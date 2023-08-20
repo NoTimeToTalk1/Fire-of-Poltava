@@ -1,0 +1,314 @@
+DPRelection_decision_category = {
+
+
+    "First Round of Elections" = {
+        activation = {
+            has_country_flag = DPRelection_active
+        }
+        available = {
+        always = no
+        }
+		icon = mission_icon
+		is_good = no
+		days_mission_timeout = 210
+		fire_only_once = yes
+        complete_effect = {
+        
+        }
+        timeout_effect = {
+            first_elections_round = yes
+        }
+    }
+	
+	"Second Round of Elections" = {
+        activation = {
+            check_variable = {
+			    opposition_leader > 1
+			}
+			has_country_flag = DPRelection_active
+        }
+        available = {
+        always = no
+        }
+		icon = mission_icon
+		is_good = no
+		days_mission_timeout = 21
+		fire_only_once = yes
+        complete_effect = {
+        
+        }
+        timeout_effect = {
+            second_elections_round = yes
+        }
+    }
+	
+	"Poll Update" = {
+        activation = {
+            has_country_flag = DPRelection_active
+        }
+        available = {
+        always = no
+        }
+		icon = mission_icon
+		is_good = yes
+		days_mission_timeout = 14
+		fire_only_once = no
+        complete_effect = {
+        
+        }
+        timeout_effect = {
+            Parties_pp_change = yes
+        }
+    }
+	
+	"Pushilin Makes his Move" = {
+        activation = {
+            has_country_flag = DPRelection_active
+			has_country_flag = DPRelection_opposition
+        }
+        available = {
+        always = no
+        }
+		icon = mission_icon
+		is_good = no
+		days_mission_timeout = 30
+		fire_only_once = no
+        complete_effect = {
+        
+        }
+        timeout_effect = {
+            random_list = {
+				50 = {
+					Pushilin_pp_increase = yes
+				}
+	
+				40 = {
+					Pushilin_pp_growth = yes
+				}
+	
+				10 = {
+					Pushilin_pp_increase_strong = yes
+				}
+			}
+        }
+    }
+	
+	"Opposition Makes its Move" = {
+        activation = {
+            has_country_flag = DPRelection_active
+			has_country_flag = DPRelection_government
+        }
+        available = {
+        always = no
+        }
+		icon = mission_icon
+		is_good = no
+		days_mission_timeout = 30
+		fire_only_once = no
+        complete_effect = {
+        
+        }
+        timeout_effect = {
+            random_list = {
+				60 = {
+					Opposition_pp_increase = yes
+				}
+	
+				40 = {
+					Opposition_pp_growth = yes
+				}
+			}
+        }
+    }
+	
+	"March on Donetsk" = {
+        activation = {
+            has_country_flag = DPRelection_active
+			has_country_flag = DPRelection_government
+        }
+        available = {
+        has_country_flag = DPRelection_ensure_order
+        }
+		icon = mission_icon
+		is_good = no
+		days_mission_timeout = 130
+		fire_only_once = yes
+        complete_effect = {
+			Pushilin_pp_increase_strong = yes
+			add_stability = 0.05
+        }
+        timeout_effect = {
+           country_event = {
+                    id = DPRelection.4
+            }
+			set_country_flag = DPRelection_NOT_ensured_order
+			Pushilin_pp_decrease_strong = yes
+			Opposition_pp_growth = yes
+			FDP_pp_increase_strong = yes
+        }
+    }
+	
+	
+	
+	
+
+	"Opposition Rally" = {
+
+		available = {
+		NOT = {
+        has_country_flag = active_decision
+        }		
+		}
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 5
+
+		modifier = {
+			political_power_factor  = -0.05
+		}
+
+		visible = {
+            has_country_flag = DPRelection_opposition
+		}
+
+		complete_effect = {
+		set_country_flag = active_decision
+		}
+
+		remove_effect = {
+            clr_country_flag = active_decision
+			Opposition_pp_increase = yes
+		}
+	}
+	
+	"Hand out Leaflets" = {
+
+		available = {
+		NOT = {
+        has_country_flag = active_decision
+        }		
+		}
+
+		cost = 70
+
+		fire_only_once = no
+
+		days_remove = 14
+
+		modifier = {
+			political_power_factor  = -0.1
+		}
+
+		visible = {
+            has_country_flag = DPRelection_opposition
+		}
+
+		complete_effect = {
+		set_country_flag = active_decision
+		}
+
+		remove_effect = {
+            clr_country_flag = active_decision
+			Opposition_pp_growth = yes
+		}
+	}
+	
+	"Discredit Pushilin" = {
+
+		available = {
+		NOT = {
+        has_country_flag = active_decision
+        }		
+		}
+
+		cost = 75
+
+		fire_only_once = no
+
+		days_remove = 14
+
+		modifier = {
+			political_power_factor  = -0.15
+		}
+
+		visible = {
+            has_country_flag = DPRelection_opposition
+		}
+
+		complete_effect = {
+		set_country_flag = active_decision
+		}
+
+		remove_effect = {
+            clr_country_flag = active_decision
+			Pushilin_pp_decrease = yes
+		}
+	}
+	
+	"Suppression of Opposition" = {
+
+		available = {
+		NOT = {
+        has_country_flag = active_decision
+        }		
+		}
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 5
+
+		modifier = {
+			political_power_factor  = -0.05
+		}
+
+		visible = {
+            has_country_flag = DPRelection_government
+		}
+
+		complete_effect = {
+		set_country_flag = active_decision
+		}
+
+		remove_effect = {
+            clr_country_flag = active_decision
+			Pushilin_pp_increase = yes
+		}
+	}
+	
+	"TV propaganda" = {
+
+		available = {
+		NOT = {
+        has_country_flag = active_decision
+        }		
+		}
+
+		cost = 80
+
+		fire_only_once = no
+
+		days_remove = 14
+
+		modifier = {
+			political_power_factor  = -0.15
+		}
+
+		visible = {
+            has_country_flag = DPRelection_government
+		}
+
+		complete_effect = {
+		set_country_flag = active_decision
+		}
+
+		remove_effect = {
+            clr_country_flag = active_decision
+			Pushilin_pp_growth = yes
+		}
+	}
+}

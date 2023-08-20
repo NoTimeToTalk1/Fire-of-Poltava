@@ -1,0 +1,1358 @@
+﻿focus_tree = {
+	id = zsu-start
+	continuous_focus_position = { x = 5000 y = 0 } 
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = AFU
+		}
+	}
+
+	#On Our Own
+	focus = {
+		id = AFU_on_our_own
+		icon = GFX_On_Our_Own
+		x = 33
+		y = 0
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 1
+		
+		completion_reward = 
+		{ country_event = { id = afu.1 } }
+	}
+	
+	#Continue the State of Emergency
+	focus = {
+		id = AFU_proclaim_a_state_of_emergency
+		icon = GFX_Continue_the_State_of_Emergency
+		x = 33
+		y = 1
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 1
+		
+		prerequisite = { focus = AFU_on_our_own}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = AFU_continue_the_state_of_emergency
+				days = 60
+			}
+			add_war_support = 0.05 
+		}
+
+	}
+	
+    #Asessing the Situation
+	focus = {
+		id = AFU_asessing_the_situation
+		icon = GFX_Asessing_the_Situation
+		x = 33
+		y = 2
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 1
+		
+		prerequisite = { focus = AFU_proclaim_a_state_of_emergency }
+		
+		completion_reward = { 
+			country_event = { id = afu.3 } 
+		}
+	}
+    
+	#Local Arms Procurement
+	focus = {
+		id = AFU_local_arms_procurement
+		icon = GFX_Local_Arms_Procurement
+		x = 33
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 5
+		
+		prerequisite = { focus = AFU_asessing_the_situation }
+		
+		completion_reward = {
+			2095 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}	
+			}
+			add_timed_idea = {
+				idea = AFU_local_arms_manufacturing
+				days = 360
+		    }
+        }
+    }
+    
+	#Harsh Quotas
+	focus = {
+		id = AFU_harsh_quotas
+		icon = GFX_Harsh_Quotas
+		x = 33
+		y = 5
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 4
+		
+		prerequisite = { focus = AFU_local_arms_procurement }
+		
+		completion_reward = { 
+			country_event = afu.4
+			add_timed_idea = {
+				idea = AFU_harsh_quotas
+				days = 180
+			}
+			add_idea = hour_limit_12
+		}
+    }
+	
+	#Provisional Military Administration
+	focus = {
+		id = AFU_millitary_administration
+		icon = GFX_Military_Administration
+		x = 33
+		y = 6
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 6
+		
+		prerequisite = { focus = AFU_harsh_quotas }
+		
+		completion_reward = {
+			swap_ideas = { 
+				remove_idea = AFU_disorganised_administration 
+				add_idea = AFU_millitary_administration
+			}
+		}
+	}
+	
+	#Promise Reform
+	focus = {
+		id = AFU_promise_reform
+		icon = GFX_Promise_Reform
+		x = 35
+		y = 9
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 5
+		
+		prerequisite = { focus = AFU_millitary_administration }
+		
+		mutually_exclusive = {
+			focus = AFU_crackdown
+	    }
+		completion_reward = {
+			add_political_power = -25
+			remove_ideas = AFU_strikes
+			add_idea = mass_media_free
+		}
+    }
+	
+	#Crackdown
+	focus = {
+		id = AFU_crackdown
+		icon = GFX_Crackdown
+		x = 31
+		y = 9
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_millitary_administration }
+		
+		mutually_exclusive = {
+			focus = AFU_promise_reform
+	    }
+		completion_reward = {
+			add_political_power = -125
+			remove_ideas = AFU_strikes
+			add_idea = mass_media_censorship
+		}
+    }
+	
+	#Victory
+	focus = {
+		id = AFU_victory
+		icon = GFX_Victory
+		x = 33
+		y = 11
+		available = {
+			owns_state = 557
+			owns_state = 518 
+		}
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 3
+		
+		prerequisite = { 
+			focus = AFU_crackdown
+			focus = AFU_promise_reform
+		}
+		
+		completion_reward = {
+			country_event = newsfop.4
+			add_political_power = 100
+			country_event = afu.10
+		}
+	}
+	
+	#Start Integration
+	focus = {
+		id = AFU_start_intergration
+		icon = GFX_Start_Integration
+		x = 33
+		y = 7
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { 
+			focus = AFU_victory
+		}
+		
+		completion_reward = { 
+			add_political_power = 10
+			country_event = afu.11
+		}
+	}
+	
+	#Finish Integration
+	focus = {
+		id = AFU_finish_integration
+		icon = GFX_Finish_Integration
+		x = 33
+		y = 8
+		
+		available = {
+			has_country_flag = AFUintfinish
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { 
+			focus = AFU_start_intergration
+		}
+		
+		completion_reward = { 
+			add_political_power = 30
+			country_event = afu.12
+		}
+	}
+	
+	#Mobilize our forces
+	focus = {
+		id = AFU_mobilize_our_forces
+		icon = GFX_Mobilize_Our_Forces
+		x = 39
+		y = 3
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_asessing_the_situation }
+		
+		completion_reward = {
+			unlock_decision_category_tooltip = afu_mobilization
+			hidden_effect = {
+            country_event = {
+            id = laws.7
+            days = 48
+                   }
+			}
+		}
+	}
+	
+	#Effective Training
+	focus = {
+		id = AFU_effective_training
+		icon = GFX_Effective_Training
+		x = 38
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 5
+		
+		prerequisite = { focus = AFU_mobilize_our_forces }
+		mutually_exclusive = {
+		
+		focus = AFU_rely_on_militias
+	    }
+		completion_reward = {
+		add_ideas = AFU_improved_training_methods
+		}
+    }
+	
+	#Rely on militias
+	focus = {
+		id = AFU_rely_on_militias
+		icon = GFX_Rely_on_Militias
+		x = 40
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 5
+		
+		prerequisite = { focus = AFU_mobilize_our_forces }
+		mutually_exclusive = {
+		
+		focus = AFU_effective_training
+	    }
+		completion_reward = {
+		add_ideas = AFU_broader_training_plan
+		
+		}
+    }
+
+	#Teroborona
+	focus = {
+		id = AFU_territorial_defence_forces
+		icon = GFX_Territorial_Defence_Forces
+		x = 42
+		y = 4
+			
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 3
+			
+		prerequisite = { focus = AFU_mobilize_our_forces }
+
+		completion_reward = { 
+			country_event = afu.13
+		}
+	}
+
+	#Special Operation Forces
+	focus = {
+		id = AFU_special_operation_forces
+		icon = GFX_Special_Operation_Forces
+		x = 36
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 5
+		
+		prerequisite = { focus = AFU_mobilize_our_forces }
+
+		completion_reward = {
+			country_event = afu.14
+		}
+	}
+	
+	#Reform the general staff
+	focus = {
+		id = AFU_reform_the_general_staff
+		icon = GFX_Reform_the_General_Staff
+		x = 38
+		y = 5
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 5
+		
+		prerequisite = { focus = AFU_effective_training focus = AFU_rely_on_militias }
+		
+		completion_reward = {
+			country_event = afu.15
+		}
+    }
+	
+	#Azov
+	focus = {
+		id = AFU_azov
+		icon = GFX_Azov
+		x = 40
+		y = 5
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 1
+		
+		prerequisite = { focus = AFU_effective_training focus = AFU_rely_on_militias }
+		
+		completion_reward = { 
+			country_event = afu.16
+			swap_ideas = { 
+				remove_idea = AFU_nationalist_agendas 
+				add_idea = AFU_nationalist_agendas_2
+			}
+		}
+	}
+	
+	#Professional Army
+	focus = {
+		id = AFU_proffesional_army
+		icon = GFX_Professional_Army
+		x = 39
+		y = 6
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 5
+		
+		prerequisite = { focus = AFU_azov focus = AFU_reform_the_general_staff }
+		
+		completion_reward = {
+			add_ideas = AFU_ready_military
+		}
+    }
+    
+	#Prepare for the Inevitable
+	focus = {
+		id = AFU_prepare_for_the_inevitable
+		icon = GFX_Prepare_for_the_Inevitable
+		x = 46
+		y = 3
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 3
+		
+		prerequisite = { focus = AFU_asessing_the_situation }
+        
+		completion_reward = { 
+			country_event = { id = afu.17 } 
+		}
+    }
+	
+	#Reserve Line
+	focus = {
+		id = AFU_prepare_the_reserve_line
+		icon = GFX_Prepare_the_Reserve_Line
+		x = 46
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 8
+		
+		prerequisite = { focus = AFU_prepare_for_the_inevitable }
+		
+		completion_reward = {
+			add_ideas = AFU_defensive_strategy
+			2093 = {
+				add_building_construction = { type = bunker level = 2 province = 13189 instant_build = yes }
+				add_building_construction = { type = bunker level = 5 province = 7149 instant_build = yes }
+				add_building_construction = { type = bunker level = 5 province = 7423 instant_build = yes }
+				add_building_construction = { type = bunker level = 2 province = 8437 instant_build = yes }
+			}
+			2099 = {
+				add_building_construction = { type = bunker level = 3 province = 12990 instant_build = yes }
+			}
+			2095 = {
+				add_building_construction = { type = bunker level = 6 province = 8175 instant_build = yes }
+				add_building_construction = { type = bunker level = 6 province = 13142 instant_build = yes }
+			}
+			2306 = {
+				add_building_construction = { type = bunker level = 2 province = 15840 instant_build = yes }
+			}
+		}
+    }
+	
+	#Now We Wait
+	focus = {
+		id = AFU_now_we_wait
+		icon = GFX_And_Now_We_Wait
+		x = 45
+		y = 5
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 5
+		
+		prerequisite = { focus = AFU_prepare_the_reserve_line }
+		mutually_exclusive = { focus = AFU_its_time_to_put_an_end_to_the_separatists }
+		completion_reward = {
+			add_war_support = 0.2
+		}
+    }
+	
+	#Strike first
+	focus = {
+		id = AFU_its_time_to_put_an_end_to_the_separatists
+		icon = GFX_It's_Time_to_Put_an_End_to_the_Separatists
+		x = 47
+		y = 5
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 10
+		
+		prerequisite = { focus = AFU_prepare_the_reserve_line }
+		mutually_exclusive = { focus = AFU_now_we_wait }
+		
+		completion_reward = {
+			declare_war_on = { 
+			target = DPR
+			type = annex_everything 
+			}
+			declare_war_on = { 
+			target = LPR
+			type = annex_everything 
+			}
+		}
+	}
+	
+	#Reaching Out
+	focus = {
+		id = AFU_reaching_out
+		icon = GFX_Reaching_Out
+		x = 27
+		y = 3
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_asessing_the_situation }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+	
+	#Speak to Zelenskyy
+	focus = {
+		id = AFU_reach_out_to_kyjiv
+		icon = GFX_Reach_Out_to_Zelensky
+		x = 23
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 1
+		
+		prerequisite = { focus = AFU_reaching_out }
+		
+		completion_reward = {
+			UKR = {
+				country_event = afu.5
+			}
+	    }
+    }
+	
+	#Speak to Poroshenko
+	focus = {
+		id = AFU_reach_out_to_poroshenko
+		icon = GFX_Reach_Out_to_Poroshenko
+		x = 25
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 1
+		
+		prerequisite = { focus = AFU_reaching_out }
+		
+		completion_reward = {
+			PRH = {
+				country_event = afu.6
+			}
+		}
+    }
+	
+	#Speak to Tyler
+	focus = {
+		id = AFU_reach_out_to_zaporizhia
+		icon = GFX_Reach_Out_to_Tyler
+		x = 27
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 1
+		
+		prerequisite = { focus = AFU_reaching_out }
+		
+		completion_reward = {
+			ZAP = {
+				country_event = afu.7
+			}
+		}	
+	}
+	
+	#Speak to Avakov
+	focus = {
+		id = AFU_reach_out_to_kharkiv
+		icon = GFX_Reach_Out_to_Avakov
+		x = 29
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 1
+		
+		prerequisite = { focus = AFU_reaching_out }
+		completion_reward = {
+			KHA = {
+				country_event = afu.8
+			}
+		}
+	}
+	
+	focus = {
+		id = AFU_stand_with_prh
+		icon = GFX_Reaching_Out
+		x = 35
+		y = 12
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_victory }
+		mutually_exclusive = {
+			focus = AFU_we_stand_alone
+			focus = AFU_stand_with_ze
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+	focus = {
+		id = AFU_stand_with_ze
+		icon = GFX_Reaching_Out
+		x = 31
+		y = 12
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_victory }
+		mutually_exclusive = {
+			focus = AFU_we_stand_alone
+			focus = AFU_stand_with_prh
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+	focus = {
+		id = AFU_we_stand_alone
+		icon = GFX_Reaching_Out
+		x = 33
+		y = 14
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_victory }
+		mutually_exclusive = {
+			focus = AFU_stand_with_prh
+			focus = AFU_stand_with_ze
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+	focus = {
+		id = AFU_no_new_faces
+		icon = GFX_Reaching_Out
+		x = 35
+		y = 13
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_stand_with_prh }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+	focus = {
+		id = AFU_faithful_army
+		icon = GFX_Reaching_Out
+		x = 35
+		y = 14
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_no_new_faces }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+	focus = {
+		id = AFU_loyal_son
+		icon = GFX_Reaching_Out
+		x = 31
+		y = 13
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_stand_with_ze }
+		
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+	focus = {
+		id = AFU_reclamation
+		icon = GFX_Reaching_Out
+		x = 31
+		y = 14
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_loyal_son }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+	focus = {
+		id = AFU_the_time_has_not_cum
+		icon = GFX_Reaching_Out
+		x = 33
+		y = 16
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_we_stand_alone }
+		mutually_exclusive = {
+			focus = AFU_rule_of_the_far_right
+			focus = AFU_elections_elections
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+    
+	focus = {
+		id = AFU_elections_elections
+		icon = GFX_Reaching_Out
+		x = 50
+		y = 16
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_we_stand_alone }
+		mutually_exclusive = {
+			focus = AFU_rule_of_the_far_right
+			focus = AFU_the_time_has_not_cum
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+	
+	focus = {
+		id = AFU_rule_of_the_far_right
+		icon = GFX_Reaching_Out
+		x = 19
+		y = 16
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_we_stand_alone }
+		mutually_exclusive = {
+			focus = AFU_elections_elections
+			focus = AFU_the_time_has_not_cum
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+	
+	focus = {
+		id = AFU_secure_our_position
+		icon = GFX_Reaching_Out
+		x = 19
+		y = 17
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_rule_of_the_far_right
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+	focus = {
+		id = AFU_behead_the_hydra
+		icon = GFX_Reaching_Out
+		x = 19
+		y = 18
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_secure_our_position
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+	focus = {
+		id = AFU_free_bombas
+		icon = GFX_Reaching_Out
+		x = 19
+		y = 19
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_behead_the_hydra
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_consolidate_our_position
+		icon = GFX_Reaching_Out
+		x = 19
+		y = 20
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_free_bombas
+		focus = AFU_reshaping_the_mentality
+		focus = AFU_hold_the_banner_high
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_bolster_our_ranks
+		icon = GFX_Reaching_Out
+		x = 22
+		y = 17
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_rule_of_the_far_right
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_second_national_mobilization
+		icon = GFX_Reaching_Out
+		x = 22
+		y = 18
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_bolster_our_ranks
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_hold_the_banner_high
+		icon = GFX_Reaching_Out
+		x = 22
+		y = 19
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_second_national_mobilization
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_uphold_the_victorious_spirit
+		icon = GFX_Reaching_Out
+		x = 16
+		y = 17
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_rule_of_the_far_right
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+
+focus = {
+		id = AFU_destroy_the_soviet_heritage
+		icon = GFX_Reaching_Out
+		x = 16
+		y = 18
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_uphold_the_victorious_spirit
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_reshaping_the_mentality
+		icon = GFX_Reaching_Out
+		x = 16
+		y = 19
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_destroy_the_soviet_heritage
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_stick_to_our_values
+		icon = GFX_Reaching_Out
+		x = 23
+		y = 21
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_consolidate_our_position
+	    }
+		
+		mutually_exclusive = {
+			focus = AFU_keep_the_face
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_keep_the_face
+		icon = GFX_Reaching_Out
+		x = 16
+		y = 21
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_consolidate_our_position
+	    }
+		
+		mutually_exclusive = {
+			focus = AFU_stick_to_our_values
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_return_of_zhorin
+		icon = GFX_Reaching_Out
+		x = 26
+		y = 22
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_stick_to_our_values
+	    }
+		
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_corridor_to_dykanka
+		icon = GFX_Reaching_Out
+		x = 28
+		y = 23
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_return_of_zhorin
+	    }
+		
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_all_cops_are_bad
+		icon = GFX_Reaching_Out
+		x = 29
+		y = 24
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_corridor_to_dykanka
+	    }
+		
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_the_greedy_must_pay
+		icon = GFX_Reaching_Out
+		x = 27
+		y = 24
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_corridor_to_dykanka
+	    }
+		
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_meeting_at_vorskla
+		icon = GFX_Reaching_Out
+		x = 28
+		y = 25
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_the_greedy_must_pay focus = AFU_all_cops_are_bad }
+		
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_biletsky_at_the_helm
+		icon = GFX_Reaching_Out
+		x = 28
+		y = 26
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_meeting_at_vorskla
+	    }
+		
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_unite_the_right
+		icon = GFX_Reaching_Out
+		x = 26
+		y = 27
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_biletsky_at_the_helm
+	    }
+		
+		mutually_exclusive = {
+			focus = AFU_there_can_only_be_one
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+	
+focus = {
+		id = AFU_there_can_only_be_one
+		icon = GFX_Reaching_Out
+		x = 30
+		y = 27
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_biletsky_at_the_helm
+	    }
+		
+		mutually_exclusive = {
+			focus = AFU_unite_the_right
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_novyj_lad
+		icon = GFX_Reaching_Out
+		x = 18
+		y = 23
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_return_of_zhorin
+		}
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_supremacy_of_ukrainian_will
+		icon = GFX_Reaching_Out
+		x = 16
+		y = 24
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_novyj_lad
+		}
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_history_is_written_by_the_winners
+		icon = GFX_Reaching_Out
+		x = 18
+		y = 24
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_novyj_lad
+		}
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_reach_to_our_bretheren
+		icon = GFX_Reaching_Out
+		x = 22
+		y = 24
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_novyj_lad
+		}
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_define_russians
+		icon = GFX_Reaching_Out
+		x = 22
+		y = 25
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_reach_to_our_bretheren
+		}
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_we_have_no_business_with_the_mongoloids
+		icon = GFX_Reaching_Out
+		x = 25
+		y = 26
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_define_russians
+		}
+		
+		mutually_exclusive = {
+			focus = AFU_no_need_to_divide_us
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+focus = {
+		id = AFU_no_need_to_divide_us
+		icon = GFX_Reaching_Out
+		x = 20
+		y = 26
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_define_russians
+		}
+		
+		mutually_exclusive = {
+			focus = AFU_we_have_no_business_with_the_mongoloids
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+}

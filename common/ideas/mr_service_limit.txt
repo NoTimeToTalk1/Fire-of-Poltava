@@ -1,0 +1,103 @@
+ideas = {
+
+	mr_service_limit = { 
+		law = yes
+
+		limited_service = {
+			removal_cost = -1
+			level = 1
+			
+			available = {
+			}
+
+			modifier = {
+				political_power_factor = 0.02
+			}
+			
+			ai_will_do = {
+				factor = 1
+
+				modifier = {
+					has_war = no
+					factor = 40
+				}
+
+				modifier = {
+					threat < 50
+					factor = 40
+				}
+			}
+			
+			cancel_if_invalid = no
+			default = yes
+		}
+		
+		wartime_service = {
+			removal_cost = -1
+			level = 2
+			
+			available = {
+				NOT = { has_idea = disarmed_nation }
+				NOT = { has_idea = volunteer_only }
+				NOT = { has_idea = limited_conscription }
+				OR = {
+					has_war = yes
+					threat > 0.30
+				}
+			}
+			
+			ai_will_do = {
+				factor = 1
+
+				modifier = {
+					threat > 60
+					factor = 40
+				}
+			}
+
+			modifier = {
+				experience_gain_army = 0.05
+				experience_gain_air = 0.05
+				experience_gain_navy = 0.05
+				training_time_factor = -0.10
+			}
+			
+			cancel_if_invalid = no
+		}
+		
+		shake_and_bake = {
+			removal_cost = -1
+			level = 3
+			
+			available = {
+				NOT = { has_idea = disarmed_nation }
+				NOT = { has_idea = volunteer_only }
+				NOT = { has_idea = limited_conscription }
+				AND = {
+					threat > 0.50
+					has_war_support > 0.6
+				}
+			}
+			
+			ai_will_do = {
+				factor = 1
+
+				modifier = {
+					threat > 80
+					factor = 40
+				}
+			}
+
+			modifier = {
+				political_power_factor = -0.10
+				military_leader_cost_factor = 0.15
+				training_time_factor = -0.20
+				experience_gain_army = 0.1
+				experience_gain_air = 0.1
+				experience_gain_navy = 0.1
+			}
+			
+			cancel_if_invalid = no
+		}
+	}
+}

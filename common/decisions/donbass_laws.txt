@@ -1,0 +1,179 @@
+donbass_laws = {
+	medicine = {
+		available = {
+		has_idea = healthcare_public_bad
+	}
+		visible = {
+						OR = {
+			tag = DPR
+			tag = LPR
+		}
+		}
+		days_re_enable = 2
+
+		cost = 100
+		days_remove = 100
+
+		complete_effect = {
+swap_ideas = {
+ remove_idea = healthcare_public_bad
+ add_idea = healthcare_public_decent
+}
+}
+remove_effect = {
+hidden_effect = {
+swap_ideas = {
+ remove_idea = healthcare_public_decent
+ add_idea = healthcare_public_bad
+}
+}	
+}
+		}
+	education_1 = {
+		available = {
+factor = 1
+	}
+		visible = {
+						OR = {
+			tag = DPR
+			tag = LPR
+		}
+		}
+		days_re_enable = 20
+
+		cost = 50
+		days_remove = 10
+
+remove_effect = {
+ add_ideas = education_military	
+}
+		}
+	education_2 = {
+	available = {
+    factor = 1
+	}
+		visible = {
+						OR = {
+			tag = DPR
+			tag = LPR
+		}
+		}
+		days_re_enable = 20
+
+		cost = 50
+		days_remove = 10
+
+remove_effect = {
+ add_ideas = education_propagandized
+
+}
+		}
+	education_3 = {
+		available = {
+        factor = 1
+	}
+		visible = {
+						OR = {
+			tag = DPR
+			tag = LPR
+		}
+		}
+		days_re_enable = 20
+
+		cost = 50
+		days_remove = 10
+
+remove_effect = {
+ add_ideas = education_standard
+
+         }
+    }
+	invest_in_army = {
+		available = {
+		factor = 1
+	}
+		visible = {
+						OR = {
+			tag = DPR
+			tag = LPR
+		}
+		}
+		days_re_enable = 2
+
+		cost = 80
+		days_remove = 180
+
+		complete_effect = {
+ add_ideas = finances_army
+}
+remove_effect = {
+hidden_effect = {
+swap_ideas = {
+ remove_idea = finances_army
+ add_idea = finances_no_data
+}
+}	
+}
+		}
+	invest_in_civilian = {
+		available = {
+		factor = 1
+	}
+		visible = {
+						OR = {
+			tag = DPR
+			tag = LPR
+		}
+		}
+		days_re_enable = 2
+
+		cost = 80
+		days_remove = 180
+
+		complete_effect = {
+ add_ideas = finances_civilian
+}
+remove_effect = {
+hidden_effect = {
+swap_ideas = {
+ remove_idea = finances_civilian
+ add_idea = finances_no_data
+}
+}	
+}
+		}
+	tighten_customs_control = {
+		available = {
+custom_trigger_tooltip = {
+    tooltip = tamohnya_not_deal	
+DPR = {	
+		NOT = {
+has_completed_focus = dnr_end_the_trade_war
+}
+    }
+}
+}
+		visible = {
+						OR = {
+			tag = DPR
+			tag = LPR
+		}
+		}
+		days_re_enable = 2
+
+custom_cost_trigger = {
+            command_power > 14
+        }
+        complete_effect = {
+            hidden_effect = {
+                add_command_power = -15
+            }
+        }
+		custom_cost_text = decision_cost_CP_15
+		days_remove = 2
+
+remove_effect = {
+add_political_power = 50	
+}
+		}
+}

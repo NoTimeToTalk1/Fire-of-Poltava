@@ -1,0 +1,129 @@
+ideas = {
+
+	mr_recruitment_standard = { 
+		law = yes
+
+		healthy_standard = {
+			removal_cost = -1
+			level = 4
+			
+			available = {
+			}
+			
+			ai_will_do = {
+				factor = 1
+
+				modifier = {
+					has_manpower > 800000
+					factor = 80
+				}
+			}
+
+			modifier = {
+				army_org_factor = 0.15
+			}
+			
+			cancel_if_invalid = no
+			default = yes
+		}
+		
+		loose_standard = {
+			removal_cost = -1
+			level = 3
+			
+			available = {
+				NOT = { has_idea = disarmed_nation }
+				NOT = { has_idea = volunteer_only }
+				OR = {
+					has_war = yes
+					threat > 0.40
+				}
+			}
+			
+			ai_will_do = {
+				factor = 1
+
+				modifier = {
+					has_manpower < 300000
+					factor = 40
+				}
+			}
+
+			modifier = {
+				conscription = 0.01
+				army_org_factor = 0.05
+
+			}
+			
+			cancel_if_invalid = yes
+		}
+		
+		no_exemptions = {
+			removal_cost = -1
+			level = 2
+			
+			available = {
+				NOT = { has_idea = disarmed_nation }
+				NOT = { has_idea = volunteer_only }
+				NOT = { has_idea = limited_conscription }
+				NOT = { has_idea = extensive_conscription }
+				AND = {
+					has_war = yes
+					enemies_strength_ratio > 1.5
+				}
+			}
+			
+			ai_will_do = {
+				factor = 1
+
+				modifier = {
+					has_idea = loose_standard
+					has_manpower < 150000
+					factor = 40
+				}
+			}
+
+			modifier = {
+				conscription = 0.02
+				army_org_factor = -0.05
+			}
+			
+			cancel_if_invalid = yes
+		}
+		
+		scraping_the_barrel_standard = {
+			removal_cost = -1
+			level = 1
+			
+			available = {
+				NOT = { has_idea = disarmed_nation }
+				NOT = { has_idea = volunteer_only }
+				NOT = { has_idea = limited_conscription }
+				NOT = { has_idea = extensive_conscription }
+				NOT = { has_idea = service_by_requirement }
+				NOT = { has_idea = all_adults_serve }
+				AND = {
+					has_war = yes
+					enemies_strength_ratio > 2.0
+				}
+			}
+			
+			ai_will_do = {
+				factor = 1
+
+				modifier = {
+					has_idea = no_exemptions
+					has_manpower < 0
+					factor = 40
+				}
+			}
+
+			modifier = {
+				conscription = 0.04
+				army_org_factor = -0.15
+			}
+			
+			cancel_if_invalid = yes
+		}
+	}
+}

@@ -1,0 +1,238 @@
+ideas = {
+
+	gp_economic_base = { 
+	
+		law = yes
+
+		collapsed_system = {
+			available = {
+				has_country_flag = niggerslayer
+			}
+
+			modifier = {
+				political_power_factor = -0.15
+				production_speed_buildings_factor = -0.1
+                industry_repair_factor = -0.1
+				political_power_cost = 0.15
+				stability_factor = -0.15
+				war_support_weekly = -0.01
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+cancel_if_invalid = no
+default = yes
+		}
+		
+		banditism = {
+			available = {
+				has_country_flag = niggerslayer
+			}
+
+			modifier = {
+				political_power_factor = 0.1
+				production_speed_buildings_factor = -0.12
+                industry_repair_factor = -0.12
+				political_power_cost = -0.15
+				stability_factor = -0.15
+				war_support_weekly = -0.05
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+cancel_if_invalid = no
+		}
+
+		agriculture = {
+			available = {
+				has_country_flag = niggerslayer
+			}
+			
+			modifier = {
+				political_power_factor = 0.10
+				consumer_goods_factor = -0.10
+				monthly_population = 1
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
+				production_speed_buildings_factor = -0.10
+				production_factory_max_efficiency_factor = -0.05
+				production_factory_efficiency_gain_factor = -0.1
+				research_speed_factor = -0.05
+			}
+			
+			cancel_if_invalid = no
+			
+			ai_will_do = {
+				factor = 1
+
+				modifier = {
+					num_of_civilian_factories < 15
+					has_manpower < 100000
+					factor = 80
+				}
+			}
+		}
+		
+		banking = {
+			available = {
+				has_country_flag = niggerslayer
+			}
+			
+			modifier = {
+				political_power_factor = -0.15
+				consumer_goods_factor = -0.05
+				global_building_slots_factor = 0.25
+				production_factory_max_efficiency_factor = 0.05
+				production_speed_infrastructure_factor = 0.1
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			cancel_if_invalid = no
+		}
+		
+		service_economy = {
+			available = {
+				has_country_flag = niggerslayer
+			}
+			
+			modifier = {
+				production_speed_industrial_complex_factor = 0.15
+				global_building_slots_factor = 0.15
+			}
+			
+			ai_will_do = {
+   				factor = 1
+   			}
+
+			cancel_if_invalid = no
+		}
+		
+		natural_exports = {
+			available = {
+				has_country_flag = niggerslayer
+			}
+
+			modifier = {
+				political_power_factor = 0.1
+				consumer_goods_factor = -0.025
+				local_resources_factor = 0.3
+				production_speed_industrial_complex_factor = -0.15
+				min_export = 0.1
+			}
+
+			ai_will_do = {
+				factor = 1
+
+				modifier = {
+					has_idea = export_focus
+					factor = 40
+				}
+			}
+			cancel_if_invalid = no
+
+
+		}
+
+		enterprise = {
+			available = {
+				has_country_flag = niggerslayer
+			}
+
+			modifier = {
+				political_power_factor = -0.1
+				consumer_goods_factor = -0.05
+				local_resources_factor = 0.1
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+			}
+
+			ai_will_do = {
+				factor = 1
+
+				modifier = {
+					num_of_civilian_factories > 30
+					factor = 40
+				}
+			}
+			cancel_if_invalid = no
+
+		}
+
+		manufacturing = {
+			available = {
+				has_country_flag = niggerslayer
+			}
+
+			modifier = {
+				political_power_factor = -0.10
+				consumer_goods_factor = 0.10
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.15
+				production_speed_buildings_factor = 0.1
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+			}
+
+			ai_will_do = {
+				factor = 1
+
+				modifier = {
+					num_of_factories > 75
+					factor = 40
+				}
+			}
+cancel_if_invalid = no
+		}
+		militarist = {
+			available = {
+				has_country_flag = niggerslayer
+			}
+
+			modifier = {
+				political_power_factor = 0.05
+				production_speed_buildings_factor = -0.1
+				production_speed_arms_factory_factor = 0.2
+				production_speed_ammunition_plant_factor = 0.2
+			}
+
+			ai_will_do = {
+				factor = 1
+
+				modifier = {
+					num_of_factories > 75
+					factor = 40
+				}
+			}
+cancel_if_invalid = no
+		}
+		destroyed = {
+			available = {
+				has_country_flag = niggerslayer
+			}
+
+			modifier = {
+				political_power_factor = -0.25
+				production_speed_buildings_factor = -0.1
+                industry_repair_factor = -0.3
+				political_power_cost = 0.3
+				stability_factor = -0.3
+				war_support_weekly = -0.01
+			}
+
+			ai_will_do = {
+				factor = 1
+
+				modifier = {
+					num_of_factories > 75
+					factor = 40
+				}
+			}
+cancel_if_invalid = no
+		}
+	}
+}

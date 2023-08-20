@@ -1,0 +1,46 @@
+BG_mercenary_limited_contract = {
+	custom_effect_tooltip = BG_mercenary_limited_contract
+	BG_mercenary_template = yes
+}
+
+BG_mercenary_extensive_contract = {
+	custom_effect_tooltip = BG_mercenary_extend_contract
+	set_division_template_cap = { 
+		division_template = "Mercenaries" 
+		division_cap = 12
+	}
+}
+
+BG_mercenary_banned = {
+	delete_unit_template_and_units = {
+		division_template = "Mercenaries"
+	}
+}
+
+### TEMPLATES
+BG_mercenary_template = {
+	division_template = { #Mercenaries
+		name = "Mercenaries"
+		template_counter = 33
+		is_locked = yes
+		force_allow_recruiting = yes
+		division_cap = 6
+
+		regiments = {
+			mercenary = { x = 0 y = 0 }
+			mercenary = { x = 0 y = 1 }
+			mercenary = { x = 0 y = 2 }
+			mercenary = { x = 1 y = 0 }
+			mercenary = { x = 1 y = 1 }
+			mercenary = { x = 1 y = 2 }
+			mercenary = { x = 2 y = 0 }
+			mercenary = { x = 2 y = 1 }
+			mercenary = { x = 2 y = 2 }
+		}
+		support = {
+			engineer = { x = 0 y = 0 }
+			artillery = { x = 0 y = 1 }
+		}
+	}
+}
+

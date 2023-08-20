@@ -1,0 +1,364 @@
+#	Example:
+#
+#	example_effect = {
+#		add_political_power = 66
+#		add_popularity = {
+#			ideology = fascism
+#			popularity = 0.33
+#		}
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		example_effect = yes
+#	}
+#
+
+Parties_pp_change = {
+		set_temp_variable = { growthN = NDPD_pp_ch }
+        add_to_variable = { NDPD_pp = growthN }
+		divide_temp_variable = { growthN = 4 }
+		
+		subtract_from_variable = { FDP_pp = growthN }
+		subtract_from_variable = { DPN_pp = growthN }
+		subtract_from_variable = { SWPD_pp = growthN }
+		subtract_from_variable = { CP_pp = growthN }
+		
+		set_temp_variable = { growthF = FDP_pp_ch  }
+		add_to_variable = { FDP_pp = growthF }
+		divide_temp_variable = { growthF = 4 }
+		
+		subtract_from_variable = { NDPD_pp = growthF }
+		subtract_from_variable = { DPN_pp = growthF }
+		subtract_from_variable = { SWPD_pp = growthF }
+		subtract_from_variable = { CP_pp = growthF }
+		
+		set_temp_variable = { growthD = DPN_pp_ch  }
+		add_to_variable = { DPN_pp = growthD }
+		divide_temp_variable = { growthD = 4 }
+		
+		subtract_from_variable = { FDP_pp = growthD }
+		subtract_from_variable = { NDPD_pp = growthD }
+		subtract_from_variable = { SWPD_pp = growthD }
+		subtract_from_variable = { CP_pp = growthD }
+		
+		set_temp_variable = { growthS = SWPD_pp_ch  }
+		add_to_variable = { SWPD_pp = growthS }
+		divide_temp_variable = { growthS = 4 }
+		
+		subtract_from_variable = { FDP_pp = growthS }
+		subtract_from_variable = { DPN_pp = growthS }
+		subtract_from_variable = { NDPD_pp = growthS }
+		subtract_from_variable = { CP_pp = growthS }
+		
+		set_temp_variable = { growthC = CP_pp_ch  }
+		add_to_variable = { CP_pp = growthC }
+		divide_temp_variable = { growthC = 4 }
+		
+		subtract_from_variable = { FDP_pp = growthC }
+		subtract_from_variable = { DPN_pp = growthC }
+		subtract_from_variable = { SWPD_pp = growthC }
+		subtract_from_variable = { NDPD_pp = growthC }
+		
+	}
+	
+Opposition_pp_increase = {
+	    custom_effect_tooltip = DPRelection_Opposition_increase_tt
+	
+        add_to_variable = { FDP_pp = 1 }
+		add_to_variable = { DPN_pp = 1 }
+		add_to_variable = { SWPD_pp = 1 }
+		subtract_from_variable = { NDPD_pp = 3 }
+}
+
+Opposition_pp_decrease = {
+	    custom_effect_tooltip = DPRelection_Opposition_decrease_tt
+	
+        subtract_from_variable = { FDP_pp = 1 }
+		subtract_from_variable = { DPN_pp = 1 }
+		subtract_from_variable = { SWPD_pp = 1 }
+		add_to_variable = { NDPD_pp = 3 }
+}
+
+SWPD_pp_increase = {
+	    custom_effect_tooltip = DPRelection_SWPD_increase_tt
+	
+        subtract_from_variable = { FDP_pp = 0.75 }
+		subtract_from_variable = { DPN_pp = 0.5 }
+		add_to_variable = { SWPD_pp = 2.5 }
+		subtract_from_variable = { NDPD_pp = 1.25 }
+}
+
+SWPD_pp_increase_strong = {
+	    custom_effect_tooltip = DPRelection_SWPD_increase_strong_tt
+	
+        subtract_from_variable = { FDP_pp = 1 }
+		subtract_from_variable = { DPN_pp = 0.75 }
+		add_to_variable = { SWPD_pp = 4 }
+		subtract_from_variable = { NDPD_pp = 2.25 }
+}
+
+DPN_pp_increase = {
+	    custom_effect_tooltip = DPRelection_DPN_increase_tt
+	
+        subtract_from_variable = { FDP_pp = 0.5 }
+		subtract_from_variable = { SWPD_pp = 0.5 }
+		add_to_variable = { DPN_pp = 2.5 }
+		subtract_from_variable = { NDPD_pp = 1.5 }
+}
+
+FDP_pp_increase = {
+	    custom_effect_tooltip = DPRelection_FDP_increase_tt
+	
+        subtract_from_variable = { DPN_pp = 0.5 }
+		subtract_from_variable = { SWPD_pp = 0.75 }
+		add_to_variable = { FDP_pp = 2.5 }
+		subtract_from_variable = { NDPD_pp = 1.25 }
+}
+
+FDP_pp_increase_strong = {
+	    custom_effect_tooltip = DPRelection_FDP_increase_strong_tt
+	
+        subtract_from_variable = { DPN_pp = 0.90 }
+		subtract_from_variable = { SWPD_pp = 0.75 }
+		add_to_variable = { FDP_pp = 4 }
+		subtract_from_variable = { NDPD_pp = 2.35 }
+}
+
+FDP_pp_decrease = {
+	    custom_effect_tooltip = DPRelection_FDP_decrease_tt
+	
+        add_to_variable = { DPN_pp = 1 }
+		subtract_from_variable = { FDP_pp = 3 }
+		add_to_variable = { NDPD_pp = 2 }
+}
+
+CP_pp_increase = {
+	    custom_effect_tooltip = DPRelection_CP_increase_tt
+	
+        subtract_from_variable = { DPN_pp = 0.5 }
+		subtract_from_variable = { SWPD_pp = 0.5 }
+		subtract_from_variable = { FDP_pp = 1 }
+		subtract_from_variable = { NDPD_pp = 1 }
+		add_to_variable = { CP_pp = 3 }
+		add_to_variable = { CP_pp_ch = 1 }
+}
+
+Opposition_pp_growth = {
+        custom_effect_tooltip = DPRelection_Opposition_growth_tt
+	
+        add_to_variable = { FDP_pp_ch = 0.5 }
+		add_to_variable = { DPN_pp_ch = 0.5 }
+		add_to_variable = { SWPD_pp_ch = 0.5 }
+}
+
+Pushilin_pp_decrease = {
+	    custom_effect_tooltip = DPRelection_Pushilin_pp_decrease_tt
+	
+        add_to_variable = { FDP_pp = 1 }
+		add_to_variable = { DPN_pp = 1 }
+		add_to_variable = { SWPD_pp = 1 }
+		subtract_from_variable = { NDPD_pp = 3 }
+}
+
+Pushilin_pp_decrease_strong = {
+	    custom_effect_tooltip = DPRelection_Pushilin_pp_decrease_strong_tt
+	
+        add_to_variable = { FDP_pp = 2 }
+		add_to_variable = { DPN_pp = 2 }
+		add_to_variable = { SWPD_pp = 3 }
+		subtract_from_variable = { NDPD_pp = 7 }
+}
+
+Pushilin_pp_increase = {
+	    custom_effect_tooltip = DPRelection_Pushilin_increase_tt
+	
+        subtract_from_variable = { FDP_pp = 1 }
+		subtract_from_variable = { DPN_pp = 0.5 }
+		subtract_from_variable = { SWPD_pp = 0.5 }
+		add_to_variable = { NDPD_pp = 2 }
+}
+
+Pushilin_pp_increase_strong = {
+	    custom_effect_tooltip = DPRelection_Pushilin_increase_strong_tt
+	
+        subtract_from_variable = { FDP_pp = 3 }
+		subtract_from_variable = { DPN_pp = 1 }
+		subtract_from_variable = { SWPD_pp = 1 }
+		add_to_variable = { NDPD_pp = 5 }
+}
+
+Pushilin_pp_growth = {
+        custom_effect_tooltip = DPRelection_Pushilin_growth_tt
+	
+        add_to_variable = { NDPD_pp_ch = 2 }
+}
+
+first_elections_round = {
+        custom_effect_tooltip = DPRelection_first_round_tt
+        if = {
+		    limit = {
+			    check_variable = {
+                    FDP_pp > DPN_pp
+                }
+				
+				check_variable = {
+                    FDP_pp > SWPD_pp
+                }
+			}
+		    add_to_variable = { FDP_pp = DPN_pp }
+			add_to_variable = { FDP_pp = SWPD_pp }
+			add_to_variable = { NDPD_pp = CP_pp }
+			clear_variable = CP_pp
+			clear_variable = NDPD_pp_ch
+			clear_variable = FDP_pp_ch
+			clear_variable = DPN_pp_ch
+			clear_variable = SWPD_pp_ch
+			clear_variable = CP_pp_ch
+			clear_variable = DPN_pp
+			clear_variable = SWPD_pp
+			set_variable = { opposition_leader = 2 }
+			country_event = {
+                id = DPRelection.20
+            }
+		}
+		
+		else_if = {
+		    limit = {
+			    check_variable = {
+                    DPN_pp > FDP_pp
+                }
+				
+				check_variable = {
+                    DPN_pp > SWPD_pp
+                }
+			}
+		    add_to_variable = { DPN_pp = FDP_pp }
+			add_to_variable = { DPN_pp = SWPD_pp }
+			add_to_variable = { NDPD_pp = CP_pp }
+			clear_variable = CP_pp
+			clear_variable = NDPD_pp_ch
+			clear_variable = FDP_pp_ch
+			clear_variable = DPN_pp_ch
+			clear_variable = SWPD_pp_ch
+			clear_variable = CP_pp_ch
+			clear_variable = FDP_pp
+			clear_variable = SWPD_pp
+			set_variable = { opposition_leader = 3 }
+			country_event = {
+                id = DPRelection.20
+            }
+		} 
+
+        else = {
+		    add_to_variable = { SWPD_pp = FDP_pp }
+			add_to_variable = { SWPD_pp = DPN_pp }
+			add_to_variable = { NDPD_pp = CP_pp }
+			clear_variable = CP_pp
+			clear_variable = NDPD_pp_ch
+			clear_variable = FDP_pp_ch
+			clear_variable = DPN_pp_ch
+			clear_variable = SWPD_pp_ch
+			clear_variable = CP_pp_ch
+			clear_variable = FDP_pp
+			clear_variable = DPN_pp
+			set_variable = { opposition_leader = 4 }
+			country_event = {
+                id = DPRelection.20
+            }
+		}
+} 
+
+second_elections_round = {
+        custom_effect_tooltip = DPRelection_second_round_tt
+		
+		if = {
+		    limit = {		
+			    check_variable = {
+                    NDPD_pp > 50
+                }
+			}
+			set_popularities = {
+	            oligarchy = 56
+	            conservative_democracy = 21
+	            radical_nationalism = 8
+	            radical_socialism = 15
+            }
+			clr_country_flag = DPRelection_active
+			country_event = {
+                id = DPRelection.21
+            }
+		}
+		
+        else_if = {
+		    limit = {
+			    check_variable = {
+                    FDP_pp > 50
+                }
+			}
+			set_popularities = {
+	            oligarchy = 26
+	            conservative_democracy = 19
+	            radical_nationalism = 37
+	            radical_socialism = 18
+            }
+			set_politics = {
+	            ruling_party = radical_nationalism
+                elections_allowed = no
+                last_election = "1984.12.1"
+                election_frequency = 48
+            }
+			clr_country_flag = DPRelection_active
+			country_event = {
+                id = DPRelection.21
+            }
+		}
+		
+		else_if = {
+		    limit = {
+			    check_variable = {
+                    DPN_pp > 50
+                }
+			}
+			set_popularities = {
+	            oligarchy = 31
+	            conservative_democracy = 46
+	            radical_nationalism = 17
+	            radical_socialism = 6
+            }
+			
+			set_politics = {
+	            ruling_party = conservative_democracy
+                elections_allowed = no
+                last_election = "1984.12.1"
+                election_frequency = 48
+            }
+			clr_country_flag = DPRelection_active
+			country_event = {
+                id = DPRelection.21
+            }
+		} 
+
+        else = {
+            set_popularities = {
+	            oligarchy = 29
+	            conservative_democracy = 11
+	            radical_nationalism = 21
+	            radical_socialism = 39
+            }
+			
+			set_politics = {
+	            ruling_party = radical_socialism
+                elections_allowed = no
+                last_election = "1984.12.1"
+                election_frequency = 48
+            }
+			clr_country_flag = DPRelection_active
+			country_event = {
+                id = DPRelection.21
+            }
+		}
+}		
+		

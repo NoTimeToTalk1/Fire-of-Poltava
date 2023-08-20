@@ -1,0 +1,136 @@
+ideas = {
+
+	mr_maximum_age = { 
+		law = yes
+
+		age_40 = {
+			removal_cost = -1
+			level = 4
+			
+			available = {
+			}
+
+			modifier = {
+				attrition = -0.05
+			}
+			
+			ai_will_do = {
+				factor = 1
+
+				modifier = {
+					threat < 0.30
+					factor = 40
+				}
+			}
+			
+			cancel_if_invalid = no
+			default = yes
+		}
+		age_50 = {
+			removal_cost = -1
+			level = 3
+			
+			available = {
+				NOT = { has_idea = disarmed_nation }
+				NOT = { has_idea = volunteer_only }
+				NOT = { has_idea = limited_conscription }
+				OR = {
+					AND = {
+						threat > 0.35
+					}
+					AND = {
+						has_war = yes
+						surrender_progress > 0.1
+					}
+				}
+			}
+			
+			ai_will_do = {
+				factor = 1
+
+				modifier = {
+					has_manpower < 500000
+					threat > 0.50
+					factor = 80
+				}
+			}
+
+			modifier = {
+
+				conscription_factor = 0.10
+			}
+			
+			cancel_if_invalid = yes
+		}
+		age_60 = {
+			removal_cost = -1
+			level = 2
+			
+			available = {
+				NOT = { has_idea = disarmed_nation }
+				NOT = { has_idea = volunteer_only }
+				NOT = { has_idea = limited_conscription }
+				NOT = { has_idea = extensive_conscription }
+				AND = {
+					has_war = yes
+					surrender_progress > 0.15
+					has_war_support > 0.5
+				}
+			}
+			
+			ai_will_do = {
+				factor = 1
+
+				modifier = {
+					has_manpower < 300000
+					surrender_progress > 0.25
+					factor = 40
+				}
+			}
+
+			modifier = {
+				conscription_factor = 0.20
+				attrition = 0.05
+				political_power_factor = -0.05
+			}
+			
+			cancel_if_invalid = yes
+		}
+		all_must_serve_old = {
+			removal_cost = -1
+			level = 1
+			
+			available = {
+				NOT = { has_idea = disarmed_nation }
+				NOT = { has_idea = volunteer_only }
+				NOT = { has_idea = limited_conscription }
+				NOT = { has_idea = extensive_conscription }
+				NOT = { has_idea = service_by_requirement }
+				NOT = { has_idea = all_adults_serve }
+				AND = {
+					has_war = yes
+					surrender_progress > 0.4
+					has_war_support > 0.7
+				}
+			}
+			
+			ai_will_do = {
+				factor = 1
+
+				modifier = {
+					has_manpower < 0
+					surrender_progress > 0.5
+					factor = 40
+				}
+			}
+
+			modifier = {
+				conscription_factor = 0.3
+				attrition = 0.1
+				political_power_factor = -0.1
+			}
+			
+			cancel_if_invalid = yes
+		}
+	}
+}

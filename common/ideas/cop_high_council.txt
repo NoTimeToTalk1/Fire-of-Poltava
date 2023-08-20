@@ -1,0 +1,203 @@
+ideas = {
+
+	cop_high_council = { 
+		law = yes
+
+		planning_stage = {
+			cost = 200
+			
+			available = {
+				has_country_flag = niggerslayer
+			}
+
+			modifier = {
+				political_power_gain = 1
+			}
+			
+			ai_will_do = {
+				factor = 200
+		 	}
+
+			default = yes
+
+			cancel_if_invalid = no
+		}
+		
+		efficiency_burocracy = {
+			cost = 200
+
+			available = {
+				has_country_flag = niggerslayer
+			}
+
+			modifier = {
+				political_power_gain = 0.05
+				stability_factor = 0.1
+				local_resources_factor = 0.50
+			}
+
+			ai_will_do = {
+				factor = 1
+			 	modifier = {
+					has_stability > 0.60
+					factor = 40
+			 	}
+		 	}
+			cancel_if_invalid = no
+		}
+		
+		creation_of_guerrilas = {
+			cost = 200
+
+			available = {
+				has_country_flag = niggerslayer
+			}
+
+			modifier = {
+				equipment_capture = 0.1
+				operation_make_resistance_contacts_outcome = 0.5
+				resistance_target_on_our_occupied_states = 0.05
+				resistance_growth_on_our_occupied_states = 0.2
+				exiled_divisions_attack_factor = 0.15
+			}
+			
+			ai_will_do = {
+   				factor = 0
+				
+				modifier = {
+					factor = 40
+					has_defensive_war = yes
+					surrender_progress > 0.8
+				}
+
+   			}
+			
+			cancel_if_invalid = no
+		}
+		
+		production_country = {
+			cost = 200
+
+			available = {
+				has_country_flag = niggerslayer
+			}
+
+			modifier = {
+				industrial_capacity_dockyard = 0.20
+				industrial_capacity_factory = 0.20
+				production_factory_efficiency_gain_factor = 0.15
+				production_factory_max_efficiency_factor = 0.1
+			}
+			
+			ai_will_do = {
+   				factor = 1
+				
+				modifier = {
+					num_of_factories > 50
+					has_stability > 0.7
+					factor = 40
+				}
+   			}
+			
+			cancel_if_invalid = no
+		}
+		
+		mobilization_country = {
+			cost = 200
+
+			available = {
+				has_country_flag = niggerslayer
+			}
+
+			modifier = {
+				 mobilization_speed = 0.75
+				 army_speed_factor = 0.10
+			}
+			
+			ai_will_do = {
+   				factor = 1
+
+   				modifier = {
+					has_war_support > 0.6
+					ai_wants_divisions > 5
+					factor = 80
+				}
+   			}
+
+			cancel_if_invalid = no
+		}
+		
+		military_expansion = {
+			cost = 200
+
+			available = {
+				has_country_flag = niggerslayer
+			}
+
+			modifier = {
+				political_power_gain = -0.15
+				consumer_goods_factor = -0.1
+				production_speed_industrial_complex_factor = -0.10
+				production_speed_arms_factory_factor = 0.20
+				production_speed_dockyard_factor = 0.20
+			}
+			
+			ai_will_do = {
+   				factor = 1
+   			}
+
+			cancel_if_invalid = no
+		}
+		
+		nationalism_country = {
+			cost = 200
+
+			available = {
+				has_country_flag = niggerslayer
+			}
+
+			modifier = {
+				war_support_factor = 0.05
+				conscription_factor = 0.3
+				army_morale_factor = 0.15
+			}
+			
+			ai_will_do = {
+   				factor = 1
+
+   				modifier = {
+					has_manpower < 100000
+					factor = 40
+				}
+   			}
+			
+			cancel_if_invalid = no
+		}
+		
+		covert_ops = {
+			cost = 200
+
+			available = {
+				has_country_flag = niggerslayer
+			}
+
+			modifier = {
+				operative_slot = 1
+				operation_cost = -0.10
+				operation_outcome = 0.5
+				own_operative_capture_chance_factor = -0.15
+			}
+			
+			ai_will_do = {
+   				factor = 1
+
+				modifier = {
+					agency_upgrade_number > 10
+					factor = 40
+				}
+   			}
+			
+			cancel_if_invalid = no
+		}
+	}
+}

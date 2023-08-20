@@ -1,0 +1,516 @@
+
+afu_mobilization = {
+    afu_mobilization_1 = {			
+
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { has_completed_focus = AFU_mobilize_our_forces	}
+		
+		fire_only_once = yes
+        days_remove = 15		
+
+		visible = {	
+		tag = AFU
+		has_completed_focus = AFU_mobilize_our_forces	
+		}		
+
+		cost = 50
+
+		remove_effect = {
+		    add_manpower = 2000
+			hidden_effect = { add_manpower = 1000
+			}
+		set_country_flag = {
+		flag = AFU_1
+		days = 365
+		value = 1
+		}
+	   }
+		ai_will_do = {	
+			factor = 100		
+		}
+   }
+afu_mobilization_2 = {				
+
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { has_completed = afu_mobilization_1 }
+		
+		fire_only_once = yes
+        days_remove = 20		
+		days_re_enable = 25	
+
+		visible = {	
+		tag = AFU
+		has_country_flag = AFU_1	
+		}		
+
+		cost = 60
+
+
+		remove_effect = {
+		    add_manpower = 5000
+			hidden_effect = { add_manpower = 5 }
+		set_country_flag = {
+		flag = AFU_2
+		days = 365
+		value = 1
+		}
+		}
+		ai_will_do = {	
+			factor = 100		
+		}
+   }
+afu_mobilization_3 = {			
+
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { has_completed = afu_mobilization_1 }
+		
+		fire_only_once = yes
+        days_remove = 30		
+		days_re_enable = 25	
+
+		visible = {	
+		tag = AFU
+		has_country_flag = AFU_2	
+		}		
+
+		cost = 60
+
+
+		remove_effect = {
+		    add_manpower = 15000
+		set_country_flag = {
+		flag = AFU_3
+		days = 365
+		value = 1
+		}
+		add_ideas = extensive_conscription
+	}
+		ai_will_do = {	
+			factor = 100		
+		}
+   }
+afu_mobilization_4 = {				
+
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { has_completed = afu_mobilization_1 }
+		
+		fire_only_once = yes
+        days_remove = 7020
+
+		visible = {	
+		tag = AFU
+		has_country_flag = AFU_3	
+		}		
+
+		cost = 60
+
+
+		remove_effect = {
+		    add_manpower = 30000
+		}
+		ai_will_do = {	
+			factor = 100		
+		}
+   }
+afu_mobilization_5 = {				
+
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { has_completed = afu_mobilization_1 }
+		
+		fire_only_once = yes
+        days_remove = 20
+
+		visible = {	
+		has_war_with = DPR
+		}		
+
+		cost = 5
+
+
+		remove_effect = {
+		    add_manpower = 10000
+		}
+		ai_will_do = {	
+			factor = 100		
+		}
+   }
+  
+}
+
+afu_teroborona = {
+
+	afu_teroborona1 = {
+
+		icon = GFX_ZAK_rada_election
+
+		fire_only_once = no
+		days_remove = 25
+
+		cost = 30
+
+		remove_effect = {
+			AFU = {
+			random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"Teroborona\" division_template = \"Teroborona\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+				owner = AFU
+					}	
+				add_manpower = -1000
+					}
+				}
+			}
+
+		ai_will_do = {	
+			factor = 70		
+		}
+	}
+	afu_teroborona2 = {
+
+		icon = GFX_ZAK_rada_election
+
+		fire_only_once = no
+		days_remove = 28
+
+		cost = 30
+
+		remove_effect = {
+			AFU = {
+			random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"Teroborona\" division_template = \"Teroborona\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
+				owner = AFU
+					}
+					add_manpower = -1500	
+				}
+			}
+		}
+
+		ai_will_do = {	
+			factor = 100		
+		}
+	}
+	afu_teroborona3 = {
+
+		icon = GFX_ZAK_rada_election
+
+		fire_only_once = no
+		days_remove = 35
+
+		cost = 30
+
+		remove_effect = {
+			AFU = {
+			random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"Teroborona\" division_template = \"Teroborona\" start_experience_factor = 0.1"
+				owner = AFU
+					}	
+				}
+				add_manpower = -2000
+			}
+		}
+
+		ai_will_do = {	
+			factor = 100		
+		}
+	}
+	afu_teroborona4 = {
+
+		icon = GFX_ZAK_rada_election
+
+		fire_only_once = no
+		days_remove = 27
+
+		cost = 30
+
+		remove_effect = {
+			AFU = {
+			random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"Teroborona\" division_template = \"Teroborona\" start_experience_factor = 0.1 start_equipment_factor = 0.7"
+				owner = AFU
+					}
+					add_manpower = -1300	
+				}
+			}
+		}
+
+		ai_will_do = {	
+			factor = 100		
+		}
+	}
+}
+
+afu_integration = {
+
+	afu_integration1 = {
+	
+		icon = GFX_ZAK_rada_election
+
+		available = { 
+		}
+		
+		fire_only_once = yes
+		days_remove = 20
+		
+		visible = {	
+		}		
+	
+		cost = 30
+	
+		remove_effect = {
+			add_manpower = -2000
+			DPR = {
+				remove_country_leader_role = {
+					character = DNR_Pidor
+					ideology = kleptocracy
+				}
+			}
+			LPR = {
+				remove_country_leader_role = {
+					character = LNR_Huy
+					ideology = kleptocracy
+				}
+			}
+			set_country_flag = AFUint1
+
+			hidden_effect = {
+				DPR = {
+					remove_country_leader_role = {
+						character = LNR_Huy
+						ideology = kleptocracy
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {	
+			factor = 100		
+		}
+	}
+
+	afu_integration2 = {
+	
+		icon = GFX_ZAK_rada_election
+		
+		available = { 
+		}
+		
+		fire_only_once = yes
+		days_remove = 20
+
+		visible = {	
+		}		
+
+		cost = 30
+
+		remove_effect = {
+			557 = { add_manpower = -2500 }
+			2310 = { add_manpower = -1000 }
+			2028 = { add_manpower = -1000 }
+			2310 = { add_manpower = -1000 }
+			2029 = { add_manpower = -1000
+			}
+			2309 = { add_manpower = -1000 }
+			518 = { add_manpower = -2500 }
+			2308 = { add_manpower = -1000 }
+			set_country_flag = AFUint2
+		}
+		
+		ai_will_do = {	
+			factor = 100		
+		}
+    }
+
+	afu_integration3 = {
+
+		icon = GFX_ZAK_rada_election
+
+		fire_only_once = yes
+		days_remove = 10
+
+		cost = 50
+
+		available = {
+			has_equipment = {
+				infantry_equipment > 200
+			}
+		}
+		
+		visible = {
+			has_country_flag = AFUint1
+			has_country_flag = AFUint2
+		}
+
+		remove_effect = {
+			add_timed_idea = {
+				idea = AFU_fucking_fsb
+				days = 90
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -200
+			}
+			set_country_flag = AFUint3
+		}
+
+		ai_will_do = {	
+			factor = 100		
+		}
+	}
+	afu_integration4 = {
+
+		icon = GFX_ZAK_rada_election
+
+		fire_only_once = yes
+		days_remove = 10
+
+		cost = 50
+
+		available = {
+		}
+		
+		visible = {
+			has_country_flag = AFUint3
+		}
+
+		remove_effect = {
+			set_country_flag = AFUint4
+			add_stability = 0.1
+		}
+		
+		ai_will_do = {	
+			factor = 100		
+		}
+	}
+
+	afu_integration5 = {
+
+		icon = GFX_ZAK_rada_election
+
+		fire_only_once = yes
+		days_remove = 10
+
+		cost = 50
+
+		available = {
+		}
+		
+		visible = {
+			has_country_flag = AFUint4
+		}
+
+		remove_effect = {
+			set_country_flag = AFUint5
+			add_stability = 0.1
+		}
+		
+		ai_will_do = {	
+			factor = 100		
+		}
+	}
+
+	afu_integration6 = {
+
+		icon = GFX_ZAK_rada_election
+
+		fire_only_once = yes
+		days_remove = 15
+
+		cost = 30
+
+		available = {
+		}
+		
+		visible = {
+			has_country_flag = AFUint4
+		}
+
+		remove_effect = {
+			add_timed_idea = {
+				idea = AFU_filtration
+				days = 60
+			}
+			set_country_flag = AFUint6
+		}
+		
+		ai_will_do = {
+			factor = 100		
+		}
+	}
+
+	afu_integration7 = {
+
+		icon = GFX_ZAK_rada_election
+
+		fire_only_once = yes
+		days_remove = 5
+
+		cost = 100
+
+		available = {
+		}
+		
+		visible = {
+			has_country_flag = AFUint5
+			has_country_flag = AFUint6
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = AFUintfinalise
+			set_country_flag = AFUintfinish
+		}
+		
+		ai_will_do = {	
+			factor = 100		
+		}
+	}
+}
+
+emergency_makeshift_fortifications = {
+     
+	 siversky_donets_line = {
+
+	    
+		icon = generic_fort
+
+		allowed = {
+		}
+		
+		visible = {
+			has_country_flag = AFU_5
+		}
+
+		cost = 100
+
+		days_remove = 8
+		fire_only_once = yes
+		
+
+		modifier = {
+			civilian_factory_use = 6
+		}
+
+		complete_effect = {
+		2097 = {
+			add_building_construction = { type = bunker level = 2 province = 13189 instant_build = yes }
+			add_building_construction = { type = bunker level = 4 province = 7149 instant_build = yes }
+			add_building_construction = { type = bunker level = 5 province = 7423 instant_build = yes }
+			add_building_construction = { type = bunker level = 2 province = 13043 instant_build = yes }
+			add_building_construction = { type = bunker level = 2 province = 8437 instant_build = yes }
+			add_building_construction = { type = bunker level = 3 province = 13163 instant_build = yes }
+			add_building_construction = { type = bunker level = 2 province = 2801 instant_build = yes }
+		}
+	}
+}
+}

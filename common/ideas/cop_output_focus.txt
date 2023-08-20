@@ -1,0 +1,158 @@
+ideas = {
+
+	cop_output_focus = { 
+	
+		law = yes
+		
+		output_no_data = {
+			available = {
+				has_country_flag = niggerslayer
+			}
+			
+			modifier = {
+			    political_power_gain = -0.1
+				stability_factor = -0.1
+				industrial_capacity_factory = -0.05
+				equipment_conversion_speed = -0.05
+				industry_repair_factor = -0.1
+			}
+
+			cost = 150
+			
+			ai_will_do = {
+				factor = 1
+			 	modifier = {
+					num_of_naval_factories < 5
+					factor = 40
+			 	}
+			}
+			default = yes
+			cancel_if_invalid = no
+		}
+		output_army_dominant = {
+			available = {
+				has_country_flag = niggerslayer
+			}
+			
+			modifier = {
+			monthly_population = -0.07
+			    political_power_gain = -0.3
+				stability_factor = -0.3
+				industrial_capacity_factory = 0.2
+				equipment_conversion_speed = 0.15
+				industry_repair_factor = 0.15
+			}
+
+			cost = 150
+			
+			ai_will_do = {
+				factor = 1
+			 	modifier = {
+					num_of_naval_factories < 5
+					factor = 40
+			 	}
+			}
+			cancel_if_invalid = no
+		}
+
+		output_army_strengthened = {
+			available = {
+				has_country_flag = niggerslayer
+			}
+			
+			modifier = {
+			monthly_population = -0.05
+			    political_power_gain = -0.15
+				stability_factor = -0.15
+				industrial_capacity_factory = 0.1
+				equipment_conversion_speed = 0.07
+				industry_repair_factor = 0.07
+			}
+
+			cost = 100
+			
+			ai_will_do = {
+				factor = 1
+			 	modifier = {
+					num_of_naval_factories < 20
+					factor = 40
+			 	}
+			}
+			cancel_if_invalid = no
+
+		}
+
+		output_balanced = {
+			available = {
+				has_country_flag = niggerslayer
+			}
+			
+			modifier = {
+			monthly_population = 0.01
+				political_power_factor = 0.05
+				industrial_capacity_factory = 0.01
+			    political_power_gain = 0.01
+				stability_factor = 0.01
+			}
+
+			cost = 50
+			
+			ai_will_do = {
+   				factor = 40
+   			}
+			cancel_if_invalid = no
+
+		}
+
+
+		output_navy_strengthened = {
+			available = {
+				has_country_flag = niggerslayer
+			}
+			
+			modifier = {
+			monthly_population = 0.15
+			    political_power_gain = 0.07
+				stability_factor = 0.1
+				industrial_capacity_factory = -0.1
+			}
+
+			cost = 100
+			
+			ai_will_do = {
+   				factor = 1
+				modifier = {
+					num_of_naval_factories > 30
+					factor = 40
+				}
+   			}
+			cancel_if_invalid = no
+
+		}
+
+		output_navy_dominant = {
+			available = {
+				has_country_flag = niggerslayer
+			}
+			
+			modifier = {
+			monthly_population = 0.25
+			    political_power_gain = 0.1
+				stability_factor = 0.2
+				industrial_capacity_factory = -0.2
+			}
+
+			cost = 150
+			
+			ai_will_do = {
+				factor = 1
+			 	modifier = {
+				 	num_of_naval_factories > 60
+				 	factor = 40
+			 	}
+			}
+			cancel_if_invalid = no
+
+		}
+	}
+}

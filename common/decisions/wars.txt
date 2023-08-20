@@ -1,0 +1,948 @@
+wars = {
+
+
+	deal_with_bdz = {
+		available = {
+is_neighbor_of = BDZ
+	}
+		visible = {
+country_exists = BDZ
+NOT = {
+
+OR = {  
+original_tag = ODE
+original_tag = STR
+original_tag = BDZ
+}
+
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+		cost = 250
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+annex_country = {
+    target = BDZ
+    transfer_troops = yes
+}
+hidden_effect = {
+BDZ = {
+every_character = {
+                set_nationality = {
+                target_country = ROOT
+                }
+            }
+	}
+}
+
+}
+		}
+
+	deal_with_cri = {
+		available = {
+is_neighbor_of = CRI
+has_country_flag = rusnya
+	}
+		visible = {
+has_country_flag = rusnya
+country_exists = CRI
+NOT = {
+ 
+original_tag = CRI
+
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 300
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+annex_country = {
+    target = CRI
+    transfer_troops = yes
+}
+hidden_effect = {
+CRI = {
+every_character = {
+                set_nationality = {
+                target_country = ROOT
+                }
+            }
+	}
+}
+
+}
+		}
+
+	deal_with_rge = {
+		available = {
+is_neighbor_of = RGE
+	}
+		visible = {
+has_country_flag = rusnya
+NOT = {
+ 
+original_tag = RGE
+
+}
+country_exists = RGE
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 250
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+annex_country = {
+    target = RGE
+    transfer_troops = yes
+}
+hidden_effect = {
+RGE = {
+every_character = {
+                set_nationality = {
+                target_country = ROOT
+                }
+            }
+	}
+}
+
+}
+		}
+
+	deal_with_trn = {
+		available = {
+is_neighbor_of = TRA
+	}
+		visible = {
+has_country_flag = rusnya
+NOT = {
+ 
+original_tag = TRA
+
+}
+country_exists = TRA
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 300
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+annex_country = {
+    target = TRA
+    transfer_troops = yes
+}
+hidden_effect = {
+TRA = {
+every_character = {
+                set_nationality = {
+                target_country = ROOT
+                }
+            }
+	}
+}
+
+}
+		}
+		
+	deal_with_her = {
+		available = {
+is_neighbor_of = OPZ
+	}
+		visible = {
+country_exists = OPZ
+has_country_flag = rusnya
+NOT = {
+ 
+original_tag = OPZ
+
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 300
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+annex_country = {
+    target = OPZ
+    transfer_troops = yes
+}
+hidden_effect = {
+OPZ = {
+every_character = {
+                set_nationality = {
+                target_country = ROOT
+                }
+            }
+	}
+}
+
+}
+		}		
+
+
+	declare_war_zap = {
+		available = {
+is_neighbor_of = ZAP
+	}
+		visible = {
+country_exists = ZAP
+NOT = {
+ 
+original_tag = ZAP
+
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 150
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+declare_war_on = {
+    target = ZAP
+    type = annex_everything
+}
+}
+		}
+
+	declare_war_myk = {
+		available = {
+is_neighbor_of = MYK
+	}
+		visible = {
+country_exists = MYK
+NOT = {
+ OR = {
+original_tag = MYK
+original_tag = ODE
+ }
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 150
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+declare_war_on = {
+    target = MYK
+    type = annex_everything
+}
+}
+		}
+
+	declare_war_her = {
+		available = {
+is_neighbor_of = OPZ
+	}
+		visible = {
+country_exists = OPZ
+NOT = {
+
+original_tag = OPZ
+
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 150
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+declare_war_on = {
+    target = OPZ
+    type = annex_everything
+}
+}
+		}
+
+	declare_war_kha = {
+		available = {
+is_neighbor_of = KHA
+	}
+		visible = {
+country_exists = KHA
+NOT = {
+
+original_tag = KHA
+
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+ai_will_do = {
+    base = 1
+}
+
+		cost = 150
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+declare_war_on = {
+    target = KHA
+    type = annex_everything
+}
+}
+		}
+
+
+
+	declare_war_dni = {
+		available = {
+		OR = {
+is_neighbor_of = DNI
+is_neighbor_of = BAN
+is_neighbor_of = KRS
+is_neighbor_of = PMU
+is_neighbor_of = UWF
+}
+	}
+		visible = {
+		OR = {
+country_exists = DNI
+country_exists = BAN
+country_exists = KRS
+country_exists = PMU
+country_exists = UWF
+}
+NOT = {
+OR = {
+original_tag = DNI
+original_tag = BAN
+original_tag = KRS
+original_tag = PMU
+original_tag = UWF
+}
+}
+		}
+
+
+		cost = 150
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+declare_war_on = {
+    target = DNI
+    type = annex_everything
+}
+declare_war_on = {
+    target = BAN
+    type = annex_everything
+}
+declare_war_on = {
+    target = KRS
+    type = annex_everything
+}
+declare_war_on = {
+    target = PMU
+    type = annex_everything
+}
+declare_war_on = {
+    target = UWF
+    type = annex_everything
+}
+}
+		}
+		
+	declare_war_ode = {
+		available = {
+		OR = {
+is_neighbor_of = ODE
+is_neighbor_of = STR
+is_neighbor_of = SHT
+}
+	}
+		visible = {
+		OR = {
+country_exists = ODE
+country_exists = STR
+country_exists = SHT
+country_exists = OLD
+}
+NOT = {
+OR = {
+original_tag = ODE
+original_tag = STR
+original_tag = SHT
+original_tag = OLD
+original_tag = MYK
+}
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 150
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+declare_war_on = {
+    target = ODE
+    type = annex_everything
+}
+declare_war_on = {
+    target = STR
+    type = annex_everything
+}
+declare_war_on = {
+    target = SHT
+    type = annex_everything
+}
+declare_war_on = {
+    target = OLD
+    type = annex_everything
+}
+}
+		}
+
+	declare_war_kyi = {
+		available = {
+		OR = {
+is_neighbor_of = KYI
+is_neighbor_of = UKR
+	}
+}
+		visible = {
+		OR = {
+is_neighbor_of = KYI
+is_neighbor_of = UKR
+	}
+NOT = {
+OR = {
+original_tag = KYI
+original_tag = UKR
+}
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 150
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+declare_war_on = {
+    target = KYI
+    type = annex_everything
+}
+declare_war_on = {
+    target = UKR
+    type = annex_everything
+}
+}
+		}
+		
+	declare_war_prh = {
+		available = {
+
+is_neighbor_of = PRH
+
+}
+		visible = {
+
+is_neighbor_of = PRH
+
+
+NOT = {
+
+original_tag = PRH
+
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 150
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+declare_war_on = {
+    target = PRH
+    type = annex_everything
+}
+}
+		}
+
+	declare_war_plt = {
+		available = {
+
+is_neighbor_of = PLT
+
+}
+		visible = {
+
+is_neighbor_of = PLT
+
+
+NOT = {
+
+original_tag = PLT
+
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 150
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+declare_war_on = {
+    target = PLT
+    type = annex_everything
+}
+}
+		}
+
+	declare_war_kre = {
+		available = {
+
+is_neighbor_of = KRE
+
+}
+		visible = {
+
+is_neighbor_of = KRE
+
+
+NOT = {
+
+original_tag = KRE
+
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 150
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+declare_war_on = {
+    target = KRE
+    type = annex_everything
+}
+}
+		}
+		
+	declare_war_kir = {
+		available = {
+
+is_neighbor_of = KIR
+
+}
+		visible = {
+
+is_neighbor_of = KIR
+
+
+NOT = {
+has_country_flag = rusnya
+original_tag = KIR
+
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 150
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+declare_war_on = {
+    target = KIR
+    type = annex_everything
+}
+}
+		}
+		
+	declare_war_chr = {
+		available = {
+
+is_neighbor_of = CHR
+
+}
+		visible = {
+
+is_neighbor_of = CHR
+
+
+NOT = {
+
+original_tag = CHR
+
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 150
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+declare_war_on = {
+    target = CHR
+    type = annex_everything
+}
+}
+		}
+		
+	declare_war_zhy = {
+		available = {
+
+is_neighbor_of = ZHY
+
+}
+		visible = {
+
+is_neighbor_of = ZHY
+
+
+NOT = {
+
+original_tag = ZHY
+
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 150
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+declare_war_on = {
+    target = ZHY
+    type = annex_everything
+}
+}
+		}
+		
+	declare_war_khm = {
+		available = {
+
+is_neighbor_of = KHM
+
+}
+		visible = {
+
+is_neighbor_of = KHM
+
+
+NOT = {
+
+original_tag = KHM
+
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 150
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+declare_war_on = {
+    target = KHM
+    type = annex_everything
+}
+}
+		}
+		
+	declare_war_riv = {
+		available = {
+
+is_neighbor_of = RIV
+
+}
+		visible = {
+
+is_neighbor_of = RIV
+
+
+NOT = {
+
+original_tag = RIV
+
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 150
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+declare_war_on = {
+    target = RIV
+    type = annex_everything
+}
+}
+		}
+		
+	declare_war_uma = {
+		available = {
+
+is_neighbor_of = UMA
+
+}
+		visible = {
+
+is_neighbor_of = UMA
+
+
+NOT = {
+
+original_tag = UMA
+
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 150
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+declare_war_on = {
+    target = UMA
+    type = annex_everything
+}
+}
+		}
+		
+	declare_war_vol = {
+		available = {
+
+is_neighbor_of = vol
+
+}
+		visible = {
+
+is_neighbor_of = VOL
+
+
+NOT = {
+
+original_tag = VOL
+
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 150
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+declare_war_on = {
+    target = VOL
+    type = annex_everything
+}
+}
+		}
+		
+	declare_war_ter = {
+		available = {
+
+is_neighbor_of = TER
+
+}
+		visible = {
+
+is_neighbor_of = TER
+
+
+NOT = {
+
+original_tag = TER
+
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 150
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+declare_war_on = {
+    target = TER
+    type = annex_everything
+}
+}
+		}
+		
+	declare_war_gal = {
+		available = {
+
+is_neighbor_of = GAL
+
+}
+		visible = {
+
+is_neighbor_of = GAL
+
+
+NOT = {
+
+original_tag = GAL
+
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 150
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+declare_war_on = {
+    target = GAL
+    type = annex_everything
+}
+}
+		}
+		
+	declare_war_zak = {
+		available = {
+
+is_neighbor_of = ZAK
+
+}
+		visible = {
+
+is_neighbor_of = ZAK
+
+
+NOT = {
+
+original_tag = ZAK
+
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 150
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+declare_war_on = {
+    target = ZAK
+    type = annex_everything
+}
+}
+		}
+
+}
