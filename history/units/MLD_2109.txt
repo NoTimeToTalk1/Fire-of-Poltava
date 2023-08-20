@@ -1,0 +1,159 @@
+
+
+division_template = {
+	name = "Peacekeepers"
+	division_names_group = BLR_INF_01
+
+	regiments = {
+		mechanized = { x = 0 y = 0 }
+		motorized  = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		military_police = { x = 0 y = 0 }
+	}
+	
+}
+
+division_template = {
+	name = "Motorized Brigade"
+	division_names_group = BLR_INF_01
+
+		regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		artillery_brigade = { x = 1 y = 0 }
+		anti_tank_brigade = { x = 1 y = 1}
+		anti_air_brigade = { x = 1 y = 2 }
+		
+	}
+	support = {
+       	engineer = { x = 0 y = 0 }
+		maintenance_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon = { x = 0 y = 3 }
+		logistics_company = { x = 0 y = 4 }
+	}
+}
+
+division_template = {
+	name = "Artillery Brigade"
+	division_names_group = BLR_INF_01
+
+		regiments = {
+		artillery_brigade = { x = 0 y = 0 }
+		artillery_brigade = { x = 0 y = 1 }
+		artillery_brigade = { x = 0 y = 2 }
+		artillery_brigade = { x = 0 y = 3 }
+		
+	}
+	support = {
+		maintenance_company = { x = 0 y = 0 }
+		logistics_company = { x = 0 y = 1 }
+	}
+}
+
+
+#TOTAL DIVISIONS: 8
+units = { 
+	division= {	
+		name = "1st Independent Battalion of Peacekeepers "
+		location = 7344
+		division_template = "Peacekeepers"
+		start_experience_factor = 0.7
+		start_equipment_factor = 0.5
+	}
+
+	division= {	
+		name = "3rd Independent Battalion of Peacekeepers"
+		location = 7344
+		division_template = "Peacekeepers"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.6
+	}
+
+	division= {	
+		name = "Independent Infantry Company of Peacekeepers"
+		location = 8735
+		division_template = "Peacekeepers"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.3
+	}
+
+	division= {	
+		name = "22nd Peacekeeping Battalion"
+		location = 20392
+		division_template = "Peacekeepers"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.4
+	}
+
+	division= {	
+		name = "1st Motorized Infantry Brigade 'Moldova'"
+		location = 20391
+		division_template = "Motorized Brigade"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.5
+	}
+
+	division= {	
+		name = "2nd Motorized Infantry Brigade 'Stefan Cel Mare'"
+		location = 20392
+		division_template = "Motorized Brigade"
+		start_experience_factor = 0.7
+		start_equipment_factor = 0.6
+	}
+
+	division= {	
+		name = "3rd Motorized Infantry Brigade 'Dacia'"
+		location = 8049
+		division_template = "Motorized Brigade"
+		start_experience_factor = 0.7
+		start_equipment_factor = 0.7
+	}
+
+	division= {	
+		name = "Artillery Division 'Prut'"
+		location = 13784
+		division_template = "Artillery Brigade"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.7
+	}
+}
+
+instant_effect = {
+	
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_2
+			creator = "AFU"
+		}
+		requested_factories = 3
+		progress = 0.1
+		efficiency = 50
+	}
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = "AFU"
+		}
+		requested_factories = 2
+		progress = 0.1
+		efficiency = 50
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "AFU" 
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 50
+	}
+	}

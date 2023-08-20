@@ -1,0 +1,100 @@
+capital = 2060
+
+set_research_slots = 0
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_recon = 1
+	tech_support = 1		
+	tech_engineers = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	early_fighter = 1
+	fighter1 = 1
+	basic_train = 1
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "No Step Back"
+		}
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+	}
+}
+if = {
+	limit = {
+		
+		has_dlc = "No Step Back"
+		
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+	}
+}
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		early_submarine = 1
+		basic_submarine = 1
+		early_destroyer = 1
+		early_light_cruiser = 1
+		early_heavy_cruiser = 1
+		early_battleship = 1
+		early_battlecruiser = 1
+		transport = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		early_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		mtg_transport = 1
+		basic_battery = 1
+		basic_torpedo = 1
+	}
+}
+
+set_politics = {
+	ruling_party = centrism
+	last_election = "1932.5.21"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_party_name = { ideology = centrism
+    long_name = "Partiya Shariya"
+	name = "PSH" }
+	
+	recruit_character = MYK_shariy
+    recruit_character = MYK_oleg
+	recruit_character = MYK_freiman
+	recruit_character = MYK_batrakov
+	recruit_character = MYK_chernoivan
+	recruit_character = ODE_loh1
+	recruit_character = ODE_loh2
+
+set_popularities = {
+	social_democracy = 0
+	oligarchy = 5
+	centrism = 60
+	conservative_democracy = 0
+	liberal_democracy = 10
+	millitary_junta = 0
+	radical_nationalism = 0
+	radical_socialism = 25
+}

@@ -1,0 +1,77 @@
+division_template = {
+	name = "Dobrobat"
+	division_names_group = BLR_INF_01
+
+	regiments = {
+		motorized  = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+	}
+	support = {
+
+	}
+	
+}
+
+
+#TOTAL DIVISIONS: 8
+units = { 
+
+	division= {	
+		name = "1st Dobrobat"
+		location = 9169
+		division_template = "Dobrobat"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "2nd Dobrobat"
+		location = 2691
+		division_template = "Dobrobat"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.6
+	}
+
+	division= {	
+		name = "3rd Dobrobat"
+		location = 13328
+		division_template = "Dobrobat"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+	}
+
+
+}
+
+instant_effect = {
+	
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_2
+			creator = "AFU"
+		}
+		requested_factories = 3
+		progress = 0.1
+		efficiency = 50
+	}
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = "AFU"
+		}
+		requested_factories = 2
+		progress = 0.1
+		efficiency = 50
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "AFU" 
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 50
+	}
+	}

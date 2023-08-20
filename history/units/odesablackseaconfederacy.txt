@@ -1,0 +1,127 @@
+division_template = {
+	name = "Pikhotna Brygada"
+	division_names_group = BLR_INF_01
+
+	regiments = {
+		mechanized = { x = 0 y = 0 }
+		mechanized = { x = 0 y = 1 }
+		mechanized = { x = 0 y = 2 }
+		medium_armor = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		marine = { x = 3 y = 0 }
+		marine = { x = 3 y = 1 }
+		
+	}
+	support = {
+       	engineer = { x = 0 y = 0 }
+       	artillery = { x = 0 y = 1 }
+		maintenance_company = { x = 0 y = 2 }
+		mot_recon = { x = 0 y = 3 }
+		signal_company = { x = 0 y = 4 }
+	}
+	
+}
+division_template = {
+	name = "National guard"
+	
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+        engineer = { x = 0 y = 0 }
+		mot_recon = { x = 0 y = 1 }
+    }
+}
+
+division_template = {
+	name = "Mechanized Brigade"
+	division_names_group = BLR_INF_01
+
+		regiments = {
+		mechanized = { x = 0 y = 0 }
+		mechanized = { x = 0 y = 1 }
+		mechanized = { x = 0 y = 2 }
+		medium_armor = { x = 0 y = 3 }
+		motorized = { x = 0 y = 4}
+		light_sp_artillery_brigade = { x = 1 y = 0 }
+		light_sp_artillery_brigade = { x = 1 y = 1 }
+		rocket_artillery_brigade = { x = 1 y = 2 } 
+		anti_tank_brigade = { x = 1 y = 3 }
+		anti_air_brigade = { x = 1 y = 4}
+
+		
+	}
+	support = {
+       	engineer = { x = 0 y = 0 }
+		maintenance_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon = { x = 0 y = 3 }
+	}
+}
+
+division_template = {
+	name = "Artillery Brigade"
+	division_names_group = BLR_INF_01
+
+		regiments = {
+			artillery_brigade = { x = 0 y = 0 }
+			artillery_brigade = { x = 0 y = 1 }
+			artillery_brigade = { x = 0 y = 2 }
+			artillery_brigade = { x = 1 y = 0 }
+		
+	}
+	support = {
+		maintenance_company = { x = 0 y = 0 }
+		logistics_company = { x = 0 y = 1 }
+	}
+}
+
+units = { 
+	division= {	
+		name = "35th 'Mykhailo Ostrogradsky' Marines Brigade"
+		location = 924
+		division_template = "Pikhotna Brygada"
+		start_experience_factor = 0.7
+		start_equipment_factor = 0.5
+
+	}
+division= {	
+		name = "28th Separate Mechanized Brigade named after the Knights of the Winter Campaign"
+		location = 924
+		division_template = "Mechanized Brigade"
+		start_experience_factor = 0.8
+		start_equipment_factor = 0.3
+
+	}
+division= {	
+		name = "National guard unit"
+		location = 924
+		division_template = "National guard"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.4
+
+	}
+division= {	
+		name = "32nd Separate Rocket Artillery Regiment"
+		location = 924
+		division_template = "Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.1
+
+	}
+
+division= {	
+		name = "11th Brigade named after Mykhailo Hrushevskyi"
+		location = 6897
+		division_template = "National guard"
+		start_experience_factor = 0.7
+		start_equipment_factor = 0.3
+
+	}
+}

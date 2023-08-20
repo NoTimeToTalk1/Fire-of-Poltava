@@ -1,0 +1,168 @@
+﻿capital = 2095
+
+oob = "AFU_2109"
+
+set_research_slots = 0
+
+country_lock_all_division_template = yes
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	basic_train = 1
+	tech_recon = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_military_police = 1
+	tech_mountaineers = 1
+	motorised_infantry = 1
+	mechanised_infantry = 1
+	paratroopers = 1
+	gw_artillery = 1
+	early_bomber = 1
+	strategic_bomber1 = 1
+	naval_bomber1 = 1
+	mass_assault = 1
+	fleet_in_being = 1
+	jet_engines = 1
+	jet_fighter1 = 1
+}
+
+if = {
+	limit = {
+		not = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		improved_medium_tank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = { 
+		improved_medium_tank_chassis = 1
+	}
+	create_equipment_variant = {
+		name = "BM 'Oplot'"
+		type = medium_tank_chassis_3
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_medium_fixed_superstructure_turret
+			suspension_type_slot = tank_torsion_bar_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = additional_machine_guns
+			special_type_slot_2 = additional_machine_guns
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 2
+			tank_nsb_armor_upgrade = 3
+		}
+		obsolete = no
+		icon = "gfx/interface/technology/t64b.dds"
+	}
+}
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		early_submarine = 1
+		basic_submarine = 1
+		early_destroyer = 1
+		early_light_cruiser = 1
+		early_heavy_cruiser = 1
+		early_battleship = 1
+		early_battlecruiser = 1
+		transport = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		early_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		mtg_transport = 1
+		basic_battery = 1
+		basic_torpedo = 1
+	}
+}
+add_ideas = AFU_disorganised_administration
+add_ideas = AFU_martial_law
+add_ideas = industrial_legacy
+add_ideas = AFU_pro_russian_sentiments
+add_ideas = AFU_nationalist_agendas 
+add_ideas = AFU_apathy_of_the_population 
+add_ideas = finances_army 
+add_ideas = head_military
+add_ideas = penal_labour
+add_ideas = five_percent
+add_ideas = output_army_strengthened
+add_ideas = hour_limit_8
+add_ideas = age_60
+add_ideas = age_18
+add_ideas = loose_standard
+add_ideas = limited_female_service
+add_ideas = mass_media_propaganda
+add_ideas = martial_law
+
+set_politics = {
+	ruling_party = millitary_junta
+	last_election = "1939.9.12"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_party_name = { 
+	ideology = millitary_junta
+    long_name = "Council of Generals"
+	name = "Zbrojni syly Ukrajiny" }
+	
+	set_party_name = { ideology = radical_nationalism
+    long_name = "Nackorpus - Azov"
+	name = "National corps - Azov" }
+
+recruit_character = AFU_Krivonis
+recruit_character = AFU_Kohan
+recruit_character = AFU_homa
+recruit_character = AFU_malko
+recruit_character = AFU_davinci
+recruit_character = AFU_mikac
+recruit_character = AFU_syr
+recruit_character = AFU_nayev
+recruit_character = AFU_shapt
+recruit_character = AFU_khorenko
+recruit_character = AFU_gaidai
+recruit_character = AFU_lunev
+recruit_character = AFU_danilov
+recruit_character = AFU_struk
+recruit_character = AFU_kyrilenko
+recruit_character = AFU_zhdanov
+recruit_character = AFU_nesterenko
+recruit_character = AFU_kuts
+recruit_character = AFU_lukashik
+recruit_character = AFU_poltorak
+recruit_character = AFU_tsigikal
+recruit_character = AFU_krasnook
+recruit_character = AFU_moskalyov
+recruit_character = AFU_suhanov
+recruit_character = AFU_maistrenko
+recruit_character = AFU_redys
+recruit_character = AFU_zhorin
+
+set_popularities = {
+	oligarchy = 5
+	millitary_junta = 85
+	radical_nationalism = 10
+}
+
+
+
