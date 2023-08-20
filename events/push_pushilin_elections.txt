@@ -1,0 +1,1116 @@
+add_namespace = push_pushilin_elections
+
+#Victory of Pushilin
+country_event = {
+	id = push_pushilin_elections.1
+	title = push_pushilin_elections.1.t
+	desc = push_pushilin_elections.1.d
+
+	picture = GFX_dnr_encircled
+	fire_only_once = yes
+    is_triggered_only = yes
+	mean_time_to_happen = { days = 2 }
+	option = {
+		name = push_pushilin_elections.1.a
+		ai_chance = { factor = 1 }
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#Continuing the status quo
+country_event = {
+	id = push_pushilin_elections.2
+	title = push_pushilin_elections.2.t
+	desc = push_pushilin_elections.2.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+    is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.2.a
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#Beginning of Trade Wars
+country_event = {
+	id = push_pushilin_elections.3
+	title = push_pushilin_elections.3.t
+	desc = push_pushilin_elections.3.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+    is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.3.a
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#Trade Wars
+country_event = {
+	id = push_pushilin_elections.4
+	title = push_pushilin_elections.4.t
+	desc = push_pushilin_elections.4.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.4.a
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#Conflict Erupts
+country_event = {
+	id = push_pushilin_elections.5
+	title = push_pushilin_elections.5.t
+	desc = push_pushilin_elections.5.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+    is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.5.a
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+				country_event = {
+					id = push_pushilin_elections.6
+				}
+				
+		}
+	}
+}
+
+#The Guests
+country_event = {
+	id = push_pushilin_elections.6
+	title = push_pushilin_elections.6.t
+	desc = push_pushilin_elections.6.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 5 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.6.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+recruit_character = DNR_pisya
+	}
+}
+
+#Security Rights of PMCs
+country_event = {
+	id = push_pushilin_elections.7
+	title = push_pushilin_elections.7.t
+	desc = push_pushilin_elections.7.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.7.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+set_nationality = {
+    target_country = DPR
+    character = DPR_prigozhin
+}
+	add_ideas = limited_foreign_mercenaries		
+	}
+}
+
+#Arrival of Medical Companies
+country_event = {
+	id = push_pushilin_elections.8
+	title = push_pushilin_elections.8.t
+	desc = push_pushilin_elections.8.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.8.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = healthcare_private	
+		}
+	}
+}
+
+#The Implementation of a 12-Hour Working Day
+country_event = {
+	id = push_pushilin_elections.9
+	title = push_pushilin_elections.9.t
+	desc = push_pushilin_elections.9.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.9.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = hour_limit_12
+		}
+	}
+}
+
+#Choosing an Education System
+country_event = {
+	id = push_pushilin_elections.10
+	title = push_pushilin_elections.10.t
+	desc = push_pushilin_elections.10.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.10.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = education_priveleged	
+		}
+	}
+	option = {
+		name = push_pushilin_elections.10.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = education_military	
+		}
+	}
+	option = {
+		name = push_pushilin_elections.10.c
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = education_propagandized	
+		}
+	}
+}
+
+#Choosing Tax Policy
+country_event = {
+	id = push_pushilin_elections.11
+	title = push_pushilin_elections.11.t
+	desc = push_pushilin_elections.11.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.11.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = low_taxation
+		}
+	}
+	option = {
+		name = push_pushilin_elections.11.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = standard_taxation	
+		}
+	}
+}
+
+#The Dominance of Army Output
+country_event = {
+	id = push_pushilin_elections.12
+	title = push_pushilin_elections.12.t
+	desc = push_pushilin_elections.12.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.12.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = output_army_strengthened	
+		}
+	}
+	option = {
+		name = push_pushilin_elections.12.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = output_balanced	
+		}
+	}
+}
+
+#Choosing a Penalty System
+country_event = {
+	id = push_pushilin_elections.13
+	title = push_pushilin_elections.13.t
+	desc = push_pushilin_elections.13.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.13.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = penal_incarceration	
+		}
+	}
+	option = {
+		name = push_pushilin_elections.13.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = penal_labour	
+		}
+	}
+}
+
+#Choosing the Military Budget
+country_event = {
+	id = push_pushilin_elections.14
+	title = push_pushilin_elections.14.t
+	desc = push_pushilin_elections.14.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.14.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = two_percent	
+		}
+	}
+	option = {
+		name = push_pushilin_elections.14.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = three_percent	
+		}
+	}
+}
+
+#Novorossia's Dependency on Russian Oligarchs
+country_event = {
+	id = push_pushilin_elections.15
+	title = push_pushilin_elections.15.t
+	desc = push_pushilin_elections.15.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.15.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#Industrial Development
+country_event = {
+	id = push_pushilin_elections.16
+	title = push_pushilin_elections.16.t
+	desc = push_pushilin_elections.16.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.16.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = manufacturing
+				country_event = {
+					id = push_pushilin_elections.17
+				}		
+		}
+	}
+}
+
+#The Elitism
+country_event = {
+	id = push_pushilin_elections.17
+	title = push_pushilin_elections.17.t
+	desc = push_pushilin_elections.17.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.17.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = elitism	
+		}
+	}
+}
+
+#Segregation Politics
+country_event = {
+	id = push_pushilin_elections.18
+	title = push_pushilin_elections.18.t
+	desc = push_pushilin_elections.18.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.18.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = equality_segregation	
+		}
+	}
+}
+
+#Addressing the Labor Crisis
+country_event = {
+	id = push_pushilin_elections.19
+	title = push_pushilin_elections.19.t
+	desc = push_pushilin_elections.19.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.19.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+				country_event = {
+					id = push_pushilin_elections.11
+				}
+			
+		}
+	}
+}
+
+#Conflict between Local Criminal Authorities and Russian Oligarchs
+country_event = {
+	id = push_pushilin_elections.20
+	title = push_pushilin_elections.20.t
+	desc = push_pushilin_elections.20.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.20.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+				country_event = {
+					id = push_pushilin_elections.21
+				}			
+		}
+	}
+}
+
+#Export Financing Agreement
+country_event = {
+	id = push_pushilin_elections.21
+	title = push_pushilin_elections.21.t
+	desc = push_pushilin_elections.21.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 8 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.21.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+				country_event = {
+					id = push_pushilin_elections.22
+				}			
+		}
+	}
+}
+
+#Censorship and Propaganda
+country_event = {
+	id = push_pushilin_elections.22
+	title = push_pushilin_elections.22.t
+	desc = push_pushilin_elections.22.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 8 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.22.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = mass_media_censorship	
+		}
+	}
+}
+
+#Army doctrine
+country_event = {
+	id = push_pushilin_elections.23
+	title = push_pushilin_elections.23.t
+	desc = push_pushilin_elections.23.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.23.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = doctrine_army_speed
+				country_event = {
+					id = push_pushilin_elections.26
+				}		
+		}
+	}
+	option = {
+		name = push_pushilin_elections.23.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = doctrine_army_plan
+				country_event = {
+					id = push_pushilin_elections.26
+				}			
+		}
+	}
+	option = {
+		name = push_pushilin_elections.23.c
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = doctrine_army_wide
+				country_event = {
+					id = push_pushilin_elections.26
+				}				
+		}
+	}
+}
+
+#Officer Training Selection
+country_event = {
+	id = push_pushilin_elections.24
+	title = push_pushilin_elections.24.t
+	desc = push_pushilin_elections.24.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.24.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = officer_attack
+				country_event = {
+					id = push_pushilin_elections.25
+				}			
+		}
+	}
+	option = {
+		name = push_pushilin_elections.24.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = officer_defense
+				country_event = {
+					id = push_pushilin_elections.25
+				}			
+		}
+	}
+	option = {
+		name = push_pushilin_elections.24.c
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = officer_planning
+				country_event = {
+					id = push_pushilin_elections.25
+				}		
+		}
+	}
+	option = {
+		name = push_pushilin_elections.24.e
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = officer_logistics
+				country_event = {
+					id = push_pushilin_elections.25
+				}			
+		}
+	}
+}
+
+#Soldier Training Selection
+country_event = {
+	id = push_pushilin_elections.25
+	title = push_pushilin_elections.25.t
+	desc = push_pushilin_elections.25.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.25.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = soldier_basic
+				country_event = {
+					id = push_pushilin_elections.27
+				}			
+		}
+	}
+	option = {
+		name = push_pushilin_elections.25.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = soldier_full
+				country_event = {
+					id = push_pushilin_elections.27
+				}			
+		}
+	}
+	option = {
+		name = push_pushilin_elections.25.c
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = soldier_extended
+				country_event = {
+					id = push_pushilin_elections.27
+				}			
+		}
+	}
+}
+
+#Special Forces Role
+country_event = {
+	id = push_pushilin_elections.26
+	title = push_pushilin_elections.26.t
+	desc = push_pushilin_elections.26.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.26.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = spec_ops_quality	
+		}
+	}
+	option = {
+		name = push_pushilin_elections.26.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = spec_ops_quantity	
+		}
+	}
+	option = {
+		name = push_pushilin_elections.26.c
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = spec_ops_security	
+		}
+	}
+}
+
+#Volunteers' Role
+country_event = {
+	id = push_pushilin_elections.27
+	title = push_pushilin_elections.27.t
+	desc = push_pushilin_elections.27.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.27.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = volunteers_extended	
+		}
+	}
+	option = {
+		name = push_pushilin_elections.27.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_ideas = volunteers_limited	
+		}
+	}
+}
+
+#Assistance from Russian Experts
+country_event = {
+	id = push_pushilin_elections.28
+	title = push_pushilin_elections.28.t
+	desc = push_pushilin_elections.28.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.28.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+	recruit_character = DNR_boomich
+	recruit_character = DNR_pegov
+	recruit_character = DNR_ugolny
+	}
+}
+
+#Whole World Will Know About Donbass Exploits!
+country_event = {
+	id = push_pushilin_elections.29
+	title = push_pushilin_elections.29.t
+	desc = push_pushilin_elections.29.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.29.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#Russia Recognizes Donbass as an Independent Country
+country_event = {
+	id = push_pushilin_elections.30
+	title = push_pushilin_elections.30.t
+	desc = push_pushilin_elections.30.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.30.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#Novorossia Establishes Diplomatic Missions
+country_event = {
+	id = push_pushilin_elections.31
+	title = push_pushilin_elections.31.t
+	desc = push_pushilin_elections.31.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.31.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#Treatment of Donbass Population
+country_event = {
+	id = push_pushilin_elections.32
+	title = push_pushilin_elections.32.t
+	desc = push_pushilin_elections.32.d
+
+	picture = pGFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.32.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#Propaganda and Anti-Ukrainian Sentiment
+country_event = {
+	id = push_pushilin_elections.33
+	title = push_pushilin_elections.33.t
+	desc = push_pushilin_elections.33.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.33.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+				country_event = {
+					id = push_pushilin_elections.32
+				}		
+		}
+	}
+}
+
+#Population Returns to Donbass as Peaceful Conditions Improve
+country_event = {
+	id = push_pushilin_elections.34
+	title = push_pushilin_elections.34.t
+	desc = push_pushilin_elections.34.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.34.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#President Pushilin Orders Arrest of Opposition Leader Leonid Pasechnik
+country_event = {
+	id = push_pushilin_elections.35
+	title = push_pushilin_elections.35.t
+	desc = push_pushilin_elections.35.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.35.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#Operation Against General Igor Girkin-Strelkov
+country_event = {
+	id = push_pushilin_elections.36
+	title = push_pushilin_elections.36.t
+	desc = push_pushilin_elections.36.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.36.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#Natalya Vitrenko Silenced
+country_event = {
+	id = push_pushilin_elections.37
+	title = push_pushilin_elections.37.t
+	desc = push_pushilin_elections.37.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.37.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#Prepares for Unification
+country_event = {
+	id = push_pushilin_elections.38
+	title = push_pushilin_elections.38.t
+	desc = push_pushilin_elections.38.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.38.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+country_event = {
+	id = push_pushilin_elections.39
+	title = push_pushilin_elections.39.t
+	desc = push_pushilin_elections.39.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.39.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		add_political_power = -100
+		hidden_effect = {
+			
+		}
+	}
+}
+country_event = {
+	id = push_pushilin_elections.40
+	title = push_pushilin_elections.40.t
+	desc = push_pushilin_elections.40.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.40.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		add_political_power = -200
+				country_event = {
+					id = push_pushilin_elections.41
+					days = 2
+				}
+		}
+	}
+}
+#COMMUNIST REBELION
+country_event = {
+	id = push_pushilin_elections.41
+	title = push_pushilin_elections.41.t
+	desc = push_pushilin_elections.41.d
+
+	picture = GFX_dnr_encircled
+	mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	option = {
+		name = push_pushilin_elections.41.a
+		ai_chance = { factor = 1 }
+		COM = {
+            transfer_state = 518
+			{ change_tag_from = DPR }
+		}		
+		hidden_effect = {
+
+		}
+	}
+	option = {
+		name = push_pushilin_elections.41.b
+		ai_chance = { factor = 1 }
+		COM = {
+            transfer_state = 518
+		}		
+		hidden_effect = {
+
+		}
+	}
+}

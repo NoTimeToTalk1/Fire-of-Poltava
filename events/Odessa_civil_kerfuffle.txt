@@ -1,0 +1,901 @@
+﻿add_namespace = ode
+
+country_event = {
+	id = ode.1
+	title = ode.1.t
+	desc = ode.1.d
+
+	picture = GFX_report_event_carp_rada
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = ode.1.a
+		add_political_power = -100
+		add_stability = -0.05
+		
+		hidden_effect = {
+			country_event = {
+				id = ode.5
+				days = 24
+            }
+		}
+	}
+}
+
+country_event = {
+	id = ode.2
+	title = ode.2.t
+	desc = ode.2.d
+
+	picture = GFX_report_event_carp_rada
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ode.2.a
+		ai_chance = {
+			base = 100
+		}
+		
+		
+		
+		OLD = {
+			transfer_state = 2045
+			set_province_controller = 14022
+			add_state_core = 2045
+			give_military_access = ODE
+			give_military_access = MYK
+		}
+		
+		STR = {
+			transfer_state = 2038
+			transfer_state = 2047
+		    transfer_state = 2046
+		    transfer_state = 613
+			set_province_controller = 7032
+			set_province_controller = 8526
+			set_province_controller = 6897
+			set_province_controller = 13910
+			set_province_controller = 5954
+			set_province_controller = 3104
+			
+			declare_war_on = {
+				target = ODE
+				type = annex_everything
+			}
+		    declare_war_on = {
+				target = OLD
+				type = annex_everything
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = ODE
+			}
+			add_core_of = STR
+		}
+
+		hidden_effect = {
+			OLD = {
+				add_equipment = {
+					type = train_equipment_1
+					amount = 1
+					producer = ODE
+				}
+				load_oob = "odesatrukhanov"
+			}
+			STR = {
+				add_equipment = {
+					type = train_equipment_1
+					amount = 5
+					producer = ODE
+				}
+				load_oob = "sternenko"
+			}
+			country_event = {
+				id = ode.3
+				hours = 6
+				random_hours = 6
+            }
+			news_event = {
+				id = war.1
+				days = 1
+			}
+		}
+    }
+	
+	option = {
+		name = ode.2.b
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				is_ai = yes
+			}
+		}
+		
+		OLD = { change_tag_from = ODE }
+		
+		OLD = {
+			transfer_state = 2045
+			set_province_controller = 14022
+			add_state_core = 2045
+			give_military_access = ODE
+		}
+		
+		STR = {
+			transfer_state = 2038
+			transfer_state = 2047
+		    transfer_state = 2046
+		    transfer_state = 613
+			set_province_controller = 7032
+			set_province_controller = 8526
+			set_province_controller = 6897
+			set_province_controller = 13910
+			set_province_controller = 5954
+			set_province_controller = 3104
+			
+			declare_war_on = {
+				target = ODE
+				type = annex_everything
+			}
+		    declare_war_on = {
+				target = OLD
+				type = annex_everything
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = ODE
+			}
+			add_core_of = STR
+		}
+
+		hidden_effect = {
+			OLD = {
+				add_equipment = {
+					type = train_equipment_1
+					amount = 1
+					producer = ODE
+				}
+				load_oob = "odesatrukhanov"
+			}
+			STR = {
+				add_equipment = {
+					type = train_equipment_1
+					amount = 5
+					producer = ODE
+				}
+				load_oob = "sternenko"
+			}
+			country_event = {
+				id = ode.3
+				hours = 6
+				random_hours = 6
+            }
+			news_event = {
+				id = war.1
+				days = 1
+			}
+		}
+    }
+	
+	option = {
+		name = ode.2.c
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				is_ai = yes
+			}
+		}
+		
+		STR = { change_tag_from = ODE }
+		
+		OLD = {
+			transfer_state = 2045
+			set_province_controller = 14022
+			add_state_core = 2045
+			give_military_access = ODE
+		}
+		
+		STR = {
+			transfer_state = 2038
+			transfer_state = 2047
+		    transfer_state = 2046
+		    transfer_state = 613
+			set_province_controller = 7032
+			set_province_controller = 8526
+			set_province_controller = 6897
+			set_province_controller = 13910
+			set_province_controller = 5954
+			set_province_controller = 3104
+			
+			declare_war_on = {
+				target = ODE
+				type = annex_everything
+			}
+		    declare_war_on = {
+				target = OLD
+				type = annex_everything
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = ODE
+			}
+			add_core_of = STR
+		}
+
+		hidden_effect = {
+			OLD = {
+				add_equipment = {
+					type = train_equipment_1
+					amount = 1
+					producer = ODE
+				}
+				load_oob = "odesatrukhanov"
+			}
+			STR = {
+				add_equipment = {
+					type = train_equipment_1
+					amount = 5
+					producer = ODE
+				}
+				load_oob = "sternenko"
+			}
+			country_event = {
+				id = ode.3
+				hours = 6
+				random_hours = 6
+            }
+			news_event = {
+				id = war.1
+				days = 1
+			}
+		}
+    }
+}
+
+country_event = {
+	id = ode.3
+	title = ode.3.t
+	desc = ode.3.d
+
+	picture = GFX_report_event_carp_rada
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = ode.3.a
+		ai_chance = {
+			base = 100
+		}
+		
+		
+		
+		RGE = {
+            transfer_state = 2682
+		    transfer_state = 2683
+			
+			declare_war_on = {
+				target = ODE
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = OLD
+				type = annex_everything
+			}
+		    declare_war_on = {
+				target = STR
+				type = annex_everything
+			}
+		}
+		
+		TRA = {
+			give_military_access = RGE
+		}
+		KIR = {
+			give_military_access = RGE
+		}
+		
+		hidden_effect = {
+			RGE = {
+				add_equipment = {
+					type = train_equipment_1
+					amount = 2
+					producer = ODE
+				}
+				load_oob = "RVKtrans"
+			}
+			country_event = {
+				id = ode.4
+				hours = 6
+				random_hours = 6
+			}
+		}
+	}
+	
+	option = {
+		name = ode.3.b
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				is_ai = yes
+			}
+		}
+		
+		RGE = { change_tag_from = ODE }
+		
+		RGE = {
+            transfer_state = 2682
+		    transfer_state = 2683
+			
+			declare_war_on = {
+				target = ODE
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = OLD
+				type = annex_everything
+			}
+		    declare_war_on = {
+				target = STR
+				type = annex_everything
+			}
+		}
+		
+		TRA = {
+			give_military_access = RGE
+		}
+		KIR = {
+			give_military_access = RGE
+		}
+		
+		hidden_effect = {
+			RGE = {
+				add_equipment = {
+					type = train_equipment_1
+					amount = 2
+					producer = ODE
+				}
+				load_oob = "RVKtrans"
+			}
+			country_event = {
+				id = ode.4
+				hours = 6
+				random_hours = 6
+			}
+		}
+	}
+}
+
+country_event = {
+	id = ode.4
+	title = ode.4.t
+	desc = ode.4.d
+
+	picture = GFX_report_event_carp_rada
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+	    name = ode.4.a
+		ai_chance = {
+			base = 100
+		}
+		
+		
+		
+		ODE = {
+			end_puppet = MYK
+		}
+		SHT = {
+			transfer_state = 2060
+			transfer_state = 2061
+			transfer_state = 2062
+			transfer_state = 2063
+			transfer_state = 618
+			
+			declare_war_on = {
+				target = STR
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = MYK
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = OLD
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = ODE
+				type = annex_everything
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = ODE
+			}
+			add_core_of = SHT
+		}
+		every_state = {
+			limit = {
+				is_core_of = MYK
+			}
+			add_core_of = SHT
+		}
+		MYK = {
+			set_province_controller = 13720
+			set_province_controller = 13652
+			set_cosmetic_tag = MYO
+		}
+		
+		hidden_effect = {
+        set_global_flag = odessa_war		
+			SHT = {
+				add_equipment = {
+					type = train_equipment_1
+					amount = 3
+					producer = ODE
+				}
+				load_oob = "odesashariy"
+			}
+			MYK = {
+				add_equipment = {
+					type = train_equipment_1
+					amount = 5
+					producer = ODE
+				}
+				load_oob = "odesamyk"
+			}
+			#country_event = {
+			#	id = ode.5
+			#	hours = 6
+			#	random_hours = 6
+			#}
+		}
+    }
+	
+	option = {
+	    name = ode.4.b
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				is_ai = yes
+			}
+		}
+		
+		MYK = { change_tag_from = ODE }
+		
+		ODE = {
+			end_puppet = MYK
+		}
+		SHT = {
+			transfer_state = 2060
+			transfer_state = 2061
+			transfer_state = 2062
+			transfer_state = 2063
+			transfer_state = 618
+			
+			declare_war_on = {
+				target = STR
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = MYK
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = OLD
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = ODE
+				type = annex_everything
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = ODE
+			}
+			add_core_of = SHT
+		}
+		every_state = {
+			limit = {
+				is_core_of = MYK
+			}
+			add_core_of = SHT
+		}
+		MYK = {
+			set_province_controller = 13720
+			set_province_controller = 13652
+			set_cosmetic_tag = MYO
+		}
+		
+		hidden_effect = { 
+			SHT = {
+				add_equipment = {
+					type = train_equipment_1
+					amount = 5
+					producer = ODE
+				}
+				load_oob = "odesashariy"
+			}
+			MYK = {
+				add_equipment = {
+					type = train_equipment_1
+					amount = 5
+					producer = ODE
+				}
+				load_oob = "odesamyk"
+			}
+			#country_event = {
+			#	id = ode.5
+			#	hours = 6
+			#	random_hours = 6
+			#}
+		}
+    }
+	
+	option = {
+	    name = ode.4.c
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				is_ai = yes
+			}
+		}
+		
+		SHT = { change_tag_from = ODE }
+		
+		ODE = {
+			end_puppet = MYK
+		}
+		SHT = {
+			transfer_state = 2060
+			transfer_state = 2061
+			transfer_state = 2062
+			transfer_state = 2063
+			transfer_state = 618
+			
+			declare_war_on = {
+				target = STR
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = MYK
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = OLD
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = ODE
+				type = annex_everything
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = ODE
+			}
+			add_core_of = SHT
+		}
+		every_state = {
+			limit = {
+				is_core_of = MYK
+			}
+			add_core_of = SHT
+		}
+		MYK = {
+			set_province_controller = 13720
+			set_province_controller = 13652
+			set_cosmetic_tag = MYO
+		}
+		
+		hidden_effect = { 
+			SHT = {
+				add_equipment = {
+					type = train_equipment_1
+					amount = 3
+					producer = ODE
+				}
+				load_oob = "odesashariy"
+			}
+			MYK = {
+				add_equipment = {
+					type = train_equipment_1
+					amount = 5
+					producer = ODE
+				}
+				load_oob = "odesamyk"
+			}
+			#country_event = {
+			#	id = ode.5
+			#	hours = 6
+			#	random_hours = 6
+			#}
+		}
+    }
+}
+
+country_event = {
+	id = ode.5
+	title = ode.5.t
+	desc = ode.5.d
+
+	picture = GFX_report_event_carp_rada
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+	    name = ode.5.a
+		ai_chance = {
+			base = 100
+		}
+		
+		
+		
+		BDZ = {
+			transfer_state = 794
+			add_state_core = 794
+			add_state_core = 1601
+			
+			declare_war_on = {
+				target = ODE
+				type = annex_everything
+			}
+		}
+		
+		hidden_effect = {
+			BDZ = {
+				add_equipment = {
+					type = train_equipment_1
+					amount = 5
+					producer = ODE
+				}
+				load_oob = "odesabudzhak"
+			}
+			ODE = {
+			remove_ideas = ODE_budjak_alliance
+				load_oob = "odesablackseaconfederacy"
+			}
+			country_event = {
+				id = ode.2
+				days = 1
+			}
+		}
+	}
+	
+	option = {
+	    name = ode.5.b
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				is_ai = yes
+			}
+		}
+		
+		BDZ = { change_tag_from = ODE }
+		
+		BDZ = {
+			transfer_state = 794
+			add_state_core = 794
+			add_state_core = 1601
+			
+			declare_war_on = {
+				target = ODE
+				type = annex_everything
+			}
+		}
+		
+		hidden_effect = {
+			BDZ = {
+				add_equipment = {
+					type = train_equipment_1
+					amount = 5
+					producer = ODE
+				}
+				load_oob = "odesabudzhak"
+			}
+			ODE = {
+			remove_ideas = ODE_budjak_alliance
+				load_oob = "odesablackseaconfederacy"
+			}
+			country_event = {
+				id = ode.2
+				days = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = ode.6
+	title = ode.6.t
+	desc = ode.6.d
+
+	picture = GFX_report_event_carp_rada
+    is_triggered_only = yes
+    fire_only_once = yes
+
+	option = {
+		name = ode.6.a
+		    ai_chance = {
+			base = 20
+		}
+		ODE = {
+	            annex_country = {
+                target = OLD
+                transfer_troops = yes
+            }
+		}
+	}
+	option = {
+		name = ode.6.b
+		    ai_chance = {
+			base = 80
+		}
+		ODE = {
+         set_autonomy = {
+	       target = OLD
+	       autonomous_state = autonomy_satellite
+		                  }
+                }
+		
+		OLD = {
+
+	set_politics = {	
+	ruling_party = oligarchy
+	last_election = "2019.10.12"
+	election_frequency = 48
+	elections_allowed = no
+	}
+
+set_party_name = { ideology = oligarchy
+    long_name = "Trust in actions"
+	name = "Doviriaj Dilam" }
+
+	set_popularities = {
+	social_democracy = 10
+	oligarchy = 15
+	centrism = 5
+	conservative_democracy = 30
+	liberal_democracy = 35
+	millitary_junta = 5
+	radical_nationalism = 0
+	radical_socialism = 0
+	}
+
+}
+        OLD = {
+        set_cosmetic_tag = OLD_adm
+         }
+hidden_effect = {
+OLD = {
+			country_event = {
+				id = ode.7
+				days = 6
+			}
+}
+}
+		 
+		}
+	}
+country_event = {
+	id = ode.7
+	title = ode.7.t
+	desc = ode.7.d
+
+	picture = GFX_report_event_carp_rada
+    is_triggered_only = yes
+    fire_only_once = yes
+
+	option = {
+		name = ode.7.a
+				country_event = {
+				id = ode.8
+				days = 6
+			}
+set_party_name = { ideology = conservative_democracy
+    long_name = "European Solidarity"
+	name = "YeS" }
+set_party_name = { ideology = liberal_democracy
+    long_name = "Servant of People"
+	name = "SH" }
+		}
+	}
+country_event = {
+	id = ode.8
+	title = ode.8.t
+	desc = ode.8.d
+
+	picture = GFX_report_event_carp_rada
+    is_triggered_only = yes
+    fire_only_once = yes
+
+	option = {
+		name = ode.8.a
+		OLD = {
+		create_country_leader = {
+			name = "Oleksiy Goncharenko"
+			desc = "uvu"
+			picture = "GFX_gonch"
+			expire = "3000.1.1"
+			ideology = national_democracy
+			traits = { }
+		}
+set_politics = {
+	ruling_party = conservative_democracy
+	elections_allowed = no
+}
+		}
+		}
+	option = {
+		name = ode.8.c
+		OLD = {
+		create_country_leader = {
+			name = "Oleg Filimonov"
+			desc = "uvu"
+			picture = "GFX_filim"
+			expire = "3000.1.1"
+			ideology = classical_liberalism
+			traits = { }
+		}
+set_politics = {
+	ruling_party = liberal_democracy
+	elections_allowed = no
+}
+}
+		}
+	option = {
+		name = ode.8.e
+		OLD = {
+		create_country_leader = {
+			name = "Nataliya Delieva"
+			desc = "uvu"
+			picture = "GFX_delieva"
+			expire = "3000.1.1"
+			ideology = liberalism
+			traits = { }
+		}
+set_politics = {
+	ruling_party = liberal_democracy
+	elections_allowed = no
+}
+hidden_effect = {
+set_party_name = { ideology = liberal_democracy
+    long_name = "Voice"
+	name = "Holos" }
+		}
+}
+		}
+	option = {
+		name = ode.8.b
+		OLD = {
+		create_country_leader = {
+			name = "Adnan Kivan"
+			desc = "uvu"
+			picture = "GFX_kivan"
+			expire = "3000.1.1"
+			ideology = corporatocracy
+			traits = { }
+		}
+set_politics = {
+	ruling_party = oligarchy
+	elections_allowed = no
+}
+hidden_effect = {
+set_party_name = { ideology = oligarchy
+    long_name = "OMR - Kadorr Group"
+	name = "Kadorr Group" }
+		}
+}
+		}
+	}

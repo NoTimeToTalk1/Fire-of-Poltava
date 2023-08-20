@@ -1,0 +1,713 @@
+add_namespace = dni
+
+country_event = {
+	id = dni.1
+	title = dni.1.t
+	desc = dni.1.d
+
+	picture = GFX_report_event_carp_rada
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = dni.1.a
+		add_political_power = -100
+		add_stability = -0.05
+		
+		hidden_effect = {
+			country_event = {
+				id = dni.2
+				days = 1
+            }
+		}
+	}
+}
+
+country_event = {
+	id = dni.2
+	title = dni.2.t
+	desc = dni.2.d
+
+	picture = GFX_report_event_carp_rada
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = dni.2.a
+		ai_chance = {
+			base = 100
+		}
+		
+		
+		
+		UWF = {
+			transfer_state = 2077
+			give_military_access = KIR
+		
+		    
+		    declare_war_on = {
+				target = KRS
+				type = annex_everything
+		}
+		declare_war_on = {
+				target = DNI
+				type = annex_everything
+		}	}
+		every_state = {
+			limit = {
+				is_core_of = DNI
+			}
+			add_core_of = UWF
+		}
+		
+		KRS = {
+			transfer_state = 2862
+			transfer_state = 2075
+
+			 
+			 declare_war_on = {
+				target = UWF
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = DNI
+				type = annex_everything
+		}
+		}
+		hidden_effect = {
+			UWF = {
+				add_equipment_to_stockpile = {
+					type = train_equipment_1
+					amount = 4
+					producer = DNI
+				}
+				load_oob = "Proletariat"
+			}
+			KRS = {
+				add_equipment_to_stockpile = {
+					type = train_equipment_1
+					amount = 3
+					producer = DNI
+				}
+				load_oob = "kriv"
+			}
+			country_event = {
+				id = dni.3
+				hours = 6
+				random_hours = 6
+            }
+			news_event = {
+				id = war.10
+				days = 1
+			}
+		}
+    }
+	
+	option = {
+		name = dni.2.b
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				is_ai = yes
+			}
+		}
+		
+		UWF = { change_tag_from = DNI }
+		
+		UWF = {
+			transfer_state = 2077
+			give_military_access = KIR
+		
+		    declare_war_on = {
+				target = DNI
+				type = annex_everything
+			}
+		    declare_war_on = {
+				target = KRS
+		}	}	type = annex_everything
+		every_state = {
+			limit = {
+				is_core_of = DNI
+			}
+			add_core_of = UWF
+		}
+		
+		KRS = {
+			transfer_state = 2862
+			transfer_state = 2075
+		
+		   
+			 declare_war_on = {
+				target = UWF
+				type = annex_everything
+	    }	
+		declare_war_on = {
+				target = DNI
+				type = annex_everything
+		}}
+		hidden_effect = {
+			UWF = {
+				add_equipment_to_stockpile = {
+					type = train_equipment_1
+					amount = 4
+					producer = DNI
+				}
+				load_oob = "Proletariat"
+			}
+			KRS = {
+				add_equipment_to_stockpile = {
+					type = train_equipment_1
+					amount = 3
+					producer = DNI
+				}
+				load_oob = "kriv"
+			}
+			country_event = {
+				id = dni.3
+				hours = 6
+				random_hours = 6
+            }
+			news_event = {
+				id = war.10
+				days = 1
+			}
+		}
+    }
+	
+	option = {
+		name = dni.2.c
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				is_ai = yes
+			}
+		}
+		
+		KRS = { change_tag_from = DNI }
+		
+		UWF = {
+			transfer_state = 2077
+			give_military_access = KIR
+		
+		    declare_war_on = {
+				target = KRS
+			}
+				type = annex_everything
+		}
+		declare_war_on = {
+				target = DNI
+				type = annex_everything
+		}
+		every_state = {
+			limit = {
+				is_core_of = DNI
+			}
+			add_core_of = UWF
+		}
+
+		KRS = {
+			transfer_state = 2862
+			transfer_state = 2075
+			declare_war_on = {
+				target = DNI
+				type = annex_everything
+			}
+			 declare_war_on = {
+				target = UWF
+				type = annex_everything
+			}
+		}
+		hidden_effect = {
+			UWF = {
+				add_equipment_to_stockpile = {
+					type = train_equipment_1
+					amount = 4
+					producer = DNI
+				}
+				load_oob = "Proletariat"
+			}
+			KRS = {
+				add_equipment_to_stockpile = {
+					type = train_equipment_1
+					amount = 3
+					producer = dni
+				}
+				load_oob = "kriv"
+			}
+			country_event = {
+				id = dni.3
+				hours = 6
+				random_hours = 6
+            }
+			news_event = {
+				id = war.10
+				days = 1
+			}
+		}
+    }
+}
+
+country_event = {
+	id = dni.3
+	title = dni.3.t
+	desc = dni.3.d
+
+	picture = GFX_report_event_carp_rada
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = dni.3.a
+		ai_chance = {
+			base = 100
+		}
+		
+		
+		
+		OPM = {
+            transfer_state = 579
+		    transfer_state = 560
+			transfer_state = 2080
+			
+			declare_war_on = {
+				target = DNI
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = UWF
+				type = annex_everything
+			}
+		    declare_war_on = {
+				target = KRS
+				type = annex_everything
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = DNI
+			}
+			add_core_of = OPM
+		}
+
+		hidden_effect = {
+			OPM = {
+				add_equipment_to_stockpile = {
+					type = train_equipment_1
+					amount = 
+					producer = DNI
+				}
+				load_oob = "murik"
+			}
+			country_event = {
+				id = dni.4
+				hours = 6
+				random_hours = 6
+			}
+		}
+	}
+	
+	option = {
+		name = dni.3.b
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				is_ai = yes
+			}
+		}
+		
+		OPM = { change_tag_from = DNI }
+		
+		OPM = {
+            transfer_state = 579
+		    transfer_state = 560
+			transfer_state = 2080
+			
+			declare_war_on = {
+				target = DNI
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = UWF
+				type = annex_everything
+			}
+		    declare_war_on = {
+				target = KRS
+				type = annex_everything
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = DNI
+			}
+			add_core_of = OPM
+		}
+
+		hidden_effect = {
+			OPM = {
+				add_equipment_to_stockpile = {
+					type = train_equipment_1
+					amount = 3
+					producer = DNI
+				}
+				load_oob = "murik"
+			}
+			country_event = {
+				id = dni.4
+				hours = 6
+				random_hours = 6
+			}
+		}
+	}
+}
+
+country_event = {
+	id = dni.4
+	title = dni.4.t
+	desc = dni.4.d
+
+	picture = GFX_report_event_carp_rada
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+	    name = dni.4.a
+		ai_chance = {
+			base = 100
+		}
+		
+		
+		PMU = {
+			transfer_state = 2403
+
+			declare_war_on = {
+				target = OPM
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = UWF
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = DNI
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = KRS
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = BAN
+				type = annex_everything
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = DNI
+			}
+			add_core_of = OPM
+		}
+		BAN = {
+			transfer_state = 2724
+			set_province_controller = 2097
+			set_province_controller = 2669
+			set_province_controller = 13290
+
+			declare_war_on = {
+				target = OPM
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = UWF
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = DNI
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = KRS
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = PMU
+				type = annex_everything
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = DNI
+			}
+			add_core_of = BAN
+		}
+		
+		hidden_effect = {
+        set_global_flag = dnipro_war		
+			PMU = {
+				add_equipment_to_stockpile = {
+					type = train_equipment_1
+					amount = 4
+					producer = DNI
+				}
+				load_oob = "pmu"
+			}
+			BAN = {
+				add_equipment_to_stockpile = {
+					type = train_equipment_1
+					amount = 4
+					producer = DNI
+				}
+				load_oob = "bandosy"
+			}
+			country_event = {
+				id = dni.5
+				hours = 6
+				random_hours = 6
+			}
+		}
+    }
+	
+	option = {
+	    name = dni.4.b
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				is_ai = yes
+			}
+		}
+		
+		BAN = { change_tag_from = DNI }
+	
+		PMU = {
+			transfer_state = 2403
+
+			declare_war_on = {
+				target = OPM
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = UWF
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = DNI
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = KRS
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = BAN
+				type = annex_everything
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = DNI
+			}
+			add_core_of = PMU
+		}
+	
+		BAN = {
+			transfer_state = 2724
+			set_province_controller = 2097
+			set_province_controller = 2669
+			set_province_controller = 13290
+
+			declare_war_on = {
+				target = OPM
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = UWF
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = DNI
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = KRS
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = PMU
+				type = annex_everything
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = DNI
+			}
+			add_core_of = BAN
+		}
+		
+		hidden_effect = { 
+			PMU = {
+				add_equipment_to_stockpile = {
+					type = train_equipment_1
+					amount = 4
+					producer = DNI
+				}
+				load_oob = "pmu"
+			}
+			BAN = {
+				add_equipment_to_stockpile = {
+					type = train_equipment_1
+					amount = 4
+					producer = DNI
+				}
+				load_oob = "bandosy"
+			}
+			country_event = {
+				id = dni.5
+				hours = 6
+				random_hours = 6
+			}
+		}
+    }
+	
+	option = {
+	    name = dni.4.c
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				is_ai = yes
+			}
+		}
+		
+		PMU = { change_tag_from = DNI }
+		
+		PMU = {
+			transfer_state = 2403
+
+			declare_war_on = {
+				target = OPM
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = UWF
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = DNI
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = KRS
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = BAN
+				type = annex_everything
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = DNI
+			}
+			add_core_of = PMU
+		}
+
+		BAN = {
+			transfer_state = 2724
+			set_province_controller = 2097
+			set_province_controller = 2669
+			set_province_controller = 13290
+			declare_war_on = {
+				target = KRS
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = UWF
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = OPM
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = DNI
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = PMU
+				type = annex_everything
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = DNI
+			}
+			add_core_of = BAN
+		}
+		
+		hidden_effect = { 
+			PMU = {
+				add_equipment_to_stockpile = {
+					type = train_equipment_1
+					amount = 4
+					producer = DNI
+				}
+				load_oob = "pmu"
+			}
+			BAN = {
+				add_equipment_to_stockpile = {
+					type = train_equipment_1
+					amount = 4
+					producer = DNI
+				}
+				load_oob = "bandosy"
+			}
+			country_event = {
+				id = dni.5
+				hours = 2
+				random_hours = 2
+			}
+		}
+    }
+}
+
+country_event = {
+	id = dni.5
+	title = dni.5.t
+	desc = dni.5.d
+
+	picture = GFX_report_event_carp_rada
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+	    name = dni.5.a
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				is_ai = yes
+			}
+		}
+		
+		COD = {
+			set_province_controller = 13368
+		}
+		retire_character = DNI_bilousov
+		recruit_character = DNI_Korban
+		DNI_Korban = {promote_character = oligarhcy}
+		hidden_effect = {
+			DNI = {
+				add_equipment_to_stockpile = {
+					type = train_equipment_1
+					amount = 4
+					producer = DNI
+				}
+				load_oob = "cod"
+			}
+		}
+	}
+}
+

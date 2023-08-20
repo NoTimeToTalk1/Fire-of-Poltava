@@ -1,0 +1,1541 @@
+add_namespace = dpr_vitrenko
+
+country_event = {
+	id = dpr_vitrenko.1
+	title = dpr_vitrenko.1.t
+	desc = dpr_vitrenko.1.d
+
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+
+	trigger = {
+		DPR = {
+			has_government = radical_socialism
+		}
+
+	}
+
+	option = { 
+		name = dpr_vitrenko.1.a
+		DPR = {
+			set_cosmetic_tag = VTR
+			load_focus_tree = vitrenko_focus
+		}
+		
+	}
+	
+
+}
+
+country_event = {
+	id = dpr_vitrenko.2
+	title = dpr_vitrenko.2.t
+	desc = dpr_vitrenko.2.d
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.2.a
+		add_stability = 0.05
+	}
+	
+
+}
+
+country_event = {
+	id = dpr_vitrenko.3
+	title = girkin_bezhit
+	desc = LOVI_PIDORASA_NEGR_EBUCHIY
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = huylo ubezhalo
+		retire_character = DNR_girkin
+			add_popularity = {
+    		ideology = radical_nationalism
+    		popularity = -0.05
+			}
+			add_popularity = {
+    		ideology = oligarchy
+    		popularity = -0.03
+			}
+			add_popularity = {
+    		ideology = conservative_democracy
+    		popularity = -0.03
+			}
+	}
+	
+
+}
+
+country_event = {
+	id = dpr_vitrenko.4
+	title = HUESOSI
+	desc = MEZHDUNARODNIYE
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.4.a
+		hidden_effect = {
+			load_oob = DNR_Vitrenko
+		}
+	}
+	
+
+}
+
+country_event = {
+	id = dpr_vitrenko.5
+	title = puchkov
+	desc = daun
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.5.a
+		KIR = {
+			country_event = {
+				id = dpr_vitrenko.6
+				days = 2
+			}
+		}
+	}
+	
+
+}
+
+country_event = {
+	id = dpr_vitrenko.6
+	title = vitrenko
+	desc = vitrenko
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.6.a
+		DPR = {
+			country_event = {
+				id = dpr_vitrenko.7
+				days = 1
+			}
+		}
+	}
+	
+
+}
+
+country_event = {
+	id = dpr_vitrenko.7
+	title = uraaa
+	desc = uraaa
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.7.a
+		create_faction = "Ukrainian Socialist Liberation Union"
+		add_to_faction = KIR
+	}
+	
+
+}
+
+country_event = {
+	id = dpr_vitrenko.8
+	title = medvedchuk
+	desc = pidoras
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.8.a
+		OPZ = {
+			country_event = {
+				id = dpr_vitrenko.9
+				days = 2
+			}
+		}
+	}
+	
+
+}
+
+country_event = {
+	id = dpr_vitrenko.9
+	title = vitrenko
+	desc = vitrenko
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.9.a
+		DPR = {
+			country_event = {
+				id = dpr_vitrenko.10
+				days = 1
+			}
+		}
+	}
+	
+
+}
+
+country_event = {
+	id = dpr_vitrenko.10
+	title = uraaa
+	desc = uraaa
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.10.a
+		create_faction = "Platform 'For Unification of Ukraine'"
+		add_to_faction = OPZ
+	}
+	
+
+}
+
+country_event = {
+	id = dpr_vitrenko.11
+	title = oligarchs
+	desc = oligarchs
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.11.a
+		add_ideas = DPR_deal_with_wealthy
+	}
+	
+
+}
+
+country_event = {
+	id = dpr_vitrenko.12
+	title = v chom sila
+	desc = brat
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.12.a
+			set_country_flag = DPR_vitrenko_bomzhi
+	}
+
+	option = { 
+		name = dpr_vitrenko.12.b
+			set_country_flag = DPR_vitrenko_sila
+	}
+	
+
+}
+
+country_event = {
+	id = dpr_vitrenko.13
+	title = ayooooo
+	desc = benes
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.13.a
+			recruit_character = LNR_benes
+	}
+	
+
+}
+
+country_event = {
+	id = dpr_vitrenko.14
+	title = ayooooo
+	desc = benes
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.13.a
+			recruit_character = DNR_lenin
+	}
+	
+
+}
+
+country_event = {
+	id = dpr_vitrenko.15
+	title = medias
+	desc = medias
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.15.a
+			add_stability = -0.03
+			add_political_power = -50
+			manpower = -300
+	}
+	
+
+}
+
+country_event = {
+	id = dpr_vitrenko.16
+	title = kakayaraznica
+	desc = yaruski
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.16.a
+			add_ideas = DPR_ruzgi
+	}
+	
+
+}
+
+country_event = {
+	id = dpr_vitrenko.17
+	title = davaiiii
+	desc = tsygan
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.17.a
+		DPR = {
+			country_event = {
+				id = dpr_vitrenko.18
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.18
+	title = uraura
+	desc = peremoha
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.18.a
+		DPR = {
+			annex_country = {
+				target = ROM
+			}
+		}
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.19
+	title = crimea
+	desc = isukr
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.19.a
+		RUS = {
+			country_event = {
+				id = dpr_vitrenko.20
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.20
+	title = crimea
+	desc = dat?
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.20.a
+		ai_chance = {
+			factor = 25
+		}
+		DPR = {
+			country_event = {
+				id = dpr_vitrenko.21
+				days = 3
+			}
+		}
+	}
+
+	option = { 
+		name = dpr_vitrenko.20.b
+		ai_chance = {
+			factor = 70
+		}
+		DPR = {
+			country_event = {
+				id = dpr_vitrenko.22
+				days = 3
+			}
+		}
+	}
+
+	option = { 
+		name = dpr_vitrenko.20.c
+		ai_chance = {
+			factor = 5
+		}
+		DPR = {
+			country_event = {
+				id = dpr_vitrenko.23
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.21
+	title = poslali
+	desc = nahui
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.21.a
+		add_political_power = -50
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.22
+	title = odkb
+	desc = krim
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.22.a
+		add_political_power = 50
+		set_country_flag = dpr_vitrenko_to_odkb
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.23
+	title = dali
+	desc = CRIMNASHHHH!!!!!
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.23.a
+		annex_country = {
+			target = CRI
+		}
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.24
+	title = URAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+	desc = TOTAL VICTORIIIIIIIIIIIIIIIIIIIII
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.24.a
+		set_country_flag = dpr_vitrenko_united
+		if = {
+			limit = {
+				DPR = {
+					in_faction = yes
+				}
+			}
+			set_country_flag = dpr_vitrenko_settle_things
+		}
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.25
+	title = puckovukraine
+	desc = 
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.25.a
+		KIR = {
+			country_event = {
+				id = dpr_vitrenko.26
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.26
+	title = puckovukraine
+	desc = 
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.26.a
+		ai_chance = {
+			factor = 30
+		}
+		DPR = {
+			country_event = {
+				id = dpr_vitrenko.27
+				days = 3
+			}
+		}
+	}
+
+	option = { 
+		name = dpr_vitrenko.26.b
+		ai_chance = {
+			factor = 70
+		}
+		DPR = {
+			country_event = {
+				id = dpr_vitrenko.28
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.27
+	title = puckovukraine
+	desc = 
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.27.a
+		DPR = {
+			annex_country = {
+				target = KIR
+			}
+		}
+		clr_country_flag = dpr_vitrenko_settle_things
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.28
+	title = puckovukraine
+	desc = 
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.28.a
+		KIR = {
+			leave_faction = yes
+		}
+		DPR = {
+			declare_war_on = {
+				target = KIR
+				type = annex_everything
+			}
+		}
+		clr_country_flag = dpr_vitrenko_settle_things
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.29
+	title = puchkovunion
+	desc = 
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.29.a
+		KIR = {
+			country_event = {
+				id = dpr_vitrenko.30
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.30
+	title = puchkovunion
+	desc = 
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.30.a
+		ai_chance = {
+			factor = 90
+		}
+		DPR = {
+			country_event = {
+				id = dpr_vitrenko.56
+				days = 3
+			}
+		}
+	}
+	option = { 
+		name = dpr_vitrenko.30.b
+		ai_chance = {
+			factor = 10
+		}
+		DPR = {
+			country_event = {
+				id = dpr_vitrenko.31
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.56
+	title = puchkovunion
+	desc = 
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.30.a
+		set_country_flag = dnr_puchkov_novososiya
+		clr_country_flag = dpr_vitrenko_settle_things
+		DPR = {
+			annex_country = {
+				target = KIR
+			}
+		}
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.31
+	title = puchkovunion
+	desc = 
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.31.a
+		ai_chance = {
+			factor = 10
+		}
+		set_country_flag = dnr_puchkov_ukraine
+	}
+	option = { 
+		name = dpr_vitrenko.31.b
+		ai_chance = {
+			factor = 90
+		}
+		KIR = {
+			leave_faction = yes
+		}
+		DPR = {
+			declare_war_on = {
+				target = KIR
+				type = annex_everything
+			}
+		}
+		clr_country_flag = dpr_vitrenko_settle_things
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.32
+	title = medvedukraine
+	desc = 
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.32.a
+		OPZ = {
+			country_event = {
+				id = dpr_vitrenko.33
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.33
+	title = medvedukraine
+	desc = 
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.33.a
+		ai_chance = {
+			factor = 20
+		}
+		DPR = {
+			country_event = {
+				id = dpr_vitrenko.34
+				days = 3
+			}
+		}
+	}
+
+	option = { 
+		name = dpr_vitrenko.33.b
+		ai_chance = {
+			factor = 40
+		}
+		DPR = {
+			country_event = {
+				id = dpr_vitrenko.35
+				days = 3
+			}
+		}
+	}
+	option = { 
+		name = dpr_vitrenko.33.c
+		ai_chance = {
+			factor = 40
+		}
+		DPR = {
+			country_event = {
+				id = dpr_vitrenko.36
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.34
+	title = medvedukraine
+	desc = 
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.27.a
+		DPR = {
+			annex_country = {
+				target = OPZ
+			}
+		}
+		clr_country_flag = dpr_vitrenko_settle_things
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.35
+	title = medvedukraine
+	desc = 
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.35.a
+		set_country_flag = dpr_medvedchuk_government
+		clr_country_flag = dpr_vitrenko_settle_things
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.36
+	title = medvedukraine
+	desc = 
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.36.a
+		OPZ = {
+			leave_faction = yes
+		}
+		DPR = {
+			declare_war_on = {
+				target = OPZ
+				type = annex_everything
+			}
+		}
+		clr_country_flag = dpr_vitrenko_settle_things
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.37
+	title = medvedunion
+	desc = 
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.37.a
+		KIR = {
+			country_event = {
+				id = dpr_vitrenko.38
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.38
+	title = medvedunion
+	desc = 
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.38.a
+		ai_chance = {
+			factor = 40
+		}
+		DPR = {
+			country_event = {
+				id = dpr_vitrenko.39
+				days = 3
+			}
+		}
+	}
+	option = { 
+		name = dpr_vitrenko.38.b
+		ai_chance = {
+			factor = 60
+		}
+		DPR = {
+			country_event = {
+				id = dpr_vitrenko.40
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.39
+	title = medvedunion
+	desc = 
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.39.a
+		set_country_flag = dnr_medved_novososiya
+		clr_country_flag = dpr_vitrenko_settle_things
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.40
+	title = medvedunion
+	desc = 
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.40.a
+		ai_chance = {
+			factor = 10
+		}
+		set_country_flag = dnr_medved_ukraine
+		clr_country_flag = dpr_vitrenko_settle_things
+	}
+	option = { 
+		name = dpr_vitrenko.40.b
+		ai_chance = {
+			factor = 90
+		}
+		OPZ = {
+			leave_faction = yes
+		}
+		DPR = {
+			declare_war_on = {
+				target = OPZ
+				type = annex_everything
+			}
+		}
+		clr_country_flag = dpr_vitrenko_settle_things
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.41
+	title = ura ura
+	desc = sss
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.41.a
+		if = {
+			limit = {
+				has_completed_focus = dnr_a_shining_whole_ukraine
+			}		
+			every_state = {
+				limit = {
+					is_owned_by = DPR
+				}
+				add_core_of = DPR
+			}
+		}
+		if = {
+			limit = {
+				has_completed_focus = dnr_renewal_of_union_system
+			}
+		}
+
+		DPR = {
+			set_cosmetic_tag = VTR
+		}
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.42
+	title = novososit
+	desc = sss
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.42.a
+			every_state = {
+				limit = {
+						OR = {
+							state = 2091
+							state = 2309
+							state = 2029
+							state = 518
+							state = 2030
+							state = 2308
+							state = 2097
+							state = 2099
+							state = 2098
+							state = 2031
+							state = 2107
+							state = 2108
+							state = 497
+							state = 2109
+							state = 2105
+							state = 2104
+							state = 2032
+							state = 2106
+							state = 2095
+							state = 2307
+							state = 2310
+							state = 2096
+							state = 557
+							state = 2310
+							state = 2028
+							state = 2094
+							state = 2306
+							state = 579
+							state = 2080
+							state = 560
+							state = 623
+							state = 2092
+							state = 2093
+							state = 2111
+							state = 2724
+							state = 2079
+							state = 2728
+							state = 2076
+							state = 2403
+							state = 2078
+							state = 2077
+							state = 2862
+							state = 2075
+							state = 2064
+							state = 2088
+							state = 2085
+							state = 2091
+							state = 2043
+							state = 2090
+							state = 2089
+							state = 657
+							state = 2732
+							state = 2087
+							state = 2086
+							state = 614
+							state = 618
+							state = 2062
+							state = 2063
+							state = 2061
+							state = 2683
+							state = 2038
+							state = 2682
+							state = 2047
+							state = 613
+							state = 2046
+							state = 613
+							state = 2046
+							state = 2045
+							state = 794
+							state = 1601
+							state = 2060
+						}
+				}
+				VTN = {
+					transfer_state = PREV
+				}
+				add_core_of = VTN
+				if = {
+					limit = {
+					2044 = {
+						is_owned_by = DPR
+					}
+					}
+					every_state = {
+						limit = {
+							OR = {
+								state = 2044
+								state = 2125
+								state = 2126
+								state = 769
+								state = 2130
+								state = 2129
+								state = 2128
+								state = 2127
+							}
+						}
+						VTN = {
+							transfer_state = PREV
+						}
+						add_core_of = VTN
+						
+					}
+				}
+			}
+			DPR = {
+							set_autonomy = {
+								target = VTN
+								autonomy_state = FOP_recognized_state
+							}
+						}
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.43
+	title = galitchane
+	desc = katoliki
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.43.a
+			every_state = {
+				limit = {
+						OR = {
+							state = 1272
+							state = 1293
+							state = 2346
+							state = 1233
+							state = 1292
+							state = 1270
+							state = 459
+							state = 1294
+							state = 502
+							state = 1164
+							state = 592
+							state = 590
+							state = 1143
+							state = 1599
+							state = 2336
+							state = 490
+							state = 1600
+							state = 542
+							state = 1265
+							state = 564
+							state = 1608
+							state = 593
+							state = 1607
+							state = 2247
+							state = 2246
+						}
+				}
+				VTW = {
+					transfer_state = PREV
+				}
+			}
+								set_autonomy = {
+    					target = VTW
+						autonomy_state = FOP_recognized_state
+				}
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.44
+	title = odkb
+	desc = sssssssss
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = dpr_vitrenko.44.a
+					if = {
+						limit = {
+							CRI = {
+								exists = yes
+							}
+							VTN = {
+								exists = no
+							}
+							DPR = {
+									has_country_flag = dpr_vitrenko_to_odkb
+							}
+						}
+						DPR = {
+							annex_country = {
+								target = CRI
+							}
+						}
+						every_state = {
+							limit = {
+								is_owned_by = CRI
+							}
+							add_core_of = DPR
+						}
+					}
+					if = {
+						limit = {
+							VTN = {
+								exists = yes
+							}
+							CRI = {
+								exists = yes
+							}
+							DPR = {
+									has_country_flag = dpr_vitrenko_to_odkb
+							}
+						}
+						VTN = {
+							annex_country = {
+								target = CRI
+							}
+							}
+						every_state = {
+							limit = {
+								is_core_of = CRI
+							}
+							add_core_of = VTN
+						}
+						}
+					RUS = {
+						add_to_faction = DPR
+					}
+					if = {
+						limit = {
+							VTN = {
+								exists = yes
+							}
+							VTW = {
+								exists = yes
+							}
+						}
+					RUS = {
+						add_to_faction = VTN
+						add_to_faction = VTW
+					}
+					}
+
+	}
+}
+
+country_event = {
+	id = dpr_vitrenko.45
+	title = odkb
+	desc = sssssssss
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = medved
+		trigger = {
+			DPR = {
+				has_country_flag = dnr_medved_novososiya
+			}
+		}	
+		VTN = {
+			kill_country_leader = yes
+			create_country_leader = {
+				name = "Viktor Medvedchuk"
+				desc = ""
+				picture = "gfx/leaders/OPZ/Medvid.dds"
+				expire = "2099.1.1"
+				ideology = conservative_democracy
+				traits = { }
+			} 	
+		}	
+	}
+
+	option = { 
+		name = medvedukraine
+		trigger = {
+			DPR = {
+				has_country_flag = dnr_medved_ukraine
+			}
+		}
+		DPR = {
+			kill_country_leader = yes
+			create_country_leader = {
+				name = "Viktor Medvedchuk"
+				desc = ""
+				picture = "gfx/leaders/OPZ/Medvid.dds"
+				expire = "2099.1.1"
+				ideology = post_soviet_bureaucracy
+				traits = { }
+			}
+			set_politics = {
+				ruling_party = oligarchy
+			} 	
+		}
+		VTN = {
+			kill_country_leader = yes
+			create_country_leader = {
+				name = "Natalia Vitrenko"
+				desc = ""
+				picture = "gfx/leaders/DNR/vitrenko.dds"
+				expire = "2099.1.1"
+				ideology = authoritarian_socialism
+				traits = { }
+			} 	
+		}					
+	}
+
+	option = { 
+		name = puchkov
+		trigger = {
+			DPR = {
+				has_country_flag = dnr_puchkov_novososiya
+			}
+		}
+		VTN = {
+			kill_country_leader = yes
+			create_country_leader = {
+				name = "Dmitriy Puchkov"
+				desc = ""
+				picture = "gfx/leaders/PUC/puchkov.dds"
+				expire = "2099.1.1"
+				ideology = communism
+				traits = { }
+			}
+			set_politics = {
+				ruling_party = radical_socialism
+			}	
+		}						
+	}
+	
+	option = { 
+		name = puchkovukraine
+		trigger = {
+			DPR = {
+				has_country_flag = dnr_puchkov_ukraine
+			}
+		}
+		VTN = {
+			kill_country_leader = yes
+			create_country_leader = {
+				name = "Natalia Vitrenko"
+				desc = ""
+				picture = "gfx/leaders/DNR/vitrenko.dds"
+				expire = "2099.1.1"
+				ideology = authoritarian_socialism
+				traits = { }
+			}
+			set_politics = {
+				ruling_party = radical_socialism
+			} 	
+		}
+		DPR = {
+			kill_country_leader = yes
+			create_country_leader = {
+				name = "Dmitriy Puchkov"
+				desc = ""
+				picture = "gfx/leaders/PUC/puchkov.dds"
+				expire = "2099.1.1"
+				ideology = communism
+				traits = { }
+			}
+					set_politics = {
+				ruling_party = radical_socialism
+			} 	
+		}			
+	}
+
+	option = {
+		trigger = {
+			DPR = {
+				NOT = {
+					OR = {
+						has_country_flag = dnr_puchkov_ukraine
+						has_country_flag = dnr_puchkov_novososiya
+						has_country_flag = dnr_medved_ukraine
+						has_country_flag = dnr_medved_novososiya
+					}
+				}
+			}
+		} 
+		name = trahat
+		}			
+	}
+
+country_event = {
+	id = dpr_vitrenko.46
+	title = odkb
+	desc = sssssssss
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = chornovol
+			
+	}
+
+	option = { 
+		name = coolguy
+			
+	}	
+	}
+
+	country_event = {
+	id = dpr_vitrenko.47
+	title = novososiya
+	desc = pupet
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = yas
+		DPR = {
+			set_autonomy = {
+				target = VTN
+				autonomy_state = FOP_recognized_state
+			}
+		}	
+	}
+	}
+
+	country_event = {
+	id = dpr_vitrenko.48
+	title = west
+	desc = pupet
+
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = yas
+		DPR = {
+			set_autonomy = {
+				target = VTW
+				autonomy_state = FOP_recognized_state
+			}
+		}	
+	}
+	}
+
+

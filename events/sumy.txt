@@ -1,0 +1,103 @@
+add_namespace = sum
+
+country_event = { 
+	id = sum.1
+	title = "Smeshko victorious"
+	desc = sum.1.d
+	
+	picture = GFX_sumy_sme
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+	set_cosmetic_tag = SUM_sme
+		name = "Poroshenko's hold over Sumy at last reaffirmed."
+		set_politics = {
+	    ruling_party = social_democracy
+}
+        add_popularity = {
+				ideology = social_democracy
+				popularity = 0.4
+		}        
+	}
+}
+country_event = {
+	id = sum.2
+	title = "2004 is back in fashion"
+	desc = sum.2.d
+	
+	picture = GFX_sumy_tak
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+	set_cosmetic_tag = SUM_tak
+		name = "Tak!"
+		set_politics = {
+	    ruling_party = liberal_democracy
+             }
+	     add_popularity = {
+		ideology = liberal_democracy
+		popularity = 0.45
+		}
+        }
+}
+
+country_event = {
+	id = sum.3
+	title = "Storm of the Sumy oblrada"
+	desc = sum.3.d
+
+	
+	picture = GFX_sumy_aks
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+	set_cosmetic_tag = SUM_aks
+		name = "For the Avant - Garde!"
+		set_politics = {
+	    ruling_party = radical_nationalism
+             }
+		PRH = {
+		end_puppet = SUM
+			}
+		remove_ideas = SUM_aks
+	     add_popularity = {
+		ideology = radical_nationalism
+		popularity = 0.2
+		}
+            SUM = {
+                news_event = {
+				id = newsfop.2
+				days = 5
+            }
+		}
+        }
+}
+country_event = {
+	id = sum.4
+	title = sum.4.t
+	desc = sum.4.d
+
+	
+	picture = GFX_sumy_rada
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+name = sum.4.a
+SUM = { country_event = sum.1 
+days = 4 }
+        }
+	option = {
+name = sum.4.b
+SUM = { country_event = sum.2 
+days = 4}
+        }
+	option = {
+name = sum.4.c
+SUM = { country_event = sum.3 
+days = 4 }
+        }
+}
