@@ -1,0 +1,60 @@
+#	Example:
+#
+#	example_effect = {
+#		add_political_power = 66
+#		add_popularity = {
+#			ideology = fascism
+#			popularity = 0.33
+#		}
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		example_effect = yes
+#	}
+#
+
+BG_effect = {
+	add_political_power = 150
+}
+
+BG_mercenary_limited_contract = {
+
+}
+
+BG_mercenary_extensive_contract = {
+
+}
+
+BG_mercenary_banned = {
+	delete_unit_template_and_units = {
+		division_template = "Mercenaries"
+	}
+}
+
+### TEMPLATES
+BG_mercenary_template = {
+	division_template = { #Mercenaries
+		name = "Mercenaries"
+		division_names_group = ITA_INF_02 #TODO_Manu
+		override_model = ITA_militia_alt_0_entity
+		template_counter = 68
+		is_locked = yes
+		force_allow_recruiting = yes
+		division_cap = 5
+
+		regiments = {
+			mercenary = { x = 0 y = 0 }
+			mercenary = { x = 0 y = 1 }
+			mercenary = { x = 1 y = 0 }
+			mercenary = { x = 1 y = 1 }
+			mercenary = { x = 2 y = 0 }
+			mercenary = { x = 2 y = 1 }
+		}
+		support = {
+			engineer = { x = 0 y = 0 }
+		}
+	}
+}
