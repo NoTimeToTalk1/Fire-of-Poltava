@@ -632,3 +632,56 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = afu.21
+	title = afu.21.t
+	desc = afu.21.d
+
+	picture = GFX_a
+	
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afu.21.a
+		set_cosmetic_tag = AFUdan_reun
+		AFU_danilov = {
+                set_portraits = {
+                    civilian = {
+                        large = "gfx/leaders/AFU/danilov2.dds"
+                    }
+                }
+            }
+	}
+}
+
+country_event = {
+	id = afu.22
+	title = afu.22.t
+	desc = afu.22.d
+
+	picture = GFX_report_event_table
+	
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = afu.22.a
+		custom_effect_tooltip = danilov_cum_into_power
+		hidden_effect = {
+		load_focus_tree = danilov
+		set_politics = {
+	    ruling_party = conservative_democracy
+}
+        add_popularity = {
+				ideology = conservative_democracy
+				popularity = 0.5
+		}
+		set_cosmetic_tag = AFU_dan
+		complete_national_focus = AFU_danilov
+	}
+}
+}
+

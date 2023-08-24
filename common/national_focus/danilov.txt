@@ -1,0 +1,402 @@
+focus_tree = {
+	id = danilov
+	continuous_focus_position = { x = -40 y = 1050 } 
+	country = {
+		factor = 0
+		modifier = {
+		}
+	}
+	#Subsidies for Educational Institutions
+	focus = {
+		id = AFU_subsidies_for_educational_institutions
+		icon = GFX_AFU_subsidies_for_educational_institutions-495536
+		x = 25
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = AFU_restoration_of_the_scientific_field  }
+	}
+
+	#State Security Strategy
+	focus = {
+		id = AFU_state_security_strategy
+		icon = GFX_AFU_state_security_strategy-495536
+		x = 13
+		y = 0
+		available = {
+    has_country_flag = danilov_new_focuses
+    }
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+	}
+
+	#Danilov
+	focus = {
+		id = AFU_danilov
+		icon = GFX_AFU_danilov-529497
+		x = 5
+		y = 0
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+    custom_effect_tooltip = danilov_in_power
+		}
+	}
+
+	#We are Not Alone
+	focus = {
+		id = AFU_we_are_not_alone
+		icon = GFX_AFU_we_are_not_alone-529498
+		x = 5
+		y = 1
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_danilov  }
+	}
+
+	#The Only Ones Fighting For a Common Goal
+	focus = {
+		id = AFU_the_only_ones_fighting_for_a_common_goal
+		icon = GFX_AFU_the_only_ones_fighting_for_a_common_goal-495536
+		x = 5
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_we_are_not_alone  }
+		mutually_exclusive = { focus = AFU_align_with_the_legetimists  } mutually_exclusive = { focus = AFU_trust_the_old_faces  }
+	completion_reward = {
+	
+    custom_effect_tooltip = danilov_allow_focuses
+	
+	hidden_effect = {
+	set_country_flag = danilov_new_focuses
+		}
+		
+	}
+	}
+
+	#Align with the Legetimists
+	focus = {
+		id = AFU_align_with_the_legetimists
+		icon = GFX_AFU_align_with_the_legetimists-495536
+		x = 3
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_we_are_not_alone  }
+		mutually_exclusive = { focus = AFU_the_only_ones_fighting_for_a_common_goal  } mutually_exclusive = { focus = AFU_trust_the_old_faces  }
+	completion_reward = {
+	
+    custom_effect_tooltip = danilov_allow_focuses
+		create_faction = ZE_FACTION_NAME
+	AFU = { add_to_faction = UKR }
+	
+	hidden_effect = {
+	set_country_flag = danilov_new_focuses
+		}
+		
+	}
+	}
+
+	#Trust the Old Faces
+	focus = {
+		id = AFU_trust_the_old_faces
+		icon = GFX_AFU_trust_the_old_faces-495536
+		x = 7
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_we_are_not_alone  }
+		mutually_exclusive = { focus = AFU_the_only_ones_fighting_for_a_common_goal  } mutually_exclusive = { focus = AFU_align_with_the_legetimists  }
+		
+	completion_reward = {
+	
+    custom_effect_tooltip = danilov_allow_focuses
+		create_faction = PRH_FACTION_NAME
+	AFU = { add_to_faction = PRH }
+	
+	hidden_effect = {
+	set_country_flag = danilov_new_focuses
+		}
+		
+	  }
+    }
+
+	#New Minister of Economy
+	focus = {
+		id = AFU_new_minister_of_economy
+		icon = GFX_AFU_new_minister_of_economy-495536
+		x = 4
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_the_only_ones_fighting_for_a_common_goal  }
+	}
+
+	#Industrial Redistribution
+	focus = {
+		id = AFU_industrial_redistribution
+		icon = GFX_AFU_industrial_redistribution-495536
+		x = 6
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_the_only_ones_fighting_for_a_common_goal  }
+		mutually_exclusive = { focus = AFU_new_minister_of_economy  }
+	}
+
+	#Our State-Corporate Monopoly
+	focus = {
+		id = AFU_our_statecorporate_monopoly
+		icon = GFX_AFU_our_statecorporate_monopoly-495536
+		x = 5
+		y = 7
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_industrial_redistribution  focus = AFU_new_minister_of_economy  }
+	}
+
+	#Rehabilitation of the Population
+	focus = {
+		id = AFU_rehabilitation_of_the_population
+		icon = GFX_AFU_rehabilitation_of_the_population-495536
+		x = 10
+		y = 1
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = AFU_state_security_strategy  }
+	}
+
+	#Legacy of ATO
+	focus = {
+		id = AFU_legacy_of_ato
+		icon = GFX_AFU_legacy_of_ato-495536
+		x = 16
+		y = 1
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = AFU_state_security_strategy  }
+	}
+
+	#Support Veterans
+	focus = {
+		id = AFU_support_veterans
+		icon = GFX_AFU_support_veterans-495536
+		x = 13
+		y = 2
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = AFU_rehabilitation_of_the_population  } prerequisite = { focus = AFU_legacy_of_ato  }
+	}
+
+	#Request Humanitarian Aid
+	focus = {
+		id = AFU_request_humanitarian_aid
+		icon = GFX_AFU_request_humanitarian_aid-495536
+		x = 10
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = AFU_support_veterans  }
+	}
+
+	#Borders Under Control
+	focus = {
+		id = AFU_borders_under_control
+		icon = GFX_AFU_borders_under_control-495536
+		x = 16
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = AFU_support_veterans  }
+	}
+
+	#Keep the Army in Shape
+	focus = {
+		id = AFU_keep_the_army_in_shape
+		icon = GFX_AFU_keep_the_army_in_shape-495536
+		x = 13
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = AFU_request_humanitarian_aid  } prerequisite = { focus = AFU_borders_under_control  }
+	}
+
+	#System of Counter-Propaganda
+	focus = {
+		id = AFU_system_of_counterpropaganda
+		icon = GFX_AFU_system_of_counterpropaganda-495536
+		x = 10
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = AFU_keep_the_army_in_shape  }
+	}
+
+	#Hunting for rats
+	focus = {
+		id = AFU_hunting_for_rats
+		icon = GFX_AFU_hunting_for_rats-495536
+		x = 16
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = AFU_keep_the_army_in_shape  }
+	}
+
+	#Never Again!
+	focus = {
+		id = AFU_neveragain
+		icon = GFX_AFU_neveragain-495536
+		x = 13
+		y = 7
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = AFU_system_of_counterpropaganda  } prerequisite = { focus = AFU_hunting_for_rats  }
+	}
+
+	#Enterprise Support Program
+	focus = {
+		id = AFU_enterprise_support_program
+		icon = GFX_AFU_enterprise_support_program-495536
+		x = 21
+		y = 0
+	available = {
+    has_country_flag = danilov_new_focuses
+    }
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+	}
+
+	#Policy of Gentle Ukrainization
+	focus = {
+		id = AFU_policy_of_gentle_ukrainization
+		icon = GFX_AFU_policy_of_gentle_ukrainization-495536
+		x = 25
+		y = 1
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
+		prerequisite = { focus = AFU_enterprise_support_program  }
+	}
+
+	#Restoration of the Scientific Field
+	focus = {
+		id = AFU_restoration_of_the_scientific_field
+		icon = GFX_AFU_restoration_of_the_scientific_field-495536
+		x = 27
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = AFU_policy_of_gentle_ukrainization  }
+	}
+
+	#Way to Energy Independence
+	focus = {
+		id = AFU_way_to_energy_independence
+		icon = GFX_AFU_way_to_energy_independence-495536
+		x = 21
+		y = 7
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_explorations_of_donbas_mines  }
+	}
+
+	#Reform of the Tax System
+	focus = {
+		id = AFU_reform_of_the_tax_system
+		icon = GFX_AFU_reform_of_the_tax_system-495536
+		x = 23
+		y = 2
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_enterprise_support_program  }
+	}
+
+	#Big Repair
+	focus = {
+		id = AFU_big_repair
+		icon = GFX_AFU_big_repair-495536
+		x = 19
+		y = 2
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_enterprise_support_program  }
+	}
+
+	#We Will Find a Job for Everyone
+	focus = {
+		id = AFU_we_will_find_a_job_for_everyone
+		icon = GFX_AFU_we_will_find_a_job_for_everyone-495536
+		x = 21
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_big_repair  } prerequisite = { focus = AFU_reform_of_the_tax_system  }
+	}
+
+	#Explorations of Donbas Mines
+	focus = {
+		id = AFU_explorations_of_donbas_mines
+		icon = GFX_AFU_explorations_of_donbas_mines-495536
+		x = 21
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_we_will_find_a_job_for_everyone  }
+	}
+
+}
