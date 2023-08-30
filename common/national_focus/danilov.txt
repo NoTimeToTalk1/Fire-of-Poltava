@@ -17,6 +17,10 @@ focus_tree = {
 			FOCUS_FILTER_RESEARCH
 		}
 		prerequisite = { focus = AFU_restoration_of_the_scientific_field  }
+				completion_reward = {
+        add_ideas = education_excessive				
+		country_event = { id = dan.29 } 
+		}
 	}
 
 	#State Security Strategy
@@ -31,6 +35,11 @@ focus_tree = {
 		cost = 4
 		search_filters = {
 			FOCUS_FILTER_WAR_SUPPORT
+		}
+				completion_reward = { 
+				army_experience = 10
+				add_command_power = 25
+		country_event = { id = dan.30 } 
 		}
 	}
 
@@ -60,6 +69,10 @@ focus_tree = {
 			FOCUS_FILTER_INDUSTRY
 		}
 		prerequisite = { focus = AFU_danilov  }
+		completion_reward = {
+        add_political_power = 10		
+		country_event = { id = dan.1 }		
+		}
 	}
 
 	#The Only Ones Fighting For a Common Goal
@@ -73,15 +86,20 @@ focus_tree = {
 			FOCUS_FILTER_INDUSTRY
 		}
 		prerequisite = { focus = AFU_we_are_not_alone  }
-		mutually_exclusive = { focus = AFU_align_with_the_legetimists  } mutually_exclusive = { focus = AFU_trust_the_old_faces  }
+		mutually_exclusive = { 
+		focus = AFU_align_with_the_legetimists
+		focus = AFU_trust_the_old_faces  
+		}
 	completion_reward = {
 	
     custom_effect_tooltip = danilov_allow_focuses
 	
 	hidden_effect = {
 	set_country_flag = danilov_new_focuses
+	
+		country_event = { id = dan.3 } 
 		}
-		
+		add_political_power = 10
 	}
 	}
 
@@ -95,13 +113,28 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
+				available = {
+				AND = {
+	country_exists = UKR
+    UKR = {
+	has_character = UKR_Zelensky
+	   }
+	}
+             }
 		prerequisite = { focus = AFU_we_are_not_alone  }
-		mutually_exclusive = { focus = AFU_the_only_ones_fighting_for_a_common_goal  } mutually_exclusive = { focus = AFU_trust_the_old_faces  }
+		mutually_exclusive = { 
+		focus = AFU_the_only_ones_fighting_for_a_common_goal
+		focus = AFU_trust_the_old_faces  
+		}
 	completion_reward = {
 	
     custom_effect_tooltip = danilov_allow_focuses
 		create_faction = ZE_FACTION_NAME
 	AFU = { add_to_faction = UKR }
+		country_event = { 
+		id = dan.7 
+		days = 2 
+		}
 	
 	hidden_effect = {
 	set_country_flag = danilov_new_focuses
@@ -120,14 +153,29 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
+				available = {
+				AND = {
+	country_exists = PRH
+    PRH = {
+	has_character = UAR_Poroshenko
+	   }
+	}
+             }
 		prerequisite = { focus = AFU_we_are_not_alone  }
-		mutually_exclusive = { focus = AFU_the_only_ones_fighting_for_a_common_goal  } mutually_exclusive = { focus = AFU_align_with_the_legetimists  }
+		mutually_exclusive = { 
+		focus = AFU_the_only_ones_fighting_for_a_common_goal 
+		focus = AFU_align_with_the_legetimists  
+		}
 		
 	completion_reward = {
 	
     custom_effect_tooltip = danilov_allow_focuses
 		create_faction = PRH_FACTION_NAME
 	AFU = { add_to_faction = PRH }
+		country_event = { 
+		id = dan.5
+		days = 2 
+		}
 	
 	hidden_effect = {
 	set_country_flag = danilov_new_focuses
@@ -147,6 +195,17 @@ focus_tree = {
 			FOCUS_FILTER_INDUSTRY
 		}
 		prerequisite = { focus = AFU_the_only_ones_fighting_for_a_common_goal  }
+		
+				completion_reward = {
+				SWI = {
+                set_nationality = {
+                    target_country = AFU
+                    character = AFU_rinat
+                }
+			}
+        add_ideas = state_capitalism		
+		country_event = { id = dan.9 } 
+		}
 	}
 
 	#Industrial Redistribution
@@ -161,6 +220,18 @@ focus_tree = {
 		}
 		prerequisite = { focus = AFU_the_only_ones_fighting_for_a_common_goal  }
 		mutually_exclusive = { focus = AFU_new_minister_of_economy  }
+			completion_reward = {
+        add_timed_idea = {
+    idea = AFU_industrial_redistribution_1
+    days = 60
+}		
+add_ideas = capitalism
+    add_popularity = {
+    ideology = conservative_democracy
+    popularity = 0.1
+}	
+		country_event = { id = dan.10 } 
+		}
 	}
 
 	#Our State-Corporate Monopoly
@@ -174,6 +245,15 @@ focus_tree = {
 			FOCUS_FILTER_INDUSTRY
 		}
 		prerequisite = { focus = AFU_industrial_redistribution  focus = AFU_new_minister_of_economy  }
+					completion_reward = {
+        add_extra_state_shared_building_slots = 2
+    add_popularity = {
+    ideology = conservative_democracy
+    popularity = 0.05
+}	
+        add_ideas = manufacturing	
+		country_event = { id = dan.11 } 
+		}
 	}
 
 	#Rehabilitation of the Population
@@ -187,6 +267,10 @@ focus_tree = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
 		prerequisite = { focus = AFU_state_security_strategy  }
+					completion_reward = { 
+					add_ideas = healthcare_public_bad
+		country_event = { id = dan.12 } 
+		}
 	}
 
 	#Legacy of ATO
@@ -200,6 +284,11 @@ focus_tree = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
 		prerequisite = { focus = AFU_state_security_strategy  }
+		completion_reward = { 
+		add_ideas = AFU_legacy_of_ato_1
+		add_command_power = 25
+		country_event = { id = dan.13 } 
+		}
 	}
 
 	#Support Veterans
@@ -213,6 +302,15 @@ focus_tree = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
 		prerequisite = { focus = AFU_rehabilitation_of_the_population  } prerequisite = { focus = AFU_legacy_of_ato  }
+				completion_reward = { 
+				custom_effect_tooltip = danilov_unlock_new_decisions
+				add_political_power = 10
+				    add_popularity = {
+    ideology = conservative_democracy
+    popularity = 0.05
+}
+		country_event = { id = dan.14 } 
+		}
 	}
 
 	#Request Humanitarian Aid
@@ -226,6 +324,14 @@ focus_tree = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
 		prerequisite = { focus = AFU_support_veterans  }
+				completion_reward = { 
+add_timed_idea = {
+    idea = AFU_humanitarian_aid_1
+    days = 365
+}
+		country_event = { id = dan.15 } 
+		
+		}
 	}
 
 	#Borders Under Control
@@ -239,6 +345,10 @@ focus_tree = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
 		prerequisite = { focus = AFU_support_veterans  }
+				completion_reward = { 
+				custom_effect_tooltip = danilov_unlock_new_decisions
+		country_event = { id = dan.16 } 
+		}
 	}
 
 	#Keep the Army in Shape
@@ -252,6 +362,11 @@ focus_tree = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
 		prerequisite = { focus = AFU_request_humanitarian_aid  } prerequisite = { focus = AFU_borders_under_control  }
+						completion_reward = {
+						add_command_power = 50
+						
+		country_event = { id = dan.17 } 
+		}
 	}
 
 	#System of Counter-Propaganda
@@ -265,6 +380,10 @@ focus_tree = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
 		prerequisite = { focus = AFU_keep_the_army_in_shape  }
+						completion_reward = {
+        custom_effect_tooltip = danilov_unlock_new_decisions						
+		country_event = { id = dan.18 } 
+		}
 	}
 
 	#Hunting for rats
@@ -278,6 +397,11 @@ focus_tree = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
 		prerequisite = { focus = AFU_keep_the_army_in_shape  }
+		completion_reward = { 
+		custom_effect_tooltip = danilov_unlock_new_decisions
+		add_command_power = 25
+		country_event = { id = dan.19 } 
+		}
 	}
 
 	#Never Again!
@@ -291,6 +415,14 @@ focus_tree = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
 		prerequisite = { focus = AFU_system_of_counterpropaganda  } prerequisite = { focus = AFU_hunting_for_rats  }
+				completion_reward = { 
+				add_command_power = 25
+		country_event = { id = dan.20 } 
+		hidden_effect = {
+		set_country_flag = can_declare_wars
+		set_country_flag = ukrwarlord
+		    }
+		}
 	}
 
 	#Enterprise Support Program
@@ -306,6 +438,10 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
 		}
+				completion_reward = {
+        				
+		country_event = { id = dan.21 } 
+		}
 	}
 
 	#Policy of Gentle Ukrainization
@@ -319,6 +455,10 @@ focus_tree = {
 			FOCUS_FILTER_STABILITY
 		}
 		prerequisite = { focus = AFU_enterprise_support_program  }
+				completion_reward = {
+        custom_effect_tooltip = danilov_unlock_new_decisions				
+		country_event = { id = dan.22 } 
+		}
 	}
 
 	#Restoration of the Scientific Field
@@ -332,6 +472,10 @@ focus_tree = {
 			FOCUS_FILTER_RESEARCH
 		}
 		prerequisite = { focus = AFU_policy_of_gentle_ukrainization  }
+				completion_reward = { 
+		add_ideas = finances_science
+		country_event = { id = dan.23 } 
+		}
 	}
 
 	#Way to Energy Independence
@@ -345,6 +489,10 @@ focus_tree = {
 			FOCUS_FILTER_INDUSTRY
 		}
 		prerequisite = { focus = AFU_explorations_of_donbas_mines  }
+				completion_reward = { 
+		add_political_power = 25
+		country_event = { id = dan.24 } 
+		}
 	}
 
 	#Reform of the Tax System
@@ -358,6 +506,10 @@ focus_tree = {
 			FOCUS_FILTER_INDUSTRY
 		}
 		prerequisite = { focus = AFU_enterprise_support_program  }
+				completion_reward = {
+        add_ideas = low_taxation				
+		country_event = { id = dan.25 } 
+		}
 	}
 
 	#Big Repair
@@ -371,6 +523,10 @@ focus_tree = {
 			FOCUS_FILTER_INDUSTRY
 		}
 		prerequisite = { focus = AFU_enterprise_support_program  }
+				completion_reward = {
+        add_ideas = AFU_buduemo				
+		country_event = { id = dan.26 } 
+		}
 	}
 
 	#We Will Find a Job for Everyone
@@ -384,6 +540,10 @@ focus_tree = {
 			FOCUS_FILTER_INDUSTRY
 		}
 		prerequisite = { focus = AFU_big_repair  } prerequisite = { focus = AFU_reform_of_the_tax_system  }
+				completion_reward = {
+        add_ideas = AFU_labour_mobilisation				
+		country_event = { id = dan.27 } 
+		}
 	}
 
 	#Explorations of Donbas Mines
@@ -397,6 +557,10 @@ focus_tree = {
 			FOCUS_FILTER_INDUSTRY
 		}
 		prerequisite = { focus = AFU_we_will_find_a_job_for_everyone  }
+				completion_reward = {
+        custom_effect_tooltip = danilov_unlock_new_decisions				
+		country_event = { id = dan.28 } 
+		}
 	}
 
 }

@@ -1,7 +1,67 @@
 wars = {
 
+	danilov_ukraine_unification = {
+	
+		available = {
+NOT = {
+country_exists = ZAK
+country_exists = KHA
+country_exists = DNI
+country_exists = PLT
+country_exists = KRE
+country_exists = PRH
+country_exists = UKR
+country_exists = CHR
+country_exists = KIR
+country_exists = OPZ
+country_exists = MYK
+country_exists = ODE
+country_exists = UMA
+country_exists = ZHY
+country_exists = KHM
+country_exists = GAL
+country_exists = TER
+country_exists = VOL
+country_exists = RIV
+country_exists = ZAK
+}
+
+}
+		visible = {
+AND = {
+original_tag = AFU
+has_country_leader = {
+	character = AFU_danilov
+	ruling_only = yes
+}
+}
+		}
+
+ai_will_do = {
+    base = 1
+}
+
+
+		cost = 20
+		days_remove = 10
+		fire_only_once = yes
+
+remove_effect = {
+AFU = {
+country_event = { id = afu.21 days = 2 } 
+}
+}
+		}
+
 
 	deal_with_bdz = {
+	
+        target_trigger = {
+            FROM = {
+                    original_tag = BDZ
+            }
+        }
+	
 		available = {
 is_neighbor_of = BDZ
 	}
@@ -45,6 +105,13 @@ every_character = {
 		}
 
 	deal_with_cri = {
+	
+        target_trigger = {
+            FROM = {
+                    original_tag = CRI
+            }
+        }	
+	
 		available = {
 is_neighbor_of = CRI
 has_country_flag = rusnya
@@ -87,6 +154,13 @@ every_character = {
 		}
 
 	deal_with_rge = {
+	
+        target_trigger = {
+            FROM = {
+                    original_tag = RGE
+            }
+        }	
+	
 		available = {
 is_neighbor_of = RGE
 	}
@@ -128,6 +202,13 @@ every_character = {
 		}
 
 	deal_with_trn = {
+	
+        target_trigger = {
+            FROM = {
+                    original_tag = TRA
+            }
+        }
+	
 		available = {
 is_neighbor_of = TRA
 	}
@@ -169,6 +250,13 @@ every_character = {
 		}
 		
 	deal_with_her = {
+	
+        target_trigger = {
+            FROM = {
+                    original_tag = OPZ
+            }
+        }
+	
 		available = {
 is_neighbor_of = OPZ
 	}
@@ -211,6 +299,13 @@ every_character = {
 
 
 	declare_war_zap = {
+	
+        target_trigger = {
+            FROM = {
+                    original_tag = ZAP
+            }
+        }
+	
 		available = {
 is_neighbor_of = ZAP
 	}
@@ -241,6 +336,13 @@ declare_war_on = {
 		}
 
 	declare_war_myk = {
+	
+        target_trigger = {
+            FROM = {
+                    original_tag = MYK
+            }
+        }
+	
 		available = {
 is_neighbor_of = MYK
 	}
@@ -272,6 +374,13 @@ declare_war_on = {
 		}
 
 	declare_war_her = {
+	
+        target_trigger = {
+            FROM = {
+                    original_tag = OPZ
+            }
+        }
+	
 		available = {
 is_neighbor_of = OPZ
 	}
@@ -302,6 +411,13 @@ declare_war_on = {
 		}
 
 	declare_war_kha = {
+	
+        target_trigger = {
+            FROM = {
+                    original_tag = KHA
+            }
+        }	
+	
 		available = {
 is_neighbor_of = KHA
 	}
@@ -337,6 +453,19 @@ declare_war_on = {
 
 
 	declare_war_dni = {
+	
+        target_trigger = {
+            FROM = {
+			OR = {
+                    original_tag = DNI
+original_tag = BAN
+original_tag = KRS
+original_tag = PMU
+original_tag = UWF
+				}
+            }
+        }	
+	
 		available = {
 		OR = {
 is_neighbor_of = DNI
@@ -395,6 +524,19 @@ declare_war_on = {
 		}
 		
 	declare_war_ode = {
+	
+	        target_trigger = {
+            FROM = {
+                    OR = {
+original_tag = ODE
+original_tag = STR
+original_tag = SHT
+original_tag = OLD
+original_tag = MYK
+}
+            }
+        }	
+	
 		available = {
 		OR = {
 is_neighbor_of = ODE
@@ -450,6 +592,13 @@ declare_war_on = {
 		}
 
 	declare_war_kyi = {
+	
+	        target_trigger = {
+            FROM = {
+                    original_tag = UKR
+            }
+        }
+	
 		available = {
 		OR = {
 is_neighbor_of = KYI
@@ -491,6 +640,13 @@ declare_war_on = {
 		}
 		
 	declare_war_prh = {
+	
+        target_trigger = {
+            FROM = {
+                    original_tag = PRH
+            }
+        }	
+	
 		available = {
 
 is_neighbor_of = PRH
@@ -526,6 +682,13 @@ declare_war_on = {
 		}
 
 	declare_war_plt = {
+	
+	        target_trigger = {
+            FROM = {
+                    original_tag = PLT
+            }
+        }
+	
 		available = {
 
 is_neighbor_of = PLT
@@ -561,6 +724,13 @@ declare_war_on = {
 		}
 
 	declare_war_kre = {
+	
+	        target_trigger = {
+            FROM = {
+                    original_tag = KRE
+            }
+        }
+	
 		available = {
 
 is_neighbor_of = KRE
@@ -596,6 +766,13 @@ declare_war_on = {
 		}
 		
 	declare_war_kir = {
+	
+	        target_trigger = {
+            FROM = {
+                    original_tag = KIR
+            }
+        }
+	
 		available = {
 
 is_neighbor_of = KIR
@@ -631,6 +808,13 @@ declare_war_on = {
 		}
 		
 	declare_war_chr = {
+	
+	        target_trigger = {
+            FROM = {
+                    original_tag = CHR
+            }
+        }
+	
 		available = {
 
 is_neighbor_of = CHR
@@ -666,6 +850,13 @@ declare_war_on = {
 		}
 		
 	declare_war_zhy = {
+	
+	        target_trigger = {
+            FROM = {
+                    original_tag = ZHY
+            }
+        }
+	
 		available = {
 
 is_neighbor_of = ZHY
@@ -701,6 +892,13 @@ declare_war_on = {
 		}
 		
 	declare_war_khm = {
+	
+	        target_trigger = {
+            FROM = {
+                    original_tag = KHM
+            }
+        }
+	
 		available = {
 
 is_neighbor_of = KHM
@@ -736,6 +934,13 @@ declare_war_on = {
 		}
 		
 	declare_war_riv = {
+	
+	        target_trigger = {
+            FROM = {
+                    original_tag = RIV
+            }
+        }
+	
 		available = {
 
 is_neighbor_of = RIV
@@ -771,6 +976,13 @@ declare_war_on = {
 		}
 		
 	declare_war_uma = {
+	
+	        target_trigger = {
+            FROM = {
+                    original_tag = UMA
+            }
+        }
+	
 		available = {
 
 is_neighbor_of = UMA
@@ -806,6 +1018,13 @@ declare_war_on = {
 		}
 		
 	declare_war_vol = {
+	
+	        target_trigger = {
+            FROM = {
+                    original_tag = VOL
+            }
+        }
+	
 		available = {
 
 is_neighbor_of = vol
@@ -841,6 +1060,13 @@ declare_war_on = {
 		}
 		
 	declare_war_ter = {
+	
+	        target_trigger = {
+            FROM = {
+                    original_tag = TER
+            }
+        }
+	
 		available = {
 
 is_neighbor_of = TER
@@ -876,6 +1102,13 @@ declare_war_on = {
 		}
 		
 	declare_war_gal = {
+	
+	        target_trigger = {
+            FROM = {
+                    original_tag = GAL
+            }
+        }
+	
 		available = {
 
 is_neighbor_of = GAL
@@ -911,6 +1144,13 @@ declare_war_on = {
 		}
 		
 	declare_war_zak = {
+	
+	        target_trigger = {
+            FROM = {
+                    original_tag = ZAK
+            }
+        }
+	
 		available = {
 
 is_neighbor_of = ZAK
