@@ -1,0 +1,31 @@
+##################
+# SUPER EVENTS 
+##################
+
+add_namespace = super
+
+news_event = {	#odessa_war
+	id = super.1
+	title = super.1.t
+	desc = super.1.d
+	picture = GFX_report_event_diplomatic_message
+
+	is_triggered_only = yes
+	
+	fire_only_once = no
+	
+	hidden = yes
+	
+	trigger = {
+		
+	}
+
+	option = {
+		name = super.1.a
+		hidden_effect = {
+		    set_global_flag = Super_Event_Visible
+		    play_song = "superev_odessa_war"
+		    set_global_flag = super_odessa_war
+		}
+	}
+}
