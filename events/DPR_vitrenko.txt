@@ -24,6 +24,8 @@ country_event = {
 		DPR = {
 			set_cosmetic_tag = VTR
 			load_focus_tree = vitrenko_focus
+			remove_ideas = DPR_clown
+			remove_ideas = DPR_FSB
 		}
 		
 	}
@@ -100,7 +102,7 @@ country_event = {
 	option = { 
 		name = dpr_vitrenko.4.a
 		hidden_effect = {
-			load_oob = DNR_Vitrenko
+			load_oob = VTR_2109
 		}
 	}
 	
@@ -606,6 +608,10 @@ country_event = {
 	option = { 
 		name = dpr_vitrenko.24.a
 		set_country_flag = dpr_vitrenko_united
+		set_cosmetic_tag = VTR_UKR
+		set_capital = {
+			state = 2081
+		}
 		if = {
 			limit = {
 				DPR = {
@@ -1145,7 +1151,7 @@ country_event = {
 		}
 
 		DPR = {
-			set_cosmetic_tag = VTR
+			set_cosmetic_tag = VTR_UKR
 		}
 	}
 }
@@ -1379,7 +1385,24 @@ country_event = {
 								exists = yes
 							}
 							DPR = {
-									has_country_flag = dpr_vitrenko_to_odkb
+									NOT = {
+										has_country_flag = dpr_vitrenko_to_odkb
+									}
+									
+							}
+						}
+						}
+					if = {
+						limit = {
+							VTN = {
+								exists = yes
+							}
+							CRI = {
+								exists = yes
+							}
+							DPR = {
+										has_country_flag = dpr_vitrenko_to_odkb
+									
 							}
 						}
 						VTN = {
@@ -1434,7 +1457,6 @@ country_event = {
 			}
 		}	
 		VTN = {
-			kill_country_leader = yes
 			create_country_leader = {
 				name = "Viktor Medvedchuk"
 				desc = ""
@@ -1454,7 +1476,6 @@ country_event = {
 			}
 		}
 		DPR = {
-			kill_country_leader = yes
 			create_country_leader = {
 				name = "Viktor Medvedchuk"
 				desc = ""
@@ -1468,7 +1489,6 @@ country_event = {
 			} 	
 		}
 		VTN = {
-			kill_country_leader = yes
 			create_country_leader = {
 				name = "Natalia Vitrenko"
 				desc = ""
@@ -1488,7 +1508,6 @@ country_event = {
 			}
 		}
 		VTN = {
-			kill_country_leader = yes
 			create_country_leader = {
 				name = "Dmitriy Puchkov"
 				desc = ""
@@ -1511,7 +1530,6 @@ country_event = {
 			}
 		}
 		VTN = {
-			kill_country_leader = yes
 			create_country_leader = {
 				name = "Natalia Vitrenko"
 				desc = ""
@@ -1525,7 +1543,6 @@ country_event = {
 			} 	
 		}
 		DPR = {
-			kill_country_leader = yes
 			create_country_leader = {
 				name = "Dmitriy Puchkov"
 				desc = ""
@@ -1534,7 +1551,7 @@ country_event = {
 				ideology = communism
 				traits = { }
 			}
-					set_politics = {
+			set_politics = {
 				ruling_party = radical_socialism
 			} 	
 		}			
@@ -1554,6 +1571,19 @@ country_event = {
 			}
 		} 
 		name = dpr_vitrenko.45.f
+		VTN = {
+				create_country_leader = {
+					name = "Vladimir Marchenko"
+					desc = ""
+					picture = "gfx/leaders/DNR/vitrenkolover.dds"
+					expire = "2099.1.1"
+					ideology = authoritarian_socialism
+					traits = { }
+				}
+				set_politics = {
+					ruling_party = radical_socialism
+				} 
+			}
 		}			
 	}
 
@@ -1569,12 +1599,39 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = chornovol
-			
+		name = dpr_vitrenko.46.a
+		VTW = {
+				create_country_leader = {
+					name = "Aleksandr Kostorny"
+					desc = ""
+					picture = "gfx/leaders/DNR/kostornyy.dds"
+					expire = "2099.1.1"
+					ideology = authoritarian_socialism
+					traits = { }
+				}
+				set_politics = {
+					ruling_party = radical_socialism
+				} 
+			}
+		}			
 	}
 
 	option = { 
-		name = coolguy
+		name = dpr_vitrenko.46.b
+		VTW = {
+				create_country_leader = {
+					name = "Taras Chornovol"
+					desc = ""
+					picture = "gfx/leaders/DNR/kostornyy.dds"
+					expire = "2099.1.1"
+					ideology = authoritarian_socialism
+					traits = { }
+				}
+				set_politics = {
+					ruling_party = radical_socialism
+				} 
+			}
+		}
 			
 	}	
 	}

@@ -418,10 +418,6 @@ add_timed_idea = {
 				completion_reward = { 
 				add_command_power = 25
 		country_event = { id = dan.20 } 
-		hidden_effect = {
-		set_country_flag = can_declare_wars
-		set_country_flag = ukrwarlord
-		    }
 		}
 	}
 
@@ -560,6 +556,147 @@ add_timed_idea = {
 				completion_reward = {
         custom_effect_tooltip = danilov_unlock_new_decisions				
 		country_event = { id = dan.28 } 
+		}
+	}
+	
+	#Preparing for the Unification
+	focus = {
+		id = AFU_preparing_for_the_unification
+		icon = GFX_AFU_preparing_for_the_unification-495536
+		x = 9
+		y = 8
+		cost = 3
+		available = {
+    has_country_flag = danilov_new_focuses
+    }
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+				completion_reward = {
+
+		}
+	}
+
+	#Attack on Kharkiv
+	focus = {
+		id = AFU_attack_on_kharkiv
+		icon = GFX_AFU_attack_on_kharkiv-495536
+		x = 8
+		y = 9
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		available = {
+	has_war = no
+ }
+		prerequisite = { focus = AFU_preparing_for_the_unification  }
+				completion_reward = {
+ declare_war_on = {
+    target = KHA
+    type = annex_everything
+}
+		}
+	}
+
+	#Subdue Dnipro
+	focus = {
+		id = AFU_subdue_dnipro
+		icon = GFX_AFU_subdue_dnipro-495536
+		x = 10
+		y = 9
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		available = {
+	has_war = no
+ }
+		prerequisite = { focus = AFU_preparing_for_the_unification  }
+				completion_reward = {
+ declare_war_on = {
+    target = DNI
+    type = annex_everything
+}
+ declare_war_on = {
+    target = BAN
+    type = annex_everything
+}
+ declare_war_on = {
+    target = OPM
+    type = annex_everything
+}
+ declare_war_on = {
+    target = PMU
+    type = annex_everything
+}
+ declare_war_on = {
+    target = UWF
+    type = annex_everything
+}
+ declare_war_on = {
+    target = KRS
+    type = annex_everything
+}
+		}
+	}
+
+	#Integration of New Territories
+	focus = {
+		id = AFU_integration_of_new_territories
+		icon = GFX_AFU_integration_of_new_territories-495536
+		x = 9
+		y = 10
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		available = {
+	has_war = no
+    AND = {
+	NOT = {
+	country_exists = KHA
+	country_exists = DNI
+	}
+   }
+ }
+		prerequisite = { focus = AFU_attack_on_kharkiv  } prerequisite = { focus = AFU_subdue_dnipro  }
+				completion_reward = {
+		every_state = {
+			limit = {
+				is_core_of = DNI
+				is_controlled_by = AFU
+			}
+			remove_core_of = DNI
+			add_core_of = AFU
+		}
+		every_state = {
+			limit = {
+				is_core_of = KHA
+				is_controlled_by = AFU
+			}
+			remove_core_of = KHA
+			add_core_of = AFU
+		}
+		}
+	}
+
+	#This is just the beginning!
+	focus = {
+		id = AFU_thisisjustthebeginning
+		icon = GFX_AFU_thisisjustthebeginning-495536
+		x = 9
+		y = 11
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_integration_of_new_territories  }
+		completion_reward = {
+				hidden_effect = {
+		set_country_flag = can_declare_wars
+		set_country_flag = ukrwarlord
+		    }
 		}
 	}
 
