@@ -19,6 +19,76 @@ division_template = {
 	
 }
 
+
+division_template = {
+	name = "Guards Tank Division"
+	division_names_group = BLR_INF_01
+
+	regiments = {
+		medium_armor = { x = 0 y = 0 }
+		medium_armor = { x = 0 y = 1 }
+		medium_armor = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		mot_artillery_brigade = { x = 1 y = 1 }
+		mot_artillery_brigade = { x = 1 y = 2 }
+		anti_air_brigade = { x = 1 y = 2 }
+		medium_armor = { x = 1 y = 3 }
+		
+	}
+	support = {
+       	engineer = { x = 0 y = 0 }
+		maintenance_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		mot_recon = { x = 0 y = 3 }
+	}
+	
+}
+
+division_template = {
+	name = "Guards Motor Rifle Brigade"
+	division_names_group = BLR_INF_01
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		medium_sp_artillery_brigade = { x = 1 y = 0 }
+		anti_air_brigade = { x = 1 y = 1 }
+		anti_air_brigade = { x = 1 y = 2 }
+		medium_armor = { x = 1 y = 3 }
+		
+	}
+	support = {
+       	engineer = { x = 0 y = 0 }
+		maintenance_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		mot_recon = { x = 0 y = 3 }
+	}
+	
+}
+
+division_template = {
+	name = "Guards Artillery Brigade"
+	division_names_group = BLR_INF_01
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		mot_anti_air_brigade = { x = 0 y = 2 }
+		mot_anti_air_brigade = { x = 1 y = 1 }
+		mot_artillery_brigade = { x = 1 y = 2 }
+		mot_artillery_brigade = { x = 1 y = 3 }
+		mot_anti_tank_brigade = { x = 2 y = 1}
+		
+	}
+	support = {
+       	engineer = { x = 0 y = 0 }
+		signal_company = { x = 0 y = 1 }
+		mot_recon = { x = 0 y = 2 }
+	}
+	
+}
+
 division_template = {
 	name = "Motorized Rifle Brigade"
 	division_names_group = BLR_INF_01
@@ -47,21 +117,6 @@ division_template = {
 	}
 }
 
-division_template = {
-	name = "Artillery Brigade"
-	division_names_group = BLR_INF_01
-
-	regiments = {
-		infantry = { x = 0 y = 0 }
-		infantry = { x = 0 y = 1 }
-		artillery_brigade = { x = 1 y = 0 }
-		artillery_brigade = { x = 1 y = 1 }
-    }
-	
-	support = {
-
-	}
-}
 
 division_template = {
 	name = "Artillery Brigade"
@@ -69,7 +124,9 @@ division_template = {
 
 	regiments = {
 		motorized = { x = 0 y = 0 }
-		mot_rocket_artillery_brigade = { x = 0 y = 1 }
+		motorized = { x = 0 y = 1 }
+		mot_rocket_artillery_brigade = { x = 1 y = 0 }
+		mot_rocket_artillery_brigade = { x = 1 y = 1 }
     }
 	
 	support = {
@@ -83,8 +140,9 @@ division_template = {
 
 	regiments = {
 		motorized = { x = 0 y = 0 }
-		mot_anti_air_brigade  = { x = 0 y = 1 }
-		mot_anti_air_brigade  = { x = 0 y = 2 }
+		motorized = { x = 0 y = 1 }
+		mot_anti_air_brigade  = { x = 1 y = 0 }
+		mot_anti_air_brigade  = { x = 1 y = 1 }
     }
 	
 	support = {
@@ -102,7 +160,7 @@ division_template = {
 
 	regiments = {
 		infantry = { x = 0 y = 0 }
-		anti_air_brigade = { x = 0 y = 1 }
+		rocket_artillery_brigade = { x = 0 y = 1 }
     }
 	
 	support = {
@@ -206,9 +264,35 @@ units = {
 	}
 
 	division= {	
+		name = "34th Motorized Rifle Brigade" 
+		location = 1273
+		division_template = "Motorized Rifle Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.1
+
+	}
+
+	division= {	
 		name = "135th Separate Motorized Rifle Regiment" 
 		location = 2487
 		division_template = "Motorized Rifle Brigade"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.1
+
+	}
+	division= {	
+		name = "15-ya otdel'naya gvardeyskaya motostrelkovaya Aleksandriyskaya brigada" 
+		location = 2266
+		division_template = "Guards Motor Rifle Brigade"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.1
+
+	}
+
+	division= {	
+		name = "21st Guards Motor Rifle Brigade" 
+		location = 5473
+		division_template = "Guards Motor Rifle Brigade"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.1
 
@@ -233,6 +317,33 @@ units = {
 	}
 
 	division= {	
+		name = "227th Artillery Brigade" 
+		location = 14386
+		division_template = "Artillery Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.1
+
+	}
+
+	division= {	
+		name = "236th Artillery Brigad" 
+		location = 7352
+		division_template = "Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.2
+
+	}
+
+	division= {	
+		name = "49th Anti-Aircraft Rocket Brigade" 
+		location = 10825
+		division_template = "Anti-Aircraft Rocket Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.1
+
+	}
+
+	division= {	
 		name = "67th Separate Anti-Aircraft Rocket Brigade" 
 		location = 457
 		division_template = "Anti-Aircraft Rocket Brigade"
@@ -240,6 +351,25 @@ units = {
 		start_equipment_factor = 0.1
 
 	}
+
+	division= {	
+		name = "5th Anti-Aircraft Rocket Brigade" 
+		location = 17228
+		division_template = "Anti-Aircraft Rocket Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.1
+
+	}
+
+	division= {	
+		name = "53rd Anti-Aircraft Rocket Brigade" 
+		location = 11941
+		division_template = "Anti-Aircraft Rocket Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.2
+
+	}
+
 	division= {	
 		name = "943rd Multiple Rocket Launcher Regiment" 
 		location = 457
@@ -248,7 +378,98 @@ units = {
 		start_equipment_factor = 0.3
 
 	}
+
+	division= {	
+		name = "1st Guards Rocket Brigade" 
+		location = 14386
+		division_template = "Multiple Rocket Launcher Regiment"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
 	
+}
+
+	division= {	
+		name = "4th Guards Tank Division" 
+		location = 10672
+		division_template = "Guards Tank Division"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.3
+
+}
+
+	division= {	
+		name = "47th Guards Tank Division" 
+		location = 10495
+		division_template = "Guards Tank Division"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.3
+
+}
+
+	division= {	
+		name = "2nd Guards Motor Rifle Division" 
+		location = 10760
+		division_template = "Guards Motor Rifle Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.3
+
+}
+
+	division= {	
+		name = "27th Guards Motor Rifle Brigade" 
+		location = 10653
+		division_template = "Guards Motor Rifle Brigade"
+		start_experience_factor = 0.41
+		start_equipment_factor = 0.3
+
+}
+
+	division= {	
+		name = "138th Guards Motor Rifle Brigade" 
+		location = 2071
+		division_template = "Guards Motor Rifle Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.3
+
+}
+
+	division= {	
+		name = "3rd Motor Rifle Division" 
+		location = 12833
+		division_template = "Guards Motor Rifle Brigade"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.3
+
+}
+
+	division= {	
+		name = "144th Guards Motor Rifle Division" 
+		location = 7878
+		division_template = "Guards Motor Rifle Brigade"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.3
+
+}
+
+
+	division= {	
+		name = "9th Guards Artillery Brigade" 
+		location = 3176
+		division_template = "Guards Artillery Brigade"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.3
+
+}
+
+	division= {	
+		name = "268th Guards Artillery Brigade" 
+		location = 3176
+		division_template = "Guards Artillery Brigade"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.3
+
 }
 
 instant_effect = {
