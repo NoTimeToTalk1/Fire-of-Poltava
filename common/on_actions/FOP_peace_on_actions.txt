@@ -139,6 +139,35 @@ on_actions = {
 					set_global_flag = skip_default_capitulation
 				}
 
+				if = { # Sternenko defeats shariks for mykolajyv
+					limit = {
+						FROM = {
+							original_tag = STR
+						}
+						ROOT = {
+							OR = {
+                    			original_tag = ODE
+                    			original_tag = BDZ
+                    			original_tag = OLD
+                    			original_tag = RGE
+                    			original_tag = SHT
+                    			original_tag = MYK
+                			}
+						}
+					}
+
+					STR = {
+						white_peace = ROOT
+					}
+					MYK = {
+						annex_country = {
+							target = SHT
+						}	
+					}
+
+					set_global_flag = skip_default_capitulation
+				}
+
 				if = { # Admiralty defeats odesa warlords
 					limit = {
 						FROM = {
@@ -292,6 +321,55 @@ on_actions = {
 					}
 
 					MYK = {
+						white_peace = ROOT
+						annex_country = {
+							target = ROOT
+						}	
+					}
+
+					set_global_flag = skip_default_capitulation
+				}
+
+				if = { # novososiya defeats all
+					limit = {
+						FROM = {
+							original_tag = DPR
+						}
+						ROOT = {
+							OR = {
+                    			original_tag = ODE
+                    			original_tag = BDZ
+                    			original_tag = STR
+                    			original_tag = RGE
+                    			original_tag = SHT
+                    			original_tag = MYK
+								original_tag = KHA
+								original_tag = DNI
+								original_tag = ZAP
+								original_tag = PLT
+								original_tag = KRE
+								original_tag = SUM
+								original_tag = PRH
+								original_tag = KYI
+								original_tag = UKR
+								original_tag = CHR
+								original_tag = UMA
+								original_tag = ZHY
+								original_tag = KHM
+								original_tag = GAL
+								original_tag = TER
+								original_tag = VOL
+								original_tag = RIV
+								original_tag = BUK
+								original_tag = GUT 
+								original_tag = ZAK
+								original_tag = OPZ
+								original_tag = KIR
+                			}
+						}
+					}
+
+					DPR = {
 						white_peace = ROOT
 						annex_country = {
 							target = ROOT
