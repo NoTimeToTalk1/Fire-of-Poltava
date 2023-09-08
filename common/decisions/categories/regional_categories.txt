@@ -1,0 +1,181 @@
+unite_galician_ukraine = {
+	icon = GFX_decision_category_infiltration
+	picture = GFX_mobilization
+	visible = {
+		is_galician_ukraine = yes
+		NOT = {
+			has_country_flag = united_galicia
+		}
+	}
+	
+}
+
+unite_podillya_ukraine = {
+	icon = GFX_decision_category_infiltration
+	picture = GFX_mobilization
+	visible = {
+		is_podillya_ukraine = yes
+		NOT = {
+			has_country_flag = united_podillya
+		}
+	}
+}
+
+unite_northern_ukraine = {
+	icon = GFX_decision_category_infiltration
+	picture = GFX_mobilization
+	visible = {
+		is_northern_ukraine = yes
+		NOT = {
+			has_country_flag = united_north
+		}
+	}
+}
+
+unite_north_central_ukraine = {
+	icon = GFX_decision_category_infiltration
+	picture = GFX_mobilization
+	visible = {
+		is_north_central_ukraine = yes
+		NOT = {
+			has_country_flag = united_north_center
+		}
+	}
+}
+
+unite_south_western_ukraine = {
+	icon = GFX_decision_category_infiltration
+	picture = GFX_mobilization
+	visible = {
+		is_south_western_ukraine = yes
+		NOT = {
+			has_country_flag = united_south_west
+		}
+	}
+}
+
+unite_south_central_ukraine = {
+	icon = GFX_decision_category_infiltration
+	picture = GFX_mobilization
+	visible = {
+		is_south_central_ukraine = yes
+		NOT = {
+			has_country_flag = united_south_center
+		}
+	}
+}
+
+unite_south_eastern_ukraine = {
+	icon = GFX_decision_category_infiltration
+	picture = GFX_mobilization
+	visible = {
+		is_south_eastern__ukraine = yes
+		NOT = {
+			has_country_flag = united_south_east
+		}
+	}
+}
+
+unite_eastern_ukraine = {
+	icon = GFX_decision_category_infiltration
+	picture = GFX_mobilization
+	visible = {
+		is_eastern_ukraine = yes
+		OR = {
+			has_country_flag = united_south_east
+			original_tag = DNI
+		}
+		NOT = {
+			has_country_flag = united_east
+		}
+	}
+}
+
+unite_southern_ukraine = {
+	icon = GFX_decision_category_infiltration
+	picture = GFX_mobilization
+	visible = {
+		is_southern_ukraine = yes
+		OR = {
+			has_country_flag = united_south_center
+			has_country_flag = united_south_west
+		}
+		NOT = {
+			has_country_flag = united_south
+		}
+	}
+}
+
+unite_central_ukraine = {
+	icon = GFX_decision_category_infiltration
+	picture = GFX_mobilization
+	visible = {
+		is_central_ukraine = yes
+		OR = {
+			has_country_flag = united_north
+			has_country_flag = united_north_center
+		}
+		NOT = {
+			has_country_flag = united_center
+		}
+	}
+}
+
+unite_western_ukraine = {
+	icon = GFX_decision_category_infiltration
+	picture = GFX_mobilization
+	visible = {
+		is_western_ukraine = yes
+		OR = {
+			has_country_flag = united_galicia
+			has_country_flag = united_podillya
+		}
+		NOT = {
+			has_country_flag = united_west
+		}
+	}
+}
+
+unite_left_bank_ukraine = {
+	icon = GFX_decision_category_infiltration
+	picture = GFX_mobilization
+	visible = {
+		is_left_bank_ukraine = yes
+		OR = {
+			has_country_flag = united_east
+			has_country_flag = united_south
+		}
+		NOT = {
+			has_country_flag = united_left_bank
+		}
+	}
+}
+
+unite_right_bank_ukraine = {
+	icon = GFX_decision_category_infiltration
+	picture = GFX_mobilization
+	visible = {
+		is_right_bank_ukraine = yes
+		OR = {
+			has_country_flag = united_center
+			has_country_flag = united_west
+		}
+		NOT = {
+			has_country_flag = united_right_bank
+		}
+	}
+}
+
+unite_ukraine = {
+	icon = GFX_decision_category_infiltration
+	picture = GFX_mobilization
+	visible = {
+		OR = {
+			has_country_flag = united_left_bank
+			has_country_flag = united_right_bank
+		}
+		NOT = {
+			has_country_flag = united_ukraine
+		}
+	}
+}
