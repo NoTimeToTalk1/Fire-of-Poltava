@@ -3,10 +3,6 @@ focus_tree = {
 	continuous_focus_position = { x = -40 y = 400 } 
 	country = {
 		factor = 0
-		modifier = {
-			add = 10
-			tag = eun
-		}
 	}
 	#Old Slavic Traditions
 	focus = {
@@ -19,6 +15,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_new_pagan_dawn  }
+		completion_reward = {
+		    add_ideas = AFU_azov_paganisation_1
+}
 	}
 
 	#Secure Our Position
@@ -35,6 +34,11 @@ focus_tree = {
 					
 		}
 		prerequisite = { focus = afu_ruleofthefarright  }
+		completion_reward = {
+        add_political_power = 10
+        add_stability = 0.1		
+		country_event = { id = azov.4 }
+		}
 	}
 
 	#Rule of the Far Right
@@ -50,6 +54,30 @@ focus_tree = {
 						FOCUS_FILTER_POLITICAL
 					
 		}
+		
+		completion_reward = {
+        add_political_power = 25
+		add_ideas = AFU_azov_huge_resistance
+add_corps_commander_role = {
+    Character = AFU_zhorin
+    skill = 3
+    attack_skill = 3
+    defense_skill = 3
+    planning_skill = 3
+    logistics_skill = 2
+}
+hidden_effect = {
+set_country_flag = azov_loyalty_raising_decisions
+every_army_leader = { add_unit_leader_trait = Doubtfully_loyal_commander  }
+AFU_zhorin= {
+remove_unit_leader_trait = Doubtfully_loyal_commander
+}
+AFU_redys= {
+remove_unit_leader_trait = Doubtfully_loyal_commander
+} 
+}
+		}
+		
 	}
 
 	#Bolster Our Ranks
@@ -66,6 +94,10 @@ focus_tree = {
 					
 		}
 		prerequisite = { focus = afu_ruleofthefarright  }
+		
+			completion_reward = {
+        add_command_power = 60
+		}
 	}
 
 	#Uphold the Victorious Spirit
@@ -82,6 +114,11 @@ focus_tree = {
 					
 		}
 		prerequisite = { focus = afu_ruleofthefarright  }
+		completion_reward = {
+        add_war_support = 0.1
+		add_ideas = AFU_azov_keeping_up_morale
+		country_event = { id = azov.3 }
+		}
 	}
 
 	#Destroy the Soviet Heritage
@@ -98,6 +135,14 @@ focus_tree = {
 					
 		}
 		prerequisite = { focus = afu_upholdthevictoriousspirit  }
+		
+				completion_reward = {
+        add_manpower = -1000
+		add_popularity = {
+    ideology = radical_socialism
+    popularity = -0.5
+}
+		}
 	}
 
 	#Reshaping the Mentality
@@ -114,6 +159,11 @@ focus_tree = {
 					
 		}
 		prerequisite = { focus = afu_destroythesovietheritage  }
+		
+	completion_reward = {
+        remove_ideas = AFU_pro_russian_sentiments
+country_event = { id = azov.2 }
+		}
 	}
 
 	#Behead the Hydra
@@ -130,6 +180,21 @@ focus_tree = {
 					
 		}
 		prerequisite = { focus = afu_secureourposition  }
+		
+	completion_reward = {
+        add_opinion_modifier = {
+    target = EUN
+    modifier = globalist_jewish_conspiracy
+}
+        add_opinion_modifier = {
+    target = USA
+    modifier = globalist_jewish_conspiracy
+}
+        add_opinion_modifier = {
+    target = ISR
+    modifier = globalist_jewish_conspiracy
+}
+		}
 	}
 
 	#"Free Donbas"
@@ -146,6 +211,9 @@ focus_tree = {
 					
 		}
 		prerequisite = { focus = afu_beheadthehydra  }
+	completion_reward = {
+        add_ideas = AFU_azov_freedonbass
+		}
 	}
 
 	#Call to Battle the Most Reliable Ones
@@ -162,6 +230,13 @@ focus_tree = {
 					
 		}
 		prerequisite = { focus = afu_bolsterourranks  }
+	completion_reward = {
+	custom_effect_tooltip = azov_farright_ukrainian
+	add_ideas = spec_ops_quantity
+	hidden_effect = {
+        load_oob = "azov"
+		}
+	   }
 	}
 
 	#Hold the Banner High
@@ -178,6 +253,12 @@ focus_tree = {
 					
 		}
 		prerequisite = { focus = afu_calltobattlethemostreliableones  }
+		
+	completion_reward = {
+	add_ideas = doctrine_army_fire
+        recruit_character = AFU_tavr
+		recruit_character = AFU_himik
+		}
 	}
 
 	#Consolidate Our Position
@@ -194,6 +275,15 @@ focus_tree = {
 					
 		}
 		prerequisite = { focus = afu_freedonbas  focus = afu_holdthebannerhigh  focus = afu_reshapingthementality  }
+	completion_reward = {
+custom_effect_tooltip = azov_secured_positions
+        remove_ideas = AFU_azov_huge_resistance
+			hidden_effect = {
+set_country_flag = azov_new_focuses	
+remove_ideas = AFU_martial_law
+			}
+		}
+		
 	}
 
 	#Zrodylys' My Velykoi Hodyny
@@ -207,6 +297,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = afu_consolidateourposition  }
+	completion_reward = {
+        add_political_power = 25
+		}
 	}
 
 	#For the National Ukraine...
@@ -220,6 +313,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_zrodylysmyvelykoihodyny  }
+	completion_reward = {
+        add_stability = 0.25
+		}
 	}
 
 	#...And White Europa
@@ -233,6 +329,11 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_zrodylysmyvelykoihodyny  }
+	completion_reward = {
+        add_war_support = 0.1
+		add_ideas = volunteers_extended
+		add_ideas = AFU_azov_harbourforthefarright
+		}
 	}
 
 	#Connection With Ultras
@@ -246,6 +347,10 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_andwhiteeuropa  }
+	completion_reward = {
+        add_manpower = 1000
+		add_command_power = 50
+		}
 	}
 
 	#The Russian Question
@@ -259,6 +364,10 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_zrodylysmyvelykoihodyny  }
+	completion_reward = {
+        add_stability = -0.1
+		add_political_power = 25
+		}
 	}
 
 	#Luhansk Conference
@@ -273,6 +382,9 @@ focus_tree = {
 		}
 		prerequisite = { focus = AFU_the_russian_question  }
 		mutually_exclusive = { focus = AFU_we_have_no_busineness_with_mongoloids  }
+	completion_reward = {
+        add_political_power = 25
+		}
 	}
 
 	#Far-right European Fighters
@@ -286,6 +398,12 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_connection_with_ultras  }
+	completion_reward = {
+	custom_effect_tooltip = azov_farright_european
+	hidden_effect = {
+        load_oob = "azov_farright_european"
+		}
+		}
 	}
 
 	#Our Brothers From the New World
@@ -299,6 +417,12 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_farright_european_fighters  }
+	completion_reward = {
+	custom_effect_tooltip = azov_farright_american
+	hidden_effect = {
+        load_oob = "azov_farright_american"
+		}
+		}
 	}
 
 	#Last Fight Against Globalists
@@ -312,7 +436,36 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_the_white_revolution_will_start_here  }
+	completion_reward = {
+        add_opinion_modifier = {
+    target = EUN
+    modifier = globalist_jewish_conspiracy_2
+}
+        add_opinion_modifier = {
+    target = USA
+    modifier = globalist_jewish_conspiracy_2
+}
+        add_opinion_modifier = {
+    target = ISR
+    modifier = globalist_jewish_conspiracy_2
+}
+			hidden_effect = {
+remove_opinion_modifier = {
+    target = EUN
+    modifier = globalist_jewish_conspiracy
+}
+remove_opinion_modifier = {
+    target = ISR
+    modifier = globalist_jewish_conspiracy
+}
+remove_opinion_modifier = {
+    target = USA
+    modifier = globalist_jewish_conspiracy
+}
+		}
+
 	}
+}
 
 	#The White Revolution Will Start Here
 	focus = {
@@ -325,6 +478,12 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_our_brothers_from_the_new_world  }
+	completion_reward = {
+        add_timed_idea = {
+    idea = AFU_azov_antiglobalisationpolicies
+    days = 180
+            }
+		}
 	}
 
 	#We Have No Busineness With Mongoloids
@@ -339,6 +498,9 @@ focus_tree = {
 		}
 		prerequisite = { focus = AFU_the_russian_question  }
 		mutually_exclusive = { focus = AFU_luhansk_conference  }
+	completion_reward = {
+        add_political_power = 25
+		}
 	}
 
 	#Invite Russian Far-Rights
@@ -352,6 +514,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_luhansk_conference  } prerequisite = { focus = AFU_farright_european_fighters  }
+	completion_reward = {
+        add_command_power = 25
+		}
 	}
 
 	#For Freedom of Ours and Yours
@@ -365,6 +530,14 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_invite_russian_farrights  }
+	completion_reward = {
+        add_political_power = 10
+	custom_effect_tooltip = azov_farright_russian
+    add_ideas = AFU_azov_hvatit_bratskih_voin
+	hidden_effect = {
+		load_oob = "azov_farright_russian"
+}
+		}
 	}
 
 	#It's Not About Views
@@ -378,6 +551,10 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_we_have_no_busineness_with_mongoloids  }
+	completion_reward = {
+        add_political_power = 25
+		add_stability = 0.1
+		}
 	}
 
 	#Remember the Words of Ideologues
@@ -391,6 +568,11 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_itsnotaboutviews  }
+	completion_reward = {
+        add_war_support = 0.1
+		add_stability = 0.1
+	add_ideas = AFU_azov_aryaaaa_rusofobia
+		}
 	}
 
 	#Azov Youth
@@ -404,6 +586,12 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_forthenationalukraine  }
+	completion_reward = {
+        add_timed_idea = {
+    idea = AFU_azov_youth
+    days = 180
+}
+		}
 	}
 
 	#Propaganda in Shools
@@ -417,6 +605,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_azov_youth  }
+	completion_reward = {
+add_ideas = education_propagandized
+		}
 	}
 
 	#Special Summer Military Camps
@@ -430,6 +621,14 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_propaganda_in_shools  }
+	completion_reward = {
+add_ideas = age_16
+add_building_construction = {
+    type = supply_node
+    level = 3
+    instant_build = yes
+}
+		}
 	}
 
 	#Second National Mobilization
@@ -443,6 +642,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_forthenationalukraine  }
+	completion_reward = {
+    add_ideas = no_exemptions
+		}
 	}
 
 	#Rump Up the Military Industrial complex
@@ -456,6 +658,12 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_second_national_mobilization  }
+	completion_reward = {
+    add_ideas = AFU_azov_nazi_mega_zavodi
+			hidden_effect = {
+        remove_ideas = industrial_legacy
+			}
+		}
 	}
 
 	#All Men Are Warriors
@@ -469,6 +677,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_rump_up_the_military_industrial_complex  }
+	completion_reward = {
+    add_ideas = shake_and_bake
+		}
 	}
 
 	#Od Syanu Po Kavkas
@@ -482,6 +693,12 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_special_summer_military_camps  } prerequisite = { focus = AFU_all_men_are_warriors  }
+	completion_reward = {
+    swap_ideas = {
+    remove_idea = AFU_azov_nazi_mega_zavodi
+    add_idea = AFU_azov_nazi_mega_zavodi_2
+}
+		}
 	}
 
 	#Novi Lad
@@ -495,6 +712,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = afu_consolidateourposition  }
+	completion_reward = {
+    add_political_power = 25
+		}
 	}
 
 	#Question of Religion
@@ -508,6 +728,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_novi_lad  }
+	completion_reward = {
+    	add_stability = -0.1
+		}
 	}
 
 	#New Pagan Dawn
@@ -522,6 +745,10 @@ focus_tree = {
 		}
 		prerequisite = { focus = AFU_question_of_religion  }
 		mutually_exclusive = { focus = AFU_the_only_true_religion  }
+	completion_reward = {
+    	add_stability = -0.1
+		add_war_support = 0.25
+		}
 	}
 
 	#Start the Paganisation
@@ -535,6 +762,10 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_old_slavic_traditions  }
+	completion_reward = {
+    	add_stability = -0.1
+		add_war_support = 0.25
+		}
 	}
 
 	#Not Churches but Temples
@@ -548,6 +779,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_start_the_paganisation  }
+	completion_reward = {
+    	add_offsite_building = { type = arms_factory level = 2 }
+		}
 	}
 
 	#The Religion of The Warriors
@@ -561,6 +795,12 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_not_churches_but_temples  }
+	completion_reward = {
+    	swap_ideas = {
+    remove_idea = AFU_azov_paganisation_1
+    add_idea = AFU_azov_paganisation_2
+}
+		}
 	}
 
 	#The Only True Religion
@@ -575,6 +815,10 @@ focus_tree = {
 		}
 		prerequisite = { focus = AFU_question_of_religion  }
 		mutually_exclusive = { focus = AFU_new_pagan_dawn  }
+	completion_reward = {
+    	add_war_support = -0.1
+		add_stability = 0.25
+		}
 	}
 
 	#Destroy the Satanic Muscovite Church
@@ -588,6 +832,10 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_the_only_true_religion  }
+	completion_reward = {
+    	add_political_power = 25
+		add_stability = -0.3
+		}
 	}
 
 	#Integrate the Church Into the State
@@ -602,6 +850,9 @@ focus_tree = {
 		}
 		prerequisite = { focus = AFU_destroy_the_satanic_muscovite_church  }
 		mutually_exclusive = { focus = AFU_huge_influence_of_the_church  }
+	completion_reward = {
+    add_ideas = AFU_azov_church_integration_1
+		}
 	}
 
 	#Huge Influence of The Church
@@ -616,6 +867,9 @@ focus_tree = {
 		}
 		prerequisite = { focus = AFU_destroy_the_satanic_muscovite_church  }
 		mutually_exclusive = { focus = AFU_integrate_the_church_into_the_state  }
+	completion_reward = {
+    add_ideas = AFU_azov_church_free_1
+		}
 	}
 
 	#In the Name of The Father and Son and Holy Spirit
@@ -629,6 +883,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_huge_influence_of_the_church  focus = AFU_integrate_the_church_into_the_state  }
+	completion_reward = {
+	add_war_support = 0.25
+		}
 	}
 
 	#Christianity for Warriors
@@ -642,6 +899,10 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_in_the_name_of_the_father_and_son_and_holy_spirit  }
+	completion_reward = {
+    add_command_power = 25
+	army_experience = 10
+		}
 	}
 
 	#V Idei Natsia Mitsna
@@ -655,6 +916,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_novi_lad  }
+	completion_reward = {
+    add_stability = 0.1
+		}
 	}
 
 	#There is no Place for Liberals
@@ -668,6 +932,10 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_v_idei_natsia_mitsna  }
+	completion_reward = {
+    add_stability = -0.15
+	add_political_power = 50
+		}
 	}
 
 	#Ban the LGBT rework
@@ -681,6 +949,11 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_there_is_no_place_for_liberals  }
+	completion_reward = {
+    add_stability = 0.1
+	add_war_support = 0.1
+	add_manpower = -100
+		}
 	}
 
 	#Take a Pro Life Stance
@@ -694,6 +967,10 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_ban_the_lgbt_rework  }
+	completion_reward = {
+    add_political_power = 25
+	add_war_support = 0.1
+		}
 	}
 
 	#Woman's Role in the Society
@@ -707,6 +984,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_take_a_pro_life_stance  }
+	completion_reward = {
+    add_ideas = egalitarian
+		}
 	}
 
 	#Stimulate the birthrate
@@ -720,6 +1000,12 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_womansroleinthesociety  }
+	completion_reward = {
+    add_timed_idea = {
+    idea = AFU_azov_babyboom
+    days = 180
+}
+		}
 	}
 
 	#Learn from New and Old Dictators
@@ -733,6 +1019,10 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_v_idei_natsia_mitsna  }
+	completion_reward = {
+    add_ideas = output_army_dominant
+	add_ideas = ten_percent
+		}
 	}
 
 	#A Black List
@@ -746,6 +1036,12 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_learn_from_new_and_old_dictators  }
+	completion_reward = {
+    add_timed_idea = {
+    idea = penal_capital_punishment
+    days = 20
+}
+		}
 	}
 
 	#Everybody Who is Against Us Will Choke in Blood
@@ -759,6 +1055,10 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_a_black_list  }
+	completion_reward = {
+add_ideas = penal_slavery
+add_ideas = state_capitalism
+		}
 	}
 
 	#Allow Some Liberties
@@ -773,6 +1073,11 @@ focus_tree = {
 		}
 		prerequisite = { focus = AFU_a_black_list  }
 		mutually_exclusive = { focus = AFU_everybody_who_is_against_us_will_choke_in_blood  }
+	completion_reward = {
+add_ideas = service_economy
+add_ideas = illiberalism
+add_ideas = penal_incarceration
+		}
 	}
 
 	#The Only Free Man is the One With Gun
@@ -786,6 +1091,10 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_v_idei_natsia_mitsna  }
+	completion_reward = {
+add_stability = 0.25
+add_political_power = -50
+		}
 	}
 
 	#Principles for the Use of Force by Police
@@ -799,6 +1108,12 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_the_only_free_man_is_the_one_with_gun  }
+	completion_reward = {
+add_timed_idea = {
+    idea = AFU_azov_reformed_police
+    days = 365
+}
+		}
 	}
 
 	#Armed Society
@@ -812,6 +1127,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_principles_for_the_use_of_force_by_police  }
+	completion_reward = {
+add_stability = 0.25
+		}
 	}
 
 	#The Europa is in Danger
@@ -825,6 +1143,25 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_v_idei_natsia_mitsna  }
+	completion_reward = {
+add_ideas = equality_minority
+add_opinion_modifier = {
+    target = ARM
+    modifier = der_untermenchen
+}
+add_opinion_modifier = {
+    target = LAS
+    modifier = der_untermenchen
+}
+add_opinion_modifier = {
+    target = TUR
+    modifier = der_untermenchen
+}
+add_opinion_modifier = {
+    target = AZE
+    modifier = der_untermenchen
+}
+		}
 	}
 
 	#Levko's Lessons
@@ -838,6 +1175,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_the_europa_is_in_danger  }
+	completion_reward = {
+    add_ideas = population_controlled
+		}
 	}
 
 	#Go Back From Where You've Came From
@@ -852,6 +1192,9 @@ focus_tree = {
 		}
 		prerequisite = { focus = AFU_levkoslessons  }
 		mutually_exclusive = { focus = AFU_sonscriptionordeportation  }
+	completion_reward = {
+add_ideas = equality_genocide
+		}
 	}
 
 	#Сonscription or Deportation
@@ -866,6 +1209,227 @@ focus_tree = {
 		}
 		prerequisite = { focus = AFU_levkoslessons  }
 		mutually_exclusive = { focus = AFU_gobackfromwhereyouvecamefrom  }
+	completion_reward = {
+add_ideas = penal_recruitment
+		}
 	}
+	
+	#March on the Kharkiv
+	focus = {
+		id = AFU_march_on_the_kharkiv
+		icon = GFX_AFU_march_on_the_kharkiv-495536
+		x = 24
+		y = 0
+		cost = 1
+		available = {	
+		NOT = { KHA = { has_government = radical_nationalism } }
+        has_country_flag = azov_new_focuses		
+		}
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+	completion_reward = {
+declare_war_on = {
+    target = KHA
+    type = annex_everything
+}
+		}
+	}
+
+	#Blow Up Their Railways
+	focus = {
+		id = AFU_blow_up_their_railways
+		icon = GFX_AFU_blow_up_their_railways-495536
+		x = 23
+		y = 1
+		cost = 1
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_march_on_the_kharkiv  }
+	completion_reward = {
+KHA = {
+add_timed_idea = {
+    idea = AFU_azov_kharkiv_raids_1
+    days = 90
+}
+}
+		}
+	}
+
+	#Infrastructural Raids
+	focus = {
+		id = AFU_infrastructural_raids
+		icon = GFX_AFU_infrastructural_raids-495536
+		x = 23
+		y = 2
+		cost = 1
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_blow_up_their_railways  }
+	completion_reward = {
+KHA = {
+add_temporary_buff_to_units = {
+    combat_offense = -0.25
+    combat_breakthrough = -0.25
+    org_damage_multiplier = 1.0
+    str_damage_multiplier = 0.25
+    cannot_retreat_while_attacking = 1.0
+				
+    days = 60
+
+}
+}
+		}
+	}
+
+	#Invite Local Loyalists to Azov
+	focus = {
+		id = AFU_invite_local_loyalists_to_azov
+		icon = GFX_AFU_invite_local_loyalists_to_azov-495536
+		x = 25
+		y = 1
+		cost = 1
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_march_on_the_kharkiv  }
+	completion_reward = {
+add_manpower = 1000
+add_war_support = 0.1
+add_command_power = 25
+KHA = {
+add_manpower = -1000
+add_war_support = -0.1
+add_command_power = -25
+}
+		}
+	}
+
+	#Form The Future Military Administration
+	focus = {
+		id = AFU_form_the_future_military_administration
+		icon = GFX_AFU_form_the_future_military_administration-495536
+		x = 25
+		y = 2
+		cost = 1
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_invite_local_loyalists_to_azov  }
+	completion_reward = {
+		every_state = {
+			limit = {
+				is_core_of = KHA
+				is_controlled_by = ROOT
+			}
+		add_resistance = -20
+	    add_compliance = 25
+		}
+		}
+	}
+
+	#Crushing Blow
+	focus = {
+		id = AFU_crushing_blow
+		icon = GFX_AFU_crushing_blow-495536
+		x = 24
+		y = 4
+		cost = 1
+		available = {
+	has_war = no
+	NOT = {
+	country_exists = KHA
+	}
+ }
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_infrastructural_raids  } prerequisite = { focus = AFU_form_the_future_military_administration  }
+	completion_reward = {
+add_war_support = 0.15
+add_command_power = 25
+		every_state = {
+			limit = {
+				is_core_of = KHA
+				is_controlled_by = ROOT
+			}
+			remove_core_of = KHA
+			add_core_of = ROOT
+		}
+		}
+	}
+
+	#Nationalist Kharkiv
+	focus = {
+		id = AFU_nationalist_kharkiv
+		icon = GFX_AFU_nationalist_kharkiv-495536
+		x = 27
+		y = 0
+		cost = 1
+		available = {	
+		KHA = { has_government = radical_nationalism }
+		has_country_flag = azov_new_focuses	
+		}
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+	completion_reward = {
+add_political_power = 10
+		}
+	}
+
+	#Negotiations With Ideological Brothers
+	focus = {
+		id = AFU_negotatiations_with_ideological_brothers
+		icon = GFX_AFU_negotatiations_with_ideological_brothers-495536
+		x = 27
+		y = 2
+		cost = 1
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_nationalist_kharkiv  }
+	completion_reward = {
+add_command_power = 25
+		}
+	}
+
+	#Successful Unification
+	focus = {
+		id = AFU_successful_unification
+		icon = GFX_AFU_successful_unification-495536
+		x = 27
+		y = 4
+		cost = 1
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_negotatiations_with_ideological_brothers  }
+completion_reward = {
+annex_country = {
+    target = KHA
+    transfer_troops = yes
+}
+		every_state = {
+			limit = {
+				is_core_of = KHA
+				is_controlled_by = ROOT
+			}
+			remove_core_of = KHA
+			add_core_of = ROOT
+		}
+KHA = {
+every_unit_leader = {
+                set_nationality = {
+                    target_country = ROOT
+				
+                }
+            }
+}
+	}
+}
+
 
 }

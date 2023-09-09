@@ -29,3 +29,28 @@ news_event = {	#odessa_war
 		}
 	}
 }
+news_event = {	#russian-ukrainian war
+	id = super.2
+	title = super.2.t
+	desc = super.2.d
+	picture = GFX_report_event_diplomatic_message
+
+	is_triggered_only = yes
+	
+	fire_only_once = no
+	
+	hidden = yes
+	
+	trigger = {
+		
+	}
+
+	option = {
+		name = super.2.a
+		hidden_effect = {
+		    set_global_flag = Super_Event_Visible
+		    play_song = "superev_russian_ukrainian_war"
+		    set_global_flag = super_russian_ukraine_war
+		}
+	}
+}

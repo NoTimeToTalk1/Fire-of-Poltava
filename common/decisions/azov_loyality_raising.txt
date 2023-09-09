@@ -1,0 +1,47 @@
+azov_loyalty_raising = { 
+
+AFU_azov_negotatiation_decision = {
+
+		icon = GFX_decision_generic_decision
+		
+		ai_will_do = {	
+			factor = 20		
+		}
+		
+		available = {
+			AFU = {
+			any_unit_leader = {		
+			has_trait = Doubtfully_loyal_commander
+			}
+		}
+		}
+
+		visible = {
+        AFU = {
+			any_army_leader = {		
+			has_trait = Doubtfully_loyal_commander
+			}
+		}
+		}
+		
+		cost = 50
+		
+		days_remove = 20
+
+
+		remove_effect  = {
+		add_command_power = 5
+if = {
+    limit = {	
+	random_unit_leader = {
+			has_trait = Doubtfully_loyal_commander
+    }
+	}
+random_unit_leader = {
+remove_unit_leader_trait = Doubtfully_loyal_commander
+
+ }
+		}
+	}
+
+}
