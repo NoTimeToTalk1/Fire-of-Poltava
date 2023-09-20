@@ -105,3 +105,28 @@ country_event = {
 		}
 	}
 }
+
+#gypsy question
+country_event = {
+	id = azov.6
+	title = azov.6.t
+	desc = azov.6.d
+
+	picture = GFX_event_azov_2
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = azov.6.a
+    add_political_power = 10
+		hidden_effect = {
+		set_country_flag = AFU_friend_gypsy
+		}
+	}
+	option = {
+		name = azov.6.b
+    add_political_power = -10
+		hidden_effect = {
+		set_country_flag = AFU_kill_gypsy
+		}
+	}
+}
