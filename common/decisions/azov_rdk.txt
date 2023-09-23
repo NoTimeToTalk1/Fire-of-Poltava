@@ -1,0 +1,352 @@
+azov_rdk = {
+
+	AFU_rdk_war_decision = {
+
+		icon = GFX_decision_rdk
+		
+				ai_will_do = {	
+			factor = 50	
+		}
+		
+		available = {
+		has_completed_focus = AFU_invite_russian_farrights
+        check_variable = {
+    AFU_rdk > 10000
+       }	
+        check_variable = {
+    AFU_rdk_media > 4
+       }	
+        check_variable = {
+    AFU_rdk_eq > 5
+       }	   
+		}
+		
+		fire_only_once = yes
+
+		visible = {
+		has_completed_focus = AFU_invite_russian_farrights	
+		AFU = { has_war_with = RUS }
+		}
+		
+		cost = 50
+
+		
+
+complete_effect = {
+            AFU = {
+			create_faction = LUHANSK_AGREEMENT
+			}
+			RDK = {
+			transfer_state = 450
+			add_state_core = 450
+			add_manpower = AFU:AFU_rdk
+			}
+            AFU = { add_to_faction = RDK }
+RDK = {
+				add_equipment_to_stockpile = { type = infantry_equipment_2
+				amount = 10000
+				producer = AFU
+			}
+			
+			add_equipment_to_stockpile = { type = artillery_equipment_1
+				amount = 2500
+				producer = AFU
+			}
+			
+			add_equipment_to_stockpile = { type = support_equipment_1
+				amount = 5000
+				producer = AFU
+			}
+}	
+}
+}
+
+	AFU_rdk_1_decision = {
+
+		icon = GFX_decision_rdk
+		
+				ai_will_do = {	
+			factor = 50	
+		}
+		
+		available = {
+		has_completed_focus = AFU_invite_russian_farrights	
+		}
+
+		visible = {
+		has_completed_focus = AFU_invite_russian_farrights	
+		}
+		
+		cost = 50
+
+		
+		days_remove = 180
+
+complete_effect = {
+			add_to_variable = {
+				var = AFU_rdk
+				value = 50
+				tooltip = AFU_rdk_tt
+			}
+}
+
+		remove_effect  = {
+		
+		}
+	}
+	
+	AFU_rdk_2_decision = {
+
+		icon = GFX_decision_rdk
+		
+				ai_will_do = {	
+			factor = 50	
+		}
+		
+		available = {
+       check_variable = {
+       AFU_rdk_media > 3
+       }
+		has_completed_focus = AFU_invite_russian_farrights	
+		}
+
+		visible = {
+		has_completed_focus = AFU_invite_russian_farrights	
+       check_variable = {
+       AFU_rdk_media > 3
+       }
+		}
+		
+		cost = 50
+
+		
+		days_remove = 180
+
+complete_effect = {
+			add_to_variable = {
+				var = AFU_rdk
+				value = 100
+				tooltip = AFU_rdk_tt
+			}
+}
+
+		remove_effect  = {
+		
+		}
+	}
+	
+	AFU_rdk_eq_1_decision = {
+
+		icon = GFX_decision_rdk
+		
+				ai_will_do = {	
+			factor = 50	
+		}
+		
+		available = {
+		has_completed_focus = AFU_invite_russian_farrights	
+		}
+
+		visible = {
+		has_completed_focus = AFU_invite_russian_farrights	
+		}
+		
+		cost = 50
+
+		
+		days_remove = 180
+
+complete_effect = {
+			add_to_variable = {
+				var = AFU_rdk_eq
+				value = 1
+				tooltip = AFU_rdk_eq_tt
+			}
+			clamp_variable = {
+				var = AFU_rdk_eq
+				min = 0
+				max = 5
+			}
+}
+
+		remove_effect  = {
+		
+		}
+	}
+	
+	AFU_rdk_contact_nswp_decision = {
+
+		icon = GFX_decision_nswp
+		
+				ai_will_do = {	
+			factor = 50	
+		}
+		
+		available = {
+		has_completed_focus = AFU_invite_russian_farrights	
+		}
+
+		visible = {
+		has_completed_focus = AFU_invite_russian_farrights	
+		}
+		
+		cost = 100
+
+		
+		days_remove = 60
+		
+		fire_only_once = yes
+
+complete_effect = {
+
+}
+
+		remove_effect  = {
+		hidden_effect = {
+		set_country_flag = contact_with_nswp
+		}
+		}
+	}
+	
+	AFU_rdk_nswp_operation_decision = {
+
+		icon = GFX_decision_nswp
+		
+				ai_will_do = {	
+			factor = 50	
+		}
+		
+		available = {
+		has_country_flag = contact_with_nswp
+		}
+
+		visible = {
+		has_country_flag = contact_with_nswp
+		}
+		
+		cost = 100
+
+		
+		days_remove = 60
+
+
+complete_effect = {
+
+}
+
+		remove_effect  = {
+random_list = {
+ 60 = {
+RUS = {
+add_stability = -0.01
+add_manpower = -10
+}
+ }
+ 30 = {
+RUS = {
+add_stability = -0.03
+add_manpower = -25
+}
+}
+ 10 = {
+RUS = {
+add_stability = -0.05
+add_manpower = -30
+}
+}
+		}
+	}
+	
+}
+
+	AFU_rdk_nswp_invite_members_decision = {
+
+		icon = GFX_decision_nswp
+		
+				ai_will_do = {	
+			factor = 50	
+		}
+		
+		available = {
+		has_country_flag = contact_with_nswp
+		}
+
+		visible = {
+		has_country_flag = contact_with_nswp
+		}
+		
+		cost = 100
+
+		
+		days_remove = 60
+
+
+complete_effect = {
+
+}
+
+		remove_effect  = {
+random_list = {
+ 60 = {
+			add_to_variable = {
+				var = AFU_rdk
+				value = 10
+				tooltip = AFU_rdk_tt
+			}
+RUS = {
+add_manpower = -10
+}
+ }
+ 30 = {
+			add_to_variable = {
+				var = AFU_rdk
+				value = 25
+				tooltip = AFU_rdk_tt
+			}
+RUS = {
+add_manpower = -25
+}
+}
+ 10 = {
+			add_to_variable = {
+				var = AFU_rdk
+				value = 30
+				tooltip = AFU_rdk_tt
+			}
+RUS = {
+add_manpower = -30
+}
+}
+		}
+	}
+	
+}
+
+	afu_rdk_update = {
+        activation = {
+            has_completed_focus = AFU_invite_russian_farrights
+        }
+        available = {
+        always = no
+        }
+		icon = mission_icon
+		is_good = yes
+		days_mission_timeout = 60
+		fire_only_once = no
+        complete_effect = {
+        
+        }
+        timeout_effect = {
+			add_to_variable = {
+				var = AFU_rdk_media
+				value = -1
+				tooltip = AFU_rdk_media_2_tt
+			}
+			clamp_variable = {
+				var = AFU_rdk_media
+				min = 0
+				max = 5
+			}
+        }
+    }
+}

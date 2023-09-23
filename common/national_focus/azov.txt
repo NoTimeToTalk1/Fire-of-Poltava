@@ -97,6 +97,8 @@ remove_unit_leader_trait = Doubtfully_loyal_commander
 		
 			completion_reward = {
         add_command_power = 60
+        recruit_character = AFU_kudryashov
+		recruit_character = AFU_dutchak
 		}
 	}
 
@@ -233,6 +235,9 @@ country_event = { id = azov.2 }
 	completion_reward = {
 	custom_effect_tooltip = azov_farright_ukrainian
 	add_ideas = spec_ops_quantity
+	recruit_character = AFU_ignatiev
+	recruit_character = AFU_overchenko
+	recruit_character = AFU_samoilenko
 	hidden_effect = {
         load_oob = "azov"
 		}
@@ -274,13 +279,23 @@ country_event = { id = azov.2 }
 						FOCUS_FILTER_POLITICAL
 					
 		}
-		prerequisite = { focus = afu_freedonbas  focus = afu_holdthebannerhigh  focus = afu_reshapingthementality  }
+		prerequisite = { focus = afu_freedonbas }  prerequisite = {  focus = afu_holdthebannerhigh } prerequisite = {  focus = afu_reshapingthementality  }
 	completion_reward = {
 custom_effect_tooltip = azov_secured_positions
         remove_ideas = AFU_azov_huge_resistance
+add_opinion_modifier = {
+    target = PLT
+    modifier = ideological_brothers
+}
 			hidden_effect = {
 set_country_flag = azov_new_focuses	
 remove_ideas = AFU_martial_law
+		PLT = {
+add_opinion_modifier = {
+    target = AFU
+    modifier = ideological_brothers
+    }
+		}
 			}
 		}
 		
@@ -516,6 +531,8 @@ remove_opinion_modifier = {
 		prerequisite = { focus = AFU_luhansk_conference  } prerequisite = { focus = AFU_farright_european_fighters  }
 	completion_reward = {
         add_command_power = 25
+		recruit_character = AFU_pomor
+		recruit_character = AFU_esenin
 		}
 	}
 
@@ -537,6 +554,11 @@ remove_opinion_modifier = {
 	hidden_effect = {
 		load_oob = "azov_farright_russian"
 }
+			add_to_variable = {
+				var = AFU_rdk
+				value = 9000
+				tooltip = AFU_rdk_tt
+			}
 		}
 	}
 
@@ -748,8 +770,20 @@ add_building_construction = {
 	completion_reward = {
     	add_stability = -0.1
 		add_war_support = 0.25
+add_opinion_modifier = {
+    target = TER
+    modifier = pagans_brothers
+}
+		hidden_effect = {
+		TER = {
+add_opinion_modifier = {
+    target = AFU
+    modifier = pagans_brothers
+    }
+}
 		}
 	}
+}
 
 	#Start the Paganisation
 	focus = {
@@ -1055,9 +1089,10 @@ add_building_construction = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_a_black_list  }
+        mutually_exclusive = { focus = AFU_allow_some_liberties  }
 	completion_reward = {
-add_ideas = penal_slavery
-add_ideas = state_capitalism
+add_political_power = 100
+add_stability = -0.25
 		}
 	}
 
@@ -1074,9 +1109,8 @@ add_ideas = state_capitalism
 		prerequisite = { focus = AFU_a_black_list  }
 		mutually_exclusive = { focus = AFU_everybody_who_is_against_us_will_choke_in_blood  }
 	completion_reward = {
-add_ideas = service_economy
-add_ideas = illiberalism
-add_ideas = penal_incarceration
+add_political_power = -100
+add_stability = 0.25
 		}
 	}
 
@@ -1358,6 +1392,9 @@ add_command_power = 25
 			remove_core_of = KHA
 			add_core_of = ROOT
 		}
+	hidden_effect = {
+        country_event = azov.6
+		}
 		}
 	}
 
@@ -1377,6 +1414,9 @@ add_command_power = 25
 		}
 	completion_reward = {
 add_political_power = 10
+AFU = {
+give_guarantee = KHA
+}
 		}
 	}
 
@@ -1393,6 +1433,9 @@ add_political_power = 10
 		prerequisite = { focus = AFU_nationalist_kharkiv  }
 	completion_reward = {
 add_command_power = 25
+KHA = {
+give_military_access = AFU
+}
 		}
 	}
 
@@ -1428,8 +1471,151 @@ every_unit_leader = {
                 }
             }
 }
+	hidden_effect = {
+        country_event = azov.6
+		}
 	}
 }
+
+	#Begin the reclamation
+	focus = {
+		id = AFU_begin_the_reclamation
+		icon = GFX_AFU_begin_the_reclamation-495536
+		x = 17
+		y = 16
+		cost = 1
+		available = {	
+		has_country_flag = azov_new_focuses	
+		}
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+	completion_reward = {
+add_political_power = 10
+		}
+	}
+
+	#plan sicheslav
+	focus = {
+		id = AFU_plan_sicheslav
+		icon = GFX_AFU_plan_sicheslav-495536
+		x = 17
+		y = 17
+		cost = 1
+		
+		prerequisite = { focus = AFU_begin_the_reclamation  }
+
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+	completion_reward = {
+declare_war_on = {
+    target = DNI
+    type = annex_everything
+}
+declare_war_on = {
+    target = BAN
+    type = annex_everything
+}
+declare_war_on = {
+    target = KRS
+    type = annex_everything
+}
+declare_war_on = {
+    target = UWF
+    type = annex_everything
+}
+declare_war_on = {
+    target = OPM
+    type = annex_everything
+}
+declare_war_on = {
+    target = PMU
+    type = annex_everything
+}
+		}
+	}
+	
+#fuck odessa
+	focus = {
+		id = AFU_operation_sich
+		icon = GFX_AFU_operation_sich-495536
+		x = 17
+		y = 18
+		cost = 1
+		
+		prerequisite = { focus = AFU_plan_sicheslav  }
+		
+		available = {
+	has_war = no
+ }
+
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+	completion_reward = {
+declare_war_on = {
+    target = ODE
+    type = annex_everything
+}
+declare_war_on = {
+    target = OLD
+    type = annex_everything
+}
+declare_war_on = {
+    target = MYK
+    type = annex_everything
+}
+declare_war_on = {
+    target = ZAP
+    type = annex_everything
+}
+declare_war_on = {
+    target = OPZ
+    type = annex_everything
+}
+declare_war_on = {
+    target = SHT
+    type = annex_everything
+}
+declare_war_on = {
+    target = STR
+    type = annex_everything
+}
+declare_war_on = {
+    target = BDZ
+    type = annex_everything
+}
+declare_war_on = {
+    target = RGE
+    type = annex_everything
+}
+		}
+	}
+	
+	#contact local nationalists
+	focus = {
+		id = AFU_contact_local_nationalists
+		icon = GFX_AFU_contact_local_nationalists-495536
+		x = 17
+		y = 19
+		cost = 1
+		prerequisite = { focus = AFU_operation_sich  }
+		
+		available = {
+	has_war = no
+ }
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+	completion_reward = {
+every_state = { 
+is_owned_and_controlled_by = AFU
+add_compliance = 50
+add_resistance = -30
+}
+		}
+	}
 
 
 }

@@ -59,6 +59,34 @@ leader_traits = {
         ################################
 	## GENERAL TRAITS ##
 	################################
+	
+Russian_volunteer = { 
+		type = corps_commander
+		gain_xp = {
+			always = no # not gainable
+		}
+		cost = 500
+		targeted_modifier = {
+			tag = RUS
+			attack_bonus_against = 0.25
+			defense_bonus_against = 0.25
+		}
+		targeted_modifier = {
+			tag = VSR
+			attack_bonus_against = 0.25
+			defense_bonus_against = 0.25
+		}
+		
+		enable_ability = glider_planes
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		trait_type = personality_trait
+		parent = commando
+		
+	}
 
 Doubtfully_loyal_commander = { 
 		type = corps_commander
