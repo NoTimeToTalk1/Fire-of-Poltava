@@ -1,0 +1,380 @@
+focus_tree = {
+	id = savchenko
+	continuous_focus_position = { x = -40 y = 1050 } 
+	country = {
+		factor = 0
+	}
+	#Savchenko
+	focus = {
+		id = isr_savchenko
+		icon = GFX_isr_savchenko-495536
+		x = 12
+		y = 0
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+				completion_reward = { 
+         add_political_power = 10
+		}
+	}
+
+	#Greatest Success
+	focus = {
+		id = isr_greatest_success
+		icon = GFX_isr_greatest_success-495536
+		x = 12
+		y = 2
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = isr_savchenko  }
+				completion_reward = { 
+         add_political_power = 10
+		 add_stability = 0.1
+		}
+	}
+
+	#Our True Intention
+	focus = {
+		id = isr_our_true_intention
+		icon = GFX_isr_our_true_intention-495536
+		x = 12
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = isr_greatest_success  }
+				completion_reward = { 
+         add_political_power = 10
+		 add_war_support = 0.1
+		}
+	}
+
+	#Arrest Akhmetov
+	focus = {
+		id = isr_arrest_akhmetov
+		icon = GFX_isr_arrest_akhmetov-495536
+		x = 6
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = isr_our_true_intention  }
+				completion_reward = { 
+         add_political_power = -10
+		 add_stability = -0.25
+		}
+	}
+
+	#Arrest Their Master...
+	focus = {
+		id = isr_arresttheirmaster
+		icon = GFX_isr_arresttheirmaster-495536
+		x = 9
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
+		}
+		prerequisite = { focus = isr_our_true_intention  }
+				completion_reward = { 
+         add_political_power = -10
+		 add_stability = -0.25
+		 add_war_support = -0.25
+		}
+	}
+
+	#Make Them Loyal
+	focus = {
+		id = isr_make_them_loyal
+		icon = GFX_isr_make_them_loyal-495536
+		x = 5
+		y = 7
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
+		}
+		prerequisite = { focus = isr_arrest_akhmetov  }
+		mutually_exclusive = { focus = isr_nationalise_enterprises  }
+				completion_reward = { 
+         add_ideas = capitalism
+		}
+	}
+
+	#Nationalise Enterprises
+	focus = {
+		id = isr_nationalise_enterprises
+		icon = GFX_isr_nationalise_enterprises-495536
+		x = 7
+		y = 7
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
+		}
+		prerequisite = { focus = isr_arrest_akhmetov  }
+		mutually_exclusive = { focus = isr_make_them_loyal  }
+				completion_reward = { 
+         add_ideas = state_capitalism
+		}
+	}
+
+	#...And His Dogs
+	focus = {
+		id = isr_andhisdogs
+		icon = GFX_isr_andhisdogs-495536
+		x = 9
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
+		}
+		prerequisite = { focus = isr_arresttheirmaster  }
+				completion_reward = { 
+         add_political_power = -10
+		 add_stability = -0.25
+		 add_war_support = -0.25
+		}
+	}
+
+	#Form a New Cabinet
+	focus = {
+		id = isr_form_a_new_cabinet
+		icon = GFX_isr_form_a_new_cabinet-495536
+		x = 9
+		y = 7
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
+		}
+		prerequisite = { focus = isr_andhisdogs  }
+				completion_reward = { 
+         add_command_power = 25
+		}
+	}
+
+	#Final Cleaning
+	focus = {
+		id = isr_final_cleaning
+		icon = GFX_isr_final_cleaning-495536
+		x = 12
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
+		}
+		prerequisite = { focus = isr_our_true_intention  }
+				completion_reward = { 
+         add_command_power = 25
+		}
+	}
+
+	#Loyal Army
+	focus = {
+		id = isr_loyal_army
+		icon = GFX_isr_loyal_army-495536
+		x = 11
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = isr_final_cleaning  }
+				completion_reward = { 
+         add_command_power = 25
+		 army_experience = 10
+		 add_war_support = 0.1
+		}
+	}
+
+	#Purge the Deputies
+	focus = {
+		id = isr_purge_the_deputies
+		icon = GFX_isr_purge_the_deputies-495536
+		x = 13
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
+		}
+		prerequisite = { focus = isr_final_cleaning  }
+				completion_reward = { 
+         add_stability = -0.2
+		}
+	}
+
+	#Seize the Power
+	focus = {
+		id = isr_seize_the_power
+		icon = GFX_isr_seize_the_power-495536
+		x = 11
+		y = 6
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = isr_loyal_army  }
+				completion_reward = { 
+         add_stability = 0.2
+		}
+	}
+
+	#Proclaim Us Legitimate
+	focus = {
+		id = isr_proclaim_us_legitimate
+		icon = GFX_isr_proclaim_us_legitimate-495536
+		x = 11
+		y = 7
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = isr_seize_the_power  }
+				completion_reward = { 
+         add_ideas = AFU_savchenko_antipresident_campaing
+		}
+	}
+
+	#Iron Bastion
+	focus = {
+		id = isr_iron_bastion
+		icon = GFX_isr_iron_bastion-495536
+		x = 14
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = isr_our_true_intention  }
+				completion_reward = { 
+         add_ideas = AFU_savchenko_iron_bastion
+		}
+	}
+
+	#Contacts With the Red Cross
+	focus = {
+		id = isr_contacts_with_the_red_cross
+		icon = GFX_isr_contacts_with_the_red_cross-495536
+		x = 16
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = isr_our_true_intention  }
+				completion_reward = { 
+         add_ideas = AFU_savchenko_humanitarian_aid
+		}
+	}
+
+	#Solve Humanitarian Problems
+	focus = {
+		id = isr_solve_humanitarian_problems
+		icon = GFX_isr_solve_humanitarian_problems-495536
+		x = 16
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = isr_contacts_with_the_red_cross  }
+				completion_reward = { 
+         add_stability = 0.25
+		 add_political_power = 75
+		}
+	}
+
+	#No More Deception
+	focus = {
+		id = isr_no_more_deception
+		icon = GFX_isr_no_more_deception-495536
+		x = 18
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = isr_our_true_intention  }
+				completion_reward = { 
+         add_stability = 0.25
+		 add_political_power = 75
+		 
+        add_opinion_modifier = {
+    target = RUS
+    modifier = Enemy_state
+}
+		}
+	}
+
+	#Win the Trust of the People
+	focus = {
+		id = isr_win_the_trust_of_the_people
+		icon = GFX_isr_win_the_trust_of_the_people-495536
+		x = 18
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = isr_no_more_deception  }
+				completion_reward = { 
+         add_stability = 0.25
+		 add_war_support = 0.25
+		 
+		}
+	}
+
+	#Fix the Law
+	focus = {
+		id = isr_fix_the_law
+		icon = GFX_isr_fix_the_law-495536
+		x = 17
+		y = 6
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = isr_win_the_trust_of_the_people  } prerequisite = { focus = isr_solve_humanitarian_problems  }
+				completion_reward = { 
+         add_ideas = penal_recruitment
+		 add_ideas = education_propagandized
+		}
+	}
+
+	#Project of the New Constitution
+	focus = {
+		id = isr_project_of_the_new_constitution
+		icon = GFX_isr_project_of_the_new_constitution-495536
+		x = 17
+		y = 7
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = isr_fix_the_law  }
+				completion_reward = { 
+         add_stability = 0.25
+		}
+	}
+
+	#Iron Lady
+	focus = {
+		id = isr_iron_lady
+		icon = GFX_isr_iron_lady-495536
+		x = 12
+		y = 8
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = isr_form_a_new_cabinet  } prerequisite = { focus = isr_proclaim_us_legitimate  } prerequisite = { focus = isr_iron_bastion  } prerequisite = { focus = isr_project_of_the_new_constitution  }
+					completion_reward = { 
+         add_command_power = 25
+		 add_war_support = 0.25
+		}
+	}
+
+}
