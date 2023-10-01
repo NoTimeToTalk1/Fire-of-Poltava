@@ -1,0 +1,122 @@
+division_template = {
+	name = "Motorized Rifle Battalion"
+	division_names_group = BLR_INF_01
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+	}
+	support = {
+       	mot_artillery_brigade = { x = 0 y = 0 }
+	}
+	
+}
+
+division_template = {
+	name = "Rifle Battalion"
+	division_names_group = BLR_INF_01
+
+	regiments = {
+		mechanized = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1}
+		infantry = { x = 1 y = 0 }
+
+		}
+	support = {
+       	artillery = { x = 0 y = 0 }
+	}
+	
+}
+
+
+
+#TOTAL DIVISIONS: 8
+units = { 
+
+	
+	division= {	
+		name = "1st Motorized Rifle Battalion"
+		location = 7318
+		division_template = "Motorized Rifle Battalion"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.1
+	}
+	division= {	
+		name = "2nd Motorized Rifle Battalion"
+		location = 7318
+		division_template = "Motorized Rifle Battalion"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.3
+	}
+	division= {	
+		name = "3rd Motorized Rifle Battalion"
+		location = 7318
+		division_template = "Motorized Rifle Battalion"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+	}
+
+	division= {	
+		name = "1st Rifle Battalion"
+		location = 7318
+		division_template = "Rifle Battalion"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.1
+	}
+	division= {	
+		name = "2nd Rifle Battalion"
+		location = 7318
+		division_template = "Rifle Battalion"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.2
+	}
+	division= {	
+		name = "3rd Rifle Battalion"
+		location = 7318
+		division_template = "Rifle Battalion"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.1
+	}
+	division= {	
+		name = "4th Rifle Battalion"
+		location = 7318
+		division_template = "Rifle Battalion"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.1
+	}
+
+}
+instant_effect = {
+	
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_2
+			creator = "AFU"
+		}
+		requested_factories = 3
+		progress = 0.1
+		efficiency = 50
+	}
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = "AFU"
+		}
+		requested_factories = 2
+		progress = 0.1
+		efficiency = 50
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "AFU" 
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 50
+	}
+	}
