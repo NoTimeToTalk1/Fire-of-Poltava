@@ -1,0 +1,567 @@
+focus_tree = {
+	id = kryvonys
+	continuous_focus_position = { x = -40 y = 1050 } 
+	country = {
+		factor = 0
+	}
+	#Kozackomy Rodu Nema Prevodu
+	focus = {
+		id = AFU_kozackomy_rodu_nema_prevodu
+		icon = GFX_AFU_kozackomy_rodu_nema_prevodu-495536
+		x = 15
+		y = 7
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_militarisation_of_society  }
+		mutually_exclusive = { focus = AFU_keep_military_dictatorship  }
+	}
+
+	#There is No Time for Democracy
+	focus = {
+		id = AFU_there_is_no_time_for_democracy
+		icon = GFX_AFU_there_is_no_time_for_democracy-495536
+		x = 13
+		y = 0
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+
+	#Continue Military Rule
+	focus = {
+		id = AFU_continue_military_rule
+		icon = GFX_AFU_continue_military_rule-495536
+		x = 13
+		y = 1
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_there_is_no_time_for_democracy  }
+	}
+
+	#Reinforce the Army
+	focus = {
+		id = AFU_reinforce_the_army
+		icon = GFX_AFU_reinforce_the_army-495536
+		x = 13
+		y = 2
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_continue_military_rule  }
+	}
+
+	#Armaments programme
+	focus = {
+		id = AFU_armaments_programme
+		icon = GFX_AFU_armaments_programme-495536
+		x = 7
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_reinforce_the_army  }
+	}
+
+	#Renovate Enterprises
+	focus = {
+		id = AFU_renovate_enterprises
+		icon = GFX_AFU_renovate_enterprises-495536
+		x = 5
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_armaments_programme  }
+	}
+
+	#Solve Logistical Problems
+	focus = {
+		id = AFU_solve_logistical_problems
+		icon = GFX_AFU_solve_logistical_problems-495536
+		x = 7
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_armaments_programme  }
+	}
+
+	#Opening of New Plants
+	focus = {
+		id = AFU_opening_of_new_plants
+		icon = GFX_AFU_opening_of_new_plants-495536
+		x = 9
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_armaments_programme  }
+	}
+
+	#Capture the KMDB
+	focus = {
+		id = AFU_capture_the_kmdb
+		icon = GFX_AFU_capture_the_kmdb-495536
+		x = 7
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_renovate_enterprises  } prerequisite = { focus = AFU_solve_logistical_problems  } prerequisite = { focus = AFU_opening_of_new_plants  }
+	}
+
+	#On the Ground...
+	focus = {
+		id = AFU_ontheground
+		icon = GFX_AFU_ontheground-495536
+		x = 5
+		y = 6
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_capture_the_kmdb  }
+	}
+
+	#In the Air...
+	focus = {
+		id = AFU_intheair
+		icon = GFX_AFU_intheair-495536
+		x = 7
+		y = 6
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_capture_the_kmdb  }
+	}
+
+	#Syrsky's plan "The Jerk"
+	focus = {
+		id = AFU_syrskysplanthejerk
+		icon = GFX_AFU_syrskysplanthejerk-495536
+		x = 20
+		y = 6
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_officersstaffconvention  }
+	}
+
+	#The Rich Will Pay
+	focus = {
+		id = AFU_the_rich_will_pay
+		icon = GFX_AFU_the_rich_will_pay-495536
+		x = 19
+		y = 7
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_syrskysplanthejerk  }
+	}
+
+	#Eastern Military Administration
+	focus = {
+		id = AFU_eastern_military_administration
+		icon = GFX_AFU_eastern_military_administration-495536
+		x = 20
+		y = 8
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_the_rich_will_pay  } prerequisite = { focus = AFU_down_the_castle  }
+	}
+
+	#Punishment for the Recalcitrant
+	focus = {
+		id = AFU_punishment_for_the_recalcitrant
+		icon = GFX_AFU_punishment_for_the_recalcitrant-495536
+		x = 17
+		y = 6
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_contact_their_police  }
+	}
+
+	#Officers' Staff Convention
+	focus = {
+		id = AFU_officersstaffconvention
+		icon = GFX_AFU_officersstaffconvention-495536
+		x = 20
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_liaising_with_soldiers_outside  }
+	}
+
+	#Contact their Police
+	focus = {
+		id = AFU_contact_their_police
+		icon = GFX_AFU_contact_their_police-495536
+		x = 18
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_liaising_with_soldiers_outside  }
+	}
+
+	#Invite Observers
+	focus = {
+		id = AFU_invite_observers
+		icon = GFX_AFU_invite_observers-495536
+		x = 22
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_dontforgetabouttheeasternneighbour  }
+	}
+
+	#Don't Forget about the Eastern Neighbour
+	focus = {
+		id = AFU_dontforgetabouttheeasternneighbour
+		icon = GFX_AFU_dontforgetabouttheeasternneighbour-495536
+		x = 21
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_take_a_sober_look_at_the_situation  }
+	}
+
+	#Take a Sober Look at the Situation
+	focus = {
+		id = AFU_take_a_sober_look_at_the_situation
+		icon = GFX_AFU_take_a_sober_look_at_the_situation-495536
+		x = 19
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_reinforce_the_army  }
+	}
+
+	#Propaganda Against Opponents
+	focus = {
+		id = AFU_propaganda_against_opponents
+		icon = GFX_AFU_propaganda_against_opponents-495536
+		x = 17
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_take_a_sober_look_at_the_situation  }
+	}
+
+	#Liaising with Soldiers Outside
+	focus = {
+		id = AFU_liaising_with_soldiers_outside
+		icon = GFX_AFU_liaising_with_soldiers_outside-495536
+		x = 19
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_take_a_sober_look_at_the_situation  }
+	}
+
+	#Ukraine will be Free and Strong
+	focus = {
+		id = AFU_ukraine_will_be_free_and_strong
+		icon = GFX_AFU_ukraine_will_be_free_and_strong-495536
+		x = 16
+		y = 10
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_restorepartyveteransofato  } prerequisite = { focus = AFU_guns_for_everyone  }
+	}
+
+	#Guns for Everyone
+	focus = {
+		id = AFU_guns_for_everyone
+		icon = GFX_AFU_guns_for_everyone-495536
+		x = 17
+		y = 9
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_legalise_pmcs  }
+	}
+
+	#Order Above All Else
+	focus = {
+		id = AFU_order_above_all_else
+		icon = GFX_AFU_order_above_all_else-495536
+		x = 10
+		y = 10
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_the_only_lightweight_power  } prerequisite = { focus = AFU_administrative_reform  }
+	}
+
+	#Friends in Need
+	focus = {
+		id = AFU_friends_in_need
+		icon = GFX_AFU_friends_in_need-495536
+		x = 19
+		y = 9
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_eastern_military_administration  }
+	}
+
+	#Kryvonys Political Career
+	focus = {
+		id = AFU_kryvonys_political_career
+		icon = GFX_AFU_kryvonys_political_career-495536
+		x = 15
+		y = 8
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_kozackomy_rodu_nema_prevodu  }
+	}
+
+	#Restore Party "Veterans of ATO"
+	focus = {
+		id = AFU_restorepartyveteransofato
+		icon = GFX_AFU_restorepartyveteransofato-495536
+		x = 15
+		y = 9
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_kryvonys_political_career  }
+	}
+
+	#Not Yet Perished
+	focus = {
+		id = AFU_not_yet_perished
+		icon = GFX_AFU_not_yet_perished-495536
+		x = 20
+		y = 10
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_friends_in_need  } prerequisite = { focus = AFU_thunder_and_fire  }
+	}
+
+	#Thunder and Fire
+	focus = {
+		id = AFU_thunder_and_fire
+		icon = GFX_AFU_thunder_and_fire-495536
+		x = 21
+		y = 9
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_eastern_military_administration  }
+	}
+
+	#The Only Lightweight Power
+	focus = {
+		id = AFU_the_only_lightweight_power
+		icon = GFX_AFU_the_only_lightweight_power-495536
+		x = 11
+		y = 9
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_strengthen_population_control  }
+	}
+
+	#Administrative Reform
+	focus = {
+		id = AFU_administrative_reform
+		icon = GFX_AFU_administrative_reform-495536
+		x = 9
+		y = 9
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_create_councill_of_generals  }
+	}
+
+	#And at Sea...
+	focus = {
+		id = AFU_andatsea
+		icon = GFX_AFU_andatsea-495536
+		x = 9
+		y = 6
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_capture_the_kmdb  }
+	}
+
+	#Gorit` Palae Tehnika Vorozha
+	focus = {
+		id = AFU_goritpalaetehnikavorozha
+		icon = GFX_AFU_goritpalaetehnikavorozha-495536
+		x = 7
+		y = 7
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_ontheground  } prerequisite = { focus = AFU_intheair  } prerequisite = { focus = AFU_andatsea  }
+	}
+
+	#Use Everything for the Greater Good
+	focus = {
+		id = AFU_use_everything_for_the_greater_good
+		icon = GFX_AFU_use_everything_for_the_greater_good-495536
+		x = 13
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_reinforce_the_army  }
+	}
+
+	#Militarisation of Society
+	focus = {
+		id = AFU_militarisation_of_society
+		icon = GFX_AFU_militarisation_of_society-495536
+		x = 13
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_use_everything_for_the_greater_good  }
+	}
+
+	#Build More Supply Camps
+	focus = {
+		id = AFU_build_more_supply_camps
+		icon = GFX_AFU_build_more_supply_camps-495536
+		x = 13
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_militarisation_of_society  }
+	}
+
+	#Send Young People to Work in Factories
+	focus = {
+		id = AFU_send_young_people_to_work_in_factories
+		icon = GFX_AFU_send_young_people_to_work_in_factories-495536
+		x = 13
+		y = 6
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_build_more_supply_camps  }
+	}
+
+	#Keep Military Dictatorship
+	focus = {
+		id = AFU_keep_military_dictatorship
+		icon = GFX_AFU_keep_military_dictatorship-495536
+		x = 11
+		y = 7
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_militarisation_of_society  }
+		mutually_exclusive = { focus = AFU_kozackomy_rodu_nema_prevodu  }
+	}
+
+	#Create Councill of Generals
+	focus = {
+		id = AFU_create_councill_of_generals
+		icon = GFX_AFU_create_councill_of_generals-495536
+		x = 9
+		y = 8
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_keep_military_dictatorship  }
+	}
+
+	#Strengthen Population Control
+	focus = {
+		id = AFU_strengthen_population_control
+		icon = GFX_AFU_strengthen_population_control-495536
+		x = 11
+		y = 8
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_keep_military_dictatorship  }
+	}
+
+	#Legalise PMCs
+	focus = {
+		id = AFU_legalise_pmcs
+		icon = GFX_AFU_legalise_pmcs-495536
+		x = 17
+		y = 8
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_kozackomy_rodu_nema_prevodu  }
+	}
+
+	#Down the Castle
+	focus = {
+		id = AFU_down_the_castle
+		icon = GFX_AFU_down_the_castle-495536
+		x = 21
+		y = 7
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_syrskysplanthejerk  }
+	}
+
+}
