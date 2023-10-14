@@ -1,0 +1,519 @@
+focus_tree = {
+	id = chernihiv_start
+	continuous_focus_position = { x = 5000 y = 0 } 
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = PRH
+		}
+	}
+#Somewhere in Chernihiv
+	focus = {
+		id = somewhere_in_chernihiv
+		icon = 0
+		x = 33
+		y = 0
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 1
+		
+		completion_reward = {
+			country_event = {id = prh.1}
+		}
+	}
+#Poroh's guilt
+	focus = {
+		id = poroh's_guilt
+		icon = 0
+		x = 30
+		y = 1
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2.2
+		
+		prerequisite = { focus = somewhere_in_chernihiv}
+		
+		completion_reward = {
+			country_event = {id = prh.2}
+			add_stability = -0.05
+		}
+
+	}
+#Meeting an old friend
+	focus = {
+		id = meeting_an_old_friend
+		icon = 0
+		x = 30
+		y = 2
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2.2
+		
+		prerequisite = { focus = poroh's_guilt}
+		
+		completion_reward = {
+			country_event = {id = prh.3}
+			add_political_power = 50
+		}
+
+	}
+#Partial Mobilisation
+	focus = {
+		id = partial_mobilisation
+		icon = 0
+		x = 36
+		y = 3
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 3
+		
+		prerequisite = { focus = somewhere_in_chernihiv}
+		
+		completion_reward = {
+			country_event = {id=prh.10}
+			add_stability = -0.05
+			add_manpower = +10000
+		}
+
+	}
+#Rewrite the constitution
+	focus = {
+		id = rewrite_the_constitution
+		icon = 0
+		x = 29
+		y = 5
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 3
+		
+		prerequisite = { focus = balance_of_the_coalition}
+		
+		completion_reward = {
+			country_event = {id = prh.6}
+		}
+
+	}
+#increase professionalism
+	focus = {
+		id = increase_professionalism
+		icon = 0
+		x = 35
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 5.8
+		
+		prerequisite = { focus = partial_mobilisation}
+		mutually_exclusive = {focus = rely_on_militants}
+		completion_reward = {
+			country_event = {id = prh.11}
+			add_ideas = AFU_improved_training_methods
+		}
+
+	}
+#rely on militants
+	focus = {
+		id = rely_on_militants
+		icon = 0
+		x = 37
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 3.6
+		
+		prerequisite = { focus = partial_mobilisation}
+		mutually_exclusive = {focus=increase_professionalism}
+		completion_reward = {
+			country_event = {id = prh.12}
+			add_ideas = AFU_broader_training_plan
+		}
+
+	}
+#appoint commissioners
+	focus = {
+		id = appoint_commissioners
+		icon = 0
+		x = 35
+		y = 5
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 3.7
+		
+		prerequisite = { focus = increase_professionalism}
+		completion_reward = {}
+
+	}
+#payments to mercenaries
+	focus = {
+		id = payments_to_mercenaries
+		icon = 0
+		x = 37
+		y = 5
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2.2
+		
+		prerequisite = { focus = rely_on_militants}
+		completion_reward = 0
+
+	}
+#Avanti Revanché
+	focus = {
+		id = avanti_revanché
+		icon = 0
+		x = 33
+		y = 5
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2.9
+		
+		prerequisite = { focus = increase_professionalism}
+		completion_reward = {}
+
+	}
+#Avangard Cultural Union soldiers
+	focus = {
+		id = avangard_cultural_union_soldiers
+		icon = 0
+		x = 39
+		y = 5
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2.2
+		
+		prerequisite = { focus = rely_on_militants}
+		completion_reward = 0
+
+	}
+#Situation in republic
+	focus = {
+		id = situation_in_republic_prh
+		icon = 0
+		x = 30
+		y = 3
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 3
+		
+		prerequisite = { focus = meeting_an_old_friend}
+		
+		completion_reward = {
+			country_event = {id = prh.4}
+			add_stability = -0.05
+		}
+
+	}
+#Balance of the coalition
+	focus = {
+		id = balance_of_the_coalition
+		icon = 0
+		x = 29
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 3
+		
+		prerequisite = { focus = situation_in_republic_prh}
+		
+		completion_reward = {
+			country_event = {id = prh.5}
+			}
+
+	}
+#Paramilitary groups
+	focus = {
+		id = paramilitary_groups
+		icon = 0
+		x = 31
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 3
+		
+		prerequisite = { focus = situation_in_republic_prh}
+		
+		completion_reward = {
+			country_event = {id = prh.7}
+		}
+
+	}
+#Free state property
+	focus = {
+		id = free_state_property
+		icon = 0
+		x = 31
+		y = 5
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 3
+		
+		prerequisite = { focus = paramilitary_groups}
+		
+		completion_reward = {
+			country_event = {id = prh.8}
+		}
+
+	}
+#Return stability
+	focus = {
+		id = return_stability_prh
+		icon = 0
+		x = 30
+		y = 6
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 7.2
+		
+		prerequisite = { focus = free_state_property }
+		prerequisite = {focus = rewrite_the_constitution}
+		
+		completion_reward = {
+			add_stability = +0.1 
+			country_event = {id = prh.9}
+		}
+
+	}
+#Army is ready
+	focus = {
+		id = army_is_ready
+		icon = 0
+		x = 36
+		y = 6
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		cost = 3.7
+		prerequisite = {focus = appoint_commissioners focus = payments_to_mercenaries}
+}
+#War with Zelensky
+	focus = {
+		id = war_with_zelensky
+		icon = 0
+		x = 33
+		y = 7
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 3.7
+		
+		prerequisite = {focus = return_stability_prh}
+		prerequisite = {focus = army_is_ready}
+		
+		completion_reward = {
+			add_stability = -0.1 
+			add_war_support = +0.05
+		}}
+#Attack_defence_plan
+	focus = {
+		id = our_plan
+		icon = 0
+		x = 33
+		y = 8
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2.2
+		
+		prerequisite = {focus = war_with_zelensky}
+		
+		completion_reward = 0
+}
+#Prepare reserve
+	focus = {
+		id = prepare_reserve
+		icon = 0
+		x = 33
+		y = 9
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 7.2
+		
+		prerequisite = {focus = our_plan}
+		
+		completion_reward = 0
+}
+#March on Kyiv
+	focus = {
+		id = march_on_kyiv
+		icon = 0
+		x = 34
+		y = 10
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2.2
+		
+		prerequisite = {focus = prepare_reserve}
+		
+		completion_reward = {
+			declare_war_on = { 
+			target = UKR
+			type = annex_everything 
+			}
+			declare_war_on = { 
+			target = KYI
+			type = annex_everything 
+			}
+
+		}
+}
+#Return of the eternal kyiv
+	focus = {
+		id = return_of_the_eternal_kyiv
+		icon = 0
+		x = 33
+		y = 11
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2.2
+		
+		prerequisite = {focus = march_on_kyiv}
+		
+		completion_reward = 0
+		available = {
+			owns_state = 2081
+			owns_state = 2058
+		}
+	}
+#Liberate the East
+	focus = {
+		id = liberate_the_east
+		icon = 0
+		x = 33
+		y = 12
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2.2
+		
+		prerequisite = {focus = return_of_the_eternal_kyiv}
+		
+		completion_reward = {
+			declare_war_on = { 
+			target = SUM
+			type = annex_everything 
+			}
+		}
+		}
+#Begin integration
+	focus = {
+		id = begin_integration_prh
+		icon = 0
+		x = 33
+		y = 13
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 10
+		
+		prerequisite = {focus = liberate_the_east}
+		
+		completion_reward = {
+			UKR = {
+    			every_core_state = {
+       				 PRH = {
+            			add_state_core = PREV
+         			}
+    		}
+			}
+			KYI = {
+    			every_core_state = {
+       				 PRH = {
+            			add_state_core = PREV
+         			}
+    		}
+			}
+			SUM = {
+    			every_core_state = {
+       				PRH = {
+            			add_state_core = PREV
+         			}
+    			}
+			}
+			CBL = {
+    			every_core_state = {
+       				PRH = {
+            			add_state_core = PREV
+         			}
+    			}
+			}
+		}
+    }
+	#Parade on Khreshatyk
+	focus = {
+		id = parade_on_khreshatyk
+		icon = 0
+		x = 33
+		y = 14
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 5.8
+		
+		prerequisite = {focus = begin_integration_prh}
+		
+		completion_reward = {
+			set_capital = {
+				state = 2081
+				remember_old_capital = no
+				}
+		}
+	}
+	#Coalition Leader
+	focus = {
+		id = coalition_leader
+		icon = 0
+		x = 33
+		y = 15
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 1.5
+		
+		prerequisite = {focus = parade_on_khreshatyk}
+		
+		completion_reward = 0
+}
+}
