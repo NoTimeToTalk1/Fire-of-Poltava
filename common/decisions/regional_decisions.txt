@@ -1,4 +1,5 @@
 unite_galician_ukraine = {
+		
 		unite_galician_ukraine = {			
 
 		icon = GFX_ZAK_rada_election
@@ -10,7 +11,6 @@ unite_galician_ukraine = {
 				is_galician_ukraine = yes
 				can_unite_galicia = yes
 			}
-			date > 2023.01.01
 
 		}
 		
@@ -86,7 +86,7 @@ unite_podillya_ukraine = {
 				is_podillya_ukraine = yes
 				can_unite_podillya = yes
 			}
-			date > 2023.01.01
+		
 		}
 		
 		fire_only_once = yes
@@ -133,7 +133,7 @@ unite_northern_ukraine = {
 				is_northern_ukraine = yes
 				can_unite_north_ukraine = yes
 			}
-			date > 2023.01.01
+			
 		}
 		
 		fire_only_once = yes
@@ -207,7 +207,7 @@ unite_north_central_ukraine = {
 				is_north_central_ukraine = yes
 				can_unite_north_central_ukraine = yes
 			}
-			date > 2023.01.01
+			
 		}
 		
 		fire_only_once = yes
@@ -275,7 +275,7 @@ unite_south_western_ukraine = {
 				is_south_western_ukraine = yes
 				can_unite_south_western_ukraine = yes
 			}
-			date > 2023.01.01
+			
 		}
 		
 		fire_only_once = yes
@@ -350,7 +350,7 @@ unite_south_central_ukraine = {
 				is_south_central_ukraine = yes
 				can_unite_south_central_ukraine = yes
 			}
-			date > 2023.01.01
+			
 		}
 		
 		fire_only_once = yes
@@ -397,7 +397,7 @@ unite_south_eastern_ukraine = {
 				is_south_eastern_ukraine = yes
 				can_unite_south_eastern_ukraine = yes
 			}
-			date > 2023.01.01
+			
 		}
 		
 		fire_only_once = yes
@@ -413,8 +413,21 @@ unite_south_eastern_ukraine = {
 			if = {
 				limit = {
 						original_tag = AFU
+                has_country_leader = {
+	            character = AFU_Krivonis
+	            ruling_only = yes
+                      }
 				}
-				set_cosmetic_tag = AFU_regional_south_eastern
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = AFU
+                has_country_leader = {
+	            character = AFU_zhorin
+	            ruling_only = yes
+                      }
+				}
 				add_political_power = 50
 			}
 			if = {
@@ -458,7 +471,7 @@ unite_eastern_ukraine = {
 				is_eastern_ukraine = yes
 				can_unite_eastern_ukraine = yes
 			}
-			date > 2027.01.01
+			
 		}
 		
 		fire_only_once = yes
@@ -478,8 +491,22 @@ unite_eastern_ukraine = {
 			if = {
 				limit = {
 						original_tag = AFU
+                has_country_leader = {
+	            character = AFU_Krivonis
+	            ruling_only = yes
+                      }
 				}
 				set_cosmetic_tag = AFU_regional_eastern
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = AFU
+                has_country_leader = {
+	            character = AFU_zhorin
+	            ruling_only = yes
+                      }
+				}
 				add_political_power = 50
 			}
 			if = {
@@ -530,7 +557,7 @@ unite_southern_ukraine = {
 				is_southern_ukraine = yes
 				can_unite_southern_ukraine = yes
 			}
-			date > 2027.01.01
+			
 		}
 		
 		fire_only_once = yes
@@ -623,7 +650,7 @@ unite_central_ukraine = {
 				is_central_ukraine = yes
 				can_unite_central_ukraine = yes
 			}
-			date > 2027.01.01
+			
 		}
 		
 		fire_only_once = yes
@@ -734,7 +761,7 @@ unite_western_ukraine = {
 				is_western_ukraine = yes
 				can_unite_western_ukraine = yes
 			}
-			date > 2027.01.01
+			
 		}
 		
 		fire_only_once = yes
@@ -827,7 +854,7 @@ unite_left_bank_ukraine = {
 				is_left_bank_ukraine = yes
 				can_unite_left_bank_ukraine = yes
 			}
-			date > 2030.06.01
+			
 		}
 		
 		fire_only_once = yes
@@ -846,10 +873,28 @@ unite_left_bank_ukraine = {
 		complete_effect = {
 			if = {
 				limit = {
+				AND = {
 						original_tag = AFU
+				                has_country_leader = {
+	            character = AFU_Krivonis
+	            ruling_only = yes
+                      }
+					 }
 				}
 				set_cosmetic_tag = AFU_regional_left_bank
 				add_political_power = 50
+			}
+			if = {
+				limit = {
+				AND = {
+                original_tag = AFU
+                has_country_leader = {
+	            character = AFU_zhorin
+	            ruling_only = yes
+                      }
+                   }
+				}
+				country_event = { id = azov.11 days = 2 } 
 			}
 			if = {
 				limit = {
@@ -955,7 +1000,7 @@ unite_right_bank_ukraine = {
 				is_right_bank_ukraine = yes
 				can_unite_right_bank_ukraine = yes
 			}
-			date > 2030.06.01
+			
 		}
 		
 		fire_only_once = yes
@@ -1122,7 +1167,7 @@ unite_ukraine = {
 				is_ukraine = yes
 				can_unite_ukraine = yes
 			}
-			date > 2033.01.01
+			
 		}
 		
 		fire_only_once = yes
@@ -1271,10 +1316,41 @@ unite_ukraine = {
 			if = {
 				limit = {
 						original_tag = AFU
+                has_country_leader = {
+	            character = AFU_Krivonis
+	            ruling_only = yes
+                      }
 				}
 				set_cosmetic_tag = AFU_united_ukraine
 				add_political_power = 50
 			}
+			if = {
+				limit = {
+				AND = {
+                original_tag = AFU
+                has_country_leader = {
+	            character = AFU_zhorin
+	            ruling_only = yes
+                      }
+                   }
+				}
+				country_event = { id = azov.12 days = 1 } 
+			}
+			
+			if = {
+				limit = {
+AND = {
+original_tag = AFU
+has_country_leader = {
+	character = AFU_danilov
+	ruling_only = yes
+}
+}
+				}
+				country_event = { id = afu.21 days = 1 } 
+			}			
+			
+			
 			if = {
 				limit = {
 						original_tag = KHA

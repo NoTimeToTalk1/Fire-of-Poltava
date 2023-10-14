@@ -279,6 +279,12 @@ country_event = { id = azov.2 }
 						FOCUS_FILTER_POLITICAL
 					
 		}
+		
+		available = {	
+        has_stability > 0.3
+		has_war_support > 0.35
+		}		
+		
 		prerequisite = { focus = afu_freedonbas }  prerequisite = {  focus = afu_holdthebannerhigh } prerequisite = {  focus = afu_reshapingthementality  }
 	completion_reward = {
 custom_effect_tooltip = azov_secured_positions
@@ -314,6 +320,9 @@ add_opinion_modifier = {
 		prerequisite = { focus = afu_consolidateourposition  }
 	completion_reward = {
         add_political_power = 25
+	hidden_effect = {
+        country_event = azov.10
+		}
 		}
 	}
 
@@ -399,6 +408,9 @@ add_opinion_modifier = {
 		mutually_exclusive = { focus = AFU_we_have_no_busineness_with_mongoloids  }
 	completion_reward = {
         add_political_power = 25
+	hidden_effect = {
+        country_event = azov.9
+		}
 		}
 	}
 
@@ -609,10 +621,10 @@ remove_opinion_modifier = {
 		}
 		prerequisite = { focus = AFU_forthenationalukraine  }
 	completion_reward = {
-        add_timed_idea = {
-    idea = AFU_azov_youth
-    days = 180
-}
+add_ideas = AFU_azov_youth
+	hidden_effect = {
+        country_event = azov.8
+		}
 		}
 	}
 
@@ -886,6 +898,9 @@ add_opinion_modifier = {
 		mutually_exclusive = { focus = AFU_huge_influence_of_the_church  }
 	completion_reward = {
     add_ideas = AFU_azov_church_integration_1
+	hidden_effect = {
+        country_event = azov.7
+		}
 		}
 	}
 
@@ -1257,7 +1272,9 @@ add_ideas = penal_recruitment
 		cost = 1
 		available = {	
 		NOT = { KHA = { has_government = radical_nationalism } }
-        has_country_flag = azov_new_focuses		
+        has_country_flag = azov_new_focuses	
+         has_stability > 0.15
+		has_war_support > 0.15		
 		}
 		search_filters = {
 			FOCUS_FILTER_ANNEXATION
@@ -1394,6 +1411,7 @@ add_command_power = 25
 		}
 	hidden_effect = {
         country_event = azov.6
+		set_country_flag = united_east
 		}
 		}
 	}
@@ -1473,6 +1491,7 @@ every_unit_leader = {
 }
 	hidden_effect = {
         country_event = azov.6
+		set_country_flag = united_east
 		}
 	}
 }
@@ -1486,6 +1505,9 @@ every_unit_leader = {
 		cost = 1
 		available = {	
 		has_country_flag = azov_new_focuses	
+			NOT = {
+	country_exists = KHA
+	}
 		}
 		search_filters = {
 			FOCUS_FILTER_ANNEXATION
@@ -1502,6 +1524,11 @@ add_political_power = 10
 		x = 17
 		y = 17
 		cost = 1
+		
+		available = {	
+        has_stability > 0.6
+		has_war_support > 0.6
+		}
 		
 		prerequisite = { focus = AFU_begin_the_reclamation  }
 
@@ -1548,6 +1575,8 @@ declare_war_on = {
 		
 		available = {
 	has_war = no
+        has_stability > 0.6
+		has_war_support > 0.6
  }
 
 		search_filters = {
