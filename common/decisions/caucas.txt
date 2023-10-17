@@ -45,40 +45,42 @@ caucas = {
 			# set_state_owner = 993
 			# set_state_owner = 1020
 			# set_state_owner = 2266
-			
 				country_event = caucas.6
 			}
+
 			NKR = {
 				add_ideas = NRK_blocade
 			}
+			remove_mission = NAKHACHIVAN_CORRIDOR`
 		}
 		is_good = no
 		timeout_effect = {
 			if = {
 				limit = {
 					AND = {	
-					ARM = {
-					has_war_with = AZE
-					}
-					NKR = {
-						surrender_progress > 0.1
+					# ARM = {
+					# has_war_with = AZE
+					# }
+					# NKR = {
+						# surrender_progress > 0.1
 					}
 				}
+
 			}
 			AZE = {
 				country_event = caucas.4
 			}
+
 			
 		}
-			AZE = {
-				white_peace = NKR
-				white_peace = ARM
-				white_peace = RUS
-				}
-			add_war_support = -0.1
-			add_stability = -0.1
+			# AZE = {
+			# 	white_peace = NKR
+			# 	white_peace = ARM
+			# 	white_peace = RUS
+			# 	}
+			# add_war_support = -0.1
+			# add_stability = -0.1
 		}
-   	}
 
 
 	   NAKHACHIVAN_CORRIDOR = {			
@@ -89,6 +91,9 @@ caucas = {
 			# AZE = {
 			# 	has_war_with = NKR
 			# }
+			AZE = {
+				has_war_with = ARM
+				}
 		}
 		
 		fire_only_once = yes
@@ -103,6 +108,7 @@ caucas = {
 		remove_effect = {
 
 	  	}
+		
 
 		available = {
 				AZE = {
@@ -124,7 +130,7 @@ caucas = {
 			
 			}
 			IRA = {
-				country_event = causcas.8
+				country_event = caucas.8
 			}
 		}
 		is_good = no

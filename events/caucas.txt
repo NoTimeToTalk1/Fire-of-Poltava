@@ -78,34 +78,34 @@ country_event = {
 
 #### brake fucing nkr puppet | remove puppet status from nkr
 
-news_event = {
-	id = caucas.3
-	title = caucas.3.t
-	desc = caucas.3.d
-	hidden = no
+# news_event = {
+# 	id = caucas.3
+# 	title = caucas.3.t
+# 	desc = caucas.3.d
+# 	hidden = no
 
-	picture = GFX_cherkasy_kobzar
-	fire_only_once = yes
-	is_triggered_only = yes
-	#mean_time_to_happen = { days = 2 }
+# 	picture = GFX_cherkasy_kobzar
+# 	fire_only_once = yes
+# 	is_triggered_only = yes
+# 	#mean_time_to_happen = { days = 2 }
 	
 	
 	
-	option = {
-		name = caucas.3.a
-		ARM = {
-			end_puppet = NKR
-			add_opinion_modifier = {
-				target = NKR
-				modifier = puppet
-			}
-		}
-		NKR = {
-			give_military_access = ARM
-			leave_faction = ODKB
-		}
-		}	
-	}
+# 	option = {
+# 		name = caucas.3.a
+# 		ARM = {
+# 			end_puppet = NKR
+# 			add_opinion_modifier = {
+# 				target = NKR
+# 				modifier = puppet
+# 			}
+# 		}
+# 		NKR = {
+# 			give_military_access = ARM
+# 			leave_faction = ODKB
+# 		}
+# 		}	
+# 	}
 
 ##### ARM respone to second war in nkr
 
@@ -180,12 +180,18 @@ news_event = {
 			mission = ceasefire
 			days = 14
 			}
+			
 		}
 		
 		option = {
 			ai_chance = { factor = 75 }
 			add_stability = -0.1
 			add_war_support = -0.1
+				AZE = {
+				white_peace = NKR
+				white_peace = ARM
+				white_peace = RUS
+				}
 			}	
 	}
 
@@ -338,7 +344,7 @@ news_event = {
 
 
 			###### IRAN INTERVATION
-			news_event = {
+			country_event = {
 				id = caucas.8
 				title = caucas.8.t
 				desc = caucas.8.d
@@ -357,7 +363,7 @@ news_event = {
 						IRA = {
 							declare_war_on = {
 								target = AZE
-								type = annex_everything
+								type = puppet
 							}
 						}
 						TUR = {
@@ -373,7 +379,7 @@ news_event = {
 				}
 
 
-				news_event = {
+				country_event  = {
 					id = caucas.9
 					title = caucas.9.t
 					desc = caucas.9.d
@@ -394,6 +400,10 @@ news_event = {
 									target = NKR
 									type = annex_everything
 								}
+								declare_war_on = {
+									target = ARM
+									type = puppet
+								}
 							}
 						}
 						
@@ -403,3 +413,4 @@ news_event = {
 						add_war_support = -0.1
 						}	
 					}
+				}
