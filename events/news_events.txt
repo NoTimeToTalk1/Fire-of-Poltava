@@ -103,3 +103,90 @@ news_event = {
         name = newsfop.7.a
     }
 }
+#biden
+news_event = {
+    id = newsfop.8
+    title = newsfop.8.t
+    desc = newsfop.8.d
+    picture = GFX_event_usa_elections_biden
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+    major = yes
+
+    option = {
+        name = newsfop.8.a
+    }
+}
+#trump
+news_event = {
+    id = newsfop.9
+    title = newsfop.9.t
+    desc = newsfop.9.d
+    picture = GFX_event_usa_elections_trump
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+    major = yes
+
+    option = {
+        name = newsfop.9.a
+    }
+}
+#bernie
+news_event = {
+    id = newsfop.10
+    title = newsfop.10.t
+    desc = newsfop.10.d
+    picture = GFX_event_usa_elections_sanders
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+    major = yes
+
+    option = {
+        name = newsfop.10.a
+    }
+}
+#usa elections
+country_event = {
+    id = newsfop.11
+    title = newsfop.11.t
+    desc = newsfop.11.d
+    picture = GFX_event_usa_elections_placeholder
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+    option = {
+        name = newsfop.11.a
+		USA = {
+		country_event = { id = newsfop.8 days = 2 }
+		}
+		hidden_effect = {
+		set_politics = {
+	    ruling_party = liberal_democracy
+}
+		}
+    }
+    option = {
+        name = newsfop.11.b
+		USA = {
+		country_event = { id = newsfop.9 days = 2 }
+		}
+    }
+    option = {
+        name = newsfop.11.c
+		USA = {
+		country_event = { id = newsfop.10 days = 2 }
+		}
+		hidden_effect = {
+		set_politics = {
+	    ruling_party = social_democracy
+}
+		}
+    }
+}
