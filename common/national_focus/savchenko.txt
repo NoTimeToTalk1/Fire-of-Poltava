@@ -50,6 +50,7 @@ focus_tree = {
 				completion_reward = { 
          add_political_power = 10
 		 add_war_support = 0.1
+		 recruit_character = AFU_ruban
 		}
 	}
 
@@ -150,9 +151,19 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
 		}
+		
+		available = {	
+        has_completed_focus = isr_purge_the_deputies
+		}
+		
 		prerequisite = { focus = isr_andhisdogs  }
 				completion_reward = { 
          add_command_power = 25
+		 recruit_character = AFU_solovyova
+		 recruit_character = AFU_arhipov
+		 recruit_character = AFU_diyakiv
+		 recruit_character = AFU_protorchenko
+		 recruit_character = AFU_globa
 		}
 	}
 
@@ -203,6 +214,13 @@ focus_tree = {
 		prerequisite = { focus = isr_final_cleaning  }
 				completion_reward = { 
          add_stability = -0.2
+		 hidden_effect = {
+		 retire_character = AFU_danilov
+		 retire_character = AFU_struk
+		 retire_character = AFU_kyrilenko
+		 retire_character = AFU_kuts
+		 retire_character = AFU_maistrenko
+		  }
 		}
 	}
 
@@ -219,6 +237,7 @@ focus_tree = {
 		prerequisite = { focus = isr_loyal_army  }
 				completion_reward = { 
          add_stability = 0.2
+		 add_ideas = efficiency_burocracy
 		}
 	}
 
@@ -357,6 +376,11 @@ focus_tree = {
 		prerequisite = { focus = isr_fix_the_law  }
 				completion_reward = { 
          add_stability = 0.25
+hidden_effect = {
+   add_ideas = low_taxation
+   add_ideas = manufacturing
+   add_ideas = healthcare_public_decent
+   }
 		}
 	}
 

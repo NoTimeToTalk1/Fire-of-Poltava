@@ -99,6 +99,7 @@ remove_unit_leader_trait = Doubtfully_loyal_commander
         add_command_power = 60
         recruit_character = AFU_kudryashov
 		recruit_character = AFU_dutchak
+		country_event = { id = azov.13 days = 2 }
 		}
 	}
 
@@ -527,6 +528,9 @@ remove_opinion_modifier = {
 		mutually_exclusive = { focus = AFU_luhansk_conference  }
 	completion_reward = {
         add_political_power = 25
+   hidden_effect = {
+   country_event = { id = azov.14 days = 7 }
+   }
 		}
 	}
 
@@ -606,6 +610,9 @@ remove_opinion_modifier = {
         add_war_support = 0.1
 		add_stability = 0.1
 	add_ideas = AFU_azov_aryaaaa_rusofobia
+   hidden_effect = {
+   country_event = { id = azov.16 days = 7 }
+   }
 		}
 	}
 
@@ -1638,11 +1645,111 @@ declare_war_on = {
 			FOCUS_FILTER_ANNEXATION
 		}
 	completion_reward = {
-every_state = { 
+every_state = {
+limit = { 
 is_owned_and_controlled_by = AFU
+}
 add_compliance = 50
 add_resistance = -30
 }
+		}
+	}
+	
+	#military administration
+	focus = {
+		id = AFU_military_administration_of_the_eastern_ukraine
+		icon = GFX_AFU_military_administration_of_the_eastern_ukraine-495536
+		x = 17
+		y = 20
+		cost = 3
+		prerequisite = { focus = AFU_contact_local_nationalists  }
+		
+		available = {
+	has_war = no
+	has_stability > 0.8
+	has_political_power > 100
+ }
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+	completion_reward = {
+every_state = { 
+limit = {
+is_controlled_by = AFU
+NOT = {
+is_core_of = AFU
+}
+}
+add_core_of = AFU
+}
+		}
+	}
+	
+	#day of short sabers
+	focus = {
+		id = AFU_day_of_short_guns
+		icon = GFX_AFU_day_of_short_guns-495536
+		x = 17
+		y = 21
+		cost = 1
+		prerequisite = { focus = AFU_military_administration_of_the_eastern_ukraine  }
+		
+		available = {
+	has_political_power > 100
+ }
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+	completion_reward = {
+add_political_power = -100
+add_stability = -0.25
+add_manpower = -2000
+army_experience = -5
+		}
+	}
+	
+	#get ready for final fight
+	focus = {
+		id = AFU_get_ready_for_the_final_fight
+		icon = GFX_AFU_get_ready_for_the_final_fight-495536
+		x = 17
+		y = 22
+		cost = 3
+		prerequisite = { focus = AFU_day_of_short_guns  }
+		
+		available = {
+    has_stability > 0.75
+	has_political_power > 150
+ }
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+	completion_reward = {
+add_war_support = 0.35
+add_political_power = 100
+army_experience = 10
+add_command_power = 40
+		}
+	}
+	
+	#bla bla bla 
+	focus = {
+		id = AFU_united_and_strong
+		icon = GFX_AFU_united_and_strong-495536
+		x = 17
+		y = 22
+		cost = 3
+		prerequisite = { focus = AFU_get_ready_for_the_final_fight  }
+		
+		available = {
+    has_stability > 0.75
+	has_political_power > 150
+ }
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+	completion_reward = {
+add_manpower = 1488
 		}
 	}
 

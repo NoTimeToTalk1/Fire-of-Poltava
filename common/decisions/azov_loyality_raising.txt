@@ -30,18 +30,100 @@ AFU_azov_negotatiation_decision = {
 
 
 		remove_effect  = {
-		add_command_power = 5
-if = {
-    limit = {	
-	random_unit_leader = {
-			has_trait = Doubtfully_loyal_commander
-    }
-	}
+		add_command_power = 2
 random_unit_leader = {
+limit = {
+has_trait = Doubtfully_loyal_commander
+}
 remove_unit_leader_trait = Doubtfully_loyal_commander
-
- }
 		}
 	}
+
+}
+}
+
+azov_stabilization = {
+
+AFU_call_military_patrols_decision = {
+
+		icon = GFX_decision_generic_decision
+		
+		ai_will_do = {	
+			factor = 20		
+		}
+		
+		available = {
+		original_tag = AFU
+		}
+
+		visible = {
+        original_tag = AFU
+		}
+		
+		cost = 25
+		
+		days_remove = 20
+
+
+		remove_effect  = {
+		add_stability = 0.05
+		add_manpower = 50
+		}
+	}
+AFU_call_military_patrols_decision_2 = {
+
+		icon = GFX_decision_generic_decision
+		
+		ai_will_do = {	
+			factor = 20		
+		}
+		
+		available = {
+		original_tag = AFU
+		}
+
+		visible = {
+        original_tag = AFU
+		}
+		
+		cost = 35
+		
+		days_remove = 20
+
+
+		remove_effect  = {
+		add_stability = 0.07
+		add_manpower = 75
+		}
+	}
+	
+AFU_call_military_patrols_decision_3 = {
+
+		icon = GFX_decision_generic_decision
+		
+		ai_will_do = {	
+			factor = 20		
+		}
+		
+		available = {
+		original_tag = AFU
+		}
+
+		visible = {
+        original_tag = AFU
+		}
+		
+		cost = 50
+		
+		days_remove = 20
+
+
+		remove_effect  = {
+		add_stability = 0.1
+		add_manpower = 100
+		}
+	}
+
+}
 
 }
