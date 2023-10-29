@@ -1,0 +1,305 @@
+lpr_opening_the_warehouses = {
+	
+	search_for_a_warehouse_in_krasnodon = {
+		icon = generic_decision
+
+		allowed = {
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 2309
+			} 
+		}
+
+		cost = 50
+		ai_will_do = {
+            factor = 25
+        }
+
+		days_remove = 60
+		fire_only_once = yes
+
+		modifier = {
+			#consumer_goods_factor = 0.05
+		}
+
+		remove_effect = {
+			random_list = {
+				50 = {
+					country_event = dnr.8
+				}
+
+				50 = {
+					country_event = dnr.9
+				}
+			}
+		}
+	}
+
+	search_for_a_warehouse_on_the_outskirts_of_luhansk = {
+		icon = generic_decision
+
+		allowed = {
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 518
+			} 
+		}
+
+		cost = 50
+		ai_will_do = {
+            factor = 25
+        }
+
+		days_remove = 60
+		fire_only_once = yes
+
+		modifier = {
+			#consumer_goods_factor = 0.05
+		}
+
+		remove_effect = {
+			random_list = {
+				50 = {
+					country_event = dnr.8
+				}
+
+				50 = {
+					country_event = dnr.9
+				}
+			}
+		}
+	}
+
+	search_for_a_warehouse_on_the_outskirts_of_alchevsk = {
+		icon = generic_decision
+
+		allowed = {
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 2308
+			} 
+		}
+
+		cost = 50
+		ai_will_do = {
+            factor = 25
+        }
+
+		days_remove = 60
+		fire_only_once = yes
+
+		modifier = {
+			#consumer_goods_factor = 0.05
+		}
+
+		remove_effect = {
+			random_list = {
+				50 = {
+					country_event = dnr.8
+				}
+
+				50 = {
+					country_event = dnr.9
+				}
+			}
+		}
+	}
+
+	search_for_a_warehouse_on_the_outskirts_of_khrustalnyi = {
+		icon = generic_decision
+
+		allowed = {
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 2029
+			} 
+		}
+
+		cost = 50
+		ai_will_do = {
+            factor = 25
+        }
+
+		days_remove = 60
+		fire_only_once = yes
+
+		modifier = {
+			political_power_gain = -0.25
+		}
+
+		remove_effect = {
+			random_list = {
+				50 = {
+					country_event = dnr.8
+				}
+
+				50 = {
+					country_event = dnr.9
+				}
+			}
+		}
+	}
+}
+
+lpr_extradition_of_plotnytskyi = {
+
+	lpr_plotnytskyi's_extradition_1 = {
+		icon = GFX_ZAK_rada_election
+		
+		allowed = {
+            original_tag = LPR
+        }
+
+        visible = {
+            has_completed_focus = lpr_let_daynego_come_up_with_something
+        }
+
+        cost = 25
+        ai_will_do = {
+            factor = 100
+        }
+
+        fire_only_once = yes
+        days_remove = 20
+
+        remove_effect = {
+			
+            hidden_effect = {
+                set_country_flag = LPR_PLOT_1
+				country_event =
+            }
+        }
+    }
+	
+	lpr_plotnytskyi's_extradition_2 = {
+		icon = GFX_ZAK_rada_election
+		
+		allowed = {
+            original_tag = LPR
+        }
+
+        visible = {
+            has_completed_focus = lpr_let_daynego_come_up_with_something
+			has_country_flag = LPR_PLOT_1
+        }
+
+        available = {
+            has_country_flag = LPR_PLOT_1
+        }
+
+        fire_only_once = yes
+        days_remove = 20
+
+        cost = 60
+        ai_will_do = {
+            factor = 100
+        }
+
+        remove_effect = {
+            add_opinion_modifier = {
+				target = RUS
+				modifier = diplomatic_cooperation
+			}
+            hidden_effect = {
+                clr_country_flag = LPR_PLOT_1
+                set_country_flag = LPR_PLOT_2
+				country_event =
+            }
+        }
+    }
+	
+	lpr_plotnytskyi's_extradition_3 = {
+		icon = GFX_ZAK_rada_election
+		
+		allowed = {
+			original_tag = LPR
+		}
+		
+		visible = {
+			has_completed_focus = lpr_let_daynego_come_up_with_something
+			has_country_flag = LPR_PLOT_2
+		}
+		
+		available = {
+			has_country_flag = LPR_PLOT_2
+			custom_trigger_tooltip = {
+			tooltip = "The republic demands it!"
+			}
+		}
+		
+		fire_only_once = yes
+		days_remove = 60
+		
+		cost = 150
+		ai_will_do = {
+			factor = 100
+		}
+		
+		remove_effect = {
+			
+			hidden_effect = {
+                clr_country_flag = LPR_PLOT_2
+				country_event = {
+					id = dpr.6
+					days = 5
+				}
+			}
+		}
+	}
+}
+
+lpr_cooperation_with_allies = {
+
+	lpr_cooperation_with_russia_1 = {
+	}
+	
+	lpr_cooperation_with_russia_2 = {
+	}
+	
+	lpr_cooperation_with_russia_3 = {
+	}
+	
+	lpr_cooperation_with_donetsk_1 = {
+	}
+	
+	lpr_cooperation_with_donetsk_2 = {
+	}
+	
+	lpr_cooperation_with_donetsk_3 = {
+	}
+	
+	lpr_cooperation_with_trans_1 = {
+	}
+	
+	lpr_cooperation_with_trans_2 = {
+	}
+	
+	lpr_cooperation_with_trans_3 = {
+	}
+	
+	lpr_cooperation_with_abkhazia_1 = {
+	}
+	
+	lpr_cooperation_with_abkhazia_2 = {
+	}
+	
+	lpr_cooperation_with_abkhazia_3 = {
+	}
+	
+	lpr_cooperation_with_osetia_1 = {
+	}
+	
+	lpr_cooperation_with_osetia_2 = {
+	}
+	
+	lpr_cooperation_with_osetia_3 = {
+	}
+}

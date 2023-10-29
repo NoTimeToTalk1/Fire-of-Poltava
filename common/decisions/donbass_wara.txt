@@ -874,5 +874,44 @@ donbass_war = {
 			}
 		}
 	}
+	lpr_opening_the_warehouses = {
+	icon = GFX_decision_category_military_operation
+
+		allowed = {
+			tag = LPR
+		}
+	
+		visible = {
+			tag = LPR
+			has_completed_focus = lpr_check_all_warehouses_and_niches
+		}
+	}
+
+	lpr_extradition_of_plotnytskyi = {
+	icon = GFX_decision_category_generic_civil_support
+
+		allowed = {
+			tag = LPR
+		}
+
+		visible = {
+			tag = LPR
+			has_completed_focus = lpr_let_daynego_come_up_with_something
+			country_exists = RUS
+		}
+	}
+
+	lpr_cooperation_with_allies = {
+	icon = GFX_decision_category_generic_civil_support
+
+		allowed = {
+			tag = AFU
+		}
+
+		visible = {
+			tag = LPR
+			has_completed_focus = lpr_let_daynego_come_up_with_something
+		}
+	}
 }
 
