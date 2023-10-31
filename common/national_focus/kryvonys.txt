@@ -16,6 +16,11 @@ focus_tree = {
 		}
 		prerequisite = { focus = AFU_militarisation_of_society  }
 		mutually_exclusive = { focus = AFU_keep_military_dictatorship  }
+         completion_reward = {		
+			add_political_power = 50
+			activate_advisor = AFU_baranov
+			activate_advisor = AFU_serhiev
+		}
 	}
 
 	#There is No Time for Democracy
@@ -41,6 +46,10 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_there_is_no_time_for_democracy  }
+		completion_reward = {
+			add_political_power = 50
+			add_war_support = 0.1
+		}
 	}
 
 	#Reinforce the Army
@@ -54,6 +63,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_continue_military_rule  }
+		completion_reward = {
+			add_ideas = AFU_reinforce_army_idea
+		}
 	}
 
 	#Armaments programme
@@ -67,6 +79,9 @@ focus_tree = {
 			FOCUS_FILTER_INDUSTRY
 		}
 		prerequisite = { focus = AFU_reinforce_the_army  }
+		completion_reward = {
+			add_ideas = AFU_armnament_programe_idea
+		}
 	}
 
 	#Renovate Enterprises
@@ -80,6 +95,12 @@ focus_tree = {
 			FOCUS_FILTER_INDUSTRY
 		}
 		prerequisite = { focus = AFU_armaments_programme  }
+		completion_reward = {
+			add_timed_idea = {
+				idea = AFU_repairing_zavodi
+				days = 300
+			}
+		}
 	}
 
 	#Solve Logistical Problems
@@ -93,6 +114,10 @@ focus_tree = {
 			FOCUS_FILTER_INDUSTRY
 		}
 		prerequisite = { focus = AFU_armaments_programme  }
+		completion_reward = {
+			add_ideas = AFU_logistic_problems
+				
+		}
 	}
 
 	#Opening of New Plants
@@ -106,6 +131,21 @@ focus_tree = {
 			FOCUS_FILTER_INDUSTRY
 		}
 		prerequisite = { focus = AFU_armaments_programme  }
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 4 }
+			add_offsite_building = { type = ammunition_plant level = 1 }
+			
+random_owned_state = {
+    add_extra_state_shared_building_slots = 2
+}
+random_owned_state = {
+    add_extra_state_shared_building_slots = 2
+}
+random_owned_state = {
+    add_extra_state_shared_building_slots = 2
+}
+				
+		}
 	}
 
 	#Capture the KMDB
@@ -118,7 +158,18 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
 		}
+		available = {	
+			NOT = {
+	country_exists = KHA
+	}
+		}
 		prerequisite = { focus = AFU_renovate_enterprises  } prerequisite = { focus = AFU_solve_logistical_problems  } prerequisite = { focus = AFU_opening_of_new_plants  }
+			completion_reward = {
+			add_political_power = 30
+			army_experience = 10
+			navy_experience = 10
+			air_experience = 10
+		}
 	}
 
 	#On the Ground...
@@ -132,6 +183,10 @@ focus_tree = {
 			FOCUS_FILTER_INDUSTRY
 		}
 		prerequisite = { focus = AFU_capture_the_kmdb  }
+			completion_reward = {
+			add_political_power = 30
+			army_experience = 10
+		}
 	}
 
 	#In the Air...
@@ -145,6 +200,10 @@ focus_tree = {
 			FOCUS_FILTER_INDUSTRY
 		}
 		prerequisite = { focus = AFU_capture_the_kmdb  }
+			completion_reward = {
+			add_political_power = 30
+			air_experience = 10
+		}
 	}
 
 	#Syrsky's plan "The Jerk"
@@ -158,6 +217,10 @@ focus_tree = {
 			FOCUS_FILTER_ANNEXATION
 		}
 		prerequisite = { focus = AFU_officersstaffconvention  }
+			completion_reward = {
+			add_political_power = 30
+			add_command_power = 20
+		}
 	}
 
 	#The Rich Will Pay
@@ -171,6 +234,32 @@ focus_tree = {
 			FOCUS_FILTER_ANNEXATION
 		}
 		prerequisite = { focus = AFU_syrskysplanthejerk  }
+			completion_reward = {
+declare_war_on = {
+    target = DNI
+    type = annex_everything
+}
+declare_war_on = {
+    target = BAN
+    type = annex_everything
+}
+declare_war_on = {
+    target = KRS
+    type = annex_everything
+}
+declare_war_on = {
+    target = UWF
+    type = annex_everything
+}
+declare_war_on = {
+    target = OPM
+    type = annex_everything
+}
+declare_war_on = {
+    target = PMU
+    type = annex_everything
+}
+		}
 	}
 
 	#Eastern Military Administration
@@ -183,7 +272,23 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_ANNEXATION
 		}
+		available = {
+	has_war = no
+	has_stability > 0.8
+	has_political_power > 100
+ }
 		prerequisite = { focus = AFU_the_rich_will_pay  } prerequisite = { focus = AFU_down_the_castle  }
+	completion_reward = {
+every_state = { 
+limit = {
+is_controlled_by = AFU
+NOT = {
+is_core_of = AFU
+}
+}
+add_core_of = AFU
+}
+		}
 	}
 
 	#Punishment for the Recalcitrant
@@ -197,6 +302,9 @@ focus_tree = {
 			FOCUS_FILTER_ANNEXATION
 		}
 		prerequisite = { focus = AFU_contact_their_police  }
+	completion_reward = {
+add_offsite_building = { type = labour_camp level = 1 }
+		}
 	}
 
 	#Officers' Staff Convention
@@ -210,6 +318,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_liaising_with_soldiers_outside  }
+	completion_reward = {
+add_command_power = 25
+		}
 	}
 
 	#Contact their Police
@@ -223,6 +334,9 @@ focus_tree = {
 			FOCUS_FILTER_ANNEXATION
 		}
 		prerequisite = { focus = AFU_liaising_with_soldiers_outside  }
+	completion_reward = {
+add_ideas = AFU_krivreformed_police
+		}
 	}
 
 	#Invite Observers
@@ -236,6 +350,22 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_dontforgetabouttheeasternneighbour  }
+	completion_reward = {
+activate_advisor = AFU_gonchar
+	add_ideas = AFU_nato_observers
+        add_opinion_modifier = {
+    target = EUN
+    modifier = invited_observers
+}
+        add_opinion_modifier = {
+    target = USA
+    modifier = invited_observers
+}
+        add_opinion_modifier = {
+    target = CAN
+    modifier = invited_observers
+}
+		}
 	}
 
 	#Don't Forget about the Eastern Neighbour
@@ -249,6 +379,12 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_take_a_sober_look_at_the_situation  }
+	completion_reward = {
+        add_opinion_modifier = {
+    target = RUS
+    modifier = Enemy_state
+}
+		}
 	}
 
 	#Take a Sober Look at the Situation
@@ -262,6 +398,9 @@ focus_tree = {
 			FOCUS_FILTER_ANNEXATION
 		}
 		prerequisite = { focus = AFU_reinforce_the_army  }
+	completion_reward = {
+add_command_power = 25
+		}
 	}
 
 	#Propaganda Against Opponents
@@ -275,6 +414,9 @@ focus_tree = {
 			FOCUS_FILTER_ANNEXATION
 		}
 		prerequisite = { focus = AFU_take_a_sober_look_at_the_situation  }
+	completion_reward = {
+add_war_support = 0.25
+		}
 	}
 
 	#Liaising with Soldiers Outside
@@ -288,6 +430,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_take_a_sober_look_at_the_situation  }
+	completion_reward = {
+add_political_power = 10
+		}
 	}
 
 	#Ukraine will be Free and Strong
@@ -301,6 +446,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_restorepartyveteransofato  } prerequisite = { focus = AFU_guns_for_everyone  }
+	completion_reward = {
+add_ideas = AFU_cossaks_state
+		}
 	}
 
 	#Guns for Everyone
@@ -314,6 +462,10 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_legalise_pmcs  }
+	completion_reward = {
+add_political_power = 10
+add_stability = 0.3
+		}
 	}
 
 	#Order Above All Else
@@ -327,6 +479,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_the_only_lightweight_power  } prerequisite = { focus = AFU_administrative_reform  }
+	completion_reward = {
+add_ideas = AFU_order_above_all_else_idea
+		}
 	}
 
 	#Friends in Need
@@ -353,6 +508,10 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_kozackomy_rodu_nema_prevodu  }
+	completion_reward = {
+add_stability = 0.1
+add_ideas = eliberalism
+		}
 	}
 
 	#Restore Party "Veterans of ATO"
@@ -366,6 +525,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_kryvonys_political_career  }
+	completion_reward = {
+add_war_support = 0.1
+		}
 	}
 
 	#Not Yet Perished
@@ -379,6 +541,9 @@ focus_tree = {
 			FOCUS_FILTER_ANNEXATION
 		}
 		prerequisite = { focus = AFU_friends_in_need  } prerequisite = { focus = AFU_thunder_and_fire  }
+	completion_reward = {
+add_political_power = 100
+		}
 	}
 
 	#Thunder and Fire
@@ -405,6 +570,12 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_strengthen_population_control  }
+	completion_reward = {
+add_popularity = {
+    ideology = oligarchy
+    popularity = -0.5
+}
+		}
 	}
 
 	#Administrative Reform
@@ -418,6 +589,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_create_councill_of_generals  }
+	completion_reward = {
+add_ideas = AFU_updated_military_administrations
+		}
 	}
 
 	#And at Sea...
@@ -431,6 +605,10 @@ focus_tree = {
 			FOCUS_FILTER_INDUSTRY
 		}
 		prerequisite = { focus = AFU_capture_the_kmdb  }
+	completion_reward = {
+	add_political_power = 30
+navy_experience = 10
+		}
 	}
 
 	#Gorit` Palae Tehnika Vorozha
@@ -444,6 +622,9 @@ focus_tree = {
 			FOCUS_FILTER_INDUSTRY
 		}
 		prerequisite = { focus = AFU_ontheground  } prerequisite = { focus = AFU_intheair  } prerequisite = { focus = AFU_andatsea  }
+	completion_reward = {
+	add_political_power = 30
+		}
 	}
 
 	#Use Everything for the Greater Good
@@ -457,6 +638,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_reinforce_the_army  }
+	completion_reward = {
+add_political_power = 30
+		}
 	}
 
 	#Militarisation of Society
@@ -470,6 +654,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_use_everything_for_the_greater_good  }
+	completion_reward = {
+add_ideas = AFU_militarisation_of_society
+		}
 	}
 
 	#Build More Supply Camps
@@ -483,6 +670,29 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_militarisation_of_society  }
+	completion_reward = {
+random_owned_state = {
+   add_building_construction = {
+    type = supply_node
+    level = 3
+    instant_build = yes
+}
+}
+random_owned_state = {
+   add_building_construction = {
+    type = supply_node
+    level = 3
+    instant_build = yes
+}
+}
+random_owned_state = {
+   add_building_construction = {
+    type = supply_node
+    level = 3
+    instant_build = yes
+}
+}
+		}
 	}
 
 	#Send Young People to Work in Factories
@@ -496,7 +706,25 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_build_more_supply_camps  }
+		completion_reward = {
+random_owned_state = {
+   add_extra_state_shared_building_slots = 2
+   add_building_construction = {
+    type = ammunition_plant
+    level = 1
+    instant_build = yes
+}
+}
+random_owned_state = {
+   add_extra_state_shared_building_slots = 2
+   add_building_construction = {
+    type = arms_factory
+    level = 1
+    instant_build = yes
+}
+}
 	}
+}
 
 	#Keep Military Dictatorship
 	focus = {
@@ -510,6 +738,9 @@ focus_tree = {
 		}
 		prerequisite = { focus = AFU_militarisation_of_society  }
 		mutually_exclusive = { focus = AFU_kozackomy_rodu_nema_prevodu  }
+	completion_reward = {
+add_political_power = 30
+		}
 	}
 
 	#Create Councill of Generals
@@ -523,6 +754,9 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_keep_military_dictatorship  }
+	completion_reward = {
+add_political_power = 30
+		}
 	}
 
 	#Strengthen Population Control
@@ -536,6 +770,11 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_keep_military_dictatorship  }
+	completion_reward = {
+add_political_power = 10
+add_ideas = population_controlled
+add_ideas = illiberalism
+		}
 	}
 
 	#Legalise PMCs
@@ -549,6 +788,10 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = AFU_kozackomy_rodu_nema_prevodu  }
+	completion_reward = {
+add_political_power = 10
+add_ideas = limited_foreign_mercenaries
+		}
 	}
 
 	#Down the Castle
@@ -562,6 +805,12 @@ focus_tree = {
 			FOCUS_FILTER_ANNEXATION
 		}
 		prerequisite = { focus = AFU_syrskysplanthejerk  }
+	completion_reward = {
+declare_war_on = {
+    target = KHA
+    type = annex_everything
+}
+		}
 	}
 
 }
