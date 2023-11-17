@@ -15,15 +15,17 @@ country_event = {
 	option = { 
 		name = DPRelection.1.a
         set_country_flag = DPRelection_government
-		mark_focus_tree_layout_dirty = yes
 		custom_effect_tooltip = DPRelection_government_option_tt
+		load_focus_tree = DPR_penis_election
+		set_country_flag = DPRelection_active
 	}
 	
 	option = { 
 		name = DPRelection.1.b
         set_country_flag = DPRelection_opposition
-		mark_focus_tree_layout_dirty = yes
 		custom_effect_tooltip = DPRelection_opposition_option_tt
+		load_focus_tree = DPR_opposition
+		set_country_flag = DPRelection_active
 	}
 }
 
@@ -417,4 +419,68 @@ country_event = {
 	option = { 
 		name = DPRelection.21.a
 	}
+}
+
+country_event = {
+	id = DPRelection.22
+	title = DPRelection.22.t
+	desc = DPRelection.22.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		DPR = {
+			has_government = radical_nationalism
+		}
+
+	}
+
+	option = { 
+		name = DPRelection.22.a
+		DPR = {
+			set_cosmetic_tag = GRK
+			remove_ideas = DPR_clown
+			remove_ideas = DPR_FSB
+			load_focus_tree = DPR_strelkov
+		}
+		
+	}
+	
+
+}
+
+country_event = {
+	id = DPRelection.23
+	title = DPRelection.23.t
+	desc = DPRelection.23.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		DPR = {
+			has_country_flag = dpr_penis_win
+		}
+
+	}
+
+	option = { 
+		name = DPRelection.23.a
+		DPR = {
+			set_cosmetic_tag = PSH
+			remove_ideas = DPR_clown
+			remove_ideas = DPR_FSB
+			load_focus_tree = DPR_penis
+		}
+		
+	}
+	
+
 }
