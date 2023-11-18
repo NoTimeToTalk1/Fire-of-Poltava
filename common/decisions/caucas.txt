@@ -1,25 +1,18 @@
 caucas = {
-	    ceasefire = {			
-
+	ceasefire = {
 		icon = GFX_ZAK_rada_election
-		
 		activation = {
 			AZE = {
 				has_war_with = NKR
 			}
 		}
-		
 		fire_only_once = yes
 		days_mission_timeout = 30
-
-		visible = {	
+		visible = {
 			has_war = yes
-		}		
-
+		}
 		remove_effect = {
-
-	  	}
-
+		}
 		available = {
 			OR = {
 				AZE = {
@@ -35,21 +28,30 @@ caucas = {
 				}
 			}
 		}
-
 		complete_effect = {
 			AZE = {
-			# white_peace = NKR
-			# white_peace = ARM
-			# white_peace = RUS
-			# set_state_owner = 998
-			# set_state_owner = 993
-			# set_state_owner = 1020
-			# set_state_owner = 2266
+				# white_peace = NKR
+				# white_peace = ARM
+				# white_peace = RUS
+				# set_state_owner = 998
+				# set_state_owner = 993
+				# set_state_owner = 1020
+				# set_state_owner = 2266
 				country_event = caucas.6
 			}
-
 			NKR = {
-				add_ideas = NRK_blocade
+				add_ideas = NKR_blocade
+				if = {
+					limit = {
+						NKR = {
+							NOT = {
+								controls_province = 7318
+							}
+						}
+					}
+				country_event = caucas.10
+			}
+			
 			}
 			remove_mission = NAKHACHIVAN_CORRIDOR`
 		}
@@ -57,77 +59,64 @@ caucas = {
 		timeout_effect = {
 			if = {
 				limit = {
-					AND = {	
-					# ARM = {
-					# has_war_with = AZE
-					# }
-					# NKR = {
+					AND = {
+						# ARM = {
+						# has_war_with = AZE
+						# }
+						# NKR = {
 						# surrender_progress > 0.1
 					}
 				}
-
 			}
 			AZE = {
 				country_event = caucas.4
 			}
-
-			
 		}
-			# AZE = {
-			# 	white_peace = NKR
-			# 	white_peace = ARM
-			# 	white_peace = RUS
-			# 	}
-			# add_war_support = -0.1
-			# add_stability = -0.1
-		}
-
-
-	   NAKHACHIVAN_CORRIDOR = {			
-
+		# AZE = {
+		# 	white_peace = NKR
+		# 	white_peace = ARM
+		# 	white_peace = RUS
+		# 	}
+		# add_war_support = -0.1
+		# add_stability = -0.1
+	}
+	NAKHACHIVAN_CORRIDOR = {
 		icon = GFX_ZAK_rada_election
-		
 		activation = {
-			# AZE = {
-			# 	has_war_with = NKR
-			# }
-			AZE = {
-				has_war_with = ARM
+			OR = {
+				NKR = {
+					has_capitulated = yes
 				}
+				AZE = {
+					controls_province = 7318
+				}
+			}
 		}
-		
 		fire_only_once = yes
 		days_mission_timeout = 90
-
-		visible = {	
-			AZE = {
-			has_war_with = ARM
-			}
-		}		
-
+		visible = {
+			#AZE = {
+			#has_war_with = ARM
+			#}
+		}
 		remove_effect = {
-
-	  	}
-		
-
+		}
 		available = {
-				AZE = {
-					controls_province = 6772
-					controls_province = 16343
-					controls_province = 6288
+			AZE = {
+				controls_province = 6772
+				controls_province = 16343
+				controls_province = 6288
 			}
 		}
-
 		complete_effect = {
 			AZE = {
-			# white_peace = NKR
-			# white_peace = ARM
-			# white_peace = RUS
-			# set_state_owner = 998
-			# set_state_owner = 993
-			# set_state_owner = 1020
-			# set_state_owner = 2266
-			
+				# white_peace = NKR
+				# white_peace = ARM
+				# white_peace = RUS
+				# set_state_owner = 998
+				# set_state_owner = 993
+				# set_state_owner = 1020
+				# set_state_owner = 2266
 			}
 			IRA = {
 				country_event = caucas.8
@@ -139,17 +128,17 @@ caucas = {
 				white_peace = NKR
 				white_peace = ARM
 				white_peace = RUS
-			add_war_support = -0.25
-			add_stability = -0.2
-			add_popularity = {
-				ideology = radical_nationalism
-				popularity = 0.1
-			}
-			add_popularity = {
-				ideology = millitary_junta
-				popularity = 0.1
+				add_war_support = -0.25
+				add_stability = -0.2
+				add_popularity = {
+					ideology = radical_nationalism
+					popularity = 0.1
+				}
+				add_popularity = {
+					ideology = millitary_junta
+					popularity = 0.1
+				}
 			}
 		}
-		}
-   	}
+	}
 }

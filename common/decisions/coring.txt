@@ -1,23 +1,20 @@
 coring = {
-
 	"install_administration" = {
-
 		available = {
 			ROOT = {
-			FROM = {
-				compliance > 20
-				any_neighbor_state = {
-					is_core_of = ROOT
+				FROM = {
+					compliance > 20
+					any_neighbor_state = {
+						is_core_of = ROOT
+					}
 				}
 			}
-			}
 		}
-
 		state_target = yes
 		on_map_mode = map_only
 		target_array = controlled_states
 		target_trigger = {
-			FROM = { 
+			FROM = {
 				has_state_flag = poc
 				any_neighbor_state = {
 					is_core_of = ROOT
@@ -27,15 +24,13 @@ coring = {
 				}
 			}
 		}
-
 		cost = 20
 		fire_only_once = yes
 		days_remove = 5
 		modifier = {
-			political_power_factor  = -0.10
-			compliance_growth  = 0.1
+			political_power_factor = -0.1
+			compliance_growth = 0.1
 		}
-
 		visible = {
 			# FROM = { 
 			# 	any_neighbor_state = {
@@ -48,54 +43,45 @@ coring = {
 			FROM = {
 				set_state_flag = core.1
 				clr_state_flag = poc
-
 			}
 			add_political_power = 5
 		}
-}
-
-
-"crush_desedents" = {
-
-	available = {
-		FROM = {
-			compliance > 50
-			has_state_flag = core.1
-
-		}
 	}
-
-	state_target = yes
-	on_map_mode = map_only
-	target_array = controlled_states
-	target_trigger = {
-		FROM = { 
-			has_state_flag = core.1
-			any_neighbor_state = {
-				is_core_of = ROOT
-			}
-			NOT = {
-				is_core_of = ROOT
-				# any_neighbor_state = {
-				# 	is_core_of = ROOT
-				# }
+	"crush_desedents" = {
+		available = {
+			FROM = {
+				compliance > 50
+				has_state_flag = core.1
 			}
 		}
-	}
-
-	cost = 30
-	fire_only_once = yes
-	days_remove = 30
-
-	modifier = {
-		political_power_factor  = -0.10
-		compliance_growth  = 0.2
-		state_resources_factor = 0.2
-	}
-
-	visible = {
-		FROM = {
-			#  has_state_flag = core.1
+		state_target = yes
+		on_map_mode = map_only
+		target_array = controlled_states
+		target_trigger = {
+			FROM = {
+				has_state_flag = core.1
+				any_neighbor_state = {
+					is_core_of = ROOT
+				}
+				NOT = {
+					is_core_of = ROOT
+					# any_neighbor_state = {
+					# 	is_core_of = ROOT
+					# }
+				}
+			}
+		}
+		cost = 30
+		fire_only_once = yes
+		days_remove = 30
+		modifier = {
+			political_power_factor = -0.1
+			compliance_growth = 0.2
+			state_resources_factor = 0.2
+		}
+		visible = {
+			FROM = {
+				#  has_state_flag = core.1
 			}
 		}
 		remove_effect = {
@@ -104,13 +90,10 @@ coring = {
 				set_state_flag = core.2
 				add_manpower = -2000
 				cancel_resistance = yes
-
-			}  
+			}
 		}
 	}
-
 	"core" = {
-
 		available = {
 			FROM = {
 				any_neighbor_state = {
@@ -118,12 +101,11 @@ coring = {
 				}
 			}
 		}
-	
 		state_target = yes
-		on_map_mode = map_only 
+		on_map_mode = map_only
 		target_array = controlled_states
 		target_trigger = {
-			FROM = { 
+			FROM = {
 				any_neighbor_state = {
 					is_core_of = ROOT
 				}
@@ -136,90 +118,72 @@ coring = {
 				}
 			}
 		}
-	
 		cost = 30
 		fire_only_once = yes
 		days_remove = 50
-	
 		modifier = {
-			political_power_factor  = -0.15
-			compliance_growth  = 0.2
+			political_power_factor = -0.15
+			compliance_growth = 0.2
 			state_resources_factor = 0.2
 		}
-	
 		visible = {
 			FROM = {
-
 				has_state_flag = core.2
 			}
-				}
-		  
-			remove_effect = {
-				FROM = {
-					clr_state_flag = core.2
-					add_core_of = ROOT
-				}
-			}
 		}
-
-
-
-
- ### difficult region for core
-
-"hardintegration" = {
-
-	available = {
-		FROM = {
-			compliance > 30
-			any_neighbor_state = {
-				is_core_of = ROOT
+		remove_effect = {
+			FROM = {
+				clr_state_flag = core.2
+				add_core_of = ROOT
 			}
 		}
 	}
-
-	state_target = yes
-	on_map_mode = map_only
-	target_array = controlled_states
-	target_trigger = {
-		FROM = { 
-			has_state_flag = hardint
-			NOT = {
-				is_core_of = ROOT
-				all_neighbor_state = {
+	### difficult region for core
+	"hardintegration" = {
+		available = {
+			FROM = {
+				compliance > 30
+				any_neighbor_state = {
 					is_core_of = ROOT
 				}
 			}
 		}
-	}
-
-	cost = 100  
-
-	fire_only_once = yes
-	days_remove = 50
-
-	modifier = {
-		political_power_factor  = -0.20
-		compliance_growth  = 0.05
-		weekly_manpower = -2500
-
-	}
-
-	visible = {
-		FROM = {
-			any_neighbor_state = {
-				is_core_of = ROOT
+		state_target = yes
+		on_map_mode = map_only
+		target_array = controlled_states
+		target_trigger = {
+			FROM = {
+				has_state_flag = hardint
+				NOT = {
+					is_core_of = ROOT
+					all_neighbor_state = {
+						is_core_of = ROOT
+					}
+				}
 			}
 		}
-}
-	remove_effect = {
-		FROM = {
-			clr_state_flag = hardint
-			set_state_flag = poc
-			add_manpower = -20000
-
+		cost = 100
+		fire_only_once = yes
+		days_remove = 50
+		modifier = {
+			political_power_factor = -0.2
+			compliance_growth = 0.05
+			weekly_manpower = -2500
 		}
-		add_political_power = 5
-		}	
+		visible = {
+			FROM = {
+				any_neighbor_state = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		remove_effect = {
+			FROM = {
+				clr_state_flag = hardint
+				set_state_flag = poc
+				add_manpower = -20000
+			}
+			add_political_power = 5
+		}
 	}
 }

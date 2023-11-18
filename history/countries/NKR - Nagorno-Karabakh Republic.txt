@@ -1,12 +1,7 @@
 capital = 997
-
 oob = "NKR_2109"
-
 set_research_slots = 0
-
-
-#add_ideas = NRK_karbabach
-
+#add_ideas = NKR_karbabach
 add_ideas = head_president
 add_ideas = service_economy
 add_ideas = output_balanced
@@ -27,22 +22,15 @@ add_ideas = finances_army
 add_ideas = volunteers_extended
 add_ideas = focus_infrastructure
 add_ideas = extensive_foreign_mercenaries
-
-
 add_ideas = extensive_conscription
-
-
-
-add_ideas = NRK_Armenian_puppet
-
-add_ideas = NRK_karbabach
-
+add_ideas = NKR_Armenian_puppet
+add_ideas = NKR_karbabach
 # Starting tech
 set_technology = {
 	infantry_weapons = 1
 	infantry_weapons1 = 1
 	tech_recon = 1
-	tech_support = 1		
+	tech_support = 1
 	tech_engineers = 1
 	basic_train = 1
 	tech_military_police = 1
@@ -61,13 +49,16 @@ set_technology = {
 
 if = {
 	limit = {
-		NOT = { has_dlc = "No Step Back" }
+		NOT = {
+			has_dlc = "No Step Back"
+		}
 	}
 	set_technology = {
 		gwtank = 1
 		basic_light_tank = 1
 	}
 }
+
 if = {
 	limit = {
 		has_dlc = "No Step Back"
@@ -77,9 +68,12 @@ if = {
 		basic_light_tank_chassis = 1
 	}
 }
+
 if = {
 	limit = {
-		not = { has_dlc = "Man the Guns" }
+		not = {
+			has_dlc = "Man the Guns"
+		}
 	}
 	set_technology = {
 		early_submarine = 1
@@ -92,6 +86,7 @@ if = {
 		transport = 1
 	}
 }
+
 if = {
 	limit = {
 		has_dlc = "Man the Guns"
@@ -109,18 +104,18 @@ if = {
 }
 
 recruit_character = NKR_kocharyan
-
-set_politics = {	
+set_politics = {
 	ruling_party = conservative_democracy
 	last_election = "2017.7.19"
 	election_frequency = 60
 	elections_allowed = no
-
 }
 
-set_party_name = { ideology = conservative_democracy
-    long_name = "Democratic Party of Artsakh"
-	name = "DPA" }
+set_party_name = {
+	ideology = conservative_democracy
+	long_name = "Democratic Party of Artsakh"
+	name = "DPA"
+}
 
 set_popularities = {
 	social_democracy = 0
