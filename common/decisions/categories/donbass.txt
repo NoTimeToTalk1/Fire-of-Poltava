@@ -7,6 +7,22 @@ Odesa_civil_war = {
 	
 }
 
+DPR_verkhovna_rada_decision_category = {
+	icon = GFX_decision_category_duma
+	visible = {
+	tag = MLD
+	MLD = {
+		has_completed_focus = DPR_beginning_of_new_era
+		}
+	}
+
+	priority = 99999
+
+	scripted_gui = DPR_rada_scripted_gui
+	
+	visible_when_empty = yes
+}
+
 vsrf_decisions = {
 	icon = GFX_decision_category_infiltration
 	picture = GFX_mobilization
@@ -20,7 +36,7 @@ afu_azov_start_decisions = {
 	icon = GFX_decision_category_infiltration
 	picture = GFX_decision_picture_azov
 	visible = {
-	tag = AFU
+	
 	AFU = {
 	has_war = no
 	has_completed_focus = AFU_azov

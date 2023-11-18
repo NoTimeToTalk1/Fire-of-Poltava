@@ -312,3 +312,1129 @@ DPRelection_decision_category = {
 		}
 	}
 }
+
+DPR_verkhovna_rada_decision_category = {
+	
+	DPR_decision_change_speaker = {
+
+		icon = GFX_decision_dpr_duma_change_speaker
+		
+				ai_will_do = {	
+			factor = 200	
+		}
+
+		available = {
+			has_completed_focus = DPR_beginning_of_new_era
+		}
+		visible = {
+			has_completed_focus = DPR_beginning_of_new_era
+		}
+		
+		days_remove = 200
+
+		cost = 10
+
+		complete_effect = {
+if = {
+    limit = {
+radical_nationalism > 0.5
+	}
+custom_effect_tooltip = this_guy_became_speaker_tt
+			hidden_effect = {
+set_country_flag = speaker_vorobyov
+clr_country_flag = speaker_nadion
+clr_country_flag = speaker_rudkovskyi
+clr_country_flag = speaker_nevzorov
+clr_country_flag = speaker_tylkin
+clr_country_flag = speaker_yanik
+clr_country_flag = speaker_ponos
+clr_country_flag = speaker_tsaryov
+clr_country_flag = speaker_no
+			}
+}
+if = {
+    limit = {
+social_democracy > 0.5
+	}
+custom_effect_tooltip = this_guy_became_speaker_tt
+			hidden_effect = {
+set_country_flag = speaker_rudkovskyi
+clr_country_flag = speaker_nadion
+clr_country_flag = speaker_vorobyov
+clr_country_flag = speaker_nevzorov
+clr_country_flag = speaker_tylkin
+clr_country_flag = speaker_yanik
+clr_country_flag = speaker_ponos
+clr_country_flag = speaker_tsaryov
+clr_country_flag = speaker_no
+			}
+}
+if = {
+    limit = {
+liberal_democracy > 0.5
+	}
+custom_effect_tooltip = this_guy_became_speaker_tt
+			hidden_effect = {
+set_country_flag = speaker_nevzorov
+clr_country_flag = speaker_nadion
+clr_country_flag = speaker_vorobyov
+clr_country_flag = speaker_rudkovskyi
+clr_country_flag = speaker_tylkin
+clr_country_flag = speaker_yanik
+clr_country_flag = speaker_ponos
+clr_country_flag = speaker_tsaryov
+clr_country_flag = speaker_no
+			}
+}
+if = {
+    limit = {
+oligarchy > 0.5
+	}
+ custom_effect_tooltip = this_guy_became_speaker_tt
+			hidden_effect = {
+set_country_flag = speaker_tsaryov
+clr_country_flag = speaker_nadion
+clr_country_flag = speaker_vorobyov
+clr_country_flag = speaker_rudkovskyi
+clr_country_flag = speaker_tylkin
+clr_country_flag = speaker_yanik
+clr_country_flag = speaker_ponos
+clr_country_flag = speaker_nevzorov
+clr_country_flag = speaker_no
+			}
+}
+if = {
+    limit = {
+conservative_democracy > 0.5
+	}
+ custom_effect_tooltip = this_guy_became_speaker_tt
+			hidden_effect = {
+set_country_flag = speaker_ponos
+clr_country_flag = speaker_nadion
+clr_country_flag = speaker_vorobyov
+clr_country_flag = speaker_rudkovskyi
+clr_country_flag = speaker_tylkin
+clr_country_flag = speaker_yanik
+clr_country_flag = speaker_tsaryov
+clr_country_flag = speaker_nevzorov
+clr_country_flag = speaker_no
+			}
+}
+if = {
+    limit = {
+radical_socialism > 0.5
+	}
+ custom_effect_tooltip = this_guy_became_speaker_tt
+			hidden_effect = {
+set_country_flag = speaker_tylkin
+clr_country_flag = speaker_nadion
+clr_country_flag = speaker_vorobyov
+clr_country_flag = speaker_rudkovskyi
+clr_country_flag = speaker_yanik
+clr_country_flag = speaker_ponos
+clr_country_flag = speaker_tsaryov
+clr_country_flag = speaker_nevzorov
+clr_country_flag = speaker_no
+			}
+}
+if = {
+    limit = {
+			AND = {
+				centrism > 0.5
+				has_country_flag = Yanik_returned
+			}
+	}
+ custom_effect_tooltip = this_guy_became_speaker_tt
+			hidden_effect = {
+set_country_flag = speaker_yanik
+clr_country_flag = speaker_nadion
+clr_country_flag = speaker_vorobyov
+clr_country_flag = speaker_rudkovskyi
+clr_country_flag = speaker_tylkin
+clr_country_flag = speaker_ponos
+clr_country_flag = speaker_tsaryov
+clr_country_flag = speaker_nevzorov
+clr_country_flag = speaker_no
+			}
+}
+if = {
+    limit = {
+	AND = {
+				centrism > 0.5
+			NOT = {
+			has_country_flag = Yanik_returned
+			}
+		}
+	}
+ custom_effect_tooltip = this_guy_became_speaker_tt
+			hidden_effect = {
+set_country_flag = speaker_nadion
+clr_country_flag = speaker_yanik
+clr_country_flag = speaker_vorobyov
+clr_country_flag = speaker_rudkovskyi
+clr_country_flag = speaker_tylkin
+clr_country_flag = speaker_ponos
+clr_country_flag = speaker_tsaryov
+clr_country_flag = speaker_nevzorov
+clr_country_flag = speaker_no
+			}
+}
+		}
+	}
+	
+DPR_rostislave_right_war_mass_mobilization = {
+		available = {
+		has_war = yes
+	}
+		visible = {
+		has_war = yes
+		}
+		days_re_enable = 2
+
+		cost = 10
+		days_remove = 200
+
+		complete_effect = {
+ add_ideas = mobilization_country
+}
+remove_effect = {
+add_war_support = 0.1
+swap_ideas = {
+ remove_idea = mobilization_country
+ add_idea = planning_stage
+}
+		}
+}
+
+DPR_rostislave_right_war_martial_laws = {
+		available = {
+		has_war = yes
+	}
+		visible = {
+		has_war = yes
+		}
+		days_re_enable = 2
+
+		cost = 10
+		days_remove = 200
+
+		complete_effect = {
+ add_ideas = hour_limit_14
+ add_ideas = mass_media_propaganda
+}
+remove_effect = {
+hidden_effect = {
+swap_ideas = {
+ remove_idea = hour_limit_14
+ add_idea = hour_limit_12
+}
+swap_ideas = {
+ remove_idea = mass_media_propaganda
+ add_idea = mass_media_control
+}
+}
+		}
+}
+
+	DPR_rostislave_libs_lustration_for_debils = {
+		available = {
+		OR = {
+		liberal_democracy > 0.5
+		}
+	}
+		visible = {
+		OR = {
+		liberal_democracy > 0.5
+		}
+		}
+		days_re_enable = 2
+
+		cost = 25
+		days_remove = 180
+
+		complete_effect = {
+ add_ideas = efficiency_burocracy
+ add_stability = -0.2
+}
+remove_effect = {
+hidden_effect = {
+swap_ideas = {
+ remove_idea = efficiency_burocracy
+ add_idea = planning_stage
+}
+}	
+}
+		}
+
+	DPR_rostislave_libs_invite_ivests = {
+		available = {
+		OR = {
+		liberal_democracy > 0.5
+		}
+	}
+		visible = {
+		OR = {
+		liberal_democracy > 0.5
+		}
+		}
+		days_re_enable = 2
+
+		cost = 25
+		days_remove = 180
+
+		complete_effect = {
+ add_ideas = finances_civilian
+ add_ideas = very_low_taxation
+}
+remove_effect = {
+hidden_effect = {
+swap_ideas = {
+ remove_idea = finances_civilian
+ add_idea = finances_no_data
+}
+swap_ideas = {
+ remove_idea = very_low_taxation
+ add_idea = standard_taxation
+}
+}	
+}
+		}
+		
+	DPR_rostislave_libs_stimulate_busines = {
+		available = {
+		OR = {
+		liberal_democracy > 0.5
+		}
+	}
+		visible = {
+		OR = {
+		liberal_democracy > 0.5
+		}
+		}
+		days_re_enable = 2
+
+		cost = 25
+		days_remove = 180
+
+		complete_effect = {
+add_war_support = -0.05
+}
+remove_effect = {
+random_owned_state = {
+add_extra_state_shared_building_slots = 2
+}
+random_owned_state = {
+add_extra_state_shared_building_slots = 2
+}
+}	
+}
+
+
+	DPR_rostislave_army_investition = {
+		available = {
+		OR = {
+		oligarchy > 0.5
+		conservative_democracy > 0.5
+		radical_nationalism > 0.5
+		}
+	}
+		visible = {
+		OR = {
+		oligarchy > 0.5
+		conservative_democracy > 0.5
+		radical_nationalism > 0.5
+		}
+		}
+		days_re_enable = 2
+
+		cost = 25
+		days_remove = 180
+
+		complete_effect = {
+ add_ideas = finances_army
+ add_ideas = five_percent
+}
+remove_effect = {
+hidden_effect = {
+swap_ideas = {
+ remove_idea = finances_army
+ add_idea = finances_no_data
+}
+swap_ideas = {
+ remove_idea = five_percent
+ add_idea = two_percent
+}
+}	
+}
+		}
+
+	DPR_rostislave_right_education_investition = {
+		available = {
+		OR = {
+		oligarchy > 0.5
+		conservative_democracy > 0.5
+		radical_nationalism > 0.5
+		}
+	}
+		visible = {
+		OR = {
+		oligarchy > 0.5
+		conservative_democracy > 0.5
+		radical_nationalism > 0.5
+		}
+		}
+		days_re_enable = 2
+
+		cost = 25
+		days_remove = 180
+
+		complete_effect = {
+ add_ideas = education_military
+}
+remove_effect = {
+random_core_state = {
+add_building_construction = {
+    type = civil_education_centre
+    level = 1
+    instant_build = yes
+}
+}	
+}
+		}
+		
+	DPR_rostislave_language_supression = {
+		available = {
+		OR = {
+		oligarchy > 0.5
+		conservative_democracy > 0.5
+		radical_nationalism > 0.5
+		}
+	}
+		visible = {
+		any_owned_state = { 
+			NOT = {
+	is_core_of = DPR
+	}
+		}
+		OR = {
+		oligarchy > 0.5
+		conservative_democracy > 0.5
+		radical_nationalism > 0.5
+		}
+		}
+		days_re_enable = 2
+
+		cost = 25
+		days_remove = 20
+
+		complete_effect = {
+add_stability = -0.1
+}
+remove_effect = {
+random_owned_state = {
+    limit = {
+	NOT = {
+	is_core_of = DPR
+	}
+	}
+add_resistance = -10
+}
+random_owned_state = {
+    limit = {
+	NOT = {
+	is_core_of = DPR
+	}
+	}
+	add_resistance = -10
+}
+random_owned_state = {
+    limit = {
+	NOT = {
+	is_core_of = DPR
+	}
+	}
+	add_resistance = -10
+}	
+}
+		}
+		
+DPR_rostislave_right_heathcare_investition = {
+		available = {
+		OR = {
+		oligarchy > 0.5
+		conservative_democracy > 0.5
+		radical_nationalism > 0.5
+		}
+	}
+		visible = {
+		OR = {
+		oligarchy > 0.5
+		conservative_democracy > 0.5
+		radical_nationalism > 0.5
+		}
+		}
+		days_re_enable = 2
+
+		cost = 25
+		days_remove = 180
+
+		complete_effect = {
+ add_ideas = healthcare_public_decent
+}
+remove_effect = {
+swap_ideas = {
+ remove_idea = healthcare_public_decent
+ add_idea = healthcare_public_bad
+}
+random_core_state = {
+add_building_construction = {
+    type = hospital_building
+    level = 1
+    instant_build = yes
+}
+}
+		}
+}
+
+	DPR_rostislave_army_investition = {
+		available = {
+		OR = {
+		centrism > 0.5
+		liberal_democracy > 0.5
+		}
+	}
+		visible = {
+		OR = {
+		centrism > 0.5
+		liberal_democracy > 0.5
+		}
+		}
+		days_re_enable = 2
+
+		cost = 25
+		days_remove = 180
+
+		complete_effect = {
+ add_ideas = finances_army
+ add_ideas = three_percent
+}
+remove_effect = {
+hidden_effect = {
+swap_ideas = {
+ remove_idea = finances_army
+ add_idea = finances_no_data
+}
+swap_ideas = {
+ remove_idea = three_percent
+ add_idea = two_percent
+}
+}	
+}
+		}
+
+	DPR_rostislave_centre_education_investition = {
+		available = {
+		OR = {
+		centrism > 0.5
+		liberal_democracy > 0.5
+		}
+	}
+		visible = {
+		OR = {
+		centrism > 0.5
+		liberal_democracy > 0.5
+		}
+		}
+		days_re_enable = 2
+
+		cost = 25
+		days_remove = 180
+
+		complete_effect = {
+ add_ideas = education_excessive
+}
+remove_effect = {
+random_core_state = {
+add_building_construction = {
+    type = civil_education_centre
+    level = 1
+    instant_build = yes
+}
+}	
+}
+		}
+		
+	DPR_rostislave_administration_update = {
+		available = {
+		OR = {
+		centrism > 0.5
+		liberal_democracy > 0.5
+		}
+	}
+		visible = {
+		any_owned_state = { 
+			NOT = {
+	is_core_of = DPR
+	}
+		}
+		OR = {
+		centrism > 0.5
+		liberal_democracy > 0.5
+		}
+		}
+		days_re_enable = 2
+
+		cost = 25
+		days_remove = 20
+
+		complete_effect = {
+}
+remove_effect = {
+random_owned_state = {
+    limit = {
+	NOT = {
+	is_core_of = DPR
+	}
+	}
+add_resistance = -10
+}
+random_owned_state = {
+    limit = {
+	NOT = {
+	is_core_of = DPR
+	}
+	}
+	add_resistance = -5
+}
+random_owned_state = {
+    limit = {
+	NOT = {
+	is_core_of = DPR
+	}
+	}
+	add_resistance = -5
+}	
+}
+		}
+		
+DPR_rostislave_centre_heathcare_investition = {
+		available = {
+		OR = {
+		centrism > 0.5
+		liberal_democracy > 0.5
+		}
+	}
+		visible = {
+		OR = {
+		centrism > 0.5
+		liberal_democracy > 0.5
+		}
+		}
+		days_re_enable = 2
+
+		cost = 25
+		days_remove = 180
+
+		complete_effect = {
+ add_ideas = healthcare_public_good
+}
+remove_effect = {
+swap_ideas = {
+ remove_idea = healthcare_public_good
+ add_idea = healthcare_public_bad
+}
+random_core_state = {
+add_building_construction = {
+    type = hospital_building
+    level = 1
+    instant_build = yes
+}
+}
+		}
+}
+
+
+
+	DPR_rostislave_army_investition = {
+		available = {
+		OR = {
+		radical_socialism > 0.5
+		social_democracy > 0.5
+		}
+	}
+		visible = {
+		OR = {
+		radical_socialism > 0.5
+		social_democracy > 0.5
+		}
+		}
+		days_re_enable = 2
+
+		cost = 25
+		days_remove = 90
+
+		complete_effect = {
+ add_ideas = finances_army
+ add_ideas = three_percent
+}
+remove_effect = {
+hidden_effect = {
+swap_ideas = {
+ remove_idea = finances_army
+ add_idea = finances_no_data
+}
+swap_ideas = {
+ remove_idea = three_percent
+ add_idea = two_percent
+}
+}	
+}
+		}
+
+	DPR_rostislave_left_education_investition = {
+		available = {
+		OR = {
+		radical_socialism > 0.5
+		social_democracy > 0.5
+		}
+	}
+		visible = {
+		OR = {
+		radical_socialism > 0.5
+		social_democracy > 0.5
+		}
+		}
+		days_re_enable = 2
+
+		cost = 25
+		days_remove = 120
+
+		complete_effect = {
+ add_ideas = education_standard
+}
+remove_effect = {
+random_core_state = {
+add_building_construction = {
+    type = civil_education_centre
+    level = 1
+    instant_build = yes
+}
+}
+random_list = {
+50 = { 
+random_core_state = {
+add_building_construction = {
+    type = research_complex
+    level = 1
+    instant_build = yes
+}
+}
+}
+50 = { 
+random_core_state = {
+add_building_construction = {
+    type = civil_education_centre
+    level = 1
+    instant_build = yes
+}
+}
+}
+}	
+}
+		}
+		
+	DPR_rostislave_left_propaganda = {
+		available = {
+		OR = {
+		radical_socialism > 0.5
+		social_democracy > 0.5
+		}
+	}
+		visible = {
+		any_owned_state = { 
+			NOT = {
+	is_core_of = DPR
+	}
+		}
+		OR = {
+		radical_socialism > 0.5
+		social_democracy > 0.5
+		}
+		}
+		days_re_enable = 2
+
+		cost = 25
+		days_remove = 30
+
+		complete_effect = {
+add_stability = -0.05
+}
+remove_effect = {
+random_owned_state = {
+    limit = {
+	NOT = {
+	is_core_of = DPR
+	}
+	}
+add_resistance = -10
+}
+random_owned_state = {
+    limit = {
+	NOT = {
+	is_core_of = DPR
+	}
+	}
+	add_resistance = -10
+}
+random_owned_state = {
+    limit = {
+	NOT = {
+	is_core_of = DPR
+	}
+	}
+	add_resistance = -10
+}	
+}
+		}
+		
+DPR_rostislave_left_heathcare_investition = {
+		available = {
+		OR = {
+		radical_socialism > 0.5
+		social_democracy > 0.5
+		}
+	}
+		visible = {
+		OR = {
+		radical_socialism > 0.5
+		social_democracy > 0.5
+		}
+		}
+		days_re_enable = 2
+
+		cost = 25
+		days_remove = 180
+
+		complete_effect = {
+ add_ideas = healthcare_public_good
+}
+remove_effect = {
+swap_ideas = {
+ remove_idea = healthcare_public_good
+ add_idea = healthcare_public_bad
+}
+random_core_state = {
+add_building_construction = {
+    type = hospital_building
+    level = 1
+    instant_build = yes
+}
+}
+random_core_state = {
+add_building_construction = {
+    type = hospital_building
+    level = 1
+    instant_build = yes
+}
+}
+		}
+}
+
+DPR_rostislave_left_workers_right_support = {
+		available = {
+		OR = {
+		radical_socialism > 0.5
+		social_democracy > 0.5
+		}
+	}
+		visible = {
+		OR = {
+		radical_socialism > 0.5
+		social_democracy > 0.5
+		}
+		}
+		days_re_enable = 2
+
+		cost = 30
+		days_remove = 180
+
+		complete_effect = {
+ add_ideas = hour_limit_8
+}
+remove_effect = {
+hidden_effect = {
+swap_ideas = {
+ remove_idea = hour_limit_8
+ add_idea = hour_limit_10
+}
+}
+		}
+}
+
+DPR_rostislave_farright_rally = {
+
+        icon = GFX_decision_dpr_duma_farright
+
+		available = {
+		has_political_power > 100
+		has_stability > 0.2
+		has_war_support > 0.9
+		num_of_available_military_factories > 5		
+	}
+		visible = {
+		has_political_power > 25
+		}
+		days_re_enable = 2
+
+		cost = 25
+		days_remove = 20
+
+		complete_effect = {
+ add_stability = -0.07
+ add_war_support = 0.05
+}
+remove_effect = {
+random_list = {
+50 = {
+add_popularity = {
+    ideology = radical_nationalism
+    popularity = 0.03
+}
+}
+30 = {
+add_popularity = {
+    ideology = radical_nationalism
+    popularity = 0.04
+}
+}
+20 = {
+add_popularity = {
+    ideology = radical_nationalism
+    popularity = 0.05
+}
+}
+		}
+	}
+}
+
+DPR_rostislave_moderright_rally = {
+
+        icon = GFX_decision_dpr_duma_moderright
+
+		available = {
+		has_political_power > 100
+		has_stability > 0.2
+		has_war_support > 0.5		
+	}
+		visible = {
+		has_political_power > 10
+		}
+		days_re_enable = 2
+
+		cost = 25
+		days_remove = 20
+
+		complete_effect = {
+ add_stability = -0.07
+ add_war_support = 0.05
+}
+remove_effect = {
+random_list = {
+50 = {
+add_popularity = {
+    ideology = conservative_democracy
+    popularity = 0.03
+}
+}
+30 = {
+add_popularity = {
+    ideology = conservative_democracy
+    popularity = 0.04
+}
+}
+20 = {
+add_popularity = {
+    ideology =conservative_democracy
+    popularity = 0.05
+}
+}
+		}
+	}
+}
+
+DPR_rostislave_centrist_rally = {
+
+        icon = GFX_decision_dpr_duma_centrist
+
+		available = {
+		has_political_power > 100
+		has_stability > 0.2
+		num_of_available_military_factories > 2		
+	}
+		visible = {
+		has_political_power > 10
+		}
+		days_re_enable = 2
+
+		cost = 25
+		days_remove = 20
+
+		complete_effect = {
+ add_stability = -0.02
+ add_war_support = -0.02
+}
+remove_effect = {
+random_list = {
+50 = {
+add_popularity = {
+    ideology = centrism
+    popularity = 0.03
+}
+}
+30 = {
+add_popularity = {
+    ideology = centrism
+    popularity = 0.04
+}
+}
+20 = {
+add_popularity = {
+    ideology = centrism
+    popularity = 0.05
+}
+}
+		}
+	}
+}
+
+DPR_rostislave_liberals_rally = {
+
+        icon = GFX_decision_dpr_duma_liberals
+
+		available = {
+		has_political_power > 150
+		has_stability > 0.4		
+	}
+		visible = {
+		has_political_power > 10
+		}
+		days_re_enable = 2
+
+		cost = 25
+		days_remove = 20
+
+		complete_effect = {
+ add_stability = -0.04
+ add_war_support = -0.04
+}
+remove_effect = {
+random_list = {
+50 = {
+add_popularity = {
+    ideology = liberal_democracy
+    popularity = 0.04
+}
+}
+30 = {
+add_popularity = {
+    ideology = liberal_democracy
+    popularity = 0.05
+}
+}
+20 = {
+add_popularity = {
+    ideology = liberal_democracy
+    popularity = 0.06
+}
+}
+		}
+	}
+}
+
+DPR_rostislave_socdem_rally = {
+
+        icon = GFX_decision_dpr_duma_socdems
+
+		available = {
+		has_political_power > 200
+		has_stability > 0.6
+		num_of_available_civilian_factories > 5		
+	}
+		visible = {
+		has_political_power > 200
+		}
+		days_re_enable = 2
+
+		cost = 25
+		days_remove = 20
+
+		complete_effect = {
+ add_stability = -0.05
+ add_war_support = -0.05
+}
+remove_effect = {
+random_list = {
+50 = {
+add_popularity = {
+    ideology = social_democracy
+    popularity = 0.04
+}
+}
+30 = {
+add_popularity = {
+    ideology = social_democracy
+    popularity = 0.05
+}
+}
+20 = {
+add_popularity = {
+    ideology = social_democracy
+    popularity = 0.06
+}
+}
+		}
+	}
+}
+
+DPR_rostislave_yanukovich_coup_meme = {
+		available = {
+		
+	}
+		visible = {
+		has_political_power > 200
+		centrism > 0.9
+		num_of_available_civilian_factories > 20
+		}
+		days_re_enable = 2
+
+		cost = 200
+		days_remove = 7
+		
+		fire_only_once = yes
+
+		complete_effect = {
+ 
+}
+remove_effect = {
+recruit_character = DNR_yanik
+add_country_leader_role = {
+    character = DNR_yanik
+    promote_leader = yes
+    country_leader = {
+        ideology = monacrhism
+        expire = "2222.1.1.1"
+        traits = {  }
+    }
+}
+set_politics = {
+	ruling_party = conservative_democracy
+    elections_allowed = no
+    long_name = "Partiya Guberniy"
+    name = "Partiya Guberniy"
+}
+	}
+}
+
+
+}
+

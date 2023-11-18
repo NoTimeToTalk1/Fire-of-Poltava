@@ -1,0 +1,48 @@
+add_namespace = rdk
+
+country_event = { #rdk spawn only for consos`
+	id = rdk.1
+	title = rdk.1.t
+	desc = rdk.1.d
+
+	picture = GFX_event_rdk_photo
+	
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = rdk.1.a
+            AFU = {
+			create_faction = LUHANSK_AGREEMENT
+			}
+			RDK = {
+			transfer_state = 450
+			add_state_core = 450
+			add_manpower = AFU:AFU_rdk
+			}
+            AFU = { add_to_faction = RDK }
+RDK = {
+add_to_war = {
+    targeted_alliance = AFU
+    enemy = RUS
+    hostility_reason = asked_to_join
+}
+load_oob = "RDK_2019"
+				add_equipment_to_stockpile = { type = infantry_equipment_2
+				amount = 10000
+				producer = AFU
+			}
+			
+			add_equipment_to_stockpile = { type = artillery_equipment_1
+				amount = 2500
+				producer = AFU
+			}
+			
+			add_equipment_to_stockpile = { type = support_equipment_1
+				amount = 5000
+				producer = AFU
+			}
+}	
+	}
+}
