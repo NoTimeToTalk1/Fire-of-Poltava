@@ -176,4 +176,48 @@ remove_effect = {
 add_political_power = 50	
 }
 		}
+		
+	hiveration_of_daunbas_cum_to_power = {
+		available = {
+tag = DPR
+}
+		visible = {
+DPR = {
+has_country_flag = DNR_no
+has_political_power > 200
+command_power > 1
+has_idea = finances_civilian
+has_idea = education_propagandized
+has_idea = healthcare_public_bad
+}
+		}
+		
+		cost = 10
+		
+		fire_only_once = yes
+
+        complete_effect = {
+		custom_effect_tooltip = decision_HIVeration_of_donbas_oh_no
+            hidden_effect = {
+                add_command_power = -1
+add_country_leader_role = {
+    character = DNR_vasiliev
+    promote_leader = yes
+    country_leader = {
+        ideology = queer_nationalism
+        expire = "2222.1.1.1"
+        traits = {  }
+    }
+}
+set_politics = {
+	ruling_party = radical_socialism
+    elections_allowed = no
+    long_name = "Novie Lyudi"
+    name = "New Humans"
+}
+set_cosmetic_tag = DPR_HIV
+            }
+        }
+		}
+
 }

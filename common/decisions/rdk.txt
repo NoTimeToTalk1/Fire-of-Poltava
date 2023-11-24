@@ -1,0 +1,45 @@
+rdk_core = {
+RDK_nationalisation = {
+
+		icon = GFX_decision_generic_decision
+		
+				ai_will_do = {	
+			factor = 20		
+		}
+		
+		available = {
+			tag = RDK
+			any_controlled_state = { 
+	is_fully_controlled_by = RDK
+			compliance > 10
+			}
+		}
+
+		visible = {
+
+			any_controlled_state = { 
+	is_fully_controlled_by = RDK
+			compliance > 10
+			}
+		}
+		
+		cost = 20
+		
+		days_remove = 10
+
+		remove_effect  = {
+random_controlled_state = {
+			limit = {
+	is_fully_controlled_by = RDK
+			compliance > 10
+		NOT = {
+		has_state_flag = RDK_liberated
+		}
+			}
+add_core_of = RDK
+remove_core_of = RUS
+set_state_flag = RDK_liberated
+}
+		}
+	}
+}

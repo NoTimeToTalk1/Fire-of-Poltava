@@ -1,0 +1,38 @@
+add_namespace = kha
+
+#FREICORP march
+country_event = {
+	id = kha.1
+	title = kha.1.t
+	desc = kha.1.d
+
+	picture = GFX_event_kharkiv_freicor
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = kha.1.a
+        ai_chance = {
+            base = 80
+        }
+	}
+	option = {
+		name = kha.2.b
+		set_politics = {
+	    ruling_party = radical_nationalism
+}
+		hidden_effect = {
+        add_popularity = {
+				ideology = radical_nationalism
+				popularity = 0.2
+		}
+		set_cosmetic_tag = KHA_radical_nationalism
+remove_ideas = {
+    KHA_police_state
+    KHA_preserving_the_old_ways
+}
+	}
+        ai_chance = {
+            base = 20
+        }
+	}
+}

@@ -30,7 +30,7 @@
 		}
 		prerequisite = { focus = afu_ruleofthefarright  }
 		completion_reward = {
-        add_political_power = 10
+        add_political_power = 15
         add_stability = 0.1		
 		country_event = { id = azov.4 }
 		}
@@ -51,7 +51,7 @@
 		}
 		
 		completion_reward = {
-        add_political_power = 25
+        add_political_power = 100
 		add_ideas = AFU_azov_huge_resistance
 add_corps_commander_role = {
     Character = AFU_zhorin
@@ -91,7 +91,8 @@ remove_unit_leader_trait = Doubtfully_loyal_commander
 		prerequisite = { focus = afu_ruleofthefarright  }
 		
 			completion_reward = {
-        add_command_power = 60
+		add_manpower = 1500
+        add_command_power = 50
         recruit_character = AFU_kudryashov
 		recruit_character = AFU_dutchak
 		country_event = { id = azov.13 days = 2 }
@@ -159,6 +160,7 @@ remove_unit_leader_trait = Doubtfully_loyal_commander
 		prerequisite = { focus = afu_destroythesovietheritage  }
 		
 	completion_reward = {
+	add_manpower = 5000
         remove_ideas = AFU_pro_russian_sentiments
 country_event = { id = azov.2 }
 		}
@@ -1292,10 +1294,7 @@ add_ideas = penal_recruitment
 			FOCUS_FILTER_ANNEXATION
 		}
 	completion_reward = {
-declare_war_on = {
-    target = KHA
-    type = annex_everything
-}
+
 		}
 	}
 
@@ -1413,17 +1412,12 @@ add_command_power = -25
 	completion_reward = {
 add_war_support = 0.15
 add_command_power = 25
-		every_state = {
-			limit = {
-				is_core_of = KHA
-				is_controlled_by = ROOT
-			}
-			remove_core_of = KHA
-			add_core_of = ROOT
-		}
+declare_war_on = {
+    target = KHA
+    type = annex_everything
+}
 	hidden_effect = {
-        country_event = azov.6
-		set_country_flag = united_east
+        country_event = { id = azov.6 days = 7 }
 		}
 		}
 	}

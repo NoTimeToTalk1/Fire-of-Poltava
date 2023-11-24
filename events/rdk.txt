@@ -15,6 +15,7 @@ country_event = { #rdk spawn only for consos`
 		name = rdk.1.a
             AFU = {
 			create_faction = LUHANSK_AGREEMENT
+			country_event = { id = rdk.2 days = 2 }
 			}
 			RDK = {
 			transfer_state = 450
@@ -23,6 +24,18 @@ country_event = { #rdk spawn only for consos`
 			}
             AFU = { add_to_faction = RDK }
 RDK = {
+set_nationality = {
+    target_country = AFU
+    character = AFU_esenin
+}	
+set_nationality = {
+    target_country = AFU
+    character = AFU_pomor
+}
+declare_war_on = {
+    target = RUS
+    type = annex_everything
+}
 add_to_war = {
     targeted_alliance = AFU
     enemy = RUS
@@ -43,6 +56,29 @@ load_oob = "RDK_2019"
 				amount = 5000
 				producer = AFU
 			}
-}	
+}
 	}
+}
+
+country_event = { #rdk 
+	id = rdk.2
+	title = rdk.2.t
+	desc = rdk.2.d
+
+	picture = GFX_event_rdk_photo
+	
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = rdk.2.a
+		RDK = {
+		change_tag_from = ROOT
+		}
+		}
+	option = {
+		name = rdk.2.b
+		add_political_power = 20
+		}
 }
