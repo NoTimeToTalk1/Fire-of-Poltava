@@ -12,12 +12,9 @@ news_event = {
 	option = {
 		name = war.1.a
 		hidden_effect = {
-				if = {
-			limit = {is_ai = no}
-		    set_global_flag = super_odessa_war
             set_global_flag = Super_Event_Visible
-			play_song = "superev_odessa_war"
-			}
+		    play_song = "superev_odessa_war"
+		    set_global_flag = super_odessa_war
 		ODE = {
 		set_country_flag = odesa_war
 		}
@@ -40,6 +37,9 @@ news_event = {
 		set_country_flag = odesa_war
 		}
 		}
+	}
+	immediate = {
+		add_threat = 15
 	}
 }
 news_event = {
