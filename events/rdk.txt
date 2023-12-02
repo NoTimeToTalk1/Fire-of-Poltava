@@ -24,14 +24,6 @@ country_event = { #rdk spawn only for consos`
 			}
             AFU = { add_to_faction = RDK }
 RDK = {
-set_nationality = {
-    target_country = AFU
-    character = AFU_esenin
-}	
-set_nationality = {
-    target_country = AFU
-    character = AFU_pomor
-}
 declare_war_on = {
     target = RUS
     type = annex_everything
@@ -56,6 +48,35 @@ load_oob = "RDK_2019"
 				amount = 5000
 				producer = AFU
 			}
+}
+hidden_effect = {
+
+RDK = {
+set_nationality = {
+    target_country = AFU
+    character = AFU_esenin
+}	
+set_nationality = {
+    target_country = AFU
+    character = AFU_pomor
+}
+set_nationality = {
+    target_country = PLT
+    character = PLT_tesak
+}
+set_nationality = {
+    target_country = TER
+    character = TER_lyovkin
+}
+}
+TER_lyovkin = {
+                set_portraits = {
+                    civilian = {
+                        large = "gfx/leaders/RDK/lyovkin.dds"
+                    }
+                }
+            }
+
 }
 	}
 }
