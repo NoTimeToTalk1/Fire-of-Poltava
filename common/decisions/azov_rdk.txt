@@ -9,20 +9,21 @@ azov_rdk = {
 		}
 		
 		available = {
-		has_completed_focus = AFU_invite_russian_farrights
-        check_variable = {
-    AFU_rdk > 9500
-       }		
+		AND = {
+		has_completed_focus = AFU_invite_russian_farrights		
         check_variable = {
     AFU_rdk_eq > 5
-       }	   
+       }
+}	   
 		}
 		
 		fire_only_once = yes
 
 		visible = {
-		has_completed_focus = AFU_invite_russian_farrights	
+		AND = {
+		has_completed_focus = AFU_invite_russian_farrights
 		AFU = { has_war_with = RUS }
+		}
 		}
 		
 		cost = 50
