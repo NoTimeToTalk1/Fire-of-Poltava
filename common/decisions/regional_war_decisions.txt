@@ -1,0 +1,4830 @@
+south_war = {
+	sw_pick_doctrine_offensive = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = south_war
+			NOT = {
+				OR = {
+					has_country_flag = sw_offensive
+					has_country_flag = sw_defensive
+				}
+			}
+		}		
+
+		cost = 25
+
+		complete_effect = {
+			set_country_flag = sw_offensive
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	sw_declare_mobilisation = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = south_war
+		}		
+
+		cost = 50
+		days_remove = 30
+
+		remove_effect = {
+			add_manpower = 30000
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	sw_war_economy = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = south_war
+		}		
+
+		cost = 25
+		days_remove = 10
+
+		remove_effect = {
+			add_ideas = regional_war_economy
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	sw_raise_morale = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = south_war
+		}		
+
+		cost = 25
+		days_remove = 20
+
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = sw_defensive
+				}
+				add_ideas = regional_raise_morale_def
+			}
+			if = {
+				limit = {
+					has_country_flag = sw_pffensive
+				}
+				add_ideas = regional_raise_morale_atk
+			}
+			
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	sw_gather_intel = {
+		icon = GFX_ZAK_rada_election
+		
+		target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_south_west
+					has_country_flag = united_south_center
+				}
+                
+            }
+        }
+
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = south_war
+		}		
+
+		days_remove = 40
+		custom_cost_trigger = {
+			command_power > 25
+		}
+		custom_cost_text = decision_cost_25_cp
+
+		complete_effect = {
+				add_command_power = -25		
+	  	}
+		remove_effect = {
+			add_intel = {
+				target = FROM
+				civilian_intel = 20
+				army_intel = 20
+				navy_intel = 10
+				airforce_intel = 10
+			}
+		}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	sw_sabotage = {
+		icon = GFX_ZAK_rada_election
+
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = south_war
+		}		
+
+		days_remove = 30
+		custom_cost_trigger = {
+			command_power > 50
+		}
+		custom_cost_text = decision_cost_50_cp
+
+		complete_effect = {
+				add_command_power = -50		
+	  	}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_south_center
+				}
+				614 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				2063 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				2064 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = united_south_west
+				}
+				2085 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				2088 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				2089 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+			}
+		}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	sw_expand_supply_routes = {
+		icon = GFX_ZAK_rada_election
+
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = south_war
+		}		
+
+		days_remove = 10
+		custom_cost_trigger = {
+			command_power > 10
+		}
+		custom_cost_text = decision_cost_10_cp
+
+		complete_effect = {
+				add_command_power = -10		
+	  	}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_south_center
+				}
+				build_railway = {
+					level = 1
+					fallback = yes
+					path = { 940 806 9188 3712 8851 13766 }
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = united_south_west
+				}
+				build_railway = {
+					level = 1
+					fallback = yes
+					path = { 13844 1636 138 9324 }
+				}
+			}
+		}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+
+	sw_pick_doctrine_defensive = {
+		icon = GFX_ZAK_rada_election
+		available = { 
+			
+		}
+
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = south_war
+			NOT = {
+				OR = {
+					has_country_flag = sw_offensive
+					has_country_flag = sw_defensive
+				}
+			}
+		}		
+
+		cost = 25
+
+		complete_effect = {
+			set_country_flag = sw_defensive
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	sw_raise_defences = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = sw_defensive
+		}		
+		
+		days_remove = 40
+		custom_cost_trigger = {
+			command_power > 50
+		}
+		custom_cost_text = decision_cost_50_cp
+
+		complete_effect = {
+			add_command_power = -50
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_south_center
+				}
+				2085 = {
+					add_building_construction = { type = bunker level = 3 province = 2085 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13997 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 940 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 806 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 2628 instant_build = yes }
+				}
+				2088 = {
+					add_building_construction = { type = bunker level = 3 province = 9188 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 3712 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 8851 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13766 instant_build = yes }
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = united_south_west
+				}
+				614 = {
+					add_building_construction = { type = bunker level = 3 province = 13888 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 5293 instant_build = yes }
+				}
+				2088 = {
+					add_building_construction = { type = bunker level = 3 province = 138 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 1636 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13901 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13844 instant_build = yes }
+				}
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	sw_secondary_defences = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+		}
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = sw_defensive
+		}		
+		
+		days_remove = 20
+		custom_cost_trigger = {
+			command_power > 30
+		}
+		custom_cost_text = decision_cost_30_cp
+
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_global_flag = sw_built_secondary
+			if = {
+				limit = {
+					has_country_flag = united_south_center
+				}
+				657 = {
+					add_building_construction = { type = bunker level = 3 province = 6792 instant_build = yes }
+				}
+				2089 = {
+					add_building_construction = { type = bunker level = 3 province = 5061 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13990 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 5632 instant_build = yes }
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = united_south_west
+				}
+				2061 = {
+					add_building_construction = { type = bunker level = 3 province = 5245 instant_build = yes }
+				}
+				2063 = {
+					add_building_construction = { type = bunker level = 3 province = 3327 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 378 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 5474 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 8522 instant_build = yes }
+				}
+				618 = {
+					add_building_construction = { type = bunker level = 3 province = 2511 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13826 instant_build = yes }
+				}
+			}
+					
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	sw_war = {
+		activation = {
+			always = no
+		}
+		available = {
+			NOT = {
+				has_country_flag = south_war
+			}
+		}
+		target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_south_west
+					has_country_flag = united_south_center
+				}
+				has_country_flag = south_war
+            }
+        }
+		is_good = no
+		war_with_on_timeout = FROM
+		days_mission_timeout = 120
+		selectable_mission = no
+		timeout_effect = {
+			declare_war_on = {
+				target = FROM
+				type = annex_everything
+			}
+			set_country_flag = south_war_escalated
+			FROM = {
+				set_country_flag = south_war_escalated
+			}
+			if = {
+				limit = {
+					has_country_flag = sw_offensive
+				}
+				add_ideas = regional_commend_the_offensive
+				set_country_flag = sw_capture_cities
+			}
+			if = {
+				limit = {
+					has_country_flag = sw_defensive
+				}
+				add_ideas = regional_ready_to_hold
+				set_country_flag = sw_hold_positions
+			}
+    	}
+	}
+
+	sw_capture_cities = {
+		activation = {
+			ROOT = {
+				has_country_flag = sw_capture_cities
+			}
+		}
+		available = {
+			FROM = {
+				surrender_progress > 0.5
+			}
+		}
+		target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_south_west
+					has_country_flag = united_south_center
+				}
+				has_country_flag = south_war_escalated
+            }
+			ROOT = {
+				NOT = {
+					has_country_flag = sw_hold_positions
+				}
+			}
+        }
+		is_good = no
+		days_mission_timeout = 100
+		selectable_mission = no
+		timeout_effect = {
+			add_ideas = regional_failed_plans
+    	}
+		complete_effect = {
+			add_war_support = 0.1
+			add_stability = 0.15
+		}
+	}
+
+	sw_hold_positions = {
+		activation = {
+			has_country_flag = sw_hold_positions
+		}
+		available = {
+			ROOT = {
+				surrender_progress > 0.5
+			}
+		}
+		target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_south_west
+					has_country_flag = united_south_center
+				}
+				has_country_flag = south_war_escalated
+            }
+			ROOT = {
+				NOT = {
+					has_country_flag = sw_capture_cities
+				}
+			}
+        }
+		is_good = no
+		days_mission_timeout = 100
+		selectable_mission = no
+		timeout_effect = {
+			add_ideas = regional_counter_attack
+    	}
+		complete_effect = {
+			add_war_support = -0.1
+			add_stability = -0.3
+		}
+	}   
+}
+
+center_war = {
+    center_pick_doctrine_offensive = {
+        icon = GFX_ZAK_rada_election
+        available = {
+        }
+        fire_only_once = yes
+        visible = {
+            has_country_flag = center_war
+            NOT = {
+                OR = {
+                    has_country_flag = center_offensive
+                    has_country_flag = center_defensive
+                }
+            }
+        }
+        cost = 25
+        complete_effect = {
+            set_country_flag = center_offensive
+        }
+        ai_will_do = {
+            base = 10
+        }
+    }
+
+    center_declare_mobilisation = {
+        icon = GFX_ZAK_rada_election
+        available = {
+        }
+        fire_only_once = yes
+        visible = {
+            has_country_flag = center_war
+        }
+        cost = 50
+        days_remove = 30
+        remove_effect = {
+            add_manpower = 30000
+        }
+        ai_will_do = {
+            base = 10
+        }
+    }
+
+    center_war_economy = {
+        icon = GFX_ZAK_rada_election
+        available = {
+        }
+        fire_only_once = yes
+        visible = {
+            has_country_flag = center_war
+        }
+        cost = 25
+        days_remove = 10
+        remove_effect = {
+            add_ideas = regional_war_economy
+        }
+        ai_will_do = {
+            base = 10
+        }
+    }
+
+    center_raise_morale = {
+        icon = GFX_ZAK_rada_election
+        available = {
+        }
+        fire_only_once = yes
+        visible = {
+            has_country_flag = center_war
+        }
+        cost = 25
+        days_remove = 20
+        remove_effect = {
+            if = {
+                limit = {
+                    has_country_flag = center_defensive
+                }
+                add_ideas = regional_raise_morale_def
+            }
+            if = {
+                limit = {
+                    has_country_flag = center_pffensive
+                }
+                add_ideas = regional_raise_morale_atk
+            }
+        }
+        ai_will_do = {
+            base = 10
+        }
+    }
+
+    center_gather_intel = {
+        icon = GFX_ZAK_rada_election
+        target_trigger = {
+            FROM = {
+                OR = {
+                    has_country_flag = united_north
+                    has_country_flag = united_north_center
+                }
+            }
+        }
+        available = {
+        }
+        fire_only_once = yes
+        visible = {
+            has_country_flag = center_war
+        }
+        days_remove = 40
+        custom_cost_trigger = {
+            command_power > 25
+        }
+        custom_cost_text = decision_cost_25_cp
+        complete_effect = {
+            add_command_power = -25
+        }
+        remove_effect = {
+            add_intel = {
+                target = FROM
+                civilian_intel = 20
+                army_intel = 20
+                navy_intel = 10
+                airforce_intel = 10
+            }
+        }
+        ai_will_do = {
+            base = 10
+        }
+    }
+
+    center_sabotage = {
+        icon = GFX_ZAK_rada_election
+        available = {
+        }
+        fire_only_once = yes
+        visible = {
+            has_country_flag = center_war
+        }
+        days_remove = 30
+        custom_cost_trigger = {
+            command_power > 50
+        }
+        custom_cost_text = decision_cost_50_cp
+        complete_effect = {
+            add_command_power = -50
+        }
+        remove_effect = {
+            if = {
+                limit = {
+                    has_country_flag = united_north
+                }
+                2067 = {
+                    damage_building = {
+                        type = infrastructure
+                        damage = 1
+                    }
+                }
+                2113 = {
+                    damage_building = {
+                        type = infrastructure
+                        damage = 1
+                    }
+                }
+                494 = {
+                    damage_building = {
+                        type = infrastructure
+                        damage = 1
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    has_country_flag = united_north_center
+                }
+                2057 = {
+                    damage_building = {
+                        type = infrastructure
+                        damage = 1
+                    }
+                }
+                443 = {
+                    damage_building = {
+                        type = infrastructure
+                        damage = 1
+                    }
+                }
+                2119 = {
+                    damage_building = {
+                        type = infrastructure
+                        damage = 1
+                    }
+                }
+            }
+        }
+        ai_will_do = {
+            base = 10
+        }
+    }
+
+    center_expand_supply_routes = {
+        icon = GFX_ZAK_rada_election
+        available = {
+        }
+        fire_only_once = yes
+        visible = {
+            has_country_flag = center_war
+        }
+        days_remove = 10
+        custom_cost_trigger = {
+            command_power > 10
+        }
+        custom_cost_text = decision_cost_10_cp
+        complete_effect = {
+            add_command_power = -10
+        }
+        remove_effect = {
+            if = {
+                limit = {
+                    has_country_flag = united_north
+                }
+                build_railway = {
+                    level = 1
+                    fallback = yes
+                    path = {
+                        2025
+                        8436
+                        12794
+                        12827
+                        7008
+                        5631
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    has_country_flag = united_north_center
+                }
+                build_railway = {
+                    level = 1
+                    fallback = yes
+                    path = {
+                        12949
+                        8297
+                        12874
+                        2357
+                    }
+                }
+                build_railway = {
+                    level = 1
+                    fallback = yes
+                    path = {
+                        2158
+                        12832
+                        2547
+                    }
+                }
+            }
+        }
+        ai_will_do = {
+            base = 10
+        }
+    }
+
+    center_pick_doctrine_defensive = {
+        icon = GFX_ZAK_rada_election
+        available = {
+        }
+        fire_only_once = yes
+        visible = {
+            has_country_flag = center_war
+            NOT = {
+                OR = {
+                    has_country_flag = center_offensive
+                    has_country_flag = center_defensive
+                }
+            }
+        }
+        cost = 25
+        complete_effect = {
+            set_country_flag = center_defensive
+        }
+        ai_will_do = {
+            base = 10
+        }
+    }
+
+    center_raise_defences = {
+        icon = GFX_ZAK_rada_election
+        available = {
+        }
+        fire_only_once = yes
+        visible = {
+            has_country_flag = center_defensive
+        }
+        days_remove = 40
+        custom_cost_trigger = {
+            command_power > 50
+        }
+        custom_cost_text = decision_cost_50_cp
+        complete_effect = {
+            add_command_power = -50
+        }
+        remove_effect = {
+            if = {
+                limit = {
+                    has_country_flag = united_north
+                }
+                2057 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 8945
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 12997
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 8006
+                        instant_build = yes
+                    }
+                }
+                2058 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 8363
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 7008
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 5631
+                        instant_build = yes
+                    }
+                }
+                443 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 5746
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 6162
+                        instant_build = yes
+                    }
+                }
+                2118 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 12526
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 36
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 7170
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 8518
+                        instant_build = yes
+                    }
+                }
+                2116 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 5348
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 6569
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 12464
+                        instant_build = yes
+                    }
+                }
+                2115 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 12500
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 6083
+                        instant_build = yes
+                    }
+                }
+                2114 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 260
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 12668
+                        instant_build = yes
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    has_country_flag = united_north_center
+                }
+                2065 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 6434
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 9060
+                        instant_build = yes
+                    }
+                }
+                2027 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 3
+                        province = 1597
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 3
+                        province = 1701
+                        instant_build = yes
+                    }
+                }
+                2066 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 13019
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 13051
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 12998
+                        instant_build = yes
+                    }
+                }
+                2067 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 12934
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 12874
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 2357
+                        instant_build = yes
+                    }
+                }
+                510 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 12828
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 15779
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 12774
+                        instant_build = yes
+                    }
+                }
+                494 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 1542
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 6644
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 12609
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 12618
+                        instant_build = yes
+                    }
+                }
+                2113 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 3066
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 6511
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 12589
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 3267
+                        instant_build = yes
+                    }
+                }
+                2112 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 12649
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 2547
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 2
+                        province = 6646
+                        instant_build = yes
+                    }
+                }
+            }
+        }
+        ai_will_do = {
+            base = 10
+        }
+    }
+
+    center_secondary_defences = {
+        icon = GFX_ZAK_rada_election
+        available = {
+        }
+        fire_only_once = yes
+        visible = {
+            has_country_flag = center_defensive
+        }
+        days_remove = 20
+        custom_cost_trigger = {
+            command_power > 30
+        }
+        custom_cost_text = decision_cost_30_cp
+        complete_effect = {
+            add_command_power = -30
+        }
+        remove_effect = {
+            if = {
+                limit = {
+                    has_country_flag = united_north
+                }
+                2056 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 7182
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 5957
+                        instant_build = yes
+                    }
+                }
+                2058 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 15875
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 8436
+                        instant_build = yes
+                    }
+                }
+                2069 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 12532
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 12476
+                        instant_build = yes
+                    }
+                }
+                2122 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 12569
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 12315
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 12223
+                        instant_build = yes
+                    }
+                }
+                397 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 1892
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 4959
+                        instant_build = yes
+                    }
+                }
+                2119 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 12146
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 853
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 5446
+                        instant_build = yes
+                    }
+                }
+                2117 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 8611
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 4780
+                        instant_build = yes
+                    }
+                }
+                2035 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 12186
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 8029
+                        instant_build = yes
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    has_country_flag = united_north_center
+                }
+                2072 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 13427
+                        instant_build = yes
+                    }
+                }
+                2073 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 9169
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 13250
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 3706
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 1281
+                        instant_build = yes
+                    }
+                }
+                559 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 5464
+                        instant_build = yes
+                    }
+                }
+                2684 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 2457
+                        instant_build = yes
+                    }
+                }
+                2110 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 12988
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 4663
+                        instant_build = yes
+                    }
+                }
+                2113 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 6734
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 9591
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 6981
+                        instant_build = yes
+                    }
+                }
+                2112 = {
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 12649
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = bunker
+                        level = 1
+                        province = 12707
+                        instant_build = yes
+                    }
+                }
+            }
+        }
+        ai_will_do = {
+            base = 10
+        }
+    }
+
+    center_war = {
+        activation = {
+            always = no
+        }
+        available = {
+            NOT = {
+                has_country_flag = center_war
+            }
+        }
+        target_trigger = {
+            FROM = {
+                OR = {
+                    has_country_flag = united_north
+                    has_country_flag = united_north_center
+                }
+                has_country_flag = center_war
+            }
+        }
+        is_good = no
+        war_with_on_timeout = FROM
+        days_mission_timeout = 120
+        selectable_mission = no
+        timeout_effect = {
+            declare_war_on = {
+                target = FROM
+                type = annex_everything
+            }
+            set_country_flag = center_war_escalated
+            FROM = {
+                set_country_flag = center_war_escalated
+            }
+            if = {
+                limit = {
+                    has_country_flag = center_offensive
+                }
+                add_ideas = regional_commend_the_offensive
+                set_country_flag = center_capture_cities
+            }
+            if = {
+                limit = {
+                    has_country_flag = center_defensive
+                }
+                add_ideas = regional_ready_to_hold
+                set_country_flag = center_hold_positions
+            }
+        }
+    }
+
+    center_capture_cities = {
+        activation = {
+            ROOT = {
+                has_country_flag = center_capture_cities
+            }
+        }
+        available = {
+            FROM = {
+                surrender_progress > 0.5
+            }
+        }
+        target_trigger = {
+            FROM = {
+                OR = {
+                    has_country_flag = united_north
+                    has_country_flag = united_center
+                }
+                has_country_flag = center_war_escalated
+            }
+            ROOT = {
+                NOT = {
+                    has_country_flag = center_hold_positions
+                }
+            }
+        }
+        is_good = no
+        days_mission_timeout = 100
+        selectable_mission = no
+        timeout_effect = {
+            add_ideas = regional_failed_plans
+        }
+        complete_effect = {
+            add_war_support = 0.1
+            add_stability = 0.15
+        }
+    }
+
+    center_hold_positions = {
+        activation = {
+            has_country_flag = scenter_hold_positions
+        }
+        available = {
+            ROOT = {
+                surrender_progress > 0.5
+            }
+        }
+        target_trigger = {
+            FROM = {
+                OR = {
+                    has_country_flag = united_north
+                    has_country_flag = united_center
+                }
+                has_country_flag = center_war_escalated
+            }
+            ROOT = {
+                NOT = {
+                    has_country_flag = center_capture_cities
+                }
+            }
+        }
+        is_good = no
+        days_mission_timeout = 100
+        selectable_mission = no
+        timeout_effect = {
+            add_ideas = regional_counter_attack
+        }
+        complete_effect = {
+            add_war_support = -0.1
+            add_stability = -0.3
+        }
+    }
+}
+
+west_war = {
+	ww_pick_doctrine_offensive = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = west_war
+			NOT = {
+				OR = {
+					has_country_flag = ww_offensive
+					has_country_flag = ww_defensive
+				}
+			}
+		}		
+
+		cost = 25
+
+		complete_effect = {
+			set_country_flag = ww_offensive
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	ww_declare_mobilisation = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = west_war
+		}		
+
+		cost = 50
+		days_remove = 30
+
+		remove_effect = {
+			add_manpower = 30000
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	ww_war_economy = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = west_war
+		}		
+
+		cost = 25
+		days_remove = 10
+
+		remove_effect = {
+			add_ideas = regional_war_economy
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	ww_raise_morale = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = west_war
+		}		
+
+		cost = 25
+		days_remove = 20
+
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = ww_defensive
+				}
+				add_ideas = regional_raise_morale_def
+			}
+			if = {
+				limit = {
+					has_country_flag = ww_pffensive
+				}
+				add_ideas = regional_raise_morale_atk
+			}
+			
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	ww_gather_intel = {
+		icon = GFX_ZAK_rada_election
+		
+		target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_galicia
+					has_country_flag = united_podillya
+				}
+                
+            }
+        }
+
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = west_war
+		}		
+
+		days_remove = 40
+		custom_cost_trigger = {
+			command_power > 25
+		}
+		custom_cost_text = decision_cost_25_cp
+
+		complete_effect = {
+				add_command_power = -25		
+	  	}
+		remove_effect = {
+			add_intel = {
+				target = FROM
+				civilian_intel = 20
+				army_intel = 20
+				navy_intel = 10
+				airforce_intel = 10
+			}
+		}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	ww_sabotage = {
+		icon = GFX_ZAK_rada_election
+
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = west_war
+		}		
+
+		days_remove = 30
+		custom_cost_trigger = {
+			command_power > 50
+		}
+		custom_cost_text = decision_cost_50_cp
+
+		complete_effect = {
+				add_command_power = -50		
+	  	}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_podillya
+				}
+				671 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				1294 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = united_galicia
+				}
+				2041 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				527 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				2042 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+			}
+		}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	ww_expand_supply_routes = {
+		icon = GFX_ZAK_rada_election
+
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = west_war
+		}		
+
+		days_remove = 10
+		custom_cost_trigger = {
+			command_power > 10
+		}
+		custom_cost_text = decision_cost_10_cp
+
+		complete_effect = {
+				add_command_power = -10		
+	  	}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_podillya
+				}
+				build_railway = {
+					level = 1
+					fallback = yes
+					path = { 12811 12830 7707 }
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = united_galicia
+				}
+				build_railway = {
+					level = 1
+					fallback = yes
+					path = { 998 12608 12713 8972 }
+				}
+				build_railway = {
+					level = 1
+					fallback = yes
+					path = { 13138 13179 13 }
+				}
+			}
+		}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+
+	ww_pick_doctrine_defensive = {
+		icon = GFX_ZAK_rada_election
+		available = { 
+			
+		}
+
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = west_war
+			NOT = {
+				OR = {
+					has_country_flag = ww_offensive
+					has_country_flag = ww_defensive
+				}
+			}
+		}		
+
+		cost = 25
+
+		complete_effect = {
+			set_country_flag = ww_defensive
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	ww_raise_defences = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = ww_defensive
+		}		
+		
+		days_remove = 40
+		custom_cost_trigger = {
+			command_power > 50
+		}
+		custom_cost_text = decision_cost_50_cp
+
+		complete_effect = {
+			add_command_power = -50
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_podillya
+				}
+				2040 = {
+					add_building_construction = { type = bunker level = 2 province = 3713 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 13302 instant_build = yes }
+				}
+				493 = {
+					add_building_construction = { type = bunker level = 2 province = 5342 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 6149 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 7707 instant_build = yes }
+				}
+				2495 = {
+					add_building_construction = { type = bunker level = 2 province = 5581 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 12642 instant_build = yes }
+				}
+				2041 = {
+					add_building_construction = { type = bunker level = 2 province = 5207 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 12553 instant_build = yes }
+				}
+				2101 = {
+					add_building_construction = { type = bunker level = 2 province = 15774 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 12329 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 4853 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 4855 instant_build = yes }
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = united_galicia
+				}
+				502 = {
+					add_building_construction = { type = bunker level = 2 province = 13271 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 13 instant_build = yes }
+				}
+				1294 = {
+					add_building_construction = { type = bunker level = 2 province = 13041 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 12974 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 9173 instant_build = yes }
+				}
+				459 = {
+					add_building_construction = { type = bunker level = 2 province = 5485 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 8972 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 9504 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 9181 instant_build = yes }
+				}
+				2538 = {
+					add_building_construction = { type = bunker level = 2 province = 5894 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 8026 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 684 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 7371 instant_build = yes }
+				}
+				420 = {
+					add_building_construction = { type = bunker level = 2 province = 12237 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 12162 instant_build = yes }
+				}
+				2319 = {
+					add_building_construction = { type = bunker level = 2 province = 4707 instant_build = yes }
+				}
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	ww_secondary_defences = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+		}
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = ww_defensive
+		}		
+		
+		days_remove = 20
+		custom_cost_trigger = {
+			command_power > 30
+		}
+		custom_cost_text = decision_cost_30_cp
+
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_podillya
+				}
+				set_global_flag = pd_built_secondary
+				2039 = {
+					add_building_construction = { type = bunker level = 2 province = 5583 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 6792 instant_build = yes }
+				}
+				2494 = {
+					add_building_construction = { type = bunker level = 2 province = 730 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 4895 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 12913 instant_build = yes }
+				}
+				436 = {
+					add_building_construction = { type = bunker level = 2 province = 5583 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 6792 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 3674 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 4852 instant_build = yes }
+				}
+				2100 = {
+					add_building_construction = { type = bunker level = 2 province = 12573 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 12703 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 4035 instant_build = yes }
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = united_galicia
+				}
+				2258 = {
+					add_building_construction = { type = bunker level = 2 province = 3345 instant_build = yes }
+				}
+				1129 = {
+					add_building_construction = { type = bunker level = 2 province = 818 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 12144 instant_build = yes }
+				}
+				1030 = {
+					add_building_construction = { type = bunker level = 2 province = 19940 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 12498 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 12371 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 12498 instant_build = yes }
+				}
+				671 = {
+					add_building_construction = { type = bunker level = 2 province = 2788 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 19915 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 2569 instant_build = yes }
+				}
+				502 = {
+					add_building_construction = { type = bunker level = 2 province = 8117 instant_build = yes }
+				}
+				1164 = {
+					add_building_construction = { type = bunker level = 2 province = 13240 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 4089 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 13096 instant_build = yes }
+				}
+				2336 = {
+					add_building_construction = { type = bunker level = 2 province = 13083 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 6667 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 13092 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 5889 instant_build = yes }
+				}
+				1292 = {
+					add_building_construction = { type = bunker level = 2 province = 12883 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 9005 instant_build = yes }
+				}
+				1293 = {
+					add_building_construction = { type = bunker level = 2 province = 7829 instant_build = yes }
+				}
+				2346 = {
+					add_building_construction = { type = bunker level = 2 province = 19919 instant_build = yes }
+				}
+			}
+					
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	ww_war = {
+		activation = {
+			always = no
+		}
+		available = {
+			NOT = {
+				has_country_flag = west_war
+			}
+		}
+		target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_galicia
+					has_country_flag = united_podillya
+				}
+				has_country_flag = west_war
+            }
+        }
+		is_good = no
+		war_with_on_timeout = FROM
+		days_mission_timeout = 120
+		selectable_mission = no
+		timeout_effect = {
+			declare_war_on = {
+				target = FROM
+				type = annex_everything
+			}
+			set_country_flag = west_war_escalated
+			FROM = {
+				set_country_flag = west_war_escalated
+			}
+			if = {
+				limit = {
+					has_country_flag = ww_offensive
+				}
+				add_ideas = regional_commend_the_offensive
+				set_country_flag = ww_capture_cities
+			}
+			if = {
+				limit = {
+					has_country_flag = ww_defensive
+				}
+				add_ideas = regional_ready_to_hold
+				set_country_flag = ww_hold_positions
+			}
+    	}
+	}
+
+	ww_capture_cities = {
+		activation = {
+			ROOT = {
+				has_country_flag = ww_capture_cities
+			}
+		}
+		available = {
+			FROM = {
+				surrender_progress > 0.5
+			}
+		}
+		target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_galicia
+					has_country_flag = united_podillya
+				}
+				has_country_flag = west_war_escalated
+            }
+			ROOT = {
+				NOT = {
+					has_country_flag = ww_hold_positions
+				}
+			}
+        }
+		is_good = no
+		days_mission_timeout = 100
+		selectable_mission = no
+		timeout_effect = {
+			add_ideas = regional_failed_plans
+    	}
+		complete_effect = {
+			add_war_support = 0.1
+			add_stability = 0.15
+		}
+	}
+
+	ww_hold_positions = {
+		activation = {
+			has_country_flag = ww_hold_positions
+		}
+		available = {
+			ROOT = {
+				surrender_progress > 0.5
+			}
+		}
+		target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_galicia
+					has_country_flag = united_podillya
+				}
+				has_country_flag = west_war_escalated
+            }
+			ROOT = {
+				NOT = {
+					has_country_flag = ww_capture_cities
+				}
+			}
+        }
+		is_good = no
+		days_mission_timeout = 100
+		selectable_mission = no
+		timeout_effect = {
+			add_ideas = regional_counter_attack
+    	}
+		complete_effect = {
+			add_war_support = -0.1
+			add_stability = -0.3
+		}
+	}   
+}
+
+east_war = {
+	ew_pick_doctrine_offensive = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = east_war
+			NOT = {
+				OR = {
+					has_country_flag = ew_offensive
+					has_country_flag = ew_defensive
+				}
+			}
+		}		
+
+		cost = 25
+
+		complete_effect = {
+			set_country_flag = ew_offensive
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	ew_declare_mobilisation = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = east_war
+		}		
+
+		cost = 50
+		days_remove = 30
+
+		remove_effect = {
+			add_manpower = 30000
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	ew_war_economy = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = east_war
+		}		
+
+		cost = 25
+		days_remove = 10
+
+		remove_effect = {
+			add_ideas = regional_war_economy
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	ew_raise_morale = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = east_war
+		}		
+
+		cost = 25
+		days_remove = 20
+
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = ew_defensive
+				}
+				add_ideas = regional_raise_morale_def
+			}
+			if = {
+				limit = {
+					has_country_flag = ew_pffensive
+				}
+				add_ideas = regional_raise_morale_atk
+			}
+			
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	ew_gather_intel = {
+		icon = GFX_ZAK_rada_election
+		
+		target_trigger = {
+            FROM = {
+				OR = {
+					original_tag = DNI
+					has_country_flag = united_south_east
+				}
+                
+            }
+        }
+
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = east_war
+		}		
+
+		days_remove = 40
+		custom_cost_trigger = {
+			command_power > 25
+		}
+		custom_cost_text = decision_cost_25_cp
+
+		complete_effect = {
+				add_command_power = -25		
+	  	}
+		remove_effect = {
+			add_intel = {
+				target = FROM
+				civilian_intel = 20
+				army_intel = 20
+				navy_intel = 10
+				airforce_intel = 10
+			}
+		}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	ew_sabotage = {
+		icon = GFX_ZAK_rada_election
+
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = east_war
+		}		
+
+		days_remove = 40
+		custom_cost_trigger = {
+			command_power > 50
+		}
+		custom_cost_text = decision_cost_50_cp
+
+		complete_effect = {
+				add_command_power = -50		
+	  	}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_south_east
+				}
+				2080 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				8675 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+			}
+			if = {
+				limit = {
+					original_tag = DNI
+				}
+				2095 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				2094 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				2104 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+			}
+		}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	ew_expand_supply_routes = {
+		icon = GFX_ZAK_rada_election
+
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = east_war
+		}		
+
+		days_remove = 10
+		custom_cost_trigger = {
+			command_power > 10
+		}
+		custom_cost_text = decision_cost_10_cp
+
+		complete_effect = {
+				add_command_power = -10		
+	  	}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_south_east
+				}
+				build_railway = {
+					level = 1
+					fallback = yes
+					path = { 8175 13412 8777 13279 }
+				}
+			}
+			if = {
+				limit = {
+					original_tag = DNI
+				}
+				build_railway = {
+					level = 1
+					fallback = yes
+					path = { 13590 3179 945 2390 }
+				}
+				579 = {
+					add_building_construction = { type = supply_node level = 1 province = 3179 instant_build = yes }
+				}
+			}
+		}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+
+	ew_pick_doctrine_defensive = {
+		icon = GFX_ZAK_rada_election
+		available = { 
+			
+		}
+
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = east_war
+			NOT = {
+				OR = {
+					has_country_flag = ew_offensive
+					has_country_flag = ew_defensive
+				}
+			}
+		}		
+
+		cost = 25
+
+		complete_effect = {
+			set_country_flag = ew_defensive
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	ew_raise_defences = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = ew_defensive
+		}		
+		
+		days_remove = 40
+		custom_cost_trigger = {
+			command_power > 50
+		}
+		custom_cost_text = decision_cost_50_cp
+
+		complete_effect = {
+			add_command_power = -50
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_south_east
+				}
+				2105 = {
+					add_building_construction = { type = bunker level = 3 province = 12966 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13020 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13072 instant_build = yes }
+				}
+				2104 = {
+					add_building_construction = { type = bunker level = 3 province = 8234 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 2335 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 5523 instant_build = yes }
+				}
+				2095 = {
+					add_building_construction = { type = bunker level = 3 province = 13279 instant_build = yes }
+				}
+				2094 = {
+					add_building_construction = { type = bunker level = 3 province = 147 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 17 instant_build = yes }
+				}
+			}
+			if = {
+				limit = {
+					original_tag = DNI
+				}
+				579 = {
+					add_building_construction = { type = bunker level = 3 province = 13505 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 7508 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 2390 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 4202 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13148 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13305 instant_build = yes }
+				}
+				2080 = {
+					add_building_construction = { type = bunker level = 3 province = 13234 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13215 instant_build = yes }
+				}
+				2111 = {
+					add_building_construction = { type = bunker level = 2 province = 6473 instant_build = yes }
+				}
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	ew_secondary_defences = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+		}
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = ew_defensive
+		}		
+		
+		days_remove = 20
+		custom_cost_trigger = {
+			command_power > 30
+		}
+		custom_cost_text = decision_cost_30_cp
+
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_south_east
+				}
+				set_global_flag = se_built_secondary
+				2105 = {
+					add_building_construction = { type = bunker level = 2 province = 3320 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 2617 instant_build = yes }
+				}
+				2104 = {
+					add_building_construction = { type = bunker level = 2 province = 8379 instant_build = yes }
+				}
+				2108 = {
+					add_building_construction = { type = bunker level = 2 province = 8340 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 3136 instant_build = yes }
+				}
+				2106 = {
+					add_building_construction = { type = bunker level = 2 province = 4379 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 9239 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 9602 instant_build = yes }
+				}
+				2095 = {
+					add_building_construction = { type = bunker level = 2 province = 13142 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 8175 instant_build = yes }
+				}
+				2310 = {
+					add_building_construction = { type = bunker level = 2 province = 9235 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 13622 instant_build = yes }
+				}
+			}
+			if = {
+				limit = {
+					original_tag = DNI
+				}
+				2111 = {
+					add_building_construction = { type = bunker level = 3 province = 13263 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 776 instant_build = yes }
+				}
+				2724 = {
+					add_building_construction = { type = bunker level = 3 province = 15847 instant_build = yes }
+				}
+				560 = {
+					add_building_construction = { type = bunker level = 3 province = 13440 instant_build = yes }
+				}
+				579 = {
+					add_building_construction = { type = bunker level = 3 province = 13590 instant_build = yes }
+				}
+				5079 = {
+					add_building_construction = { type = bunker level = 3 province = 13406 instant_build = yes }
+				}
+			}
+					
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	ew_war = {
+		activation = {
+			always = no
+		}
+		available = {
+			NOT = {
+				has_country_flag = east_war
+			}
+		}
+		target_trigger = {
+            FROM = {
+				OR = {
+					original_tag = DNI
+					has_country_flag = united_south_east
+				}
+				has_country_flag = east_war
+            }
+        }
+		is_good = no
+		war_with_on_timeout = FROM
+		days_mission_timeout = 120
+		selectable_mission = no
+		timeout_effect = {
+			declare_war_on = {
+				target = FROM
+				type = annex_everything
+			}
+			set_country_flag = east_war_escalated
+			FROM = {
+				set_country_flag = east_war_escalated
+			}
+			if = {
+				limit = {
+					has_country_flag = ew_offensive
+				}
+				add_ideas = regional_commend_the_offensive
+				set_country_flag = ew_capture_cities
+			}
+			if = {
+				limit = {
+					has_country_flag = ew_defensive
+				}
+				add_ideas = regional_ready_to_hold
+				set_country_flag = ew_hold_positions
+			}
+    	}
+	}
+
+	ew_capture_cities = {
+		activation = {
+			ROOT = {
+				has_country_flag = ew_capture_cities
+			}
+		}
+		available = {
+			FROM = {
+				surrender_progress > 0.5
+			}
+		}
+		target_trigger = {
+            FROM = {
+				OR = {
+					original_tag = DNI
+					has_country_flag = united_south_east
+				}
+				has_country_flag = east_war_escalated
+            }
+			ROOT = {
+				NOT = {
+					has_country_flag = ew_hold_positions
+				}
+			}
+        }
+		is_good = no
+		days_mission_timeout = 100
+		selectable_mission = no
+		timeout_effect = {
+			add_ideas = regional_failed_plans
+    	}
+		complete_effect = {
+			add_war_support = 0.1
+			add_stability = 0.15
+		}
+	}
+
+	ew_hold_positions = {
+		activation = {
+			has_country_flag = ew_hold_positions
+		}
+		available = {
+			ROOT = {
+				surrender_progress > 0.5
+			}
+		}
+		target_trigger = {
+            FROM = {
+				OR = {
+					original_tag = DNI
+					has_country_flag = united_south_east
+				}
+				has_country_flag = east_war_escalated
+            }
+			ROOT = {
+				NOT = {
+					has_country_flag = ew_capture_cities
+				}
+			}
+        }
+		is_good = no
+		days_mission_timeout = 100
+		selectable_mission = no
+		timeout_effect = {
+			add_ideas = regional_counter_attack
+    	}
+		complete_effect = {
+			add_war_support = -0.1
+			add_stability = -0.3
+		}
+	}   
+}
+
+left_bank_war = {
+	lw_pick_doctrine_offensive = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = left_bank_war
+			NOT = {
+				OR = {
+					has_country_flag = lw_offensive
+					has_country_flag = lw_defensive
+				}
+			}
+		}		
+
+		cost = 25
+
+		complete_effect = {
+			set_country_flag = lw_offensive
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	lw_declare_mobilisation = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = left_bank_war
+		}		
+
+		cost = 50
+		days_remove = 30
+
+		remove_effect = {
+			add_manpower = 30000
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	lw_war_economy = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = left_bank_war
+		}		
+
+		cost = 25
+		days_remove = 10
+
+		remove_effect = {
+			add_ideas = regional_war_economy
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	lw_raise_morale = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = left_bank_war
+		}		
+
+		cost = 25
+		days_remove = 20
+
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = lw_defensive
+				}
+				add_ideas = regional_raise_morale_def
+			}
+			if = {
+				limit = {
+					has_country_flag = lw_pffensive
+				}
+				add_ideas = regional_raise_morale_atk
+			}
+			
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	lw_gather_intel = {
+		icon = GFX_ZAK_rada_election
+		
+		target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_south
+					has_country_flag = united_east
+				}
+                
+            }
+        }
+
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = left_bank_war
+		}		
+
+		days_remove = 40
+		custom_cost_trigger = {
+			command_power > 25
+		}
+		custom_cost_text = decision_cost_25_cp
+
+		complete_effect = {
+				add_command_power = -25		
+	  	}
+		remove_effect = {
+			add_intel = {
+				target = FROM
+				civilian_intel = 20
+				army_intel = 20
+				navy_intel = 10
+				airforce_intel = 10
+			}
+		}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	lw_sabotage = {
+		icon = GFX_ZAK_rada_election
+
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = left_bank_war
+		}		
+
+		days_remove = 40
+		custom_cost_trigger = {
+			command_power > 50
+		}
+		custom_cost_text = decision_cost_50_cp
+
+		complete_effect = {
+				add_command_power = -50		
+	  	}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_east
+				}
+				2085 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				2090 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = united_south
+				}
+				2079 = {
+					damage_building = {
+					type = supply_node
+					damage = 1
+					}	
+				}
+				560 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				2104 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+			}
+		}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	lw_expand_supply_routes = {
+		icon = GFX_ZAK_rada_election
+
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = left_bank_war
+		}		
+
+		days_remove = 10
+		custom_cost_trigger = {
+			command_power > 10
+		}
+		custom_cost_text = decision_cost_10_cp
+
+		complete_effect = {
+				add_command_power = -10		
+	  	}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_east
+				}
+				build_railway = {
+					level = 1
+					fallback = yes
+					path = { 13845 13874 307 }
+				}
+				build_railway = {
+					level = 1
+					fallback = yes
+					path = { 66 1724 1054 13550 }
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = united_south
+				}
+				build_railway = {
+					level = 1
+					fallback = yes
+					path = { 4987 5469 }
+				}
+				2092 = {
+					add_building_construction = { type = supply_node level = 1 province = 6406 instant_build = yes }
+				}
+			}
+		}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+
+	lw_pick_doctrine_defensive = {
+		icon = GFX_ZAK_rada_election
+		available = { 
+			
+		}
+
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = left_bank_war
+			NOT = {
+				OR = {
+					has_country_flag = lw_offensive
+					has_country_flag = lw_defensive
+				}
+			}
+		}		
+
+		cost = 25
+
+		complete_effect = {
+			set_country_flag = lw_defensive
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	lw_raise_defences = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = lw_defensive
+		}		
+		
+		days_remove = 40
+		custom_cost_trigger = {
+			command_power > 50
+		}
+		custom_cost_text = decision_cost_50_cp
+
+		complete_effect = {
+			add_command_power = -50
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_east
+				}
+				2862 = {
+					add_building_construction = { type = bunker level = 3 province = 4991 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 1971 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13628 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 9631 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13709 instant_build = yes }
+				}
+				2077 = {
+					add_building_construction = { type = bunker level = 3 province = 1680 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 1054 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13550 instant_build = yes }
+				}
+				2728 = {
+					add_building_construction = { type = bunker level = 3 province = 2669 instant_build = yes }
+				}
+				560 = {
+					add_building_construction = { type = bunker level = 3 province = 8418 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 2717 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13440 instant_build = yes }
+				}
+				579 = {
+					add_building_construction = { type = bunker level = 3 province = 945 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13505 instant_build = yes }
+				}
+				2094 = {
+					add_building_construction = { type = bunker level = 3 province = 17 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 9191 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13645 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 3084 instant_build = yes }
+				}
+				2093 = {
+					add_building_construction = { type = bunker level = 3 province = 8833 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 305 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 307 instant_build = yes }
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = united_south
+				}
+				2064 = {
+					add_building_construction = { type = bunker level = 3 province = 9324 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 138 instant_build = yes }
+				}
+				2088 = {
+					add_building_construction = { type = bunker level = 3 province = 13766 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 1117 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 7039 instant_build = yes }
+				}
+				2078 = {
+					add_building_construction = { type = bunker level = 4 province = 13575 instant_build = yes }
+					add_building_construction = { type = bunker level = 4 province = 8481 instant_build = yes }
+				}
+				623 = {
+					add_building_construction = { type = bunker level = 3 province = 13551 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13582 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 5469 instant_build = yes }
+				}
+				2092 = {
+					add_building_construction = { type = bunker level = 3 province = 13673 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13642 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13705 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 214 instant_build = yes }
+				}
+				2043 = {
+					add_building_construction = { type = bunker level = 3 province = 5260 instant_build = yes }
+				}
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	lw_secondary_defences = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+		}
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = lw_defensive
+			NOT = {
+				OR = {
+					has_global_flag = se_built_secondary
+					has_global_flag = sw_built_secondary
+				}
+			}
+		}		
+		
+		days_remove = 20
+		custom_cost_trigger = {
+			command_power > 30
+		}
+		custom_cost_text = decision_cost_30_cp
+
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_east
+				}
+				2105 = {
+					add_building_construction = { type = bunker level = 2 province = 3320 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 2617 instant_build = yes }
+				}
+				2104 = {
+					add_building_construction = { type = bunker level = 2 province = 8379 instant_build = yes }
+				}
+				2108 = {
+					add_building_construction = { type = bunker level = 2 province = 8340 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 3136 instant_build = yes }
+				}
+				2106 = {
+					add_building_construction = { type = bunker level = 2 province = 4379 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 9239 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 9602 instant_build = yes }
+				}
+				2095 = {
+					add_building_construction = { type = bunker level = 2 province = 13142 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 8175 instant_build = yes }
+				}
+				2310 = {
+					add_building_construction = { type = bunker level = 2 province = 9235 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 13622 instant_build = yes }
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = united_south
+				}
+				657 = {
+					add_building_construction = { type = bunker level = 3 province = 6792 instant_build = yes }
+				}
+				2089 = {
+					add_building_construction = { type = bunker level = 3 province = 5061 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13990 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 5632 instant_build = yes }
+				}
+				2061 = {
+					add_building_construction = { type = bunker level = 3 province = 5245 instant_build = yes }
+				}
+				2063 = {
+					add_building_construction = { type = bunker level = 3 province = 3327 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 378 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 5474 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 8522 instant_build = yes }
+				}
+				618 = {
+					add_building_construction = { type = bunker level = 3 province = 2511 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13826 instant_build = yes }
+				}
+			}
+					
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	lw_war = {
+		activation = {
+			always = no
+		}
+		available = {
+			NOT = {
+				has_country_flag = left_bank_war
+			}
+		}
+		target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_south
+					has_country_flag = united_east
+				}
+				has_country_flag = left_bank_war
+            }
+        }
+		is_good = no
+		war_with_on_timeout = FROM
+		days_mission_timeout = 120
+		selectable_mission = no
+		timeout_effect = {
+			declare_war_on = {
+				target = FROM
+				type = annex_everything
+			}
+			set_country_flag = left_bank_war_escalated
+			FROM = {
+				set_country_flag = left_bank_war_escalated
+			}
+			if = {
+				limit = {
+					has_country_flag = lw_offensive
+				}
+				add_ideas = regional_commend_the_offensive
+				set_country_flag = lw_capture_cities
+			}
+			if = {
+				limit = {
+					has_country_flag = lw_defensive
+				}
+				add_ideas = regional_ready_to_hold
+				set_country_flag = lw_hold_positions
+			}
+    	}
+	}
+
+	lw_capture_cities = {
+		activation = {
+			ROOT = {
+				has_country_flag = lw_capture_cities
+			}
+		}
+		available = {
+			FROM = {
+				surrender_progress > 0.5
+			}
+		}
+		target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_south
+					has_country_flag = united_east
+				}
+				has_country_flag = left_bank_war_escalated
+            }
+			ROOT = {
+				NOT = {
+					has_country_flag = lw_hold_positions
+				}
+			}
+        }
+		is_good = no
+		days_mission_timeout = 100
+		selectable_mission = no
+		timeout_effect = {
+			add_ideas = regional_failed_plans
+    	}
+		complete_effect = {
+			add_war_support = 0.1
+			add_stability = 0.15
+		}
+	}
+
+	lw_hold_positions = {
+		activation = {
+			has_country_flag = lw_hold_positions
+		}
+		available = {
+			ROOT = {
+				surrender_progress > 0.5
+			}
+		}
+		target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_south
+					has_country_flag = united_east
+				}
+				has_country_flag = left_bank_war_escalated
+            }
+			ROOT = {
+				NOT = {
+					has_country_flag = lw_capture_cities
+				}
+			}
+        }
+		is_good = no
+		days_mission_timeout = 100
+		selectable_mission = no
+		timeout_effect = {
+			add_ideas = regional_counter_attack
+    	}
+		complete_effect = {
+			add_war_support = -0.1
+			add_stability = -0.3
+		}
+	}   
+}
+
+right_bank_war = {
+	rw_pick_doctrine_offensive = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = right_bank_war
+			NOT = {
+				OR = {
+					has_country_flag = rw_offensive
+					has_country_flag = rw_defensive
+				}
+			}
+		}		
+
+		cost = 25
+
+		complete_effect = {
+			set_country_flag = rw_offensive
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	rw_declare_mobilisation = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = right_bank_war
+		}		
+
+		cost = 50
+		days_remove = 30
+
+		remove_effect = {
+			add_manpower = 30000
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	rw_war_economy = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = right_bank_war
+		}		
+
+		cost = 25
+		days_remove = 10
+
+		remove_effect = {
+			add_ideas = regional_war_economy
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	rw_raise_morale = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = right_bank_war
+		}		
+
+		cost = 25
+		days_remove = 20
+
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = rw_defensive
+				}
+				add_ideas = regional_raise_morale_def
+			}
+			if = {
+				limit = {
+					has_country_flag = rw_pffensive
+				}
+				add_ideas = regional_raise_morale_atk
+			}
+			
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	rw_gather_intel = {
+		icon = GFX_ZAK_rada_election
+		
+		target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_west
+					has_country_flag = united_center
+				}
+                
+            }
+        }
+
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = right_bank_war
+		}		
+
+		days_remove = 40
+		custom_cost_trigger = {
+			command_power > 25
+		}
+		custom_cost_text = decision_cost_25_cp
+
+		complete_effect = {
+				add_command_power = -25		
+	  	}
+		remove_effect = {
+			add_intel = {
+				target = FROM
+				civilian_intel = 20
+				army_intel = 20
+				navy_intel = 10
+				airforce_intel = 10
+			}
+		}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	rw_sabotage = {
+		icon = GFX_ZAK_rada_election
+
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = right_bank_war
+		}		
+
+		days_remove = 30
+		custom_cost_trigger = {
+			command_power > 50
+		}
+		custom_cost_text = decision_cost_50_cp
+
+		complete_effect = {
+				add_command_power = -50		
+	  	}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_center
+				}
+				436 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				527 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = united_west
+				}
+				2057 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				2067 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				2073 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+			}
+		}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	rw_expand_supply_routes = {
+		icon = GFX_ZAK_rada_election
+
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = right_bank_war
+		}		
+
+		days_remove = 10
+		custom_cost_trigger = {
+			command_power > 10
+		}
+		custom_cost_text = decision_cost_10_cp
+
+		complete_effect = {
+				add_command_power = -10		
+	  	}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_center
+				}
+				2065 = {
+					add_building_construction = { type = supply_node level = 1 province = 13183 instant_build = yes}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = united_west
+				}
+				build_railway = {
+					level = 1
+					fallback = yes
+					path = { 8021 12691 12633 12703 5256 }
+				}
+				build_railway = {
+					level = 1
+					fallback = yes
+					path = { 1025 13367 6637 }
+				}
+			}
+		}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+
+	rw_pick_doctrine_defensive = {
+		icon = GFX_ZAK_rada_election
+		available = { 
+			
+		}
+
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = right_bank_war
+			NOT = {
+				OR = {
+					has_country_flag = rw_offensive
+					has_country_flag = rw_defensive
+				}
+			}
+		}		
+
+		cost = 25
+
+		complete_effect = {
+			set_country_flag = rw_defensive
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	rw_raise_defences = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = rw_defensive
+		}		
+		
+		days_remove = 40
+		custom_cost_trigger = {
+			command_power > 50
+		}
+		custom_cost_text = decision_cost_50_cp
+
+		complete_effect = {
+			add_command_power = -50
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_center
+				}
+				2068 = {
+					add_building_construction = { type = bunker level = 2 province = 8917 instant_build = yes }
+				}
+				2055 = {
+					add_building_construction = { type = bunker level = 2 province = 12238 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 4298 instant_build = yes }
+				}
+				2054 = {
+					add_building_construction = { type = bunker level = 2 province = 4320 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 7169 instant_build = yes }
+				}
+				2056 = {
+					add_building_construction = { type = bunker level = 2 province = 8203 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 7182 instant_build = yes }
+				}
+				2057 = {
+					add_building_construction = { type = bunker level = 2 province = 9586 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 12866 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 8380 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 8945 instant_build = yes }
+				}
+				2065 = {
+					add_building_construction = { type = bunker level = 2 province = 6434 instant_build = yes }
+				}
+				2049 = {
+					add_building_construction = { type = bunker level = 2 province = 5249 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 13233 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 3215 instant_build = yes }
+				}
+				2071 = {
+					add_building_construction = { type = bunker level = 2 province = 13436 instant_build = yes }
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = united_west
+				}
+				2687 = {
+					add_building_construction = { type = bunker level = 2 province = 12169 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 6795 instant_build = yes }
+				}
+				2070 = {
+					add_building_construction = { type = bunker level = 2 province = 12432 instant_build = yes }
+				}
+				2100 = {
+					add_building_construction = { type = bunker level = 2 province = 5234 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 4035 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 5256 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 7453 instant_build = yes }
+				}
+				2053 = {
+					add_building_construction = { type = bunker level = 2 province = 1338 instant_build = yes }
+				}
+				527 = {
+					add_building_construction = { type = bunker level = 2 province = 7389 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 2143 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 510 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 4105 instant_build = yes }
+				}
+				565 = {
+					add_building_construction = { type = bunker level = 2 province = 13225 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 13278 instant_build = yes }
+				}
+				2050 = {
+					add_building_construction = { type = bunker level = 2 province = 6637 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 13411 instant_build = yes }
+				}
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	rw_secondary_defences = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+		}
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = rw_defensive
+			NOT = {
+				has_global_flag = pd_built_secondary
+			}
+		}		
+		
+		days_remove = 20
+		custom_cost_trigger = {
+			command_power > 30
+		}
+		custom_cost_text = decision_cost_30_cp
+
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_center
+				}
+				2074 = {
+					add_building_construction = { type = bunker level = 4 province = 13147 instant_build = yes }
+				}
+				2110 = {
+					add_building_construction = { type = bunker level = 4 province = 6880 instant_build = yes }
+				}
+				2067 = {
+					add_building_construction = { type = bunker level = 4 province = 3684 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 12874 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 12934 instant_build = yes }
+				}
+				2066 = {
+					add_building_construction = { type = bunker level = 2 province = 12998 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 13102 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 13109 instant_build = yes }
+				}
+				2072 = {
+					add_building_construction = { type = bunker level = 2 province = 9209 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 7369 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 13450 instant_build = yes }
+				}
+				510 = {
+					add_building_construction = { type = bunker level = 4 province = 12828 instant_build = yes }
+				}
+				2081 = {
+					add_building_construction = { type = bunker level = 4 province = 13272 instant_build = yes }
+					add_building_construction = { type = bunker level = 4 province = 2025 instant_build = yes }
+				}
+				2027 = {
+					add_building_construction = { type = bunker level = 4 province = 1701 instant_build = yes }
+					add_building_construction = { type = bunker level = 4 province = 1597 instant_build = yes }
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = united_west
+				}
+				2039 = {
+					add_building_construction = { type = bunker level = 2 province = 5583 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 6792 instant_build = yes }
+				}
+				2494 = {
+					add_building_construction = { type = bunker level = 2 province = 730 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 4895 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 12913 instant_build = yes }
+				}
+				436 = {
+					add_building_construction = { type = bunker level = 2 province = 5583 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 6792 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 3674 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 4852 instant_build = yes }
+				}
+				2100 = {
+					add_building_construction = { type = bunker level = 2 province = 12573 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 12703 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 4035 instant_build = yes }
+				}
+			}
+					
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	rw_war = {
+		activation = {
+			always = no
+		}
+		available = {
+			NOT = {
+				has_country_flag = right_bank_war
+			}
+		}
+		target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_west
+					has_country_flag = united_center
+				}
+				has_country_flag = right_bank_war
+            }
+        }
+		is_good = no
+		war_with_on_timeout = FROM
+		days_mission_timeout = 120
+		selectable_mission = no
+		timeout_effect = {
+			declare_war_on = {
+				target = FROM
+				type = annex_everything
+			}
+			set_country_flag = right_bank_war_escalated
+			FROM = {
+				set_country_flag = right_bank_war_escalated
+			}
+			if = {
+				limit = {
+					has_country_flag = rw_offensive
+				}
+				add_ideas = regional_commend_the_offensive
+				set_country_flag = rw_capture_cities
+			}
+			if = {
+				limit = {
+					has_country_flag = rw_defensive
+				}
+				add_ideas = regional_ready_to_hold
+				set_country_flag = rw_hold_positions
+			}
+    	}
+	}
+
+	rw_capture_cities = {
+		activation = {
+			ROOT = {
+				has_country_flag = rw_capture_cities
+			}
+		}
+		available = {
+			FROM = {
+				surrender_progress > 0.5
+			}
+		}
+		target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_west
+					has_country_flag = united_center
+				}
+				has_country_flag = right_bank_war_escalated
+            }
+			ROOT = {
+				NOT = {
+					has_country_flag = rw_hold_positions
+				}
+			}
+        }
+		is_good = no
+		days_mission_timeout = 100
+		selectable_mission = no
+		timeout_effect = {
+			add_ideas = regional_failed_plans
+    	}
+		complete_effect = {
+			add_war_support = 0.1
+			add_stability = 0.15
+		}
+	}
+
+	rw_hold_positions = {
+		activation = {
+			has_country_flag = rw_hold_positions
+		}
+		available = {
+			ROOT = {
+				surrender_progress > 0.5
+			}
+		}
+		target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_west
+					has_country_flag = united_center
+				}
+				has_country_flag = right_bank_war_escalated
+            }
+			ROOT = {
+				NOT = {
+					has_country_flag = rw_capture_cities
+				}
+			}
+        }
+		is_good = no
+		days_mission_timeout = 100
+		selectable_mission = no
+		timeout_effect = {
+			add_ideas = regional_counter_attack
+    	}
+		complete_effect = {
+			add_war_support = -0.1
+			add_stability = -0.3
+		}
+	}   
+}
+
+ukraine_war = {
+	uw_pick_doctrine_offensive = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = ukraine_war
+			NOT = {
+				OR = {
+					has_country_flag = uw_offensive
+					has_country_flag = uw_defensive
+				}
+			}
+		}		
+
+		cost = 25
+
+		complete_effect = {
+			set_country_flag = uw_offensive
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	uw_declare_mobilisation = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = ukraine_war
+		}		
+
+		cost = 50
+		days_remove = 30
+
+		remove_effect = {
+			add_manpower = 30000
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	uw_war_economy = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = ukraine_war
+		}		
+
+		cost = 25
+		days_remove = 10
+
+		remove_effect = {
+			add_ideas = regional_war_economy
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	uw_raise_morale = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = ukraine_war
+		}		
+
+		cost = 25
+		days_remove = 20
+
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = uw_defensive
+				}
+				add_ideas = regional_raise_morale_def
+			}
+			if = {
+				limit = {
+					has_country_flag = uw_pffensive
+				}
+				add_ideas = regional_raise_morale_atk
+			}
+			
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	uw_gather_intel = {
+		icon = GFX_ZAK_rada_election
+		
+		target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_left_bank
+					has_country_flag = united_right_bank
+				}
+                
+            }
+        }
+
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = ukraine_war
+		}		
+
+		days_remove = 40
+		custom_cost_trigger = {
+			command_power > 25
+		}
+		custom_cost_text = decision_cost_25_cp
+
+		complete_effect = {
+				add_command_power = -25		
+	  	}
+		remove_effect = {
+			add_intel = {
+				target = FROM
+				civilian_intel = 20
+				army_intel = 20
+				navy_intel = 10
+				airforce_intel = 10
+			}
+		}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	uw_sabotage = {
+		icon = GFX_ZAK_rada_election
+
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = ukraine_war
+		}		
+
+		days_remove = 30
+		custom_cost_trigger = {
+			command_power > 50
+		}
+		custom_cost_text = decision_cost_50_cp
+
+		complete_effect = {
+				add_command_power = -50		
+	  	}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_right_bank
+				}
+				2079 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				497 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				557 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				623 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				2085 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = united_left_bank
+				}
+				2112 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				527 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				2067 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				493 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+				494 = {
+					damage_building = {
+					type = infrastructure
+					damage = 1
+					}	
+				}
+			}
+		}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	uw_expand_supply_routes = {
+		icon = GFX_ZAK_rada_election
+
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = ukraine_war
+		}		
+
+		days_remove = 10
+		custom_cost_trigger = {
+			command_power > 10
+		}
+		custom_cost_text = decision_cost_10_cp
+
+		complete_effect = {
+				add_command_power = -10		
+	  	}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_right_bank
+				}
+				2071 = {
+					add_building_construction = { type = infrastructure level = 1 province = 13183 instant_build = yes}
+				}
+				build_railway = {
+					level = 1
+					fallback = yes
+					path = { 9169 1281 5422 4629 }
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = united_left_bank
+				}
+				build_railway = {
+					level = 1
+					fallback = yes
+					path = { 6852 13765 9036  }
+				}
+				build_railway = {
+					level = 1
+					fallback = yes
+					path = { 13290 1147 13195 }
+				}
+			}
+		}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+
+	uw_pick_doctrine_defensive = {
+		icon = GFX_ZAK_rada_election
+		available = { 
+			
+		}
+
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = ukraine_war
+			NOT = {
+				OR = {
+					has_country_flag = uw_offensive
+					has_country_flag = uw_defensive
+				}
+			}
+		}		
+
+		cost = 25
+
+		complete_effect = {
+			set_country_flag = uw_defensive
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	uw_raise_defences = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			
+		}
+
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = uw_defensive
+		}		
+		
+		days_remove = 40
+		custom_cost_trigger = {
+			command_power > 50
+		}
+		custom_cost_text = decision_cost_50_cp
+
+		complete_effect = {
+			add_command_power = -50
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_right_bank
+				}
+				2074 = {
+					add_building_construction = { type = bunker level = 3 province = 13147 instant_build = yes }
+				}
+				2057 = {
+					add_building_construction = { type = bunker level = 3 province = 7979 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 15869 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13316 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 1073 instant_build = yes }
+				}
+				2103 = {
+					add_building_construction = { type = bunker level = 3 province = 13458 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 3974 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 6178 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 2916 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 4629 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 9542 instant_build = yes }
+				}
+				2071 = {
+					add_building_construction = { type = bunker level = 3 province = 1873 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13390 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13337 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13283 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13436 instant_build = yes }
+				}
+				2050 = {
+					add_building_construction = { type = bunker level = 3 province = 13411 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 6235 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13367 instant_build = yes }
+				}
+				2074 = {
+					add_building_construction = { type = bunker level = 3 province = 1025 instant_build = yes }
+				}
+				2124 = {
+					add_building_construction = { type = bunker level = 3 province = 13085 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 4121 instant_build = yes }
+				}
+				2112 = {
+					add_building_construction = { type = bunker level = 3 province = 13006 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 6239 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 12989 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 3886 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 12809 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 6646 instant_build = yes }
+				}
+				2050 = {
+					add_building_construction = { type = bunker level = 3 province = 12668 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 7125 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 12603 instant_build = yes }
+				}
+				2033 = {
+					add_building_construction = { type = bunker level = 3 province = 12554 instant_build = yes }
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = united_left_bank
+				}
+				2109 = {
+					add_building_construction = { type = bunker level = 3 province = 1456 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 225 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 2825 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 5281 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 7455 instant_build = yes }
+				}
+				2105 = {
+					add_building_construction = { type = bunker level = 3 province = 3320 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 12966 instant_build = yes }
+				}
+				2111 = {
+					add_building_construction = { type = bunker level = 3 province = 6473 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13188 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13263 instant_build = yes }
+				}
+				2076 = {
+					add_building_construction = { type = bunker level = 3 province = 13195 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13317 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 254 instant_build = yes }
+				}
+				2862 = {
+					add_building_construction = { type = bunker level = 3 province = 13504 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 4991 instant_build = yes }
+				}
+				2064 = {
+					add_building_construction = { type = bunker level = 3 province = 9324 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 7054 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 2589 instant_build = yes }
+				}
+				2109 = {
+					add_building_construction = { type = bunker level = 3 province = 9036 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 5369 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 9626 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13531 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 9380 instant_build = yes }
+				}
+				2060 = {
+					add_building_construction = { type = bunker level = 3 province = 5108 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 537 instant_build = yes }
+				}
+				2061 = {
+					add_building_construction = { type = bunker level = 3 province = 5245 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 9131 instant_build = yes }
+				}
+				2862 = {
+					add_building_construction = { type = bunker level = 3 province = 549 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 2783 instant_build = yes }
+				}
+				2038 = {
+					add_building_construction = { type = bunker level = 3 province = 9014 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 2396 instant_build = yes }
+					add_building_construction = { type = bunker level = 3 province = 13523 instant_build = yes }
+				}
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	uw_secondary_defences = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+		}
+		
+		fire_only_once = yes		
+
+		visible = {	
+			has_country_flag = uw_defensive
+		}		
+		
+		days_remove = 20
+		custom_cost_trigger = {
+			command_power > 30
+		}
+		custom_cost_text = decision_cost_30_cp
+
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = united_right_bank
+				}
+				2110 = {
+					add_building_construction = { type = bunker level = 2 province = 6680 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 4663 instant_build = yes }
+				}
+				2113 = {
+					add_building_construction = { type = bunker level = 2 province = 5888 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 6734 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 12765 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 12589 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 3066 instant_build = yes }
+				}
+				2115 = {
+					add_building_construction = { type = bunker level = 2 province = 12500 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 6911 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 12270 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 613 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 499 instant_build = yes }
+				}
+				2034 = {
+					add_building_construction = { type = bunker level = 2 province = 2475 instant_build = yes }
+				}
+				2067 = {
+					add_building_construction = { type = bunker level = 2 province = 3684 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 12874 instant_build = yes }
+				}
+				2058 = {
+					add_building_construction = { type = bunker level = 2 province = 5631 instant_build = yes }
+				}
+				2057 = {
+					add_building_construction = { type = bunker level = 2 province = 8006 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 12997 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 8945 instant_build = yes }
+				}
+				527 = {
+					add_building_construction = { type = bunker level = 2 province = 2143 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 510 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 4105 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 13140 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 13076 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 6353 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 13084 instant_build = yes }
+				}
+				2052 = {
+					add_building_construction = { type = bunker level = 2 province = 13182 instant_build = yes }
+				}
+				2039 = {
+					add_building_construction = { type = bunker level = 2 province = 13214 instant_build = yes }
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = united_left_bank
+				}
+				2107 = {
+					add_building_construction = { type = bunker level = 2 province = 12803 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 3254 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 2021 instant_build = yes }
+				}
+				2106 = {
+					add_building_construction = { type = bunker level = 2 province = 12982 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 448 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 13098 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 3941 instant_build = yes }
+				}
+				2104 = {
+					add_building_construction = { type = bunker level = 2 province = 5523 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 2335 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 2021 instant_build = yes }
+				}
+				579 = {
+					add_building_construction = { type = bunker level = 2 province = 13305 instant_build = yes }
+				}
+				2080 = {
+					add_building_construction = { type = bunker level = 2 province = 4869 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 7924 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 2406 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 13398 instant_build = yes }
+				}
+				2046 = {
+					add_building_construction = { type = bunker level = 2 province = 6310 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 8497 instant_build = yes }
+				}
+				613 = {
+					add_building_construction = { type = bunker level = 2 province = 3442 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 13815 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 3519 instant_build = yes }
+				}
+				618 = {
+					add_building_construction = { type = bunker level = 2 province = 114 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 13826 instant_build = yes }
+				}
+				614 = {
+					add_building_construction = { type = bunker level = 2 province = 6852 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 13832 instant_build = yes }
+				}
+				2064 = {
+					add_building_construction = { type = bunker level = 2 province = 13844 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 13901 instant_build = yes }
+				}
+				2088 = {
+					add_building_construction = { type = bunker level = 2 province = 3712 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 8851 instant_build = yes }
+					add_building_construction = { type = bunker level = 2 province = 6422 instant_build = yes }
+				}
+			}
+					
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	uw_war = {
+		activation = {
+			always = no
+		}
+		available = {
+			NOT = {
+				has_country_flag = ukraine_war
+			}
+		}
+		target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_left_bank
+					has_country_flag = united_right_bank
+				}
+				has_country_flag = ukraine_war
+            }
+        }
+		is_good = no
+		war_with_on_timeout = FROM
+		days_mission_timeout = 120
+		selectable_mission = no
+		timeout_effect = {
+			declare_war_on = {
+				target = FROM
+				type = annex_everything
+			}
+			set_country_flag = ukraine_war_escalated
+			FROM = {
+				set_country_flag = ukraine_war_escalated
+			}
+			if = {
+				limit = {
+					has_country_flag = uw_offensive
+				}
+				add_ideas = regional_commend_the_offensive
+				set_country_flag = uw_capture_cities
+			}
+			if = {
+				limit = {
+					has_country_flag = uw_defensive
+				}
+				add_ideas = regional_ready_to_hold
+				set_country_flag = uw_hold_positions
+			}
+    	}
+	}
+
+	uw_capture_cities = {
+		activation = {
+			ROOT = {
+				has_country_flag = uw_capture_cities
+			}
+		}
+		available = {
+			FROM = {
+				surrender_progress > 0.5
+			}
+		}
+		target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_left_bank
+					has_country_flag = united_right_bank
+				}
+				has_country_flag = ukraine_war_escalated
+            }
+			ROOT = {
+				NOT = {
+					has_country_flag = uw_hold_positions
+				}
+			}
+        }
+		is_good = no
+		days_mission_timeout = 100
+		selectable_mission = no
+		timeout_effect = {
+			add_ideas = regional_failed_plans
+    	}
+		complete_effect = {
+			add_war_support = 0.1
+			add_stability = 0.15
+		}
+	}
+
+	uw_hold_positions = {
+		activation = {
+			has_country_flag = uw_hold_positions
+		}
+		available = {
+			ROOT = {
+				surrender_progress > 0.5
+			}
+		}
+		target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_left_bank
+					has_country_flag = united_right_bank
+				}
+				has_country_flag = ukraine_war_escalated
+            }
+			ROOT = {
+				NOT = {
+					has_country_flag = uw_capture_cities
+				}
+			}
+        }
+		is_good = no
+		days_mission_timeout = 100
+		selectable_mission = no
+		timeout_effect = {
+			add_ideas = regional_counter_attack
+    	}
+		complete_effect = {
+			add_war_support = -0.1
+			add_stability = -0.3
+		}
+	}   
+}
+

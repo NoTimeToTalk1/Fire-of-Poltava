@@ -1,0 +1,4353 @@
+unite_galician_ukraine = {
+		unite_galician_ukraine = {			
+
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = unite_western_ukraine_tt
+				is_galician_ukraine = yes
+				can_unite_galicia = yes
+			}
+			
+
+		}
+		
+		fire_only_once = yes
+        	days_remove = 0		
+
+		visible = {	
+			is_galician_ukraine = yes
+		}		
+
+		complete_effect = {
+			save_global_event_target_as = UKR_galicia_unifier
+			if = {
+				limit = {
+						original_tag = GAL
+				}
+				set_cosmetic_tag = GAL_regional_galicia
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = GUT
+				}
+				set_cosmetic_tag = GUT_regional_galicia
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = ZAK
+				}
+				set_cosmetic_tag = ZAK_regional_galicia
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = RIV
+				}
+				set_cosmetic_tag = RIV_regional_galicia
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = VOL
+				}
+				set_cosmetic_tag = VOL_regional_galicia
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = TER
+				}
+				set_cosmetic_tag = TER_regional_galicia
+				add_political_power = 50
+			}
+			set_country_flag = united_galicia
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+   	}
+	
+	attack_galicia = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			is_neighbor_of = GAL
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = GAL
+				}
+			}
+		}
+
+		targets = {
+			tag = GAL
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+			GAL = {
+				exists = yes	
+			}	
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			war_with_on_remove = GAL
+			declare_war_on = {
+    				target = GAL
+    				type = annex_everything
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	attack_ternopil = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			is_neighbor_of = TER
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = TER
+				}
+			}
+		}
+
+		targets = {
+			tag = TER
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+			TER = {
+				exists = yes	
+			}	
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			war_with_on_remove = TER
+			declare_war_on = {
+    				target = TER
+    				type = annex_everything
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	attack_volhynia = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			is_neighbor_of = VOL
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = VOL
+				}
+			}
+		}
+
+		targets = {
+			tag = VOL
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+			VOL = {
+				exists = yes	
+			}
+			NOT = {
+				original_tag = GAL
+			}	
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			war_with_on_remove = VOL
+			declare_war_on = {
+    				target = VOL
+    				type = annex_everything
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	deal_with_volhynia = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			is_neighbor_of = VOL
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = VOL
+				}
+			}
+		}
+
+		targets = {
+			tag = VOL
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+			VOL = {
+				exists = yes	
+			}
+				original_tag = GAL
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			VOL = {
+				country_event = {
+					id = reg_halychyna.2
+				}
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	attack_zakarpattya = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			is_neighbor_of = ZAK
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = ZAK
+				}
+			}
+		}
+
+		targets = {
+			tag = ZAK
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+			ZAK = {
+				exists = yes	
+			}
+			NOT = {
+				original_tag = GAL
+			}	
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			declare_war_on = {
+				war_with_on_remove = ZAK
+    				target = ZAK
+    				type = annex_everything
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	deal_with_zakarpattya = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			is_neighbor_of = ZAK
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = ZAK
+				}
+			}
+		}
+
+		targets = {
+			tag = ZAK
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+			ZAK = {
+				exists = yes	
+			}
+				original_tag = GAL
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			ZAK = {
+				country_event = {
+					id = reg_halychyna.5
+				}
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	attack_rivne = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			is_neighbor_of = RIV
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = RIV
+				}
+			}
+		}
+
+		targets = {
+			tag = RIV
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+			RIV = {
+				exists = yes	
+			}	
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			declare_war_on = {
+					war_with_on_remove = RIV
+    				target = RIV
+    				type = annex_everything
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+}
+
+unite_podillya_ukraine = {
+		unite_podillya_ukraine = {			
+
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = unite_podillya_ukraine_tt
+				is_podillya_ukraine = yes
+				can_unite_podillya = yes
+			}
+			
+		}
+		
+		fire_only_once = yes
+        	days_remove = 0		
+
+		visible = {	
+			is_podillya_ukraine = yes
+		}		
+
+		cost = 0
+
+		complete_effect = {
+			save_global_event_target_as = UKR_podillya_unifier
+			if = {
+				limit = {
+						original_tag = ZHY
+				}
+				set_cosmetic_tag = ZHY_regional_podillya
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = KHM
+				}
+				set_cosmetic_tag = KHM_regional_podillya
+				add_political_power = 50
+			}
+			set_country_flag = united_podillya
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+   	}
+
+	deal_with_khmelnytsky = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			is_neighbor_of = KHM
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = KHM
+				}
+			}
+		}
+
+		targets = {
+			tag = KHM
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+			KHM = {
+				exists = yes	
+			}
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			KHM = {
+				country_event = {
+					id = reg_podillya.2
+				}
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+}
+
+unite_northern_ukraine = {
+		unite_northern_ukraine = {			
+
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = unite_northern_ukraine_tt
+				is_northern_ukraine = yes
+				can_unite_north_ukraine = yes
+			}
+			
+		}
+		
+		fire_only_once = yes
+        	days_remove = 0		
+
+		visible = {	
+			is_northern_ukraine = yes
+		}		
+
+		cost = 0
+
+		complete_effect = {
+			if = {
+				limit = {
+						original_tag = UKR
+				}
+				set_cosmetic_tag = UKR_regional_north
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = KYI
+				}
+				set_cosmetic_tag = KYI_regional_north
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = PRH
+				}
+				set_cosmetic_tag = PRH_regional_north
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = SUM
+						NOT = {
+							has_government = radical_nationalism
+						}
+				}
+				set_cosmetic_tag = SUM_regional_north
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						AND = {
+						original_tag = SUM
+						has_government = radical_nationalism
+						}
+				}
+				set_cosmetic_tag = SUM_AKS_regional_north
+				add_political_power = 50
+			}
+			set_country_flag = united_north
+			save_global_event_target_as = UKR_north_unifier
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+   	}
+
+	attack_poroh = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			OR = {
+				is_neighbor_of = PRH
+				UKR = {
+					has_subject = KYI
+				}
+			}
+			
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = PRH
+				}
+			}
+		}
+
+		targets = {
+			tag = PRH
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+			PRH = {
+				exists = yes	
+			}
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			war_with_on_remove = PRH
+			declare_war_on = {
+    				target = PRH
+    				type = annex_everything
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	attack_zeleboba = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			OR = {
+				is_neighbor_of = UKR
+				UKR = {
+					has_subject = KYI
+				}
+			}
+			
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = UKR
+				}
+			}
+		}
+
+		targets = {
+			tag = UKR
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+			UKR = {
+				exists = yes	
+			}
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			war_with_on_remove = UKR
+			declare_war_on = {
+    				target = UKR
+    				type = annex_everything
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	attack_kyiv_oblast = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			OR = {
+				is_neighbor_of = KYI
+			}
+			
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = KYI
+				}
+			}
+		}
+
+		targets = {
+			tag = KYI
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+				KYI = {
+					exists = yes
+				}
+				NOT = {
+						original_tag = UKR					
+					}
+
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			war_with_on_remove = KYI
+			declare_war_on = {
+    				target = KYI
+    				type = annex_everything
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	attack_kyiv_oblast_ukr = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+				is_neighbor_of = KYI			
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = KYI
+				}
+			}
+		}
+
+		targets = {
+			tag = KYI
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+				original_tag = UKR
+				NOT = {
+					UKR = {
+						has_subject = KYI
+					}
+				}
+
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			war_with_on_remove = KYI
+			declare_war_on = {
+    				target = KYI
+    				type = annex_everything
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	deal_with_kyiv_oblast_ukr = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+				is_neighbor_of = KYI			
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = KYI
+				}
+			}
+		}
+
+		targets = {
+			tag = KYI
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+				original_tag = UKR
+				KYI = {
+					exists = yes
+				}
+
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			KYI = {
+				country_event = {
+					id = reg_north.2
+				}
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	deal_with_sumy = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+				is_neighbor_of = SUM			
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = SUM
+				}
+			}
+		}
+
+		targets = {
+			tag = SUM
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+				SUM = {
+					exists = yes
+				}
+				NOT = {
+					SUM = {
+						has_government = radical_nationalism
+					}
+				}
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			SUM = {
+				country_event = {
+					id = reg_north.5
+				}
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	attack_sumy = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+				is_neighbor_of = SUM			
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = SUM
+				}
+			}
+		}
+
+		targets = {
+			tag = SUM
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+					SUM = {
+						has_government = radical_nationalism
+					}
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			war_with_on_remove = SUM
+			declare_war_on = {
+    				target = SUM
+    				type = annex_everything
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	deal_with_chornobyl = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+				is_neighbor_of = CBL			
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = CBL
+				}
+			}
+		}
+
+		targets = {
+			tag = CBL
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+					CBL = {
+						exists = yes
+					}
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			CBL = {
+				country_event = {
+					id = reg_north.8
+				}
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+}
+
+unite_north_central_ukraine = {
+		unite_north_central_ukraine = {			
+
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = unite_north_central_ukraine_tt
+				is_north_central_ukraine = yes
+				can_unite_north_central_ukraine = yes
+			}
+			
+		}
+		
+		fire_only_once = yes
+        	days_remove = 0		
+
+		visible = {	
+			is_north_central_ukraine = yes
+		}		
+
+		cost = 0
+
+		complete_effect = {
+			if = {
+				limit = {
+						original_tag = PLT
+				}
+				set_cosmetic_tag = PLT_regional_north_central
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = KRE
+				}
+				set_cosmetic_tag = KRE_regional_north_central
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = CHR
+				}
+				set_cosmetic_tag = CHR_regional_north_central
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = UMA
+				}
+				set_cosmetic_tag = UMA_regional_north_central
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = KIR
+				}
+				set_cosmetic_tag = KIR_regional_north_central
+				add_political_power = 50
+			}
+			set_country_flag = united_north_center
+			save_global_event_target_as = UKR_north_center_unifier
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+   	}
+
+	attack_poltava = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+				is_neighbor_of = PLT
+			
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = PLT
+				}
+			}
+		}
+
+		targets = {
+			tag = PLT
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+				PLT = {
+					exists = yes
+				}
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			declare_war_on = {
+    				target = PLT
+    				type = annex_everything
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+	
+	attack_kremenchuk = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+				is_neighbor_of = KRE
+			
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = KRE
+				}
+			}
+		}
+
+		targets = {
+			tag = KRE
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+				KRE = {
+					exists = yes
+				}
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			declare_war_on = {
+    				target = KRE
+    				type = annex_everything
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	attack_goblin = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+				is_neighbor_of = KIR
+			
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = KIR
+				}
+			}
+		}
+
+		targets = {
+			tag = KIR
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+				KIR = {
+					exists = yes
+				}
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			declare_war_on = {
+    				target = KIR
+    				type = annex_everything
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	attack_cherkasy = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+				is_neighbor_of = CHR
+			
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = CHR
+				}
+			}
+		}
+
+		targets = {
+			tag = CHR
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+				CHR = {
+					exists = yes
+				}
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			declare_war_on = {
+    				target = CHR
+    				type = annex_everything
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	attack_uman = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+				is_neighbor_of = UMA
+			
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = UMA
+				}
+			}
+		}
+
+		targets = {
+			tag = UMA
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+				UMA = {
+					exists = yes
+				}
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			declare_war_on = {
+    				target = UMA
+    				type = annex_everything
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+}
+
+unite_south_western_ukraine = {
+		unite_south_western_ukraine = {			
+
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = unite_south_western_ukraine_tt
+				is_south_western_ukraine = yes
+				can_unite_south_western_ukraine = yes
+			}
+			
+		}
+		
+		fire_only_once = yes
+        	days_remove = 0		
+
+		visible = {	
+			is_south_western_ukraine = yes
+		}		
+
+		cost = 0
+
+		complete_effect = {
+			save_global_event_target_as = UKR_south_west_unifier
+			if = {
+				limit = {
+						original_tag = ODE
+				}
+				set_cosmetic_tag = ODE_regional_south_west
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = STR
+				}
+				set_cosmetic_tag = STR_regional_south_west
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = SHT
+				}
+				set_cosmetic_tag = SHT_regional_south_west
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = MYK
+				}
+				set_cosmetic_tag = MYK_regional_south_west
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = RGE
+				}
+				set_cosmetic_tag = RGE_regional_south_west
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = BDZ
+				}
+				set_cosmetic_tag = BDZ_regional_south_west
+				add_political_power = 50
+			}
+			set_country_flag = united_south_west
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+   	}
+
+	attack_stetsenko = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+				is_neighbor_of = STR
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = STR
+				}
+			}
+		}
+
+		targets = {
+			tag = STR
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+				STR = {
+					exists = yes
+				}
+				OR = {
+					original_tag = BDZ
+					original_tag = MYK
+				}
+				
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			declare_war_on = {
+    				target = ODE
+    				type = annex_everything
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	attack_shariks = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+				is_neighbor_of = SHT
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = SHT
+				}
+			}
+		}
+
+		targets = {
+			tag = SHT
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+				SHT = {
+					exists = yes
+				}
+				OR = {
+					original_tag = BDZ
+				}
+				
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			declare_war_on = {
+    				target = SHT
+    				type = annex_everything
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	attack_mykolaiv = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+				is_neighbor_of = MYK
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = MYK
+				}
+			}
+		}
+
+		targets = {
+			tag = MYK
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+				MYK = {
+					exists = yes
+				}
+				OR = {
+					original_tag = RGE
+				}
+				
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			declare_war_on = {
+    				target = MYK
+    				type = annex_everything
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	deal_with_budzhak = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+				is_neighbor_of = BDZ			
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = BDZ
+				}
+			}
+		}
+
+		targets = {
+			tag = BDZ
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+				BDZ = {
+					exists = yes
+				}
+				OR = {
+					original_tag = MYK
+					original_tag = STR
+					original_tag = SHT
+					original_tag = RGE
+				}
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			SUM = {
+				country_event = {
+					id = reg_south_west.2
+				}
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	deal_with_mykolaiv = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+				is_neighbor_of = MYK			
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = MYK
+				}
+			}
+		}
+
+		targets = {
+			tag = MYK
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+				MYK = {
+					exists = yes
+				}
+				OR = {
+					original_tag = BDZ
+					original_tag = STR
+					original_tag = ODE
+				}
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			MYK = {
+				country_event = {
+					id = reg_south_west.5
+				}
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+}
+
+unite_south_central_ukraine = {
+		unite_south_central_ukraine = {			
+
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = unite_south_central_ukraine_tt
+				is_south_central_ukraine = yes
+				can_unite_south_central_ukraine = yes
+			}
+			
+		}
+		
+		fire_only_once = yes
+        	days_remove = 0		
+
+		visible = {	
+			is_south_central_ukraine = yes
+		}		
+
+		cost = 0
+
+		complete_effect = {
+			save_global_event_target_as = UKR_south_center_unifier
+			if = {
+				limit = {
+						original_tag = ZAP
+				}
+				set_cosmetic_tag = ZAP_regional_south_central
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = OPZ
+				}
+				set_cosmetic_tag = OPZ_regional_south_central
+				add_political_power = 50
+			}
+			set_country_flag = united_south_center
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+   	}
+	
+	attack_zaporizhzhya = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+				is_neighbor_of = ZAP
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = ZAP
+				}
+			}
+		}
+
+		targets = {
+			tag = ZAP
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+				ZAP = {
+					exists = yes
+				}
+				
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			declare_war_on = {
+    				target = ZAP
+    				type = annex_everything
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	attack_kherson = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+				is_neighbor_of = OPZ
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = OPZ
+				}
+			}
+		}
+
+		targets = {
+			tag = OPZ
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+				OPZ = {
+					exists = yes
+				}
+				
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			declare_war_on = {
+    				target = OPZ
+    				type = annex_everything
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+}
+
+unite_south_eastern_ukraine = {
+		unite_south_eastern_ukraine = {			
+
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = unite_south_eastern_ukraine_tt
+				is_south_eastern_ukraine = yes
+				can_unite_south_eastern_ukraine = yes
+			}
+			
+		}
+		
+		fire_only_once = yes
+        	days_remove = 0		
+
+		visible = {	
+			is_south_eastern_ukraine = yes
+		}		
+
+		cost = 0
+
+		complete_effect = {
+			save_global_event_target_as = UKR_south_east_unifier
+			if = {
+				limit = {
+						original_tag = AFU
+				}
+				set_cosmetic_tag = AFU_regional_south_eastern
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = KHA
+				}
+				set_cosmetic_tag = KHA_regional_south_eastern
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = DPR
+						has_cosmetic_tag = GRK
+				}
+				set_cosmetic_tag = GRK_regional
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = DPR
+						has_cosmetic_tag = VTR
+				}
+				set_cosmetic_tag = VTR_SE
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = LPR
+				}
+				set_cosmetic_tag = LPR_regional_south_eastern
+				add_political_power = 50
+			}
+			set_country_flag = united_south_east
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+   	}
+
+	deal_with_afu = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+				is_neighbor_of = AFU
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = AFU
+				}
+			}
+		}
+
+		targets = {
+			tag = AFU
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+				AFU = {
+					exists = yes
+				}
+				original_tag = KHA
+				NOT = {
+					OR = {
+						original_tag = DPR
+						original_tag = LPR
+					}
+				}
+				
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			AFU = {
+				country_event = {
+					id = reg_south_east.2
+				}
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	attack_novososiya = {
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+				is_neighbor_of = DPR
+		}
+
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = DPR
+				}
+			}
+		}
+
+		targets = {
+			tag = DPR
+		}
+		
+		fire_only_once = yes
+        days_remove = 14		
+
+		visible = {	
+				DPR = {
+					exists = yes
+				}
+				NOT = {
+					original_tag = AFU
+				}
+				
+		}		
+
+		cost = 25
+
+		remove_effect = {
+			declare_war_on = {
+    				target = DPR
+    				type = annex_everything
+			}
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+}
+
+unite_eastern_ukraine = {
+		unite_eastern_ukraine = {			
+
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = unite_eastern_ukraine_tt
+				is_eastern_ukraine = yes
+				can_unite_eastern_ukraine = yes
+			}
+			#date > 2027.01.01
+		}
+		
+		fire_only_once = yes
+        	days_remove = 0		
+
+		visible = {	
+			is_eastern_ukraine = yes
+			OR = {
+				has_country_flag = united_south_east
+				original_tag = DNI
+			}
+		}		
+
+		cost = 0
+
+		complete_effect = {
+			save_global_event_target_as = UKR_east_unifier
+			if = {
+				limit = {
+						original_tag = AFU
+				}
+				set_cosmetic_tag = AFU_regional_eastern
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = KHA
+				}
+				set_cosmetic_tag = KHA_regional_eastern
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = DPR
+				}
+				set_cosmetic_tag = DPR_regional_eastern
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = LPR
+				}
+				set_cosmetic_tag = LPR_regional_eastern
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = DNI
+				}
+				set_cosmetic_tag = DNI_regional_eastern
+				add_political_power = 50
+			}
+			set_country_flag = united_east
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+   	}
+
+	prepare_war_east = {
+        icon = GFX_ZAK_rada_election
+
+        target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_south_east
+					original_tag = DNI
+				}
+            }
+        }
+
+        fire_only_once = yes
+        cost = 25
+
+        ai_will_do = {
+            base = 10
+        }
+
+        available = {
+        }
+
+        visible = {
+				OR = {
+					original_tag = DNI
+					has_country_flag = united_south_east
+				}
+				NOT = {
+					has_country_flag = east_war
+				}
+				NOT = {
+					has_country_flag = east_elections
+				}
+				
+        }
+
+        complete_effect = {
+            set_country_flag = east_war
+            FROM = { set_country_flag =  east_war }
+        }
+}
+
+	prepare_dogovornyak_east = {
+		visible = {
+			OR = {
+				original_tag = DNI
+				original_tag = KHA
+				AFU = {
+					OR = {
+						has_cosmetic_tag = AFU_dan
+					}
+				}
+			}			
+			NOT = {
+				has_country_flag = east_war
+				has_country_flag = east_dogovornyak
+			}
+			DNP = {
+				exists = yes
+			}
+			SET = {
+				exists = yes
+			}
+		}
+		fire_only_once = yes
+        	days_remove = 0
+			ai_will_do = {
+				base = 10
+			}	
+		complete_effect = {
+			DNI = {
+				set_country_flag = east_dogovornyak
+				add_political_power = 100
+				set_variable = {
+					var = dnipro_spendible_influence
+					value = 21
+				}
+				set_variable = {
+					var = dnipro_influence
+					value = 0
+				}
+			}
+			KHA = {
+				set_country_flag = east_dogovornyak	
+				add_political_power = 100
+				set_variable = {
+					var = south_east_spendible_influence
+					value = 21
+				}
+				set_variable = {
+					var = south_east_influence
+					value = 0
+				}
+			}
+		}
+	}
+}
+
+unite_southern_ukraine = {
+		unite_southern_ukraine = {			
+
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = unite_southern_ukraine_tt
+				is_southern_ukraine = yes
+				can_unite_southern_ukraine = yes
+			}
+			#date > 2027.01.01
+		}
+		
+		fire_only_once = yes
+        	days_remove = 0		
+
+		visible = {	
+			is_southern_ukraine = yes
+			OR = {
+				has_country_flag = united_south_center
+				has_country_flag = united_south_west
+			}
+		}		
+
+		cost = 0
+
+		complete_effect = {
+			save_global_event_target_as = UKR_south_unifier
+			if = {
+				limit = {
+						original_tag = ODE
+				}
+				set_cosmetic_tag = ODE_regional_south
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = STR
+				}
+				set_cosmetic_tag = STR_regional_south
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = SHT
+				}
+				set_cosmetic_tag = SHT_regional_south
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = MYK
+				}
+				set_cosmetic_tag = MYK_regional_south
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = RGE
+				}
+				set_cosmetic_tag = RGE_regional_south
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = BDZ
+				}
+				set_cosmetic_tag = BDZ_regional_south
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = ZAP
+				}
+				set_cosmetic_tag = ZAP_regional_south
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = OPZ
+				}
+				set_cosmetic_tag = OPZ_regional_south
+				add_political_power = 50
+			}
+			set_country_flag = united_south
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+   	}
+
+	prepare_war_south = {
+        icon = GFX_ZAK_rada_election
+
+        target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_south_west
+					has_country_flag = united_south_center
+				}
+            }
+        }
+
+        fire_only_once = yes
+        cost = 25
+
+        ai_will_do = {
+            base = 10
+        }
+
+        available = {
+        }
+
+        visible = {
+				OR = {
+					has_country_flag = united_south_center
+					has_country_flag = united_south_west
+				}
+				OR = {
+					NOT = {
+						has_country_flag = south_war
+					}
+				}
+				NOT = {
+						has_country_flag = south_elections
+					}
+        }
+
+        complete_effect = {
+            set_country_flag = south_war
+            FROM = { set_country_flag =  south_war }
+        }
+    }
+
+	prepare_elections_south = {
+		available = {
+		}
+        target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_south_west
+					has_country_flag = united_south_center
+				}
+            }
+        }
+		visible = {
+			is_southern_ukraine = yes
+			OR = {
+				has_country_flag = united_south_west
+				has_country_flag = united_south_center
+			}
+			NOT = {
+				has_country_flag = south_war
+				has_country_flag = south_elections
+			}
+			OR = {
+				original_tag = ZAP
+				original_tag = MYK
+				original_tag = BDZ
+				AND = {
+					country_exists = SHT
+                    country_exists = OPZ
+				}
+			}
+		}
+		fire_only_once = yes
+        	days_remove = 0	
+		complete_effect = {
+			set_country_flag = south_elections
+			add_political_power = 100
+			FROM = {
+				set_country_flag = south_elections
+				add_political_power = 100
+			}
+			if = {
+					limit = {
+						FROM = {
+							has_country_flag = united_south_center
+						}
+					}
+				custom_effect_tooltip = aaaaaa
+				FROM = {
+					set_variable = {
+						var = south_center_rates
+						value = 50.00
+					}
+					set_variable = {
+						var = south_center_rates_grow
+						value = 2
+					}
+				}
+				set_variable = {
+					var = south_west_rates
+					value = 50.00
+				}
+				set_variable = {
+					var = south_west_rates_grow
+					value = 2
+				}
+			}
+			else_if = {
+					limit = {
+						FROM = {
+							has_country_flag = united_south_west
+						}
+					}
+				custom_effect_tooltip = bbbbbb
+				FROM = {
+					set_variable = {
+						var = south_west_rates
+						value = 50.00
+					}
+					set_variable = {
+					var = south_west_rates_grow
+					value = 2
+					}
+				}
+				set_variable = {
+					var = south_center_rates
+					value = 50.00
+				}
+				set_variable = {
+					var = south_center_rates_grow
+					value = 2
+				}
+			}
+		}
+	}
+
+	prepare_dogovornyak_south = {
+		visible = {
+			OR = {
+				original_tag = ZAP
+				original_tag = ODE
+			}
+			NOT = {
+				has_country_flag = west_war
+				has_country_flag = west_dogovornyak
+			}
+			SWT = {
+				exists = yes
+			}
+			SCT = {
+				exists = yes
+			}
+		}
+		fire_only_once = yes
+        	days_remove = 0
+			ai_will_do = {
+				base = 10
+			}	
+		complete_effect = {
+			SCT = {
+				set_country_flag = south_dogovornyak
+				add_political_power = 100
+				set_variable = {
+					var = south_center_spendible_influence
+					value = 21
+				}
+				set_variable = {
+					var = south_center_influence
+					value = 0
+				}
+			}
+			SWT = {
+				set_country_flag = south_dogovornyak	
+				add_political_power = 100
+				set_variable = {
+					var = south_west_spendible_influence
+					value = 21
+				}
+				set_variable = {
+					var = south_west_influence
+					value = 0
+				}
+			}
+		}
+	}
+}
+
+unite_central_ukraine = {
+		unite_central_ukraine = {			
+
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = unite_central_ukraine_tt
+				is_central_ukraine = yes
+				can_unite_central_ukraine = yes
+			}
+			#date > 2027.01.01
+		}
+		
+		fire_only_once = yes
+        	days_remove = 0		
+
+		visible = {	
+			is_central_ukraine = yes
+			OR = {
+				has_country_flag = united_north
+				has_country_flag = united_north_center
+			}
+		}		
+
+		cost = 0
+
+		complete_effect = {
+			save_global_event_target_as = UKR_center_unifier
+			if = {
+				limit = {
+						original_tag = UKR
+				}
+				set_cosmetic_tag = UKR_regional_central
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = KYI
+				}
+				set_cosmetic_tag = KYI_regional_central
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = PRH
+				}
+				set_cosmetic_tag = PRH_regional_central
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = SUM
+						NOT = {
+							has_government = radical_nationalism
+						}
+				}
+				set_cosmetic_tag = SUM_regional_central
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = SUM
+						has_government = radical_nationalism
+				}
+				set_cosmetic_tag = SUM_AKS_regional_central
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = PLT
+				}
+				set_cosmetic_tag = PLT_regional_central
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = KRE
+				}
+				set_cosmetic_tag = KRE_regional_central
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = CHR
+				}
+				set_cosmetic_tag = CHR_regional_central
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = UMA
+				}
+				set_cosmetic_tag = UMA_regional_central
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = KIR
+				}
+				set_cosmetic_tag = KIR_regional_central
+				add_political_power = 50
+			}
+			set_country_flag = united_center
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+   	}
+
+	prepare_elections_center = {
+		available = {
+		}
+        target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_north
+					has_country_flag = united_north_center
+				}
+            }
+        }
+		visible = {
+			is_central_ukraine = yes
+			OR = {
+				has_country_flag = united_north
+				has_country_flag = united_north_center
+			}
+			NOT = {
+				has_country_flag = center_war
+			}
+			OR = {
+				AND = {
+					NRT = {
+						OR = {
+							original_tag = UKR
+							original_tag = PRH
+							original_tag = SUM
+						}
+					}
+					NCT = {
+						OR = {
+							original_tag = CHR
+						}
+					}	
+				}
+			}
+			NOT = {
+				AND = {
+					original_tag = SUM
+					has_government = radical_nationalism
+				}
+			}
+		}
+		fire_only_once = yes
+        	days_remove = 0	
+		complete_effect = {
+			set_country_flag = center_elections
+			add_political_power = 100
+			FROM = {
+				set_country_flag = center_elections
+				add_political_power = 100
+			}
+			if = {
+					limit = {
+						FROM = {
+							has_country_flag = united_north
+						}
+					}
+				custom_effect_tooltip = aaaaaa
+				FROM = {
+					set_variable = {
+						var = north_rates
+						value = 50.00
+					}
+					set_variable = {
+						var = north_rates_grow
+						value = 2
+					}
+				}
+				set_variable = {
+					var = north_center_rates
+					value = 50.00
+				}
+				set_variable = {
+					var = north_center_rates_grow
+					value = 2
+				}
+			}
+			else_if = {
+					limit = {
+						FROM = {
+							has_country_flag = united_north_center
+						}
+					}
+				custom_effect_tooltip = bbbbbb
+				FROM = {
+					set_variable = {
+						var = north_center_rates
+						value = 50.00
+					}
+					set_variable = {
+					var = north_center_rates_grow
+					value = 2
+					}
+				}
+				set_variable = {
+					var = north_rates
+					value = 50.00
+				}
+				set_variable = {
+					var = north_rates_grow
+					value = 2
+				}
+			}
+		}
+	}
+
+	prepare_dogovornyak_center = {
+		visible = {
+			AND = {
+				NRT = {
+					OR = {
+						original_tag = UKR
+						original_tag = PRH
+						AND = {
+							original_tag = SUM
+							NOT = {
+								has_government = radical_nationalism
+							}
+						}
+					}
+				}
+				NCT = {
+					original_tag = UMA
+				}
+			}
+			NOT = {
+				has_country_flag = center_war
+				has_country_flag = center_dogovornyak
+			}
+			NCT = {
+				exists = yes
+			}
+			NRT = {
+				exists = yes
+			}
+		}
+		fire_only_once = yes
+        	days_remove = 0
+			ai_will_do = {
+				base = 10
+			}	
+		complete_effect = {
+			NRT = {
+				set_country_flag = center_dogovornyak
+				add_political_power = 100
+				set_variable = {
+					var = north_spendible_influence
+					value = 21
+				}
+				set_variable = {
+					var = north_influence
+					value = 0
+				}
+			}
+			NCT = {
+				set_country_flag = center_dogovornyak	
+				add_political_power = 100
+				set_variable = {
+					var = north_center_spendible_influence
+					value = 21
+				}
+				set_variable = {
+					var = north_center_influence
+					value = 0
+				}
+			}
+		}
+	}
+
+	prepare_war_center = {
+        icon = GFX_ZAK_rada_election
+
+        target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_north
+					has_country_flag = united_north_center
+				}
+            }
+        }
+
+        fire_only_once = yes
+        cost = 25
+
+        ai_will_do = {
+            base = 10
+        }
+
+        available = {
+        }
+
+        visible = {
+				OR = {
+					has_country_flag = united_north_center
+					has_country_flag = united_north
+				}
+				NOT = {
+					has_country_flag = center_war
+				}
+				NOT = {
+					has_country_flag = center_elections
+				}
+				
+        }
+
+        complete_effect = {
+            set_country_flag = center_war
+            FROM = { set_country_flag =  center_war }
+        }
+	}
+	
+}
+
+unite_western_ukraine = {
+
+		unite_western_ukraine = {			
+
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = unite_western_ukraine_tt
+				is_western_ukraine = yes
+				can_unite_western_ukraine = yes
+			}
+			#date > 2027.01.01
+		}
+		
+		fire_only_once = yes
+        	days_remove = 0		
+
+		visible = {	
+			is_western_ukraine = yes
+			OR = {
+				has_country_flag = united_galicia
+				has_country_flag = united_podillya
+			}
+		}		
+
+		cost = 0
+
+		complete_effect = {
+			save_global_event_target_as = UKR_west_unifier
+			if = {
+				limit = {
+						original_tag = GAL
+				}
+				set_cosmetic_tag = GAL_regional_western
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = GUT
+				}
+				set_cosmetic_tag = GUT_regional_western
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = ZAK
+				}
+				set_cosmetic_tag = ZAK_regional_western
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = RIV
+				}
+				set_cosmetic_tag = RIV_regional_western
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = VOL
+				}
+				set_cosmetic_tag = VOL_regional_western
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = TER
+				}
+				set_cosmetic_tag = TER_regional_western
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = ZHY
+				}
+				set_cosmetic_tag = ZHY_regional_western
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = KHM
+				}
+				set_cosmetic_tag = KHM_regional_western
+				add_political_power = 50
+			}
+			set_country_flag = united_west
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+   	}
+
+	prepare_elections_west = {
+		available = {
+			OR = {
+				original_tag = GAL
+				original_tag = ZHY
+			}
+		}
+        target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_galicia
+					has_country_flag = united_podillya
+				}
+            }
+        }
+		visible = {
+			is_western_ukraine = yes
+			OR = {
+				has_country_flag = united_galicia
+				has_country_flag = united_podillya
+			}
+			NOT = {
+				OR = {
+					has_country_flag = west_war
+					has_country_flag = west_dogovornyak
+				}			
+			}
+		}
+		fire_only_once = yes
+        	days_remove = 0	
+		complete_effect = {
+			set_country_flag = west_elections
+			add_political_power = 100
+			FROM = {
+				set_country_flag = west_elections
+				add_political_power = 100
+			}
+			if = {
+					limit = {
+						FROM = {
+							has_country_flag = united_podillya
+						}
+					}
+				custom_effect_tooltip = aaaaaa
+				FROM = {
+					set_variable = {
+						var = podillya_rates
+						value = 50.00
+					}
+					set_variable = {
+						var = podillya_rates_grow
+						value = 2
+					}
+				}
+				set_variable = {
+					var = galicia_rates
+					value = 50.00
+				}
+				set_variable = {
+					var = galicia_rates_grow
+					value = 2
+				}
+			}
+			else_if = {
+					limit = {
+						FROM = {
+							has_country_flag = united_galicia
+						}
+					}
+				custom_effect_tooltip = bbbbbb
+				FROM = {
+					set_variable = {
+						var = galicia_rates
+						value = 50.00
+					}
+					set_variable = {
+					var = galicia_rates_grow
+					value = 2
+					}
+				}
+				set_variable = {
+					var = podillya_rates
+					value = 50.00
+				}
+				set_variable = {
+					var = podillya_rates_grow
+					value = 2
+				}
+			}
+		}
+	}
+
+	prepare_dogovornyak_west = {
+		visible = {
+			OR = {
+				original_tag = GAL
+				original_tag = ZHY
+			}
+			NOT = {
+				has_country_flag = west_war
+				has_country_flag = west_dogovornyak
+			}
+			GLY = {
+				exists = yes
+			}
+			PDL = {
+				exists = yes
+			}
+		}
+		fire_only_once = yes
+        	days_remove = 0
+			ai_will_do = {
+				base = 10
+			}	
+		complete_effect = {
+			PDL = {
+				set_country_flag = west_dogovornyak
+				add_political_power = 100
+				set_variable = {
+					var = podillya_spendible_influence
+					value = 21
+				}
+				set_variable = {
+					var = podillya_influence
+					value = 0
+				}
+			}
+			GLY = {
+				set_country_flag = west_dogovornyak	
+				add_political_power = 100
+				set_variable = {
+					var = galicia_spendible_influence
+					value = 21
+				}
+				set_variable = {
+					var = galicia_influence
+					value = 0
+				}
+			}
+		}
+	}
+
+	prepare_war_west = {
+        icon = GFX_ZAK_rada_election
+
+        target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_galicia
+					has_country_flag = united_podillya
+				}
+            }
+        }
+
+        fire_only_once = yes
+        cost = 25
+
+        ai_will_do = {
+            base = 10
+        }
+
+        available = {
+        }
+
+        visible = {
+				OR = {
+					has_country_flag = united_podillya
+					has_country_flag = united_galicia
+				}
+				NOT = {
+					has_country_flag = west_war
+				}
+				NOT = {
+					has_country_flag = west_elections
+				}
+				
+        }
+
+        complete_effect = {
+            set_country_flag = west_war
+            FROM = { set_country_flag =  west_war }
+        }
+	}
+}
+
+unite_left_bank_ukraine = {
+		unite_left_bank_ukraine = {			
+
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = unite_left_bank_ukraine_tt
+				is_left_bank_ukraine = yes
+				can_unite_left_bank_ukraine = yes
+			}
+			#date > 2030.06.01
+		}
+		
+		fire_only_once = yes
+        	days_remove = 0		
+
+		visible = {	
+			is_left_bank_ukraine = yes
+			OR = {
+				has_country_flag = united_east
+				has_country_flag = united_south
+			}
+		}		
+
+		cost = 0
+
+		complete_effect = {
+			save_global_event_target_as = UKR_left_bank_unifier
+			if = {
+				limit = {
+						original_tag = AFU
+				}
+				set_cosmetic_tag = AFU_regional_left_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+					has_cosmetic_tag = GRK
+				}
+				set_cosmetic_tag = GRK_LFT
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = KHA
+				}
+				set_cosmetic_tag = KHA_regional_left_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = DPR
+				}
+				set_cosmetic_tag = DPR_regional_left_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = LPR
+				}
+				set_cosmetic_tag = LPR_regional_left_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = DNI
+				}
+				set_cosmetic_tag = DNI_regional_left_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = ODE
+				}
+				set_cosmetic_tag = ODE_regional_left_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = STR
+				}
+				set_cosmetic_tag = STR_regional_left_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = SHT
+				}
+				set_cosmetic_tag = SHT_regional_left_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = MYK
+				}
+				set_cosmetic_tag = MYK_regional_left_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = RGE
+				}
+				set_cosmetic_tag = RGE_regional_left_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = BDZ
+				}
+				set_cosmetic_tag = BDZ_regional_left_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = ZAP
+				}
+				set_cosmetic_tag = ZAP_regional_left_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = OPZ
+				}
+				set_cosmetic_tag = OPZ_regional_left_bank
+				add_political_power = 50
+			}
+			set_country_flag = united_left_bank
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+   	}
+
+	prepare_elections_left_bank = {
+		available = {
+		}
+        target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_east
+					has_country_flag = united_south
+				}
+            }
+        }
+		visible = {
+			is_left_bank_ukraine = yes
+			OR = {
+				has_country_flag = united_east
+				has_country_flag = united_south
+			}
+			NOT = {
+				has_country_flag = left_bank_war
+			}
+		}
+		fire_only_once = yes
+        	days_remove = 0	
+		complete_effect = {
+			set_country_flag = left_bank_elections
+			add_political_power = 100
+			FROM = {
+				set_country_flag = left_bank_elections
+				add_political_power = 100
+			}
+			if = {
+					limit = {
+						FROM = {
+							has_country_flag = united_east
+						}
+					}
+				custom_effect_tooltip = aaaaaa
+				FROM = {
+					set_variable = {
+						var = east_rates
+						value = 50.00
+					}
+					set_variable = {
+						var = east_rates_grow
+						value = 2
+					}
+				}
+				set_variable = {
+					var = south_rates
+					value = 50.00
+				}
+				set_variable = {
+					var = south_rates_grow
+					value = 2
+				}
+			}
+			else_if = {
+					limit = {
+						FROM = {
+							has_country_flag = united_south
+						}
+					}
+				custom_effect_tooltip = bbbbbb
+				FROM = {
+					set_variable = {
+						var = south_rates
+						value = 50.00
+					}
+					set_variable = {
+					var = south_rates_grow
+					value = 2
+					}
+				}
+				set_variable = {
+					var = east_rates
+					value = 50.00
+				}
+				set_variable = {
+					var = east_rates_grow
+					value = 2
+				}
+			}
+		}
+	}
+
+	prepare_dogovornyak_left_bank = {
+		visible = {
+            OR = {
+               	ESN = {
+                    OR = {
+                        original_tag = KHA
+                        AFU = {
+                            has_cosmetic_tag = AFU_dan
+                        }
+                    }
+                }
+                STH = {
+                    OR = {
+                        original_tag = ODE
+                        original_tag = ZAP
+                    }
+                }
+                AND = {
+                    ESN = {
+                        original_tag = DPR
+                    }
+                    STH = {
+                        OR = {
+                            original_tag = OPZ
+                            original_tag = SHT
+                        }
+                    }
+                } 
+            }
+
+			NOT = {
+                OR = {
+                    has_country_flag = left_bank_war
+                    has_country_flag = left_bank_dogovornyak
+                    has_country_flag = left_bank_elections
+                }
+			}
+			ESN = {
+				exists = yes
+			}
+			STH = {
+				exists = yes
+			}
+		}
+		fire_only_once = yes
+        	days_remove = 0
+			ai_will_do = {
+				base = 10
+			}	
+		complete_effect = {
+			ESN = {
+				set_country_flag = left_bank_dogovornyak
+				add_political_power = 100
+				set_variable = {
+					var = east_spendible_influence
+					value = 21
+				}
+				set_variable = {
+					var = east_influence
+					value = 0
+				}
+			}
+			STH = {
+				set_country_flag = left_bank_dogovornyak	
+				add_political_power = 100
+				set_variable = {
+					var = south_spendible_influence
+					value = 21
+				}
+				set_variable = {
+					var = south_influence
+					value = 0
+				}
+			}
+		}
+	}
+
+	prepare_war_left_bank = {
+        icon = GFX_ZAK_rada_election
+
+        target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_south
+					has_country_flag = united_east
+				}
+            }
+        }
+
+        fire_only_once = yes
+        cost = 25
+
+        ai_will_do = {
+            base = 10
+        }
+
+        available = {
+        }
+
+        visible = {
+				OR = {
+					has_country_flag = united_east
+					has_country_flag = united_south
+				}
+				NOT = {
+					has_country_flag = left_bank_war
+				}
+				NOT = {
+					has_country_flag = left_bank_elections
+				}
+				
+        }
+
+        complete_effect = {
+            set_country_flag = left_bank_war
+            FROM = { set_country_flag =  left_bank_war }
+        }
+	}
+}
+
+unite_right_bank_ukraine = {
+		unite_right_bank_ukraine = {			
+
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = unite_right_bank_ukraine_tt
+				is_right_bank_ukraine = yes
+				can_unite_right_bank_ukraine = yes
+			}
+			#date > 2030.06.01
+		}
+		
+		fire_only_once = yes
+        	days_remove = 0		
+
+		visible = {	
+		is_right_bank_ukraine = yes
+			OR = {
+				has_country_flag = united_center
+				has_country_flag = united_west
+			}
+		}		
+
+		cost = 0
+
+		complete_effect = {
+			save_global_event_target_as = UKR_right_bank_unifier
+			if = {
+				limit = {
+						original_tag = UKR
+				}
+				set_cosmetic_tag = UKR_regional_right_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = KYI
+				}
+				set_cosmetic_tag = KYI_regional_right_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = PRH
+				}
+				set_cosmetic_tag = PRH_regional_right_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = SUM
+						NOT = {
+							has_government = radical_nationalism
+						}
+				}
+				set_cosmetic_tag = SUM_regional_right_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = SUM
+						has_government = radical_nationalism
+				}
+				set_cosmetic_tag = SUM_AKS_regional_right_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = PLT
+				}
+				set_cosmetic_tag = PLT_regional_right_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = KRE
+				}
+				set_cosmetic_tag = KRE_regional_right_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = CHR
+				}
+				set_cosmetic_tag = CHR_regional_right_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = UMA
+				}
+				set_cosmetic_tag = UMA_regional_right_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = KIR
+				}
+				set_cosmetic_tag = KIR_regional_right_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = GAL
+				}
+				set_cosmetic_tag = GAL_regional_right_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = GUT
+				}
+				set_cosmetic_tag = GUT_regional_right_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = ZAK
+				}
+				set_cosmetic_tag = ZAK_regional_right_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = RIV
+				}
+				set_cosmetic_tag = RIV_regional_right_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = VOL
+				}
+				set_cosmetic_tag = VOL_regional_right_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = TER
+				}
+				set_cosmetic_tag = TER_regional_right_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = ZHY
+				}
+				set_cosmetic_tag = ZHY_regional_right_bank
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = KHM
+				}
+				set_cosmetic_tag = KHM_regional_right_bank
+				add_political_power = 50
+			}
+			set_country_flag = united_right_bank
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+   	}
+
+	prepare_elections_right_bank = {
+		available = {
+		}
+        target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_west
+					has_country_flag = united_center
+				}
+            }
+        }
+		visible = {
+			is_right_bank_ukraine = yes
+			OR = {
+				has_country_flag = united_west
+				has_country_flag = united_center
+			}
+			NOT = {
+				has_country_flag = right_bank_war
+			}
+		}
+		fire_only_once = yes
+        	days_remove = 0	
+		complete_effect = {
+			set_country_flag = right_bank_elections
+			add_political_power = 100
+			FROM = {
+				set_country_flag = right_bank_elections
+				add_political_power = 100
+			}
+			if = {
+					limit = {
+						FROM = {
+							has_country_flag = united_west
+						}
+					}
+				custom_effect_tooltip = aaaaaa
+				FROM = {
+					set_variable = {
+						var = west_rates
+						value = 50.00
+					}
+					set_variable = {
+						var = west_rates_grow
+						value = 2
+					}
+				}
+				set_variable = {
+					var = center_rates
+					value = 50.00
+				}
+				set_variable = {
+					var = center_rates_grow
+					value = 2
+				}
+			}
+			else_if = {
+					limit = {
+						FROM = {
+							has_country_flag = united_center
+						}
+					}
+				custom_effect_tooltip = bbbbbb
+				FROM = {
+					set_variable = {
+						var = center_rates
+						value = 50.00
+					}
+					set_variable = {
+					var = center_rates_grow
+					value = 2
+					}
+				}
+				set_variable = {
+					var = west_rates
+					value = 50.00
+				}
+				set_variable = {
+					var = west_rates_grow
+					value = 2
+				}
+			}
+		}
+	}
+
+	prepare_dogovornyak_right_bank = {
+		visible = {
+               	WST = {
+					OR = {
+						original_tag = VOL
+						original_tag = ZHY
+					}					
+                }
+                CNT = {
+                    OR = {
+						original_tag = PRH
+						original_tag = UKR
+						AND = {
+							original_tag = SUM
+							NOT = {
+								SUM = {
+									has_government = radical_nationalism
+								}
+							}
+						}
+					}
+                }
+			NOT = {
+                OR = {
+                    has_country_flag = right_bank_war
+                    has_country_flag = right_bank_dogovornyak
+                    has_country_flag = right_bank_elections
+                }
+			}
+			WST = {
+				exists = yes
+			}
+			CNT = {
+				exists = yes
+			}
+		}
+		fire_only_once = yes
+        	days_remove = 0
+			ai_will_do = {
+				base = 10
+			}	
+		complete_effect = {
+			WST = {
+				set_country_flag = right_bank_dogovornyak
+				add_political_power = 100
+				set_variable = {
+					var = west_spendible_influence
+					value = 21
+				}
+				set_variable = {
+					var = west_influence
+					value = 0
+				}
+			}
+			CNT = {
+				set_country_flag = right_bank_dogovornyak	
+				add_political_power = 100
+				set_variable = {
+					var = center_spendible_influence
+					value = 21
+				}
+				set_variable = {
+					var = center_influence
+					value = 0
+				}
+			}
+		}
+	}
+
+	prepare_war_right_bank = {
+        icon = GFX_ZAK_rada_election
+
+        target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_west
+					has_country_flag = united_center
+				}
+            }
+        }
+
+        fire_only_once = yes
+        cost = 25
+
+        ai_will_do = {
+            base = 10
+        }
+
+        available = {
+        }
+
+        visible = {
+				OR = {
+					has_country_flag = united_center
+					has_country_flag = united_west
+				}
+				NOT = {
+					has_country_flag = right_bank_war
+				}
+				NOT = {
+					has_country_flag = right_bank_elections
+				}
+				
+        }
+
+        complete_effect = {
+            set_country_flag = right_bank_war
+            FROM = { set_country_flag =  right_bank_war }
+        }
+	}
+}
+
+unite_ukraine = {
+		unite_ukraine = {			
+
+		icon = GFX_ZAK_rada_election
+		
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = unite_ukraine_tt
+				is_ukraine = yes
+				can_unite_ukraine = yes
+			}
+			#date > 2033.01.01
+		}
+		
+		fire_only_once = yes
+        	days_remove = 0		
+
+		visible = {	
+			OR = {
+				has_country_flag = united_left_bank
+				has_country_flag = united_right_bank
+			}
+		}		
+
+		cost = 0
+
+		complete_effect = {
+			if = {
+				limit = {
+						original_tag = UKR
+				}
+				set_cosmetic_tag = UKR_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = KYI
+				}
+				set_cosmetic_tag = KYI_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = PRH
+				}
+				set_cosmetic_tag = PRH_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = SUM
+						NOT = {
+							has_government = radical_nationalism
+						}
+				}
+				set_cosmetic_tag = SUM_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = SUM
+						has_government = radical_nationalism
+				}
+				set_cosmetic_tag = SUM_AKS_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = PLT
+				}
+				set_cosmetic_tag = PLT_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = KRE
+				}
+				set_cosmetic_tag = KRE_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = CHR
+				}
+				set_cosmetic_tag = CHR_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = UMA
+				}
+				set_cosmetic_tag = UMA_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = KIR
+				}
+				set_cosmetic_tag = KIR_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = GAL
+				}
+				set_cosmetic_tag = GAL_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = GUT
+				}
+				set_cosmetic_tag = GUT_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = ZAK
+				}
+				set_cosmetic_tag = ZAK_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = RIV
+				}
+				set_cosmetic_tag = RIV_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = VOL
+				}
+				set_cosmetic_tag = VOL_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = TER
+				}
+				set_cosmetic_tag = TER_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = ZHY
+				}
+				set_cosmetic_tag = ZHY_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = KHM
+				}
+				set_cosmetic_tag = KHM_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = AFU
+				}
+				set_cosmetic_tag = AFU_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = KHA
+				}
+				set_cosmetic_tag = KHA_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = DNI
+				}
+				set_cosmetic_tag = DNI_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = ODE
+				}
+				set_cosmetic_tag = ODE_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = STR
+				}
+				set_cosmetic_tag = STR_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = SHT
+				}
+				set_cosmetic_tag = SHT_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = MYK
+				}
+				set_cosmetic_tag = MYK_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = RGE
+				}
+				set_cosmetic_tag = RGE_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = BDZ
+				}
+				set_cosmetic_tag = BDZ_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = ZAP
+				}
+				set_cosmetic_tag = ZAP_united_ukraine
+				add_political_power = 50
+			}
+			if = {
+				limit = {
+						original_tag = OPZ
+				}
+				set_cosmetic_tag = OPZ_united_ukraine
+				add_political_power = 50
+			}
+			set_country_flag = united_ukraine
+	  	}
+		ai_will_do = {	
+			base = 10		
+		}
+   	}
+
+	prepare_dogovornyak_ukraine = {
+		visible = {
+               	LBU = {
+					OR = {
+						original_tag = ODE
+						original_tag = DNI
+						original_tag = KHA
+						AFU = {
+							has_cosmetic_tag = AFU_dan
+						}
+					}					
+                }
+                RBU = {
+                    OR = {
+						original_tag = PRH
+						original_tag = UKR
+						original_tag = ZHY
+						original_tag = GAL
+						AND = {
+							original_tag = SUM
+							NOT = {
+								SUM = {
+									has_government = radical_nationalism
+								}
+							}
+						}
+					}
+                }
+			NOT = {
+                OR = {
+                    has_country_flag = ukraine_war
+                    has_country_flag = ukraine_dogovornyak
+                    has_country_flag = ukraine_elections
+                }
+			}
+			LBU = {
+				exists = yes
+			}
+			RBU = {
+				exists = yes
+			}
+		}
+		fire_only_once = yes
+        	days_remove = 0
+			ai_will_do = {
+				base = 10
+			}	
+		complete_effect = {
+			LBU = {
+				set_country_flag = ukraine_dogovornyak
+				add_political_power = 100
+				set_variable = {
+					var = left_bank_spendible_influence
+					value = 21
+				}
+				set_variable = {
+					var = left_bank_influence
+					value = 0
+				}
+			}
+			RBU = {
+				set_country_flag = ukraine_dogovornyak	
+				add_political_power = 100
+				set_variable = {
+					var = right_bank_spendible_influence
+					value = 21
+				}
+				set_variable = {
+					var = right_bank_influence
+					value = 0
+				}
+			}
+		}
+	}
+
+	prepare_elections_ukraine = {
+		available = {
+			
+		}
+        target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_left_bank
+					has_country_flag = united_right_bank
+				}
+            }
+        }
+		visible = {
+			OR = {
+				has_country_flag = united_left_bank
+				has_country_flag = united_right_bank
+			}
+			NOT = {
+				has_country_flag = ukraine_war
+				has_country_flag = ukraine_elections
+			}
+			LBU = {
+				OR = {
+					original_tag = ZAP
+					original_tag = STR
+					AFU = {
+						has_cosmetic_tag = AFU_savchenko
+					}
+				}
+			}
+			RBU = {
+				OR = {
+					original_tag = UKR
+					original_tag = PRH
+					original_tag = ZHY
+					original_tag = GAL
+					AND = {
+						original_tag = SUM
+						SUM = {
+							NOT = {
+								has_government = radical_nationalism
+							}
+						}
+					}
+				}
+			}
+		}
+		fire_only_once = yes
+        	days_remove = 0	
+		complete_effect = {
+			set_country_flag = ukraine_elections
+			add_political_power = 100
+			FROM = {
+				set_country_flag = ukraine_elections
+				add_political_power = 100
+			}
+			if = {
+					limit = {
+						FROM = {
+							has_country_flag = united_right_bank
+						}
+					}
+				custom_effect_tooltip = aaaaaa
+				FROM = {
+					set_variable = {
+						var = right_bank_rates
+						value = 50.00
+					}
+					set_variable = {
+						var = right_bank_rates_grow
+						value = 2
+					}
+				}
+				set_variable = {
+					var = left_bank_rates
+					value = 50.00
+				}
+				set_variable = {
+					var = left_bank_rates_grow
+					value = 2
+				}
+			}
+			else_if = {
+					limit = {
+						FROM = {
+							has_country_flag = united_left_bank
+						}
+					}
+				custom_effect_tooltip = bbbbbb
+				FROM = {
+					set_variable = {
+						var = left_bank_rates
+						value = 50.00
+					}
+					set_variable = {
+					var = left_bank_rates_grow
+					value = 2
+					}
+				}
+				set_variable = {
+					var = right_bank_rates
+					value = 50.00
+				}
+				set_variable = {
+					var = right_bank_rates_grow
+					value = 2
+				}
+			}
+		}
+	}
+
+	prepare_war_ukraine = {
+        icon = GFX_ZAK_rada_election
+
+        target_trigger = {
+            FROM = {
+				OR = {
+					has_country_flag = united_left_bank
+					has_country_flag = united_right_bank
+				}
+            }
+        }
+
+        fire_only_once = yes
+        cost = 25
+
+        ai_will_do = {
+            base = 10
+        }
+
+        available = {
+        }
+
+        visible = {
+				OR = {
+					has_country_flag = united_right_bank
+					has_country_flag = united_left_bank
+				}
+				NOT = {
+					has_country_flag = ukraine_war
+				}
+				NOT = {
+					has_country_flag = ukraine_elections
+				}
+				
+        }
+
+        complete_effect = {
+            set_country_flag = ukraine_war
+            FROM = { set_country_flag =  ukraine_war }
+        }
+	}
+}
+
+regional_development = {
+	invest_in_military = {
+		available = {
+			num_of_available_civilian_factories > 3
+			has_stability > 0.1
+		}
+		cost = 25
+		days_remove = 30
+		modifier = {
+			civilian_factory_use = 3
+		}
+		remove_effect = {
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	resistance_crackdown = {
+		available = {
+			
+		}
+		visible = {
+			any_owned_state = {
+				has_resistance = yes
+			}
+		}
+		cost = 30
+		days_remove = 20
+		remove_effect = {
+			random_owned_state = {
+				limit = {
+					has_resistance = yes
+				}
+				custom_effect_tooltip = "State will get some resistance shortened"
+				hidden_effect = {
+					random_list = {
+						20 = {
+							add_resistance = -12
+						}
+						30 = {
+							add_resistance = -8
+						}
+						50 = {
+							add_resistance = -4
+						}
+					}	
+				}
+			}
+			random_owned_state = {
+				limit = {
+					has_resistance = yes
+				}
+				custom_effect_tooltip = "State will get some resistance shortened"
+				hidden_effect = {
+					random_list = {
+						20 = {
+							add_resistance = -12
+						}
+						30 = {
+							add_resistance = -8
+						}
+						50 = {
+							add_resistance = -4
+						}
+					}	
+				}	
+			}
+			random_owned_state = {
+				limit = {
+					has_resistance = yes
+				}
+				custom_effect_tooltip = "State will get some resistance shortened"
+				hidden_effect = {
+					random_list = {
+						20 = {
+							add_resistance = -12
+						}
+						30 = {
+							add_resistance = -8
+						}
+						50 = {
+							add_resistance = -4
+						}
+					}	
+				}	
+			}
+			random_owned_state = {
+				limit = {
+					has_resistance = yes
+				}
+				custom_effect_tooltip = "State will get some resistance shortened"
+				hidden_effect = {
+					random_list = {
+						20 = {
+							add_resistance = -12
+						}
+						30 = {
+							add_resistance = -8
+						}
+						50 = {
+							add_resistance = -4
+						}
+					}	
+				}	
+			}
+			random_owned_state = {
+				limit = {
+					has_resistance = yes
+				}
+				custom_effect_tooltip = "State will get some resistance shortened"
+				hidden_effect = {
+					random_list = {
+						20 = {
+							add_resistance = -12
+						}
+						30 = {
+							add_resistance = -8
+						}
+						50 = {
+							add_resistance = -4
+						}
+					}	
+				}	
+			}
+		}
+	}
+	make_countrywide_trust_campaign = {
+		available = {
+			
+		}
+		visible = {
+			any_owned_state = {
+				has_resistance = yes
+			}
+		}
+		cost = 30
+		days_remove = 15
+		remove_effect = {
+			random_owned_state = {
+				limit = {
+					has_resistance = yes
+				}
+				custom_effect_tooltip = "State will get more compliant towards us"
+				random_list = {
+					20 = {
+						add_compliance = 15
+					}
+					30 = {
+						add_compliance = 10
+					}
+					50 = {
+						add_compliance = 5
+					}
+				}	
+			}
+			random_owned_state = {
+				limit = {
+					has_resistance = yes
+				}
+				custom_effect_tooltip = "State will get more compliant towards us"
+				random_list = {
+					20 = {
+						add_compliance = 15
+					}
+					30 = {
+						add_compliance = 10
+					}
+					50 = {
+						add_compliance = 5
+					}
+				}	
+			}
+			random_owned_state = {
+				limit = {
+					has_resistance = yes
+				}
+				custom_effect_tooltip = "State will get more compliant towards us"
+				random_list = {
+					20 = {
+						add_compliance = 15
+					}
+					30 = {
+						add_compliance = 10
+					}
+					50 = {
+						add_compliance = 5
+					}
+				}	
+			}
+			random_owned_state = {
+				limit = {
+					has_resistance = yes
+				}
+				custom_effect_tooltip = "State will get more compliant towards us"
+				random_list = {
+					20 = {
+						add_compliance = 15
+					}
+					30 = {
+						add_compliance = 10
+					}
+					50 = {
+						add_compliance = 5
+					}
+				}	
+			}
+			random_owned_state = {
+				limit = {
+					has_resistance = yes
+				}
+				custom_effect_tooltip = "State will get more compliant towards us"
+				random_list = {
+					20 = {
+						add_compliance = 15
+					}
+					30 = {
+						add_compliance = 10
+					}
+					50 = {
+						add_compliance = 5
+					}
+				}	
+			}
+		}
+	}
+	open_hospital = {
+		available = {
+			num_of_available_civilian_factories > 3
+			has_stability > 0.1
+		}
+		cost = 25
+		days_remove = 30
+		modifier = {
+			civilian_factory_use = 3
+		}
+		remove_effect = {
+			random_owned_state = {
+				add_building_construction = {
+					type = hospital_building
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	open_education_center = {
+		available = {
+			num_of_available_civilian_factories > 3
+			has_stability > 0.1
+		}
+		cost = 25
+		days_remove = 30
+		modifier = {
+			civilian_factory_use = 3
+		}
+		remove_effect = {
+			random_owned_state = {
+				add_building_construction = {
+					type = civil_education_centre
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	establish_labor_camp = {
+		available = {
+			num_of_available_civilian_factories > 3
+			has_stability > 0.1
+		}
+		cost = 25
+		days_remove = 30
+		modifier = {
+			civilian_factory_use = 3
+		}
+		remove_effect = {
+			random_owned_state = {
+				add_building_construction = {
+					type = labour_camp
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	make_promising_speech = {
+		available = {
+			has_stability < 0.4
+		}
+		cost = 20
+		days_remove = 7
+		remove_effect = {
+			add_stability = 0.1
+		}
+	}
+}
