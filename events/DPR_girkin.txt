@@ -1,34 +1,67 @@
 add_namespace = dpr_girkin
-
 country_event = {
 	id = dpr_girkin.1
 	title = dpr_girkin.1.t
 	desc = dpr_girkin.1.d
-
 	picture = none
-
 	is_triggered_only = yes
-
 	fire_only_once = yes
-
 	trigger = {
 		DPR = {
 			has_government = radical_nationalism
 		}
-
 	}
-
-	option = { 
+	option = {
 		name = dpr_vitrenko.1.a
 		DPR = {
 			set_cosmetic_tag = GRK
 			remove_ideas = DPR_clown
 			remove_ideas = DPR_FSB
 			load_focus_tree = DPR_strelkov
-			
 		}
-		
 	}
-	
+}
 
+country_event = {
+	id = dpr_girkin.2
+	title = dpr_girkin.2.t
+	desc = dpr_girkin.2.d
+	picture = none
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		DPR = {
+			has_government = radical_nationalism
+		}
+	}
+	option = {
+		name = dpr_vitrenko.2.a
+		DPR = {
+			add_manpower = 6000
+		}
+	}
+}
+
+country_event = {
+	id = dpr_girkin.3
+	title = dpr_girkin.3.t
+	desc = dpr_girkin.3.d
+	picture = none
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		DPR = {
+			has_government = radical_nationalism
+		}
+	}
+	option = {
+		name = dpr_vitrenko.3.a
+		DPR = {
+			add_popularity = {
+				ideology = radical_nationalism
+				popularity = -0.08
+			}
+			add_stability = 0.1
+		}
+	}
 }
