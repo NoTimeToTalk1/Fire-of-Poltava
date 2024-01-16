@@ -1,0 +1,650 @@
+right_bank_elections = {
+		right_bank_elections_countdown = {			
+		activation = {
+			has_country_flag = right_bank_elections
+		}
+		available = {
+			NOT = {
+				has_country_flag = right_bank_elections
+			}
+		}
+		is_good = no
+		days_mission_timeout = 150
+		selectable_mission = no
+		timeout_effect = {
+			CNT = {
+				clr_country_flag = right_bank_elections
+			}
+			WST = {
+				clr_country_flag = right_bank_elections
+			}
+			if = {
+				limit = {
+					check_variable = {CNT.center_rates > WST.west_rates}
+				}
+				WST = {
+					every_core_state = {
+						add_core_of = CNT
+					}
+				}
+				CNT = {
+					annex_country = {
+						target = WST
+						transfer_troops = yes
+					}
+					country_event = {
+						id = reg_unify.2
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {WST.west_rates > CNT.center_rates}
+				}
+				CNT = {
+					every_core_state = {
+						add_core_of = WST
+					}
+				}
+				WST = {
+					annex_country = {
+						target = CNT
+						transfer_troops = yes
+					}
+					country_event = {
+						id = reg_unify.3
+					}
+				}
+			}
+			else = {
+					custom_effect_tooltip = not_decided
+			}
+		}
+	}
+
+	right_bank_change_in_popularity = {			
+		activation = {
+			has_country_flag = right_bank_elections
+		}
+		available = {
+			NOT = {
+				has_country_flag = right_bank_elections
+			}
+		}
+		is_good = yes
+		days_mission_timeout = 10
+		selectable_mission = no
+		fire_only_once = no
+		timeout_effect = {
+			activate_mission = right_bank_change_in_popularity
+			if = {
+				limit = {
+					tag = CNT
+				}
+				if = {
+					limit = {
+						check_variable = {CNT.center_rates_grow = 3}
+					}
+					custom_effect_tooltip = a1
+					add_to_variable = {
+						var = center_rates
+						value = 2.50
+					}
+					WST = {
+						add_to_variable = {
+							var = west_rates
+							value = -2.50
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {CNT.center_rates_grow = 2}
+					}
+					custom_effect_tooltip = a2
+					add_to_variable = {
+						var = center_rates
+						value = 1.50
+					}
+					WST = {
+						add_to_variable = {
+							var = west_rates
+							value = -1.50
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {CNT.center_rates_grow = 1}
+					}
+					custom_effect_tooltip = a3
+					add_to_variable = {
+						var = center_rates
+						value = 0.50
+					}
+					WST = {
+						add_to_variable = {
+							var = west_rates
+							value = -0.50
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					tag = WST
+				}
+				if = {
+					limit = {
+						check_variable = {WST.west_rates_grow = 3}
+					}
+					custom_effect_tooltip = a1
+					add_to_variable = {
+						var = west_rates
+						value = 2.50
+					}
+					CNT = {
+						add_to_variable = {
+							var = center_rates
+							value = -2.50
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {WST.west_rates_grow = 2}
+					}
+					custom_effect_tooltip = a2
+					add_to_variable = {
+						var = west_rates
+						value = 1.50
+					}
+					CNT = {
+						add_to_variable = {
+							var = center_rates
+							value = -1.50
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {WST.west_rates_grow = 1}
+					}
+					custom_effect_tooltip = a3
+					add_to_variable = {
+						var = west_rates
+						value = 0.50
+					}
+					CNT = {
+						add_to_variable = {
+							var = center_rates
+							value = -0.50
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = united_north_center
+				}
+				if = {
+					limit = {
+						check_variable = {CNT.center_rates_grow = 3}
+					}
+					custom_effect_tooltip = b1
+				}
+				else_if = {
+					limit = {
+						check_variable = {CNT.center_rates_grow = 2}
+					}
+					custom_effect_tooltip = b2
+				}
+				else_if = {
+					limit = {
+						check_variable = {CNT.center_rates_grow = 1}
+					}
+					custom_effect_tooltip = b3
+				}		
+			}
+			else_if = {
+				limit = {
+					has_country_flag = united_north
+				}
+				if = {
+					limit = {
+						check_variable = {WST.west_rates_grow = 3}
+					}
+					custom_effect_tooltip = b1
+				}
+				else_if = {
+					limit = {
+						check_variable = {WST.west_rates_grow = 2}
+					}
+					custom_effect_tooltip = b2
+				}
+				else_if = {
+					limit = {
+						check_variable = {WST.west_rates_grow = 1}
+					}
+					custom_effect_tooltip = b3
+				}		
+			}
+    	}
+   	}
+
+
+	right_bank_agitation = {
+		available = {
+			NOT = {
+				has_country_flag = elect_action
+			}
+		}
+		visible = {
+			OR = {
+				tag = CNT
+				tag = WST
+			}
+		}
+		days_remove = 7
+		cost = 10
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			set_country_flag = elect_action
+		}
+		remove_effect = {
+			clr_country_flag = elect_action
+			if = {
+				limit = {
+					tag = CNT
+				}
+				custom_effect_tooltip = aaaaaaa
+				hidden_effect = {
+					random_list = {
+						20 = {
+							add_to_variable = {
+								var = center_rates
+								value = 5.00
+							}
+							WST= {
+								add_to_variable = {
+									var = west_rates
+									value = -5.00
+								}
+							}
+							
+						}
+						30 = {
+							add_to_variable = {
+								var = center_rates
+								value = 3.50
+							}
+							WST = {
+								add_to_variable = {
+									var = west_rates
+									value = -3.50
+								}
+							}
+						}
+						50 = {
+							add_to_variable = {
+								var = center_rates
+								value = 2.00
+							}
+							WST = {
+								add_to_variable = {
+									var = west_rates
+									value = -2.00
+								}
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					tag = WST
+				}
+				custom_effect_tooltip = bbbbbb
+				hidden_effect = {
+					random_list = {
+						20 = {
+							add_to_variable = {
+								var = west_rates
+								value = 5.00
+							}
+							CNT = {
+								add_to_variable = {
+									var = center_rates
+									value = -5.00
+								}
+							}
+						}
+						30 = {
+							add_to_variable = {
+								var = west_rates
+								value = 3.50
+							}
+							CNT = {
+								add_to_variable = {
+									var = center_rates
+									value = -3.50
+								}
+							}
+						}
+						50 = {
+							add_to_variable = {
+								var = west_rates
+								value = 2.00
+							}
+							CNT = {
+								add_to_variable = {
+									var = center_rates
+									value = -2.00
+								}
+							}
+						}
+					}
+				}
+			}
+			
+		}
+	}
+
+	right_bank_reach_out = {
+		available = {
+			NOT = {
+				has_country_flag = elect_action
+			}
+		}
+		visible = {
+			OR = {
+				tag = CNT
+				tag = WST
+			}
+		}
+		days_remove = 5
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			set_country_flag = elect_action
+		}
+		remove_effect = {
+			clr_country_flag = elect_action
+			if = {
+				limit = {
+					tag = CNT
+				}
+				custom_effect_tooltip = aaaaaaa
+				hidden_effect = {
+					add_to_variable = {
+						var = center_rates
+						value = 10.00
+					}
+					CNT = {
+						add_to_variable = {
+							var = west_rates
+							value = -10.00
+						}
+					}
+				}				
+			}
+			else_if = {
+				limit = {
+					tag = WST
+				}
+				custom_effect_tooltip = bbbbbb
+				hidden_effect = {
+					add_to_variable = {
+						var = west_rates
+						value = 10.00
+					}
+					CNT = {
+						add_to_variable = {
+							var = center_rates
+							value = -10.00
+						}
+					}
+				}
+			}
+		}
+	}
+
+	right_bank_discredit_opponent = {
+		available = {
+			NOT = {
+				has_country_flag = elect_action
+			}
+		}
+		visible = {
+			OR = {
+				tag = CNT
+				tag = WST
+			}
+		}
+		days_remove = 7
+		cost = 20
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			set_country_flag = elect_action
+		}
+		remove_effect = {
+		clr_country_flag = elect_action
+		if = {
+			limit = {
+				tag = WST
+			}
+			custom_effect_tooltip = aaaaaa
+			hidden_effect = {
+				random_list = {
+					20 = {
+						CNT = {
+							add_to_variable = {
+								var = center_rates
+								value = -3.00
+							}
+						}
+						add_to_variable = {
+							var = west_rates
+							value = 3.00
+						}
+					}
+					30 = {
+						CNT = {
+							add_to_variable = {
+								var = center_rates
+								value = -1.50
+							}
+						}
+						add_to_variable = {
+							var = west_rates
+							value = 1.50
+						}
+					}
+					50 = {
+						CNT = {
+							add_to_variable = {
+								var = center_rates
+								value = -1.00
+							}
+						}
+						add_to_variable = {
+							var = west_rates
+							value = 1.00
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				tag = CNT
+			}
+			custom_effect_tooltip = bbbbbb
+			hidden_effect = {
+				random_list = {
+					20 = {
+						WST = {
+							add_to_variable = {
+								var = west_rates
+								value = -3.00
+							}
+						}
+						add_to_variable = {
+							var = center_rates
+							value = 3.00
+						}
+					}
+					30 = {
+						WST = {
+							add_to_variable = {
+								var = west_rates
+								value = -1.50
+							}
+						}
+						add_to_variable = {
+							var = center_rates
+							value = 1.50
+						}
+					}
+					50 = {
+						WST = {
+							add_to_variable = {
+								var = west_rates
+								value = -1.00
+							}
+						}
+						add_to_variable = {
+							var = center_rates
+							value = 1.00
+						}
+					}
+				}
+			}
+			
+		}
+			
+		}
+	}
+	
+	right_bank_disrupt_opponent_agitation = {
+		available = {
+			NOT = {
+				if = {
+					limit = {
+						tag = CNT
+					}
+					check_variable = {WST.west_rates_grow = 1}
+				}
+				else_if = {
+					limit = {
+						tag = WST
+					}
+					check_variable = {CNT.center_rates_grow = 1}
+				}
+				has_country_flag = elect_action
+			}
+			
+		}
+		visible = {
+			OR = {
+				tag = CNT
+				tag = WST
+			}
+		}
+		days_remove = 7
+		cost = 10
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			set_country_flag = elect_action
+		}
+		remove_effect = {
+			clr_country_flag = elect_action
+			if = {
+				limit = {
+					tag = CNT
+				}
+				WST = {
+					add_to_variable = {
+						var = west_rates_grow
+						value = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					tag = WST
+				}
+				CNT = {
+					add_to_variable = {
+						var = center_rates_grow
+						value = -1
+					}
+				}
+			}				
+		}
+	}
+
+	right_bank_improve_our_position = {
+		available = {
+			NOT = {
+				if = {
+					limit = {
+						tag = CNT
+					}
+					check_variable = {CNT.center_rates_grow = 3}
+				}
+				else_if = {
+					limit = {
+						tag = WST
+					}
+					check_variable = {WST.west_rates_grow = 3}
+				}
+				has_country_flag = elect_action
+			}
+		}
+		visible = {
+			OR = {
+				tag = CNT
+				tag = WST
+			}
+		}=
+		days_remove = 7
+		cost = 10
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			set_country_flag = elect_action
+		}
+		remove_effect = {
+			clr_country_flag = elect_action
+			if = {
+				limit = {
+					tag = CNT
+				}
+					add_to_variable = {
+						var = center_rates_grow
+						value = 1
+					}
+				}
+			else_if = {
+				limit = {
+					tag = WST
+				}
+					add_to_variable = {
+						var = west_rates_grow
+						value = 1
+					}
+			}				
+		}
+	}
+}

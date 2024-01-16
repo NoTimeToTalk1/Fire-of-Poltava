@@ -182,3 +182,47 @@ set_party_name = { ideology = social_democracy
 		}
     }
 }
+
+news_event = {
+    id = newsfop.12
+    title = newsfop.12.t
+    desc = newsfop.12.d
+    picture = GFX_rusnya_gavkaet
+
+    is_triggered_only = yes
+
+    major = yes
+
+    option = {
+        name = newsfop.12.a
+hidden_effect = {
+news_event = {
+    id = newsfop.13
+    days = 30
+}
+}
+    }
+}
+
+news_event = {
+    id = newsfop.13
+    title = newsfop.13.t
+    desc = newsfop.13.d
+    picture = GFX_rusnya_gavkaet_2
+
+    is_triggered_only = yes
+
+    major = yes
+
+    option = {
+        name = newsfop.13.a
+hidden_effect = {
+RUS = {
+declare_war_on = {
+    target = AFU
+    type = annex_everything
+}
+}
+}
+    }
+}

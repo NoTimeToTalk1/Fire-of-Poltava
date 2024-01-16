@@ -1,0 +1,1009 @@
+add_namespace = reg_halychyna
+add_namespace = reg_podillya
+add_namespace = reg_north
+add_namespace = reg_north_center
+add_namespace = reg_south_west
+add_namespace = reg_south_center
+add_namespace = reg_south_east
+add_namespace = reg_war
+add_namespace = reg_unify
+add_namespace = reg_rename
+
+#GALITCHANE KATOLIKI
+
+
+country_event = {
+	id = reg_halychyna.1 #Start of unification Halychyna
+	title = reg_halychyna.1.t
+	desc = reg_halychyna.1.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_halychyna.1.a
+			custom_effect_tooltip = galychyna_to_unite
+			set_global_flag = galychyna_to_unite
+		}
+}
+
+
+country_event = {
+	id = reg_halychyna.2 #Halychyna to Volhyn
+	title = reg_halychyna.2.t
+	desc = reg_halychyna.2.d
+
+	picture = none
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_halychyna.2.a
+		GAL = {
+			country_event = {
+				id = reg_halychyna.3
+				days = 5
+			}
+		}
+	}
+
+	option = { 
+		name = reg_halychyna.2.b
+		GAL = {
+			country_event = {
+				id = reg_halychyna.4
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_halychyna.3 #Volhyn yes
+	title = reg_halychyna.3.t
+	desc = reg_halychyna.3.d
+
+	picture = none
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_halychyna.3.a
+		GAL = {
+			annex_country = {
+				target = VOL
+				transfer_troops = yes
+			}
+		}
+		VOL = {
+			every_core_state = {
+				add_core_of = GAL
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_halychyna.4 #Volhyn no
+	title = reg_halychyna.4.t
+	desc = reg_halychyna.4.d
+
+	picture = none
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_halychyna.4.a
+		GAL = {
+			declare_war_on = {
+    				target = VOL
+    				type = annex_everything
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_halychyna.5 #Halychyna to Zakarpattya
+	title = reg_halychyna.5.t
+	desc = reg_halychyna.5.d
+
+	picture = none
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_halychyna.5.a
+		GAL = {
+			country_event = {
+				id = reg_halychyna.6
+				days = 5
+			}
+		}
+	}
+
+	option = { 
+		name = reg_halychyna.5.b
+		GAL = {
+			country_event = {
+				id = reg_halychyna.7
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_halychyna.6 #Zakarpattya yes
+	title = reg_halychyna.6.t
+	desc = reg_halychyna.6.d
+
+	picture = none
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_halychyna.6.a
+		GAL = {
+			annex_country = {
+				target = ZAK
+				transfer_troops = yes
+			}
+		}
+		ZAK = {
+			every_core_state = {
+				add_core_of = GAL
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_halychyna.7 #Zakarpattya no
+	title = reg_halychyna.7.t
+	desc = reg_halychyna.7.d
+
+	picture = none
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_halychyna.7.a
+		GAL = {
+			declare_war_on = {
+    				target = ZAK
+    				type = annex_everything
+			}
+		}
+	}
+}
+
+#PODOLYAKI
+
+country_event = {
+	id = reg_podillya.1 #Start of unification Podillya
+	title = reg_podillya.1.t
+	desc = reg_podillya.1.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_podillya.1.a
+			custom_effect_tooltip = podillya_to_unite
+			set_global_flag = podillya_to_unite
+		}
+}
+
+country_event = {
+	id = reg_podillya.2 #Zhytomyr to Khmelnytsky
+	title = reg_podillya.2.t
+	desc = reg_podillya.2.d
+
+	picture = none
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_podillya.2.a
+		ZHY = {
+			country_event = {
+				id = reg_podillya.3
+				days = 5
+			}
+		}
+	}
+
+	option = { 
+		name = reg_podillya.2.b
+		ZHY = {
+			country_event = {
+				id = reg_podillya.4
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_podillya.3 #Khmelnytsky yes
+	title = reg_podillya.3.t
+	desc = reg_podillya.3.d
+
+	picture = podillya
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_podillya.3.a
+		ZHY = {
+			annex_country = {
+				target = KHM
+				transfer_troops = yes
+			}
+		}
+		KHM = {
+			every_core_state = {
+				add_core_of = ZHY
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_podillya.4 #Khmelnytsky no
+	title = reg_podillya.4.t
+	desc = reg_podillya.4.d
+
+	picture = podillya
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_podillya.4.a
+		ZHY = {
+			declare_war_on = {
+    				target = KHM
+    				type = annex_everything
+			}
+		}
+	}
+}
+
+#PIVNICH
+
+country_event = {
+	id = reg_north.1 #Start of unification North
+	title = reg_north.1.t
+	desc = reg_north.1.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_north.1.a
+			custom_effect_tooltip = north_to_unite
+			set_global_flag = north_to_unite
+		}
+}
+
+country_event = {
+	id = reg_north.2 #Kyiv to Oblast
+	title = reg_north.2.t
+	desc = reg_north.2.d
+
+	picture = none
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_north.2.a
+		ai_chance = {
+			factor = 99
+		}
+		UKR = {
+			country_event = {
+				id = reg_north.3
+				days = 5
+			}
+		}
+	}
+
+	option = { 
+		name = reg_north.2.b
+		ai_chance = {
+			factor = 1
+		}
+		UKR = {
+			country_event = {
+				id = reg_north.4
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_north.3 #Oblast yes
+	title = reg_north.3.t
+	desc = reg_north.3.d
+
+	picture = north
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_north.3.a
+		UKR = {
+			annex_country = {
+				target = KYI
+				transfer_troops = yes
+			}
+		}
+		KYI = {
+			every_core_state = {
+				add_core_of = UKR
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_north.4 #Oblast no
+	title = reg_north.4.t
+	desc = reg_north.4.d
+
+	picture = north
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_north.4.a
+		UKR = {
+			declare_war_on = {
+    				target = KYI
+    				type = annex_everything
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_north.5 #to Sumy
+	title = reg_north.5.t
+	desc = reg_north.5.d
+
+	picture = none
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_north.5.a
+		FROM = {
+			country_event = {
+				id = reg_north.6
+				days = 5
+			}
+		}
+	}
+
+	option = { 
+		name = reg_north.5.b
+		FROM = {
+			country_event = {
+				id = reg_north.7
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_north.6 #Sumy yes
+	title = reg_north.6.t
+	desc = reg_north.6.d
+
+	picture = none
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_north.6.a
+		ROOT = {
+			annex_country = {
+				target = SUM
+				transfer_troops = yes
+			}
+		}
+		SUM = {
+			every_core_state = {
+				add_core_of = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_north.7 #Sumy no
+	title = reg_north.7.t
+	desc = reg_north.7.d
+
+	picture = none
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_north.7.a
+		ROOT = {
+			declare_war_on = {
+    				target = SUM
+    				type = annex_everything
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_north.8 #to Chornobyl
+	title = reg_north.8.t
+	desc = reg_north.8.d
+
+	picture = none
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_north.8.a
+		FROM = {
+			country_event = {
+				id = reg_north.9
+				days = 5
+			}
+		}
+	}
+
+	option = { 
+		name = reg_north.8.b
+		FROM = {
+			country_event = {
+				id = reg_north.10
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_north.9 #Chornobyl yes
+	title = reg_north.9.t
+	desc = reg_north.9.d
+
+	picture = none
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_north.9.a
+		ROOT = {
+			annex_country = {
+				target = CBL
+				transfer_troops = yes
+			}
+		}
+		CBL = {
+			every_core_state = {
+				add_core_of = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_north.10 #Chornobyl no
+	title = reg_north.10.t
+	desc = reg_north.10.d
+
+	picture = none
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_north.10.a
+		FROM = {
+			declare_war_on = {
+    				target = CBL
+    				type = annex_everything
+			}
+		}
+	}
+}
+
+#NADDNIPRANIT
+
+country_event = {
+	id = reg_north_center.1 #Start of unification North-Center
+	title = reg_north_center.1.t
+	desc = reg_north_center.1.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_north_center.1.a
+			custom_effect_tooltip = north_center_to_unite
+			set_global_flag = north_center_to_unite
+		}
+}
+
+#OI ADESSA
+
+country_event = {
+	id = reg_south_west.1 #Start of unification South-West
+	title = reg_south_west.1.t
+	desc = reg_south_west.1.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_south_west.1.a
+			custom_effect_tooltip = south_west_to_unite
+			set_global_flag = south_west_to_unite
+		}
+}
+
+country_event = {
+	id = reg_south_west.2 # to Budzhak
+	title = reg_south_west.2.t
+	desc = reg_south_west.2.d
+
+	picture = none
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_south_west.2.a
+		FROM = {
+			country_event = {
+				id = reg_south_west.3
+				days = 5
+			}
+		}
+	}
+
+	option = { 
+		name = reg_south_west.2.b
+		FROM = {
+			country_event = {
+				id = reg_south_west.4
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_south_west.3 #Budzhak yes
+	title = reg_south_west.3.t
+	desc = reg_south_west.3.d
+
+	picture = south_west
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_south_west.3.a
+		ROOT = {
+			annex_country = {
+				target = BDZ
+				transfer_troops = yes
+			}
+		}
+		ROOT = {
+			every_core_state = {
+				add_core_of = BDZ
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_south_west.4 #Budzhak no
+	title = reg_south_west.4.t
+	desc = reg_south_west.4.d
+
+	picture = south_west
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_south_west.4.a
+		ROOT = {
+			declare_war_on = {
+    				target = BDZ
+    				type = annex_everything
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_south_west.5 #to Mykolaiv
+	title = reg_south_west.5.t
+	desc = reg_south_west.5.d
+
+	picture = none
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_south_west.5.a
+		FROM = {
+			country_event = {
+				id = reg_south_west.6
+				days = 5
+			}
+		}
+	}
+
+	option = { 
+		name = reg_south_west.5.b
+		FROM = {
+			country_event = {
+				id = reg_south_west.7
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_south_west.6 #Mykolaiv yes
+	title = reg_south_west.6.t
+	desc = reg_south_west.6.d
+
+	picture = none
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_south_west.6.a
+		ROOT = {
+			annex_country = {
+				target = MYK
+				transfer_troops = yes
+			}
+		}
+		MYK = {
+			every_core_state = {
+				add_core_of = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_south_west.7 #Mykolaiv no
+	title = reg_south_west.7.t
+	desc = reg_south_west.7.d
+
+	picture = none
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_south_west.7.a
+		ROOT = {
+			declare_war_on = {
+    				target = MYK
+    				type = annex_everything
+			}
+		}
+	}
+}
+
+#zaporizzhia kherson
+
+country_event = {
+	id = reg_south_center.1 #Start of unification South-Center
+	title = reg_south_center.1.t
+	desc = reg_south_center.1.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_south_center.1.a
+			custom_effect_tooltip = south_center_to_unite
+			set_global_flag = south_center_to_unite
+		}
+}
+
+#VSTAVAI BAMBAS
+
+country_event = {
+	id = reg_south_east.1 #Start of unification South-East
+	title = reg_south_east.1.t
+	desc = reg_south_east.1.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_south_east.1.a
+			custom_effect_tooltip = south_east_to_unite
+			set_global_flag = south_east_to_unite
+		}
+}
+
+country_event = {
+	id = reg_south_east.2 # to AFU
+	title = reg_south_east.2.t
+	desc = reg_south_east.2.d
+
+	picture = none
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_south_east.2.a
+		ai_chance = {
+			factor = 10
+		}
+		FROM = {
+			country_event = {
+				id = reg_south_east.3
+				days = 5
+			}
+		}
+	}
+
+	option = { 
+		name = reg_south_east.2.b
+		ai_chance = {
+			factor = 90
+		}
+		FROM = {
+			country_event = {
+				id = reg_south_east.4
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_south_east.3 #afu yes
+	title = reg_south_east.3.t
+	desc = reg_south_east.3.d
+
+	picture = south_east
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_south_east.3.a
+		ROOT = {
+			annex_country = {
+				target = AFU
+				transfer_troops = yes
+			}
+		}
+		ROOT = {
+			every_core_state = {
+				add_core_of = AFU
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_south_east.4 #AFU no
+	title = reg_south_east.4.t
+	desc = reg_south_east.4.d
+
+	picture = south_east
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_south_east.4.a
+		ROOT = {
+			declare_war_on = {
+    				target = AFU
+    				type = annex_everything
+			}
+		}
+	}
+}
+
+#WAR EVENTS
+
+country_event = {
+	id = reg_war.1 #Movement on borders, south
+	title = reg_war.1.t
+	desc = reg_war.1.d
+
+	picture = south_east
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_war.1.a
+		custom_effect_tooltip = south_war_tooltip
+	}
+}
+
+#UNIFICATION VPEREEEED
+
+country_event = {
+	id = reg_unify.1 #elections center
+	title = reg_unify.1.t
+	desc = reg_unify.1.d
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_unify.1.a
+	}
+}
+
+country_event = {
+	id = reg_unify.2 #north victory
+	title = reg_unify.2.t
+	desc = reg_unify.2.d
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_unify.2.a
+	}
+}
+
+country_event = {
+	id = reg_unify.3 #north center victory
+	title = reg_unify.3.t
+	desc = reg_unify.3.d
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_unify.3.a
+	}
+}
+
+country_event = {
+	id = reg_unify.4 #no winner ARRRGH WAR
+	title = reg_unify.4.t
+	desc = reg_unify.4.d
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_unify.4.a
+		ROOT = {
+			declare_war_on = {
+				target = FROM
+				type = annex_everything
+			}
+		}
+	}
+}
+
+country_event = {
+	id = reg_rename.1 #	East pro Ukraine
+	title = reg_unify.1.t
+	desc = reg_unify.1.d
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_unify.1.a
+		
+	}
+}
+
+country_event = {
+	id = reg_rename.2 #	East pro rusix
+	title = reg_unify.2.t
+	desc = reg_unify.2.d
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_unify.2.a
+		2307 = {
+			set_state_name = "Artemovsk"
+		}
+		2095 = {
+			set_state_name = "Kramatorsk"
+		}
+		set_province_name = {
+			id = 8175
+			name = "Kramatorsk"
+		}
+		set_province_name = {
+			id = 13142
+			name = "Slavyansk"
+		}
+		set_province_name = {
+			id = 7364
+			name = "Krasnyi Liman"
+		}
+	}
+}

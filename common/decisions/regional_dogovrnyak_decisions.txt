@@ -1,0 +1,7773 @@
+center_dogovornyak = {
+	north_view_influence = {
+		available = {
+			always = no
+		}
+		visible = {
+			has_country_flag = center_dogovornyak
+			tag = NRT
+		}
+	}
+	north_center_view_influence = {
+		available = {
+			always = no
+		}
+		visible = {
+			has_country_flag = center_dogovornyak
+			tag = NCT
+		}
+	}
+	center_current_topic = {
+		available = {
+			always = no
+		}
+	}
+	center_summing_up = {
+		available = {
+			if = {
+				limit = {
+					tag = NCT
+				}
+				check_variable = {NCT.north_center_influence > NRT.north_influence}
+			}
+			else_if = {
+				limit = {
+					tag = NRT
+				}
+				check_variable = {NRT.north_influence > NCT.north_center_influence}
+			}
+		}
+		target_trigger = {
+			FROM = {
+				OR = {
+					tag = NCT
+					tag = NRT
+				}
+			}
+		}
+		visible = {
+			AND = {
+				has_country_flag = done_army
+				has_country_flag = done_domestic
+				has_country_flag = done_government
+			}
+		}
+		complete_effect = {
+			clr_country_flag = done_army
+			clr_country_flag = done_domestic
+			clr_country_flag = done_government
+			clr_country_flag = domestic_choice
+			clr_country_flag = army_choice
+			clr_country_flag = government_choice
+			annex_country = {
+				target = FROM
+				transfer_troops = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_army_recruiting
+					}
+				}
+				add_recruting = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_army_staff
+					}
+				}
+				add_staff = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_army_standarts
+					}
+				}
+				add_standarts = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_civilian
+					}
+				}
+				add_civservices = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_economy
+					}
+				}
+				add_economy_model = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_liberties
+					}
+				}
+				add_liberties = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_workers
+					}
+				}
+				add_workers = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_government_grip
+					}
+				}
+				add_grip = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_government_politics
+					}
+				}
+				add_politics = yes
+			}
+		}
+	}
+	center_choice_time = {		
+		activation = {
+			always = no
+		}
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice
+			}
+		}
+		is_good = no
+		days_mission_timeout = 14
+		selectable_mission = no
+		timeout_effect = {
+			clr_country_flag = dogovornyak_choice
+			clr_country_flag = dogovornyak_choice_made
+			NCT = {
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = domestic_economy
+								has_country_flag = domestic_civilian
+								has_country_flag = domestic_liberties
+								has_country_flag = domestic_workers
+							}
+						}
+						clr_country_flag = domestic_choice
+						set_country_flag = done_domestic
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = army_recruiting
+								has_country_flag = army_staff
+								has_country_flag = army_standarts
+							}
+						}
+						clr_country_flag = army_choice
+						set_country_flag = done_army
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = government_grip
+								has_country_flag = government_politics
+							}
+						}
+						clr_country_flag = government_choice
+						set_country_flag = done_government
+					}
+			}
+			NRT = {
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = domestic_economy
+								has_country_flag = domestic_civilian
+								has_country_flag = domestic_liberties
+								has_country_flag = domestic_workers
+							}
+						}
+						clr_country_flag = domestic_choice
+						set_country_flag = done_domestic
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = army_recruiting
+								has_country_flag = army_staff
+								has_country_flag = army_standarts
+							}
+						}
+						clr_country_flag = army_choice
+						set_country_flag = done_army
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = government_grip
+								has_country_flag = government_politics
+							}
+						}
+						clr_country_flag = government_choice
+						set_country_flag = done_government
+					}
+			}
+			if = {
+				limit = {
+					check_variable = {NCT.north_center_influence_choice > NRT.north_influence_choice}
+				}
+				add_political_power = 100
+				NCT = {
+					add_to_variable = {
+						var = north_center_influence
+						value = 1
+					}
+					if = {
+						limit = {has_country_flag = domestic_economy}
+						set_country_flag = won_domestic_economy
+					}
+					if = {
+						limit = {has_country_flag = domestic_civilian}
+						set_country_flag = won_domestic_civilian
+					}
+					if = {
+						limit = {has_country_flag = domestic_workers}
+						set_country_flag = won_domestic_workers
+					}
+					if = {
+						limit = {has_country_flag = domestic_liberties}
+						set_country_flag = won_domestic_liberties
+					}
+					if = {
+						limit = {has_country_flag = army_staff}
+						set_country_flag = won_army_staff
+					}
+					if = {
+						limit = {has_country_flag = army_recruiting}
+						set_country_flag = won_army_recruiting
+					}
+					if = {
+						limit = {has_country_flag = army_standarts}
+						set_country_flag = won_army_standarts
+					}
+					if = {
+						limit = {has_country_flag = government_politics}
+						set_country_flag = won_government_politics
+					}
+					if = {
+						limit = {has_country_flag = government_grip}
+						set_country_flag = won_government_grip
+					}
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {NRT.north_influence_choice > NCT.north_center_influence_choice}
+				}
+				NRT = {
+					add_to_variable = {
+						var = north_influence
+						value = 1
+					}
+					add_political_power = 100
+					if = {
+						limit = {has_country_flag = domestic_economy}
+						set_country_flag = won_domestic_economy
+					}
+					if = {
+						limit = {has_country_flag = domestic_civilian}
+						set_country_flag = won_domestic_civilian
+					}
+					if = {
+						limit = {has_country_flag = domestic_workers}
+						set_country_flag = won_domestic_workers
+					}
+					if = {
+						limit = {has_country_flag = domestic_liberties}
+						set_country_flag = won_domestic_liberties
+					}
+					if = {
+						limit = {has_country_flag = army_staff}
+						set_country_flag = won_army_staff
+					}
+					if = {
+						limit = {has_country_flag = army_recruiting}
+						set_country_flag = won_army_recruiting
+					}
+					if = {
+						limit = {has_country_flag = army_standarts}
+						set_country_flag = won_army_standarts
+					}
+					if = {
+						limit = {has_country_flag = government_politics}
+						set_country_flag = won_government_politics
+					}
+					if = {
+						limit = {has_country_flag = government_grip}
+						set_country_flag = won_government_grip
+					}
+				}
+			}
+		}
+	}
+	center_give_high_importance = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_north_center}
+				check_variable = {NCT.north_center_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_north}
+				check_variable = {NRT.north_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = no
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = NCT
+				}
+				add_to_variable = {
+					var = north_center_spendible_influence
+					value = -3
+				}
+				set_variable = {
+					var = north_center_influence_choice
+					value = 3
+				}
+			}
+			else_if = {
+				limit = {
+					tag = NRT
+				}
+				add_to_variable = {
+					var = north_spendible_influence
+					value = -3
+				}
+				set_variable = {
+					var = north_influence_choice
+					value = 3
+				}
+			}
+		}
+	}
+	center_give_medium_importance = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_north_center}
+				check_variable = {NCT.north_center_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_north}
+				check_variable = {NRT.north_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = no
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = NCT
+				}
+				add_to_variable = {
+					var = north_center_spendible_influence
+					value = -2
+				}
+				set_variable = {
+					var = north_center_influence_choice
+					value = 2
+				}
+			}
+			else_if = {
+				limit = {
+					tag = NRT
+				}
+				add_to_variable = {
+					var = north_spendible_influence
+					value = -2
+				}
+				set_variable = {
+					var = north_influence_choice
+					value = 2
+				}
+			}
+		}
+	}
+	center_give_low_importance = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_north_center}
+				check_variable = {NCT.north_center_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_north}
+				check_variable = {NRT.north_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = no
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = NCT
+				}
+				add_to_variable = {
+					var = north_center_spendible_influence
+					value = -1
+				}
+				set_variable = {
+					var = north_center_influence_choice
+					value = 1
+				}
+			}
+			else_if = {
+				limit = {
+					tag = NRT
+				}
+				add_to_variable = {
+					var = north_spendible_influence
+					value = -1
+				}
+				set_variable = {
+					var = north_influence_choice
+					value = 1
+				}
+			}
+		}
+	}
+	center_give_importance_ai = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_north_center}
+				check_variable = {NCT.north_center_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_north}
+				check_variable = {NRT.north_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = yes
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = NCT
+				}
+				random_list = {
+					30 = {
+						add_to_variable = {
+							var = north_center_spendible_influence
+							value = -1
+						}
+						set_variable = {
+							var = north_center_influence_choice
+							value = 1
+						}
+					}
+					50 = {
+						add_to_variable = {
+							var = north_center_spendible_influence
+							value = -2
+						}
+						set_variable = {
+							var = north_center_influence_choice
+							value = 2
+						}
+					}
+					20 = {
+						add_to_variable = {
+							var = north_center_spendible_influence
+							value = -3
+						}
+						set_variable = {
+							var = north_center_influence_choice
+							value = 3
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					tag = NRT
+				}
+				random_list = {
+					30 = {
+						add_to_variable = {
+							var = north_spendible_influence
+							value = -1
+						}
+						set_variable = {
+							var = north_influence_choice
+							value = 1
+						}
+					}
+					50 = {
+						add_to_variable = {
+							var = north_spendible_influence
+							value = -2
+						}
+						set_variable = {
+							var = north_influence_choice
+							value = 2
+						}
+					}
+					20 = {
+						add_to_variable = {
+							var = north_spendible_influence
+							value = -3
+						}
+						set_variable = {
+							var = north_influence_choice
+							value = 3
+						}
+					}
+				}
+			}
+		}
+	}
+	center_discuss_ministries = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+					has_country_flag = center_ministries
+				}
+			}
+		}
+		visible = {	
+			always = no	
+		}
+		fire_only_once = yes
+		days_remove = 0
+		complete_effect = {
+			set_country_flag = center_ministries
+		}
+	}
+	center_discuss_army = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				has_country_flag = done_army
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			NCT = {
+				set_country_flag = army_choice
+			}
+			NRT = {
+				set_country_flag = army_choice
+			}
+		}
+	}
+	center_discuss_recruiting = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = army_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = army_recruiting
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			NCT = {
+				set_country_flag = picked_a_theme
+				activate_mission = center_choice_time
+				set_country_flag = army_recruiting
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = north_center_influence_choice
+					value = 0
+				}
+			}
+			NRT = {
+				set_country_flag = picked_a_theme
+				activate_mission = center_choice_time
+				set_country_flag = army_recruiting
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = north_influence_choice
+					value = 0
+				}				
+			}
+		}
+	}
+	center_discuss_staff = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = army_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = army_staff
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			NCT = {
+				set_country_flag = picked_a_theme
+				activate_mission = center_choice_time
+				set_country_flag = army_staff
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = north_center_influence_choice
+					value = 0
+				}
+			}
+			NRT = {
+				set_country_flag = picked_a_theme
+				activate_mission = center_choice_time
+				set_country_flag = army_staff
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = north_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	center_discuss_standarts = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = army_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = army_standarts
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			NCT = {
+				set_country_flag = picked_a_theme
+				activate_mission = center_choice_time
+				set_country_flag = army_standarts
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = north_center_influence_choice
+					value = 0
+				}
+			}
+			NRT = {
+				set_country_flag = picked_a_theme
+				activate_mission = center_choice_time
+				set_country_flag = army_standarts
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = north_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	center_discuss_government = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				has_country_flag = done_government
+				OR = {
+					has_country_flag = picked_army
+					has_country_flag = picked_domestic
+					has_country_flag = picked_government
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			NCT = {
+				set_country_flag = government_choice
+			}
+			NRT = {
+				set_country_flag = government_choice
+			}
+		}
+	}
+	center_discuss_politics = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = government_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = government_politics
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			NCT = {
+				set_country_flag = picked_a_theme
+				activate_mission = center_choice_time
+				set_country_flag = government_politics
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = north_center_influence_choice
+					value = 0
+				}
+			}
+			NRT = {
+				set_country_flag = picked_a_theme
+				activate_mission = center_choice_time
+				set_country_flag = government_politics
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = north_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	center_discuss_grip_over_people = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = government_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = government_grip
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			NCT = {
+				set_country_flag = picked_a_theme
+				activate_mission = center_choice_time
+				set_country_flag = government_grip
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = north_center_influence_choice
+					value = 0
+				}
+			}
+			NRT = {
+				set_country_flag = picked_a_theme
+				activate_mission = center_choice_time
+				set_country_flag = government_grip
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = north_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	center_discuss_domestic = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+					has_country_flag = center_ministries
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				has_country_flag = done_domestic
+				OR = {
+					has_country_flag = picked_army
+					has_country_flag = picked_domestic
+					has_country_flag = picked_government
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			NCT = {
+				set_country_flag = domestic_choice
+			}
+			NRT = {
+				set_country_flag = domestic_choice
+			}
+		}
+	}
+	center_discuss_economy = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_economy
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			NCT = {
+				set_country_flag = picked_a_theme
+				activate_mission = center_choice_time
+				set_country_flag = domestic_economy
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = north_center_influence_choice
+					value = 0
+				}
+			}
+			NRT = {
+				set_country_flag = picked_a_theme
+				activate_mission = center_choice_time
+				set_country_flag = domestic_economy
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = north_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	center_discuss_workers = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_workers
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			NCT = {
+				set_country_flag = picked_a_theme
+				activate_mission = center_choice_time
+				set_country_flag = domestic_workers
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = north_center_influence_choice
+					value = 0
+				}
+			}
+			NRT = {
+				set_country_flag = picked_a_theme
+				activate_mission = center_choice_time
+				set_country_flag = domestic_workers
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = north_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	center_discuss_civillian_services = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_civilian
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			NCT = {
+				set_country_flag = picked_a_theme
+				activate_mission = center_choice_time
+				set_country_flag = domestic_civilian
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = north_center_influence_choice
+					value = 0
+				}
+			}
+			NRT = {
+				set_country_flag = picked_a_theme
+				activate_mission = center_choice_time
+				set_country_flag = domestic_civilian
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = north_influence_choice
+					value = 0
+				}				
+			}
+		}
+	}
+	center_discuss_liberties = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_liberties
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			NCT = {
+				set_country_flag = picked_a_theme
+				activate_mission = center_choice_time
+				set_country_flag = domestic_liberties
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = north_center_influence_choice
+					value = 0
+				}
+			}
+			NRT = {
+				set_country_flag = picked_a_theme
+				activate_mission = center_choice_time
+				set_country_flag = domestic_liberties
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = north_influence_choice
+					value = 0
+				}				
+			}
+		}
+	}
+}
+
+west_dogovornyak = {
+	podillya_view_influence = {
+		available = {
+			always = no
+		}
+		visible = {
+			has_country_flag = west_dogovornyak
+			tag = PDL
+		}
+	}
+	galicia_view_influence = {
+		available = {
+			always = no
+		}
+		visible = {
+			has_country_flag = west_dogovornyak
+			tag = GLY
+		}
+	}
+	west_current_topic = {
+		available = {
+			always = no
+		}
+	}
+	west_summing_up = {
+		available = {
+			if = {
+				limit = {
+					tag = GLY
+				}
+				check_variable = {GLY.galicia_influence > PDL.podillya_influence}
+			}
+			else_if = {
+				limit = {
+					tag = PDL
+				}
+				check_variable = {PDL.podillya_influence > GLY.galicia_influence}
+			}
+		}
+		target_trigger = {
+			FROM = {
+				OR = {
+					tag = GLY
+					tag = PDL
+				}
+			}
+		}
+		visible = {
+			AND = {
+				has_country_flag = done_army
+				has_country_flag = done_domestic
+				has_country_flag = done_government
+			}
+		}
+		complete_effect = {
+			annex_country = {
+				target = FROM
+				transfer_troops = yes
+			}
+			clr_country_flag = done_army
+			clr_country_flag = done_domestic
+			clr_country_flag = done_government
+			clr_country_flag = domestic_choice
+			clr_country_flag = army_choice
+			clr_country_flag = government_choice
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_army_recruiting
+					}
+				}
+				add_recruting = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_army_staff
+					}
+				}
+				add_staff = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_army_standarts
+					}
+				}
+				add_standarts = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_civilian
+					}
+				}
+				add_civservices = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_economy
+					}
+				}
+				add_economy_model = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_liberties
+					}
+				}
+				add_liberties = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_workers
+					}
+				}
+				add_workers = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_government_grip
+					}
+				}
+				add_grip = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_government_politics
+					}
+				}
+				add_politics = yes
+			}
+		}
+	}
+	west_choice_time = {		
+		activation = {
+			always = no
+		}
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice
+			}
+		}
+		is_good = no
+		days_mission_timeout = 14
+		selectable_mission = no
+		timeout_effect = {
+			clr_country_flag = dogovornyak_choice
+			clr_country_flag = dogovornyak_choice_made
+			GLY = {
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = domestic_economy
+								has_country_flag = domestic_civilian
+								has_country_flag = domestic_liberties
+								has_country_flag = domestic_workers
+							}
+						}
+						clr_country_flag = domestic_choice
+						set_country_flag = done_domestic
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = army_recruiting
+								has_country_flag = army_staff
+								has_country_flag = army_standarts
+							}
+						}
+						clr_country_flag = army_choice
+						set_country_flag = done_army
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = government_grip
+								has_country_flag = government_politics
+							}
+						}
+						clr_country_flag = government_choice
+						set_country_flag = done_government
+					}
+			}
+			PDL = {
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = domestic_economy
+								has_country_flag = domestic_civilian
+								has_country_flag = domestic_liberties
+								has_country_flag = domestic_workers
+							}
+						}
+						clr_country_flag = domestic_choice
+						set_country_flag = done_domestic
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = army_recruiting
+								has_country_flag = army_staff
+								has_country_flag = army_standarts
+							}
+						}
+						clr_country_flag = army_choice
+						set_country_flag = done_army
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = government_grip
+								has_country_flag = government_politics
+							}
+						}
+						clr_country_flag = government_choice
+						set_country_flag = done_government
+					}
+			}
+			if = {
+				limit = {
+					check_variable = {GLY.galicia_influence_choice > PDL.podillya_influence_choice}
+				}
+				add_political_power = 100
+				GLY = {
+					add_to_variable = {
+						var = galicia_influence
+						value = 1
+					}
+					if = {
+						limit = {has_country_flag = domestic_economy}
+						set_country_flag = won_domestic_economy
+					}
+					if = {
+						limit = {has_country_flag = domestic_civilian}
+						set_country_flag = won_domestic_civilian
+					}
+					if = {
+						limit = {has_country_flag = domestic_workers}
+						set_country_flag = won_domestic_workers
+					}
+					if = {
+						limit = {has_country_flag = domestic_liberties}
+						set_country_flag = won_domestic_liberties
+					}
+					if = {
+						limit = {has_country_flag = army_staff}
+						set_country_flag = won_army_staff
+					}
+					if = {
+						limit = {has_country_flag = army_recruiting}
+						set_country_flag = won_army_recruiting
+					}
+					if = {
+						limit = {has_country_flag = army_standarts}
+						set_country_flag = won_army_standarts
+					}
+					if = {
+						limit = {has_country_flag = government_politics}
+						set_country_flag = won_government_politics
+					}
+					if = {
+						limit = {has_country_flag = government_grip}
+						set_country_flag = won_government_grip
+					}
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {PDL.podillya_influence_choice > GLY.galicia_influence_choice}
+				}
+				PDL = {
+					add_to_variable = {
+						var = podillya_influence
+						value = 1
+					}
+					add_political_power = 100
+					if = {
+						limit = {has_country_flag = domestic_economy}
+						set_country_flag = won_domestic_economy
+					}
+					if = {
+						limit = {has_country_flag = domestic_civilian}
+						set_country_flag = won_domestic_civilian
+					}
+					if = {
+						limit = {has_country_flag = domestic_workers}
+						set_country_flag = won_domestic_workers
+					}
+					if = {
+						limit = {has_country_flag = domestic_liberties}
+						set_country_flag = won_domestic_liberties
+					}
+					if = {
+						limit = {has_country_flag = army_staff}
+						set_country_flag = won_army_staff
+					}
+					if = {
+						limit = {has_country_flag = army_recruiting}
+						set_country_flag = won_army_recruiting
+					}
+					if = {
+						limit = {has_country_flag = army_standarts}
+						set_country_flag = won_army_standarts
+					}
+					if = {
+						limit = {has_country_flag = government_politics}
+						set_country_flag = won_government_politics
+					}
+					if = {
+						limit = {has_country_flag = government_grip}
+						set_country_flag = won_government_grip
+					}
+				}
+			}
+		}
+	}
+	west_give_high_importance = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_galicia}
+				check_variable = {GLY.galicia_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_podillya}
+				check_variable = {PDL.podillya_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = no
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = GLY
+				}
+				add_to_variable = {
+					var = galicia_spendible_influence
+					value = -3
+				}
+				set_variable = {
+					var = galicia_influence_choice
+					value = 3
+				}
+			}
+			else_if = {
+				limit = {
+					tag = PDL
+				}
+				add_to_variable = {
+					var = podillya_spendible_influence
+					value = -3
+				}
+				set_variable = {
+					var = podillya_influence_choice
+					value = 3
+				}
+			}
+		}
+	}
+	west_give_medium_importance = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_galicia}
+				check_variable = {GLY.galicia_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_podillya}
+				check_variable = {PDL.podillya_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = no
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = GLY
+				}
+				add_to_variable = {
+					var = galicia_spendible_influence
+					value = -2
+				}
+				set_variable = {
+					var = galicia_influence_choice
+					value = 2
+				}
+			}
+			else_if = {
+				limit = {
+					tag = PDL
+				}
+				add_to_variable = {
+					var = podillya_spendible_influence
+					value = -2
+				}
+				set_variable = {
+					var = podillya_influence_choice
+					value = 2
+				}
+			}
+		}
+	}
+	west_give_low_importance = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_galicia}
+				check_variable = {GLY.galicia_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_podillya}
+				check_variable = {PDL.podillya_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = no
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = GLY
+				}
+				add_to_variable = {
+					var = galicia_spendible_influence
+					value = -1
+				}
+				set_variable = {
+					var = galicia_influence_choice
+					value = 1
+				}
+			}
+			else_if = {
+				limit = {
+					tag = PDL
+				}
+				add_to_variable = {
+					var = podillya_spendible_influence
+					value = -1
+				}
+				set_variable = {
+					var = podillya_influence_choice
+					value = 1
+				}
+			}
+		}
+	}
+	west_give_importance_ai = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_galicia}
+				check_variable = {GLY.galicia_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_podillya}
+				check_variable = {PDL.podillya_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = yes
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = GLY
+				}
+				random_list = {
+					30 = {
+						add_to_variable = {
+							var = galicia_spendible_influence
+							value = -1
+						}
+						set_variable = {
+							var = galicia_influence_choice
+							value = 1
+						}
+					}
+					50 = {
+						add_to_variable = {
+							var = galicia_spendible_influence
+							value = -2
+						}
+						set_variable = {
+							var = galicia_influence_choice
+							value = 2
+						}
+					}
+					20 = {
+						add_to_variable = {
+							var = galicia_spendible_influence
+							value = -3
+						}
+						set_variable = {
+							var = galicia_influence_choice
+							value = 3
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					tag = PDL
+				}
+				random_list = {
+					30 = {
+						add_to_variable = {
+							var = podillya_spendible_influence
+							value = -1
+						}
+						set_variable = {
+							var = podillya_influence_choice
+							value = 1
+						}
+					}
+					50 = {
+						add_to_variable = {
+							var = podillya_spendible_influence
+							value = -2
+						}
+						set_variable = {
+							var = podillya_influence_choice
+							value = 2
+						}
+					}
+					20 = {
+						add_to_variable = {
+							var = podillya_spendible_influence
+							value = -3
+						}
+						set_variable = {
+							var = podillya_influence_choice
+							value = 3
+						}
+					}
+				}
+			}
+		}
+	}
+	west_discuss_ministries = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+					has_country_flag = west_ministries
+				}
+			}
+		}
+		visible = {	
+			always = no	
+		}
+		fire_only_once = yes
+		days_remove = 0
+		complete_effect = {
+			set_country_flag = west_ministries
+		}
+	}
+	west_discuss_army = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = picked_army
+					has_country_flag = picked_domestic
+					has_country_flag = picked_government
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			GLY = {
+				set_country_flag = army_choice
+			}
+			PDL = {
+				set_country_flag = army_choice
+			}
+		}
+	}
+	west_discuss_recruiting = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = army_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = army_recruiting
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			GLY = {
+				set_country_flag = picked_a_theme
+				activate_mission = west_choice_time
+				set_country_flag = army_recruiting
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = galicia_influence_choice
+					value = 0
+				}
+			}
+			PDL = {
+				set_country_flag = picked_a_theme
+				activate_mission = west_choice_time
+				set_country_flag = army_recruiting
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = podillya_influence_choice
+					value = 0
+				}				
+			}
+		}
+	}
+	west_discuss_staff = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = army_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = army_staff
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			GLY = {
+				set_country_flag = picked_a_theme
+				activate_mission = west_choice_time
+				set_country_flag = army_staff
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = galicia_influence_choice
+					value = 0
+				}
+			}
+			PDL = {
+				set_country_flag = picked_a_theme
+				activate_mission = west_choice_time
+				set_country_flag = army_staff
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = podillya_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	west_discuss_standarts = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = army_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = army_standarts
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			GLY = {
+				set_country_flag = picked_a_theme
+				activate_mission = west_choice_time
+				set_country_flag = army_standarts
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = galicia_influence_choice
+					value = 0
+				}
+			}
+			PDL = {
+				set_country_flag = picked_a_theme
+				activate_mission = west_choice_time
+				set_country_flag = army_standarts
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = podillya_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	west_discuss_government = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = west_ministries
+					has_country_flag = army_choice
+					has_country_flag = domestic_choice
+					has_country_flag = government_choice
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = picked_army
+					has_country_flag = picked_domestic
+					has_country_flag = picked_government
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			set_country_flag = government_choice
+		}
+	}
+	west_discuss_politics = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = government_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = government_politics
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			GLY = {
+				set_country_flag = picked_a_theme
+				activate_mission = west_choice_time
+				set_country_flag = government_politics
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = galicia_influence_choice
+					value = 0
+				}
+			}
+			PDL = {
+				set_country_flag = picked_a_theme
+				activate_mission = west_choice_time
+				set_country_flag = government_politics
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = podillya_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	west_discuss_grip_over_people = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = government_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = government_grip
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			GLY = {
+				set_country_flag = picked_a_theme
+				activate_mission = west_choice_time
+				set_country_flag = government_grip
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = galicia_influence_choice
+					value = 0
+				}
+			}
+			PDL = {
+				set_country_flag = picked_a_theme
+				activate_mission = west_choice_time
+				set_country_flag = government_grip
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = podillya_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	west_discuss_domestic = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+					has_country_flag = west_ministries
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = picked_army
+					has_country_flag = picked_domestic
+					has_country_flag = picked_government
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			GLY = {
+				set_country_flag = domestic_choice
+			}
+			PDL = {
+				set_country_flag = domestic_choice
+			}
+		}
+	}
+	west_discuss_economy = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_economy
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			GLY = {
+				set_country_flag = picked_a_theme
+				activate_mission = west_choice_time
+				set_country_flag = domestic_economy
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = galicia_influence_choice
+					value = 0
+				}
+			}
+			PDL = {
+				set_country_flag = picked_a_theme
+				activate_mission = west_choice_time
+				set_country_flag = domestic_economy
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = podillya_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	west_discuss_workers = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_workers
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			GLY = {
+				set_country_flag = picked_a_theme
+				activate_mission = west_choice_time
+				set_country_flag = domestic_workers
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = galicia_influence_choice
+					value = 0
+				}
+			}
+			PDL = {
+				set_country_flag = picked_a_theme
+				activate_mission = west_choice_time
+				set_country_flag = domestic_workers
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = podillya_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	west_discuss_civillian_services = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_civilian
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			GLY = {
+				set_country_flag = picked_a_theme
+				activate_mission = west_choice_time
+				set_country_flag = domestic_civilian
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = galicia_influence_choice
+					value = 0
+				}
+			}
+			PDL = {
+				set_country_flag = picked_a_theme
+				activate_mission = west_choice_time
+				set_country_flag = domestic_civilian
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = podillya_influence_choice
+					value = 0
+				}				
+			}
+		}
+	}
+	west_discuss_liberties = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_liberties
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			GLY = {
+				set_country_flag = picked_a_theme
+				activate_mission = west_choice_time
+				set_country_flag = domestic_liberties
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = galicia_influence_choice
+					value = 0
+				}
+			}
+			PDL = {
+				set_country_flag = picked_a_theme
+				activate_mission = west_choice_time
+				set_country_flag = domestic_liberties
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = podillya_influence_choice
+					value = 0
+				}				
+			}
+		}
+	}
+}
+
+south_dogovornyak = {
+	south_center_view_influence = {
+		available = {
+			always = no
+		}
+		visible = {
+			has_country_flag = south_dogovornyak
+			tag = SCT
+		}
+	}
+	south_west_view_influence = {
+		available = {
+			always = no
+		}
+		visible = {
+			has_country_flag = south_dogovornyak
+			tag = SWT
+		}
+	}
+	south_current_topic = {
+		available = {
+			always = no
+		}
+	}
+	south_summing_up = {
+		available = {
+			if = {
+				limit = {
+					tag = SWT
+				}
+				check_variable = {SWT.south_west_influence > SCT.south_center_influence}
+			}
+			else_if = {
+				limit = {
+					tag = SCT
+				}
+				check_variable = {SCT.south_center_influence > SWT.south_west_influence}
+			}
+		}
+		target_trigger = {
+			FROM = {
+				OR = {
+					tag = SWT
+					tag = SCT
+				}
+			}
+		}
+		visible = {
+			AND = {
+				has_country_flag = done_army
+				has_country_flag = done_domestic
+				has_country_flag = done_government
+			}
+		}
+		complete_effect = {
+			annex_country = {
+				target = FROM
+				transfer_troops = yes
+			}
+			clr_country_flag = done_army
+			clr_country_flag = done_domestic
+			clr_country_flag = done_government
+			clr_country_flag = domestic_choice
+			clr_country_flag = army_choice
+			clr_country_flag = government_choice
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_army_recruiting
+					}
+				}
+				add_recruting = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_army_staff
+					}
+				}
+				add_staff = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_army_standarts
+					}
+				}
+				add_standarts = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_civilian
+					}
+				}
+				add_civservices = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_economy
+					}
+				}
+				add_economy_model = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_liberties
+					}
+				}
+				add_liberties = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_workers
+					}
+				}
+				add_workers = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_government_grip
+					}
+				}
+				add_grip = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_government_politics
+					}
+				}
+				add_politics = yes
+			}
+		}
+	}
+	south_choice_time = {		
+		activation = {
+			always = no
+		}
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice
+			}
+		}
+		is_good = no
+		days_mission_timeout = 14
+		selectable_mission = no
+		timeout_effect = {
+			clr_country_flag = dogovornyak_choice
+			clr_country_flag = dogovornyak_choice_made
+			SWT = {
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = domestic_economy
+								has_country_flag = domestic_civilian
+								has_country_flag = domestic_liberties
+								has_country_flag = domestic_workers
+							}
+						}
+						clr_country_flag = domestic_choice
+						set_country_flag = done_domestic
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = army_recruiting
+								has_country_flag = army_staff
+								has_country_flag = army_standarts
+							}
+						}
+						clr_country_flag = army_choice
+						set_country_flag = done_army
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = government_grip
+								has_country_flag = government_politics
+							}
+						}
+						clr_country_flag = government_choice
+						set_country_flag = done_government
+					}
+			}
+			SCT = {
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = domestic_economy
+								has_country_flag = domestic_civilian
+								has_country_flag = domestic_liberties
+								has_country_flag = domestic_workers
+							}
+						}
+						clr_country_flag = domestic_choice
+						set_country_flag = done_domestic
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = army_recruiting
+								has_country_flag = army_staff
+								has_country_flag = army_standarts
+							}
+						}
+						clr_country_flag = army_choice
+						set_country_flag = done_army
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = government_grip
+								has_country_flag = government_politics
+							}
+						}
+						clr_country_flag = government_choice
+						set_country_flag = done_government
+					}
+			}
+			if = {
+				limit = {
+					check_variable = {SWT.south_west_influence_choice > SCT.south_center_influence_choice}
+				}
+				add_political_power = 100
+				SWT = {
+					add_to_variable = {
+						var = south_west_influence
+						value = 1
+					}
+					if = {
+						limit = {has_country_flag = domestic_economy}
+						set_country_flag = won_domestic_economy
+					}
+					if = {
+						limit = {has_country_flag = domestic_civilian}
+						set_country_flag = won_domestic_civilian
+					}
+					if = {
+						limit = {has_country_flag = domestic_workers}
+						set_country_flag = won_domestic_workers
+					}
+					if = {
+						limit = {has_country_flag = domestic_liberties}
+						set_country_flag = won_domestic_liberties
+					}
+					if = {
+						limit = {has_country_flag = army_staff}
+						set_country_flag = won_army_staff
+					}
+					if = {
+						limit = {has_country_flag = army_recruiting}
+						set_country_flag = won_army_recruiting
+					}
+					if = {
+						limit = {has_country_flag = army_standarts}
+						set_country_flag = won_army_standarts
+					}
+					if = {
+						limit = {has_country_flag = government_politics}
+						set_country_flag = won_government_politics
+					}
+					if = {
+						limit = {has_country_flag = government_grip}
+						set_country_flag = won_government_grip
+					}
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {SCT.south_center_influence_choice > SWT.south_west_influence_choice}
+				}
+				SCT = {
+					add_to_variable = {
+						var = south_center_influence
+						value = 1
+					}
+					add_political_power = 100
+					if = {
+						limit = {has_country_flag = domestic_economy}
+						set_country_flag = won_domestic_economy
+					}
+					if = {
+						limit = {has_country_flag = domestic_civilian}
+						set_country_flag = won_domestic_civilian
+					}
+					if = {
+						limit = {has_country_flag = domestic_workers}
+						set_country_flag = won_domestic_workers
+					}
+					if = {
+						limit = {has_country_flag = domestic_liberties}
+						set_country_flag = won_domestic_liberties
+					}
+					if = {
+						limit = {has_country_flag = army_staff}
+						set_country_flag = won_army_staff
+					}
+					if = {
+						limit = {has_country_flag = army_recruiting}
+						set_country_flag = won_army_recruiting
+					}
+					if = {
+						limit = {has_country_flag = army_standarts}
+						set_country_flag = won_army_standarts
+					}
+					if = {
+						limit = {has_country_flag = government_politics}
+						set_country_flag = won_government_politics
+					}
+					if = {
+						limit = {has_country_flag = government_grip}
+						set_country_flag = won_government_grip
+					}
+				}
+			}
+		}
+	}
+	south_give_high_importance = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_south_west}
+				check_variable = {SWT.south_west_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_south_center}
+				check_variable = {SCT.south_center_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = no
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = SWT
+				}
+				add_to_variable = {
+					var = south_west_spendible_influence
+					value = -3
+				}
+				set_variable = {
+					var = south_west_influence_choice
+					value = 3
+				}
+			}
+			else_if = {
+				limit = {
+					tag = SCT
+				}
+				add_to_variable = {
+					var = south_center_spendible_influence
+					value = -3
+				}
+				set_variable = {
+					var = south_center_influence_choice
+					value = 3
+				}
+			}
+		}
+	}
+	south_give_medium_importance = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_south_west}
+				check_variable = {SWT.south_west_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_south_center}
+				check_variable = {SCT.south_center_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = no
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = SWT
+				}
+				add_to_variable = {
+					var = south_west_spendible_influence
+					value = -2
+				}
+				set_variable = {
+					var = south_west_influence_choice
+					value = 2
+				}
+			}
+			else_if = {
+				limit = {
+					tag = SCT
+				}
+				add_to_variable = {
+					var = south_center_spendible_influence
+					value = -2
+				}
+				set_variable = {
+					var = south_center_influence_choice
+					value = 2
+				}
+			}
+		}
+	}
+	south_give_low_importance = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_south_west}
+				check_variable = {SWT.south_west_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_south_center}
+				check_variable = {SCT.south_center_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = no
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = SWT
+				}
+				add_to_variable = {
+					var = south_west_spendible_influence
+					value = -1
+				}
+				set_variable = {
+					var = south_west_influence_choice
+					value = 1
+				}
+			}
+			else_if = {
+				limit = {
+					tag = SCT
+				}
+				add_to_variable = {
+					var = south_center_spendible_influence
+					value = -1
+				}
+				set_variable = {
+					var = south_center_influence_choice
+					value = 1
+				}
+			}
+		}
+	}
+	south_give_importance_ai = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_south_west}
+				check_variable = {SWT.south_west_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_south_center}
+				check_variable = {SCT.south_center_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = yes
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = SWT
+				}
+				random_list = {
+					30 = {
+						add_to_variable = {
+							var = south_west_spendible_influence
+							value = -1
+						}
+						set_variable = {
+							var = south_west_influence_choice
+							value = 1
+						}
+					}
+					50 = {
+						add_to_variable = {
+							var = south_west_spendible_influence
+							value = -2
+						}
+						set_variable = {
+							var = south_west_influence_choice
+							value = 2
+						}
+					}
+					20 = {
+						add_to_variable = {
+							var = south_west_spendible_influence
+							value = -3
+						}
+						set_variable = {
+							var = south_west_influence_choice
+							value = 3
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					tag = SCT
+				}
+				random_list = {
+					30 = {
+						add_to_variable = {
+							var = south_center_spendible_influence
+							value = -1
+						}
+						set_variable = {
+							var = south_center_influence_choice
+							value = 1
+						}
+					}
+					50 = {
+						add_to_variable = {
+							var = south_center_spendible_influence
+							value = -2
+						}
+						set_variable = {
+							var = south_center_influence_choice
+							value = 2
+						}
+					}
+					20 = {
+						add_to_variable = {
+							var = south_center_spendible_influence
+							value = -3
+						}
+						set_variable = {
+							var = south_center_influence_choice
+							value = 3
+						}
+					}
+				}
+			}
+		}
+	}
+	south_discuss_ministries = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+					has_country_flag = south_ministries
+				}
+			}
+		}
+		visible = {	
+			always = no	
+		}
+		fire_only_once = yes
+		days_remove = 0
+		complete_effect = {
+			set_country_flag = south_ministries
+		}
+	}
+	south_discuss_army = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = picked_army
+					has_country_flag = picked_domestic
+					has_country_flag = picked_government
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			SWT = {
+				set_country_flag = army_choice
+			}
+			SCT = {
+				set_country_flag = army_choice
+			}
+		}
+	}
+	south_discuss_recruiting = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = army_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = army_recruiting
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			SWT = {
+				set_country_flag = picked_a_theme
+				activate_mission = south_choice_time
+				set_country_flag = army_recruiting
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_west_influence_choice
+					value = 0
+				}
+			}
+			SCT = {
+				set_country_flag = picked_a_theme
+				activate_mission = south_choice_time
+				set_country_flag = army_recruiting
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_center_influence_choice
+					value = 0
+				}				
+			}
+		}
+	}
+	south_discuss_staff = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = army_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = army_staff
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			SWT = {
+				set_country_flag = picked_a_theme
+				activate_mission = south_choice_time
+				set_country_flag = army_staff
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_west_influence_choice
+					value = 0
+				}
+			}
+			SCT = {
+				set_country_flag = picked_a_theme
+				activate_mission = south_choice_time
+				set_country_flag = army_staff
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_center_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	south_discuss_standarts = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = army_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = army_standarts
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			SWT = {
+				set_country_flag = picked_a_theme
+				activate_mission = south_choice_time
+				set_country_flag = army_standarts
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_west_influence_choice
+					value = 0
+				}
+			}
+			SCT = {
+				set_country_flag = picked_a_theme
+				activate_mission = south_choice_time
+				set_country_flag = army_standarts
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_center_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	south_discuss_government = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = south_ministries
+					has_country_flag = army_choice
+					has_country_flag = domestic_choice
+					has_country_flag = government_choice
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = picked_army
+					has_country_flag = picked_domestic
+					has_country_flag = picked_government
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			set_country_flag = government_choice
+		}
+	}
+	south_discuss_politics = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = government_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = government_politics
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			SWT = {
+				set_country_flag = picked_a_theme
+				activate_mission = south_choice_time
+				set_country_flag = government_politics
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_west_influence_choice
+					value = 0
+				}
+			}
+			SCT = {
+				set_country_flag = picked_a_theme
+				activate_mission = south_choice_time
+				set_country_flag = government_politics
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_center_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	south_discuss_grip_over_people = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = government_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = government_grip
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			SWT = {
+				set_country_flag = picked_a_theme
+				activate_mission = south_choice_time
+				set_country_flag = government_grip
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_west_influence_choice
+					value = 0
+				}
+			}
+			SCT = {
+				set_country_flag = picked_a_theme
+				activate_mission = south_choice_time
+				set_country_flag = government_grip
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_center_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	south_discuss_domestic = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+					has_country_flag = south_ministries
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = picked_army
+					has_country_flag = picked_domestic
+					has_country_flag = picked_government
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			SWT = {
+				set_country_flag = domestic_choice
+			}
+			SCT = {
+				set_country_flag = domestic_choice
+			}
+		}
+	}
+	south_discuss_economy = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_economy
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			SWT = {
+				set_country_flag = picked_a_theme
+				activate_mission = south_choice_time
+				set_country_flag = domestic_economy
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_west_influence_choice
+					value = 0
+				}
+			}
+			SCT = {
+				set_country_flag = picked_a_theme
+				activate_mission = south_choice_time
+				set_country_flag = domestic_economy
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_center_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	south_discuss_workers = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_workers
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			SWT = {
+				set_country_flag = picked_a_theme
+				activate_mission = south_choice_time
+				set_country_flag = domestic_workers
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_west_influence_choice
+					value = 0
+				}
+			}
+			SCT = {
+				set_country_flag = picked_a_theme
+				activate_mission = south_choice_time
+				set_country_flag = domestic_workers
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_center_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	south_discuss_civillian_services = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_civilian
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			SWT = {
+				set_country_flag = picked_a_theme
+				activate_mission = south_choice_time
+				set_country_flag = domestic_civilian
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_west_influence_choice
+					value = 0
+				}
+			}
+			SCT = {
+				set_country_flag = picked_a_theme
+				activate_mission = south_choice_time
+				set_country_flag = domestic_civilian
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_center_influence_choice
+					value = 0
+				}				
+			}
+		}
+	}
+	south_discuss_liberties = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_liberties
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			SWT = {
+				set_country_flag = picked_a_theme
+				activate_mission = south_choice_time
+				set_country_flag = domestic_liberties
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_west_influence_choice
+					value = 0
+				}
+			}
+			SCT = {
+				set_country_flag = picked_a_theme
+				activate_mission = south_choice_time
+				set_country_flag = domestic_liberties
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_center_influence_choice
+					value = 0
+				}				
+			}
+		}
+	}
+}
+
+east_dogovornyak = {
+	south_east_view_influence = {
+		available = {
+			always = no
+		}
+		visible = {
+			has_country_flag = east_dogovornyak
+			tag = SET
+		}
+	}
+	dnipro_view_influence = {
+		available = {
+			always = no
+		}
+		visible = {
+			has_country_flag = east_dogovornyak
+			original_tag = DNI
+		}
+	}
+	east_current_topic = {
+		available = {
+			always = no
+		}
+	}
+	east_summing_up = {
+		available = {
+			if = {
+				limit = {
+					original_tag = DNI
+				}
+				check_variable = {DNI.dnipro_influence > SET.south_east_influence}
+			}
+			else_if = {
+				limit = {
+					tag = SET
+				}
+				check_variable = {SET.south_east_influence > DNI.dnipro_influence}
+			}
+		}
+		target_trigger = {
+			FROM = {
+				OR = {
+					original_tag = DNI
+					tag = SET
+				}
+			}
+		}
+		visible = {
+			AND = {
+				has_country_flag = done_army
+				has_country_flag = done_domestic
+				has_country_flag = done_government
+			}
+		}
+		complete_effect = {
+			annex_country = {
+				target = FROM
+				transfer_troops = yes
+			}
+			clr_country_flag = done_army
+			clr_country_flag = done_domestic
+			clr_country_flag = done_government
+			clr_country_flag = domestic_choice
+			clr_country_flag = army_choice
+			clr_country_flag = government_choice
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_army_recruiting
+					}
+				}
+				add_recruting = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_army_staff
+					}
+				}
+				add_staff = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_army_standarts
+					}
+				}
+				add_standarts = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_civilian
+					}
+				}
+				add_civservices = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_economy
+					}
+				}
+				add_economy_model = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_liberties
+					}
+				}
+				add_liberties = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_workers
+					}
+				}
+				add_workers = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_government_grip
+					}
+				}
+				add_grip = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_government_politics
+					}
+				}
+				add_politics = yes
+			}
+		}
+	}
+	east_choice_time = {		
+		activation = {
+			always = no
+		}
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice
+			}
+		}
+		is_good = no
+		days_mission_timeout = 14
+		selectable_mission = no
+		timeout_effect = {
+			clr_country_flag = dogovornyak_choice
+			clr_country_flag = dogovornyak_choice_made
+			DNI = {
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = domestic_economy
+								has_country_flag = domestic_civilian
+								has_country_flag = domestic_liberties
+								has_country_flag = domestic_workers
+							}
+						}
+						clr_country_flag = domestic_choice
+						set_country_flag = done_domestic
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = army_recruiting
+								has_country_flag = army_staff
+								has_country_flag = army_standarts
+							}
+						}
+						clr_country_flag = army_choice
+						set_country_flag = done_army
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = government_grip
+								has_country_flag = government_politics
+							}
+						}
+						clr_country_flag = government_choice
+						set_country_flag = done_government
+					}
+			}
+			SET = {
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = domestic_economy
+								has_country_flag = domestic_civilian
+								has_country_flag = domestic_liberties
+								has_country_flag = domestic_workers
+							}
+						}
+						clr_country_flag = domestic_choice
+						set_country_flag = done_domestic
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = army_recruiting
+								has_country_flag = army_staff
+								has_country_flag = army_standarts
+							}
+						}
+						clr_country_flag = army_choice
+						set_country_flag = done_army
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = government_grip
+								has_country_flag = government_politics
+							}
+						}
+						clr_country_flag = government_choice
+						set_country_flag = done_government
+					}
+			}
+			if = {
+				limit = {
+					check_variable = {DNI.dnipro_influence_choice > SET.south_east_influence_choice}
+				}
+				add_political_power = 100
+				DNI = {
+					add_to_variable = {
+						var = dnipro_influence
+						value = 1
+					}
+					if = {
+						limit = {has_country_flag = domestic_economy}
+						set_country_flag = won_domestic_economy
+					}
+					if = {
+						limit = {has_country_flag = domestic_civilian}
+						set_country_flag = won_domestic_civilian
+					}
+					if = {
+						limit = {has_country_flag = domestic_workers}
+						set_country_flag = won_domestic_workers
+					}
+					if = {
+						limit = {has_country_flag = domestic_liberties}
+						set_country_flag = won_domestic_liberties
+					}
+					if = {
+						limit = {has_country_flag = army_staff}
+						set_country_flag = won_army_staff
+					}
+					if = {
+						limit = {has_country_flag = army_recruiting}
+						set_country_flag = won_army_recruiting
+					}
+					if = {
+						limit = {has_country_flag = army_standarts}
+						set_country_flag = won_army_standarts
+					}
+					if = {
+						limit = {has_country_flag = government_politics}
+						set_country_flag = won_government_politics
+					}
+					if = {
+						limit = {has_country_flag = government_grip}
+						set_country_flag = won_government_grip
+					}
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {SET.south_east_influence_choice > DNI.dnipro_influence_choice}
+				}
+				SET = {
+					add_to_variable = {
+						var = south_east_influence
+						value = 1
+					}
+					add_political_power = 100
+					if = {
+						limit = {has_country_flag = domestic_economy}
+						set_country_flag = won_domestic_economy
+					}
+					if = {
+						limit = {has_country_flag = domestic_civilian}
+						set_country_flag = won_domestic_civilian
+					}
+					if = {
+						limit = {has_country_flag = domestic_workers}
+						set_country_flag = won_domestic_workers
+					}
+					if = {
+						limit = {has_country_flag = domestic_liberties}
+						set_country_flag = won_domestic_liberties
+					}
+					if = {
+						limit = {has_country_flag = army_staff}
+						set_country_flag = won_army_staff
+					}
+					if = {
+						limit = {has_country_flag = army_recruiting}
+						set_country_flag = won_army_recruiting
+					}
+					if = {
+						limit = {has_country_flag = army_standarts}
+						set_country_flag = won_army_standarts
+					}
+					if = {
+						limit = {has_country_flag = government_politics}
+						set_country_flag = won_government_politics
+					}
+					if = {
+						limit = {has_country_flag = government_grip}
+						set_country_flag = won_government_grip
+					}
+				}
+			}
+		}
+	}
+	east_give_high_importance = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_dnipro}
+				check_variable = {DNI.dnipro_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_south_east}
+				check_variable = {SET.south_east_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = no
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					original_tag = DNI
+				}
+				add_to_variable = {
+					var = dnipro_spendible_influence
+					value = -3
+				}
+				set_variable = {
+					var = dnipro_influence_choice
+					value = 3
+				}
+			}
+			else_if = {
+				limit = {
+					tag = SET
+				}
+				add_to_variable = {
+					var = south_east_spendible_influence
+					value = -3
+				}
+				set_variable = {
+					var = south_east_influence_choice
+					value = 3
+				}
+			}
+		}
+	}
+	east_give_medium_importance = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_dnipro}
+				check_variable = {DNI.dnipro_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_south_east}
+				check_variable = {SET.south_east_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = no
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					original_tag = DNI
+				}
+				add_to_variable = {
+					var = dnipro_spendible_influence
+					value = -2
+				}
+				set_variable = {
+					var = dnipro_influence_choice
+					value = 2
+				}
+			}
+			else_if = {
+				limit = {
+					tag = SET
+				}
+				add_to_variable = {
+					var = south_east_spendible_influence
+					value = -2
+				}
+				set_variable = {
+					var = south_east_influence_choice
+					value = 2
+				}
+			}
+		}
+	}
+	east_give_low_importance = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_dnipro}
+				check_variable = {DNI.dnipro_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_south_east}
+				check_variable = {SET.south_east_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = no
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					original_tag = DNI
+				}
+				add_to_variable = {
+					var = dnipro_spendible_influence
+					value = -1
+				}
+				set_variable = {
+					var = dnipro_influence_choice
+					value = 1
+				}
+			}
+			else_if = {
+				limit = {
+					tag = SET
+				}
+				add_to_variable = {
+					var = south_east_spendible_influence
+					value = -1
+				}
+				set_variable = {
+					var = south_east_influence_choice
+					value = 1
+				}
+			}
+		}
+	}
+	east_give_importance_ai = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_dnipro}
+				check_variable = {DNI.dnipro_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_south_east}
+				check_variable = {SET.south_east_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = yes
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					original_tag = DNI
+				}
+				random_list = {
+					30 = {
+						add_to_variable = {
+							var = dnipro_spendible_influence
+							value = -1
+						}
+						set_variable = {
+							var = dnipro_influence_choice
+							value = 1
+						}
+					}
+					50 = {
+						add_to_variable = {
+							var = dnipro_spendible_influence
+							value = -2
+						}
+						set_variable = {
+							var = dnipro_influence_choice
+							value = 2
+						}
+					}
+					20 = {
+						add_to_variable = {
+							var = dnipro_spendible_influence
+							value = -3
+						}
+						set_variable = {
+							var = dnipro_influence_choice
+							value = 3
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					tag = SET
+				}
+				random_list = {
+					30 = {
+						add_to_variable = {
+							var = south_east_spendible_influence
+							value = -1
+						}
+						set_variable = {
+							var = south_east_influence_choice
+							value = 1
+						}
+					}
+					50 = {
+						add_to_variable = {
+							var = south_east_spendible_influence
+							value = -2
+						}
+						set_variable = {
+							var = south_east_influence_choice
+							value = 2
+						}
+					}
+					20 = {
+						add_to_variable = {
+							var = south_east_spendible_influence
+							value = -3
+						}
+						set_variable = {
+							var = south_east_influence_choice
+							value = 3
+						}
+					}
+				}
+			}
+		}
+	}
+	east_discuss_ministries = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+					has_country_flag = east_ministries
+				}
+			}
+		}
+		visible = {	
+			always = no	
+		}
+		fire_only_once = yes
+		days_remove = 0
+		complete_effect = {
+			set_country_flag = east_ministries
+		}
+	}
+	east_discuss_army = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = picked_army
+					has_country_flag = picked_domestic
+					has_country_flag = picked_government
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			DNI = {
+				set_country_flag = army_choice
+			}
+			SET = {
+				set_country_flag = army_choice
+			}
+		}
+	}
+	east_discuss_recruiting = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = army_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = army_recruiting
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			DNI = {
+				set_country_flag = picked_a_theme
+				activate_mission = east_choice_time
+				set_country_flag = army_recruiting
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = dnipro_influence_choice
+					value = 0
+				}
+			}
+			SET = {
+				set_country_flag = picked_a_theme
+				activate_mission = east_choice_time
+				set_country_flag = army_recruiting
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_east_influence_choice
+					value = 0
+				}				
+			}
+		}
+	}
+	east_discuss_staff = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = army_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = army_staff
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			DNI = {
+				set_country_flag = picked_a_theme
+				activate_mission = east_choice_time
+				set_country_flag = army_staff
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = dnipro_influence_choice
+					value = 0
+				}
+			}
+			SET = {
+				set_country_flag = picked_a_theme
+				activate_mission = east_choice_time
+				set_country_flag = army_staff
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_east_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	east_discuss_standarts = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = army_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = army_standarts
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			DNI = {
+				set_country_flag = picked_a_theme
+				activate_mission = east_choice_time
+				set_country_flag = army_standarts
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = dnipro_influence_choice
+					value = 0
+				}
+			}
+			SET = {
+				set_country_flag = picked_a_theme
+				activate_mission = east_choice_time
+				set_country_flag = army_standarts
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_east_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	east_discuss_government = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = east_ministries
+					has_country_flag = army_choice
+					has_country_flag = domestic_choice
+					has_country_flag = government_choice
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = picked_army
+					has_country_flag = picked_domestic
+					has_country_flag = picked_government
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			set_country_flag = government_choice
+		}
+	}
+	east_discuss_politics = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = government_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = government_politics
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			DNI = {
+				set_country_flag = picked_a_theme
+				activate_mission = east_choice_time
+				set_country_flag = government_politics
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = dnipro_influence_choice
+					value = 0
+				}
+			}
+			SET = {
+				set_country_flag = picked_a_theme
+				activate_mission = east_choice_time
+				set_country_flag = government_politics
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_east_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	east_discuss_grip_over_people = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = government_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = government_grip
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			DNI = {
+				set_country_flag = picked_a_theme
+				activate_mission = east_choice_time
+				set_country_flag = government_grip
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = dnipro_influence_choice
+					value = 0
+				}
+			}
+			SET = {
+				set_country_flag = picked_a_theme
+				activate_mission = east_choice_time
+				set_country_flag = government_grip
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_east_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	east_discuss_domestic = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+					has_country_flag = east_ministries
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = picked_army
+					has_country_flag = picked_domestic
+					has_country_flag = picked_government
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			DNI = {
+				set_country_flag = domestic_choice
+			}
+			SET = {
+				set_country_flag = domestic_choice
+			}
+		}
+	}
+	east_discuss_economy = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_economy
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			DNI = {
+				set_country_flag = picked_a_theme
+				activate_mission = east_choice_time
+				set_country_flag = domestic_economy
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = dnipro_influence_choice
+					value = 0
+				}
+			}
+			SET = {
+				set_country_flag = picked_a_theme
+				activate_mission = east_choice_time
+				set_country_flag = domestic_economy
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_east_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	east_discuss_workers = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_workers
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			DNI = {
+				set_country_flag = picked_a_theme
+				activate_mission = east_choice_time
+				set_country_flag = domestic_workers
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = dnipro_influence_choice
+					value = 0
+				}
+			}
+			SET = {
+				set_country_flag = picked_a_theme
+				activate_mission = east_choice_time
+				set_country_flag = domestic_workers
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_east_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	east_discuss_civillian_services = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_civilian
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			DNI = {
+				set_country_flag = picked_a_theme
+				activate_mission = east_choice_time
+				set_country_flag = domestic_civilian
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = dnipro_influence_choice
+					value = 0
+				}
+			}
+			SET = {
+				set_country_flag = picked_a_theme
+				activate_mission = east_choice_time
+				set_country_flag = domestic_civilian
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_east_influence_choice
+					value = 0
+				}				
+			}
+		}
+	}
+	east_discuss_liberties = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_liberties
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			DNI = {
+				set_country_flag = picked_a_theme
+				activate_mission = east_choice_time
+				set_country_flag = domestic_liberties
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = dnipro_influence_choice
+					value = 0
+				}
+			}
+			SET = {
+				set_country_flag = picked_a_theme
+				activate_mission = east_choice_time
+				set_country_flag = domestic_liberties
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_east_influence_choice
+					value = 0
+				}				
+			}
+		}
+	}
+}
+
+left_bank_dogovornyak = {
+	south_view_influence = {
+		available = {
+			always = no
+		}
+		visible = {
+			has_country_flag = left_bank_dogovornyak
+			tag = STH
+		}
+	}
+	east_view_influence = {
+		available = {
+			always = no
+		}
+		visible = {
+			has_country_flag = left_bank_dogovornyak
+			tag = ESN
+		}
+	}
+	left_bank_current_topic = {
+		available = {
+			always = no
+		}
+	}
+	left_bank_summing_up = {
+		available = {
+			if = {
+				limit = {
+					tag = ESN
+				}
+				check_variable = {ESN.east_influence > STH.south_influence}
+			}
+			else_if = {
+				limit = {
+					tag = STH
+				}
+				check_variable = {STH.south_influence > ESN.east_influence}
+			}
+		}
+		target_trigger = {
+			FROM = {
+				OR = {
+					tag = ESN
+					tag = STH
+				}
+			}
+		}
+		visible = {
+			AND = {
+				has_country_flag = done_army
+				has_country_flag = done_domestic
+				has_country_flag = done_government
+			}
+		}
+		complete_effect = {
+			annex_country = {
+				target = FROM
+				transfer_troops = yes
+			}
+			clr_country_flag = done_army
+			clr_country_flag = done_domestic
+			clr_country_flag = done_government
+			clr_country_flag = domestic_choice
+			clr_country_flag = army_choice
+			clr_country_flag = government_choice
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_army_recruiting
+					}
+				}
+				add_recruting = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_army_staff
+					}
+				}
+				add_staff = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_army_standarts
+					}
+				}
+				add_standarts = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_civilian
+					}
+				}
+				add_civservices = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_economy
+					}
+				}
+				add_economy_model = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_liberties
+					}
+				}
+				add_liberties = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_workers
+					}
+				}
+				add_workers = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_government_grip
+					}
+				}
+				add_grip = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_government_politics
+					}
+				}
+				add_politics = yes
+			}
+		}
+	}
+	left_bank_choice_time = {		
+		activation = {
+			always = no
+		}
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice
+			}
+		}
+		is_good = no
+		days_mission_timeout = 14
+		selectable_mission = no
+		timeout_effect = {
+			clr_country_flag = dogovornyak_choice
+			clr_country_flag = dogovornyak_choice_made
+			ESN = {
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = domestic_economy
+								has_country_flag = domestic_civilian
+								has_country_flag = domestic_liberties
+								has_country_flag = domestic_workers
+							}
+						}
+						clr_country_flag = domestic_choice
+						set_country_flag = done_domestic
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = army_recruiting
+								has_country_flag = army_staff
+								has_country_flag = army_standarts
+							}
+						}
+						clr_country_flag = army_choice
+						set_country_flag = done_army
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = government_grip
+								has_country_flag = government_politics
+							}
+						}
+						clr_country_flag = government_choice
+						set_country_flag = done_government
+					}
+			}
+			STH = {
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = domestic_economy
+								has_country_flag = domestic_civilian
+								has_country_flag = domestic_liberties
+								has_country_flag = domestic_workers
+							}
+						}
+						clr_country_flag = domestic_choice
+						set_country_flag = done_domestic
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = army_recruiting
+								has_country_flag = army_staff
+								has_country_flag = army_standarts
+							}
+						}
+						clr_country_flag = army_choice
+						set_country_flag = done_army
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = government_grip
+								has_country_flag = government_politics
+							}
+						}
+						clr_country_flag = government_choice
+						set_country_flag = done_government
+					}
+			}
+			if = {
+				limit = {
+					check_variable = {ESN.east_influence_choice > STH.south_influence_choice}
+				}
+				add_political_power = 100
+				ESN = {
+					add_to_variable = {
+						var = east_influence
+						value = 1
+					}
+					if = {
+						limit = {has_country_flag = domestic_economy}
+						set_country_flag = won_domestic_economy
+					}
+					if = {
+						limit = {has_country_flag = domestic_civilian}
+						set_country_flag = won_domestic_civilian
+					}
+					if = {
+						limit = {has_country_flag = domestic_workers}
+						set_country_flag = won_domestic_workers
+					}
+					if = {
+						limit = {has_country_flag = domestic_liberties}
+						set_country_flag = won_domestic_liberties
+					}
+					if = {
+						limit = {has_country_flag = army_staff}
+						set_country_flag = won_army_staff
+					}
+					if = {
+						limit = {has_country_flag = army_recruiting}
+						set_country_flag = won_army_recruiting
+					}
+					if = {
+						limit = {has_country_flag = army_standarts}
+						set_country_flag = won_army_standarts
+					}
+					if = {
+						limit = {has_country_flag = government_politics}
+						set_country_flag = won_government_politics
+					}
+					if = {
+						limit = {has_country_flag = government_grip}
+						set_country_flag = won_government_grip
+					}
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {STH.south_influence_choice > ESN.east_influence_choice}
+				}
+				STH = {
+					add_to_variable = {
+						var = south_influence
+						value = 1
+					}
+					add_political_power = 100
+					if = {
+						limit = {has_country_flag = domestic_economy}
+						set_country_flag = won_domestic_economy
+					}
+					if = {
+						limit = {has_country_flag = domestic_civilian}
+						set_country_flag = won_domestic_civilian
+					}
+					if = {
+						limit = {has_country_flag = domestic_workers}
+						set_country_flag = won_domestic_workers
+					}
+					if = {
+						limit = {has_country_flag = domestic_liberties}
+						set_country_flag = won_domestic_liberties
+					}
+					if = {
+						limit = {has_country_flag = army_staff}
+						set_country_flag = won_army_staff
+					}
+					if = {
+						limit = {has_country_flag = army_recruiting}
+						set_country_flag = won_army_recruiting
+					}
+					if = {
+						limit = {has_country_flag = army_standarts}
+						set_country_flag = won_army_standarts
+					}
+					if = {
+						limit = {has_country_flag = government_politics}
+						set_country_flag = won_government_politics
+					}
+					if = {
+						limit = {has_country_flag = government_grip}
+						set_country_flag = won_government_grip
+					}
+				}
+			}
+		}
+	}
+	left_bank_give_high_importance = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_east}
+				check_variable = {ESN.east_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_south}
+				check_variable = {STH.south_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = no
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = ESN
+				}
+				add_to_variable = {
+					var = east_spendible_influence
+					value = -3
+				}
+				set_variable = {
+					var = east_influence_choice
+					value = 3
+				}
+			}
+			else_if = {
+				limit = {
+					tag = STH
+				}
+				add_to_variable = {
+					var = south_spendible_influence
+					value = -3
+				}
+				set_variable = {
+					var = south_influence_choice
+					value = 3
+				}
+			}
+		}
+	}
+	left_bank_give_medium_importance = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_east}
+				check_variable = {ESN.east_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_south}
+				check_variable = {STH.south_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = no
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = ESN
+				}
+				add_to_variable = {
+					var = east_spendible_influence
+					value = -2
+				}
+				set_variable = {
+					var = east_influence_choice
+					value = 2
+				}
+			}
+			else_if = {
+				limit = {
+					tag = STH
+				}
+				add_to_variable = {
+					var = south_spendible_influence
+					value = -2
+				}
+				set_variable = {
+					var = south_influence_choice
+					value = 2
+				}
+			}
+		}
+	}
+	left_bank_give_low_importance = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_east}
+				check_variable = {ESN.east_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_south}
+				check_variable = {STH.south_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = no
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = ESN
+				}
+				add_to_variable = {
+					var = east_spendible_influence
+					value = -1
+				}
+				set_variable = {
+					var = east_influence_choice
+					value = 1
+				}
+			}
+			else_if = {
+				limit = {
+					tag = STH
+				}
+				add_to_variable = {
+					var = south_spendible_influence
+					value = -1
+				}
+				set_variable = {
+					var = south_influence_choice
+					value = 1
+				}
+			}
+		}
+	}
+	left_bank_give_importance_ai = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_east}
+				check_variable = {ESN.east_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_south}
+				check_variable = {STH.south_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = yes
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = ESN
+				}
+				random_list = {
+					30 = {
+						add_to_variable = {
+							var = east_spendible_influence
+							value = -1
+						}
+						set_variable = {
+							var = east_influence_choice
+							value = 1
+						}
+					}
+					50 = {
+						add_to_variable = {
+							var = east_spendible_influence
+							value = -2
+						}
+						set_variable = {
+							var = east_influence_choice
+							value = 2
+						}
+					}
+					20 = {
+						add_to_variable = {
+							var = east_spendible_influence
+							value = -3
+						}
+						set_variable = {
+							var = east_influence_choice
+							value = 3
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					tag = STH
+				}
+				random_list = {
+					30 = {
+						add_to_variable = {
+							var = south_spendible_influence
+							value = -1
+						}
+						set_variable = {
+							var = south_influence_choice
+							value = 1
+						}
+					}
+					50 = {
+						add_to_variable = {
+							var = south_spendible_influence
+							value = -2
+						}
+						set_variable = {
+							var = south_influence_choice
+							value = 2
+						}
+					}
+					20 = {
+						add_to_variable = {
+							var = south_spendible_influence
+							value = -3
+						}
+						set_variable = {
+							var = south_influence_choice
+							value = 3
+						}
+					}
+				}
+			}
+		}
+	}
+	left_bank_discuss_ministries = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+					has_country_flag = left_bank_ministries
+				}
+			}
+		}
+		visible = {	
+			always = no	
+		}
+		fire_only_once = yes
+		days_remove = 0
+		complete_effect = {
+			set_country_flag = left_bank_ministries
+		}
+	}
+	left_bank_discuss_army = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = picked_army
+					has_country_flag = picked_domestic
+					has_country_flag = picked_government
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			ESN = {
+				set_country_flag = army_choice
+			}
+			STH = {
+				set_country_flag = army_choice
+			}
+		}
+	}
+	left_bank_discuss_recruiting = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = army_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = army_recruiting
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			ESN = {
+				set_country_flag = picked_a_theme
+				activate_mission = left_bank_choice_time
+				set_country_flag = army_recruiting
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = east_influence_choice
+					value = 0
+				}
+			}
+			STH = {
+				set_country_flag = picked_a_theme
+				activate_mission = left_bank_choice_time
+				set_country_flag = army_recruiting
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_influence_choice
+					value = 0
+				}				
+			}
+		}
+	}
+	left_bank_discuss_staff = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = army_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = army_staff
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			ESN = {
+				set_country_flag = picked_a_theme
+				activate_mission = left_bank_choice_time
+				set_country_flag = army_staff
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = east_influence_choice
+					value = 0
+				}
+			}
+			STH = {
+				set_country_flag = picked_a_theme
+				activate_mission = left_bank_choice_time
+				set_country_flag = army_staff
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	left_bank_discuss_standarts = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = army_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = army_standarts
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			ESN = {
+				set_country_flag = picked_a_theme
+				activate_mission = left_bank_choice_time
+				set_country_flag = army_standarts
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = east_influence_choice
+					value = 0
+				}
+			}
+			STH = {
+				set_country_flag = picked_a_theme
+				activate_mission = left_bank_choice_time
+				set_country_flag = army_standarts
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	left_bank_discuss_government = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = left_bank_ministries
+					has_country_flag = army_choice
+					has_country_flag = domestic_choice
+					has_country_flag = government_choice
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = picked_army
+					has_country_flag = picked_domestic
+					has_country_flag = picked_government
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			set_country_flag = government_choice
+		}
+	}
+	left_bank_discuss_politics = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = government_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = government_politics
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			ESN = {
+				set_country_flag = picked_a_theme
+				activate_mission = left_bank_choice_time
+				set_country_flag = government_politics
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = east_influence_choice
+					value = 0
+				}
+			}
+			STH = {
+				set_country_flag = picked_a_theme
+				activate_mission = left_bank_choice_time
+				set_country_flag = government_politics
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	left_bank_discuss_grip_over_people = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = government_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = government_grip
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			ESN = {
+				set_country_flag = picked_a_theme
+				activate_mission = left_bank_choice_time
+				set_country_flag = government_grip
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = east_influence_choice
+					value = 0
+				}
+			}
+			STH = {
+				set_country_flag = picked_a_theme
+				activate_mission = left_bank_choice_time
+				set_country_flag = government_grip
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	left_bank_discuss_domestic = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+					has_country_flag = left_bank_ministries
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = picked_army
+					has_country_flag = picked_domestic
+					has_country_flag = picked_government
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			ESN = {
+				set_country_flag = domestic_choice
+			}
+			STH = {
+				set_country_flag = domestic_choice
+			}
+		}
+	}
+	left_bank_discuss_economy = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_economy
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			ESN = {
+				set_country_flag = picked_a_theme
+				activate_mission = left_bank_choice_time
+				set_country_flag = domestic_economy
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = east_influence_choice
+					value = 0
+				}
+			}
+			STH = {
+				set_country_flag = picked_a_theme
+				activate_mission = left_bank_choice_time
+				set_country_flag = domestic_economy
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	left_bank_discuss_workers = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_workers
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			ESN = {
+				set_country_flag = picked_a_theme
+				activate_mission = left_bank_choice_time
+				set_country_flag = domestic_workers
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = east_influence_choice
+					value = 0
+				}
+			}
+			STH = {
+				set_country_flag = picked_a_theme
+				activate_mission = left_bank_choice_time
+				set_country_flag = domestic_workers
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	left_bank_discuss_civillian_services = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_civilian
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			ESN = {
+				set_country_flag = picked_a_theme
+				activate_mission = left_bank_choice_time
+				set_country_flag = domestic_civilian
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = east_influence_choice
+					value = 0
+				}
+			}
+			STH = {
+				set_country_flag = picked_a_theme
+				activate_mission = left_bank_choice_time
+				set_country_flag = domestic_civilian
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_influence_choice
+					value = 0
+				}				
+			}
+		}
+	}
+	left_bank_discuss_liberties = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_liberties
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			ESN = {
+				set_country_flag = picked_a_theme
+				activate_mission = left_bank_choice_time
+				set_country_flag = domestic_liberties
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = east_influence_choice
+					value = 0
+				}
+			}
+			STH = {
+				set_country_flag = picked_a_theme
+				activate_mission = left_bank_choice_time
+				set_country_flag = domestic_liberties
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = south_influence_choice
+					value = 0
+				}				
+			}
+		}
+	}
+}
+
+right_bank_dogovornyak = {
+	center_view_influence = {
+		available = {
+			always = no
+		}
+		visible = {
+			has_country_flag = right_bank_dogovornyak
+			tag = CNT
+		}
+	}
+	west_view_influence = {
+		available = {
+			always = no
+		}
+		visible = {
+			has_country_flag = right_bank_dogovornyak
+			tag = WST
+		}
+	}
+	right_bank_current_topic = {
+		available = {
+			always = no
+		}
+	}
+	right_bank_summing_up = {
+		available = {
+			if = {
+				limit = {
+					tag = WST
+				}
+				check_variable = {WST.west_influence > CNT.center_influence}
+			}
+			else_if = {
+				limit = {
+					tag = CNT
+				}
+				check_variable = {CNT.center_influence > WST.west_influence}
+			}
+		}
+		target_trigger = {
+			FROM = {
+				OR = {
+					tag = WST
+					tag = CNT
+				}
+			}
+		}
+		visible = {
+			AND = {
+				has_country_flag = done_army
+				has_country_flag = done_domestic
+				has_country_flag = done_government
+			}
+		}
+		complete_effect = {
+			annex_country = {
+				target = FROM
+				transfer_troops = yes
+			}
+			clr_country_flag = done_army
+			clr_country_flag = done_domestic
+			clr_country_flag = done_government
+			clr_country_flag = domestic_choice
+			clr_country_flag = army_choice
+			clr_country_flag = government_choice
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_army_recruiting
+					}
+				}
+				add_recruting = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_army_staff
+					}
+				}
+				add_staff = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_army_standarts
+					}
+				}
+				add_standarts = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_civilian
+					}
+				}
+				add_civservices = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_economy
+					}
+				}
+				add_economy_model = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_liberties
+					}
+				}
+				add_liberties = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_workers
+					}
+				}
+				add_workers = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_government_grip
+					}
+				}
+				add_grip = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_government_politics
+					}
+				}
+				add_politics = yes
+			}
+		}
+	}
+	right_bank_choice_time = {		
+		activation = {
+			always = no
+		}
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice
+			}
+		}
+		is_good = no
+		days_mission_timeout = 14
+		selectable_mission = no
+		timeout_effect = {
+			clr_country_flag = dogovornyak_choice
+			clr_country_flag = dogovornyak_choice_made
+			WST = {
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = domestic_economy
+								has_country_flag = domestic_civilian
+								has_country_flag = domestic_liberties
+								has_country_flag = domestic_workers
+							}
+						}
+						clr_country_flag = domestic_choice
+						set_country_flag = done_domestic
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = army_recruiting
+								has_country_flag = army_staff
+								has_country_flag = army_standarts
+							}
+						}
+						clr_country_flag = army_choice
+						set_country_flag = done_army
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = government_grip
+								has_country_flag = government_politics
+							}
+						}
+						clr_country_flag = government_choice
+						set_country_flag = done_government
+					}
+			}
+			CNT = {
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = domestic_economy
+								has_country_flag = domestic_civilian
+								has_country_flag = domestic_liberties
+								has_country_flag = domestic_workers
+							}
+						}
+						clr_country_flag = domestic_choice
+						set_country_flag = done_domestic
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = army_recruiting
+								has_country_flag = army_staff
+								has_country_flag = army_standarts
+							}
+						}
+						clr_country_flag = army_choice
+						set_country_flag = done_army
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = government_grip
+								has_country_flag = government_politics
+							}
+						}
+						clr_country_flag = government_choice
+						set_country_flag = done_government
+					}
+			}
+			if = {
+				limit = {
+					check_variable = {WST.west_influence_choice > CNT.center_influence_choice}
+				}
+				add_political_power = 100
+				WST = {
+					add_to_variable = {
+						var = west_influence
+						value = 1
+					}
+					if = {
+						limit = {has_country_flag = domestic_economy}
+						set_country_flag = won_domestic_economy
+					}
+					if = {
+						limit = {has_country_flag = domestic_civilian}
+						set_country_flag = won_domestic_civilian
+					}
+					if = {
+						limit = {has_country_flag = domestic_workers}
+						set_country_flag = won_domestic_workers
+					}
+					if = {
+						limit = {has_country_flag = domestic_liberties}
+						set_country_flag = won_domestic_liberties
+					}
+					if = {
+						limit = {has_country_flag = army_staff}
+						set_country_flag = won_army_staff
+					}
+					if = {
+						limit = {has_country_flag = army_recruiting}
+						set_country_flag = won_army_recruiting
+					}
+					if = {
+						limit = {has_country_flag = army_standarts}
+						set_country_flag = won_army_standarts
+					}
+					if = {
+						limit = {has_country_flag = government_politics}
+						set_country_flag = won_government_politics
+					}
+					if = {
+						limit = {has_country_flag = government_grip}
+						set_country_flag = won_government_grip
+					}
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {CNT.center_influence_choice > WST.west_influence_choice}
+				}
+				CNT = {
+					add_to_variable = {
+						var = center_influence
+						value = 1
+					}
+					add_political_power = 100
+					if = {
+						limit = {has_country_flag = domestic_economy}
+						set_country_flag = won_domestic_economy
+					}
+					if = {
+						limit = {has_country_flag = domestic_civilian}
+						set_country_flag = won_domestic_civilian
+					}
+					if = {
+						limit = {has_country_flag = domestic_workers}
+						set_country_flag = won_domestic_workers
+					}
+					if = {
+						limit = {has_country_flag = domestic_liberties}
+						set_country_flag = won_domestic_liberties
+					}
+					if = {
+						limit = {has_country_flag = army_staff}
+						set_country_flag = won_army_staff
+					}
+					if = {
+						limit = {has_country_flag = army_recruiting}
+						set_country_flag = won_army_recruiting
+					}
+					if = {
+						limit = {has_country_flag = army_standarts}
+						set_country_flag = won_army_standarts
+					}
+					if = {
+						limit = {has_country_flag = government_politics}
+						set_country_flag = won_government_politics
+					}
+					if = {
+						limit = {has_country_flag = government_grip}
+						set_country_flag = won_government_grip
+					}
+				}
+			}
+		}
+	}
+	right_bank_give_high_importance = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_west}
+				check_variable = {WST.west_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_center}
+				check_variable = {CNT.center_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = no
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = WST
+				}
+				add_to_variable = {
+					var = west_spendible_influence
+					value = -3
+				}
+				set_variable = {
+					var = west_influence_choice
+					value = 3
+				}
+			}
+			else_if = {
+				limit = {
+					tag = CNT
+				}
+				add_to_variable = {
+					var = center_spendible_influence
+					value = -3
+				}
+				set_variable = {
+					var = center_influence_choice
+					value = 3
+				}
+			}
+		}
+	}
+	right_bank_give_medium_importance = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_west}
+				check_variable = {WST.west_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_center}
+				check_variable = {CNT.center_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = no
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = WST
+				}
+				add_to_variable = {
+					var = west_spendible_influence
+					value = -2
+				}
+				set_variable = {
+					var = west_influence_choice
+					value = 2
+				}
+			}
+			else_if = {
+				limit = {
+					tag = CNT
+				}
+				add_to_variable = {
+					var = center_spendible_influence
+					value = -2
+				}
+				set_variable = {
+					var = center_influence_choice
+					value = 2
+				}
+			}
+		}
+	}
+	right_bank_give_low_importance = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_west}
+				check_variable = {WST.west_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_center}
+				check_variable = {CNT.center_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = no
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = WST
+				}
+				add_to_variable = {
+					var = west_spendible_influence
+					value = -1
+				}
+				set_variable = {
+					var = west_influence_choice
+					value = 1
+				}
+			}
+			else_if = {
+				limit = {
+					tag = CNT
+				}
+				add_to_variable = {
+					var = center_spendible_influence
+					value = -1
+				}
+				set_variable = {
+					var = center_influence_choice
+					value = 1
+				}
+			}
+		}
+	}
+	right_bank_give_importance_ai = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_west}
+				check_variable = {WST.west_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_center}
+				check_variable = {CNT.center_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = yes
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = WST
+				}
+				random_list = {
+					30 = {
+						add_to_variable = {
+							var = west_spendible_influence
+							value = -1
+						}
+						set_variable = {
+							var = west_influence_choice
+							value = 1
+						}
+					}
+					50 = {
+						add_to_variable = {
+							var = west_spendible_influence
+							value = -2
+						}
+						set_variable = {
+							var = west_influence_choice
+							value = 2
+						}
+					}
+					20 = {
+						add_to_variable = {
+							var = west_spendible_influence
+							value = -3
+						}
+						set_variable = {
+							var = west_influence_choice
+							value = 3
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					tag = CNT
+				}
+				random_list = {
+					30 = {
+						add_to_variable = {
+							var = center_spendible_influence
+							value = -1
+						}
+						set_variable = {
+							var = center_influence_choice
+							value = 1
+						}
+					}
+					50 = {
+						add_to_variable = {
+							var = center_spendible_influence
+							value = -2
+						}
+						set_variable = {
+							var = center_influence_choice
+							value = 2
+						}
+					}
+					20 = {
+						add_to_variable = {
+							var = center_spendible_influence
+							value = -3
+						}
+						set_variable = {
+							var = center_influence_choice
+							value = 3
+						}
+					}
+				}
+			}
+		}
+	}
+	right_bank_discuss_ministries = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+					has_country_flag = right_bank_ministries
+				}
+			}
+		}
+		visible = {	
+			always = no	
+		}
+		fire_only_once = yes
+		days_remove = 0
+		complete_effect = {
+			set_country_flag = right_bank_ministries
+		}
+	}
+	right_bank_discuss_army = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = picked_army
+					has_country_flag = picked_domestic
+					has_country_flag = picked_government
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			WST = {
+				set_country_flag = army_choice
+			}
+			CNT = {
+				set_country_flag = army_choice
+			}
+		}
+	}
+	right_bank_discuss_recruiting = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = army_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = army_recruiting
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			WST = {
+				set_country_flag = picked_a_theme
+				activate_mission = right_bank_choice_time
+				set_country_flag = army_recruiting
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = west_influence_choice
+					value = 0
+				}
+			}
+			CNT = {
+				set_country_flag = picked_a_theme
+				activate_mission = right_bank_choice_time
+				set_country_flag = army_recruiting
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = center_influence_choice
+					value = 0
+				}				
+			}
+		}
+	}
+	right_bank_discuss_staff = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = army_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = army_staff
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			WST = {
+				set_country_flag = picked_a_theme
+				activate_mission = right_bank_choice_time
+				set_country_flag = army_staff
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = west_influence_choice
+					value = 0
+				}
+			}
+			CNT = {
+				set_country_flag = picked_a_theme
+				activate_mission = right_bank_choice_time
+				set_country_flag = army_staff
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = center_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	right_bank_discuss_standarts = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = army_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = army_standarts
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			WST = {
+				set_country_flag = picked_a_theme
+				activate_mission = right_bank_choice_time
+				set_country_flag = army_standarts
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = west_influence_choice
+					value = 0
+				}
+			}
+			CNT = {
+				set_country_flag = picked_a_theme
+				activate_mission = right_bank_choice_time
+				set_country_flag = army_standarts
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = center_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	right_bank_discuss_government = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = right_bank_ministries
+					has_country_flag = army_choice
+					has_country_flag = domestic_choice
+					has_country_flag = government_choice
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = picked_army
+					has_country_flag = picked_domestic
+					has_country_flag = picked_government
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			set_country_flag = government_choice
+		}
+	}
+	right_bank_discuss_politics = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = government_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = government_politics
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			WST = {
+				set_country_flag = picked_a_theme
+				activate_mission = right_bank_choice_time
+				set_country_flag = government_politics
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = west_influence_choice
+					value = 0
+				}
+			}
+			CNT = {
+				set_country_flag = picked_a_theme
+				activate_mission = right_bank_choice_time
+				set_country_flag = government_politics
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = center_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	right_bank_discuss_grip_over_people = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = government_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = government_grip
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			WST = {
+				set_country_flag = picked_a_theme
+				activate_mission = right_bank_choice_time
+				set_country_flag = government_grip
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = west_influence_choice
+					value = 0
+				}
+			}
+			CNT = {
+				set_country_flag = picked_a_theme
+				activate_mission = right_bank_choice_time
+				set_country_flag = government_grip
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = center_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	right_bank_discuss_domestic = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+					has_country_flag = right_bank_ministries
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = picked_army
+					has_country_flag = picked_domestic
+					has_country_flag = picked_government
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			WST = {
+				set_country_flag = domestic_choice
+			}
+			CNT = {
+				set_country_flag = domestic_choice
+			}
+		}
+	}
+	right_bank_discuss_economy = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_economy
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			WST = {
+				set_country_flag = picked_a_theme
+				activate_mission = right_bank_choice_time
+				set_country_flag = domestic_economy
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = west_influence_choice
+					value = 0
+				}
+			}
+			CNT = {
+				set_country_flag = picked_a_theme
+				activate_mission = right_bank_choice_time
+				set_country_flag = domestic_economy
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = center_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	right_bank_discuss_workers = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_workers
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			WST = {
+				set_country_flag = picked_a_theme
+				activate_mission = right_bank_choice_time
+				set_country_flag = domestic_workers
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = west_influence_choice
+					value = 0
+				}
+			}
+			CNT = {
+				set_country_flag = picked_a_theme
+				activate_mission = right_bank_choice_time
+				set_country_flag = domestic_workers
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = center_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	right_bank_discuss_civillian_services = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_civilian
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			WST = {
+				set_country_flag = picked_a_theme
+				activate_mission = right_bank_choice_time
+				set_country_flag = domestic_civilian
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = west_influence_choice
+					value = 0
+				}
+			}
+			CNT = {
+				set_country_flag = picked_a_theme
+				activate_mission = right_bank_choice_time
+				set_country_flag = domestic_civilian
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = center_influence_choice
+					value = 0
+				}				
+			}
+		}
+	}
+	right_bank_discuss_liberties = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_liberties
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			WST = {
+				set_country_flag = picked_a_theme
+				activate_mission = right_bank_choice_time
+				set_country_flag = domestic_liberties
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = west_influence_choice
+					value = 0
+				}
+			}
+			CNT = {
+				set_country_flag = picked_a_theme
+				activate_mission = right_bank_choice_time
+				set_country_flag = domestic_liberties
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = center_influence_choice
+					value = 0
+				}				
+			}
+		}
+	}
+}
+
+ukraine_dogovornyak = {
+	right_bank_view_influence = {
+		available = {
+			always = no
+		}
+		visible = {
+			has_country_flag = ukraine_dogovornyak
+			tag = RBU
+		}
+	}
+	left_bank_view_influence = {
+		available = {
+			always = no
+		}
+		visible = {
+			has_country_flag = ukraine_dogovornyak
+			tag = LBU
+		}
+	}
+	ukraine_current_topic = {
+		available = {
+			always = no
+		}
+	}
+	ukraine_summing_up = {
+		available = {
+			if = {
+				limit = {
+					tag = LBU
+				}
+				check_variable = {LBU.left_bank_influence > RBU.right_bank_influence}
+			}
+			else_if = {
+				limit = {
+					tag = RBU
+				}
+				check_variable = {RBU.right_bank_influence > LBU.left_bank_influence}
+			}
+		}
+        ai_will_do = {
+            base = 10
+        }
+		target_trigger = {
+			FROM = {
+				OR = {
+					tag = LBU
+					tag = RBU
+				}
+			}
+		}
+		visible = {
+			AND = {
+				has_country_flag = done_army
+				has_country_flag = done_domestic
+				has_country_flag = done_government
+			}
+		}
+		complete_effect = {
+			annex_country = {
+				target = FROM
+				transfer_troops = yes
+			}
+			clr_country_flag = done_army
+			clr_country_flag = done_domestic
+			clr_country_flag = done_government
+			clr_country_flag = domestic_choice
+			clr_country_flag = army_choice
+			clr_country_flag = government_choice
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_army_recruiting
+					}
+				}
+				add_recruting = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_army_staff
+					}
+				}
+				add_staff = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_army_standarts
+					}
+				}
+				add_standarts = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_civilian
+					}
+				}
+				add_civservices = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_economy
+					}
+				}
+				add_economy_model = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_liberties
+					}
+				}
+				add_liberties = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_domestic_workers
+					}
+				}
+				add_workers = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_government_grip
+					}
+				}
+				add_grip = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = won_government_politics
+					}
+				}
+				add_politics = yes
+			}
+		}
+	}
+	ukraine_choice_time = {		
+		activation = {
+			always = no
+		}
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice
+			}
+		}
+		is_good = no
+		days_mission_timeout = 14
+		selectable_mission = no
+		timeout_effect = {
+			clr_country_flag = dogovornyak_choice
+			clr_country_flag = dogovornyak_choice_made
+			LBU = {
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = domestic_economy
+								has_country_flag = domestic_civilian
+								has_country_flag = domestic_liberties
+								has_country_flag = domestic_workers
+							}
+						}
+						clr_country_flag = domestic_choice
+						set_country_flag = done_domestic
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = army_recruiting
+								has_country_flag = army_staff
+								has_country_flag = army_standarts
+							}
+						}
+						clr_country_flag = army_choice
+						set_country_flag = done_army
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = government_grip
+								has_country_flag = government_politics
+							}
+						}
+						clr_country_flag = government_choice
+						set_country_flag = done_government
+					}
+			}
+			RBU = {
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = domestic_economy
+								has_country_flag = domestic_civilian
+								has_country_flag = domestic_liberties
+								has_country_flag = domestic_workers
+							}
+						}
+						clr_country_flag = domestic_choice
+						set_country_flag = done_domestic
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = army_recruiting
+								has_country_flag = army_staff
+								has_country_flag = army_standarts
+							}
+						}
+						clr_country_flag = army_choice
+						set_country_flag = done_army
+					}
+					if = {
+						limit = {
+							AND = {
+								has_country_flag = government_grip
+								has_country_flag = government_politics
+							}
+						}
+						clr_country_flag = government_choice
+						set_country_flag = done_government
+					}
+			}
+			if = {
+				limit = {
+					check_variable = {LBU.left_bank_influence_choice > RBU.right_bank_influence_choice}
+				}
+				add_political_power = 100
+				LBU = {
+					add_to_variable = {
+						var = left_bank_influence
+						value = 1
+					}
+					if = {
+						limit = {has_country_flag = domestic_economy}
+						set_country_flag = won_domestic_economy
+					}
+					if = {
+						limit = {has_country_flag = domestic_civilian}
+						set_country_flag = won_domestic_civilian
+					}
+					if = {
+						limit = {has_country_flag = domestic_workers}
+						set_country_flag = won_domestic_workers
+					}
+					if = {
+						limit = {has_country_flag = domestic_liberties}
+						set_country_flag = won_domestic_liberties
+					}
+					if = {
+						limit = {has_country_flag = army_staff}
+						set_country_flag = won_army_staff
+					}
+					if = {
+						limit = {has_country_flag = army_recruiting}
+						set_country_flag = won_army_recruiting
+					}
+					if = {
+						limit = {has_country_flag = army_standarts}
+						set_country_flag = won_army_standarts
+					}
+					if = {
+						limit = {has_country_flag = government_politics}
+						set_country_flag = won_government_politics
+					}
+					if = {
+						limit = {has_country_flag = government_grip}
+						set_country_flag = won_government_grip
+					}
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {RBU.right_bank_influence_choice > LBU.left_bank_influence_choice}
+				}
+				RBU = {
+					add_to_variable = {
+						var = right_bank_influence
+						value = 1
+					}
+					add_political_power = 100
+					if = {
+						limit = {has_country_flag = domestic_economy}
+						set_country_flag = won_domestic_economy
+					}
+					if = {
+						limit = {has_country_flag = domestic_civilian}
+						set_country_flag = won_domestic_civilian
+					}
+					if = {
+						limit = {has_country_flag = domestic_workers}
+						set_country_flag = won_domestic_workers
+					}
+					if = {
+						limit = {has_country_flag = domestic_liberties}
+						set_country_flag = won_domestic_liberties
+					}
+					if = {
+						limit = {has_country_flag = army_staff}
+						set_country_flag = won_army_staff
+					}
+					if = {
+						limit = {has_country_flag = army_recruiting}
+						set_country_flag = won_army_recruiting
+					}
+					if = {
+						limit = {has_country_flag = army_standarts}
+						set_country_flag = won_army_standarts
+					}
+					if = {
+						limit = {has_country_flag = government_politics}
+						set_country_flag = won_government_politics
+					}
+					if = {
+						limit = {has_country_flag = government_grip}
+						set_country_flag = won_government_grip
+					}
+				}
+			}
+		}
+	}
+	ukraine_give_high_importance = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_left_bank}
+				check_variable = {LBU.left_bank_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_right_bank}
+				check_variable = {RBU.right_bank_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = no
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = LBU
+				}
+				add_to_variable = {
+					var = left_bank_spendible_influence
+					value = -3
+				}
+				set_variable = {
+					var = left_bank_influence_choice
+					value = 3
+				}
+			}
+			else_if = {
+				limit = {
+					tag = RBU
+				}
+				add_to_variable = {
+					var = right_bank_spendible_influence
+					value = -3
+				}
+				set_variable = {
+					var = right_bank_influence_choice
+					value = 3
+				}
+			}
+		}
+	}
+	ukraine_give_medium_importance = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_left_bank}
+				check_variable = {LBU.left_bank_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_right_bank}
+				check_variable = {RBU.right_bank_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = no
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = LBU
+				}
+				add_to_variable = {
+					var = left_bank_spendible_influence
+					value = -2
+				}
+				set_variable = {
+					var = left_bank_influence_choice
+					value = 2
+				}
+			}
+			else_if = {
+				limit = {
+					tag = RBU
+				}
+				add_to_variable = {
+					var = right_bank_spendible_influence
+					value = -2
+				}
+				set_variable = {
+					var = right_bank_influence_choice
+					value = 2
+				}
+			}
+		}
+	}
+	ukraine_give_low_importance = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_left_bank}
+				check_variable = {LBU.left_bank_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_right_bank}
+				check_variable = {RBU.right_bank_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = no
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = LBU
+				}
+				add_to_variable = {
+					var = left_bank_spendible_influence
+					value = -1
+				}
+				set_variable = {
+					var = left_bank_influence_choice
+					value = 1
+				}
+			}
+			else_if = {
+				limit = {
+					tag = RBU
+				}
+				add_to_variable = {
+					var = right_bank_spendible_influence
+					value = -1
+				}
+				set_variable = {
+					var = right_bank_influence_choice
+					value = 1
+				}
+			}
+		}
+	}
+	ukraine_give_importance_ai = {
+		available = {
+			NOT = {
+				has_country_flag = dogovornyak_choice_made
+			}
+			if = {
+				limit = {has_country_flag = united_left_bank}
+				check_variable = {LBU.left_bank_spendible_influence > 0}
+			}
+			else_if = {
+				limit = {has_country_flag = united_right_bank}
+				check_variable = {RBU.right_bank_spendible_influence > 0}
+			}
+		}
+		visible = {
+			has_country_flag = dogovornyak_choice
+			is_ai = yes
+		}
+		days_remove = 0
+		cost = 0
+		ai_will_do = {
+			base = 15
+		}
+		complete_effect = {
+			set_country_flag = dogovornyak_choice_made
+			if = {
+				limit = {
+					tag = LBU
+				}
+				random_list = {
+					30 = {
+						add_to_variable = {
+							var = left_bank_spendible_influence
+							value = -1
+						}
+						set_variable = {
+							var = left_bank_influence_choice
+							value = 1
+						}
+					}
+					50 = {
+						add_to_variable = {
+							var = left_bank_spendible_influence
+							value = -2
+						}
+						set_variable = {
+							var = left_bank_influence_choice
+							value = 2
+						}
+					}
+					20 = {
+						add_to_variable = {
+							var = left_bank_spendible_influence
+							value = -3
+						}
+						set_variable = {
+							var = left_bank_influence_choice
+							value = 3
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					tag = RBU
+				}
+				random_list = {
+					30 = {
+						add_to_variable = {
+							var = right_bank_spendible_influence
+							value = -1
+						}
+						set_variable = {
+							var = right_bank_influence_choice
+							value = 1
+						}
+					}
+					50 = {
+						add_to_variable = {
+							var = right_bank_spendible_influence
+							value = -2
+						}
+						set_variable = {
+							var = right_bank_influence_choice
+							value = 2
+						}
+					}
+					20 = {
+						add_to_variable = {
+							var = right_bank_spendible_influence
+							value = -3
+						}
+						set_variable = {
+							var = right_bank_influence_choice
+							value = 3
+						}
+					}
+				}
+			}
+		}
+	}
+	ukraine_discuss_ministries = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+					has_country_flag = ukraine_ministries
+				}
+			}
+		}
+		visible = {	
+			always = no	
+		}
+		fire_only_once = yes
+		days_remove = 0
+		complete_effect = {
+			set_country_flag = ukraine_ministries
+		}
+	}
+	ukraine_discuss_army = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = picked_army
+					has_country_flag = picked_domestic
+					has_country_flag = picked_government
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			LBU = {
+				set_country_flag = army_choice
+			}
+			RBU = {
+				set_country_flag = army_choice
+			}
+		}
+	}
+	ukraine_discuss_recruiting = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = army_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = army_recruiting
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			LBU = {
+				set_country_flag = picked_a_theme
+				activate_mission = ukraine_choice_time
+				set_country_flag = army_recruiting
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = left_bank_influence_choice
+					value = 0
+				}
+			}
+			RBU = {
+				set_country_flag = picked_a_theme
+				activate_mission = ukraine_choice_time
+				set_country_flag = army_recruiting
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = right_bank_influence_choice
+					value = 0
+				}				
+			}
+		}
+	}
+	ukraine_discuss_staff = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = army_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = army_staff
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			LBU = {
+				set_country_flag = picked_a_theme
+				activate_mission = ukraine_choice_time
+				set_country_flag = army_staff
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = left_bank_influence_choice
+					value = 0
+				}
+			}
+			RBU = {
+				set_country_flag = picked_a_theme
+				activate_mission = ukraine_choice_time
+				set_country_flag = army_staff
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = right_bank_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	ukraine_discuss_standarts = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = army_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = army_standarts
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			LBU = {
+				set_country_flag = picked_a_theme
+				activate_mission = ukraine_choice_time
+				set_country_flag = army_standarts
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = left_bank_influence_choice
+					value = 0
+				}
+			}
+			RBU = {
+				set_country_flag = picked_a_theme
+				activate_mission = ukraine_choice_time
+				set_country_flag = army_standarts
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = right_bank_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	ukraine_discuss_government = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = ukraine_ministries
+					has_country_flag = army_choice
+					has_country_flag = domestic_choice
+					has_country_flag = government_choice
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = picked_army
+					has_country_flag = picked_domestic
+					has_country_flag = picked_government
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			set_country_flag = government_choice
+		}
+	}
+	ukraine_discuss_politics = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = government_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = government_politics
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			LBU = {
+				set_country_flag = picked_a_theme
+				activate_mission = ukraine_choice_time
+				set_country_flag = government_politics
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = left_bank_influence_choice
+					value = 0
+				}
+			}
+			RBU = {
+				set_country_flag = picked_a_theme
+				activate_mission = ukraine_choice_time
+				set_country_flag = government_politics
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = right_bank_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	ukraine_discuss_grip_over_people = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = government_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = government_grip
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			LBU = {
+				set_country_flag = picked_a_theme
+				activate_mission = ukraine_choice_time
+				set_country_flag = government_grip
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = left_bank_influence_choice
+					value = 0
+				}
+			}
+			RBU = {
+				set_country_flag = picked_a_theme
+				activate_mission = ukraine_choice_time
+				set_country_flag = government_grip
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = right_bank_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	ukraine_discuss_domestic = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = army_choice
+					has_country_flag = government_choice
+					has_country_flag = domestic_choice
+					has_country_flag = ukraine_ministries
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = picked_army
+					has_country_flag = picked_domestic
+					has_country_flag = picked_government
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			LBU = {
+				set_country_flag = domestic_choice
+			}
+			RBU = {
+				set_country_flag = domestic_choice
+			}
+		}
+	}
+	ukraine_discuss_economy = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_economy
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			LBU = {
+				set_country_flag = picked_a_theme
+				activate_mission = ukraine_choice_time
+				set_country_flag = domestic_economy
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = left_bank_influence_choice
+					value = 0
+				}
+			}
+			RBU = {
+				set_country_flag = picked_a_theme
+				activate_mission = ukraine_choice_time
+				set_country_flag = domestic_economy
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = right_bank_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	ukraine_discuss_workers = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_workers
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			LBU = {
+				set_country_flag = picked_a_theme
+				activate_mission = ukraine_choice_time
+				set_country_flag = domestic_workers
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = left_bank_influence_choice
+					value = 0
+				}
+			}
+			RBU = {
+				set_country_flag = picked_a_theme
+				activate_mission = ukraine_choice_time
+				set_country_flag = domestic_workers
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = right_bank_influence_choice
+					value = 0
+				}					
+			}
+		}
+	}
+	ukraine_discuss_civillian_services = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_civilian
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			LBU = {
+				set_country_flag = picked_a_theme
+				activate_mission = ukraine_choice_time
+				set_country_flag = domestic_civilian
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = left_bank_influence_choice
+					value = 0
+				}
+			}
+			RBU = {
+				set_country_flag = picked_a_theme
+				activate_mission = ukraine_choice_time
+				set_country_flag = domestic_civilian
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = right_bank_influence_choice
+					value = 0
+				}				
+			}
+		}
+	}
+	ukraine_discuss_liberties = {
+		icon = GFX_ZAK_rada_election
+		available = {
+			NOT = {
+				has_country_flag = {
+					flag = picked_a_theme
+					days < 21
+				}
+			}
+		}
+		visible = {
+			has_country_flag = domestic_choice
+			NOT = {
+				has_country_flag = dogovornyak_choice
+				has_country_flag = domestic_liberties
+			}
+		}
+		fire_only_once = yes
+		days_remove = 0
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			LBU = {
+				set_country_flag = picked_a_theme
+				activate_mission = ukraine_choice_time
+				set_country_flag = domestic_liberties
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = left_bank_influence_choice
+					value = 0
+				}
+			}
+			RBU = {
+				set_country_flag = picked_a_theme
+				activate_mission = ukraine_choice_time
+				set_country_flag = domestic_liberties
+				set_country_flag = dogovornyak_choice
+				set_variable = {
+					var = right_bank_influence_choice
+					value = 0
+				}				
+			}
+		}
+	}
+}
+

@@ -1,123 +1,207 @@
 debug_m = {
+
 	"annex ukranian warlords" = {
+
 		icon = GFX_decision_generic_military
+
 		available = {
 			always = yes
 			#random_country = { has_country_flag = ukrwarlord }
 			is_ai = no
 		}
+
+
 		visible = {
 			always = yes
 		}
-		complete_effect = {
+
+
+        complete_effect = {
 			every_country = {
-				every_state = {
-					limit = {
-						has_state_flag = poc
-					}
-					#	ROOT = { 
-					set_state_owner_to = ROOT
-					set_state_controller_to = ROOT
-					#	}
-				}
+				every_state  = {
+					limit = { has_state_flag = poc }
+			#	ROOT = { 
+				set_state_owner_to = ROOT
+				set_state_controller_to = ROOT
+			#	}
 			}
-		}
-		fire_only_once = no
+		} 
+		} 
+
+
+		fire_only_once = no  
 		cost = 0
+
 	}
+
 	"GREAT ukraine jopta" = {
+
 		icon = GFX_decision_generic_military
+
 		available = {
 			always = yes
 			#random_country = { has_country_flag = ukrwarlord }
 			is_ai = no
 		}
+
+
 		visible = {
 			always = yes
 		}
-		complete_effect = {
+
+
+        complete_effect = {
 			every_country = {
-				every_state = {
-					limit = {
-						has_state_flag = hardint
-					}
-					#	ROOT = { 
-					set_state_owner_to = ROOT
-					set_state_controller_to = ROOT
-					#	}
-				}
+				every_state  = {
+					limit = { has_state_flag = hardint }
+			#	ROOT = { 
+				set_state_owner_to = ROOT
+				set_state_controller_to = ROOT
+
+			#	}
 			}
-		}
-		fire_only_once = no
-		cost = 0
+		} 
 	}
+
+		fire_only_once = no  
+		cost = 0
+
+	}
+
+
 	"Odesa collapse" = {
+
 		icon = GFX_decision_generic_military
+
 		available = {
 			always = yes
 			#random_country = { has_country_flag = ukrwarlord }
 			is_ai = no
 		}
+
+
 		visible = {
 			always = yes
 		}
-		complete_effect = {
+
+
+        complete_effect = {
 			ODE = {
 				country_event = ode.5
 			}
-		}
-		fire_only_once = no
-		cost = 0
 	}
+
+		fire_only_once = no  
+		cost = 0
+
+	}
+
 	"dnipro collapse" = {
+
 		icon = GFX_decision_generic_military
+
 		available = {
 			always = yes
 			#random_country = { has_country_flag = ukrwarlord }
 			is_ai = no
 		}
+
+
 		visible = {
 			always = yes
 		}
-		complete_effect = {
+
+
+        complete_effect = {
 			DNI = {
 				country_event = dni.2
 			}
-		}
-		fire_only_once = no
-		cost = 0
 	}
+
+		fire_only_once = no  
+		cost = 0
+
+	}
+
 	"vitrenko bliat" = {
+
 		icon = GFX_decision_generic_military
+
 		available = {
 			always = yes
 		}
+
+
 		visible = {
 			always = yes
 		}
-		complete_effect = {
+
+
+        complete_effect = {
 			DPR = {
 				country_event = dnr_vitrenko.1
-				load_focus_tree = vitrenko_focus
+			load_focus_tree = vitrenko_focus
 			}
-		}
-		fire_only_once = no
-		cost = 0
 	}
+
+		fire_only_once = no  
+		cost = 0
+
+	}
+
 	"nkrwarfirstxd" = {
+
 		icon = GFX_decision_generic_military
+
 		available = {
 			always = yes
 		}
+
+
 		visible = {
 			always = yes
 		}
-		complete_effect = {
+
+
+        complete_effect = {
 			AZE = {
 				country_event = caucas.1
+				
 			}
-		}
-		fire_only_once = no
-		cost = 0
 	}
+
+		fire_only_once = no  
+		cost = 0
+
+	}
+
+"unification NOW!" = {
+
+		icon = GFX_decision_generic_military
+
+		available = {
+			always = yes
+		}
+
+
+		visible = {
+			always = yes
+		}
+
+
+        complete_effect = {
+			set_global_flag = galychyna_to_unite
+			set_global_flag = podillya_to_unite
+			set_global_flag = north_to_unite
+			set_global_flag = north_center_to_unite
+			set_global_flag = south_west_to_unite
+			set_global_flag = south_center_to_unite
+			set_global_flag = south_east_to_unite
+	}
+
+		fire_only_once = no  
+		cost = 0
+
+	}
+
 }
