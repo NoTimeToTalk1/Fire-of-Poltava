@@ -11,6 +11,9 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_from_the_ground_up
 	}
+	completion_reward = {
+		add_ideas = DPR_ourlegacy
+	}
 }
 
 #Restore the Don Host
@@ -27,7 +30,10 @@ shared_focus = {
 		focus = DPR_invite_local_leaders
 	}
 	completion_reward = {
-		
+		swap_ideas = {
+			remove_idea = DPR_generalplan4
+			add_idea = DPR_generalplan5
+		}
 	}
 }
 
@@ -88,6 +94,9 @@ shared_focus = {
 	}
 	prerequisite = {
 		focus = DPR_rematch_of_1917th
+	}
+	completion_reward = {
+		add_ideas = DPR_monarchicalcoalition
 	}
 }
 
@@ -313,9 +322,6 @@ shared_focus = {
 	search_filters = {
 		FOCUS_FILTER_POLITICAL
 	}
-	#prerequisite = {
-	#	focus = DPR_keep_the_order
-	#}
 	mutually_exclusive = {
 		focus = DPR_facing_the_problems_alone
 	}
@@ -366,7 +372,7 @@ shared_focus = {
 		focus = DPR_facing_the_problems_alone
 	}
 	completion_reward = {
-		add_ideas = DPR_generalplan
+		add_ideas = DPR_generalplan1
 		add_political_power = 50
 	}
 }
@@ -384,6 +390,12 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_glorify_the_true_heroes
 	}
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_whiteculture1
+			add_idea = DPR_whiteculture2
+		}
+	}
 }
 
 #Call to the Old Friends
@@ -400,12 +412,11 @@ shared_focus = {
 		focus = DPR_plan__the_key_to_success
 	}
 	completion_reward = {
-		
-	create_intelligence_agency = {
-		name = "Security Service of Novorossiya"
-		icon = GFX_intelligence_agency_logo_agency
+		create_intelligence_agency = {
+			name = "Security Service of Novorossiya"
+			icon = GFX_intelligence_agency_logo_agency
+		}
 	}
-}
 }
 
 #Use Proven Methods
@@ -441,6 +452,9 @@ shared_focus = {
 	}
 	prerequisite = {
 		focus = DPR_rematch_of_1917th
+	}
+	completion_reward = {
+		add_ideas = DPR_whiteculture1
 	}
 }
 
@@ -478,6 +492,9 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_plan__the_key_to_success
 	}
+	completion_reward = {
+		add_ideas = DPR_newfriends1
+	}
 }
 
 #Recognise Whites` Legitimacy
@@ -495,7 +512,15 @@ shared_focus = {
 	}
 	completion_reward = {
 		if = {
-			limit = { tag = { has_}}
+			limit = {
+				any_other_country = {
+					has_government = radical_socialism
+				}
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = spirit_of_novorosja
+			}
 		}
 	}
 }
@@ -513,6 +538,12 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_recognisewhiteslegitimacy
 	}
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_generalplan1
+			add_idea = DPR_generalplan2
+		}
+	}
 }
 
 #Messege to Cossaks
@@ -527,6 +558,15 @@ shared_focus = {
 	}
 	prerequisite = {
 		focus = DPR_plan__the_key_to_success
+	}
+	available = {
+		has_idea = DPR_newfriends1
+	}
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_newfriends1
+			add_idea = DPR_newfriends2
+		}
 	}
 }
 
@@ -549,6 +589,12 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_restore_the_don_host
 	}
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_generalplan2
+			add_idea = DPR_generalplan3
+		}
+	}
 }
 
 #Engage in Big Politics
@@ -563,6 +609,12 @@ shared_focus = {
 	}
 	search_filters = {
 		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_generalplan3
+			add_idea = DPR_generalplan4
+		}
 	}
 }
 
@@ -579,6 +631,12 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_the_first_allrussian_monarchical_congress
 	}
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_monarchicalcoalition1
+			add_idea = DPR_monarchicalcoalition2
+		}
+	}
 }
 
 #Revival of the Spirituality
@@ -594,6 +652,9 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_rematch_of_1917th
 	}
+	completion_reward = {
+		add_ideas = DPR_ourlegacy
+	}
 }
 
 #Return of Canonical Church from Overseas
@@ -608,6 +669,9 @@ shared_focus = {
 	}
 	prerequisite = {
 		focus = DPR_revival_of_the_spirituality
+	}
+	completion_reward = {
+		add_ideas = DPR_russianchurch
 	}
 }
 
@@ -629,6 +693,12 @@ shared_focus = {
 	}
 	prerequisite = {
 		focus = DPR_renounce_the_soviet_heritage
+	}
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_monarchicalcoalition2
+			add_idea = DPR_monarchicalcoalition3
+		}
 	}
 }
 
