@@ -1,127 +1,10 @@
-#Remember About True Rots
-shared_focus = {
-	id = DPR_remember_about_true_rots
-	icon = GFX_DPR_remember_about_true_rots-495488
-	x = 14
-	y = 7
-	cost = 3
-	prerequisite = {
-		focus = DPR_from_the_ground_up
-	}
-	completion_reward = {
-		add_ideas = DPR_ourlegacy
-	}
-}
-
-#Restore the Don Host
-shared_focus = {
-	id = DPR_restore_the_don_host
-	icon = GFX_DPR_restore_the_don_host-495485
-	x = 16
-	y = 5
-	cost = 3
-	prerequisite = {
-		focus = DPR_invite_local_leaders
-	}
-	completion_reward = {
-		swap_ideas = {
-			remove_idea = DPR_generalplan4
-			add_idea = DPR_generalplan5
-		}
-	}
-}
-
-#Claim in Our Real Borders
-shared_focus = {
-	id = DPR_claim_in_our_real_borders
-	icon = GFX_DPR_claim_in_our_real_borders-495504
-	x = 20
-	y = 14
-	cost = 3
-	prerequisite = {
-		focus = DPR_time_for_strategic_games
-	}
-}
-
-#Invite Local Leaders
-shared_focus = {
-	id = DPR_invite_local_leaders
-	icon = GFX_DPR_invite_local_leaders-495484
-	x = 16
-	y = 4
-	cost = 3
-	prerequisite = {
-		focus = DPR_messege_to_cossaks
-	}
-}
-
-#Rematch of 1917th
-shared_focus = {
-	id = DPR_rematch_of_1917th
-	icon = GFX_DPR_rematch_of_1917th-495512
-	x = 14
-	y = 8
-	cost = 3
-
-	prerequisite = {
-		focus = DPR_remember_about_true_rots
-	}
-}
-
-#The First All-Russian Monarchical Congress
-shared_focus = {
-	id = DPR_the_first_allrussian_monarchical_congress
-	icon = GFX_DPR_the_first_allrussian_monarchical_congress-495519
-	x = 14
-	y = 9
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_rematch_of_1917th
-	}
-	completion_reward = {
-		add_ideas = DPR_monarchicalcoalition
-	}
-}
-
-#Find The Loyal Ones
-shared_focus = {
-	id = DPR_find_the_loyal_ones
-	icon = GFX_DPR_find_the_loyal_ones-495505
-	x = 20
-	y = 15
-	cost = 3
-
-	prerequisite = {
-		focus = DPR_claim_in_our_real_borders
-	}
-}
-
-#Consolidation of the South
-shared_focus = {
-	id = DPR_consolidation_of_the_south
-	icon = GFX_DPR_consolidation_of_the_south-495507
-	x = 20
-	y = 16
-	cost = 3
-
-	prerequisite = {
-		focus = DPR_find_the_loyal_ones
-	}
-}
-
-#Time For Strategic Games
-shared_focus = {
-	id = DPR_time_for_strategic_games
-	icon = GFX_DPR_time_for_strategic_games-495492
-	x = 20
-	y = 13
-	cost = 3
-
-	prerequisite = {
-		focus = DPR_engage_in_big_politics
-	}
-}
+##############################################################################################
+##############################################################################################
+##################   											##############################
+##################   THE STARTING TREE(RIGHT AFTER ELECTIONS)   ##############################
+##################   											##############################
+##############################################################################################
+##############################################################################################
 
 #Beginning of New Era
 shared_focus = {
@@ -151,6 +34,61 @@ shared_focus = {
 	mutually_exclusive = {
 		focus = DPR_givethemguarantees
 	}
+	
+	completion_reward = {
+		country_event = {
+			id = dpr.901 #PLACEHOLDER
+			days = 1
+		}
+	}
+}
+
+#Militarise Loyalistst
+shared_focus = {
+	id = DPR_militarise_loyalistst
+	icon = GFX_DPR_militarise_loyalistst-495447
+	x = 9
+	y = 2
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_give_them_a_fight
+	}
+	completion_reward = {
+		country_event = {
+			id = dpr_girkin.2
+			days = 1
+		}
+	}
+}
+
+#Discrediting Always Works
+shared_focus = {
+	id = DPR_discrediting_always_works
+	icon = GFX_DPR_discrediting_always_works-495454
+	x = 9
+	y = 3
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_militarise_loyalistst
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Udar V Pechen` - Nikto Ne Vechen
+shared_focus = {
+	id = DPR_udarvpechenniktonevechen
+	icon = GFX_DPR_udarvpechenniktonevechen-495462
+	x = 9
+	y = 4
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_discrediting_always_works
+	}
 }
 
 #Give Them "Guarantees"
@@ -167,21 +105,8 @@ shared_focus = {
 	mutually_exclusive = {
 		focus = DPR_give_them_a_fight
 	}
-}
-
-#Militarise Loyalistst
-shared_focus = {
-	id = DPR_militarise_loyalistst
-	icon = GFX_DPR_militarise_loyalistst-495447
-	x = 9
-	y = 2
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_give_them_a_fight
-	}
 	completion_reward = {
-		country_event = dpr_girkin.2
+		###
 	}
 }
 
@@ -199,18 +124,8 @@ shared_focus = {
 	completion_reward = {
 		remove_ideas = DPR_peopleopposition
 	}
-}
-
-#Discrediting Always Works
-shared_focus = {
-	id = DPR_discrediting_always_works
-	icon = GFX_DPR_discrediting_always_works-495454
-	x = 9
-	y = 3
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_militarise_loyalistst
+	completion_reward = {
+		###
 	}
 }
 
@@ -227,19 +142,6 @@ shared_focus = {
 	}
 }
 
-#Udar V Pechen` - Nikto Ne Vechen
-shared_focus = {
-	id = DPR_udarvpechenniktonevechen
-	icon = GFX_DPR_udarvpechenniktonevechen-495462
-	x = 9
-	y = 4
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_discrediting_always_works
-	}
-}
-
 #...And Abond It
 shared_focus = {
 	id = DPR_andabondit
@@ -250,6 +152,9 @@ shared_focus = {
 
 	prerequisite = {
 		focus = DPR_preparefotthehell
+	}
+	completion_reward = {
+		###
 	}
 }
 
@@ -283,6 +188,22 @@ shared_focus = {
 	}
 }
 
+#Integration of PMC
+shared_focus = {
+	id = DPR_integration_of_pmc
+	icon = GFX_DPR_integration_of_pmc-495474
+	x = 12
+	y = 2
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_contract_with_the_devil
+	}
+	completion_reward = {
+		###
+	}
+}
+
 #Facing the Problems Alone
 shared_focus = {
 	id = DPR_facing_the_problems_alone
@@ -294,18 +215,8 @@ shared_focus = {
 	mutually_exclusive = {
 		focus = DPR_contract_with_the_devil
 	}
-}
-
-#Integration of PMC
-shared_focus = {
-	id = DPR_integration_of_pmc
-	icon = GFX_DPR_integration_of_pmc-495474
-	x = 12
-	y = 2
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_contract_with_the_devil
+	completion_reward = {
+		###
 	}
 }
 
@@ -323,25 +234,6 @@ shared_focus = {
 	completion_reward = {
 		add_ideas = DPR_generalplan1
 		add_political_power = 50
-	}
-}
-
-#Renounce the Soviet Heritage
-shared_focus = {
-	id = DPR_renounce_the_soviet_heritage
-	icon = GFX_DPR_renounce_the_soviet_heritage-495532
-	x = 16
-	y = 10
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_glorify_the_true_heroes
-	}
-	completion_reward = {
-		swap_ideas = {
-			remove_idea = DPR_whiteculture1
-			add_idea = DPR_whiteculture2
-		}
 	}
 }
 
@@ -380,22 +272,6 @@ shared_focus = {
 			remove_idea = DPR_FSB
 			add_idea = DPR_fsblocal
 		}
-	}
-}
-
-#Glorify the True Heroes
-shared_focus = {
-	id = DPR_glorify_the_true_heroes
-	icon = GFX_DPR_glorify_the_true_heroes-495531
-	x = 16
-	y = 9
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_rematch_of_1917th
-	}
-	completion_reward = {
-		add_ideas = DPR_whiteculture1
 	}
 }
 
@@ -479,7 +355,7 @@ shared_focus = {
 	}
 }
 
-#Messege to Cossaks
+#Message to Cossaks
 shared_focus = {
 	id = DPR_messege_to_cossaks
 	icon = GFX_DPR_messege_to_cossaks-495483
@@ -497,6 +373,36 @@ shared_focus = {
 		swap_ideas = {
 			remove_idea = DPR_newfriends1
 			add_idea = DPR_newfriends2
+		}
+	}
+}
+
+#Invite Local Leaders
+shared_focus = {
+	id = DPR_invite_local_leaders
+	icon = GFX_DPR_invite_local_leaders-495484
+	x = 16
+	y = 4
+	cost = 3
+	prerequisite = {
+		focus = DPR_messege_to_cossaks
+	}
+}
+
+#Restore the Don Host
+shared_focus = {
+	id = DPR_restore_the_don_host
+	icon = GFX_DPR_restore_the_don_host-495485
+	x = 16
+	y = 5
+	cost = 3
+	prerequisite = {
+		focus = DPR_invite_local_leaders
+	}
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_generalplan4
+			add_idea = DPR_generalplan5
 		}
 	}
 }
@@ -526,41 +432,34 @@ shared_focus = {
 	}
 }
 
-#Engage in Big Politics
+#Remember About True Roots
 shared_focus = {
-	id = DPR_engage_in_big_politics
-	icon = GFX_DPR_engage_in_big_politics-495489
-	x = 20
-	y = 12
+	id = DPR_remember_about_true_rots
+	icon = GFX_DPR_remember_about_true_rots-495488
+	x = 14
+	y = 7
 	cost = 3
-	available = {
-		has_completed_focus = DPR_united_traditionalists_front
+	prerequisite = {
+		focus = DPR_from_the_ground_up
 	}
-
 	completion_reward = {
-		swap_ideas = {
-			remove_idea = DPR_generalplan3
-			add_idea = DPR_generalplan4
-		}
+		add_ideas = DPR_ourlegacy
 	}
 }
 
-#Get Trough the Disputes
+#Rematch of 1917th
 shared_focus = {
-	id = DPR_get_trough_the_disputes
-	icon = GFX_DPR_get_trough_the_disputes-495522
+	id = DPR_rematch_of_1917th
+	icon = GFX_DPR_rematch_of_1917th-495512
 	x = 14
-	y = 10
-	cost = 2
+	y = 8
+	cost = 3
 
 	prerequisite = {
-		focus = DPR_the_first_allrussian_monarchical_congress
+		focus = DPR_remember_about_true_rots
 	}
 	completion_reward = {
-		swap_ideas = {
-			remove_idea = DPR_monarchicalcoalition1
-			add_idea = DPR_monarchicalcoalition2
-		}
+		###
 	}
 }
 
@@ -596,6 +495,76 @@ shared_focus = {
 	}
 }
 
+#The First All-Russian Monarchical Congress
+shared_focus = {
+	id = DPR_the_first_allrussian_monarchical_congress
+	icon = GFX_DPR_the_first_allrussian_monarchical_congress-495519
+	x = 14
+	y = 9
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_rematch_of_1917th
+	}
+	completion_reward = {
+		add_ideas = DPR_monarchicalcoalition
+	}
+}
+
+#Get Trough the Disputes
+shared_focus = {
+	id = DPR_get_trough_the_disputes
+	icon = GFX_DPR_get_trough_the_disputes-495522
+	x = 14
+	y = 10
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_the_first_allrussian_monarchical_congress
+	}
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_monarchicalcoalition1
+			add_idea = DPR_monarchicalcoalition2
+		}
+	}
+}
+
+#Glorify the True Heroes
+shared_focus = {
+	id = DPR_glorify_the_true_heroes
+	icon = GFX_DPR_glorify_the_true_heroes-495531
+	x = 16
+	y = 9
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_rematch_of_1917th
+	}
+	completion_reward = {
+		add_ideas = DPR_whiteculture1
+	}
+}
+
+#Renounce the Soviet Heritage
+shared_focus = {
+	id = DPR_renounce_the_soviet_heritage
+	icon = GFX_DPR_renounce_the_soviet_heritage-495532
+	x = 16
+	y = 10
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_glorify_the_true_heroes
+	}
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_whiteculture1
+			add_idea = DPR_whiteculture2
+		}
+	}
+}
+
 #United Traditionalists Front
 shared_focus = {
 	id = DPR_united_traditionalists_front
@@ -621,6 +590,91 @@ shared_focus = {
 	}
 }
 
+#Engage in Big Politics
+shared_focus = {
+	id = DPR_engage_in_big_politics
+	icon = GFX_DPR_engage_in_big_politics-495489
+	x = 20
+	y = 12
+	cost = 3
+	available = {
+		has_completed_focus = DPR_united_traditionalists_front
+	}
+	#prerequisite = {
+	#	focus = DPR_from_the_ground_up
+	#}
+
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_generalplan3
+			add_idea = DPR_generalplan4
+		}
+	}
+}
+
+#Time For Strategic Games
+shared_focus = {
+	id = DPR_time_for_strategic_games
+	icon = GFX_DPR_time_for_strategic_games-495492
+	x = 20
+	y = 13
+	cost = 3
+
+	prerequisite = {
+		focus = DPR_engage_in_big_politics
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Claim in Our Real Borders
+shared_focus = {
+	id = DPR_claim_in_our_real_borders
+	icon = GFX_DPR_claim_in_our_real_borders-495504
+	x = 20
+	y = 14
+	cost = 3
+	prerequisite = {
+		focus = DPR_time_for_strategic_games
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Find The Loyal Ones
+shared_focus = {
+	id = DPR_find_the_loyal_ones
+	icon = GFX_DPR_find_the_loyal_ones-495505
+	x = 20
+	y = 15
+	cost = 3
+
+	prerequisite = {
+		focus = DPR_claim_in_our_real_borders
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Consolidation of the South
+shared_focus = {
+	id = DPR_consolidation_of_the_south
+	icon = GFX_DPR_consolidation_of_the_south-495507
+	x = 20
+	y = 16
+	cost = 3
+
+	prerequisite = {
+		focus = DPR_find_the_loyal_ones
+	}
+	completion_reward = {
+		###
+	}
+}
+
 #Start the Debate
 shared_focus = {
 	id = DPR_start_the_debate
@@ -628,7 +682,15 @@ shared_focus = {
 	x = 26
 	y = 1
 	cost = 3
-
+	prerequisite = {
+		focus = DPR_united_traditionalists_front
+	}
+	prerequisite = {
+		focus = DPR_consolidation_of_the_south
+	}
+	completion_reward = {
+		###
+	}
 }
 
 #Return Power to the Rightful Hands...
@@ -642,52 +704,22 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_start_the_debate
 	}
-}
-
-#Pulya Ne Dura, No Shtyk Tozhe Molodets
-shared_focus = {
-	id = DPR_pulyaneduranoshtyktozhemolodets
-	icon = GFX_DPR_pulyaneduranoshtyktozhemolodets-495536
-	x = 25
-	y = 5
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_loyality_to_traditions
+	completion_reward = {
+		###
 	}
 }
 
-#Full Motorisation
-shared_focus = {
-	id = DPR_full_motorisation
-	icon = GFX_DPR_full_motorisation-495536
-	x = 27
-	y = 5
-	cost = 2
 
-	prerequisite = {
-		focus = DPR_we_need_radical_changes
-	}
-}
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################      CONSTITUTIONAL MONARCHY PATH(Splits into 2 paths later)     ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
 
-#Unlimited Power!
-shared_focus = {
-	id = DPR_unlimitedpower
-	icon = GFX_DPR_unlimitedpower-495536
-	x = 39
-	y = 12
-	cost = 2
 
-	prerequisite = {
-		focus = DPR_time_to_wash_hands
-	}
-	prerequisite = {
-		focus = DPR_letatcestmoi
-	}
-	prerequisite = {
-		focus = DPR_generals_of_the_first_class
-	}
-}
+
 
 #...And Become a Mentor
 shared_focus = {
@@ -703,6 +735,9 @@ shared_focus = {
 	mutually_exclusive = {
 		focus = DPR_andrestorehistoricaljustice
 	}
+	completion_reward = {
+		###
+	}
 }
 
 #Protect the New Order
@@ -715,6 +750,9 @@ shared_focus = {
 
 	prerequisite = {
 		focus = DPR_andbecomeamentor
+	}
+	completion_reward = {
+		###
 	}
 }
 
@@ -729,6 +767,9 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_protect_the_new_order
 	}
+	completion_reward = {
+		###
+	}
 }
 
 #Unite Little Russia
@@ -741,6 +782,9 @@ shared_focus = {
 
 	prerequisite = {
 		focus = DPR_rejoice_what_we_have
+	}
+	completion_reward = {
+		###
 	}
 }
 
@@ -755,6 +799,9 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_unite_little_russia
 	}
+	completion_reward = {
+		###
+	}
 }
 
 #Conflict of Interests
@@ -767,6 +814,9 @@ shared_focus = {
 
 	prerequisite = {
 		focus = DPR_andbecomeamentor
+	}
+	completion_reward = {
+		###
 	}
 }
 
@@ -784,6 +834,41 @@ shared_focus = {
 	mutually_exclusive = {
 		focus = DPR_on_guard_of_heritage
 	}
+	completion_reward = {
+		###
+	}
+}
+
+#Decentralisation is What We Need
+shared_focus = {
+	id = DPR_decentralisation_is_what_we_need
+	icon = GFX_DPR_decentralisation_is_what_we_need-495536
+	x = 16
+	y = 6
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_new_times_new_politics
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#We Are Part of Civilised World
+shared_focus = {
+	id = DPR_we_are_part_of_civilised_world
+	icon = GFX_DPR_we_are_part_of_civilised_world-495536
+	x = 16
+	y = 7
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_decentralisation_is_what_we_need
+	}
+	completion_reward = {
+		###
+	}
 }
 
 #On Guard of Heritage
@@ -800,18 +885,8 @@ shared_focus = {
 	mutually_exclusive = {
 		focus = DPR_new_times_new_politics
 	}
-}
-
-#Decentralisation is What We Need
-shared_focus = {
-	id = DPR_decentralisation_is_what_we_need
-	icon = GFX_DPR_decentralisation_is_what_we_need-495536
-	x = 16
-	y = 6
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_new_times_new_politics
+	completion_reward = {
+		###
 	}
 }
 
@@ -826,18 +901,8 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_on_guard_of_heritage
 	}
-}
-
-#We Are Part of Civilised World
-shared_focus = {
-	id = DPR_we_are_part_of_civilised_world
-	icon = GFX_DPR_we_are_part_of_civilised_world-495536
-	x = 16
-	y = 7
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_decentralisation_is_what_we_need
+	completion_reward = {
+		###
 	}
 }
 
@@ -851,6 +916,9 @@ shared_focus = {
 
 	prerequisite = {
 		focus = DPR_power_belongs_to_the_strongest
+	}
+	completion_reward = {
+		###
 	}
 }
 
@@ -869,7 +937,19 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_we_only_need_us
 	}
+	completion_reward = {
+		###
+	}
 }
+
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################              LOVELY LIBERAL MONARCHY POSTISLAV PATH              ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
 
 #Emperor By The Will of the People
 shared_focus = {
@@ -881,6 +961,9 @@ shared_focus = {
 
 	prerequisite = {
 		focus = DPR_time_to_resolve_the_issue
+	}
+	completion_reward = {
+		###
 	}
 }
 
@@ -895,6 +978,9 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_emperor_by_the_will_of_the_people
 	}
+	completion_reward = {
+		###
+	}
 }
 
 #New Frontiers of Civilisation
@@ -907,6 +993,9 @@ shared_focus = {
 
 	prerequisite = {
 		focus = DPR_contact_the_united_nations
+	}
+	completion_reward = {
+		###
 	}
 }
 
@@ -921,6 +1010,9 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_new_frontiers_of_civilisation
 	}
+	completion_reward = {
+		###
+	}
 }
 
 #Parlamentarism is the Future
@@ -933,6 +1025,9 @@ shared_focus = {
 
 	prerequisite = {
 		focus = DPR_emperor_by_the_will_of_the_people
+	}
+	completion_reward = {
+		###
 	}
 }
 
@@ -947,6 +1042,9 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_parlamentarism_is_the_future
 	}
+	completion_reward = {
+		###
+	}
 }
 
 #Form Verkhovna Duma
@@ -960,83 +1058,8 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_rule_will_be_as_people_want_it_to_be
 	}
-}
-
-#The Key is In Love, not Fear
-shared_focus = {
-	id = DPR_thekeyisinlovenotfear
-	icon = GFX_DPR_thekeyisinlovenotfear-495536
-	x = 12
-	y = 10
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_emperor_by_the_will_of_the_people
-	}
-}
-
-#Emperor of All Man
-shared_focus = {
-	id = DPR_emperor_of_all_man
-	icon = GFX_DPR_emperor_of_all_man-495536
-	x = 12
-	y = 11
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_thekeyisinlovenotfear
-	}
-}
-
-#Embrace Ukrainianness
-shared_focus = {
-	id = DPR_embrace_ukrainianness
-	icon = GFX_DPR_embrace_ukrainianness-495536
-	x = 12
-	y = 12
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_emperor_of_all_man
-	}
-}
-
-#Show Ideological Tolerance
-shared_focus = {
-	id = DPR_show_ideological_tolerance
-	icon = GFX_DPR_show_ideological_tolerance-495536
-	x = 14
-	y = 10
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_emperor_by_the_will_of_the_people
-	}
-}
-
-#Quoting the Peace of Westphalia
-shared_focus = {
-	id = DPR_quoting_the_peace_of_westphalia
-	icon = GFX_DPR_quoting_the_peace_of_westphalia-495536
-	x = 14
-	y = 11
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_show_ideological_tolerance
-	}
-}
-
-#Time to Come Back to Life
-shared_focus = {
-	id = DPR_time_to_come_back_to_life
-	icon = GFX_DPR_time_to_come_back_to_life-495536
-	x = 14
-	y = 12
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_quoting_the_peace_of_westphalia
+	completion_reward = {
+		###
 	}
 }
 
@@ -1054,9 +1077,108 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_gain_international_recognition
 	}
+	completion_reward = {
+		###
+	}
 }
 
-#Everyone is Welcome Here
+#The Key is In Love, not Fear
+shared_focus = {
+	id = DPR_thekeyisinlovenotfear
+	icon = GFX_DPR_thekeyisinlovenotfear-495536
+	x = 12
+	y = 10
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_emperor_by_the_will_of_the_people
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Emperor of All Men
+shared_focus = {
+	id = DPR_emperor_of_all_man
+	icon = GFX_DPR_emperor_of_all_man-495536
+	x = 12
+	y = 11
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_thekeyisinlovenotfear
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Embrace Ukrainianness
+shared_focus = {
+	id = DPR_embrace_ukrainianness
+	icon = GFX_DPR_embrace_ukrainianness-495536
+	x = 12
+	y = 12
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_emperor_of_all_man
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Show Ideological Tolerance
+shared_focus = {
+	id = DPR_show_ideological_tolerance
+	icon = GFX_DPR_show_ideological_tolerance-495536
+	x = 14
+	y = 10
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_emperor_by_the_will_of_the_people
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Quoting the Peace of Westphalia
+shared_focus = {
+	id = DPR_quoting_the_peace_of_westphalia
+	icon = GFX_DPR_quoting_the_peace_of_westphalia-495536
+	x = 14
+	y = 11
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_show_ideological_tolerance
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Time to Come Back to Life
+shared_focus = {
+	id = DPR_time_to_come_back_to_life
+	icon = GFX_DPR_time_to_come_back_to_life-495536
+	x = 14
+	y = 12
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_quoting_the_peace_of_westphalia
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Everyone is Welcomed Here
 shared_focus = {
 	id = DPR_everyone_is_welcome_here
 	icon = GFX_DPR_everyone_is_welcome_here-495536
@@ -1069,6 +1191,9 @@ shared_focus = {
 	}
 	prerequisite = {
 		focus = DPR_time_to_come_back_to_life
+	}
+	completion_reward = {
+		###
 	}
 }
 
@@ -1086,353 +1211,360 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_everyone_is_welcome_here
 	}
+	completion_reward = {
+		###
+	}
 }
 
-#Start New Economic Cource
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################                SCARY PUPPET MONARCHY GIRKIN PATH                 ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+#Exercise Our Right
 shared_focus = {
-	id = DPR_start_new_economic_cource
-	icon = GFX_DPR_start_new_economic_cource-495536
-	x = 4
-	y = 1
+	id = DPR_exercise_our_right
+	icon = GFX_DPR_exercise_our_right-495536
+	x = 20
+	y = 9
 	cost = 3
 
+	prerequisite = {
+		focus = DPR_time_to_resolve_the_issue
+	}
+	mutually_exclusive = {
+		focus = DPR_emperor_by_the_will_of_the_people
+	}
+	completion_reward = {
+		###
+	}
 }
 
-#Declare War on the Oligarchy
+#Return Allies to the Game
 shared_focus = {
-	id = DPR_declare_war_on_the_oligarchy
-	icon = GFX_DPR_declare_war_on_the_oligarchy-495536
-	x = 2
+	id = DPR_return_allies_to_the_game
+	icon = GFX_DPR_return_allies_to_the_game-495536
+	x = 18
+	y = 10
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_exercise_our_right
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Expand Our Private Club
+shared_focus = {
+	id = DPR_expand_our_private_club
+	icon = GFX_DPR_expand_our_private_club-495536
+	x = 18
+	y = 11
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_return_allies_to_the_game
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Take Away the "Boring Work" from the Tsar
+shared_focus = {
+	id = DPR_takeawaytheboringworkfromthetsar
+	icon = GFX_DPR_takeawaytheboringworkfromthetsar-495536
+	x = 20
+	y = 10
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_exercise_our_right
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Constitutional Nuance
+shared_focus = {
+	id = DPR_constitutional_nuance
+	icon = GFX_DPR_constitutional_nuance-495536
+	x = 20
+	y = 11
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_takeawaytheboringworkfromthetsar
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Protect Ideals
+shared_focus = {
+	id = DPR_protect_ideals
+	icon = GFX_DPR_protect_ideals-495536
+	x = 22
+	y = 10
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_exercise_our_right
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#No Compromises
+shared_focus = {
+	id = DPR_no_compromises
+	icon = GFX_DPR_no_compromises-495536
+	x = 22
+	y = 11
+	cost = 2
+	
+	prerequisite = {
+		focus = DPR_protect_ideals
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#New State Cabinet
+shared_focus = {
+	id = DPR_new_state_cabinet
+	icon = GFX_DPR_new_state_cabinet-495536
+	x = 10
+	y = 1
+	cost = 2
+	prerequisite = {
+		focus = DPR_expand_our_private_club
+	}
+	prerequisite = {
+		focus = DPR_constitutional_nuance
+	}
+	prerequisite = {
+		focus = DPR_no_compromises
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Following in Denikin`s Footsteps
+shared_focus = {
+	id = DPR_followingindenikinsfootsteps
+	icon = GFX_DPR_followingindenikinsfootsteps-495536
+	x = 8
 	y = 2
 	cost = 2
 
 	prerequisite = {
-		focus = DPR_start_new_economic_cource
+		focus = DPR_new_state_cabinet
+	}
+	completion_reward = {
+		###
 	}
 }
 
-#Policy of Mass Nationalisation
+#New White Guard
 shared_focus = {
-	id = DPR_policy_of_mass_nationalisation
-	icon = GFX_DPR_policy_of_mass_nationalisation-495536
-	x = 6
+	id = DPR_new_white_guard
+	icon = GFX_DPR_new_white_guard-495536
+	x = 8
+	y = 3
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_followingindenikinsfootsteps
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Let Them Feel the Whip
+shared_focus = {
+	id = DPR_let_them_feel_the_whip
+	icon = GFX_DPR_let_them_feel_the_whip-495536
+	x = 12
 	y = 2
 	cost = 2
 
 	prerequisite = {
-		focus = DPR_start_new_economic_cource
+		focus = DPR_new_state_cabinet
+	}
+	completion_reward = {
+		###
 	}
 }
 
-#Ubiquitous State Monopolies
+#Crush the Dissatisfied
 shared_focus = {
-	id = DPR_ubiquitous_state_monopolies
-	icon = GFX_DPR_ubiquitous_state_monopolies-495536
-	x = 2
+	id = DPR_crush_the_dissatisfied
+	icon = GFX_DPR_crush_the_dissatisfied-495536
+	x = 12
 	y = 3
 	cost = 2
 
 	prerequisite = {
-		focus = DPR_declare_war_on_the_oligarchy
+		focus = DPR_let_them_feel_the_whip
+	}
+	completion_reward = {
+		###
 	}
 }
 
-#Full Exploitation of the Land
+#Emperor on the Icon, Generalissimo on the Throne
 shared_focus = {
-	id = DPR_full_exploitation_of_the_land
-	icon = GFX_DPR_full_exploitation_of_the_land-495536
-	x = 6
-	y = 3
-	cost = 2
+	id = DPR_emperorontheicongeneralissimoonthethrone
+	icon = GFX_DPR_emperorontheicongeneralissimoonthethrone-495536
+	x = 10
+	y = 4
+	cost = 3
 
 	prerequisite = {
-		focus = DPR_policy_of_mass_nationalisation
+		focus = DPR_new_white_guard
+	}
+	prerequisite = {
+		focus = DPR_crush_the_dissatisfied
+	}
+	completion_reward = {
+		###
 	}
 }
 
-#Course to Full Economy Independence
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################         ABSOLUTIST MONARCHY PATH(Splits into 2 paths later)      ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+#...And Restore Historical Justice
 shared_focus = {
-	id = DPR_course_to_full_economy_independence
-	icon = GFX_DPR_course_to_full_economy_independence-495536
-	x = 4
+	id = DPR_andrestorehistoricaljustice
+	icon = GFX_DPR_andrestorehistoricaljustice-495536
+	x = 34
+	y = 3
+	cost = 3
+
+	prerequisite = {
+		focus = DPR_returnpowertotherightfulhands
+	}
+	mutually_exclusive = {
+		focus = DPR_andbecomeamentor
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Loyalty Check
+shared_focus = {
+	id = DPR_loyalty_check
+	icon = GFX_DPR_loyalty_check-495536
+	x = 32
 	y = 4
 	cost = 2
 
 	prerequisite = {
-		focus = DPR_ubiquitous_state_monopolies
+		focus = DPR_andrestorehistoricaljustice
 	}
-	prerequisite = {
-		focus = DPR_full_exploitation_of_the_land
+	completion_reward = {
+		###
 	}
 }
 
-#Adapt to the Role of the Role
+#Secure the Dynasty Once and for All
 shared_focus = {
-	id = DPR_adapt_to_the_role_of_the_role
-	icon = GFX_DPR_adapt_to_the_role_of_the_role-495536
-	x = 4
+	id = DPR_secure_the_dynasty_once_and_for_all
+	icon = GFX_DPR_secure_the_dynasty_once_and_for_all-495536
+	x = 32
 	y = 5
 	cost = 2
 
 	prerequisite = {
-		focus = DPR_course_to_full_economy_independence
+		focus = DPR_loyalty_check
+	}
+	completion_reward = {
+		###
 	}
 }
 
-#Continue the Nationalisation Policy
+#Invite the Courtiers
 shared_focus = {
-	id = DPR_continue_the_nationalisation_policy
-	icon = GFX_DPR_continue_the_nationalisation_policy-495536
-	x = 6
-	y = 6
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_adapt_to_the_role_of_the_role
-	}
-}
-
-#Set Land Trade Quotas
-shared_focus = {
-	id = DPR_set_land_trade_quotas
-	icon = GFX_DPR_set_land_trade_quotas-495536
-	x = 6
-	y = 7
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_continue_the_nationalisation_policy
-	}
-}
-
-#Monopolise New Spheres
-shared_focus = {
-	id = DPR_monopolise_new_spheres
-	icon = GFX_DPR_monopolise_new_spheres-495536
-	x = 8
-	y = 7
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_continue_the_nationalisation_policy
-	}
-}
-
-#State is the Best Economist
-shared_focus = {
-	id = DPR_state_is_the_best_economist
-	icon = GFX_DPR_state_is_the_best_economist-495536
-	x = 7
-	y = 8
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_set_land_trade_quotas
-	}
-	prerequisite = {
-		focus = DPR_monopolise_new_spheres
-	}
-}
-
-#Liberalisation of the Economic Environment
-shared_focus = {
-	id = DPR_liberalisation_of_the_economic_environment
-	icon = GFX_DPR_liberalisation_of_the_economic_environment-495536
-	x = 2
-	y = 6
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_adapt_to_the_role_of_the_role
-	}
-	mutually_exclusive = {
-		focus = DPR_continue_the_nationalisation_policy
-	}
-}
-
-#State Privatisation Programme
-shared_focus = {
-	id = DPR_state_privatisation_programme
-	icon = GFX_DPR_state_privatisation_programme-495536
-	x = 2
-	y = 7
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_liberalisation_of_the_economic_environment
-	}
-}
-
-#Stimulate Competition in the Market
-shared_focus = {
-	id = DPR_stimulate_competition_in_the_market
-	icon = GFX_DPR_stimulate_competition_in_the_market-495536
-	x = 2
-	y = 8
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_state_privatisation_programme
-	}
-}
-
-#Encourge Foreign Investment
-shared_focus = {
-	id = DPR_encourge_foreign_investment
-	icon = GFX_DPR_encourge_foreign_investment-495536
-	x = 0
-	y = 7
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_liberalisation_of_the_economic_environment
-	}
-}
-
-#Sign Contracts with Magnates
-shared_focus = {
-	id = DPR_sign_contracts_with_magnates
-	icon = GFX_DPR_sign_contracts_with_magnates-495536
-	x = 0
-	y = 8
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_encourge_foreign_investment
-	}
-}
-
-#Enshirining Western-style Economics
-shared_focus = {
-	id = DPR_enshirining_westernstyle_economics
-	icon = GFX_DPR_enshirining_westernstyle_economics-495536
-	x = 1
-	y = 9
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_sign_contracts_with_magnates
-	}
-	prerequisite = {
-		focus = DPR_stimulate_competition_in_the_market
-	}
-}
-
-#Fleet of the Two Seas
-shared_focus = {
-	id = DPR_fleet_of_the_two_seas
-	icon = GFX_DPR_fleet_of_the_two_seas-495536
-	x = 45
-	y = 1
-	cost = 3
-
-}
-
-#Open New Shipyards
-shared_focus = {
-	id = DPR_open_new_shipyards
-	icon = GFX_DPR_open_new_shipyards-495536
-	x = 45
-	y = 2
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_fleet_of_the_two_seas
-	}
-}
-
-#New Black Sea Pearl
-shared_focus = {
-	id = DPR_new_black_sea_pearl
-	icon = GFX_DPR_new_black_sea_pearl-495536
-	x = 47
-	y = 3
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_open_new_shipyards
-	}
-}
-
-#Cruiser Programme
-shared_focus = {
-	id = DPR_cruiser_programme
-	icon = GFX_DPR_cruiser_programme-495536
-	x = 45
-	y = 3
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_open_new_shipyards
-	}
-}
-
-#Occupy the Sea Depths
-shared_focus = {
-	id = DPR_occupy_the_sea_depths
-	icon = GFX_DPR_occupy_the_sea_depths-495536
-	x = 43
-	y = 3
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_open_new_shipyards
-	}
-	mutually_exclusive = {
-		focus = DPR_cruiser_programme
-	}
-}
-
-#All-Powerfull Navy
-shared_focus = {
-	id = DPR_allpowerfull_navy
-	icon = GFX_DPR_allpowerfull_navy-495536
-	x = 45
+	id = DPR_invite_the_courtiers
+	icon = GFX_DPR_invite_the_courtiers-495536
+	x = 34
 	y = 4
 	cost = 2
 
 	prerequisite = {
-		focus = DPR_new_black_sea_pearl
+		focus = DPR_andrestorehistoricaljustice
 	}
-	prerequisite = {
-		focus = DPR_cruiser_programme
-		focus = DPR_occupy_the_sea_depths
+	completion_reward = {
+		###
 	}
 }
 
-#And What About The Millitary?
+#Consolidate Power in Worthy Hands
 shared_focus = {
-	id = DPR_andwhataboutthemillitary
-	icon = GFX_DPR_andwhataboutthemillitary-495536
-	x = 25
-	y = 1
-	cost = 3
-
-}
-
-#Reform Recruitment Policy
-shared_focus = {
-	id = DPR_reform_recruitment_policy
-	icon = GFX_DPR_reform_recruitment_policy-495536
-	x = 23
-	y = 2
+	id = DPR_consolidate_power_in_worthy_hands
+	icon = GFX_DPR_consolidate_power_in_worthy_hands-495536
+	x = 34
+	y = 5
 	cost = 2
 
 	prerequisite = {
-		focus = DPR_andwhataboutthemillitary
+		focus = DPR_invite_the_courtiers
+	}
+	completion_reward = {
+		###
 	}
 }
 
-#Time for Apitude Tests
+#Deprive Girkin`s Arrogance
 shared_focus = {
-	id = DPR_time_for_apitude_tests
-	icon = GFX_DPR_time_for_apitude_tests-495536
-	x = 25
-	y = 2
+	id = DPR_deprivegirkinsarrogance
+	icon = GFX_DPR_deprivegirkinsarrogance-495536
+	x = 36
+	y = 4
 	cost = 2
 
 	prerequisite = {
-		focus = DPR_andwhataboutthemillitary
+		focus = DPR_andrestorehistoricaljustice
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#End the White Guard
+shared_focus = {
+	id = DPR_end_the_white_guard
+	icon = GFX_DPR_end_the_white_guard-495536
+	x = 36
+	y = 5
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_deprivegirkinsarrogance
+	}
+	completion_reward = {
+		###
 	}
 }
 
@@ -1453,6 +1585,896 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_end_the_white_guard
 	}
+	completion_reward = {
+		###
+	}
+}
+
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################              DOMINATIVE MAMA MARIA MONARCHY PATH                 ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+#United in Blood and Purpose
+shared_focus = {
+	id = DPR_united_in_blood_and_purpose
+	icon = GFX_DPR_united_in_blood_and_purpose-495536
+	x = 29
+	y = 8
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_about_the_motherson_relationship
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Protect Cossack Privileges
+shared_focus = {
+	id = DPR_protect_cossack_privileges
+	icon = GFX_DPR_protect_cossack_privileges-495536
+	x = 27
+	y = 10
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_fair_distribution_of_power
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Fair Distribution of Power
+shared_focus = {
+	id = DPR_fair_distribution_of_power
+	icon = GFX_DPR_fair_distribution_of_power-495536
+	x = 29
+	y = 9
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_united_in_blood_and_purpose
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Form the Imperial Cabinet
+shared_focus = {
+	id = DPR_form_the_imperial_cabinet
+	icon = GFX_DPR_form_the_imperial_cabinet-495536
+	x = 31
+	y = 10
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_fair_distribution_of_power
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Peace and Harmony in the Empire
+shared_focus = {
+	id = DPR_peace_and_harmony_in_the_empire
+	icon = GFX_DPR_peace_and_harmony_in_the_empire-495536
+	x = 29
+	y = 11
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_form_the_imperial_cabinet
+	}
+	prerequisite = {
+		focus = DPR_protect_cossack_privileges
+	}
+	completion_reward = {
+		###
+	}
+}
+
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################             CRAZY SON GEORGIY(GOSHA) MONARCHY PATH               ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+#Sorry, Ma
+shared_focus = {
+	id = DPR_sorryma
+	icon = GFX_DPR_sorryma-495536
+	x = 39
+	y = 8
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_about_the_motherson_relationship
+	}
+	mutually_exclusive = {
+		focus = DPR_united_in_blood_and_purpose
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Standing up to the Consequences
+shared_focus = {
+	id = DPR_standing_up_to_the_consequences
+	icon = GFX_DPR_standing_up_to_the_consequences-495536
+	x = 37
+	y = 9
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_sorryma
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Witch Hunt
+shared_focus = {
+	id = DPR_witch_hunt
+	icon = GFX_DPR_witch_hunt-495536
+	x = 37
+	y = 10
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_standing_up_to_the_consequences
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Time to Wash Hands
+shared_focus = {
+	id = DPR_time_to_wash_hands
+	icon = GFX_DPR_time_to_wash_hands-495536
+	x = 37
+	y = 11
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_witch_hunt
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Enshrining Absolutism
+shared_focus = {
+	id = DPR_enshrining_absolutism
+	icon = GFX_DPR_enshrining_absolutism-495536
+	x = 39
+	y = 9
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_sorryma
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#No One is Above the Tsar
+shared_focus = {
+	id = DPR_no_one_is_above_the_tsar
+	icon = GFX_DPR_no_one_is_above_the_tsar-495536
+	x = 39
+	y = 10
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_enshrining_absolutism
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#L`etat Cest Moi
+shared_focus = {
+	id = DPR_letatcestmoi
+	icon = GFX_DPR_letatcestmoi-495536
+	x = 39
+	y = 11
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_no_one_is_above_the_tsar
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Destroy the Remnants of the Past
+shared_focus = {
+	id = DPR_destroy_the_remnants_of_the_past
+	icon = GFX_DPR_destroy_the_remnants_of_the_past-495536
+	x = 41
+	y = 9
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_sorryma
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#End the Cossacks
+shared_focus = {
+	id = DPR_end_the_cossacks
+	icon = GFX_DPR_end_the_cossacks-495536
+	x = 41
+	y = 10
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_destroy_the_remnants_of_the_past
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Generals of the First Class
+shared_focus = {
+	id = DPR_generals_of_the_first_class
+	icon = GFX_DPR_generals_of_the_first_class-495536
+	x = 41
+	y = 11
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_end_the_cossacks
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Unlimited Power!
+shared_focus = {
+	id = DPR_unlimitedpower
+	icon = GFX_DPR_unlimitedpower-495536
+	x = 39
+	y = 12
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_time_to_wash_hands
+	}
+	prerequisite = {
+		focus = DPR_letatcestmoi
+	}
+	prerequisite = {
+		focus = DPR_generals_of_the_first_class
+	}
+	completion_reward = {
+		###
+	}
+}
+
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################             EXPANSION FOCUSES FOR ABSOLUTISTS(Mama+Son)          ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+#Re-form the Little Russian Gubernia
+shared_focus = {
+	id = DPR_reform_the_little_russian_gubernia
+	icon = GFX_DPR_reform_the_little_russian_gubernia-495536
+	x = 34
+	y = 9
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_sorryma
+		focus = DPR_united_in_blood_and_purpose
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Supress Resistance
+shared_focus = {
+	id = DPR_supress_resistance
+	icon = GFX_DPR_supress_resistance-495536
+	x = 33
+	y = 10
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_reform_the_little_russian_gubernia
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#There is no Ukraine!
+shared_focus = {
+	id = DPR_thereisnoukraine
+	icon = GFX_DPR_thereisnoukraine-495536
+	x = 33
+	y = 11
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_supress_resistance
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Strengthen Our New Bastion
+shared_focus = {
+	id = DPR_strengthen_our_new_bastion
+	icon = GFX_DPR_strengthen_our_new_bastion-495536
+	x = 35
+	y = 10
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_reform_the_little_russian_gubernia
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Appeal to the People
+shared_focus = {
+	id = DPR_appeal_to_the_people
+	icon = GFX_DPR_appeal_to_the_people-495536
+	x = 35
+	y = 11
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_strengthen_our_new_bastion
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Righterous Hike!
+shared_focus = {
+	id = DPR_righteroushike
+	icon = GFX_DPR_righteroushike-495536
+	x = 10
+	y = 1
+	cost = 2
+	prerequisite = {
+		focus = DPR_thereisnoukraine
+	}
+	prerequisite = {
+		focus = DPR_appeal_to_the_people
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Blessed Triumph
+shared_focus = {
+	id = DPR_blessed_triumph
+	icon = GFX_DPR_blessed_triumph-495536
+	x = 10
+	y = 2
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_righteroushike
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Restoration of Imperial Culture
+shared_focus = {
+	id = DPR_restoration_of_imperial_culture
+	icon = GFX_DPR_restoration_of_imperial_culture-495536
+	x = 8
+	y = 3
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_blessed_triumph
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Use All the Wealth of the Motherland
+shared_focus = {
+	id = DPR_use_all_the_wealth_of_the_motherland
+	icon = GFX_DPR_use_all_the_wealth_of_the_motherland-495536
+	x = 8
+	y = 4
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_restoration_of_imperial_culture
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Crowing, As it Belongs
+shared_focus = {
+	id = DPR_crowingasitbelongs
+	icon = GFX_DPR_crowingasitbelongs-495536
+	x = 10
+	y = 3
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_blessed_triumph
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Learn From the Past
+shared_focus = {
+	id = DPR_learn_from_the_past
+	icon = GFX_DPR_learn_from_the_past-495536
+	x = 10
+	y = 4
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_crowingasitbelongs
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Ambitiousness - Our Everything
+shared_focus = {
+	id = DPR_ambitiousness__our_everything
+	icon = GFX_DPR_ambitiousness__our_everything-495536
+	x = 12
+	y = 3
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_blessed_triumph
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Challenge the World
+shared_focus = {
+	id = DPR_challenge_the_world
+	icon = GFX_DPR_challenge_the_world-495536
+	x = 12
+	y = 4
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_ambitiousness__our_everything
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#God is With Us - World is for Us
+shared_focus = {
+	id = DPR_god_is_with_us__world_is_for_us
+	icon = GFX_DPR_god_is_with_us__world_is_for_us-495536
+	x = 10
+	y = 5
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_use_all_the_wealth_of_the_motherland
+	}
+	prerequisite = {
+		focus = DPR_learn_from_the_past
+	}
+	prerequisite = {
+		focus = DPR_challenge_the_world
+	}
+	completion_reward = {
+		###
+	}
+}
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################   THE START OF ECONOMY TREE(for Girkin right after elections )   ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+
+#Start New Economic Cource
+shared_focus = {
+	id = DPR_start_new_economic_cource
+	icon = GFX_DPR_start_new_economic_cource-495536
+	x = 4
+	y = 1
+	cost = 3
+	completion_reward = {
+		###
+	}
+}
+
+#Declare War on the Oligarchy
+shared_focus = {
+	id = DPR_declare_war_on_the_oligarchy
+	icon = GFX_DPR_declare_war_on_the_oligarchy-495536
+	x = 2
+	y = 2
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_start_new_economic_cource
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Ubiquitous State Monopolies
+shared_focus = {
+	id = DPR_ubiquitous_state_monopolies
+	icon = GFX_DPR_ubiquitous_state_monopolies-495536
+	x = 2
+	y = 3
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_declare_war_on_the_oligarchy
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Policy of Mass Nationalisation
+shared_focus = {
+	id = DPR_policy_of_mass_nationalisation
+	icon = GFX_DPR_policy_of_mass_nationalisation-495536
+	x = 6
+	y = 2
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_start_new_economic_cource
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Full Exploitation of the Land
+shared_focus = {
+	id = DPR_full_exploitation_of_the_land
+	icon = GFX_DPR_full_exploitation_of_the_land-495536
+	x = 6
+	y = 3
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_policy_of_mass_nationalisation
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Course to Full Economy Independence
+shared_focus = {
+	id = DPR_course_to_full_economy_independence
+	icon = GFX_DPR_course_to_full_economy_independence-495536
+	x = 4
+	y = 4
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_ubiquitous_state_monopolies
+	}
+	prerequisite = {
+		focus = DPR_full_exploitation_of_the_land
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Adapt to the Role of the Role
+shared_focus = {
+	id = DPR_adapt_to_the_role_of_the_role
+	icon = GFX_DPR_adapt_to_the_role_of_the_role-495536
+	x = 4
+	y = 5
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_course_to_full_economy_independence
+	}
+	completion_reward = {
+		###
+	}
+}
+
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################           ECONOMIC TREE PART FOR LIBERAL ROSTISLAV               ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+#Liberalisation of the Economic Environment
+shared_focus = {
+	id = DPR_liberalisation_of_the_economic_environment
+	icon = GFX_DPR_liberalisation_of_the_economic_environment-495536
+	x = 2
+	y = 6
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_adapt_to_the_role_of_the_role
+	}
+	mutually_exclusive = {
+		focus = DPR_continue_the_nationalisation_policy
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Encourge Foreign Investment
+shared_focus = {
+	id = DPR_encourge_foreign_investment
+	icon = GFX_DPR_encourge_foreign_investment-495536
+	x = 0
+	y = 7
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_liberalisation_of_the_economic_environment
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Sign Contracts with Magnates
+shared_focus = {
+	id = DPR_sign_contracts_with_magnates
+	icon = GFX_DPR_sign_contracts_with_magnates-495536
+	x = 0
+	y = 8
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_encourge_foreign_investment
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#State Privatisation Programme
+shared_focus = {
+	id = DPR_state_privatisation_programme
+	icon = GFX_DPR_state_privatisation_programme-495536
+	x = 2
+	y = 7
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_liberalisation_of_the_economic_environment
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Stimulate Competition in the Market
+shared_focus = {
+	id = DPR_stimulate_competition_in_the_market
+	icon = GFX_DPR_stimulate_competition_in_the_market-495536
+	x = 2
+	y = 8
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_state_privatisation_programme
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Enshirining Western-style Economics
+shared_focus = {
+	id = DPR_enshirining_westernstyle_economics
+	icon = GFX_DPR_enshirining_westernstyle_economics-495536
+	x = 1
+	y = 9
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_sign_contracts_with_magnates
+	}
+	prerequisite = {
+		focus = DPR_stimulate_competition_in_the_market
+	}
+	completion_reward = {
+		###
+	}
+}
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################     ECONOMIC TREE PART FOR LITERALLY ANYONE EXCEPT ROSTISALV     ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+#Continue the Nationalisation Policy
+shared_focus = {
+	id = DPR_continue_the_nationalisation_policy
+	icon = GFX_DPR_continue_the_nationalisation_policy-495536
+	x = 6
+	y = 6
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_adapt_to_the_role_of_the_role
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Set Land Trade Quotas
+shared_focus = {
+	id = DPR_set_land_trade_quotas
+	icon = GFX_DPR_set_land_trade_quotas-495536
+	x = 6
+	y = 7
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_continue_the_nationalisation_policy
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Monopolise New Spheres
+shared_focus = {
+	id = DPR_monopolise_new_spheres
+	icon = GFX_DPR_monopolise_new_spheres-495536
+	x = 8
+	y = 7
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_continue_the_nationalisation_policy
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#State is the Best Economist
+shared_focus = {
+	id = DPR_state_is_the_best_economist
+	icon = GFX_DPR_state_is_the_best_economist-495536
+	x = 7
+	y = 8
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_set_land_trade_quotas
+	}
+	prerequisite = {
+		focus = DPR_monopolise_new_spheres
+	}
+	completion_reward = {
+		###
+	}
+}
+
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################                      ARMYYYYYYY TREEEEEEEEEE                     ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+#And What About the Military?
+shared_focus = {
+	id = DPR_andwhataboutthemillitary
+	icon = GFX_DPR_andwhataboutthemillitary-495536
+	x = 25
+	y = 1
+	cost = 3
+	completion_reward = {
+		###
+	}
+}
+
+#Reform Recruitment Policy
+shared_focus = {
+	id = DPR_reform_recruitment_policy
+	icon = GFX_DPR_reform_recruitment_policy-495536
+	x = 23
+	y = 2
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_andwhataboutthemillitary
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Time for Apitude Tests
+shared_focus = {
+	id = DPR_time_for_apitude_tests
+	icon = GFX_DPR_time_for_apitude_tests-495536
+	x = 25
+	y = 2
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_andwhataboutthemillitary
+	}
+	completion_reward = {
+		###
+	}
 }
 
 #New Logistic Appartus
@@ -1465,6 +2487,9 @@ shared_focus = {
 
 	prerequisite = {
 		focus = DPR_andwhataboutthemillitary
+	}
+	completion_reward = {
+		###
 	}
 }
 
@@ -1485,6 +2510,9 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_new_logistic_appartus
 	}
+	completion_reward = {
+		###
+	}
 }
 
 #Launch a Full Re-equipment
@@ -1498,6 +2526,9 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_one_step_forward
 	}
+	completion_reward = {
+		###
+	}
 }
 
 #Loyality to Traditions
@@ -1510,6 +2541,25 @@ shared_focus = {
 
 	prerequisite = {
 		focus = DPR_one_step_forward
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Pulya Ne Dura, No Shtyk Tozhe Molodets
+shared_focus = {
+	id = DPR_pulyaneduranoshtyktozhemolodets
+	icon = GFX_DPR_pulyaneduranoshtyktozhemolodets-495536
+	x = 25
+	y = 5
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_loyality_to_traditions
+	}
+	completion_reward = {
+		###
 	}
 }
 
@@ -1527,6 +2577,25 @@ shared_focus = {
 	mutually_exclusive = {
 		focus = DPR_loyality_to_traditions
 	}
+	completion_reward = {
+		###
+	}
+}
+
+#Full Motorisation
+shared_focus = {
+	id = DPR_full_motorisation
+	icon = GFX_DPR_full_motorisation-495536
+	x = 27
+	y = 5
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_we_need_radical_changes
+	}
+	completion_reward = {
+		###
+	}
 }
 
 #Begin with Top-level Trainings
@@ -1542,6 +2611,9 @@ shared_focus = {
 		focus = DPR_pulyaneduranoshtyktozhemolodets
 		focus = DPR_full_motorisation
 	}
+	completion_reward = {
+		###
+	}
 }
 
 #Last Moves
@@ -1554,6 +2626,9 @@ shared_focus = {
 
 	prerequisite = {
 		focus = DPR_begin_with_toplevel_trainings
+	}
+	completion_reward = {
+		###
 	}
 }
 
@@ -1568,6 +2643,9 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_last_moves
 	}
+	completion_reward = {
+		###
+	}
 }
 
 #Lands to Military Enterprises
@@ -1581,6 +2659,9 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_last_moves
 	}
+	completion_reward = {
+		###
+	}
 }
 
 #Establish New Military Academics
@@ -1593,6 +2674,9 @@ shared_focus = {
 
 	prerequisite = {
 		focus = DPR_last_moves
+	}
+	completion_reward = {
+		###
 	}
 }
 
@@ -1613,7 +2697,18 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_establish_new_military_academics
 	}
+	completion_reward = {
+		###
+	}
 }
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################                      AIRFLEET TREEEEEEEEEE                       ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
 
 #Preparation of our Skies
 shared_focus = {
@@ -1622,7 +2717,9 @@ shared_focus = {
 	x = 48
 	y = 7
 	cost = 3
-
+	completion_reward = {
+		###
+	}
 }
 
 #Opening of New Airfields
@@ -1636,31 +2733,8 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_preparation_of_our_skies
 	}
-}
-
-#New Production Programme
-shared_focus = {
-	id = DPR_new_production_programme
-	icon = GFX_DPR_new_production_programme-495536
-	x = 50
-	y = 8
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_preparation_of_our_skies
-	}
-}
-
-#We Will become the Destroyers of the World
-shared_focus = {
-	id = DPR_we_will_become_the_destroyers_of_the_world
-	icon = GFX_DPR_we_will_become_the_destroyers_of_the_world-495536
-	x = 52
-	y = 10
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_turn_everything_into_ashes
+	completion_reward = {
+		###
 	}
 }
 
@@ -1675,18 +2749,8 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_opening_of_new_airfields
 	}
-}
-
-#Make the Skies Our Home
-shared_focus = {
-	id = DPR_make_the_skies_our_home
-	icon = GFX_DPR_make_the_skies_our_home-495536
-	x = 49
-	y = 9
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_new_production_programme
+	completion_reward = {
+		###
 	}
 }
 
@@ -1704,6 +2768,41 @@ shared_focus = {
 	mutually_exclusive = {
 		focus = DPR_rely_on_foreign_samples
 	}
+	completion_reward = {
+		###
+	}
+}
+
+#New Production Programme
+shared_focus = {
+	id = DPR_new_production_programme
+	icon = GFX_DPR_new_production_programme-495536
+	x = 50
+	y = 8
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_preparation_of_our_skies
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#Make the Skies Our Home
+shared_focus = {
+	id = DPR_make_the_skies_our_home
+	icon = GFX_DPR_make_the_skies_our_home-495536
+	x = 49
+	y = 9
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_new_production_programme
+	}
+	completion_reward = {
+		###
+	}
 }
 
 #Turn Everything into Ashes
@@ -1719,6 +2818,25 @@ shared_focus = {
 	}
 	mutually_exclusive = {
 		focus = DPR_make_the_skies_our_home
+	}
+	completion_reward = {
+		###
+	}
+}
+
+#We Will become the Destroyers of the World
+shared_focus = {
+	id = DPR_we_will_become_the_destroyers_of_the_world
+	icon = GFX_DPR_we_will_become_the_destroyers_of_the_world-495536
+	x = 52
+	y = 10
+	cost = 2
+
+	prerequisite = {
+		focus = DPR_turn_everything_into_ashes
+	}
+	completion_reward = {
+		###
 	}
 }
 
@@ -1740,657 +2858,115 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_turn_everything_into_ashes
 	}
-}
-
-#Exercise Our Right
-shared_focus = {
-	id = DPR_exercise_our_right
-	icon = GFX_DPR_exercise_our_right-495536
-	x = 20
-	y = 9
-	cost = 3
-
-	prerequisite = {
-		focus = DPR_time_to_resolve_the_issue
-	}
-	mutually_exclusive = {
-		focus = DPR_emperor_by_the_will_of_the_people
+	completion_reward = {
+		###
 	}
 }
 
-#Return Allies to the Game
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################                AND FINALLYYYYYY: SEAFLEET TREE(xd)               ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+
+#Fleet of the Two Seas
 shared_focus = {
-	id = DPR_return_allies_to_the_game
-	icon = GFX_DPR_return_allies_to_the_game-495536
-	x = 18
-	y = 10
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_exercise_our_right
-	}
-}
-
-#Expand Our Private Club
-shared_focus = {
-	id = DPR_expand_our_private_club
-	icon = GFX_DPR_expand_our_private_club-495536
-	x = 18
-	y = 11
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_return_allies_to_the_game
-	}
-}
-
-#Take Away the "Boring Work" from the Tsar
-shared_focus = {
-	id = DPR_takeawaytheboringworkfromthetsar
-	icon = GFX_DPR_takeawaytheboringworkfromthetsar-495536
-	x = 20
-	y = 10
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_exercise_our_right
-	}
-}
-
-#Constitutional Nuance
-shared_focus = {
-	id = DPR_constitutional_nuance
-	icon = GFX_DPR_constitutional_nuance-495536
-	x = 20
-	y = 11
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_takeawaytheboringworkfromthetsar
-	}
-}
-
-#Protect Ideals
-shared_focus = {
-	id = DPR_protect_ideals
-	icon = GFX_DPR_protect_ideals-495536
-	x = 22
-	y = 10
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_exercise_our_right
-	}
-}
-
-#No Compromises
-shared_focus = {
-	id = DPR_no_compromises
-	icon = GFX_DPR_no_compromises-495536
-	x = 22
-	y = 11
-	cost = 2
-	
-	prerequisite = {
-		focus = DPR_protect_ideals
-	}
-}
-
-#New State Cabinet
-shared_focus = {
-	id = DPR_new_state_cabinet
-	icon = GFX_DPR_new_state_cabinet-495536
-	x = 10
+	id = DPR_fleet_of_the_two_seas
+	icon = GFX_DPR_fleet_of_the_two_seas-495536
+	x = 45
 	y = 1
-	cost = 2
-
+	cost = 3
+	completion_reward = {
+		###
+	}
 }
 
-#Following in Denikin`s Footsteps
+#Open New Shipyards
 shared_focus = {
-	id = DPR_followingindenikinsfootsteps
-	icon = GFX_DPR_followingindenikinsfootsteps-495536
-	x = 8
+	id = DPR_open_new_shipyards
+	icon = GFX_DPR_open_new_shipyards-495536
+	x = 45
 	y = 2
 	cost = 2
 
 	prerequisite = {
-		focus = DPR_new_state_cabinet
+		focus = DPR_fleet_of_the_two_seas
+	}
+	completion_reward = {
+		###
 	}
 }
 
-#New White Guard
+#Occupy the Sea Depths
 shared_focus = {
-	id = DPR_new_white_guard
-	icon = GFX_DPR_new_white_guard-495536
-	x = 8
+	id = DPR_occupy_the_sea_depths
+	icon = GFX_DPR_occupy_the_sea_depths-495536
+	x = 43
 	y = 3
 	cost = 2
 
 	prerequisite = {
-		focus = DPR_followingindenikinsfootsteps
-	}
-}
-
-#Let Them Feel the Whip
-shared_focus = {
-	id = DPR_let_them_feel_the_whip
-	icon = GFX_DPR_let_them_feel_the_whip-495536
-	x = 12
-	y = 2
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_new_state_cabinet
-	}
-}
-
-#Crush the Dissatisfied
-shared_focus = {
-	id = DPR_crush_the_dissatisfied
-	icon = GFX_DPR_crush_the_dissatisfied-495536
-	x = 12
-	y = 3
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_let_them_feel_the_whip
-	}
-}
-
-#Emperor on the Icon, Generalissimo on the Throne
-shared_focus = {
-	id = DPR_emperorontheicongeneralissimoonthethrone
-	icon = GFX_DPR_emperorontheicongeneralissimoonthethrone-495536
-	x = 10
-	y = 4
-	cost = 3
-
-	prerequisite = {
-		focus = DPR_new_white_guard
-	}
-	prerequisite = {
-		focus = DPR_crush_the_dissatisfied
-	}
-}
-
-#...And Restore Historical Justice
-shared_focus = {
-	id = DPR_andrestorehistoricaljustice
-	icon = GFX_DPR_andrestorehistoricaljustice-495536
-	x = 34
-	y = 3
-	cost = 3
-
-	prerequisite = {
-		focus = DPR_returnpowertotherightfulhands
+		focus = DPR_open_new_shipyards
 	}
 	mutually_exclusive = {
-		focus = DPR_andbecomeamentor
+		focus = DPR_cruiser_programme
+	}
+	completion_reward = {
+		###
 	}
 }
 
-#Secure the Dynasty Once and for All
+#Cruiser Programme
 shared_focus = {
-	id = DPR_secure_the_dynasty_once_and_for_all
-	icon = GFX_DPR_secure_the_dynasty_once_and_for_all-495536
-	x = 32
-	y = 5
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_loyalty_check
-	}
-}
-
-#Loyalty Check
-shared_focus = {
-	id = DPR_loyalty_check
-	icon = GFX_DPR_loyalty_check-495536
-	x = 32
-	y = 4
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_andrestorehistoricaljustice
-	}
-}
-
-#Deprive Girkin`s Arrogance
-shared_focus = {
-	id = DPR_deprivegirkinsarrogance
-	icon = GFX_DPR_deprivegirkinsarrogance-495536
-	x = 36
-	y = 4
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_andrestorehistoricaljustice
-	}
-}
-
-#Invite the Courtiers
-shared_focus = {
-	id = DPR_invite_the_courtiers
-	icon = GFX_DPR_invite_the_courtiers-495536
-	x = 34
-	y = 4
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_andrestorehistoricaljustice
-	}
-}
-
-#Consolidate Power in Worthy Hands
-shared_focus = {
-	id = DPR_consolidate_power_in_worthy_hands
-	icon = GFX_DPR_consolidate_power_in_worthy_hands-495536
-	x = 34
-	y = 5
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_invite_the_courtiers
-	}
-}
-
-#End the White Guard
-shared_focus = {
-	id = DPR_end_the_white_guard
-	icon = GFX_DPR_end_the_white_guard-495536
-	x = 36
-	y = 5
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_deprivegirkinsarrogance
-	}
-}
-
-#Re-form the Little Russian Gubernia
-shared_focus = {
-	id = DPR_reform_the_little_russian_gubernia
-	icon = GFX_DPR_reform_the_little_russian_gubernia-495536
-	x = 34
-	y = 9
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_sorryma
-		focus = DPR_united_in_blood_and_purpose
-	}
-}
-
-#United in Blood and Purpose
-shared_focus = {
-	id = DPR_united_in_blood_and_purpose
-	icon = GFX_DPR_united_in_blood_and_purpose-495536
-	x = 29
-	y = 8
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_about_the_motherson_relationship
-	}
-}
-
-#Sorry, Ma
-shared_focus = {
-	id = DPR_sorryma
-	icon = GFX_DPR_sorryma-495536
-	x = 39
-	y = 8
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_about_the_motherson_relationship
-	}
-	mutually_exclusive = {
-		focus = DPR_united_in_blood_and_purpose
-	}
-}
-
-#Supress Resistance
-shared_focus = {
-	id = DPR_supress_resistance
-	icon = GFX_DPR_supress_resistance-495536
-	x = 33
-	y = 10
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_reform_the_little_russian_gubernia
-	}
-}
-
-#There is no Ukraine!
-shared_focus = {
-	id = DPR_thereisnoukraine
-	icon = GFX_DPR_thereisnoukraine-495536
-	x = 33
-	y = 11
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_supress_resistance
-	}
-}
-
-#Righterous Hike!
-shared_focus = {
-	id = DPR_righteroushike
-	icon = GFX_DPR_righteroushike-495536
-	x = 10
-	y = 1
-	cost = 2
-
-}
-
-#Blessed Triumph
-shared_focus = {
-	id = DPR_blessed_triumph
-	icon = GFX_DPR_blessed_triumph-495536
-	x = 10
-	y = 2
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_righteroushike
-	}
-}
-
-#Strengthen Our New Bastion
-shared_focus = {
-	id = DPR_strengthen_our_new_bastion
-	icon = GFX_DPR_strengthen_our_new_bastion-495536
-	x = 35
-	y = 10
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_reform_the_little_russian_gubernia
-	}
-}
-
-#Appeal to the People
-shared_focus = {
-	id = DPR_appeal_to_the_people
-	icon = GFX_DPR_appeal_to_the_people-495536
-	x = 35
-	y = 11
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_strengthen_our_new_bastion
-	}
-}
-
-#Ambitiousness - Our Everything
-shared_focus = {
-	id = DPR_ambitiousness__our_everything
-	icon = GFX_DPR_ambitiousness__our_everything-495536
-	x = 12
+	id = DPR_cruiser_programme
+	icon = GFX_DPR_cruiser_programme-495536
+	x = 45
 	y = 3
 	cost = 2
 
 	prerequisite = {
-		focus = DPR_blessed_triumph
+		focus = DPR_open_new_shipyards
+	}
+	completion_reward = {
+		###
 	}
 }
 
-#Restoration of Imperial Culture
+#New Black Sea Pearl
 shared_focus = {
-	id = DPR_restoration_of_imperial_culture
-	icon = GFX_DPR_restoration_of_imperial_culture-495536
-	x = 8
+	id = DPR_new_black_sea_pearl
+	icon = GFX_DPR_new_black_sea_pearl-495536
+	x = 47
 	y = 3
 	cost = 2
 
 	prerequisite = {
-		focus = DPR_blessed_triumph
+		focus = DPR_open_new_shipyards
+	}
+	completion_reward = {
+		###
 	}
 }
 
-#Use All the Wealth of the Motherland
+#All-Powerfull Navy
 shared_focus = {
-	id = DPR_use_all_the_wealth_of_the_motherland
-	icon = GFX_DPR_use_all_the_wealth_of_the_motherland-495536
-	x = 8
+	id = DPR_allpowerfull_navy
+	icon = GFX_DPR_allpowerfull_navy-495536
+	x = 45
 	y = 4
 	cost = 2
 
 	prerequisite = {
-		focus = DPR_restoration_of_imperial_culture
-	}
-}
-
-#Crowing, As it Belongs
-shared_focus = {
-	id = DPR_crowingasitbelongs
-	icon = GFX_DPR_crowingasitbelongs-495536
-	x = 10
-	y = 3
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_blessed_triumph
-	}
-}
-
-#Learn From the Past
-shared_focus = {
-	id = DPR_learn_from_the_past
-	icon = GFX_DPR_learn_from_the_past-495536
-	x = 10
-	y = 4
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_crowingasitbelongs
-	}
-}
-
-#Challenge the World
-shared_focus = {
-	id = DPR_challenge_the_world
-	icon = GFX_DPR_challenge_the_world-495536
-	x = 12
-	y = 4
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_ambitiousness__our_everything
-	}
-}
-
-#God is With Us - World is for Us
-shared_focus = {
-	id = DPR_god_is_with_us__world_is_for_us
-	icon = GFX_DPR_god_is_with_us__world_is_for_us-495536
-	x = 10
-	y = 5
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_use_all_the_wealth_of_the_motherland
+		focus = DPR_new_black_sea_pearl
 	}
 	prerequisite = {
-		focus = DPR_learn_from_the_past
+		focus = DPR_cruiser_programme
+		focus = DPR_occupy_the_sea_depths
 	}
-	prerequisite = {
-		focus = DPR_challenge_the_world
-	}
-}
-
-#Fair Distribution of Power
-shared_focus = {
-	id = DPR_fair_distribution_of_power
-	icon = GFX_DPR_fair_distribution_of_power-495536
-	x = 29
-	y = 9
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_united_in_blood_and_purpose
-	}
-}
-
-#Form the Imperial Cabinet
-shared_focus = {
-	id = DPR_form_the_imperial_cabinet
-	icon = GFX_DPR_form_the_imperial_cabinet-495536
-	x = 31
-	y = 10
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_fair_distribution_of_power
-	}
-}
-
-#Protect Cossack Privileges
-shared_focus = {
-	id = DPR_protect_cossack_privileges
-	icon = GFX_DPR_protect_cossack_privileges-495536
-	x = 27
-	y = 10
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_fair_distribution_of_power
-	}
-}
-
-#Peace and Harmony in the Empire
-shared_focus = {
-	id = DPR_peace_and_harmony_in_the_empire
-	icon = GFX_DPR_peace_and_harmony_in_the_empire-495536
-	x = 29
-	y = 11
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_form_the_imperial_cabinet
-	}
-	prerequisite = {
-		focus = DPR_protect_cossack_privileges
-	}
-}
-
-#Standing up to the Consequences
-shared_focus = {
-	id = DPR_standing_up_to_the_consequences
-	icon = GFX_DPR_standing_up_to_the_consequences-495536
-	x = 37
-	y = 9
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_sorryma
-	}
-}
-
-#Witch Hunt
-shared_focus = {
-	id = DPR_witch_hunt
-	icon = GFX_DPR_witch_hunt-495536
-	x = 37
-	y = 10
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_standing_up_to_the_consequences
-	}
-}
-
-#Time to Wash Hands
-shared_focus = {
-	id = DPR_time_to_wash_hands
-	icon = GFX_DPR_time_to_wash_hands-495536
-	x = 37
-	y = 11
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_witch_hunt
-	}
-}
-
-#Enshrining Absolutism
-shared_focus = {
-	id = DPR_enshrining_absolutism
-	icon = GFX_DPR_enshrining_absolutism-495536
-	x = 39
-	y = 9
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_sorryma
-	}
-}
-
-#No One is Above the Tsar
-shared_focus = {
-	id = DPR_no_one_is_above_the_tsar
-	icon = GFX_DPR_no_one_is_above_the_tsar-495536
-	x = 39
-	y = 10
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_enshrining_absolutism
-	}
-}
-
-#L`etat Cest Moi
-shared_focus = {
-	id = DPR_letatcestmoi
-	icon = GFX_DPR_letatcestmoi-495536
-	x = 39
-	y = 11
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_no_one_is_above_the_tsar
-	}
-}
-
-#Destroy the Remnants of the Past
-shared_focus = {
-	id = DPR_destroy_the_remnants_of_the_past
-	icon = GFX_DPR_destroy_the_remnants_of_the_past-495536
-	x = 41
-	y = 9
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_sorryma
-	}
-}
-
-#End the Cossacks
-shared_focus = {
-	id = DPR_end_the_cossacks
-	icon = GFX_DPR_end_the_cossacks-495536
-	x = 41
-	y = 10
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_destroy_the_remnants_of_the_past
-	}
-}
-
-#Generals of the First Class
-shared_focus = {
-	id = DPR_generals_of_the_first_class
-	icon = GFX_DPR_generals_of_the_first_class-495536
-	x = 41
-	y = 11
-	cost = 2
-
-	prerequisite = {
-		focus = DPR_end_the_cossacks
+	completion_reward = {
+		###
 	}
 }
