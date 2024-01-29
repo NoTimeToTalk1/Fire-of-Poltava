@@ -1,0 +1,254 @@
+### Military Laws
+ideas = {
+	fop_conscription = {
+		law = yes
+		fop_conscription_disarmed_nation = {
+			default = yes
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				conscription = 0.01
+			}
+			cancel_if_invalid = no
+		}
+		fop_conscription_volunteer_only = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				conscription = 0.015
+			}
+			cancel_if_invalid = no
+		}
+		fop_conscription_limited = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				conscription = 0.025
+			}
+			cancel_if_invalid = no
+		}
+		fop_conscription_extensive = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				conscription = 0.05
+				training_time_factor = 0.1
+			}
+			cancel_if_invalid = no
+		}
+		fop_conscription_service_by_requirement = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				conscription = 0.1
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
+				production_speed_buildings_factor = -0.1
+				training_time_factor = 0.2
+			}
+			cancel_if_invalid = no
+		}
+		fop_conscription_all_adults_serve = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				conscription = 0.2
+				industrial_capacity_factory = -0.3
+				industrial_capacity_dockyard = -0.3
+				production_speed_buildings_factor = -0.3
+				training_time_factor = 0.3
+			}
+			cancel_if_invalid = no
+		}
+		fop_conscription_scraping_the_barrel = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				conscription = 0.25
+				industrial_capacity_factory = -0.4
+				industrial_capacity_dockyard = -0.4
+				production_speed_buildings_factor = -0.4
+				training_time_factor = 0.5
+			}
+			cancel_if_invalid = no
+		}
+	}
+	fop_women = {
+		law = yes
+		fop_women_banned = {
+			default = yes
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				political_power_factor = -0.01
+				production_factory_max_efficiency_factor = 0.075
+				industrial_capacity_factory = 0.075
+			}
+			cancel_if_invalid = no
+		}
+		fop_women_noncombat_only = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				supply_consumption_factor = -0.15
+				political_power_factor = -0.10
+			}
+			cancel_if_invalid = no
+		}
+		fop_women_military_assistance = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				conscription = 0.02
+				political_power_factor = -0.15
+			}
+			cancel_if_invalid = no
+		}
+		fop_women_on_the_frontline = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				conscription = 0.06
+				political_power_factor = -0.20
+				training_time_factor = 0.15
+			}
+			cancel_if_invalid = no
+		}
+	}
+	fop_training = {
+		law = yes
+		fop_training_no = {
+			default = yes
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				army_morale_factor = -0.15
+				army_org_factor = -0.15
+			}
+			cancel_if_invalid = no
+		}
+		fop_training_minimal = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				army_morale_factor = -0.05
+				training_time_factor = -0.1
+			}
+			cancel_if_invalid = no
+		}
+		fop_training_basic = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				army_morale_factor = 0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_training_advanced = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				army_morale_factor = 0.10
+				training_time_factor = 0.15
+			}
+			cancel_if_invalid = no
+		}
+	}
+	fop_supervision = {
+		law = yes
+		fop_supervision_encouraged_brutality = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				army_attack_factor = 0.1
+				war_support_factor = -0.1
+				experience_gain_factor = -0.1
+				resistance_growth = 0.1
+			}
+			cancel_if_invalid = no
+		}
+		fop_supervision_no = {
+			default = yes
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				army_attack_factor = 0.05
+				war_support_factor = -0.05
+				experience_gain_factor = -0.05
+				resistance_growth = 0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_supervision_strict_rules = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				war_support_factor = 0.025
+				experience_gain_factor = 0.025
+			}
+			cancel_if_invalid = no
+		}
+		fop_supervision_observer_groups = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				army_attack_factor = -0.05
+				war_support_factor = 0.05
+				experience_gain_factor = 0.05
+				resistance_growth = -0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_supervision_total = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				army_attack_factor = -0.1
+				war_support_factor = 0.1
+				experience_gain_factor = 0.1
+				resistance_growth = -0.1
+			}
+			cancel_if_invalid = no
+		}
+	}
+}

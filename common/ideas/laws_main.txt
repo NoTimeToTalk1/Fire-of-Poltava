@@ -1,0 +1,300 @@
+### Main Laws
+ideas = {
+	fop_economic_system = {
+		law = yes
+		fop_economic_system_corporatism = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = -0.1
+				political_power_factor = -0.15
+				local_resources_factor = 0.15
+				consumer_goods_factor = -0.1
+				research_speed_factor = 0.10
+				industrial_capacity_factory = -0.10
+				production_speed_infrastructure_factor = 0.25
+				production_speed_industrial_complex_factor = -0.15
+				production_speed_arms_factory_factor = -0.15
+				production_speed_air_base_factor = 0.25
+				production_speed_supply_node_factor = 0.25
+				production_speed_naval_base_factor = 0.25
+				production_speed_anti_air_building_factor = 0.25
+				production_speed_radar_station_factor = 0.25
+				min_export = 0.2
+			}
+			cancel_if_invalid = no
+		}
+		fop_economic_system_capitalism = {
+			default = yes
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = -0.075
+				political_power_factor = -0.1
+				local_resources_factor = 0.1
+				consumer_goods_factor = -0.075
+				research_speed_factor = 0.075
+				industrial_capacity_factory = -0.075
+				production_speed_infrastructure_factor = 0.2
+				production_speed_industrial_complex_factor = -0.1
+				production_speed_arms_factory_factor = -0.1
+				production_speed_air_base_factor = 0.2
+				production_speed_supply_node_factor = 0.2
+				production_speed_naval_base_factor = 0.2
+				production_speed_anti_air_building_factor = 0.2
+				production_speed_radar_station_factor = 0.2
+				min_export = 0.15
+			}
+			cancel_if_invalid = no
+		}
+		fop_economic_system_mixed = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				political_power_factor = 0.05
+				local_resources_factor = -0.05
+				consumer_goods_factor = 0.05
+				research_speed_factor = -0.05
+				industrial_capacity_factory = 0.05
+				production_speed_infrastructure_factor = -0.05
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_arms_factory_factor = 0.15
+				production_speed_air_base_factor = -0.05
+				production_speed_supply_node_factor = -0.05
+				production_speed_naval_base_factor = -0.05
+				production_speed_anti_air_building_factor = -0.05
+				production_speed_radar_station_factor = -0.05
+				min_export = -0.1
+			}
+			cancel_if_invalid = no
+		}
+		fop_economic_system_state_socialism = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = 0.10
+				political_power_factor = 0.15
+				local_resources_factor = -0.15
+				consumer_goods_factor = 0.10
+				research_speed_factor = -0.10
+				industrial_capacity_factory = 0.15
+				production_speed_infrastructure_factor = -0.15
+				production_speed_industrial_complex_factor = 0.25
+				production_speed_arms_factory_factor = 0.25
+				production_speed_air_base_factor = -0.15
+				production_speed_supply_node_factor = -0.15
+				production_speed_naval_base_factor = -0.15
+				production_speed_anti_air_building_factor = -0.15
+				production_speed_radar_station_factor = -0.15
+				min_export = -0.20
+			}
+			cancel_if_invalid = no
+		}
+		fop_economic_system_people_socialism = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				political_power_factor = -0.05
+				local_resources_factor = 0.05
+				consumer_goods_factor = -0.05
+				research_speed_factor = 0.05
+				industrial_capacity_factory = -0.05
+				production_speed_infrastructure_factor = 0.15
+				production_speed_industrial_complex_factor = -0.05
+				production_speed_arms_factory_factor = -0.05
+				production_speed_air_base_factor = 0.15
+				production_speed_supply_node_factor = 0.15
+				production_speed_naval_base_factor = 0.15
+				production_speed_anti_air_building_factor = 0.15
+				production_speed_radar_station_factor = 0.15
+				min_export = 0.1
+			}
+			cancel_if_invalid = no
+		}
+	}
+	fop_centralization = {
+		law = yes
+		fop_centralization_unitarism = {
+			default = yes
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = 0.1
+			}
+			cancel_if_invalid = no
+		}
+		fop_centralization_autonomism = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = 0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_centralization_federalism = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = -0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_centralization_confederalism = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = -0.1
+			}
+			cancel_if_invalid = no
+		}
+		fop_centralization_regionalism = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = -0.25
+			}
+			cancel_if_invalid = no
+		}
+	}
+	fop_oligarchs_power = {
+		law = yes
+		fop_oligarchs_power_direct_control = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				#add more modifiers
+				political_power_gain = 2
+			}
+			cancel_if_invalid = no
+		}
+		fop_oligarchs_power_grey_eminences = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				#add more modifiers
+				political_power_gain = -1
+			}
+			cancel_if_invalid = no
+		}
+		fop_oligarchs_power_high = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				#add more modifiers
+				political_power_gain = -0.5
+			}
+			cancel_if_invalid = no
+		}
+		fop_oligarchs_power_moderate = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				#add more modifiers
+				political_power_gain = -0.1
+			}
+			cancel_if_invalid = no
+		}
+		fop_oligarchs_power_low = {
+			default = yes
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				#add more modifiers
+				political_power_gain = 0.5
+			}
+			cancel_if_invalid = no
+		}
+		fop_oligarchs_power_tamed_oligarchs = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				#add more modifiers
+				political_power_gain = 1
+			}
+			cancel_if_invalid = no
+		}
+	}
+	fop_oligarchs_relations = {
+		law = yes
+		fop_oligarchs_relations_cooperation = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				#add more buffs
+				oligarchism_drift = 0.075
+				oligarchism_acceptance = 50
+			}
+			cancel_if_invalid = no
+		}
+		fop_oligarchs_relations_neutrality = {
+			default = yes
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				#add more buffs
+				oligarchism_drift = 0.025
+			}
+			cancel_if_invalid = no
+		}
+		fop_oligarchs_relations_hostility = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				#add more de-buffs
+				oligarchism_drift = -0.01
+				oligarchism_acceptance = -50
+			}
+			cancel_if_invalid = no
+		}
+		fop_oligarchs_relations_anti_oligarchic_policy = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				#add more de-buffs
+				oligarchism_drift = -0.1
+				oligarchism_acceptance = -100
+			}
+			cancel_if_invalid = no
+		}
+	}
+}

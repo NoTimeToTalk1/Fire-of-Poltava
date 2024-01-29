@@ -3,66 +3,144 @@ idea_categories = {
 	# first one overrides the others
 	# multiple ledgers can be defined, in that case will show on all
 	# possible values : army, air, navy, military (shows on all military ledgers), civilian, all (shows up everywhere), hidden (does not show up)
-	
-	
+
 	hidden_ideas = {
 		hidden = yes
-	
-		cost = 0
+
+		cost = 9999
 		removal_cost = -1
-		
+
 		ledger = hidden
 	}
 
 	country = {
 		type = national_spirit
-		
-		cost = 0
-		removal_cost = -1
-		
-		ledger = hidden
-	}
-	
-	government = {
-		slot = mobilization_laws
-		slot = trade_laws
-		slot = economy
-		character_slot = political_advisor
-		character_slot = political_advisor
-		character_slot = political_advisor
-		
-		ledger = civilian
-		
-		cost = 150
-		removal_cost = 0
-	}
-	
-	research_production = {
-		slot = tank_manufacturer
-		slot = naval_manufacturer
-		slot = aircraft_manufacturer
-		slot = materiel_manufacturer
-		slot = industrial_concern
-		character_slot = theorist
 
-		ledger = civilian
-		
-		cost = 150
-		removal_cost = 0
+		cost = 9999
+		removal_cost = -1
+
+		ledger = hidden
 	}
 	
 	military_staff = {
 		character_slot = army_chief 
 		character_slot = navy_chief 
 		character_slot = air_chief
-		character_slot = high_command
-		character_slot = high_command
-		character_slot = high_command
-		
+		character_slot = staff_chief
+		character_slot = commander_chief
+		character_slot = defence_minister
+
 		ledger = invalid # must be overridden
-		
+
 		cost = 150
 		removal_cost = 0
+	}
+
+	research_production = {
+		character_slot = theorist
+		slot = weapons_manufacturer
+		slot = tank_manufacturer
+		slot = naval_manufacturer
+		slot = aircraft_manufacturer
+		slot = industrial_concern
+
+		ledger = civilian
+
+		cost = 150
+		removal_cost = 0
+	}
+
+	government = {
+		character_slot = head_of_government
+		character_slot = foreign_minister
+		character_slot = interior_minister
+		character_slot = economy_minister
+		character_slot = industry_minister
+		character_slot = culture_minister
+
+		ledger = civilian
+
+		cost = 9999
+		removal_cost = -1
+	}
+
+	main_laws = {
+		slot = fop_economic_system
+		slot = fop_centralization
+		slot = fop_oligarchs_power
+		slot = fop_oligarchs_relations
+
+		cost = 9999
+		removal_cost = -1
+	}
+
+	military_laws = {
+		slot = fop_conscription
+		slot = fop_women
+		slot = fop_training
+		slot = fop_supervision
+
+		cost = 9999
+		removal_cost = -1
+	}
+
+	economic_laws = {
+		slot = fop_economic_mobilization
+		slot = fop_commercial_policy
+		slot = fop_taxes
+		slot = fop_forced_labour
+
+		cost = 9999
+		removal_cost = -1
+	}
+
+	political_laws = {
+		slot = fop_party_system
+		slot = fop_religious_rights
+		slot = fop_suffrage
+		slot = fop_press_freedom
+		slot = fop_security
+
+		cost = 9999
+		removal_cost = -1
+	}
+
+	social_laws = {
+		slot = fop_healthcare_system
+		slot = fop_pensions
+		slot = fop_unemployment_subsidies
+		slot = fop_minimum_wage
+		slot = fop_working_hours
+
+		cost = 9999
+		removal_cost = -1
+	}
+
+	community_laws = {
+		slot = fop_pollution
+		slot = fop_immigration
+		slot = fop_gender_rights
+		slot = fop_sexual_minorities
+		slot = fop_ethnic_minorities
+		slot = fop_racial_integration
+
+		cost = 9999
+		removal_cost = -1
+	}
+
+	societal_development = {
+		slot = fop_science
+		slot = fop_schooling
+		slot = fop_healthcare
+		slot = fop_poverty
+		slot = fop_unemployment
+		slot = fop_corruption
+		slot = fop_industry
+		slot = fop_agriculture
+		slot = fop_administrative_efficiency
+		slot = fop_military_professionalism
+
+		removal_cost = -1
 	}
 
 	academy_spirit = {
@@ -70,9 +148,9 @@ idea_categories = {
 
 		cost = 20
 		removal_cost = -1
-		
+
 		politics_tab = no
-		
+
 		ledger = hidden
 
 		slot = academy_spirit
@@ -83,21 +161,21 @@ idea_categories = {
 
 		cost = 35
 		removal_cost = -1
-		
+
 		politics_tab = no
-		
+
 		ledger = hidden
 		slot = army_spirit
 	}
 
 	division_command_spirit = {
 		type = army_spirit
-		
+
 		cost = 50
 		removal_cost = -1
-		
+
 		politics_tab = no
-		
+
 		ledger = hidden
 		slot = division_command_spirit
 	}
@@ -107,9 +185,9 @@ idea_categories = {
 
 		cost = 20
 		removal_cost = -1
-		
+
 		politics_tab = no
-		
+
 		ledger = hidden
 		slot = naval_academy_spirit
 	}
@@ -119,21 +197,21 @@ idea_categories = {
 
 		cost = 35
 		removal_cost = -1
-		
+
 		politics_tab = no
-		
+
 		ledger = hidden
 		slot = navy_spirit
 	}
 
 	naval_command_spirit = {
 		type = navy_spirit
-		
+
 		cost = 50
 		removal_cost = -1
-		
+
 		politics_tab = no
-		
+
 		ledger = hidden
 		slot = naval_command_spirit
 	}
@@ -143,9 +221,9 @@ idea_categories = {
 
 		cost = 50
 		removal_cost = -1
-		
+
 		politics_tab = no
-		
+
 		ledger = hidden
 		slot = air_force_academy_spirit
 	}
@@ -155,39 +233,37 @@ idea_categories = {
 
 		cost = 50
 		removal_cost = -1
-		
+
 		politics_tab = no
-		
+
 		ledger = hidden
 		slot = air_force_spirit
 	}
 
 	air_force_command_spirit = {
 		type = air_spirit
-		
+
 		politics_tab = no
-		
+
 		cost = 50
 		removal_cost = -1
-		
+
 		ledger = hidden
 		slot = air_force_command_spirit
 	}
 }
 
-
 slot_ledgers = {
 	army_chief = army
 	navy_chief = navy
 	air_chief = air
-	
+
 	tank_manufacturer = army
 	naval_manufacturer = navy
 	aircraft_manufacturer = air
-	
+
 	theorist = invalid # must be overridden
 	high_command = invalid # must be overridden
-	
-	
+
 	mobilization_laws = civilian
 }

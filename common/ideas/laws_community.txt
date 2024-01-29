@@ -1,0 +1,303 @@
+### Community Laws
+ideas = {
+	fop_pollution = {
+		law = yes
+		fop_pollution_no_controls = {
+			default = yes
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = -0.10
+				political_power_factor = 0.15
+			}
+			cancel_if_invalid = no
+		}
+		fop_pollution_some_regulations = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = -0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_pollution_good_regulations = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = 0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_pollution_strict_regulations = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = 0.15
+				political_power_factor = -0.15
+			}
+			cancel_if_invalid = no
+		}
+	}
+	fop_immigration = {
+		law = yes
+		fop_immigration_closed_borders = {
+			default = yes
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = 0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_immigration_quota = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				monthly_population = 0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_immigration_open_borders = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = -0.05
+				monthly_population = 0.1
+			}
+			cancel_if_invalid = no
+		}
+		fop_immigration_encouraged = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = -0.1
+				monthly_population = 0.25
+			}
+			cancel_if_invalid = no
+		}
+	}
+	fop_gender_rights = {
+		law = yes
+		fop_gender_rights_restricted = {
+			default = yes
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = -0.10
+				political_power_factor = 0.15
+			}
+			cancel_if_invalid = no
+		}
+		fop_gender_rights_traditional = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = -0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_gender_rights_legal_equality = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = 0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_gender_rights_promoted_equality = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = 0.15
+				political_power_factor = -0.15
+			}
+			cancel_if_invalid = no
+		}
+		fop_gender_rights_forced_equality = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = 0.2
+				political_power_factor = -0.2
+			}
+			cancel_if_invalid = no
+		}
+	}
+	fop_sexual_minorities = {
+		law = yes
+		fop_sexual_minorities_criminalized = {
+			default = yes
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = -0.10
+				political_power_factor = 0.15
+			}
+			cancel_if_invalid = no
+		}
+		fop_sexual_minorities_compulsory_sterilization = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = -0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_sexual_minorities_recognized = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = 0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_sexual_minorities_equal_rights = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = 0.15
+				political_power_factor = -0.15
+			}
+			cancel_if_invalid = no
+		}
+	}
+	fop_ethnic_minorities = {
+		law = yes
+		fop_ethnic_minorities_opression = {
+			default = yes
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				resistance_damage_to_garrison = -0.5
+				political_power_factor = 0.25
+				stability_factor = -0.15
+				conscription_factor = -0.30
+			}
+			cancel_if_invalid = no
+		}
+		fop_ethnic_minorities_forced_assimilation = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				resistance_damage_to_garrison = -0.15
+				political_power_factor = 0.05
+				stability_factor = -0.05
+				conscription_factor = -0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_ethnic_minorities_cultural_acommodation = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				resistance_damage_to_garrison = -0.25
+				stability_factor = -0.05
+				conscription_factor = -0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_ethnic_minorities_cultural_autonomy = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = -0.15
+			    resistance_damage_to_garrison = 0.25
+				conscription_factor = 0.2
+			}
+			cancel_if_invalid = no
+		}
+	}
+	fop_racial_integration = {
+		law = yes
+		fop_racial_integration_segregation = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = -0.10
+				political_power_factor = 0.15
+			}
+			cancel_if_invalid = no
+		}
+		fop_racial_integration_discrimination = {
+			default = yes
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = -0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_racial_integration_equal_rights = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = 0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_racial_integration_affirmative_action = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = 0.15
+				political_power_factor = -0.15
+			}
+			cancel_if_invalid = no
+		}
+	}
+}

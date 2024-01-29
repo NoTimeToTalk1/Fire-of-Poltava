@@ -1,0 +1,252 @@
+### Political Laws
+ideas = {
+	fop_party_system = {
+		law = yes
+		fop_party_system_nonpartisan = {
+			default = yes
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				political_power_gain = 0.2
+				stability_factor = -0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_party_system_single_party = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				political_power_gain = 0.15
+				drift_defence_factor = 0.5
+			}
+			cancel_if_invalid = no
+		}
+		fop_party_system_controlled_opposition = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				political_power_gain = 0.05
+				drift_defence_factor = 0.25
+				stability_factor = 0.025
+			}
+			cancel_if_invalid = no
+		}
+		fop_party_system_multiparty = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = 0.075
+			}
+			cancel_if_invalid = no
+		}
+	}
+	fop_religious_rights = {
+		law = yes
+		fop_religious_rights_moralism = {
+			default = yes
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				political_power_gain = -0.15
+				stability_factor = 0.1
+				war_support_factor = 0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_religious_rights_pluralism = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				political_power_gain = -0.05
+				stability_factor = 0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_religious_rights_secularism = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = 0.025
+			}
+			cancel_if_invalid = no
+		}
+		fop_religious_rights_atheism = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				political_power_gain = 1
+				drift_defence_factor = 0.25
+				stability_factor = -0.05
+				war_support_factor = -0.05
+			}
+			cancel_if_invalid = no
+		}
+	}
+	fop_suffrage = {
+		law = yes
+		fop_suffrage_no = {
+			default = yes
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				political_power_factor = 0.15
+				stability_factor = -0.075
+			}
+			cancel_if_invalid = no
+		}
+		fop_suffrage_elite = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = -0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_suffrage_universal = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = 0.05
+			}
+			cancel_if_invalid = no
+		}
+	}
+	fop_press_freedom = {
+		law = yes
+		fop_press_freedom_state = {
+			default = yes
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				political_power_factor = -0.15
+				war_support_factor = 0.1
+				stability_factor = 0.1
+				drift_defence_factor = 0.5
+			}
+			cancel_if_invalid = no
+		}
+		fop_press_freedom_censored = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				political_power_factor = -0.05
+				war_support_factor = 0.05
+				stability_factor = -0.05
+				drift_defence_factor = 0.3
+			}
+			cancel_if_invalid = no
+		}
+		fop_press_freedom_free = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				war_support_factor = -0.05
+				stability_factor = 0.05
+				political_power_factor = 0.15
+				drift_defence_factor = -0.5
+			}
+			cancel_if_invalid = no
+		}
+	}
+	fop_security = {
+		law = yes
+		fop_security_no = {
+			default = yes
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				political_power_gain = -0.5
+				stability_factor = -0.3
+				civilian_intel_to_others = 1
+				encryption_factor = -0.5
+				decryption_factor = -0.5
+			}
+			cancel_if_invalid = no
+		}
+		fop_security_paramilitary = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				stability_factor = -0.1
+				civilian_intel_to_others = 0.5
+				encryption_factor = -0.25
+				decryption_factor = -0.25
+			}
+			cancel_if_invalid = no
+		}
+		fop_security_regulated_police = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				political_power_gain = 0.05
+				stability_factor = 0.05
+			}
+			cancel_if_invalid = no
+		}
+		fop_security_opressive_police = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				political_power_gain = 0.1
+				stability_factor = 0.1
+				monthly_population = -0.025
+				civilian_intel_to_others = -0.05
+				encryption_factor = 0.1
+				decryption_factor = 0.1
+			}
+			cancel_if_invalid = no
+		}
+		fop_security_totalitarian_police = {
+			available = { always = no }
+
+			removal_cost = -1
+			ledger = civilian
+			modifier = {
+				political_power_gain = 0.2
+				stability_factor = 0.2
+				monthly_population = -0.05
+				civilian_intel_to_others = -0.1
+				encryption_factor = 0.25
+				decryption_factor = 0.25
+			}
+			cancel_if_invalid = no
+		}
+	}
+}
