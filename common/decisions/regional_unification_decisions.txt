@@ -1921,9 +1921,8 @@ unite_eastern_ukraine = {
 				}
 				NOT = {
 					has_country_flag = east_war
-				}
-				NOT = {
 					has_country_flag = east_elections
+					has_country_flag = east_dogovornyak
 				}
 				
         }
@@ -1946,9 +1945,10 @@ unite_eastern_ukraine = {
 				}
 			}			
 			NOT = {
-				has_country_flag = east_war
-				has_country_flag = east_dogovornyak
-			}
+					has_country_flag = east_war
+					has_country_flag = east_elections
+					has_country_flag = east_dogovornyak
+				}
 			DNP = {
 				exists = yes
 			}
@@ -2110,14 +2110,11 @@ unite_southern_ukraine = {
 					has_country_flag = united_south_center
 					has_country_flag = united_south_west
 				}
-				OR = {
-					NOT = {
-						has_country_flag = south_war
-					}
-				}
 				NOT = {
-						has_country_flag = south_elections
-					}
+					has_country_flag = south_war
+					has_country_flag = south_elections
+					has_country_flag = south_dogovornyak
+				}
         }
 
         complete_effect = {
@@ -2144,9 +2141,10 @@ unite_southern_ukraine = {
 				has_country_flag = united_south_center
 			}
 			NOT = {
-				has_country_flag = south_war
-				has_country_flag = south_elections
-			}
+					has_country_flag = south_war
+					has_country_flag = south_elections
+					has_country_flag = south_dogovornyak
+				}
 			OR = {
 				original_tag = ZAP
 				original_tag = MYK
@@ -2228,9 +2226,10 @@ unite_southern_ukraine = {
 				original_tag = ODE
 			}
 			NOT = {
-				has_country_flag = west_war
-				has_country_flag = west_dogovornyak
-			}
+					has_country_flag = south_war
+					has_country_flag = south_elections
+					has_country_flag = south_dogovornyak
+				}
 			SWT = {
 				exists = yes
 			}
@@ -2273,7 +2272,7 @@ unite_southern_ukraine = {
 }
 
 unite_central_ukraine = {
-		unite_central_ukraine = {			
+	unite_central_ukraine = {			
 
 		icon = GFX_ZAK_rada_election
 		
@@ -2401,8 +2400,10 @@ unite_central_ukraine = {
 				has_country_flag = united_north_center
 			}
 			NOT = {
-				has_country_flag = center_war
-			}
+					has_country_flag = center_war
+					has_country_flag = center_elections
+					has_country_flag = center_dogovornyak
+				}
 			OR = {
 				AND = {
 					NRT = {
@@ -2510,9 +2511,10 @@ unite_central_ukraine = {
 				}
 			}
 			NOT = {
-				has_country_flag = center_war
-				has_country_flag = center_dogovornyak
-			}
+					has_country_flag = center_war
+					has_country_flag = center_elections
+					has_country_flag = center_dogovornyak
+				}
 			NCT = {
 				exists = yes
 			}
@@ -2582,9 +2584,8 @@ unite_central_ukraine = {
 				}
 				NOT = {
 					has_country_flag = center_war
-				}
-				NOT = {
 					has_country_flag = center_elections
+					has_country_flag = center_dogovornyak
 				}
 				
         }
@@ -2713,11 +2714,10 @@ unite_western_ukraine = {
 				has_country_flag = united_podillya
 			}
 			NOT = {
-				OR = {
 					has_country_flag = west_war
+					has_country_flag = west_elections
 					has_country_flag = west_dogovornyak
-				}			
-			}
+				}
 		}
 		fire_only_once = yes
         	days_remove = 0	
@@ -2790,9 +2790,10 @@ unite_western_ukraine = {
 				original_tag = ZHY
 			}
 			NOT = {
-				has_country_flag = west_war
-				has_country_flag = west_dogovornyak
-			}
+					has_country_flag = west_war
+					has_country_flag = west_elections
+					has_country_flag = west_dogovornyak
+				}
 			GLY = {
 				exists = yes
 			}
@@ -2862,9 +2863,8 @@ unite_western_ukraine = {
 				}
 				NOT = {
 					has_country_flag = west_war
-				}
-				NOT = {
 					has_country_flag = west_elections
+					has_country_flag = west_dogovornyak
 				}
 				
         }
@@ -3029,8 +3029,10 @@ unite_left_bank_ukraine = {
 				has_country_flag = united_south
 			}
 			NOT = {
-				has_country_flag = left_bank_war
-			}
+					has_country_flag = left_bank_war
+					has_country_flag = left_bank_elections
+					has_country_flag = left_bank_dogovornyak
+				}
 		}
 		fire_only_once = yes
         	days_remove = 0	
@@ -3127,12 +3129,10 @@ unite_left_bank_ukraine = {
             }
 
 			NOT = {
-                OR = {
-                    has_country_flag = left_bank_war
-                    has_country_flag = left_bank_dogovornyak
-                    has_country_flag = left_bank_elections
-                }
-			}
+					has_country_flag = left_bank_war
+					has_country_flag = left_bank_elections
+					has_country_flag = left_bank_dogovornyak
+				}
 			ESN = {
 				exists = yes
 			}
@@ -3202,9 +3202,8 @@ unite_left_bank_ukraine = {
 				}
 				NOT = {
 					has_country_flag = left_bank_war
-				}
-				NOT = {
 					has_country_flag = left_bank_elections
+					has_country_flag = left_bank_dogovornyak
 				}
 				
         }
@@ -3401,8 +3400,10 @@ unite_right_bank_ukraine = {
 				has_country_flag = united_center
 			}
 			NOT = {
-				has_country_flag = right_bank_war
-			}
+					has_country_flag = right_bank_war
+					has_country_flag = right_bank_elections
+					has_country_flag = right_bank_dogovornyak
+				}
 		}
 		fire_only_once = yes
         	days_remove = 0	
@@ -3491,12 +3492,10 @@ unite_right_bank_ukraine = {
 					}
                 }
 			NOT = {
-                OR = {
-                    has_country_flag = right_bank_war
-                    has_country_flag = right_bank_dogovornyak
-                    has_country_flag = right_bank_elections
-                }
-			}
+					has_country_flag = right_bank_war
+					has_country_flag = right_bank_elections
+					has_country_flag = right_bank_dogovornyak
+				}
 			WST = {
 				exists = yes
 			}
@@ -3566,9 +3565,8 @@ unite_right_bank_ukraine = {
 				}
 				NOT = {
 					has_country_flag = right_bank_war
-				}
-				NOT = {
 					has_country_flag = right_bank_elections
+					has_country_flag = right_bank_dogovornyak
 				}
 				
         }
@@ -3851,11 +3849,9 @@ unite_ukraine = {
 					}
                 }
 			NOT = {
-                OR = {
                     has_country_flag = ukraine_war
                     has_country_flag = ukraine_dogovornyak
                     has_country_flag = ukraine_elections
-                }
 			}
 			LBU = {
 				exists = yes
@@ -3915,8 +3911,9 @@ unite_ukraine = {
 				has_country_flag = united_right_bank
 			}
 			NOT = {
-				has_country_flag = ukraine_war
-				has_country_flag = ukraine_elections
+                    has_country_flag = ukraine_war
+                    has_country_flag = ukraine_dogovornyak
+                    has_country_flag = ukraine_elections
 			}
 			LBU = {
 				OR = {
@@ -4036,11 +4033,10 @@ unite_ukraine = {
 					has_country_flag = united_left_bank
 				}
 				NOT = {
-					has_country_flag = ukraine_war
-				}
-				NOT = {
-					has_country_flag = ukraine_elections
-				}
+                    has_country_flag = ukraine_war
+                    has_country_flag = ukraine_dogovornyak
+                    has_country_flag = ukraine_elections
+			}
 				
         }
 
