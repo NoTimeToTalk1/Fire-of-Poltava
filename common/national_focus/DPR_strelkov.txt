@@ -17,6 +17,7 @@ shared_focus = {
 	completion_reward = {
 		activate_advisor = DPR_gubareva
 		add_ideas = DPR_peopleopposition
+		add_political_power = 40
 	}
 }
 
@@ -40,6 +41,10 @@ shared_focus = {
 			id = dpr.901 #PLACEHOLDER
 			days = 1
 		}
+		add_popularity = {
+			ideology = traditionalism
+			popularity = 0.3
+		}
 	}
 }
 
@@ -56,9 +61,10 @@ shared_focus = {
 	}
 	completion_reward = {
 		country_event = {
-			id = dpr_girkin.2
+			id = dpr.902 #PLACEHOLDER
 			days = 1
 		}
+		add_manpower = 6000
 	}
 }
 
@@ -74,7 +80,23 @@ shared_focus = {
 		focus = DPR_militarise_loyalistst
 	}
 	completion_reward = {
-		###
+		add_popularity = {
+			ideology = conservatism
+			popularity = -0.1
+		}
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.1
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = -0.1
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = -0.1
+		}
+		add_political_power = -80
 	}
 }
 
@@ -88,6 +110,11 @@ shared_focus = {
 
 	prerequisite = {
 		focus = DPR_discrediting_always_works
+	}
+	completion_reward = {
+		###ADD DECISIONS TO FUCK WITH VITRENKO AND PASECHNIK
+		remove_ideas = DPR_peopleopposition
+		add_stability = -0.2
 	}
 }
 
@@ -106,7 +133,14 @@ shared_focus = {
 		focus = DPR_give_them_a_fight
 	}
 	completion_reward = {
-		###
+		country_event = {
+			id = dpr.903 #PLACEHOLDER
+			days = 1
+		}
+		add_popularity = {
+			ideology = traditionalism
+			popularity = -0.2
+		}
 	}
 }
 
@@ -122,10 +156,24 @@ shared_focus = {
 		focus = DPR_givethemguarantees
 	}
 	completion_reward = {
+		add_political_power = 200
 		remove_ideas = DPR_peopleopposition
-	}
-	completion_reward = {
-		###
+		add_popularity = {
+			ideology = conservatism
+			popularity = 0.06
+		}
+		add_popularity = {
+			ideology = liberalism
+			popularity = 0.04
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.07
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.03
+		}
 	}
 }
 
@@ -139,6 +187,12 @@ shared_focus = {
 
 	prerequisite = {
 		focus = DPR_liberalisetheconstitution
+	}
+	completion_reward = {
+		country_event = {
+			id = dpr.904 #PLACEHOLDER
+			days = 1
+		}
 	}
 }
 
@@ -154,7 +208,7 @@ shared_focus = {
 		focus = DPR_preparefotthehell
 	}
 	completion_reward = {
-		###
+		###I DPMT LNMPWOWP
 	}
 }
 
@@ -171,7 +225,11 @@ shared_focus = {
 		focus = DPR_udarvpechenniktonevechen
 	}
 	completion_reward = {
-		country_event = dpr_girkin.3
+		country_event = {
+			id = dpr.905 #PLACEHOLDER
+			days = 1
+		}
+		###GUI FOR DEMILITARIZATION OF REGIONS(WHAT???)
 	}
 }
 
@@ -185,6 +243,9 @@ shared_focus = {
 
 	mutually_exclusive = {
 		focus = DPR_facing_the_problems_alone
+	}
+	completion_reward = {
+		###I DPMT LNMPWOWP
 	}
 }
 
@@ -200,7 +261,7 @@ shared_focus = {
 		focus = DPR_contract_with_the_devil
 	}
 	completion_reward = {
-		###
+		###ADDS 3 ELITE UNITS(PRIGHOZIN AND OTHER NOOBS AS GENERALS TOO)
 	}
 }
 
@@ -216,7 +277,7 @@ shared_focus = {
 		focus = DPR_contract_with_the_devil
 	}
 	completion_reward = {
-		###
+		###I DPMT LNMPWOWP
 	}
 }
 
@@ -325,7 +386,10 @@ shared_focus = {
 		if = {
 			limit = {
 				any_other_country = {
-					has_government = radical_socialism
+					OR = {
+						has_government = communism
+						has_government = socialism
+					}
 				}
 			}
 			add_opinion_modifier = {
@@ -352,6 +416,7 @@ shared_focus = {
 			remove_idea = DPR_generalplan1
 			add_idea = DPR_generalplan2
 		}
+		###ADD IHOR IVANOV AS ADVISOR
 	}
 }
 
@@ -387,6 +452,9 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_messege_to_cossaks
 	}
+	completion_reward = {
+		###ADD DECISIONS TO RECRUIT COSSACK LEADERS
+	}
 }
 
 #Restore the Don Host
@@ -400,10 +468,7 @@ shared_focus = {
 		focus = DPR_invite_local_leaders
 	}
 	completion_reward = {
-		swap_ideas = {
-			remove_idea = DPR_generalplan4
-			add_idea = DPR_generalplan5
-		}
+		###ADD 4 COSSACK BRIGADES(4 horse, 2 infantry, 1 truck)
 	}
 }
 
@@ -459,7 +524,10 @@ shared_focus = {
 		focus = DPR_remember_about_true_rots
 	}
 	completion_reward = {
-		###
+		swap_ideas = {
+			remove_idea = DPR_generalplan3
+			add_idea = DPR_generalplan4
+		}
 	}
 }
 
@@ -475,7 +543,7 @@ shared_focus = {
 		focus = DPR_rematch_of_1917th
 	}
 	completion_reward = {
-		add_ideas = DPR_ourlegacy
+		add_ideas = DPR_promoting_othodoxy
 	}
 }
 
@@ -491,7 +559,10 @@ shared_focus = {
 		focus = DPR_revival_of_the_spirituality
 	}
 	completion_reward = {
-		add_ideas = DPR_russianchurch
+		swap_ideas = {
+			remove_idea = DPR_promoting_othodoxy
+			add_idea = DPR_russianchurch
+		}
 	}
 }
 
@@ -507,7 +578,10 @@ shared_focus = {
 		focus = DPR_rematch_of_1917th
 	}
 	completion_reward = {
-		add_ideas = DPR_monarchicalcoalition
+		swap_ideas = {
+			remove_idea = DPR_newfriends2
+			add_idea = DPR_monarchicalcoalition1
+		}
 	}
 }
 
@@ -624,7 +698,7 @@ shared_focus = {
 		focus = DPR_engage_in_big_politics
 	}
 	completion_reward = {
-		###
+		add_idea = DPR_strategic_innitiative
 	}
 }
 
@@ -639,7 +713,7 @@ shared_focus = {
 		focus = DPR_time_for_strategic_games
 	}
 	completion_reward = {
-		###
+		###DECISIONS FOR CONQUERING NOVORISSIYA(also Crimea and Transnistria diplomatically)
 	}
 }
 
@@ -655,7 +729,8 @@ shared_focus = {
 		focus = DPR_claim_in_our_real_borders
 	}
 	completion_reward = {
-		###
+		###INCREASES COMPLIANCE ON NEW CONQUERED LAND
+		###AND DECISIONS TO LOWER RESISTANCE(REAL)
 	}
 }
 
@@ -671,7 +746,7 @@ shared_focus = {
 		focus = DPR_find_the_loyal_ones
 	}
 	completion_reward = {
-		###
+		###CORES ON CONQUERED STATES
 	}
 }
 
@@ -689,7 +764,10 @@ shared_focus = {
 		focus = DPR_consolidation_of_the_south
 	}
 	completion_reward = {
-		###
+		country_event = {
+			id = dpr.905 #PLACEHOLDER
+			days = 1
+		}
 	}
 }
 
@@ -705,7 +783,14 @@ shared_focus = {
 		focus = DPR_start_the_debate
 	}
 	completion_reward = {
-		###
+		country_event = {
+			id = dpr.906 #PLACEHOLDER
+			days = 1
+		}
+		swap_ideas = {
+			remove_idea = DPR_ourlegacy
+			add_idea = DPR_empirestrikesback
+		}
 	}
 }
 
