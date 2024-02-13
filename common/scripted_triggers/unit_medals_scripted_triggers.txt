@@ -1,0 +1,61 @@
+#scripted triggers for Division Medals feature
+
+should_have_ukrainian_medals_trigger = {
+OR = {
+	original_tag = UKR
+	original_tag = AFU
+	original_tag = PRH
+	original_tag = KYI
+	original_tag = ZAK
+	original_tag = ZAP
+	original_tag = VOL
+	original_tag = GAL
+	original_tag = MYK
+	original_tag = ODE
+	original_tag = PLT
+	original_tag = KHA
+	original_tag = ZHY
+	original_tag = CHR
+	original_tag = SUM
+	original_tag = KHM
+	original_tag = STR
+	original_tag = DNI
+}
+}
+
+should_have_rus_medals_trigger = {
+OR = {
+	original_tag = DPR
+	original_tag = LPR
+	original_tag = KIR
+	original_tag = RGE
+	original_tag = RUS
+	original_tag = TRA
+	original_tag = CRI
+}
+}
+
+should_have_afu_medals_trigger = {
+	original_tag = AFU
+}
+
+should_have_dpr_medals_trigger = {
+	original_tag = DPR
+}
+
+should_have_lpr_medals_trigger = {
+	original_tag = LPR
+}
+
+should_have_ter_medals_trigger = {
+	original_tag = TER
+}
+
+
+
+should_have_any_unique_medals_trigger = {
+	OR = {
+		should_have_ukrainian_medals_trigger = yes
+		should_have_russian_medals_trigger = yes
+	}
+}

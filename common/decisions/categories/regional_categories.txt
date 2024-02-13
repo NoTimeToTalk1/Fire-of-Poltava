@@ -192,6 +192,12 @@ center_elections = {
 	picture = GFX_mobilization
 	visible = {
 		has_country_flag = center_elections
+		NRT = {
+			exists = yes
+		}
+		NCT = {
+			exists = yes
+		}
 	}
 }
 
@@ -202,6 +208,12 @@ center_dogovornyak = {
 		has_country_flag = center_dogovornyak
 		NOT = {
 			has_country_flag = united_center
+		}
+		NRT = {
+			exists = yes
+		}
+		NCT = {
+			exists = yes
 		}
 	}
 }
@@ -214,6 +226,12 @@ center_war = {
 		NOT = {
 			has_country_flag = united_center
 		}
+		NRT = {
+			exists = yes
+		}
+		NCT = {
+			exists = yes
+		}
 	}
 }
 
@@ -224,6 +242,12 @@ south_war = {
 		has_country_flag = south_war
 		NOT = {
 			has_country_flag = united_south
+		}
+		SWT = {
+			exists = yes
+		}
+		SCT = {
+			exists = yes
 		}
 	}
 }
@@ -236,6 +260,12 @@ south_dogovornyak = {
 		NOT = {
 			has_country_flag = united_south
 		}
+		SWT = {
+			exists = yes
+		}
+		SCT = {
+			exists = yes
+		}
 	}
 	
 }
@@ -245,6 +275,12 @@ south_elections = {
 	picture = GFX_mobilization
 	visible = {
 		has_country_flag = south_elections
+		SWT = {
+			exists = yes
+		}
+		SCT = {
+			exists = yes
+		}
 	}
 }
 
@@ -253,10 +289,17 @@ east_dogovornyak = {
 	picture = GFX_mobilization
 	visible = {
 		has_country_flag = east_dogovornyak
+		NOT = {
+			has_country_flag = united_east
+		}
+		SET = {
+			exists = yes
+		}
+		DNP = {
+			exists = yes
+		}
 	}
-	NOT = {
-		has_country_flag = united_east
-	}
+	
 }
 
 east_war = {
@@ -267,6 +310,12 @@ east_war = {
 		NOT = {
 			has_country_flag = united_east
 		}
+		SET = {
+			exists = yes
+		}
+		DNP = {
+			exists = yes
+		}
 	}
 }
 
@@ -275,10 +324,15 @@ west_dogovornyak = {
 	picture = GFX_mobilization
 	visible = {
 		has_country_flag = west_dogovornyak
-	}
-	NOT = {
+		NOT = {
 		has_country_flag = united_west
 	}
+	AND = {
+			country_exists = GLY
+			country_exists = PDL
+		}
+	}
+	
 }
 
 west_elections = {
@@ -289,6 +343,10 @@ west_elections = {
 		NOT = {
 			has_country_flag = united_west
 		}
+		AND = {
+			country_exists = GLY
+			country_exists = PDL
+		}		
 	}
 }
 
@@ -299,6 +357,12 @@ west_war = {
 		has_country_flag = west_war
 		NOT = {
 			has_country_flag = united_west
+		}
+		GLY = {
+			exists = yes
+		}
+		PDL = {
+			exists = yes
 		}
 	}
 }
@@ -313,6 +377,12 @@ left_bank_dogovornyak = {
 		NOT = {
 			has_country_flag = united_left_bank
 		}
+		STH = {
+			exists = yes
+		}
+		ESN = {
+			exists = yes
+		}
 	}
 }
 
@@ -323,6 +393,12 @@ left_bank_elections = {
 		has_country_flag = left_bank_elections
 		NOT = {
 			has_country_flag = united_left_bank
+		}
+		STH = {
+			exists = yes
+		}
+		ESN = {
+			exists = yes
 		}
 	}
 }
@@ -335,6 +411,12 @@ left_bank_war = {
 		NOT = {
 			has_country_flag = united_left_bank
 		}
+		STH = {
+			exists = yes
+		}
+		ESN = {
+			exists = yes
+		}
 	}
 }
 
@@ -345,6 +427,12 @@ right_bank_dogovornyak = {
 		has_country_flag = right_bank_dogovornyak
 		NOT = {
 			has_country_flag = united_right_bank
+		}
+		WST = {
+			exists = yes
+		}
+		CNT = {
+			exists = yes
 		}
 	}
 }
@@ -357,6 +445,12 @@ right_bank_elections = {
 		NOT = {
 			has_country_flag = united_right_bank
 		}
+		WST = {
+			exists = yes
+		}
+		CNT = {
+			exists = yes
+		}
 	}
 }
 
@@ -367,6 +461,12 @@ right_bank_war = {
 		has_country_flag = right_bank_war
 		NOT = {
 			has_country_flag = united_right_bank
+		}
+		WST = {
+			exists = yes
+		}
+		CNT = {
+			exists = yes
 		}
 	}
 }
@@ -379,6 +479,12 @@ ukraine_elections = {
 		NOT = {
 			has_country_flag = united_ukraine
 		}
+		LBU = {
+			exists = yes
+		}
+		RBU = {
+			exists = yes
+		}
 	}
 }
 
@@ -390,6 +496,12 @@ ukraine_dogovornyak = {
 		NOT = {
 			has_country_flag = united_ukraine
 		}
+		LBU = {
+			exists = yes
+		}
+		RBU = {
+			exists = yes
+		}
 	}
 }
 
@@ -400,6 +512,12 @@ ukraine_war = {
 		has_country_flag = ukraine_war
 		NOT = {
 			has_country_flag = united_ukraine
+		}
+		LBU = {
+			exists = yes
+		}
+		RBU = {
+			exists = yes
 		}
 	}
 }
