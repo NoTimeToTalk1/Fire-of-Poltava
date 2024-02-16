@@ -12,85 +12,21 @@ donbass_laws = {
 		days_re_enable = 2
 
 		cost = 100
-		days_remove = 100
+		days_remove = 180
 
 		complete_effect = {
-swap_ideas = {
- remove_idea = healthcare_public_bad
- add_idea = healthcare_public_decent
+ 		add_timed_idea = {
+    idea = healthcare_public_decent
+    days = 180
 }
 }
-remove_effect = {
-hidden_effect = {
-swap_ideas = {
- remove_idea = healthcare_public_decent
- add_idea = healthcare_public_bad
-}
-}	
-}
 		}
-	education_1 = {
-		available = {
-factor = 1
-	}
-		visible = {
-						OR = {
-			tag = DPR
-			tag = LPR
-		}
-		}
-		days_re_enable = 20
-
-		cost = 50
-		days_remove = 10
-
-remove_effect = {
- add_ideas = education_military	
-}
-		}
-	education_2 = {
-	available = {
-    factor = 1
-	}
-		visible = {
-						OR = {
-			tag = DPR
-			tag = LPR
-		}
-		}
-		days_re_enable = 20
-
-		cost = 50
-		days_remove = 10
-
-remove_effect = {
- add_ideas = education_propagandized
-
-}
-		}
-	education_3 = {
-		available = {
-        factor = 1
-	}
-		visible = {
-						OR = {
-			tag = DPR
-			tag = LPR
-		}
-		}
-		days_re_enable = 20
-
-		cost = 50
-		days_remove = 10
-
-remove_effect = {
- add_ideas = education_standard
-
-         }
-    }
+		
 	invest_in_army = {
 		available = {
-		factor = 1
+		NOT = {
+		has_idea = finances_civilian
+		}
 	}
 		visible = {
 						OR = {
@@ -104,20 +40,17 @@ remove_effect = {
 		days_remove = 180
 
 		complete_effect = {
- add_ideas = finances_army
-}
-remove_effect = {
-hidden_effect = {
-swap_ideas = {
- remove_idea = finances_army
- add_idea = finances_no_data
-}
-}	
+ 		add_timed_idea = {
+    idea = finances_army
+    days = 180
+} 
 }
 		}
 	invest_in_civilian = {
 		available = {
-		factor = 1
+		NOT = {
+		has_idea = finances_army
+		}
 	}
 		visible = {
 						OR = {
@@ -131,15 +64,10 @@ swap_ideas = {
 		days_remove = 180
 
 		complete_effect = {
- add_ideas = finances_civilian
+		add_timed_idea = {
+    idea = finances_civilian
+    days = 180
 }
-remove_effect = {
-hidden_effect = {
-swap_ideas = {
- remove_idea = finances_civilian
- add_idea = finances_no_data
-}
-}	
 }
 		}
 	tighten_customs_control = {
@@ -173,7 +101,7 @@ custom_cost_trigger = {
 		days_remove = 2
 
 remove_effect = {
-add_political_power = 50	
+add_political_power = 200	
 }
 		}
 		
