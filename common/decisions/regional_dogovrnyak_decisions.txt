@@ -24,22 +24,25 @@ center_dogovornyak = {
 	}
 	center_summing_up = {
 		available = {
-			OR = {
-				check_variable = { NCT.center_done_themes = 10 }
-				check_variable = { NRT.center_done_themes = 10 }
-			}
-			if = {
-				limit = {
-					tag = NCT
+			check_variable = { center_done_themes = 10 }
+				if = {
+					limit = {
+						tag = NCT
+					}
+					OR = {
+						check_variable = {NCT.north_center_influence > NRT.north_influence}
+						check_variable = {NCT.north_center_influence = NRT.north_influence}
+					}
 				}
-				check_variable = {NCT.north_center_influence > NRT.north_influence}
-			}
-			else_if = {
-				limit = {
-					tag = NRT
+				if = {
+					limit = {
+						tag = NRT
+					}
+					OR = {
+						check_variable = {NRT.north_influence > NCT.north_center_influence}
+						check_variable = {NCT.north_center_influence = NRT.north_influence}
+					}					
 				}
-				check_variable = {NRT.north_influence > NCT.north_center_influence}
-			}
 		}
 		target_trigger = {
 			FROM = {
@@ -65,89 +68,121 @@ center_dogovornyak = {
 			clr_country_flag = civilian_liberties
 			clr_country_flag = equality
 			clr_country_flag = community_controls
-			annex_country = {
-				target = FROM
-				transfer_troops = yes
-			}
 			if = {
 				limit = {
-					FROM = {
-						has_country_flag = won_economy_base
-					}
+					check_variable = { NCT.center_done_themes < 10 }
+					check_variable = { NRT.center_done_themes < 10 }
 				}
-				add_economy_base = yes
+				custom_effect_tooltip = dogovornyak_not_decided
 			}
-			if = {
+			else_if = {
 				limit = {
-					FROM = {
-						has_country_flag = won_economy_freedoms
-					}
+					check_variable = { NCT.north_center_influence = NRT.north_influence }
 				}
-				add_economy_freedoms = yes
+				declare_war_on = {
+					target = FROM
+					type = annex_everything
+				}
+				country_event = reg_exp_ukraine.7
+				FROM = {
+					country_event = reg_exp_ukraine.7
+				}
 			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_army_standarts
-					}
+			else = {
+				annex_country = {
+					target = FROM
+					transfer_troops = yes
 				}
-				add_army_professionalism = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_army_structure
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_economy_base
+						}
 					}
+					custom_effect_tooltip = add_economy_base
+                    hidden_effect = {add_economy_base = yes}
 				}
-				add_army_structure = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_state_control
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_economy_freedoms
+						}
 					}
+					custom_effect_tooltip = add_economy_freedoms
+                    hidden_effect = {add_economy_freedoms = yes}
 				}
-				add_state_control = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_civilian_services
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_army_standarts
+						}
 					}
+					custom_effect_tooltip = add_army_professionalism
+                    hidden_effect = {add_army_professionalism = yes}
 				}
-				add_civservices = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_civilian_liberties
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_army_structure
+						}
 					}
+					custom_effect_tooltip = add_army_structure
+                    hidden_effect = {add_army_structure = yes}
 				}
-				add_liberties = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_worker_stance
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_state_control
+						}
 					}
+					custom_effect_tooltip = add_state_control
+                    hidden_effect = {add_state_control = yes}
 				}
-				add_workers = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_equality
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_civilian_services
+						}
 					}
+					custom_effect_tooltip = add_civservices
+                    hidden_effect = {add_civservices = yes}
 				}
-				add_equalities = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_community_controls
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_civilian_liberties
+						}
 					}
+					custom_effect_tooltip = add_liberties
+                    hidden_effect = {add_liberties = yes}
 				}
-				add_community_control = yes
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_worker_stance
+						}
+					}
+					custom_effect_tooltip = add_workers
+                    hidden_effect = {add_workers = yes}
+				}
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_equality
+						}
+					}
+					custom_effect_tooltip = add_equalities
+                    hidden_effect = {add_equalities = yes}
+				}
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_community_controls
+						}
+					}
+					custom_effect_tooltip = add_community_control
+                    hidden_effect = {add_community_control = yes}
+				}
 			}
 		}
 	}
@@ -161,7 +196,7 @@ center_dogovornyak = {
 			}
 		}
 		is_good = no
-		days_mission_timeout = 14
+		days_mission_timeout = 7
 		selectable_mission = no
 		timeout_effect = {
 			clr_country_flag = dogovornyak_choice
@@ -541,7 +576,7 @@ center_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -585,7 +620,7 @@ center_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -629,7 +664,7 @@ center_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -673,7 +708,7 @@ center_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -717,7 +752,7 @@ center_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -761,7 +796,7 @@ center_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -805,7 +840,7 @@ center_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -849,7 +884,7 @@ center_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -893,7 +928,7 @@ center_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -937,7 +972,7 @@ center_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -1003,29 +1038,29 @@ west_dogovornyak = {
 	}
 	west_summing_up = {
 		available = {
-			OR = {
-				check_variable = { GLY.west_done_themes = 10 }
-				check_variable = { PDL.west_done_themes = 10 }
-			}
-			if = {
-				limit = {
-					tag = GLY
+			check_variable = {west_done_themes = 10}
+				if = {
+					limit = {
+						tag = GLY
+					}
+					OR = {
+						check_variable = {GLY.galicia_influence > PDL.podillya_influence}
+						check_variable = {GLY.galicia_influence = PDL.podillya_influence}
+					}
 				}
-				check_variable = {GLY.galicia_influence > PDL.podillya_influence}
-			}
-			else_if = {
-				limit = {
-					tag = PDL
-				}
-				check_variable = {PDL.podillya_influence > GLY.galicia_influence}
-			}
+				if = {
+					limit = {
+						tag = PDL
+					}
+					OR = {
+						check_variable = {PDL.podillya_influence > GLY.galicia_influence}
+						check_variable = {GLY.galicia_influence = PDL.podillya_influence}
+					}					
+				}	
 		}
 		target_trigger = {
 			FROM = {
-				OR = {
-					tag = GLY
-					tag = PDL
-				}
+				has_country_flag = west_dogovornyak
 			}
 		}
 		visible = {
@@ -1034,10 +1069,6 @@ west_dogovornyak = {
             base = 10
         }
 		complete_effect = {
-			annex_country = {
-				target = FROM
-				transfer_troops = yes
-			}
 			clr_country_flag = economy_base
 			clr_country_flag = economy_freedoms
 			clr_country_flag = army_standarts
@@ -1050,83 +1081,119 @@ west_dogovornyak = {
 			clr_country_flag = community_controls
 			if = {
 				limit = {
-					FROM = {
-						has_country_flag = won_economy_base
-					}
+					check_variable = { GLY.west_done_themes < 10 }
+					check_variable = { PDL.west_done_themes < 10 }
 				}
-				add_economy_base = yes
+				custom_effect_tooltip = dogovornyak_not_decided
 			}
-			if = {
+			else_if = {
 				limit = {
-					FROM = {
-						has_country_flag = won_economy_freedoms
-					}
+					check_variable = { GLY.galicia_influence = PDL.podillya_influence }
 				}
-				add_economy_freedoms = yes
+				declare_war_on = {
+					target = FROM
+					type = annex_everything
+				}
+				country_event = reg_exp_ukraine.7
+				FROM = {
+					country_event = reg_exp_ukraine.7
+				}
 			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_army_standarts
-					}
+			else = {
+				annex_country = {
+					target = FROM
+					transfer_troops = yes
 				}
-				add_army_professionalism = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_army_structure
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = won_economy_base
+						}
 					}
+					custom_effect_tooltip = add_economy_base
+                    hidden_effect = {add_economy_base = yes}
 				}
-				add_army_structure = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_state_control
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = won_economy_freedoms
+						}
 					}
+					custom_effect_tooltip = add_economy_freedoms
+                    hidden_effect = {add_economy_freedoms = yes}
 				}
-				add_state_control = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_civilian_services
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = won_army_standarts
+						}
 					}
+					custom_effect_tooltip = add_army_professionalism
+                    hidden_effect = {add_army_professionalism = yes}
 				}
-				add_civservices = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_civilian_liberties
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = won_army_structure
+						}
 					}
+					custom_effect_tooltip = add_army_structure
+                    hidden_effect = {add_army_structure = yes}
 				}
-				add_liberties = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_worker_stance
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = won_state_control
+						}
 					}
+					custom_effect_tooltip = add_state_control
+                    hidden_effect = {add_state_control = yes}
 				}
-				add_workers = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_equality
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = won_civilian_services
+						}
 					}
+					custom_effect_tooltip = add_civservices
+                    hidden_effect = {add_civservices = yes}
 				}
-				add_equalities = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_community_controls
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = won_civilian_liberties
+						}
 					}
+					custom_effect_tooltip = add_liberties
+                    hidden_effect = {add_liberties = yes}
 				}
-				add_community_control = yes
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = won_worker_stance
+						}
+					}
+					custom_effect_tooltip = add_workers
+                    hidden_effect = {add_workers = yes}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = won_equality
+						}
+					}
+					custom_effect_tooltip = add_equalities
+                    hidden_effect = {add_equalities = yes}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = won_community_controls
+						}
+					}
+					custom_effect_tooltip = add_community_control
+                    hidden_effect = {add_community_control = yes}
+				}
 			}
 		}
 	}
@@ -1140,7 +1207,7 @@ west_dogovornyak = {
 			}
 		}
 		is_good = no
-		days_mission_timeout = 14
+		days_mission_timeout = 7
 		selectable_mission = no
 		timeout_effect = {
 			clr_country_flag = dogovornyak_choice
@@ -1160,8 +1227,7 @@ west_dogovornyak = {
 			if = {
 				limit = {
 					check_variable = {GLY.galicia_influence_choice > PDL.podillya_influence_choice}
-				}
-				
+				}			
 				GLY = {
 					add_to_variable = {
 						var = galicia_influence
@@ -1528,7 +1594,7 @@ west_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -1572,7 +1638,7 @@ west_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -1616,7 +1682,7 @@ west_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -1660,7 +1726,7 @@ west_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -1704,7 +1770,7 @@ west_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -1748,7 +1814,7 @@ west_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -1792,7 +1858,7 @@ west_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -1836,7 +1902,7 @@ west_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -1880,7 +1946,7 @@ west_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -1924,7 +1990,7 @@ west_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -1990,22 +2056,25 @@ south_dogovornyak = {
 	}
 	south_summing_up = {
 		available = {
-			OR = {
-				check_variable = {SWT.south_done_themes = 10}
-				check_variable = {SCT.south_done_themes = 10}
-			}
-			if = {
-				limit = {
-					tag = SWT
+				check_variable = {south_done_themes = 10}
+				if = {
+					limit = {
+						tag = SWT
+					}
+					OR = {
+						check_variable = {SWT.south_west_influence > SCT.south_center_influence}
+						check_variable = {SCT.south_center_influence = SWT.south_west_influence}
+					}
 				}
-				check_variable = {SWT.south_west_influence > SCT.south_center_influence}
-			}
-			else_if = {
-				limit = {
-					tag = SCT
+				if = {
+					limit = {
+						tag = SCT
+					}
+					OR = {
+						check_variable = {SCT.south_center_influence > SWT.south_west_influence}
+						check_variable = {SCT.south_center_influence = SWT.south_west_influence}
+					}					
 				}
-				check_variable = {SCT.south_center_influence > SWT.south_west_influence}
-			}
 		}
 		target_trigger = {
 			FROM = {
@@ -2021,10 +2090,6 @@ south_dogovornyak = {
             base = 10
         }
 		complete_effect = {
-			annex_country = {
-				target = FROM
-				transfer_troops = yes
-			}
 			clr_country_flag = economy_base
 			clr_country_flag = economy_freedoms
 			clr_country_flag = army_standarts
@@ -2037,83 +2102,119 @@ south_dogovornyak = {
 			clr_country_flag = community_controls
 			if = {
 				limit = {
-					FROM = {
-						has_country_flag = won_economy_base
-					}
+					check_variable = { SWT.south_done_themes < 10 }
+					check_variable = { SCT.south_done_themes < 10 }
 				}
-				add_economy_base = yes
+				custom_effect_tooltip = dogovornyak_not_decided
 			}
-			if = {
+			else_if = {
 				limit = {
-					FROM = {
-						has_country_flag = won_economy_freedoms
-					}
+					check_variable = { SWT.south_west_influence = SCT.south_center_influence }
 				}
-				add_economy_freedoms = yes
+				declare_war_on = {
+					target = FROM
+					type = annex_everything
+				}
+				country_event = reg_exp_ukraine.7
+				FROM = {
+					country_event = reg_exp_ukraine.7
+				}
 			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_army_standarts
-					}
+			else = {
+				annex_country = {
+					target = FROM
+					transfer_troops = yes
 				}
-				add_army_professionalism = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_army_structure
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_economy_base
+						}
 					}
+					custom_effect_tooltip = add_economy_base
+                    hidden_effect = {add_economy_base = yes}
 				}
-				add_army_structure = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_state_control
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_economy_freedoms
+						}
 					}
+					custom_effect_tooltip = add_economy_freedoms
+                    hidden_effect = {add_economy_freedoms = yes}
 				}
-				add_state_control = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_civilian_services
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_army_standarts
+						}
 					}
+					custom_effect_tooltip = add_army_professionalism
+                    hidden_effect = {add_army_professionalism = yes}
 				}
-				add_civservices = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_civilian_liberties
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_army_structure
+						}
 					}
+					custom_effect_tooltip = add_army_structure
+                    hidden_effect = {add_army_structure = yes}
 				}
-				add_liberties = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_worker_stance
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_state_control
+						}
 					}
+					custom_effect_tooltip = add_state_control
+                    hidden_effect = {add_state_control = yes}
 				}
-				add_workers = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_equality
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_civilian_services
+						}
 					}
+					custom_effect_tooltip = add_civservices
+                    hidden_effect = {add_civservices = yes}
 				}
-				add_equalities = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_community_controls
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_civilian_liberties
+						}
 					}
+					custom_effect_tooltip = add_liberties
+                    hidden_effect = {add_liberties = yes}
 				}
-				add_community_control = yes
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_worker_stance
+						}
+					}
+					custom_effect_tooltip = add_workers
+                    hidden_effect = {add_workers = yes}
+				}
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_equality
+						}
+					}
+					custom_effect_tooltip = add_equalities
+                    hidden_effect = {add_equalities = yes}
+				}
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_community_controls
+						}
+					}
+					custom_effect_tooltip = add_community_control
+                    hidden_effect = {add_community_control = yes}
+				}
 			}
 		}
 	}
@@ -2127,7 +2228,7 @@ south_dogovornyak = {
 			}
 		}
 		is_good = no
-		days_mission_timeout = 14
+		days_mission_timeout = 7
 		selectable_mission = no
 		timeout_effect = {
 			clr_country_flag = dogovornyak_choice
@@ -2515,7 +2616,7 @@ south_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -2559,7 +2660,7 @@ south_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -2603,7 +2704,7 @@ south_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -2647,7 +2748,7 @@ south_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -2691,7 +2792,7 @@ south_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -2735,7 +2836,7 @@ south_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -2779,7 +2880,7 @@ south_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -2823,7 +2924,7 @@ south_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -2867,7 +2968,7 @@ south_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -2911,7 +3012,7 @@ south_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -2977,22 +3078,25 @@ east_dogovornyak = {
 	}
 	east_summing_up = {
 		available = {
-			OR = {
-				check_variable = { DNP.east_done_themes = 10 }
-				check_variable = { SET.east_done_themes = 10 }
-			}
-			if = {
-				limit = {
-					tag = DNP
+			check_variable = { east_done_themes = 10 }
+				if = {
+					limit = {
+						tag = DNP
+					}
+					OR = {
+						check_variable = {DNP.dnipro_influence > SET.south_east_influence}
+						check_variable = {DNP.dnipro_influence = SET.south_east_influence}
+					}
 				}
-				check_variable = {DNP.dnipro_influence > SET.south_east_influence}
-			}
-			else_if = {
-				limit = {
-					tag = SET
-				}
-				check_variable = {SET.south_east_influence > DNP.dnipro_influence}
-			}
+				if = {
+					limit = {
+						tag = SET
+					}
+					OR = {
+						check_variable = {SET.south_east_influence > DNP.dnipro_influence}
+						check_variable = {DNP.dnipro_influence = SET.south_east_influence}
+					}
+				}			
 		}
 		target_trigger = {
 			FROM = {
@@ -3008,10 +3112,6 @@ east_dogovornyak = {
             base = 10
         }
 		complete_effect = {
-			annex_country = {
-				target = FROM
-				transfer_troops = yes
-			}
 			clr_country_flag = economy_base
 			clr_country_flag = economy_freedoms
 			clr_country_flag = army_standarts
@@ -3024,83 +3124,119 @@ east_dogovornyak = {
 			clr_country_flag = community_controls
 			if = {
 				limit = {
-					FROM = {
-						has_country_flag = won_economy_base
-					}
+					check_variable = { DNP.east_done_themes < 10 }
+					check_variable = { SET.east_done_themes < 10 }
 				}
-				add_economy_base = yes
+				custom_effect_tooltip = dogovornyak_not_decided
 			}
-			if = {
+			else_if = {
 				limit = {
-					FROM = {
-						has_country_flag = won_economy_freedoms
-					}
+					check_variable = { DNP.dnipro_influence = SET.south_east_influence }
 				}
-				add_economy_freedoms = yes
+				declare_war_on = {
+					target = FROM
+					type = annex_everything
+				}
+				country_event = reg_exp_ukraine.7
+				FROM = {
+					country_event = reg_exp_ukraine.7
+				}
 			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_army_standarts
-					}
+			else = {
+				annex_country = {
+					target = FROM
+					transfer_troops = yes
 				}
-				add_army_professionalism = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_army_structure
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_economy_base
+						}
 					}
+					custom_effect_tooltip = add_economy_base
+                    hidden_effect = {add_economy_base = yes}
 				}
-				add_army_structure = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_state_control
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_economy_freedoms
+						}
 					}
+					custom_effect_tooltip = add_economy_freedoms
+                    hidden_effect = {add_economy_freedoms = yes}
 				}
-				add_state_control = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_civilian_services
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_army_standarts
+						}
 					}
+					custom_effect_tooltip = add_army_professionalism
+                    hidden_effect = {add_army_professionalism = yes}
 				}
-				add_civservices = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_civilian_liberties
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_army_structure
+						}
 					}
+					custom_effect_tooltip = add_army_structure
+                    hidden_effect = {add_army_structure = yes}
 				}
-				add_liberties = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_worker_stance
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_state_control
+						}
 					}
+					custom_effect_tooltip = add_state_control
+                    hidden_effect = {add_state_control = yes}
 				}
-				add_workers = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_equality
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_civilian_services
+						}
 					}
+					custom_effect_tooltip = add_civservices
+                    hidden_effect = {add_civservices = yes}
 				}
-				add_equalities = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_community_controls
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_civilian_liberties
+						}
 					}
+					custom_effect_tooltip = add_liberties
+                    hidden_effect = {add_liberties = yes}
 				}
-				add_community_control = yes
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_worker_stance
+						}
+					}
+					custom_effect_tooltip = add_workers
+                    hidden_effect = {add_workers = yes}
+				}
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_equality
+						}
+					}
+					custom_effect_tooltip = add_equalities
+                    hidden_effect = {add_equalities = yes}
+				}
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_community_controls
+						}
+					}
+					custom_effect_tooltip = add_community_control
+                    hidden_effect = {add_community_control = yes}
+				}
 			}
 		}
 	}
@@ -3114,7 +3250,7 @@ east_dogovornyak = {
 			}
 		}
 		is_good = no
-		days_mission_timeout = 14
+		days_mission_timeout = 7
 		selectable_mission = no
 		timeout_effect = {
 			clr_country_flag = dogovornyak_choice
@@ -3501,7 +3637,7 @@ east_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -3545,7 +3681,7 @@ east_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -3589,7 +3725,7 @@ east_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -3633,7 +3769,7 @@ east_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -3677,7 +3813,7 @@ east_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -3721,7 +3857,7 @@ east_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -3765,7 +3901,7 @@ east_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -3809,7 +3945,7 @@ east_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -3853,7 +3989,7 @@ east_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -3897,7 +4033,7 @@ east_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -3963,23 +4099,26 @@ left_bank_dogovornyak = {
 	}
 	left_bank_summing_up = {
 		available = {
-			OR = {
-				check_variable = {ESN.left_bank_done_themes = 10}
-				check_variable = {STH.left_bank_done_themes = 10}
-			}
-			if = {
-				limit = {
-					tag = ESN
+			check_variable = {left_bank_done_themes = 10}
+				if = {
+					limit = {
+						tag = ESN
+					}
+					OR = {
+						check_variable = {ESN.east_influence > STH.south_influence}
+						check_variable = {ESN.east_influence = STH.south_influence}
+					}					
 				}
-				check_variable = {ESN.east_influence > STH.south_influence}
-			}
-			else_if = {
-				limit = {
-					tag = STH
+				if = {
+					limit = {
+						tag = STH
+					}
+					OR = {
+						check_variable = {STH.south_influence > ESN.east_influence}
+						check_variable = {ESN.east_influence = STH.south_influence}
+					}
 				}
-				check_variable = {STH.south_influence > ESN.east_influence}
-			}
-		}
+		}		
 		target_trigger = {
 			FROM = {
 				OR = {
@@ -3994,10 +4133,6 @@ left_bank_dogovornyak = {
             base = 10
         }
 		complete_effect = {
-			annex_country = {
-				target = FROM
-				transfer_troops = yes
-			}
 			clr_country_flag = economy_base
 			clr_country_flag = economy_freedoms
 			clr_country_flag = army_standarts
@@ -4010,83 +4145,119 @@ left_bank_dogovornyak = {
 			clr_country_flag = community_controls
 			if = {
 				limit = {
-					FROM = {
-						has_country_flag = won_economy_base
-					}
+					check_variable = { ESN.left_bank_done_themes < 10 }
+					check_variable = { STH.left_bank_done_themes < 10 }
 				}
-				add_economy_base = yes
+				custom_effect_tooltip = dogovornyak_not_decided
 			}
-			if = {
+			else_if = {
 				limit = {
-					FROM = {
-						has_country_flag = won_economy_freedoms
-					}
+					check_variable = { ESN.east_influence = STH.south_influence }
 				}
-				add_economy_freedoms = yes
+				declare_war_on = {
+					target = FROM
+					type = annex_everything
+				}
+				country_event = reg_exp_ukraine.7
+				FROM = {
+					country_event = reg_exp_ukraine.7
+				}
 			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_army_standarts
-					}
+			else = {
+				annex_country = {
+					target = FROM
+					transfer_troops = yes
 				}
-				add_army_professionalism = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_army_structure
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_economy_base
+						}
 					}
+					custom_effect_tooltip = add_economy_base
+                    hidden_effect = {add_economy_base = yes}
 				}
-				add_army_structure = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_state_control
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_economy_freedoms
+						}
 					}
+					custom_effect_tooltip = add_economy_freedoms
+                    hidden_effect = {add_economy_freedoms = yes}
 				}
-				add_state_control = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_civilian_services
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_army_standarts
+						}
 					}
+					custom_effect_tooltip = add_army_professionalism
+                    hidden_effect = {add_army_professionalism = yes}
 				}
-				add_civservices = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_civilian_liberties
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_army_structure
+						}
 					}
+					custom_effect_tooltip = add_army_structure
+                    hidden_effect = {add_army_structure = yes}
 				}
-				add_liberties = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_worker_stance
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_state_control
+						}
 					}
+					custom_effect_tooltip = add_state_control
+                    hidden_effect = {add_state_control = yes}
 				}
-				add_workers = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_equality
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_civilian_services
+						}
 					}
+					custom_effect_tooltip = add_civservices
+                    hidden_effect = {add_civservices = yes}
 				}
-				add_equalities = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_community_controls
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_civilian_liberties
+						}
 					}
+					custom_effect_tooltip = add_liberties
+                    hidden_effect = {add_liberties = yes}
 				}
-				add_community_control = yes
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_worker_stance
+						}
+					}
+					custom_effect_tooltip = add_workers
+                    hidden_effect = {add_workers = yes}
+				}
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_equality
+						}
+					}
+					custom_effect_tooltip = add_equalities
+                    hidden_effect = {add_equalities = yes}
+				}
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_community_controls
+						}
+					}
+					custom_effect_tooltip = add_community_control
+                    hidden_effect = {add_community_control = yes}
+				}
 			}
 		}
 	}
@@ -4100,7 +4271,7 @@ left_bank_dogovornyak = {
 			}
 		}
 		is_good = no
-		days_mission_timeout = 14
+		days_mission_timeout = 7
 		selectable_mission = no
 		timeout_effect = {
 			clr_country_flag = dogovornyak_choice
@@ -4488,7 +4659,7 @@ left_bank_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -4532,7 +4703,7 @@ left_bank_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -4576,7 +4747,7 @@ left_bank_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -4620,7 +4791,7 @@ left_bank_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -4664,7 +4835,7 @@ left_bank_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -4708,7 +4879,7 @@ left_bank_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -4752,7 +4923,7 @@ left_bank_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -4796,7 +4967,7 @@ left_bank_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -4840,7 +5011,7 @@ left_bank_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -4884,7 +5055,7 @@ left_bank_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -4950,22 +5121,25 @@ right_bank_dogovornyak = {
 	}
 	right_bank_summing_up = {
 		available = {
-			OR = {
-				check_variable = {CNT.right_bank_done_themes = 10}
-				check_variable = {WST.right_bank_done_themes = 10}
-			}
-			if = {
-				limit = {
-					tag = WST
+			check_variable = {right_bank_done_themes = 10}
+				if = {
+					limit = {
+						tag = WST
+					}
+					OR = {
+						check_variable = {WST.west_influence > CNT.center_influence}
+						check_variable = {WST.west_influence = CNT.center_influence}
+					}
 				}
-				check_variable = {WST.west_influence > CNT.center_influence}
-			}
-			else_if = {
-				limit = {
-					tag = CNT
+				if = {
+					limit = {
+						tag = CNT
+					}
+					OR = {
+						check_variable = {CNT.center_influence > WST.west_influence}
+						check_variable = {WST.west_influence = CNT.center_influence}
+					}					
 				}
-				check_variable = {CNT.center_influence > WST.west_influence}
-			}
 		}
 		target_trigger = {
 			FROM = {
@@ -4981,10 +5155,6 @@ right_bank_dogovornyak = {
             base = 10
         }
 		complete_effect = {
-			annex_country = {
-				target = FROM
-				transfer_troops = yes
-			}
 			clr_country_flag = economy_base
 			clr_country_flag = economy_freedoms
 			clr_country_flag = army_standarts
@@ -4997,83 +5167,119 @@ right_bank_dogovornyak = {
 			clr_country_flag = community_controls
 			if = {
 				limit = {
-					FROM = {
-						has_country_flag = won_economy_base
-					}
+					check_variable = { WST.right_bank_done_themes < 10 }
+					check_variable = { CNT.right_bank_done_themes < 10 }
 				}
-				add_economy_base = yes
+				custom_effect_tooltip = dogovornyak_not_decided
 			}
-			if = {
+			else_if = {
 				limit = {
-					FROM = {
-						has_country_flag = won_economy_freedoms
-					}
+					check_variable = { WST.west_influence = CNT.center_influence }
 				}
-				add_economy_freedoms = yes
+				declare_war_on = {
+					target = FROM
+					type = annex_everything
+				}
+				country_event = reg_exp_ukraine.7
+				FROM = {
+					country_event = reg_exp_ukraine.7
+				}
 			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_army_standarts
-					}
+			else = {
+				annex_country = {
+					target = FROM
+					transfer_troops = yes
 				}
-				add_army_professionalism = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_army_structure
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_economy_base
+						}
 					}
+					custom_effect_tooltip = add_economy_base
+                    hidden_effect = {add_economy_base = yes}
 				}
-				add_army_structure = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_state_control
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_economy_freedoms
+						}
 					}
+					custom_effect_tooltip = add_economy_freedoms
+                    hidden_effect = {add_economy_freedoms = yes}
 				}
-				add_state_control = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_civilian_services
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_army_standarts
+						}
 					}
+					custom_effect_tooltip = add_army_professionalism
+                    hidden_effect = {add_army_professionalism = yes}
 				}
-				add_civservices = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_civilian_liberties
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_army_structure
+						}
 					}
+					custom_effect_tooltip = add_army_structure
+                    hidden_effect = {add_army_structure = yes}
 				}
-				add_liberties = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_worker_stance
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_state_control
+						}
 					}
+					custom_effect_tooltip = add_state_control
+                    hidden_effect = {add_state_control = yes}
 				}
-				add_workers = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_equality
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_civilian_services
+						}
 					}
+					custom_effect_tooltip = add_civservices
+                    hidden_effect = {add_civservices = yes}
 				}
-				add_equalities = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_community_controls
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_civilian_liberties
+						}
 					}
+					custom_effect_tooltip = add_liberties
+                    hidden_effect = {add_liberties = yes}
 				}
-				add_community_control = yes
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_worker_stance
+						}
+					}
+					custom_effect_tooltip = add_workers
+                    hidden_effect = {add_workers = yes}
+				}
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_equality
+						}
+					}
+					custom_effect_tooltip = add_equalities
+                    hidden_effect = {add_equalities = yes}
+				}
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_community_controls
+						}
+					}
+					custom_effect_tooltip = add_community_control
+                    hidden_effect = {add_community_control = yes}
+				}
 			}
 		}
 	}
@@ -5087,7 +5293,7 @@ right_bank_dogovornyak = {
 			}
 		}
 		is_good = no
-		days_mission_timeout = 14
+		days_mission_timeout = 7
 		selectable_mission = no
 		timeout_effect = {
 			clr_country_flag = dogovornyak_choice
@@ -5474,7 +5680,7 @@ right_bank_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -5518,7 +5724,7 @@ right_bank_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -5562,7 +5768,7 @@ right_bank_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -5606,7 +5812,7 @@ right_bank_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -5650,7 +5856,7 @@ right_bank_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -5694,7 +5900,7 @@ right_bank_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -5738,7 +5944,7 @@ right_bank_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -5782,7 +5988,7 @@ right_bank_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -5826,7 +6032,7 @@ right_bank_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -5870,7 +6076,7 @@ right_bank_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -5936,22 +6142,25 @@ ukraine_dogovornyak = {
 	}
 	ukraine_summing_up = {
 		available = {
-			OR = {
-				check_variable = {LBU.ukraine_done_themes = 10}
-				check_variable = {RBU.ukraine_done_themes = 10}
-			}
-			if = {
-				limit = {
-					tag = LBU
+			check_variable = {ukraine_done_themes = 10}
+				if = {
+					limit = {
+						tag = LBU
+					}
+					OR = {
+						check_variable = {LBU.left_bank_influence > RBU.right_bank_influence}
+						check_variable = {RBU.right_bank_influence = LBU.left_bank_influence}
+					}
 				}
-				check_variable = {LBU.left_bank_influence > RBU.right_bank_influence}
-			}
-			else_if = {
-				limit = {
-					tag = RBU
+				if = {
+					limit = {
+						tag = RBU
+					}
+					OR = {
+						check_variable = {RBU.right_bank_influence > LBU.left_bank_influence}
+						check_variable = {RBU.right_bank_influence = LBU.left_bank_influence}
+					}			
 				}
-				check_variable = {RBU.right_bank_influence > LBU.left_bank_influence}
-			}
 		}
         ai_will_do = {
             base = 10
@@ -5970,10 +6179,6 @@ ukraine_dogovornyak = {
             base = 10
         }
 		complete_effect = {
-			annex_country = {
-				target = FROM
-				transfer_troops = yes
-			}
 			clr_country_flag = economy_base
 			clr_country_flag = economy_freedoms
 			clr_country_flag = army_standarts
@@ -5986,83 +6191,119 @@ ukraine_dogovornyak = {
 			clr_country_flag = community_controls
 			if = {
 				limit = {
-					FROM = {
-						has_country_flag = won_economy_base
-					}
+					check_variable = { RBU.ukraine_done_themes < 10 }
+					check_variable = { LBU.ukraine_done_themes < 10 }
 				}
-				add_economy_base = yes
+				custom_effect_tooltip = dogovornyak_not_decided
 			}
-			if = {
+			else_if = {
 				limit = {
-					FROM = {
-						has_country_flag = won_economy_freedoms
-					}
+					check_variable = { RBU.right_bank_influence = LBU.left_bank_influence}
 				}
-				add_economy_freedoms = yes
+				declare_war_on = {
+					target = FROM
+					type = annex_everything
+				}
+				country_event = reg_exp_ukraine.7
+				FROM = {
+					country_event = reg_exp_ukraine.7
+				}
 			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_army_standarts
-					}
+			else = {
+				annex_country = {
+					target = FROM
+					transfer_troops = yes
 				}
-				add_army_professionalism = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_army_structure
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_economy_base
+						}
 					}
+					custom_effect_tooltip = add_economy_base
+                    hidden_effect = {add_economy_base = yes}
 				}
-				add_army_structure = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_state_control
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_economy_freedoms
+						}
 					}
+					custom_effect_tooltip = add_economy_freedoms
+                    hidden_effect = {add_economy_freedoms = yes}
 				}
-				add_state_control = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_civilian_services
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_army_standarts
+						}
 					}
+					custom_effect_tooltip = add_army_professionalism
+                    hidden_effect = {add_army_professionalism = yes}
 				}
-				add_civservices = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_civilian_liberties
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_army_structure
+						}
 					}
+					custom_effect_tooltip = add_army_structure
+                    hidden_effect = {add_army_structure = yes}
 				}
-				add_liberties = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_worker_stance
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_state_control
+						}
 					}
+					custom_effect_tooltip = add_state_control
+                    hidden_effect = {add_state_control = yes}
 				}
-				add_workers = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_equality
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_civilian_services
+						}
 					}
+					custom_effect_tooltip = add_civservices
+                    hidden_effect = {add_civservices = yes}
 				}
-				add_equalities = yes
-			}
-			if = {
-				limit = {
-					FROM = {
-						has_country_flag = won_community_controls
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_civilian_liberties
+						}
 					}
+					custom_effect_tooltip = add_liberties
+                    hidden_effect = {add_liberties = yes}
 				}
-				add_community_control = yes
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_worker_stance
+						}
+					}
+					custom_effect_tooltip = add_workers
+                    hidden_effect = {add_workers = yes}
+				}
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_equality
+						}
+					}
+					custom_effect_tooltip = add_equalities
+                    hidden_effect = {add_equalities = yes}
+				}
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = won_community_controls
+						}
+					}
+					custom_effect_tooltip = add_community_control
+                    hidden_effect = {add_community_control = yes}
+				}
 			}
 		}
 	}
@@ -6076,7 +6317,7 @@ ukraine_dogovornyak = {
 			}
 		}
 		is_good = no
-		days_mission_timeout = 14
+		days_mission_timeout = 7
 		selectable_mission = no
 		timeout_effect = {
 			clr_country_flag = dogovornyak_choice
@@ -6464,7 +6705,7 @@ ukraine_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -6508,7 +6749,7 @@ ukraine_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -6552,7 +6793,7 @@ ukraine_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -6596,7 +6837,7 @@ ukraine_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -6640,7 +6881,7 @@ ukraine_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -6684,7 +6925,7 @@ ukraine_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -6728,7 +6969,7 @@ ukraine_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -6772,7 +7013,7 @@ ukraine_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -6816,7 +7057,7 @@ ukraine_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}
@@ -6860,7 +7101,7 @@ ukraine_dogovornyak = {
 				NOT = {
 					has_country_flag = {
 						flag = picked_a_theme
-						days < 21
+						days < 14
 					}
 				}
 			}

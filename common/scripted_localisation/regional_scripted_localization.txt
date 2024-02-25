@@ -234,58 +234,95 @@ defined_text = {
         name = GetDogovornyakTopic
             text = {
                 trigger = {
-                        has_country_flag = army_recruiting
+                        has_country_flag = {
+                                flag = economy_base
+                                days < 15
+                        }
                 }
-                localization_key = ArmyRecruting
+                localization_key = EconomyBase
             }
             text = {
                 trigger = {
-                        has_country_flag = army_staff
+                        has_country_flag = {
+                                flag = economy_freedoms
+                                days < 15
+                        }
                 }
-                localization_key = ArmyStaff
+                localization_key = EconomyFreedoms
             }
             text = {
                 trigger = {
-                        has_country_flag = army_standarts
+                        has_country_flag = {
+                                flag = army_standarts
+                                days < 15
+                        }
                 }
                 localization_key = ArmyStandarts
             }
             text = {
                 trigger = {
-                        has_country_flag = domestic_civilian
+                        has_country_flag = {
+                                flag = army_structure
+                                days < 15
+                        }
                 }
-                localization_key = DomesticCivilian
+                localization_key = ArmyStructure
             }
             text = {
                 trigger = {
-                        has_country_flag = domestic_economy
+                        has_country_flag = {
+                                flag = state_control
+                                days < 15
+                        }
                 }
-                localization_key = DomesticEconomy
+                localization_key = StateControl
             }
             text = {
                 trigger = {
-                        has_country_flag = domestic_liberties
+                        has_country_flag = {
+                                flag = civilian_services
+                                days < 15
+                        }
                 }
-                localization_key = DomesticLiberties
+                localization_key = CivilianServices
             }
             text = {
                 trigger = {
-                        has_country_flag = domestic_workers
+                        has_country_flag = {
+                                flag = civilian_liberties
+                                days < 15
+                        }
                 }
-                localization_key = DomesticWorkers
+                localization_key = CivilianLiberties
             }
             text = {
                 trigger = {
-                        has_country_flag = government_grip
+                        has_country_flag = {
+                                flag = worker_stance
+                                days < 15
+                        }
                 }
-                localization_key = GovernmentGrip
+                localization_key = WorkerStance
             }
             text = {
                 trigger = {
-                        has_country_flag = government_politics
+                        has_country_flag = {
+                                flag = equality
+                                days < 15
+                        }
                 }
-                localization_key = GovernmentPolitics
+                localization_key = Equality
             }
+            text = {
+                trigger = {
+                        has_country_flag = {
+                                flag = community_controls
+                                days < 15
+                        }
+                }
+                localization_key = CommunityControls
+            }
+            
 }
 
 defined_text = {
@@ -327,6 +364,138 @@ defined_text = {
     	text = {
             trigger = {
                     check_variable = {SCT.south_center_rates_grow = 1}
+            }
+            localization_key = ElectionRatesLow
+	    }
+}
+
+defined_text = {
+    name = GetLeftBankRatesGrowSouth
+    	text = {
+            trigger = {
+                    check_variable = {STH.south_rates_grow = 3}
+            }
+            localization_key = ElectionRatesHigh
+	    }
+    	text = {
+            trigger = {
+                    check_variable = {STH.south_rates_grow = 2}
+            }
+            localization_key = ElectionRatesMedium
+	    }
+    	text = {
+            trigger = {
+                    check_variable = {STH.south_rates_grow = 1}
+            }
+            localization_key = ElectionRatesLow
+	    }
+}
+
+defined_text = {
+    name = GetLeftBankRatesGrowEast
+    	text = {
+            trigger = {
+                    check_variable = {ESN.east_rates_grow = 3}
+            }
+            localization_key = ElectionRatesHigh
+	    }
+    	text = {
+            trigger = {
+                    check_variable = {ESN.east_rates_grow = 2}
+            }
+            localization_key = ElectionRatesMedium
+	    }
+    	text = {
+            trigger = {
+                    check_variable = {ESN.east_rates_grow = 1}
+            }
+            localization_key = ElectionRatesLow
+	    }
+}
+
+defined_text = {
+    name = GetRightBankRatesGrowWest
+    	text = {
+            trigger = {
+                    check_variable = {WST.west_rates_grow = 3}
+            }
+            localization_key = ElectionRatesHigh
+	    }
+    	text = {
+            trigger = {
+                    check_variable = {WST.west_rates_grow = 2}
+            }
+            localization_key = ElectionRatesMedium
+	    }
+    	text = {
+            trigger = {
+                    check_variable = {WST.west_rates_grow = 1}
+            }
+            localization_key = ElectionRatesLow
+	    }
+}
+
+defined_text = {
+    name = GetRightBankRatesGrowCenter
+    	text = {
+            trigger = {
+                    check_variable = {CNT.center_rates_grow = 3}
+            }
+            localization_key = ElectionRatesHigh
+	    }
+    	text = {
+            trigger = {
+                    check_variable = {CNT.center_rates_grow = 2}
+            }
+            localization_key = ElectionRatesMedium
+	    }
+    	text = {
+            trigger = {
+                    check_variable = {CNT.center_rates_grow = 1}
+            }
+            localization_key = ElectionRatesLow
+	    }
+}
+
+defined_text = {
+    name = GetUkraineRatesGrowLeftBank
+    	text = {
+            trigger = {
+                    check_variable = {LBU.left_bank_rates_grow = 3}
+            }
+            localization_key = ElectionRatesHigh
+	    }
+    	text = {
+            trigger = {
+                    check_variable = {LBU.left_bank_rates_grow = 2}
+            }
+            localization_key = ElectionRatesMedium
+	    }
+    	text = {
+            trigger = {
+                    check_variable = {LBU.left_bank_rates_grow = 1}
+            }
+            localization_key = ElectionRatesLow
+	    }
+}
+
+defined_text = {
+    name = GetUkraineRatesGrowRightBank
+    	text = {
+            trigger = {
+                    check_variable = {RBU.right_bank_rates_grow = 3}
+            }
+            localization_key = ElectionRatesHigh
+	    }
+    	text = {
+            trigger = {
+                    check_variable = {RBU.right_bank_rates_grow = 2}
+            }
+            localization_key = ElectionRatesMedium
+	    }
+    	text = {
+            trigger = {
+                    check_variable = {RBU.right_bank_rates_grow = 1}
             }
             localization_key = ElectionRatesLow
 	    }

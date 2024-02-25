@@ -456,6 +456,7 @@ south_war = {
 			NOT = {
 				has_country_flag = south_war
 			}
+			has_country_flag = south_war_escalated
 		}
 		target_trigger = {
             FROM = {
@@ -468,7 +469,7 @@ south_war = {
         }
 		is_good = no
 		war_with_on_timeout = FROM
-		days_mission_timeout = 120
+		days_mission_timeout = 90
 		selectable_mission = no
 		timeout_effect = {
 			declare_war_on = {
@@ -517,7 +518,8 @@ south_war = {
             }
 			ROOT = {
 				NOT = {
-					has_country_flag = sw_hold_positions
+					has_country_flag = sw_defensive
+					has_ideas = regional_failed_plans
 				}
 			}
         }
@@ -552,7 +554,8 @@ south_war = {
             }
 			ROOT = {
 				NOT = {
-					has_country_flag = sw_capture_cities
+					has_country_flag = sw_offensive
+					has_ideas = regional_counter_attack
 				}
 			}
         }
@@ -1436,6 +1439,7 @@ center_war = {
             NOT = {
                 has_country_flag = center_war
             }
+			has_country_flag = center_war_escalated
         }
         target_trigger = {
             FROM = {
@@ -1448,7 +1452,7 @@ center_war = {
         }
         is_good = no
         war_with_on_timeout = FROM
-        days_mission_timeout = 120
+        days_mission_timeout = 90
         selectable_mission = no
         timeout_effect = {
             declare_war_on = {
@@ -1497,7 +1501,8 @@ center_war = {
             }
             ROOT = {
                 NOT = {
-                    has_country_flag = center_hold_positions
+                    has_country_flag = center_defensive
+					has_ideas = regional_failed_plans
                 }
             }
         }
@@ -1532,7 +1537,8 @@ center_war = {
             }
             ROOT = {
                 NOT = {
-                    has_country_flag = center_capture_cities
+                    has_country_flag = center_offensive
+					has_ideas = regional_counter_attack
                 }
             }
         }
@@ -2075,6 +2081,7 @@ west_war = {
 			NOT = {
 				has_country_flag = west_war
 			}
+			has_country_flag = west_war_escalated
 		}
 		target_trigger = {
             FROM = {
@@ -2087,7 +2094,7 @@ west_war = {
         }
 		is_good = no
 		war_with_on_timeout = FROM
-		days_mission_timeout = 120
+		days_mission_timeout = 90
 		selectable_mission = no
 		timeout_effect = {
 			declare_war_on = {
@@ -2135,9 +2142,10 @@ west_war = {
 				has_country_flag = west_war_escalated
             }
 			ROOT = {
-				NOT = {
-					has_country_flag = ww_hold_positions
-				}
+					NOT = {
+						has_country_flag = ww_defensive
+						has_ideas = regional_failed_plans
+					}
 			}
         }
 		is_good = no
@@ -2171,8 +2179,9 @@ west_war = {
             }
 			ROOT = {
 				NOT = {
-					has_country_flag = ww_capture_cities
-				}
+                    has_country_flag = ww_offensive
+					has_ideas = regional_counter_attack
+                }
 			}
         }
 		is_good = no
@@ -2671,6 +2680,7 @@ east_war = {
 			NOT = {
 				has_country_flag = east_war
 			}
+			has_country_flag = east_war_escalated
 		}
 		target_trigger = {
             FROM = {
@@ -2683,7 +2693,7 @@ east_war = {
         }
 		is_good = no
 		war_with_on_timeout = FROM
-		days_mission_timeout = 120
+		days_mission_timeout = 90
 		selectable_mission = no
 		timeout_effect = {
 			declare_war_on = {
@@ -2732,8 +2742,9 @@ east_war = {
             }
 			ROOT = {
 				NOT = {
-					has_country_flag = ew_hold_positions
-				}
+                    has_country_flag = ew_defensive
+					has_ideas = regional_failed_plans
+                }
 			}
         }
 		is_good = no
@@ -2767,8 +2778,9 @@ east_war = {
             }
 			ROOT = {
 				NOT = {
-					has_country_flag = ew_capture_cities
-				}
+                    has_country_flag = ew_offensive
+					has_ideas = regional_counter_attack
+                }
 			}
         }
 		is_good = no
@@ -3312,6 +3324,7 @@ left_bank_war = {
 			NOT = {
 				has_country_flag = left_bank_war
 			}
+			has_country_flag = left_bank_war_escalated
 		}
 		target_trigger = {
             FROM = {
@@ -3324,7 +3337,7 @@ left_bank_war = {
         }
 		is_good = no
 		war_with_on_timeout = FROM
-		days_mission_timeout = 120
+		days_mission_timeout = 90
 		selectable_mission = no
 		timeout_effect = {
 			declare_war_on = {
@@ -3373,8 +3386,9 @@ left_bank_war = {
             }
 			ROOT = {
 				NOT = {
-					has_country_flag = lw_hold_positions
-				}
+                    has_country_flag = lw_defensive
+					has_ideas = regional_failed_plans
+                }
 			}
         }
 		is_good = no
@@ -3408,8 +3422,9 @@ left_bank_war = {
             }
 			ROOT = {
 				NOT = {
-					has_country_flag = lw_capture_cities
-				}
+                    has_country_flag = lw_offensive
+					has_ideas = regional_counter_attack
+                }
 			}
         }
 		is_good = no
@@ -3952,6 +3967,7 @@ right_bank_war = {
 			NOT = {
 				has_country_flag = right_bank_war
 			}
+			has_country_flag = right_bank_war_escalated
 		}
 		target_trigger = {
             FROM = {
@@ -3964,7 +3980,7 @@ right_bank_war = {
         }
 		is_good = no
 		war_with_on_timeout = FROM
-		days_mission_timeout = 120
+		days_mission_timeout = 90
 		selectable_mission = no
 		timeout_effect = {
 			declare_war_on = {
@@ -4013,8 +4029,9 @@ right_bank_war = {
             }
 			ROOT = {
 				NOT = {
-					has_country_flag = rw_hold_positions
-				}
+                    has_country_flag = rw_defensive
+					has_ideas = regional_failed_plans
+                }
 			}
         }
 		is_good = no
@@ -4048,8 +4065,9 @@ right_bank_war = {
             }
 			ROOT = {
 				NOT = {
-					has_country_flag = rw_capture_cities
-				}
+                    has_country_flag = rw_offensive
+					has_ideas = regional_counter_attack
+                }
 			}
         }
 		is_good = no
@@ -4715,6 +4733,7 @@ ukraine_war = {
 			NOT = {
 				has_country_flag = ukraine_war
 			}
+			has_country_flag = ukraine_war_escalated
 		}
 		target_trigger = {
             FROM = {
@@ -4727,7 +4746,7 @@ ukraine_war = {
         }
 		is_good = no
 		war_with_on_timeout = FROM
-		days_mission_timeout = 120
+		days_mission_timeout = 90
 		selectable_mission = no
 		timeout_effect = {
 			declare_war_on = {
@@ -4776,8 +4795,9 @@ ukraine_war = {
             }
 			ROOT = {
 				NOT = {
-					has_country_flag = uw_hold_positions
-				}
+                    has_country_flag = uw_defensive
+					has_ideas = regional_failed_plans
+                }
 			}
         }
 		is_good = no
@@ -4811,8 +4831,9 @@ ukraine_war = {
             }
 			ROOT = {
 				NOT = {
-					has_country_flag = uw_capture_cities
-				}
+                    has_country_flag = uw_offensive
+					has_ideas = regional_counter_attack
+                }
 			}
         }
 		is_good = no
