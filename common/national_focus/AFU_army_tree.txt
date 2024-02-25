@@ -1,0 +1,888 @@
+
+shared_focus = {
+	id = AFU_army_problems
+	icon = GFX_generic_suspend_constitution
+	x = 50
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+}
+
+shared_focus = {
+	id = AFU_reform_comitee
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_army_problems
+	prerequisite = { focus = AFU_army_problems }
+}
+
+shared_focus = {
+	id = AFU_zvit_1
+	icon = GFX_generic_suspend_constitution
+	x = -1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_reform_comitee
+	prerequisite = { focus = AFU_reform_comitee }
+}
+
+shared_focus = {
+	id = AFU_zvit_2
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_reform_comitee
+	prerequisite = { focus = AFU_reform_comitee }
+}
+
+shared_focus = {
+	id = AFU_zvit_3
+	icon = GFX_generic_suspend_constitution
+	x = 1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_reform_comitee
+	prerequisite = { focus = AFU_reform_comitee }
+}
+
+shared_focus = {
+	id = AFU_general_condition
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 2
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_zvit_2
+	prerequisite = { focus = AFU_zvit_1 }
+	prerequisite = { focus = AFU_zvit_2 }
+	prerequisite = { focus = AFU_zvit_3 }
+}
+
+shared_focus = {
+	id = AFU_development_of_the_military_industry
+	icon = GFX_generic_suspend_constitution
+	x = -12
+	y = 2
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_general_condition
+	prerequisite = { focus = AFU_general_condition }
+}
+
+shared_focus = {
+	id = AFU_purchases_abroad
+	icon = GFX_generic_suspend_constitution
+	x = -2
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_development_of_the_military_industry
+	prerequisite = { focus = AFU_development_of_the_military_industry }
+	mutually_exclusive = { focus = AFU_own_production_facilities }
+}
+
+shared_focus = {
+	id = AFU_buy_military_trucks
+	icon = GFX_generic_suspend_constitution
+	x = -5
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_purchases_abroad
+	prerequisite = { focus = AFU_purchases_abroad }
+}
+
+shared_focus = {
+	id = AFU_buy_tanks
+	icon = GFX_generic_suspend_constitution
+	x = -3
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_purchases_abroad
+	prerequisite = { focus = AFU_purchases_abroad }
+}
+
+shared_focus = {
+	id = AFU_buy_artillery
+	icon = GFX_generic_suspend_constitution
+	x = -1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_purchases_abroad
+	prerequisite = { focus = AFU_purchases_abroad }
+}
+
+shared_focus = {
+	id = AFU_buy_bmp
+	icon = GFX_generic_suspend_constitution
+	x = 1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_purchases_abroad
+	prerequisite = { focus = AFU_purchases_abroad }
+}
+
+shared_focus = {
+	id = AFU_cooperation_with_east_europe
+	icon = GFX_generic_suspend_constitution
+	x = -1
+	y = 2
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_buy_artillery
+	prerequisite = { focus = AFU_buy_military_trucks focus = AFU_buy_tanks focus = AFU_buy_artillery focus = AFU_buy_bmp }
+}
+
+shared_focus = {
+	id = AFU_own_production_facilities
+	icon = GFX_generic_suspend_constitution
+	x = 2
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_development_of_the_military_industry
+	prerequisite = { focus = AFU_development_of_the_military_industry }
+	mutually_exclusive = { focus = AFU_purchases_abroad }
+}
+
+shared_focus = {
+	id = AFU_resume_promising_projects
+	icon = GFX_generic_suspend_constitution
+	x = -1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_own_production_facilities
+	prerequisite = { focus = AFU_own_production_facilities }
+}
+
+shared_focus = {
+	id = AFU_restoration_of_the_military_industry
+	icon = GFX_generic_suspend_constitution
+	x = 1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_own_production_facilities
+	prerequisite = { focus = AFU_own_production_facilities }
+}
+
+shared_focus = {
+	id = AFU_modernization_of_industrial_capacities
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 2
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_own_production_facilities
+	prerequisite = { focus = AFU_own_production_facilities }
+}
+
+shared_focus = {
+	id = AFU_industrial_giant
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 2
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_modernization_of_industrial_capacities
+	prerequisite = { focus = AFU_modernization_of_industrial_capacities }
+}
+
+shared_focus = {
+	id = AFU_reform_SV
+	icon = GFX_generic_suspend_constitution
+	x = -6
+	y = 2
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_general_condition
+	prerequisite = { focus = AFU_general_condition }
+}
+
+shared_focus = {
+	id = AFU_improve_training_standards
+	icon = GFX_generic_suspend_constitution
+	x = 1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_reform_SV
+	prerequisite = { focus = AFU_reform_SV }
+}
+
+shared_focus = {
+	id = AFU_revise_doctrines
+	icon = GFX_generic_suspend_constitution
+	x = -1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_reform_SV
+	prerequisite = { focus = AFU_reform_SV }
+	mutually_exclusive = { focus = AFU_improve_soviet_doctrines }
+}
+
+shared_focus = {
+	id = AFU_improve_soviet_doctrines
+	icon = GFX_generic_suspend_constitution
+	x = -3
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_reform_SV
+	prerequisite = { focus = AFU_reform_SV }
+	mutually_exclusive = { focus = AFU_revise_doctrines }
+}
+
+shared_focus = {
+	id = AFU_give_way_to_young_officers
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 2
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_reform_SV
+	prerequisite = { focus = AFU_improve_training_standards }
+	prerequisite = { focus = AFU_revise_doctrines focus = AFU_improve_soviet_doctrines }
+}
+
+shared_focus = {
+	id = AFU_new_staffing_structure
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_give_way_to_young_officers
+	prerequisite = { focus = AFU_give_way_to_young_officers }
+}
+
+shared_focus = {
+	id = AFU_refresh_officer_corps
+	icon = GFX_generic_suspend_constitution
+	x = -1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_new_staffing_structure
+	prerequisite = { focus = AFU_new_staffing_structure }
+}
+
+shared_focus = {
+	id = AFU_support_units
+	icon = GFX_generic_suspend_constitution
+	x = 1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_new_staffing_structure
+	prerequisite = { focus = AFU_new_staffing_structure }
+}
+
+shared_focus = {
+	id = AFU_reform_PS
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 2
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_general_condition
+	prerequisite = { focus = AFU_general_condition }
+}
+
+shared_focus = {
+	id = AFU_modernize_MiG
+	icon = GFX_generic_suspend_constitution
+	x = 2
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_reform_PS
+	prerequisite = { focus = AFU_reform_PS }
+}
+
+shared_focus = {
+	id = AFU_buy_planes
+	icon = GFX_generic_suspend_constitution
+	x = -2
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_reform_PS
+	prerequisite = { focus = AFU_reform_PS }
+}
+
+shared_focus = {
+	id = AFU_pilot_training_in_other_countries
+	icon = GFX_generic_suspend_constitution
+	x = 1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_buy_planes
+	prerequisite = { focus = AFU_buy_planes }
+	prerequisite = { focus = AFU_modernize_MiG }
+	mutually_exclusive = { focus = AFU_pilot_training_in_donetsk }
+}
+
+shared_focus = {
+	id = AFU_pilot_training_in_donetsk
+	icon = GFX_generic_suspend_constitution
+	x = 3
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_buy_planes
+	prerequisite = { focus = AFU_buy_planes }
+	prerequisite = { focus = AFU_modernize_MiG }
+	mutually_exclusive = { focus = AFU_pilot_training_in_other_countries }
+}
+
+shared_focus = {
+	id = AFU_buy_rockets
+	icon = GFX_generic_suspend_constitution
+	x = -1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_pilot_training_in_donetsk
+	prerequisite = { focus = AFU_pilot_training_in_other_countries focus = AFU_pilot_training_in_donetsk }
+}
+
+shared_focus = {
+	id = AFU_buy_planes_from_africa
+	icon = GFX_generic_suspend_constitution
+	x = -1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_buy_rockets
+	prerequisite = { focus = AFU_buy_rockets }
+}
+
+shared_focus = {
+	id = AFU_sapsan_2
+	icon = GFX_generic_suspend_constitution
+	x = 1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_buy_rockets
+	prerequisite = { focus = AFU_buy_rockets }
+}
+
+shared_focus = {
+	id = AFU_reform_sso
+	icon = GFX_generic_suspend_constitution
+	x = 6
+	y = 2
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_general_condition
+	prerequisite = { focus = AFU_general_condition }
+}
+
+shared_focus = {
+	id = AFU_new_sso_deployment
+	icon = GFX_generic_suspend_constitution
+	x = -2
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_reform_sso
+	prerequisite = { focus = AFU_reform_sso }
+}
+
+shared_focus = {
+	id = AFU_intensify_sso_training
+	icon = GFX_generic_suspend_constitution
+	x = 2
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_reform_sso
+	prerequisite = { focus = AFU_reform_sso }
+}
+
+shared_focus = {
+	id = AFU_special_conditions
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 2
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_reform_sso
+	prerequisite = { focus = AFU_new_sso_deployment }
+	prerequisite = { focus = AFU_intensify_sso_training }
+}
+
+shared_focus = {
+	id = AFU_final_weapon_replacement
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_special_conditions
+	prerequisite = { focus = AFU_special_conditions }
+}
+
+shared_focus = {
+	id = AFU_foreign_mercenaries
+	icon = GFX_generic_suspend_constitution
+	x = -1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_final_weapon_replacement
+	prerequisite = { focus = AFU_final_weapon_replacement }
+	mutually_exclusive = { focus = AFU_integration_of_air_tactics }
+}
+
+shared_focus = {
+	id = AFU_integration_of_air_tactics
+	icon = GFX_generic_suspend_constitution
+	x = 1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_final_weapon_replacement
+	prerequisite = { focus = AFU_final_weapon_replacement }
+	mutually_exclusive = { focus = AFU_foreign_mercenaries }
+}
+
+shared_focus = {
+	id = AFU_army_reformed
+	icon = GFX_generic_suspend_constitution
+	x = -1
+	y = 3
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_sapsan_2
+	prerequisite = { focus = AFU_refresh_officer_corps focus = AFU_support_units }
+	prerequisite = { focus = AFU_buy_planes_from_africa focus = AFU_sapsan_2 }
+	prerequisite = { focus = AFU_foreign_mercenaries focus = AFU_integration_of_air_tactics }
+}
+
+shared_focus = {
+	id = AFU_remember_shared_history
+	icon = GFX_generic_suspend_constitution
+	x = -2
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_army_reformed
+	prerequisite = { focus = AFU_army_reformed }
+	mutually_exclusive = { focus = AFU_remember_true_nature }
+}
+
+shared_focus = {
+	id = AFU_attache_in_moskow
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 2
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_remember_shared_history
+	prerequisite = { focus = AFU_remember_shared_history }
+}
+
+shared_focus = {
+	id = AFU_compensation_for_crimea
+	icon = GFX_generic_suspend_constitution
+	x = -2
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_remember_shared_history
+	prerequisite = { focus = AFU_remember_shared_history }
+}
+
+shared_focus = {
+	id = AFU_trainings_in_belarus
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 2
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_compensation_for_crimea
+	prerequisite = { focus = AFU_compensation_for_crimea }
+}
+
+shared_focus = {
+	id = AFU_remember_true_nature
+	icon = GFX_generic_suspend_constitution
+	x = 2
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_army_reformed
+	prerequisite = { focus = AFU_army_reformed }
+	mutually_exclusive = { focus = AFU_remember_shared_history }
+}
+
+shared_focus = {
+	id = AFU_cossack_spirit_lmao
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 2
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_remember_true_nature
+	prerequisite = { focus = AFU_remember_true_nature }
+}
+
+shared_focus = {
+	id = AFU_introduce_OUN_statutes
+	icon = GFX_generic_suspend_constitution
+	x = 2
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_remember_true_nature
+	prerequisite = { focus = AFU_remember_true_nature }
+}
+
+shared_focus = {
+	id = AFU_remind_about_eternal_enemy
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 2
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_introduce_OUN_statutes
+	prerequisite = { focus = AFU_introduce_OUN_statutes }
+}
+
+shared_focus = {
+	id = AFU_new_ukrainian_army
+	icon = GFX_generic_suspend_constitution
+	x = -4
+	y = 2
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_remind_about_eternal_enemy
+	prerequisite = { focus = AFU_attache_in_moskow focus = AFU_cossack_spirit_lmao }
+	prerequisite = { focus = AFU_trainings_in_belarus focus = AFU_remind_about_eternal_enemy }
+}
+
+
+
+
+
+
+shared_focus = {
+	id = AFU_new_ways_of_war
+	icon = GFX_generic_suspend_constitution
+	x = 12
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_general_condition
+	prerequisite = { focus = AFU_general_condition }
+}
+
+shared_focus = {
+	id = AFU_mass_drone_production
+	icon = GFX_generic_suspend_constitution
+	x = -1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_new_ways_of_war
+	prerequisite = { focus = AFU_new_ways_of_war }
+}
+
+shared_focus = {
+	id = AFU_training_of_the_drone_operators
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_mass_drone_production
+	prerequisite = { focus = AFU_mass_drone_production }
+}
+
+shared_focus = {
+	id = AFU_centre_of_psyop_operations
+	icon = GFX_generic_suspend_constitution
+	x = 1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_new_ways_of_war
+	prerequisite = { focus = AFU_new_ways_of_war }
+}
+
+shared_focus = {
+	id = AFU_hybrid_war
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_centre_of_psyop_operations
+	prerequisite = { focus = AFU_centre_of_psyop_operations }
+}
+
+
+
+
+
+
+
+
+
+shared_focus = {
+	id = AFU_naval_reform
+	icon = GFX_generic_suspend_constitution
+	x = 16
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_general_condition
+	prerequisite = { focus = AFU_general_condition }
+}
+
+shared_focus = {
+	id = AFU_return_old_fleet
+	icon = GFX_generic_suspend_constitution
+	x = -1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_naval_reform
+	prerequisite = { focus = AFU_naval_reform }
+	mutually_exclusive = { focus = AFU_light_ships_tactic }
+}
+
+shared_focus = {
+	id = AFU_new_ship_equipement
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 2
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_return_old_fleet
+	prerequisite = { focus = AFU_return_old_fleet }
+}
+
+shared_focus = {
+	id = AFU_light_ships_tactic
+	icon = GFX_generic_suspend_constitution
+	x = 1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_naval_reform
+	prerequisite = { focus = AFU_naval_reform }
+	mutually_exclusive = { focus = AFU_return_old_fleet }
+}
+
+shared_focus = {
+	id = AFU_fast_raids
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 2
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_light_ships_tactic
+	prerequisite = { focus = AFU_light_ships_tactic }
+}
+
+shared_focus = {
+	id = AFU_marine_reborn
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 2
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_naval_reform
+	prerequisite = { focus = AFU_return_old_fleet focus = AFU_light_ships_tactic }
+}
+
+
+
+
+
+
+
+
+
+
+shared_focus = {
+	id = AFU_death_from_above
+	icon = GFX_generic_suspend_constitution
+	x = 3
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_naval_reform
+	prerequisite = { focus = AFU_naval_reform }
+}
+
+shared_focus = {
+	id = AFU_neptun_production
+	icon = GFX_generic_suspend_constitution
+	x = -1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_death_from_above
+	prerequisite = { focus = AFU_death_from_above }
+	mutually_exclusive = { focus = AFU_buy_british_drones }
+}
+
+shared_focus = {
+	id = AFU_buy_british_drones
+	icon = GFX_generic_suspend_constitution
+	x = 1
+	y = 1
+    cost = 2
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_death_from_above
+	prerequisite = { focus = AFU_death_from_above }
+	mutually_exclusive = { focus = AFU_neptun_production }
+}
