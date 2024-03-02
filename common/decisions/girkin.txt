@@ -1,0 +1,1287 @@
+girkin_invite_cossaks_decisions = {
+
+    invite_for_cossaks = {
+        activation = {
+            has_country_flag = girkin_invite_cossaks
+        }
+        available = {
+        always = no
+        }
+		icon = mission_icon
+		is_good = no
+		days_mission_timeout = 365
+		fire_only_once = yes
+        complete_effect = {
+        
+        }
+        timeout_effect = {
+            clr_country_flag = girkin_invite_cossaks
+        }
+    }
+	
+    form_elite_cossaks_division = {			
+
+		icon = GFX_elite_cossaks_decision
+		
+		available = {  has_country_flag = girkin_invite_cossaks	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+		has_country_flag = girkin_invite_cossaks
+		}		
+
+		cost = 300
+
+		remove_effect = {
+		
+		
+division_template = {
+                    name = "Elite Cossaks Division"
+                    priority = 1
+                    division_names_group = BLR_INF_01
+                    regiments = {
+                        cavalry = { x = 0 y = 0 }
+                        cavalry = { x = 0 y = 1 }
+                        cavalry = { x = 0 y = 2 }
+						cavalry = { x = 0 y = 3 }
+                        cavalry = { x = 1 y = 0 }
+                        cavalry = { x = 1 y = 1 }
+						cavalry = { x = 1 y = 2 }
+						cavalry = { x = 1 y = 3 }
+
+                    }
+                    support = {
+                        engineer = { x = 0 y = 0 }
+                        military_police = { x = 0 y = 1 }
+                        anti_tank = { x = 0 y = 2 }
+                        recon = { x = 0 y = 3 }
+                    }
+                }
+			random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"Triumfal`noe Kazackoe Voisko im. Igorya Girkina\" division_template = \"Elite Cossaks Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+				owner = DPR
+					}	
+				}		
+
+			}           		
+			hidden_effect = {
+			RUS = {
+			add_manpower = -6000
+			}
+
+			}
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }	
+	
+    invite_cuban_cossaks = {			
+
+		icon = GFX_cuban_cossaks_decision
+		
+		available = {  has_country_flag = girkin_invite_cossaks	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+		has_country_flag = girkin_invite_cossaks
+		}		
+
+		cost = 200
+
+		remove_effect = {
+			random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"Kuban Cossaks Division\" division_template = \"Cossaks Division\" start_experience_factor = 0.2 start_equipment_factor = 0.5"
+				owner = DPR
+					}	
+				}		
+				recruit_character = DNR_nutrecov
+			}           		
+			hidden_effect = {
+			RUS = {
+			add_manpower = -6000
+			}
+
+			}
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+	   
+    invite_terek_cossaks = {			
+
+		icon = GFX_terek_cossaks_decision
+		
+		available = {  has_country_flag = girkin_invite_cossaks	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+		has_country_flag = girkin_invite_cossaks
+		}		
+
+		cost = 200
+
+		remove_effect = {
+			random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"Terek Cossaks Division\" division_template = \"Cossaks Division\" start_experience_factor = 0.2 start_equipment_factor = 0.5"
+				owner = DPR
+					}	
+				}			
+
+			}           		
+			hidden_effect = {
+			RUS = {
+			add_manpower = -6000
+			}
+
+			}
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+	   
+    invite_don_cossaks = {			
+
+		icon = GFX_don_cossaks_decision
+		
+		available = {  has_country_flag = girkin_invite_cossaks	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+		has_country_flag = girkin_invite_cossaks
+		}		
+
+		cost = 200
+
+		remove_effect = {
+			random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"Don Cossaks Division\" division_template = \"Cossaks Division\" start_experience_factor = 0.2 start_equipment_factor = 0.5"
+				owner = DPR
+					}	
+				}
+				recruit_character = DNR_turanov			
+
+			}           		
+			hidden_effect = {
+			RUS = {
+			add_manpower = -6000
+			}
+
+			}
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+
+    invite_ussurian_cossaks = {			
+
+		icon = GFX_ussurian_cossaks_decision
+		
+		available = {  has_country_flag = girkin_invite_cossaks	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+		has_country_flag = girkin_invite_cossaks
+		}		
+
+		cost = 200
+
+		remove_effect = {
+			random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"Ussurian Cossaks Division\" division_template = \"Cossaks Division\" start_experience_factor = 0.2 start_equipment_factor = 0.5"
+				owner = DPR
+					}	
+				}		
+
+			}           		
+			hidden_effect = {
+			RUS = {
+			add_manpower = -6000
+			}
+
+			}
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }	
+
+    invite_volga_cossaks = {			
+
+		icon = GFX_volga_cossaks_decision
+		
+		available = {  has_country_flag = girkin_invite_cossaks	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+		has_country_flag = girkin_invite_cossaks
+		}		
+
+		cost = 200
+
+		remove_effect = {
+			random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"Volga Cossaks Division\" division_template = \"Cossaks Division\" start_experience_factor = 0.2 start_equipment_factor = 0.5"
+				owner = DPR
+					}	
+				}
+				recruit_character = DNR_sherstykov					
+
+			}           		
+			hidden_effect = {
+			RUS = {
+			add_manpower = -6000
+			}
+
+			}
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+
+    invite_central_cossaks = {			
+
+		icon = GFX_central_cossaks_decision
+		
+		available = {  has_country_flag = girkin_invite_cossaks	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+		has_country_flag = girkin_invite_cossaks
+		}		
+
+		cost = 200
+
+		remove_effect = {
+			random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"Central Cossaks Division\" division_template = \"Cossaks Division\" start_experience_factor = 0.2 start_equipment_factor = 0.5"
+				owner = DPR
+					}	
+				}
+				recruit_character = DNR_chirko				
+
+			}           		
+			hidden_effect = {
+			RUS = {
+			add_manpower = -6000
+			}
+
+			}
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+
+    invite_enisei_cossaks = {			
+
+		icon = GFX_enisei_cossaks_decision
+		
+		available = {  has_country_flag = girkin_invite_cossaks	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+		has_country_flag = girkin_invite_cossaks
+		}		
+
+		cost = 200
+
+		remove_effect = {
+			random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"Enisei Cossaks Division\" division_template = \"Cossaks Division\" start_experience_factor = 0.2 start_equipment_factor = 0.5"
+				owner = DPR
+					}	
+				}		
+
+			}           		
+			hidden_effect = {
+			RUS = {
+			add_manpower = -6000
+			}
+
+			}
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+
+    invite_zabaikal_cossaks = {			
+
+		icon = GFX_zabaikal_cossaks_decision
+		
+		available = {  has_country_flag = girkin_invite_cossaks	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+		has_country_flag = girkin_invite_cossaks
+		}		
+
+		cost = 200
+
+		remove_effect = {
+			random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"Zabaikal Cossaks Division\" division_template = \"Cossaks Division\" start_experience_factor = 0.2 start_equipment_factor = 0.5"
+				owner = DPR
+					}	
+				}		
+
+			}           		
+			hidden_effect = {
+			RUS = {
+			add_manpower = -6000
+			}
+
+			}
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }	   
+	   
+   }	
+
+
+girkin_kill_opposition_decisions = {
+
+    great_escape_from_the_country = {
+        activation = {
+            has_country_flag = girkin_kill_opposition_flag
+        }
+        available = {
+        always = no
+        }
+		icon = mission_icon
+		is_good = no
+		days_mission_timeout = 40
+		fire_only_once = yes
+        complete_effect = {
+        
+        }
+        timeout_effect = {
+            clr_country_flag = girkin_kill_opposition_flag
+        }
+    }
+	
+    kill_petushilin_decision = {			
+
+		icon = GFX_pushilin_kill_decision
+		
+		available = {  has_country_flag = DPR_pushilin_alive	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+		has_country_flag = DPR_pushilin_alive	
+		}		
+
+		cost = 150
+
+		remove_effect = {
+            retire_character = DNR_Pidor		
+			hidden_effect = { 
+			clr_country_flag = DPR_pushilin_alive
+			set_country_flag = DPR_pushilin_dead
+			}	
+	   }
+		ai_will_do = {	
+			factor = 100		
+		}
+   }	
+   
+     kill_pasechnik_decision = {			
+
+		icon = GFX_pasek_kill_decision
+		
+		
+		available = {  has_country_flag = DPR_pasechnik_alive	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+		has_country_flag = DPR_pasechnik_alive	
+		}		
+
+		cost = 150
+
+		remove_effect = {
+        retire_character = DNR_Pasechnik		
+			hidden_effect = { 
+			retire_character = LNR_Huy
+			retire_character = LNR_Huylo
+			clr_country_flag = DPR_pasechnik_alive
+			set_country_flag = DPR_pasechnik_dead
+			}	
+	   }
+		ai_will_do = {	
+			factor = 100		
+		}
+   }	
+   
+      kill_vitrenko_decision = {			
+
+		icon = GFX_vitrenko_kill_decision
+		
+		
+		available = {  has_country_flag = DPR_vitrenko_alive	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+		has_country_flag = DPR_vitrenko_alive	
+		}		
+
+		cost = 150
+
+		remove_effect = {	
+		retire_character = DNR_Vitrenko
+			hidden_effect = { 
+			clr_country_flag = DPR_vitrenko_alive
+			set_country_flag = DPR_vitrenko_dead
+			}	
+	   }
+		ai_will_do = {	
+			factor = 100		
+		}
+   }
+   
+      alliance_pushilin_decision = {			
+
+		icon = GFX_pushilin_alliance_decision
+		
+		
+		available = {  has_country_flag = DPR_pushilin_alive	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+		has_country_flag = DPR_pushilin_alive	
+		}		
+
+		cost = 200
+
+		remove_effect = {	
+		
+		add_advisor_role = {
+    character = DNR_Pidor
+    activate = yes
+    advisor = {
+        slot = economy_minister
+        cost = 50
+        idea_token = DNR_Pidor
+        traits = {
+            Entrepreneur
+        }
+    }
+}
+		
+			hidden_effect = { 
+			clr_country_flag = DPR_pushilin_alive
+			set_country_flag = DPR_pushilin_alliance
+			}	
+	   }
+		ai_will_do = {	
+			factor = 100		
+		}
+   }
+	
+  }
+  
+DPR_rostislave_girkin_balance_decisions = {
+
+    tsars_television_speech = {			
+
+		icon = GFX_decision_hol_radio_oranje
+		
+		available = {  has_power_balance = {
+    id = DPR_rostislave_girkin_political_balance
+}
+
+
+	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+
+power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value < -0.1
+}
+		}			
+
+		cost = 50
+
+		remove_effect = {
+				
+			add_stability = 0.05
+				
+			}           		
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+	   
+    girkin_army_meet = {			
+
+		icon = GFX_decision_generic_army_support
+		
+		available = {  has_power_balance = {
+    id = DPR_rostislave_girkin_political_balance
+}
+
+
+	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value > 0.1
+}
+		}		
+
+		cost = 50
+
+		remove_effect = {
+				
+			add_command_power = 10
+				
+			}           		
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+	   
+    cleansing_of_radicals_and_fanatics = {			
+
+		icon = GFX_decision_generic_arrest
+		
+		available = {  has_power_balance = {
+    id = DPR_rostislave_girkin_political_balance
+}
+
+
+	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value < -0.3
+}	
+}		
+
+		cost = 50
+
+		remove_effect = {
+			retire_character = DPR_verin
+			retire_character = DPR_bezsonov
+			retire_character = DPR_gubarev
+			add_manpower = -1000
+				
+			}           		
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+	   
+    strengthen_the_emperors_security = {			
+
+		icon = GFX_decision_generic_intelligence_operation
+		
+		available = {  has_power_balance = {
+    id = DPR_rostislave_girkin_political_balance
+}
+
+
+	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value > 0.3
+}
+		}		
+
+		cost = 50
+
+		remove_effect = {
+				
+			add_stability = 0.1
+			add_command_power = 5
+			army_experience = 5
+				
+			}           		
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+	   
+	       Integration_of_the_European_education_system = {			
+
+		icon = GFX_decision_eng_trade_unions_support
+		
+		available = {  has_power_balance = {
+    id = DPR_rostislave_girkin_political_balance
+}
+
+
+	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value < -0.5
+}	
+}		
+
+		cost = 50
+
+		remove_effect = {
+			add_popularity = {
+    ideology = liberal_democracy
+    popularity = 0.1
+	}
+	random_owned_state = {
+    add_building_construction = {
+    type = civilian_resting_place
+    level = 1
+    instant_build = yes
+}
+}
+
+				
+			}           		
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+	   
+    development_of_the_Orthodox_community = {			
+
+		icon = GFX_decision_generic_civil_support
+		
+		available = {  has_power_balance = {
+    id = DPR_rostislave_girkin_political_balance
+}
+
+
+	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value > 0.5
+}
+		}		
+
+		cost = 50
+
+		remove_effect = {
+			add_popularity = {
+    ideology = radical_nationalism
+    popularity = 0.1
+	}
+	random_owned_state = {
+    add_building_construction = {
+    type = religious_building
+    level = 1
+    instant_build = yes
+}
+}	
+			}           		
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+	   
+	       Negotiations_with_human_rights_organisations = {			
+
+		icon = GFX_decision_SWI_swiss_democratic_tradition_campaign
+		
+		available = {  has_power_balance = {
+    id = DPR_rostislave_girkin_political_balance
+}
+
+
+	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value < -0.6
+}
+}		
+
+		cost = 50
+
+		remove_effect = {
+			add_popularity = {
+    ideology = liberal_democracy
+    popularity = 0.2
+}
+				
+			}           		
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+	   
+    nationalisation_of_disloyal_companies = {			
+
+		icon = GFX_decision_generic_factory
+		
+		available = {  has_power_balance = {
+    id = DPR_rostislave_girkin_political_balance
+}
+
+
+	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value > 0.6
+}
+		}		
+
+		cost = 50
+
+		remove_effect = {
+	
+	random_owned_state = {
+    add_building_construction = {
+    type = arms_factory
+    level = 1
+    instant_build = yes
+}
+}
+	random_owned_state = {
+    add_building_construction = {
+    type = industrial_complex
+    level = 1
+    instant_build = yes
+}
+}		
+			}           		
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+	   
+	       improve_working_conditions = {			
+
+		icon = GFX_decision_generic_consumer_goods
+		
+		available = {  has_power_balance = {
+    id = DPR_rostislave_girkin_political_balance
+}
+
+
+	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value < -0.7
+}	
+}		
+
+		cost = 50
+
+		remove_effect = {
+			add_popularity = {
+    ideology = liberal_democracy
+    popularity = 0.2
+}
+				
+			}           		
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+	   
+    form_a_list_of_the_crowns_enemies = {			
+
+		icon = GFX_decision_ger_mefo_bills
+		
+		available = {  has_power_balance = {
+    id = DPR_rostislave_girkin_political_balance
+}
+
+
+	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value > 0.7
+}
+		}		
+
+		cost = 50
+
+		remove_effect = {
+				add_popularity = {
+    ideology = radical_nationalism
+    popularity = 0.2
+}
+			
+			}           		
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+	   
+	   
+	       secret_meeting_with_European_partners = {			
+
+		icon = GFX_decision_hol_exchange_intelligence_data
+		
+		available = {  has_power_balance = {
+    id = DPR_rostislave_girkin_political_balance
+}
+
+
+	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+	
+power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value < -0.8
+}	
+		}		
+
+		cost = 50
+
+		remove_effect = {
+			add_command_power = 40
+				
+			}           		
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+	   
+   form_new_guard_units = {			
+
+		icon = GFX_decision_generic_civil_support
+		
+		available = {  has_power_balance = {
+    id = DPR_rostislave_girkin_political_balance
+}
+
+
+	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value > 0.8
+}
+		}		
+
+		cost = 50
+
+		remove_effect = {
+				add_command_power = 40
+			
+			}           		
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+	   
+	       bring_back_evacuated_businesses = {			
+
+		icon = GFX_decision_gre_paying_ifc_debt
+		
+		available = {  has_power_balance = {
+    id = DPR_rostislave_girkin_political_balance
+}
+
+
+	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {		
+power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value < -0.8
+}
+		}		
+
+		cost = 50
+
+		remove_effect = {
+random_controlled_state = {
+    add_building_construction = {
+    type = industrial_complex
+    level = 2
+    instant_build = yes
+}
+}			
+			}           		
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+	   
+   military_parades_through_liberated_cities = {			
+
+		icon = GFX_decision_generic_tank
+		
+		available = {  has_power_balance = {
+    id = DPR_rostislave_girkin_political_balance
+}
+
+
+	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value > 0.8
+}
+		}		
+
+		cost = 50
+
+		remove_effect = {
+				army_experience = 10
+				
+random_controlled_state = {
+    add_compliance = 30
+}
+random_controlled_state = {
+    add_compliance = 30
+}
+random_controlled_state = {
+    add_compliance = 30
+}
+			
+			}           		
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+	   
+	      set_up_our_own_shell_production = {			
+
+		icon = GFX_decision_ger_military_buildup
+		
+		available = {  has_power_balance = {
+    id = DPR_rostislave_girkin_political_balance
+}
+
+
+	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value < -0.8
+}	
+}		
+
+		cost = 50
+
+		remove_effect = {
+random_controlled_state = {
+    add_building_construction = {
+    type = ammunition_plant
+    level = 1
+    instant_build = yes
+}
+}
+random_controlled_state = {
+    add_building_construction = {
+    type = ammunition_plant
+    level = 1
+    instant_build = yes
+}
+}				
+			}           		
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+	   
+   forced_mobilisation_dec  = {			
+
+		icon = GFX_decision_generic_prepare_civil_war
+		
+		available = {  has_power_balance = {
+    id = DPR_rostislave_girkin_political_balance
+}
+
+
+	}
+		
+		fire_only_once = yes
+        days_remove = 10		
+
+		visible = {	
+power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value > 0.8
+}
+		}		
+
+		cost = 50
+
+		remove_effect = {
+				add_manpower = 10000		
+			}           		
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+}
+
+DPR_maria_georgiy_balance_decisions = { 
+
+   georgiy_secret_meetings  = {			
+
+		icon = GFX_decision_generic_army_support
+		
+		available = {  has_power_balance = {
+    id = DPR_maria_georgiy_political_balance
+}
+
+
+	}
+		
+
+        days_remove = 10		
+
+		visible = {	
+has_power_balance = {
+    id = DPR_maria_georgiy_political_balance
+}
+		}		
+
+		cost = 50
+
+		remove_effect = {
+		add_stability = -0.1
+add_power_balance_value = {
+    id = DPR_maria_georgiy_political_balance
+    value = 0.1
+    tooltip_side = DPR_emp_bop_right_side
+}		
+			}           		
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+
+  strengthen_the_influence_of_the_tsarevich  = {			
+
+		icon = GFX_decision_generic_civil_support
+		
+		available = {  has_power_balance = {
+    id = DPR_maria_georgiy_political_balance
+}
+
+
+	}
+		
+
+        days_remove = 10		
+
+		visible = {	
+has_power_balance = {
+    id = DPR_maria_georgiy_political_balance
+}
+		}		
+
+		cost = 50
+
+		remove_effect = {
+		add_stability = -0.1
+add_power_balance_value = {
+    id = DPR_maria_georgiy_political_balance
+    value = 0.1
+    tooltip_side = DPR_emp_bop_right_side
+}		
+			}           		
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+	   
+  bribe_the_Cossacks  = {			
+
+		icon = GFX_decision_hol_attract_foreign_investors
+		
+		available = {  has_power_balance = {
+    id = DPR_maria_georgiy_political_balance
+}
+
+
+	}
+		
+
+        days_remove = 10		
+
+		visible = {	
+has_power_balance = {
+    id = DPR_maria_georgiy_political_balance
+}
+		}		
+
+		cost = 50
+
+		remove_effect = {
+		add_command_power = -30
+		add_war_support = -0.1
+		army_experience = -10
+add_power_balance_value = {
+    id = DPR_maria_georgiy_political_balance
+    value = 0.1
+    tooltip_side = DPR_emp_bop_right_side
+}		
+			}           		
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+  bribe_the_ssn  = {			
+
+		icon = GFX_decision_generic_protection
+		
+		available = {  has_power_balance = {
+    id = DPR_maria_georgiy_political_balance
+}
+
+
+	}
+		
+        days_remove = 10		
+
+		visible = {	
+has_power_balance = {
+    id = DPR_maria_georgiy_political_balance
+}
+		}		
+
+		cost = 50
+
+		remove_effect = {
+		add_command_power = -30
+		add_war_support = -0.1
+add_power_balance_value = {
+    id = DPR_maria_georgiy_political_balance
+    value = 0.1
+    tooltip_side = DPR_emp_bop_right_side
+}		
+			}           		
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+	   
+  enlist_the_loyalists  = {			
+
+		icon = GFX_decision_generic_nationalism
+		
+		available = {  has_power_balance = {
+    id = DPR_maria_georgiy_political_balance
+}
+
+
+	}
+		
+        days_remove = 10		
+
+		visible = {	
+has_power_balance = {
+    id = DPR_maria_georgiy_political_balance
+}
+		}		
+
+		cost = 50
+
+		remove_effect = {
+add_power_balance_value = {
+    id = DPR_maria_georgiy_political_balance
+    value = 0.1
+    tooltip_side = DPR_emp_bop_right_side
+}		
+			}           		
+		ai_will_do = {	
+			factor = 100		
+		}			
+	   }
+
+
+}
