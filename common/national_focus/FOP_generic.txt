@@ -1,0 +1,478 @@
+focus_tree = {
+	id = fop_generic
+	continuous_focus_position = { x = 0 y = 1000 }
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			OR = {
+                tag = GAL
+                tag = TER
+                tag = RIV
+                tag = VOL
+                tag = ZAK
+                tag = KHM
+                tag = ZHY
+                tag = KYI
+                tag = UKR
+                tag = PRH
+                tag = SUM 
+                tag = UMA
+                tag = CHR
+                tag = PLT 
+                tag = KRE 
+                tag = KIR 
+                tag = ODE 
+                tag = MYK
+                tag = STR 
+                tag = SHT 
+                tag = BDZ
+                tag = RVE 
+                tag = OPZ 
+                tag = ZAP 
+                tag = DNI 
+                tag = KHA
+            }
+		}
+	}
+
+
+focus = {
+	id = FOP_Fire_Of_Poltava
+	icon = GFX_generic_suspend_constitution
+	x = 35
+	y = 1
+    cost = 1
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_We_Are_Holding
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 1
+    cost = 2
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_Fire_Of_Poltava }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Time_To_Reorganise
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 2
+    cost = 2
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_We_Are_Holding }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_What_About_Army
+	icon = GFX_generic_suspend_constitution
+	x = -10
+	y = 3
+    cost = 2
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_Time_To_Reorganise }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Rely_On_Militias
+	icon = GFX_generic_suspend_constitution
+	x = -12
+	y = 4
+    cost = 2
+    relative_position_id = FOP_Fire_Of_Poltava
+    mutually_exclusive = { focus = FOP_Rely_On_Vehicles }
+    mutually_exclusive = { focus = FOP_Rely_On_Professionals }
+    prerequisite = { focus = FOP_What_About_Army }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Rely_On_Vehicles
+	icon = GFX_generic_suspend_constitution
+	x = -10
+	y = 4
+    cost = 2
+    relative_position_id = FOP_Fire_Of_Poltava
+    mutually_exclusive = { focus = FOP_Rely_On_Militias }
+    mutually_exclusive = { focus = FOP_Rely_On_Professionals }
+    prerequisite = { focus = FOP_What_About_Army }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Rely_On_Professionals
+	icon = GFX_generic_suspend_constitution
+	x = -8
+	y = 4
+    cost = 2
+    relative_position_id = FOP_Fire_Of_Poltava
+    mutually_exclusive = { focus = FOP_Rely_On_Militias }
+    mutually_exclusive = { focus = FOP_Rely_On_Vehicles }
+    prerequisite = { focus = FOP_What_About_Army }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Gather_Militants
+	icon = GFX_generic_suspend_constitution
+	x = -12
+	y = 5
+    cost = 6
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_Rely_On_Militias }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Seize_What_We_Can
+	icon = GFX_generic_suspend_constitution
+	x = -10
+	y = 5
+    cost = 7
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_Rely_On_Vehicles }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Search_For_Skilled_Personnel
+	icon = GFX_generic_suspend_constitution
+	x = -8
+	y = 5
+    cost = 5
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_Rely_On_Professionals }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Making_Up_General_Staff
+	icon = GFX_generic_suspend_constitution
+	x = -9
+	y = 6
+    cost = 8
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_Gather_Militants focus = FOP_Seize_What_We_Can focus = FOP_Search_For_Skilled_Personnel }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Find_Warehouses
+	icon = GFX_generic_suspend_constitution
+	x = -11
+	y = 6
+    cost = 5
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_Gather_Militants focus = FOP_Seize_What_We_Can focus = FOP_Search_For_Skilled_Personnel }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Mobilisation
+	icon = GFX_generic_suspend_constitution
+	x = -11
+	y = 7
+    cost = 6
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_Making_Up_General_Staff }
+    prerequisite = { focus = FOP_Find_Warehouses }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Prepare_Equipment_Production
+	icon = GFX_generic_suspend_constitution
+	x = -9
+	y = 7
+    cost = 5
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_Making_Up_General_Staff }
+    prerequisite = { focus = FOP_Find_Warehouses }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Bad_Times
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 3
+    cost = 2
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_Time_To_Reorganise }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Require_Better_Treatment
+	icon = GFX_generic_suspend_constitution
+	x = -1
+	y = 4
+    cost = 2
+    relative_position_id = FOP_Fire_Of_Poltava
+    mutually_exclusive = { focus = FOP_Make_Strong_People }
+    prerequisite = { focus = FOP_Bad_Times }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Make_Strong_People
+	icon = GFX_generic_suspend_constitution
+	x = 1
+	y = 4
+    cost = 2
+    relative_position_id = FOP_Fire_Of_Poltava
+    mutually_exclusive = { focus = FOP_Require_Better_Treatment }
+    prerequisite = { focus = FOP_Bad_Times }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Reorganise_The_Administration
+	icon = GFX_generic_suspend_constitution
+	x = -2
+	y = 5
+    cost = 5
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_Make_Strong_People focus = FOP_Require_Better_Treatment }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Appease_The_Populace
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 5
+    cost = 6
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_Make_Strong_People focus = FOP_Require_Better_Treatment }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Earn_The_Trust
+	icon = GFX_generic_suspend_constitution
+	x = 2
+	y = 5
+    cost = 4
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_Make_Strong_People focus = FOP_Require_Better_Treatment }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Its_Fine
+	icon = GFX_generic_suspend_constitution
+	x = -1
+	y = 6
+    cost = 3
+    relative_position_id = FOP_Fire_Of_Poltava
+    mutually_exclusive = { focus = FOP_No_Time_To_Whine }
+    prerequisite = { focus = FOP_Reorganise_The_Administration }
+    prerequisite = { focus = FOP_Appease_The_Populace }
+    prerequisite = { focus = FOP_Earn_The_Trust }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_No_Time_To_Whine
+	icon = GFX_generic_suspend_constitution
+	x = 1
+	y = 6
+    cost = 3
+    relative_position_id = FOP_Fire_Of_Poltava
+    mutually_exclusive = { focus = FOP_Its_Fine }
+    prerequisite = { focus = FOP_Reorganise_The_Administration }
+    prerequisite = { focus = FOP_Appease_The_Populace }
+    prerequisite = { focus = FOP_Earn_The_Trust }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_We_Will_See_The_Future
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 7
+    cost = 5
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_Its_Fine focus = FOP_No_Time_To_Whine }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Look_Into_Industry
+	icon = GFX_generic_suspend_constitution
+	x = 10
+	y = 3
+    cost = 2
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_Time_To_Reorganise }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_The_More_The_Better
+	icon = GFX_generic_suspend_constitution
+	x = 9
+	y = 4
+    cost = 3
+    relative_position_id = FOP_Fire_Of_Poltava
+    mutually_exclusive = { focus = FOP_Concentrate_Product_Quality }
+    prerequisite = { focus = FOP_Look_Into_Industry }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Concentrate_Product_Quality
+	icon = GFX_generic_suspend_constitution
+	x = 11
+	y = 4
+    cost = 3
+    relative_position_id = FOP_Fire_Of_Poltava
+    mutually_exclusive = { focus = FOP_The_More_The_Better }
+    prerequisite = { focus = FOP_Look_Into_Industry }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Stabilize_Production
+	icon = GFX_generic_suspend_constitution
+	x = 8
+	y = 5
+    cost = 3
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_Concentrate_Product_Quality focus = FOP_The_More_The_Better }
+	completion_reward = {
+		###
+	}
+}
+focus = {
+	id = FOP_Expand_Factories
+	icon = GFX_generic_suspend_constitution
+	x = 10
+	y = 5
+    cost = 5
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_Concentrate_Product_Quality focus = FOP_The_More_The_Better }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Organize_Workers
+	icon = GFX_generic_suspend_constitution
+	x = 12
+	y = 5
+    cost = 3
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_Concentrate_Product_Quality focus = FOP_The_More_The_Better }
+	completion_reward = {
+		###
+	}
+}
+
+
+
+focus = {
+	id = FOP_The_More_We_Work_The_Better_Our_Chances
+	icon = GFX_generic_suspend_constitution
+	x = 9
+	y = 6
+    cost = 4
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_Stabilize_Production }
+    prerequisite = { focus = FOP_Expand_Factories }
+    prerequisite = { focus = FOP_Organize_Workers }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Rudimentary_Resource_Production
+	icon = GFX_generic_suspend_constitution
+	x = 11
+	y = 6
+    cost = 4
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_Stabilize_Production }
+    prerequisite = { focus = FOP_Expand_Factories }
+    prerequisite = { focus = FOP_Organize_Workers }
+	completion_reward = {
+		###
+	}
+}
+
+focus = {
+	id = FOP_Jumpstart_The_Industry
+	icon = GFX_generic_suspend_constitution
+	x = 10
+	y = 7
+    cost = 6
+    relative_position_id = FOP_Fire_Of_Poltava
+    prerequisite = { focus = FOP_The_More_We_Work_The_Better_Our_Chances }
+    prerequisite = { focus = FOP_Rudimentary_Resource_Production }
+	completion_reward = {
+		###
+	}
+}
+
+}
