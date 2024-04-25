@@ -122,8 +122,10 @@
 		
 		completion_reward = {
 			add_stability = 0.1
-			
-			
+			remove_opinion_modifier = {
+    target = RUS
+    modifier = spirit_of_novorosja
+}		
 		}
 	}
 
@@ -170,14 +172,14 @@
    
 			   	amount = 10
    
-			   	producer = DPR
+			   	producer = EUN
 			}
 			add_equipment_to_stockpile = {
 				type = drone_0_equipment
    
 			   	amount = 300
    
-			   	producer = DPR
+			   	producer = EUN
 			}
 			
 		}
@@ -477,7 +479,14 @@ add_extra_state_shared_building_slots = 1
 		prerequisite = { focus = DPR_begin_eurocentered_reforms  }
 		completion_reward = {
 			add_stability = 0.1
-			
+		random_owned_state = {
+    add_extra_state_shared_building_slots = 1
+	add_building_construction = {
+    type = arms_factory
+    level = 1
+    instant_build = yes
+}
+}			
 			
 		}
 	}
@@ -495,7 +504,14 @@ add_extra_state_shared_building_slots = 1
 		prerequisite = { focus = DPR_brazen_copyng_of_their_accomplishments  }
 		completion_reward = {
 			add_political_power = 10
-			
+			random_owned_state = {
+    add_extra_state_shared_building_slots = 1
+	add_building_construction = {
+    type = civilian_resting_place
+    level = 1
+    instant_build = yes
+}
+}		
 			
 		}
 	}
@@ -734,7 +750,11 @@ add_resistance = -20
 		completion_reward = {
 			add_extra_state_shared_building_slots = 2
 			
-			
+	add_resource = {
+    type = oil
+    amount = 5
+    state = 557
+}
 		}
 	}
 
