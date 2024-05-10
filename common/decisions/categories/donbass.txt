@@ -321,3 +321,108 @@ icon = GFX_decision_category_generic_civil_support
 		has_completed_focus = lpr_let_daynego_come_up_with_something
 	}
 }
+
+girkin_invite_cossaks_decisions = {
+icon = GFX_decision_girkin_cossaks_smal
+picture = GFX_decision_girkin_cossaks
+
+	allowed = {
+		tag = DPR
+	}
+
+	visible = {
+		tag = DPR
+		has_country_flag = girkin_invite_cossaks
+	}
+}
+
+girkin_kill_opposition_decisions = {
+icon = GFX_decision_category_generic_civil_support
+
+scripted_gui = DPR_girkin_kill_opposition_ui
+
+
+	allowed = {
+		tag = DPR
+	}
+
+	visible = {
+		tag = DPR
+		has_country_flag = girkin_kill_opposition_flag
+	}
+}
+
+DPR_rostislave_girkin_balance_decisions = {
+icon = GFX_decision_category_generic_civil_support
+
+	allowed = {
+		tag = DPR
+	}
+
+	visible = {
+		tag = DPR
+has_power_balance = {
+    id = DPR_rostislave_girkin_political_balance
+}
+	}
+}
+
+DPR_maria_georgiy_balance_decisions = {
+icon = GFX_decision_category_generic_civil_support
+
+	allowed = {
+		tag = DPR
+	}
+
+	visible = {
+		tag = DPR
+has_power_balance = {
+    id = DPR_maria_georgiy_political_balance
+}
+	}
+}
+
+DPR_paseka_reopen_factories_decisions = {
+icon = GFX_decision_category_generic_civil_support
+picture = GFX_decisions_big_factory
+
+	allowed = {
+		tag = DPR
+	}
+
+	visible = {
+		tag = DPR
+		has_completed_focus = DPR_reopen_factories
+	}
+}
+
+DPR_execution_of_hardliners_decisions = {
+icon = GFX_decision_category_generic_civil_support
+
+	allowed = {
+		tag = DPR
+	}
+
+	visible = {
+		tag = DPR
+		has_completed_focus = DPR_execution_of_hardlines
+	}
+}
+
+DPR_eurointegration_decisions = {
+icon = GFX_decision_category_generic_civil_support
+
+	allowed = {
+		tag = DPR
+	}
+
+	visible = {
+		tag = DPR
+		has_completed_focus = DPR_open_the_window
+		NOT = {
+		has_country_flag = america_idi_nahui
+		}
+	}
+	
+	visible_when_empty = yes
+}

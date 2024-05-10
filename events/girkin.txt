@@ -27,7 +27,7 @@ country_event = {
 	title = gir.2.t
 	desc = gir.2.d
 
-	picture = GFX_report_event_table
+	picture = GFX_girkin_don_cossaks
 	fire_only_once = yes
 	is_triggered_only = yes
 	option = {
@@ -60,14 +60,14 @@ set_power_balance = {
 #girkin buff
 country_event = {
 	id = gir.4
-	title = "girkin"
-	desc = ""
+	title = gir.4.t
+	desc = gir.4.d
 
 	picture = GFX_report_event_table
 	fire_only_once = yes
 	is_triggered_only = yes
 	option = {
-		name = "te"
+		name = gir.4.a
 add_power_balance_value = {
     id = DPR_rostislave_girkin_political_balance
     value = 0.9
@@ -78,14 +78,14 @@ add_power_balance_value = {
 #rostislave buff
 country_event = {
 	id = gir.5
-	title = "rost"
-	desc = ""
+	title = gir.5.t
+	desc = gir.5.d
 
 	picture = GFX_report_event_table
 	fire_only_once = yes
 	is_triggered_only = yes
 	option = {
-		name = "te"
+		name = gir.5.a
 add_power_balance_value = {
     id = DPR_rostislave_girkin_political_balance
     value = -0.9
@@ -97,14 +97,14 @@ add_power_balance_value = {
 #maria-georgiy bop
 country_event = {
 	id = gir.6
-	title = "bop"
-	desc = "fofofo"
+	title = gir.6.t
+	desc = gir.6.d
 
 	picture = GFX_report_event_table
 	fire_only_once = yes
 	is_triggered_only = yes
 	option = {
-		name = gir.3.a
+		name = gir.6.a
 set_power_balance = {
     id = DPR_maria_georgiy_political_balance
 }
@@ -138,5 +138,70 @@ country_event = {
 	option = {
 		name = gir.7.a
 set_cosmetic_tag = DPR_imperial
+	}
+}
+
+#pasechnik death
+country_event = {
+	id = gir.9
+	title = gir.9.t
+	desc = gir.9.d
+
+	picture = GFX_girkin_pasechnik_death
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = gir.9.a
+custom_effect_tooltip = pasechnik_death_tt
+add_stability = -0.1
+add_manpower = -1
+	}
+}
+
+#vitrenko death
+country_event = {
+	id = gir.10
+	title = gir.10.t
+	desc = gir.10.d
+
+	picture = GFX_girkin_vitrenko_death
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = gir.10.a
+custom_effect_tooltip = vitrenko_death_tt
+add_stability = -0.1
+	}
+}
+
+#push death
+country_event = {
+	id = gir.11
+	title = gir.11.t
+	desc = gir.11.d
+
+	picture = GFX_girkin_pushilin_death
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = gir.11.a
+custom_effect_tooltip = pushilin_death_tt
+add_stability = -0.1
+add_manpower = -1
+	}
+}
+
+#leak
+country_event = {
+	id = gir.12
+	title = gir.12.t
+	desc = gir.12.d
+
+	picture = GFX_girkin_people_opposition
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = gir.12.a
+add_stability = -0.1
 	}
 }
