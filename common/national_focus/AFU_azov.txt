@@ -95,6 +95,10 @@ remove_unit_leader_trait = Doubtfully_loyal_commander
         add_command_power = 50
         recruit_character = AFU_kudryashov
 		recruit_character = AFU_dutchak
+recruit_character = AFU_reins
+recruit_character = AFU_troyan
+recruit_character = AFU_nadtochiy
+recruit_character = AFU_garkovenko
 		country_event = { id = azov.13 days = 2 }
 		}
 	}
@@ -357,6 +361,9 @@ add_opinion_modifier = {
 	completion_reward = {
         add_war_support = 0.1
 		add_ideas = AFU_azov_harbourforthefarright
+	hidden_effect = {
+        country_event = azov.56
+		}
 		}
 	}
 
@@ -686,6 +693,7 @@ add_building_construction = {
 		prerequisite = { focus = AFU_forthenationalukraine  }
 	completion_reward = {
     add_ideas = fop_conscription_all_adults_serve
+	country_event = { id = azov.34 days = 1 }
 		}
 	}
 
@@ -771,6 +779,7 @@ add_building_construction = {
 		prerequisite = { focus = AFU_novi_lad  }
 	completion_reward = {
     	add_stability = -0.1
+		country_event = { id = azov.36 days = 1 }
 		}
 	}
 
@@ -784,9 +793,13 @@ add_building_construction = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
+		available = {
+		has_country_flag = azov_paganism_flag
+		}
 		prerequisite = { focus = AFU_question_of_religion  }
 		mutually_exclusive = { focus = AFU_the_only_true_religion  }
 	completion_reward = {
+		country_event = { id = azov.33 days = 1 }
     	add_stability = -0.1
 		add_war_support = 0.25
 add_opinion_modifier = {
@@ -838,6 +851,16 @@ add_opinion_modifier = {
     remove_idea = AFU_azov_paganisation_1
     add_idea = AFU_azov_paganisation_2
 }
+			add_to_variable = {
+				var =  AFU_azov_paganisation_v
+				value = 10
+				tooltip = azov_paganisation_progress_tt
+			}
+			clamp_variable = {
+				var =  AFU_azov_paganisation_v
+				min = 0
+				max = 100
+			}
 		}
 	}
 
@@ -857,6 +880,16 @@ add_opinion_modifier = {
     remove_idea = AFU_azov_paganisation_2
     add_idea = AFU_azov_paganisation_3
 }
+			add_to_variable = {
+				var =  AFU_azov_paganisation_v
+				value = 10
+				tooltip = azov_paganisation_progress_tt
+			}
+			clamp_variable = {
+				var =  AFU_azov_paganisation_v
+				min = 0
+				max = 100
+			}
 		}
 	}
 
@@ -870,9 +903,13 @@ add_opinion_modifier = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
+		available = {
+		has_country_flag = azov_christianity_flag
+		}
 		prerequisite = { focus = AFU_question_of_religion  }
 		mutually_exclusive = { focus = AFU_new_pagan_dawn  }
 	completion_reward = {
+	country_event = { id = azov.32 days = 1 }
     	add_war_support = -0.1
 		add_stability = 0.25
 		}
@@ -945,6 +982,15 @@ add_opinion_modifier = {
 		prerequisite = { focus = AFU_huge_influence_of_the_church  focus = AFU_integrate_the_church_into_the_state  }
 	completion_reward = {
 	add_war_support = 0.25
+set_technology = {
+    tech_capellans_company = 1
+}
+add_units_to_division_template = {
+    template_name = "Special Regiment Azov"
+    support = {
+        capellans = 1
+    }
+}
 		}
 	}
 
@@ -1235,6 +1281,7 @@ add_opinion_modifier = {
 		prerequisite = { focus = AFU_the_europa_is_in_danger  }
 	completion_reward = {
     add_ideas = fop_immigration_closed_borders
+	country_event = { id = azov.31 }
 		}
 	}
 
@@ -1429,6 +1476,7 @@ add_command_power = 25
 			FOCUS_FILTER_ANNEXATION
 		}
 	completion_reward = {
+	country_event = { id = azov.35 days = 1 }
 add_political_power = 10
 AFU = {
 give_guarantee = KHA
@@ -1729,11 +1777,15 @@ add_command_power = 40
 		
 		available = {
 	has_political_power > 150
+	owns_state = 2081
  }
 		search_filters = {
 			FOCUS_FILTER_ANNEXATION
 		}
 	completion_reward = {
 add_manpower = 1488
+	hidden_effect = {
+	country_event = { id = azov.55 }
+	}
 		}
 	}

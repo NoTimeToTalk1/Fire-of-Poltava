@@ -1,0 +1,526 @@
+
+	#Nationalise the Critical Infrastructure
+	shared_focus = {
+		id = AFU_nationalise_the_critical_infrastructure
+		icon = GFX_AFU_nationalise_the_critical_infrastructure-495536
+		x = 31
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_give_the_oligarchs_a_fight  }
+		completion_reward = {
+		add_ideas = AFU_azov_nationalized_infrastructure
+		}
+	}
+
+	#Privatization of Fields by Workers
+	shared_focus = {
+		id = AFU_privatization_of_fields_by_workers
+		icon = GFX_AFU_privatization_of_fields_by_workers-495536
+		x = 34
+		y = 6
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available = {	
+		has_country_flag = azov_privatization_of_fields_by_workers_flag
+		}
+		prerequisite = { focus = AFU_expulsion_of_foreign_monopolists  }
+		mutually_exclusive = { focus = AFU_cooperation_with_agrarian_elites  }
+		
+		completion_reward = {
+		add_ideas = AFU_azov_privatisation
+			add_popularity = {
+    ideology = radical_nationalism
+    popularity = 0.1
+}
+random_core_state = {
+    add_extra_state_shared_building_slots = 1
+add_building_construction = {
+    type = farm_building
+    level = 1
+    instant_build = yes
+}
+}
+random_core_state = {
+    add_extra_state_shared_building_slots = 1
+add_building_construction = {
+    type = farm_building
+    level = 1
+    instant_build = yes
+}
+}
+random_core_state = {
+    add_extra_state_shared_building_slots = 1
+add_building_construction = {
+    type = farm_building
+    level = 1
+    instant_build = yes
+}
+}
+		}
+	}
+
+	#Collectivist Mind
+	shared_focus = {
+		id = AFU_collectivist_mind
+		icon = GFX_AFU_collectivist_mind-495536
+		x = 35
+		y = 7
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_privatization_of_fields_by_workers  focus = AFU_cooperation_with_agrarian_elites  }
+		completion_reward = {
+	add_political_power = 20
+			add_popularity = {
+    ideology = radical_nationalism
+    popularity = 0.1
+}
+}
+	}
+
+	#Expulsion of Foreign Monopolists
+	shared_focus = {
+		id = AFU_expulsion_of_foreign_monopolists
+		icon = GFX_AFU_expulsion_of_foreign_monopolists-495536
+		x = 35
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_small_business_support  }
+	completion_reward = {
+	country_event = { id = azov.24 days = 2 }	
+			add_popularity = {
+    ideology = radical_nationalism
+    popularity = 0.05
+}
+		}
+	}
+
+	#Cooperation With Agrarian Elites
+	shared_focus = {
+		id = AFU_cooperation_with_agrarian_elites
+		icon = GFX_AFU_cooperation_with_agrarian_elites-495536
+		x = 36
+		y = 6
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available = {	
+		has_country_flag = azov_cooperation_with_agrarian_elites_flag
+		}
+		prerequisite = { focus = AFU_expulsion_of_foreign_monopolists  }
+		mutually_exclusive = { focus = AFU_privatization_of_fields_by_workers  }
+	completion_reward = {
+	add_ideas = AFU_azov_cooperation_with_agrarian_elites
+			add_popularity = {
+    ideology = radical_nationalism
+    popularity = -0.1
+}
+		}
+	}
+
+	#Small Business Support
+	shared_focus = {
+		id = AFU_small_business_support
+		icon = GFX_AFU_small_business_support-495536
+		x = 35
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_improve_working_conditions  }
+	completion_reward = {
+	add_ideas = AFU_azov_small_business
+			add_popularity = {
+    ideology = radical_nationalism
+    popularity = 0.03
+}
+		}
+	}
+
+	#Lessons From the "Natiocratia"
+	shared_focus = {
+		id = AFU_lessonsfromthenatiocratia
+		icon = GFX_AFU_lessonsfromthenatiocratia-495536
+		x = 35
+		y = 0
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		
+		select_effect = { 
+	country_event = { id = azov.21 days = 10 }	
+		}
+		
+	completion_reward = {
+country_event = { id = azov.22 }
+add_ideas = fop_economic_system_corporatism
+		}
+	}
+
+	#An Opportunity For the Best
+	shared_focus = {
+		id = AFU_an_opportunity_for_the_best
+		icon = GFX_AFU_an_opportunity_for_the_best-495536
+		x = 34
+		y = 1
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_lessonsfromthenatiocratia  }
+	completion_reward = {
+add_political_power = 50
+add_ideas = AFU_azov_New_Aristocracy
+		}
+	}
+
+	#Restore Old Donbas Enterprises
+	shared_focus = {
+		id = AFU_restore_old_donbas_enterprises
+		icon = GFX_AFU_restore_old_donbas_enterprises-495536
+		x = 38
+		y = 7
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_close_nonprofit_wnterprises  }
+		completion_reward = {
+swap_ideas = {
+    remove_idea = AFU_azov_natiocracy_economic_politics_1
+    add_idea = AFU_azov_natiocracy_economic_politics_2
+}
+random_core_state = {
+add_building_construction = {
+    type = industrial_complex
+    level = 1
+    instant_build = yes
+}    
+}				
+		}
+	}
+
+	#Formation of Syndicates
+	shared_focus = {
+		id = AFU_formation_of_syndicates
+		icon = GFX_AFU_formation_of_syndicates-495536
+		x = 36
+		y = 1
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_lessonsfromthenatiocratia  }
+	completion_reward = {
+	country_event = { id = azov.23 days = 2 }	
+		}
+	}
+
+	#First National-Syndicalist Congress
+	shared_focus = {
+		id = AFU_first_nationalsyndicalist_congress
+		icon = GFX_AFU_first_nationalsyndicalist_congress-495536
+		x = 35
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_an_opportunity_for_the_best  } prerequisite = { focus = AFU_formation_of_syndicates  }
+				select_effect = { 
+	country_event = { id = azov.25 days = 7 }	
+	country_event = { id = azov.26 days = 14 }	
+	country_event = { id = azov.27 days = 21 }
+		}
+	completion_reward = {
+	custom_effect_tooltip = AFU_first_nationalsyndicalist_congress_tt
+	}
+	}
+
+	#Smooth Militarization
+	shared_focus = {
+		id = AFU_smooth_militarization
+		icon = GFX_AFU_smooth_militarization-495536
+		x = 37
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available = {	
+		has_country_flag = azov_smooth_militarization_flag
+		}
+		prerequisite = { focus = AFU_first_nationalsyndicalist_congress  }
+		mutually_exclusive = { focus = AFU_total_war_economy  }
+		completion_reward = {
+		add_stability = -0.1
+			add_ideas = fop_economic_mobilization_war_economy
+		}
+	}
+
+	#Total War Economy
+	shared_focus = {
+		id = AFU_total_war_economy
+		icon = GFX_AFU_total_war_economy-495536
+		x = 39
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available = {	
+		has_country_flag = azov_total_war_economy_flag
+		}
+		prerequisite = { focus = AFU_first_nationalsyndicalist_congress  }
+		mutually_exclusive = { focus = AFU_smooth_militarization  }
+		completion_reward = {
+			add_ideas = fop_economic_mobilization_total
+		}
+	}
+
+	#Promoting Hard Work
+	shared_focus = {
+		id = AFU_promoting_hard_work
+		icon = GFX_AFU_promoting_hard_work-495536
+		x = 37
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_smooth_militarization  }
+		completion_reward = {
+		add_political_power = 10
+		add_stability = -0.1
+		}
+	}
+
+	#Forced Labor in the Name of the Nation
+	shared_focus = {
+		id = AFU_forced_labor_in_the_name_of_the_nation
+		icon = GFX_AFU_forced_labor_in_the_name_of_the_nation-495536
+		x = 39
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_total_war_economy  }
+		completion_reward = {
+		add_political_power = -10
+		add_stability = 0.1			
+		}
+
+	}
+
+	#Renew the Donbass Mines
+	shared_focus = {
+		id = AFU_renew_the_donbass_mines
+		icon = GFX_AFU_renew_the_donbass_mines-495536
+		x = 38
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_smooth_militarization  focus = AFU_total_war_economy  }
+		completion_reward = {
+		add_ideas = AFU_azov_natiocracy_economic_politics
+random_core_state = {
+add_building_construction = {
+    type = industrial_complex
+    level = 1
+    instant_build = yes
+}    
+}				
+		}
+	}
+
+	#Close Non-Profit Wnterprises
+	shared_focus = {
+		id = AFU_close_nonprofit_wnterprises
+		icon = GFX_AFU_close_nonprofit_wnterprises-495536
+		x = 38
+		y = 6
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_renew_the_donbass_mines  }
+		completion_reward = {
+swap_ideas = {
+    remove_idea = AFU_azov_natiocracy_economic_politics
+    add_idea = AFU_azov_natiocracy_economic_politics_1
+}		
+random_core_state = {
+add_extra_state_shared_building_slots = 2    
+}				
+		}
+	}
+
+	#Ban the Destruction of Ukraine By Waste
+	shared_focus = {
+		id = AFU_ban_the_destruction_of_ukraine_by_waste
+		icon = GFX_AFU_ban_the_destruction_of_ukraine_by_waste-495536
+		x = 37
+		y = 8
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available = {	
+		has_country_flag = azov_ban_the_destruction_of_ukraine_by_waste_flag
+		}
+		prerequisite = { focus = AFU_restore_old_donbas_enterprises  }
+		mutually_exclusive = { focus = AFU_all_for_the_sake_of_efficiency  }
+		completion_reward = {
+			add_ideas = fop_pollution_strict_regulations
+		}
+	}
+
+	#All for the Sake of Efficiency
+	shared_focus = {
+		id = AFU_all_for_the_sake_of_efficiency
+		icon = GFX_AFU_all_for_the_sake_of_efficiency-495536
+		x = 39
+		y = 8
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available = {	
+		has_country_flag = azov_all_for_the_sake_of_efficiency_flag
+		}
+		prerequisite = { focus = AFU_restore_old_donbas_enterprises  }
+		mutually_exclusive = { focus = AFU_ban_the_destruction_of_ukraine_by_waste  }
+		completion_reward = {
+			add_ideas = fop_pollution_no_controls
+		}
+	}
+
+	#Development of National Products
+	shared_focus = {
+		id = AFU_development_of_national_products
+		icon = GFX_AFU_development_of_national_products-495536
+		x = 38
+		y = 9
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_all_for_the_sake_of_efficiency  focus = AFU_ban_the_destruction_of_ukraine_by_waste  }
+		completion_reward = {
+swap_ideas = {
+    remove_idea = AFU_azov_natiocracy_economic_politics_2
+    add_idea = AFU_azov_natiocracy_economic_politics_3
+}
+random_core_state = {
+add_building_construction = {
+    type = industrial_complex
+    level = 1
+    instant_build = yes
+}    
+}				
+		}
+	}
+
+	#Give the Oligarchs a Fight
+	shared_focus = {
+		id = AFU_give_the_oligarchs_a_fight
+		icon = GFX_AFU_give_the_oligarchs_a_fight-495536
+		x = 32
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_first_nationalsyndicalist_congress  }
+		completion_reward = {
+		add_political_power = -100
+		add_stability = 0.1
+		}
+	}
+
+	#Nationalize the Azovstal
+	shared_focus = {
+		id = AFU_nationalize_the_azovstal
+		icon = GFX_AFU_nationalize_the_azovstal-495536
+		x = 33
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_give_the_oligarchs_a_fight  }
+		completion_reward = {
+			2093 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			add_resource = {
+    type = steel
+    amount = 10
+            }
+			}
+		}
+	}
+
+	#Donetsk Trial
+	shared_focus = {
+		id = AFU_donetsk_trial
+		icon = GFX_AFU_donetsk_trial-495536
+		x = 32
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available = { 
+		controls_state = 557
+		controls_state = 497
+		controls_state = 2724
+		}
+		prerequisite = { focus = AFU_nationalize_the_azovstal  } prerequisite = { focus = AFU_nationalise_the_critical_infrastructure  }
+		completion_reward = {
+			country_event = { id = azov.30 days = 1 }
+			add_stability = 0.1
+		}
+	}
+
+	#Improve Working Conditions
+	shared_focus = {
+		id = AFU_improve_working_conditions
+		icon = GFX_AFU_improve_working_conditions-495536
+		x = 35
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = AFU_first_nationalsyndicalist_congress  }
+		completion_reward = {
+			add_popularity = {
+    ideology = radical_nationalism
+    popularity = 0.1
+}
+			add_stability = 0.1
+			add_ideas = fop_minimum_wage_moderate
+			add_ideas = fop_working_hours_10
+		}
+	}
+

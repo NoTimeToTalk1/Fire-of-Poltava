@@ -178,7 +178,7 @@ country_event = {
 }
 set_party_name = { ideology = social_democracy
     long_name = "Democratic Party"
-	name = "Democratic Party - Progressive Factionv" }
+	name = "Democratic Party - Progressive Faction" }
 		}
     }
 }
@@ -224,5 +224,75 @@ declare_war_on = {
 }
 }
 }
+    }
+}
+
+#uk elections
+country_event = {
+    id = newsfop.14
+    title = newsfop.14.t
+    desc = newsfop.14.d
+    picture = GFX_event_usa_elections_placeholder
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+    option = {
+        name = newsfop.14.a
+		news_event = { id = newsfop.15 days = 2 }
+	ai_chance = {
+    base = 90
+	}
+promote_character = GBR_johnsonuk
+		hidden_effect = {
+		retire_character = GBR_may
+		}
+    }
+    option = {
+        name = newsfop.14.c
+		news_event = { id = newsfop.16 days = 2 }
+		hidden_effect = {
+		set_politics = {
+	    ruling_party = social_democracy
+}
+set_party_name = { ideology = social_democracy
+    long_name = "Labour Party"
+	name = "Labour Party" }
+		}
+	ai_chance = {
+    base = 10
+	}
+    }
+}
+
+#johnsonuk
+news_event = {
+    id = newsfop.15
+    title = newsfop.15.t
+    desc = newsfop.15.d
+    picture = GFX_event_johnsonuk
+
+    is_triggered_only = yes
+
+    major = yes
+
+    option = {
+        name = newsfop.15.a
+    }
+}
+
+#korbin
+news_event = {
+    id = newsfop.16
+    title = newsfop.16.t
+    desc = newsfop.16.d
+    picture = GFX_event_korbin
+
+    is_triggered_only = yes
+
+    major = yes
+
+    option = {
+        name = newsfop.16.a
     }
 }
