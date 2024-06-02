@@ -1,0 +1,85 @@
+DPR_rostislave_girkin_political_balance = {
+    initial_value = 0.01
+    left_side = DPR_bop_left_side
+    right_side = DPR_bop_right_side
+    decision_category = DPR_rostislave_girkin_balance_decisions
+
+	range = {
+		id = DPR_bop_neutral_side
+		min = -0.05
+		max = 0.05
+		modifier = {
+			
+		}
+
+
+	}
+
+    side = {
+        id = DPR_bop_left_side
+        icon = GFX_bop_rostislave_side
+        range = {
+            id = DPR_rostislave_range
+            min = -1
+            max = -0.05
+            modifier = {
+                stability_weekly = 0.01
+            }
+        }
+    }
+    side = {
+        id = DPR_bop_right_side
+        icon = GFX_bop_girkin_side
+        range = {
+            id = DPR_girkin_range
+            min = 0.05
+            max = 1
+            modifier = {
+                war_support_weekly = 0.01
+            }
+        }
+    }
+}
+
+DPR_maria_georgiy_political_balance = {
+    initial_value = 0.01
+    left_side = DPR_emp_bop_left_side
+    right_side = DPR_emp_bop_right_side
+    decision_category = DPR_maria_georgiy_balance_decisions
+
+	range = {
+		id = DPR_bop_neutral_side
+		min = -0.05
+		max = 0.05
+		modifier = {
+			
+		}
+
+
+	}
+
+    side = {
+        id = DPR_emp_bop_left_side
+        icon = GFX_bop_maria_side
+        range = {
+            id = DPR_maria_range
+            min = -1
+            max = -0.05
+            modifier = {
+                stability_weekly = 0.01
+            }
+        }
+    }
+    side = {
+        id = DPR_emp_bop_right_side
+        icon = GFX_bop_georgiy_side
+        range = {
+            id = DPR_georgiy_range
+            min = 0.05
+            max = 1
+            modifier = {
+                war_support_weekly = 0.01
+            }
+        }
+    }
+}

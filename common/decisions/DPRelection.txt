@@ -318,23 +318,19 @@ DPR_verkhovna_rada_decision_category = {
 	DPR_decision_change_speaker = {
 
 		icon = GFX_decision_dpr_duma_change_speaker
+	
+        activation = {
+            has_completed_focus = DPR_form_verkhovna_duma
+        }
+       available = {
+        always = no
+        }
 		
-				ai_will_do = {	
-			factor = 200	
-		}
-
-		available = {
-			has_completed_focus = DPR_beginning_of_new_era
-		}
-		visible = {
-			has_completed_focus = DPR_beginning_of_new_era
-		}
-		
-		days_remove = 200
+		days_mission_timeout = 10
 
 		cost = 10
 
-		complete_effect = {
+		timeout_effect = {
 if = {
     limit = {
 radical_nationalism > 0.5
