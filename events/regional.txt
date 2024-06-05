@@ -8,6 +8,14 @@ add_namespace = reg_south_east
 add_namespace = reg_war
 add_namespace = reg_unify
 add_namespace = reg_rename
+add_namespace = reg_exp_east
+add_namespace = reg_exp_south
+add_namespace = reg_exp_west
+add_namespace = reg_exp_center
+add_namespace = reg_exp_left_bank
+add_namespace = reg_exp_right_bank
+add_namespace = reg_exp_ukraine
+add_namespace = reg_capital
 
 #GALITCHANE KATOLIKI
 
@@ -961,6 +969,8 @@ country_event = {
 	}
 }
 
+#rename
+
 country_event = {
 	id = reg_rename.1 #	East pro Ukraine
 	title = reg_unify.1.t
@@ -1007,3 +1017,1240 @@ country_event = {
 		}
 	}
 }
+
+#DOMAIN EXPANSION: UNLIMITED VOID
+
+country_event = { #east dogovornyak
+	id = reg_exp_east.1
+	title = reg_exp_east.1.t
+	desc = reg_exp_east.1.d
+
+	
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_exp_east.1.a #uhuh
+		country_event = {
+				id = reg_exp_east.2
+				days = 3
+			}
+		FROM = {
+			country_event = {
+				id = reg_exp_east.2
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = reg_exp_east.1.b #nah
+		country_event = {
+				id = reg_exp_east.3
+				days = 3
+			}
+		FROM = {
+			country_event = {
+				id = reg_exp_east.3
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #east dogovornyak yes
+	id = reg_exp_east.2
+	title = reg_exp_east.2.t
+	desc = reg_exp_east.2.d
+
+	
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_exp_east.2.a #uhuh
+		set_country_flag = dogovornyak_agreed
+		FROM = {
+			set_country_flag = dogovornyak_agreed
+		}
+	}
+}
+
+country_event = { #east dogovornyak no
+	id = reg_exp_east.3
+	title = reg_exp_east.3.t
+	desc = reg_exp_east.3.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_east.3.a #nah
+			set_country_flag = east_war
+	}
+}
+
+country_event = { #east war
+	id = reg_exp_east.4
+	title = reg_exp_east.4.t
+	desc = reg_exp_east.4.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_east.4.a #war
+			set_country_flag = east_war
+	}
+}
+
+country_event = { #south dogovornyak
+	id = reg_exp_south.1
+	title = reg_exp_south.1.t
+	desc = reg_exp_south.1.d
+
+	
+
+	is_triggered_only = yes
+
+	option = { 
+		country_event = {
+				id = reg_exp_south.2
+				days = 3
+			}
+		name = reg_exp_south.1.a #uhuh
+		FROM = {
+			country_event = {
+				id = reg_exp_south.2
+				days = 3
+			}
+		}
+	}
+	option = {
+		country_event = {
+				id = reg_exp_south.3
+				days = 3
+			}
+		name = reg_exp_south.1.b #nah
+		FROM = {
+			country_event = {
+				id = reg_exp_south.3
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #south dogovornyak yes
+	id = reg_exp_south.2
+	title = reg_exp_south.2.t
+	desc = reg_exp_south.2.d
+
+	
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_exp_south.2.a #uhuh
+		set_country_flag = dogovornyak_agreed
+			FROM = {
+				set_country_flag = dogovornyak_agreed
+			}
+	}
+}
+
+country_event = { #south dogovornyak no
+	id = reg_exp_south.3
+	title = reg_exp_south.3.t
+	desc = reg_exp_south.3.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_south.3.a #nah
+			set_country_flag = south_war
+	}
+}
+
+country_event = { #south war
+	id = reg_exp_south.4
+	title = reg_exp_south.4.t
+	desc = reg_exp_south.4.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_south.4.a #nah
+			set_country_flag = south_war
+	}
+}
+
+country_event = { #south elections
+	id = reg_exp_south.5
+	title = reg_exp_south.5.t
+	desc = reg_exp_south.5.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		country_event = {
+				id = reg_exp_south.6
+				days = 3
+			}
+		name = reg_exp_south.5.a #yes
+		FROM = {
+			country_event = {
+				id = reg_exp_south.6
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = reg_exp_south.5.b #maybe deal
+		FROM = {
+			country_event = {
+				id = reg_exp_south.1
+				days = 3
+			}
+		}
+	}
+	option = {
+		country_event = {
+				id = reg_exp_south.3
+				days = 3
+			}
+		name = reg_exp_south.5.c #no
+		FROM = {
+			country_event = {
+				id = reg_exp_south.3
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #south elect
+	id = reg_exp_south.6
+	title = reg_exp_south.6.t
+	desc = reg_exp_south.6.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_south.6.a #nah
+			set_country_flag = elections_agreed
+			FROM = {
+				set_country_flag = elections_agreed
+			}
+	}
+}
+
+country_event = { #west dogovornyak
+	id = reg_exp_west.1
+	title = reg_exp_west.1.t
+	desc = reg_exp_west.1.d
+
+	
+
+	is_triggered_only = yes
+
+	option = { 	
+		name = reg_exp_west.1.a #uhuh
+		FROM = {
+			country_event = {
+				id = reg_exp_west.2
+				days = 3
+			}
+		}
+		country_event = {
+				id = reg_exp_west.2
+				days = 3
+			}
+	}
+	option = {
+		
+		name = reg_exp_west.1.b #nah
+		FROM = {
+			country_event = {
+				id = reg_exp_west.3
+				days = 3
+			}
+		}
+		country_event = {
+				id = reg_exp_west.3
+				days = 3
+			}
+	}
+}
+
+country_event = { #west dogovornyak yes
+	id = reg_exp_west.2
+	title = reg_exp_west.2.t
+	desc = reg_exp_west.2.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_exp_west.2.a #uhuh
+		set_country_flag = dogovornyak_agreed
+		FROM = {
+			set_country_flag = dogovornyak_agreed
+		}
+	}
+}
+
+country_event = { #west dogovornyak no
+	id = reg_exp_west.3
+	title = reg_exp_west.3.t
+	desc = reg_exp_west.3.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_west.3.a #nah
+			set_country_flag = west_war
+			FROM = {
+				set_country_flag = west_war
+			}
+	}
+}
+
+country_event = { #west war
+	id = reg_exp_west.4
+	title = reg_exp_west.4.t
+	desc = reg_exp_west.4.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_west.4.a #nah
+			set_country_flag = west_war
+	}
+}
+
+country_event = { #west elections
+	id = reg_exp_west.5
+	title = reg_exp_west.5.t
+	desc = reg_exp_west.5.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		country_event = {
+				id = reg_exp_west.6
+				days = 3
+			}
+		name = reg_exp_west.5.a #yes
+		FROM = {
+			country_event = {
+				id = reg_exp_west.6
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = reg_exp_west.5.b #maybe deal
+		FROM = {
+			country_event = {
+				id = reg_exp_west.1
+				days = 3
+			}
+		}
+	}
+	option = {
+		country_event = {
+				id = reg_exp_west.3
+				days = 3
+			}
+		name = reg_exp_west.5.c #no
+		FROM = {
+			country_event = {
+				id = reg_exp_west.3
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #west elect
+	id = reg_exp_west.6
+	title = reg_exp_west.6.t
+	desc = reg_exp_west.6.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_west.6.a #nah
+			set_country_flag = elections_agreed
+			FROM = {
+				set_country_flag = elections_agreed
+			}
+	}
+}
+
+country_event = { #center dogovornyak
+	id = reg_exp_center.1
+	title = reg_exp_center.1.t
+	desc = reg_exp_center.1.d
+
+	
+
+	is_triggered_only = yes
+
+	option = { 
+		country_event = {
+				id = reg_exp_center.2
+				days = 3
+			}
+		name = reg_exp_center.1.a #uhuh
+		FROM = {
+			country_event = {
+				id = reg_exp_center.2
+				days = 3
+			}
+		}
+	}
+	option = {
+		country_event = {
+				id = reg_exp_center.3
+				days = 3
+			}
+		name = reg_exp_center.1.b #nah
+		FROM = {
+			country_event = {
+				id = reg_exp_center.3
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #center dogovornyak yes
+	id = reg_exp_center.2
+	title = reg_exp_center.2.t
+	desc = reg_exp_center.2.d
+
+	
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_exp_center.2.a #uhuh
+		set_country_flag = dogovornyak_agreed
+			FROM = {
+				set_country_flag = dogovornyak_agreed
+			}
+	}
+}
+
+country_event = { #center dogovornyak no
+	id = reg_exp_center.3
+	title = reg_exp_center.3.t
+	desc = reg_exp_center.3.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_center.3.a #nah
+			set_country_flag = center_war
+	}
+}
+
+country_event = { #center war
+	id = reg_exp_center.4
+	title = reg_exp_center.4.t
+	desc = reg_exp_center.4.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_center.4.a #nah
+			set_country_flag = center_war
+	}
+}
+
+country_event = { #center elections
+	id = reg_exp_center.5
+	title = reg_exp_center.5.t
+	desc = reg_exp_center.5.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		country_event = {
+				id = reg_exp_center.6
+				days = 3
+			}
+		name = reg_exp_center.5.a #yes
+		FROM = {
+			country_event = {
+				id = reg_exp_center.6
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = reg_exp_center.5.b #maybe deal
+		FROM = {
+			country_event = {
+				id = reg_exp_center.1
+				days = 3
+			}
+		}
+	}
+	option = {
+		country_event = {
+				id = reg_exp_center.3
+				days = 3
+			}
+		name = reg_exp_center.5.c #no
+		FROM = {
+			country_event = {
+				id = reg_exp_center.3
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #center elect
+	id = reg_exp_center.6
+	title = reg_exp_center.6.t
+	desc = reg_exp_center.6.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_center.6.a #nah
+		set_country_flag = elections_agreed
+			FROM = {
+				set_country_flag = elections_agreed
+			}
+	}
+}
+
+country_event = { #left bank dogovornyak
+	id = reg_exp_left_bank.1
+	title = reg_exp_left_bank.1.t
+	desc = reg_exp_left_bank.1.d
+
+	
+
+	is_triggered_only = yes
+
+	option = { 
+		country_event = {
+				id = reg_exp_left_bank.2
+				days = 3
+			}
+		name = reg_exp_left_bank.1.a #uhuh
+		FROM = {
+			country_event = {
+				id = reg_exp_left_bank.2
+				days = 3
+			}
+		}
+	}
+	option = {
+		country_event = {
+				id = reg_exp_left_bank.3
+				days = 3
+			}
+		name = reg_exp_left_bank.1.b #nah
+		FROM = {
+			country_event = {
+				id = reg_exp_left_bank.3
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #left bank dogovornyak yes
+	id = reg_exp_left_bank.2
+	title = reg_exp_left_bank.2.t
+	desc = reg_exp_left_bank.2.d
+
+	
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_exp_left_bank.2.a #uhuh
+		set_country_flag = dogovornyak_agreed_banks
+		FROM = {
+			set_country_flag = dogovornyak_agreed_banks
+		}
+	}
+}
+
+country_event = { #left bank dogovornyak no
+	id = reg_exp_left_bank.3
+	title = reg_exp_left_bank.3.t
+	desc = reg_exp_left_bank.3.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_left_bank.3.a #nah
+			set_country_flag = left_bank_war
+	}
+}
+
+country_event = { #left bank war
+	id = reg_exp_left_bank.4
+	title = reg_exp_left_bank.4.t
+	desc = reg_exp_left_bank.4.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_left_bank.4.a #nah
+			set_country_flag = left_bank_war
+	}
+}
+
+country_event = { #left bank elections
+	id = reg_exp_left_bank.5
+	title = reg_exp_left_bank.5.t
+	desc = reg_exp_left_bank.5.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		country_event = {
+				id = reg_exp_left_bank.6
+				days = 3
+			}
+		name = reg_exp_left_bank.5.a #yes
+		FROM = {
+			country_event = {
+				id = reg_exp_left_bank.6
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = reg_exp_left_bank.5.b #maybe deal
+		FROM = {
+			country_event = {
+				id = reg_exp_left_bank.1
+				days = 3
+			}
+		}
+	}
+	option = {
+		country_event = {
+				id = reg_exp_left_bank.3
+				days = 3
+			}
+		name = reg_exp_left_bank.5.c #no
+		FROM = {
+			country_event = {
+				id = reg_exp_left_bank.3
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #left bank elect
+	id = reg_exp_left_bank.6
+	title = reg_exp_left_bank.6.t
+	desc = reg_exp_left_bank.6.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_left_bank.6.a #nah
+		set_country_flag = elections_agreed_banks
+		FROM = {
+			set_country_flag = elections_agreed_banks
+		}
+		
+	}
+}
+
+country_event = { #right bank dogovornyak
+	id = reg_exp_right_bank.1
+	title = reg_exp_right_bank.1.t
+	desc = reg_exp_right_bank.1.d
+
+	
+
+	is_triggered_only = yes
+
+	option = { 
+		country_event = {
+				id = reg_exp_right_bank.2
+				days = 3
+			}
+		name = reg_exp_right_bank.1.a #uhuh
+		FROM = {
+			country_event = {
+				id = reg_exp_right_bank.2
+				days = 3
+			}
+		}
+	}
+	option = {
+		country_event = {
+				id = reg_exp_right_bank.3
+				days = 3
+			}
+		name = reg_exp_right_bank.1.b #nah
+		FROM = {
+			country_event = {
+				id = reg_exp_right_bank.3
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #right bank dogovornyak yes
+	id = reg_exp_right_bank.2
+	title = reg_exp_right_bank.2.t
+	desc = reg_exp_right_bank.2.d
+
+	
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_exp_right_bank.2.a #uhuh
+		set_country_flag = dogovornyak_agreed_banks
+		FROM = {
+			set_country_flag = dogovornyak_agreed_banks
+		}
+	}
+}
+
+country_event = { #right bank dogovornyak no
+	id = reg_exp_right_bank.3
+	title = reg_exp_right_bank.3.t
+	desc = reg_exp_right_bank.3.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_right_bank.3.a #nah
+			set_country_flag = right_bank_war
+	}
+}
+
+country_event = { #right bank war
+	id = reg_exp_right_bank.4
+	title = reg_exp_right_bank.4.t
+	desc = reg_exp_right_bank.4.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_right_bank.4.a #nah
+			set_country_flag = right_bank_war
+	}
+}
+
+country_event = { #right bank elections
+	id = reg_exp_right_bank.5
+	title = reg_exp_right_bank.5.t
+	desc = reg_exp_right_bank.5.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		country_event = {
+				id = reg_exp_right_bank.6
+				days = 3
+			}
+		name = reg_exp_right_bank.5.a #yes
+		FROM = {
+			country_event = {
+				id = reg_exp_right_bank.6
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = reg_exp_right_bank.5.b #maybe deal
+		FROM = {
+			country_event = {
+				id = reg_exp_right_bank.1
+				days = 3
+			}
+		}
+	}
+	option = {
+		country_event = {
+				id = reg_exp_right_bank.3
+				days = 3
+			}
+		name = reg_exp_right_bank.5.c #no
+		FROM = {
+			country_event = {
+				id = reg_exp_right_bank.3
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #right bank elect
+	id = reg_exp_right_bank.6
+	title = reg_exp_right_bank.6.t
+	desc = reg_exp_right_bank.6.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_right_bank.6.a #nah
+		set_country_flag = elections_agreed_banks
+		FROM = {
+			set_country_flag = elections_agreed_banks
+		}
+		
+	}
+}
+
+country_event = { #ukraine dogovornyak
+	id = reg_exp_ukraine.1
+	title = reg_exp_ukraine.1.t
+	desc = reg_exp_ukraine.1.d
+
+	
+
+	is_triggered_only = yes
+
+	option = { 
+		country_event = {
+				id = reg_exp_ukraine.2
+				days = 3
+			}
+		name = reg_exp_ukraine.1.a #uhuh
+		FROM = {
+			country_event = {
+				id = reg_exp_ukraine.2
+				days = 3
+			}
+		}
+	}
+	option = {
+		country_event = {
+				id = reg_exp_ukraine.3
+				days = 3
+			}
+		name = reg_exp_ukraine.1.b #nah
+		FROM = {
+			country_event = {
+				id = reg_exp_ukraine.3
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #ukraine dogovornyak yes
+	id = reg_exp_ukraine.2
+	title = reg_exp_ukraine.2.t
+	desc = reg_exp_ukraine.2.d
+
+	
+
+	is_triggered_only = yes
+
+	option = { 
+		name = reg_exp_ukraine.2.a #uhuh
+		set_country_flag = elections_agreed_ua
+		FROM = {
+			set_country_flag = elections_agreed_ua
+		}
+	}
+}
+
+country_event = { #ukraine dogovornyak no
+	id = reg_exp_ukraine.3
+	title = reg_exp_ukraine.3.t
+	desc = reg_exp_ukraine.3.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_ukraine.3.a #nah
+			set_country_flag = ukraine_war
+	}
+}
+
+country_event = { #ukraine war
+	id = reg_exp_ukraine.4
+	title = reg_exp_ukraine.4.t
+	desc = reg_exp_ukraine.4.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_ukraine.4.a #nah
+			set_country_flag = ukraine_war
+	}
+}
+
+country_event = { #ukraine elections
+	id = reg_exp_ukraine.5
+	title = reg_exp_ukraine.5.t
+	desc = reg_exp_ukraine.5.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		country_event = {
+				id = reg_exp_ukraine.6
+				days = 3
+			}
+		name = reg_exp_ukraine.5.a #yes
+		FROM = {
+			country_event = {
+				id = reg_exp_ukraine.6
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = reg_exp_ukraine.5.b #maybe deal
+		FROM = {
+			country_event = {
+				id = reg_exp_ukraine.1
+				days = 3
+			}
+		}
+	}
+	option = {
+		country_event = {
+				id = reg_exp_ukraine.3
+				days = 3
+			}
+		name = reg_exp_ukraine.5.c #no
+		FROM = {
+			country_event = {
+				id = reg_exp_ukraine.3
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #ukraine elect
+	id = reg_exp_ukraine.6
+	title = reg_exp_ukraine.6.t
+	desc = reg_exp_ukraine.6.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_ukraine.6.a #nah
+		set_country_flag = elections_agreed_ua
+		FROM = {
+			set_country_flag = elections_agreed_ua
+		}
+		
+	}
+}
+
+country_event = { #deadlok
+	id = reg_exp_ukraine.7
+	title = reg_exp_ukraine.7.t
+	desc = reg_exp_ukraine.7.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_ukraine.7.a #ATTACK
+		declare_war_on = {
+					target = FROM
+					type = annex_everything
+				}
+	}
+}
+
+country_event = { #capital of south east
+	id = reg_capital.1
+	title = reg_capital.1.t
+	desc = reg_capital.1.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_capital.1.a #Kharkiv
+		set_capital = { state = 497 }
+	}
+
+	option = {
+		name = reg_capital.1.b #Donetsk
+		set_capital = { state = 557 }
+	}
+}
+
+country_event = { #capital of south west
+	id = reg_capital.2
+	title = reg_capital.2.t
+	desc = reg_capital.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_capital.2.a #Odesa
+		set_capital = { state = 2045 }
+	}
+}
+
+country_event = { #capital of south center
+	id = reg_capital.3
+	title = reg_capital.3.t
+	desc = reg_capital.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_capital.3.a #Zaporizhzhya
+		set_capital = { state = 623 }
+	}
+}
+
+country_event = { #capital of north center
+	id = reg_capital.4
+	title = reg_capital.4.t
+	desc = reg_capital.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_capital.4.a #Poltava
+		set_capital = { state = 2112 }
+	}
+
+	option = {
+		name = reg_capital.4.a #Cherkasy
+		set_capital = { state = 2067 }
+	}
+
+	option = {
+		name = reg_capital.4.a #Kropysnytskyy
+		set_capital = { state = 2073 }
+	}
+}
+
+country_event = { #capital of north
+	id = reg_capital.5
+	title = reg_capital.5.t
+	desc = reg_capital.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_capital.5.a #Kyiv
+		set_capital = { state = 2081 }
+	}
+}
+
+country_event = { #capital of podillya
+	id = reg_capital.6
+	title = reg_capital.6.t
+	desc = reg_capital.6.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_capital.6.a #Zhytomyr
+		set_capital = { state = 436 }
+	}
+
+	option = {
+		name = reg_capital.6.b #Vinnytsia
+		set_capital = { state = 527 }
+	}
+
+	option = {
+		name = reg_capital.6.c #Khmelnytsky
+		set_capital = { state = 493 }
+	}
+}
+
+country_event = { #capital of galicia
+	id = reg_capital.7
+	title = reg_capital.7.t
+	desc = reg_capital.7.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_capital.7.a #Lviv
+		set_capital = { state = 1292 }
+	}
+}
+
+country_event = { #capital of west
+	id = reg_capital.8
+	title = reg_capital.8.t
+	desc = reg_capital.8.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_capital.8.a #Lviv
+		set_capital = { state = 1292 }
+	}
+}
+
+country_event = { #capital of center
+	id = reg_capital.9
+	title = reg_capital.9.t
+	desc = reg_capital.9.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_capital.9.a #Kyiv
+		set_capital = { state = 2081 }
+	}
+}
+
+country_event = { #capital of south
+	id = reg_capital.10
+	title = reg_capital.10.t
+	desc = reg_capital.10.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_capital.10.a #Odesa
+		set_capital = { state = 2045 }
+	}
+
+	option = {
+		name = reg_capital.10.b #Zaporizhzhia
+		set_capital = { state = 623 }
+	}
+}
+
+country_event = { #capital of east
+	id = reg_capital.11
+	title = reg_capital.11.t
+	desc = reg_capital.11.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_capital.11.a #Kharkiv
+		set_capital = { state = 497 }
+	}
+
+	option = {
+		name = reg_capital.11.b #Donetsk
+		set_capital = { state = 557 }
+	}
+
+	option = {
+		name = reg_capital.11.b #Dnipro
+		set_capital = { state = 2079 }
+	}
+}
+
+country_event = { #capital of left bank
+	id = reg_capital.12
+	title = reg_capital.12.t
+	desc = reg_capital.12.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_capital.12.a #Kharkiv
+		set_capital = { state = 497 }
+	}
+
+	option = {
+		name = reg_capital.12.b #Donetsk
+		set_capital = { state = 557 }
+	}
+
+	option = {
+		name = reg_capital.12.c #Dnipro
+		set_capital = { state = 2079 }
+	}
+
+	option = {
+		name = reg_capital.12.e #Odesa
+		set_capital = { state = 2045 }
+	}
+
+	option = {
+		name = reg_capital.12.f #Zaporizhzhia
+		set_capital = { state = 623 }
+	}
+}
+
+country_event = { #capital of right bank
+	id = reg_capital.13
+	title = reg_capital.13.t
+	desc = reg_capital.13.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_capital.13.a #Kyiv
+		set_capital = { state = 2081 }
+	}
+
+	option = {
+		name = reg_capital.13.b #Lviv
+		set_capital = { state = 1292 }
+	}
+}
+
