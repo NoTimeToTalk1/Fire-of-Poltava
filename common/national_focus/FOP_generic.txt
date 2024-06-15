@@ -44,7 +44,12 @@ focus = {
 	y = 1
     cost = 1
 	completion_reward = {
-		###
+		country_event = {
+			id = FOP_generic.1
+			days = 2
+		}
+		add_ideas = FOP_ruin
+		add_ideas = FOP_ruined_economy
 	}
 }
 
@@ -57,7 +62,7 @@ focus = {
     relative_position_id = FOP_Fire_Of_Poltava
     prerequisite = { focus = FOP_Fire_Of_Poltava }
 	completion_reward = {
-		###
+		add_stability = 0.1
 	}
 }
 
@@ -70,7 +75,10 @@ focus = {
     relative_position_id = FOP_Fire_Of_Poltava
     prerequisite = { focus = FOP_We_Are_Holding }
 	completion_reward = {
-		###
+		swap_ideas = {
+			remove_idea = FOP_ruin
+			add_idea = FOP_ruin_2
+		}
 	}
 }
 
@@ -83,7 +91,7 @@ focus = {
     relative_position_id = FOP_Fire_Of_Poltava
     prerequisite = { focus = FOP_Time_To_Reorganise }
 	completion_reward = {
-		###
+		###tooltip
 	}
 }
 
@@ -98,7 +106,7 @@ focus = {
     mutually_exclusive = { focus = FOP_Rely_On_Professionals }
     prerequisite = { focus = FOP_What_About_Army }
 	completion_reward = {
-		###
+		add_ideas = FOP_militias_focus
 	}
 }
 
@@ -113,7 +121,7 @@ focus = {
     mutually_exclusive = { focus = FOP_Rely_On_Professionals }
     prerequisite = { focus = FOP_What_About_Army }
 	completion_reward = {
-		###
+		add_ideas = FOP_vehicles_focus
 	}
 }
 
@@ -128,7 +136,7 @@ focus = {
     mutually_exclusive = { focus = FOP_Rely_On_Vehicles }
     prerequisite = { focus = FOP_What_About_Army }
 	completion_reward = {
-		###
+		add_ideas = FOP_professionals_focus
 	}
 }
 
@@ -141,7 +149,31 @@ focus = {
     relative_position_id = FOP_Fire_Of_Poltava
     prerequisite = { focus = FOP_Rely_On_Militias }
 	completion_reward = {
-		###
+		division_template = {
+			name = "Militia"
+			is_locked = yes
+			division_names_group = BLR_INF_01
+			priority = 0
+			template_counter = 0
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+			}
+		}
+		random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"Militia\" division_template = \"Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+				owner = ROOT
+			}	
+			add_manpower = -1200
+		}
+		random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"Militia\" division_template = \"Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.4"
+				owner = ROOT
+			}	
+			add_manpower = -800
+		}
 	}
 }
 
@@ -154,7 +186,16 @@ focus = {
     relative_position_id = FOP_Fire_Of_Poltava
     prerequisite = { focus = FOP_Rely_On_Vehicles }
 	completion_reward = {
-		###
+		add_equipment_to_stockpile = {
+			type = mechanized_equipment_1
+			amount = 150
+			producer = ROOT
+		}
+		add_equipment_to_stockpile = {
+			type = motorized_equipment
+			amount = 300
+			producer = ROOT
+		}
 	}
 }
 
@@ -167,7 +208,7 @@ focus = {
     relative_position_id = FOP_Fire_Of_Poltava
     prerequisite = { focus = FOP_Rely_On_Professionals }
 	completion_reward = {
-		###
+		add_ideas = FOP_skilled_personnel
 	}
 }
 
@@ -180,7 +221,14 @@ focus = {
     relative_position_id = FOP_Fire_Of_Poltava
     prerequisite = { focus = FOP_Gather_Militants focus = FOP_Seize_What_We_Can focus = FOP_Search_For_Skilled_Personnel }
 	completion_reward = {
-		###
+		add_ideas = FOP_starting_general_stuff
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = situation_centre
+				level = 1
+				instant_build = yes
+			}
+		}
 	}
 }
 
@@ -193,7 +241,7 @@ focus = {
     relative_position_id = FOP_Fire_Of_Poltava
     prerequisite = { focus = FOP_Gather_Militants focus = FOP_Seize_What_We_Can focus = FOP_Search_For_Skilled_Personnel }
 	completion_reward = {
-		###
+		unlock_decision_category_tooltip = fop_warehouses
 	}
 }
 
@@ -207,7 +255,8 @@ focus = {
     prerequisite = { focus = FOP_Making_Up_General_Staff }
     prerequisite = { focus = FOP_Find_Warehouses }
 	completion_reward = {
-		###
+		unlock_decision_category_tooltip = fop_mobilisation
+		add_manpower = 10000
 	}
 }
 
@@ -221,7 +270,15 @@ focus = {
     prerequisite = { focus = FOP_Making_Up_General_Staff }
     prerequisite = { focus = FOP_Find_Warehouses }
 	completion_reward = {
-		###
+		add_ideas = FOP_starting_equipment_production
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = ammunition_plant
+				level = 1
+				instant_build = yes
+			}
+		}
+		
 	}
 }
 
@@ -234,7 +291,7 @@ focus = {
     relative_position_id = FOP_Fire_Of_Poltava
     prerequisite = { focus = FOP_Time_To_Reorganise }
 	completion_reward = {
-		###
+		add_stability = 0.05
 	}
 }
 
@@ -248,7 +305,8 @@ focus = {
     mutually_exclusive = { focus = FOP_Make_Strong_People }
     prerequisite = { focus = FOP_Bad_Times }
 	completion_reward = {
-		###
+		add_war_support = -0.05
+		add_ideas = FOP_ease_up
 	}
 }
 
@@ -262,7 +320,8 @@ focus = {
     mutually_exclusive = { focus = FOP_Require_Better_Treatment }
     prerequisite = { focus = FOP_Bad_Times }
 	completion_reward = {
-		###
+		add_stability = -0.05
+		add_ideas = FOP_strict_rule
 	}
 }
 
@@ -275,7 +334,7 @@ focus = {
     relative_position_id = FOP_Fire_Of_Poltava
     prerequisite = { focus = FOP_Make_Strong_People focus = FOP_Require_Better_Treatment }
 	completion_reward = {
-		###
+		add_ideas = FOP_reorganised_administration
 	}
 }
 
@@ -288,7 +347,15 @@ focus = {
     relative_position_id = FOP_Fire_Of_Poltava
     prerequisite = { focus = FOP_Make_Strong_People focus = FOP_Require_Better_Treatment }
 	completion_reward = {
-		###
+		add_stability = -0.1
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = labour_camp
+				level = 1
+				instant_build = yes
+			}
+		}
+		unlock_decision_category_tooltip = fop_appeasement
 	}
 }
 
@@ -301,7 +368,14 @@ focus = {
     relative_position_id = FOP_Fire_Of_Poltava
     prerequisite = { focus = FOP_Make_Strong_People focus = FOP_Require_Better_Treatment }
 	completion_reward = {
-		###
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = hospital_building
+				level = 1
+				instant_build = yes
+			}
+		}
+		unlock_decision_category_tooltip = FOP_earn_trust
 	}
 }
 
@@ -317,7 +391,9 @@ focus = {
     prerequisite = { focus = FOP_Appease_The_Populace }
     prerequisite = { focus = FOP_Earn_The_Trust }
 	completion_reward = {
-		###
+		add_stability = 0.05
+		add_war_support = -0.05
+		add_political_power = -25
 	}
 }
 
@@ -333,7 +409,9 @@ focus = {
     prerequisite = { focus = FOP_Appease_The_Populace }
     prerequisite = { focus = FOP_Earn_The_Trust }
 	completion_reward = {
-		###
+		add_war_support = 0.05
+		add_stability = -0.05
+		add_political_power = 25
 	}
 }
 
@@ -346,7 +424,10 @@ focus = {
     relative_position_id = FOP_Fire_Of_Poltava
     prerequisite = { focus = FOP_Its_Fine focus = FOP_No_Time_To_Whine }
 	completion_reward = {
-		###
+		swap_ideas = {
+			remove_idea = FOP_ruin_2
+			add_idea = FOP_ruin_3
+		}
 	}
 }
 
@@ -359,7 +440,10 @@ focus = {
     relative_position_id = FOP_Fire_Of_Poltava
     prerequisite = { focus = FOP_Time_To_Reorganise }
 	completion_reward = {
-		###
+		swap_ideas = {
+			remove_idea = FOP_ruined_economy
+			add_idea = FOP_ruined_economy_2
+		}
 	}
 }
 
@@ -373,7 +457,7 @@ focus = {
     mutually_exclusive = { focus = FOP_Concentrate_Product_Quality }
     prerequisite = { focus = FOP_Look_Into_Industry }
 	completion_reward = {
-		###
+		add_ideas = FOP_production_quantity
 	}
 }
 
@@ -387,7 +471,7 @@ focus = {
     mutually_exclusive = { focus = FOP_The_More_The_Better }
     prerequisite = { focus = FOP_Look_Into_Industry }
 	completion_reward = {
-		###
+		add_ideas = FOP_production_quality
 	}
 }
 
@@ -400,7 +484,10 @@ focus = {
     relative_position_id = FOP_Fire_Of_Poltava
     prerequisite = { focus = FOP_Concentrate_Product_Quality focus = FOP_The_More_The_Better }
 	completion_reward = {
-		###
+		swap_ideas = {
+			remove_idea = FOP_ruined_economy_2
+			add_idea = FOP_ruined_economy_3
+		}
 	}
 }
 focus = {
@@ -412,7 +499,27 @@ focus = {
     relative_position_id = FOP_Fire_Of_Poltava
     prerequisite = { focus = FOP_Concentrate_Product_Quality focus = FOP_The_More_The_Better }
 	completion_reward = {
-		###
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
 	}
 }
 
@@ -425,7 +532,7 @@ focus = {
     relative_position_id = FOP_Fire_Of_Poltava
     prerequisite = { focus = FOP_Concentrate_Product_Quality focus = FOP_The_More_The_Better }
 	completion_reward = {
-		###
+		add_ideas = FOP_workers_organisation
 	}
 }
 
@@ -442,7 +549,14 @@ focus = {
     prerequisite = { focus = FOP_Expand_Factories }
     prerequisite = { focus = FOP_Organize_Workers }
 	completion_reward = {
-		###
+		if = {
+			limit = {
+				NOT = {
+					has_ideas = fop_working_hours_10
+				}
+			}
+			add_ideas = fop_working_hours_10
+		}
 	}
 }
 
@@ -457,7 +571,7 @@ focus = {
     prerequisite = { focus = FOP_Expand_Factories }
     prerequisite = { focus = FOP_Organize_Workers }
 	completion_reward = {
-		###
+		unlock_decision_category_tooltip = FOP_resources
 	}
 }
 
@@ -471,7 +585,10 @@ focus = {
     prerequisite = { focus = FOP_The_More_We_Work_The_Better_Our_Chances }
     prerequisite = { focus = FOP_Rudimentary_Resource_Production }
 	completion_reward = {
-		###
+		swap_ideas = {
+			remove_idea = FOP_ruined_economy_3
+			add_idea = FOP_ruined_economy_4
+		}
 	}
 }
 
