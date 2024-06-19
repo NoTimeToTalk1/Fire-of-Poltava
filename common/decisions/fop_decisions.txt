@@ -18,6 +18,10 @@ FOP_warehouses = {
 		days_remove = 35
 		fire_only_once = yes
 
+        ai_will_do = {	
+			factor = 100		
+		}
+
 		modifier = {
 		}
 
@@ -66,6 +70,10 @@ FOP_warehouses = {
 		modifier = {
 		}
 
+        ai_will_do = {	
+			factor = 100		
+		}
+
 		remove_effect = {
 			random_list = {
 				33 = {
@@ -111,6 +119,10 @@ FOP_warehouses = {
 		modifier = {
 		}
 
+        ai_will_do = {	
+			factor = 100		
+		}
+
 		remove_effect = {
 			random_list = {
 				33 = {
@@ -150,6 +162,10 @@ FOP_earn_trust = {
 		modifier = {
 		}
 
+        ai_will_do = {	
+			factor = 100		
+		}
+
 		remove_effect = {
 			random_list = {
 				50 = {
@@ -167,11 +183,20 @@ FOP_earn_trust = {
                     add_political_power = 25
                 }
 			}
-            random_controlled_state = {
+            if = {
                 limit = {
-                    has_active_resistance = yes
+                    random_controlled_state = {
+                        limit = {
+                            has_active_resistance = yes
+                        }
+                    }
                 }
-                add_compliance = 1
+                random_controlled_state = {
+                        limit = {
+                            has_active_resistance = yes
+                        }
+                        add_compliance = 1
+                    }
             }
 		}
 	}
@@ -190,15 +215,29 @@ FOP_earn_trust = {
             production_factory_efficiency_gain_factor = -0.1
 		}
 
+        ai_will_do = {	
+			factor = 100		
+		}
+
 		remove_effect = {
 			add_stability = 0.1
             add_political_power = 50
-            random_controlled_state = {
+            if = {
                 limit = {
-                    has_active_resistance = yes
+                    random_controlled_state = {
+                        limit = {
+                            has_active_resistance = yes
+                        }
+                    }
                 }
-                add_compliance = 5
+                random_controlled_state = {
+                    limit = {
+                        has_active_resistance = yes
+                    }
+                    add_compliance = 5
+                }
             }
+            
 		}
 	}
     invest_in_social_buildings = {
@@ -214,6 +253,10 @@ FOP_earn_trust = {
 		modifier = {
             civilian_factory_use = 2
             consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 100		
 		}
 
 		remove_effect = {
@@ -255,11 +298,20 @@ FOP_earn_trust = {
 		            }
                 }
 			}
-            random_controlled_state = {
+            if = {
                 limit = {
-                    has_active_resistance = yes
+                    random_controlled_state = {
+                        limit = {
+                            has_active_resistance = yes
+                        }
+                    }
                 }
-                add_compliance = 3
+                random_controlled_state = {
+                    limit = {
+                        has_active_resistance = yes
+                    }
+                    add_compliance = 3
+                }
             }
 		}
     }
@@ -277,6 +329,10 @@ FOP_appeasement = {
 		days_remove = 35
 
 		modifier = {
+		}
+
+        ai_will_do = {	
+			factor = 100		
 		}
 
 		remove_effect = {
@@ -297,24 +353,28 @@ FOP_appeasement = {
                     add_manpower = -500
                 }
 			}
-            random_list = {
-                50 = {
+            if = {
+                limit = {
                     random_controlled_state = {
                         limit = {
                             has_active_resistance = yes
                         }
-                        add_resistance = -5
                     }
                 }
-                50 = {
-                    random_controlled_state = {
-                        limit = {
-                            has_active_resistance = yes
+                random_controlled_state = {
+                    limit = {
+                        has_active_resistance = yes
+                    }
+                    random_list = {
+                        50 = {
+                                add_resistance = -5
                         }
-                        add_resistance = 5
+                        50 = {
+                                add_resistance  = 5
+                        }
                     }
                 }
-            }
+            } 
 		}
 	}
     invest_in_populace_control = {
@@ -330,6 +390,10 @@ FOP_appeasement = {
 		modifier = {
             civilian_factory_use = 2
             consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 100		
 		}
 
 		remove_effect = {
@@ -353,14 +417,27 @@ FOP_appeasement = {
 
 		days_remove = 35
 
+        ai_will_do = {	
+			factor = 100		
+		}
+
 		remove_effect = {
             add_war_support = -0.1
             add_manpower = 500
-            random_controlled_state = {
+            if = {
                 limit = {
-                    has_active_resistance = yes
+                    random_controlled_state = {
+                        limit = {
+                            has_active_resistance = yes
+                        }
+                    }
                 }
-                add_resistance = 4
+                random_controlled_state = {
+                    limit = {
+                        has_active_resistance = yes
+                    }
+                    add_resistance = 4
+                }
             }
 		}
     }
@@ -378,6 +455,10 @@ FOP_mobilisation = {
 		days_remove = 14
 
 		modifier = {
+		}
+
+        ai_will_do = {	
+			factor = 100		
 		}
 
 		remove_effect = {
@@ -400,11 +481,15 @@ FOP_mobilisation = {
 		allowed = {
 		}
 		
-		cost = 30
+		cost = 50
 
 		days_remove = 21
 
 		modifier = {
+		}
+
+        ai_will_do = {	
+			factor = 30		
 		}
 
 		remove_effect = {
@@ -429,25 +514,29 @@ FOP_mobilisation = {
 		allowed = {
 		}
 		
-		cost = 40
+		cost = 75
 
 		days_remove = 35
 
 		modifier = {
 		}
 
+        ai_will_do = {	
+			factor = 50		
+		}
+
 		remove_effect = {
 			random_list = {
 				35 = {
-                    add_stability = -0.01
+                    add_stability = -0.03
                     add_manpower = 1500
                 }
                 35 = {
-                    add_stability = -0.03
+                    add_stability = -0.05
                     add_manpower = 2000
                 }
                 30 = {
-                    add_stability = -0.05
+                    add_stability = -0.07
                     add_manpower = 3000
                 }
 			}
@@ -471,6 +560,10 @@ FOP_resources = {
 		modifier = {
             civilian_factory_use = 2
             consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 100		
 		}
 
 		remove_effect = {
@@ -499,6 +592,10 @@ FOP_resources = {
             consumer_goods_factor = 0.1
 		}
 
+        ai_will_do = {	
+			factor = 100		
+		}
+
 		remove_effect = {
 			random_owned_controlled_state = {
                 add_resource = {
@@ -523,6 +620,10 @@ FOP_resources = {
 		modifier = {
             civilian_factory_use = 2
             consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 100		
 		}
 
 		remove_effect = {
