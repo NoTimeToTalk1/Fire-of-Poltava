@@ -2,3 +2,232 @@ on_actions = {
 	
 	on_startup = { effect = { AFU = {set_country_flag = part_of_war} DPR = {set_country_flag = part_of_war} LPR = {set_country_flag = part_of_war}} }
 }
+
+on_actions = {
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						original_tag = DPR
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 497
+						}
+					}
+					FROM.FROM = {
+						set_state_name = "STATE_497_DPR"
+						set_province_name = {
+							id = 12724
+							name = "STATE_497_DPR"
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						original_tag = DPR
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 2079
+						}
+					}
+					FROM.FROM = {
+						set_state_name = "STATE_2079_DPR"
+						set_province_name = {
+							id = 13406
+							name = "STATE_2079_DPR"
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						original_tag = DPR
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 623
+						}
+					}
+					FROM.FROM = {
+						set_state_name = "STATE_623_DPR"
+						set_province_name = {
+							id = 3340
+							name = "STATE_623_DPR"
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						original_tag = DPR
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 614
+						}
+					}
+					FROM.FROM = {
+						set_state_name = "STATE_614_DPR"
+						set_province_name = {
+							id = 13888
+							name = "STATE_614_DPR"
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						original_tag = DPR
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 2045
+						}
+					}
+					FROM.FROM = {
+						set_state_name = "STATE_2045_DPR"
+						set_province_name = {
+							id = 14022
+							name = "STATE_2045_DPR"
+						}
+					}
+				}
+			}
+	
+			if = {
+				limit = {
+					ROOT = {
+					NOT = {
+						original_tag = DPR
+					}
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 497
+						}
+					}
+					FROM.FROM = {
+						set_state_name = "VICTORY_POINTS_12724"
+						set_province_name = {
+							id = 12724
+							name = "VICTORY_POINTS_12724"
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+					NOT = {
+						original_tag = DPR
+					}
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 2079
+						}
+					}
+					FROM.FROM = {
+						set_state_name = "VICTORY_POINTS_13406"
+						set_province_name = {
+							id = 13406
+							name = "VICTORY_POINTS_13406"
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+					NOT = {
+						original_tag = DPR
+					}
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 623
+						}
+					}
+					FROM.FROM = {
+						set_state_name = "VICTORY_POINTS_3340"
+						set_province_name = {
+							id = 3340
+							name = "VICTORY_POINTS_3340"
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+					NOT = {
+						original_tag = DPR
+					}
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 614
+						}
+					}
+					FROM.FROM = {
+						set_state_name = "VICTORY_POINTS_13888"
+						set_province_name = {
+							id = 13888
+							name = "VICTORY_POINTS_13888"
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+					NOT = {
+						original_tag = DPR
+					}
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 2045
+						}
+					}
+					FROM.FROM = {
+						set_state_name = "VICTORY_POINTS_14022"
+						set_province_name = {
+							id = 14022
+							name = "VICTORY_POINTS_14022"
+						}
+					}
+				}
+			}
+	
+	}
+}
+}

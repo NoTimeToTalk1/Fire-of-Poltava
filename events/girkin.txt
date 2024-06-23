@@ -49,20 +49,6 @@ country_event = {
 	picture = GFX_report_event_table
 	fire_only_once = yes
 	is_triggered_only = yes
-	option = {
-		name = gir.3.a
-		set_country_flag = DPR_rostik_choice
-set_power_balance = {
-    id = DPR_rostislave_girkin_political_balance
-}
-	}
-	option = {
-		name = gir.3.b
-		set_country_flag = DPR_girkin_choice
-set_power_balance = {
-    id = DPR_rostislave_girkin_political_balance
-}
-	}
 }
 
 #girkin buff
@@ -369,7 +355,7 @@ country_event = {
 	}
 }
 
-#vaginer
+#wagner
 country_event = {
 	id = gir.24
 	title = gir.24.t
@@ -380,6 +366,9 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = gir.24.a
+		hidden_effect = {
+		set_country_flag = girkin_wagner_friends
+		}
 	}
 }
 
@@ -618,6 +607,10 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = gir.41.a
+declare_war_on = {
+    target = RUS
+    type = annex_everything
+}
 	}
 }
 
@@ -803,6 +796,19 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = gir.54.a
+		custom_effect_tooltip = DPR_rostik_choice
+		set_country_flag = DPR_rostik_choice
+set_power_balance = {
+    id = DPR_rostislave_girkin_political_balance
+}
+	}
+	option = {
+		name = gir.54.b
+		set_country_flag = DPR_girkin_choice
+		custom_effect_tooltip = DPR_girkin_choice
+set_power_balance = {
+    id = DPR_rostislave_girkin_political_balance
+}
 	}
 }
 
@@ -1230,6 +1236,85 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = gir.82.a
+
+	}
+}
+
+#girkin support
+country_event = {
+	id = gir.83
+	title = gir.83.t
+	desc = gir.83.d
+
+	picture = GFX_event_girkin_2
+	is_triggered_only = yes
+	option = {
+		name = gir.83.a
+		add_command_power = 25
+		add_political_power = 30
+	random_list = {
+25 = {
+add_opinion_modifier = {
+    target = DPR
+    modifier = material_support
+}
+}
+25 = {
+add_opinion_modifier = {
+    target = DPR
+    modifier = humanitarian_support
+}
+}
+25 = {
+add_opinion_modifier = {
+    target = DPR
+    modifier = moral_support
+}
+}
+25 = {
+add_opinion_modifier = {
+    target = DPR
+    modifier = military_support
+}
+}
+}	
+	
+
+	}
+}
+
+#annex offer support
+country_event = {
+	id = gir.84
+	title = gir.84.t
+	desc = gir.84.d
+
+	picture = GFX_event_girkin_2
+	is_triggered_only = yes
+	option = {
+		name = gir.84.a
+	DPR = {
+annex_country = {
+    target = ROOT
+    transfer_troops = yes
+}
+}
+		every_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			remove_core_of = ROOT
+			add_core_of = DPR
+		}
+
+			ROOT = {
+every_character = {
+                set_nationality = {
+                    target_country = DPR
+				
+                }
+            }
+}		
 
 	}
 }
