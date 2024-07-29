@@ -1,0 +1,1038 @@
+focus_tree = {
+	id = fop_generic_one
+	continuous_focus_position = { x = 0 y = 1000 }
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			OR = {
+                tag = GAL
+                tag = TER
+                tag = RIV
+                tag = VOL
+                tag = ZAK
+                tag = KHM
+                tag = ZHY
+                tag = KYI
+                tag = UKR
+                tag = PRH
+                tag = SUM 
+                tag = UMA
+                tag = CHR
+                tag = PLT 
+                tag = KRE 
+                tag = KIR 
+                tag = ODE 
+                tag = MYK
+                tag = STR 
+                tag = SHT 
+                tag = BDZ
+                tag = RVE 
+                tag = OPZ 
+                tag = ZAP 
+                tag = DNI 
+                tag = KHA
+		tag = CRN
+            }
+		}
+	}
+
+
+focus = {
+	id = FOP_We_Stand_On_Ground
+	icon = GFX_generic_suspend_constitution
+	x = 50
+	y = 1
+    cost = 1
+	completion_reward = {
+		country_event = {
+			id = FOP_generic.2
+			days = 2
+		}
+		add_ideas = FOP_energy_crisis
+        add_ideas = FOP_chaos_on_territories
+        add_ideas = FOP_shadow_economy_rising
+	}
+}
+
+focus = {
+	id = FOP_Establish_Regional_Administration
+	icon = GFX_generic_suspend_constitution
+	x = -1
+	y = 1
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_We_Stand_On_Ground }
+	completion_reward = {
+		add_political_power = 150
+	}
+}
+
+focus = {
+	id = FOP_Appeal_To_The_People
+	icon = GFX_generic_suspend_constitution
+	x = 1
+	y = 1
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_We_Stand_On_Ground }
+	completion_reward = {
+		country_event = {
+			id = FOP_generic.6
+			days = 2
+		}
+	}
+}
+
+focus = {
+	id = FOP_Open_For_Business
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 2
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Appeal_To_The_People }
+    prerequisite = { focus = FOP_Establish_Regional_Administration }
+	completion_reward = {
+		add_stability = 0.1
+	}
+}
+
+focus = {
+	id = FOP_Army_Reorganisation
+	icon = GFX_generic_suspend_constitution
+	x = -30
+	y = 3
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Open_For_Business }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Expand_Staff
+	icon = GFX_generic_suspend_constitution
+	x = -30
+	y = 4
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Army_Reorganisation }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Weapon_Markets
+	icon = GFX_generic_suspend_constitution
+	x = -35
+	y = 5
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Expand_Staff }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Military_Industry_Development
+	icon = GFX_generic_suspend_constitution
+	x = -33
+	y = 5
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Expand_Staff }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Gather_Munitions_From_Citizens
+	icon = GFX_generic_suspend_constitution
+	x = -35
+	y = 6
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Weapon_Markets }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Encourage_Local_Workshops
+	icon = GFX_generic_suspend_constitution
+	x = -33
+	y = 6
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Expand_Staff }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Recruitment_Issue
+	icon = GFX_generic_suspend_constitution
+	x = -34
+	y = 7
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Encourage_Local_Workshops }
+	prerequisite = { focus = FOP_Gather_Munitions_From_Citizens }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Who_Was_Made_To_Serve
+	icon = GFX_generic_suspend_constitution
+	x = -36
+	y = 8
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Recruitment_Issue }
+	mutually_exclusive = { focus = FOP_Army_Service_Will_Touch_Everyone }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Army_Service_Will_Touch_Everyone
+	icon = GFX_generic_suspend_constitution
+	x = -32
+	y = 8
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Recruitment_Issue }
+	mutually_exclusive = { focus = FOP_Who_Was_Made_To_Serve }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Mandated_Rearline_Jobs
+	icon = GFX_generic_suspend_constitution
+	x = -37
+	y = 9
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Who_Was_Made_To_Serve }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Self_Defence_Training_Programmes
+	icon = GFX_generic_suspend_constitution
+	x = -35
+	y = 9
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Who_Was_Made_To_Serve }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Ease_Up_Conscription_Requirements
+	icon = GFX_generic_suspend_constitution
+	x = -33
+	y = 9
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Army_Service_Will_Touch_Everyone }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Good_Mobilization_Bonuses
+	icon = GFX_generic_suspend_constitution
+	x = -31
+	y = 9
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Army_Service_Will_Touch_Everyone }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_NATO_Standarts
+	icon = GFX_generic_suspend_constitution
+	x = -28
+	y = 5
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Expand_Staff }
+	mutually_exclusive = { focus = FOP_Lessons_From_Old_Mistakes }
+	mutually_exclusive = { focus = FOP_Takticheskaya_Doctrine }
+	mutually_exclusive = { focus = FOP_New_Army_Way }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Contact_NATO_Countries
+	icon = GFX_generic_suspend_constitution
+	x = -28
+	y = 6
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_NATO_Standarts }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Learn_From_NATO_Books
+	icon = GFX_generic_suspend_constitution
+	x = -28
+	y = 7
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Contact_NATO_Countries }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Lessons_From_Old_Mistakes
+	icon = GFX_generic_suspend_constitution
+	x = -26
+	y = 5
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Expand_Staff }
+	mutually_exclusive = { focus = FOP_NATO_Standarts }
+	mutually_exclusive = { focus = FOP_Takticheskaya_Doctrine }
+	mutually_exclusive = { focus = FOP_New_Army_Way }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Cleaning_Up_Soviet_Trash
+	icon = GFX_generic_suspend_constitution
+	x = -26
+	y = 6
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Lessons_From_Old_Mistakes }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Our_Own_Weaponry
+	icon = GFX_generic_suspend_constitution
+	x = -26
+	y = 7
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Cleaning_Up_Soviet_Trash }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Takticheskaya_Doctrine
+	icon = GFX_generic_suspend_constitution
+	x = -24
+	y = 5
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Expand_Staff }
+	mutually_exclusive = { focus = FOP_Lessons_From_Old_Mistakes }
+	mutually_exclusive = { focus = FOP_NATO_Standarts }
+	mutually_exclusive = { focus = FOP_New_Army_Way }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Contact_CSTO_Countries
+	icon = GFX_generic_suspend_constitution
+	x = -24
+	y = 6
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Takticheskaya_Doctrine }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Respect_The_Command
+	icon = GFX_generic_suspend_constitution
+	x = -24
+	y = 7
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Contact_CSTO_Countries }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_New_Army_Way
+	icon = GFX_generic_suspend_constitution
+	x = -22
+	y = 5
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Expand_Staff }
+	mutually_exclusive = { focus = FOP_Lessons_From_Old_Mistakes }
+	mutually_exclusive = { focus = FOP_Takticheskaya_Doctrine }
+	mutually_exclusive = { focus = FOP_NATO_Standarts }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Army_Reform_Comitee
+	icon = GFX_generic_suspend_constitution
+	x = -22
+	y = 6
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_New_Army_Way }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Encourage_Youth
+	icon = GFX_generic_suspend_constitution
+	x = -22
+	y = 7
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Army_Reform_Comitee }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_We_Fight_For_Future
+	icon = GFX_generic_suspend_constitution
+	x = -30
+	y = 10
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Mandated_Rearline_Jobs }
+	prerequisite = { focus = FOP_Self_Defence_Training_Programmes }
+	prerequisite = { focus = FOP_Ease_Up_Conscription_Requirements }
+	prerequisite = { focus = FOP_Good_Mobilization_Bonuses }
+	prerequisite = { focus = FOP_Learn_From_NATO_Books focus = FOP_Our_Own_Weaponry focus = FOP_Respect_The_Command focus = FOP_Encourage_Youth }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Government_Reforms
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 3
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Open_For_Business }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Reforming_The_Cabinet
+	icon = GFX_generic_suspend_constitution
+	x = -15
+	y = 4
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Government_Reforms}
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_New_Faces_In_Charge
+	icon = GFX_generic_suspend_constitution
+	x = -16
+	y = 5
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Reforming_The_Cabinet}
+	mutually_exclusive = { focus = FOP_Rely_On_Old_Ones }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Rely_On_Old_Ones
+	icon = GFX_generic_suspend_constitution
+	x = -14
+	y = 5
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Reforming_The_Cabinet }
+	mutually_exclusive = { focus = FOP_New_Faces_In_Charge }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Ensure_Completion_Of_Duties
+	icon = GFX_generic_suspend_constitution
+	x = -17
+	y = 6
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_New_Faces_In_Charge focus = FOP_Rely_On_Old_Ones }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Look_For_Jurists
+	icon = GFX_generic_suspend_constitution
+	x = -15
+	y = 6
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_New_Faces_In_Charge focus = FOP_Rely_On_Old_Ones }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Expand_Administrational_Capabilities
+	icon = GFX_generic_suspend_constitution
+	x = -13
+	y = 6
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_New_Faces_In_Charge focus = FOP_Rely_On_Old_Ones }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Call_Law_Revision_Comission
+	icon = GFX_generic_suspend_constitution
+	x = -15
+	y = 7
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Ensure_Completion_Of_Duties }
+	prerequisite = { focus = FOP_Look_For_Jurists }
+	prerequisite = { focus = FOP_Expand_Administrational_Capabilities }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Revisiting_The_Law
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 4
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Government_Reforms}
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Our_Own_Vision
+	icon = GFX_generic_suspend_constitution
+	x = -5
+	y = 5
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Revisiting_The_Law}
+	mutually_exclusive = { focus = FOP_Readopt_Ukrainian_Constitution }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Readopt_Ukrainian_Constitution
+	icon = GFX_generic_suspend_constitution
+	x = 5
+	y = 5
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Revisiting_The_Law }
+	mutually_exclusive = { focus = FOP_Our_Own_Vision}
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_European_Standart_Of_Law
+	icon = GFX_generic_suspend_constitution
+	x = -8
+	y = 6
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Our_Own_Vision }
+	mutually_exclusive = { focus = FOP_We_Know_Law_Better }
+	mutually_exclusive = { focus = FOP_Rule_Of_Hard_Hand }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_We_Know_Law_Better
+	icon = GFX_generic_suspend_constitution
+	x = -5
+	y = 6
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Our_Own_Vision }
+	mutually_exclusive = { focus = FOP_European_Standart_Of_Law }
+	mutually_exclusive = { focus = FOP_Rule_Of_Hard_Hand }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Rule_Of_Hard_Hand
+	icon = GFX_generic_suspend_constitution
+	x = -2
+	y = 6
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Our_Own_Vision }
+	mutually_exclusive = { focus = FOP_European_Standart_Of_Law }
+	mutually_exclusive = { focus = FOP_We_Know_Law_Better}
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Media_Question
+	icon = GFX_generic_suspend_constitution
+	x = -5
+	y = 7
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_We_Know_Law_Better }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Police_Enforcement
+	icon = GFX_generic_suspend_constitution
+	x = -3
+	y = 7
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_We_Know_Law_Better }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_How_Free_The_Speech_Is
+	icon = GFX_generic_suspend_constitution
+	x = -7
+	y = 7
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_We_Know_Law_Better }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_New_Laws_New_Times
+	icon = GFX_generic_suspend_constitution
+	x = -5
+	y = 8
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_European_Standart_Of_Law focus = FOP_How_Free_The_Speech_Is focus = FOP_Media_Question focus = FOP_Police_Enforcement focus = FOP_Rule_Of_Hard_Hand }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Review_Law_Holes
+	icon = GFX_generic_suspend_constitution
+	x = 4
+	y = 6
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Readopt_Ukrainian_Constitution }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Solve_Long_Lasting_Issues
+	icon = GFX_generic_suspend_constitution
+	x = 6
+	y = 6
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Readopt_Ukrainian_Constitution }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Laws_How_They_Meant_To_Be
+	icon = GFX_generic_suspend_constitution
+	x = 5
+	y = 7
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Review_Law_Holes }
+	prerequisite = { focus = FOP_Solve_Long_Lasting_Issues }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Allow_Mild_Changes
+	icon = GFX_generic_suspend_constitution
+	x = 4
+	y = 8
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Laws_How_They_Meant_To_Be }
+	mutually_exclusive = { focus = FOP_Law_Stays_As_He_Was }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Law_Stays_As_He_Was
+	icon = GFX_generic_suspend_constitution
+	x = 6
+	y = 8
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Laws_How_They_Meant_To_Be }
+	mutually_exclusive = { focus = FOP_Allow_Mild_Changes }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Social_Reforms
+	icon = GFX_generic_suspend_constitution
+	x = 10
+	y = 4
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Government_Reforms }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Healthcare_Issue
+	icon = GFX_generic_suspend_constitution
+	x = 10
+	y = 5
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Social_Reforms }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Social_Insurance
+	icon = GFX_generic_suspend_constitution
+	x = 9
+	y = 6
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Healthcare_Issue }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Minimal_Wages
+	icon = GFX_generic_suspend_constitution
+	x = 11
+	y = 6
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Healthcare_Issue }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Workers_Rights
+	icon = GFX_generic_suspend_constitution
+	x = 10
+	y = 7
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Social_Insurance }
+	prerequisite = { focus = FOP_Minimal_Wages }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Elderly_Treatment
+	icon = GFX_generic_suspend_constitution
+	x = 10
+	y = 8
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Workers_Rights }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_With_Renewed_Hope_We_Continue_Forward
+	icon = GFX_generic_suspend_constitution
+	x = 0
+	y = 9
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Allow_Mild_Changes focus = FOP_Law_Stays_As_He_Was focus = FOP_New_Laws_New_Times}
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Restructuring_Economy
+	icon = GFX_generic_suspend_constitution
+	x = 20
+	y = 3
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Open_For_Business }
+	completion_reward = {
+		add_stability = 0.1
+	}
+}
+
+focus = {
+	id = FOP_Electricity_Management
+	icon = GFX_generic_suspend_constitution
+	x = 19
+	y = 4
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Restructuring_Economy }
+	completion_reward = {
+		add_stability = 0.1
+	}
+}
+
+focus = {
+	id = FOP_New_Markets
+	icon = GFX_generic_suspend_constitution
+	x = 21
+	y = 4
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Restructuring_Economy }
+	completion_reward = {
+		add_stability = 0.1
+	}
+}
+
+focus = {
+	id = FOP_Economy_Model
+	icon = GFX_generic_suspend_constitution
+	x = 20
+	y = 5
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Electricity_Management }
+	prerequisite = { focus = FOP_New_Markets}
+	completion_reward = {
+		add_stability = 0.1
+	}
+}
+
+focus = {
+	id = FOP_Market_Paradise
+	icon = GFX_generic_suspend_constitution
+	x = 17
+	y = 6
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Economy_Model }
+	mutually_exclusive = { focus = FOP_Social_Economy }
+	mutually_exclusive = { focus = FOP_Regulations }
+	mutually_exclusive = { focus = FOP_State_Controlled_Economy }
+	completion_reward = {
+		add_ideas = fop_commercial_policy_free_trade
+		add_ideas = fop_economic_system_capitalism
+	}
+}
+
+focus = {
+	id = FOP_Social_Economy
+	icon = GFX_generic_suspend_constitution
+	x = 19
+	y = 6
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Economy_Model }
+	mutually_exclusive = { focus = FOP_Market_Paradise }
+	mutually_exclusive = { focus = FOP_Regulations }
+	mutually_exclusive = { focus = FOP_State_Controlled_Economy }
+	completion_reward = {
+		add_ideas = fop_economic_system_people_socialism
+		add_ideas = fop_commercial_policy_strategic_tariffs
+	}
+}
+
+focus = {
+	id = FOP_Regulations
+	icon = GFX_generic_suspend_constitution
+	x = 21
+	y = 6
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Economy_Model }
+	mutually_exclusive = { focus = FOP_Social_Economy }
+	mutually_exclusive = { focus = FOP_Market_Paradise }
+	mutually_exclusive = { focus = FOP_State_Controlled_Economy }
+	completion_reward = {
+		add_ideas = fop_economic_system_mixed
+		add_ideas = fop_commercial_policy_strategic_tariffs
+	}
+}
+
+focus = {
+	id = FOP_State_Controlled_Economy
+	icon = GFX_generic_suspend_constitution
+	x = 23
+	y = 6
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Economy_Model }
+	mutually_exclusive = { focus = FOP_Social_Economy }
+	mutually_exclusive = { focus = FOP_Regulations }
+	mutually_exclusive = { focus = FOP_Market_Paradise }
+	completion_reward = {
+		add_ideas = fop_economic_system_corporatism
+		add_ideas = fop_commercial_policy_heavy_protectionism
+	}
+}
+
+focus = {
+	id = FOP_Local_Deals
+	icon = GFX_generic_suspend_constitution
+	x = 17
+	y = 7
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Market_Paradise focus = FOP_Social_Economy focus = FOP_Regulations focus = FOP_State_Controlled_Economy }
+	mutually_exclusive = { focus = FOP_Oligarchs_Banned }
+	completion_reward = {
+		add_ideas = fop_oligarchs_relations_cooperation
+		add_ideas = fop_oligarchs_power_high
+	}
+}
+
+focus = {
+	id = FOP_Oligarchs_Banned
+	icon = GFX_generic_suspend_constitution
+	x = 19
+	y = 7
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Market_Paradise focus = FOP_Social_Economy focus = FOP_Regulations focus = FOP_State_Controlled_Economy }
+	mutually_exclusive = { focus = FOP_Local_Deals }
+	completion_reward = {
+		add_ideas = fop_oligarchs_relations_anti_oligarchic_policy
+		add_ideas = fop_oligarchs_power_low
+	}
+}
+
+focus = {
+	id = FOP_New_Currency
+	icon = GFX_generic_suspend_constitution
+	x = 21
+	y = 7
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Market_Paradise focus = FOP_Social_Economy focus = FOP_Regulations focus = FOP_State_Controlled_Economy }
+	mutually_exclusive = { focus = FOP_Revaluate_Hryvnia }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Revaluate_Hryvnia
+	icon = GFX_generic_suspend_constitution
+	x = 23
+	y = 7
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Market_Paradise focus = FOP_Social_Economy focus = FOP_Regulations focus = FOP_State_Controlled_Economy }
+	mutually_exclusive = { focus = FOP_New_Currency }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Attract_Investments
+	icon = GFX_generic_suspend_constitution
+	x = 18
+	y = 8
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Oligarchs_Banned focus = FOP_Local_Deals }
+	prerequisite = { focus = FOP_New_Currency focus = FOP_Revaluate_Hryvnia }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Production_Development
+	icon = GFX_generic_suspend_constitution
+	x = 20
+	y = 8
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Oligarchs_Banned focus = FOP_Local_Deals }
+	prerequisite = { focus = FOP_New_Currency focus = FOP_Revaluate_Hryvnia }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Building_Projects
+	icon = GFX_generic_suspend_constitution
+	x = 22
+	y = 8
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Oligarchs_Banned focus = FOP_Local_Deals }
+	prerequisite = { focus = FOP_New_Currency focus = FOP_Revaluate_Hryvnia }
+	completion_reward = {
+	}
+}
+
+focus = {
+	id = FOP_Let_Us_Strive
+	icon = GFX_generic_suspend_constitution
+	x = 20
+	y = 9
+    cost = 2
+    relative_position_id = FOP_We_Stand_On_Ground
+    prerequisite = { focus = FOP_Attract_Investments }
+	prerequisite = { focus = FOP_Production_Development }
+	prerequisite = { focus = FOP_Building_Projects }
+	completion_reward = {
+	}
+}
+
+}
