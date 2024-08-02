@@ -723,6 +723,32 @@ add_corps_commander_role = {
 		}
 		prerequisite = { focus = dnr_trybunal  }
 		completion_reward = {
+			if = {
+				limit = {
+					LPR = { exists = yes }
+				} 
+				every_state = {
+					limit = {
+						is_core_of = AFU
+						NOT = { is_claimed_by = LPR }
+					}
+					remove_core_of = AFU
+					add_core_of = DPR
+				}
+				every_state = {
+					limit = {
+						is_core_of = AFU
+						NOT = { is_claimed_by = DPR }
+					}
+					remove_core_of = AFU
+					add_core_of = LPR
+				}
+			}
+			
+			if = {
+				limit = {
+					LPR = { exists = no }
+				} 
 				every_state = {
 					limit = {
 						is_core_of = AFU
@@ -730,6 +756,14 @@ add_corps_commander_role = {
 					remove_core_of = AFU
 					add_core_of = DPR
 				}
+				every_state = {
+					limit = {
+						is_core_of = LPR
+					}
+					remove_core_of = LPR
+					add_core_of = DPR
+				}
+			}
 		}
 	}
 	
