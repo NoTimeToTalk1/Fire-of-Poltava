@@ -757,6 +757,10 @@ shared_focus = {
 		focus = DPR_engage_in_big_politics
 	}
 	completion_reward = {
+	DNR_girkin = {
+	add_planning = 1
+add_random_trait = { old_guard brilliant_strategist inflexible_strategist }	
+	}
 		add_idea = DPR_strategic_innitiative
 	}
 }
@@ -866,6 +870,10 @@ shared_focus = {
 	completion_reward = {
 		country_event = {
 			id = gir.32 #PLACEHOLDER --- IN THIS EVENT NEW PARTY POPULARITIES NEED TO BE SET UP FOR EVERY VARIANT+NEW RULING PARTY+PARTY NAMES CHANGED+PARTY LEADERS CHANGED+NEW LEADER+NEW PREMIER+ADVISORS
+			days = 1
+		}
+		country_event = {
+			id = gir.66 
 			days = 1
 		}
 		#swap_ideas = { ### ADD THIS TO EVENT CONSTITUTIONAL PATH INSTEAD OF FOCUS
@@ -2009,15 +2017,30 @@ shared_focus = {
 	completion_reward = {
 		custom_effect_tooltip = maria_vs_grigoriy_conclusion_tt
 		hidden_effect = {
-			### !!! ADD CHECK CONDITION WHO HAS MORE POINTS in BoP game !!!
-			country_event = { # --- IF MARIA HAS MORE POINTS
-				id = dpr.926 #PLACEHOLDER --- івент про тріумф матері
-				days = 1
-			}
-			country_event = { # --- IF GRIGORIY HAS MORE POINTS
-				id = dpr.927 #PLACEHOLDER --- івент про вбивсто Машки сином (в ночі в імператорському палаці, вину кидає син на її козацьку гвардію)
-				days = 1
-			}
+if = {
+limit = {
+power_balance_value = {
+    id = DPR_maria_georgiy_political_balance
+    value < 0.5
+}
+}
+		country_event = {
+			id = gir.82
+			days = 2
+		}
+}
+if = {
+limit = {
+power_balance_value = {
+    id = DPR_maria_georgiy_political_balance
+    value > 0.5
+}
+}
+		country_event = {
+			id = gir.55
+			days = 2
+		}
+}
 		}
 	}
 }
@@ -2092,7 +2115,7 @@ shared_focus = {
 	}
 	completion_reward = {
 		country_event = {
-			id = dpr.928 #PLACEHOLDER --- івент про відновлення соціальних станів періодну імперії (основні сословія - шляхта, церква, козаки)
+			id = gir.58 #PLACEHOLDER --- івент про відновлення соціальних станів періодну імперії (основні сословія - шляхта, церква, козаки)
 			days = 1
 		}
 	}
@@ -3081,7 +3104,20 @@ shared_focus = {
 		focus = DPR_monopolise_new_spheres
 	}
 	completion_reward = {
-		###
+random_controlled_state = {
+add_building_construction = {
+    type = industrial_complex
+    level = 1
+    instant_build = yes
+}
+}
+random_controlled_state = {
+add_building_construction = {
+    type = industrial_complex
+    level = 1
+    instant_build = yes
+}
+}
 	}
 }
 
