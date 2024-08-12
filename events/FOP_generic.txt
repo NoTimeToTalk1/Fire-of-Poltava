@@ -1,0 +1,408 @@
+add_namespace = FOP_generic
+add_namespace = FOP_generic_regional
+
+country_event = { 
+	id = FOP_generic.1
+	title = FOP_generic.1.t
+	desc = FOP_generic.1.d
+
+	picture = 
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.1.a
+        add_ideas = FOP_ruin
+		add_ideas = FOP_ruined_economy
+	}
+}
+
+country_event = { 
+	id = FOP_generic.2
+	title = FOP_generic.2.t
+	desc = FOP_generic.2.d
+
+	picture = 
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.2.a
+        add_stability = 0.05
+	}
+}
+
+country_event = { 
+	id = FOP_generic.3
+	title = FOP_generic.3.t
+	desc = FOP_generic.3.d
+
+	picture = 
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.3.a
+        complete_national_focus = FOP_Rely_On_Militias
+	}
+
+    option = { 
+		name = FOP_generic.3.b
+        complete_national_focus = FOP_Rely_On_Vehicles
+	}
+
+    option = { 
+		name = FOP_generic.3.c
+        complete_national_focus = FOP_Rely_On_Professionals
+	}
+}
+
+country_event = { 
+	id = FOP_generic.4
+	title = FOP_generic.4.t
+	desc = FOP_generic.4.d
+
+	picture = 
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.4.a
+        add_war_support = -0.05
+	}
+}
+
+country_event = { 
+	id = FOP_generic.5
+	title = FOP_generic.5.t
+	desc = FOP_generic.5.d
+
+	picture = 
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.5.a 
+        add_war_support = -0.05
+	}
+}
+
+country_event = { 
+	id = FOP_generic.6
+	title = FOP_generic.6.t
+	desc = FOP_generic.6.d
+
+	picture = 
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.6.a
+        add_stability = -0.05
+	}
+}
+
+country_event = { 
+	id = FOP_generic.7
+	title = FOP_generic.7.t
+	desc = FOP_generic.7.d
+
+	picture = 
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.7.a
+        add_stability = 0.01
+	}
+}
+
+country_event = { 
+	id = FOP_generic.8
+	title = FOP_generic.8.t
+	desc = FOP_generic.8.d
+
+	picture = 
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.8.a
+        add_ideas = FOP_energy_crisis
+        add_ideas = FOP_chaos_on_territories
+        add_ideas = FOP_shadow_economy_rising
+	}
+}
+
+country_event = { 
+	id = FOP_generic.9
+	title = FOP_generic.9.t
+	desc = FOP_generic.9.d
+
+	picture = 
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.9.a
+        add_stability = 0.15
+        add_war_support = -0.1
+	}
+}
+
+country_event = { 
+	id = FOP_generic.10
+	title = FOP_generic.10.t
+	desc = FOP_generic.10.d
+
+	picture = 
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.10.a #refuse
+		ai_chance = {
+			modifier = {
+				tag = TUR
+				factor = 40
+			}
+			modifier = {
+				tag = MAC
+				factor = 70
+			}
+			modifier = {
+				tag = EUN
+				factor = 100
+			}
+			modifier = {
+				tag = CRN
+				factor = 80
+			}
+			modifier = {
+				tag = GBR
+				factor = 70
+			}
+			modifier = {
+				tag = ICE
+				factor = 70
+			}
+			modifier = {
+				tag = NOR
+				factor = 100
+			}
+        }
+		FROM = {
+			country_event = {
+				id = FOP_generic.11
+				days = 5
+			}
+		}
+	}
+	option = { 
+		name = FOP_generic.10.b #agree
+		ai_chance = {
+			modifier = {
+				tag = TUR
+				factor = 60
+			}
+			modifier = {
+				tag = MAC
+				factor = 30
+			}
+			modifier = {
+				tag = CRN
+				factor = 20
+			}
+			modifier = {
+				tag = GBR
+				factor = 30
+			}
+			modifier = {
+				tag = ICE
+				factor = 20
+			}
+			modifier = {
+				tag = NOR
+				factor = 0
+			}
+			modifier = {
+				tag = EUN
+				factor = 0
+			}
+        }
+		FROM = {
+			country_event = {
+				id = FOP_generic.12
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = { 
+	id = FOP_generic.11
+	title = FOP_generic.11.t
+	desc = FOP_generic.11.d
+
+	picture = 
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.11.a
+	}
+}
+
+country_event = { 
+	id = FOP_generic.12
+	title = FOP_generic.12.t
+	desc = FOP_generic.12.d
+
+	picture = 
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.12.a
+		if = {
+			limit = {
+				FROM = {
+					OR = {
+						tag = GBR
+						tag = TUR
+					}
+				}
+			}
+			army_experience = 30
+		}
+		else = {
+			army_experience = 10
+		}
+	}
+}
+
+country_event = { 
+	id = FOP_generic.13
+	title = FOP_generic.13.t
+	desc = FOP_generic.13.d
+
+	picture = 
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.13.a #refuse
+		ai_chance = {
+			modifier = {
+				tag = RUS
+				factor = 40
+			}
+			modifier = {
+				tag = RUS
+				FROM = {
+					tag = KIR
+				}
+				factor = 0
+			}
+			modifier = {
+				tag = BLR
+				factor = 70
+			}
+			modifier = {
+				tag = UZB
+				factor = 80
+			}
+			modifier = {
+				tag = ARM
+				factor = 65
+			}
+			modifier = {
+				tag = KAZ
+				factor = 70
+			}
+        }
+		FROM = {
+			country_event = {
+				id = FOP_generic.14
+				days = 5
+			}
+		}
+	}
+	option = { 
+		name = FOP_generic.13.b #agree
+		ai_chance = {
+			modifier = {
+				tag = RUS
+				factor = 60
+			}
+			modifier = {
+				tag = RUS
+				FROM = {
+					tag = KIR
+				}
+				factor = 100
+			}
+			modifier = {
+				tag = BLR
+				factor = 30
+			}
+			modifier = {
+				tag = UZB
+				factor = 20
+			}
+			modifier = {
+				tag = ARM
+				factor = 35
+			}
+			modifier = {
+				tag = KAZ
+				factor = 30
+			}
+        }
+		FROM = {
+			country_event = {
+				id = FOP_generic.15
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = { 
+	id = FOP_generic.14
+	title = FOP_generic.14.t
+	desc = FOP_generic.14.d
+
+	picture = 
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.14.a
+	}
+}
+
+country_event = { 
+	id = FOP_generic.15
+	title = FOP_generic.15.t
+	desc = FOP_generic.15.d
+
+	picture = 
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.15.a
+		if = {
+			limit = {
+				FROM = {
+					tag = RUS
+				}
+			}
+			army_experience = 30
+		}
+		else = {
+			army_experience = 10
+		}
+	}
+}

@@ -48,8 +48,6 @@ focus = {
 			id = FOP_generic.1
 			days = 2
 		}
-		add_ideas = FOP_ruin
-		add_ideas = FOP_ruined_economy
 	}
 }
 
@@ -62,7 +60,10 @@ focus = {
     relative_position_id = FOP_Fire_Of_Poltava
     prerequisite = { focus = FOP_Fire_Of_Poltava }
 	completion_reward = {
-		add_stability = 0.1
+		country_event = {
+			id = FOP_generic.2
+			days = 2
+		}
 	}
 }
 
@@ -91,7 +92,7 @@ focus = {
     relative_position_id = FOP_Fire_Of_Poltava
     prerequisite = { focus = FOP_Time_To_Reorganise }
 	completion_reward = {
-		###tooltip
+		country_event = FOP_generic.3
 	}
 }
 
@@ -257,6 +258,10 @@ focus = {
 	completion_reward = {
 		unlock_decision_category_tooltip = fop_mobilisation
 		add_manpower = 10000
+		country_event = {
+			id = FOP_generic.4
+			days = 5
+		}
 	}
 }
 
@@ -305,8 +310,11 @@ focus = {
     mutually_exclusive = { focus = FOP_Make_Strong_People }
     prerequisite = { focus = FOP_Bad_Times }
 	completion_reward = {
-		add_war_support = -0.05
 		add_ideas = FOP_ease_up
+		country_event = {
+			id = FOP_generic.5
+			days = 5
+		}
 	}
 }
 
@@ -320,8 +328,11 @@ focus = {
     mutually_exclusive = { focus = FOP_Require_Better_Treatment }
     prerequisite = { focus = FOP_Bad_Times }
 	completion_reward = {
-		add_stability = -0.05
 		add_ideas = FOP_strict_rule
+		country_event = {
+			id = FOP_generic.6
+			days = 5
+		}
 	}
 }
 
@@ -588,6 +599,10 @@ focus = {
 		swap_ideas = {
 			remove_idea = FOP_ruined_economy_3
 			add_idea = FOP_ruined_economy_4
+		}
+		country_event = {
+			id = FOP_generic.7
+			days = 7
 		}
 	}
 }

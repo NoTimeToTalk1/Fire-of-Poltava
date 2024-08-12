@@ -636,3 +636,61 @@ FOP_resources = {
 		}
 	}
 }
+
+FOP_weapon_market = {
+    buy_infantry_weapons = {
+        icon = generic_decision
+
+		allowed = {
+		}
+		
+		cost = 30
+
+		days_remove = 90
+
+		modifier = {
+            civilian_factory_use = 1
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 100		
+		}
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+                type = infantry_equipment_2
+                amount = 300
+            }
+		}
+    }
+
+    buy_vehicles = {
+        icon = generic_decision
+
+		allowed = {
+		}
+		
+		cost = 50
+
+		days_remove = 120
+
+        fire_only_once = yes
+
+		modifier = {
+            civilian_factory_use = 2
+            consumer_goods_factor = 0.15
+		}
+
+        ai_will_do = {	
+			factor = 100		
+		}
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+                type = motorized_equipment
+                amount = 100
+            }
+		}
+    }
+}

@@ -45,13 +45,7 @@ focus = {
 	y = 1
     cost = 1
 	completion_reward = {
-		country_event = {
-			id = FOP_generic.2
-			days = 2
-		}
-		add_ideas = FOP_energy_crisis
-        add_ideas = FOP_chaos_on_territories
-        add_ideas = FOP_shadow_economy_rising
+		country_event = FOP_generic.8
 	}
 }
 
@@ -78,7 +72,7 @@ focus = {
     prerequisite = { focus = FOP_We_Stand_On_Ground }
 	completion_reward = {
 		country_event = {
-			id = FOP_generic.6
+			id = FOP_generic.9
 			days = 2
 		}
 	}
@@ -107,6 +101,7 @@ focus = {
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Open_For_Business }
 	completion_reward = {
+		army_experience = 25
 	}
 }
 
@@ -115,10 +110,14 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -30
 	y = 4
-    cost = 2
+    cost = 4
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Army_Reorganisation }
 	completion_reward = {
+		swap_ideas = {
+			remove_idea = FOP_starting_general_stuff
+			add_idea = FOP_expanded_general_stuff
+		}
 	}
 }
 
@@ -127,10 +126,11 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -35
 	y = 5
-    cost = 2
+    cost = 5
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Expand_Staff }
 	completion_reward = {
+		unlock_decision_category_tooltip = FOP_weapon_market
 	}
 }
 
@@ -139,10 +139,38 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -33
 	y = 5
-    cost = 2
+    cost = 6
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Expand_Staff }
 	completion_reward = {
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = ammunition_plant
+				level = 1
+				instant_build = yes
+			}
+		}
 	}
 }
 
@@ -155,6 +183,11 @@ focus = {
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Weapon_Markets }
 	completion_reward = {
+		add_political_power = -20
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 500
+		}
 	}
 }
 
@@ -163,10 +196,11 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -33
 	y = 6
-    cost = 2
+    cost = 5
     relative_position_id = FOP_We_Stand_On_Ground
-    prerequisite = { focus = FOP_Expand_Staff }
+    prerequisite = { focus = FOP_Military_Industry_Development }
 	completion_reward = {
+		add_ideas = FOP_local_workshops
 	}
 }
 
@@ -193,6 +227,8 @@ focus = {
     prerequisite = { focus = FOP_Recruitment_Issue }
 	mutually_exclusive = { focus = FOP_Army_Service_Will_Touch_Everyone }
 	completion_reward = {
+		add_ideas = fop_conscription_limited
+		add_war_support = -0.03
 	}
 }
 
@@ -206,6 +242,8 @@ focus = {
     prerequisite = { focus = FOP_Recruitment_Issue }
 	mutually_exclusive = { focus = FOP_Who_Was_Made_To_Serve }
 	completion_reward = {
+		add_ideas = fop_conscription_service_by_requirement
+		add_stability = -0.1
 	}
 }
 
@@ -214,10 +252,11 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -37
 	y = 9
-    cost = 2
+    cost = 5
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Who_Was_Made_To_Serve }
 	completion_reward = {
+		add_ideas = FOP_rearline_jobs
 	}
 }
 
@@ -226,10 +265,11 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -35
 	y = 9
-    cost = 2
+    cost = 5
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Who_Was_Made_To_Serve }
 	completion_reward = {
+		add_ideas = FOP_self_defence_training
 	}
 }
 
@@ -238,10 +278,13 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -33
 	y = 9
-    cost = 2
+    cost = 5
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Army_Service_Will_Touch_Everyone }
 	completion_reward = {
+		add_ideas = fop_women_military_assistance
+		add_ideas = FOP_lowered_conscription_age
+		add_stability = -0.02
 	}
 }
 
@@ -250,10 +293,12 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -31
 	y = 9
-    cost = 2
+    cost = 5
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Army_Service_Will_Touch_Everyone }
 	completion_reward = {
+		add_ideas = FOP_mobilisation_bonuses
+		add_stability = 0.05
 	}
 }
 
@@ -262,13 +307,14 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -28
 	y = 5
-    cost = 2
+    cost = 3
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Expand_Staff }
 	mutually_exclusive = { focus = FOP_Lessons_From_Old_Mistakes }
 	mutually_exclusive = { focus = FOP_Takticheskaya_Doctrine }
 	mutually_exclusive = { focus = FOP_New_Army_Way }
 	completion_reward = {
+		add_ideas = FOP_nato_oriented_doctrine
 	}
 }
 
@@ -277,10 +323,23 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -28
 	y = 6
-    cost = 2
+    cost = 5
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_NATO_Standarts }
 	completion_reward = {
+		every_country = {
+			limit = {
+				OR = {
+					tag = EUN
+					tag = GBR
+					tag = NOR
+					tag = TUR
+					tag = MAC
+					tag = CRN
+				}
+			}
+			country_event = FOP_generic.10
+		}
 	}
 }
 
@@ -289,10 +348,14 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -28
 	y = 7
-    cost = 2
+    cost = 5
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Contact_NATO_Countries }
 	completion_reward = {
+		swap_ideas = {
+			add_idea = FOP_nato_methodics
+			remove_idea = FOP_nato_oriented_doctrine
+		}
 	}
 }
 
@@ -301,13 +364,14 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -26
 	y = 5
-    cost = 2
+    cost = 3
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Expand_Staff }
 	mutually_exclusive = { focus = FOP_NATO_Standarts }
 	mutually_exclusive = { focus = FOP_Takticheskaya_Doctrine }
 	mutually_exclusive = { focus = FOP_New_Army_Way }
 	completion_reward = {
+		add_ideas = FOP_army_self_improvement_doctrine
 	}
 }
 
@@ -316,10 +380,18 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -26
 	y = 6
-    cost = 2
+    cost = 5
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Lessons_From_Old_Mistakes }
 	completion_reward = {
+		swap_ideas = {
+			add_idea = FOP_army_improvements
+			remove_idea = FOP_army_self_improvement_doctrine
+		}
+		add_timed_idea = {
+			idea = FOP_soviet_leftovers
+			days = 90
+		}
 	}
 }
 
@@ -328,10 +400,11 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -26
 	y = 7
-    cost = 2
+    cost = 5
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Cleaning_Up_Soviet_Trash }
 	completion_reward = {
+		add_ideas = FOP_own_guns
 	}
 }
 
@@ -340,13 +413,14 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -24
 	y = 5
-    cost = 2
+    cost = 3
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Expand_Staff }
 	mutually_exclusive = { focus = FOP_Lessons_From_Old_Mistakes }
 	mutually_exclusive = { focus = FOP_NATO_Standarts }
 	mutually_exclusive = { focus = FOP_New_Army_Way }
 	completion_reward = {
+		add_ideas = FOP_huita_russian_art
 	}
 }
 
@@ -355,10 +429,22 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -24
 	y = 6
-    cost = 2
+    cost = 5
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Takticheskaya_Doctrine }
 	completion_reward = {
+		every_country = {
+			limit = {
+				OR = {
+					tag = RUS
+					tag = BLR
+					tag = ARM
+					tag = KAZ
+					tag = UZB
+				}
+			}
+			country_event = FOP_generic.14
+		}
 	}
 }
 
@@ -367,10 +453,14 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -24
 	y = 7
-    cost = 2
+    cost = 5
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Contact_CSTO_Countries }
 	completion_reward = {
+		swap_ideas = {
+			add_idea = FOP_huita_ruskiiiii
+			remove_idea = FOP_huita_russian_art
+		}
 	}
 }
 
@@ -379,13 +469,14 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -22
 	y = 5
-    cost = 2
+    cost = 3
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Expand_Staff }
 	mutually_exclusive = { focus = FOP_Lessons_From_Old_Mistakes }
 	mutually_exclusive = { focus = FOP_Takticheskaya_Doctrine }
 	mutually_exclusive = { focus = FOP_NATO_Standarts }
 	completion_reward = {
+		add_ideas = FOP_new_army
 	}
 }
 
@@ -394,10 +485,15 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -22
 	y = 6
-    cost = 2
+    cost = 5
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_New_Army_Way }
 	completion_reward = {
+		add_timed_idea = {
+			idea = FOP_army_reforms
+			days = 180
+		}
+		add_ideas = FOP_reformed_army
 	}
 }
 
@@ -406,10 +502,12 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -22
 	y = 7
-    cost = 2
+    cost = 5
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Army_Reform_Comitee }
 	completion_reward = {
+		add_manpower = 1000
+		add_ideas = FOP_army_youth
 	}
 }
 
@@ -420,12 +518,11 @@ focus = {
 	y = 10
     cost = 2
     relative_position_id = FOP_We_Stand_On_Ground
-    prerequisite = { focus = FOP_Mandated_Rearline_Jobs }
-	prerequisite = { focus = FOP_Self_Defence_Training_Programmes }
-	prerequisite = { focus = FOP_Ease_Up_Conscription_Requirements }
-	prerequisite = { focus = FOP_Good_Mobilization_Bonuses }
+    prerequisite = { focus = FOP_Mandated_Rearline_Jobs focus = FOP_Self_Defence_Training_Programmes focus = FOP_Ease_Up_Conscription_Requirements focus = FOP_Good_Mobilization_Bonuses }
 	prerequisite = { focus = FOP_Learn_From_NATO_Books focus = FOP_Our_Own_Weaponry focus = FOP_Respect_The_Command focus = FOP_Encourage_Youth }
 	completion_reward = {
+		army_experience = 50
+		add_ideas = FOP_formed_army
 	}
 }
 
