@@ -6,32 +6,8 @@ focus_tree = {
 		modifier = {
 			add = 10
 			OR = {
-                tag = GAL
-                tag = TER
-                tag = RIV
-                tag = VOL
-                tag = ZAK
-                tag = KHM
-                tag = ZHY
-                tag = KYI
-                tag = UKR
-                tag = PRH
-                tag = SUM 
-                tag = UMA
-                tag = CHR
-                tag = PLT 
-                tag = KRE 
-                tag = KIR 
-                tag = ODE 
-                tag = MYK
-                tag = STR 
-                tag = SHT 
-                tag = BDZ
-                tag = RVE 
-                tag = OPZ 
-                tag = ZAP 
-                tag = DNI 
-                tag = KHA
+                has_country_flag = united_galicia
+		has_country_flag = united_podillya
 		tag = CRN
             }
 		}
@@ -535,6 +511,7 @@ focus = {
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Open_For_Business }
 	completion_reward = {
+		add_political_power = 100
 	}
 }
 
@@ -543,7 +520,7 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -15
 	y = 4
-    cost = 2
+    cost = 3
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Government_Reforms}
 	completion_reward = {
@@ -560,6 +537,8 @@ focus = {
     prerequisite = { focus = FOP_Reforming_The_Cabinet}
 	mutually_exclusive = { focus = FOP_Rely_On_Old_Ones }
 	completion_reward = {
+		add_political_power = -50
+		add_stability = 0.05
 	}
 }
 
@@ -573,6 +552,8 @@ focus = {
     prerequisite = { focus = FOP_Reforming_The_Cabinet }
 	mutually_exclusive = { focus = FOP_New_Faces_In_Charge }
 	completion_reward = {
+		add_political_power = 50
+		add_stability = -0.05
 	}
 }
 
@@ -581,10 +562,14 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -17
 	y = 6
-    cost = 2
+    cost = 4
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_New_Faces_In_Charge focus = FOP_Rely_On_Old_Ones }
 	completion_reward = {
+		add_timed_idea = {
+			idea = FOP_stronger_political_observation
+			days = 90
+		}
 	}
 }
 
@@ -593,10 +578,11 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -15
 	y = 6
-    cost = 2
+    cost = 5
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_New_Faces_In_Charge focus = FOP_Rely_On_Old_Ones }
 	completion_reward = {
+		add_political_power = -25
 	}
 }
 
@@ -605,10 +591,15 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -13
 	y = 6
-    cost = 2
+    cost = 5
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_New_Faces_In_Charge focus = FOP_Rely_On_Old_Ones }
 	completion_reward = {
+		swap_ideas = {
+			add_idea = FOP_expanding_administration
+			remove_idea = FOP_chaos_on_territories
+			days = 90
+		}
 	}
 }
 
@@ -617,12 +608,13 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -15
 	y = 7
-    cost = 2
+    cost = 3
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Ensure_Completion_Of_Duties }
 	prerequisite = { focus = FOP_Look_For_Jurists }
 	prerequisite = { focus = FOP_Expand_Administrational_Capabilities }
 	completion_reward = {
+		#tooltip
 	}
 }
 
@@ -634,7 +626,11 @@ focus = {
     cost = 2
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Government_Reforms}
+	available = {
+		has_completed_focus = FOP_Call_Law_Revision_Comission
+	}
 	completion_reward = {
+		#tooltip
 	}
 }
 
@@ -643,11 +639,15 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -5
 	y = 5
-    cost = 2
+    cost = 4
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Revisiting_The_Law}
 	mutually_exclusive = { focus = FOP_Readopt_Ukrainian_Constitution }
 	completion_reward = {
+		add_timed_idea = {
+			idea = FOP_adapting_new_constitution
+			days = 60
+		}
 	}
 }
 
@@ -656,11 +656,12 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = 5
 	y = 5
-    cost = 2
+    cost = 3
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Revisiting_The_Law }
 	mutually_exclusive = { focus = FOP_Our_Own_Vision}
 	completion_reward = {
+		add_ideas = FOP_ukrainian_constitution
 	}
 }
 
@@ -669,12 +670,16 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -8
 	y = 6
-    cost = 2
+    cost = 8
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Our_Own_Vision }
 	mutually_exclusive = { focus = FOP_We_Know_Law_Better }
 	mutually_exclusive = { focus = FOP_Rule_Of_Hard_Hand }
 	completion_reward = {
+		add_ideas = fop_security_regulated_police
+		add_ideas = fop_press_freedom_free
+		add_ideas = fop_suffrage_universal
+		add_ideas = fop_party_system_multiparty
 	}
 }
 
@@ -689,6 +694,7 @@ focus = {
 	mutually_exclusive = { focus = FOP_European_Standart_Of_Law }
 	mutually_exclusive = { focus = FOP_Rule_Of_Hard_Hand }
 	completion_reward = {
+		country_event = FOP_generic.16
 	}
 }
 
@@ -697,12 +703,16 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = -2
 	y = 6
-    cost = 2
+    cost = 8
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Our_Own_Vision }
 	mutually_exclusive = { focus = FOP_European_Standart_Of_Law }
 	mutually_exclusive = { focus = FOP_We_Know_Law_Better}
 	completion_reward = {
+		add_ideas = fop_security_opressive_police
+		add_ideas = fop_press_freedom_state
+		add_ideas = fop_suffrage_elite
+		add_ideas = fop_party_system_single_party
 	}
 }
 
@@ -715,6 +725,7 @@ focus = {
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_We_Know_Law_Better }
 	completion_reward = {
+		country_event = FOP_generic.17
 	}
 }
 
@@ -727,11 +738,12 @@ focus = {
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_We_Know_Law_Better }
 	completion_reward = {
+		country_event = FOP_generic.18
 	}
 }
 
 focus = {
-	id = FOP_How_Free_The_Speech_Is
+	id = FOP_Elections_Question
 	icon = GFX_generic_suspend_constitution
 	x = -7
 	y = 7
@@ -739,6 +751,7 @@ focus = {
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_We_Know_Law_Better }
 	completion_reward = {
+		country_event = FOP_generic.19
 	}
 }
 
@@ -749,8 +762,9 @@ focus = {
 	y = 8
     cost = 2
     relative_position_id = FOP_We_Stand_On_Ground
-    prerequisite = { focus = FOP_European_Standart_Of_Law focus = FOP_How_Free_The_Speech_Is focus = FOP_Media_Question focus = FOP_Police_Enforcement focus = FOP_Rule_Of_Hard_Hand }
+    prerequisite = { focus = FOP_European_Standart_Of_Law focus = FOP_Elections_Question focus = FOP_Media_Question focus = FOP_Police_Enforcement focus = FOP_Rule_Of_Hard_Hand }
 	completion_reward = {
+		add_stability = 0.05
 	}
 }
 
@@ -759,10 +773,23 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = 4
 	y = 6
-    cost = 2
+    cost = 4
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Readopt_Ukrainian_Constitution }
 	completion_reward = {
+		if = { 
+			limit = {has_completed_focus = FOP_Solve_Long_Lasting_Issues}
+			swap_ideas = {
+				add_idea = FOP_greatly_improving_ukrainian_constitution
+				remove_idea = FOP_improving_ukrainian_constitution
+			}
+		}
+		else = {
+			swap_ideas = {
+				add_idea = FOP_improving_ukrainian_constitution
+				remove_idea = FOP_ukrainian_constitution
+			}
+		}
 	}
 }
 
@@ -771,10 +798,23 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = 6
 	y = 6
-    cost = 2
+    cost = 4
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Readopt_Ukrainian_Constitution }
 	completion_reward = {
+		if = { 
+			limit = {has_completed_focus = FOP_Review_Law_Holes}
+			swap_ideas = {
+				add_idea = FOP_greatly_improving_ukrainian_constitution
+				remove_idea = FOP_improving_ukrainian_constitution
+			}
+		}
+		else = {
+			swap_ideas = {
+				add_idea = FOP_improving_ukrainian_constitution
+				remove_idea = FOP_ukrainian_constitution
+			}
+		}
 	}
 }
 
@@ -788,6 +828,10 @@ focus = {
     prerequisite = { focus = FOP_Review_Law_Holes }
 	prerequisite = { focus = FOP_Solve_Long_Lasting_Issues }
 	completion_reward = {
+		swap_ideas = {
+			add_idea = FOP_improved_constitution
+			remove_idea = FOP_greatly_improving_ukrainian_constitution
+		}
 	}
 }
 
@@ -801,6 +845,7 @@ focus = {
     prerequisite = { focus = FOP_Laws_How_They_Meant_To_Be }
 	mutually_exclusive = { focus = FOP_Law_Stays_As_He_Was }
 	completion_reward = {
+		add_political_power = -25
 	}
 }
 
@@ -814,6 +859,7 @@ focus = {
     prerequisite = { focus = FOP_Laws_How_They_Meant_To_Be }
 	mutually_exclusive = { focus = FOP_Allow_Mild_Changes }
 	completion_reward = {
+		add_political_power = 50
 	}
 }
 
@@ -822,10 +868,17 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = 10
 	y = 4
-    cost = 2
+    cost = 1
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Government_Reforms }
+	available = {
+		OR = {
+			has_completed_focus = FOP_Allow_Mild_Changes
+			has_completed_focus = FOP_We_Know_Law_Better
+		}
+	}
 	completion_reward = {
+		#tooltip
 	}
 }
 
@@ -834,10 +887,11 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = 10
 	y = 5
-    cost = 2
+    cost = 3
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Social_Reforms }
 	completion_reward = {
+		country_event = FOP_generic.20
 	}
 }
 
@@ -846,10 +900,11 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = 9
 	y = 6
-    cost = 2
+    cost = 3
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Healthcare_Issue }
 	completion_reward = {
+		country_event = FOP_generic.21
 	}
 }
 
@@ -858,10 +913,11 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = 11
 	y = 6
-    cost = 2
+    cost = 3
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Healthcare_Issue }
 	completion_reward = {
+		country_event = FOP_generic.22
 	}
 }
 
@@ -870,11 +926,12 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = 10
 	y = 7
-    cost = 2
+    cost = 3
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Social_Insurance }
 	prerequisite = { focus = FOP_Minimal_Wages }
 	completion_reward = {
+		country_event = FOP_generic.23
 	}
 }
 
@@ -887,6 +944,7 @@ focus = {
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Workers_Rights }
 	completion_reward = {
+		country_event = FOP_generic.24
 	}
 }
 
@@ -895,10 +953,14 @@ focus = {
 	icon = GFX_generic_suspend_constitution
 	x = 0
 	y = 9
-    cost = 2
+    cost = 5
     relative_position_id = FOP_We_Stand_On_Ground
     prerequisite = { focus = FOP_Allow_Mild_Changes focus = FOP_Law_Stays_As_He_Was focus = FOP_New_Laws_New_Times}
 	completion_reward = {
+		swap_ideas = {
+			add_idea = FOP_ruin_4
+			remove_idea = FOP_ruin_3
+		}
 	}
 }
 

@@ -6,14 +6,18 @@ country_event = {
 	title = FOP_generic.1.t
 	desc = FOP_generic.1.d
 
-	picture = 
+	
 
 	is_triggered_only = yes
 
+	immediate = { 
+		log = "[GetDateText]: [Root.GetName]: event FOP_generic.1" 
+	}
+
 	option = { 
 		name = FOP_generic.1.a
-        add_ideas = FOP_ruin
-		add_ideas = FOP_ruined_economy
+			add_ideas = FOP_ruin
+			add_ideas = FOP_ruined_economy
 	}
 }
 
@@ -22,7 +26,7 @@ country_event = {
 	title = FOP_generic.2.t
 	desc = FOP_generic.2.d
 
-	picture = 
+	generic_decision
 
 	is_triggered_only = yes
 
@@ -37,7 +41,7 @@ country_event = {
 	title = FOP_generic.3.t
 	desc = FOP_generic.3.d
 
-	picture = 
+	
 
 	is_triggered_only = yes
 
@@ -62,9 +66,11 @@ country_event = {
 	title = FOP_generic.4.t
 	desc = FOP_generic.4.d
 
-	picture = 
+	
 
 	is_triggered_only = yes
+
+	
 
 	option = { 
 		name = FOP_generic.4.a
@@ -77,9 +83,11 @@ country_event = {
 	title = FOP_generic.5.t
 	desc = FOP_generic.5.d
 
-	picture = 
+	
 
 	is_triggered_only = yes
+
+	
 
 	option = { 
 		name = FOP_generic.5.a 
@@ -92,9 +100,11 @@ country_event = {
 	title = FOP_generic.6.t
 	desc = FOP_generic.6.d
 
-	picture = 
+	
 
 	is_triggered_only = yes
+
+	
 
 	option = { 
 		name = FOP_generic.6.a
@@ -107,9 +117,11 @@ country_event = {
 	title = FOP_generic.7.t
 	desc = FOP_generic.7.d
 
-	picture = 
+	
 
 	is_triggered_only = yes
+
+	
 
 	option = { 
 		name = FOP_generic.7.a
@@ -122,9 +134,11 @@ country_event = {
 	title = FOP_generic.8.t
 	desc = FOP_generic.8.d
 
-	picture = 
+	
 
 	is_triggered_only = yes
+
+	
 
 	option = { 
 		name = FOP_generic.8.a
@@ -139,9 +153,11 @@ country_event = {
 	title = FOP_generic.9.t
 	desc = FOP_generic.9.d
 
-	picture = 
+	
 
 	is_triggered_only = yes
+
+	
 
 	option = { 
 		name = FOP_generic.9.a
@@ -155,9 +171,11 @@ country_event = {
 	title = FOP_generic.10.t
 	desc = FOP_generic.10.d
 
-	picture = 
+	
 
 	is_triggered_only = yes
+
+	
 
 	option = { 
 		name = FOP_generic.10.a #refuse
@@ -244,9 +262,11 @@ country_event = {
 	title = FOP_generic.11.t
 	desc = FOP_generic.11.d
 
-	picture = 
+	
 
 	is_triggered_only = yes
+
+	
 
 	option = { 
 		name = FOP_generic.11.a
@@ -258,9 +278,11 @@ country_event = {
 	title = FOP_generic.12.t
 	desc = FOP_generic.12.d
 
-	picture = 
+	
 
 	is_triggered_only = yes
+
+	
 
 	option = { 
 		name = FOP_generic.12.a
@@ -286,9 +308,11 @@ country_event = {
 	title = FOP_generic.13.t
 	desc = FOP_generic.13.d
 
-	picture = 
+	
 
 	is_triggered_only = yes
+
+	
 
 	option = { 
 		name = FOP_generic.13.a #refuse
@@ -373,9 +397,11 @@ country_event = {
 	title = FOP_generic.14.t
 	desc = FOP_generic.14.d
 
-	picture = 
+	
 
 	is_triggered_only = yes
+
+	
 
 	option = { 
 		name = FOP_generic.14.a
@@ -387,9 +413,11 @@ country_event = {
 	title = FOP_generic.15.t
 	desc = FOP_generic.15.d
 
-	picture = 
+	
 
 	is_triggered_only = yes
+
+	
 
 	option = { 
 		name = FOP_generic.15.a
@@ -404,5 +432,228 @@ country_event = {
 		else = {
 			army_experience = 10
 		}
+	}
+}
+
+country_event = { 
+	id = FOP_generic.16
+	title = FOP_generic.16.t
+	desc = FOP_generic.16.d
+
+	
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.16.a
+		add_ideas = fop_party_system_nonpartisan
+	}
+	option = { 
+		name = FOP_generic.16.b
+		add_ideas = fop_party_system_single_party
+	}
+	option = { 
+		name = FOP_generic.16.c
+		add_ideas = fop_party_system_controlled_opposition
+	}
+	option = { 
+		name = FOP_generic.16.e
+		add_ideas = fop_party_system_multiparty
+	}
+}
+
+country_event = { 
+	id = FOP_generic.17
+	title = FOP_generic.17.t
+	desc = FOP_generic.17.d
+
+	
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.17.a
+		add_ideas = fop_press_freedom_free
+	}
+	option = { 
+		name = FOP_generic.17.b
+		add_ideas = fop_press_freedom_censored
+	}
+	option = { 
+		name = FOP_generic.17.c
+		add_ideas = fop_press_freedom_state
+	}
+}
+
+country_event = { 
+	id = FOP_generic.18
+	title = FOP_generic.18.t
+	desc = FOP_generic.18.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.18.a
+		add_ideas = fop_security_paramilitary
+	}
+	option = { 
+		name = FOP_generic.18.b
+		add_ideas = fop_security_regulated_police
+	}
+	option = { 
+		name = FOP_generic.18.c
+		add_ideas = fop_security_opressive_police
+	}
+	option = { 
+		name = FOP_generic.18.e
+		add_ideas = fop_security_totalitarian_police
+	}
+}
+
+country_event = { 
+	id = FOP_generic.19
+	title = FOP_generic.19.t
+	desc = FOP_generic.19.d
+
+	
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.19.a
+		add_ideas = fop_suffrage_no
+	}
+	option = { 
+		name = FOP_generic.19.b
+		add_ideas = fop_suffrage_elite
+	}
+	option = { 
+		name = FOP_generic.19.c
+		add_ideas = fop_suffrage_universal
+	}
+}
+
+country_event = { 
+	id = FOP_generic.20
+	title = FOP_generic.20.t
+	desc = FOP_generic.20.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.20.a
+		add_ideas = fop_healthcare_system_private_insurance
+	}
+	option = { 
+		name = FOP_generic.20.b
+		add_ideas = fop_healthcare_system_social_insurance
+	}
+	option = { 
+		name = FOP_generic.20.c
+		add_ideas = fop_healthcare_system_public
+	}
+}
+
+country_event = { 
+	id = FOP_generic.21
+	title = FOP_generic.21.t
+	desc = FOP_generic.21.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.21.a
+		add_ideas = fop_unemployment_subsidies_no
+	}
+	option = { 
+		name = FOP_generic.21.b
+		add_ideas = fop_unemployment_subsidies_low
+	}
+	option = { 
+		name = FOP_generic.21.c
+		add_ideas = fop_unemployment_subsidies_moderate
+	}
+	option = { 
+		name = FOP_generic.21.e
+		add_ideas = fop_unemployment_subsidies_generous
+	}
+}
+
+country_event = { 
+	id = FOP_generic.22
+	title = FOP_generic.22.t
+	desc = FOP_generic.22.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.22.a
+		add_ideas = fop_minimum_wage_no
+	}
+	option = { 
+		name = FOP_generic.22.b
+		add_ideas = fop_minimum_wage_low
+	}
+	option = { 
+		name = FOP_generic.22.c
+		add_ideas = fop_minimum_wage_moderate
+	}
+	option = { 
+		name = FOP_generic.22.e
+		add_ideas = fop_minimum_wage_generous
+	}
+}
+
+country_event = { 
+	id = FOP_generic.23
+	title = FOP_generic.23.t
+	desc = FOP_generic.23.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.23.a
+		add_ideas = fop_working_hours_unlimited
+	}
+	option = { 
+		name = FOP_generic.23.b
+		add_ideas = fop_working_hours_8
+	}
+	option = { 
+		name = FOP_generic.23.c
+		add_ideas = fop_working_hours_10
+	}
+	option = { 
+		name = FOP_generic.23.e
+		add_ideas = fop_working_hours_12
+	}
+	option = { 
+		name = FOP_generic.23.f
+		add_ideas = fop_working_hours_14
+	}
+}
+
+country_event = { 
+	id = FOP_generic.24
+	title = FOP_generic.24.t
+	desc = FOP_generic.24.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.24.a
+		add_ideas = fop_pensions_no
+	}
+	option = { 
+		name = FOP_generic.24.b
+		add_ideas = fop_pensions_low
+	}
+	option = { 
+		name = FOP_generic.24.c
+		add_ideas = fop_pensions_moderate
+	}
+	option = { 
+		name = FOP_generic.24.e
+		add_ideas = fop_pensions_generous
 	}
 }
