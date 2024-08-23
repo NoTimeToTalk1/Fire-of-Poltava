@@ -10,8 +10,10 @@ shared_focus = {
 	id = AFU_khomutynnik
 	icon = GFX_generic_suspend_constitution
 	cost = 2
+
 	x = 10
 	y = 0
+
 	completion_reward = {
 		###
 	}
@@ -19,90 +21,108 @@ shared_focus = {
 
 shared_focus = {
 	id = AFU_contact_bondar
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Contact_Bondar
 	cost = 2
-	x = 2
+
+	relative_position_id = AFU_khomutynnik
+	x = -2
 	y = 1
+
+	prerequisite = { focus = AFU_khomutynnik }
+	mutually_exclusive = { focus = AFU_invite_kinakh }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_khomutynnik
-	prerequisite = { focus = AFU_khomutynnik }
-	mutually_exclusive = { focus = AFU_invite_kinakh }
 }
 
 shared_focus = {
 	id = AFU_talk_with_kolomoyskyi
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Talk_with_Kolomoyskyi
 	cost = 2
+
+	relative_position_id = AFU_contact_bondar
 	x = -2
 	y = 1
+
+	prerequisite = { focus = AFU_contact_bondar }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_contact_bondar
-	prerequisite = { focus = AFU_contact_bondar }
 }
 
 shared_focus = {
 	id = AFU_revival_faction_session
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Revival_Faction_Session
 	cost = 2
+
+	relative_position_id = AFU_message_to_bondar
 	x = 0
 	y = 1
+
+	prerequisite = { focus = AFU_message_to_bondar }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_message_to_bondar
-	prerequisite = { focus = AFU_message_to_bondar }
 }
 
 shared_focus = {
 	id = AFU_mutually_beneficial_alliance
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_Mutually_Beneficial_Alliance
 	cost = 2
+
+	relative_position_id = AFU_revival_faction_session
 	x = -1
 	y = 1
+
+	prerequisite = { focus = AFU_talk_with_kolomoyskyi }
+	prerequisite = { focus = AFU_revival_faction_session }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_revival_faction_session
-	prerequisite = { focus = AFU_talk_with_kolomoyskyi }
-	prerequisite = { focus = AFU_revival_faction_session }
 }
 
 shared_focus = {
 	id = AFU_invite_kinakh
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Invite_Kinakh
 	cost = 2
+
+	relative_position_id = AFU_khomutynnik
 	x = 2
 	y = 1
-	completion_reward = {
-		###
-	}
-	relative_position_id = AFU_khomutynnik
+
 	prerequisite = { focus = AFU_khomutynnik }
 	mutually_exclusive = { focus = AFU_contact_bondar }
-}
 
-shared_focus = {
-	id = AFU_meeting_with_the_donetsk_clan
-	icon = GFX_generic_suspend_constitution
-	cost = 2
-	x = 2
-	y = 1
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_invite_kinakh
-	prerequisite = { focus = AFU_invite_kinakh }
 }
 
 shared_focus = {
 	id = AFU_integrate_the_party_of_industrialists
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Integrate_the_Party_of_Industrialists
 	cost = 2
+
+	relative_position_id = AFU_invite_kinakh
 	x = 0
+	y = 1
+
+	prerequisite = { focus = AFU_invite_kinakh }
+
+	completion_reward = {
+		###
+	}
+}
+
+shared_focus = {
+	id = AFU_meeting_with_the_donetsk_clan
+	icon = GFX_AFU_Meeting_with_the_Donetsk_Clan
+	cost = 2
+	x = 2
 	y = 1
 	completion_reward = {
 		###
@@ -113,55 +133,67 @@ shared_focus = {
 
 shared_focus = {
 	id = AFU_negotiation_channel_with_moscow
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Negotiation_Channel_with_Moscow
 	cost = 2
+
+	relative_position_id = AFU_integrate_the_party_of_industrialists
 	x = 1
 	y = 1
+
+	prerequisite = { focus = AFU_integrate_the_party_of_industrialists }
+	prerequisite = { focus = AFU_meeting_with_the_donetsk_clan }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_integrate_the_party_of_industrialists
-	prerequisite = { focus = AFU_integrate_the_party_of_industrialists }
-	prerequisite = { focus = AFU_meeting_with_the_donetsk_clan }
 }
 
 shared_focus = {
 	id = AFU_cooperation_with_local_outsiders
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Cooperation_with_Local_Outsiders
 	cost = 2
+	
+	relative_position_id = AFU_khomutynnik
 	x = 0
 	y = 2
+
+	prerequisite = { focus = AFU_contact_bondar focus = AFU_invite_kinakh }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_khomutynnik
-	prerequisite = { focus = AFU_contact_bondar focus = AFU_invite_kinakh }
 }
 
 shared_focus = {
 	id = AFU_formation_of_coalition
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Formation_of_Coalition
 	cost = 2
+
+	relative_position_id = AFU_cooperation_with_local_outsiders
 	x = 0
 	y = 1
+
+	prerequisite = { focus = AFU_cooperation_with_local_outsiders }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_cooperation_with_local_outsiders
-	prerequisite = { focus = AFU_cooperation_with_local_outsiders }
 }
 
 shared_focus = {
 	id = AFU_time_for_great_solutions
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Time_for_Great_Solutions
 	cost = 2
+
+	relative_position_id = AFU_formation_of_coalition
 	x = 0
 	y = 1
+
+	prerequisite = { focus = AFU_formation_of_coalition }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_formation_of_coalition
-	prerequisite = { focus = AFU_formation_of_coalition }
 }
 
 ##############################################################################################
@@ -174,15 +206,18 @@ shared_focus = {
 
 shared_focus = {
 	id = AFU_learn_from_the_best
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Learn_From_the_Best
 	cost = 2
+
+	relative_position_id = AFU_time_for_great_solutions
 	x = -4
 	y = 1
+
+	prerequisite = { focus = AFU_time_for_great_solutions }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_time_for_great_solutions
-	prerequisite = { focus = AFU_time_for_great_solutions }
 }
 
 shared_focus = {
