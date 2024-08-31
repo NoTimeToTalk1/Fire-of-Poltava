@@ -68,6 +68,7 @@ unite_galician_ukraine = {
 				add_political_power = 50
 			}
 			set_country_flag = united_galicia
+			load_focus_tree = fop_generic_one
 	  	}
 		}
 		ai_will_do = {	
@@ -474,6 +475,7 @@ unite_podillya_ukraine = {
 				add_political_power = 50
 			}
 			set_country_flag = united_podillya
+			load_focus_tree = fop_generic_one
 			}
 		}
 		ai_will_do = {	
@@ -595,6 +597,7 @@ unite_northern_ukraine = {
 			}
 			set_country_flag = united_north
 			save_global_event_target_as = UKR_north_unifier
+			load_focus_tree = fop_generic_one
 	  		}
 		}
 		ai_will_do = {	
@@ -1041,6 +1044,7 @@ unite_north_central_ukraine = {
 			}
 			set_country_flag = united_north_center
 			save_global_event_target_as = UKR_north_center_unifier
+			load_focus_tree = fop_generic_one
 	  		}
 		}
 		ai_will_do = {	
@@ -1335,6 +1339,7 @@ unite_south_western_ukraine = {
 				add_political_power = 50
 			}
 			set_country_flag = united_south_west
+			load_focus_tree = fop_generic_one
 	  		}
 		}
 		ai_will_do = {	
@@ -1622,6 +1627,7 @@ unite_south_central_ukraine = {
 				add_political_power = 50
 			}
 			set_country_flag = united_south_center
+			load_focus_tree = fop_generic_one
 	  		}
 		}
 		ai_will_do = {	
@@ -1779,6 +1785,7 @@ unite_south_eastern_ukraine = {
 				add_political_power = 50
 			}
 			set_country_flag = united_south_east
+			load_focus_tree = fop_generic_one
 	  		}
 		}
 		ai_will_do = {	
@@ -1938,7 +1945,7 @@ unite_eastern_ukraine = {
 				is_eastern_ukraine = yes
 				can_unite_eastern_ukraine = yes
 			}
-			#date > 2027.01.01
+			date > 2024.01.01
 		}
 		
 		fire_only_once = yes
@@ -2047,6 +2054,7 @@ unite_eastern_ukraine = {
         }
 
         available = {
+			date > 2024.01.01
         }
 
         visible = {
@@ -2123,6 +2131,9 @@ unite_eastern_ukraine = {
 				}
             }
         }
+		available = {
+			date > 2024.01.01
+		}
 		fire_only_once = yes
         	days_remove = 0
 			ai_will_do = {
@@ -2195,6 +2206,82 @@ unite_eastern_ukraine = {
 			base = 10		
 		}
 	}
+
+	capture_territory_east = {
+        icon = generic_decision
+
+		available = {
+			#date > 2024.01.01
+		}
+
+		visible = {
+			if = {
+				limit = {
+					tag = DNI
+				}
+				NOT = {
+					country_exists = SET
+				}
+			}
+			if = {
+				limit = {
+					tag = SET
+				}
+				NOT = {
+					country_exists = DNI
+				}
+			}
+			#date > 2024.01.01
+		}
+		
+		cost = 50
+
+		days_remove = 20
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = unite_eastern_ukraine_zachystka_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						tag = SET
+					}
+					SET = {
+						declare_war_on = {
+							target = DNI
+							type = annex_everything
+						}
+					}
+				}
+				if = {
+					limit = {
+						tag = DNI
+					}
+					DNI = {
+						declare_war_on = {
+							target = AFU
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = KHA
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = DPR
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = LPR
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+    }
 }
 
 unite_southern_ukraine = {
@@ -2209,7 +2296,7 @@ unite_southern_ukraine = {
 				is_southern_ukraine = yes
 				can_unite_southern_ukraine = yes
 			}
-			#date > 2027.01.01
+			date > 2024.01.01
 		}
 		
 		fire_only_once = yes
@@ -2329,7 +2416,8 @@ unite_southern_ukraine = {
         }
 
         available = {
-        }
+			date > 2024.01.01
+		}
 
         visible = {
 				OR = {
@@ -2373,6 +2461,9 @@ unite_southern_ukraine = {
 				}
             }
         }
+		available = {
+			date > 2024.01.01
+		}
 		visible = {
 			is_southern_ukraine = yes
 			OR = {
@@ -2488,7 +2579,9 @@ unite_southern_ukraine = {
 				exists = yes
 			}
 		}
-
+		available = {
+			date > 2024.01.01
+		}
 		target_trigger = {
             FROM = {
 				OR = {
@@ -2569,6 +2662,98 @@ unite_southern_ukraine = {
 			base = 10		
 		}
 	}
+
+	capture_territory_south = {
+        icon = generic_decision
+
+		available = {
+			date > 2024.01.01
+		}
+
+		visible = {
+			if = {
+				limit = {
+					tag = SWT
+				}
+				NOT = {
+					country_exists = SCT
+				}
+			}
+			if = {
+				limit = {
+					tag = SCT
+				}
+				NOT = {
+					country_exists = SWT
+				}
+			}
+			date > 2024.01.01
+		}
+		
+		cost = 50
+
+		days_remove = 20
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = unite_southern_ukraine_zachystka_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						tag = SWT
+					}
+					SWT = {
+						declare_war_on = {
+							target = ZAP
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = OPZ
+							type = annex_everything
+						}
+					}
+				}
+				if = {
+					limit = {
+						tag = SCT
+					}
+					SCT = {
+						declare_war_on = {
+							target = ODE
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = STR
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = BDZ
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = RGE
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = MYK
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = SHT
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = OLD
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+    }
 }
 
 unite_central_ukraine = {
@@ -2583,7 +2768,7 @@ unite_central_ukraine = {
 				is_central_ukraine = yes
 				can_unite_central_ukraine = yes
 			}
-			#date > 2027.01.01
+			date > 2024.01.01
 		}
 		
 		fire_only_once = yes
@@ -2753,6 +2938,9 @@ unite_central_ukraine = {
 				}
 			}
 		}
+		available = {
+			date > 2024.01.01
+		}
 		fire_only_once = yes
         	days_remove = 0	
 		complete_effect = {
@@ -2852,6 +3040,9 @@ unite_central_ukraine = {
 			NRT = {
 				exists = yes
 			}
+		}
+		available = {
+			date > 2024.01.01
 		}
 		target_trigger = {
             FROM = {
@@ -2954,7 +3145,8 @@ unite_central_ukraine = {
         }
 
         available = {
-        }
+			date > 2024.01.01
+		}
 
         visible = {
 				OR = {
@@ -2988,7 +3180,102 @@ unite_central_ukraine = {
         }
 
 	}
-	
+
+	capture_territory_center = {
+        icon = generic_decision
+
+		available = {
+			date > 2024.01.01
+		}
+
+		visible = {
+			if = {
+				limit = {
+					tag = NRT
+				}
+				NOT = {
+					country_exists = NCT
+				}
+			}
+			if = {
+				limit = {
+					tag = NCT
+				}
+				NOT = {
+					country_exists = NRT
+				}
+			}
+			date > 2024.01.01
+		}
+		
+		cost = 50
+
+		days_remove = 20
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = unite_central_ukraine_zachystka_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						tag = NCT
+					}
+					NCT = {
+							declare_war_on = {
+								target = KYI
+								type = annex_everything
+							}
+							declare_war_on = {
+								target = PRH
+								type = annex_everything
+							}
+							declare_war_on = {
+								target = SUM
+								type = annex_everything
+							}
+							declare_war_on = {
+								target = UKR
+								type = annex_everything
+							}
+							declare_war_on = {
+								target = CBL
+								type = annex_everything
+							}
+					}
+				}
+				if = {
+					limit = {
+						tag = NRT
+					}
+					NRT = {
+						declare_war_on = {
+							target = CHR
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = PLT
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = UMA
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = KRE
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = KIR
+							type = annex_everything
+						}
+					}
+				}				
+			}
+		}
+    }	
 }
 
 unite_western_ukraine = {
@@ -3004,7 +3291,7 @@ unite_western_ukraine = {
 				is_western_ukraine = yes
 				can_unite_western_ukraine = yes
 			}
-			#date > 2027.01.01
+			date > 2024.01.01
 		}
 		
 		fire_only_once = yes
@@ -3110,6 +3397,7 @@ unite_western_ukraine = {
 				original_tag = GAL
 				original_tag = ZHY
 			}
+			date > 2024.01.01
 		}
         target_trigger = {
             FROM = {
@@ -3217,6 +3505,9 @@ unite_western_ukraine = {
 				exists = yes
 			}
 		}
+		available = {
+			date > 2024.01.01
+		}
 		target_trigger = {
             FROM = {
 				OR = {
@@ -3318,7 +3609,8 @@ unite_western_ukraine = {
         }
 
         available = {
-        }
+			date > 2024.01.01
+		}
 
         visible = {
 				OR = {
@@ -3346,6 +3638,94 @@ unite_western_ukraine = {
 			}
         }
 	}
+
+	capture_territory_west = {
+        icon = generic_decision
+
+		available = {
+			#date > 2024.01.01
+		}
+
+		visible = {
+			if = {
+				limit = {
+					tag = GLY
+				}
+				NOT = {
+					country_exists = PDL
+				}
+			}
+			if = {
+				limit = {
+					tag = PDL
+				}
+				NOT = {
+					country_exists = GLY
+				}
+			}
+			#date > 2024.01.01
+		}
+		
+		cost = 50
+
+		days_remove = 20
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = unite_western_ukraine_zachystka_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						tag = GLY
+					}
+					GLY = {
+						declare_war_on = {
+							target = ZHY
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = KHM
+							type = annex_everything
+						}
+					}
+				}
+				if = {
+					limit = {
+						tag = PDL
+					}
+					PDL = {
+						declare_war_on = {
+							target = GAL
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = VOL
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = TER
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = RIV
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = ZAK
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = GUT
+							type = annex_everything
+						}
+					}
+				}				
+			}
+		}
+    }	
 }
 
 unite_left_bank_ukraine = {
@@ -3360,7 +3740,7 @@ unite_left_bank_ukraine = {
 				is_left_bank_ukraine = yes
 				can_unite_left_bank_ukraine = yes
 			}
-			#date > 2030.06.01
+			date > 2027.01.01
 		}
 		
 		fire_only_once = yes
@@ -3526,6 +3906,7 @@ unite_left_bank_ukraine = {
 
 	prepare_elections_left_bank = {
 		available = {
+			date > 2027.01.01
 		}
         target_trigger = {
             FROM = {
@@ -3717,7 +4098,9 @@ unite_left_bank_ukraine = {
 				exists = yes
 			}
 		}
-
+		available = {
+			date > 2027.01.01
+		}
 		target_trigger = {
             FROM = {
 				OR = {
@@ -3768,7 +4151,8 @@ unite_left_bank_ukraine = {
         }
 
         available = {
-        }
+			date > 2027.01.01
+		}
 
         visible = {
 				OR = {
@@ -3801,6 +4185,78 @@ unite_left_bank_ukraine = {
         }
 
 	}
+
+	capture_territory_left_bank = {
+        icon = generic_decision
+
+		available = {
+			date > 2024.01.01
+		}
+
+		visible = {
+			if = {
+				limit = {
+					tag = ESN
+				}
+				NOT = {
+					country_exists = STH
+				}
+			}
+			if = {
+				limit = {
+					tag = STH
+				}
+				NOT = {
+					country_exists = ESN
+				}
+			}
+			date > 2024.01.01
+		}
+		
+		cost = 50
+
+		days_remove = 20
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = unite_left_bank_ukraine_zachystka_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						tag = ESN
+					}
+					ESN = {
+						declare_war_on = {
+							target = SWT
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = SCT
+							type = annex_everything
+						}
+					}
+				}
+				if = {
+					limit = {
+						tag = STH
+					}
+					PDL = {
+						declare_war_on = {
+							target = DNI
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = SET
+							type = annex_everything
+						}
+					}
+				}				
+			}
+		}
+    }	
 }
 
 unite_right_bank_ukraine = {
@@ -3815,7 +4271,7 @@ unite_right_bank_ukraine = {
 				is_right_bank_ukraine = yes
 				can_unite_right_bank_ukraine = yes
 			}
-			#date > 2030.06.01
+			date > 2027.01.01
 		}
 		
 		fire_only_once = yes
@@ -3990,6 +4446,7 @@ unite_right_bank_ukraine = {
 
 	prepare_elections_right_bank = {
 		available = {
+			date > 2027.01.01
 		}
         target_trigger = {
             FROM = {
@@ -4173,7 +4630,9 @@ unite_right_bank_ukraine = {
 				exists = yes
 			}
 		}
-
+		available = {
+			date > 2027.01.01
+		}
 		target_trigger = {
             FROM = {
 				OR = {
@@ -4223,7 +4682,8 @@ unite_right_bank_ukraine = {
         }
 
         available = {
-        }
+			date > 2027.01.01
+		}
 
         visible = {
 				OR = {
@@ -4256,6 +4716,78 @@ unite_right_bank_ukraine = {
         }
 
 	}
+
+	capture_territory_right_bank = {
+        icon = generic_decision
+
+		available = {
+			date > 2024.01.01
+		}
+
+		visible = {
+			if = {
+				limit = {
+					tag = CNT
+				}
+				NOT = {
+					country_exists = WST
+				}
+			}
+			if = {
+				limit = {
+					tag = WST
+				}
+				NOT = {
+					country_exists = CNT
+				}
+			}
+			date > 2024.01.01
+		}
+		
+		cost = 50
+
+		days_remove = 20
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = unite_right_bank_ukraine_zachystka_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						tag = CNT
+					}
+					CNT = {
+						declare_war_on = {
+							target = GLY
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = PDL
+							type = annex_everything
+						}
+					}
+				}
+				if = {
+					limit = {
+						tag = WST
+					}
+					WST = {
+						declare_war_on = {
+							target = NRT
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = NCT
+							type = annex_everything
+						}
+					}
+				}				
+			}
+		}
+    }
 }
 
 unite_ukraine = {
@@ -4270,7 +4802,7 @@ unite_ukraine = {
 				is_ukraine = yes
 				can_unite_ukraine = yes
 			}
-			#date > 2033.01.01
+			date > 2030.01.01
 		}
 		
 		fire_only_once = yes
@@ -4607,7 +5139,9 @@ unite_ukraine = {
 				exists = yes
 			}
 		}
-
+		available = {
+			date > 2030.01.01
+		}
 		target_trigger = {
             FROM = {
 				OR = {
@@ -4735,7 +5269,7 @@ unite_ukraine = {
 
 	prepare_elections_ukraine = {
 		available = {
-			
+			date > 2030.01.01
 		}
         target_trigger = {
             FROM = {
@@ -4826,6 +5360,7 @@ unite_ukraine = {
         }
 
         available = {
+			date > 2030.01.01
         }
 
         visible = {
@@ -4859,6 +5394,77 @@ unite_ukraine = {
         }
 	}	
 	
+	capture_territory_ukraine = {
+        icon = generic_decision
+
+		available = {
+			date > 2024.01.01
+		}
+
+		visible = {
+			if = {
+				limit = {
+					tag = RBU
+				}
+				NOT = {
+					country_exists = LBU
+				}
+			}
+			if = {
+				limit = {
+					tag = LBU
+				}
+				NOT = {
+					country_exists = RBU
+				}
+			}
+			date > 2024.01.01
+		}
+		
+		cost = 50
+
+		days_remove = 20
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = unite_ukraine_zachystka_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						tag = RBU
+					}
+					RBU = {
+						declare_war_on = {
+							target = ESN
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = STH
+							type = annex_everything
+						}
+					}
+				}
+				if = {
+					limit = {
+						tag = LBU
+					}
+					LBU = {
+						declare_war_on = {
+							target = CNT
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = WST
+							type = annex_everything
+						}
+					}
+				}				
+			}
+		}
+    }
 }
 
 regional_development = {
