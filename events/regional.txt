@@ -1254,6 +1254,31 @@ country_event = { #south elect
 	}
 }
 
+country_event = { #war on dnipro or not
+	id = reg_exp_south.7
+	title = reg_exp_south.7.t
+	desc = reg_exp_south.7.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_south.7.a #yes
+		ROOT = {
+			declare_war_on = {
+				target = DNI
+				type = annex_everything
+			}
+			set_country_flag = south_center_dnipro_war
+		}
+	}
+
+	option = {
+		name = reg_exp_south.7.b #no
+	}
+}
+
 country_event = { #west dogovornyak
 	id = reg_exp_west.1
 	title = reg_exp_west.1.t

@@ -103,3 +103,55 @@ country_event = { #rdk
 		add_political_power = 20
 		}
 }
+
+country_event = { #GOIDAAAAAAA
+	id = rdk.3
+	title = rdk.3.t
+	desc = rdk.3.d
+
+	picture = GFX_moskva_podzhech_photo
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = rdk.3.a
+		every_country = {
+            limit = {
+                is_in_faction_with = RUS
+            }
+			leave_faction = yes
+            white_peace = RDK
+            white_peace = AFU
+        }
+		every_state = {
+			limit = {
+				is_core_of = RUS
+				NOT = {
+					OR = {
+						is_core_of = CHE
+						is_core_of = DAG
+					}
+				}
+			}
+			add_core_of = RDK
+		}
+		RDK = {
+			annex_country = {
+				target = RUS
+			}
+			set_cosmetic_tag = RDK_russia_united
+		}
+		AFU = {
+			annex_country = {
+				target = TRA
+			}
+			annex_country = {
+				target = CRI
+			}
+			load_focus_tree = AFU_azov_triumph
+		}		
+		country_event = cap.13
+	}
+}

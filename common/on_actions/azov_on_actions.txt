@@ -1,0 +1,26 @@
+on_actions = {
+    on_state_control_changed = {
+        effect = {
+            if = {
+                limit = {
+                    FROM.FROM = { state = 229 }
+                }
+                if = {
+                    limit = {
+                        country_exists = RDK
+                        OR = {
+                            tag = RDK
+                            tag = AFU
+                        }
+                    }
+                    RDK = {
+                        country_event = {
+                            id = rdk.3
+                            days = 14
+                        }
+                    }
+                }
+            }
+        } 
+    }
+}

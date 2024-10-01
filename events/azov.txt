@@ -23,6 +23,14 @@ custom_effect_tooltip = azov_cum_into_power
 				popularity = 0.2
 		}
 		set_cosmetic_tag = AFU_radical_nationalism
+		hidden_effect = {
+			clr_country_flag = AFU_elections_flag
+			clr_country_flag = AFU_elections_play_danilov
+			clr_country_flag = AFU_elections_play_savchenko
+			clr_country_flag = AFU_elections_play_homut
+			remove_ideas = AFU_nationalist_agendas
+			remove_ideas = AFU_nationalist_agendas_2
+		}
 	}
 	}
 }
@@ -1512,24 +1520,20 @@ country_event = {
 	option = {
 		name = azov.56.a
 		add_political_power = 5
-	hidden_effect = {
-	country_event = { id = azov.57 days = 7 }
-	}
 	}
 }
 
-#jews
+#victory
 country_event = {
 	id = azov.57
 	title = azov.57.t
 	desc = azov.57.d
 
-	picture = GFX_event_azov_11
+	picture = GFX_no
 	fire_only_once = yes
 	is_triggered_only = yes
 	option = {
 		name = azov.57.a
-		add_political_power = 5
 	}
 }
 

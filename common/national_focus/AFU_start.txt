@@ -109,7 +109,7 @@
 				idea = AFU_harsh_quotas
 				days = 180
 			}
-			add_ideas = hour_limit_12
+			add_ideas = fop_working_hours_12
 		}
     }
 	
@@ -208,10 +208,11 @@
 			news_event = newsfop.4
 			add_political_power = 100
 			country_event = afu.10
+			country_lock_all_division_template = no
 			hidden_effect = {
-			RUS = {
-			country_event = { id = rus.3 days = 7 }
-			}
+				RUS = {
+					country_event = { id = rus.3 days = 21 }
+				}
 			}
 		}
 	}
@@ -221,7 +222,7 @@
 		id = AFU_start_intergration
 		icon = GFX_Start_Integration
 		x = 33
-		y = 7
+		y = 12
 		
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -243,7 +244,7 @@
 		id = AFU_finish_integration
 		icon = GFX_Finish_Integration
 		x = 33
-		y = 8
+		y = 13
 		
 		available = {
 			has_country_flag = AFUintfinish
@@ -646,25 +647,24 @@
 		id = AFU_stand_with_prh
 		icon = GFX_stand_with_prh
 		x = 35
-		y = 12
+		y = 15
 		
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
 		cost = 2
+
+		available = {
+			has_idea = AFU_support_PRH
+		}
 		
 		prerequisite = { focus = AFU_victory }
-		mutually_exclusive = {
-			focus = AFU_we_stand_alone
-			focus = AFU_stand_with_ze
-	    }
+		mutually_exclusive = { focus = AFU_stand_with_ze }
 		
 		completion_reward = {
 			add_political_power = 50
 			hidden_effect = {
-			remove_ideas = {
-    AFU_support_UKR
-}
+				remove_ideas = AFU_support_UKR
 			}
 		}
     }
@@ -672,26 +672,25 @@
 		id = AFU_stand_with_ze
 		icon = GFX_stand_with_ze
 		x = 31
-		y = 12
+		y = 15
 		
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
 		cost = 2
+
+		available = {
+			has_idea = AFU_support_UKR
+		}
 		
 		prerequisite = { focus = AFU_victory }
-		mutually_exclusive = {
-			focus = AFU_we_stand_alone
-			focus = AFU_stand_with_prh
-	    }
+		mutually_exclusive = { focus = AFU_stand_with_prh }
 		
 		completion_reward = {
 			add_political_power = 50
 			country_event = { id = afu.36 }
 			hidden_effect = {
-			remove_ideas = {
-    AFU_support_PRH
-}
+				remove_ideas = AFU_support_PRH
 			}
 		}
     }
@@ -699,34 +698,37 @@
 		id = AFU_we_stand_alone
 		icon = GFX_stand_alone
 		x = 33
-		y = 14
+		y = 18
 		
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
 		cost = 2
 		
-		prerequisite = { focus = AFU_victory }
-		mutually_exclusive = {
-			focus = AFU_stand_with_prh
-			focus = AFU_stand_with_ze
-	    }
+		prerequisite = { focus = AFU_finish_integration }
+
+		available = {
+			NOT = {
+				OR = {
+					has_completed_focus = AFU_stand_with_ze
+					has_completed_focus = AFU_stand_with_prh
+				}
+			}
+		}
 		
 		completion_reward = {
 			add_political_power = 50
 			hidden_effect = {
-			remove_ideas = {
-    AFU_support_UKR
-    AFU_support_PRH
-}
+				remove_ideas = AFU_support_UKR
+				remove_ideas = AFU_support_PRH
 			}
 		}
-    }
+	}
 	shared_focus = {
 		id = AFU_no_new_faces
 		icon = GFX_no_new_faces
 		x = 35
-		y = 13
+		y = 16
 		
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -743,7 +745,7 @@
 		id = AFU_faithful_army
 		icon = GFX_faithful_army
 		x = 35
-		y = 14
+		y = 17
 		
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -760,7 +762,7 @@
 		id = AFU_loyal_son
 		icon = GFX_loyal_son
 		x = 31
-		y = 13
+		y = 16
 		
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -778,7 +780,7 @@
 		id = AFU_reclamation
 		icon = GFX_reclamation
 		x = 31
-		y = 14
+		y = 17
 		
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -795,7 +797,7 @@
 		id = AFU_the_time_has_not_cum
 		icon = GFX_Reaching_Out
 		x = 31
-		y = 16
+		y = 19
 		
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -808,14 +810,13 @@
 		
 		prerequisite = { focus = AFU_we_stand_alone }
 		mutually_exclusive = {
-			focus = AFU_rule_of_the_far_right
 			focus = AFU_elections_elections
 	    }
 		
 		completion_reward = {
 			add_political_power = 50
 			hidden_effect = {
-			country_event = afu.34
+				country_event = afu.34
 			}
 		}
     }
@@ -824,7 +825,7 @@
 		id = AFU_elections_elections
 		icon = GFX_Reaching_Out
 		x = 35
-		y = 16
+		y = 19
 		
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -837,14 +838,24 @@
 		
 		prerequisite = { focus = AFU_we_stand_alone }
 		mutually_exclusive = {
-			focus = AFU_rule_of_the_far_right
 			focus = AFU_the_time_has_not_cum
 	    }
 		
 		completion_reward = {
 			add_political_power = 50
+			remove_ideas = AFU_millitary_administration
+			remove_ideas = AFU_martial_law
 			hidden_effect = {
-			country_event = afu.25
+				country_event = afu.25
+				if = {
+					limit = {
+						radical_nationalism > 0.2
+					}
+					country_event = {
+						id = azov.1
+						days = 7
+					}
+				}
 			}
 		}
     }
