@@ -2,3 +2,5 @@ NDefines.NMilitary.CORPS_COMMANDER_DIVISIONS_CAP = 6			-- how many divisions a c
 NDefines.NMilitary.CORPS_COMMANDER_ARMIES_CAP = 8			-- how many armies a corps commander is limited to. 0 = inf, < 0 = blocked
 NDefines.NMilitary.FIELD_MARSHAL_DIVISIONS_CAP = 0			-- how many divisions a field marshall is limited to. 0 = inf, < 0 = blocked
 NDefines.NMilitary.FIELD_MARSHAL_ARMIES_CAP = 3				-- how many armies a field marshall is limited to. 0 = inf, < 0 = blocked
+NDefines.NPolitics.BASE_POLITICAL_POWER_INCREASE = 2
+NDefines.NCountry.MIN_STABILITY = -1.0
