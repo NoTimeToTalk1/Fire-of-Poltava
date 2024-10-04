@@ -579,6 +579,20 @@ shared_focus = {
 		focus = DPR_rematch_of_1917th
 	}
 	completion_reward = {
+random_owned_state = {
+add_building_construction = {
+    type = recruiting_center
+    level = 1
+    instant_build = yes
+}  
+}
+random_owned_state = {
+add_building_construction = {
+    type = recruiting_center
+    level = 1
+    instant_build = yes
+}  
+}
 		add_ideas = DPR_promoting_othodoxy
 		country_event = { id = gir.30 days = 2 }
 	}
@@ -599,6 +613,20 @@ shared_focus = {
 	country_event = { id = gir.37 days = 7 }
 	}
 	completion_reward = {
+random_owned_state = {
+add_building_construction = {
+    type = recruiting_center
+    level = 1
+    instant_build = yes
+}  
+}
+random_owned_state = {
+add_building_construction = {
+    type = recruiting_center
+    level = 1
+    instant_build = yes
+}  
+}
 		swap_ideas = {
 			remove_idea = DPR_promoting_othodoxy
 			add_idea = DPR_russianchurch
@@ -623,6 +651,11 @@ shared_focus = {
 			remove_idea = DPR_newfriends2
 			add_idea = DPR_monarchicalcoalition1
 		}
+recruit_character = DNR_Kulibin		
+recruit_character = DNR_Sorokin	
+recruit_character = DNR_Voronin		
+recruit_character = DNR_Bazanov	
+		
 	}
 }
 
@@ -1574,6 +1607,20 @@ power_balance_value = {
 		focus = DPR_emperor_by_the_will_of_the_people
 	}
 	completion_reward = {
+	add_ideas = DPR_rostislav_icon
+set_portraits = {
+    character = DNR_girkin
+    civilian = { large = GFX_dirkin3 }
+}
+	add_country_leader_role = {
+    character = DNR_girkin
+    promote_leader = yes
+    country_leader = {
+        ideology = conservative_democracy
+        expire = "2222.1.1.1"
+        traits = { right_hand_of_the_tsar }
+    }
+}
 		### just pp
 remove_power_balance = {
     id = DPR_rostislave_girkin_political_balance
@@ -1725,7 +1772,12 @@ shared_focus = {
 		focus = DPR_new_state_cabinet
 	}
 	completion_reward = {
-		###ADD LEADER TRAIT "NEW DENIKIN" or smth
+	DNR_girkin = {
+add_trait = {
+    ideology = conservative_democracy
+    trait = new_denikin_1
+}
+	}
 		swap_ideas = {
 			remove_idea = DPR_generalplan6
 			add_idea = DPR_generalplan7
@@ -1746,6 +1798,9 @@ shared_focus = {
 	}
 	completion_reward = {
 		###SPAWN 2 ELITE WHITE DIVISIONS
+	DNR_girkin = {
+swap_country_leader_traits = { remove = new_denikin_1 add = new_denikin_2 ideology = conservative_democracy }
+	}
 		army_experience = 25
 	}
 }
@@ -1762,6 +1817,12 @@ shared_focus = {
 		focus = DPR_new_state_cabinet
 	}
 	completion_reward = {
+	DNR_girkin = {
+add_trait = {
+    ideology = conservative_democracy
+    trait = great_repressor
+}
+	}
 		country_event = {
 			id = dpr.918 #PLACEHOLDER --- івент про розстріл антиокупаційної демонстрації вкраїнчиків у Львові/Києві (на вибір) гіркінськими військами
 			days = 1
@@ -1781,6 +1842,9 @@ shared_focus = {
 		focus = DPR_let_them_feel_the_whip
 	}
 	completion_reward = {
+	DNR_girkin = {
+swap_country_leader_traits = { remove = great_repressor add = great_repressor_and_pacifier ideology = conservative_democracy }
+	}
 		add_political_power = -100
 		add_popularity = {
 			ideology = liberalism
@@ -1817,6 +1881,11 @@ shared_focus = {
 		focus = DPR_crush_the_dissatisfied
 	}
 	completion_reward = {
+add_trait = {
+     character = DNR_girkin
+     ideology = conservative_democracy
+     trait = GENERALISSIMO 
+}
 		add_political_power = 100
 		add_stability = 0.1
 		add_war_support = 0.1
