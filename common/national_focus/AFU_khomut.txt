@@ -8,7 +8,7 @@
 
 shared_focus = {
 	id = AFU_khomutynnik
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Khomutynnik
 	cost = 2
 
 	x = 10
@@ -122,13 +122,16 @@ shared_focus = {
 	id = AFU_meeting_with_the_donetsk_clan
 	icon = GFX_AFU_Meeting_with_the_Donetsk_Clan
 	cost = 2
+
+	relative_position_id = AFU_invite_kinakh
 	x = 2
 	y = 1
+
+	prerequisite = { focus = AFU_invite_kinakh }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_invite_kinakh
-	prerequisite = { focus = AFU_invite_kinakh }
 }
 
 shared_focus = {
@@ -221,135 +224,165 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = AFU_reduce_taxes_for_businesses
-	icon = GFX_generic_suspend_constitution
+	id = AFU_tax_cuts_for_businesses
+	icon = GFX_AFU_Tax_Cuts_for_Businesses
 	cost = 2
+
+	relative_position_id = AFU_learn_from_the_best
 	x = 0
 	y = 1
+
+	prerequisite = { focus = AFU_learn_from_the_best }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_learn_from_the_best
-	prerequisite = { focus = AFU_learn_from_the_best }
 }
 
 shared_focus = {
 	id = AFU_special_rights_to_corporations
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Special_Rights_to_Corporations
 	cost = 2
+
+	relative_position_id = AFU_tax_cuts_for_businesses
 	x = 0
 	y = 1
+
+	prerequisite = { focus = AFU_tax_cuts_for_businesses }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_reduce_taxes_for_businesses
-	prerequisite = { focus = AFU_reduce_taxes_for_businesses }
 }
 
 shared_focus = {
 	id = AFU_deradicalization_of_society
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Deradicalization_of_Society
 	cost = 2
+
+	relative_position_id = AFU_time_for_great_solutions
 	x = -1
 	y = 1
+
+	prerequisite = { focus = AFU_time_for_great_solutions }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_time_for_great_solutions
-	prerequisite = { focus = AFU_time_for_great_solutions }
 }
 
 shared_focus = {
 	id = AFU_hunt_for_ringleaders
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Hunt_for_Ringleaders
 	cost = 2
-	x = -1
+
+	relative_position_id = AFU_deradicalization_of_society
+	x = 0
 	y = 1
+
+	prerequisite = { focus = AFU_deradicalization_of_society }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_deradicalization_of_society
-	prerequisite = { focus = AFU_deradicalization_of_society }
 }
 
 shared_focus = {
 	id = AFU_disband_azov
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Disband_Azov
 	cost = 2
+
+	relative_position_id = AFU_hunt_for_ringleaders
 	x = 0
 	y = 1
+
+	prerequisite = { focus = AFU_hunt_for_ringleaders }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_hunt_for_ringleaders
-	prerequisite = { focus = AFU_hunt_for_ringleaders }
 }
 
 shared_focus = {
 	id = AFU_for_the_state
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_For_the_State
 	cost = 2
+
+	relative_position_id = AFU_disband_azov
 	x = -1
 	y = 1
+
+	prerequisite = { focus = AFU_special_rights_to_corporations }
+	prerequisite = { focus = AFU_disband_azov }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_disband_azov
-	prerequisite = { focus = AFU_special_rights_to_corporations }
-	prerequisite = { focus = AFU_disband_azov }
 }
 
 shared_focus = {
 	id = AFU_strenghten_the_police_force
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Strenghten_the_Police_Force
 	cost = 2
+
+	relative_position_id = AFU_for_the_state
 	x = 0
 	y = 1
+
+	prerequisite = { focus = AFU_for_the_state }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_for_the_state
-	prerequisite = { focus = AFU_for_the_state }
 }
 
 shared_focus = {
-	id = AFU_expand_agency_funding
-	icon = GFX_generic_suspend_constitution
+	id = AFU_expand_security_service_funding
+	icon = GFX_AFU_Expand_Security_Service_Funding
 	cost = 2
+
+	relative_position_id = AFU_strenghten_the_police_force
 	x = -1
 	y = 1
+
+	prerequisite = { focus = AFU_strenghten_the_police_force }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_strenghten_the_police_force
-	prerequisite = { focus = AFU_strenghten_the_police_force }
 }
 
 shared_focus = {
 	id = AFU_stop_inner_conflicts
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Stop_Inner_Conflicts
 	cost = 2
+
+	relative_position_id = AFU_strenghten_the_police_force
 	x = 1
 	y = 1
+
+	prerequisite = { focus = AFU_strenghten_the_police_force }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_strenghten_the_police_force
-	prerequisite = { focus = AFU_strenghten_the_police_force }
 }
 
 shared_focus = {
 	id = AFU_form_the_internal_troops
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Form_the_Internal_Troops
 	cost = 2
+
+	relative_position_id = AFU_stop_inner_conflicts
 	x = -1
 	y = 1
+
+	prerequisite = { focus = AFU_expand_security_service_funding }
+	prerequisite = { focus = AFU_stop_inner_conflicts }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_stop_inner_conflicts
-	prerequisite = { focus = AFU_expand_agency_funding }
-	prerequisite = { focus = AFU_stop_inner_conflicts }
 }
 
 ##############################################################################################
@@ -362,147 +395,181 @@ shared_focus = {
 
 shared_focus = {
 	id = AFU_tackle_peoples_problems
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Tackle_Peoples_Problems
 	cost = 2
+
+
+	relative_position_id = AFU_time_for_great_solutions
 	x = -4
 	y = 1
+
+	prerequisite = { focus = AFU_time_for_great_solutions }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_time_for_great_solutions
-	prerequisite = { focus = AFU_time_for_great_solutions }
 }
 
 shared_focus = {
 	id = AFU_distribute_humanitarian_aid
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Distribute_Humanitarian_Aid
 	cost = 2
+
+	relative_position_id = AFU_tackle_peoples_problems
 	x = 0
 	y = 1
+
+	prerequisite = { focus = AFU_tackle_peoples_problems }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_tackle_peoples_problems
-	prerequisite = { focus = AFU_tackle_peoples_problems }
 }
 
 shared_focus = {
 	id = AFU_increase_veterans_payments
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Increase_Veterans_Payments
 	cost = 2
+
+	relative_position_id = AFU_distribute_humanitarian_aid
 	x = 0
 	y = 1
+
+	prerequisite = { focus = AFU_distribute_humanitarian_aid }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_distribute_humanitarian_aid
-	prerequisite = { focus = AFU_distribute_humanitarian_aid }
 }
 
 shared_focus = {
-	id = AFU_end_of_kryvonos_era
-	icon = GFX_generic_suspend_constitution
+	id = AFU_dismantle_kryvonos_legacy
+	icon = GFX_AFU_Dismantle_Kryvonos_Legacy
 	cost = 2
+
+	relative_position_id = AFU_time_for_great_solutions
 	x = 1
 	y = 1
+
+	prerequisite = { focus = AFU_time_for_great_solutions }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_time_for_great_solutions
-	prerequisite = { focus = AFU_time_for_great_solutions }
 }
 
 shared_focus = {
 	id = AFU_abolish_censorship_laws
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Abolish_Censorship_Laws
 	cost = 2
+
+	relative_position_id = AFU_dismantle_kryvonos_legacy
 	x = 1
 	y = 1
+
+	prerequisite = { focus = AFU_dismantle_kryvonos_legacy }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_end_of_kryvonos_era
-	prerequisite = { focus = AFU_end_of_kryvonos_era }
 }
 
 shared_focus = {
 	id = AFU_open_trade_channels
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Open_Trade_Channels
 	cost = 2
+
+	relative_position_id = AFU_abolish_censorship_laws
 	x = 0
 	y = 1
+
+	prerequisite = { focus = AFU_abolish_censorship_laws }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_abolish_censorship_laws
-	prerequisite = { focus = AFU_abolish_censorship_laws }
 }
 
 shared_focus = {
 	id = AFU_for_the_people
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_For_the_People
 	cost = 2
+	
+	relative_position_id = AFU_open_trade_channels
 	x = 1
 	y = 1
+
+	prerequisite = { focus = AFU_open_trade_channels }
+	prerequisite = { focus = AFU_increase_veterans_payments }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_open_trade_channels
-	prerequisite = { focus = AFU_open_trade_channels }
-	prerequisite = { focus = AFU_increase_veterans_payments }
 }
 
 shared_focus = {
 	id = AFU_raise_the_living_standarts
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Raise_the_Living_Standarts
 	cost = 2
+
+	relative_position_id = AFU_for_the_people
 	x = 0
 	y = 1
+
+	prerequisite = { focus = AFU_for_the_people }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_for_the_people
-	prerequisite = { focus = AFU_for_the_people }
 }
 
 shared_focus = {
 	id = AFU_golf_the_best_entertainment
 	icon = GFX_generic_suspend_constitution
 	cost = 2
+
+	relative_position_id = AFU_raise_the_living_standarts
 	x = 1
 	y = 1
+
+	prerequisite = { focus = AFU_raise_the_living_standarts }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_for_the_people
-	prerequisite = { focus = AFU_for_the_people }
 }
 
 shared_focus = {
 	id = AFU_miners_paradise_on_earth
 	icon = GFX_generic_suspend_constitution
 	cost = 2
+
+	relative_position_id = AFU_raise_the_living_standarts
 	x = -1
 	y = 1
+
+	prerequisite = { focus = AFU_raise_the_living_standarts }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_for_the_people
-	prerequisite = { focus = AFU_for_the_people }
 }
 
 shared_focus = {
 	id = AFU_nation_of_hard_workers
 	icon = GFX_generic_suspend_constitution
 	cost = 2
+
+	relative_position_id = AFU_miners_paradise_on_earth
 	x = 1
 	y = 1
+
+	prerequisite = { focus = AFU_miners_paradise_on_earth }
+	prerequisite = { focus = AFU_golf_the_best_entertainment }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_miners_paradise_on_earth
-	prerequisite = { focus = AFU_miners_paradise_on_earth }
-	prerequisite = { focus = AFU_golf_the_best_entertainment }
 }
 
 ##############################################################################################
@@ -515,134 +582,164 @@ shared_focus = {
 
 shared_focus = {
 	id = AFU_pardon_ldpr_participants
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Pardon_LDPR_Participants
 	cost = 2
+
+	relative_position_id = AFU_deradicalization_of_society
 	x = 0
 	y = 1
+
+	prerequisite = { focus = AFU_deradicalization_of_society }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_deradicalization_of_society
-	prerequisite = { focus = AFU_deradicalization_of_society }
 }
 
 shared_focus = {
 	id = AFU_stop_the_ethnic_hatred
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Stop_the_Ethnic_Hatred
 	cost = 2
+
+	relative_position_id = AFU_pardon_ldpr_participants
 	x = 0
 	y = 1
+
+	prerequisite = { focus = AFU_pardon_ldpr_participants }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_pardon_ldpr_participants
-	prerequisite = { focus = AFU_pardon_ldpr_participants }
 }
 
 shared_focus = {
 	id = AFU_disband_totalitarian_system
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Disband_Totalitarian_System
 	cost = 2
+
+	relative_position_id = AFU_dismantle_kryvonos_legacy
 	x = 0
 	y = 1
+
+	prerequisite = { focus = AFU_dismantle_kryvonos_legacy }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_end_of_kryvonos_era
-	prerequisite = { focus = AFU_end_of_kryvonos_era }
 }
 
 shared_focus = {
 	id = AFU_raise_the_issue_of_generality
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Raise_the_Issue_of_Generality
 	cost = 2
+
+	relative_position_id = AFU_disband_totalitarian_system
 	x = 0
 	y = 1
+
+	prerequisite = { focus = AFU_disband_totalitarian_system }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_disband_totalitarian_system
-	prerequisite = { focus = AFU_disband_totalitarian_system }
 }
 
 shared_focus = {
 	id = AFU_for_the_nation
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_For_the_Nation
 	cost = 2
+
+	relative_position_id = AFU_raise_the_issue_of_generality
 	x = -1
 	y = 1
+
+	prerequisite = { focus = AFU_stop_the_ethnic_hatred }
+	prerequisite = { focus = AFU_raise_the_issue_of_generality }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_raise_the_issue_of_generality
-	prerequisite = { focus = AFU_stop_the_ethnic_hatred }
-	prerequisite = { focus = AFU_raise_the_issue_of_generality }
 }
 
 shared_focus = {
 	id = AFU_reform_the_territorial_system
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Reform_the_Territorial_System
 	cost = 2
+
+	relative_position_id = AFU_for_the_nation
 	x = -1
 	y = 1
+
+	prerequisite = { focus = AFU_for_the_nation }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_for_the_nation
-	prerequisite = { focus = AFU_for_the_nation }
 }
 
 shared_focus = {
-	id = AFU_presidental_republic_project
-	icon = GFX_generic_suspend_constitution
+	id = AFU_presidential_republic_project
+	icon = GFX_AFU_Presidential_Republic_Project
 	cost = 2
+
+	relative_position_id = AFU_reform_the_territorial_system
 	x = 0
 	y = 1
+
+	prerequisite = { focus = AFU_reform_the_territorial_system }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_reform_the_territorial_system
-	prerequisite = { focus = AFU_reform_the_territorial_system }
 }
 
 shared_focus = {
 	id = AFU_support_the_regional_minorities
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Support_the_Regional_Minorities
 	cost = 2
+
+	relative_position_id = AFU_for_the_nation
 	x = 1
 	y = 1
+
+	prerequisite = { focus = AFU_for_the_nation }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_for_the_nation
-	prerequisite = { focus = AFU_for_the_nation }
 }
 
 shared_focus = {
-	id = AFU_second_language_iniciative
-	icon = GFX_generic_suspend_constitution
+	id = AFU_second_language_initiative
+	icon = GFX_AFU_Second_Language_Initiative
 	cost = 2
+
+	relative_position_id = AFU_support_the_regional_minorities
 	x = 0
 	y = 1
+
+	prerequisite = { focus = AFU_support_the_regional_minorities }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_support_the_regional_minorities
-	prerequisite = { focus = AFU_support_the_regional_minorities }
 }
 
 shared_focus = {
 	id = AFU_decisive_referendums
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_AFU_Decisive_Referendums
 	cost = 2
+
+	relative_position_id = AFU_second_language_initiative
 	x = -1
 	y = 1
+
+	prerequisite = { focus = AFU_presidential_republic_project }
+	prerequisite = { focus = AFU_second_language_initiative }
+
 	completion_reward = {
 		###
 	}
-	relative_position_id = AFU_second_language_iniciative
-	prerequisite = { focus = AFU_presidental_republic_project }
-	prerequisite = { focus = AFU_second_language_iniciative }
 }
 
 ##############################################################################################
