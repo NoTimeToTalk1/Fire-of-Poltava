@@ -1,3 +1,48 @@
+russian_empire_political_decisions = {
+
+    RE_unlock_new_focuses_decision = {			
+
+		icon = GFX_decision_swords
+		
+		available = {
+		has_completed_focus = DPR_thereisno_ukraine
+		has_completed_focus = DPR_appeal_to_the_people
+		OR = {
+		has_completed_focus = DPR_peace_and_harmony_in_the_empire
+		has_completed_focus = DPR_unlimited_power
+		}
+		}
+		
+		modifier = {
+		political_power_gain = -0.9
+		}
+		
+        days_remove = 2		
+
+		visible = {
+		}		
+
+		cost = 10
+
+		remove_effect = {
+load_focus_tree = {
+    tree = DPR_strelkov_absolutist
+}		
+
+  		hidden_effect = {
+news_event = {
+    id = war.4
+    days = 1
+}		
+		}      	
+		}
+		ai_will_do = {	
+			factor = 100		
+		}
+   }
+
+}
+
 girkin_foreign_politics_decisions = {
 
     support_opz_decision = {			
@@ -2424,7 +2469,6 @@ girkin_kill_opposition_decisions = {
 
 		visible = {	
 		has_country_flag = DPR_pushilin_alive	
-		has_country_flag = girkin_kill_opposition_flag
 		}		
 
 		cost = 150
@@ -2455,7 +2499,6 @@ girkin_kill_opposition_decisions = {
 
 		visible = {	
 		has_country_flag = DPR_pasechnik_alive	
-		has_country_flag = girkin_kill_opposition_flag
 		}		
 
 		cost = 150
@@ -2488,7 +2531,6 @@ girkin_kill_opposition_decisions = {
 
 		visible = {	
 		has_country_flag = DPR_vitrenko_alive	
-		has_country_flag = girkin_kill_opposition_flag
 		}		
 
 		cost = 150
@@ -2519,7 +2561,7 @@ girkin_kill_opposition_decisions = {
 
 		visible = {	
 		has_country_flag = DPR_pushilin_alive
-		has_country_flag = dnr_better_call_push_flag
+		has_completed_focus = dnr_better_call_push		
 		}		
 
 		cost = 100
@@ -2552,131 +2594,6 @@ girkin_kill_opposition_decisions = {
   }
   
 DPR_rostislave_girkin_balance_decisions = {
-
-   mission_girkin_plan_church = {
-        activation = {
-           AND = {
-			has_completed_focus = DPR_we_are_part_of_civilised_world
-			}
-        }
-        available = {
-        always = no
-        }
-		icon = GFX_decision_dogovornyak_highimportance
-		is_good = no
-		days_mission_timeout = 60
-		fire_only_once = yes
-        complete_effect = {
-        
-        }
-        timeout_effect = {
-		custom_effect_tooltip = mission_girkin_plan_church_tt
-		set_war_support = 0
-				
-			hidden_effect = {
-			clr_country_flag = mission_girkin_plan_church_flag
-			}
-        }
-		
-		cancel_trigger = {
-        religious_building < 3
-        }
-    cancel_effect = {
-	custom_effect_tooltip = girkin_looser_church_tt
-    add_political_power = 50
-    }
-    }
-
-   mission_girkin_plan_ideology = {
-        activation = {
-           AND = {
-			has_completed_focus = DPR_decentralisation_is_what_we_need
-			}
-        }
-        available = {
-        always = no
-        }
-		icon = GFX_decision_dogovornyak_highimportance
-		is_good = no
-		days_mission_timeout = 60
-		fire_only_once = yes
-        complete_effect = {
-        
-        }
-        timeout_effect = {
-		custom_effect_tooltip = mission_girkin_plan_ideology_tt
-		set_political_power = -100		
-				
-			hidden_effect = {
-			clr_country_flag = mission_girkin_plan_ideology_flag
-			}
-        }
-		
-		cancel_trigger = {
-        has_country_flag = rostislav_uwu_1
-		has_country_flag = rostislav_uwu_2
-		has_country_flag = rostislav_uwu_3
-        }
-    cancel_effect = {
-	custom_effect_tooltip = girkin_looser_tt
-    add_political_power = 50
-    }
-    }
-
-   mission_girkin_plan_army = {
-        activation = {
-           AND = {
-			has_completed_focus = DPR_new_times_new_politics
-			}
-        }
-        available = {
-        always = no
-        }
-		icon = GFX_decision_dogovornyak_highimportance
-		is_good = no
-		days_mission_timeout = 30
-		fire_only_once = yes
-        complete_effect = {
-        
-        }
-        timeout_effect = {
-			custom_effect_tooltip = mission_girkin_plan_army_tt
-		
-		random_army_leader = { 
-		add_unit_leader_trait = Doubtfully_loyal_commander
-		}			
-		random_army_leader = { 
-		add_unit_leader_trait = Doubtfully_loyal_commander
-		}					
-		random_army_leader = { 
-		add_unit_leader_trait = Doubtfully_loyal_commander
-		}					
-		random_army_leader = { 
-		add_unit_leader_trait = Doubtfully_loyal_commander
-		}					
-		random_army_leader = { 
-		add_unit_leader_trait = Doubtfully_loyal_commander
-		}						
-		random_army_leader = { 
-		add_unit_leader_trait = Doubtfully_loyal_commander
-		}						
-		random_army_leader = { 
-		add_unit_leader_trait = Doubtfully_loyal_commander
-		}	
-				
-			hidden_effect = {
-			clr_country_flag = mission_girkin_plan_army_flag
-			}
-        }
-		
-		cancel_trigger = {
-        has_country_flag = girkin_army_inf_stop_flag
-        }
-    cancel_effect = {
-    add_political_power = 25
-	add_stability = 0.1
-    }
-    }
 
     tsars_television_speech = {			
 
@@ -2769,10 +2686,6 @@ power_balance_value = {
 		cost = 50
 
 		remove_effect = {
-			custom_effect_tooltip = girkin_army_inf_stop_tt
-			hidden_effect = {
-			set_country_flag = girkin_army_inf_stop_flag
-			}
 			retire_character = DPR_verin
 			retire_character = DPR_bezsonov
 			retire_character = DPR_gubarev
@@ -2843,9 +2756,6 @@ power_balance_value = {
 		cost = 50
 
 		remove_effect = {
-			hidden_effect = {
-			set_country_flag = rostislav_uwu_1
-			}
 			add_popularity = {
     ideology = liberal_democracy
     popularity = 0.1
@@ -2930,9 +2840,6 @@ power_balance_value = {
 		cost = 50
 
 		remove_effect = {
-			hidden_effect = {
-			set_country_flag = rostislav_uwu_2
-			}
 			add_popularity = {
     ideology = liberal_democracy
     popularity = 0.2
@@ -3013,9 +2920,6 @@ power_balance_value = {
 		cost = 50
 
 		remove_effect = {
-			hidden_effect = {
-			set_country_flag = rostislav_uwu_3
-			}
 			add_popularity = {
     ideology = liberal_democracy
     popularity = 0.2

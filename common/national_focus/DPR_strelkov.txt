@@ -185,10 +185,7 @@ shared_focus = {
 		focus = DPR_liberalisetheconstitution
 	}
 	completion_reward = {
-		country_event = {
-			id = dpr.904 #PLACEHOLDER
-			days = 1
-		}
+		add_stability = -0.2
 	}
 }
 
@@ -234,7 +231,7 @@ available = {
 	}
 	completion_reward = {
 		country_event = {
-			id = dpr.905 #PLACEHOLDER
+			id = gir.905 #PLACEHOLDER
 			days = 1
 		}
 		###GUI FOR DEMILITARIZATION OF REGIONS(WHAT???)
@@ -261,6 +258,10 @@ shared_focus = {
 	add_stability = -0.1
 	army_experience = 10
 		country_event = { id = gir.24 days = 2 }
+		add_popularity = {
+			ideology = radical_nationalism
+			popularity = 0.05
+		}
 	}
 }
 
@@ -277,6 +278,10 @@ shared_focus = {
 	}
 	completion_reward = {
 		recruit_character = DNR_pisya
+		add_popularity = {
+			ideology = radical_nationalism
+			popularity = 0.05
+		}
 	}
 }
 
@@ -579,21 +584,7 @@ shared_focus = {
 		focus = DPR_rematch_of_1917th
 	}
 	completion_reward = {
-random_owned_state = {
-add_building_construction = {
-    type = recruiting_center
-    level = 1
-    instant_build = yes
-}  
-}
-random_owned_state = {
-add_building_construction = {
-    type = recruiting_center
-    level = 1
-    instant_build = yes
-}  
-}
-		add_ideas = DPR_promoting_othodoxy
+		add_ideas = DPR_promotingorthodox
 		country_event = { id = gir.30 days = 2 }
 	}
 }
@@ -613,22 +604,8 @@ shared_focus = {
 	country_event = { id = gir.37 days = 7 }
 	}
 	completion_reward = {
-random_owned_state = {
-add_building_construction = {
-    type = recruiting_center
-    level = 1
-    instant_build = yes
-}  
-}
-random_owned_state = {
-add_building_construction = {
-    type = recruiting_center
-    level = 1
-    instant_build = yes
-}  
-}
 		swap_ideas = {
-			remove_idea = DPR_promoting_othodoxy
+			remove_idea = DPR_promotingorthodox
 			add_idea = DPR_russianchurch
 		}
 		country_event = { id = gir.30 days = 2 }
@@ -651,11 +628,6 @@ shared_focus = {
 			remove_idea = DPR_newfriends2
 			add_idea = DPR_monarchicalcoalition1
 		}
-recruit_character = DNR_Kulibin		
-recruit_character = DNR_Sorokin	
-recruit_character = DNR_Voronin		
-recruit_character = DNR_Bazanov	
-		
 	}
 }
 
@@ -874,6 +846,7 @@ shared_focus = {
 	y = 1
 	cost = 3
 	completion_reward = {
+	custom_effect_tooltip = DPR_start_the_debate_tt
 		country_event = {
 			id = gir.36 
 			days = 1
@@ -909,10 +882,6 @@ shared_focus = {
 			id = gir.66 
 			days = 1
 		}
-		#swap_ideas = { ### ADD THIS TO EVENT CONSTITUTIONAL PATH INSTEAD OF FOCUS
-		#	remove_idea = DPR_generalplan5
-		#	add_idea = DPR_generalplan6
-		#}
 		swap_ideas = {
 			remove_idea = DPR_ourlegacy
 			add_idea = DPR_empirestrikesback
@@ -958,6 +927,13 @@ set_politics = {
 			id = gir.40 --- івент про коронацію Ростіслава Романова імператором всеросійським
 			days = 1
 		}
+		
+	hidden_effect = {
+		country_event = {
+			id = gir.85 #YANUKOVICH
+			days = 10
+		}	
+	}
 	}
 }
 
@@ -1621,7 +1597,6 @@ set_portraits = {
         traits = { right_hand_of_the_tsar }
     }
 }
-		### just pp
 remove_power_balance = {
     id = DPR_rostislave_girkin_political_balance
 }
@@ -1797,7 +1772,6 @@ shared_focus = {
 		focus = DPR_followingindenikinsfootsteps
 	}
 	completion_reward = {
-		###SPAWN 2 ELITE WHITE DIVISIONS
 	DNR_girkin = {
 swap_country_leader_traits = { remove = new_denikin_1 add = new_denikin_2 ideology = conservative_democracy }
 	}
@@ -1823,10 +1797,6 @@ add_trait = {
     trait = great_repressor
 }
 	}
-		country_event = {
-			id = dpr.918 #PLACEHOLDER --- івент про розстріл антиокупаційної демонстрації вкраїнчиків у Львові/Києві (на вибір) гіркінськими військами
-			days = 1
-		}
 	}
 }
 
@@ -1941,6 +1911,12 @@ set_politics = {
 			id = gir.6 #PLACEHOLDER --- івент про напружені відносини Марії та її сина Григорія (син не лояльний владі матері та хотів сам стати імператором, але перевагу надали їй. Тож він хоче більше влади, бабла, та повноважень)
 			days = 3
 		}
+	hidden_effect = {
+		country_event = {
+			id = gir.85 #YANUKOVICH
+			days = 10
+		}	
+	}
 	}
 }
 
@@ -1956,6 +1932,15 @@ shared_focus = {
 		focus = DPR_andrestorehistoricaljustice
 	}
 	completion_reward = {
+	add_political_power = 25
+	add_manpower = -100
+	army_experience = -10
+	retire_character = DNR_borodai
+	retire_character = DNR_chemeris
+	retire_character = DNR_dus
+	random_army_leader = { 
+	retire = yes
+	}
 		###REMOVES DISLOYAL TO MARIA MINISTERS
 	}
 }
@@ -1972,6 +1957,34 @@ shared_focus = {
 		focus = DPR_loyalty_check
 	}
 	completion_reward = {
+set_party_name = {
+    ideology = conservative_democracy
+    long_name = "Vse-Rossiyskaya Imperskaya Partiya"
+    name = "All-Russian Imperial Party - Loyalists"
+}
+hidden_effect = {
+set_party_name = {
+    ideology = liberal_democracy
+    long_name = "Vse-Rossiyskaya Imperskaya Partiya"
+    name = "All-Russian Imperial Party - Kadets"
+}
+set_party_name = {
+    ideology = radical_nationalism
+    long_name = "Vse-Rossiyskaya Imperskaya Partiya"
+    name = "All-Russian Imperial Party - Chernosotentsy"
+}
+set_party_name = {
+    ideology = oligarchy
+    long_name = "Vse-Rossiyskaya Imperskaya Partiya"
+    name = "All-Russian Imperial Party - Industrialisty"
+}
+set_party_name = {
+    ideology = centrism
+    long_name = "Vse-Rossiyskaya Imperskaya Partiya"
+    name = "All-Russian Imperial Party - Umerennye"
+}
+}
+	add_stability = 0.1
 		country_event = {
 			id = gir.71 #PLACEHOLDER --- івент про промову Машки адресованої всьому світові що рашн емпайр іс соу бек (вони хочуть все відвоювати, але це прямо не згадуйте:PrideandFallreference:)
 			days = 1
@@ -1991,6 +2004,8 @@ shared_focus = {
 		focus = DPR_andrestorehistoricaljustice
 	}
 	completion_reward = {
+	activate_advisor = DNR_fedorov
+	activate_advisor = DNR_bakov
 		###ADD LOYAL MARIA MINISTERS :3
 		add_popularity = {
 			ideology = authoritarianism
@@ -2031,6 +2046,10 @@ shared_focus = {
 		focus = DPR_andrestorehistoricaljustice
 	}
 	completion_reward = {
+	DNR_girkin = {
+	gain_xp = -100
+    demote_leader = yes	
+	}
 		country_event = { # --- REMOVES GIRKIN AS GENERAL
 			id = gir.47 #PLACEHOLDER --- івент про те як гіркіна попускає Машка і він стає звичайним генералом (життя лайно і в нього депресія)
 			days = 1
@@ -2055,6 +2074,8 @@ shared_focus = {
 	}
 	completion_reward = {
 		###REMOVE GIRKIN GENERALS
+		retire_character = DNR_Volkov
+		retire_character = DNR_ivanov
 		country_event = { # --- REMOVES MANPOWER BTW
 			id = gir.43 #PLACEHOLDER --- івент про штурм головної резиденції ровс спецназом, заборону організації та ліквідацію Іванова з прибічниками (мочать його в офісі)
 			days = 1
@@ -2166,6 +2187,17 @@ shared_focus = {
 		focus = DPR_fair_distribution_of_power
 	}
 	completion_reward = {
+	activate_advisor = DNR_kelin
+	DNR_kozytsin = {
+	promote_leader = yes
+	add_unit_leader_trait = war_hero
+	add_unit_leader_trait = media_personality
+	}
+	DNR_mozhaev = {
+	promote_leader = yes
+	add_unit_leader_trait = war_hero
+	add_unit_leader_trait = media_personality
+	}
 		###NEW COSSACK ADVISORS
 		###ALSO ADD SOME COSSACK DIVISIONS
 	}
@@ -2183,6 +2215,9 @@ shared_focus = {
 		focus = DPR_united_in_blood_and_purpose
 	}
 	completion_reward = {
+	DNR_maria = {
+	add_country_leader_trait = modern_ekaterina1
+	}
 		country_event = {
 			id = gir.58 #PLACEHOLDER --- івент про відновлення соціальних станів періодну імперії (основні сословія - шляхта, церква, козаки)
 			days = 1
@@ -2202,6 +2237,12 @@ shared_focus = {
 		focus = DPR_fair_distribution_of_power
 	}
 	completion_reward = {
+	DNR_maria = {
+swap_country_leader_traits = {
+    remove = modern_ekaterina1
+    add = modern_ekaterina2
+}
+	}
 		add_popularity = {
 			ideology = traditionalism
 			popularity = 0.2
@@ -2270,6 +2311,9 @@ power_balance_value = {
 	}
 	completion_reward = {
 		###I am fucking dying please save me
+	DNR_george = {
+	add_country_leader_trait = Mad_monarch1
+	}
 	retire_character = DNR_maria
 	recruit_character = DNR_george
 	promote_character = DNR_george
@@ -2291,6 +2335,12 @@ shared_focus = {
 		focus = DPR_sorryma
 	}
 	completion_reward = {
+	DNR_george = {
+swap_country_leader_traits = {
+    remove = Mad_monarch1
+    add = Mad_monarch2
+}
+	}
 		add_ideas = DPR_badconsequences
 	}
 }
@@ -2328,11 +2378,14 @@ shared_focus = {
 		focus = DPR_witch_hunt
 	}
 	completion_reward = {
+	DNR_george = {
+remove_country_leader_trait = Mad_monarch2
+	}
 		country_event = {
-			id = dpr.930 #PLACEHOLDER --- івент про полювання на про-мамкінських поців в уряді силами Георгія
+			id = gir.80 #PLACEHOLDER --- івент про полювання на про-мамкінських поців в уряді силами Георгія
 			days = 1
 		}
-		#remove_ideas = DPR_badconsequences --- ADD THIS TO EVENT INSTEAD
+		remove_ideas = DPR_badconsequences
 	}
 }
 
@@ -2350,6 +2403,8 @@ shared_focus = {
 	completion_reward = {
 		###LAWS LAWS MORE LAWS
 		add_ideas = DPR_absolutepower1
+		add_ideas = fop_press_freedom_censored
+		add_ideas = fop_security_totalitarian_police
 	}
 }
 
@@ -2385,6 +2440,10 @@ shared_focus = {
 		focus = DPR_no_one_is_above_the_tsar
 	}
 	completion_reward = {
+		country_event = { # REMOVES COSSACK GENERALS
+			id = gir.81
+			days = 1
+		}
 		### ADDS LEADER TRAIT(idk about the name yet)
 		swap_ideas = {
 			remove_idea = DPR_absolutepower2
@@ -2404,6 +2463,10 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_sorryma
 	}
+	random_army_leader = { gain_xp = -100 }
+	random_army_leader = { gain_xp = -100 }
+	random_army_leader = { gain_xp = -100 }
+	random_army_leader = { gain_xp = -100 }
 	completion_reward = {
 		army_experience = -50
 	}
@@ -2421,8 +2484,11 @@ shared_focus = {
 		focus = DPR_destroy_the_remnants_of_the_past
 	}
 	completion_reward = {
+	retire_character = DNR_kozytsin
+	retire_character = DNR_kelin
+	retire_character = DNR_mozhaev
 		country_event = { # REMOVES COSSACK GENERALS
-			id = dpr.931 #PLACEHOLDER --- івент про геноцид козацьких полків та генералітету
+			id = gir.61 --- івент про геноцид козацьких полків та генералітету
 			days = 1
 		}
 	}
@@ -2440,6 +2506,8 @@ shared_focus = {
 		focus = DPR_end_the_cossacks
 	}
 	completion_reward = {
+	army_experience = 10
+
 		###ADDS LAW NO PROFESIONALISM LMAO
 	}
 }
@@ -2466,7 +2534,7 @@ shared_focus = {
 		add_stability = 0.1
 		add_war_support = 0.1
 		country_event = {
-			id = dpr.932 #PLACEHOLDER
+			id = gir.89
 			days = 1
 		}
 		swap_ideas = {
@@ -2517,7 +2585,21 @@ shared_focus = {
 		focus = DPR_reform_the_little_russian_gubernia
 	}
 	completion_reward = {
-		###ADD DECISIONS TO LOWER RESISTANCE
+		country_event = {
+			id = gir.63
+			days = 1
+		}
+	add_political_power = 10
+	add_manpower = -5000
+	add_war_support = 0.1
+	add_stability = -0.2
+		every_state = {
+			limit = {
+				is_controlled_by = ROOT
+				has_resistance = yes
+			}
+		add_resistance = -20
+		}
 	}
 }
 
@@ -2538,7 +2620,7 @@ shared_focus = {
 			days = 180
 		}
 		country_event = {
-			id = dpr.933 #PLACEHOLDER --- івент про заперечення укр ідентичності (брошура якась)
+			id = gir.87
 			days = 1
 		}
 	}
@@ -2556,6 +2638,34 @@ shared_focus = {
 		focus = DPR_reform_the_little_russian_gubernia
 	}
 	completion_reward = {
+random_core_state = {
+    add_building_construction = {
+    type = situation_centre
+    level = 1
+    instant_build = yes
+}
+}
+random_core_state = {
+    add_building_construction = {
+    type = boot_camp
+    level = 1
+    instant_build = yes
+}
+}
+random_core_state = {
+    add_building_construction = {
+    type = recruiting_center
+    level = 1
+    instant_build = yes
+}
+}
+random_core_state = {
+    add_building_construction = {
+    type = labour_camp
+    level = 1
+    instant_build = yes
+}
+}
 		###BUILDS BUNKERS ON BORDER WITH RUSSIA
 	}
 }
@@ -2573,7 +2683,7 @@ shared_focus = {
 	}
 	completion_reward = {
 		country_event = {
-			id = dpr.934 #PLACEHOLDER --- івент про промову монарха (окремі версії для марії та георгія) до населення рашки (заклик визнати лише їх як своїх правителів та допомогти їм знищити путіна з рештою)
+			id = gir.86 --- івент про промову монарха до населення рашки (заклик визнати лише їх як своїх правителів та допомогти їм знищити путіна з рештою)
 			days = 1
 		}
 	}
@@ -2701,7 +2811,7 @@ NOT = {
 is_core_of = ROOT
 }
 }
-		add_compliance = 5
+		add_compliance = 10
 		}
 	}
 }
@@ -2718,6 +2828,14 @@ shared_focus = {
 		focus = DPR_blessed_triumph
 	}
 	completion_reward = {
+		every_controlled_state = {
+limit = {
+NOT = {
+is_core_of = ROOT
+}
+}		
+		add_compliance = 10
+		}
 if = {
 limit = {
 has_country_leader = {
@@ -2757,8 +2875,16 @@ shared_focus = {
 		focus = DPR_crowingasitbelongs
 	}
 	completion_reward = {
+		every_controlled_state = {
+limit = {
+NOT = {
+is_core_of = ROOT
+}
+}		
+		add_compliance = 5
+		}
 		country_event = { # ADDS DECISION TO DEAL WITH RESISTANCE
-			id = dpr.939 #PLACEHOLDER --- івент про активність анти-монархічних рухів
+			id = gir.88
 			days = 1
 		}
 	}

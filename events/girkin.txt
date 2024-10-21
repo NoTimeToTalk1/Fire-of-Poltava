@@ -1145,7 +1145,11 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = gir.76.a
-
+declare_war_on = {
+    target = EUN
+    type = annex_everything
+}
+	}
 	}
 }
 
@@ -1315,5 +1319,117 @@ every_character = {
             }
 }		
 
+	}
+}
+
+#yANUKOVICH RETURN
+country_event = {
+	id = gir.85
+	title = gir.85.t
+	desc = gir.85.d
+
+	picture = GFX_event_yanukovich
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = gir.85.a  #refuse
+			trigger = {	
+			
+			radical_nationalism > 0.8
+			
+			}
+	}
+	option = {
+		name = gir.85.b  #agree
+		
+every_possible_country = {
+
+    limit = { has_character = DNR_yanik }
+	
+    random_character = {
+	
+        limit = { is_character = DNR_yanik }
+		
+        set_nationality = DPR
+		
+    }
+}
+			trigger = {	
+			
+			radical_nationalism < 0.8
+			
+			}
+	activate_advisor = DNR_yanik
+	hidden_effect = {
+	set_country_flag = Yanik_returned
+	}
+	}
+}
+
+#appeal
+country_event = {
+	id = gir.86
+	title = gir.86.t
+	desc = gir.86.d
+
+	picture = GFX_event_girkin_30
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = gir.86.a
+	RUS = {
+	add_stability = -0.1
+	add_war_support = -0.1
+	}
+	}
+}
+
+
+#no ukr
+country_event = {
+	id = gir.87
+	title = gir.87.t
+	desc = gir.87.d
+
+	picture = GFX_event_girkin_35
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = gir.87.a
+	add_stability = -0.1
+	add_war_support = -0.1
+	}
+}
+
+#Declaration of Emergency in the Empire.
+country_event = {
+	id = gir.88
+	title = gir.88.t
+	desc = gir.88.d
+
+	picture = GFX_event_girkin_33
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = gir.88.a
+	add_stability = -0.1
+	add_war_support = -0.1
+	}
+}
+
+#george mad
+country_event = {
+	id = gir.89
+	title = gir.89.t
+	desc = gir.89.d
+
+	picture = GFX_event_girkin_31
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = gir.89.a
+	add_political_power = 20
+	add_stability = -0.1
+	add_war_support = -0.1
 	}
 }
