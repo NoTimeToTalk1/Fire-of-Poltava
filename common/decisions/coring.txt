@@ -21,7 +21,6 @@ coring = {
 		fire_only_once = yes
 		days_remove = 5
 		modifier = {
-			political_power_factor = -0.1
 			compliance_growth = 0.5
 		}
 		visible = {
@@ -58,11 +57,9 @@ coring = {
 				}
 			}
 		}
-		cost = 20
 		fire_only_once = yes
 		days_remove = 30
 		modifier = {
-			political_power_factor = -0.1
 			compliance_growth = 0.2
 			state_resources_factor = 0.2
 		}
@@ -71,6 +68,10 @@ coring = {
 				#  has_state_flag = core.1
 			# }
 		}
+		custom_cost_text = decision_cost_CP_5
+        complete_effect = {
+            add_command_power = -5
+        }
 		remove_effect = {
 			FROM = {
 				clr_state_flag = core.1
@@ -97,11 +98,11 @@ coring = {
 				}
 			}
 		}
-		cost = 30
+		cost = 20
 		fire_only_once = yes
 		days_remove = 30
 		modifier = {
-			political_power_factor = -0.15
+			political_power_factor = -0.05
 			compliance_growth = 0.5
 			state_resources_factor = 0.2
 		}
@@ -141,11 +142,10 @@ coring = {
 				}
 			}
 		}
-		cost = 100
+		cost = 20
 		fire_only_once = yes
 		days_remove = 50
 		modifier = {
-			political_power_factor = -0.2
 			compliance_growth = 0.05
 			weekly_manpower = -2500
 		}
@@ -187,7 +187,6 @@ coring = {
 		fire_only_once = no
 		days_remove = 10
 		modifier = {
-			political_power_factor = -0.2
 			compliance_growth = 0.5
 		}
 		visible = {
@@ -200,7 +199,7 @@ coring = {
 		}
 		remove_effect = {
 			FROM = {
-				add_compliance = 2.5
+				add_compliance = 4
 			}
 		}
 	}
