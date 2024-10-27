@@ -9,9 +9,7 @@ azov_rdk = {
 		}
 		
 		available = {
-			AND = {
-						
-			}	   
+			check_variable = {AFU.AFU_rdk_eq > 2}   
 		}
 		
 		fire_only_once = yes
@@ -43,21 +41,20 @@ azov_rdk = {
 				
 		}
 		
-		cost = 50
+		cost = 25
 
 		
-		days_remove = 180
+		days_remove = 30
 
 		complete_effect = {
-			add_to_variable = {
-				var = AFU_rdk
-				value = 50
-				tooltip = AFU_rdk_tt
-			}
 		}
 
 		remove_effect  = {
-		
+			add_to_variable = {
+				var = AFU_rdk
+				value = 100
+				tooltip = AFU_rdk_1_tt
+			}
 		}
 	}
 	
@@ -71,33 +68,60 @@ azov_rdk = {
 		
 		available = {
        check_variable = {
-       AFU_rdk_media > 3
+       AFU.rdk_media > 1
        }
 			
 		}
 
-		visible = {
-			
-       check_variable = {
-       AFU_rdk_media > 3
-       }
+		visible = {	
+       		check_variable = {
+       			AFU.rdk_media > 1
+       		}
 		}
 		
 		cost = 50
-
 		
-		days_remove = 180
-
-complete_effect = {
-			add_to_variable = {
-				var = AFU_rdk
-				value = 100
-				tooltip = AFU_rdk_tt
-			}
-}
+		days_remove = 60
 
 		remove_effect  = {
+			add_to_variable = {
+				var = AFU_rdk
+				value = 300
+				tooltip = AFU_rdk_2_tt
+			}
+		}
+	}
+
+	AFU_rdk_media_decision = {
+		icon = GFX_decision_rdk
 		
+		ai_will_do = {	
+			factor = 50	
+		}
+
+		available = {
+
+		}
+
+		visible = {
+			check_variable = {AFU.rdk_media < 3}
+		}
+
+		cost = 30
+
+		days_remove = 90
+
+		remove_effect  = {
+			add_to_variable = {
+				var = AFU_rdk_media
+				value = 1
+				tooltip = AFU_rdk_media_tt
+			}
+			clamp_variable = {
+				var = AFU_rdk_media
+				min = 0
+				max = 3
+			}
 		}
 	}
 	
@@ -120,7 +144,7 @@ complete_effect = {
 		cost = 50
 
 		
-		days_remove = 180
+		days_remove = 120
 
 complete_effect = {
 			add_to_variable = {
@@ -193,7 +217,7 @@ complete_effect = {
 		cost = 100
 
 		
-		days_remove = 60
+		days_remove = 240
 
 
 complete_effect = {
@@ -205,19 +229,19 @@ random_list = {
  60 = {
 RUS = {
 add_stability = -0.01
-add_manpower = -10
+add_manpower = -50
 }
  }
  30 = {
 RUS = {
 add_stability = -0.03
-add_manpower = -25
+add_manpower = -100
 }
 }
  10 = {
 RUS = {
 add_stability = -0.05
-add_manpower = -30
+add_manpower = -150
 }
 }
 		}
@@ -259,9 +283,6 @@ random_list = {
 				value = 10
 				tooltip = AFU_rdk_tt
 			}
-RUS = {
-add_manpower = -10
-}
  }
  30 = {
 			add_to_variable = {
@@ -269,9 +290,6 @@ add_manpower = -10
 				value = 25
 				tooltip = AFU_rdk_tt
 			}
-RUS = {
-add_manpower = -25
-}
 }
  10 = {
 			add_to_variable = {
@@ -279,9 +297,6 @@ add_manpower = -25
 				value = 30
 				tooltip = AFU_rdk_tt
 			}
-RUS = {
-add_manpower = -30
-}
 }
 		}
 	}

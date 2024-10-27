@@ -42,4 +42,42 @@ set_state_flag = RDK_liberated
 }
 		}
 	}
+	RDK_propaganda = {
+		icon = GFX_decision_generic_decision
+		
+				ai_will_do = {	
+			factor = 20		
+		}
+		
+		available = {
+			tag = RDK
+			any_controlled_state = { 
+				is_fully_controlled_by = RDK
+			}
+		}
+
+		cost = 10
+		
+		days_remove = 20
+
+		remove_effect  = {
+			random_controlled_state = {
+				limit = {
+					is_fully_controlled_by = RDK
+				}
+				if = {
+					limit = {
+						check_variable = {AFU.rdk_media < 3}
+					}
+					add_compliance = 5
+				}
+				else_if = {
+					limit = {
+						check_variable = {AFU.rdk_media > 2}
+					}
+					add_compliance = 10
+				}
+			}	
+		}
+	}
 }

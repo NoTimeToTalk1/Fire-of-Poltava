@@ -5142,7 +5142,6 @@ unite_ukraine = {
 			if = {
 				limit = {
 						original_tag = KHA
-						has_government = centrism
 				}
 				set_cosmetic_tag = KHA_united_ukraine
 				add_political_power = 50
@@ -5249,6 +5248,77 @@ unite_ukraine = {
 			base = 10		
 		}
 	}
+
+	deal_with_plt = {
+        allowed = {
+            original_tag = AFU
+        }
+
+        visible = {
+            PLT = {
+				exists = yes
+                has_country_flag = united_right_bank
+                has_country_leader = {
+                    character = PLT_abil
+                }
+            }
+            AFU = {
+                has_country_flag = united_left_bank
+                has_country_leader = {
+                    character = AFU_zhorin
+                }
+            }
+        }
+
+        ai_will_do = {
+            base = 100
+        }
+
+        cost = 0
+        fire_only_once = yes
+
+        complete_effect = {
+            country_event = { id = azov.17 }
+        }
+    }
+
+	deal_with_ter = {
+
+        allowed = {
+            original_tag = TER
+        }
+
+        visible = {
+            TER = {
+				exists = yes
+                has_country_flag = united_right_bank
+            }
+            AFU = {
+                has_country_flag = united_left_bank
+                has_country_leader = {
+                    character = AFU_zhorin
+                }
+				OR = {
+					has_idea = AFU_azov_paganisation_1
+					has_idea = AFU_azov_paganisation_2
+					has_idea = AFU_azov_paganisation_3
+				}
+            }
+        }
+
+        ai_will_do = {
+            base = 100
+        }
+
+        cost = 0
+        fire_only_once = yes
+
+        complete_effect = {
+            country_event = { id = azov.18 }
+        }
+    }
+
+}
 
 	prepare_dogovornyak_ukraine = {
 		visible = {
