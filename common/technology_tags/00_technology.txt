@@ -2,19 +2,50 @@
 # If adding new technology, make sure they are uniquely named.
 
 technology_categories = {
-    capellans_tech
-	light_air
-	medium_air
-	heavy_air
+	###Infantry
+	infantry_weapons
+	support_weapons
+	infantry_anti_tank
+	infantry_anti_air
+	night_vision
+	infantry_uniform
+	infantry_CnC
+	infantry_drones
+	
+	###Support
+	support_tech
+	engineers_tech
+	recon_tech
+	military_police_tech
+	maintenance_company_tech
+	hospital_tech
+	logistics_tech
+	signal_company_tech
+	
+	###Armor
 	armor
+	UV
+	AC
+	AFV
+	IFV
+	APC
+	MBT
+	
+	###Artillery
+	artillery
+	mortar
+	howitzer
+	anti_air
+	rocket_artillery
+
+
+	mountaineers_tech
 	cat_light_armor
 	cat_medium_armor
 	cat_heavy_armor
-	artillery
 	cat_anti_tank
 	cat_anti_air
 	naval_air
-	infantry_weapons
 	motorized_equipment
 	cat_mechanized_equipment
 	naval_equipment
@@ -47,10 +78,24 @@ technology_categories = {
 	shbb_tech
 	ss_tech
 	tp_tech
+	
+	###Air
+	light_air
+	medium_air
+	heavy_air
+	air_equipment
+	plane_modules_tech
+	cat_air_guns
+	cat_air_engine
+	cat_air_bombs
+	
+	
+	
+	
+	
+	
 	synth_resources
 	fleet_in_being_tree
-	encryption_tech
-	decryption_tech
 	computing_tech
 	radar_tech
 	infantry_tech
@@ -69,26 +114,26 @@ technology_categories = {
 	cat_strategic_destruction
 	cat_battlefield_support
 	cat_operational_integrity
-	night_vision
 	base_strike_main
 	mot_rockets
-	support_tech
-	drones
 	para_tech
-	engineers_tech
-	recon_tech
-	mountaineers_tech
-	military_police_tech
-	hospital_tech
-	logistics_tech
-	signal_company_tech
-	maintenance_company_tech
 	naval_mines
 	concentrated_industry_category
 	dispersed_industry_category
 	asw_tech
+	
+	
+	###Naval
 	naval_minesweeping
 	naval_minelaying
+	
+	
+	
+	
+	
+	
+	
+	
 	cat_scout_plane
 	train_tech
 	cat_production
@@ -100,17 +145,25 @@ technology_categories = {
 	cat_ship_light_battery
 	cat_ship_medium_battery
 	cat_ship_heavy_battery
-	air_equipment
-	plane_modules_tech
-	cat_air_guns
-	cat_air_engine
-	cat_air_bombs
 	special_forces_doctrine
 	cat_maritime_patrol
 	cat_mountaineers_doctrine
 	cat_marines_doctrine
 	cat_paratroopers_doctrine
-
+	###Industry + Electronics
+	encryption_tech
+	decryption_tech
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	mio_cat_tech_all_armor_and_modules #Includes modules and chassis (DOES NOT INCLUDE ARMORED CARS)
 	mio_cat_tech_light_armor_and_modules #Includes modules and stand-alone Amphibious Chassis
 	mio_cat_tech_medium_armor_and_modules #Includes modules and Modern Tank
 	mio_cat_tech_heavy_armor_and_modules #Includes modules and Super-Heavy Tank
@@ -127,6 +180,7 @@ technology_categories = {
 	mio_cat_tech_all_carrier_and_modules #Includes CV and all related modules
 	mio_cat_tech_all_cruiser_and_modules #Includes all CA (+ Coastal etc.), CL (Torpedo Cruiser) and all related modules
 	mio_cat_tech_all_destroyer_and_modules #Includes all DD and all related modules
+	mio_cat_tech_all_motorized_mechanized #Includes all Motorized (incl. Motorized Rocket Artillery) and Mechanized Equipment. (DOES NOT INCLUDE ARMORED CARS)
 }
 
 technology_folders = {
@@ -134,6 +188,9 @@ technology_folders = {
 		ledger = army
 	}
 	support_folder = {
+		ledger = army
+	}
+	artillery_folder = {
 		ledger = army
 	}
 	armour_folder = {
@@ -149,9 +206,6 @@ technology_folders = {
 		available = {
 			has_dlc = "No Step Back"
 		}
-	}
-	artillery_folder = {
-		ledger = army
 	}
 	air_techs_folder = {
 		available = { NOT = { has_dlc = "By Blood Alone" } }
