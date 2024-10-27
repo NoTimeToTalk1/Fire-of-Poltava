@@ -4339,7 +4339,7 @@ unite_left_bank_ukraine = {
         icon = generic_decision
 
 		available = {
-			date > 2024.01.01
+			date > 2027.01.01
 		}
 
 		visible = {
@@ -4359,7 +4359,7 @@ unite_left_bank_ukraine = {
 					country_exists = ESN
 				}
 			}
-			date > 2024.01.01
+			#date > 2027.01.01
 		}
 		
 		cost = 50
@@ -4377,6 +4377,17 @@ unite_left_bank_ukraine = {
 					limit = {
 						tag = ESN
 					}
+					every_country = {
+						limit = {
+							is_southern_ukraine = yes
+						}
+						ESN = {
+							declare_war_on = {
+								target = PREV
+								type = annex_everything
+							}
+						}
+					}
 					ESN = {
 						declare_war_on = {
 							target = SWT
@@ -4392,7 +4403,18 @@ unite_left_bank_ukraine = {
 					limit = {
 						tag = STH
 					}
-					PDL = {
+					every_country = {
+						limit = {
+							is_eastern_ukraine = yes
+						}
+						STH = {
+							declare_war_on = {
+								target = PREV
+								type = annex_everything
+							}
+						}
+					}
+					STH = {
 						declare_war_on = {
 							target = DNI
 							type = annex_everything
@@ -4870,7 +4892,7 @@ unite_right_bank_ukraine = {
         icon = generic_decision
 
 		available = {
-			date > 2024.01.01
+			date > 2027.01.01
 		}
 
 		visible = {
@@ -4890,7 +4912,7 @@ unite_right_bank_ukraine = {
 					country_exists = CNT
 				}
 			}
-			date > 2024.01.01
+			#date > 2027.01.01
 		}
 		
 		cost = 50
@@ -4908,6 +4930,17 @@ unite_right_bank_ukraine = {
 					limit = {
 						tag = CNT
 					}
+					every_country = {
+						limit = {
+							is_western_ukraine = yes
+						}
+						CNT = {
+							declare_war_on = {
+								target = PREV
+								type = annex_everything
+							}
+						}
+					}
 					CNT = {
 						declare_war_on = {
 							target = GLY
@@ -4922,6 +4955,17 @@ unite_right_bank_ukraine = {
 				if = {
 					limit = {
 						tag = WST
+					}
+					every_country = {
+						limit = {
+							is_central_ukraine = yes
+						}
+						WST = {
+							declare_war_on = {
+								target = PREV
+								type = annex_everything
+							}
+						}
 					}
 					WST = {
 						declare_war_on = {
@@ -5318,8 +5362,6 @@ unite_ukraine = {
         }
     }
 
-}
-
 	prepare_dogovornyak_ukraine = {
 		visible = {
                	LBU = {
@@ -5626,7 +5668,7 @@ unite_ukraine = {
         icon = generic_decision
 
 		available = {
-			date > 2024.01.01
+			date > 2030.01.01
 		}
 
 		visible = {
@@ -5646,7 +5688,7 @@ unite_ukraine = {
 					country_exists = RBU
 				}
 			}
-			date > 2024.01.01
+			#date > 2030.01.01
 		}
 		
 		cost = 50
@@ -5664,6 +5706,17 @@ unite_ukraine = {
 					limit = {
 						tag = RBU
 					}
+					every_country = {
+						limit = {
+							is_left_bank_ukraine = yes
+						}
+						RBU = {
+							declare_war_on = {
+								target = PREV
+								type = annex_everything
+							}
+						}
+					}
 					RBU = {
 						declare_war_on = {
 							target = ESN
@@ -5679,6 +5732,17 @@ unite_ukraine = {
 					limit = {
 						tag = LBU
 					}
+					every_country = {
+						limit = {
+							is_right_bank_ukraine = yes
+						}
+						RBU = {
+							declare_war_on = {
+								target = PREV
+								type = annex_everything
+							}
+						}
+					}
 					LBU = {
 						declare_war_on = {
 							target = CNT
@@ -5693,305 +5757,4 @@ unite_ukraine = {
 			}
 		}
     }
-}
-
-regional_development = {
-	invest_in_military = {
-		available = {
-			num_of_available_civilian_factories > 3
-			has_stability > 0.1
-		}
-		
-		days_remove = 30
-		modifier = {
-			civilian_factory_use = 3
-		}
-		remove_effect = {
-			random_owned_state = {
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-	resistance_crackdown = {
-		available = {
-			
-		}
-		visible = {
-			any_owned_state = {
-				has_resistance = yes
-			}
-		}
-		cost = 30
-		days_remove = 20
-		remove_effect = {
-			random_owned_state = {
-				limit = {
-					has_resistance = yes
-				}
-				custom_effect_tooltip = "State will get some resistance shortened"
-				hidden_effect = {
-					random_list = {
-						20 = {
-							add_resistance = -12
-						}
-						30 = {
-							add_resistance = -8
-						}
-						50 = {
-							add_resistance = -4
-						}
-					}	
-				}
-			}
-			random_owned_state = {
-				limit = {
-					has_resistance = yes
-				}
-				custom_effect_tooltip = "State will get some resistance shortened"
-				hidden_effect = {
-					random_list = {
-						20 = {
-							add_resistance = -12
-						}
-						30 = {
-							add_resistance = -8
-						}
-						50 = {
-							add_resistance = -4
-						}
-					}	
-				}	
-			}
-			random_owned_state = {
-				limit = {
-					has_resistance = yes
-				}
-				custom_effect_tooltip = "State will get some resistance shortened"
-				hidden_effect = {
-					random_list = {
-						20 = {
-							add_resistance = -12
-						}
-						30 = {
-							add_resistance = -8
-						}
-						50 = {
-							add_resistance = -4
-						}
-					}	
-				}	
-			}
-			random_owned_state = {
-				limit = {
-					has_resistance = yes
-				}
-				custom_effect_tooltip = "State will get some resistance shortened"
-				hidden_effect = {
-					random_list = {
-						20 = {
-							add_resistance = -12
-						}
-						30 = {
-							add_resistance = -8
-						}
-						50 = {
-							add_resistance = -4
-						}
-					}	
-				}	
-			}
-			random_owned_state = {
-				limit = {
-					has_resistance = yes
-				}
-				custom_effect_tooltip = "State will get some resistance shortened"
-				hidden_effect = {
-					random_list = {
-						20 = {
-							add_resistance = -12
-						}
-						30 = {
-							add_resistance = -8
-						}
-						50 = {
-							add_resistance = -4
-						}
-					}	
-				}	
-			}
-		}
-	}
-	make_countrywide_trust_campaign = {
-		available = {
-			
-		}
-		visible = {
-			any_owned_state = {
-				has_resistance = yes
-			}
-		}
-		cost = 30
-		days_remove = 15
-		remove_effect = {
-			random_owned_state = {
-				limit = {
-					has_resistance = yes
-				}
-				custom_effect_tooltip = "State will get more compliant towards us"
-				random_list = {
-					20 = {
-						add_compliance = 15
-					}
-					30 = {
-						add_compliance = 10
-					}
-					50 = {
-						add_compliance = 5
-					}
-				}	
-			}
-			random_owned_state = {
-				limit = {
-					has_resistance = yes
-				}
-				custom_effect_tooltip = "State will get more compliant towards us"
-				random_list = {
-					20 = {
-						add_compliance = 15
-					}
-					30 = {
-						add_compliance = 10
-					}
-					50 = {
-						add_compliance = 5
-					}
-				}	
-			}
-			random_owned_state = {
-				limit = {
-					has_resistance = yes
-				}
-				custom_effect_tooltip = "State will get more compliant towards us"
-				random_list = {
-					20 = {
-						add_compliance = 15
-					}
-					30 = {
-						add_compliance = 10
-					}
-					50 = {
-						add_compliance = 5
-					}
-				}	
-			}
-			random_owned_state = {
-				limit = {
-					has_resistance = yes
-				}
-				custom_effect_tooltip = "State will get more compliant towards us"
-				random_list = {
-					20 = {
-						add_compliance = 15
-					}
-					30 = {
-						add_compliance = 10
-					}
-					50 = {
-						add_compliance = 5
-					}
-				}	
-			}
-			random_owned_state = {
-				limit = {
-					has_resistance = yes
-				}
-				custom_effect_tooltip = "State will get more compliant towards us"
-				random_list = {
-					20 = {
-						add_compliance = 15
-					}
-					30 = {
-						add_compliance = 10
-					}
-					50 = {
-						add_compliance = 5
-					}
-				}	
-			}
-		}
-	}
-	open_hospital = {
-		available = {
-			num_of_available_civilian_factories > 3
-			has_stability > 0.1
-		}
-		
-		days_remove = 30
-		modifier = {
-			civilian_factory_use = 3
-		}
-		remove_effect = {
-			random_owned_state = {
-				add_building_construction = {
-					type = hospital_building
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-	open_education_center = {
-		available = {
-			num_of_available_civilian_factories > 3
-			has_stability > 0.1
-		}
-		
-		days_remove = 30
-		modifier = {
-			civilian_factory_use = 3
-		}
-		remove_effect = {
-			random_owned_state = {
-				add_building_construction = {
-					type = civil_education_centre
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-	establish_labor_camp = {
-		available = {
-			num_of_available_civilian_factories > 3
-			has_stability > 0.1
-		}
-		
-		days_remove = 30
-		modifier = {
-			civilian_factory_use = 3
-		}
-		remove_effect = {
-			random_owned_state = {
-				add_building_construction = {
-					type = labour_camp
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-	make_promising_speech = {
-		available = {
-			has_stability < 0.4
-		}
-		cost = 20
-		days_remove = 7
-		remove_effect = {
-			add_stability = 0.1
-		}
-	}
 }
