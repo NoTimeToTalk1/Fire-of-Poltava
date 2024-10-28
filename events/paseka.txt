@@ -41,3 +41,127 @@ country_event = {
 		name = paseka.3.a
 	}
 }
+
+#paseka civil war start
+country_event = {
+	id = paseka.4
+	title = paseka.4.t
+	desc = paseka.4.d
+
+	picture = GFX_girkin_skuf
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = paseka.4.a
+	set_cosmetic_tag = NVR_union
+	load_focus_tree = {
+    tree = DPR_pasek_war
+}
+start_civil_war = {
+    ideology = oligarchy
+    size = 0.3
+    army_ratio = 0.5
+    navy_ratio = 0
+    air_ratio = 1
+    PREV = {  # Original country
+        DNR_Pidor = { # Character
+            set_nationality = PREV.PREV
+            # Transfers to breakaway
+        }
+    }
+    promote_character = DNR_Pidor
+	PREV.PREV = {
+	set_cosmetic_tag = NVR_confederacy
+	}
+}
+hidden_effect = {
+DNR_Pidor = {
+                set_portraits = {
+                    civilian = {
+                        large = "gfx/leaders/DNR/push2.dds"
+                    }
+                }
+            }
+			}
+	}
+	option = {
+		name = paseka.4.b
+	load_focus_tree = {
+    tree = DPR_pasek_war
+}	
+	set_cosmetic_tag = NVR_union
+start_civil_war = {
+    ideology = oligarchy
+    size = 0.3
+    army_ratio = 0.5
+    navy_ratio = 0
+    air_ratio = 1
+    PREV = {  # Original country
+        DNR_Pidor = { # Character
+            set_nationality = PREV.PREV
+            # Transfers to breakaway
+        }
+    }
+    promote_character = DNR_Pidor
+	PREV.PREV = {
+	set_cosmetic_tag = NVR_confederacy
+	change_tag_from = ROOT
+	}
+}
+hidden_effect = {
+DNR_Pidor = {
+                set_portraits = {
+                    civilian = {
+                        large = "gfx/leaders/DNR/push2.dds"
+                    }
+                }
+            }
+			}
+	}
+}
+
+#paseka help
+country_event = {
+	id = paseka.5
+	title = paseka.5.t
+	desc = paseka.5.d
+
+	picture = GFX_event_vsrf_photo
+	is_triggered_only = yes
+	option = {
+		name = paseka.5.a
+	add_political_power = -10
+	add_stability = -0.02
+DPR = {
+add_equipment_to_stockpile = {
+    type = infantry_equipment
+    amount = 10
+    producer = ROOT
+}
+}
+	}
+	option = {
+		name = paseka.5.b
+	add_political_power = 10
+	}
+	
+}
+
+#paseka or not paseka
+country_event = {
+	id = paseka.6
+	title = paseka.6.t
+	desc = paseka.6.d
+
+	picture = GFX_pasechnik_photo
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = paseka.6.a
+	set_country_flag = paseka_stay
+	}
+	option = {
+		name = paseka.6.b
+	set_country_flag = paseka_dont_stay
+	}
+}
