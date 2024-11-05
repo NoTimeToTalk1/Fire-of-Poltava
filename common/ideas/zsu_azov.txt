@@ -608,7 +608,7 @@ ideas = {
 
 		AFU_final_fight = {
 
-			picture = AFU_final_fight
+			picture = GFX_idea_AFU_final_fight
 
 			modifier = {
 				recruitable_population_factor = 0.1
@@ -653,6 +653,110 @@ ideas = {
 			}
 		}
 
+		AFU_by_us_alone = {
+
+			picture = AFU_by_us_alone
+
+			targeted_modifier = {
+				tag = RUS
+				army_core_attack_factor = -0.1
+				army_core_defence_factor = -0.1
+			}
+		}
+
+		AFU_solid_rear = {
+
+			picture = AFU_all_ukrainian_mobilization
+
+			modifier = {
+				weekly_manpower = 5000
+				production_factory_efficiency_gain_factor = 0.15
+				consumer_goods_factor = -0.1
+				training_time_army_factor = -0.1
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instantly use instant = yes
+					build_cost_ic = -0.2	
+				}
+				armor = {
+					instantly use instant = yes
+					build_cost_ic = -0.2	
+				}
+				motorized = {
+					instantly use instant = yes
+					build_cost_ic = -0.2	
+				}
+			}
+		}
+
+		AFU_everyone_is_a_fighter = {
+
+			picture = AFU_all_ukrainian_mobilization
+
+			modifier = {
+				weekly_manpower = 10000
+				production_factory_efficiency_gain_factor = 0.05
+				training_time_army_factor = -0.25
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instantly use instant = yes
+					build_cost_ic = -0.2	
+				}
+				armor = {
+					instantly use instant = yes
+					build_cost_ic = -0.2	
+				}
+				motorized = {
+					instantly use instant = yes
+					build_cost_ic = -0.2	
+				}
+			}
+		}
+
+		AFU_anti_partisan_operations = {
+
+			picture = AFU_anti_partisan_operations
+
+			modifier = {
+				required_garrison_factor = -0.3
+				resistance_activity = -0.1
+			}
+		}
+
+		AFU_fop_experience = {
+
+			picture = AFU_fop_experience
+
+			modifier = {
+				army_speed_factor = 0.1
+				cas_damage_reduction = 0.15
+			}
+		}
+
+		AFU_help_from_azov = {
+
+			picture = AFU_help_from_azov
+
+			targeted_modifier = {
+				tag = RUS
+				army_attack_factor = -0.1
+			}
+		}
+
+		AFU_operation_fallen_pawn = {
+			targeted_modifier = {
+				tag = BLR
+				army_core_defence_factor = -0.2
+			}
+			cancel = {
+				NOT = {
+					country_exists = BLR
+				}
+			}
+		}
+
 		AFU_RVC_cooperation = {
 			
 			picture = AFU_RVC_cooperation
@@ -670,7 +774,7 @@ ideas = {
 
 		AFU_smo_caucasus = {
 
-			picture = AFU_special_operation
+			picture = AFU_smo
 
 			modifier = {
 				army_attack_against_major_factor = 0.2
@@ -682,7 +786,7 @@ ideas = {
 
 		AFU_smo_rus = {
 
-			picture = AFU_special_operation
+			picture = AFU_smo
 
 			modifier = {
 				ai_call_ally_desire_factor  = -2000
@@ -691,7 +795,7 @@ ideas = {
 
 		AFU_smo_csto = {
 
-			picture = AFU_special_operation
+			picture = AFU_smo
 
 			modifier = {
 				ai_join_ally_desire_factor = -2000
@@ -700,7 +804,7 @@ ideas = {
 
 		AFU_fight_till_the_death = {
 
-			picture = AFU_fight_till_the_death
+			picture = AFU_me_ne_frego
 
 			modifier = {
 				surrender_limit = 0.2

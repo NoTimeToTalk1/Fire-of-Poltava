@@ -622,6 +622,7 @@
 				}
 			}
 			add_political_power = 50
+			country_event = azov.8
 		}
 	}
 
@@ -1711,7 +1712,7 @@ every_unit_leader = {
 	shared_focus = {
 		id = AFU_prepare_for_the_final_fight
 		icon = GFX_AFU_pid_znamenem_slavetnym_ziednavsia_ves_narid
-		x = 20
+		x = 19
 		y = 31
 		cost = 5
 		search_filters = {
@@ -1766,6 +1767,27 @@ every_unit_leader = {
 		}
 	}
 
+	#Form Belarusian Volunteer Corps
+	shared_focus = {
+		id = AFU_form_belarusian_volunteer_corps
+		icon = GFX_AFU_Form_the_Belarusian_volunteer_corps
+		x = 21
+		y = 31
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_prepare_for_the_final_fight  }
+		completion_reward = {
+			add_war_support = 0.2
+			add_popularity = {
+				ideology = radical_nationalism
+				popularity = 0.2
+			}
+			add_ideas = AFU_final_fight
+		}
+	}
+
 	#Coordination with the RVC
 	shared_focus = {
 		id = AFU_coordination_with_the_rvc
@@ -1779,7 +1801,7 @@ every_unit_leader = {
 		allow_branch = {
 			has_country_flag = rvc_coop
 		}
-		prerequisite = { focus = AFU_prepare_for_the_final_fight  }
+		prerequisite = { focus = AFU_form_belarusian_volunteer_corps }
 		completion_reward = {
 			add_to_variable = {
 				var = AFU_rdk
@@ -1805,9 +1827,9 @@ every_unit_leader = {
 				has_country_flag = rvc_coop
 			}
 		}
-		prerequisite = { focus = AFU_prepare_for_the_final_fight  }
+		prerequisite = { focus = AFU_form_belarusian_volunteer_corps }
 		completion_reward = {
-
+			add_ideas = AFU_by_us_alone
 		}
 	}
 
@@ -1817,11 +1839,17 @@ every_unit_leader = {
 		icon = GFX_AFU_light_the_fire_of_the_revolution_in_the_caucasus
 		x = 21
 		y = 33
-		cost = 6
+		cost = 10
 		search_filters = {
 			FOCUS_FILTER_ANNEXATION
 		}
 		prerequisite = { focus = AFU_coordination_with_the_rvc focus = AFU_by_us_alone  }
+		select_effect = { 
+			country_event = { id = azov.59 days = 25 }	
+			country_event = { id = azov.60 days = 40 }
+			country_event = { id = azov.63 days = 50 }
+			country_event = { id = azov.64 days = 65 }			
+		}
 		completion_reward = {
 			every_state = {
 				limit = {
@@ -1899,14 +1927,92 @@ every_unit_leader = {
 				}
 				CHE = {
 					add_ideas = AFU_smo_caucasus
+					load_oob = CHE_2109
 				}
 				DAG = {
 					add_ideas = AFU_smo_caucasus
+					load_oob = DAG_2109
 				}
 				RUS = {
 					add_ideas = AFU_smo_rus
 				}
+				if = {
+					limit = {
+						GEO = {
+							has_government = radical_nationalism
+						}
+					}
+					GEO = {
+						declare_war_on = {
+							target = ABK
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = SOS
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = RUS
+						}
+					}
+				}
 			}
+		}
+	}
+
+	#Solid rear
+	shared_focus = {
+		id = AFU_solid_rear
+		icon = GFX_AFU_solid_rear
+		x = 19
+		y = 35
+		cost = 1
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_special_decommunization_and_demilitarization_operation }
+		mutually_exclusive = { focus = AFU_every_man_a_fighter }
+		completion_reward = {
+			swap_ideas = {
+				add_idea = AFU_solid_rear
+				remove_idea = AFU_all_ukrainian_mobilization
+			}
+		}
+	}
+
+	#Every man a fighter
+	shared_focus = {
+		id = AFU_every_man_a_fighter
+		icon = GFX_AFU_every_man_a_fighter
+		x = 21
+		y = 35
+		cost = 1
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_special_decommunization_and_demilitarization_operation }
+		mutually_exclusive = { focus = AFU_solid_rear }
+		completion_reward = {
+			swap_ideas = {
+				add_idea = AFU_everyone_is_a_fighter
+				remove_idea = AFU_all_ukrainian_mobilization
+			}
+		}
+	}
+
+	#Apply the Fire of Poltava experience
+	shared_focus = {
+		id = AFU_apply_the_fire_of_poltava_experience
+		icon = GFX_AFU_apply_the_fire_of_poltava_experience
+		x = 20
+		y = 36
+		cost = 1
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_solid_rear focus = AFU_every_man_a_fighter }
+		completion_reward = {
+			add_ideas = AFU_fop_experience
 		}
 	}
 
@@ -1914,7 +2020,23 @@ every_unit_leader = {
 	shared_focus = {
 		id = AFU_fight_till_the_death
 		icon = GFX_AFU_fight_till_the_death
-		x = 20
+		x = 19
+		y = 37
+		cost = 1
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_apply_the_fire_of_poltava_experience }
+		completion_reward = {
+			add_ideas = AFU_fight_till_the_death
+		}
+	}
+
+	#Enemy of my enemy
+	shared_focus = {
+		id = AFU_enemy_of_my_enemy
+		icon = GFX_AFU_enemy_of_my_enemy
+		x = 17
 		y = 35
 		cost = 1
 		search_filters = {
@@ -1922,7 +2044,79 @@ every_unit_leader = {
 		}
 		prerequisite = { focus = AFU_special_decommunization_and_demilitarization_operation }
 		completion_reward = {
-			add_ideas = AFU_fight_till_the_death
+			every_country = {
+				limit = {
+					OR = {
+						original_tag = CHE
+						original_tag = DAG
+					}	
+				}
+				add_ideas = AFU_help_from_azov
+			}
+			if = {
+				limit = {
+					GEO = {
+						has_government = radical_nationalism
+					}
+				}
+				GEO = {
+					add_ideas = AFU_help_from_azov
+				}
+			}
+		}
+	}
+
+	#Operation Fallen Pawn
+	shared_focus = {
+		id = AFU_operation_fallen_pawn
+		icon = GFX_AFU_operation_fallen_pawn
+		x = 23
+		y = 35
+		cost = 1
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_special_decommunization_and_demilitarization_operation }
+		completion_reward = {
+			BVC = {
+				transfer_state = 1163
+				give_military_access = AFU
+				declare_war_on = {
+					target = BLR
+					type = annex_everything
+				}
+				add_ideas = AFU_operation_fallen_pawn
+			}
+			AFU = {
+				declare_war_on = {
+					target = BLR
+					type = annex_everything
+				}
+				add_ideas = AFU_operation_fallen_pawn
+			}
+			RUS = {
+				add_to_war = {
+					targeted_alliance = BLR
+					enemy = AFU
+					hostility_reason = asked_to_join
+				}
+			}
+		}
+	}
+
+	#Crush the partisans
+	shared_focus = {
+		id = AFU_crush_the_partisans
+		icon = GFX_AFU_crush_the_partisans
+		x = 21
+		y = 37
+		cost = 1
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = AFU_apply_the_fire_of_poltava_experience }
+		completion_reward = {
+			add_ideas = AFU_crush_the_partisans
 		}
 	}
 
