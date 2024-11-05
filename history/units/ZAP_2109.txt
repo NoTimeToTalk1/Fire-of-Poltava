@@ -2,24 +2,43 @@
 
 division_template = {
 	name = "National Guard"
-	division_names_group = BLR_INF_01
+	division_names_group = UKR_MEC_01
 
 	regiments = {
 		IFV = { x = 0 y = 0 }
-		infantry = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
-		
+		IFV = { x = 0 y = 1 }
+		APC = { x = 0 y = 2 }
+		motorized = { x = 0 y = 3 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		artillery_brigade = { x = 1 y = 2 }
 	}
 	support = {
 		military_police = { x = 0 y = 0 }
 	}
-	
+}
+
+division_template = {
+	name = "Volunteer Battalion"
+	division_names_group = UKR_INF_01
+
+	regiments = {
+		APC = { x = 0 y = 0 }
+		APC = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		artillery_brigade = { x = 1 y = 1 }
+	}
+	support = {
+		military_police = { x = 0 y = 0 }
+		field_hospital = { x = 0 y = 1 }
+	}
 }
 
 
 division_template = {
-	name = "Special Police Forces"
-	division_names_group = BLR_INF_01
+	name = "Special Forces"
+	division_names_group = UKR_INF_01
 
 	regiments = {
 		IFV = { x = 0 y = 0 }
@@ -33,31 +52,14 @@ division_template = {
 	
 }
 
-
 division_template = {
-	name = "Border Guards"
-	division_names_group = BLR_INF_01
-
-	regiments = {
-		IFV = { x = 0 y = 0 }
-		IFV = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
-		infantry = { x = 0 y = 3 }
-	}
-	support = {
-       	artillery = { x = 0 y = 0 }
-	}
-	
-}
-
-division_template = {
-	name = "IFV Brigade"
-	division_names_group = BLR_INF_01
+	name = "Mechanized Brigade"
+	division_names_group = UKR_INF_01
 
 		regiments = {
 		IFV = { x = 0 y = 0 }
 		IFV = { x = 0 y = 1 }
-		IFV = { x = 0 y = 2 }
+		APC = { x = 0 y = 2 }
 		main_battle_tank = { x = 0 y = 3 }
 		motorized = { x = 0 y = 4}
 		main_battle_tank = { x = 1 y = 0 }
@@ -78,7 +80,7 @@ division_template = {
 
 division_template = {
 	name = "Tank Brigade"
-	division_names_group = BLR_INF_01
+	division_names_group = UKR_INF_01
 
 		regiments = {
 		main_battle_tank = { x = 0 y = 0 }
@@ -101,7 +103,7 @@ division_template = {
 
 division_template = {
 	name = "Artillery Brigade"
-	division_names_group = BLR_INF_01
+	division_names_group = UKR_INF_01
 
 		regiments = {
 			artillery_brigade = { x = 0 y = 0 }
@@ -117,39 +119,39 @@ division_template = {
 }
 
 
-#TOTAL DIVISIONS: 1
+#TOTAL DIVISIONS: 4
 units = { 
 
 	division= {	
-		name = "55th Separate Artillery Brigade Zaporizhzhia Sich"
+		name = "55th 'Zaporiz'ka Sich' Separate Artillery Brigade"
 		location = 3340
 		division_template = "Artillery Brigade"
-		start_experience_factor = 0.9
-		start_equipment_factor = 0.6
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
 	}
 
 	division= {	
 		name = "Police Battalion Skif"
 		location = 3340
-		division_template = "Special Police Forces"
-		start_experience_factor = 0.8
+		division_template = "Special Forces"
+		start_experience_factor = 0.2
 		start_equipment_factor = 0.7
 	}
 	
 	division= {	
 		name = "Berdyansk Detachment"
 		location = 9218
-		division_template = "Border Guards"
-		start_experience_factor = 0.7
+		division_template = "Special Forces"
+		start_experience_factor = 0.2
 		start_equipment_factor = 0.6
 	}
 
 	division= {	
 		name = "1st Progressive Volunteer Battalion"
 		location = 6360
-		division_template = "National Guard"
+		division_template = "Volunteer Battalion"
 		start_experience_factor = 0.1
-		start_equipment_factor = 0.6
+		start_equipment_factor = 0.7
 	}
 }
 
@@ -158,7 +160,7 @@ instant_effect = {
 
 	add_equipment_production = {
 		equipment = {
-			type = infantry_equipment_2
+			type = infantry_equipment_1
 			creator = "AFU"
 		}
 		requested_factories = 3

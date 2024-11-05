@@ -1,11 +1,12 @@
 division_template = {
-	name = "Kruk Battalion"
-	division_names_group = BLR_INF_01
+	name = "Volunteer Battalion"
+	division_names_group = UKR_INF_01
 
 	regiments = {
 		IFV = { x = 0 y = 0 }
-		infantry = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
+		APC = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
 		
 	}
 	support = {
@@ -16,43 +17,29 @@ division_template = {
 
 division_template = {
 	name = "National Guard"
-	division_names_group = BLR_INF_01
+	division_names_group = UKR_INF_01
 
 	regiments = {
 		IFV = { x = 0 y = 0 }
-		infantry = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
+		APC = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
 		
 	}
 	support = {
 		military_police = { x = 0 y = 0 }
-	}
-	
-}
-
-
-division_template = {
-	name = "Border Guards"
-	division_names_group = BLR_INF_01
-
-	regiments = {
-		IFV = { x = 0 y = 0 }
-		IFV = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
-		infantry = { x = 0 y = 3 }
-	}
-	support = {
-       	artillery = { x = 0 y = 0 }
+		logistics_company = { x = 0 y = 1 }
 	}
 	
 }
 
 division_template = {
-	name = "Special Police Forces"
-	division_names_group = BLR_INF_01
+	name = "Special Forces"
+	division_names_group = UKR_INF_01
 
 	regiments = {
-		IFV = { x = 0 y = 0 }
+		APC = { x = 0 y = 0 }
 		motorized  = { x = 0 y = 1 }
 		infantry = { x = 0 y = 2 }
 		infantry = { x = 0 y = 3 }
@@ -64,19 +51,20 @@ division_template = {
 }
 
 division_template = {
-	name = "Pikhotna Brygada"
-	division_names_group = BLR_INF_01
+	name = "Mechanized Brigade"
+	division_names_group = UKR_MEC_01
 
 	regiments = {
 		IFV = { x = 0 y = 0 }
 		IFV = { x = 0 y = 1 }
 		IFV = { x = 0 y = 2 }
 		main_battle_tank = { x = 1 y = 0 }
-		motorized = { x = 1 y = 1 }
-		motorized = { x = 2 y = 0 }
-		motorized = { x = 2 y = 1 }
-		infantry = { x = 3 y = 0 }
-		infantry = { x = 3 y = 1 }
+		APC = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 1 y = 3 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		artillery_brigade = { x = 2 y = 2 }
 		
 	}
 	support = {
@@ -91,69 +79,53 @@ division_template = {
 
 division_template = {
 	name = "Artillery Brigade"
-	division_names_group = BLR_INF_01
+	division_names_group = UKR_INF_01
 
 		regiments = {
-		anti_air_brigade = { x = 0 y = 0 }
-		anti_air_brigade = { x = 0 y = 1 }
-		anti_air_brigade = { x = 0 y = 2 }
-		anti_air_brigade = { x = 1 y = 0 }
-		anti_air_brigade = { x = 1 y = 1}
+		arillery_brigade = { x = 0 y = 0 }
+		arillery_brigade = { x = 0 y = 1 }
+		arillery_brigade = { x = 0 y = 2 }
+		arillery_brigade = { x = 1 y = 0 }
+		anti_tank_brigade = { x = 1 y = 1}
 		
 	}
 	support = {
 		maintenance_company = { x = 0 y = 0 }
+		logistics_company = { x = 0 y = 1 }
 	}
 }
 
 #TOTAL DIVISIONS: 8
 units = { 
 
-	
 	division= {	
-		name = "15th Separate IFV Brigade"
-		location = 12788
-		division_template = "Pikhotna Brygada"
-		start_experience_factor = 0.6
-		start_equipment_factor = 0.8
-
-	}
-	division= {	
-		name = "24th Separate IFV Brigade named after King Daniel"
+		name = "24th 'King Danylo' Separate Mechanized Brigade"
 		location = 7514
-		division_template = "Pikhotna Brygada"
-		start_experience_factor = 0.9
+		division_template = "Mechanized Brigade"
+		start_experience_factor = 0.3
 		start_equipment_factor = 0.8
 	}
 	division= {	
 		name = "65th Separate IFV Brigade"
 		location = 12748
-		division_template = "Pikhotna Brygada"
-		start_experience_factor = 0.9
-		start_equipment_factor = 0.8
-	}
-
-	division= {	
-		name = "4th Battalion Kruk of Operational Assignment of National Guard"
-		location = 19918
-		division_template = "Kruk Battalion"
-		start_experience_factor = 0.5
-		start_equipment_factor = 0.9
-	}
-	
-	division= {	
-		name = "Lviv Border Guards"
-		location = 12854
-		division_template = "Border Guards"
-		start_experience_factor = 0.5
+		division_template = "Mechanized Brigade"
+		start_experience_factor = 0.3
 		start_equipment_factor = 0.7
 	}
 
 	division= {	
-		name = "50th National Guard"
+		name = "4th 'Kruk' Battalion of Operational Assignment of National Guard"
+		location = 19918
+		division_template = "Volunteer Battalion"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.9
+	}
+
+	division= {	
+		name = "45th 'Oleksandr Krasitskyi' National Guard Regiment"
 		location = 19918
 		division_template = "National Guard"
-		start_experience_factor = 0.5
+		start_experience_factor = 0.2
 		start_equipment_factor = 0.8
 	}
 
@@ -161,64 +133,48 @@ units = {
 		name = "Vega Special Purpose Regiment"
 		location = 249
 		division_template = "National Guard"
-		start_experience_factor = 0.5
-		start_equipment_factor = 0.8
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
 	}
 
 	division= {	
 		name = "Special Purpose Police Battalion Lviv"
 		location = 249
-		division_template = "Special Police Forces"
-		start_experience_factor = 0.6
+		division_template = "Special Forces"
+		start_experience_factor = 0.2
 		start_equipment_factor = 0.8
 	}
 
 	division= {	
-		name = "8th Separate Battalion Aratta named after Andryi Herhert Ukrainian Volunteer Army"
+		name = "8th 'Andryi Herhert' Separate Battalion"
 		location = 249
 		division_template = "National Guard"
-		start_experience_factor = 0.5
+		start_experience_factor = 0.2
 		start_equipment_factor = 0.8
 	}
 
 	division= {	
-		name = "45th Regiment named after Oleksandr Krasitskyi of the National Guard of Ukraine"
-		location = 5889
-		division_template = "National Guard"
-		start_experience_factor = 0.6
-		start_equipment_factor = 0.6
-	}
-
-	division= {	
-		name = "Police Company Ivano-Frankivsk"
+		name = "Special Forces Ivano-Frankivsk"
 		location = 19918
-		division_template = "Special Police Forces"
-		start_experience_factor = 0.4
+		division_template = "Special Forces"
+		start_experience_factor = 0.2
 		start_equipment_factor = 0.8
 	}
 
 	division= {	
 		name = "Police Company Lviv"
 		location = 19918
-		division_template = "Special Police Forces"
-		start_experience_factor = 0.4
+		division_template = "Special Forces"
+		start_experience_factor = 0.1
 		start_equipment_factor = 0.8
 	}
 
 	division= {	
-		name = "223rd Anti-aircraft Missile Regiment"
+		name = "44th 'Hetman Danylo Apostol' Separate Artillery Brigade"
 		location = 8773
 		division_template = "Artillery Brigade"
-		start_experience_factor = 0.5
+		start_experience_factor = 0.3
 		start_equipment_factor = 0.7
-	}
-
-	division= {	
-		name = "540th Anti-aircraft Missile Regiment"
-		location = 6573
-		division_template = "Artillery Brigade"
-		start_experience_factor = 0.5
-		start_equipment_factor = 0.6
 	}
 }
 
@@ -227,7 +183,7 @@ instant_effect = {
 
 	add_equipment_production = {
 		equipment = {
-			type = infantry_equipment_2
+			type = infantry_equipment_1
 			creator = "AFU"
 		}
 		requested_factories = 3

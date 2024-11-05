@@ -1,7 +1,7 @@
 
 division_template = {
 	name = "National Guard"
-	division_names_group = BLR_INF_01
+	division_names_group = UKR_INF_01
 
 	regiments = {
 		IFV = { x = 0 y = 0 }
@@ -17,7 +17,7 @@ division_template = {
 
 division_template = {
 	name = "Ukrainian Volunteer Battalion"
-	division_names_group = BLR_INF_01
+	division_names_group = UKR_INF_01
 
 	regiments = {
 		IFV = { x = 0 y = 0 }
@@ -32,8 +32,8 @@ division_template = {
 }
 
 division_template = {
-	name = "Special Police Forces"
-	division_names_group = BLR_INF_01
+	name = "Special Forces"
+	division_names_group = UKR_INF_01
 
 	regiments = {
 		IFV = { x = 0 y = 0 }
@@ -47,26 +47,9 @@ division_template = {
 	
 }
 
-
 division_template = {
-	name = "Border Guards"
-	division_names_group = BLR_INF_01
-
-	regiments = {
-		IFV = { x = 0 y = 0 }
-		IFV = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
-		infantry = { x = 0 y = 3 }
-	}
-	support = {
-       	artillery = { x = 0 y = 0 }
-	}
-	
-}
-
-division_template = {
-	name = "IFV Brigade"
-	division_names_group = BLR_INF_01
+	name = "Mechanized Brigade"
+	division_names_group = UKR_INF_01
 
 		regiments = {
 		IFV = { x = 0 y = 0 }
@@ -92,7 +75,7 @@ division_template = {
 
 division_template = {
 	name = "Jager Brigade"
-	division_names_group = BLR_INF_01
+	division_names_group = UKR_INF_01
 
 		regiments = {
 		IFV = { x = 0 y = 0 }
@@ -114,7 +97,7 @@ division_template = {
 
 division_template = {
 	name = "Artillery Brigade"
-	division_names_group = BLR_INF_01
+	division_names_group = UKR_INF_01
 
 		regiments = {
 		anti_air_brigade = { x = 0 y = 0 }
@@ -129,15 +112,15 @@ division_template = {
 	}
 }
 
-#TOTAL DIVISIONS: 8
+#TOTAL DIVISIONS: 7
 units = { 
 
 	
 	division= {	
 		name = "Special Police Company Svityaz"
 		location = 12222
-		division_template = "Special Police Forces"
-		start_experience_factor = 0.6
+		division_template = "Special Forces"
+		start_experience_factor = 0.2
 		start_equipment_factor = 0.7
 
 	}
@@ -145,26 +128,17 @@ units = {
 	division= {	
 		name = "Police Battalion Zakhid"
 		location = 3598
-		division_template = "Special Police Forces"
-		start_experience_factor = 0.6
+		division_template = "Special Forces"
+		start_experience_factor = 0.2
 		start_equipment_factor = 0.7
 
 	}
 
 	division= {	
-		name = "Lutsk Detachment"
-		location = 17570
-		division_template = "Border Guards"
-		start_experience_factor = 0.5
-		start_equipment_factor = 0.6
-
-	}
-
-	division= {	
-		name = "14th Separate IFV Brigade named after Prince Roman the Great"
+		name = "14th Separate Mechanized Brigade named after Prince Roman the Great"
 		location = 2165
-		division_template = "IFV Brigade"
-		start_experience_factor = 0.6
+		division_template = "Mechanized Brigade"
+		start_experience_factor = 0.3
 		start_equipment_factor = 0.7
 
 	}
@@ -172,7 +146,7 @@ units = {
 		name = "68th Separate Yeger Brigade named after Oleksa Dovbush"
 		location = 6633
 		division_template = "Jager Brigade"
-		start_experience_factor = 0.6
+		start_experience_factor = 0.3
 		start_equipment_factor = 0.9
 
 	}
@@ -181,25 +155,7 @@ units = {
 		name = "3rd Battalion Volyn"
 		location = 6633
 		division_template = "Ukrainian Volunteer Battalion"
-		start_experience_factor = 0.4
-		start_equipment_factor = 0.7
-
-	}
-
-	division= {	
-		name = "3rd Battalion Volyn"
-		location = 12211
-		division_template = "Ukrainian Volunteer Battalion"
-		start_experience_factor = 0.4
-		start_equipment_factor = 0.7
-
-	}
-
-	division= {	
-		name = "Volyn Detachment"
-		location = 6633
-		division_template = "Ukrainian Volunteer Battalion"
-		start_experience_factor = 0.4
+		start_experience_factor = 0.3
 		start_equipment_factor = 0.7
 
 	}
@@ -208,7 +164,7 @@ units = {
 		name = "39th Anti-aircraft Missile Regiment"
 		location = 2165
 		division_template = "Artillery Brigade"
-		start_experience_factor = 0.4
+		start_experience_factor = 0.3
 		start_equipment_factor = 0.7
 
 	}
@@ -221,7 +177,7 @@ instant_effect = {
 
 	add_equipment_production = {
 		equipment = {
-			type = infantry_equipment_2
+			type = infantry_equipment_1
 			creator = "AFU"
 		}
 		requested_factories = 3

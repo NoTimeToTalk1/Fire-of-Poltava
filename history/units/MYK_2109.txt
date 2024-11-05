@@ -58,9 +58,6 @@ division_template = {
 
 	regiments = {
 		IFV = { x = 0 y = 0 }
-		IFV = { x = 0 y = 1 }
-		APC = { x = 0 y = 2 }
-		motorized = { x = 0 y = 3}
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 0 y = 2 }
 		
@@ -112,50 +109,58 @@ division_template = {
 }
 
 units = {
-division= {	
+	division= {	
 		name = "79th Air Assault Brigade"
 		location = 13888
-		division_template = "Airborne Brigade"
+		division_template = "Special Police Forces"
 		start_experience_factor = 0.3
-		start_equipment_factor = 0.5
-
+		start_equipment_factor = 0.6
 	}
-division= {	
+	division= {	
 		name = "19 Mykolayiv Public Order Protection Regiment of NGU"
 		location = 13652
 		division_template = "National Guard"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.4
-
 	}
-division= {	
-		name = "40th Separate Artillery Brigade named after Grand Duke Vytautas"
-		location = 13652
+	division= {	
+		name = "40th 'Grand Duke Vytautas 'Separate Artillery Brigade "
+		location = 5108
 		division_template = "Artillery Brigade"
-		start_experience_factor = 0.3
-		start_equipment_factor = 0.4
-
-	}
-division= {	
-		name = "406th Separate Artillery Brigade named after Corporal General Oleksiy Almazov"
-		location = 13720
-		division_template = "Artillery Brigade"
-		start_experience_factor = 0.3
-		start_equipment_factor = 0.4
-	}
-division= {	
-		name = "MDF battalion"
-		location = 15855
-		division_template = "Mykolajiv defence force"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.5
-
-	}
-division= {	
-		name = "Police Battalion Mykolaiv"
-		location = 15855
-		division_template = "Special Police Forces"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.4
+	}
+}
+
+instant_effect = {
+	
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "AFU"
+		}
+		requested_factories = 3
+		progress = 0.1
+		efficiency = 50
+	}
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = "AFU"
+		}
+		requested_factories = 2
+		progress = 0.1
+		efficiency = 50
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "AFU" 
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 50
 	}
 }

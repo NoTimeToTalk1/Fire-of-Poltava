@@ -1,6 +1,6 @@
 division_template = {
 	name = "Border Guards"
-	division_names_group = BLR_INF_01
+	division_names_group = UKR_INF_01
 
 	regiments = {
 		IFV = { x = 0 y = 0 }
@@ -16,7 +16,7 @@ division_template = {
 
 division_template = {
 	name = "IFV Brigade"
-	division_names_group = BLR_INF_01
+	division_names_group = UKR_INF_01
 
 		regiments = {
 		IFV = { x = 0 y = 0 }
@@ -42,7 +42,7 @@ division_template = {
 
 division_template = {
 	name = "Special Police Forces"
-	division_names_group = BLR_INF_01
+	division_names_group = UKR_INF_01
 
 	regiments = {
 		IFV = { x = 0 y = 0 }
@@ -58,13 +58,15 @@ division_template = {
 
 division_template = {
 	name = "Artillery Brigade"
-	division_names_group = BLR_INF_01
+	division_names_group = UKR_INF_01
 
 		regiments = {
 			artillery_brigade = { x = 0 y = 0 }
 			artillery_brigade = { x = 0 y = 1 }
 			artillery_brigade = { x = 0 y = 2 }
-			artillery_brigade = { x = 1 y = 0 }
+			rocket_artillery_brigade = { x = 1 y = 0 }
+			rocket_artillery_brigade = { x = 1 y = 1 }
+			rocket_artillery_brigade = { x = 1 y = 2 }
 		
 	}
 	support = {
@@ -74,32 +76,23 @@ division_template = {
 }
 
 
-#TOTAL DIVISIONS: 8
+#TOTAL DIVISIONS: 2
 units = { 
 
-	
 	division= {	
-		name = "Sumy Detachment"
-		location = 613
-		division_template = "Border Guards"
-		start_experience_factor = 0.8
-		start_equipment_factor = 0.9
-	}
-
-	division= {	
-		name = "Police Company Sumy"
+		name = "Sumy Police"
 		location = 613
 		division_template = "Special Police Forces"
-		start_experience_factor = 0.7
+		start_experience_factor = 0.2
 		start_equipment_factor = 0.6
 	}
 
 	division= {	
-		name = "27th Rocket Artillery Brigade named after of the field commander Petro Kalnyshevskyi		"
+		name = "27th 'Petro Kalnyshevskyi' Rocket Artillery Brigade"
 		location = 613
 		division_template = "Artillery Brigade"
-		start_experience_factor = 0.9
-		start_equipment_factor = 0.3
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.8
 	}
 }
 
@@ -108,7 +101,7 @@ instant_effect = {
 
 	add_equipment_production = {
 		equipment = {
-			type = infantry_equipment_2
+			type = infantry_equipment_1
 			creator = "AFU"
 		}
 		requested_factories = 3

@@ -1,25 +1,26 @@
-
-
 division_template = {
 	name = "National Guard"
-	division_names_group = BLR_INF_01
+	division_names_group = UKR_MEC_01
 
 	regiments = {
 		IFV = { x = 0 y = 0 }
-		infantry = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
+		IFV = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		APC = { x = 0 y = 3 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		artillery_brigade = { x = 1 y = 2 }
 		
 	}
 	support = {
 		military_police = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
 	}
-	
 }
 
-
 division_template = {
-	name = "Special Police Forces"
-	division_names_group = BLR_INF_01
+	name = "Special Forces"
+	division_names_group = UKR_INF_01
 
 	regiments = {
 		IFV = { x = 0 y = 0 }
@@ -33,26 +34,9 @@ division_template = {
 	
 }
 
-
 division_template = {
-	name = "Border Guards"
-	division_names_group = BLR_INF_01
-
-	regiments = {
-		IFV = { x = 0 y = 0 }
-		IFV = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
-		infantry = { x = 0 y = 3 }
-	}
-	support = {
-       	artillery = { x = 0 y = 0 }
-	}
-	
-}
-
-division_template = {
-	name = "IFV Brigade"
-	division_names_group = BLR_INF_01
+	name = "Mechanized Brigade"
+	division_names_group = UKR_MEC_01
 
 		regiments = {
 		IFV = { x = 0 y = 0 }
@@ -78,7 +62,7 @@ division_template = {
 
 division_template = {
 	name = "Tank Brigade"
-	division_names_group = BLR_INF_01
+	division_names_group = UKR_MBT_01
 
 		regiments = {
 		main_battle_tank = { x = 0 y = 0 }
@@ -101,14 +85,14 @@ division_template = {
 
 division_template = {
 	name = "Artillery Brigade"
-	division_names_group = BLR_INF_01
+	division_names_group = UKR_INF_01
 
 		regiments = {
 			artillery_brigade = { x = 0 y = 0 }
 			artillery_brigade = { x = 0 y = 1 }
 			artillery_brigade = { x = 0 y = 2 }
 			artillery_brigade = { x = 1 y = 0 }
-		anti_air_brigade = { x = 1 y = 1}
+			anti_air_brigade = { x = 1 y = 1}
 		
 	}
 	support = {
@@ -121,10 +105,10 @@ division_template = {
 units = { 
 
 	division= {	
-		name = "92nd Separate IFV Brigade named after Koshovo Ataman Ivan Sirk"
+		name = "92nd 'Ivan Sirko' Separate Mechanized Brigade"
 		location = 12756
-		division_template = "IFV Brigade"
-		start_experience_factor = 0.9
+		division_template = "Mechanized Brigade"
+		start_experience_factor = 0.3
 		start_equipment_factor = 0.6
 	}
 
@@ -132,39 +116,39 @@ units = {
 		name = "Volunteer unit 'Freikorps'"
 		location = 12756
 		division_template = "National Guard"
-		start_experience_factor = 0.6
+		start_experience_factor = 0.3
 		start_equipment_factor = 0.5
 	}
 
 	division= {	
-		name = "3rd Brigade of Operational Assignment named after Colonel Petro Bolbochan"
+		name = "3rd 'Petro Bolbochan' Brigade of Operational Assignment"
 		location = 12756
 		division_template = "National Guard"
-		start_experience_factor = 0.7
+		start_experience_factor = 0.3
 		start_equipment_factor = 0.6
 	}
 
 	division= {	
-		name = "Kharkiv Detachment"
+		name = "Kharkiv Border Service Detachment"
 		location = 12756
-		division_template = "Border Guards"
-		start_experience_factor = 0.7
+		division_template = "Special Forces"
+		start_experience_factor = 0.2
 		start_equipment_factor = 0.7
 	}
 
 	division= {	
 		name = "Police Company East"
 		location = 12756
-		division_template = "Special Police Forces"
-		start_experience_factor = 0.5
+		division_template = "Special Forces"
+		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
 	}
 
 	division= {	
 		name = "Police Battalion Kharkiv"
 		location = 12756
-		division_template = "Special Police Forces"
-		start_experience_factor = 0.5
+		division_template = "Special Forces"
+		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
 	}
 
@@ -175,7 +159,7 @@ instant_effect = {
 
 	add_equipment_production = {
 		equipment = {
-			type = infantry_equipment_2
+			type = infantry_equipment_1
 			creator = "AFU"
 		}
 		requested_factories = 3

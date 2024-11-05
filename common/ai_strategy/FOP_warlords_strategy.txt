@@ -1,0 +1,240 @@
+FOP_minor_wars = {
+    allowed = {
+        OR = {
+            is_galician_ukraine = yes
+            is_podillya_ukraine = yes
+            is_northern_ukraine = yes
+            is_north_central_ukraine = yes
+            is_south_western_ukraine = yes
+            is_south_central_ukraine = yes
+            is_south_eastern_ukraine = yes
+        }
+        date < 2023.01.01
+    }
+    enable = {
+		date < 2023.01.01
+	}
+    ai_strategy = {
+        type = front_control
+        ordertype = front
+        country_trigger = { 
+            OR = {
+                is_galician_ukraine = yes
+                is_podillya_ukraine = yes
+                is_northern_ukraine = yes
+                is_north_central_ukraine = yes
+                is_south_western_ukraine = yes
+                is_south_central_ukraine = yes
+                is_south_eastern_ukraine = yes
+            }
+        }
+        execution_type = balanced
+        execute_order = yes
+        manual_attack = yes
+        priority = 100
+    }
+}
+
+FOP_minor_wars_rush = {
+    allowed = {
+        OR = {
+            is_galician_ukraine = yes
+            is_podillya_ukraine = yes
+            is_northern_ukraine = yes
+            is_north_central_ukraine = yes
+            is_south_western_ukraine = yes
+            is_south_central_ukraine = yes
+            is_south_eastern_ukraine = yes
+        }
+    }
+    enable = {
+        AND = {
+            date > 2023.01.01
+            date < 2024.01.01
+        }
+	}
+    ai_strategy = {
+        type = front_control
+        ordertype = front
+        country_trigger = { 
+            OR = {
+                is_galician_ukraine = yes
+                is_podillya_ukraine = yes
+                is_northern_ukraine = yes
+                is_north_central_ukraine = yes
+                is_south_western_ukraine = yes
+                is_south_central_ukraine = yes
+                is_south_eastern_ukraine = yes
+            }
+        }
+        execution_type = rush
+        execute_order = yes
+        manual_attack = yes
+    }
+}
+
+FOP_regional_wars = {
+    allowed = {
+        OR = {
+            is_western_ukraine = yes
+            is_southern_ukraine = yes
+            is_central_ukraine = yes
+            is_northern_ukraine = yes
+        }
+    }
+    enable = {
+        AND = {
+            date < 2025.01.01
+            date > 2023.01.01
+        }  
+	}
+    ai_strategy = {
+        type = front_control
+        ordertype = front
+         country_trigger = { 
+            OR = {
+                is_galician_ukraine = yes
+                is_podillya_ukraine = yes
+                is_northern_ukraine = yes
+                is_north_central_ukraine = yes
+                is_south_western_ukraine = yes
+                is_south_central_ukraine = yes
+                is_south_eastern_ukraine = yes
+            }
+        }
+        execution_type = balanced
+        execute_order = yes
+        manual_attack = yes
+    }
+}
+
+FOP_regional_wars_rush = {
+    allowed = {
+        OR = {
+            is_western_ukraine = yes
+            is_southern_ukraine = yes
+            is_central_ukraine = yes
+            is_northern_ukraine = yes
+        }
+    }
+    enable = {
+        AND = {
+            date > 2025.01.01
+            date < 2026.01.01
+        }
+	}
+    ai_strategy = {
+        type = front_control
+        ordertype = front
+         country_trigger = { 
+            OR = {
+                is_galician_ukraine = yes
+                is_podillya_ukraine = yes
+                is_northern_ukraine = yes
+                is_north_central_ukraine = yes
+                is_south_western_ukraine = yes
+                is_south_central_ukraine = yes
+                is_south_eastern_ukraine = yes
+            }
+        }
+        execution_type = rush
+        execute_order = yes
+        manual_attack = yes
+    }
+}
+
+VOL_crush_Rivne = {
+    allowed = {
+        original_tag = VOL
+    }
+    enable = {
+        country_exists = RIV
+    }
+    ai_strategy = {
+		type = prepare_for_war
+		id = VOL
+		value = 200
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = VOL
+		value = 200
+	}
+    ai_strategy = {
+        type = front_control
+        ordertype = front
+        execution_type = rush
+        execute_order = yes
+        manual_attack = yes
+    }
+}
+
+GAL_crush_Ternopil = {
+    allowed = {
+        original_tag = GAL
+    }
+    enable = {
+        country_exists = TER
+    }
+    ai_strategy = {
+		type = prepare_for_war
+		id = GAL
+		value = 200
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = GAL
+		value = 200
+	}
+    ai_strategy = {
+        type = front_control
+        ordertype = front
+        execution_type = rush
+        execute_order = yes
+        manual_attack = yes
+    }
+}
+
+ZAP_OPZ_war = {
+    allowed = {
+        OR = {
+            original_tag = ZAP
+            original_tag = OPZ
+        }
+        
+    }
+    enable = {
+        OR = {
+            country_exists = ZAP
+            country_exists = OPZ
+        }
+    }
+    ai_strategy = {
+		type = prepare_for_war
+		id = ZAP
+		value = 200
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = ZAP
+		value = 200
+	}
+    ai_strategy = {
+		type = prepare_for_war
+		id = OPZ
+		value = 200
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = OPZ
+		value = 200
+	}
+    ai_strategy = {
+        type = front_control
+        ordertype = front
+        execution_type = rush
+        execute_order = yes
+        manual_attack = yes
+        priority = 200
+    }
+}

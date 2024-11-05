@@ -2,7 +2,7 @@
 
 division_template = {
 	name = "Rod Guard"
-	division_names_group = BLR_INF_01
+	division_names_group = UKR_INF_01
 
 	regiments = {
 		infantry = { x = 0 y = 0 }
@@ -14,7 +14,7 @@ division_template = {
 
 division_template = {
 	name = "Tribal Elite"
-	division_names_group = BLR_INF_01
+	division_names_group = UKR_INF_01
 
 	regiments = {
 		infantry = { x = 0 y = 0 }
@@ -28,46 +28,27 @@ division_template = {
 	
 }
 
-
 division_template = {
-	name = "Special Police Forces"
-	division_names_group = BLR_INF_01
+	name = "Gifts from above"
+	division_names_group = UKR_INF_01
 
-	regiments = {
-		IFV = { x = 0 y = 0 }
-		motorized  = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
-		infantry = { x = 0 y = 3 }
-	}
-	support = {
-		military_police = { x = 0 y = 0 }
-	}
-	
-}
-
-division_template = {
-	name = "Artillery Brigade"
 		regiments = {
 			artillery_brigade = { x = 0 y = 0 }
 			artillery_brigade = { x = 0 y = 1 }
 			artillery_brigade = { x = 0 y = 2 }
-			anti_tank = { x = 0 y = 3 }
-			main_battle_tank = { x = 1 y = 0 }
-			artillery_brigade = { x = 1 y = 1}
-			anti_air_brigade = { x = 1 y = 2}
-	
-		}
-		support = {
-			engineer = { x = 0 y = 0 }
-			maintenance_company = { x = 0 y = 1 }
-			signal_company = { x = 0 y = 2 }
-			recon = { x = 0 y = 3 }
-			signal_company = { x = 0 y = 4 }
+			rocket_artillery_brigade = { x = 1 y = 0 }
+			rocket_artillery_brigade = { x = 1 y = 1 }
+			rocket_artillery_brigade = { x = 1 y = 2 }
+		
+	}
+	support = {
+		maintenance_company = { x = 0 y = 0 }
+		logistics_company = { x = 0 y = 1 }
 	}
 }
 
 
-#TOTAL DIVISIONS: 4
+#TOTAL DIVISIONS: 5
 units = { 
 
 	
@@ -108,19 +89,10 @@ units = {
 	}
 
 	division= {	
-		name = "Police Company Ternopil"
-		location = 12713
-		division_template = "Special Police Forces"
-		start_experience_factor = 0.7
-		start_equipment_factor = 0.6
-
-	}
-
-	division= {	
-		name = "44th Separate Artillery Brigade named after Hetman Danylo Apostol"
+		name = "Dazhboh gifted rat'"
 		location = 12912
-		division_template = "Artillery Brigade"
-		start_experience_factor = 0.8
+		division_template = "Gifts from above"
+		start_experience_factor = 0.1
 		start_equipment_factor = 0.6
 
 	}
@@ -135,7 +107,7 @@ instant_effect = {
 
 	add_equipment_production = {
 		equipment = {
-			type = infantry_equipment_2
+			type = infantry_equipment_1
 			creator = "AFU"
 		}
 		requested_factories = 3

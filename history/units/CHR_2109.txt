@@ -1,12 +1,13 @@
 division_template = {
-	name = "Special Police Forces"
-	division_names_group = BLR_INF_01
+	name = "Self-Defence Forces"
+	division_names_group = UKR_MIL_01
 
 	regiments = {
 		IFV = { x = 0 y = 0 }
 		motorized  = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
-		infantry = { x = 0 y = 3 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
 	}
 	support = {
 		military_police = { x = 0 y = 0 }
@@ -15,32 +16,32 @@ division_template = {
 }
 
 
-#TOTAL DIVISIONS: 8
+#TOTAL DIVISIONS: 3
 units = { 
 
 	
 	division= {	
-		name = "Special Police Company Cherkasy"
+		name = "Cherkasy Self-Defence Forces"
 		location = 12949
-		division_template = "Special Police Forces"
-		start_experience_factor = 0.1
+		division_template = "Self-Defence Forces"
+		start_experience_factor = 0.2
 		start_equipment_factor = 0.7
 
 	}
 
 	division= {	
-		name = "Special Police Company Zvenigorodka"
+		name = "Zvenyhorodka Self-Defence Forces"
 		location = 2255
-		division_template = "Special Police Forces"
-		start_experience_factor = 0.1
+		division_template = "Self-Defence Forces"
+		start_experience_factor = 0.2
 		start_equipment_factor = 0.7
 
 	}
 
 	division= {	
-		name = "Special Police Company Gorodyshce"
+		name = "Horodyshche Self-Defence Forces"
 		location = 12934
-		division_template = "Special Police Forces"
+		division_template = "Self-Defence Forces"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.7
 
@@ -53,7 +54,7 @@ instant_effect = {
 
 	add_equipment_production = {
 		equipment = {
-			type = infantry_equipment_2
+			type = infantry_equipment_1
 			creator = "AFU"
 		}
 		requested_factories = 3

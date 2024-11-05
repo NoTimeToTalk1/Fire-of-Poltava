@@ -1,11 +1,27 @@
 division_template = {
 	name = "Dobrobat"
-	division_names_group = BLR_INF_01
+	division_names_group = UKR_INF_01
 
 	regiments = {
 		motorized  = { x = 0 y = 0 }
-		infantry = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		penal_battalion = { x = 1 y = 2 }
+	}
+	support = {
+
+	}
+	
+}
+
+division_template = {
+	name = "Shtrafbat"
+	division_names_group = UKR_MIL_01
+
+	regiments = {
+		penal_battalion = { x = 0 y = 0 }
+		penal_battalion = { x = 0 y = 1 }
+		penal_battalion = { x = 0 y = 2 }
 	}
 	support = {
 
@@ -14,18 +30,18 @@ division_template = {
 }
 
 
-#TOTAL DIVISIONS: 8
+#TOTAL DIVISIONS: 4
 units = { 
 
 	division= {	
-		name = "1st Dobrobat"
+		name = "1st 'Vladimir Lenin' Dobrobat"
 		location = 9169
 		division_template = "Dobrobat"
-		start_experience_factor = 0.4
+		start_experience_factor = 0.2
 		start_equipment_factor = 0.7
 	}
 	division= {	
-		name = "2nd Dobrobat"
+		name = "2nd 'Iosif Stalin' Dobrobat"
 		location = 2691
 		division_template = "Dobrobat"
 		start_experience_factor = 0.2
@@ -33,14 +49,21 @@ units = {
 	}
 
 	division= {	
-		name = "3rd Dobrobat"
+		name = "3rd 'Lavrentiy Beriya' Dobrobat"
 		location = 13328
 		division_template = "Dobrobat"
-		start_experience_factor = 0.3
+		start_experience_factor = 0.2
 		start_equipment_factor = 0.7
 	}
 
-
+	division= {	
+		name = "1st 'Stanislav Kosior' Shtrafbat"
+		location = 13328
+		division_template = "Shtrafbat"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+		start_manpower_factor = 0.6
+	}
 }
 
 instant_effect = {
@@ -48,7 +71,7 @@ instant_effect = {
 
 	add_equipment_production = {
 		equipment = {
-			type = infantry_equipment_2
+			type = infantry_equipment_1
 			creator = "AFU"
 		}
 		requested_factories = 3
