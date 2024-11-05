@@ -834,7 +834,12 @@ add_resistance = -20
 		prerequisite = { focus = DPR_referendum_of_ii_language_status  } prerequisite = { focus = DPR_establish_lawful_instituons  }
 		completion_reward = {
 			add_political_power = 10
-			
+		hidden_effect = {
+		country_event = {
+			id = paseka.4
+			days = 1
+		}
+}		
 			
 		}
 	}
@@ -1834,3 +1839,423 @@ add_extra_state_shared_building_slots = 1
 			
 		}
 	}
+
+##############################################################################################
+##############################################################################################
+##################   											##############################
+##################   CIvil war                                  ##############################
+##################   											##############################
+##############################################################################################
+##############################################################################################
+
+	#Civil War
+	shared_focus = {
+		id = DPR_civil_war
+		icon = GFX_DPR_civil_war-495536
+		x = 7
+		y = 1
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 10
+			country_event = { 
+				id = paseka.6
+				days = 1
+			}
+		hidden_effect = {
+set_party_name = {
+    ideology = social_democracy
+    long_name = "Luganskiy Economicheskiy Soyuz"
+    name = "LES"
+}	
+set_party_name = {
+    ideology = radical_nationalism
+    long_name = "Oficerskyi shtab"
+    name = "Officers"
+}	
+		
+		}
+			
+		}
+	}
+
+	#Pasichnik Will Lead the People Forward
+	shared_focus = {
+		id = DPR_pasichnik_will_lead_the_people_forward
+		icon = GFX_DPR_pasichnik_will_lead_the_people_forward-495536
+		x = 11
+		y = 2
+		cost = 2
+		available = {
+		has_country_flag = paseka_stay
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = DPR_civil_war  }
+		completion_reward = {
+			add_political_power = 10
+	DNR_Pasechnik = {
+	add_country_leader_trait = Democratic_dictator
+	}			
+		}
+	}
+
+	#Nadion Will Bring Back Stability
+	shared_focus = {
+		id = DPR_nadion_will_bring_back_stability
+		icon = GFX_DPR_nadion_will_bring_back_stability-495536
+		x = 7
+		y = 2
+		cost = 2
+		available = {
+		has_country_flag = paseka_dont_stay
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = DPR_civil_war  }
+		mutually_exclusive = { focus = DPR_cornet_will_take_the_helm  }
+		completion_reward = {
+every_possible_country = {
+    limit = { has_character = LNR_Zinaida }
+    random_character = {
+        limit = { is_character = LNR_Zinaida }
+        set_nationality = ROOT
+    }
+}
+promote_character = LNR_Zinaida
+set_politics = {
+    ruling_party = social_democracy
+    elections_allowed = no
+}			
+		}
+	}
+
+	#Cornet Will Take the Helm
+	shared_focus = {
+		id = DPR_cornet_will_take_the_helm
+		icon = GFX_DPR_cornet_will_take_the_helm-495536
+		x = 3
+		y = 2
+		cost = 3
+		available = {
+		has_country_flag = paseka_dont_stay
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = DPR_civil_war  }
+		mutually_exclusive = { focus = DPR_nadion_will_bring_back_stability }
+		completion_reward = {
+every_possible_country = {
+    limit = { has_character = LNR_kornet }
+    random_character = {
+        limit = { is_character = LNR_kornet }
+        set_nationality = ROOT
+    }
+}
+promote_character = LNR_kornet
+set_politics = {
+    ruling_party = radical_nationalism
+    elections_allowed = no
+}			
+		}
+	}
+
+	#Secure the Democractic Way
+	shared_focus = {
+		id = DPR_secure_the_democractic_way
+		icon = GFX_DPR_secure_the_democractic_way-495536
+		x = 10
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = DPR_pasichnik_will_lead_the_people_forward  }
+		completion_reward = {
+add_popularity = {
+    ideology = conservative_democracy
+    popularity = 0.2
+}			
+		}
+
+	}
+
+	#Elimination of the Opposition
+	shared_focus = {
+		id = DPR_elimination_of_the_opposition
+		icon = GFX_DPR_elimination_of_the_opposition-495536
+		x = 10
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = DPR_secure_the_democractic_way  }
+		completion_reward = {
+add_ideas = fop_party_system_single_party		
+add_ideas = fop_security_opressive_police	
+		}
+	}
+
+	#Ask the For Help
+	shared_focus = {
+		id = DPR_ask_the_for_help
+		icon = GFX_DPR_ask_the_for_help-495536
+		x = 12
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = DPR_pasichnik_will_lead_the_people_forward  }
+				completion_reward = {
+every_country = { 
+limit = {
+OR = {
+has_government = liberal_democracy
+has_government = conservative_democracy
+has_government = oligarchy
+}
+}
+			country_event = { 
+				id = paseka.4
+				days = 1
+			}
+
+			}
+		}
+
+	}
+
+	#Propaganda Machine
+	shared_focus = {
+		id = DPR_propaganda_machine
+		icon = GFX_DPR_propaganda_machine-495536
+		x = 12
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = DPR_ask_the_for_help  }
+		completion_reward = {
+add_ideas = fop_press_freedom_censored				
+		}
+	}
+
+	#The Traitors' Tribunal
+	shared_focus = {
+		id = DPR_thetraitorstribunal
+		icon = GFX_DPR_thetraitorstribunal-495536
+		x = 11
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = DPR_elimination_of_the_opposition  } prerequisite = { focus = DPR_propaganda_machine  }
+		completion_reward = {
+	DNR_Pasechnik = {
+	add_country_leader_trait = AntiPushilinsentiment
+	}				
+		}
+	}
+
+	#Nationalisation of Strategic Enterprises
+	shared_focus = {
+		id = DPR_nationalisation_of_strategic_enterprises
+		icon = GFX_DPR_nationalisation_of_strategic_enterprises-495536
+		x = 8
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = DPR_nadion_will_bring_back_stability  }
+		completion_reward = {	
+add_ideas = fop_economic_system_state_socialism	
+		}
+	}
+
+	#Economic Stabilisation
+	shared_focus = {
+		id = DPR_economic_stabilisation
+		icon = GFX_DPR_economic_stabilisation-495536
+		x = 8
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = DPR_nationalisation_of_strategic_enterprises  }
+	}
+
+	#The Collective Rear
+	shared_focus = {
+		id = DPR_the_collective_rear
+		icon = GFX_DPR_the_collective_rear-495536
+		x = 6
+		y = 3
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = DPR_nadion_will_bring_back_stability  }
+		completion_reward = {
+add_ideas = fop_commercial_policy_heavy_protectionism		
+		}
+	}
+
+	#Assistance to Those Affected
+	shared_focus = {
+		id = DPR_assistance_to_those_affected
+		icon = GFX_DPR_assistance_to_those_affected-495536
+		x = 6
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = DPR_the_collective_rear  }
+		completion_reward = {
+add_ideas = fop_healthcare_system_public	
+		}
+	}
+
+	#Expanding Social Influence
+	shared_focus = {
+		id = DPR_expanding_social_influence
+		icon = GFX_DPR_expanding_social_influence-495536
+		x = 7
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = DPR_economic_stabilisation  } prerequisite = { focus = DPR_assistance_to_those_affected  }
+		completion_reward = {
+add_ideas = fop_minimum_wage_generous
+add_ideas = fop_pensions_generous
+		}
+	}
+
+	#Restoration of the Army
+	shared_focus = {
+		id = DPR_restoration_of_the_army
+		icon = GFX_DPR_restoration_of_the_army-495536
+		x = 4
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = DPR_cornet_will_take_the_helm  }
+		completion_reward = {
+add_ideas = fop_economic_mobilization_war_economy
+add_ideas = fop_conscription_extensive
+		}
+	}
+
+	#War is Fun
+	shared_focus = {
+		id = DPR_war_is_fun
+		icon = GFX_DPR_war_is_fun-495536
+		x = 4
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = DPR_restoration_of_the_army  }
+		completion_reward = {
+add_ideas = fop_supervision_encouraged_brutality
+		}
+	}
+
+	#The Counterintelligence
+	shared_focus = {
+		id = DPR_the_counterintelligence
+		icon = GFX_DPR_the_counterintelligence-495536
+		x = 2
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = DPR_cornet_will_take_the_helm  }
+		completion_reward = {
+	LNR_kornet = {
+	add_country_leader_trait = intelligence_experience
+	}	
+		}
+	}
+
+	#Strengthen the Base
+	shared_focus = {
+		id = DPR_strengthen_the_base
+		icon = GFX_DPR_strengthen_the_base-495536
+		x = 2
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = DPR_the_counterintelligence  }
+		completion_reward = {
+random_core_state = {
+    add_building_construction = {
+    type = situation_centre
+    level = 1
+    instant_build = yes
+}
+}
+random_core_state = {
+    add_building_construction = {
+    type = boot_camp
+    level = 1
+    instant_build = yes
+}
+}
+random_core_state = {
+    add_building_construction = {
+    type = recruiting_center
+    level = 1
+    instant_build = yes
+}
+}
+random_core_state = {
+    add_building_construction = {
+    type = labour_camp
+    level = 1
+    instant_build = yes
+}
+}	
+		}
+	}
+
+	#Put an End to the Traitors
+	shared_focus = {
+		id = DPR_put_an_end_to_the_traitors
+		icon = GFX_DPR_put_an_end_to_the_traitors-495536
+		x = 3
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = DPR_war_is_fun  } prerequisite = { focus = DPR_strengthen_the_base  }
+		completion_reward = {
+	LNR_kornet = {
+	add_country_leader_trait = AntiPushilinsentiment
+	}				
+		}
+	}
+
+}
+
+
