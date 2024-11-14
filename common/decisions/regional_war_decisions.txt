@@ -126,8 +126,8 @@ south_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_south_west
-					has_country_flag = united_south_center
+					tag = SWT
+					tag = SCT
 				}
                 
             }
@@ -193,7 +193,7 @@ south_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_south_center
+					tag = SCT
 				}
 				614 = {
 					damage_building = {
@@ -216,7 +216,7 @@ south_war = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_south_west
+					tag = SWT
 				}
 				2085 = {
 					damage_building = {
@@ -269,7 +269,7 @@ south_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_south_center
+					tag = SCT
 				}
 				build_railway = {
 					level = 1
@@ -279,7 +279,7 @@ south_war = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_south_west
+					tag = SWT
 				}
 				build_railway = {
 					level = 1
@@ -349,7 +349,7 @@ south_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_south_center
+					tag = SCT
 				}
 				2085 = {
 					add_building_construction = { type = bunker level = 3 province = 2085 instant_build = yes }
@@ -367,7 +367,7 @@ south_war = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_south_west
+					tag = SWT
 				}
 				614 = {
 					add_building_construction = { type = bunker level = 3 province = 13888 instant_build = yes }
@@ -412,7 +412,7 @@ south_war = {
 			set_global_flag = sw_built_secondary
 			if = {
 				limit = {
-					has_country_flag = united_south_center
+					tag = SCT
 				}
 				657 = {
 					add_building_construction = { type = bunker level = 3 province = 6792 instant_build = yes }
@@ -425,7 +425,7 @@ south_war = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_south_west
+					tag = SWT
 				}
 				2061 = {
 					add_building_construction = { type = bunker level = 3 province = 5245 instant_build = yes }
@@ -461,8 +461,8 @@ south_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_south_west
-					has_country_flag = united_south_center
+					tag = SWT
+					tag = SCT
 				}
 				has_country_flag = south_war
             }
@@ -477,8 +477,10 @@ south_war = {
 				type = annex_everything
 			}
 			set_country_flag = south_war_escalated
+			clr_country_flag = south_war
 			FROM = {
 				set_country_flag = south_war_escalated
+				clr_country_flag = south_war
 			}
 			if = {
 				limit = {
@@ -505,14 +507,14 @@ south_war = {
 		}
 		available = {
 			FROM = {
-				surrender_progress > 0.5
+				surrender_progress > 0.3
 			}
 		}
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_south_west
-					has_country_flag = united_south_center
+					tag = SWT
+					tag = SCT
 				}
 				has_country_flag = south_war_escalated
             }
@@ -528,10 +530,12 @@ south_war = {
 		selectable_mission = no
 		timeout_effect = {
 			add_ideas = regional_failed_plans
+			clr_country_flag = sw_capture_cities
     	}
 		complete_effect = {
 			add_war_support = 0.1
 			add_stability = 0.15
+			clr_country_flag = sw_capture_cities
 		}
 	}
 
@@ -547,8 +551,8 @@ south_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_south_west
-					has_country_flag = united_south_center
+					tag = SWT
+					tag = SCT
 				}
 				has_country_flag = south_war_escalated
             }
@@ -564,10 +568,12 @@ south_war = {
 		selectable_mission = no
 		timeout_effect = {
 			add_ideas = regional_counter_attack
+			clr_country_flag = sw_hold_positions
     	}
 		complete_effect = {
 			add_war_support = -0.1
 			add_stability = -0.3
+			clr_country_flag = sw_hold_positions
 		}
 	}   
 }
@@ -666,8 +672,8 @@ center_war = {
         target_trigger = {
             FROM = {
                 OR = {
-                    has_country_flag = united_north
-                    has_country_flag = united_north_center
+                    tag = NRT
+                    tag = NCT
                 }
             }
         }
@@ -718,7 +724,7 @@ center_war = {
         remove_effect = {
             if = {
                 limit = {
-                    has_country_flag = united_north
+                    tag = NRT
                 }
                 2067 = {
                     damage_building = {
@@ -741,7 +747,7 @@ center_war = {
             }
             if = {
                 limit = {
-                    has_country_flag = united_north_center
+                    tag = NCT
                 }
                 2057 = {
                     damage_building = {
@@ -787,7 +793,7 @@ center_war = {
         remove_effect = {
             if = {
                 limit = {
-                    has_country_flag = united_north
+                    tag = NRT
                 }
                 build_railway = {
                     level = 1
@@ -804,7 +810,7 @@ center_war = {
             }
             if = {
                 limit = {
-                    has_country_flag = united_north_center
+                    tag = NCT
                 }
                 build_railway = {
                     level = 1
@@ -874,7 +880,7 @@ center_war = {
         remove_effect = {
             if = {
                 limit = {
-                    has_country_flag = united_north
+                    tag = NRT
                 }
                 2057 = {
                     add_building_construction = {
@@ -1007,7 +1013,7 @@ center_war = {
             }
             if = {
                 limit = {
-                    has_country_flag = united_north_center
+                    tag = NCT
                 }
                 2065 = {
                     add_building_construction = {
@@ -1195,7 +1201,7 @@ center_war = {
         remove_effect = {
             if = {
                 limit = {
-                    has_country_flag = united_north
+                    tag = NRT
                 }
                 2056 = {
                     add_building_construction = {
@@ -1324,7 +1330,7 @@ center_war = {
             }
             if = {
                 limit = {
-                    has_country_flag = united_north_center
+                    tag = NCT
                 }
                 2072 = {
                     add_building_construction = {
@@ -1444,8 +1450,8 @@ center_war = {
         target_trigger = {
             FROM = {
                 OR = {
-                    has_country_flag = united_north
-                    has_country_flag = united_north_center
+                    tag = NRT
+                    tag = NCT
                 }
                 has_country_flag = center_war
             }
@@ -1460,8 +1466,10 @@ center_war = {
                 type = annex_everything
             }
             set_country_flag = center_war_escalated
+			clr_country_flag = center_war
             FROM = {
                 set_country_flag = center_war_escalated
+				clr_country_flag = center_war
             }
             if = {
                 limit = {
@@ -1494,8 +1502,8 @@ center_war = {
         target_trigger = {
             FROM = {
                 OR = {
-                    has_country_flag = united_north
-                    has_country_flag = united_center
+                    tag = NRT
+                    tag = NCT
                 }
                 has_country_flag = center_war_escalated
             }
@@ -1511,10 +1519,12 @@ center_war = {
         selectable_mission = no
         timeout_effect = {
             add_ideas = regional_failed_plans
+			clr_country_flag = center_capture_cities
         }
         complete_effect = {
             add_war_support = 0.1
             add_stability = 0.15
+			clr_country_flag = center_capture_cities
         }
     }
 
@@ -1530,8 +1540,8 @@ center_war = {
         target_trigger = {
             FROM = {
                 OR = {
-                    has_country_flag = united_north
-                    has_country_flag = united_center
+                    tag = NRT
+                    tag = NCT
                 }
                 has_country_flag = center_war_escalated
             }
@@ -1547,10 +1557,12 @@ center_war = {
         selectable_mission = no
         timeout_effect = {
             add_ideas = regional_counter_attack
+			clr_country_flag = center_hold_positions
         }
         complete_effect = {
             add_war_support = -0.1
             add_stability = -0.3
+			clr_country_flag = center_hold_positions
         }
     }
 }
@@ -1683,8 +1695,8 @@ west_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_galicia
-					has_country_flag = united_podillya
+					tag = GLY
+					tag = PDL
 				}
                 
             }
@@ -1750,7 +1762,7 @@ west_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_podillya
+					tag = PDL
 				}
 				671 = {
 					damage_building = {
@@ -1767,7 +1779,7 @@ west_war = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_galicia
+					tag = GLY
 				}
 				2041 = {
 					damage_building = {
@@ -1820,7 +1832,7 @@ west_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_podillya
+					tag = PDL
 				}
 				build_railway = {
 					level = 1
@@ -1830,7 +1842,7 @@ west_war = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_galicia
+					tag = GLY
 				}
 				build_railway = {
 					level = 1
@@ -1905,7 +1917,7 @@ west_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_podillya
+					tag = PDL
 				}
 				2040 = {
 					add_building_construction = { type = bunker level = 2 province = 3713 instant_build = yes }
@@ -1933,7 +1945,7 @@ west_war = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_galicia
+					tag = GLY
 				}
 				502 = {
 					add_building_construction = { type = bunker level = 2 province = 13271 instant_build = yes }
@@ -1995,7 +2007,7 @@ west_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_podillya
+					tag = PDL
 				}
 				set_global_flag = pd_built_secondary
 				2039 = {
@@ -2021,7 +2033,7 @@ west_war = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_galicia
+					tag = GLY
 				}
 				2258 = {
 					add_building_construction = { type = bunker level = 2 province = 3345 instant_build = yes }
@@ -2086,8 +2098,8 @@ west_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_galicia
-					has_country_flag = united_podillya
+					tag = GLY
+					tag = PDL
 				}
 				has_country_flag = west_war
             }
@@ -2102,8 +2114,10 @@ west_war = {
 				type = annex_everything
 			}
 			set_country_flag = west_war_escalated
+			clr_country_flag = west_war
 			FROM = {
 				set_country_flag = west_war_escalated
+				clr_country_flag = west_war
 			}
 			if = {
 				limit = {
@@ -2136,8 +2150,8 @@ west_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_galicia
-					has_country_flag = united_podillya
+					tag = GLY
+					tag = PDL
 				}
 				has_country_flag = west_war_escalated
             }
@@ -2153,10 +2167,12 @@ west_war = {
 		selectable_mission = no
 		timeout_effect = {
 			add_ideas = regional_failed_plans
+			clr_country_flag = ww_capture_cities
     	}
 		complete_effect = {
 			add_war_support = 0.1
 			add_stability = 0.15
+			clr_country_flag = ww_capture_cities
 		}
 	}
 
@@ -2172,8 +2188,8 @@ west_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_galicia
-					has_country_flag = united_podillya
+					tag = GLY
+					tag = PDL
 				}
 				has_country_flag = west_war_escalated
             }
@@ -2189,10 +2205,12 @@ west_war = {
 		selectable_mission = no
 		timeout_effect = {
 			add_ideas = regional_counter_attack
+			clr_country_flag = ww_hold_positions
     	}
 		complete_effect = {
 			add_war_support = -0.1
 			add_stability = -0.3
+			clr_country_flag = ww_hold_positions
 		}
 	}   
 }
@@ -2325,8 +2343,8 @@ east_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					original_tag = DNI
-					has_country_flag = united_south_east
+					tag = DNP
+					tag = SET
 				}
                 
             }
@@ -2392,7 +2410,7 @@ east_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_south_east
+					tag = SET
 				}
 				2080 = {
 					damage_building = {
@@ -2409,7 +2427,7 @@ east_war = {
 			}
 			if = {
 				limit = {
-					original_tag = DNI
+					tag = DNP
 				}
 				2095 = {
 					damage_building = {
@@ -2462,7 +2480,7 @@ east_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_south_east
+					tag = SET
 				}
 				build_railway = {
 					level = 1
@@ -2472,7 +2490,7 @@ east_war = {
 			}
 			if = {
 				limit = {
-					original_tag = DNI
+					tag = DNP
 				}
 				build_railway = {
 					level = 1
@@ -2545,7 +2563,7 @@ east_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_south_east
+					tag = SET
 				}
 				2105 = {
 					add_building_construction = { type = bunker level = 3 province = 12966 instant_build = yes }
@@ -2567,7 +2585,7 @@ east_war = {
 			}
 			if = {
 				limit = {
-					original_tag = DNI
+					tag = DNP
 				}
 				579 = {
 					add_building_construction = { type = bunker level = 3 province = 13505 instant_build = yes }
@@ -2616,7 +2634,7 @@ east_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_south_east
+					tag = SET
 				}
 				set_global_flag = se_built_secondary
 				2105 = {
@@ -2646,7 +2664,7 @@ east_war = {
 			}
 			if = {
 				limit = {
-					original_tag = DNI
+					tag = DNP
 				}
 				2111 = {
 					add_building_construction = { type = bunker level = 3 province = 13263 instant_build = yes }
@@ -2685,8 +2703,8 @@ east_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					original_tag = DNI
-					has_country_flag = united_south_east
+					tag = DNP
+					tag = SET
 				}
 				has_country_flag = east_war
             }
@@ -2701,8 +2719,10 @@ east_war = {
 				type = annex_everything
 			}
 			set_country_flag = east_war_escalated
+			clr_country_flag = east_war
 			FROM = {
 				set_country_flag = east_war_escalated
+				clr_country_flag = east_war
 			}
 			if = {
 				limit = {
@@ -2735,8 +2755,8 @@ east_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					original_tag = DNI
-					has_country_flag = united_south_east
+					tag = DNP
+					tag = SET
 				}
 				has_country_flag = east_war_escalated
             }
@@ -2752,10 +2772,12 @@ east_war = {
 		selectable_mission = no
 		timeout_effect = {
 			add_ideas = regional_failed_plans
+			clr_country_flag = ew_capture_cities
     	}
 		complete_effect = {
 			add_war_support = 0.1
 			add_stability = 0.15
+			clr_country_flag = ew_capture_cities
 		}
 	}
 
@@ -2771,8 +2793,8 @@ east_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					original_tag = DNI
-					has_country_flag = united_south_east
+					tag = DNP
+					tag = SET
 				}
 				has_country_flag = east_war_escalated
             }
@@ -2788,10 +2810,12 @@ east_war = {
 		selectable_mission = no
 		timeout_effect = {
 			add_ideas = regional_counter_attack
+			clr_country_flag = ew_hold_positions
     	}
 		complete_effect = {
 			add_war_support = -0.1
 			add_stability = -0.3
+			clr_country_flag = ew_hold_positions
 		}
 	}   
 }
@@ -2924,8 +2948,8 @@ left_bank_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_south
-					has_country_flag = united_east
+					tag = STH
+					tag = ESN
 				}
                 
             }
@@ -2991,7 +3015,7 @@ left_bank_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_east
+					tag = ESN
 				}
 				2085 = {
 					damage_building = {
@@ -3008,7 +3032,7 @@ left_bank_war = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_south
+					tag = STH
 				}
 				2079 = {
 					damage_building = {
@@ -3061,7 +3085,7 @@ left_bank_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_east
+					tag = ESN
 				}
 				build_railway = {
 					level = 1
@@ -3076,7 +3100,7 @@ left_bank_war = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_south
+					tag = STH
 				}
 				build_railway = {
 					level = 1
@@ -3149,7 +3173,7 @@ left_bank_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_east
+					tag = ESN
 				}
 				2862 = {
 					add_building_construction = { type = bunker level = 3 province = 4991 instant_build = yes }
@@ -3189,7 +3213,7 @@ left_bank_war = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_south
+					tag = STH
 				}
 				2064 = {
 					add_building_construction = { type = bunker level = 3 province = 9324 instant_build = yes }
@@ -3256,7 +3280,7 @@ left_bank_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_east
+					tag = ESN
 				}
 				2105 = {
 					add_building_construction = { type = bunker level = 2 province = 3320 instant_build = yes }
@@ -3285,7 +3309,7 @@ left_bank_war = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_south
+					tag = STH
 				}
 				657 = {
 					add_building_construction = { type = bunker level = 3 province = 6792 instant_build = yes }
@@ -3329,8 +3353,8 @@ left_bank_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_south
-					has_country_flag = united_east
+					tag = STH
+					tag = ESN
 				}
 				has_country_flag = left_bank_war
             }
@@ -3345,8 +3369,10 @@ left_bank_war = {
 				type = annex_everything
 			}
 			set_country_flag = left_bank_war_escalated
+			clr_country_flag = left_bank_war
 			FROM = {
 				set_country_flag = left_bank_war_escalated
+				clr_country_flag = left_bank_war
 			}
 			if = {
 				limit = {
@@ -3379,8 +3405,8 @@ left_bank_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_south
-					has_country_flag = united_east
+					tag = STH
+					tag = ESN
 				}
 				has_country_flag = left_bank_war_escalated
             }
@@ -3396,10 +3422,12 @@ left_bank_war = {
 		selectable_mission = no
 		timeout_effect = {
 			add_ideas = regional_failed_plans
+			clr_country_flag = lw_capture_cities
     	}
 		complete_effect = {
 			add_war_support = 0.1
 			add_stability = 0.15
+			clr_country_flag = lw_capture_cities
 		}
 	}
 
@@ -3415,8 +3443,8 @@ left_bank_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_south
-					has_country_flag = united_east
+					tag = STH
+					tag = ESN
 				}
 				has_country_flag = left_bank_war_escalated
             }
@@ -3432,10 +3460,12 @@ left_bank_war = {
 		selectable_mission = no
 		timeout_effect = {
 			add_ideas = regional_counter_attack
+			clr_country_flag = lw_hold_positions
     	}
 		complete_effect = {
 			add_war_support = -0.1
 			add_stability = -0.3
+			clr_country_flag = lw_hold_positions
 		}
 	}   
 }
@@ -3551,7 +3581,7 @@ right_bank_war = {
 			}
 			if = {
 				limit = {
-					has_country_flag = rw_pffensive
+					has_country_flag = rw_offensive
 				}
 				add_ideas = regional_raise_morale_atk
 			}
@@ -3568,8 +3598,8 @@ right_bank_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_west
-					has_country_flag = united_center
+					tag = WST
+					tag = CNT
 				}
                 
             }
@@ -3635,7 +3665,7 @@ right_bank_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_center
+					tag = CNT
 				}
 				436 = {
 					damage_building = {
@@ -3652,7 +3682,7 @@ right_bank_war = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_west
+					tag = WST
 				}
 				2057 = {
 					damage_building = {
@@ -3705,7 +3735,7 @@ right_bank_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_center
+					tag = CNT
 				}
 				2065 = {
 					add_building_construction = { type = supply_node level = 1 province = 13183 instant_build = yes}
@@ -3713,7 +3743,7 @@ right_bank_war = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_west
+					tag = WST
 				}
 				build_railway = {
 					level = 1
@@ -3788,7 +3818,7 @@ right_bank_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_center
+					tag = CNT
 				}
 				2068 = {
 					add_building_construction = { type = bunker level = 2 province = 8917 instant_build = yes }
@@ -3825,7 +3855,7 @@ right_bank_war = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_west
+					tag = WST
 				}
 				2687 = {
 					add_building_construction = { type = bunker level = 2 province = 12169 instant_build = yes }
@@ -3892,7 +3922,7 @@ right_bank_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_center
+					tag = CNT
 				}
 				2074 = {
 					add_building_construction = { type = bunker level = 4 province = 13147 instant_build = yes }
@@ -3929,7 +3959,7 @@ right_bank_war = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_west
+					tag = WST
 				}
 				2039 = {
 					add_building_construction = { type = bunker level = 2 province = 5583 instant_build = yes }
@@ -3972,8 +4002,8 @@ right_bank_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_west
-					has_country_flag = united_center
+					tag = WST
+					tag = CNT
 				}
 				has_country_flag = right_bank_war
             }
@@ -3988,8 +4018,10 @@ right_bank_war = {
 				type = annex_everything
 			}
 			set_country_flag = right_bank_war_escalated
+			clr_country_flag = right_bank_war
 			FROM = {
 				set_country_flag = right_bank_war_escalated
+				clr_country_flag = right_bank_war
 			}
 			if = {
 				limit = {
@@ -4022,8 +4054,8 @@ right_bank_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_west
-					has_country_flag = united_center
+					tag = WST
+					tag = CNT
 				}
 				has_country_flag = right_bank_war_escalated
             }
@@ -4039,10 +4071,12 @@ right_bank_war = {
 		selectable_mission = no
 		timeout_effect = {
 			add_ideas = regional_failed_plans
+			clr_country_flag = rw_capture_cities
     	}
 		complete_effect = {
 			add_war_support = 0.1
 			add_stability = 0.15
+			clr_country_flag = rw_capture_cities
 		}
 	}
 
@@ -4058,8 +4092,8 @@ right_bank_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_west
-					has_country_flag = united_center
+					tag = WST
+					tag = CNT
 				}
 				has_country_flag = right_bank_war_escalated
             }
@@ -4075,10 +4109,12 @@ right_bank_war = {
 		selectable_mission = no
 		timeout_effect = {
 			add_ideas = regional_counter_attack
+			clr_country_flag = rw_hold_positions
     	}
 		complete_effect = {
 			add_war_support = -0.1
 			add_stability = -0.3
+			clr_country_flag = rw_hold_positions
 		}
 	}   
 }
@@ -4211,8 +4247,8 @@ ukraine_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_left_bank
-					has_country_flag = united_right_bank
+					tag = LBU
+					tag = RBU
 				}
                 
             }
@@ -4278,7 +4314,7 @@ ukraine_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_right_bank
+					tag = RBU
 				}
 				2079 = {
 					damage_building = {
@@ -4313,7 +4349,7 @@ ukraine_war = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_left_bank
+					tag = LBU
 				}
 				2112 = {
 					damage_building = {
@@ -4378,7 +4414,7 @@ ukraine_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_right_bank
+					tag = RBU
 				}
 				2071 = {
 					add_building_construction = { type = infrastructure level = 1 province = 13183 instant_build = yes}
@@ -4391,7 +4427,7 @@ ukraine_war = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_left_bank
+					tag = LBU
 				}
 				build_railway = {
 					level = 1
@@ -4466,7 +4502,7 @@ ukraine_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_right_bank
+					tag = RBU
 				}
 				2074 = {
 					add_building_construction = { type = bunker level = 3 province = 13147 instant_build = yes }
@@ -4523,7 +4559,7 @@ ukraine_war = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_left_bank
+					tag = LBU
 				}
 				2109 = {
 					add_building_construction = { type = bunker level = 3 province = 1456 instant_build = yes }
@@ -4611,7 +4647,7 @@ ukraine_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_right_bank
+					tag = RBU
 				}
 				2110 = {
 					add_building_construction = { type = bunker level = 2 province = 6680 instant_build = yes }
@@ -4664,7 +4700,7 @@ ukraine_war = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_left_bank
+					tag = LBU
 				}
 				2107 = {
 					add_building_construction = { type = bunker level = 2 province = 12803 instant_build = yes }
@@ -4738,8 +4774,8 @@ ukraine_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_left_bank
-					has_country_flag = united_right_bank
+					tag = LBU
+					tag = RBU
 				}
 				has_country_flag = ukraine_war
             }
@@ -4754,8 +4790,10 @@ ukraine_war = {
 				type = annex_everything
 			}
 			set_country_flag = ukraine_war_escalated
+			clr_country_flag = ukraine_war
 			FROM = {
 				set_country_flag = ukraine_war_escalated
+				clr_country_flag = ukraine_war
 			}
 			if = {
 				limit = {
@@ -4788,8 +4826,8 @@ ukraine_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_left_bank
-					has_country_flag = united_right_bank
+					tag = LBU
+					tag = RBU
 				}
 				has_country_flag = ukraine_war_escalated
             }
@@ -4805,10 +4843,12 @@ ukraine_war = {
 		selectable_mission = no
 		timeout_effect = {
 			add_ideas = regional_failed_plans
+			clr_country_flag = uw_capture_cities
     	}
 		complete_effect = {
 			add_war_support = 0.1
 			add_stability = 0.15
+			clr_country_flag = uw_capture_cities
 		}
 	}
 
@@ -4824,8 +4864,8 @@ ukraine_war = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_left_bank
-					has_country_flag = united_right_bank
+					tag = LBU
+					tag = RBU
 				}
 				has_country_flag = ukraine_war_escalated
             }
@@ -4841,10 +4881,12 @@ ukraine_war = {
 		selectable_mission = no
 		timeout_effect = {
 			add_ideas = regional_counter_attack
+			clr_country_flag = uw_hold_positions
     	}
 		complete_effect = {
 			add_war_support = -0.1
 			add_stability = -0.3
+			clr_country_flag = uw_hold_positions
 		}
 	}   
 }
