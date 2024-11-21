@@ -73,7 +73,7 @@ FOP_minor_wars_rush = {
     }
 }
 
-FOP_regional_wars = {
+FOP_micro_regional_wars = {
     allowed = {
         OR = {
             is_western_ukraine = yes
@@ -93,13 +93,10 @@ FOP_regional_wars = {
         ordertype = front
          country_trigger = { 
             OR = {
-                is_galician_ukraine = yes
-                is_podillya_ukraine = yes
+                is_western_ukraine = yes
+                is_southern_ukraine = yes
+                is_central_ukraine = yes
                 is_northern_ukraine = yes
-                is_north_central_ukraine = yes
-                is_south_western_ukraine = yes
-                is_south_central_ukraine = yes
-                is_south_eastern_ukraine = yes
             }
         }
         execution_type = balanced
@@ -108,7 +105,7 @@ FOP_regional_wars = {
     }
 }
 
-FOP_regional_wars_rush = {
+FOP_micro_regional_wars_rush = {
     allowed = {
         OR = {
             is_western_ukraine = yes
@@ -128,13 +125,122 @@ FOP_regional_wars_rush = {
         ordertype = front
          country_trigger = { 
             OR = {
-                is_galician_ukraine = yes
-                is_podillya_ukraine = yes
+                is_western_ukraine = yes
+                is_southern_ukraine = yes
+                is_central_ukraine = yes
                 is_northern_ukraine = yes
-                is_north_central_ukraine = yes
-                is_south_western_ukraine = yes
-                is_south_central_ukraine = yes
-                is_south_eastern_ukraine = yes
+            }
+        }
+        execution_type = rush
+        execute_order = yes
+        manual_attack = yes
+    }
+}
+
+FOP_regional_wars = {
+    allowed = {
+        OR = {
+            is_left_bank_ukraine = yes
+            is_right_bank_ukraine = yes
+        }
+    }
+    enable = {
+        AND = {
+            date > 2027.01.01
+            date < 2028.01.01
+        }
+	}
+    ai_strategy = {
+        type = front_control
+        ordertype = front
+         country_trigger = { 
+            OR = {
+                is_left_bank_ukraine = yes
+                is_right_bank_ukraine = yes
+            }
+        }
+        execution_type = balanced
+        execute_order = yes
+        manual_attack = yes
+    }
+}
+
+FOP_regional_wars_rush = {
+    allowed = {
+        OR = {
+            is_left_bank_ukraine = yes
+            is_right_bank_ukraine = yes
+        }
+    }
+    enable = {
+        AND = {
+            date > 2028.01.01
+            date < 2029.01.01
+        }
+	}
+    ai_strategy = {
+        type = front_control
+        ordertype = front
+         country_trigger = { 
+            OR = {
+                is_left_bank_ukraine = yes
+                is_right_bank_ukraine = yes
+            }
+        }
+        execution_type = rush
+        execute_order = yes
+        manual_attack = yes
+    }
+}
+
+FOP_super_regional_wars = {
+    allowed = {
+        OR = {
+            is_left_bank_ukraine = yes
+            is_right_bank_ukraine = yes
+        }
+    }
+    enable = {
+        AND = {
+            date > 2030.01.01
+            date < 2031.01.01
+        }
+	}
+    ai_strategy = {
+        type = front_control
+        ordertype = front
+         country_trigger = { 
+            OR = {
+                is_left_bank_ukraine = yes
+                is_right_bank_ukraine = yes
+            }
+        }
+        execution_type = balanced
+        execute_order = yes
+        manual_attack = yes
+    }
+}
+
+FOP_super_regional_wars_rush = {
+    allowed = {
+        OR = {
+            is_left_bank_ukraine = yes
+            is_right_bank_ukraine = yes
+        }
+    }
+    enable = {
+        AND = {
+            date > 2031.01.01
+            date < 2032.01.01
+        }
+	}
+    ai_strategy = {
+        type = front_control
+        ordertype = front
+         country_trigger = { 
+            OR = {
+                is_left_bank_ukraine = yes
+                is_right_bank_ukraine = yes
             }
         }
         execution_type = rush

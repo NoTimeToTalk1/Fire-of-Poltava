@@ -1,13 +1,15 @@
-FOP_warehouses = {
+FOP_micro_region_development = {
     search_warehouse_1 = {
-		icon = generic_decision
+		icon = GFX_decision_search_warehouse
 
 		allowed = {
 		}
 
+        visible = {
+            has_completed_focus = FOP_Find_Warehouses
+        }
+
         on_map_mode = map_and_decisions_view
-		
-		cost = 25
 
 		days_remove = 35
 		fire_only_once = yes
@@ -19,23 +21,35 @@ FOP_warehouses = {
 		modifier = {
 		}
 
+        custom_cost_trigger = {
+            check_variable = { region_dev_var > 4 }
+        }
+        custom_cost_text = decision_cost_development_5
+
+        complete_effect = {
+            add_to_variable = {
+                var = region_dev_var
+                value = -5
+            }
+        }
+
 		remove_effect = {
 			random_list = {
 				33 = {
                     add_equipment_to_stockpile = {
-                        type = infantry_equipment_2
+                        type = infantry_equipment
                         amount = 1000
                     }
                 }
                 33 = {
                     add_equipment_to_stockpile = {
-                        type = infantry_equipment_2
+                        type = infantry_equipment
                         amount = 500
                     }
                 }
                 33 = {
                     add_equipment_to_stockpile = {
-                        type = infantry_equipment_2
+                        type = infantry_equipment
                         amount = 1500
                     }
                 }
@@ -43,10 +57,14 @@ FOP_warehouses = {
 		}
 	}
     search_warehouse_2 = {
-		icon = generic_decision
+		icon = GFX_decision_search_warehouse
 
 		allowed = {
 		}
+
+        visible = {
+            has_completed_focus = FOP_Find_Warehouses
+        }
 
         on_map_mode = map_and_decisions_view
 
@@ -55,8 +73,6 @@ FOP_warehouses = {
                 is_controlled_by = ROOT
             }
         }
-		
-		cost = 25
 
 		days_remove = 35
 		fire_only_once = yes
@@ -68,23 +84,35 @@ FOP_warehouses = {
 			factor = 30		
 		}
 
+        custom_cost_trigger = {
+            check_variable = { region_dev_var > 4 }
+        }
+        custom_cost_text = decision_cost_development_5
+
+        complete_effect = {
+            add_to_variable = {
+                var = region_dev_var
+                value = -5
+            }
+        }
+
 		remove_effect = {
 			random_list = {
 				33 = {
                     add_equipment_to_stockpile = {
-                        type = infantry_equipment_2
+                        type = infantry_equipment
                         amount = 1000
                     }
                 }
                 33 = {
                     add_equipment_to_stockpile = {
-                        type = infantry_equipment_2
+                        type = infantry_equipment
                         amount = 500
                     }
                 }
                 33 = {
                     add_equipment_to_stockpile = {
-                        type = infantry_equipment_2
+                        type = infantry_equipment
                         amount = 1500
                     }
                 }
@@ -92,10 +120,14 @@ FOP_warehouses = {
 		}
 	}
     search_warehouse_3 = {
-		icon = generic_decision
+		icon = GFX_decision_search_warehouse
 
 		allowed = {
 		}
+
+        visible = {
+            has_completed_focus = FOP_Find_Warehouses
+        }
 
         on_map_mode = map_and_decisions_view
 
@@ -104,8 +136,6 @@ FOP_warehouses = {
                 is_controlled_by = ROOT
             }
         }
-		
-		cost = 25
 
 		days_remove = 35
 		fire_only_once = yes
@@ -117,39 +147,51 @@ FOP_warehouses = {
 			factor = 30		
 		}
 
+        custom_cost_trigger = {
+            check_variable = { region_dev_var > 4 }
+        }
+        custom_cost_text = decision_cost_development_5
+
+        complete_effect = {
+            add_to_variable = {
+                var = region_dev_var
+                value = -5
+            }
+        }
+
 		remove_effect = {
 			random_list = {
 				33 = {
                     add_equipment_to_stockpile = {
-                        type = infantry_equipment_2
+                        type = infantry_equipment
                         amount = 1000
                     }
                 }
                 33 = {
                     add_equipment_to_stockpile = {
-                        type = infantry_equipment_2
+                        type = infantry_equipment
                         amount = 500
                     }
                 }
                 33 = {
                     add_equipment_to_stockpile = {
-                        type = infantry_equipment_2
+                        type = infantry_equipment
                         amount = 1500
                     }
                 }
 			}
 		}
 	}
-}
 
-FOP_earn_trust = {
     issue_propaganda_material = {
-		icon = generic_decision
+		icon = GFX_decision_megaphone
 
 		allowed = {
 		}
-		
-		cost = 15
+
+        visible = {
+            has_completed_focus = FOP_Earn_The_Trust
+        }
 
 		days_remove = 21
 
@@ -159,6 +201,18 @@ FOP_earn_trust = {
         ai_will_do = {	
 			factor = 20		
 		}
+
+        custom_cost_trigger = {
+            check_variable = { region_dev_var > 0 }
+        }
+        custom_cost_text = decision_cost_development_1
+
+        complete_effect = {
+            add_to_variable = {
+                var = region_dev_var
+                value = -1
+            }
+        }
 
 		remove_effect = {
 			random_list = {
@@ -195,12 +249,14 @@ FOP_earn_trust = {
 		}
 	}
     economic_concessions = {
-		icon = generic_decision
+		icon = GFX_decision_economic_concessions
 
 		allowed = {
 		}
-		
-		cost = 20
+
+        visible = {
+            has_completed_focus = FOP_Earn_The_Trust
+        }
 
 		days_remove = 50
 
@@ -213,9 +269,25 @@ FOP_earn_trust = {
 			factor = 20		
 		}
 
+        custom_cost_trigger = {
+            check_variable = { region_dev_var > 0 }
+        }
+        custom_cost_text = decision_cost_development_1
+
+        complete_effect = {
+            add_to_variable = {
+                var = region_dev_var
+                value = -1
+            }
+        }
+
 		remove_effect = {
-			add_stability = 0.1
+			add_stability = 0.01
             add_political_power = 30
+            add_to_variable = {
+                var = region_dev_var
+                value = 2
+            }
             if = {
                 limit = {
                     random_controlled_state = {
@@ -231,14 +303,17 @@ FOP_earn_trust = {
                     add_compliance = 5
                 }
             }
-            
 		}
 	}
     invest_in_social_buildings = {
-        icon = generic_decision
+        icon = GFX_decision_invest_in_social_buildings
 
 		allowed = {
 		}
+
+        visible = {
+            has_completed_focus = FOP_Earn_The_Trust
+        }
 		
 		cost = 35
 
@@ -252,6 +327,18 @@ FOP_earn_trust = {
         ai_will_do = {	
 			factor = 30		
 		}
+
+        custom_cost_trigger = {
+            check_variable = { region_dev_var > 1 }
+        }
+        custom_cost_text = decision_cost_development_2
+
+        complete_effect = {
+            add_to_variable = {
+                var = region_dev_var
+                value = -2
+            }
+        }
 
 		remove_effect = {
 			random_list = {
@@ -309,16 +396,16 @@ FOP_earn_trust = {
             }
 		}
     }
-}
 
-FOP_appeasement = {
     police_raid = {
-		icon = generic_decision
+		icon = GFX_decision_naruchniki
 
 		allowed = {
 		}
 		
-		cost = 15
+        visible = {
+            has_completed_focus = FOP_Appease_The_Populace
+        }
 
 		days_remove = 35
 
@@ -328,6 +415,18 @@ FOP_appeasement = {
         ai_will_do = {	
 			factor = 20		
 		}
+
+        custom_cost_trigger = {
+            check_variable = { region_dev_var > 0 }
+        }
+        custom_cost_text = decision_cost_development_1
+
+        complete_effect = {
+            add_to_variable = {
+                var = region_dev_var
+                value = -1
+            }
+        }
 
 		remove_effect = {
 			random_list = {
@@ -372,12 +471,14 @@ FOP_appeasement = {
 		}
 	}
     invest_in_populace_control = {
-        icon = generic_decision
+        icon = GFX_decision_invest_in_populace_control
 
 		allowed = {
 		}
-		
-		cost = 20
+
+        visible = {
+            has_completed_focus = FOP_Appease_The_Populace
+        }
 
 		days_remove = 60
 
@@ -390,6 +491,18 @@ FOP_appeasement = {
 			factor = 20		
 		}
 
+        custom_cost_trigger = {
+            check_variable = { region_dev_var > 1 }
+        }
+        custom_cost_text = decision_cost_development_2
+
+        complete_effect = {
+            add_to_variable = {
+                var = region_dev_var
+                value = -2
+            }
+        }
+
 		remove_effect = {
             random_owned_controlled_state = {
                 add_building_construction = {
@@ -401,13 +514,16 @@ FOP_appeasement = {
 		}
     }
     put_them_to_serve = {
-        icon = generic_decision
+        icon = GFX_decision_put_them_to_serve
 
 		visible = {
-            has_completed_focus = FOP_Mobilisation
+            AND = {
+                has_completed_focus = FOP_Mobilisation
+                has_completed_focus = FOP_Appease_The_Populace
+            }
 		}
-		
-		cost = 20
+
+        cost = 25
 
 		days_remove = 35
 
@@ -417,6 +533,7 @@ FOP_appeasement = {
 
 		remove_effect = {
             add_war_support = -0.1
+            add_stability = -0.01
             add_manpower = 500
             if = {
                 limit = {
@@ -435,16 +552,16 @@ FOP_appeasement = {
             }
 		}
     }
-}
 
-FOP_mobilisation = {
     mobilise_small_amount = {
-		icon = generic_decision
+		icon = GFX_decision_mobilise_small_amount
 
 		allowed = {
 		}
-		
-		cost = 20
+
+        visible = {
+            has_completed_focus = FOP_Mobilisation
+        }
 
 		days_remove = 14
 
@@ -454,6 +571,18 @@ FOP_mobilisation = {
         ai_will_do = {	
 			factor = 100		
 		}
+
+        custom_cost_trigger = {
+            check_variable = { region_dev_var > 0 }
+        }
+        custom_cost_text = decision_cost_development_1
+
+        complete_effect = {
+            add_to_variable = {
+                var = region_dev_var
+                value = -1
+            }
+        }
 
 		remove_effect = {
 			random_list = {
@@ -470,17 +599,31 @@ FOP_mobilisation = {
 		}
 	}
     mobilise_medium_amount = {
-		icon = generic_decision
+		icon = GFX_decision_mobilise_medium_amount
 
 		allowed = {
 		}
-		
-		cost = 50
+
+        visible = {
+            has_completed_focus = FOP_Mobilisation
+        }
 
 		days_remove = 21
 
 		modifier = {
 		}
+
+        custom_cost_trigger = {
+            check_variable = { region_dev_var > 1 }
+        }
+        custom_cost_text = decision_cost_development_2
+
+        complete_effect = {
+            add_to_variable = {
+                var = region_dev_var
+                value = -2
+            }
+        }
 
         ai_will_do = {	
 			factor = 30		
@@ -503,12 +646,14 @@ FOP_mobilisation = {
 		}
 	}
     mobilise_large_amount = {
-		icon = generic_decision
+		icon = GFX_decision_mobilise_large_amount
 
 		allowed = {
 		}
-		
-		cost = 75
+
+        visible = {
+            has_completed_focus = FOP_Mobilisation
+        }
 
 		days_remove = 35
 
@@ -518,6 +663,18 @@ FOP_mobilisation = {
         ai_will_do = {	
 			factor = 50		
 		}
+
+        custom_cost_trigger = {
+            check_variable = { region_dev_var > 2 }
+        }
+        custom_cost_text = decision_cost_development_3
+
+        complete_effect = {
+            add_to_variable = {
+                var = region_dev_var
+                value = -3
+            }
+        }
 
 		remove_effect = {
 			random_list = {
@@ -536,16 +693,16 @@ FOP_mobilisation = {
 			}
 		}
 	}
-}
 
-FOP_resources = {
     organise_steel_production = {
 		icon = generic_decision
 
 		allowed = {
 		}
-		
-		cost = 30
+
+        visible = {
+            has_completed_focus = FOP_Rudimentary_Resource_Production
+        }
 
 		days_remove = 30
 
@@ -556,6 +713,18 @@ FOP_resources = {
             consumer_goods_factor = 0.1
 		}
 
+        custom_cost_trigger = {
+            check_variable = { region_dev_var > 2 }
+        }
+        custom_cost_text = decision_cost_development_3
+
+        complete_effect = {
+            add_to_variable = {
+                var = region_dev_var
+                value = -3
+            }
+        }
+
         ai_will_do = {	
 			factor = 100		
 		}
@@ -564,7 +733,7 @@ FOP_resources = {
 			random_owned_controlled_state = {
                 add_resource = {
                     type = steel
-                    amount = 8
+                    amount = 12
                 }
             }
 		}
@@ -574,8 +743,10 @@ FOP_resources = {
 
 		allowed = {
 		}
-		
-		cost = 30
+
+        visible = {
+            has_completed_focus = FOP_Rudimentary_Resource_Production
+        }
 
 		days_remove = 50
 
@@ -585,6 +756,18 @@ FOP_resources = {
             civilian_factory_use = 2
             consumer_goods_factor = 0.1
 		}
+
+        custom_cost_trigger = {
+            check_variable = { region_dev_var > 2 }
+        }
+        custom_cost_text = decision_cost_development_3
+
+        complete_effect = {
+            add_to_variable = {
+                var = region_dev_var
+                value = -3
+            }
+        }
 
         ai_will_do = {	
 			factor = 100		
@@ -594,7 +777,7 @@ FOP_resources = {
 			random_owned_controlled_state = {
                 add_resource = {
                     type = tungsten
-                    amount = 5
+                    amount = 8
                 }
             }
 		}
@@ -604,8 +787,10 @@ FOP_resources = {
 
 		allowed = {
 		}
-		
-		cost = 30
+
+        visible = {
+            has_completed_focus = FOP_Rudimentary_Resource_Production
+        }
 
 		days_remove = 50
 
@@ -616,6 +801,18 @@ FOP_resources = {
             consumer_goods_factor = 0.1
 		}
 
+        custom_cost_trigger = {
+            check_variable = { region_dev_var > 2 }
+        }
+        custom_cost_text = decision_cost_development_3
+
+        complete_effect = {
+            add_to_variable = {
+                var = region_dev_var
+                value = -3
+            }
+        }
+
         ai_will_do = {	
 			factor = 100		
 		}
@@ -624,16 +821,16 @@ FOP_resources = {
 			random_owned_controlled_state = {
                 add_resource = {
                     type = aluminium
-                    amount = 6
+                    amount = 10
                 }
             }
 		}
 	}
-}
 
+}
 FOP_weapon_market = {
     buy_infantry_weapons = {
-        icon = generic_decision
+        icon = GFX_decision_buy_infantry_weapons
 
 		allowed = {
 		}
@@ -653,19 +850,19 @@ FOP_weapon_market = {
 
 		remove_effect = {
 			add_equipment_to_stockpile = {
-                type = infantry_equipment_2
-                amount = 300
+                type = infantry_equipment
+                amount = 1000
             }
 		}
     }
 
     buy_vehicles = {
-        icon = generic_decision
+        icon = GFX_decision_buy_vehicles
 
 		allowed = {
 		}
 		
-		cost = 50
+		cost = 30
 
 		days_remove = 120
 
@@ -683,7 +880,7 @@ FOP_weapon_market = {
 		remove_effect = {
 			add_equipment_to_stockpile = {
                 type = motorized_equipment
-                amount = 100
+                amount = 200
             }
 		}
     }
@@ -691,7 +888,7 @@ FOP_weapon_market = {
 
 FOP_building_projects = {
     build_hospital = {
-        icon = generic_decision
+        icon = GFX_decision_build_hospital
 
 		allowed = {
 		}
@@ -720,7 +917,7 @@ FOP_building_projects = {
 		}
     }
     build_education_centre = {
-        icon = generic_decision
+        icon = GFX_decision_build_education_centre
 
 		allowed = {
 		}
@@ -749,7 +946,7 @@ FOP_building_projects = {
 		}
     }
     invest_in_factory = {
-        icon = generic_decision
+        icon = GFX_decision_invest_in_factory
 
 		allowed = {
 		}
@@ -778,7 +975,7 @@ FOP_building_projects = {
 		}
     }
     invest_in_arms_plant = {
-        icon = generic_decision
+        icon = GFX_decision_invest_in_arms_plant
 
 		allowed = {
 		}
@@ -811,7 +1008,7 @@ FOP_building_projects = {
 		}
     }
     invest_in_bullets = {
-        icon = generic_decision
+        icon = GFX_decision_invest_in_bullets
 
 		allowed = {
 		}
@@ -847,7 +1044,7 @@ FOP_building_projects = {
 
 FOP_attract_investments = {
     lend_factories_1 = {
-        icon = generic_decision
+        icon = GFX_decision_economic_concessions
 
 		allowed = {
 		}
@@ -874,7 +1071,7 @@ FOP_attract_investments = {
 		}
     }
     lend_factories_2 = {
-        icon = generic_decision
+        icon = GFX_decision_economic_concessions
 
 		allowed = {
 		}
@@ -901,7 +1098,7 @@ FOP_attract_investments = {
 		}
     }
     lend_factories_3 = {
-        icon = generic_decision
+        icon = GFX_decision_economic_concessions
 
 		allowed = {
 		}
