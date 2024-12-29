@@ -1879,7 +1879,6 @@ unite_south_eastern_ukraine = {
 				limit = {
 						original_tag = KHA
 				}
-				set_cosmetic_tag = KHA_regional_south_eastern
 				add_political_power = 50
 				load_focus_tree = fop_generic_one
 			}
@@ -2113,23 +2112,6 @@ unite_eastern_ukraine = {
 				limit = {
 						original_tag = KHA
 				}
-				set_cosmetic_tag = KHA_regional_eastern
-				add_political_power = 50
-			}
-			if = {
-				limit = {
-						original_tag = KHA
-						has_government = radical_nationalism
-				}
-				set_cosmetic_tag = KHA_freicor_1
-				add_political_power = 50
-			}
-			if = {
-				limit = {
-						original_tag = KHA
-						has_government = radical_socialism
-				}
-				set_cosmetic_tag = KHA_zhadan_1
 				add_political_power = 50
 			}
 			if = {
@@ -3945,6 +3927,10 @@ unite_left_bank_ukraine = {
 			if = {
 				limit = {
 						original_tag = KHA
+				NOT = {
+				has_government = radical_nationalism
+				has_government = radical_socialism
+				}
 				}
 				set_cosmetic_tag = KHA_regional_left_bank
 				add_political_power = 50
@@ -3954,7 +3940,7 @@ unite_left_bank_ukraine = {
 						original_tag = KHA
 						has_government = radical_nationalism
 				}
-				set_cosmetic_tag = KHA_freicor_1
+				set_cosmetic_tag = KHA_freicor_regional_left_bank
 				add_political_power = 50
 			}
 			if = {
@@ -3962,7 +3948,7 @@ unite_left_bank_ukraine = {
 						original_tag = KHA
 						has_government = radical_socialism
 				}
-				set_cosmetic_tag = KHA_zhadan_1
+				set_cosmetic_tag = KHA_zhadan_regional_left_bank
 				add_political_power = 50
 			}
 			if = {
@@ -5204,6 +5190,10 @@ unite_ukraine = {
 			if = {
 				limit = {
 						original_tag = KHA
+				NOT = {
+				has_government = radical_nationalism
+				has_government = radical_socialism
+				}
 				}
 				set_cosmetic_tag = KHA_united_ukraine
 				add_political_power = 50
@@ -5213,7 +5203,7 @@ unite_ukraine = {
 						original_tag = KHA
 						has_government = radical_nationalism
 				}
-				set_cosmetic_tag = KHA_freicor_2
+				set_cosmetic_tag = KHA_freicor_united_ukraine
 				add_political_power = 50
 			}
 			if = {
@@ -5221,7 +5211,7 @@ unite_ukraine = {
 						original_tag = KHA
 						has_government = radical_socialism
 				}
-				set_cosmetic_tag = KHA_zhadan_2
+				set_cosmetic_tag = KHA_zhadan_united_ukraine
 				add_political_power = 50
 			}
 			if = {
