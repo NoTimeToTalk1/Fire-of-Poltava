@@ -1,6 +1,6 @@
 focus_tree = {
-	id = lpr_start
-	continuous_focus_position = { x = -40 y = 1050 } 
+	id = LPR_start
+	continuous_focus_position = { x = -40 y = 1050 }
 	country = {
 		factor = 0
 		modifier = {
@@ -8,89 +8,62 @@ focus_tree = {
 			tag = LPR
 		}
 	}
-	
-	#We are Nothing Without the Army
-	focus = {
-		id = LPR_we_are_nothing_without_the_army
-		icon = GFX_LPR_we_are_nothing_without_the_army
-		x = 18
-		y = 2
-		cost = 1
-		
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-		prerequisite = { focus = LPR_time_for_change_in_state_policies  }
-		completion_reward = {
-		
-			add_war_support = 0.10
-			
-			hidden_effect = {
-				country_event = {
-					id = lpr.4
-				}
-			}
-		}
-	}
 
 	#Evaluate New Realities
 	focus = {
 		id = LPR_evaluate_new_realities
-		icon = GFX_LPR_evaluate_new_realities
+		icon = GFX_LPR_Evaluate_New_Realities
+		cost = 3
+
 		x = 18
 		y = 0
-		cost = 1
-		
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-		
-			add_stability = 0.05
 
-			hidden_effect = {
-				country_event = {
-					id = lpr.1
-				}
-			}
-		}
-	}
-
-	#Time for Change in State Policies
-	focus = {
-		id = LPR_time_for_change_in_state_policies
-		icon = GFX_LPR_time_for_changes_in_state_policies
-		x = 18
-		y = 1
-		cost = 3
-		
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = LPR_evaluate_new_realities  }
 		completion_reward = {
-		
 			add_stability = 0.10
-			add_political_power = 100
-			
-			hidden_effect = {
-				country_event = {
-					id = lpr.2
-				}
+			country_event = {
+				id = lpr.1
+				hours = 6
 			}
 		}
 	}
-	
-	#We Have a Democracy, Right?
+
+	#It's Time for Change in State Policies
+	focus = {
+		id = LPR_its_time_for_change_in_state_policies
+		icon = GFX_LPR_Its_Time_for_Change_in_State_Policies
+		cost = 2
+
+		relative_position_id = LPR_evaluate_new_realities
+		x = 0
+		y = 1
+
+		prerequisite = { focus = LPR_evaluate_new_realities }
+
+		completion_reward = {
+			add_political_power = 100
+			country_event = {
+				id = lpr.2
+				hours = 6
+			}
+		}
+	}
+
+	#We have a Democracy, Right?
 	focus = {
 		id = LPR_we_have_a_democracy_right
-		icon = GFX_LPR_we_have_democracy_right
-		x = 13
-		y = 2
-		cost = 1
-		
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = LPR_time_for_change_in_state_policies  }
+		icon = GFX_LPR_We_have_a_Democracy_Right
+		cost = 2
+
+		relative_position_id = LPR_its_time_for_change_in_state_policies
+		x = -4
+		y = 1
+
+		prerequisite = { focus = LPR_its_time_for_change_in_state_policies }
+
 		completion_reward = {
-		
-			add_stability = 0.05
 			swap_ideas = {
 				remove_idea = LPR_democracy_shirm
-				add_idea = LPR_democracy_shirm_2
+				add_idea = LPR_democracy_shirm_1
 			}
 		}
 	}
@@ -98,94 +71,118 @@ focus_tree = {
 	#Agreement With the Opposition
 	focus = {
 		id = LPR_agreement_with_the_opposition
-		icon = GFX_LPR_agreement_with_opposition
-		x = 13
-		y = 3
-		cost = 5
-		
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = LPR_we_have_a_democracy_right  }
+		icon = GFX_LPR_Agreement_With_the_Opposition
+		cost = 2
+
+		relative_position_id = LPR_we_have_a_democracy_right
+		x = 0
+		y = 1
+
+		prerequisite = { focus = LPR_we_have_a_democracy_right }
+
 		completion_reward = {
-		
-			add_popularity = { ideology = conservative_democracy popularity = 0.1 }
-			add_popularity = { ideology = radical_socialism popularity = 0.06 }
-			swap_ideas = {
-				remove_idea = LPR_democracy_shirm_2
-				add_idea = LPR_democracy_shirm_3
+			add_popularity = {
+				ideology = conservatism
+				popularity = 0.1
 			}
-			add_stability = 0.10
-			add_political_power = 150
-			country_event = lpr.3
+			add_popularity = {
+				ideology = socialism
+				popularity = 0.1
+			}
+			swap_ideas = {
+				remove_idea = LPR_democracy_shirm_1
+				add_idea = LPR_democracy_shirm_2
+			}
+			country_event = {
+				id = lpr.3
+				hours = 6
+			}
 		}
 	}
 
-	#Short-term Economic Development Plan
+	#Short-Term Economic Development Plan
 	focus = {
-		id = LPR_shortterm_economic_development_plan
-		icon = GFX_LPR_shortterm_economic_development_plan
-		x = 13
-		y = 4
-		cost = 3
-		
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		id = LPR_short_term_economic_development_plan
+		icon = GFX_LPR_Short_Term_Economic_Development_Plan
+		cost = 2
+
+		relative_position_id = LPR_agreement_with_the_opposition
+		x = 0
+		y = 1
+
 		prerequisite = { focus = LPR_agreement_with_the_opposition }
+
 		completion_reward = {
-		
 			add_timed_idea = {
 				idea = LPR_joint_development_plan
 				days = 120
-			
 			}
-			add_political_power = 100
+		}
+	}
+
+	#We are Nothing Without the Army
+	focus = {
+		id = LPR_we_are_nothing_without_the_army
+		icon = GFX_LPR_We_are_Nothing_Without_the_Army
+		cost = 2
+
+		relative_position_id = LPR_its_time_for_change_in_state_policies
+		x = 0
+		y = 1
+
+		prerequisite = { focus = LPR_its_time_for_change_in_state_policies }
+
+		completion_reward = {
+			add_war_support = 0.10
+			country_event = {
+				id = lpr.4
+				hours = 6
+			}
 		}
 	}
 
 	#Check All Warehouses and Niches
 	focus = {
 		id = LPR_check_all_warehouses_and_niches
-		icon = GFX_LPR_check_all_warehouses_and_niches
-		x = 17
-		y = 3
-		cost = 3
-		
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		icon = GFX_LPR_Check_All_Warehouses_and_Niches
+		cost = 2
+
+		relative_position_id = LPR_we_are_nothing_without_the_army
+		x = -1
+		y = 1
+
 		prerequisite = { focus = LPR_we_are_nothing_without_the_army }
+
 		completion_reward = {
-		
-			add_war_support = 0.05
-			
-			
-			
 			unlock_decision_category_tooltip = lpr_opening_the_warehouses
 		}
 	}
-	
-	#Self-sufficiency Programme
+
+	#Self-Sufficiency Programme
 	focus = {
-		id = LPR_selfsufficiency_programme
-		icon = GFX_LPR_selfsufficiency_programme
-		x = 19
-		y = 3
-		cost = 3
-		
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		id = LPR_self_sufficiency_programme
+		icon = GFX_LPR_Self_Sufficiency_Programme
+		cost = 2
+
+		relative_position_id = LPR_we_are_nothing_without_the_army
+		x = 1
+		y = 1
+
 		prerequisite = { focus = LPR_we_are_nothing_without_the_army }
+
 		completion_reward = {
-		
-		add_war_support = 0.03
-		
-		random_owned_controlled_state = {
+			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = ammunition_plant
+					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
 				add_building_construction = {
-					type = ammunition_silo
+					type = arms_factory
 					level = 1
 					instant_build = yes
-				}	
+				}
 			}
 		}
 	}
@@ -193,173 +190,190 @@ focus_tree = {
 	#Prepare People for the Inevitable
 	focus = {
 		id = LPR_prepare_people_for_the_inevitable
-		icon = GFX_LPR_prepare_people_for_the_inevitable
-		x = 18
-		y = 4
-		cost = 3
-		
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		icon = GFX_LPR_Prepare_People_for_the_Inevitable
+		cost = 2
+
+		relative_position_id = LPR_self_sufficiency_programme
+		x = -1
+		y = 1
+
 		prerequisite = { focus = LPR_check_all_warehouses_and_niches }
-		prerequisite = { focus = LPR_selfsufficiency_programme }
+		prerequisite = { focus = LPR_self_sufficiency_programme }
 		completion_reward = {
-		
-			add_manpower = 4000
-			add_war_support = 0.10
-			add_idea = extensive_conscription
+			add_manpower = 4500
 		}
 	}
 
-	#Let Daynego Come Up With Something
+	#Let Deynego Come Up With Something
 	focus = {
-		id = LPR_let_daynego_come_up_with_something
-		icon = GFX_LPR_let_daynego_come_up_with_smt
-		x = 23
-		y = 2
-		cost = 1
-		
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = LPR_time_for_change_in_state_policies }
+		id = LPR_let_deynego_come_up_with_something
+		icon = GFX_LPR_Let_Deynego_Come_Up_With_Something
+		cost = 2
+
+		relative_position_id = LPR_its_time_for_change_in_state_policies
+		x = 4
+		y = 1
+
+		prerequisite = { focus = LPR_its_time_for_change_in_state_policies }
+
 		completion_reward = {
-			
-			
-			
 			unlock_decision_category_tooltip = lpr_extradition_of_plotnytskyi
 			unlock_decision_category_tooltip = lpr_relations_with_allies
-			country_event = lpr.5
+			country_event = {
+				id = lpr.5
+				hours = 6
+			}
 		}
 	}
 
 	#About Relations With Donetsk
 	focus = {
 		id = LPR_about_relations_with_donetsk
-		icon = GFX_LPR_about_relations_with_donetsk
-		x = 23
-		y = 3
-		cost = 1
-		
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = LPR_let_daynego_come_up_with_something }
+		icon = GFX_LPR_About_Relations_With_Donetsk
+		cost = 2
+
+		relative_position_id = LPR_let_deynego_come_up_with_something
+		x = 0
+		y = 1
+
+		prerequisite = { focus = LPR_let_deynego_come_up_with_something }
+
 		completion_reward = {
-		
-			add_political_power = 25
-			country_event = lpr.6
+			country_event = {
+				id = lpr.6
+				hours = 6
+			}
 		}
 	}
 
 	#Beg Matushka for Help
 	focus = {
 		id = LPR_beg_matushka_for_help
-		icon = GFX_LPR_beg_matushka_for_help
-		x = 23
-		y = 4
+		icon = GFX_LPR_Beg_Matushka_for_Help
 		cost = 2
-		
-		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		relative_position_id = LPR_about_relations_with_donetsk
+		x = 0
+		y = 1
+
 		prerequisite = { focus = LPR_about_relations_with_donetsk }
+
 		completion_reward = {
-		
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = 1000
-				producer = LPR
+				producer = RUS
 			}
 			add_equipment_to_stockpile = {
 				type = artillery_equipment
 				amount = 50
-				producer = LPR
+				producer = RUS
 			}
 			add_equipment_to_stockpile = {
 				type = motorized_equipment
 				amount = 100
-				producer = LPR
+				producer = RUS
 			}
-			country_event = lpr.7
+			country_event = {
+				id = lpr.7
+				hours = 6
+			}
+		}
+	}
+
+	#With Lugansk in Grief and Joy
+	focus = {
+		id = LPR_with_lugansk_in_grief_and_joy
+		icon = GFX_LPR_With_Lugansk_in_Grief_and_Joy
+		cost = 4
+
+		relative_position_id = LPR_beg_matushka_for_help
+		x = -4
+		y = 1
+
+		prerequisite = { focus = LPR_short_term_economic_development_plan }
+		prerequisite = { focus = LPR_prepare_people_for_the_inevitable }
+		prerequisite = { focus = LPR_beg_matushka_for_help }
+
+		completion_reward = {
+			add_stability = 0.15
+			add_war_support = 0.15
+			country_event = {
+				id = lpr.10
+				hours = 6
+			}
 		}
 	}
 
 	#What is Novorossiya?
 	focus = {
 		id = LPR_what_is_novorossiya
-		icon = GFX_goal_unknown
-		x = 25
-		y = 4
-		cost = 1
-		
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = LPR_about_relations_with_donetsk }
-		completion_reward = {
-		
-			add_political_power = 15
-			country_event = lpr.8
-		}
-	}
-
-	#With Lugansk in Grief and Joy
-	focus = {
-		id = LPR_with_luhansk_in_grief_and_joy
-		icon = GFX_LPR_with_lugansk_in_grief_and_joy
-		x = 18
-		y = 5
+		icon = GFX_LPR_What_is_Novorossiya
 		cost = 2
-		
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = LPR_shortterm_economic_development_plan }
-		prerequisite = { focus = LPR_prepare_people_for_the_inevitable }
-		prerequisite = { focus = LPR_beg_matushka_for_help }
+
+		relative_position_id = LPR_about_relations_with_donetsk
+		x = 2
+		y = 1
+
+		prerequisite = { focus = LPR_about_relations_with_donetsk }
+
 		completion_reward = {
-		
-			add_stability = 0.15
-			add_war_support = 0.10
-			country_event = lpr.10
+			country_event = {
+				id = lpr.9
+				hours = 6
+			}
 		}
 	}
 
 	#Our Only Hope
 	focus = {
 		id = LPR_our_only_hope
-		icon = GFX_LPR_our_only_hope
-		x = 24
-		y = 5
-		cost = 1
-		
-		
-		
-		ai_will_do = {
-			factor = 90
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_LPR_Our_Only_Hope
+		cost = 2
+
+		relative_position_id = LPR_what_is_novorossiya
+		x = -1
+		y = 1
+
 		prerequisite = { focus = LPR_what_is_novorossiya }
 		mutually_exclusive = { focus = LPR_something_that_needs_rethinking }
+
 		completion_reward = {
-		
-			add_political_power = 50
+			add_political_power = 25
 			add_opinion_modifier = {
 				target = DPR
 				modifier = donbass_brothers
 			}
+		}
+
+		ai_will_do = {
+			factor = 100
 		}
 	}
 
 	#Something That Needs Rethinking
 	focus = {
 		id = LPR_something_that_needs_rethinking
-		icon = GFX_LPR_smt_that_needs_rethinking
-		x = 26
-		y = 5
-		cost = 1
-		
-		
-		
-		ai_will_do = {
-			factor = 10
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		icon = GFX_LPR_Something_That_Needs_Rethinking
+		cost = 2
+
+		relative_position_id = LPR_what_is_novorossiya
+		x = 1
+		y = 1
+
 		prerequisite = { focus = LPR_what_is_novorossiya }
 		mutually_exclusive = { focus = LPR_our_only_hope }
+
 		completion_reward = {
-		
-			add_political_power = -125
-			country_event = lpr.9
+			add_political_power = -25
+			country_event = {
+				id = lpr.10
+				hours = 6
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
 		}
 	}
 }

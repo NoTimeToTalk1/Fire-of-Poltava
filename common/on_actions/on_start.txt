@@ -1,23 +1,13 @@
-# "on_action = {
-# 	on_startup = {
-# 		effect = {
-# 			EUN = {
-# 			news_event = {
-# 				id = trans_global.1
-# 				days = 2
-# 				}
-# 			}
-
-# 			ARM = {
-# 				country_event = {
-# 					id = caucas.1
-# 					days = 10
-# 				}
-# 			}
-# 			NKR = {
-# 				give_military_access = ARM
-# 			}
-
-# 		}
-# 	}
-# }"
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = {
+				add_equipment_to_stockpile = {
+					type = train_equipment_1
+					amount = 20
+					producer = UKR
+				}	
+			}
+		}
+	}
+}

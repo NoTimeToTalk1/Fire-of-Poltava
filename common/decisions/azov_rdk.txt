@@ -9,21 +9,28 @@ azov_rdk = {
 		}
 		
 		available = {
-			check_variable = {AFU.AFU_rdk_eq > 2}   
+		AND = {
+		has_completed_focus = AFU_invite_russian_farrights		
+}	   
 		}
 		
 		fire_only_once = yes
 
 		visible = {
-				AFU = { has_war_with = RUS }
-			}
+		AND = {
+		has_completed_focus = AFU_invite_russian_farrights
+		AFU = { has_war_with = RUS }
+		}
+		}
 		
 		cost = 50
 
-		complete_effect = {
-			country_event = rdk.1
-		}
-	}
+		
+
+complete_effect = {
+	country_event = rdk.1
+}
+}
 
 	AFU_rdk_1_decision = {
 
@@ -34,27 +41,28 @@ azov_rdk = {
 		}
 		
 		available = {
-				
+		has_completed_focus = AFU_invite_russian_farrights	
 		}
 
 		visible = {
-				
+		has_completed_focus = AFU_invite_russian_farrights	
 		}
 		
-		cost = 25
+		cost = 50
 
 		
-		days_remove = 30
+		days_remove = 180
 
-		complete_effect = {
-		}
-
-		remove_effect  = {
+complete_effect = {
 			add_to_variable = {
 				var = AFU_rdk
-				value = 100
-				tooltip = AFU_rdk_1_tt
+				value = 50
+				tooltip = AFU_rdk_tt
 			}
+}
+
+		remove_effect  = {
+		
 		}
 	}
 	
@@ -68,60 +76,33 @@ azov_rdk = {
 		
 		available = {
        check_variable = {
-       AFU.rdk_media > 1
+       AFU_rdk_media > 3
        }
-			
-		}
-
-		visible = {	
-       		check_variable = {
-       			AFU.rdk_media > 1
-       		}
-		}
-		
-		cost = 50
-		
-		days_remove = 60
-
-		remove_effect  = {
-			add_to_variable = {
-				var = AFU_rdk
-				value = 300
-				tooltip = AFU_rdk_2_tt
-			}
-		}
-	}
-
-	AFU_rdk_media_decision = {
-		icon = GFX_decision_rdk
-		
-		ai_will_do = {	
-			factor = 50	
-		}
-
-		available = {
-
+		has_completed_focus = AFU_invite_russian_farrights	
 		}
 
 		visible = {
-			check_variable = {AFU.rdk_media < 3}
+		has_completed_focus = AFU_invite_russian_farrights	
+       check_variable = {
+       AFU_rdk_media > 3
+       }
 		}
+		
+		cost = 50
 
-		cost = 30
+		
+		days_remove = 180
 
-		days_remove = 90
+complete_effect = {
+			add_to_variable = {
+				var = AFU_rdk
+				value = 100
+				tooltip = AFU_rdk_tt
+			}
+}
 
 		remove_effect  = {
-			add_to_variable = {
-				var = AFU_rdk_media
-				value = 1
-				tooltip = AFU_rdk_media_tt
-			}
-			clamp_variable = {
-				var = AFU_rdk_media
-				min = 0
-				max = 3
-			}
+		
 		}
 	}
 	
@@ -134,17 +115,17 @@ azov_rdk = {
 		}
 		
 		available = {
-			
+		has_completed_focus = AFU_invite_russian_farrights	
 		}
 
 		visible = {
-			
+		has_completed_focus = AFU_invite_russian_farrights	
 		}
 		
 		cost = 50
 
 		
-		days_remove = 120
+		days_remove = 180
 
 complete_effect = {
 			add_to_variable = {
@@ -173,11 +154,11 @@ complete_effect = {
 		}
 		
 		available = {
-			
+		has_completed_focus = AFU_invite_russian_farrights	
 		}
 
 		visible = {
-			
+		has_completed_focus = AFU_invite_russian_farrights	
 		}
 		
 		cost = 100
@@ -217,7 +198,7 @@ complete_effect = {
 		cost = 100
 
 		
-		days_remove = 240
+		days_remove = 60
 
 
 complete_effect = {
@@ -229,19 +210,19 @@ random_list = {
  60 = {
 RUS = {
 add_stability = -0.01
-add_manpower = -50
+add_manpower = -10
 }
  }
  30 = {
 RUS = {
 add_stability = -0.03
-add_manpower = -100
+add_manpower = -25
 }
 }
  10 = {
 RUS = {
 add_stability = -0.05
-add_manpower = -150
+add_manpower = -30
 }
 }
 		}
@@ -283,6 +264,9 @@ random_list = {
 				value = 10
 				tooltip = AFU_rdk_tt
 			}
+RUS = {
+add_manpower = -10
+}
  }
  30 = {
 			add_to_variable = {
@@ -290,6 +274,9 @@ random_list = {
 				value = 25
 				tooltip = AFU_rdk_tt
 			}
+RUS = {
+add_manpower = -25
+}
 }
  10 = {
 			add_to_variable = {
@@ -297,6 +284,9 @@ random_list = {
 				value = 30
 				tooltip = AFU_rdk_tt
 			}
+RUS = {
+add_manpower = -30
+}
 }
 		}
 	}

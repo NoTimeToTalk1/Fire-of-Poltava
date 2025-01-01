@@ -1,121 +1,68 @@
-﻿capital = 593
-oob = "ZAK_2109"
+﻿capital = 2246
+oob = "ZAK"
+set_naval_oob = ""
+set_research_slots = 3
+set_convoys = 0
+set_stability = 0.5
+set_war_support = 0.5
 
-set_research_slots = 2
+add_ideas = {
+	ZAK_hungarian_influence
+	ZAK_local_security_service
+	ZAK_rusyn_riots
+}
 
 # Starting tech
 set_technology = {
+	infantry_weapons = 1
 	infantry_weapons1 = 1
-	tech_recon = 1
-	tech_support = 1		
+	support_weapons = 1
+    army_uniform = 1
+    command_and_control = 1
+    night_vision = 1
+	
+	tech_support = 1
 	tech_engineers = 1
+	tech_recon = 1
 	tech_military_police = 1
-	basic_train = 1
-	tech_mountaineers = 1
-	AFV = 1
-    MBT1 = 1
-    IFV1 = 1
-    APC1 = 1
-    sp_artillery1 = 1
-    rocket_artillery1 = 1
-    anti_air1 = 1
-    armored_car1 = 1
-    utility_vehicle = 1
-    utility_vehicle1 = 1
-	mechanised_infantry = 1
-	motorized_rocket_unit = 1
-	rocket_artillery = 1
-	infantry_aa1 = 1
-	infantry_at1 = 1
-	paratroopers = 1
+	
 	mortar = 1
     mortar1 = 1
     howitzer = 1
     howitzer1 = 1
-	early_fighter = 1
-	early_bomber = 1
-	strategic_bomber = 1
-	naval_bomber = 1
-	mass_assault = 1
-	fleet_in_being = 1
-}
-
-if = {
-	limit = {
-		NOT = { has_dlc = "No Step Back" }
-	}
-	set_technology = {
-		gwtank = 1
-		basic_light_tank = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "No Step Back"
-	}
-	set_technology = {
-		gwtank_chassis = 1
-		basic_light_tank_chassis = 1
-	}
-}
-if = {
-	limit = {
-		not = { has_dlc = "Man the Guns" }
-	}
-	set_technology = {
-		early_submarine = 1
-		basic_submarine = 1
-		early_destroyer = 1
-		early_light_cruiser = 1
-		early_heavy_cruiser = 1
-		early_battleship = 1
-		early_battlecruiser = 1
-		transport = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "Man the Guns"
-	}
-	set_technology = {
-		early_ship_hull_submarine = 1
-		basic_ship_hull_submarine = 1
-		early_ship_hull_light = 1
-		early_ship_hull_cruiser = 1
-		early_ship_hull_heavy = 1
-		mtg_transport = 1
-		basic_battery = 1
-		basic_torpedo = 1
-	}
-}
-set_popularities = {
-	centrism = 40
-	radical_nationalism = 30
-	liberal_democracy = 15
-	conservative_democracy = 15
-}
-set_politics = {	
-	ruling_party = centrism
-	last_election = "1939.9.12"
-	election_frequency = 48
-	elections_allowed = no
-
-}
-
-set_party_name = { ideology = centrism
-    long_name = "Transcarpathian administration"
-	name = "Zakarpatska administraciya" }
+	sp_artillery1 = 1
+    anti_air1 = 1
+	rocket_artillery1 = 1
 	
-	set_party_name = { ideology = radical_nationalism
-    long_name = "Carpathian Sich"
-	name = "Karpatska Sich" }
+    utility_vehicle = 1
+    utility_vehicle1 = 1
+	armored_car1 = 1
+	AFV = 1
+    MBT1 = 1
+    IFV1 = 1
+    APC1 = 1
+}
 
-	recruit_character = ZAK_Moskal
-	recruit_character = ZAK_Deyak
-	recruit_character = ZAK_sobko
-	recruit_character = ZAK_dymanskyi
+set_politics = {
+	ruling_party = centrism
+	last_election = "2019.1.1"
+	election_frequency = 60
+	elections_allowed = no
+}
 
-add_ideas = ZAK_hungarian_influence
-add_ideas = ZAK_local_security_service
-add_ideas = ZAK_svynohryusyny
+set_popularities = {
+	communism = 0
+	socialism = 0
+	social_democracy = 0
+	progressivism = 0
+	centrism = 40
+	liberalism = 15
+	conservatism = 15
+	traditionalism = 0
+	authoritarianism = 0
+	national_democracy = 0
+	ultranationalism = 30
+	oligarchism = 0
+}
 
+recruit_character = ZAK_Moskal

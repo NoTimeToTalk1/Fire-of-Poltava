@@ -1,0 +1,129 @@
+add_namespace = che
+
+#Cherkasy win the border war
+country_event = {
+	id = che.1
+	title = che.1.t
+	desc = che.1.d
+
+	picture = GFX_cherkasy_kobzar
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = che.1.a
+		add_political_power = 100
+		declare_war_on = {
+			target = UMA
+			type = annex_everything
+		}
+	}
+}
+
+#Cherkasy lose the border war
+country_event = {
+	id = che.2
+	title = che.2.t
+	desc = che.2.d
+
+	picture = GFX_cherkasy_kobzar
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = che.2.a
+		add_political_power = -100
+		country_event = {
+			id = che.3
+			days = 3
+		}
+	}
+}
+
+#PVA seizes power
+country_event = {
+	id = che.3
+	title = che.3.t
+	desc = che.3.d
+
+	picture = GFX_cherkasy_kobzar
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = che.3.a
+		set_cosmetic_tag = CHE_socialist
+		set_politics = {
+			ruling_party = authoritarianism
+		}
+		country_event = {
+			id = che.4
+			days = 30
+		}
+	}
+}
+
+#Moroz is invited
+country_event = {
+	id = che.4
+	title = che.4.t
+	desc = che.4.d
+
+	picture = GFX_cherkasy_kobzar
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = che.4.a
+		set_politics = {
+			ruling_party = socialism
+		}
+		country_event = {
+			id = che.5
+			days = 14
+		}
+	}
+}
+
+#Hrytsenko's counter-coup
+country_event = {
+	id = che.5
+	title = che.5.t
+	desc = che.5.d
+
+	picture = GFX_cherkasy_kobzar
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = che.5.a
+		set_politics = {
+			ruling_party = liberalism
+		}
+		KIR = {
+			country_event = {
+				id = che.6
+				days = 14
+			}
+		}
+	}
+}
+
+#Communists are furious
+country_event = {
+	id = che.6
+	title = che.6.t
+	desc = che.6.d
+
+	picture = GFX_cherkasy_kobzar
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = che.6.a
+		declare_war_on = {
+			target = CHE
+			type = annex_everything
+		}
+	}
+}

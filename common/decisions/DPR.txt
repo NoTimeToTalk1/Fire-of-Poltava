@@ -1,233 +1,510 @@
-konfederation = {
+open_the_warehouses_category = {
 
-	"install administration" = {
-
-		available = {
-			FROM = {
-				any_neighbor_state = {
-					is_core_of = ROOT
-				}
-			}
+	search_for_a_warehouse_in_torez = {
+		allowed = {
+			original_tag = DPR
+		}
+		
+		visible = {	
+			has_completed_focus = dnr_open_old_warehouses	
 		}
 
-		state_target = yes
-
-		on_map_mode = map_only
-
-		target_array = controlled_states
-
-		target_trigger = {
-			FROM = {
-				NOT = {
-					is_core_of = ROOT
-					all_neighbor_state = {
-						is_core_of = ROOT
-					}
-				}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 2028
 			}
 		}
-
-		cost = 20
-
+		
+		cost = 25
+		ai_will_do = {
+			factor = 100
+		}
+		
 		fire_only_once = yes
-
-		days_remove = 20
-
-		modifier = {
-			political_power_factor  = -0.05
-			compliance_growth  = 0.1
-		}
-
-		visible = {
-			FROM = {
-				any_neighbor_state = {
-					is_core_of = ROOT
+        days_remove = 40
+		
+		remove_effect = {
+			random_list = {
+				50 = {
+					country_event = dnr.8
+				}
+				50 = {
+					country_event = dnr.9
 				}
 			}
-			
-		}
-
-		complete_effect = {
-		}
-
-		remove_effect = {
-			FROM = {
-				set_state_flag = core.1
-
-			}
-			add_political_power = 5
 		}
 	}
-
-
-	"Filtration"= {
-
-		available = {
-			has_equipment = {
-				infantry_equipment > 50
-			}
-			FROM = {
-				has_state_flag = core.1
-			}
+	search_for_a_warehouse_in_harczyk_i_ilovajsk = {
+		allowed = {
+			original_tag = DPR
+		}
+		
+		visible = {	
+			has_completed_focus = dnr_open_old_warehouses	
 		}
 
-		state_target = yes
-
-		on_map_mode = map_only
-
-		target_array = controlled_states
-
-		target_trigger = {
-			FROM = {
-				has_state_flag = core.1
+		highlight_states = {
+			highlight_state_targets = {
+				state = 557
 			}
 		}
-
-		cost = 10
-
+		
+		cost = 25
+		ai_will_do = {
+			factor = 100
+		}
+		
 		fire_only_once = yes
-
-		days_remove = 40
-
-		modifier = {
-			stability_factor = -0.05
-			compliance_growth  = 0.5
-		}
-
-		visible = {
-			FROM = {
-				NOT = {
-					is_core_of = ROOT
-					all_neighbor_state = {
-						is_core_of = ROOT
-					}
+        days_remove = 40
+		
+		remove_effect = {
+			random_list = {
+				50 = {
+					country_event = dnr.8
 				}
-				
+				50 = {
+					country_event = dnr.9
+				}
 			}
 		}
-
-		complete_effect = {
+	}
+	search_for_a_warehouse_in_amvrosijivka = {
+		allowed = {
+			original_tag = DPR
+		}
+		
+		visible = {	
+			has_completed_focus = dnr_open_old_warehouses	
 		}
 
+		highlight_states = {
+			highlight_state_targets = {
+				state = 2096
+			}
+		}
+		
+		cost = 25
+		ai_will_do = {
+			factor = 100
+		}
+		
+		fire_only_once = yes
+        days_remove = 40
+		
+		remove_effect = {
+			random_list = {
+				50 = {
+					country_event = dnr.8
+				}
+				50 = {
+					country_event = dnr.9
+				}
+			}
+		}
+	}
+	search_for_a_warehouse_in_katyk = {
+		allowed = {
+			original_tag = DPR
+		}
+		
+		visible = {	
+			has_completed_focus = dnr_open_old_warehouses	
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 2310
+			}
+		}
+		
+		cost = 25
+		ai_will_do = {
+			factor = 100
+		}
+		
+		fire_only_once = yes
+        days_remove = 40
+		
+		remove_effect = {
+			random_list = {
+				50 = {
+					country_event = dnr.8
+				}
+				50 = {
+					country_event = dnr.9
+				}
+			}
+		}
+	}
+}
+
+mobilize_the_youth_and_reserves_category = {
+	mobik1 = {
+		allowed = {
+			original_tag = DPR
+		}
+		
+		visible = {	
+			has_completed_focus = dnr_mobilize_youth_and_reserves	
+		}
+		
+		cost = 20
+		ai_will_do = {
+			factor = 100
+		}
+		
+		fire_only_once = yes
+        days_remove = 20
+		
+		remove_effect = {
+			add_manpower = 2500
+		}
+	}
+	mobik2 = {
+		allowed = {
+			original_tag = DPR
+		}
+		
+		visible = {	
+			has_completed_focus = dnr_mobilize_youth_and_reserves	
+		}
+		
+		cost = 30
+		ai_will_do = {
+			factor = 100
+		}
+		
+		fire_only_once = yes
+        days_remove = 30
+		
+		remove_effect = {
+			#add_timed_idea = { idea = DPR_mobiks1  days = 5 }
+			add_manpower = 5000
+		}
+	}
+	mobik3 = {
+		allowed = {
+			original_tag = DPR
+		}
+		
+		visible = {	
+			has_completed_focus = dnr_mobilize_youth_and_reserves	
+		}
+		
+		cost = 40
+		ai_will_do = {
+			factor = 100
+		}
+		
+		fire_only_once = yes
+        days_remove = 40
+		
+		remove_effect = {
+			#add_timed_idea = { idea = DPR_mobiks1  days = 20 }
+			add_manpower = 10000
+		}
+	}
+	mobik4 = {
+		allowed = {
+			original_tag = DPR
+		}
+		
+		visible = {	
+			has_completed_focus = dnr_mobilize_youth_and_reserves	
+		}
+		
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+		
+		fire_only_once = yes
+        days_remove = 60
+		
+		remove_effect = {
+			#add_timed_idea = { idea = DPR_mobiks2  days = 14 }
+			add_manpower = 20000
+		}
+	}
+	mobik5 = {
+		allowed = {
+			original_tag = DPR
+		}
+		
+		visible = {	
+			has_completed_focus = dnr_mobilize_youth_and_reserves	
+		}
+		
+		cost = 60
+		ai_will_do = {
+			factor = 100
+		}
+		
+		fire_only_once = yes
+        days_remove = 120
+		
+		remove_effect = {
+			#add_timed_idea = { idea = DPR_mobiks2  days = 30 }
+			add_manpower = 50000
+		}
+	}
+	mobik_absolute = {
+		allowed = {
+			original_tag = DPR
+		}
+		
+		visible = {	
+			has_completed_focus = dnr_mobilize_youth_and_reserves	
+		}
+		
+		cost = 75
+		ai_will_do = {
+			factor = 100
+		}
+		
+		fire_only_once = yes
+        days_remove = 150
+		
+		remove_effect = {
+			#add_timed_idea = { idea = DPR_mobiks3  days = 30 }
+			add_manpower = 200000
+		}
+	}
+}
+
+request_russian_weapons_category = {
+
+	request_russian_infantry_equipment = {
+		allowed = {
+			original_tag = DPR
+		}
+		
+		visible = {	
+			has_completed_focus = dnr_requestrussianequipment
+		}
+		
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+		
+		days_remove = 5
+		
+		modifier = {
+			political_power_gain = -0.25
+		}
+		
 		remove_effect = {
 			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = -50
+				type = infantry_equipment_0
+			   	amount = 1500
+			   	producer = DPR
 			}
-			FROM = {
-				any_neighbor_state = {
-					is_core_of = ROOT
+		}
+	}
+	request_russian_artillery = {
+		allowed = {
+			original_tag = DPR
+		}
+		
+		visible = {	
+			has_completed_focus = dnr_requestrussianequipment
+		}
+		
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+		
+		days_remove = 5
+		
+		modifier = {
+			political_power_gain = -0.25
+		}
+		
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+			   	amount = 250
+			   	producer = DPR
+			}
+		}
+	}
+	request_russian_anti_air = {
+		allowed = {
+			original_tag = DPR
+		}
+		
+		visible = {	
+			has_completed_focus = dnr_requestrussianequipment
+		}
+		
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+		
+		days_remove = 5
+		
+		modifier = {
+			political_power_gain = -0.25
+		}
+		
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = anti_air_equipment
+			   	amount = 100
+			   	producer = DPR
+			}
+		}
+	}
+	request_russian_trucks = {
+		allowed = {
+			original_tag = DPR
+		}
+		
+		visible = {	
+			has_completed_focus = dnr_requestrussianequipment
+		}
+		
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+		
+		days_remove = 5
+		
+		modifier = {
+			political_power_gain = -0.25
+		}
+		
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+			   	amount = 250
+			   	producer = DPR
+			}
+		}
+	}
+	request_russian_light_tanks = {
+		allowed = {
+			original_tag = DPR
+		}
+		
+		visible = {	
+			has_completed_focus = dnr_requestrussianequipment
+		}
+		
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+		
+		days_remove = 5
+		
+		modifier = {
+			political_power_gain = -0.25
+		}
+		
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = light_tank_chassis
+			   	amount = 25
+			   	producer = DPR
+			}
+		}
+	}
+}
+
+request_russian_volunteers_category = {
+
+	send_recruiters_to_the_rostov_oblast = {
+		allowed = {
+			original_tag = DPR
+		}
+		
+		visible = {	
+			has_completed_focus = dnr_andvolunteers
+		}
+		
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+		
+		days_remove = 5
+		
+		remove_effect = {
+			random_list = {
+				50 = {
+					add_manpower = 1000
+				}
+				30 = {
+					add_manpower = 2000
+				}
+				20 = {
+					add_manpower = 3000
 				}
 			}
 		}
 	}
-
-	"Propaganda"= {
-
-		available = {
-			FROM = {
-				any_neighbor_state = {
-					is_core_of = ROOT
-				}
-			}
+	send_recruiters_to_the_volgograd_oblast = {
+		allowed = {
+			original_tag = DPR
 		}
-
-		state_target = yes
-
-		on_map_mode = map_only
-
-		target_array = controlled_states
-
-		target_trigger = {
-			FROM = {
-				any_neighbor_state = {
-					is_core_of = ROOT
-				}
-			}
+		
+		visible = {	
+			has_completed_focus = dnr_andvolunteers
 		}
-
-		cost = 30
-
-		fire_only_once = yes
-
-		days_remove = 60
-
-		modifier = {
-			local_supplies = -0.25
-			local_resources = -0.5
-			army_speed_factor_for_controller = -0.5
-			compliance_growth  = 0.3
+		
+		cost = 50
+		ai_will_do = {
+			factor = 100
 		}
-
-		visible = {
-			FROM = {
-				NOT = {
-					is_core_of = ROOT
-					all_neighbor_state = {
-						is_core_of = ROOT
-					}
-				}
-				
-			}
-		}
-
-		complete_effect = {
-		}
-
+		
+		days_remove = 5
+		
 		remove_effect = {
-			add_political_power = 10
-			FROM = {
-				set_state_flag = core.propg
+			random_list = {
+				50 = {
+					add_manpower = 1000
+				}
+				30 = {
+					add_manpower = 2000
+				}
+				20 = {
+					add_manpower = 3000
+				}
 			}
 		}
 	}
-
-	"Unite with Confederation"= {
-
-		available = {
-			FROM = {
-				has_state_flag = core.1
-			}
+	send_recruiters_to_the_voronezh_oblast = {
+		allowed = {
+			original_tag = DPR
 		}
-
-		state_target = yes
-
-		on_map_mode = map_only
-
-		target_array = controlled_states
-
-		target_trigger = {
-			FROM = {
-				has_state_flag = core.1
-			}
+		
+		visible = {	
+			has_completed_focus = dnr_andvolunteers
 		}
-
-		cost = 5
-
-		fire_only_once = yes
-
-		days_remove = 10
-
-		modifier = {
-			compliance_growth  = 0.3
+		
+		cost = 50
+		ai_will_do = {
+			factor = 100
 		}
-
-		visible = {
-			FROM = {
-				AND = {
-				has_state_flag = core.1
-				has_state_flag = core.propg
-				}
-			}
-		}
-
-		complete_effect = {
-		}
-
+		
+		days_remove = 5
+		
 		remove_effect = {
-			add_political_power = 10
-			FROM = {
-				add_core_of = ROOT
+			random_list = {
+				50 = {
+					add_manpower = 1000
+				}
+				30 = {
+					add_manpower = 2000
+				}
+				20 = {
+					add_manpower = 3000
+				}
 			}
 		}
 	}

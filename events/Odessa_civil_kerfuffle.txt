@@ -1,14 +1,14 @@
 ﻿add_namespace = ode
 
-country_event = {
+country_event = { #Starting Event
 	id = ode.1
 	title = ode.1.t
 	desc = ode.1.d
-
 	picture = GFX_report_event_carp_rada
+	
 	fire_only_once = yes
 	is_triggered_only = yes
-	
+
 	option = {
 		name = ode.1.a
 		add_political_power = -100
@@ -23,16 +23,16 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Sternenko Rises Up
 	id = ode.2
 	title = ode.2.t
 	desc = ode.2.d
-
 	picture = GFX_report_event_carp_rada
+	
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	option = {
+	option = { #ADMIRAL
 		name = ode.2.a
 		ai_chance = {
 			base = 100
@@ -41,24 +41,20 @@ country_event = {
 		
 		
 		OLD = {
-			transfer_state = 2045
-			set_province_controller = 14022
-			add_state_core = 2045
+			transfer_state = 2032
 			give_military_access = ODE
 			give_military_access = MYK
+			add_to_faction = blkseaconf
 		}
 		
 		STR = {
+			transfer_state = 613
 			transfer_state = 2038
+			transfer_state = 2045
+			transfer_state = 2046
 			transfer_state = 2047
-		    transfer_state = 2046
-		    transfer_state = 613
-			set_province_controller = 7032
-			set_province_controller = 8526
-			set_province_controller = 6897
-			set_province_controller = 13910
-			set_province_controller = 5954
-			set_province_controller = 3104
+			transfer_state = 2682
+			transfer_state = 2683
 			
 			declare_war_on = {
 				target = ODE
@@ -69,37 +65,37 @@ country_event = {
 				type = annex_everything
 			}
 		}
-		every_state = {
-			limit = {
-				is_core_of = ODE
-			}
-			add_core_of = STR
-		}
 
 		hidden_effect = {
 			OLD = {
-				add_equipment = {
+				add_equipment_to_stockpile = {
 					type = train_equipment_1
 					amount = 1
 					producer = ODE
 				}
 				load_oob = "odesatrukhanov"
+				add_state_core = 2032
 			}
 			STR = {
-				add_equipment = {
+				add_equipment_to_stockpile = {
 					type = train_equipment_1
 					amount = 5
 					producer = ODE
 				}
 				load_oob = "sternenko"
+				add_state_core = 613
+				add_state_core = 2038
+				add_state_core = 2045
+				add_state_core = 2046
+				add_state_core = 2047
+				add_state_core = 2682
+				add_state_core = 2683
 			}
 			country_event = {
 				id = ode.3
 				hours = 6
 				random_hours = 6
             }
-			clr_global_flag = super_odessa_war
-            clr_global_flag = Super_Event_Visible
 			news_event = {
 				id = war.1
 				days = 1
@@ -107,7 +103,7 @@ country_event = {
 		}
     }
 	
-	option = {
+	option = { #TRUKHANOV
 		name = ode.2.b
 		ai_chance = {
 			base = 100
@@ -120,23 +116,20 @@ country_event = {
 		OLD = { change_tag_from = ODE }
 		
 		OLD = {
-			transfer_state = 2045
-			set_province_controller = 14022
-			add_state_core = 2045
+			transfer_state = 2032
 			give_military_access = ODE
+			give_military_access = MYK
+			add_to_faction = blkseaconf
 		}
 		
 		STR = {
+			transfer_state = 613
 			transfer_state = 2038
+			transfer_state = 2045
+			transfer_state = 2046
 			transfer_state = 2047
-		    transfer_state = 2046
-		    transfer_state = 613
-			set_province_controller = 7032
-			set_province_controller = 8526
-			set_province_controller = 6897
-			set_province_controller = 13910
-			set_province_controller = 5954
-			set_province_controller = 3104
+			transfer_state = 2682
+			transfer_state = 2683
 			
 			declare_war_on = {
 				target = ODE
@@ -147,37 +140,37 @@ country_event = {
 				type = annex_everything
 			}
 		}
-		every_state = {
-			limit = {
-				is_core_of = ODE
-			}
-			add_core_of = STR
-		}
 
 		hidden_effect = {
 			OLD = {
-				add_equipment = {
+				add_equipment_to_stockpile = {
 					type = train_equipment_1
 					amount = 1
 					producer = ODE
 				}
 				load_oob = "odesatrukhanov"
+				add_state_core = 2032
 			}
 			STR = {
-				add_equipment = {
+				add_equipment_to_stockpile = {
 					type = train_equipment_1
 					amount = 5
 					producer = ODE
 				}
 				load_oob = "sternenko"
+				add_state_core = 613
+				add_state_core = 2038
+				add_state_core = 2045
+				add_state_core = 2046
+				add_state_core = 2047
+				add_state_core = 2682
+				add_state_core = 2683
 			}
 			country_event = {
 				id = ode.3
 				hours = 6
 				random_hours = 6
             }
-			clr_global_flag = super_odessa_war
-            clr_global_flag = Super_Event_Visible
 			news_event = {
 				id = war.1
 				days = 1
@@ -185,7 +178,7 @@ country_event = {
 		}
     }
 	
-	option = {
+	option = { #STERNENKO
 		name = ode.2.c
 		ai_chance = {
 			base = 100
@@ -198,23 +191,20 @@ country_event = {
 		STR = { change_tag_from = ODE }
 		
 		OLD = {
-			transfer_state = 2045
-			set_province_controller = 14022
-			add_state_core = 2045
+			transfer_state = 2032
 			give_military_access = ODE
+			give_military_access = MYK
+			add_to_faction = blkseaconf
 		}
 		
 		STR = {
+			transfer_state = 613
 			transfer_state = 2038
+			transfer_state = 2045
+			transfer_state = 2046
 			transfer_state = 2047
-		    transfer_state = 2046
-		    transfer_state = 613
-			set_province_controller = 7032
-			set_province_controller = 8526
-			set_province_controller = 6897
-			set_province_controller = 13910
-			set_province_controller = 5954
-			set_province_controller = 3104
+			transfer_state = 2682
+			transfer_state = 2683
 			
 			declare_war_on = {
 				target = ODE
@@ -225,37 +215,37 @@ country_event = {
 				type = annex_everything
 			}
 		}
-		every_state = {
-			limit = {
-				is_core_of = ODE
-			}
-			add_core_of = STR
-		}
 
 		hidden_effect = {
 			OLD = {
-				add_equipment = {
+				add_equipment_to_stockpile = {
 					type = train_equipment_1
 					amount = 1
 					producer = ODE
 				}
 				load_oob = "odesatrukhanov"
+				add_state_core = 2032
 			}
 			STR = {
-				add_equipment = {
+				add_equipment_to_stockpile = {
 					type = train_equipment_1
 					amount = 5
 					producer = ODE
 				}
 				load_oob = "sternenko"
+				add_state_core = 613
+				add_state_core = 2038
+				add_state_core = 2045
+				add_state_core = 2046
+				add_state_core = 2047
+				add_state_core = 2682
+				add_state_core = 2683
 			}
 			country_event = {
 				id = ode.3
 				hours = 6
 				random_hours = 6
             }
-			clr_global_flag = super_odessa_war
-            clr_global_flag = Super_Event_Visible
 			news_event = {
 				id = war.1
 				days = 1
@@ -264,16 +254,16 @@ country_event = {
     }
 }
 
-country_event = {
+country_event = { #Russians came
 	id = ode.3
 	title = ode.3.t
 	desc = ode.3.d
-
 	picture = GFX_report_event_carp_rada
+	
 	fire_only_once = yes
 	is_triggered_only = yes
-	
-	option = {
+
+	option = { #ADMIRAL
 		name = ode.3.a
 		ai_chance = {
 			base = 100
@@ -281,7 +271,7 @@ country_event = {
 		
 		
 		
-		RGE = {
+		REC = {
             transfer_state = 2682
 		    transfer_state = 2683
 			
@@ -300,15 +290,15 @@ country_event = {
 		}
 		
 		TRA = {
-			give_military_access = RGE
+			give_military_access = REC
 		}
 		KIR = {
-			give_military_access = RGE
+			give_military_access = REC
 		}
 		
 		hidden_effect = {
-			RGE = {
-				add_equipment = {
+			REC = {
+				add_equipment_to_stockpile = {
 					type = train_equipment_1
 					amount = 2
 					producer = ODE
@@ -323,7 +313,7 @@ country_event = {
 		}
 	}
 	
-	option = {
+	option = { #RUS CORPS
 		name = ode.3.b
 		ai_chance = {
 			base = 100
@@ -333,9 +323,9 @@ country_event = {
 			}
 		}
 		
-		RGE = { change_tag_from = ODE }
+		REC = { change_tag_from = ODE }
 		
-		RGE = {
+		REC = {
             transfer_state = 2682
 		    transfer_state = 2683
 			
@@ -354,15 +344,15 @@ country_event = {
 		}
 		
 		TRA = {
-			give_military_access = RGE
+			give_military_access = REC
 		}
 		KIR = {
-			give_military_access = RGE
+			give_military_access = REC
 		}
 		
 		hidden_effect = {
-			RGE = {
-				add_equipment = {
+			REC = {
+				add_equipment_to_stockpile = {
 					type = train_equipment_1
 					amount = 2
 					producer = ODE
@@ -378,16 +368,16 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Shariy Rises Up
 	id = ode.4
 	title = ode.4.t
 	desc = ode.4.d
-
 	picture = GFX_report_event_carp_rada
+	
 	fire_only_once = yes
 	is_triggered_only = yes
-	
-	option = {
+
+	option = { #ADMIRAL
 	    name = ode.4.a
 		ai_chance = {
 			base = 100
@@ -398,7 +388,7 @@ country_event = {
 		ODE = {
 			end_puppet = MYK
 		}
-		SHT = {
+		SHA = {
 			transfer_state = 2060
 			transfer_state = 2061
 			transfer_state = 2062
@@ -422,42 +412,36 @@ country_event = {
 				type = annex_everything
 			}
 		}
-		every_state = {
-			limit = {
-				is_core_of = ODE
-			}
-			add_core_of = SHT
-		}
-		every_state = {
-			limit = {
-				is_core_of = MYK
-			}
-			add_core_of = SHT
-		}
 		MYK = {
 			set_province_controller = 13720
 			set_province_controller = 13652
 			set_cosmetic_tag = MYO
+			leave_faction = yes
 		}
 		
-		hidden_effect = {
-        set_global_flag = odessa_war		
-			SHT = {
-				add_equipment = {
+		hidden_effect = {	
+			SHA = {
+				add_equipment_to_stockpile = {
 					type = train_equipment_1
 					amount = 3
 					producer = ODE
 				}
 				load_oob = "odesashariy"
+				add_state_core = 2060
+				add_state_core = 2061
+				add_state_core = 2062
+				add_state_core = 2063
+				add_state_core = 618
 			}
 			MYK = {
-				add_equipment = {
+				add_equipment_to_stockpile = {
 					type = train_equipment_1
 					amount = 5
 					producer = ODE
 				}
 				load_oob = "odesamyk"
 			}
+			OPZ = { country_event = ode.41 }
 			#country_event = {
 			#	id = ode.5
 			#	hours = 6
@@ -466,7 +450,7 @@ country_event = {
 		}
     }
 	
-	option = {
+	option = { #KIM
 	    name = ode.4.b
 		ai_chance = {
 			base = 100
@@ -481,7 +465,7 @@ country_event = {
 		ODE = {
 			end_puppet = MYK
 		}
-		SHT = {
+		SHA = {
 			transfer_state = 2060
 			transfer_state = 2061
 			transfer_state = 2062
@@ -505,41 +489,36 @@ country_event = {
 				type = annex_everything
 			}
 		}
-		every_state = {
-			limit = {
-				is_core_of = ODE
-			}
-			add_core_of = SHT
-		}
-		every_state = {
-			limit = {
-				is_core_of = MYK
-			}
-			add_core_of = SHT
-		}
 		MYK = {
 			set_province_controller = 13720
 			set_province_controller = 13652
 			set_cosmetic_tag = MYO
+			leave_faction = yes
 		}
 		
 		hidden_effect = { 
-			SHT = {
-				add_equipment = {
+			SHA = {
+				add_equipment_to_stockpile = {
 					type = train_equipment_1
 					amount = 5
 					producer = ODE
 				}
 				load_oob = "odesashariy"
+				add_state_core = 2060
+				add_state_core = 2061
+				add_state_core = 2062
+				add_state_core = 2063
+				add_state_core = 618
 			}
 			MYK = {
-				add_equipment = {
+				add_equipment_to_stockpile = {
 					type = train_equipment_1
 					amount = 5
 					producer = ODE
 				}
 				load_oob = "odesamyk"
 			}
+			OPZ = { country_event = ode.41 }
 			#country_event = {
 			#	id = ode.5
 			#	hours = 6
@@ -548,7 +527,7 @@ country_event = {
 		}
     }
 	
-	option = {
+	option = { #SHARIY
 	    name = ode.4.c
 		ai_chance = {
 			base = 100
@@ -558,12 +537,12 @@ country_event = {
 			}
 		}
 		
-		SHT = { change_tag_from = ODE }
+		SHA = { change_tag_from = ODE }
 		
 		ODE = {
 			end_puppet = MYK
 		}
-		SHT = {
+		SHA = {
 			transfer_state = 2060
 			transfer_state = 2061
 			transfer_state = 2062
@@ -587,41 +566,36 @@ country_event = {
 				type = annex_everything
 			}
 		}
-		every_state = {
-			limit = {
-				is_core_of = ODE
-			}
-			add_core_of = SHT
-		}
-		every_state = {
-			limit = {
-				is_core_of = MYK
-			}
-			add_core_of = SHT
-		}
 		MYK = {
 			set_province_controller = 13720
 			set_province_controller = 13652
 			set_cosmetic_tag = MYO
+			leave_faction = yes
 		}
 		
 		hidden_effect = { 
-			SHT = {
-				add_equipment = {
+			SHA = {
+				add_equipment_to_stockpile = {
 					type = train_equipment_1
 					amount = 3
 					producer = ODE
 				}
 				load_oob = "odesashariy"
+				add_state_core = 2060
+				add_state_core = 2061
+				add_state_core = 2062
+				add_state_core = 2063
+				add_state_core = 618
 			}
 			MYK = {
-				add_equipment = {
+				add_equipment_to_stockpile = {
 					type = train_equipment_1
 					amount = 5
 					producer = ODE
 				}
 				load_oob = "odesamyk"
 			}
+			OPZ = { country_event = ode.41 }
 			#country_event = {
 			#	id = ode.5
 			#	hours = 6
@@ -631,16 +605,67 @@ country_event = {
     }
 }
 
-country_event = {
-	id = ode.5
-	title = ode.5.t
-	desc = ode.5.d
-
+country_event = { #Kherson Intervention
+	id = ode.41
+	title = ode.41.t
+	desc = ode.41.d
 	picture = GFX_report_event_carp_rada
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ode.41.a
+		ai_chance = {
+			factor = 100
+		}
+		2858 = {
+			transfer_state_to = OPZ
+		}
+		2847 = {
+			transfer_state_to = OPZ
+		}
+		
+		hidden_effect = {
+			ODE = { country_event = ode.42 }
+			MYK = { country_event = ode.42 }
+		}
+	}
+	
+	option = {
+		name = ode.41.b
+		ai_chance = {
+			factor = 0
+		}
+		add_political_power = -50
+	}
+}
+
+country_event = { #Intervention Notification
+	id = ode.42
+	title = ode.42.t
+	desc = ode.42.d
+	picture = GFX_report_event_carp_rada
+	
 	fire_only_once = yes
 	is_triggered_only = yes
 	
 	option = {
+		name = ode.42.a
+		add_political_power = -5
+	}
+}
+
+country_event = { #Budjak Secede
+	id = ode.5
+	title = ode.5.t
+	desc = ode.5.d
+	picture = GFX_report_event_carp_rada
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #ADMIRAL
 	    name = ode.5.a
 		ai_chance = {
 			base = 100
@@ -650,8 +675,6 @@ country_event = {
 		
 		BDZ = {
 			transfer_state = 794
-			add_state_core = 794
-			add_state_core = 1601
 			
 			declare_war_on = {
 				target = ODE
@@ -661,16 +684,17 @@ country_event = {
 		
 		hidden_effect = {
 			BDZ = {
-				add_equipment = {
+				add_equipment_to_stockpile = {
 					type = train_equipment_1
 					amount = 5
 					producer = ODE
 				}
 				load_oob = "odesabudzhak"
+				add_state_core = 794
 			}
 			ODE = {
-			remove_ideas = ODE_budjak_alliance
 				load_oob = "odesablackseaconfederacy"
+				remove_ideas = ODE_budjak_alliance
 			}
 			country_event = {
 				id = ode.2
@@ -679,7 +703,7 @@ country_event = {
 		}
 	}
 	
-	option = {
+	option = { #BUDJAK
 	    name = ode.5.b
 		ai_chance = {
 			base = 100
@@ -693,8 +717,6 @@ country_event = {
 		
 		BDZ = {
 			transfer_state = 794
-			add_state_core = 794
-			add_state_core = 1601
 			
 			declare_war_on = {
 				target = ODE
@@ -704,16 +726,17 @@ country_event = {
 		
 		hidden_effect = {
 			BDZ = {
-				add_equipment = {
+				add_equipment_to_stockpile = {
 					type = train_equipment_1
 					amount = 5
 					producer = ODE
 				}
 				load_oob = "odesabudzhak"
+				add_state_core = 794
 			}
 			ODE = {
-			remove_ideas = ODE_budjak_alliance
 				load_oob = "odesablackseaconfederacy"
+				remove_ideas = ODE_budjak_alliance
 			}
 			country_event = {
 				id = ode.2
@@ -722,22 +745,40 @@ country_event = {
 		}
 	}
 }
+
+country_event = { #Budjak Independence
+	id = ode.51
+	title = ode.51.t
+	desc = ode.51.d
+	picture = GFX_report_event_carp_rada
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ode.51.a
+		add_political_power = 100
+	}
+}
+
+### ORIG'S ODESA CONTENT ###
+
 country_event = {
 	id = ode.6
 	title = ode.6.t
 	desc = ode.6.d
-
 	picture = GFX_report_event_carp_rada
+	
     is_triggered_only = yes
     fire_only_once = yes
 
 	option = {
 		name = ode.6.a
-		    ai_chance = {
-			base = 100
+		ai_chance = {
+			base = 30
 		}
 		ODE = {
-	            annex_country = {
+	        annex_country = {
                 target = OLD
                 transfer_troops = yes
             }
@@ -745,163 +786,143 @@ country_event = {
 	}
 	option = {
 		name = ode.6.b
-		    ai_chance = {
-			base = 0
+		ai_chance = {
+			base = 70
 		}
 		ODE = {
-         set_autonomy = {
-	       target = OLD
-	       autonomous_state = autonomy_satellite
-		                  }
-                }
-		
+			set_autonomy = {
+				target = OLD
+				autonomous_state = autonomy_satellite
+		    }
+        }
 		OLD = {
+			set_politics = {	
+				ruling_party = oligarchy
+				last_election = "2018.10.12"
+				election_frequency = 48
+				elections_allowed = no
+			}
 
-	set_politics = {	
-	ruling_party = oligarchy
-	last_election = "2019.10.12"
-	election_frequency = 48
-	elections_allowed = no
-	}
+			set_party_name = { ideology = oligarchy
+			long_name = "Trust in actions"
+			name = "Doviriaj Dilam" }
 
-set_party_name = { ideology = oligarchy
-    long_name = "Trust in actions"
-	name = "Doviriaj Dilam" }
-
-	set_popularities = {
-	social_democracy = 10
-	oligarchy = 15
-	centrism = 5
-	conservative_democracy = 30
-	liberal_democracy = 35
-	millitary_junta = 5
-	radical_nationalism = 0
-	radical_socialism = 0
-	}
-
-}
-        OLD = {
-        set_cosmetic_tag = OLD_adm
-         }
-hidden_effect = {
-OLD = {
+			set_popularities = {
+				social_democracy = 10
+				oligarchy = 15
+				centrism = 5
+				conservative_democracy = 35
+				liberal_democracy = 30
+				authoritarianism = 5
+				radical_nationalism = 0
+				radical_socialism = 0
+			}
+			set_cosmetic_tag = OLD_adm
 			country_event = {
 				id = ode.7
 				days = 6
 			}
-}
-}
-		 
 		}
 	}
+}
+
 country_event = {
 	id = ode.7
 	title = ode.7.t
 	desc = ode.7.d
-
 	picture = GFX_report_event_carp_rada
+	
     is_triggered_only = yes
     fire_only_once = yes
 
 	option = {
 		name = ode.7.a
-				country_event = {
-				id = ode.8
-				days = 6
-			}
-set_party_name = { ideology = conservative_democracy
-    long_name = "European Solidarity"
-	name = "YeS" }
-set_party_name = { ideology = liberal_democracy
-    long_name = "Servant of People"
-	name = "SH" }
+		country_event = {
+			id = ode.8
+			days = 7
 		}
+		set_party_name = { ideology = conservative_democracy
+		long_name = "European Solidarity"
+		name = "YeS" }
+		set_party_name = { ideology = liberal_democracy
+		long_name = "Servant of People"
+		name = "SH" }
 	}
+}
+
 country_event = {
 	id = ode.8
 	title = ode.8.t
 	desc = ode.8.d
-
 	picture = GFX_report_event_carp_rada
+	
     is_triggered_only = yes
     fire_only_once = yes
 
 	option = {
 		name = ode.8.a
-		OLD = {
 		create_country_leader = {
 			name = "Oleksiy Goncharenko"
-			desc = "uvu"
+			desc = "POLITICS_GONCHARENKO_DESC"
 			picture = "GFX_gonch"
 			expire = "3000.1.1"
-			ideology = national_democracy
+			ideology = national_conservatism
 			traits = { }
 		}
-set_politics = {
-	ruling_party = conservative_democracy
-	elections_allowed = no
-}
+		set_politics = {
+			ruling_party = conservative_democracy
+			elections_allowed = no
 		}
-		}
-	option = {
-		name = ode.8.c
-		OLD = {
-		create_country_leader = {
-			name = "Oleg Filimonov"
-			desc = "uvu"
-			picture = "GFX_filim"
-			expire = "3000.1.1"
-			ideology = classical_liberalism
-			traits = { }
-		}
-set_politics = {
-	ruling_party = liberal_democracy
-	elections_allowed = no
-}
-}
-		}
-	option = {
-		name = ode.8.e
-		OLD = {
-		create_country_leader = {
-			name = "Nataliya Delieva"
-			desc = "uvu"
-			picture = "GFX_delieva"
-			expire = "3000.1.1"
-			ideology = liberalism
-			traits = { }
-		}
-set_politics = {
-	ruling_party = liberal_democracy
-	elections_allowed = no
-}
-hidden_effect = {
-set_party_name = { ideology = liberal_democracy
-    long_name = "Voice"
-	name = "Holos" }
-		}
-}
-		}
+	}
 	option = {
 		name = ode.8.b
-		OLD = {
+		create_country_leader = {
+			name = "Oleg Filimonov"
+			desc = "POLITICS_FILIMONOV_DESC"
+			picture = "GFX_filim"
+			expire = "3000.1.1"
+			ideology = social_liberalism
+			traits = { }
+		}
+		set_politics = {
+			ruling_party = liberal_democracy
+			elections_allowed = no
+		}
+	}
+	option = {
+		name = ode.8.c
+		create_country_leader = {
+			name = "Nataliya Delieva"
+			desc = "POLITICS_DELIEVA_DESC"
+			picture = "GFX_delieva"
+			expire = "3000.1.1"
+			ideology = neoliberalism
+			traits = { }
+		}
+		set_politics = {
+			ruling_party = liberal_democracy
+			elections_allowed = no
+		}
+		set_party_name = { ideology = liberal_democracy
+		long_name = "Voice"
+		name = "Holos" }
+	}
+	option = {
+		name = ode.8.d
 		create_country_leader = {
 			name = "Adnan Kivan"
-			desc = "uvu"
+			desc = "POLITICS_KIVAN_DESC"
 			picture = "GFX_kivan"
 			expire = "3000.1.1"
 			ideology = corporatocracy
 			traits = { }
 		}
-set_politics = {
-	ruling_party = oligarchy
-	elections_allowed = no
-}
-hidden_effect = {
-set_party_name = { ideology = oligarchy
-    long_name = "OMR - Kadorr Group"
-	name = "Kadorr Group" }
+		set_politics = {
+			ruling_party = oligarchy
+			elections_allowed = no
 		}
-}
-		}
+		set_party_name = { ideology = oligarchy
+		long_name = "OMR - Kadorr Group"
+		name = "Kadorr Group" }
 	}
+}

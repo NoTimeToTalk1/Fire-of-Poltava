@@ -1,0 +1,220 @@
+focus_tree = {
+	id = CHE
+	continuous_focus_position = { x = 0 y = 1000 }
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = CHE
+		}
+	}
+
+	#Cherkasy Stands!
+	focus = {
+		id = CHE_cherkasy_stands
+		icon = GFX_CHE_Cherkasy_Stands
+		cost = 3
+
+		x = 10
+		y = 0
+
+		completion_reward = {
+			add_political_power = 10
+		}
+	}
+
+	#Clearly Set the Goal
+	focus = {
+		id = CHE_cherkasy_stands
+		icon = GFX_CHE_Cherkasy_Stands
+		cost = 3
+
+		x = 10
+		y = 0
+
+		completion_reward = {
+			add_political_power = 10
+		}
+	}
+
+	#Clearly Set the Goal
+	focus = {
+		id = CHE_clearly_set_the_goal
+		icon = GFX_CHE_Clearly_Set_the_Goal
+		cost = 3
+		
+		relative_position_id = CHE_cherkasy_stands
+		x = 0
+		y = 1
+
+		prerequisite = { focus = CHE_cherkasy_stands }
+
+		completion_reward = {
+			add_political_power = 10
+		}
+	}
+
+	#Strenghten Ties With Brothers
+	focus = {
+		id = CHE_strenghten_ties_with_brothers
+		icon = GFX_CHE_Strenghten_Ties_with_Brothers
+		cost = 3
+		
+		relative_position_id = CHE_clearly_set_the_goal
+		x = -2
+		y = 1
+
+		prerequisite = { focus = CHE_clearly_set_the_goal }
+
+		completion_reward = {
+			add_opinion_modifier = {
+				target = ZHY
+				modifier = allies_in_the_west
+			}
+		}
+	}
+
+	#Make Promise to the People
+	focus = {
+		id = CHE_make_promise_to_the_people
+		icon = GFX_CHE_Make_Promise_to_the_People
+		cost = 3
+		
+		relative_position_id = CHE_strenghten_ties_with_brothers
+		x = 0
+		y = 1
+
+		prerequisite = { focus = CHE_strenghten_ties_with_brothers }
+
+		completion_reward = {
+			add_political_power = 10
+		}
+	}
+
+	#New Economic Policy
+	focus = {
+		id = CHE_new_economic_policy
+		icon = GFX_CHE_New_Economic_Policy
+		cost = 3
+		
+		relative_position_id = CHE_clearly_set_the_goal
+		x = 0
+		y = 1
+
+		prerequisite = { focus = CHE_clearly_set_the_goal }
+
+		completion_reward = {
+			add_political_power = 10
+		}
+	}
+
+	#Infrastructural Innovations
+	focus = {
+		id = CHE_infrastructural_innovations
+		icon = GFX_CHE_Infrastructural_Innovations
+		cost = 3
+		
+		relative_position_id = CHE_new_economic_policy
+		x = 0
+		y = 1
+
+		prerequisite = { focus = CHE_new_economic_policy }
+
+		completion_reward = {
+			add_political_power = 10
+		}
+	}
+
+	#Take Care of the Army
+	focus = {
+		id = CHE_take_care_of_the_army
+		icon = GFX_CHE_Take_Care_of_the_Army
+		cost = 3
+		
+		relative_position_id = CHE_clearly_set_the_goal
+		x = 2
+		y = 1
+
+		prerequisite = { focus = CHE_clearly_set_the_goal }
+
+		completion_reward = {
+			add_political_power = 10
+		}
+	}
+
+	#Arms Contracts
+	focus = {
+		id = CHE_arms_contracts
+		icon = GFX_CHE_Arms_Contracts
+		cost = 3
+		
+		relative_position_id = CHE_take_care_of_the_army
+		x = 2
+		y = 1
+
+		prerequisite = { focus = CHE_take_care_of_the_army }
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+				producer = ZHY
+			}
+		}
+	}
+
+	#Form Combatant Units
+	focus = {
+		id = CHE_form_combatant_units
+		icon = GFX_CHE_Form_Combatant_Units
+		cost = 3
+		
+		relative_position_id = CHE_take_care_of_the_army
+		x = 0
+		y = 1
+
+		prerequisite = { focus = CHE_take_care_of_the_army }
+
+		completion_reward = {
+			add_political_power = 10
+		}
+	}
+
+	#March to the West!
+	focus = {
+		id = CHE_march_to_the_west
+		icon = GFX_CHE_March_to_the_West
+		cost = 3
+		
+		relative_position_id = CHE_infrastructural_innovations
+		x = 0
+		y = 1
+
+		prerequisite = { focus = CHE_make_promise_to_the_people }
+		prerequisite = { focus = CHE_infrastructural_innovations }
+		prerequisite = { focus = CHE_form_combatant_units }
+
+		completion_reward = {
+			start_border_war = {
+				change_state_after_war = no
+				attacker = {
+					state = 2066
+					num_provinces = 3
+					on_win = che.1
+					on_lose = che.2
+					on_cancel = che.2
+					modifier = 0
+					dig_in_factor = 1
+					terrain_factor = 1
+				}	
+				defender = {
+					state = 2065
+					num_provinces = 3
+					on_win = che.0
+					on_lose = che.0
+					on_cancel = che.0
+				}
+			}
+		}
+	}
+}

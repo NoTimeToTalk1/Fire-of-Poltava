@@ -1,0 +1,489 @@
+focus_tree = {
+	id = RVC
+	continuous_focus_position = { x = 0 y = 1000 }
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = RVC
+		}
+	}
+
+	#The Dawn is Near!
+	focus = {
+		id = RVC_the_dawn_is_near
+		icon = GFX_RVC_The_Dawn_is_Near
+		cost = 2
+
+		x = 12
+		y = 0
+
+		completion_reward = {
+			add_political_power = 50
+			add_war_support = 0.10
+			add_ideas = RVC_railway_terror
+		}
+	}
+
+	#Banners Above, Brothers!
+	focus = {
+		id = RVC_banners_above_brothers
+		icon = GFX_RVC_Banners_Above_Brothers
+		cost = 2
+
+		relative_position_id = RVC_the_dawn_is_near
+		x = 0
+		y = 1
+
+		prerequisite = { focus = RVC_the_dawn_is_near }
+
+		completion_reward = {
+			add_war_support = 0.05
+			add_ideas = RVC_mobilization_of_locals
+		}
+	}
+
+	#Smash the Kremlin's Rotten System
+	focus = {
+		id = RVC_smash_the_kremlins_rotten_system
+		icon = GFX_RVC_Smash_the_Kremlins_Rotten_System
+		cost = 2
+
+		relative_position_id = RVC_banners_above_brothers
+		x = 0
+		y = 1
+
+		prerequisite = { focus = RVC_banners_above_brothers }
+
+		completion_reward = {
+			add_command_power = 20
+			add_temporary_buff_to_units = {
+			    combat_offense = 0.25
+			    combat_breakthrough = 0.25
+			    org_damage_multiplier = -1.0
+			    str_damage_multiplier = 0.25
+			    war_support_reduction_on_damage = 0.2
+			    cannot_retreat_while_attacking = 1.0
+			    days = 30
+			    tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	#With an Anvil in Chest...
+	focus = {
+		id = RVC_with_an_anvil_in_chest
+		icon = GFX_RVC_With_an_Anvil_in_Chest
+		cost = 3
+
+		relative_position_id = RVC_smash_the_kremlins_rotten_system
+		x = -3
+		y = 1
+
+		prerequisite = { focus = RVC_smash_the_kremlins_rotten_system }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#and with Hammer in Heart
+	focus = {
+		id = RVC_and_with_hammer_in_heart
+		icon = GFX_RVC_and_with_Hammer_in_Heart
+		cost = 3
+
+		relative_position_id = RVC_with_an_anvil_in_chest
+		x = 0
+		y = 1
+
+		prerequisite = { focus = RVC_with_an_anvil_in_chest }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Birdsongs at Dawn
+	focus = {
+		id = RVC_birdsongs_at_dawn
+		icon = GFX_RVC_Birdsongs_at_Dawn
+		cost = 3
+
+		relative_position_id = RVC_and_with_hammer_in_heart
+		x = -1
+		y = 1
+
+		prerequisite = { focus = RVC_and_with_hammer_in_heart }
+
+		completion_reward = {
+			###GIVE PLANES!!!
+		}
+	}
+
+	#Wind of the Wild Lakes
+	focus = {
+		id = RVC_wind_of_wild_lakes
+		icon = GFX_RVC_Wind_of_Wild_Lakes
+		cost = 3
+
+		relative_position_id = RVC_and_with_hammer_in_heart
+		x = 1
+		y = 1
+
+		prerequisite = { focus = RVC_and_with_hammer_in_heart }
+
+		completion_reward = {
+			RVC = {
+				create_ship = {
+					type = ship_hull_submarine_1
+					equipment_variant = "S Class"
+					creator = USA
+					name = "Vinland"
+				}
+			}
+		}
+	}
+
+	#Never Forget How the Thief Stole From Us
+	focus = {
+		id = RVC_never_forget_how_the_thief_stole_from_us
+		icon = GFX_RVC_Never_Forget_How_the_Thief_Stole_From_Us
+		cost = 3
+
+		relative_position_id = RVC_wind_of_wild_lakes
+		x = -1
+		y = 1
+
+		prerequisite = { focus = RVC_birdsongs_at_dawn }
+		prerequisite = { focus = RVC_wind_of_wild_lakes }
+
+		completion_reward = {
+			add_political_power = 10
+			add_ideas = RVC_anti_putin
+		}
+	}
+
+	#Never Forget Why We Were Born
+	focus = {
+		id = RVC_never_forget_why_we_were_born
+		icon = GFX_RVC_Never_Forget_Why_We_Were_Born
+		cost = 3
+
+		relative_position_id = RVC_never_forget_how_the_thief_stole_from_us
+		x = 0
+		y = 1
+
+		prerequisite = { focus = RVC_never_forget_how_the_thief_stole_from_us }
+
+		completion_reward = {
+			add_ideas = RDK_professional_army
+		}
+	}
+
+	#Russian Pure Soul That is Whiter than Light
+	focus = {
+		id = RVC_russian_pure_soul_that_is_whiter_than_light
+		icon = GFX_RVC_Russian_Pure_Soul_That_is_Whiter_than_Light
+		cost = 3
+
+		relative_position_id = RVC_smash_the_kremlins_rotten_system
+		x = 0
+		y = 1
+
+		prerequisite = { focus = RVC_smash_the_kremlins_rotten_system }
+
+		completion_reward = {
+			add_stability = 0.25
+		}
+	}
+
+	#To Preserve in Its Pristine Purity
+	focus = {
+		id = RVC_to_preserve_in_its_pristine_purity
+		icon = GFX_RVC_To_Preserve_in_Its_Pristine_Purity
+		cost = 3
+
+		relative_position_id = RVC_russian_pure_soul_that_is_whiter_than_light
+		x = 0
+		y = 1
+
+		prerequisite = { focus = RVC_russian_pure_soul_that_is_whiter_than_light }
+
+		completion_reward = {
+			add_fuel = 400
+		}
+	}
+
+	#Oath to White Skin and Fair Hair
+	focus = {
+		id = RVC_oath_to_white_skin_and_fair_hair
+		icon = GFX_RVC_Oath_to_White_Skin_and_Fair_Hair
+		cost = 3
+
+		relative_position_id = RVC_to_preserve_in_its_pristine_purity
+		x = 0
+		y = 1
+
+		prerequisite = { focus = RVC_to_preserve_in_its_pristine_purity }
+
+		completion_reward = {
+
+			add_ideas = RDK_whitesuprematism
+			add_ideas = RDK_problemswithnonwhites
+			
+		}
+	}
+
+	#We Remember Those Who Continued to Fight...
+	focus = {
+		id = RVC_we_remember_those_who_continued_to_fight
+		icon = GFX_RVC_We_Remember_Those_Who_Continued_to_Fight
+		cost = 3
+
+		relative_position_id = RVC_oath_to_white_skin_and_fair_hair
+		x = 0
+		y = 1
+
+		prerequisite = { focus = RVC_oath_to_white_skin_and_fair_hair }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+			limit = {
+			free_building_slots = {
+			building = arms_factory
+			size > 0
+			include_locked = yes
+			}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+			}
+			set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+			}	
+		}
+	}
+
+	#and Became Higher than Man!
+	focus = {
+		id = RVC_and_became_greater_than_man
+		icon = GFX_RVC_and_Became_Greater_than_Man
+		cost = 3
+
+		relative_position_id = RVC_we_remember_those_who_continued_to_fight
+		x = 0
+		y = 1
+
+		prerequisite = { focus = RVC_we_remember_those_who_continued_to_fight }
+
+		completion_reward = {
+			add_political_power = 10
+			add_ideas = RDK_armed_philosophers
+		}
+	}
+
+	#Courage Leads to Heaven
+	focus = {
+		id = RVC_courage_leads_to_heaven
+		icon = GFX_RVC_Courage_Leads_to_Heaven
+		cost = 3
+
+		relative_position_id = RVC_smash_the_kremlins_rotten_system
+		x = 3
+		y = 1
+
+		prerequisite = { focus = RVC_smash_the_kremlins_rotten_system }
+
+		completion_reward = {
+			add_war_support = 0.25
+			add_ideas = RDK_expandofcorpus
+		}
+	}
+
+	#Fear Leads to Death
+	focus = {
+		id = RVC_fear_leads_to_death
+		icon = GFX_RVC_Fear_Leads_to_Death
+		cost = 3
+
+		relative_position_id = RVC_courage_leads_to_heaven
+		x = 0
+		y = 1
+
+		prerequisite = { focus = RVC_courage_leads_to_heaven }
+
+		completion_reward = {
+			add_war_support = 0.1
+			add_ideas = RDK_sistersofbattle
+		}
+	}
+
+	#Our Lot is Not in Groans
+	focus = {
+		id = RVC_our_lot_is_not_in_groans
+		icon = GFX_RVC_Our_Lot_is_Not_in_Groans
+		cost = 3
+
+		relative_position_id = RVC_fear_leads_to_death
+		x = -1
+		y = 1
+
+		prerequisite = { focus = RVC_fear_leads_to_death }
+
+		completion_reward = {
+			add_war_support = 0.1
+			add_ideas = RDK_callofvalhalla
+		}
+	}
+
+	#Times of Heroes and Gods Will Rise From the Grave
+	focus = {
+		id = RVC_heroes_and_gods_will_rise_from_the_grave
+		icon = GFX_RVC_Heroes_and_Gods_Will_Rise_From_the_Grave
+		cost = 3
+
+		relative_position_id = RVC_fear_leads_to_death
+		x = 1
+		y = 1
+
+		prerequisite = { focus = RVC_fear_leads_to_death }
+
+		completion_reward = {
+			add_stability = -0.1
+			add_ideas = RDK_shtafbaty
+		}
+	}
+
+	#The Right of Force is a Blood Right
+	focus = {
+		id = RVC_the_right_of_force_is_a_blood_right
+		icon = GFX_RVC_The_Right_of_Force_is_a_Blood_Right
+		cost = 3
+
+		relative_position_id = RVC_heroes_and_gods_will_rise_from_the_grave
+		x = -1
+		y = 1
+
+		prerequisite = { focus = RVC_our_lot_is_not_in_groans }
+		prerequisite = { focus = RVC_heroes_and_gods_will_rise_from_the_grave }
+
+		completion_reward = {
+			add_war_support = 0.1
+		}
+	}
+
+	#Our Power - The Gods Within Us
+	focus = {
+		id = RVC_our_power_the_gods_within_us
+		icon = GFX_RVC_Our_Power_the_Gods_Within_Us
+		cost = 3
+
+		relative_position_id = RVC_the_right_of_force_is_a_blood_right
+		x = 0
+		y = 1
+
+		prerequisite = { focus = RVC_the_right_of_force_is_a_blood_right }
+
+		completion_reward = {
+			add_war_support = 0.1
+			add_ideas = RDK_proudsonsofwotan
+		}
+	}
+
+	#Shadows of Fathers Feed Us with Anger
+	focus = {
+		id = RVC_shadows_of_fathers_feed_us_with_anger
+		icon = GFX_RVC_Shadows_of_Fathers_Feed_Us_with_Anger
+		cost = 4
+
+		relative_position_id = RVC_our_power_the_gods_within_us
+		x = -3
+		y = 1
+
+		prerequisite = { focus = RVC_never_forget_why_we_were_born }
+		prerequisite = { focus = RVC_and_became_greater_than_man }
+		prerequisite = { focus = RVC_our_power_the_gods_within_us }
+
+		completion_reward = {
+			add_war_support = 0.1
+		}
+	}
+
+	#My Motherland Will Meet Her Sons
+	focus = {
+		id = RVC_my_motherland_will_meet_her_sons
+		icon = GFX_RVC_My_Motherland_Will_Meet_Her_Sons
+		cost = 4
+
+		relative_position_id = RVC_shadows_of_fathers_feed_us_with_anger
+		x = 0
+		y = 1
+
+		prerequisite = { focus = RVC_shadows_of_fathers_feed_us_with_anger }
+
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+}

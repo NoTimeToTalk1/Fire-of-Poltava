@@ -1,214 +1,274 @@
-Odesa_civil_war = {
-    shariy_win = {
-allowed = {
-    original_tag = SHT
-}
-fire_only_once = yes
-available = {
-        has_country_flag = odesa_war
-        SHT = { has_war = no } 
-        OLD = { exists = no } 
-        MYK = { exists = no }
-        STR = { exists = no } 
-        ODE = { exists = no }
-}
+Odesa_civil_war_category = {
+
+	admiral_win = {
+		allowed = {
+			original_tag = ODE
+		}
+		
+		visible = {
+			has_global_flag = odesa_war
+		}
+		
+		available = {
+			ODE = { has_war = no }
+			SHA = { exists = no }
+			STR = { exists = no }
+			REC = { exists = no }
+		}
+		
+		cost = 0
+		ai_will_do = {
+			factor = 100
+		}
+		
+		fire_only_once = yes
+		
         complete_effect = {
+			custom_effect_tooltip = unites_odesa_tt
             hidden_effect = {
-			 STR = {
-              сlr_country_flag = odesa_war
-            }
-			 BDZ = {
-              сlr_country_flag = odesa_war
-            }
-			 MYK = {
-              сlr_country_flag = odesa_war
-            }
-			 SHT = {
-              сlr_country_flag = odesa_war
-            }
-			 ODE = {
-              сlr_country_flag = odesa_war
-            }
-			 OLD = {
-              сlr_country_flag = odesa_war
-            }
-			 RGE = {
-              сlr_country_flag = odesa_war
-            }
-			SHT = {
-			clr_country_flag = odesa_war
-				country_event = { 
+				clr_global_flag = odesa_war
+				news_event = {
 					id = win.1
-					days = 2
+				}
+				if = {
+					limit = {
+						OLD = { exists = yes }
+					}
+					ODE = {
+						country_event = { id = ode.6 days = 14 }
+					}
+				}
+				every_state = {
+					if = {
+						limit = {
+							is_core_of = STR
+						}
+						remove_core_of = STR
+					}
+				}
+				every_state = {
+					if = {
+						limit = {
+							is_core_of = SHA
+						}
+						remove_core_of = SHA
+					}
+				}
+				every_state = {
+					if = {
+						limit = {
+							is_core_of = BDZ
+						}
+						remove_core_of = BDZ
+					}
 				}
 			}
-			every_country = {
-              сlr_country_flag = odesa_war
-            }
-                сlr_country_flag = odessa_war
-            }
-     }
-		ai_will_do = {	
-			factor = 100		
 		}
-}
-    sternenko_win = {
-allowed = {
-    original_tag = STR
-}
-fire_only_once = yes
-available = {
-        has_country_flag = odesa_war
-        STR = { has_war = no } 
-        RGE = { exists = no } 
-        OLD = { exists = no } 
-        SHT = { exists = no } 
-        ODE = { exists = no }
-}
+	}
+	sternenko_win = {
+		allowed = {
+			original_tag = STR
+		}
+		
+		visible = {
+			has_global_flag = odesa_war
+		}
+		
+		available = {
+			STR = { has_war = no }
+			ODE = { exists = no }
+			OLD = { exists = no }
+			SHA = { exists = no }
+			REC = { exists = no }
+		}
+		
+		cost = 0
+		ai_will_do = {
+			factor = 100
+		}
+		
+		fire_only_once = yes
+		
         complete_effect = {
-            hidden_effect = {
-			 STR = {
-              сlr_country_flag = odesa_war
-            }
-			 BDZ = {
-              сlr_country_flag = odesa_war
-            }
-			 MYK = {
-              сlr_country_flag = odesa_war
-            }
-			 SHT = {
-              сlr_country_flag = odesa_war
-            }
-			 ODE = {
-              сlr_country_flag = odesa_war
-            }
-			 OLD = {
-              сlr_country_flag = odesa_war
-            }
-			 RGE = {
-              сlr_country_flag = odesa_war
-            }
-			STR = {
-			clr_country_flag = odesa_war
-				country_event = { 
-					id = win.2
-					days = 2
+            custom_effect_tooltip = unites_odesa_tt
+			hidden_effect = {
+				clr_global_flag = odesa_war
+				news_event = {
+					id = win.1
+				}
+				if = {
+					limit = {
+						1601 = {
+							is_owned_by = STR
+						}
+					}
+					add_core_of = STR
+				}
+				every_state = {
+					if = {
+						limit = {
+							is_core_of = ODE
+						}
+						remove_core_of = ODE
+					}
+				}
+				every_state = {
+					if = {
+						limit = {
+							is_core_of = SHA
+						}
+						remove_core_of = SHA
+					}
+				}
+				every_state = {
+					if = {
+						limit = {
+							is_core_of = OLD
+						}
+						add_core_of = STR
+						remove_core_of = OLD
+					}
+				}
+				if = {
+					limit = {
+						MYK = { exists = no }
+					}
+					every_state = {
+						if = {
+							limit = {
+								is_core_of = MYK
+							}
+							add_core_of = STR
+							remove_core_of = MYK
+						}
+					}
+				}
+				set_capital = {
+					state = 2032
+					remember_old_capital = no
 				}
 			}
-			every_country = {
-              сlr_country_flag = odesa_war
-            }
-                сlr_global_flag = odessa_war
-            }
-     }
-		ai_will_do = {	
-			factor = 100		
 		}
-}
-    rusnya_win = {
-allowed = {
-    original_tag = RGE
-}
-fire_only_once = yes
-available = {
-        has_country_flag = odesa_war
-        RGE = { has_war = no } 
-        STR = { exists = no } 
-        OLD = { exists = no }  
-        ODE = { exists = no }
-}
+	}
+	shariy_win = {
+		allowed = {
+			original_tag = SHA
+		}
+		
+		visible = {
+			has_global_flag = odesa_war
+		}
+		
+		available = {
+			SHA = { has_war = no }
+			ODE = { exists = no }
+			OLD = { exists = no }
+			STR = { exists = no }
+			MYK = { exists = no }
+		}
+		
+		cost = 0
+		ai_will_do = {
+			factor = 100
+		}
+		
+		fire_only_once = yes
+		
         complete_effect = {
+			custom_effect_tooltip = unites_odesa_tt
             hidden_effect = {
-			 STR = {
-              сlr_country_flag = odesa_war
-            }
-			 BDZ = {
-              сlr_country_flag = odesa_war
-            }
-			 MYK = {
-              сlr_country_flag = odesa_war
-            }
-			 SHT = {
-              сlr_country_flag = odesa_war
-            }
-			 ODE = {
-              сlr_country_flag = odesa_war
-            }
-			 OLD = {
-              сlr_country_flag = odesa_war
-            }
-			 RGE = {
-              сlr_country_flag = odesa_war
-            }
-			clr_country_flag = odesa_war
-			RGE = {
-				country_event = { 
-					id = win.3
-					days = 2
+				clr_global_flag = odesa_war
+				news_event = {
+					id = win.1
+				}
+				if = {
+					limit = {
+						1601 = {
+							is_owned_by = SHA
+						}
+					}
+					add_core_of = SHA
+				}
+				every_state = {
+					if = {
+						limit = {
+							is_core_of = ODE
+						}
+						add_core_of = SHA
+						remove_core_of = ODE
+					}
+				}
+				every_state = {
+					if = {
+						limit = {
+							is_core_of = STR
+						}
+						add_core_of = SHA
+						remove_core_of = STR
+					}
+				}
+				every_state = {
+					if = {
+						limit = {
+							is_core_of = OLD
+						}
+						add_core_of = SHA
+						remove_core_of = OLD
+					}
+				}
+				every_state = {
+					if = {
+						limit = {
+							is_core_of = MYK
+						}
+						add_core_of = SHA
+						remove_core_of = MYK
+					}
+				}
+				set_capital = {
+					state = 2032
+					remember_old_capital = no
 				}
 			}
-			every_country = {
-              сlr_country_flag = odesa_war
-            }
-                сlr_global_flag = odessa_war
-            }
-     }
-		ai_will_do = {	
-			factor = 100		
 		}
-}
-    admiral_win = {
-allowed = {
-    original_tag = ODE
-}
-fire_only_once = yes
-available = {
-        has_country_flag = odesa_war
-        ODE = { has_war = no } 
-        STR = { exists = no }   
-        RGE = { exists = no }
-}
+	}
+    rec_win = {
+		allowed = {
+			original_tag = REC
+		}
+		
+		visible = {
+			has_global_flag = odesa_war
+		}
+		
+		available = {
+			REC = { has_war = no }
+			ODE = { exists = no }
+			OLD = { exists = no }
+			SHA = { exists = no }
+			STR = { exists = no }
+		}
+		
+		cost = 0
+		ai_will_do = {
+			factor = 100
+		}
+		
+		fire_only_once = yes
+		
         complete_effect = {
+			custom_effect_tooltip = unites_odesa_tt
             hidden_effect = {
-			 STR = {
-              сlr_country_flag = odesa_war
-            }
-			 BDZ = {
-              сlr_country_flag = odesa_war
-            }
-			 MYK = {
-              сlr_country_flag = odesa_war
-            }
-			 SHT = {
-              сlr_country_flag = odesa_war
-            }
-			 ODE = {
-              сlr_country_flag = odesa_war
-            }
-			 OLD = {
-              сlr_country_flag = odesa_war
-            }
-			 RGE = {
-              сlr_country_flag = odesa_war
-            }
-			clr_country_flag = odesa_war
-			ODE = {
-				country_event = { 
-					id = win.4
-					days = 2
+				clr_global_flag = odesa_war
+				news_event = {
+					id = win.1
+				}
+				add_state_core = 2032
+				set_capital = {
+					state = 2032
+					remember_old_capital = no
 				}
 			}
-				OLD = {
-				country_event = { 
-					id = ode.6
-					days = 15
-				}
 		}
-                сlr_global_flag = odessa_war
-            }
-     }
-		ai_will_do = {	
-			factor = 100		
-		}
-}
+	}
 }

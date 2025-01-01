@@ -14,67 +14,70 @@ country_event = { #rdk spawn only for consos`
 	option = {
 		name = rdk.1.a
             AFU = {
-				create_faction = LUHANSK_AGREEMENT
-				country_event = { id = rdk.2 days = 2 }
+			create_faction = LUHANSK_AGREEMENT
+			country_event = { id = rdk.2 days = 2 }
 			}
 			RDK = {
-				transfer_state = 450
-				add_state_core = 450
-				add_manpower = AFU:AFU_rdk
+			transfer_state = 450
+			add_state_core = 450
+			add_manpower = AFU:AFU_rdk
 			}
             AFU = { add_to_faction = RDK }
-			RDK = {
-				declare_war_on = {
-					target = RUS
-					type = annex_everything
-				}
-				add_to_war = {
-					targeted_alliance = AFU
-					enemy = RUS
-					hostility_reason = asked_to_join
-				}
-				load_oob = "RDK_2019"
-				add_equipment_to_stockpile = { 
-					type = infantry_equipment_1
-					amount = 5000
-					producer = AFU
-				}	
-				add_equipment_to_stockpile = { type = artillery_equipment_1
-					amount = 2500
-					producer = AFU
-				}	
-				add_equipment_to_stockpile = { type = support_equipment_1
-					amount = 5000
-					producer = AFU
-				}
-			}	
-			hidden_effect = {
-				RDK = {
-					set_nationality = {
-						target_country = RDK
-						character = AFU_esenin
-					}	
-					set_nationality = {
-						target_country = RDK
-						character = AFU_pomor
-					}
-					set_nationality = {
-						target_country = RDK
-						character = PLT_tesak
-					}
-					set_nationality = {
-						target_country = RDK
-						character = TER_lyovkin
-					}
-				}
-				TER_lyovkin = {
-					set_portraits = {
-						civilian = {
-							large = "gfx/leaders/RDK/lyovkin.dds"
-						}
-					}
-				}
+RDK = {
+declare_war_on = {
+    target = RUS
+    type = annex_everything
+}
+add_to_war = {
+    targeted_alliance = AFU
+    enemy = RUS
+    hostility_reason = asked_to_join
+}
+load_oob = "RDK_2019"
+				add_equipment_to_stockpile = { type = infantry_equipment_2
+				amount = 10000
+				producer = AFU
 			}
+			
+			add_equipment_to_stockpile = { type = artillery_equipment_1
+				amount = 2500
+				producer = AFU
+			}
+			
+			add_equipment_to_stockpile = { type = support_equipment_1
+				amount = 5000
+				producer = AFU
+			}
+}
+hidden_effect = {
+
+RDK = {
+set_nationality = {
+    target_country = AFU
+    character = AFU_esenin
+}	
+set_nationality = {
+    target_country = AFU
+    character = AFU_pomor
+}
+set_nationality = {
+    target_country = PLT
+    character = PLT_tesak
+}
+set_nationality = {
+    target_country = TER
+    character = TER_lyovkin
+}
+}
+TER_lyovkin = {
+                set_portraits = {
+                    civilian = {
+                        large = "gfx/leaders/RDK/lyovkin.dds"
+                    }
+                }
+            }
+
+}
 	}
 }
 
@@ -92,266 +95,11 @@ country_event = { #rdk
 	option = {
 		name = rdk.2.a
 		RDK = {
-			change_tag_from = ROOT
-			division_template = {
-				name = "Liberation Brigade"
-				is_locked = yes
-				division_names_group = BLR_INF_01
-				priority = 0
-				template_counter = 0
-				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					artillery_brigade = { x = 0 y = 2 }
-					IFV = { x = 1 y = 0 }
-					IFV = { x = 1 y = 1 }
-					main_battle_tank = { x = 1 y = 2 }
-					APC = { x = 1 y = 3 }
-					support = {
-						engineer = { x = 0 y = 0 }
-						artillery = { x = 0 y = 1 }
-						maintenance_company = { x = 0 y = 2 }
-						mot_recon = { x = 0 y = 3 }
-						signal_company = { x = 0 y = 4 }
-					}
-				}
-			}
-			if = {
-				limit = {
-					check_variable = {AFU.AFU_rdk > 2000}
-				}
-				random_owned_controlled_state = {
-					create_unit = {
-						division = "name = \"1st 'Volga' Brigade\" division_template = \"Liberation Brigade\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
-						owner = RDK
-					}
-				}	
-			}
-			if = {
-				limit = {
-					check_variable = {AFU.AFU_rdk > 4000}
-				}
-				random_owned_controlled_state = {
-					create_unit = {
-						division = "name = \"2nd 'Pyotr Wrangel' Brigade\" division_template = \"Liberation Brigade\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
-						owner = RDK
-					}
-				}	
-			}
-			if = {
-				limit = {
-					check_variable = {AFU.AFU_rdk > 6000}
-				}
-				random_owned_controlled_state = {
-					create_unit = {
-						division = "name = \"3rd 'Viktor Larionov' Brigade\" division_template = \"Liberation Brigade\" start_experience_factor = 0.2 start_equipment_factor = 0.8"
-						owner = RDK
-					}
-				}	
-			}
-			if = {
-				limit = {
-					check_variable = {AFU.AFU_rdk > 8000}
-				}
-				random_owned_controlled_state = {
-					create_unit = {
-						division = "name = \"4th 'Rurik of Nogvorod' Brigade\" division_template = \"Liberation Brigade\" start_experience_factor = 0.2 start_equipment_factor = 0.8"
-						owner = RDK
-					}
-				}	
-			}
-			if = {
-				limit = {
-					check_variable = {AFU.AFU_rdk > 10000}
-				}
-				random_owned_controlled_state = {
-					create_unit = {
-						division = "name = \"5th 'Dazhbog' Brigade\" division_template = \"Liberation Brigade\" start_experience_factor = 0.2 start_equipment_factor = 0.9"
-						owner = RDK
-					}
-				}	
-			}
-			if = {
-				limit = {
-					check_variable = {AFU.AFU_rdk > 12000}
-				}
-				random_owned_controlled_state = {
-					create_unit = {
-						division = "name = \"6th 'Decembrists' Brigade\" division_template = \"Liberation Brigade\" start_experience_factor = 0.2 start_equipment_factor = 0.7"
-						owner = RDK
-					}
-				}	
-			}
-			if = {
-				limit = {
-					check_variable = {AFU.AFU_rdk > 14000}
-				}
-				random_owned_controlled_state = {
-					create_unit = {
-						division = "name = \"7th 'Don' Brigade\" division_template = \"Liberation Brigade\" start_experience_factor = 0.2 start_equipment_factor = 0.6"
-						owner = RDK
-					}
-				}	
-			}
+		change_tag_from = ROOT
 		}
 		}
 	option = {
 		name = rdk.2.b
-			add_political_power = 20
-			RDK = {
-				division_template = {
-				name = "Liberation Brigade"
-				is_locked = yes
-				division_names_group = UKR_INF_01
-				priority = 0
-				template_counter = 0
-				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					artillery_brigade = { x = 0 y = 2 }
-					IFV = { x = 1 y = 0 }
-					IFV = { x = 1 y = 1 }
-					main_battle_tank = { x = 1 y = 2 }
-					APC = { x = 1 y = 3 }
-					support = {
-						engineer = { x = 0 y = 0 }
-						artillery = { x = 0 y = 1 }
-						maintenance_company = { x = 0 y = 2 }
-						mot_recon = { x = 0 y = 3 }
-						signal_company = { x = 0 y = 4 }
-					}
-				}
-				override_model = AFU_infantry_entity
-			}
-			if = {
-				limit = {
-					check_variable = {AFU.AFU_rdk > 2000}
-				}
-				random_owned_controlled_state = {
-					create_unit = {
-						division = "name = \"1st 'Andrey Vlasov' Brigade\" division_template = \"Liberation Brigade\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
-						owner = RDK
-					}
-				}	
-			}
-			if = {
-				limit = {
-					check_variable = {AFU.AFU_rdk > 4000}
-				}
-				random_owned_controlled_state = {
-					create_unit = {
-						division = "name = \"2nd 'Pyotr Wrangel' Brigade\" division_template = \"Liberation Brigade\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
-						owner = RDK
-					}
-				}	
-			}
-			if = {
-				limit = {
-					check_variable = {AFU.AFU_rdk > 6000}
-				}
-				random_owned_controlled_state = {
-					create_unit = {
-						division = "name = \"3rd 'Viktor Larionov' Brigade\" division_template = \"Liberation Brigade\" start_experience_factor = 0.2 start_equipment_factor = 0.8"
-						owner = RDK
-					}
-				}	
-			}
-			if = {
-				limit = {
-					check_variable = {AFU.AFU_rdk > 8000}
-				}
-				random_owned_controlled_state = {
-					create_unit = {
-						division = "name = \"4th 'Rurik of Nogvorod' Brigade\" division_template = \"Liberation Brigade\" start_experience_factor = 0.2 start_equipment_factor = 0.8"
-						owner = RDK
-					}
-				}	
-			}
-			if = {
-				limit = {
-					check_variable = {AFU.AFU_rdk > 10000}
-				}
-				random_owned_controlled_state = {
-					create_unit = {
-						division = "name = \"5th 'Dazhbog' Brigade\" division_template = \"Liberation Brigade\" start_experience_factor = 0.2 start_equipment_factor = 0.9"
-						owner = RDK
-					}
-				}	
-			}
-			if = {
-				limit = {
-					check_variable = {AFU.AFU_rdk > 12000}
-				}
-				random_owned_controlled_state = {
-					create_unit = {
-						division = "name = \"6th 'Decembrists' Brigade\" division_template = \"Liberation Brigade\" start_experience_factor = 0.2 start_equipment_factor = 0.7"
-						owner = RDK
-					}
-				}	
-			}
-			if = {
-				limit = {
-					check_variable = {AFU.AFU_rdk > 14000}
-				}
-				random_owned_controlled_state = {
-					create_unit = {
-						division = "name = \"7th 'Don' Brigade\" division_template = \"Liberation Brigade\" start_experience_factor = 0.2 start_equipment_factor = 0.6"
-						owner = RDK
-					}
-				}	
-			}
-			}
+		add_political_power = 20
 		}
-}
-
-country_event = { #GOIDAAAAAAA
-	id = rdk.3
-	title = rdk.3.t
-	desc = rdk.3.d
-
-	picture = GFX_moskva_podzhech_photo
-
-	fire_only_once = yes
-
-	is_triggered_only = yes
-
-	option = {
-		name = rdk.3.a
-		every_country = {
-            limit = {
-                is_in_faction_with = RUS
-            }
-			leave_faction = yes
-            white_peace = RDK
-            white_peace = AFU
-        }
-		every_state = {
-			limit = {
-				is_core_of = RUS
-				NOT = {
-					OR = {
-						is_core_of = CHE
-						is_core_of = DAG
-					}
-				}
-			}
-			add_core_of = RDK
-		}
-		RDK = {
-			annex_country = {
-				target = RUS
-			}
-			set_cosmetic_tag = RDK_russia_united
-		}
-		AFU = {
-			annex_country = {
-				target = TRA
-			}
-			annex_country = {
-				target = CRI
-			}
-			load_focus_tree = AFU_azov_triumph
-		}		
-		country_event = cap.13
-	}
 }

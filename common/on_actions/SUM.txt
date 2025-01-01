@@ -1,0 +1,53 @@
+on_actions = {
+    on_startup = {
+        effect = {
+            SUM = {
+                country_event = {
+					id = sum.1
+					days = 70
+				}
+			}
+        }
+    }
+
+	on_war = { 
+		effect = {
+			if = {
+				limit = {
+					tag = CHR
+					has_war_with = KYI
+					SUM = {
+						has_country_leader = {
+							character = SUM_Smeshko
+							ruling_only = yes
+						}
+					}
+				}
+				SUM = {
+					country_event = {
+						id = sum.4
+						days = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = CHR
+					has_war_with = KYI
+					SUM = {
+						has_country_leader = {
+							character = SUM_Yushchenko
+							ruling_only = yes
+						}
+					}
+				}
+				SUM = {
+					country_event = {
+						id = sum.5
+						days = 1
+					}
+				}
+			}
+		}
+	}
+}

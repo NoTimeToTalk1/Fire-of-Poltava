@@ -1,156 +1,57 @@
-Odesa_civil_war = {
+Odesa_civil_war_category = {
 	icon = GFX_decision_category_infiltration
-	picture = GFX_mobilization
-	visible = {
-	has_country_flag = odesa_war
-	}
-	
-}
 
-DPR_verkhovna_rada_decision_category = {
-	icon = GFX_decision_category_duma
-	visible = {
-	tag = MLD
-	MLD = {
-		has_completed_focus = DPR_beginning_of_new_era
+	allowed = {
+		OR = {
+			original_tag = ODE
+			original_tag = STR
+			original_tag = SHA
+			original_tag = REC
 		}
 	}
 
-	priority = 99999
-
-	scripted_gui = DPR_rada_scripted_gui
-	
-	visible_when_empty = yes
-}
-
-vsrf_decisions = {
-	icon = GFX_decision_category_infiltration
-	picture = GFX_mobilization
 	visible = {
-	tag = VSR
-	}
-	
-}
-
-afu_azov_start_decisions = {
-	icon = GFX_decision_category_infiltration
-	picture = GFX_decision_picture_azov
-	visible = {
-	
-	AFU = {
-	has_war = no
-	has_completed_focus = AFU_azov
-	}
-	country_exists = DPR
-	}
-	
-}
-
-azov_loyalty_raising = {
-	icon = GFX_decision_category_azov
-	picture = GFX_decisions_big_azov
-	visible = {
-		has_country_flag = azov_loyalty_raising_decisions
-	}
-	
-}
-
-azov_paganization_decisions = {
-	icon = GFX_decision_category_azov
-	picture = GFX_decision_perun_big
-	visible = {
-	has_completed_focus = AFU_start_the_paganisation
-}
-visible_when_empty = yes
-}
-
-azov_church_politics_decisions = {
-	icon = GFX_decision_category_azov
-	picture = GFX_decision_azov_church
-	visible = {
-		has_completed_focus = AFU_destroy_the_satanic_muscovite_church
-	}
-	
-visible_when_empty = yes
-	
-}
-
-azov_renaming_decisions = {
-	icon = GFX_decision_category_azov
-	picture = GFX_none
-	visible = {
-		has_country_flag = azov_renaming_decisions
+		has_global_flag = odesa_war
 	}
 }
 
-azov_rdk = {
-	icon = GFX_decision_category_rdk
-	picture = GFX_decisions_big_rdk
-	visible = {
-		has_country_flag = RDK_decisions
-	}
-	visible_when_empty = yes
-}
-
-afu_mobilization = {
+afu_mobilization_category = {
 	icon = GFX_decision_category_mobilization
-	picture = GFX_mobilization
-	visible = {
-	    
-		tag = AFU
-	}
-	allowed = {
-	tag = afu
-		}
-	
-}
-
-donbass_war = {
-	icon = GFX_decision_category_border_war
-	picture = GFX_Donbass_war
-	visible = {
-	    
-		tag = AFU
-		tag = DPR
-		tag = LPR
-	}
-	allowed = {
-	tag = AFU
-		tag = DPR
-		tag = LPR
-		}
-	
-}
-
-request_russian_weapons = {
-	icon = GFX_decision_category_army_reform
 
 	allowed = {
-		original_tag = DPR
+		original_tag = AFU
 	}
 
 	visible = {
-		has_completed_focus = dnr_requestrussianequipment
+		has_completed_focus = AFU_mobilize_our_forces
 	}
-
-	priority = 10
 }
 
-request_russian_volunteers = {
-	icon = GFX_decision_category_military_operation
+afu_teroborona_category = {
+	icon = GFX_decision_category_generic_civil_support
 
 	allowed = {
-		original_tag = DPR
+		original_tag = AFU
 	}
 
 	visible = {
-		has_completed_focus = dnr_andvolunteers
+		has_completed_focus = AFU_territorial_defence_forces
 	}
-
-	priority = 10
 }
 
-opening_the_warehouses = {
+afu_integration_category = {
+	icon = GFX_decision_category_generic_civil_support
+
+	allowed = {
+		original_tag = AFU
+	}
+
+	visible = {
+		has_completed_focus = AFU_start_intergration
+	}
+}
+
+open_the_warehouses_category = {
 	icon = GFX_decision_category_generic_military_operations
 
 	allowed = {
@@ -160,11 +61,9 @@ opening_the_warehouses = {
 	visible = {
 		has_completed_focus = dnr_open_old_warehouses
 	}
-
-	priority = 10
 }
 
-mobilize_the_youth_and_reserves = {
+mobilize_the_youth_and_reserves_category = {
 	icon = GFX_decision_category_generic_civil_support
 
 	allowed = {
@@ -176,361 +75,26 @@ mobilize_the_youth_and_reserves = {
 	}
 }
 
-afu_teroborona = {
-	icon = GFX_decision_category_generic_civil_support
-
-	allowed = {
-		tag = AFU
-
-	}
-
-	visible = {
-		tag = AFU
-		has_completed_focus = AFU_territorial_defence_forces
-		country_exists = DPR
-	}
-}
-
-afu_integration = {
-	icon = GFX_decision_category_generic_civil_support
-
-	allowed = {
-		original_tag = AFU
-	}
-
-	visible = {
-		has_completed_focus = AFU_start_intergration
-	}
-}
-emergency_makeshift_fortifications = {
-    allowed = {
-    }
-    priority = 10
-    picture = GFX_decision_category_picture
-    icon = generic_political_actions
-    visible_when_empty = no
-}
-konfederation = {
-	icon = GFX_decision_category_generic_civil_support
+request_russian_weapons_category = {
+	icon = GFX_decision_category_army_reform
 
 	allowed = {
 		original_tag = DPR
-		original_tag = VOL
-	}
-}
-	visible = {
-		has_idea = DPR_confederation
 	}
 
-gas_gas_gas = {
+	visible = {
+		has_completed_focus = dnr_requestrussianequipment
+	}
+}
+
+request_russian_volunteers_category = {
 	icon = GFX_decision_category_military_operation
-	priority = 9
-
-}
-danilov_rehabilitation = {
-	icon = GFX_decision_category_laws
-	picture = GFX_decision_danilov_rehabilitation
 
 	allowed = {
-		original_tag = AFU
+		original_tag = DPR
 	}
 
 	visible = {
-		OR = {
-			has_completed_focus = AFU_state_security_strategy
-			has_completed_focus = AFU_enterprise_support_program
-		}
+		has_completed_focus = dnr_andvolunteers
 	}
-
-	priority = 10
-}
-danilov_hunting = {
-	icon = GFX_decision_category_generic_military_operations
-	picture = GFX_decision_danilov_hunting
-
-	allowed = {
-		original_tag = AFU
-	}
-		visible = {	
-		tag = AFU
-		has_completed_focus = AFU_hunting_for_rats	
-		}
-
-	priority = 9
-}
-
-
-AFU_elections_decision_category = {
-	icon = GFX_decision_category_elections
-	allowed = {
-		original_tag = AFU
-	}
-	
-	visible = {
-		has_country_flag = AFU_elections_flag
-	}
-
-	priority = 99999
-
-	scripted_gui = AFU_elections_decision_ui
-	
-	visible_when_empty = yes
-}
-
-azov_stabilization = {
-	icon = GFX_decision_category_azov
-	picture = GFX_decision_picture_azov
-
-	allowed = {
-		original_tag = AFU
-	}
-
-	visible = {
-		has_completed_focus = afu_secureourposition
-		NOT = {
-		has_completed_focus = afu_consolidateourposition
-		}
-	}
-
-	priority = 10
-}
-
-lpr_opening_the_warehouses = {
-icon = GFX_decision_category_military_operation
-
-	allowed = {
-		tag = LPR
-	}
-	
-	visible = {
-		tag = LPR
-		has_completed_focus = lpr_check_all_warehouses_and_niches
-	}
-}
-
-lpr_extradition_of_plotnytskyi = {
-icon = GFX_decision_category_generic_civil_support
-
-	allowed = {
-		tag = LPR
-	}
-
-	visible = {
-		tag = LPR
-		has_completed_focus = lpr_let_daynego_come_up_with_something
-		country_exists = RUS
-	}
-}
-
-lpr_cooperation_with_allies = {
-icon = GFX_decision_category_generic_civil_support
-
-	allowed = {
-		tag = AFU
-	}
-
-	visible = {
-		tag = LPR
-		has_completed_focus = lpr_let_daynego_come_up_with_something
-	}
-}
-
-girkin_invite_cossaks_decisions = {
-icon = GFX_decision_girkin_cossaks_smal
-picture = GFX_decision_girkin_cossaks
-
-	allowed = {
-		tag = DPR
-	}
-
-	visible = {
-		tag = DPR
-		has_country_flag = girkin_invite_cossaks
-	}
-}
-
-girkin_collaborants_decisions = {
-icon = GFX_decision_category_russian_empire
-
-	allowed = {
-	tag = DPR
-	}
-
-	visible = {
-	tag = DPR
-	has_country_flag = girkin_second_russian_spring_flag
-	}
-	
-visible_when_empty = yes
-}
-
-girkin_wagner_decisions = {
-icon = GFX_decision_wagner
-picture = GFX_decision_girkin_wagner_big
-
-	allowed = {
-	tag = DPR
-	}
-
-	visible = {
-	tag = DPR
-	has_country_flag = girkin_wagner_friends
-	}
-}
-
-girkin_foreign_politics_decisions  = {
-icon = GFX_decision_category_russian_empire
-
-
-	allowed = {
-		tag = DPR
-	}
-
-	visible = {
-		tag = DPR
-        has_country_flag = girkin_foreign_politics_flag
-	}
-}
-
-girkin_kill_opposition_decisions = {
-icon = GFX_decision_category_generic_civil_support
-
-scripted_gui = DPR_girkin_kill_opposition_ui
-
-	allowed = {
-		tag = DPR
-	}
-
-	visible = {
-		has_completed_focus = DPR_udarvpechenniktonevechen
-	}
-}
-
-DPR_rostislave_girkin_balance_decisions = {
-icon = GFX_decision_category_generic_civil_support
-
-	allowed = {
-		tag = DPR
-	}
-
-	visible = {
-		tag = DPR
-has_power_balance = {
-    id = DPR_rostislave_girkin_political_balance
-}
-	}
-}
-
-DPR_maria_georgiy_balance_decisions = {
-icon = GFX_decision_category_generic_civil_support
-
-	allowed = {
-		tag = DPR
-	}
-
-	visible = {
-		tag = DPR
-has_power_balance = {
-    id = DPR_maria_georgiy_political_balance
-}
-	}
-}
-
-girkin_restore_russian_empire_decisions = {
-icon = GFX_decision_category_russian_empire
-
-	allowed = {
-	origina_tag = DPR
-    has_completed_focus = DPR_righterous_hike
-	}
-
-	visible = {
-    has_completed_focus = DPR_righterous_hike
-	}
-}
-
-DPR_execution_of_hardliners_decisions = {
-icon = GFX_decision_category_generic_civil_support
-
-	allowed = {
-		tag = DPR
-	}
-
-	visible = {
-		tag = DPR
-		has_completed_focus = DPR_execution_of_hardlines
-	}
-}
-
-DPR_paseka_reopen_factories_decisions = {
-icon = GFX_decision_category_generic_civil_support
-picture = GFX_decisions_big_factory
-
-	allowed = {
-		tag = DPR
-	}
-
-	visible = {
-		tag = DPR
-		has_completed_focus = DPR_reopen_factories
-	}
-}
-
-DPR_execution_of_hardliners_decisions = {
-icon = GFX_decision_category_generic_civil_support
-
-	allowed = {
-		tag = DPR
-	}
-
-	visible = {
-		tag = DPR
-		has_completed_focus = DPR_execution_of_hardlines
-	}
-}
-
-DPR_eurointegration_decisions = {
-icon = GFX_decision_category_generic_civil_support
-
-	allowed = {
-		tag = DPR
-	}
-
-	visible = {
-		tag = DPR
-		has_completed_focus = DPR_open_the_window
-		NOT = {
-		has_country_flag = america_idi_nahui
-		}
-	}
-	
-	visible_when_empty = yes
-}
-
-russian_empire_political_decisions = {
-icon = GFX_decision_category_russian_empire
-
-	allowed = {
-		tag = DPR
-	}
-
-	visible = {
-		tag = DPR
-		has_completed_focus = DPR_andrestorehistoricaljustice
-	}
-	
-}
-
-DPR_militarise_loyalistst_decisions = {
-icon = GFX_decision_category_laws
-
-	allowed = {
-		tag = DPR
-	}
-
-	visible = {
-		tag = DPR
-		has_completed_focus = DPR_militarise_loyalistst
-	}
-	
 }

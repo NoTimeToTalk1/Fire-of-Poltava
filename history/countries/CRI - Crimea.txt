@@ -1,127 +1,66 @@
-﻿capital = 2044
+﻿capital = 2127
+oob = "CRI"
+set_naval_oob = ""
+set_research_slots = 3
+set_convoys = 0
+set_stability = 0.5
+set_war_support = 0.5
 
-oob = "CRI_2109"
-
-set_research_slots = 2
+add_ideas = {
+	CRI_disturbed_water_supply
+}
 
 # Starting tech
 set_technology = {
+	infantry_weapons = 1
 	infantry_weapons1 = 1
-	support_weapons1 = 1
+	support_weapons = 1
     army_uniform = 1
     command_and_control = 1
     night_vision = 1
-	tech_recon = 1
-	tech_support = 1		
+	
+	tech_support = 1
 	tech_engineers = 1
+	tech_recon = 1
 	tech_military_police = 1
-	basic_train = 1
-	tech_mountaineers = 1
-	AFV = 1
-    MBT1 = 1
-    IFV1 = 1
-    APC1 = 1
-    sp_artillery1 = 1
-    rocket_artillery1 = 1
-    anti_air1 = 1
-    armored_car1 = 1
-    utility_vehicle = 1
-    utility_vehicle1 = 1
-	paratroopers = 1
+	
 	mortar = 1
     mortar1 = 1
     howitzer = 1
     howitzer1 = 1
-	early_fighter = 1
-	fighter1 = 1
-	early_bomber = 1
-	strategic_bomber1 = 1
-	naval_bomber1 = 1
-	mass_assault = 1
-	fleet_in_being = 1
+	sp_artillery1 = 1
+    anti_air1 = 1
+	rocket_artillery1 = 1
+	
+    utility_vehicle = 1
+    utility_vehicle1 = 1
+	armored_car1 = 1
+	AFV = 1
+    MBT1 = 1
+    IFV1 = 1
+    APC1 = 1
 }
 
-if = {
-	limit = {
-		NOT = { has_dlc = "No Step Back" }
-	}
-	set_technology = {
-		gwtank = 1
-		basic_light_tank = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "No Step Back"
-	}
-	set_technology = {
-		gwtank_chassis = 1
-		basic_light_tank_chassis = 1
-	}
-}
-if = {
-	limit = {
-		not = { has_dlc = "Man the Guns" }
-	}
-	set_technology = {
-		early_submarine = 1
-		basic_submarine = 1
-		early_destroyer = 1
-		early_light_cruiser = 1
-		early_heavy_cruiser = 1
-		early_battleship = 1
-		early_battlecruiser = 1
-		transport = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "Man the Guns"
-	}
-	set_technology = {
-		early_ship_hull_submarine = 1
-		basic_ship_hull_submarine = 1
-		early_ship_hull_light = 1
-		early_ship_hull_cruiser = 1
-		early_ship_hull_heavy = 1
-		mtg_transport = 1
-		basic_battery = 1
-		basic_torpedo = 1
-	}
-}
-
- set_politics = {	
-	ruling_party = conservative_democracy
-	last_election = "1939.9.12"
-	election_frequency = 48
+set_politics = {	
+	ruling_party = traditionalism
+	last_election = "2014.9.14"
+	election_frequency = 60
 	elections_allowed = no
-
 }
-
-set_party_name = { ideology = conservative_democracy
-    long_name = "United Russia"
-	name = "Yedinaya Rossiya" }
-
-	recruit_character = CRI_aksyonov
-	recruit_character = CRI_matovnik
-	recruit_character = CRI_vger
-	recruit_character = CRI_zhur
-	recruit_character = CRI_berich
-	recruit_character = CRI_duloda
-	recruit_character = CRI_berezovsky
-	recruit_character = DNR_yanik
 
 set_popularities = {
-	conservative_democracy = 75
-	liberal_democracy = 15
-	radical_socialism = 10
+	communism = 0
+	socialism = 0
+	social_democracy = 0
+	progressivism = 0
+	centrism = 0
+	liberalism = 15
+	conservatism = 0
+	traditionalism = 55
+	authoritarianism = 0
+	national_democracy = 0
+	ultranationalism = 15
+	oligarchism = 15
 }
 
-add_ideas = CRI_disturbed_water_supply
-add_ideas = CRI_creamian_tatar_resistance
-add_ideas = CRI_ukranian_resistance
-add_ideas = CRI_rf_support
-
-
-
-
+recruit_character = CRI_Aksyonov

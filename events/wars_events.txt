@@ -1,104 +1,45 @@
-add_namespace = war
+﻿add_namespace = war
 
 news_event = {
 	id = war.1
 	title = war.1.t
 	desc = war.1.d
-
 	picture = GFX_odessa_kerfulle
-    is_triggered_only = yes
+	
     major = yes
+	is_triggered_only = yes
 
 	option = {
 		name = war.1.a
-		hidden_effect = {
-				if = {
-			limit = {is_ai = no}
-		    set_global_flag = super_odessa_war
-            set_global_flag = Super_Event_Visible
-			play_song = "superev_odessa_war"
-			}
-		ODE = {
-		set_country_flag = odesa_war
-		}
-		MYK = {
-		set_country_flag = odesa_war
-		}
-		SHT = {
-		set_country_flag = odesa_war
-		}
-		RGE = {
-		set_country_flag = odesa_war
-		}
-		STR = {
-		set_country_flag = odesa_war
-		}
-		BDZ = {
-		set_country_flag = odesa_war
-		}
-		OLD = {
-		set_country_flag = odesa_war
-		}
-		}
+		set_global_flag = odesa_war
 	}
 }
+
 news_event = {
 	id = war.2
 	title = war.2.t
 	desc = war.2.d
-
 	picture = GFX_volrivwar
-    is_triggered_only = yes
+	
     major = yes
+	is_triggered_only = yes
 
 	option = {
 		name = war.2.a
-		# hidden_effect = {
-		# 	if = {
-		# 		limit = { has_country_flag = ukrwarlord }
-		# 		news_event = {
-		# 			id = trans_global.2
-		# 			days = 5
-		# 		}
-		# 	}
-		# }
-	}
-	immediate = {
-		add_threat = 5
 	}
 }
+
 news_event = {
 	id = war.3
 	title = war.3.t
 	desc = war.3.d
-
 	picture = GFX_galician_zhidobor
-	fire_only_once = yes
-    major = yes
+	
+	major = yes
+	is_triggered_only = yes
 
 	option = {
 		name = war.3.a
-	}
-	immediate = {
-		add_threat = 5
-	}
-}
-
-#russian empire vs russia
-news_event = {
-	id = war.4
-	title = war.4.t
-	desc = war.4.d
-
-	picture = GFX_event_girkin_37
-	fire_only_once = yes
-    major = yes
-
-	option = {
-		name = war.4.a
-	}
-	immediate = {
-		add_threat = 25
 	}
 }
 
@@ -107,75 +48,46 @@ add_namespace = win
 news_event = {
     id = win.1
     title = win.1.t
-    desc = win.1.d
-    picture = GFX_shariy_win
-
-    is_triggered_only = yes
-
-    major = yes
+    desc = {
+		text = win.1.d.a
+		trigger = {
+			ODE = { exists = yes }
+		}
+	}
+	desc = {
+		text = win.1.d.b
+		trigger = {
+			STR = { exists = yes }
+		}
+	}
+	desc = {
+		text = win.1.d.c
+		trigger = {
+			SHA = { exists = yes }
+			REC = { exists = no }
+		}
+	}
+	desc = {
+		text = win.1.d.d
+		trigger = {
+			SHA = { exists = yes }
+			REC = { exists = yes }
+		}
+	}
+	desc = {
+		text = win.1.d.e
+		trigger = {
+			SHA = { exists = no }
+			REC = { exists = yes }
+		}
+	}
+	picture = GFX_odessa_kerfulle
+	
+	major = yes
+	is_triggered_only = yes
 
     option = {
         name = win.1.a
     }
-}
-news_event = {
-    id = win.2
-    title = win.2.t
-    desc = win.2.d
-    picture = GFX_esdabes_win
-
-    is_triggered_only = yes
-
-    major = yes
-
-    option = {
-        name = win.2.a
-    }
-	immediate = {
-		add_threat = 5
-	}
-}
-news_event = {
-    id = win.3
-    title = win.3.t
-    desc = win.3.d
-    picture = GFX_rusnya_win
-
-    is_triggered_only = yes
-
-    major = yes
-
-    option = {
-        name = win.3.a
-    }
-}
-news_event = {
-    id = win.4
-    title = win.4.t
-    desc = win.4.d
-    picture = GFX_admiral_win
-
-    is_triggered_only = yes
-
-    major = yes
-
-    option = {
-        name = win.4.a
-}
-}
-DANILOV REUNIFICATION
-news_event = {
-    id = win.5
-    title = win.5.t
-    desc = win.5.d
-    picture = GFX_danilov_reunification
-
-    is_triggered_only = yes
-
-    major = yes
-
-    option = {
-        name = win.5.a
-}
-}
+ }
 

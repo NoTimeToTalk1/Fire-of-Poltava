@@ -9,13 +9,20 @@ on_actions = {
 			}
         }
     }
-	
-    on_startup = {
+
+    on_annex = {
         effect = {
-			OPZ = {
-				country_event = { 
-					id = her.1
-					days = 400
+            if = {
+				limit = {
+					FROM = { tag = REC }
+				}
+				every_state = {
+					if = {
+						limit = {
+							is_core_of = REC
+						}
+						remove_core_of = REC
+					}
 				}
 			}
         }

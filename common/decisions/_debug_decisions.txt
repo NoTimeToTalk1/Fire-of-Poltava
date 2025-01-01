@@ -1,29 +1,456 @@
-donbass_war = {
-	"Time until escalation" = {
-		icon = GFX_decision_generic_military
-		available = {
-			always = no
-		}
-		activation = {
-			has_country_flag = part_of_war
-		}
-		is_good = no
-		days_mission_timeout = 180
-		visible = {
+debug_decisions = {
+
+	power_balance_test = {
+		priority = 100
+
+		allowed = {
 			always = yes
 		}
-		fire_only_once = yes
+
+		fire_only_once = no
 		cost = 0
-		timeout_effect = {
-			AFU = {
-				declare_War_on = {
-					target = DPR
-					type = annex_everything
+
+		visible = {
+			is_ai = no
+			is_debug = yes
+		}
+
+		complete_effect = {
+			set_power_balance = {
+				id = _test_balance
+			}
+		}
+	}
+	azov_tree_load = {
+		priority = 100
+
+		allowed = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		visible = {
+			is_ai = no
+			is_debug = yes
+			tag = AFU
+		}
+
+		complete_effect = {
+			load_focus_tree = AFU_azov
+		}
+	}
+	kryvonos_tree_load = {
+		priority = 100
+
+		allowed = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		visible = {
+			is_ai = no
+			is_debug = yes
+			tag = AFU
+		}
+
+		complete_effect = {
+			load_focus_tree = AFU_kryvonos
+		}
+	}
+	savchenko_tree_load = {
+		priority = 100
+
+		allowed = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		visible = {
+			is_ai = no
+			is_debug = yes
+			tag = AFU
+		}
+
+		complete_effect = {
+			load_focus_tree = AFU_savchenko
+		}
+	}
+	danilov_tree_load = {
+		priority = 100
+
+		allowed = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		visible = {
+			is_ai = no
+			is_debug = yes
+			tag = AFU
+		}
+
+		complete_effect = {
+			load_focus_tree = AFU_danilov
+		}
+	}
+	khomut_tree_load = {
+		priority = 100
+
+		allowed = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		visible = {
+			is_ai = no
+			is_debug = yes
+			tag = AFU
+		}
+
+		complete_effect = {
+			load_focus_tree = AFU_khomut
+		}
+	}
+
+	vitrenko_tree_load = {
+		priority = 100
+
+		allowed = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		visible = {
+			is_ai = no
+			is_debug = yes
+			tag = DPR
+		}
+
+		complete_effect = {
+			load_focus_tree = DPR_vitrenko
+		}
+	}
+	pasechnik_tree_load = {
+		priority = 100
+
+		allowed = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		visible = {
+			is_ai = no
+			is_debug = yes
+			tag = DPR
+		}
+
+		complete_effect = {
+			load_focus_tree = DPR_pasechnik
+		}
+	}
+	pushilin_tree_load = {
+		priority = 100
+
+		allowed = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		visible = {
+			is_ai = no
+			is_debug = yes
+			tag = DPR
+		}
+
+		complete_effect = {
+			load_focus_tree = DPR_pushilin
+		}
+	}
+	girkin_tree_load = {
+		priority = 100
+
+		allowed = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		visible = {
+			is_ai = no
+			is_debug = yes
+			tag = DPR
+		}
+
+		complete_effect = {
+			load_focus_tree = DPR_girkin
+		}
+	}
+	
+	
+	debug_show_decisions = {
+		priority = 100
+		allowed = {
+			always = yes
+		}
+
+		visible = {
+			is_ai = no
+			is_debug = yes
+			NOT = { has_global_flag = show_debug_decisions_flag }
+		}
+		complete_effect = {
+			set_global_flag = show_debug_decisions_flag
+		}
+	}
+
+	debug_hide_decisions = {
+		priority = -1
+		allowed = {
+			always = yes
+		}
+
+		visible = {
+			is_ai = no
+			is_debug = yes
+			has_global_flag = show_debug_decisions_flag
+		}
+		complete_effect = {
+			clr_global_flag = show_debug_decisions_flag
+		}
+	}
+	
+	research_all_tank_techs_nsb = {
+		icon = generic_tank
+		visible = {
+			always = no
+		}
+		complete_effect = {
+			set_technology = {
+				gwtank_chassis = 1
+				popup = no
+			}
+			set_technology = {
+				basic_light_tank_chassis = 1
+				popup = no
+			}			
+			set_technology = {
+				improved_light_tank_chassis = 1
+				popup = no
+			}			
+			set_technology = {
+				amphibious_tank_chassis = 1
+				popup = no
+			}			
+			set_technology = {
+				amphibious_drive = 1
+				popup = no
+			}			
+			set_technology = {
+				advanced_light_tank_chassis = 1
+				popup = no
+			}			
+			set_technology = {
+				basic_medium_tank_chassis = 1
+				popup = no
+			}			
+			set_technology = {
+				improved_medium_tank_chassis = 1
+				popup = no
+			}			
+			set_technology = {
+				advanced_medium_tank_chassis = 1
+				popup = no
+			}			
+			set_technology = {
+				main_battle_tank_chassis = 1
+				popup = no
+			}			
+			set_technology = {
+				basic_heavy_tank_chassis = 1
+				popup = no
+			}			
+			set_technology = {
+				improved_heavy_tank_chassis = 1
+				popup = no
+			}			
+			set_technology = {
+				advanced_heavy_tank_chassis = 1
+				popup = no
+			}			
+			set_technology = {
+				super_heavy_tank_chassis = 1
+				popup = no
+			}			
+			set_technology = {
+				armor_tech_1 = 1
+				popup = no
+			}			
+			set_technology = {
+				armor_tech_2 = 1
+				popup = no
+			}			
+			set_technology = {
+				armor_tech_3 = 1
+				popup = no
+			}			
+			set_technology = {
+				armor_tech_4 = 1
+				popup = no
+			}			
+			set_technology = {
+				engine_tech_1 = 1
+				popup = no
+			}			
+			set_technology = {
+				engine_tech_2 = 1
+				popup = no
+			}			
+			set_technology = {
+				engine_tech_3 = 1
+				popup = no
+			}			
+			set_technology = {
+				engine_tech_4 = 1
+				popup = no
+			}
+			set_technology = {
+				gw_artillery = 1
+				popup = no
+			}
+			set_technology = {
+				interwar_artillery = 1
+				popup = no
+			}
+			set_technology = {
+				artillery1 = 1
+				popup = no
+			}
+			set_technology = {
+				artillery2 = 1
+				popup = no
+			}
+			set_technology = {
+				artillery3 = 1
+				popup = no
+			}
+			set_technology = {
+				artillery4 = 1
+				popup = no
+			}
+			set_technology = {
+				artillery5 = 1
+				popup = no
+			}
+			set_technology = {
+				mountain_gun = 1
+				popup = no
+			}
+			set_technology = {
+				rocket_artillery = 1
+				popup = no
+			}
+			set_technology = {
+				rocket_artillery2 = 1
+				popup = no
+			}
+			set_technology = {
+				rocket_artillery3 = 1
+				popup = no
+			}
+			set_technology = {
+				rocket_artillery4 = 1
+				popup = no
+			}
+			set_technology = {
+				interwar_antiair = 1
+				popup = no
+			}
+			set_technology = {
+				antiair1 = 1
+				popup = no
+			}
+			set_technology = {
+				antiair2 = 1
+				popup = no
+			}
+			set_technology = {
+				antiair3 = 1
+				popup = no
+			}
+			set_technology = {
+				antiair4 = 1
+				popup = no
+			}
+			set_technology = {
+				antiair5 = 1
+				popup = no
+			}
+			set_technology = {
+				interwar_antitank = 1
+				popup = no
+			}
+			set_technology = {
+				antitank1 = 1
+				popup = no
+			}
+			set_technology = {
+				antitank2 = 1
+				popup = no
+			}
+			set_technology = {
+				antitank3 = 1
+				popup = no
+			}
+			set_technology = {
+				antitank4 = 1
+				popup = no
+			}
+			set_technology = {
+				antitank5 = 1
+				popup = no
+			}
+			set_technology = {
+				tech_engineers = 1
+				popup = no
+			}
+			set_technology = {
+				tech_engineers2 = 1
+				popup = no
+			}
+		}
+	}
+	history_entry_debug = {
+		icon = generic_research
+		visible = {
+			always = no
+		}
+		complete_effect = {
+			random_country_division = {
+
+				add_history_entry = {
+					key = custom_localized_key
+					subject = "Custom String (not localized)"
+					allow = yes
 				}
 			}
-			ai_will_do = {
-				base = 0
-			}
+			
 		}
 	}
 }
