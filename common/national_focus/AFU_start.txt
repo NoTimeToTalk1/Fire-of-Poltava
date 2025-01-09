@@ -1,420 +1,78 @@
-﻿	#On Our Own
+﻿
+
+	#On Our Own
 	shared_focus = {
 		id = AFU_on_our_own
-		icon = GFX_AFU_On_Our_Own
-
-		x = 14
+		icon = GFX_On_Our_Own
+		x = 33
 		y = 0
-
-		cost = 1
-
-		completion_reward = {
-			country_event = afu.1
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
 		}
+		cost = 1
+		
+		completion_reward = 
+		{ country_event = { id = afu.1 } }
 	}
-
+	
 	#Continue the State of Emergency
 	shared_focus = {
-		id = AFU_continue_the_state_of_emergency
-		icon = GFX_AFU_Continue_the_State_of_Emergency
-
-		relative_position_id = AFU_on_our_own
-		x = 0
+		id = AFU_proclaim_a_state_of_emergency
+		icon = GFX_Continue_the_State_of_Emergency
+		x = 33
 		y = 1
-
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
 		cost = 1
-		prerequisite = { focus = AFU_on_our_own }
-
+		
+		prerequisite = { focus = AFU_on_our_own}
+		
 		completion_reward = {
 			add_timed_idea = {
-				idea = AFU_state_of_emergency
-				days = 120
+				idea = AFU_continue_the_state_of_emergency
+				days = 60
 			}
-			add_war_support = 0.05
+			add_war_support = 0.05 
 		}
+
 	}
-
-    #Assessing the Situation
+	
+    #Asessing the Situation
 	shared_focus = {
-		id = AFU_assessing_the_situation
-		icon = GFX_AFU_Assessing_the_Situation
-
-		relative_position_id = AFU_continue_the_state_of_emergency
-		x = 0
-		y = 1
-
-		cost = 1
-		prerequisite = { focus = AFU_continue_the_state_of_emergency }
-
-		completion_reward = {
-			country_event = afu.3
-		}
-	}
-
-	#Reaching Out
-	shared_focus = {
-		id = AFU_reaching_out
-		icon = GFX_AFU_Reaching_Out
-
-		relative_position_id = AFU_assessing_the_situation
-		x = -6
-		y = 1
-
-		cost = 2
-		prerequisite = { focus = AFU_assessing_the_situation }
-
-		completion_reward = {
-			add_political_power = 50
-		}
-    }
-
-	#Speak to Tyler
-	shared_focus = {
-		id = AFU_speak_to_tyler
-		icon = GFX_AFU_Speak_to_Tyler
-
-		relative_position_id = AFU_reaching_out
-		x = -2
-		y = 1
-
-		cost = 1
-		prerequisite = { focus = AFU_reaching_out }
-
-		completion_reward = {
-			ZAP = {
-				country_event = afu.7
-			}
-		}
-	}
-
-	#Contact the Kyiv Government
-	shared_focus = {
-		id = AFU_contact_the_kyiv_government
-		icon = GFX_AFU_Contact_the_Kyiv_Government
-
-		relative_position_id = AFU_reaching_out
-		x = -1
+		id = AFU_asessing_the_situation
+		icon = GFX_Asessing_the_Situation
+		x = 33
 		y = 2
-
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
 		cost = 1
-		prerequisite = { focus = AFU_reaching_out }
-
-		completion_reward = {
-			KYI = {
-				country_event = afu.5
-			}
-	    }
-    }
-
-	#Contact Poroshenko
-	shared_focus = {
-		id = AFU_contact_poroshenko
-		icon = GFX_AFU_Contact_Poroshenko
-
-		relative_position_id = AFU_reaching_out
-		x = 1
-		y = 2
-
-		cost = 1
-		prerequisite = { focus = AFU_reaching_out }
-
-		completion_reward = {
-			CHR = {
-				country_event = afu.6
-			}
-		}
-    }
-
-	#Appeal to Avakov
-	shared_focus = {
-		id = AFU_appeal_to_avakov
-		icon = GFX_AFU_Appeal_to_Avakov
-
-		relative_position_id = AFU_reaching_out
-		x = 2
-		y = 1
-
-		cost = 1
-		prerequisite = { focus = AFU_reaching_out }
-
-		completion_reward = {
-			KHA = {
-				country_event = afu.8
-			}
-		}
-	}
-
-	#Mobilize our Forces
-	shared_focus = {
-		id = AFU_mobilize_our_forces
-		icon = GFX_AFU_Mobilize_Our_Forces
-
-		relative_position_id = AFU_assessing_the_situation
-		x = 6
-		y = 1
-
-		cost = 2
-		prerequisite = { focus = AFU_assessing_the_situation }
-
-		completion_reward = {
-			unlock_decision_category_tooltip = afu_mobilization_category
-		}
-	}
-
-	#Special Operations Forces
-	shared_focus = {
-		id = AFU_special_operations_forces
-		icon = GFX_AFU_Special_Operations_Forces
-
-		relative_position_id = AFU_mobilize_our_forces
-		x = -3
-		y = 1
-
-		cost = 5
-		prerequisite = { focus = AFU_mobilize_our_forces }
-
-		completion_reward = {
-			country_event = afu.14
-		}
-	}
-
-	#Enhanced Training
-	shared_focus = {
-		id = AFU_enhanced_training
-		icon = GFX_AFU_Enhanced_Training
-
-		relative_position_id = AFU_mobilize_our_forces
-		x = -1
-		y = 1
-
-		cost = 5
-		prerequisite = { focus = AFU_mobilize_our_forces }
-		mutually_exclusive = { focus = AFU_rely_on_militias }
-
-		completion_reward = {
-			add_ideas = AFU_improved_training_methods
-		}
-    }
-
-	#Rely on Militias
-	shared_focus = {
-		id = AFU_rely_on_militias
-		icon = GFX_AFU_Rely_on_Militias
-
-		relative_position_id = AFU_mobilize_our_forces
-		x = 1
-		y = 1
-
-		cost = 5
-		prerequisite = { focus = AFU_mobilize_our_forces }
-		mutually_exclusive = { focus = AFU_enhanced_training }
-
-		completion_reward = {
-			add_ideas = AFU_broader_training_plan
-		}
-    }
-
-	#Territorial Defence Forces
-	shared_focus = {
-		id = AFU_territorial_defence_forces
-		icon = GFX_AFU_Territorial_Defence_Forces
-
-		relative_position_id = AFU_mobilize_our_forces
-		x = 3
-		y = 1
-
-		cost = 3
-		prerequisite = { focus = AFU_mobilize_our_forces }
-
+		
+		prerequisite = { focus = AFU_proclaim_a_state_of_emergency }
+		
 		completion_reward = { 
-			country_event = afu.13
+			country_event = { id = afu.3 } 
 		}
 	}
-
-	#Reform the General Staff
-	shared_focus = {
-		id = AFU_reform_the_general_staff
-		icon = GFX_AFU_Reform_the_General_Staff
-
-		relative_position_id = AFU_enhanced_training
-		x = 0
-		y = 1
-
-		cost = 5
-		prerequisite = { focus = AFU_enhanced_training focus = AFU_rely_on_militias }
-
-		completion_reward = {
-			country_event = afu.15
-			add_ideas = AFU_ce_baza_ce_genshtab
-		}
-    }
-
-	#Sideline the Far-Right Elements
-	shared_focus = {
-		id = AFU_sideline_the_far_right_elements
-		icon = GFX_AFU_Sideline_the_Far_Right_Elements
-
-		relative_position_id = AFU_rely_on_militias
-		x = 0
-		y = 1
-
-		cost = 1
-		prerequisite = { focus = AFU_enhanced_training focus = AFU_rely_on_militias }
-
-		completion_reward = {
-			country_event = afu.16
-			swap_ideas = { 
-				remove_idea = AFU_nationalist_agendas 
-				add_idea = AFU_nationalist_agendas_2
-			}
-		}
-	}
-
-	#Professional Army
-	shared_focus = {
-		id = AFU_professional_army
-		icon = GFX_AFU_Professional_Army
-
-		relative_position_id = AFU_sideline_the_far_right_elements
-		x = -1
-		y = 1
-
-		cost = 5
-		prerequisite = { focus = AFU_sideline_the_far_right_elements }
-        prerequisite = { focus = AFU_reform_the_general_staff }
-
-		completion_reward = {
-			add_ideas = AFU_ready_military
-		}
-    }
-
-	#Prepare for the Inevitable
-	shared_focus = {
-		id = AFU_prepare_for_the_inevitable
-		icon = GFX_AFU_Prepare_for_the_Inevitable
-
-		relative_position_id = AFU_assessing_the_situation
-		x = 13
-		y = 1
-
-		cost = 3
-		prerequisite = { focus = AFU_assessing_the_situation }
-
-		completion_reward = { 
-			country_event = afu.17
-		}
-    }
-
-	#Prepare the Reserve Line
-	shared_focus = {
-		id = AFU_prepare_the_reserve_line
-		icon = GFX_AFU_Prepare_the_Reserve_Line
-
-		relative_position_id = AFU_prepare_for_the_inevitable
-		x = 0
-		y = 1
-
-		cost = 8
-		prerequisite = { focus = AFU_prepare_for_the_inevitable }
-
-		completion_reward = {
-			add_ideas = AFU_defensive_strategy
-			2862 = {
-				add_building_construction = { type = bunker level = 2 province = 13391 instant_build = yes }
-				add_building_construction = { type = bunker level = 5 province = 13280 instant_build = yes }
-			}
-			2307 = {
-				add_building_construction = { type = bunker level = 5 province = 8361 instant_build = yes }
-			}
-			2304 = {
-				add_building_construction = { type = bunker level = 6 province = 865 instant_build = yes }
-				add_building_construction = { type = bunker level = 6 province = 7799 instant_build = yes }
-			}
-			2306 = {
-				add_building_construction = { type = bunker level = 6 province = 2275 instant_build = yes }
-				add_building_construction = { type = bunker level = 2 province = 5237 instant_build = yes }
-				add_building_construction = { type = bunker level = 2 province = 965 instant_build = yes }
-			}
-			2094 = {
-				add_building_construction = { type = bunker level = 2 province = 8462 instant_build = yes }
-			}
-		}
-    }
-
-	#And Now We Wait
-	shared_focus = {
-		id = AFU_and_now_we_wait
-		icon = GFX_AFU_And_Now_We_Wait
-
-		relative_position_id = AFU_prepare_the_reserve_line
-		x = -1
-		y = 1
-
-		cost = 5
-		prerequisite = { focus = AFU_prepare_the_reserve_line }
-		mutually_exclusive = { focus = AFU_its_time_to_put_an_end_to_the_separatists }
-
-		bypass = {
-			OR = {
-				has_war = no
-				DPR = { exists = no }
-				LPR = { exists = no }
-			}
-		}
-
-		completion_reward = {
-			add_war_support = 0.2
-		}
-    }
-
-	#It's Time to Put an End to the Separatists
-	shared_focus = {
-		id = AFU_its_time_to_put_an_end_to_the_separatists
-		icon = GFX_AFU_Its_Time_to_Put_an_End_to_the_Separatists
-
-		relative_position_id = AFU_prepare_the_reserve_line
-		x = 1
-		y = 1
-
-		cost = 10
-		prerequisite = { focus = AFU_prepare_the_reserve_line }
-		mutually_exclusive = { focus = AFU_and_now_we_wait }
-
-		bypass = {
-			OR = {
-				has_war = no
-				DPR = { exists = no }
-				LPR = { exists = no }
-			}
-		}
-
-		will_lead_to_war_with = DPR
-		will_lead_to_war_with = LPR
-
-		completion_reward = {
-			declare_war_on = {
-				target = DPR
-				type = annex_everything
-			}
-			declare_war_on = {
-				target = LPR
-				type = annex_everything
-			}
-		}
-	}
-
+    
 	#Local Arms Procurement
 	shared_focus = {
 		id = AFU_local_arms_procurement
-		icon = GFX_AFU_Local_Arms_Procurement
-
-		relative_position_id = AFU_continue_the_state_of_emergency
-		x = 0
-		y = 2
-
+		icon = GFX_Local_Arms_Procurement
+		x = 33
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
 		cost = 5
-		prerequisite = { focus = AFU_assessing_the_situation }
-
+		
+		prerequisite = { focus = AFU_asessing_the_situation }
+		
 		completion_reward = {
 			2095 = {
 				add_extra_state_shared_building_slots = 2
@@ -422,248 +80,771 @@
 					type = arms_factory
 					level = 2
 					instant_build = yes
-				}
+				}	
 			}
 			add_timed_idea = {
 				idea = AFU_local_arms_manufacturing
-				days = 180
+				days = 360
 		    }
         }
     }
-
-	#Harshen the Quotas
+    
+	#Harsh Quotas
 	shared_focus = {
-		id = AFU_harshen_the_quotas
-		icon = GFX_AFU_Harshen_the_Quotas
-
-		relative_position_id = AFU_local_arms_procurement
-		x = 0
-		y = 1
-
+		id = AFU_harsh_quotas
+		icon = GFX_Harsh_Quotas
+		x = 33
+		y = 5
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
 		cost = 4
+		
 		prerequisite = { focus = AFU_local_arms_procurement }
-
-		completion_reward = {
+		
+		completion_reward = { 
 			country_event = afu.4
 			add_timed_idea = {
 				idea = AFU_harsh_quotas
 				days = 180
 			}
+			add_ideas = fop_working_hours_12
 		}
     }
-
-	#Establish Military Administration
+	
+	#Provisional Military Administration
 	shared_focus = {
-		id = AFU_establish_military_administration
-		icon = GFX_AFU_Establish_Military_Administration
-
-		relative_position_id = AFU_harshen_the_quotas
-		x = 0
-		y = 1
-
+		id = AFU_millitary_administration
+		icon = GFX_Military_Administration
+		x = 33
+		y = 6
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
 		cost = 6
-		prerequisite = { focus = AFU_harshen_the_quotas }
-
+		
+		prerequisite = { focus = AFU_harsh_quotas }
+		
 		completion_reward = {
-			swap_ideas = {
-				remove_idea = AFU_disorganised_administration
+			swap_ideas = { 
+				remove_idea = AFU_disorganised_administration 
 				add_idea = AFU_millitary_administration
 			}
 		}
 	}
-
-	#Promise Reforms
+	
+	#Promise Reform
 	shared_focus = {
-		id = AFU_promise_reforms
-		icon = GFX_AFU_Promise_Reforms
-
-		relative_position_id = AFU_establish_military_administration
-		x = -2
-		y = 2
-
+		id = AFU_promise_reform
+		icon = GFX_Promise_Reform
+		x = 35
+		y = 9
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
 		cost = 5
-		prerequisite = { focus = AFU_establish_military_administration }
-		mutually_exclusive = { focus = AFU_crackdown_on_dissent }
-
+		
+		prerequisite = { focus = AFU_millitary_administration }
+		
+		mutually_exclusive = {
+			focus = AFU_crackdown
+	    }
 		completion_reward = {
 			add_political_power = -25
 			remove_ideas = AFU_strikes
+			add_idea = mass_media_free
 		}
     }
-
-	#Crackdown on Dissent
+	
+	#Crackdown
 	shared_focus = {
-		id = AFU_crackdown_on_dissent
-		icon = GFX_AFU_Crackdown_on_Dissent
-
-		relative_position_id = AFU_establish_military_administration
-		x = 2
-		y = 2
-
+		id = AFU_crackdown
+		icon = GFX_Crackdown
+		x = 31
+		y = 9
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
 		cost = 2
-		prerequisite = { focus = AFU_establish_military_administration }
-		mutually_exclusive = { focus = AFU_promise_reforms }
-
+		
+		prerequisite = { focus = AFU_millitary_administration }
+		
+		mutually_exclusive = {
+			focus = AFU_promise_reform
+	    }
 		completion_reward = {
 			add_political_power = -125
 			remove_ideas = AFU_strikes
+			add_idea = mass_media_censorship
 		}
     }
-
+	
 	#Victory
 	shared_focus = {
 		id = AFU_victory
-		icon = GFX_AFU_Victory
-
-		relative_position_id = AFU_establish_military_administration
-		x = 0
-		y = 4
-
-		cost = 3
-		prerequisite = { focus = AFU_promise_reforms focus = AFU_crackdown_on_dissent }
-
+		icon = GFX_Victory
+		x = 33
+		y = 11
 		available = {
-			DPR = { exists = no }
-			LPR = { exists = no }
+			owns_state = 557
+			owns_state = 518 
 		}
-
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 3
+		
+		prerequisite = { 
+			focus = AFU_crackdown
+			focus = AFU_promise_reform
+		}
+		
 		completion_reward = {
-			add_political_power = 100
 			news_event = newsfop.4
+			add_political_power = 100
 			country_event = afu.10
+			country_lock_all_division_template = no
+			hidden_effect = {
+				RUS = {
+					country_event = { id = rus.3 days = 21 }
+				}
+			}
 		}
 	}
-
-	#Begin Integration
+	
+	#Start Integration
 	shared_focus = {
-		id = AFU_begin_integration
-		icon = GFX_AFU_Begin_Integration
-
-		relative_position_id = AFU_victory
-		x = 0
-		y = 1
-
-		cost = 2
-		prerequisite = { focus = AFU_victory }
-
-		completion_reward = {
-			add_political_power = 10
-			country_event = afu.11
+		id = AFU_start_intergration
+		icon = GFX_Start_Integration
+		x = 33
+		y = 12
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
 		}
-	}
-
-	#Demine the Roads
-	shared_focus = {
-		id = AFU_demine_the_roads
-		icon = GFX_AFU_Demine_the_Roads
-
-		relative_position_id = AFU_begin_integration
-		x = -2
-		y = 1
-
 		cost = 2
-		prerequisite = { focus = AFU_begin_integration }
-
-		completion_reward = {
-			add_political_power = 10
-			country_event = afu.11
+		
+		prerequisite = { 
+			focus = AFU_victory
 		}
-	}
-
-	#Rename the Cities
-	shared_focus = {
-		id = AFU_rename_the_cities
-		icon = GFX_AFU_Rename_the_Cities
-
-		relative_position_id = AFU_begin_integration
-		x = 0
-		y = 1
-
-		cost = 2
-		prerequisite = { focus = AFU_begin_integration }
-
-		completion_reward = {
-			add_political_power = 10
-			country_event = afu.11
-		}
-	}
-
-	#Demolish the Past
-	shared_focus = {
-		id = AFU_demolish_the_past
-		icon = GFX_AFU_Demolish_the_Past
-
-		relative_position_id = AFU_begin_integration
-		x = 2
-		y = 1
-
-		cost = 2
-		prerequisite = { focus = AFU_begin_integration }
-
-		completion_reward = {
+		
+		completion_reward = { 
 			add_political_power = 10
 			country_event = afu.11
 		}
 	}
 	
-	#Trial of Separatists
+	#Finish Integration
 	shared_focus = {
-		id = AFU_trial_of_separatists
-		icon = GFX_AFU_Trial_of_Separatists
-
-		relative_position_id = AFU_demine_the_roads
-		x = 1
-		y = 1
-
-		cost = 2
-		prerequisite = { focus = AFU_demine_the_roads }
-		prerequisite = { focus = AFU_rename_the_cities }
-
-		completion_reward = {
-			add_political_power = 10
-			country_event = afu.11
-		}
-	}
-
-	#Cultural Integration
-	shared_focus = {
-		id = AFU_cultural_integration
-		icon = GFX_AFU_Cultural_Integration
-
-		relative_position_id = AFU_demolish_the_past
-		x = -1
-		y = 1
-
-		cost = 2
-		prerequisite = { focus = AFU_demolish_the_past }
-		prerequisite = { focus = AFU_rename_the_cities }
-
-		completion_reward = {
-			add_political_power = 10
-			country_event = afu.11
-		}
-	}
-
-	#Finalize Integration
-	shared_focus = {
-		id = AFU_finalize_integration
-		icon = GFX_AFU_Finalize_Integration
-
-		relative_position_id = AFU_cultural_integration
-		x = -1
-		y = 1
-
-		cost = 2
-		prerequisite = { focus = AFU_trial_of_separatists }
-		prerequisite = { focus = AFU_cultural_integration }
-
+		id = AFU_finish_integration
+		icon = GFX_Finish_Integration
+		x = 33
+		y = 13
+		
 		available = {
 			has_country_flag = AFUintfinish
 		}
-
-		completion_reward = {
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { 
+			focus = AFU_start_intergration
+		}
+		
+		completion_reward = { 
 			add_political_power = 30
 			country_event = afu.12
+		}
+	}
+	
+	#Mobilize our forces
+	shared_focus = {
+		id = AFU_mobilize_our_forces
+		icon = GFX_Mobilize_Our_Forces
+		x = 39
+		y = 3
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_asessing_the_situation }
+		
+		completion_reward = {
+			unlock_decision_category_tooltip = afu_mobilization
+		}
+	}
+	
+	#Effective Training
+	shared_focus = {
+		id = AFU_effective_training
+		icon = GFX_Effective_Training
+		x = 38
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 5
+		
+		prerequisite = { focus = AFU_mobilize_our_forces }
+		mutually_exclusive = {
+		
+		focus = AFU_rely_on_militias
+	    }
+		completion_reward = {
+		add_ideas = AFU_improved_training_methods
+		}
+    }
+	
+	#Rely on militias
+	shared_focus = {
+		id = AFU_rely_on_militias
+		icon = GFX_Rely_on_Militias
+		x = 40
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 5
+		
+		prerequisite = { focus = AFU_mobilize_our_forces }
+		mutually_exclusive = {
+		
+		focus = AFU_effective_training
+	    }
+		completion_reward = {
+		add_ideas = AFU_broader_training_plan
+		
+		}
+    }
+
+	#Teroborona
+	shared_focus = {
+		id = AFU_territorial_defence_forces
+		icon = GFX_Territorial_Defence_Forces
+		x = 42
+		y = 4
+			
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 3
+			
+		prerequisite = { focus = AFU_mobilize_our_forces }
+
+		completion_reward = { 
+			country_event = afu.13
+		}
+	}
+
+	#Special Operation Forces
+	shared_focus = {
+		id = AFU_special_operation_forces
+		icon = GFX_Special_Operation_Forces
+		x = 36
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 5
+		
+		prerequisite = { focus = AFU_mobilize_our_forces }
+
+		completion_reward = {
+			country_event = afu.14
+		}
+	}
+	
+	#Reform the general staff
+	shared_focus = {
+		id = AFU_reform_the_general_staff
+		icon = GFX_Reform_the_General_Staff
+		x = 38
+		y = 5
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 5
+		
+		prerequisite = { focus = AFU_effective_training focus = AFU_rely_on_militias }
+		
+		completion_reward = {
+			country_event = afu.15
+		}
+    }
+	
+	#Azov
+	shared_focus = {
+		id = AFU_azov
+		icon = GFX_Azov
+		x = 40
+		y = 5
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 1
+		
+		prerequisite = { focus = AFU_effective_training focus = AFU_rely_on_militias }
+		
+		completion_reward = { 
+			country_event = afu.16
+			swap_ideas = { 
+				remove_idea = AFU_nationalist_agendas 
+				add_idea = AFU_nationalist_agendas_2
+			}
+		}
+	}
+	
+	#Professional Army
+	shared_focus = {
+		id = AFU_proffesional_army
+		icon = GFX_Professional_Army
+		x = 39
+		y = 6
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 5
+		
+		prerequisite = { focus = AFU_azov focus = AFU_reform_the_general_staff }
+		
+		completion_reward = {
+			add_ideas = AFU_ready_military
+		}
+    }
+    
+	#Prepare for the Inevitable
+	shared_focus = {
+		id = AFU_prepare_for_the_inevitable
+		icon = GFX_Prepare_for_the_Inevitable
+		x = 46
+		y = 3
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 3
+		
+		prerequisite = { focus = AFU_asessing_the_situation }
+        
+		completion_reward = { 
+			country_event = { id = afu.17 } 
+		}
+    }
+	
+	#Reserve Line
+	shared_focus = {
+		id = AFU_prepare_the_reserve_line
+		icon = GFX_Prepare_the_Reserve_Line
+		x = 46
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 8
+		
+		prerequisite = { focus = AFU_prepare_for_the_inevitable }
+		
+		completion_reward = {
+			add_ideas = AFU_defensive_strategy
+			2093 = {
+				add_building_construction = { type = bunker level = 2 province = 13189 instant_build = yes }
+				add_building_construction = { type = bunker level = 5 province = 7149 instant_build = yes }
+				add_building_construction = { type = bunker level = 5 province = 7423 instant_build = yes }
+				add_building_construction = { type = bunker level = 2 province = 8437 instant_build = yes }
+			}
+			2099 = {
+				add_building_construction = { type = bunker level = 3 province = 12990 instant_build = yes }
+			}
+			2095 = {
+				add_building_construction = { type = bunker level = 6 province = 8175 instant_build = yes }
+				add_building_construction = { type = bunker level = 6 province = 13142 instant_build = yes }
+			}
+			2306 = {
+				add_building_construction = { type = bunker level = 2 province = 15840 instant_build = yes }
+			}
+		}
+    }
+	
+	#Now We Wait
+	shared_focus = {
+		id = AFU_now_we_wait
+		icon = GFX_And_Now_We_Wait
+		x = 45
+		y = 5
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		
+		available = {	
+        has_war = no
+		DPR = { exists = yes } 
+		LPR = { exists = yes } 
+		}		
+		
+		cost = 5
+		
+		prerequisite = { focus = AFU_prepare_the_reserve_line }
+		mutually_exclusive = { focus = AFU_its_time_to_put_an_end_to_the_separatists }
+		completion_reward = {
+			add_war_support = 0.2
+		}
+    }
+	
+	#Strike first
+	shared_focus = {
+		id = AFU_its_time_to_put_an_end_to_the_separatists
+		icon = GFX_It's_Time_to_Put_an_End_to_the_Separatists
+		x = 47
+		y = 5
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		
+		available = {	
+        has_war = no
+		DPR = { exists = yes } 
+		LPR = { exists = yes } 
+		}	
+		
+		cost = 10
+		
+		prerequisite = { focus = AFU_prepare_the_reserve_line }
+		mutually_exclusive = { focus = AFU_now_we_wait }
+		
+		completion_reward = {
+			declare_war_on = { 
+			target = DPR
+			type = annex_everything 
+			}
+			declare_war_on = { 
+			target = LPR
+			type = annex_everything 
+			}
+		}
+	}
+	
+	#Reaching Out
+	shared_focus = {
+		id = AFU_reaching_out
+		icon = GFX_Reaching_Out
+		x = 27
+		y = 3
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_asessing_the_situation }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+	
+	#Speak to Zelenskyy
+	shared_focus = {
+		id = AFU_reach_out_to_kyjiv
+		icon = GFX_Reach_Out_to_Zelensky
+		x = 23
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 1
+		
+		prerequisite = { focus = AFU_reaching_out }
+		
+		completion_reward = {
+			UKR = {
+				country_event = afu.5
+			}
+	    }
+    }
+	
+	#Speak to Poroshenko
+	shared_focus = {
+		id = AFU_reach_out_to_poroshenko
+		icon = GFX_Reach_Out_to_Poroshenko
+		x = 25
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 1
+		
+		prerequisite = { focus = AFU_reaching_out }
+		
+		completion_reward = {
+			PRH = {
+				country_event = afu.6
+			}
+		}
+    }
+	
+	#Speak to Tyler
+	shared_focus = {
+		id = AFU_reach_out_to_zaporizhia
+		icon = GFX_Reach_Out_to_Tyler
+		x = 27
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 1
+		
+		prerequisite = { focus = AFU_reaching_out }
+		
+		completion_reward = {
+			ZAP = {
+				country_event = afu.7
+			}
+		}	
+	}
+	
+	#Speak to Avakov
+	shared_focus = {
+		id = AFU_reach_out_to_kharkiv
+		icon = GFX_Reach_Out_to_Avakov
+		x = 29
+		y = 4
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 1
+		
+		prerequisite = { focus = AFU_reaching_out }
+		completion_reward = {
+			KHA = {
+				country_event = afu.8
+			}
+		}
+	}
+	
+	shared_focus = {
+		id = AFU_stand_with_prh
+		icon = GFX_stand_with_prh
+		x = 35
+		y = 15
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+
+		available = {
+			has_idea = AFU_support_PRH
+		}
+		
+		prerequisite = { focus = AFU_victory }
+		mutually_exclusive = { focus = AFU_stand_with_ze }
+		
+		completion_reward = {
+			add_political_power = 50
+			hidden_effect = {
+				remove_ideas = AFU_support_UKR
+			}
+		}
+    }
+	shared_focus = {
+		id = AFU_stand_with_ze
+		icon = GFX_stand_with_ze
+		x = 31
+		y = 15
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+
+		available = {
+			has_idea = AFU_support_UKR
+		}
+		
+		prerequisite = { focus = AFU_victory }
+		mutually_exclusive = { focus = AFU_stand_with_prh }
+		
+		completion_reward = {
+			add_political_power = 50
+			country_event = { id = afu.36 }
+			hidden_effect = {
+				remove_ideas = AFU_support_PRH
+			}
+		}
+    }
+	shared_focus = {
+		id = AFU_we_stand_alone
+		icon = GFX_stand_alone
+		x = 33
+		y = 18
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_finish_integration }
+
+		available = {
+			NOT = {
+				OR = {
+					has_completed_focus = AFU_stand_with_ze
+					has_completed_focus = AFU_stand_with_prh
+				}
+			}
+		}
+		
+		completion_reward = {
+			add_political_power = 50
+			hidden_effect = {
+				remove_ideas = AFU_support_UKR
+				remove_ideas = AFU_support_PRH
+			}
+		}
+	}
+	shared_focus = {
+		id = AFU_no_new_faces
+		icon = GFX_no_new_faces
+		x = 35
+		y = 16
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_stand_with_prh }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+	shared_focus = {
+		id = AFU_faithful_army
+		icon = GFX_faithful_army
+		x = 35
+		y = 17
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_no_new_faces }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+	shared_focus = {
+		id = AFU_loyal_son
+		icon = GFX_loyal_son
+		x = 31
+		y = 16
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_stand_with_ze }
+		
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+	shared_focus = {
+		id = AFU_reclamation
+		icon = GFX_reclamation
+		x = 31
+		y = 17
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_loyal_son }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+    }
+	shared_focus = {
+		id = AFU_the_time_has_not_cum
+		icon = GFX_Reaching_Out
+		x = 31
+		y = 19
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		available = {
+		has_completed_focus = AFU_crackdown
+		}
+		
+		prerequisite = { focus = AFU_we_stand_alone }
+		mutually_exclusive = {
+			focus = AFU_elections_elections
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+			hidden_effect = {
+				country_event = afu.34
+			}
+		}
+    }
+    
+	shared_focus = {
+		id = AFU_elections_elections
+		icon = GFX_Reaching_Out
+		x = 35
+		y = 19
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		available = {
+		has_completed_focus = AFU_promise_reform
+		}
+		
+		prerequisite = { focus = AFU_we_stand_alone }
+		mutually_exclusive = {
+			focus = AFU_the_time_has_not_cum
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+			remove_ideas = AFU_millitary_administration
+			remove_ideas = AFU_martial_law
 			hidden_effect = {
 				country_event = afu.25
 				if = {
@@ -677,5 +858,4 @@
 				}
 			}
 		}
-	}
-}
+    }
