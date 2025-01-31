@@ -11,8 +11,8 @@ south_elections = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_south_west
-					has_country_flag = united_south_center
+					has_country_flag = united_dnister
+					has_country_flag = united_tavria
 				}
 				has_country_flag = south_elections
             }
@@ -27,32 +27,32 @@ south_elections = {
 			}
 			if = {
 				limit = {
-					check_variable = {SWT.south_west_rates > SCT.south_center_rates}
+					check_variable = {DST.dnister_rates > TVR.tavria_rates}
 				}
-				SCT = {
+				TVR = {
 					every_core_state = {
-						add_core_of = SWT
+						add_core_of = DST
 					}
 				}
-				SWT = {
+				DST = {
 					annex_country = {
-						target = SCT
+						target = TVR
 						transfer_troops = yes
 					}
 				}
 			}
 			else_if = {
 				limit = {
-					check_variable = {SCT.south_center_rates > SWT.south_west_rates}
+					check_variable = {TVR.tavria_rates > DST.dnister_rates}
 				}
-				SWT = {
+				DST = {
 					every_core_state = {
-						add_core_of = SCT
+						add_core_of = TVR
 					}
 				}
-				SCT = {
+				TVR = {
 					annex_country = {
-						target = SWT
+						target = DST
 						transfer_troops = yes
 					}
 				}
@@ -67,8 +67,8 @@ south_elections = {
 		activation = {
 			has_country_flag = south_elections
 			OR = {
-				has_country_flag = united_south_west
-				has_country_flag = united_south_center
+				has_country_flag = united_dnister
+				has_country_flag = united_tavria
 			}
 		}
 		available = {
@@ -79,8 +79,8 @@ south_elections = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_south_west
-					has_country_flag = united_south_center
+					has_country_flag = united_dnister
+					has_country_flag = united_tavria
 				}
 				has_country_flag = south_elections
             }
@@ -92,52 +92,52 @@ south_elections = {
 		timeout_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_south_west
+					has_country_flag = united_dnister
 				}
 				if = {
 					limit = {
-						check_variable = {SWT.south_west_rates_grow = 3}
+						check_variable = {DST.dnister_rates_grow = 3}
 					}
 					custom_effect_tooltip = elections_high_rate
 					add_to_variable = {
-						var = south_west_rates
+						var = dnister_rates
 						value = 2.50
 					}
 					FROM = {
 						add_to_variable = {
-							var = south_center_rates
+							var = tavria_rates
 							value = -2.50
 						}
 					}
 				}
 				else_if = {
 					limit = {
-						check_variable = {SWT.south_west_rates_grow = 2}
+						check_variable = {DST.dnister_rates_grow = 2}
 					}
 					custom_effect_tooltip = elections_medium_rate
 					add_to_variable = {
-						var = south_west_rates
+						var = dnister_rates
 						value = 1.50
 					}
 					FROM = {
 						add_to_variable = {
-							var = south_center_rates
+							var = tavria_rates
 							value = -1.50
 						}
 					}
 				}
 				else_if = {
 					limit = {
-						check_variable = {SWT.south_west_rates_grow = 1}
+						check_variable = {DST.dnister_rates_grow = 1}
 					}
 					custom_effect_tooltip = elections_low_rate
 					add_to_variable = {
-						var = south_west_rates
+						var = dnister_rates
 						value = 0.50
 					}
 					FROM = {
 						add_to_variable = {
-							var = south_center_rates
+							var = tavria_rates
 							value = -0.50
 						}
 					}
@@ -145,52 +145,52 @@ south_elections = {
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_south_center
+					has_country_flag = united_tavria
 				}
 				if = {
 					limit = {
-						check_variable = {SCT.south_center_rates_grow = 3}
+						check_variable = {TVR.tavria_rates_grow = 3}
 					}
 					custom_effect_tooltip = elections_high_rate
 					add_to_variable = {
-						var = south_center_rates
+						var = tavria_rates
 						value = 2.50
 					}
 					FROM = {
 						add_to_variable = {
-							var = south_west_rates
+							var = dnister_rates
 							value = -2.50
 						}
 					}
 				}
 				else_if = {
 					limit = {
-						check_variable = {SCT.south_center_rates_grow = 2}
+						check_variable = {TVR.tavria_rates_grow = 2}
 					}
 					custom_effect_tooltip = elections_medium_rate
 					add_to_variable = {
-						var = south_center_rates
+						var = tavria_rates
 						value = 1.50
 					}
 					FROM = {
 						add_to_variable = {
-							var = south_west_rates
+							var = dnister_rates
 							value = -1.50
 						}
 					}
 				}
 				else_if = {
 					limit = {
-						check_variable = {SCT.south_center_rates_grow = 1}
+						check_variable = {TVR.tavria_rates_grow = 1}
 					}
 					custom_effect_tooltip = elections_low_rate
 					add_to_variable = {
-						var = south_center_rates
+						var = tavria_rates
 						value = 0.50
 					}
 					FROM = {
 						add_to_variable = {
-							var = south_west_rates
+							var = dnister_rates
 							value = -0.50
 						}
 					}
@@ -198,46 +198,46 @@ south_elections = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_south_center
+					has_country_flag = united_tavria
 				}
 				if = {
 					limit = {
-						check_variable = {SWT.south_west_rates_grow = 3}
+						check_variable = {DST.dnister_rates_grow = 3}
 					}
 					custom_effect_tooltip = elections_high_rate
 				}
 				else_if = {
 					limit = {
-						check_variable = {SWT.south_west_rates_grow = 2}
+						check_variable = {DST.dnister_rates_grow = 2}
 					}
 					custom_effect_tooltip = elections_medium_rate
 				}
 				else_if = {
 					limit = {
-						check_variable = {SWT.south_west_rates_grow = 1}
+						check_variable = {DST.dnister_rates_grow = 1}
 					}
 					custom_effect_tooltip = elections_low_rate
 				}		
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_south_west
+					has_country_flag = united_dnister
 				}
 				if = {
 					limit = {
-						check_variable = {SCT.south_center_rates_grow = 3}
+						check_variable = {TVR.tavria_rates_grow = 3}
 					}
 					custom_effect_tooltip = elections_high_rate
 				}
 				else_if = {
 					limit = {
-						check_variable = {SCT.south_center_rates_grow = 2}
+						check_variable = {TVR.tavria_rates_grow = 2}
 					}
 					custom_effect_tooltip = elections_medium_rate
 				}
 				else_if = {
 					limit = {
-						check_variable = {SCT.south_center_rates_grow = 1}
+						check_variable = {TVR.tavria_rates_grow = 1}
 					}
 					custom_effect_tooltip = elections_low_rate
 				}		
@@ -254,15 +254,15 @@ south_elections = {
 		}
 		visible = {
 			OR = {
-				has_country_flag = united_south_center
-				has_country_flag = united_south_west
+				has_country_flag = united_tavria
+				has_country_flag = united_dnister
 			}
 		}
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_south_west
-					has_country_flag = united_south_center
+					has_country_flag = united_dnister
+					has_country_flag = united_tavria
 				}
             }
         }
@@ -278,19 +278,19 @@ south_elections = {
 			clr_country_flag = elect_action
 			if = {
 				limit = {
-					has_country_flag = united_south_west
+					has_country_flag = united_dnister
 				}
 				custom_effect_tooltip = elections_agitation
 				hidden_effect = {
 					random_list = {
 						20 = {
 							add_to_variable = {
-								var = south_west_rates
+								var = dnister_rates
 								value = 5.00
 							}
 							FROM = {
 								add_to_variable = {
-									var = south_center_rates
+									var = tavria_rates
 									value = -5.00
 								}
 							}
@@ -298,24 +298,24 @@ south_elections = {
 						}
 						30 = {
 							add_to_variable = {
-								var = south_west_rates
+								var = dnister_rates
 								value = 3.50
 							}
 							FROM = {
 								add_to_variable = {
-									var = south_center_rates
+									var = tavria_rates
 									value = -3.50
 								}
 							}
 						}
 						50 = {
 							add_to_variable = {
-								var = south_west_rates
+								var = dnister_rates
 								value = 2.00
 							}
 							FROM = {
 								add_to_variable = {
-									var = south_center_rates
+									var = tavria_rates
 									value = -2.00
 								}
 							}
@@ -325,43 +325,43 @@ south_elections = {
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_south_center
+					has_country_flag = united_tavria
 				}
 				custom_effect_tooltip = elections_agitation
 				hidden_effect = {
 					random_list = {
 						20 = {
 							add_to_variable = {
-								var = south_center_rates
+								var = tavria_rates
 								value = 5.00
 							}
 							FROM = {
 								add_to_variable = {
-									var = south_west_rates
+									var = dnister_rates
 									value = -5.00
 								}
 							}
 						}
 						30 = {
 							add_to_variable = {
-								var = south_center_rates
+								var = tavria_rates
 								value = 3.50
 							}
 							FROM = {
 								add_to_variable = {
-									var = south_west_rates
+									var = dnister_rates
 									value = -3.50
 								}
 							}
 						}
 						50 = {
 							add_to_variable = {
-								var = south_center_rates
+								var = tavria_rates
 								value = 2.00
 							}
 							FROM = {
 								add_to_variable = {
-									var = south_west_rates
+									var = dnister_rates
 									value = -2.00
 								}
 							}
@@ -381,15 +381,15 @@ south_elections = {
 		}
 		visible = {
 			OR = {
-				has_country_flag = united_south_center
-				has_country_flag = united_south_west
+				has_country_flag = united_tavria
+				has_country_flag = united_dnister
 			}
 		}
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_south_west
-					has_country_flag = united_south_center
+					has_country_flag = united_dnister
+					has_country_flag = united_tavria
 				}
             }
         }
@@ -406,17 +406,17 @@ south_elections = {
 			clr_country_flag = elect_action
 			if = {
 				limit = {
-					has_country_flag = united_south_west
+					has_country_flag = united_dnister
 				}
 				custom_effect_tooltip = elections_reach_out
 				hidden_effect = {
 					add_to_variable = {
-						var = south_west_rates
+						var = dnister_rates
 						value = 10.00
 					}
 					FROM = {
 						add_to_variable = {
-							var = south_center_rates
+							var = tavria_rates
 							value = -10.00
 						}
 					}
@@ -424,17 +424,17 @@ south_elections = {
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_south_center
+					has_country_flag = united_tavria
 				}
 				custom_effect_tooltip = elections_reach_out
 				hidden_effect = {
 					add_to_variable = {
-						var = south_center_rates
+						var = tavria_rates
 						value = 10.00
 					}
 					FROM = {
 						add_to_variable = {
-							var = south_west_rates
+							var = dnister_rates
 							value = -10.00
 						}
 					}
@@ -451,15 +451,15 @@ south_elections = {
 		}
 		visible = {
 			OR = {
-				has_country_flag = united_south_center
-				has_country_flag = united_south_west
+				has_country_flag = united_tavria
+				has_country_flag = united_dnister
 			}
 		}
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_south_west
-					has_country_flag = united_south_center
+					has_country_flag = united_dnister
+					has_country_flag = united_tavria
 				}
             }
         }
@@ -476,7 +476,7 @@ south_elections = {
 		if = {
 			limit = {
 				FROM = {
-					has_country_flag = united_south_west
+					has_country_flag = united_dnister
 				}
 			}
 			custom_effect_tooltip = elections_discredit_opponent
@@ -485,36 +485,36 @@ south_elections = {
 					20 = {
 						FROM = {
 							add_to_variable = {
-								var = south_west_rates
+								var = dnister_rates
 								value = -3.00
 							}
 						}
 						add_to_variable = {
-							var = south_center_rates
+							var = tavria_rates
 							value = 3.00
 						}
 					}
 					30 = {
 						FROM = {
 							add_to_variable = {
-								var = south_west_rates
+								var = dnister_rates
 								value = -1.50
 							}
 						}
 						add_to_variable = {
-							var = south_center_rates
+							var = tavria_rates
 							value = 1.50
 						}
 					}
 					50 = {
 						FROM = {
 							add_to_variable = {
-								var = south_west_rates
+								var = dnister_rates
 								value = -1.00
 							}
 						}
 						add_to_variable = {
-							var = south_center_rates
+							var = tavria_rates
 							value = 1.00
 						}
 					}
@@ -524,7 +524,7 @@ south_elections = {
 		else_if = {
 			limit = {
 				FROM = {
-					has_country_flag = united_south_center
+					has_country_flag = united_tavria
 				}
 			}
 			custom_effect_tooltip = elections_discredit_opponent
@@ -533,36 +533,36 @@ south_elections = {
 					20 = {
 						FROM = {
 							add_to_variable = {
-								var = south_center_rates
+								var = tavria_rates
 								value = -3.00
 							}
 						}
 						add_to_variable = {
-							var = south_west_rates
+							var = dnister_rates
 							value = 3.00
 						}
 					}
 					30 = {
 						FROM = {
 							add_to_variable = {
-								var = south_center_rates
+								var = tavria_rates
 								value = -1.50
 							}
 						}
 						add_to_variable = {
-							var = south_west_rates
+							var = dnister_rates
 							value = 1.50
 						}
 					}
 					50 = {
 						FROM = {
 							add_to_variable = {
-								var = south_center_rates
+								var = tavria_rates
 								value = -1.00
 							}
 						}
 						add_to_variable = {
-							var = south_west_rates
+							var = dnister_rates
 							value = 1.00
 						}
 					}
@@ -579,15 +579,15 @@ south_elections = {
 			NOT = {
 				if = {
 					limit = {
-						has_country_flag = united_south_west
+						has_country_flag = united_dnister
 					}
-					check_variable = {SCT.south_center_rates_grow = 1}
+					check_variable = {TVR.tavria_rates_grow = 1}
 				}
 				else_if = {
 					limit = {
-						has_country_flag = united_south_center
+						has_country_flag = united_tavria
 					}
-					check_variable = {SWT.south_west_rates_grow = 1}
+					check_variable = {DST.dnister_rates_grow = 1}
 				}
 				has_country_flag = elect_action
 			}
@@ -595,15 +595,15 @@ south_elections = {
 		}
 		visible = {
 			OR = {
-				has_country_flag = united_south_center
-				has_country_flag = united_south_west
+				has_country_flag = united_tavria
+				has_country_flag = united_dnister
 			}
 		}
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_south_west
-					has_country_flag = united_south_center
+					has_country_flag = united_dnister
+					has_country_flag = united_tavria
 				}
             }
         }
@@ -620,22 +620,22 @@ south_elections = {
 			clr_country_flag = elect_action
 			if = {
 				limit = {
-					has_country_flag = united_south_west
+					has_country_flag = united_dnister
 				}
 				FROM = {
 					add_to_variable = {
-						var = south_center_rates_grow
+						var = tavria_rates_grow
 						value = -1
 					}
 				}
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_south_center
+					has_country_flag = united_tavria
 				}
 				FROM = {
 					add_to_variable = {
-						var = south_west_rates_grow
+						var = dnister_rates_grow
 						value = -1
 					}
 				}
@@ -648,30 +648,30 @@ south_elections = {
 			NOT = {
 				if = {
 					limit = {
-						has_country_flag = united_south_west
+						has_country_flag = united_dnister
 					}
-					check_variable = {SWT.south_west_rates_grow = 3}
+					check_variable = {DST.dnister_rates_grow = 3}
 				}
 				else_if = {
 					limit = {
-						has_country_flag = united_south_center
+						has_country_flag = united_tavria
 					}
-					check_variable = {SCT.south_center_rates_grow = 3}
+					check_variable = {TVR.tavria_rates_grow = 3}
 				}
 				has_country_flag = elect_action
 			}
 		}
 		visible = {
 			OR = {
-				has_country_flag = united_south_center
-				has_country_flag = united_south_west
+				has_country_flag = united_tavria
+				has_country_flag = united_dnister
 			}
 		}
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_south_west
-					has_country_flag = united_south_center
+					has_country_flag = united_dnister
+					has_country_flag = united_tavria
 				}
             }
         }
@@ -688,19 +688,19 @@ south_elections = {
 			clr_country_flag = elect_action
 			if = {
 				limit = {
-					has_country_flag = united_south_west
+					has_country_flag = united_dnister
 				}
 					add_to_variable = {
-						var = south_west_rates_grow
+						var = dnister_rates_grow
 						value = 1
 					}
 				}
 			else_if = {
 				limit = {
-					has_country_flag = united_south_center
+					has_country_flag = united_tavria
 				}
 					add_to_variable = {
-						var = south_center_rates_grow
+						var = tavria_rates_grow
 						value = 1
 					}
 			}				
@@ -1432,40 +1432,40 @@ center_elections = {
 		days_mission_timeout = 150
 		selectable_mission = no
 		timeout_effect = {
-			NRT = {
+			SIV = {
 				clr_country_flag = center_elections
 			}
-			NCT = {
+			DNP = {
 				clr_country_flag = center_elections
 			}
 			if = {
 				limit = {
-					check_variable = {NRT.north_rates > NCT.north_center_rates}
+					check_variable = {SIV.siveria_rates > DNP.dnieper_rates}
 				}
-				NCT = {
+				DNP = {
 					every_core_state = {
-						add_core_of = NRT
+						add_core_of = SIV
 					}
 				}
-				NRT = {
+				SIV = {
 					annex_country = {
-						target = NCT
+						target = DNP
 						transfer_troops = yes
 					}
 				}
 			}
 			else_if = {
 				limit = {
-					check_variable = {NCT.north_center_rates > NRT.north_rates}
+					check_variable = {DNP.dnieper_rates > SIV.siveria_rates}
 				}
-				NRT = {
+				SIV = {
 					every_core_state = {
-						add_core_of = NCT
+						add_core_of = DNP
 					}
 				}
-				NCT = {
+				DNP = {
 					annex_country = {
-						target = NRT
+						target = SIV
 						transfer_troops = yes
 					}
 				}
@@ -1493,52 +1493,52 @@ center_elections = {
 			activate_mission = center_change_in_popularity
 			if = {
 				limit = {
-					tag = NRT
+					tag = SIV
 				}
 				if = {
 					limit = {
-						check_variable = {NRT.north_rates_grow = 3}
+						check_variable = {SIV.siveria_rates_grow = 3}
 					}
 					custom_effect_tooltip = elections_high_rate
 					add_to_variable = {
-						var = north_rates
+						var = siveria_rates
 						value = 2.50
 					}
-					NCT = {
+					DNP = {
 						add_to_variable = {
-							var = north_center_rates
+							var = dnieper_rates
 							value = -2.50
 						}
 					}
 				}
 				else_if = {
 					limit = {
-						check_variable = {NRT.north_rates_grow = 2}
+						check_variable = {SIV.siveria_rates_grow = 2}
 					}
 					custom_effect_tooltip = elections_medium_rate
 					add_to_variable = {
-						var = north_rates
+						var = siveria_rates
 						value = 1.50
 					}
-					NCT = {
+					DNP = {
 						add_to_variable = {
-							var = north_center_rates
+							var = dnieper_rates
 							value = -1.50
 						}
 					}
 				}
 				else_if = {
 					limit = {
-						check_variable = {NRT.north_rates_grow = 1}
+						check_variable = {SIV.siveria_rates_grow = 1}
 					}
 					custom_effect_tooltip = elections_low_rate
 					add_to_variable = {
-						var = north_rates
+						var = siveria_rates
 						value = 0.50
 					}
-					NCT = {
+					DNP = {
 						add_to_variable = {
-							var = north_center_rates
+							var = dnieper_rates
 							value = -0.50
 						}
 					}
@@ -1546,52 +1546,52 @@ center_elections = {
 			}
 			else_if = {
 				limit = {
-					tag = NCT
+					tag = DNP
 				}
 				if = {
 					limit = {
-						check_variable = {NCT.north_center_rates_grow = 3}
+						check_variable = {DNP.dnieper_rates_grow = 3}
 					}
 					custom_effect_tooltip = elections_high_rate
 					add_to_variable = {
-						var = north_center_rates
+						var = dnieper_rates
 						value = 2.50
 					}
-					NRT = {
+					SIV = {
 						add_to_variable = {
-							var = north_rates
+							var = siveria_rates
 							value = -2.50
 						}
 					}
 				}
 				else_if = {
 					limit = {
-						check_variable = {NCT.north_center_rates_grow = 2}
+						check_variable = {DNP.dnieper_rates_grow = 2}
 					}
 					custom_effect_tooltip = elections_medium_rate
 					add_to_variable = {
-						var = north_center_rates
+						var = dnieper_rates
 						value = 1.50
 					}
-					NRT = {
+					SIV = {
 						add_to_variable = {
-							var = north_rates
+							var = siveria_rates
 							value = -1.50
 						}
 					}
 				}
 				else_if = {
 					limit = {
-						check_variable = {NCT.north_center_rates_grow = 1}
+						check_variable = {DNP.dnieper_rates_grow = 1}
 					}
 					custom_effect_tooltip = elections_low_rate
 					add_to_variable = {
-						var = north_center_rates
+						var = dnieper_rates
 						value = 0.50
 					}
-					NRT = {
+					SIV = {
 						add_to_variable = {
-							var = north_rates
+							var = siveria_rates
 							value = -0.50
 						}
 					}
@@ -1599,46 +1599,46 @@ center_elections = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_north_center
+					has_country_flag = united_dnieper
 				}
 				if = {
 					limit = {
-						check_variable = {NRT.north_rates_grow = 3}
+						check_variable = {SIV.siveria_rates_grow = 3}
 					}
 					custom_effect_tooltip = elections_high_rate
 				}
 				else_if = {
 					limit = {
-						check_variable = {NRT.north_rates_grow = 2}
+						check_variable = {SIV.siveria_rates_grow = 2}
 					}
 					custom_effect_tooltip = elections_medium_rate
 				}
 				else_if = {
 					limit = {
-						check_variable = {NRT.north_rates_grow = 1}
+						check_variable = {SIV.siveria_rates_grow = 1}
 					}
 					custom_effect_tooltip = elections_low_rate
 				}		
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_north
+					has_country_flag = united_siveria
 				}
 				if = {
 					limit = {
-						check_variable = {NCT.north_center_rates_grow = 3}
+						check_variable = {DNP.dnieper_rates_grow = 3}
 					}
 					custom_effect_tooltip = elections_high_rate
 				}
 				else_if = {
 					limit = {
-						check_variable = {NCT.north_center_rates_grow = 2}
+						check_variable = {DNP.dnieper_rates_grow = 2}
 					}
 					custom_effect_tooltip = elections_medium_rate
 				}
 				else_if = {
 					limit = {
-						check_variable = {NCT.north_center_rates_grow = 1}
+						check_variable = {DNP.dnieper_rates_grow = 1}
 					}
 					custom_effect_tooltip = elections_low_rate
 				}		
@@ -1655,8 +1655,8 @@ center_elections = {
 		}
 		visible = {
 			OR = {
-				tag = NRT
-				tag = NCT
+				tag = SIV
+				tag = DNP
 			}
 		}
 		days_remove = 7
@@ -1671,19 +1671,19 @@ center_elections = {
 			clr_country_flag = elect_action
 			if = {
 				limit = {
-					tag = NRT
+					tag = SIV
 				}
 				custom_effect_tooltip = elections_agitation
 				hidden_effect = {
 					random_list = {
 						20 = {
 							add_to_variable = {
-								var = north_rates
+								var = siveria_rates
 								value = 5.00
 							}
-							NCT= {
+							DNP= {
 								add_to_variable = {
-									var = north_center_rates
+									var = dnieper_rates
 									value = -5.00
 								}
 							}
@@ -1691,24 +1691,24 @@ center_elections = {
 						}
 						30 = {
 							add_to_variable = {
-								var = north_rates
+								var = siveria_rates
 								value = 3.50
 							}
-							NCT = {
+							DNP = {
 								add_to_variable = {
-									var = north_center_rates
+									var = dnieper_rates
 									value = -3.50
 								}
 							}
 						}
 						50 = {
 							add_to_variable = {
-								var = north_rates
+								var = siveria_rates
 								value = 2.00
 							}
-							NCT = {
+							DNP = {
 								add_to_variable = {
-									var = north_center_rates
+									var = dnieper_rates
 									value = -2.00
 								}
 							}
@@ -1718,43 +1718,43 @@ center_elections = {
 			}
 			else_if = {
 				limit = {
-					tag = NCT
+					tag = DNP
 				}
 				custom_effect_tooltip = elections_agitation
 				hidden_effect = {
 					random_list = {
 						20 = {
 							add_to_variable = {
-								var = north_center_rates
+								var = dnieper_rates
 								value = 5.00
 							}
-							NRT = {
+							SIV = {
 								add_to_variable = {
-									var = north_rates
+									var = siveria_rates
 									value = -5.00
 								}
 							}
 						}
 						30 = {
 							add_to_variable = {
-								var = north_center_rates
+								var = dnieper_rates
 								value = 3.50
 							}
-							NRT = {
+							SIV = {
 								add_to_variable = {
-									var = north_rates
+									var = siveria_rates
 									value = -3.50
 								}
 							}
 						}
 						50 = {
 							add_to_variable = {
-								var = north_center_rates
+								var = dnieper_rates
 								value = 2.00
 							}
-							NRT = {
+							SIV = {
 								add_to_variable = {
-									var = north_rates
+									var = siveria_rates
 									value = -2.00
 								}
 							}
@@ -1774,8 +1774,8 @@ center_elections = {
 		}
 		visible = {
 			OR = {
-				tag = NRT
-				tag = NCT
+				tag = SIV
+				tag = DNP
 			}
 		}
 		days_remove = 5
@@ -1791,17 +1791,17 @@ center_elections = {
 			clr_country_flag = elect_action
 			if = {
 				limit = {
-					tag = NRT
+					tag = SIV
 				}
 				custom_effect_tooltip = elections_reach_out
 				hidden_effect = {
 					add_to_variable = {
-						var = north_rates
+						var = siveria_rates
 						value = 10.00
 					}
-					NRT = {
+					SIV = {
 						add_to_variable = {
-							var = north_center_rates
+							var = dnieper_rates
 							value = -10.00
 						}
 					}
@@ -1809,17 +1809,17 @@ center_elections = {
 			}
 			else_if = {
 				limit = {
-					tag = NCT
+					tag = DNP
 				}
 				custom_effect_tooltip = elections_reach_out
 				hidden_effect = {
 					add_to_variable = {
-						var = north_center_rates
+						var = dnieper_rates
 						value = 10.00
 					}
-					NRT = {
+					SIV = {
 						add_to_variable = {
-							var = north_rates
+							var = siveria_rates
 							value = -10.00
 						}
 					}
@@ -1836,8 +1836,8 @@ center_elections = {
 		}
 		visible = {
 			OR = {
-				tag = NRT
-				tag = NCT
+				tag = SIV
+				tag = DNP
 			}
 		}
 		days_remove = 7
@@ -1852,44 +1852,44 @@ center_elections = {
 		clr_country_flag = elect_action
 		if = {
 			limit = {
-				tag = NCT
+				tag = DNP
 			}
 			custom_effect_tooltip = elections_discredit_opponent
 			hidden_effect = {
 				random_list = {
 					20 = {
-						NRT = {
+						SIV = {
 							add_to_variable = {
-								var = north_rates
+								var = siveria_rates
 								value = -3.00
 							}
 						}
 						add_to_variable = {
-							var = north_center_rates
+							var = dnieper_rates
 							value = 3.00
 						}
 					}
 					30 = {
-						NRT = {
+						SIV = {
 							add_to_variable = {
-								var = north_rates
+								var = siveria_rates
 								value = -1.50
 							}
 						}
 						add_to_variable = {
-							var = north_center_rates
+							var = dnieper_rates
 							value = 1.50
 						}
 					}
 					50 = {
-						NRT = {
+						SIV = {
 							add_to_variable = {
-								var = north_rates
+								var = siveria_rates
 								value = -1.00
 							}
 						}
 						add_to_variable = {
-							var = north_center_rates
+							var = dnieper_rates
 							value = 1.00
 						}
 					}
@@ -1898,44 +1898,44 @@ center_elections = {
 		}
 		else_if = {
 			limit = {
-				tag = NRT
+				tag = SIV
 			}
 			custom_effect_tooltip = elections_discredit_opponent
 			hidden_effect = {
 				random_list = {
 					20 = {
-						NCT = {
+						DNP = {
 							add_to_variable = {
-								var = north_center_rates
+								var = dnieper_rates
 								value = -3.00
 							}
 						}
 						add_to_variable = {
-							var = north_rates
+							var = siveria_rates
 							value = 3.00
 						}
 					}
 					30 = {
-						NCT = {
+						DNP = {
 							add_to_variable = {
-								var = north_center_rates
+								var = dnieper_rates
 								value = -1.50
 							}
 						}
 						add_to_variable = {
-							var = north_rates
+							var = siveria_rates
 							value = 1.50
 						}
 					}
 					50 = {
-						NCT = {
+						DNP = {
 							add_to_variable = {
-								var = north_center_rates
+								var = dnieper_rates
 								value = -1.00
 							}
 						}
 						add_to_variable = {
-							var = north_rates
+							var = siveria_rates
 							value = 1.00
 						}
 					}
@@ -1952,15 +1952,15 @@ center_elections = {
 			NOT = {
 				if = {
 					limit = {
-						tag = NRT
+						tag = SIV
 					}
-					check_variable = {NCT.north_center_rates_grow = 1}
+					check_variable = {DNP.dnieper_rates_grow = 1}
 				}
 				else_if = {
 					limit = {
-						tag = NCT
+						tag = DNP
 					}
-					check_variable = {NRT.north_rates_grow = 1}
+					check_variable = {SIV.siveria_rates_grow = 1}
 				}
 				has_country_flag = elect_action
 			}
@@ -1968,8 +1968,8 @@ center_elections = {
 		}
 		visible = {
 			OR = {
-				tag = NRT
-				tag = NCT
+				tag = SIV
+				tag = DNP
 			}
 		}
 		days_remove = 7
@@ -1985,22 +1985,22 @@ center_elections = {
 			clr_country_flag = elect_action
 			if = {
 				limit = {
-					tag = NRT
+					tag = SIV
 				}
-				NCT = {
+				DNP = {
 					add_to_variable = {
-						var = north_center_rates_grow
+						var = dnieper_rates_grow
 						value = -1
 					}
 				}
 			}
 			else_if = {
 				limit = {
-					tag = NCT
+					tag = DNP
 				}
-				NRT = {
+				SIV = {
 					add_to_variable = {
-						var = north_rates_grow
+						var = siveria_rates_grow
 						value = -1
 					}
 				}
@@ -2013,23 +2013,23 @@ center_elections = {
 			NOT = {
 				if = {
 					limit = {
-						tag = NRT
+						tag = SIV
 					}
-					check_variable = {NRT.north_rates_grow = 3}
+					check_variable = {SIV.siveria_rates_grow = 3}
 				}
 				else_if = {
 					limit = {
-						tag = NCT
+						tag = DNP
 					}
-					check_variable = {NCT.north_center_rates_grow = 3}
+					check_variable = {DNP.dnieper_rates_grow = 3}
 				}
 				has_country_flag = elect_action
 			}
 		}
 		visible = {
 			OR = {
-				tag = NRT
-				tag = NCT
+				tag = SIV
+				tag = DNP
 			}
 		}=
 		days_remove = 7
@@ -2045,19 +2045,19 @@ center_elections = {
 			clr_country_flag = elect_action
 			if = {
 				limit = {
-					tag = NRT
+					tag = SIV
 				}
 					add_to_variable = {
-						var = north_rates_grow
+						var = siveria_rates_grow
 						value = 1
 					}
 				}
 			else_if = {
 				limit = {
-					tag = NCT
+					tag = DNP
 				}
 					add_to_variable = {
-						var = north_center_rates_grow
+						var = dnieper_rates_grow
 						value = 1
 					}
 			}				
@@ -2246,7 +2246,7 @@ left_bank_elections = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_north_center
+					has_country_flag = united_dnieper
 				}
 				if = {
 					limit = {
@@ -2269,7 +2269,7 @@ left_bank_elections = {
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_north
+					has_country_flag = united_siveria
 				}
 				if = {
 					limit = {
@@ -2893,7 +2893,7 @@ right_bank_elections = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_north_center
+					has_country_flag = united_dnieper
 				}
 				if = {
 					limit = {
@@ -2916,7 +2916,7 @@ right_bank_elections = {
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_north
+					has_country_flag = united_siveria
 				}
 				if = {
 					limit = {
@@ -3540,7 +3540,7 @@ ukraine_elections = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_north_right_bank
+					has_country_flag = united_siveria_right_bank
 				}
 				if = {
 					limit = {
@@ -3563,7 +3563,7 @@ ukraine_elections = {
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_north
+					has_country_flag = united_siveria
 				}
 				if = {
 					limit = {
