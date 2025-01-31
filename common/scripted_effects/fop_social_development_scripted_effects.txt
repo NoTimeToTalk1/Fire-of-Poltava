@@ -1,0 +1,2081 @@
+##Thanks Pax Britannica for template
+
+#Science
+FOP_science_small_improvement = {
+    custom_effect_tooltip = FOP_science_small_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_science_month
+                value = 2
+            }
+
+            clamp_variable = {
+                var = FOP_science_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_science_medium_improvement = {
+    custom_effect_tooltip = FOP_science_medium_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_science_month
+                value = 4
+            }
+
+            clamp_variable = {
+                var = FOP_science_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_science_high_improvement = {
+    custom_effect_tooltip = FOP_science_high_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_science_month
+                value = 6
+            }
+
+            clamp_variable = {
+                var = FOP_science_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_science_small_regression = {
+    custom_effect_tooltip = FOP_science_small_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_science_month
+                value = -2
+            }
+
+            clamp_variable = {
+                var = FOP_science_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_science_medium_regression = {
+    custom_effect_tooltip = FOP_science_medium_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_science_month
+                value = -4
+            }
+
+            clamp_variable = {
+                var = FOP_science_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_science_high_regression = {
+    custom_effect_tooltip = FOP_science_high_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_science_month
+                value = -6
+            }
+
+            clamp_variable = {
+                var = FOP_science_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_science_progress = {
+    custom_effect_tooltip = FOP_science_progress_tt
+    hidden_effect = {
+        if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_science_rudimentary
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_science_outdated
+                remove_idea = fop_science_rudimentary
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_science_outdated
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_science_modern
+                remove_idea = fop_science_outdated
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_science_modern
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_science_advanced
+                remove_idea = fop_science_modern
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_science_advanced
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_science_perfect
+                remove_idea = fop_science_advanced
+            }
+        }
+    }
+}
+
+FOP_science_regress = {
+    custom_effect_tooltip = FOP_science_regress_tt
+    hidden_effect = {
+        if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_science_perfect
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_science_advanced
+                remove_idea = fop_science_perfect
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_science_advanced
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_science_modern
+                remove_idea = fop_science_advanced
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_science_modern
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_science_outdated
+                remove_idea = fop_science_modern
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_science_outdated
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_science_rudimentary
+                remove_idea = fop_science_outdated
+            }
+        }
+    }
+}
+
+#Schooling
+FOP_schooling_small_improvement = {
+    custom_effect_tooltip = FOP_schooling_small_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_schooling_month
+                value = 2
+            }
+
+            clamp_variable = {
+                var = FOP_schooling_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_schooling_medium_improvement = {
+    custom_effect_tooltip = FOP_schooling_medium_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_schooling_month
+                value = 4
+            }
+
+            clamp_variable = {
+                var = FOP_schooling_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_schooling_high_improvement = {
+    custom_effect_tooltip = FOP_schooling_high_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_schooling_month
+                value = 6
+            }
+
+            clamp_variable = {
+                var = FOP_schooling_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_schooling_small_regression = {
+    custom_effect_tooltip = FOP_schooling_small_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_schooling_month
+                value = -2
+            }
+
+            clamp_variable = {
+                var = FOP_schooling_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_schooling_medium_regression = {
+    custom_effect_tooltip = FOP_schooling_medium_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_schooling_month
+                value = -4
+            }
+
+            clamp_variable = {
+                var = FOP_schooling_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_schooling_high_regression = {
+    custom_effect_tooltip = FOP_schooling_high_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_schooling_month
+                value = -6
+            }
+
+            clamp_variable = {
+                var = FOP_schooling_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_schooling_progress = {
+    custom_effect_tooltip = FOP_schooling_progress_tt
+    hidden_effect = {
+        if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_schooling_mass_illiteracy
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_schooling_outdated
+                remove_idea = fop_schooling_mass_illiteracy
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_schooling_outdated
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_schooling_basic
+                remove_idea = fop_schooling_outdated
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_schooling_basic
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_schooling_modern
+                remove_idea = fop_schooling_basic
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_schooling_modern
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_schooling_advanced
+                remove_idea = fop_schooling_modern
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_schooling_advanced
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_schooling_perfect
+                remove_idea = fop_schooling_advanced
+            }
+        }
+    }
+}
+
+FOP_schooling_regress = {
+    custom_effect_tooltip = FOP_schooling_regress_tt
+    hidden_effect = {
+        if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_schooling_perfect
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_schooling_advanced
+                remove_idea = fop_schooling_perfect
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_schooling_advanced
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_schooling_modern
+                remove_idea = fop_schooling_advanced
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_schooling_modern
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_schooling_basic
+                remove_idea = fop_schooling_modern
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_schooling_basic
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_schooling_outdated
+                remove_idea = fop_schooling_basic
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_schooling_outdated
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_schooling_mass_illiteracy
+                remove_idea = fop_schooling_outdated
+            }
+        }
+    }
+}
+
+#Healthcare
+FOP_healthcare_small_improvement = {
+    custom_effect_tooltip = FOP_healthcare_small_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_healthcare_month
+                value = 3
+            }
+
+            clamp_variable = {
+                var = FOP_healthcare_month
+                min = -9
+                max = 9
+            }
+        }    
+}
+
+FOP_healthcare_medium_improvement = {
+    custom_effect_tooltip = FOP_healthcare_medium_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_healthcare_month
+                value = 6
+            }
+
+            clamp_variable = {
+                var = FOP_healthcare_month
+                min = -9
+                max = 9
+            }
+        }    
+}
+
+FOP_healthcare_high_improvement = {
+    custom_effect_tooltip = FOP_healthcare_high_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_healthcare_month
+                value = 9
+            }
+
+            clamp_variable = {
+                var = FOP_healthcare_month
+                min = -9
+                max = 9
+            }
+        }    
+}
+
+FOP_healthcare_small_regression = {
+    custom_effect_tooltip = FOP_healthcare_small_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_healthcare_month
+                value = -3
+            }
+
+            clamp_variable = {
+                var = FOP_healthcare_month
+                min = -9
+                max = 9
+            }
+        }    
+}
+
+FOP_healthcare_medium_regression = {
+    custom_effect_tooltip = FOP_healthcare_medium_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_healthcare_month
+                value = -6
+            }
+
+            clamp_variable = {
+                var = FOP_healthcare_month
+                min = -9
+                max = 9
+            }
+        }    
+}
+
+FOP_healthcare_high_regression = {
+    custom_effect_tooltip = FOP_healthcare_high_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_healthcare_month
+                value = -9
+            }
+
+            clamp_variable = {
+                var = FOP_healthcare_month
+                min = -9
+                max = 9
+            }
+        }    
+}
+
+FOP_healthcare_progress = {
+    custom_effect_tooltip = FOP_healthcare_progress_tt
+    hidden_effect = {
+        if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_healthcare_rudimentary
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_healthcare_outdated
+                remove_idea = fop_healthcare_rudimentary
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_healthcare_outdated
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_healthcare_acceptable
+                remove_idea = fop_healthcare_outdated
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_healthcare_acceptable
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_healthcare_developed
+                remove_idea = fop_healthcare_acceptable
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_healthcare_developed
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_healthcare_advanced
+                remove_idea = fop_healthcare_developed
+            }
+        }
+		else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_healthcare_advanced
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_healthcare_perfect
+                remove_idea = fop_healthcare_advanced
+            }
+        }
+    }
+}
+
+FOP_healthcare_regress = {
+    custom_effect_tooltip = FOP_healthcare_regress_tt
+    hidden_effect = {
+		if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_healthcare_perfect
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_healthcare_advanced
+                remove_idea = fop_healthcare_perfect
+            }
+        }
+		else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_healthcare_advanced
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_healthcare_developed
+                remove_idea = fop_healthcare_advanced
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_healthcare_developed
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_healthcare_acceptable
+                remove_idea = fop_healthcare_developed
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_healthcare_acceptable
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_healthcare_outdated
+                remove_idea = fop_healthcare_acceptable
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_healthcare_outdated
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_healthcare_rudimentary
+                remove_idea = fop_healthcare_outdated
+            }
+        }
+    }
+}
+
+#Poverty
+FOP_poverty_small_improvement = {
+    custom_effect_tooltip = FOP_poverty_small_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_poverty_month
+                value = 2
+            }
+
+            clamp_variable = {
+                var = FOP_poverty_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_poverty_medium_improvement = {
+    custom_effect_tooltip = FOP_poverty_medium_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_poverty_month
+                value = 4
+            }
+
+            clamp_variable = {
+                var = FOP_poverty_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_poverty_high_improvement = {
+    custom_effect_tooltip = FOP_poverty_high_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_poverty_month
+                value = 6
+            }
+
+            clamp_variable = {
+                var = FOP_poverty_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_poverty_small_regression = {
+    custom_effect_tooltip = FOP_poverty_small_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_poverty_month
+                value = -2
+            }
+
+            clamp_variable = {
+                var = FOP_poverty_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_poverty_medium_regression = {
+    custom_effect_tooltip = FOP_poverty_medium_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_poverty_month
+                value = -4
+            }
+
+            clamp_variable = {
+                var = FOP_poverty_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_poverty_high_regression = {
+    custom_effect_tooltip = FOP_poverty_high_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_poverty_month
+                value = -6
+            }
+
+            clamp_variable = {
+                var = FOP_poverty_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_poverty_progress = {
+    custom_effect_tooltip = FOP_poverty_progress_tt
+    hidden_effect = {
+        if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_poverty_extreme
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_poverty_high
+                remove_idea = fop_poverty_extreme
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_poverty_high
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_poverty_moderate
+                remove_idea = fop_poverty_high
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_poverty_moderate
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_poverty_low
+                remove_idea = fop_poverty_moderate
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_poverty_low
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_poverty_no
+                remove_idea = fop_poverty_low
+            }
+        }
+    }
+}
+
+FOP_poverty_regress = {
+    custom_effect_tooltip = FOP_poverty_regress_tt
+    hidden_effect = {
+		if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_poverty_no
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_poverty_low
+                remove_idea = fop_poverty_no
+            }
+        }
+		else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_poverty_low
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_poverty_moderate
+                remove_idea = fop_poverty_low
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_poverty_moderate
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_poverty_high
+                remove_idea = fop_poverty_moderate
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_poverty_high
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_poverty_extreme
+                remove_idea = fop_poverty_high
+            }
+        }
+    }
+}
+
+#Unemployment
+FOP_unemployment_small_improvement = {
+    custom_effect_tooltip = FOP_unemployment_small_improvement_tt 
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_unemployment_month
+                value = 3
+            }
+
+            clamp_variable = {
+                var = FOP_unemployment_month
+                min = -9
+                max = 9
+            }
+        }    
+}
+
+FOP_unemployment_medium_improvement = {
+    custom_effect_tooltip = FOP_unemployment_medium_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_unemployment_month
+                value = 6
+            }
+
+            clamp_variable = {
+                var = FOP_unemployment_month
+                min = -9
+                max = 9
+            }
+        }    
+}
+
+FOP_unemployment_high_improvement = {
+    custom_effect_tooltip = FOP_unemployment_high_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_unemployment_month
+                value = 9
+            }
+
+            clamp_variable = {
+                var = FOP_unemployment_month
+                min = -9
+                max = 9
+            }
+        }    
+}
+
+FOP_unemployment_small_regression = {
+    custom_effect_tooltip = FOP_unemployment_small_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_unemployment_month
+                value = -3
+            }
+
+            clamp_variable = {
+                var = FOP_unemployment_month
+                min = -9
+                max = 9
+            }
+        }    
+}
+
+FOP_unemployment_medium_regression = {
+    custom_effect_tooltip = FOP_unemployment_medium_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_unemployment_month
+                value = -6
+            }
+
+            clamp_variable = {
+                var = FOP_unemployment_month
+                min = -9
+                max = 9
+            }
+        }    
+}
+
+FOP_unemployment_high_regression = {
+    custom_effect_tooltip = FOP_unemployment_high_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_unemployment_month
+                value = -9
+            }
+
+            clamp_variable = {
+                var = FOP_unemployment_month
+                min = -9
+                max = 9
+            }
+        }    
+}
+
+FOP_unemployment_progress = {
+    custom_effect_tooltip = FOP_unemployment_progress_tt
+    hidden_effect = {
+        if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_unemployment_extreme
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_unemployment_high
+                remove_idea = fop_unemployment_extreme
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_unemployment_high
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_unemployment_moderate
+                remove_idea = fop_unemployment_high
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_unemployment_moderate
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_unemployment_low
+                remove_idea = fop_unemployment_moderate
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_unemployment_low
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_unemployment_no
+                remove_idea = fop_unemployment_low
+            }
+        }
+    }
+}
+
+FOP_unemployment_regress = {
+    custom_effect_tooltip = FOP_unemployment_regress_tt
+    hidden_effect = {
+		if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_unemployment_no
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_unemployment_low
+                remove_idea = fop_unemployment_no
+            }
+        }
+		else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_unemployment_low
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_unemployment_moderate
+                remove_idea = fop_unemployment_low
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_unemployment_moderate
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_unemployment_high
+                remove_idea = fop_unemployment_moderate
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_unemployment_high
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_unemployment_extreme
+                remove_idea = fop_unemployment_high
+            }
+        }
+    }
+}
+
+#Corruption
+FOP_corruption_small_improvement = {
+    custom_effect_tooltip = FOP_corruption_small_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_corruption_month
+                value = 2
+            }
+
+            clamp_variable = {
+                var = FOP_corruption_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_corruption_medium_improvement = {
+    custom_effect_tooltip = FOP_corruption_medium_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_corruption_month
+                value = 4
+            }
+
+            clamp_variable = {
+                var = FOP_corruption_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_corruption_high_improvement = {
+    custom_effect_tooltip = FOP_corruption_high_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_corruption_month
+                value = 6
+            }
+
+            clamp_variable = {
+                var = FOP_corruption_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_corruption_small_regression = {
+    custom_effect_tooltip = FOP_corruption_small_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_corruption_month
+                value = -2
+            }
+
+            clamp_variable = {
+                var = FOP_corruption_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_corruption_medium_regression = {
+    custom_effect_tooltip = FOP_corruption_medium_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_corruption_month
+                value = -4
+            }
+
+            clamp_variable = {
+                var = FOP_corruption_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_corruption_high_regression = {
+    custom_effect_tooltip = FOP_corruption_high_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_corruption_month
+                value = -6
+            }
+
+            clamp_variable = {
+                var = FOP_corruption_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_corruption_progress = {
+    custom_effect_tooltip = FOP_corruption_progress_tt
+    hidden_effect = {
+        if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_corruption_extreme
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_corruption_high
+                remove_idea = fop_corruption_extreme
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_corruption_high
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_corruption_moderate
+                remove_idea = fop_corruption_high
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_corruption_moderate
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_corruption_low
+                remove_idea = fop_corruption_moderate
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_corruption_low
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_corruption_no
+                remove_idea = fop_corruption_low
+            }
+        }
+    }
+}
+
+FOP_corruption_regress = {
+    custom_effect_tooltip = FOP_corruption_regress_tt
+    hidden_effect = {
+		if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_corruption_no
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_corruption_low
+                remove_idea = fop_corruption_no
+            }
+        }
+		else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_corruption_low
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_corruption_moderate
+                remove_idea = fop_corruption_low
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_corruption_moderate
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_corruption_high
+                remove_idea = fop_corruption_moderate
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_corruption_high
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_corruption_extreme
+                remove_idea = fop_corruption_high
+            }
+        }
+    }
+}
+
+#Industry
+FOP_industry_small_improvement = {
+    custom_effect_tooltip = FOP_industry_small_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_industry_month
+                value = 2
+            }
+
+            clamp_variable = {
+                var = FOP_industry_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_industry_medium_improvement = {
+    custom_effect_tooltip = FOP_industry_medium_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_industry_month
+                value = 4
+            }
+
+            clamp_variable = {
+                var = FOP_industry_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_industry_high_improvement = {
+    custom_effect_tooltip = FOP_industry_high_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_industry_month
+                value = 6
+            }
+
+            clamp_variable = {
+                var = FOP_industry_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_industry_small_regression = {
+    custom_effect_tooltip = FOP_industry_small_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_industry_month
+                value = -2
+            }
+
+            clamp_variable = {
+                var = FOP_industry_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_industry_medium_regression = {
+    custom_effect_tooltip = FOP_industry_medium_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_industry_month
+                value = -4
+            }
+
+            clamp_variable = {
+                var = FOP_industry_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_industry_high_regression = {
+    custom_effect_tooltip = FOP_industry_high_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_industry_month
+                value = -6
+            }
+
+            clamp_variable = {
+                var = FOP_industry_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_industry_progress = {
+    custom_effect_tooltip = FOP_industry_progress_tt
+    hidden_effect = {
+        if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_industry_primitive
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_industry_incompetent
+                remove_idea = fop_industry_primitive
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_industry_incompetent
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_industry_acceptable
+                remove_idea = fop_industry_incompetent
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_industry_acceptable
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_industry_experienced
+                remove_idea = fop_industry_acceptable
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_industry_experienced
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_industry_innovative
+                remove_idea = fop_industry_experienced
+            }
+        }
+    }
+}
+
+FOP_industry_regress = {
+    custom_effect_tooltip = FOP_industry_regress_tt
+    hidden_effect = {
+		if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_industry_innovative
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_industry_experienced
+                remove_idea = fop_industry_innovative
+            }
+        }
+		else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_industry_experienced
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_industry_acceptable
+                remove_idea = fop_industry_experienced
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_industry_acceptable
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_industry_incompetent
+                remove_idea = fop_industry_acceptable
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_industry_incompetent
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_industry_primitive
+                remove_idea = fop_industry_incompetent
+            }
+        }
+    }
+}
+
+#Agriculture
+FOP_agriculture_small_improvement = {
+    custom_effect_tooltip = FOP_agriculture_small_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_agriculture_month
+                value = 2
+            }
+
+            clamp_variable = {
+                var = FOP_agriculture_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_agriculture_medium_improvement = {
+    custom_effect_tooltip = FOP_agriculture_medium_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_agriculture_month
+                value = 4
+            }
+
+            clamp_variable = {
+                var = FOP_agriculture_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_agriculture_high_improvement = {
+    custom_effect_tooltip = FOP_agriculture_high_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_agriculture_month
+                value = 6
+            }
+
+            clamp_variable = {
+                var = FOP_agriculture_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_agriculture_small_regression = {
+    custom_effect_tooltip = FOP_agriculture_small_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_agriculture_month
+                value = -2
+            }
+
+            clamp_variable = {
+                var = FOP_agriculture_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_agriculture_medium_regression = {
+    custom_effect_tooltip = FOP_agriculture_medium_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_agriculture_month
+                value = -4
+            }
+
+            clamp_variable = {
+                var = FOP_agriculture_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_agriculture_high_regression = {
+    custom_effect_tooltip = FOP_agriculture_high_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_agriculture_month
+                value = -6
+            }
+
+            clamp_variable = {
+                var = FOP_agriculture_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_agriculture_progress = {
+    custom_effect_tooltip = FOP_agriculture_progress_tt
+    hidden_effect = {
+        if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_agriculture_subsistence
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_agriculture_centralized
+                remove_idea = fop_agriculture_subsistence
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_agriculture_centralized
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_agriculture_basic_mechanization
+                remove_idea = fop_agriculture_centralized
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_agriculture_basic_mechanization
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_agriculture_mass_mechanization
+                remove_idea = fop_agriculture_basic_mechanization
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_agriculture_mass_mechanization
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_agriculture_innovative
+                remove_idea = fop_agriculture_mass_mechanization
+            }
+        }
+    }
+}
+
+FOP_agriculture_regress = {
+    custom_effect_tooltip = FOP_agriculture_regress_tt
+    hidden_effect = {
+		if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_agriculture_innovative
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_agriculture_mass_mechanization
+                remove_idea = fop_agriculture_innovative
+            }
+        }
+		else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_agriculture_mass_mechanization
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_agriculture_basic_mechanization
+                remove_idea = fop_agriculture_mass_mechanization
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_agriculture_basic_mechanization
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_agriculture_centralized
+                remove_idea = fop_agriculture_basic_mechanization
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_agriculture_centralized
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_agriculture_subsistence
+                remove_idea = fop_agriculture_centralized
+            }
+        }
+    }
+}
+
+#Administrative Efficiency
+FOP_administrative_efficiency_small_improvement = {
+    custom_effect_tooltip = FOP_administrative_efficiency_small_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_administrative_efficiency_month
+                value = 3
+            }
+
+            clamp_variable = {
+                var = FOP_administrative_efficiency_month
+                min = -9
+                max = 9
+            }
+        }    
+}
+
+FOP_administrative_efficiency_medium_improvement = {
+    custom_effect_tooltip = FOP_administrative_efficiency_medium_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_administrative_efficiency_month
+                value = 6
+            }
+
+            clamp_variable = {
+                var = FOP_administrative_efficiency_month
+                min = -9
+                max = 9
+            }
+        }    
+}
+
+FOP_administrative_efficiency_high_improvement = {
+    custom_effect_tooltip = FOP_administrative_efficiency_high_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_administrative_efficiency_month
+                value = 9
+            }
+
+            clamp_variable = {
+                var = FOP_administrative_efficiency_month
+                min = -9
+                max = 9
+            }
+        }    
+}
+
+FOP_administrative_efficiency_small_regression = {
+    custom_effect_tooltip = FOP_administrative_efficiency_small_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_administrative_efficiency_month
+                value = -3
+            }
+
+            clamp_variable = {
+                var = FOP_administrative_efficiency_month
+                min = -9
+                max = 9
+            }
+        }    
+}
+
+FOP_administrative_efficiency_medium_regression = {
+    custom_effect_tooltip = FOP_administrative_efficiency_medium_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_administrative_efficiency_month
+                value = -6
+            }
+
+            clamp_variable = {
+                var = FOP_administrative_efficiency_month
+                min = -9
+                max = 9
+            }
+        }    
+}
+
+FOP_administrative_efficiency_high_regression = {
+    custom_effect_tooltip = FOP_administrative_efficiency_high_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_administrative_efficiency_month
+                value = -9
+            }
+
+            clamp_variable = {
+                var = FOP_administrative_efficiency_month
+                min = -9
+                max = 9
+            }
+        }    
+}
+
+FOP_administrative_efficiency_progress = {
+    custom_effect_tooltip = FOP_administrative_efficiency_progress_tt
+    hidden_effect = {
+        if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_administrative_efficiency_chaos
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_administrative_efficiency_dead_state_apparatus
+                remove_idea = fop_administrative_efficiency_chaos
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_administrative_efficiency_dead_state_apparatus
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_administrative_efficiency_illegitimate_administration
+                remove_idea = fop_administrative_efficiency_dead_state_apparatus
+            }
+        }
+		else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_administrative_efficiency_illegitimate_administration
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_administrative_efficiency_deficient_administrative_system
+                remove_idea = fop_administrative_efficiency_illegitimate_administration
+            }
+        }
+		else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_administrative_efficiency_deficient_administrative_system
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_administrative_efficiency_functional_administrative_system
+                remove_idea = fop_administrative_efficiency_deficient_administrative_system
+            }
+        }
+		else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_administrative_efficiency_functional_administrative_system
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_administrative_efficiency_streamlined_bureaucracy
+                remove_idea = fop_administrative_efficiency_functional_administrative_system
+            }
+        }
+		else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_administrative_efficiency_streamlined_bureaucracy
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_administrative_efficiency_perfect
+                remove_idea = fop_administrative_efficiency_streamlined_bureaucracy
+            }
+        }
+    }
+}
+
+FOP_administrative_efficiency_regress = {
+    custom_effect_tooltip = FOP_administrative_efficiency_regress_tt
+    hidden_effect = {
+		if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_administrative_efficiency_perfect
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_administrative_efficiency_streamlined_bureaucracy
+                remove_idea = fop_administrative_efficiency_perfect
+            }
+        }
+		else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_administrative_efficiency_streamlined_bureaucracy
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_administrative_efficiency_functional_administrative_system
+                remove_idea = fop_administrative_efficiency_streamlined_bureaucracy
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_administrative_efficiency_functional_administrative_system
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_administrative_efficiency_deficient_administrative_system
+                remove_idea = fop_administrative_efficiency_functional_administrative_system
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_administrative_efficiency_deficient_administrative_system
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_administrative_efficiency_illegitimate_administration
+                remove_idea = fop_administrative_efficiency_deficient_administrative_system
+            }
+        }
+		else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_administrative_efficiency_illegitimate_administration
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_administrative_efficiency_dead_state_apparatus
+                remove_idea = fop_administrative_efficiency_illegitimate_administration
+            }
+        }
+		else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_administrative_efficiency_dead_state_apparatus
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_administrative_efficiency_chaos
+                remove_idea = fop_administrative_efficiency_dead_state_apparatus
+            }
+        }
+    }
+}
+
+#Military Professionalism
+FOP_military_professionalism_small_improvement = {
+    custom_effect_tooltip = FOP_military_professionalism_small_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_military_professionalism_month
+                value = 2
+            }
+
+            clamp_variable = {
+                var = FOP_military_professionalism_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_military_professionalism_medium_improvement = {
+    custom_effect_tooltip = FOP_military_professionalism_medium_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_military_professionalism_month
+                value = 4
+            }
+
+            clamp_variable = {
+                var = FOP_military_professionalism_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_military_professionalism_high_improvement = {
+    custom_effect_tooltip = FOP_military_professionalism_high_improvement_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_military_professionalism_month
+                value = 6
+            }
+
+            clamp_variable = {
+                var = FOP_military_professionalism_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_military_professionalism_small_regression = {
+    custom_effect_tooltip = FOP_military_professionalism_small_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_military_professionalism_month
+                value = -2
+            }
+
+            clamp_variable = {
+                var = FOP_military_professionalism_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_military_professionalism_medium_regression = {
+    custom_effect_tooltip = FOP_military_professionalism_medium_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_military_professionalism_month
+                value = -4
+            }
+
+            clamp_variable = {
+                var = FOP_military_professionalism_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_military_professionalism_high_regression = {
+    custom_effect_tooltip = FOP_military_professionalism_high_regression_tt
+        hidden_effect = {
+            add_to_variable = {
+                var = FOP_military_professionalism_month
+                value = -6
+            }
+
+            clamp_variable = {
+                var = FOP_military_professionalism_month
+                min = -6
+                max = 6
+            }
+        }    
+}
+
+FOP_military_professionalism_progress = {
+    custom_effect_tooltip = FOP_military_professionalism_progress_tt
+    hidden_effect = {
+        if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_military_professionalism_disorganized_vigilantes
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_military_professionalism_incompetent_milita
+                remove_idea = fop_military_professionalism_disorganized_vigilantes
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_military_professionalism_incompetent_milita
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_military_professionalism_outdated_army
+                remove_idea = fop_military_professionalism_incompetent_milita
+            }
+        }
+		else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_military_professionalism_outdated_army
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_military_professionalism_politicized_army
+                remove_idea = fop_military_professionalism_outdated_army
+            }
+        }
+		else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_military_professionalism_politicized_army
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_military_professionalism_professional_army
+                remove_idea = fop_military_professionalism_politicized_army
+            }
+        }
+		else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_military_professionalism_professional_army
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_military_professionalism_prussian_standart
+                remove_idea = fop_military_professionalism_professional_army
+            }
+        }
+    }
+}
+
+FOP_military_professionalism_regress = {
+    custom_effect_tooltip = FOP_military_professionalism_regress_tt
+    hidden_effect = {
+		if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_military_professionalism_prussian_standart
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_military_professionalism_professional_army
+                remove_idea = fop_military_professionalism_prussian_standart
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_military_professionalism_professional_army
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_military_professionalism_politicized_army
+                remove_idea = fop_military_professionalism_professional_army
+            }
+        }
+        else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_military_professionalism_politicized_army
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_military_professionalism_outdated_army
+                remove_idea = fop_military_professionalism_politicized_army
+            }
+        }
+		else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_military_professionalism_outdated_army
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_military_professionalism_incompetent_milita
+                remove_idea = fop_military_professionalism_outdated_army
+            }
+        }
+		else_if = {
+            limit = {
+                ROOT = {
+                    has_idea = fop_military_professionalism_incompetent_milita
+                }
+            }
+            swap_ideas = {
+                add_idea = fop_military_professionalism_disorganized_vigilantes
+                remove_idea = fop_military_professionalism_incompetent_milita
+            }
+        }
+    }
+}
