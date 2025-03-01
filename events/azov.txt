@@ -11,19 +11,19 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = azov.1.a
-custom_effect_tooltip = azov_cum_into_power
+		custom_effect_tooltip = azov_cum_into_power
 		hidden_effect = {
 		load_focus_tree = AFU_azov
 		complete_national_focus = afu_ruleofthefarright
 		set_politics = {
-	    ruling_party = radical_nationalism
-}
-        add_popularity = {
-				ideology = radical_nationalism
-				popularity = 0.2
+	    	ruling_party = ultranationalism
 		}
-		set_cosmetic_tag = AFU_radical_nationalism
-		hidden_effect = {
+        add_popularity = {
+			ideology = ultranationalism
+			popularity = 0.2
+		}
+		promote_character = AFU_zhorin
+		set_cosmetic_tag = AFU_ultranationalism
 			clr_country_flag = AFU_elections_flag
 			clr_country_flag = AFU_elections_play_danilov
 			clr_country_flag = AFU_elections_play_savchenko
@@ -31,7 +31,6 @@ custom_effect_tooltip = azov_cum_into_power
 			remove_ideas = AFU_nationalist_agendas
 			remove_ideas = AFU_nationalist_agendas_2
 		}
-	}
 	}
 }
 
@@ -109,7 +108,7 @@ country_event = {
 			limit = {
 				PLT = {
 					NOT = {
-						has_country_flag = united_north_center
+						has_country_flag = united_dnieper
 					}
 				}
 			}
@@ -123,7 +122,7 @@ country_event = {
 		else_if = {
 			limit = {
 				PLT = {
-					has_country_flag = united_north_center
+					has_country_flag = united_dnieper
 				}
 			}
 			add_manpower = 4000
@@ -198,7 +197,7 @@ country_event = {
 			limit = {
 				PLT = {
 					NOT = {
-						has_country_flag = united_north_center
+						has_country_flag = united_dnieper
 					}
 				}
 			}
@@ -212,7 +211,7 @@ country_event = {
 		else_if = {
 			limit = {
 				PLT = {
-					has_country_flag = united_north_center
+					has_country_flag = united_dnieper
 				}
 			}
 			add_manpower = 920
@@ -279,7 +278,7 @@ country_event = {
 		add_stability = -0.03
 		add_war_support = -0.05
 		add_popularity = {
-			ideology = radical_nationalism
+			ideology = ultranationalism
 			popularity = -0.02
 		}
 	}
@@ -2175,11 +2174,11 @@ country_event = {
 		name = azov.61.a
 		GEO = {
 			set_politics = {
-				ruling_party = radical_nationalism
+				ruling_party = ultranationalism
 				elections_allowed = no
 				last_election = "1939.1.1"
 			}
-			set_cosmetic_tag = GEO_radical_nationalism
+			set_cosmetic_tag = GEO_ultranationalism
 			load_oob = GEO_fasci
 		}
 	}

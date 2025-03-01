@@ -137,7 +137,7 @@
 	
 	#Promise Reform
 	shared_focus = {
-		id = AFU_promise_reform
+		id = AFU_promise_reforms
 		icon = GFX_AFU_Promise_Reforms
 		x = 35
 		y = 9
@@ -150,7 +150,7 @@
 		prerequisite = { focus = AFU_millitary_administration }
 		
 		mutually_exclusive = {
-			focus = AFU_crackdown
+			focus = AFU_crackdown_on_dissent
 	    }
 		completion_reward = {
 			add_political_power = -25
@@ -161,7 +161,7 @@
 	
 	#Crackdown
 	shared_focus = {
-		id = AFU_crackdown
+		id = AFU_crackdown_on_dissent
 		icon = GFX_AFU_Crackdown_on_Dissent
 		x = 31
 		y = 9
@@ -174,7 +174,7 @@
 		prerequisite = { focus = AFU_millitary_administration }
 		
 		mutually_exclusive = {
-			focus = AFU_promise_reform
+			focus = AFU_promise_reforms
 	    }
 		completion_reward = {
 			add_political_power = -125
@@ -200,8 +200,8 @@
 		cost = 3
 		
 		prerequisite = { 
-			focus = AFU_crackdown
-			focus = AFU_promise_reform
+			focus = AFU_crackdown_on_dissent
+			focus = AFU_promise_reforms
 		}
 		
 		completion_reward = {
@@ -219,7 +219,7 @@
 	
 	#Start Integration
 	shared_focus = {
-		id = AFU_start_intergration
+		id = AFU_begin_integration
 		icon = GFX_AFU_Begin_Integration
 		x = 33
 		y = 12
@@ -241,7 +241,7 @@
 	
 	#Finish Integration
 	shared_focus = {
-		id = AFU_finish_integration
+		id = AFU_finalize_integration
 		icon = GFX_AFU_Finalize_Integration
 		x = 33
 		y = 13
@@ -255,7 +255,7 @@
 		cost = 2
 		
 		prerequisite = { 
-			focus = AFU_start_intergration
+			focus = AFU_begin_integration
 		}
 		
 		completion_reward = { 
@@ -280,6 +280,7 @@
 		
 		completion_reward = {
 			unlock_decision_category_tooltip = afu_mobilization
+			add_ideas = fop_economic_mobilization_partial
 		}
 	}
 	
@@ -382,6 +383,7 @@
 		
 		completion_reward = {
 			country_event = afu.15
+			FOP_military_professionalism_small_improvement = yes
 		}
     }
 	
@@ -410,7 +412,7 @@
 	
 	#Professional Army
 	shared_focus = {
-		id = AFU_proffesional_army
+		id = AFU_professional_army
 		icon = GFX_AFU_Professional_Army
 		x = 39
 		y = 6
@@ -424,6 +426,7 @@
 		
 		completion_reward = {
 			add_ideas = AFU_ready_military
+			army_experience = 15
 		}
     }
     
@@ -483,7 +486,7 @@
 	
 	#Now We Wait
 	shared_focus = {
-		id = AFU_now_we_wait
+		id = AFU_and_now_we_wait
 		icon = GFX_AFU_And_Now_We_Wait
 		x = 45
 		y = 5
@@ -604,7 +607,7 @@
 	
 	#Speak to Tyler
 	shared_focus = {
-		id = AFU_reach_out_to_zaporizhia
+		id = AFU_reach_out_to_zaporizhzhia
 		icon = GFX_AFU_Speak_to_Tyler
 		x = 27
 		y = 4
@@ -644,7 +647,7 @@
 	}
 	shared_focus = {
 		id = AFU_we_stand_alone
-		icon = GFX_stand_alone
+		icon = GFX_AFU_We_Stand_Alone
 		x = 33
 		y = 18
 		
@@ -653,7 +656,7 @@
 		}
 		cost = 2
 		
-		prerequisite = { focus = AFU_finish_integration }
+		prerequisite = { focus = AFU_finalize_integration }
 
 		available = {
 			NOT = {
@@ -666,6 +669,7 @@
 		
 		completion_reward = {
 			add_political_power = 50
+			country_lock_all_division_template = no
 			hidden_effect = {
 				remove_ideas = AFU_support_UKR
 				remove_ideas = AFU_support_PRH
@@ -673,8 +677,8 @@
 		}
 	}
 	shared_focus = {
-		id = AFU_the_time_has_not_cum
-		icon = GFX_Reaching_Out
+		id = AFU_the_time_has_not_come
+		icon = GFX_AFU_Time_Has_Not_Yet_Come
 		x = 31
 		y = 19
 		
@@ -684,7 +688,7 @@
 		cost = 2
 		
 		available = {
-		has_completed_focus = AFU_crackdown
+			has_completed_focus = AFU_crackdown_on_dissent
 		}
 		
 		prerequisite = { focus = AFU_we_stand_alone }
@@ -702,7 +706,7 @@
     
 	shared_focus = {
 		id = AFU_elections_elections
-		icon = GFX_Reaching_Out
+		icon = GFX_AFU_Elections_Elections
 		x = 35
 		y = 19
 		
@@ -712,12 +716,12 @@
 		cost = 2
 		
 		available = {
-		has_completed_focus = AFU_promise_reform
+			has_completed_focus = AFU_promise_reforms
 		}
 		
 		prerequisite = { focus = AFU_we_stand_alone }
 		mutually_exclusive = {
-			focus = AFU_the_time_has_not_cum
+			focus = AFU_the_time_has_not_come
 	    }
 		
 		completion_reward = {
@@ -728,7 +732,7 @@
 				country_event = afu.25
 				if = {
 					limit = {
-						radical_nationalism > 0.2
+						ultranationalism > 0.2
 					}
 					country_event = {
 						id = azov.1

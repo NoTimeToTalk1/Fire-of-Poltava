@@ -1,5 +1,5 @@
-unite_galician_ukraine = {
-	unite_galician_ukraine = {			
+unite_galicia_ukraine = {
+	unite_galicia_ukraine = {			
 
 		icon = GFX_decision_unite_ukraine
 		
@@ -7,7 +7,7 @@ unite_galician_ukraine = {
 		available = { 
 			custom_trigger_tooltip = {
 				tooltip = unite_western_ukraine_tt
-				is_galician_ukraine = yes
+				is_galicia_ukraine = yes
 				can_unite_galicia = yes
 			}
 			
@@ -18,7 +18,7 @@ unite_galician_ukraine = {
         	days_remove = 0		
 
 		visible = {	
-			is_galician_ukraine = yes
+			is_galicia_ukraine = yes
 		}		
 
 		complete_effect = {
@@ -29,14 +29,14 @@ unite_galician_ukraine = {
 				limit = {
 						original_tag = HAL
 				}
-				set_cosmetic_tag = GAL_regional_galicia
+				set_cosmetic_tag = HAL_regional_galicia
 				add_political_power = 50
 			}
 			if = {
 				limit = {
-						original_tag = GUT
+						original_tag = HUT
 				}
-				set_cosmetic_tag = GUT_regional_galicia
+				set_cosmetic_tag = HUT_regional_galicia
 				add_political_power = 50
 			}
 			if = {
@@ -129,19 +129,19 @@ unite_galician_ukraine = {
 		
 		
 		available = { 
-			is_neighbor_of = GUT
+			is_neighbor_of = HUT
 		}
 
 		target_root_trigger = {
 			ROOT = {
 				NOT = {
-					original_tag = GUT
+					original_tag = HUT
 				}
 			}
 		}
 
 		targets = {
-			tag = GUT
+			tag = HUT
 		}
 		
 		fire_only_once = yes
@@ -151,7 +151,7 @@ unite_galician_ukraine = {
 			NOT = {
 				original_tag = HAL
 			}
-			GUT = {
+			HUT = {
 				exists = yes	
 			}	
 		}		
@@ -164,9 +164,9 @@ unite_galician_ukraine = {
             add_command_power = -15
         }
 		remove_effect = {
-			war_with_on_remove = GUT
+			war_with_on_remove = HUT
 			declare_war_on = {
-    				target = GUT
+    				target = HUT
     				type = annex_everything
 			}
 	  	}
@@ -503,7 +503,7 @@ unite_podolia_ukraine = {
 				set_cosmetic_tag = KHM_regional_podillya
 				add_political_power = 50
 			}
-			set_country_flag = united_podillya
+			set_country_flag = united_podolia
 			load_focus_tree = fop_generic_one
 			}
 		}
@@ -608,7 +608,7 @@ unite_siveria_ukraine = {
 				limit = {
 						original_tag = SUM
 						NOT = {
-							has_government = radical_nationalism
+							has_government = ultranationalism
 						}
 				}
 				set_cosmetic_tag = SUM_regional_siveria
@@ -618,7 +618,7 @@ unite_siveria_ukraine = {
 				limit = {
 						AND = {
 						original_tag = SUM
-						has_government = radical_nationalism
+						has_government = ultranationalism
 						}
 				}
 				set_cosmetic_tag = SUM_AKS_regional_siveria
@@ -923,7 +923,7 @@ unite_siveria_ukraine = {
 				}
 				NOT = {
 					SUM = {
-						has_government = radical_nationalism
+						has_government = ultranationalism
 					}
 				}
 		}		
@@ -967,7 +967,7 @@ unite_siveria_ukraine = {
 
 		visible = {	
 					SUM = {
-						has_government = radical_nationalism
+						has_government = ultranationalism
 					}
 		}		
 
@@ -1065,35 +1065,35 @@ unite_dnieper_ukraine = {
 				limit = {
 						original_tag = PLT
 				}
-				set_cosmetic_tag = PLT_regional_siveria_central
+				set_cosmetic_tag = PLT_regional_dnieper
 				add_political_power = 50
 			}
 			if = {
 				limit = {
 						original_tag = KRM
 				}
-				set_cosmetic_tag = KRE_regional_siveria_central
+				set_cosmetic_tag = KRE_regional_dnieper
 				add_political_power = 50
 			}
 			if = {
 				limit = {
 						original_tag = CHE
 				}
-				set_cosmetic_tag = CHR_regional_siveria_central
+				set_cosmetic_tag = CHR_regional_dnieper
 				add_political_power = 50
 			}
 			if = {
 				limit = {
 						original_tag = UMA
 				}
-				set_cosmetic_tag = UMA_regional_siveria_central
+				set_cosmetic_tag = UMA_regional_dnieper
 				add_political_power = 50
 			}
 			if = {
 				limit = {
 						original_tag = KIR
 				}
-				set_cosmetic_tag = KIR_regional_siveria_central
+				set_cosmetic_tag = KIR_regional_dnieper
 				add_political_power = 50
 			}
 			set_country_flag = united_dnieper
@@ -1870,7 +1870,7 @@ unite_donbas_ukraine = {
 			if = {
 				limit = {
 						original_tag = AFU
-						has_government = radical_nationalism
+						has_government = ultranationalism
 				}
 				add_political_power = 50
 				load_focus_tree = AFU_azov_east
@@ -1885,7 +1885,7 @@ unite_donbas_ukraine = {
 			if = {
 				limit = {
 						original_tag = DPR
-						has_government = radical_nationalism
+						has_government = ultranationalism
 				}
 				add_political_power = 50
 				load_focus_tree = DPR_strelkov_east
@@ -2104,7 +2104,7 @@ unite_eastern_ukraine = {
 			if = {
 				limit = {
 						original_tag = AFU
-						has_government = radical_nationalism
+						has_government = ultranationalism
 				}
 				add_political_power = 50
 			}
@@ -2123,7 +2123,7 @@ unite_eastern_ukraine = {
 			if = {
 				limit = {
 						original_tag = DPR
-						has_government = radical_nationalism
+						has_government = ultranationalism
 				}
 				add_political_power = 100
 				load_focus_tree = DPR_strelkov_east
@@ -2947,7 +2947,7 @@ unite_central_ukraine = {
 				limit = {
 						original_tag = SUM
 						NOT = {
-							has_government = radical_nationalism
+							has_government = ultranationalism
 						}
 				}
 				set_cosmetic_tag = SUM_regional_central
@@ -2956,7 +2956,7 @@ unite_central_ukraine = {
 			if = {
 				limit = {
 						original_tag = SUM
-						has_government = radical_nationalism
+						has_government = ultranationalism
 				}
 				set_cosmetic_tag = SUM_AKS_regional_central
 				add_political_power = 50
@@ -3071,7 +3071,7 @@ unite_central_ukraine = {
 			NOT = {
 				AND = {
 					original_tag = SUM
-					has_government = radical_nationalism
+					has_government = ultranationalism
 				}
 			}
 		}
@@ -3150,7 +3150,7 @@ unite_central_ukraine = {
 						AND = {
 							original_tag = SUM
 							NOT = {
-								has_government = radical_nationalism
+								has_government = ultranationalism
 							}
 						}
 					}
@@ -3441,7 +3441,7 @@ unite_western_ukraine = {
 			is_western_ukraine = yes
 			OR = {
 				has_country_flag = united_galicia
-				has_country_flag = united_podillya
+				has_country_flag = united_podolia
 			}
 		}		
 
@@ -3455,14 +3455,14 @@ unite_western_ukraine = {
 				limit = {
 						original_tag = HAL
 				}
-				set_cosmetic_tag = GAL_regional_western
+				set_cosmetic_tag = HAL_regional_western
 				add_political_power = 50
 			}
 			if = {
 				limit = {
-						original_tag = GUT
+						original_tag = HUT
 				}
-				set_cosmetic_tag = GUT_regional_western
+				set_cosmetic_tag = HUT_regional_western
 				add_political_power = 50
 			}
 			if = {
@@ -3546,7 +3546,7 @@ unite_western_ukraine = {
             FROM = {
 				OR = {
 					has_country_flag = united_galicia
-					has_country_flag = united_podillya
+					has_country_flag = united_podolia
 				}
             }
         }
@@ -3554,7 +3554,7 @@ unite_western_ukraine = {
 			is_western_ukraine = yes
 			OR = {
 				has_country_flag = united_galicia
-				has_country_flag = united_podillya
+				has_country_flag = united_podolia
 			}
 			NOT = {
 					has_country_flag = west_war
@@ -3655,7 +3655,7 @@ unite_western_ukraine = {
             FROM = {
 				OR = {
 					has_country_flag = united_galicia
-					has_country_flag = united_podillya
+					has_country_flag = united_podolia
 				}
             }
         }
@@ -3739,7 +3739,7 @@ unite_western_ukraine = {
             FROM = {
 				OR = {
 					has_country_flag = united_galicia
-					has_country_flag = united_podillya
+					has_country_flag = united_podolia
 				}
             }
         }
@@ -3757,7 +3757,7 @@ unite_western_ukraine = {
 
         visible = {
 				OR = {
-					has_country_flag = united_podillya
+					has_country_flag = united_podolia
 					has_country_flag = united_galicia
 				}
 				NOT = {
@@ -3861,7 +3861,7 @@ unite_western_ukraine = {
 							type = annex_everything
 						}
 						declare_war_on = {
-							target = GUT
+							target = HUT
 							type = annex_everything
 						}
 					}
@@ -3912,7 +3912,7 @@ unite_left_bank_ukraine = {
 			if = {
 				limit = {
 						original_tag = AFU
-						has_government = radical_nationalism
+						has_government = ultranationalism
 				}
 				add_political_power = 50
 				set_cosmetic_tag = AFU_azov_lb
@@ -3921,7 +3921,7 @@ unite_left_bank_ukraine = {
 			if = {
 				limit = {
 					original_tag = DPR
-					has_government = radical_nationalism
+					has_government = ultranationalism
 				}
 				set_cosmetic_tag = GRK_LFT
 				load_focus_tree = DPR_strelkov_left_bank
@@ -3931,7 +3931,7 @@ unite_left_bank_ukraine = {
 				limit = {
 						original_tag = KHA
 				NOT = {
-				has_government = radical_nationalism
+				has_government = ultranationalism
 				has_government = radical_socialism
 				}
 				}
@@ -3941,7 +3941,7 @@ unite_left_bank_ukraine = {
 			if = {
 				limit = {
 						original_tag = KHA
-						has_government = radical_nationalism
+						has_government = ultranationalism
 				}
 				set_cosmetic_tag = KHA_freicor_regional_left_bank
 				add_political_power = 50
@@ -4491,7 +4491,7 @@ unite_right_bank_ukraine = {
 				limit = {
 						original_tag = SUM
 						NOT = {
-							has_government = radical_nationalism
+							has_government = ultranationalism
 						}
 				}
 				set_cosmetic_tag = SUM_regional_right_bank
@@ -4500,7 +4500,7 @@ unite_right_bank_ukraine = {
 			if = {
 				limit = {
 						original_tag = SUM
-						has_government = radical_nationalism
+						has_government = ultranationalism
 				}
 				set_cosmetic_tag = SUM_AKS_regional_right_bank
 				add_political_power = 50
@@ -4544,14 +4544,14 @@ unite_right_bank_ukraine = {
 				limit = {
 						original_tag = HAL
 				}
-				set_cosmetic_tag = GAL_regional_right_bank
+				set_cosmetic_tag = HAL_regional_right_bank
 				add_political_power = 50
 			}
 			if = {
 				limit = {
-						original_tag = GUT
+						original_tag = HUT
 				}
-				set_cosmetic_tag = GUT_regional_right_bank
+				set_cosmetic_tag = HUT_regional_right_bank
 				add_political_power = 50
 			}
 			if = {
@@ -4783,7 +4783,7 @@ unite_right_bank_ukraine = {
 							original_tag = SUM
 							NOT = {
 								SUM = {
-									has_government = radical_nationalism
+									has_government = ultranationalism
 								}
 							}
 						}
@@ -5046,7 +5046,7 @@ unite_ukraine = {
 				limit = {
 						original_tag = SUM
 						NOT = {
-							has_government = radical_nationalism
+							has_government = ultranationalism
 						}
 				}
 				set_cosmetic_tag = SUM_united_ukraine
@@ -5055,7 +5055,7 @@ unite_ukraine = {
 			if = {
 				limit = {
 						original_tag = SUM
-						has_government = radical_nationalism
+						has_government = ultranationalism
 				}
 				set_cosmetic_tag = SUM_AKS_united_ukraine
 				add_political_power = 50
@@ -5099,14 +5099,14 @@ unite_ukraine = {
 				limit = {
 						original_tag = HAL
 				}
-				set_cosmetic_tag = GAL_united_ukraine
+				set_cosmetic_tag = HAL_united_ukraine
 				add_political_power = 50
 			}
 			if = {
 				limit = {
-						original_tag = GUT
+						original_tag = HUT
 				}
-				set_cosmetic_tag = GUT_united_ukraine
+				set_cosmetic_tag = HUT_united_ukraine
 				add_political_power = 50
 			}
 			if = {
@@ -5156,7 +5156,7 @@ unite_ukraine = {
 						original_tag = AFU
 						NOT = {
 							OR = {
-								has_government = radical_nationalism
+								has_government = ultranationalism
 								has_government = social_democracy
 								has_government = conservative_democracy
 							}
@@ -5168,7 +5168,7 @@ unite_ukraine = {
 			if = {
 				limit = {
 						original_tag = AFU
-						has_government = radical_nationalism
+						has_government = ultranationalism
 				}
 				add_political_power = 50
 				set_cosmetic_tag = AFU_azov_reun
@@ -5194,7 +5194,7 @@ unite_ukraine = {
 				limit = {
 						original_tag = KHA
 				NOT = {
-				has_government = radical_nationalism
+				has_government = ultranationalism
 				has_government = radical_socialism
 				}
 				}
@@ -5204,7 +5204,7 @@ unite_ukraine = {
 			if = {
 				limit = {
 						original_tag = KHA
-						has_government = radical_nationalism
+						has_government = ultranationalism
 				}
 				set_cosmetic_tag = KHA_freicor_united_ukraine
 				add_political_power = 50
@@ -5398,7 +5398,7 @@ unite_ukraine = {
 							original_tag = SUM
 							NOT = {
 								SUM = {
-									has_government = radical_nationalism
+									has_government = ultranationalism
 								}
 							}
 						}
@@ -5599,7 +5599,7 @@ unite_ukraine = {
 						original_tag = SUM
 						SUM = {
 							NOT = {
-								has_government = radical_nationalism
+								has_government = ultranationalism
 							}
 						}
 					}

@@ -42,8 +42,8 @@ center_dogovornyak = {
 						tag = DNP
 					}
 					OR = {
-						check_variable = {DNP.dnieper_unifier_influence > SIV.siverian_unifier_influence}
-						check_variable = {DNP.dnieper_unifier_influence = SIV.siverian_unifier_influence}
+						check_variable = {DNP.dnieper_unifier_influence > SIV.siveria_unifier_influence}
+						check_variable = {DNP.dnieper_unifier_influence = SIV.siveria_unifier_influence}
 					}
 				}
 				if = {
@@ -51,8 +51,8 @@ center_dogovornyak = {
 						tag = SIV
 					}
 					OR = {
-						check_variable = {SIV.siverian_unifier_influence > DNP.dnieper_unifier_influence}
-						check_variable = {DNP.dnieper_unifier_influence = SIV.siverian_unifier_influence}
+						check_variable = {SIV.siveria_unifier_influence > DNP.dnieper_unifier_influence}
+						check_variable = {DNP.dnieper_unifier_influence = SIV.siveria_unifier_influence}
 					}					
 				}
 		}
@@ -89,7 +89,7 @@ center_dogovornyak = {
 			}
 			else_if = {
 				limit = {
-					check_variable = { DNP.dnieper_unifier_influence = SIV.siverian_unifier_influence }
+					check_variable = { DNP.dnieper_unifier_influence = SIV.siveria_unifier_influence }
 				}
 				declare_war_on = {
 					target = FROM
@@ -278,7 +278,7 @@ center_dogovornyak = {
 				}
 				SIV = {
 					add_to_variable = {
-						var = siverian_unifier_influence
+						var = siveria_unifier_influence
 						value = 0.5
 					}
 					if = { 
@@ -2136,8 +2136,8 @@ south_dogovornyak = {
 						tag = DST
 					}
 					OR = {
-						check_variable = {DST.dnister_unifier_influence > TVR.tavrian_unifier_influence}
-						check_variable = {TVR.tavrian_unifier_influence = DST.dnister_unifier_influence}
+						check_variable = {DST.dnister_unifier_influence > TVR.tavria_unifier_influence}
+						check_variable = {TVR.tavria_unifier_influence = DST.dnister_unifier_influence}
 					}
 				}
 				if = {
@@ -2145,8 +2145,8 @@ south_dogovornyak = {
 						tag = TVR
 					}
 					OR = {
-						check_variable = {TVR.tavrian_unifier_influence > DST.dnister_unifier_influence}
-						check_variable = {TVR.tavrian_unifier_influence = DST.dnister_unifier_influence}
+						check_variable = {TVR.tavria_unifier_influence > DST.dnister_unifier_influence}
+						check_variable = {TVR.tavria_unifier_influence = DST.dnister_unifier_influence}
 					}					
 				}
 		}
@@ -2183,7 +2183,7 @@ south_dogovornyak = {
 			}
 			else_if = {
 				limit = {
-					check_variable = { DST.dnister_unifier_influence = TVR.tavrian_unifier_influence }
+					check_variable = { DST.dnister_unifier_influence = TVR.tavria_unifier_influence }
 				}
 				declare_war_on = {
 					target = FROM
@@ -2380,7 +2380,7 @@ south_dogovornyak = {
 				}
 				TVR = {
 					add_to_variable = {
-						var = tavrian_unifier_influence
+						var = tavria_unifier_influence
 						value = 0.5
 					}
 					if = { 

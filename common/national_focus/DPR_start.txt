@@ -1,7 +1,7 @@
 	#Situation in Ukraine
 	shared_focus = {
-		id = dnr_situation_in_ukraine
-		icon = GFX_dnr_situation_in_ukraine
+		id = DPR_Situation_in_Ukraine
+		icon = GFX_DPR_Situation_in_Ukraine
 		x = 18
 		y = 0
 		cost = 1
@@ -25,15 +25,15 @@
 
 	#Situation in our country
 	shared_focus = {
-		id = dnr_situation_in_our_country
-		icon = GFX_dnr_situation_in_our_country-90101
+		id = DPR_Situation_in_Our_Nation
+		icon = GFX_DPR_Situation_in_Our_Nation
 		x = 18
 		y = 1
 		cost = 1
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_situation_in_ukraine  }
+		prerequisite = { focus = DPR_Situation_in_Ukraine  }
 		completion_reward = {
 			
 			add_political_power = 25
@@ -52,15 +52,15 @@
 
 	#Look around us
 	shared_focus = {
-		id = dnr_look_around_us
-		icon = GFX_dnr_look_around_us
+		id = DPR_Look_Around_Us
+		icon = GFX_DPR_Look_Around_Us
 		x = 18
 		y = 2
 		cost = 1
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_situation_in_our_country  }
+		prerequisite = { focus = DPR_Situation_in_Our_Nation  }
 		completion_reward = {
 			
 			add_political_power = 50
@@ -72,15 +72,15 @@
 
 	#Look to the west
 	shared_focus = {
-		id = dnr_look_west
-		icon = GFX_dnr_look_west
+		id = DPR_Look_West
+		icon = GFX_DPR_Look_West
 		x = 13
 		y = 3
 		cost = 4
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_look_around_us  }
+		prerequisite = { focus = DPR_Look_Around_Us  }
 		completion_reward = {
 	    add_political_power = 30
 			hidden_effect = {
@@ -93,15 +93,15 @@
 
 	#Look to east
 	shared_focus = {
-		id = dnr_look_east
-		icon = GFX_dnr_look_east
+		id = DPR_Look_East
+		icon = GFX_DPR_Look_East
 		x = 18
 		y = 3
 		cost = 4
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_look_around_us  }
+		prerequisite = { focus = DPR_Look_Around_Us  }
 		completion_reward = {
 	    add_political_power = 20
 			add_stability = 0.05
@@ -111,7 +111,7 @@
 
 	#Look to north
 	shared_focus = {
-		id = dnr_look_north
+		id = DPR_Look_North
 		icon = GFX_DPR_Look_North
 		x = 23
 		y = 3
@@ -119,7 +119,7 @@
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_look_around_us  }
+		prerequisite = { focus = DPR_Look_Around_Us  }
 		completion_reward = {
 			add_war_support = 0.05
 
@@ -132,15 +132,15 @@
 
 	#Open old warehouses
 	shared_focus = {
-		id = dnr_open_old_warehouses
-		icon = GFX_dnr_open_old_warehouses-90105
+		id = DPR_Open_Old_Warehouses
+		icon = GFX_DPR_Open_Old_Warehouses
 		x = 13
 		y = 4
 		cost = 5
 		search_filters = {
 			shared_focus_FILTER_WAR_SUPPORT
 		}
-		prerequisite = { focus = dnr_look_west  }
+		prerequisite = { focus = DPR_Look_West  }
 		completion_reward = {
 			add_war_support = 0.05
 
@@ -152,15 +152,15 @@
 
 	#Strengthern the propaganda
 	shared_focus = {
-		id = dnr_strengthern_the_propaganda
-		icon = GFX_dnr_strengthern_the_propaganda-90106
+		id = DPR_Strengthen_the_Propaganda
+		icon = GFX_DPR_Strengthen_the_Propaganda
 		x = 13
 		y = 5
 		cost = 5
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_open_old_warehouses  }
+		prerequisite = { focus = DPR_Open_Old_Warehouses  }
 		completion_reward = {
 			add_stability = 0.05
 			add_political_power = 20
@@ -183,15 +183,15 @@
 
 	#Mobilize youth and reserves
 	shared_focus = {
-		id = dnr_mobilize_youth_and_reserves
-		icon = GFX_dnr_mobilize_youth_and_reserves-90108
+		id = DPR_Mobilize_Youth_and_Reserves
+		icon = GFX_DPR_Mobilize_Youth_and_Reserves
 		x = 13
 		y = 6
 		cost = 6
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_strengthern_the_propaganda  }
+		prerequisite = { focus = DPR_Strengthen_the_Propaganda  }
 		completion_reward = {
 			
 			unlock_decision_category_tooltip = mobilize_the_youth_and_reserves
@@ -241,15 +241,15 @@
 
 	#Request russian equipment...
 	shared_focus = {
-		id = dnr_requestrussianequipment
-		icon = GFX_dnr_requestrussianequipment-90112
+		id = DPR_Request_Russian_Equipment
+		icon = GFX_DPR_Request_Russian_Equipment
 		x = 18
 		y = 4
 		cost = 3
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_look_east }
+		prerequisite = { focus = DPR_Look_East }
 		completion_reward = {
 			unlock_decision_category_tooltip = request_russian_weapons			
 		}
@@ -257,19 +257,19 @@
 
 	#...and Girkin
 	shared_focus = {
-		id = dnr_andvolunteers
-		icon = GFX_dnr_andvolunteers-90113
+		id = DPR_and_Volunteers
+		icon = GFX_DPR_and_Volunteers
 		x = 18
 		y = 5
 		cost = 3
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_requestrussianequipment  }
+		prerequisite = { focus = DPR_Request_Russian_Equipment  }
 		completion_reward = {
 			add_manpower = 3000
 add_corps_commander_role = {
-    Character = DNR_girkin
+    Character = DPR_girkin
 			skill=4
 			attack_skill=4
 			defense_skill=1
@@ -277,7 +277,7 @@ add_corps_commander_role = {
 			logistics_skill=1
 }
 			hidden_effect = {
-				load_oob = "DNR_20192"
+				load_oob = "DPR_20192"
 			}
 			
 		}
@@ -285,15 +285,15 @@ add_corps_commander_role = {
 
 	#Supplement our corps
 	shared_focus = {
-		id = dnr_supplement_our_corps
-		icon = GFX_dnr_supplement_our_corps-90115
+		id = DPR_Supplement_Our_Corps
+		icon = GFX_DPR_Supplement_Our_Corps
 		x = 18
 		y = 6
 		cost = 5
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_andvolunteers  }
+		prerequisite = { focus = DPR_and_Volunteers  }
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 50
@@ -317,15 +317,15 @@ add_corps_commander_role = {
 
 	#Remember about "Novorossia"
 	shared_focus = {
-		id = dnr_remember_about_novorossiya
-		icon = GFX_dnr_remember_about_novorossiya
+		id = DPR_Remember_About_Novorossiya
+		icon = GFX_DPR_Remember_Novorossiya
 		x = 23
 		y = 4
 		cost = 2
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_look_north  }
+		prerequisite = { focus = DPR_Look_North  }
 		completion_reward = {
 		remove_ideas = DPR_rivalry
 			add_political_power = 50
@@ -358,8 +358,8 @@ add_corps_commander_role = {
 
 #End the trade war 
 	shared_focus = {
-		id = dnr_end_the_trade_war
-		icon = GFX_dnr_end_the_trade_war
+		id = DPR_Set_Aside_Our_Differences
+		icon = GFX_DPR_Set_Aside_Our_Differences
 		x = 23
 		y = 5
 		cost = 3
@@ -368,12 +368,12 @@ add_corps_commander_role = {
 		}
 		available = {
 		#	hidden_trigger = {
-				has_global_flag = DNR_tradewar
-				has_global_flag = DNR_ok
+				has_global_flag = DPR_tradewar
+				has_global_flag = DPR_ok
 		#	}
 		}
 
-		prerequisite = { focus = dnr_remember_about_novorossiya }
+		prerequisite = { focus = DPR_Remember_About_Novorossiya }
 		completion_reward = {
 			add_stability = 0.05
 
@@ -398,22 +398,22 @@ add_corps_commander_role = {
 
 	#Unite with LNR
 	shared_focus = {
-		id = dnr_unite_with_lnr
-		icon = GFX_dnr_unite_with_lnr
+		id = DPR_Unite_With_LPR
+		icon = GFX_DPR_Unite_With_LPR
 		x = 23
 		y = 6
 		cost = 12
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_end_the_trade_war  }
+		prerequisite = { focus = DPR_Set_Aside_Our_Differences  }
 		completion_reward = {
 			annex_country = {
 				transfer_troops = yes
 				target = LPR
 			}
 			hidden_effect = {
-				#set_cosmetic_tag = DNR_NOV
+				#set_cosmetic_tag = DPR_NOV
 				country_event = dnr.20
 
 			}
@@ -431,15 +431,15 @@ add_corps_commander_role = {
 
 	#test their melee
 	shared_focus = {
-		id = dnr_prepare_for_war
-		icon = GFX_Test_Their_Melee
+		id = DPR_Test_Their_Strengh
+		icon = GFX_Test_Their_Strengh
 		x = 18
 		y = 7
 		cost = 3
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_mobilize_youth_and_reserves  } prerequisite = { focus = dnr_supplement_our_corps  } prerequisite = { focus = dnr_unite_with_lnr }
+		prerequisite = { focus = DPR_Mobilize_Youth_and_Reserves  } prerequisite = { focus = DPR_Supplement_Our_Corps  } prerequisite = { focus = DPR_Unite_With_LPR }
 		completion_reward = {
 			hidden_effect = {
 				
@@ -480,15 +480,15 @@ add_corps_commander_role = {
 
 	#Put an end to ukrainian army!
 	shared_focus = {
-		id = dnr_putanendtoukrainianarmy
-		icon = GFX_dnr_putanendtoukrainianarmy
+		id = DPR_Put_an_End_to_Ukrainian_Army
+		icon = GFX_DPR_Put_an_End_to_Ukrainian_Army
 		x = 18
 		y = 8
 		cost = 3
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_prepare_for_war  }
+		prerequisite = { focus = DPR_Test_Their_Strengh  }
 		completion_reward = {
 			declare_war_on = { 
 			target = AFU
@@ -508,8 +508,8 @@ add_corps_commander_role = {
 	#UPD: Wait no I need to fix them OMGGG
 	#UPD2: This was tough but I fixed them. I am the best Coder in this Mod(fake)
 	shared_focus = {
-		id = dnr_victory
-		icon = GFX_dnr_victory
+		id = DPR_Victory
+		icon = GFX_DPR_Victory
 		x = 18
 		y = 9
 		cost = 1
@@ -520,7 +520,7 @@ add_corps_commander_role = {
 		available = {
 			AFU = { exists = no }
 		}
-		prerequisite = { focus = dnr_putanendtoukrainianarmy  }
+		prerequisite = { focus = DPR_Put_an_End_to_Ukrainian_Army  }
 		completion_reward = {
 			
 			country_event = newsfop.3
@@ -529,15 +529,15 @@ add_corps_commander_role = {
 		}
 	}	
 	shared_focus = {
-		id = dnr_start_integration
-		icon = GFX_dnr_start_integration
+		id = DPR_Start_Integration
+		icon = GFX_DPR_Start_Integration
 		x = 18
 		y = 10
 		cost = 3
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_victory  }
+		prerequisite = { focus = DPR_Victory  }
 		completion_reward = {
 				every_state = {
 					limit = {
@@ -548,15 +548,15 @@ add_corps_commander_role = {
 		}
 	}
 	shared_focus = {
-		id = dnr_passport_programm
-		icon = GFX_dnr_passport_programm
+		id = DPR_Passportization_Programme
+		icon = GFX_DPR_Passportization_Programme
 		x = 14
 		y = 11
 		cost = 3
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_start_integration  }
+		prerequisite = { focus = DPR_Start_Integration  }
 		completion_reward = {
 			every_state = {
 				limit = {
@@ -568,15 +568,15 @@ add_corps_commander_role = {
 		}
 	}
 	shared_focus = {
-		id = dnr_parties_integration
-		icon = GFX_dnr_parties_integration
+		id = DPR_Party_Integration
+		icon = GFX_DPR_Party_Integration
 		x = 16
 		y = 11
 		cost = 3
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_start_integration  }
+		prerequisite = { focus = DPR_Start_Integration  }
 		completion_reward = {
 			add_popularity = {
 				ideology = conservative_democracy
@@ -600,15 +600,15 @@ add_corps_commander_role = {
 		}
 	}
 	shared_focus = {
-		id = dnr_increasing_patriotism
-		icon = GFX_dnr_increasing_patriotism
+		id = DPR_Increase_Patriotism
+		icon = GFX_DPR_Increase_Patriotism
 		x = 18
 		y = 11
 		cost = 3
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_start_integration  }
+		prerequisite = { focus = DPR_Start_Integration  }
 		completion_reward = {
 				every_state = {
 					limit = {
@@ -619,15 +619,15 @@ add_corps_commander_role = {
 		}
 	}
 	shared_focus = {
-		id = dnr_unite_communications
-		icon = GFX_dnr_unite_communications
+		id = DPR_Unite_Communications
+		icon = GFX_DPR_Unite_Communications
 		x = 20
 		y = 11
 		cost = 3
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_start_integration  }
+		prerequisite = { focus = DPR_Start_Integration  }
 		completion_reward = {
 				every_state = {
 					limit = {
@@ -642,15 +642,15 @@ add_corps_commander_role = {
 		}
 	}
 	shared_focus = {
-		id = dnr_promise_of_future
-		icon = GFX_dnr_promise_of_future
+		id = DPR_Promise_the_Future
+		icon = GFX_DPR_Promise_the_Future
 		x = 22
 		y = 11
 		cost = 3
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_start_integration  }
+		prerequisite = { focus = DPR_Start_Integration  }
 		completion_reward = {
 				every_state = {
 					limit = {
@@ -662,8 +662,8 @@ add_corps_commander_role = {
 		}
 	}
 	shared_focus = {
-		id = dnr_trybunal
-		icon = GFX_dnr_trybunal
+		id = DPR_Tribunal
+		icon = GFX_DPR_Tribunal
 		x = 18
 		y = 12
 		cost = 3
@@ -671,19 +671,19 @@ add_corps_commander_role = {
 			shared_focus_FILTER_POLITICAL
 		}
 		prerequisite = { 
-			focus = dnr_passport_programm
+			focus = DPR_Passportization_Programme
 		}
 		prerequisite = { 
-			focus = dnr_parties_integration
+			focus = DPR_Party_Integration
 		}
 		prerequisite = { 
-			focus = dnr_increasing_patriotism
+			focus = DPR_Increase_Patriotism
 		}
 		prerequisite = { 
-			focus = dnr_unite_communications
+			focus = DPR_Unite_Communications
 		}
 		prerequisite = { 
-			focus = dnr_promise_of_future
+			focus = DPR_Promise_the_Future
 		}
 		completion_reward = {
 			2093 = {
@@ -713,15 +713,15 @@ add_corps_commander_role = {
 		}
 	}
 	shared_focus = {
-		id = dnr_final_integration
-		icon = GFX_dnr_final_integration
+		id = DPR_Finish_Integration
+		icon = GFX_DPR_Finish_Integration
 		x = 18
 		y = 13
 		cost = 3
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_trybunal  }
+		prerequisite = { focus = DPR_Tribunal  }
 		completion_reward = {
 			if = {
 				limit = {
@@ -772,15 +772,15 @@ add_corps_commander_role = {
 	
 	
 	shared_focus = {
-		id = dnr_elections
-		icon = GFX_dnr_elections
+		id = DPR_Elections
+		icon = GFX_DPR_Elections
 		x = 18
 		y = 14
 		cost = 3
 		search_filters = {
 			shared_focus_FILTER_POLITICAL
 		}
-		prerequisite = { focus = dnr_final_integration  }
+		prerequisite = { focus = DPR_Finish_Integration  }
 		completion_reward = {
 		set_country_flag = DPRelection_active
 		country_event = {

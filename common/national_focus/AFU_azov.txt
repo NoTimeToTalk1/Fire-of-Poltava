@@ -55,6 +55,7 @@
 			add_political_power = 15
 			add_stability = 0.1		
 			country_event = azov.4
+			FOP_administrative_efficiency_small_improvement = yes
 		}
 	}
 
@@ -127,8 +128,12 @@
 		completion_reward = {
 			add_manpower = -1000
 			add_popularity = {
-				ideology = radical_socialism
-				popularity = -0.2
+				ideology = socialism
+				popularity = -0.02
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = -0.03
 			}
 		}
 	}
@@ -180,6 +185,7 @@
 				idea = AFU_azov_army_purge
 				days = 90
 			}
+			FOP_military_professionalism_medium_improvement = yes
 		}
 	}
 
@@ -255,447 +261,6 @@
 			add_ideas = AFU_azov_banner_of_the_victory
 			hidden_effect = {
 				country_event = { id = azov.19 days = 3 }
-			}
-		}
-	}
-
-	#Zrodylys' My Velykoi Hodyny
-	shared_focus = {
-		id = AFU_zrodylys_my_velykoyi_hodyny
-		icon = GFX_AFU_zrodylys_my_velykoyi_hodyny
-		x = 20
-		y = 7
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-			add_political_power = 50
-			hidden_effect = {
-				country_event = azov.10
-			}
-		}
-	}
-
-	#For the National Ukraine...
-	shared_focus = {
-		id = AFU_for_the_national_ukraine
-		icon = GFX_AFU_for_the_national_ukraine
-		x = 20
-		y = 9
-		cost = 7
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_zrodylys_my_velykoyi_hodyny  }
-		completion_reward = {
-			swap_ideas = {
-				add_idea = AFU_azov_banner_of_the_victory_2
-				remove_idea = AFU_azov_banner_of_the_victory
-			}
-		}
-	}
-
-	#...And White Europa
-	shared_focus = {
-		id = AFU_and_white_europa
-		icon = GFX_AFU_and_white_europa
-		x = 22
-		y = 10
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_for_the_national_ukraine  }
-		completion_reward = {
-			add_stability = -0.1
-			add_popularity = {
-				ideology = radical_nationalism
-				popularity = 0.02
-			}
-			add_war_support = 0.05
-		}
-	}
-
-	#Connection With Ultras
-	shared_focus = {
-		id = AFU_connections_with_ultras
-		icon = GFX_AFU_connections_with_ultras
-		x = 22
-		y = 11
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_and_white_europa  }
-		completion_reward = {
-        	add_manpower = 1100
-			add_command_power = 20
-		}
-	}
-
-	#The Russian Question
-	shared_focus = {
-		id = AFU_the_russian_question
-		icon = GFX_AFU_the_russian_question
-		x = 26
-		y = 9
-		cost = 2
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_zrodylys_my_velykoyi_hodyny  }
-		completion_reward = {
-			add_political_power = 25
-		}
-	}
-
-	#Luhansk Conference
-	shared_focus = {
-		id = AFU_luhansk_conference
-		icon = GFX_AFU_luhansk_conference
-		x = 25
-		y = 10
-		cost = 6
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_the_russian_question  }
-		mutually_exclusive = { focus = AFU_we_have_no_busineness_with_mongoloids  }
-		completion_reward = {
-        	add_political_power = 25
-			hidden_effect = {
-        		country_event = azov.9
-				set_country_flag = rvc_coop
-			}
-		}
-	}
-
-	#Far-right European Fighters
-	shared_focus = {
-		id = AFU_far_right_european_fighters
-		icon = GFX_AFU_far_right_european_fighters
-		x = 22
-		y = 12
-		cost = 9
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_connections_with_ultras  }
-		completion_reward = {
-			custom_effect_tooltip = azov_farright_european
-			hidden_effect = {
-				load_oob = "azov_farright_european"
-			}
-		}
-	}
-
-	#Our Brothers From the New World
-	shared_focus = {
-		id = AFU_our_brothers_from_the_new_world
-		icon = GFX_AFU_our_brothers_from_the_new_world
-		x = 22
-		y = 13
-		cost = 10
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_far_right_european_fighters  }
-		completion_reward = {
-			custom_effect_tooltip = azov_farright_american
-			hidden_effect = {
-				load_oob = "azov_farright_american"
-			}
-		}
-	}
-
-	#The White Revolution Will Start Here
-	shared_focus = {
-		id = AFU_the_white_revolution_will_start_here
-		icon = GFX_AFU_the_white_revolution_will_start_here
-		x = 22
-		y = 14
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_our_brothers_from_the_new_world  }
-		completion_reward = {
-			add_ideas = AFU_azov_harbourforthefarright
-		}
-	}
-
-	#Light the smouldering torch
-	shared_focus = {
-		id = AFU_light_the_smouldering_torch
-		icon = GFX_AFU_light_the_smouldering_torch
-		x = 22
-		y = 15
-		cost = 7
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_the_white_revolution_will_start_here  }
-		completion_reward = {
-			add_popularity = {
-				ideology = radical_nationalism
-				popularity = 0.01
-			}
-			add_timed_idea = {
-				idea = AFU_azov_antiglobalisationpolicies
-				days = 180
-			}
-		}
-	}
-
-	#We Have No Busineness With Mongoloids
-	shared_focus = {
-		id = AFU_we_have_no_busineness_with_mongoloids
-		icon = GFX_AFU_we_have_no_busineness_with_mongoloids
-		x = 27
-		y = 10
-		cost = 2
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_the_russian_question  }
-		mutually_exclusive = { focus = AFU_luhansk_conference  }
-		completion_reward = {
-			add_political_power = 25
-			add_stability = 0.1
-			hidden_effect = {
-				country_event = { id = azov.14 days = 7 }
-			}
-		}
-	}
-
-	#Invite Russian Far-Rights
-	shared_focus = {
-		id = AFU_invite_russian_far_rights
-		icon = GFX_AFU_invite_russian_far_rights
-		x = 25
-		y = 11
-		cost = 6
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_luhansk_conference  }
-		completion_reward = {
-			add_command_power = 25
-			recruit_character = AFU_pomor
-			recruit_character = AFU_esenin
-			hidden_effect = {
-				set_country_flag = RDK_decisions
-			}
-			unlock_decision_category_tooltip = azov_rdk
-		}
-	}
-
-	#For Freedom of Ours and Yours
-	shared_focus = {
-		id = AFU_for_freedom_of_ours_and_yours
-		icon = GFX_AFU_for_freedom_of_ours_and_yours
-		x = 25
-		y = 12
-		cost = 8
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_invite_russian_far_rights  }
-		completion_reward = {
-			add_political_power = 10
-			custom_effect_tooltip = azov_farright_russian
-			add_ideas = AFU_azov_for_freedom_of_ours_and_yours
-			hidden_effect = {
-				load_oob = "azov_farright_russian"
-			}
-			add_to_variable = {
-				var = AFU_rdk
-				value = 9000
-				tooltip = AFU_rdk_tt
-			}
-		}
-	}
-
-	#It's Not About Views
-	shared_focus = {
-		id = AFU_its_not_about_views
-		icon = GFX_AFU_its_not_about_views
-		x = 27
-		y = 11
-		cost = 6
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_we_have_no_busineness_with_mongoloids  }
-		completion_reward = {
-        	add_stability = 0.05
-			add_manpower = -1000
-		}
-	}
-
-	#Remember the Words of Ideologues
-	shared_focus = {
-		id = AFU_remember_the_words_of_ideologues
-		icon = GFX_AFU_remember_the_words_of_ideologues
-		x = 27
-		y = 12
-		cost = 8
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_its_not_about_views  }
-		completion_reward = {
-			add_ideas = AFU_azov_rusophobia
-   			hidden_effect = {
-   				country_event = { id = azov.16 days = 7 }
-   			}
-		}
-	}
-
-	#The Demand of the Nation is No Capitulation
-	shared_focus = {
-		id = AFU_the_demand_of_the_nation_is_no_capitulation
-		icon = GFX_AFU_the_demand_of_the_nation_is_no_capitulation
-		x = 18
-		y = 10
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_for_the_national_ukraine  }
-		completion_reward = {
-			add_ideas = AFU_no_surrender
-		}
-	}
-
-	#Propaganda in schools
-	shared_focus = {
-		id = AFU_propaganda_in_schools
-		icon = GFX_AFU_propaganda_in_schools
-		x = 17
-		y = 12
-		cost = 7
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_second_national_mobilization }
-		completion_reward = {
-			add_popularity = {
-				ideology = radical_nationalism 
-				popularity = 0.05
-			}
-			random_core_state = {
-				add_building_construction = {
-					type = civil_education_centre
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	#Special Summer Military Camps
-	shared_focus = {
-		id = AFU_special_summer_military_camps
-		icon = GFX_AFU_special_summer_military_camps
-		x = 17
-		y = 13
-		cost = 8
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_propaganda_in_schools  }
-		completion_reward = {
-			random_core_state = {
-				add_building_construction = {
-					type = civil_education_centre
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_core_state = {
-				add_building_construction = {
-					type = civil_education_centre
-					level = 1
-					instant_build = yes
-				}
-			}
-			add_political_power = 50
-			country_event = azov.8
-		}
-	}
-
-	#Second National Mobilization
-	shared_focus = {
-		id = AFU_second_national_mobilization
-		icon = GFX_AFU_second_national_mobilization
-		x = 18
-		y = 11
-		cost = 7
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_the_demand_of_the_nation_is_no_capitulation  }
-		completion_reward = {
-    		add_ideas = fop_conscription_all_adults_serve
-			country_event = { id = azov.34 days = 1 }
-		}
-	}
-
-	#Rump Up the Military Industrial complex
-	shared_focus = {
-		id = AFU_rump_up_the_military_industrial_complex
-		icon = GFX_AFU_rump_up_the_military_industrial_complex
-		x = 19
-		y = 12
-		cost = 6
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_second_national_mobilization  }
-		completion_reward = {
-			swap_ideas = {
-				add_idea = AFU_azov_nazi_mega_zavodi
-				remove_idea = industrial_legacy
-			}
-		}
-	}
-
-	#All Men Are Warriors
-	shared_focus = {
-		id = AFU_all_men_are_warriors
-		icon = GFX_AFU_all_men_are_warriors
-		x = 19
-		y = 13
-		cost = 6
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_rump_up_the_military_industrial_complex  }
-		completion_reward = {
-			swap_ideas = {
-				add_idea = AFU_azov_banner_of_the_victory_3
-				remove_idea = AFU_azov_banner_of_the_victory_2
-			}
-		}
-	}
-
-	#Od Syanu Po Kavkas
-	shared_focus = {
-		id = AFU_od_syanu_po_kavkas
-		icon = GFX_AFU_od_syanu_po_kavkas
-		x = 18
-		y = 14
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_special_summer_military_camps  } prerequisite = { focus = AFU_all_men_are_warriors  }
-		completion_reward = {
-    		swap_ideas = {
-    			remove_idea = AFU_azov_nazi_mega_zavodi
-    			add_idea = AFU_azov_nazi_mega_zavodi_2
 			}
 		}
 	}
@@ -1028,20 +593,20 @@
 			add_stability = -0.15
 			add_political_power = 50
 			add_popularity = {
-				ideology = liberal_democracy
-				popularity = -0.1
+				ideology = liberalism
+				popularity = -0.05
 			}
 			add_popularity = {
-				ideology = oligarchy
-				popularity = -0.1
+				ideology = oligarchism
+				popularity = -0.05
 			}
 			add_popularity = {
-				ideology = conservative_democracy
-				popularity = -0.1
+				ideology = conservatism
+				popularity = -0.05
 			}
 			add_popularity = {
 				ideology = social_democracy
-				popularity = -0.1
+				popularity = -0.05
 			}
 		}
 	}
@@ -1079,11 +644,12 @@
 		completion_reward = {
     		add_political_power = 25
 			add_popularity = {
-				ideology = radical_nationalism
+				ideology = ultranationalism
 				popularity = 0.05
 			}
 			add_stability = 0.05
 			add_ideas = fop_healthcare_system_public
+			FOP_healthcare_medium_improvement = yes
 		}
 	}
 
@@ -1370,7 +936,7 @@
 		completion_reward = {
 			add_ideas = AFU_azov_freedom
 			add_popularity = {
-				ideology = radical_nationalism
+				ideology = ultranationalism
 				popularity = 0.05
 			}
 			add_political_power = -100
@@ -1393,7 +959,7 @@
 		completion_reward = {
 			add_ideas = AFU_azov_opress
 			add_popularity = {
-				ideology = radical_nationalism
+				ideology = ultranationalism
 				popularity = -0.15
 			}
 			add_political_power = 100
@@ -1415,7 +981,7 @@
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
 		completion_reward = {
 			add_popularity = {
-				ideology = radical_nationalism
+				ideology = ultranationalism
 				popularity = 0.05
 			}
 		}
@@ -1453,7 +1019,7 @@
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
 		completion_reward = {
 			add_popularity = {
-				ideology = radical_nationalism
+				ideology = ultranationalism
 				popularity = -0.05
 			}
 			add_stability = 0.1
@@ -1480,6 +1046,448 @@
 			}
 		}
 	}
+
+	#Zrodylys' My Velykoi Hodyny
+	shared_focus = {
+		id = AFU_zrodylys_my_velykoyi_hodyny
+		icon = GFX_AFU_zrodylys_my_velykoyi_hodyny
+		x = 20
+		y = 7
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+			hidden_effect = {
+				country_event = azov.10
+			}
+		}
+	}
+
+	#For the National Ukraine...
+	shared_focus = {
+		id = AFU_for_the_national_ukraine
+		icon = GFX_AFU_for_the_national_ukraine
+		x = 20
+		y = 9
+		cost = 7
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_zrodylys_my_velykoyi_hodyny  }
+		completion_reward = {
+			swap_ideas = {
+				add_idea = AFU_azov_banner_of_the_victory_2
+				remove_idea = AFU_azov_banner_of_the_victory
+			}
+		}
+	}
+
+	#...And White Europa
+	shared_focus = {
+		id = AFU_and_white_europa
+		icon = GFX_AFU_and_white_europa
+		x = 22
+		y = 10
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_for_the_national_ukraine  }
+		completion_reward = {
+			add_stability = -0.1
+			add_popularity = {
+				ideology = ultranationalism
+				popularity = 0.02
+			}
+			add_war_support = 0.05
+		}
+	}
+
+	#Connection With Ultras
+	shared_focus = {
+		id = AFU_connections_with_ultras
+		icon = GFX_AFU_connections_with_ultras
+		x = 22
+		y = 11
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_and_white_europa  }
+		completion_reward = {
+        	add_manpower = 1100
+			add_command_power = 20
+		}
+	}
+
+	#The Russian Question
+	shared_focus = {
+		id = AFU_the_russian_question
+		icon = GFX_AFU_the_russian_question
+		x = 26
+		y = 9
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_zrodylys_my_velykoyi_hodyny  }
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+
+	#Luhansk Conference
+	shared_focus = {
+		id = AFU_luhansk_conference
+		icon = GFX_AFU_luhansk_conference
+		x = 25
+		y = 10
+		cost = 6
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_the_russian_question  }
+		mutually_exclusive = { focus = AFU_we_have_no_busineness_with_mongoloids  }
+		completion_reward = {
+        	add_political_power = 25
+			hidden_effect = {
+        		country_event = azov.9
+				set_country_flag = rvc_coop
+			}
+		}
+	}
+
+	#Far-right European Fighters
+	shared_focus = {
+		id = AFU_far_right_european_fighters
+		icon = GFX_AFU_far_right_european_fighters
+		x = 22
+		y = 12
+		cost = 9
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_connections_with_ultras  }
+		completion_reward = {
+			custom_effect_tooltip = azov_farright_european
+			hidden_effect = {
+				load_oob = "azov_farright_european"
+			}
+		}
+	}
+
+	#Our Brothers From the New World
+	shared_focus = {
+		id = AFU_our_brothers_from_the_new_world
+		icon = GFX_AFU_our_brothers_from_the_new_world
+		x = 22
+		y = 13
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_far_right_european_fighters  }
+		completion_reward = {
+			custom_effect_tooltip = azov_farright_american
+			hidden_effect = {
+				load_oob = "azov_farright_american"
+			}
+		}
+	}
+
+	#The White Revolution Will Start Here
+	shared_focus = {
+		id = AFU_the_white_revolution_will_start_here
+		icon = GFX_AFU_the_white_revolution_will_start_here
+		x = 22
+		y = 14
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_our_brothers_from_the_new_world  }
+		completion_reward = {
+			add_ideas = AFU_azov_harbourforthefarright
+		}
+	}
+
+	#Light the smouldering torch
+	shared_focus = {
+		id = AFU_light_the_smouldering_torch
+		icon = GFX_AFU_light_the_smouldering_torch
+		x = 22
+		y = 15
+		cost = 7
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_the_white_revolution_will_start_here  }
+		completion_reward = {
+			add_popularity = {
+				ideology = ultranationalism
+				popularity = 0.01
+			}
+			add_timed_idea = {
+				idea = AFU_azov_antiglobalisationpolicies
+				days = 180
+			}
+		}
+	}
+
+	#We Have No Busineness With Mongoloids
+	shared_focus = {
+		id = AFU_we_have_no_busineness_with_mongoloids
+		icon = GFX_AFU_we_have_no_busineness_with_mongoloids
+		x = 27
+		y = 10
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_the_russian_question  }
+		mutually_exclusive = { focus = AFU_luhansk_conference  }
+		completion_reward = {
+			add_political_power = 25
+			add_stability = 0.1
+			hidden_effect = {
+				country_event = { id = azov.14 days = 7 }
+			}
+		}
+	}
+
+	#Invite Russian Far-Rights
+	shared_focus = {
+		id = AFU_invite_russian_far_rights
+		icon = GFX_AFU_invite_russian_far_rights
+		x = 25
+		y = 11
+		cost = 6
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_luhansk_conference  }
+		completion_reward = {
+			add_command_power = 25
+			recruit_character = AFU_pomor
+			recruit_character = AFU_esenin
+			hidden_effect = {
+				set_country_flag = RDK_decisions
+			}
+			unlock_decision_category_tooltip = azov_rdk
+		}
+	}
+
+	#For Freedom of Ours and Yours
+	shared_focus = {
+		id = AFU_for_freedom_of_ours_and_yours
+		icon = GFX_AFU_for_freedom_of_ours_and_yours
+		x = 25
+		y = 12
+		cost = 8
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_invite_russian_far_rights  }
+		completion_reward = {
+			add_political_power = 10
+			custom_effect_tooltip = azov_farright_russian
+			add_ideas = AFU_azov_for_freedom_of_ours_and_yours
+			hidden_effect = {
+				load_oob = "azov_farright_russian"
+			}
+			add_to_variable = {
+				var = AFU_rdk
+				value = 9000
+				tooltip = AFU_rdk_tt
+			}
+		}
+	}
+
+	#It's Not About Views
+	shared_focus = {
+		id = AFU_its_not_about_views
+		icon = GFX_AFU_its_not_about_views
+		x = 27
+		y = 11
+		cost = 6
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_we_have_no_busineness_with_mongoloids  }
+		completion_reward = {
+        	add_stability = 0.05
+			add_manpower = -1000
+		}
+	}
+
+	#Remember the Words of Ideologues
+	shared_focus = {
+		id = AFU_remember_the_words_of_ideologues
+		icon = GFX_AFU_remember_the_words_of_ideologues
+		x = 27
+		y = 12
+		cost = 8
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_its_not_about_views  }
+		completion_reward = {
+			add_ideas = AFU_azov_rusophobia
+   			hidden_effect = {
+   				country_event = { id = azov.16 days = 7 }
+   			}
+		}
+	}
+
+	#The Demand of the Nation is No Capitulation
+	shared_focus = {
+		id = AFU_the_demand_of_the_nation_is_no_capitulation
+		icon = GFX_AFU_the_demand_of_the_nation_is_no_capitulation
+		x = 18
+		y = 10
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_for_the_national_ukraine  }
+		completion_reward = {
+			add_ideas = AFU_no_surrender
+		}
+	}
+
+	#Propaganda in schools
+	shared_focus = {
+		id = AFU_propaganda_in_schools
+		icon = GFX_AFU_propaganda_in_schools
+		x = 17
+		y = 12
+		cost = 7
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_second_national_mobilization }
+		completion_reward = {
+			add_popularity = {
+				ideology = ultranationalism 
+				popularity = 0.05
+			}
+			random_core_state = {
+				add_building_construction = {
+					type = civil_education_centre
+					level = 1
+					instant_build = yes
+				}
+			}
+			FOP_schooling_medium_improvement = yes
+		}
+	}
+
+	#Special Summer Military Camps
+	shared_focus = {
+		id = AFU_special_summer_military_camps
+		icon = GFX_AFU_special_summer_military_camps
+		x = 17
+		y = 13
+		cost = 8
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_propaganda_in_schools  }
+		completion_reward = {
+			random_core_state = {
+				add_building_construction = {
+					type = civil_education_centre
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_core_state = {
+				add_building_construction = {
+					type = civil_education_centre
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_political_power = 50
+			country_event = azov.8
+		}
+	}
+
+	#Second National Mobilization
+	shared_focus = {
+		id = AFU_second_national_mobilization
+		icon = GFX_AFU_second_national_mobilization
+		x = 18
+		y = 11
+		cost = 7
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_the_demand_of_the_nation_is_no_capitulation  }
+		completion_reward = {
+    		add_ideas = fop_conscription_all_adults_serve
+			country_event = { id = azov.34 days = 1 }
+		}
+	}
+
+	#Rump Up the Military Industrial complex
+	shared_focus = {
+		id = AFU_rump_up_the_military_industrial_complex
+		icon = GFX_AFU_rump_up_the_military_industrial_complex
+		x = 19
+		y = 12
+		cost = 6
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_second_national_mobilization  }
+		completion_reward = {
+			swap_ideas = {
+				add_idea = AFU_azov_nazi_mega_zavodi
+				remove_idea = industrial_legacy
+			}
+		}
+	}
+
+	#All Men Are Warriors
+	shared_focus = {
+		id = AFU_all_men_are_warriors
+		icon = GFX_AFU_all_men_are_warriors
+		x = 19
+		y = 13
+		cost = 6
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_rump_up_the_military_industrial_complex  }
+		completion_reward = {
+			swap_ideas = {
+				add_idea = AFU_azov_banner_of_the_victory_3
+				remove_idea = AFU_azov_banner_of_the_victory_2
+			}
+		}
+	}
+
+	#Od Syanu Po Kavkas
+	shared_focus = {
+		id = AFU_od_syanu_po_kavkas
+		icon = GFX_AFU_od_syanu_po_kavkas
+		x = 18
+		y = 14
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = AFU_special_summer_military_camps  } prerequisite = { focus = AFU_all_men_are_warriors  }
+		completion_reward = {
+    		swap_ideas = {
+    			remove_idea = AFU_azov_nazi_mega_zavodi
+    			add_idea = AFU_azov_nazi_mega_zavodi_2
+			}
+		}
+	}
 	
 	#March on the Kharkiv
 	shared_focus = {
@@ -1491,7 +1499,7 @@
 		allow_branch = { 
 			KHA = {
 				NOT = {
-					has_government = radical_nationalism
+					has_government = ultranationalism
 				}
 			}
 	 	}
@@ -1619,7 +1627,7 @@
 		cost = 1
 		allow_branch = { 
 			KHA = {
-				has_government = radical_nationalism
+				has_government = ultranationalism
 			}
 	 	}
 		available = {
@@ -1722,7 +1730,7 @@ every_unit_leader = {
 		completion_reward = {
 			add_war_support = 0.2
 			add_popularity = {
-				ideology = radical_nationalism
+				ideology = ultranationalism
 				popularity = 0.2
 			}
 			add_ideas = AFU_final_fight
@@ -1743,10 +1751,11 @@ every_unit_leader = {
 		completion_reward = {
 			add_stability = 0.1
 			add_popularity = {
-				ideology = radical_nationalism
+				ideology = ultranationalism
 				popularity = 0.2
 			}
 			add_ideas = AFU_nationalist_constitution
+			FOP_administrative_efficiency_high_improvement = yes
 		}
 	}
 
@@ -1955,7 +1964,7 @@ every_unit_leader = {
 				if = {
 					limit = {
 						GEO = {
-							has_government = radical_nationalism
+							has_government = ultranationalism
 						}
 					}
 					GEO = {

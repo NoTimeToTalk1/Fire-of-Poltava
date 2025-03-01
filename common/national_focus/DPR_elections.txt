@@ -1,5 +1,5 @@
 shared_focus = {
-		id = dnr_opposition_union
+		id = DPR_opposition_union
 		icon = GFX_Opposition_Union
 		x = 35
 		y = 0
@@ -19,7 +19,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_people_fight
+		id = DPR_people_fight
 		icon = GFX_People_Fight_For
 		x = 30
 		y = 1
@@ -30,7 +30,7 @@ shared_focus = {
 		ai_will_do = {
 			factor = 10
 		}
-		prerequisite = { focus = dnr_opposition_union  }
+		prerequisite = { focus = DPR_opposition_union  }
 		search_filters = { shared_focus_FILTER_POLITICAL }	
 		completion_reward = {
             country_event = {
@@ -43,7 +43,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_equality
+		id = DPR_equality
 		icon = GFX_Equality
 		x = 32
 		y = 2
@@ -55,16 +55,16 @@ shared_focus = {
 			factor = 15
 		}
 		search_filters = { shared_focus_FILTER_POLITICAL }
-        prerequisite = { focus = dnr_people_fight }
-        mutually_exclusive = { focus = dnr_freedom }
-        mutually_exclusive = { focus = dnr_nation }		
+        prerequisite = { focus = DPR_people_fight }
+        mutually_exclusive = { focus = DPR_freedom }
+        mutually_exclusive = { focus = DPR_nation }		
 		completion_reward = {
 			SWPD_pp_increase = yes
 		}		
 	}
 	
 	shared_focus = {
-		id = dnr_freedom
+		id = DPR_freedom
 		icon = GFX_Freedom
 		x = 30
 		y = 2
@@ -76,16 +76,16 @@ shared_focus = {
 			factor = 15
 		}
 		search_filters = { shared_focus_FILTER_POLITICAL }
-        prerequisite = { focus = dnr_people_fight }	
-        mutually_exclusive = { focus = dnr_equality }
-        mutually_exclusive = { focus = dnr_nation }		
+        prerequisite = { focus = DPR_people_fight }	
+        mutually_exclusive = { focus = DPR_equality }
+        mutually_exclusive = { focus = DPR_nation }		
 		completion_reward = {
 			DPN_pp_increase = yes
 		}		
 	}
 	
 	shared_focus = {
-		id = dnr_nation
+		id = DPR_nation
 		icon = GFX_Strong_Nation
 		x = 28
 		y = 2
@@ -97,16 +97,16 @@ shared_focus = {
 			factor = 15
 		}
 		search_filters = { shared_focus_FILTER_POLITICAL }
-        prerequisite = { focus = dnr_people_fight }	
-        mutually_exclusive = { focus = dnr_equality }
-        mutually_exclusive = { focus = dnr_freedom }		
+        prerequisite = { focus = DPR_people_fight }	
+        mutually_exclusive = { focus = DPR_equality }
+        mutually_exclusive = { focus = DPR_freedom }		
 		completion_reward = {
 			FDP_pp_increase = yes
 		}		
 	}
 	
 	shared_focus = {
-		id = dnr_march
+		id = DPR_march
 		icon = GFX_March_on_Donetsk
 		x = 30
 		y = 3
@@ -119,9 +119,9 @@ shared_focus = {
 		}
 		search_filters = { shared_focus_FILTER_POLITICAL }
         prerequisite = {
-			focus = dnr_nation
-			focus = dnr_freedom
-			focus = dnr_equality
+			focus = DPR_nation
+			focus = DPR_freedom
+			focus = DPR_equality
 		}			
 		completion_reward = {
 			country_event = {
@@ -132,7 +132,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_cariov_office
+		id = DPR_cariov_office
 		icon = GFX_In_the_Tsaryov_Office
 		x = 35
 		y = 1
@@ -143,7 +143,7 @@ shared_focus = {
 		ai_will_do = {
 			factor = 15
 		}
-		prerequisite = { focus = dnr_opposition_union  }
+		prerequisite = { focus = DPR_opposition_union  }
 		search_filters = { shared_focus_FILTER_POLITICAL }	
 		completion_reward = {
             country_event = {
@@ -154,7 +154,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_pragmatic_allience
+		id = DPR_pragmatic_allience
 		icon = GFX_Pragmatic_Alliance
 		x = 34
 		y = 2
@@ -165,9 +165,9 @@ shared_focus = {
 		ai_will_do = {
 			factor = 15
 		}
-		prerequisite = { focus = dnr_cariov_office }
+		prerequisite = { focus = DPR_cariov_office }
 		search_filters = { shared_focus_FILTER_POLITICAL }
-        mutually_exclusive = {focus = dnr_democratic_block }		
+        mutually_exclusive = {focus = DPR_democratic_block }		
 		completion_reward = {
             custom_effect_tooltip = DPRelection_CP_to_FDP_tt
 			add_to_variable = { FDP_pp = CP_pp }
@@ -183,7 +183,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_democratic_block
+		id = DPR_democratic_block
 		icon = GFX_Democratic_Bloc
 		x = 36
 		y = 2
@@ -194,9 +194,9 @@ shared_focus = {
 		ai_will_do = {
 			factor = 15
 		}
-		prerequisite = { focus = dnr_cariov_office }
+		prerequisite = { focus = DPR_cariov_office }
 		search_filters = { shared_focus_FILTER_POLITICAL }
-        mutually_exclusive = {focus = dnr_pragmatic_allience }		
+        mutually_exclusive = {focus = DPR_pragmatic_allience }		
 		completion_reward = {
             custom_effect_tooltip = DPRelection_CP_to_DPN_tt
 			add_to_variable = { DPN_pp = CP_pp }
@@ -212,7 +212,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_second_attempt
+		id = DPR_second_attempt
 		icon = GFX_Second_Attempt
 		x = 35
 		y = 3
@@ -224,8 +224,8 @@ shared_focus = {
 			factor = 15
 		}
 		prerequisite = { 
-		    focus = dnr_pragmatic_allience
-			focus = dnr_democratic_block
+		    focus = DPR_pragmatic_allience
+			focus = DPR_democratic_block
 		
 		}
 		search_filters = { shared_focus_FILTER_POLITICAL }	
@@ -238,7 +238,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_workers_strike
+		id = DPR_workers_strike
 		icon = GFX_Workers_Strike
 		x = 39
 		y = 1
@@ -250,7 +250,7 @@ shared_focus = {
 			factor = 10
 		}
 		prerequisite = { 
-		    focus = dnr_opposition_union
+		    focus = DPR_opposition_union
 		
 		}
 		search_filters = { shared_focus_FILTER_POLITICAL }	
@@ -262,7 +262,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_help_them
+		id = DPR_help_them
 		icon = GFX_Help_Them
 		x = 38
 		y = 2
@@ -274,10 +274,10 @@ shared_focus = {
 			factor = 15
 		}
 		prerequisite = { 
-		    focus = dnr_workers_strike
+		    focus = DPR_workers_strike
 		
 		}
-		mutually_exclusive = { focus = dnr_better_call_push }
+		mutually_exclusive = { focus = DPR_better_call_push }
 		search_filters = { shared_focus_FILTER_POLITICAL }	
 		completion_reward = {
             SWPD_pp_increase_strong = yes
@@ -286,7 +286,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_better_call_push
+		id = DPR_better_call_push
 		icon = GFX_Better_Call_Pushilin
 		x = 40
 		y = 2
@@ -298,10 +298,10 @@ shared_focus = {
 			factor = 15
 		}
 		prerequisite = { 
-		   focus = dnr_workers_strike
+		   focus = DPR_workers_strike
 		
 		}
-		mutually_exclusive = { focus = dnr_help_them }
+		mutually_exclusive = { focus = DPR_help_them }
 		search_filters = { shared_focus_FILTER_POLITICAL }	
 		completion_reward = {
             country_event = {
@@ -309,13 +309,13 @@ shared_focus = {
                     days = 1
             }
 		hidden_effect = {
-		set_country_flag = dnr_better_call_push_flag
+		set_country_flag = DPR_better_call_push_flag
 		}
 		}		
 	}
 	
 	shared_focus = {
-		id = dnr_promise_them
+		id = DPR_promise_them
 		icon = GFX_Promise_Them
 		x = 39
 		y = 3
@@ -327,8 +327,8 @@ shared_focus = {
 			factor = 15
 		}
 		prerequisite = { 
-		    focus = dnr_help_them
-		    focus = dnr_better_call_push
+		    focus = DPR_help_them
+		    focus = DPR_better_call_push
 		}
 		search_filters = { shared_focus_FILTER_POLITICAL }	
 		completion_reward = {
@@ -338,7 +338,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_road_to_future
+		id = DPR_road_to_future
 		icon = GFX_Road_to_the_Future
 		x = 35
 		y = 4
@@ -350,13 +350,13 @@ shared_focus = {
 			factor = 1
 		}
 		prerequisite = { 
-		    focus = dnr_promise_them
+		    focus = DPR_promise_them
 		}
 		prerequisite = { 
-		    focus = dnr_second_attempt
+		    focus = DPR_second_attempt
 		}
 		prerequisite = { 
-			focus = dnr_march
+			focus = DPR_march
 		}
 		search_filters = { shared_focus_FILTER_POLITICAL }	
 		completion_reward = {
@@ -368,7 +368,7 @@ shared_focus = {
 	
 	
 	shared_focus = {
-		id = dnr_another_term
+		id = DPR_another_term
 		icon = GFX_Another_Term
 		x = 35
 		y = 0
@@ -394,7 +394,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_reputation_colapse
+		id = DPR_reputation_colapse
 		icon = GFX_Reputation_Collapse
 		x = 35
 		y = 1
@@ -405,7 +405,7 @@ shared_focus = {
 			factor = 10
 		}
 		prerequisite = { 
-			focus = dnr_another_term
+			focus = DPR_another_term
 		}
 		search_filters = { shared_focus_FILTER_POLITICAL }	
 		completion_reward = {
@@ -417,7 +417,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_block_sources
+		id = DPR_block_sources
 		icon = GFX_Block_the_Sources
 		x = 34
 		y = 2
@@ -428,7 +428,7 @@ shared_focus = {
 			factor = 10
 		}
 		prerequisite = { 
-			focus = dnr_reputation_colapse
+			focus = DPR_reputation_colapse
 		}
 		search_filters = { shared_focus_FILTER_POLITICAL }	
 		completion_reward = {
@@ -442,7 +442,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_bribe
+		id = DPR_bribe
 		icon = GFX_Bribe_Whoever_You_Can
 		x = 36
 		y = 2
@@ -453,7 +453,7 @@ shared_focus = {
 			factor = 10
 		}
 		prerequisite = { 
-			focus = dnr_reputation_colapse
+			focus = DPR_reputation_colapse
 		}
 		search_filters = { shared_focus_FILTER_POLITICAL }	
 		completion_reward = {
@@ -467,7 +467,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_nothing_hapenned
+		id = DPR_nothing_hapenned
 		icon = GFX_Nothing_Happened
 		x = 35
 		y = 3
@@ -478,10 +478,10 @@ shared_focus = {
 			factor = 10
 		}
 		prerequisite = { 
-			focus = dnr_bribe
+			focus = DPR_bribe
 		}
 		prerequisite = { 
-			focus = dnr_block_sources
+			focus = DPR_block_sources
 		}
 		search_filters = { shared_focus_FILTER_POLITICAL }	
 		completion_reward = {
@@ -495,7 +495,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_ensure_order
+		id = DPR_ensure_order
 		icon = GFX_Ensure_Order
 		x = 33
 		y = 4
@@ -514,7 +514,7 @@ shared_focus = {
 			factor = 10
 		}
 		prerequisite = { 
-			focus = dnr_nothing_hapenned
+			focus = DPR_nothing_hapenned
 		}
 		search_filters = { shared_focus_FILTER_POLITICAL }	
 		completion_reward = {
@@ -525,7 +525,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_sos
+		id = DPR_sos
 		icon = GFX_Stability_Order_Security
 		x = 33
 		y = 5
@@ -541,9 +541,9 @@ shared_focus = {
 			factor = 15
 		}
 		prerequisite = { 
-			focus = dnr_ensure_order
+			focus = DPR_ensure_order
 		}
-		mutually_exclusive = { shared_focus = dnr_send_punishers }
+		mutually_exclusive = { shared_focus = DPR_send_punishers }
 		search_filters = { shared_focus_FILTER_POLITICAL }	
 		completion_reward = {
 			Pushilin_pp_increase = yes
@@ -556,7 +556,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_send_punishers
+		id = DPR_send_punishers
 		icon = GFX_Send_the_Punishers
 		x = 31
 		y = 5
@@ -572,9 +572,9 @@ shared_focus = {
 			factor = 15
 		}
 		prerequisite = { 
-			focus = dnr_ensure_order
+			focus = DPR_ensure_order
 		}
-		mutually_exclusive = { shared_focus = dnr_sos }
+		mutually_exclusive = { shared_focus = DPR_sos }
 		search_filters = { shared_focus_FILTER_POLITICAL }	
 		completion_reward = {
 			country_event = {
@@ -585,7 +585,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_call_friend
+		id = DPR_call_friend
 		icon = GFX_Call_an_Old_Friend
 		x = 35
 		y = 4
@@ -596,7 +596,7 @@ shared_focus = {
 			factor = 10
 		}
 		prerequisite = { 
-			focus = dnr_nothing_hapenned
+			focus = DPR_nothing_hapenned
 		}
 		search_filters = { shared_focus_FILTER_POLITICAL }	
 		completion_reward = {
@@ -608,7 +608,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_spoiler
+		id = DPR_spoiler
 		icon = GFX_Candidate_Spoiler
 		x = 35
 		y = 5
@@ -619,7 +619,7 @@ shared_focus = {
 			factor = 15
 		}
 		prerequisite = { 
-			focus = dnr_call_friend
+			focus = DPR_call_friend
 		}
 		search_filters = { shared_focus_FILTER_POLITICAL }	
 		completion_reward = {
@@ -629,7 +629,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_praise_heroes
+		id = DPR_praise_heroes
 		icon = GFX_Praise_the_Heroes
 		x = 37
 		y = 4
@@ -640,7 +640,7 @@ shared_focus = {
 			factor = 10
 		}
 		prerequisite = { 
-			focus = dnr_nothing_hapenned
+			focus = DPR_nothing_hapenned
 		}
 		search_filters = { shared_focus_FILTER_POLITICAL }	
 		completion_reward = {
@@ -651,7 +651,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_cinematography
+		id = DPR_cinematography
 		icon = GFX_Run_Cinematography
 		x = 37
 		y = 5
@@ -662,7 +662,7 @@ shared_focus = {
 			factor = 15
 		}
 		prerequisite = { 
-			focus = dnr_praise_heroes
+			focus = DPR_praise_heroes
 		}
 		search_filters = { shared_focus_FILTER_POLITICAL }	
 		completion_reward = {
@@ -674,7 +674,7 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = dnr_minutes
+		id = DPR_minutes
 		icon = GFX_Last_Minutes
 		x = 35
 		y = 6
@@ -685,15 +685,15 @@ shared_focus = {
 			factor = 15
 		}
 		prerequisite = { 
-			focus = dnr_spoiler
+			focus = DPR_spoiler
 		}
 		
 		prerequisite = { 
-			focus = dnr_cinematography
+			focus = DPR_cinematography
 		}
 		prerequisite = { 
-			focus = dnr_send_punishers
-			focus = dnr_sos
+			focus = DPR_send_punishers
+			focus = DPR_sos
 		}
 		search_filters = { shared_focus_FILTER_POLITICAL }	
 		completion_reward = {

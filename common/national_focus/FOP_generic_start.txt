@@ -83,14 +83,14 @@ focus = {
 		unlock_decision_category_tooltip = FOP_micro_region_development
 		set_variable = {
 			var = region_dev_var
-			value = 3
-			tooltip = fop_micro_region_dev_tt
+			value = 0
 		}
 		clamp_variable = {
 			var = region_dev_var
 			min = 0
 		}
 		set_country_flag = FOP_micro_region_development_flag
+		custom_effect_tooltip = FOP_micro_region_development_tt
 	}
 }
 
@@ -164,7 +164,7 @@ focus = {
 		division_template = {
 			name = "Militia"
 			is_locked = yes
-			division_names_group = BLR_INF_01
+			division_names_group = UKR_INF_01
 			priority = 0
 			template_counter = 0
 			regiments = {
@@ -270,9 +270,11 @@ focus = {
 	completion_reward = {
 		unlock_decision_category_tooltip = fop_mobilisation
 		add_manpower = 10000
-		country_event = {
-			id = FOP_generic.4
-			days = 5
+		hidden_effect = {
+			country_event = {
+				id = FOP_generic.4
+				days = 5
+			}
 		}
 	}
 }
@@ -323,9 +325,11 @@ focus = {
     prerequisite = { focus = FOP_Bad_Times }
 	completion_reward = {
 		add_ideas = FOP_ease_up
-		country_event = {
-			id = FOP_generic.5
-			days = 5
+		hidden_effect = {
+			country_event = {
+				id = FOP_generic.5
+				days = 5
+			}
 		}
 	}
 }
@@ -341,9 +345,11 @@ focus = {
     prerequisite = { focus = FOP_Bad_Times }
 	completion_reward = {
 		add_ideas = FOP_strict_rule
-		country_event = {
-			id = FOP_generic.6
-			days = 5
+		hidden_effect = {
+			country_event = {
+				id = FOP_generic.6
+				days = 5
+			}
 		}
 	}
 }
@@ -615,9 +621,11 @@ focus = {
 			remove_idea = FOP_ruined_economy_3
 			add_idea = FOP_ruined_economy_4
 		}
-		country_event = {
-			id = FOP_generic.7
-			days = 7
+		hidden_effect = {
+			country_event = {
+				id = FOP_generic.7
+				days = 7
+			}
 		}
 	}
 }
