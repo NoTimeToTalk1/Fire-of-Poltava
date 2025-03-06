@@ -1,13 +1,123 @@
 on_actions = {
-    on_monthly = {
-        if = {
-            limit = {
-                has_completed_focus = FOP_Time_To_Reorganise
+    on_startup = {
+        effect = {
+			every_country = {
+                limit = {
+                    is_galicia_ukraine = yes
+                }
+                country_event = {
+                    id = reg_halychyna.1
+                    days = 730
+                }
+
             }
-            add_to_variable = {
-                var = region_dev_var
-                value = 5
+            every_country = {
+                limit = {
+                    is_podolia_ukraine = yes
+                }
+                country_event = {
+                    id = reg_podolia.1
+                    days = 710
+                }
+
+            }
+            every_country = {
+                limit = {
+                    is_siveria_ukraine = yes
+                }
+                country_event = {
+                    id = reg_siveria.1
+                    days = 700
+                }
+
+            }
+            every_country = {
+                limit = {
+                    is_dnieper_ukraine = yes
+                }
+                country_event = {
+                    id = reg_dnieper.1
+                    days = 680
+                }
+
+            }
+            every_country = {
+                limit = {
+                    is_dnister_ukraine = yes
+                }
+                country_event = {
+                    id = reg_dnister.1
+                    days = 760
+                }
+
+            }
+            every_country = {
+                limit = {
+                    is_tavria_ukraine = yes
+                }
+                country_event = {
+                    id = reg_tavria.1
+                    days = 750
+                }
+
+            }
+            every_country = {
+                limit = {
+                    is_donbas_ukraine = yes
+                }
+                country_event = {
+                    id = reg_donbas.1
+                    days = 840
+                }
+
             }
         }
     }
+
+    on_state_control_changed = {
+        effect = {
+            if = {
+                limit = {
+                    FROM.FROM = { state = 2724 }
+                }
+                if = {
+                    limit = {
+                        tag = DBS
+                    }
+                    TVR = {
+                        country_event = reg_exp_south.7
+                    }
+                }
+            }
+        } 
+    }
+
+    on_capitulation_immediate = {
+        effect = { 
+            if = {
+                limit = {
+                    ROOT = { tag = DNI }
+                    TVR = {
+                        at_war_with = DNI
+                    } 
+                }
+                TVR = {
+                    transfer_state = 2077
+                    transfer_state = 2862
+                    transfer_state = 2075
+                    transfer_state = 2076
+                    transfer_state = 2403
+                    transfer_state = 2728
+                    transfer_state = 2079
+                }
+                DBS = {
+                    transfer_state = 579
+                    transfer_state = 2080
+                    transfer_state = 560
+                    transfer_state = 2111
+                    transfer_state = 2724
+                } 
+            }
+        }
+    }  
 }
