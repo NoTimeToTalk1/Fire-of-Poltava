@@ -8,107 +8,97 @@
 
 
 
-#Beginning of a New Era
+#Beginning of New Era
 shared_focus = {
-	id = DPR_beginning_of_a_new_era
-	icon = GFX_DPR_Beginning_of_New_Era
-	cost = 3
-
+	id = DPR_beginning_of_new_era
+	icon = GFX_DPR_beginning_of_new_era-495436
 	x = 10
 	y = 0
+	cost = 3
 
 	completion_reward = {
 		activate_advisor = DPR_gubareva
 		add_ideas = DPR_peopleopposition
 		add_political_power = 40
-		country_event = {
-			id = dpr.901 #PLACEHOLDER --- Вуличні протести виборців вітренко та пасєки
-			days = 1
-		}
+		country_event = { id = gir.13 }
 	}
 }
 
 #Give Them a Fight
 shared_focus = {
 	id = DPR_give_them_a_fight
-	icon = GFX_DPR_give_them_a_fight
-	cost = 2
-
+	icon = GFX_DPR_give_them_a_fight-495436
 	x = 9
 	y = 1
+	cost = 2
 
 	prerequisite = {
-		focus = DPR_beginning_of_a_new_era
+		focus = DPR_beginning_of_new_era
 	}
 	mutually_exclusive = {
 		focus = DPR_givethemguarantees
 	}
-
+	
 	completion_reward = {
-		###DEVIL TOOLTIP DEATHS BLOOD HAHAHAAHAH
+swap_ideas = {
+    remove_idea = DPR_peopleopposition
+    add_idea = DPR_peopleopposition1
+}
+		country_event = { id = gir.25 }
 		add_popularity = {
 			ideology = traditionalism
 			popularity = 0.3
 		}
+	custom_effect_tooltip = DPR_give_them_a_fight_tt
 	}
 }
 
-#Militarize Loyalists
+#Militarise Loyalistst
 shared_focus = {
-	id = DPR_militarize_loyalists
-	icon = GFX_DPR_Militarize_Loyalists
-	cost = 2
-
+	id = DPR_militarise_loyalistst
+	icon = GFX_DPR_militarise_loyalistst-495447
 	x = 9
 	y = 2
+	cost = 2
 
 	prerequisite = {
 		focus = DPR_give_them_a_fight
 	}
-
 	completion_reward = {
-		country_event = {
-			id = dpr.902 #PLACEHOLDER --- Перші криваві зіткнення на вулицях
-			days = 1
-		}
+	add_political_power = 100
 		add_manpower = 6000
+	custom_effect_tooltip = DPR_militarise_loyalistst_tt
 	}
 }
 
 #Discrediting Always Works
 shared_focus = {
 	id = DPR_discrediting_always_works
-	icon = GFX_DPR_Discrediting_Always_Works
-	cost = 2
-
+	icon = GFX_DPR_discrediting_always_works-495454
 	x = 9
 	y = 3
+	cost = 2
 
 	prerequisite = {
-		focus = DPR_militarize_loyalists
+		focus = DPR_militarise_loyalistst
 	}
-
 	completion_reward = {
+			country_event = { id = gir.12 }
 		add_popularity = {
-			ideology = conservatism
+			ideology = conservative_democracy
 			popularity = -0.1
 		}
 		add_popularity = {
-			ideology = liberalism
+			ideology = liberal_democracy
 			popularity = -0.1
 		}
 		add_popularity = {
-			ideology = socialism
+			ideology = social_democracy
 			popularity = -0.1
 		}
 		add_popularity = {
-			ideology = communism
+			ideology = radical_socialism
 			popularity = -0.1
-		}
-		add_political_power = -80
-		country_event = {
-			id = dpr.903 #PLACEHOLDER --- Вирізка з газети про дискредитацію Вітренко й Пасєки (відомі вони разом як "Народна Опозиція")
-			days = 1
 		}
 	}
 }
@@ -125,13 +115,13 @@ shared_focus = {
 		focus = DPR_discrediting_always_works
 	}
 	completion_reward = {
+		add_manpower = 6000
 		###ADD DECISIONS TO FUCK WITH VITRENKO AND PASECHNIK
-		remove_ideas = DPR_peopleopposition
+		country_event = { id = gir.15 }
+		country_event = { id = gir.1 days = 2 }
+		remove_ideas = DPR_peopleopposition1
 		add_stability = -0.2
-		country_event = {
-			id = dpr.904 #PLACEHOLDER --- Війна гіркіна та лоялістів з опозицією в містах та селах
-			days = 1
-		}
+	add_political_power = 80
 	}
 }
 
@@ -150,7 +140,10 @@ shared_focus = {
 		focus = DPR_give_them_a_fight
 	}
 	completion_reward = {
-		###ANGEL TOOLTIP CANDYS HAPINESS ETC.
+swap_ideas = {
+    remove_idea = DPR_peopleopposition
+    add_idea = DPR_peopleopposition2
+}
 		add_popularity = {
 			ideology = traditionalism
 			popularity = -0.2
@@ -171,31 +164,27 @@ shared_focus = {
 	}
 	completion_reward = {
 		add_political_power = 200
-		remove_ideas = DPR_peopleopposition
+		country_event = { id = gir.14 days = 2 }
 		add_popularity = {
-			ideology = conservatism
+			ideology = conservative_democracy
 			popularity = 0.06
 		}
 		add_popularity = {
-			ideology = liberalism
+			ideology = liberal_democracy
 			popularity = 0.04
 		}
 		add_popularity = {
-			ideology = socialism
+			ideology = social_democracy
 			popularity = 0.07
 		}
 		add_popularity = {
-			ideology = communism
+			ideology = radical_socialism
 			popularity = 0.03
-		}
-		country_event = {
-			id = dpr.905 #PLACEHOLDER --- Лібералізація конституції гіркіном, уряд пішов на поступки опозиції (стратегічний хід, далі більше)
-			days = 1
 		}
 	}
 }
 
-#Prepare for the Hell...
+#Prepare fot the Hell...
 shared_focus = {
 	id = DPR_preparefotthehell
 	icon = GFX_DPR_preparefotthehell-495461
@@ -207,10 +196,7 @@ shared_focus = {
 		focus = DPR_liberalisetheconstitution
 	}
 	completion_reward = {
-		country_event = {
-			id = dpr.906 #PLACEHOLDER --- Штурм ячейки Народної Опозиції (сценарій з лібералізацією)
-			days = 1
-		}
+		add_stability = -0.2
 	}
 }
 
@@ -226,10 +212,14 @@ shared_focus = {
 		focus = DPR_preparefotthehell
 	}
 	completion_reward = {
-		country_event = {
-			id = dpr.907 #PLACEHOLDER --- Відміна правок, шок контент
-			days = 1
-		}
+		remove_ideas = DPR_peopleopposition2
+		country_event = { id = gir.23 days = 2 }
+		retire_character = DNR_Pidor
+		retire_character = DNR_Pasechnik
+		retire_character = DNR_Vitrenko
+			hidden_effect = {
+			set_country_flag = end_of_purges
+			}
 	}
 }
 
@@ -241,16 +231,26 @@ shared_focus = {
 	y = 5
 	cost = 2
 
+available = {
+
+			has_country_flag = end_of_purges
+
+}
+
 	prerequisite = {
 		focus = DPR_andabondit
 		focus = DPR_udarvpechenniktonevechen
 	}
 	completion_reward = {
 		country_event = {
-			id = dpr.908 #PLACEHOLDER --- Опис подальшої ситуації (народ в страху, в державі анархія)
+			id = gir.905 #PLACEHOLDER
 			days = 1
 		}
 		###GUI FOR DEMILITARIZATION OF REGIONS(WHAT???)
+		country_event = { id = gir.19 days = 1 }
+load_focus_tree = {
+    tree = DPR_strelkov_east
+}
 	}
 }
 
@@ -266,17 +266,13 @@ shared_focus = {
 		focus = DPR_facing_the_problems_alone
 	}
 	completion_reward = {
+	add_political_power = -25
+	add_stability = -0.1
+	army_experience = 10
+		country_event = { id = gir.24 days = 2 }
 		add_popularity = {
-			ideology = traditionalism
-			popularity = -0.1
-		}
-		add_popularity = {
-			ideology = oligarchism
+			ideology = radical_nationalism
 			popularity = 0.05
-		}
-		country_event = {
-			id = dpr.909 #PLACEHOLDER --- Інтеграція Вагнера в регулярні війська
-			days = 1
 		}
 	}
 }
@@ -293,7 +289,11 @@ shared_focus = {
 		focus = DPR_contract_with_the_devil
 	}
 	completion_reward = {
-		###ADDS 3 ELITE UNITS(PRIGHOZIN AND OTHER NOOBS AS GENERALS TOO)
+		recruit_character = DNR_pisya
+		add_popularity = {
+			ideology = radical_nationalism
+			popularity = 0.05
+		}
 	}
 }
 
@@ -309,11 +309,10 @@ shared_focus = {
 		focus = DPR_contract_with_the_devil
 	}
 	completion_reward = {
-		add_popularity = {
-			ideology = traditionalism
-			popularity = 0.05
-		}
-		add_stability = -0.05
+	add_political_power = 50
+	add_command_power = 25
+	add_war_support = 0.2
+		###I DPMT LNMPWOWP
 	}
 }
 
@@ -331,10 +330,8 @@ shared_focus = {
 	completion_reward = {
 		add_ideas = DPR_generalplan1
 		add_political_power = 50
-		country_event = {
-			id = dpr.910 #PLACEHOLDER --- івент про геніальність гіркіна як стратега на воєнному й державному рівнях
-			days = 1
-		}
+		add_command_power = 5
+		country_event = { id = gir.18 days = 2 }
 	}
 }
 
@@ -350,13 +347,10 @@ shared_focus = {
 		focus = DPR_plan__the_key_to_success
 	}
 	completion_reward = {
+		country_event = { id = gir.20 days = 2 }
 		create_intelligence_agency = {
 			name = "Security Service of Novorossiya"
 			icon = GFX_intelligence_agency_logo_agency
-		}
-		country_event = {
-			id = dpr.911 #PLACEHOLDER --- HIDDEN івент про фсб
-			days = 1
 		}
 	}
 }
@@ -373,18 +367,15 @@ shared_focus = {
 		focus = DPR_call_to_the_old_friends
 	}
 	completion_reward = {
+		country_event = { id = gir.21 days = 2 }
 		swap_ideas = {
 			remove_idea = DPR_FSB
 			add_idea = DPR_fsblocal
 		}
-		country_event = {
-			id = dpr.912 #PLACEHOLDER --- Івент про методи дій фсб
-			days = 1
-		}
 	}
 }
 
-#Security Service Of Novorossiya
+#Security Service Of Novorossya
 shared_focus = {
 	id = DPR_security_service_of_novorossya
 	icon = GFX_DPR_security_service_of_novorossya-495479
@@ -400,7 +391,6 @@ shared_focus = {
 			remove_idea = DPR_fsblocal
 			add_idea = DPR_securityserviceofnovorossya
 		}
-		add_command_power = 50
 	}
 }
 
@@ -416,15 +406,9 @@ shared_focus = {
 		focus = DPR_plan__the_key_to_success
 	}
 	completion_reward = {
+	add_manpower = 1000
 		add_ideas = DPR_newfriends1
-		country_event = {
-			id = dpr.913 #PLACEHOLDER --- HIDDEN Івент про РОВС (історія, хто шо, відносно коротко, основна увага на 2014-зараз)
-			days = 1
-		}
-		country_event = {
-			id = dpr.914 #PLACEHOLDER --- Зустріч Гіркіна та Іванова - лідера РОВС
-			days = 7
-		}
+		country_event = { id = gir.26 days = 2 }
 	}
 }
 
@@ -440,6 +424,7 @@ shared_focus = {
 		focus = DPR_contact_the_rovs
 	}
 	completion_reward = {
+	add_war_support = 0.1
 		if = {
 			limit = {
 				any_other_country = {
@@ -453,10 +438,6 @@ shared_focus = {
 				target = ROOT
 				modifier = spirit_of_novorosja
 			}
-		}
-		country_event = {
-			id = dpr.915 #PLACEHOLDER --- Івент про те як Біла Гвардія насправді не програла а червоні просто оголосили про перемогу не добивши їх - білі досі легітимні й базовані
-			days = 1
 		}
 	}
 }
@@ -496,13 +477,11 @@ shared_focus = {
 		has_idea = DPR_newfriends1
 	}
 	completion_reward = {
+	add_political_power = 25
+		country_event = { id = gir.2 days = 2 }
 		swap_ideas = {
 			remove_idea = DPR_newfriends1
 			add_idea = DPR_newfriends2
-		}
-		country_event = {
-			id = dpr.916 #PLACEHOLDER --- Історія Донського козацтва (відносно коротко, основна увага на 2014-зараз)
-			days = 1
 		}
 	}
 }
@@ -518,6 +497,7 @@ shared_focus = {
 		focus = DPR_messege_to_cossaks
 	}
 	completion_reward = {
+	add_political_power = 20
 		###ADD DECISIONS TO RECRUIT COSSACK LEADERS
 	}
 }
@@ -533,11 +513,9 @@ shared_focus = {
 		focus = DPR_invite_local_leaders
 	}
 	completion_reward = {
+	add_political_power = 30
 		###ADD 4 COSSACK BRIGADES(4 horse, 2 infantry, 1 truck)
-		country_event = {
-			id = dpr.917 #PLACEHOLDER --- Івент про марш-парад Донських кізяків по Донецьку
-			days = 1
-		}
+		country_event = { id = gir.22 days = 2 }
 	}
 }
 
@@ -563,6 +541,7 @@ shared_focus = {
 			remove_idea = DPR_generalplan2
 			add_idea = DPR_generalplan3
 		}
+
 	}
 }
 
@@ -578,6 +557,8 @@ shared_focus = {
 	}
 	completion_reward = {
 		add_ideas = DPR_ourlegacy
+		country_event = { id = gir.31 days = 2 }
+		country_event = { id = gir.35 days = 10 }
 	}
 }
 
@@ -597,10 +578,9 @@ shared_focus = {
 			remove_idea = DPR_generalplan3
 			add_idea = DPR_generalplan4
 		}
-		country_event = {
-			id = dpr.918 #PLACEHOLDER --- Івент про марш-парад Донських кізяків по Донецьку
-			days = 1
-		}
+	add_political_power = 30
+		country_event = { id = gir.27 days = 2 }
+
 	}
 }
 
@@ -616,11 +596,8 @@ shared_focus = {
 		focus = DPR_rematch_of_1917th
 	}
 	completion_reward = {
-		add_ideas = DPR_promoting_othodoxy
-		country_event = {
-			id = dpr.919 #PLACEHOLDER --- Івент про рос православну церкву за кордоном
-			days = 1
-		}
+		add_ideas = DPR_promotingorthodox
+		country_event = { id = gir.30 days = 2 }
 	}
 }
 
@@ -635,15 +612,15 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_revival_of_the_spirituality
 	}
+	select_effect = { 
+	country_event = { id = gir.37 days = 7 }
+	}
 	completion_reward = {
 		swap_ideas = {
-			remove_idea = DPR_promoting_othodoxy
+			remove_idea = DPR_promotingorthodox
 			add_idea = DPR_russianchurch
 		}
-		country_event = {
-			id = dpr.920 #PLACEHOLDER --- Івент про приїзд митрополита Іларіона в новососію де він підпише з Гіркіним угоду про переїзд церкви сюди
-			days = 1
-		}
+		country_event = { id = gir.30 days = 2 }
 	}
 }
 
@@ -662,10 +639,6 @@ shared_focus = {
 		swap_ideas = {
 			remove_idea = DPR_newfriends2
 			add_idea = DPR_monarchicalcoalition1
-		}
-		country_event = {
-			id = dpr.921 #PLACEHOLDER --- Івент про перший з'їзд всеросійського монархічного конгресу
-			days = 1
 		}
 	}
 }
@@ -721,10 +694,6 @@ shared_focus = {
 			remove_idea = DPR_whiteculture1
 			add_idea = DPR_whiteculture2
 		}
-		country_event = {
-			id = dpr.922 #PLACEHOLDER --- Івент про декомунізацію
-			days = 1
-		}
 	}
 }
 
@@ -750,10 +719,21 @@ shared_focus = {
 			remove_idea = DPR_monarchicalcoalition2
 			add_idea = DPR_monarchicalcoalition3
 		}
-		country_event = {
-			id = dpr.923 #PLACEHOLDER --- Івент про святкову промову Гіркіна на честь єдинства всеросійського монархічного конгресу
-			days = 1
-		}
+	set_party_name = {
+    ideology = radical_nationalism
+    long_name = "Monarchicheskaya Coalicia"
+    name = "Monarchist Coalition - Far-right wing"
+}
+	set_party_name = {
+    ideology = conservative_democracy
+    long_name = "Monarchicheskaya Coalicia"
+    name = "Monarchist Coalition - Right wing"
+}
+	set_party_name = {
+    ideology = liberal_democracy
+    long_name = "Monarchicheskaya Coalicia"
+    name = "Monarchist Coalition - Liberal wing"
+}
 	}
 }
 
@@ -767,15 +747,18 @@ shared_focus = {
 	available = {
 		has_completed_focus = DPR_united_traditionalists_front
 	}
-	prerequisite = {
-		focus = DPR_from_the_ground_up
-	}
+	#prerequisite = {
+	#	focus = DPR_from_the_ground_up
+	#}
 
 	completion_reward = {
 		swap_ideas = {
 			remove_idea = DPR_generalplan4
 			add_idea = DPR_generalplan5
 		}
+	hidden_effect = {
+	set_country_flag = girkin_foreign_politics_flag
+	}
 	}
 }
 
@@ -791,6 +774,10 @@ shared_focus = {
 		focus = DPR_engage_in_big_politics
 	}
 	completion_reward = {
+	DNR_girkin = {
+	add_planning = 1
+add_random_trait = { old_guard brilliant_strategist inflexible_strategist }	
+	}
 		add_idea = DPR_strategic_innitiative
 	}
 }
@@ -806,11 +793,11 @@ shared_focus = {
 		focus = DPR_time_for_strategic_games
 	}
 	completion_reward = {
+	custom_effect_tooltip = girkin_wars_tt
 		###DECISIONS FOR CONQUERING NOVORISSIYA(also Crimea and Transnistria diplomatically)
-		country_event = {
-			id = dpr.924 #PLACEHOLDER --- Івент про кордони новососії і чому вони правильні
-			days = 1
-		}
+	hidden_effect = {
+	set_country_flag = girkin_second_russian_spring_flag
+	}
 	}
 }
 
@@ -826,6 +813,7 @@ shared_focus = {
 		focus = DPR_claim_in_our_real_borders
 	}
 	completion_reward = {
+	custom_effect_tooltip = girkin_collaborators_tt
 		###INCREASES COMPLIANCE ON NEW CONQUERED LAND
 		###AND DECISIONS TO LOWER RESISTANCE(REAL)
 	}
@@ -838,12 +826,27 @@ shared_focus = {
 	x = 20
 	y = 16
 	cost = 3
+	
+	available = {
+	controls_state = 497
+	controls_state = 2079
+	controls_state = 623
+	controls_state = 2085
+	controls_state = 614
+	controls_state = 2045
+	}
 
 	prerequisite = {
 		focus = DPR_find_the_loyal_ones
 	}
 	completion_reward = {
-		###CORES ON CONQUERED STATES
+		country_event = {
+			id = gir.33 
+			days = 1
+		}
+	load_focus_tree = {
+    tree = DPR_strelkov_left_bank
+}
 	}
 }
 
@@ -851,27 +854,22 @@ shared_focus = {
 shared_focus = {
 	id = DPR_start_the_debate
 	icon = GFX_DPR_start_the_debate-495535
-	x = 26
+	x = 24
 	y = 1
 	cost = 3
-	prerequisite = {
-		focus = DPR_united_traditionalists_front
-	}
-	prerequisite = {
-		focus = DPR_consolidation_of_the_south
-	}
 	completion_reward = {
+	custom_effect_tooltip = DPR_start_the_debate_tt
 		country_event = {
-			id = dpr.925 #PLACEHOLDER --- Івент про засідання поців в тому монархічному конгерсі і як вони дискутують кому віддати корону на початку виконання
+			id = gir.36 
 			days = 1
 		}
 		country_event = {
-			id = dpr.926 #PLACEHOLDER --- Івент про Марію Романову (біографія, чому вона має стати монархом) в процесі виконання
-			days = 1
+			id = gir.29 
+			days = 3
 		}
 		country_event = {
-			id = dpr.927 #PLACEHOLDER --- Івент про Ростіслава Романова (біографія, чому він має стати монархом) в процесі виконання
-			days = 1
+			id = gir.34 
+			days = 6
 		}
 	}
 }
@@ -880,7 +878,7 @@ shared_focus = {
 shared_focus = {
 	id = DPR_returnpowertotherightfulhands
 	icon = GFX_DPR_returnpowertotherightfulhands-495536
-	x = 26
+	x = 24
 	y = 2
 	cost = 2
 
@@ -889,13 +887,13 @@ shared_focus = {
 	}
 	completion_reward = {
 		country_event = {
-			id = dpr.928 #PLACEHOLDER --- IN THIS EVENT NEW PARTY POPULARITIES NEED TO BE SET UP FOR EVERY VARIANT+NEW RULING PARTY+PARTY NAMES CHANGED+PARTY LEADERS CHANGED+NEW LEADER+NEW PREMIER+ADVISORS
+			id = gir.32 #PLACEHOLDER --- IN THIS EVENT NEW PARTY POPULARITIES NEED TO BE SET UP FOR EVERY VARIANT+NEW RULING PARTY+PARTY NAMES CHANGED+PARTY LEADERS CHANGED+NEW LEADER+NEW PREMIER+ADVISORS
 			days = 1
 		}
-		#swap_ideas = { ### ADD THIS TO EVENT CONSTITUTIONAL PATH INSTEAD OF FOCUS
-		#	remove_idea = DPR_generalplan5
-		#	add_idea = DPR_generalplan6
-		#}
+		country_event = {
+			id = gir.66 
+			days = 1
+		}
 		swap_ideas = {
 			remove_idea = DPR_ourlegacy
 			add_idea = DPR_empirestrikesback
@@ -929,15 +927,25 @@ shared_focus = {
 		focus = DPR_andrestorehistoricaljustice
 	}
 	completion_reward = {
+	set_cosmetic_tag = DPR_rostislav
+	recruit_character = DNR_rostislav
+	promote_character = DNR_rostislav
+set_politics = {
+    ruling_party = conservative_democracy
+    elections_allowed = no
+}
 		### THIS FOCUS GETS AUTOCOMPLETED
 		country_event = {
-			id = dpr.907 #PLACEHOLDER --- івент про коронацію Ростіслава Романова імператором всеросійським
+			id = gir.40 --- івент про коронацію Ростіслава Романова імператором всеросійським
 			days = 1
 		}
-		country_event = { # --- !!! START BALANCE OF POWER GAME BETWEEN GIRKIN AND ROSTIK !!!
-			id = dpr.908 #PLACEHOLDER --- івент про початок суперництва гіркіна та ростіслава (перший за консервативний традиціоналізм та ізоляціонізм з культом білої гвардії, другий за союз з заходом, лібералізацію та демократизацію)
-			days = 1
-		}
+		
+	hidden_effect = {
+		country_event = {
+			id = gir.85 #YANUKOVICH
+			days = 10
+		}	
+	}
 	}
 }
 
@@ -976,7 +984,7 @@ shared_focus = {
 			popularity = 0.05
 		}
 		country_event = {
-			id = dpr.909 #івент про проголошення про відмову від притензій на землі рф імператором Ростіславом (текст документу, можна скорочено з вирізаними моментами)
+			id = gir.97
 			days = 1
 		}
 	}
@@ -1011,7 +1019,7 @@ shared_focus = {
 		focus = DPR_unite_little_russia
 	}
 	completion_reward = {
-		###CHANGING LAWS(IDK WHICH ONES THO)
+	add_ideas = fop_party_system_controlled_opposition
 	}
 }
 
@@ -1027,8 +1035,8 @@ shared_focus = {
 		focus = DPR_andbecomeamentor
 	}
 	completion_reward = {
-		country_event = {
-			id = dpr.910 #PLACEHOLDER --- BASICALLY JUST VERY SHORT EVENT WITH 2 VARIANTS TO CHOOSE FROM
+		country_event = { # --- !!! START BALANCE OF POWER GAME BETWEEN GIRKIN AND ROSTIK !!!
+			id = gir.53  # --- івент про початок суперництва гіркіна та ростіслава (перший за консервативний традиціоналізм та ізоляціонізм з культом білої гвардії, другий за союз з заходом, лібералізацію та демократизацію)
 			days = 1
 		}
 	}
@@ -1052,6 +1060,13 @@ shared_focus = {
 	}
 	completion_reward = {
 		###GIVES POINTS TO ROSTIK IN BoP(Balance of Power) game
+		
+add_power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value = -0.33
+    tooltip_side = rostislave_influence_growth
+}
+
 	}
 }
 
@@ -1067,7 +1082,12 @@ shared_focus = {
 		focus = DPR_new_times_new_politics
 	}
 	completion_reward = {
-		###CHANGE LAWS TO FUCKING FEDERATION OR AUTONOMISM
+	add_ideas = fop_centralization_federalism
+add_power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value = -0.33
+    tooltip_side = rostislave_influence_growth
+}
 	}
 }
 
@@ -1084,6 +1104,11 @@ shared_focus = {
 	}
 	completion_reward = {
 		###GIVES POINTS TO ROSTIK IN BoP(Balance of Power) game
+add_power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value = -0.33
+    tooltip_side = rostislave_influence_growth
+}
 	}
 }
 
@@ -1105,6 +1130,11 @@ shared_focus = {
 	}
 	completion_reward = {
 		###GIVES POINTS TO GIRKIN IN BoP(Balance of Power) game
+add_power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value = 0.33
+    tooltip_side = girkin_influence_growth
+}
 	}
 }
 
@@ -1121,6 +1151,12 @@ shared_focus = {
 	}
 	completion_reward = {
 		###CHANGE LAWS TO CENTRALIZED STATE
+	add_ideas = fop_centralization_unitarism
+add_power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value = 0.33
+    tooltip_side = girkin_influence_growth
+}
 	}
 }
 
@@ -1137,6 +1173,11 @@ shared_focus = {
 	}
 	completion_reward = {
 		###GIVES POINTS TO GIRKIN IN BoP(Balance of Power) game
+add_power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value = 0.33
+    tooltip_side = girkin_influence_growth
+}
 	}
 }
 
@@ -1149,24 +1190,35 @@ shared_focus = {
 	cost = 2
 
 	prerequisite = {
-		focus = DPR_no_more_mistakes_of_the_past
-		focus = DPR_we_are_part_of_civilised_world
+	focus = DPR_we_only_need_us
+		
+	focus = DPR_we_are_part_of_civilised_world
 	}
 	prerequisite = {
-		focus = DPR_we_only_need_us
+focus = DPR_no_more_mistakes_of_the_past		
 	}
 	completion_reward = {
 		custom_effect_tooltip = romanov_vs_girkin_conclusion_tt
 		hidden_effect = {
 			### !!! ADD CHECK CONDITION WHO HAS MORE POINTS in BoP game !!!
-			country_event = { # --- IF ROSTIK HAS MORE POINTS
-				id = dpr.911 #PLACEHOLDER --- івент про позбавлення гіркіна посади прем'єра ростіславом як наслідок внутрішньої боротьби та передача йому повноважень головнокомандуючого (гіркіна попустили, більше жодних денікінів) (писати з погляду ростіслава)
+		if = {
+		limit = {
+		has_completed_focus = DPR_we_only_need_us
+		}
+			country_event = { 
+				id = 
 				days = 1
 			}
-			country_event = { # --- IF GIRKIN HAS MORE POINTS
-				id = dpr.912 #PLACEHOLDER --- івент про попуск царя
+		}
+		if = {
+		limit = {
+		has_completed_focus = DPR_we_are_part_of_civilised_world
+		}
+			country_event = { 
+				id = gir.42 
 				days = 1
 			}
+		}
 		}
 	}
 }
@@ -1188,11 +1240,31 @@ shared_focus = {
 	y = 9
 	cost = 2
 
+available = {
+power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value < -0.9
+}
+}
+
+	mutually_exclusive = {
+		focus = DPR_exercise_our_right
+	}
+
 	prerequisite = {
 		focus = DPR_time_to_resolve_the_issue
 	}
 	completion_reward = {
-		###Honestly idk
+			country_event = { 
+				id = gir.98
+				days = 1
+			}
+	DNR_rostislav = {
+	add_country_leader_trait = Young_Tsar
+	}
+remove_power_balance = {
+    id = DPR_rostislave_girkin_political_balance
+}
 	}
 }
 
@@ -1210,7 +1282,7 @@ shared_focus = {
 	completion_reward = {
 		add_stability = 0.05
 		country_event = {
-			id = dpr.913 #PLACEHOLDER --- івент про вислання делегації рос імперії ростіслава до ООН (початок побудови міжнародних стосунків)
+			id = gir.39 #івент про вислання делегації рос імперії ростіслава до ООН (початок побудови міжнародних стосунків)
 			days = 1
 		}
 	}
@@ -1228,7 +1300,21 @@ shared_focus = {
 		focus = DPR_contact_the_united_nations
 	}
 	completion_reward = {
-		###ADD OPINION MODIFIER WITH EU AND USA AND BRITIAN
+		if = {
+			limit = {
+				any_other_country = {
+					OR = {
+						has_government = liberal_democracy
+						has_government = conservative_democracy
+						has_government = social_democracy
+					}
+				}
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = improved_relations
+			}
+		}
 	}
 }
 
@@ -1245,10 +1331,10 @@ shared_focus = {
 	}
 	completion_reward = {
 		country_event = {
-			id = dpr.914 #PLACEHOLDER --- івент про офіційне перейняття рос імперією ростіка українського крісла при ООН
+			id = gir.48 #PLACEHOLDER --- івент про офіційне перейняття рос імперією ростіка українського крісла при ООН
 			days = 1
 		}
-		###CHANGE LAW TO OPEN BORDERS(BLESSED)
+		add_ideas = fop_immigration_open_borders
 	}
 }
 
@@ -1264,6 +1350,10 @@ shared_focus = {
 		focus = DPR_emperor_by_the_will_of_the_people
 	}
 	completion_reward = {
+			country_event = {
+				id = gir.99
+				days = 1
+			}
 		add_timed_idea = { ###GIVES PARTY POPULARITY
 			idea = DPR_parlamentarismpropaganda
 			days = 180
@@ -1283,6 +1373,10 @@ shared_focus = {
 		focus = DPR_parlamentarism_is_the_future
 	}
 	completion_reward = {
+			country_event = {
+				id = gir.100
+				days = 1
+			}
 		add_popularity = {
 			ideology = ultranationalism
 			popularity = -0.1
@@ -1310,7 +1404,11 @@ shared_focus = {
 		focus = DPR_rule_will_be_as_people_want_it_to_be
 	}
 	completion_reward = {
-		###ADDS DUMA GUI WHICH ORIH AND IHOR HAD DONE
+			country_event = {
+				id = gir.101
+				days = 1
+			}
+	custom_effect_tooltip = DPR_form_verkhovna_duma_tt
 	}
 }
 
@@ -1329,7 +1427,13 @@ shared_focus = {
 		focus = DPR_gain_international_recognition
 	}
 	completion_reward = {
-		add_ideas = DPR_liberalempire
+			country_event = {
+				id = gir.102
+				days = 1
+			}
+	DNR_rostislav = {
+	swap_ruler_traits = { remove = Young_Tsar add = Young_Tsar2 }
+	}
 	}
 }
 
@@ -1345,7 +1449,9 @@ shared_focus = {
 		focus = DPR_emperor_by_the_will_of_the_people
 	}
 	completion_reward = {
-		###CHANGE LAWS TO MULTICULTURALISM THING(NO HATE <3)
+	add_ideas = fop_ethnic_minorities_cultural_autonomy
+	add_ideas = fop_racial_integration_equal_rights
+	add_ideas = fop_gender_rights_legal_equality
 	}
 }
 
@@ -1361,7 +1467,13 @@ shared_focus = {
 		focus = DPR_thekeyisinlovenotfear
 	}
 	completion_reward = {
-		###GIVES LEADER TRAIT (EMPEROR OF ALL MEN)
+			country_event = { 
+				id = gir.103
+				days = 1
+			}
+	DNR_rostislav = {
+	add_country_leader_trait = empreror_of_all_men
+	}
 	}
 }
 
@@ -1378,7 +1490,7 @@ shared_focus = {
 	}
 	completion_reward = {
 		country_event = {
-			id = dpr.915 #PLACEHOLDER --- івент про промову Гіркіна українською (лохам не брати, якщо встигну сам зроблю)
+			id = gir.50 # --- івент про промову Гіркіна українською (лохам не брати, якщо встигну сам зроблю)
 			days = 1
 		}
 		add_timed_idea = { ###COMPLIANCE + POLIT POWER GROW FASTER
@@ -1416,7 +1528,7 @@ shared_focus = {
 			ideology = social_democracy
 			popularity = 0.05
 		}
-		###CHANGES LAWS TO SMTH
+	add_ideas = fop_party_system_multiparty
 	}
 }
 
@@ -1432,7 +1544,7 @@ shared_focus = {
 		focus = DPR_show_ideological_tolerance
 	}
 	completion_reward = {
-		###CHANGES LAWS TO FUCKING SECULARISM
+	add_ideas = fop_religious_rights_secularism
 	}
 }
 
@@ -1448,7 +1560,7 @@ shared_focus = {
 		focus = DPR_quoting_the_peace_of_westphalia
 	}
 	completion_reward = {
-		###CHANGES LAWS TO DEMILITARIZATION LMAO NO ARMY BOZO
+	add_ideas = fop_supervision_strict_rules
 	}
 }
 
@@ -1467,7 +1579,7 @@ shared_focus = {
 		focus = DPR_time_to_come_back_to_life
 	}
 	completion_reward = {
-		###I forgor :skull:
+	add_manpower = 3500
 	}
 }
 
@@ -1490,7 +1602,7 @@ shared_focus = {
 		add_stability = 0.1
 		add_war_support = 0.1
 		country_event = {
-			id = dpr.916 #PLACEHOLDER --- фінальний івент до гілки Ростіслава, розсипати бази про те як він об'єднав всі народи на теренах України та як зміг об'єднати Україну (свою імперію) з Заходом
+			id = gir.57 #PLACEHOLDER --- фінальний івент до гілки Ростіслава, розсипати бази про те як він об'єднав всі народи на теренах України та як зміг об'єднати Україну (свою імперію) з Заходом
 			days = 1
 		}
 		add_ideas = DPR_trulynewera
@@ -1516,6 +1628,13 @@ shared_focus = {
 	y = 9
 	cost = 3
 
+available = {
+power_balance_value = {
+    id = DPR_rostislave_girkin_political_balance
+    value > 0.9
+}
+}
+
 	prerequisite = {
 		focus = DPR_time_to_resolve_the_issue
 	}
@@ -1523,7 +1642,23 @@ shared_focus = {
 		focus = DPR_emperor_by_the_will_of_the_people
 	}
 	completion_reward = {
-		### just pp
+	add_ideas = DPR_rostislav_icon
+set_portraits = {
+    character = DNR_girkin
+    civilian = { large = GFX_dirkin3 }
+}
+	add_country_leader_role = {
+    character = DNR_girkin
+    promote_leader = yes
+    country_leader = {
+        ideology = illiynism
+        expire = "2222.1.1.1"
+        traits = { right_hand_of_the_tsar }
+    }
+}
+remove_power_balance = {
+    id = DPR_rostislave_girkin_political_balance
+}
 	}
 }
 
@@ -1539,7 +1674,8 @@ shared_focus = {
 		focus = DPR_exercise_our_right
 	}
 	completion_reward = {
-		###ADD ADVISORS AND POLITICANS(ROVS, IMPERIAL LEGION)
+	activate_advisor = DNR_ivanov
+	activate_advisor = DNR_Kvachkov
 	}
 }
 
@@ -1555,7 +1691,7 @@ shared_focus = {
 		focus = DPR_return_allies_to_the_game
 	}
 	completion_reward = {
-		###ADD SOME NEW COOL ADVISOR GUYS 2.0(BORODAI, MIHEEV etc.)
+		activate_advisor = DNR_dus
 	}
 }
 
@@ -1572,7 +1708,7 @@ shared_focus = {
 	}
 	completion_reward = {
 		country_event = {
-			id = dpr.917 #PLACEHOLDER --- івент про те як гіркін з колєгами забирають в царя Ростіка "скучну роботу" у вигляді багатьох адміністративних повноважень (він клює на лоха)
+			id = gir.60 #PLACEHOLDER --- івент про те як гіркін з колєгами забирають в царя Ростіка "скучну роботу" у вигляді багатьох адміністративних повноважень (він клює на лоха)
 			days = 1
 		}
 	}
@@ -1590,7 +1726,34 @@ shared_focus = {
 		focus = DPR_takeawaytheboringworkfromthetsar
 	}
 	completion_reward = {
-		###CHANGE LAWS TO ONE PARTY/NO PARTY SYSTEM
+	add_ideas = fop_party_system_nonpartisan
+set_party_name = {
+    ideology = conservative_democracy
+    long_name = "Imperskaya Kollegiya"
+    name = "Imperial Collegium - Girkinists"
+}
+hidden_effect = {
+set_party_name = {
+    ideology = liberal_democracy
+    long_name = "Imperskaya Kollegiya"
+    name = "Imperial Collegium - Kadets"
+}
+set_party_name = {
+    ideology = radical_nationalism
+    long_name = "Imperskaya Kollegiya"
+    name = "Imperial Collegium - Far-right"
+}
+set_party_name = {
+    ideology = oligarchy
+    long_name = "Imperskaya Kollegiya"
+    name = "Imperial Collegium - Malofeevtsy"
+}
+set_party_name = {
+    ideology = centrism
+    long_name = "Imperskaya Kollegiya"
+    name = "Imperial Collegium - Umerennye"
+}
+}
 	}
 }
 
@@ -1606,7 +1769,7 @@ shared_focus = {
 		focus = DPR_exercise_our_right
 	}
 	completion_reward = {
-		### може бафати вже існуючу ідею на білу культуру(too lazy to search)
+	add_ideas = fop_security_opressive_police
 		add_popularity = {
 			ideology = communism
 			popularity = -0.1
@@ -1634,7 +1797,7 @@ shared_focus = {
 			ideology = social_democracy
 			popularity = -0.1
 		}
-		###CHJANGE LAW FOR PRESS RIGHTS OR SMTH
+	add_ideas = fop_press_freedom_censored
 	}
 }
 
@@ -1642,8 +1805,8 @@ shared_focus = {
 shared_focus = {
 	id = DPR_new_state_cabinet
 	icon = GFX_DPR_new_state_cabinet-495536
-	x = 10
-	y = 1
+	x = 20
+	y = 12
 	cost = 2
 	prerequisite = {
 		focus = DPR_expand_our_private_club
@@ -1655,7 +1818,10 @@ shared_focus = {
 		focus = DPR_no_compromises
 	}
 	completion_reward = {
-		###I have no idea
+		country_event = {
+			id = gir.90
+			days = 1
+		}
 	}
 }
 
@@ -1663,15 +1829,17 @@ shared_focus = {
 shared_focus = {
 	id = DPR_followingindenikinsfootsteps
 	icon = GFX_DPR_followingindenikinsfootsteps-495536
-	x = 8
-	y = 2
+	x = 18
+	y = 13
 	cost = 2
 
 	prerequisite = {
 		focus = DPR_new_state_cabinet
 	}
 	completion_reward = {
-		###ADD LEADER TRAIT "NEW DENIKIN" or smth
+	DNR_girkin = {
+	add_country_leader_trait = new_denikin_1
+}
 		swap_ideas = {
 			remove_idea = DPR_generalplan6
 			add_idea = DPR_generalplan7
@@ -1683,15 +1851,17 @@ shared_focus = {
 shared_focus = {
 	id = DPR_new_white_guard
 	icon = GFX_DPR_new_white_guard-495536
-	x = 8
-	y = 3
+	x = 18
+	y = 14
 	cost = 2
 
 	prerequisite = {
 		focus = DPR_followingindenikinsfootsteps
 	}
 	completion_reward = {
-		###SPAWN 2 ELITE WHITE DIVISIONS
+	DNR_girkin = {
+swap_country_leader_traits = { remove = new_denikin_1 add = new_denikin_2 }
+	}
 		army_experience = 25
 	}
 }
@@ -1700,8 +1870,8 @@ shared_focus = {
 shared_focus = {
 	id = DPR_let_them_feel_the_whip
 	icon = GFX_DPR_let_them_feel_the_whip-495536
-	x = 12
-	y = 2
+	x = 22
+	y = 13
 	cost = 2
 
 	prerequisite = {
@@ -1709,13 +1879,18 @@ shared_focus = {
 	}
 	completion_reward = {
 		country_event = {
-			id = dpr.918 #PLACEHOLDER --- івент про розстріл антиокупаційної демонстрації вкраїнчиків у Львові/Києві (на вибір) гіркінськими військами
+			id = gir.44
 			days = 1
 		}
+	DNR_girkin = {
+	add_country_leader_trait = great_repressor
+}
+hidden_effect = {
 		country_event = {
-			id = dpr.919 #PLACEHOLDER --- івент про написання антиурядової пісні на основі тієї з "Голодних Ігор" й про коротку реакцію уряду в стилі "от хохли дебіли, заборонити нахуй"
+			id = gir.104
 			days = 1
 		}
+}
 	}
 }
 
@@ -1723,14 +1898,21 @@ shared_focus = {
 shared_focus = {
 	id = DPR_crush_the_dissatisfied
 	icon = GFX_DPR_crush_the_dissatisfied-495536
-	x = 12
-	y = 3
+	x = 22
+	y = 14
 	cost = 2
 
 	prerequisite = {
 		focus = DPR_let_them_feel_the_whip
 	}
 	completion_reward = {
+		country_event = {
+			id = gir.91
+			days = 1
+		}
+	DNR_girkin = {
+swap_country_leader_traits = { remove = great_repressor add = great_repressor_and_pacifier }
+	}
 		add_political_power = -100
 		add_popularity = {
 			ideology = liberalism
@@ -1748,7 +1930,7 @@ shared_focus = {
 			ideology = national_democracy
 			popularity = -0.1
 		}
-		add_manpower = -10000
+		add_manpower = -5000
 	}
 }
 
@@ -1756,8 +1938,8 @@ shared_focus = {
 shared_focus = {
 	id = DPR_emperorontheicongeneralissimoonthethrone
 	icon = GFX_DPR_emperorontheicongeneralissimoonthethrone-495536
-	x = 10
-	y = 4
+	x = 20
+	y = 15
 	cost = 3
 
 	prerequisite = {
@@ -1767,11 +1949,14 @@ shared_focus = {
 		focus = DPR_crush_the_dissatisfied
 	}
 	completion_reward = {
+	DNR_girkin = {
+	add_country_leader_trait = GENERALISSIMO
+}
 		add_political_power = 100
 		add_stability = 0.1
 		add_war_support = 0.1
 		country_event = {
-			id = dpr.920 #PLACEHOLDER --- фінальний івент на Гіркіна
+			id = gir.96
 			days = 1
 		}
 		swap_ideas = {
@@ -1807,14 +1992,27 @@ shared_focus = {
 	}
 	completion_reward = {
 		###THIS FOCUS AUTO COMPLETES
+		set_cosmetic_tag = DPR_imperial
+	recruit_character = DNR_maria
+	promote_character = DNR_maria
+set_politics = {
+    ruling_party = conservative_democracy
+    elections_allowed = no
+}
 		country_event = {
-			id = dpr.921 #PLACEHOLDER --- івент про коронацію Марії Романової імператрицею всеросійською
+			id = gir.46 #PLACEHOLDER --- івент про коронацію Марії Романової імператрицею всеросійською
 			days = 1
 		}
 		country_event = { # --- !!! START BALANCE OF POWER GAME BETWEEN MARIA AND GRIGORIY !!!
-			id = dpr.922 #PLACEHOLDER --- івент про напружені відносини Марії та її сина Григорія (син не лояльний владі матері та хотів сам стати імператором, але перевагу надали їй. Тож він хоче більше влади, бабла, та повноважень)
-			days = 1
+			id = gir.6 #PLACEHOLDER --- івент про напружені відносини Марії та її сина Григорія (син не лояльний владі матері та хотів сам стати імператором, але перевагу надали їй. Тож він хоче більше влади, бабла, та повноважень)
+			days = 3
 		}
+	hidden_effect = {
+		country_event = {
+			id = gir.85 #YANUKOVICH
+			days = 10
+		}	
+	}
 	}
 }
 
@@ -1830,6 +2028,15 @@ shared_focus = {
 		focus = DPR_andrestorehistoricaljustice
 	}
 	completion_reward = {
+	add_political_power = 25
+	add_manpower = -100
+	army_experience = -10
+	retire_character = DNR_borodai
+	retire_character = DNR_chemeris
+	retire_character = DNR_dus
+	random_army_leader = { 
+	retire = yes
+	}
 		###REMOVES DISLOYAL TO MARIA MINISTERS
 	}
 }
@@ -1846,8 +2053,36 @@ shared_focus = {
 		focus = DPR_loyalty_check
 	}
 	completion_reward = {
+set_party_name = {
+    ideology = conservative_democracy
+    long_name = "Vse-Rossiyskaya Imperskaya Partiya"
+    name = "All-Russian Imperial Party - Loyalists"
+}
+hidden_effect = {
+set_party_name = {
+    ideology = liberal_democracy
+    long_name = "Vse-Rossiyskaya Imperskaya Partiya"
+    name = "All-Russian Imperial Party - Kadets"
+}
+set_party_name = {
+    ideology = radical_nationalism
+    long_name = "Vse-Rossiyskaya Imperskaya Partiya"
+    name = "All-Russian Imperial Party - Chernosotentsy"
+}
+set_party_name = {
+    ideology = oligarchy
+    long_name = "Vse-Rossiyskaya Imperskaya Partiya"
+    name = "All-Russian Imperial Party - Industrialisty"
+}
+set_party_name = {
+    ideology = centrism
+    long_name = "Vse-Rossiyskaya Imperskaya Partiya"
+    name = "All-Russian Imperial Party - Umerennye"
+}
+}
+	add_stability = 0.1
 		country_event = {
-			id = dpr.923 #PLACEHOLDER --- івент про промову Машки адресованої всьому світові що рашн емпайр іс соу бек (вони хочуть все відвоювати, але це прямо не згадуйте:PrideandFallreference:)
+			id = gir.71 #PLACEHOLDER --- івент про промову Машки адресованої всьому світові що рашн емпайр іс соу бек (вони хочуть все відвоювати, але це прямо не згадуйте:PrideandFallreference:)
 			days = 1
 		}
 	}
@@ -1865,6 +2100,8 @@ shared_focus = {
 		focus = DPR_andrestorehistoricaljustice
 	}
 	completion_reward = {
+	activate_advisor = DNR_fedorov
+	activate_advisor = DNR_bakov
 		###ADD LOYAL MARIA MINISTERS :3
 		add_popularity = {
 			ideology = authoritarianism
@@ -1905,8 +2142,12 @@ shared_focus = {
 		focus = DPR_andrestorehistoricaljustice
 	}
 	completion_reward = {
+	DNR_girkin = {
+	gain_xp = -100
+    demote_leader = yes	
+	}
 		country_event = { # --- REMOVES GIRKIN AS GENERAL
-			id = dpr.924 #PLACEHOLDER --- івент про те як гіркіна попускає Машка і він стає звичайним генералом (життя лайно і в нього депресія)
+			id = gir.47 #PLACEHOLDER --- івент про те як гіркіна попускає Машка і він стає звичайним генералом (життя лайно і в нього депресія)
 			days = 1
 		}
 		add_popularity = {
@@ -1929,8 +2170,10 @@ shared_focus = {
 	}
 	completion_reward = {
 		###REMOVE GIRKIN GENERALS
+		retire_character = DNR_Volkov
+		retire_character = DNR_ivanov
 		country_event = { # --- REMOVES MANPOWER BTW
-			id = dpr.925 #PLACEHOLDER --- івент про штурм головної резиденції ровс спецназом, заборону організації та ліквідацію Іванова з прибічниками (мочать його в офісі)
+			id = gir.43 #PLACEHOLDER --- івент про штурм головної резиденції ровс спецназом, заборону організації та ліквідацію Іванова з прибічниками (мочать його в офісі)
 			days = 1
 		}
 		add_popularity = {
@@ -1960,15 +2203,30 @@ shared_focus = {
 	completion_reward = {
 		custom_effect_tooltip = maria_vs_grigoriy_conclusion_tt
 		hidden_effect = {
-			### !!! ADD CHECK CONDITION WHO HAS MORE POINTS in BoP game !!!
-			country_event = { # --- IF MARIA HAS MORE POINTS
-				id = dpr.926 #PLACEHOLDER --- івент про тріумф матері
-				days = 1
-			}
-			country_event = { # --- IF GRIGORIY HAS MORE POINTS
-				id = dpr.927 #PLACEHOLDER --- івент про вбивсто Машки сином (в ночі в імператорському палаці, вину кидає син на її козацьку гвардію)
-				days = 1
-			}
+if = {
+limit = {
+power_balance_value = {
+    id = DPR_maria_georgiy_political_balance
+    value < 0.5
+}
+}
+		country_event = {
+			id = gir.82
+			days = 2
+		}
+}
+if = {
+limit = {
+power_balance_value = {
+    id = DPR_maria_georgiy_political_balance
+    value > 0.5
+}
+}
+		country_event = {
+			id = gir.55
+			days = 2
+		}
+}
 		}
 	}
 }
@@ -1992,11 +2250,24 @@ shared_focus = {
 	y = 8
 	cost = 2
 
+available = {
+power_balance_value = {
+    id = DPR_maria_georgiy_political_balance
+    value < 0.5
+}
+}
+
 	prerequisite = {
 		focus = DPR_about_the_motherson_relationship
 	}
+	mutually_exclusive = {
+		focus = DPR_sorryma
+	}
 	completion_reward = {
 		add_ideas = DPR_unitedinbloodandpurpose
+remove_power_balance = {
+    id = DPR_maria_georgiy_political_balance
+}
 	}
 }
 
@@ -2012,6 +2283,17 @@ shared_focus = {
 		focus = DPR_fair_distribution_of_power
 	}
 	completion_reward = {
+	activate_advisor = DNR_kelin
+	DNR_kozytsin = {
+	promote_leader = yes
+	add_unit_leader_trait = war_hero
+	add_unit_leader_trait = media_personality
+	}
+	DNR_mozhaev = {
+	promote_leader = yes
+	add_unit_leader_trait = war_hero
+	add_unit_leader_trait = media_personality
+	}
 		###NEW COSSACK ADVISORS
 		###ALSO ADD SOME COSSACK DIVISIONS
 	}
@@ -2029,8 +2311,11 @@ shared_focus = {
 		focus = DPR_united_in_blood_and_purpose
 	}
 	completion_reward = {
+	DNR_maria = {
+	add_country_leader_trait = modern_ekaterina1
+	}
 		country_event = {
-			id = dpr.928 #PLACEHOLDER --- івент про відновлення соціальних станів періодну імперії (основні сословія - шляхта, церква, козаки)
+			id = gir.58 #PLACEHOLDER --- івент про відновлення соціальних станів періодну імперії (основні сословія - шляхта, церква, козаки)
 			days = 1
 		}
 	}
@@ -2048,6 +2333,12 @@ shared_focus = {
 		focus = DPR_fair_distribution_of_power
 	}
 	completion_reward = {
+	DNR_maria = {
+swap_country_leader_traits = {
+    remove = modern_ekaterina1
+    add = modern_ekaterina2
+}
+	}
 		add_popularity = {
 			ideology = traditionalism
 			popularity = 0.2
@@ -2074,10 +2365,6 @@ shared_focus = {
 		add_political_power = 100
 		add_stability = 0.1
 		add_war_support = 0.1
-		country_event = {
-			id = dpr.929 #PLACEHOLDER --- фінальний івент мамки
-			days = 1
-		}
 		add_ideas = DPR_peaceandharmony
 	}
 }
@@ -2101,6 +2388,13 @@ shared_focus = {
 	y = 8
 	cost = 2
 
+available = {
+power_balance_value = {
+    id = DPR_maria_georgiy_political_balance
+    value > 0.5
+}
+}
+
 	prerequisite = {
 		focus = DPR_about_the_motherson_relationship
 	}
@@ -2109,6 +2403,15 @@ shared_focus = {
 	}
 	completion_reward = {
 		###I am fucking dying please save me
+	DNR_george = {
+	add_country_leader_trait = Mad_monarch1
+	}
+	retire_character = DNR_maria
+	recruit_character = DNR_george
+	promote_character = DNR_george
+remove_power_balance = {
+    id = DPR_maria_georgiy_political_balance
+}
 	}
 }
 
@@ -2124,6 +2427,12 @@ shared_focus = {
 		focus = DPR_sorryma
 	}
 	completion_reward = {
+	DNR_george = {
+swap_country_leader_traits = {
+    remove = Mad_monarch1
+    add = Mad_monarch2
+}
+	}
 		add_ideas = DPR_badconsequences
 	}
 }
@@ -2161,11 +2470,14 @@ shared_focus = {
 		focus = DPR_witch_hunt
 	}
 	completion_reward = {
+	DNR_george = {
+remove_country_leader_trait = Mad_monarch2
+	}
 		country_event = {
-			id = dpr.930 #PLACEHOLDER --- івент про полювання на про-мамкінських поців в уряді силами Георгія
+			id = gir.80 #PLACEHOLDER --- івент про полювання на про-мамкінських поців в уряді силами Георгія
 			days = 1
 		}
-		#remove_ideas = DPR_badconsequences --- ADD THIS TO EVENT INSTEAD
+		remove_ideas = DPR_badconsequences
 	}
 }
 
@@ -2183,6 +2495,8 @@ shared_focus = {
 	completion_reward = {
 		###LAWS LAWS MORE LAWS
 		add_ideas = DPR_absolutepower1
+		add_ideas = fop_press_freedom_censored
+		add_ideas = fop_security_totalitarian_police
 	}
 }
 
@@ -2218,6 +2532,10 @@ shared_focus = {
 		focus = DPR_no_one_is_above_the_tsar
 	}
 	completion_reward = {
+		country_event = { # REMOVES COSSACK GENERALS
+			id = gir.81
+			days = 1
+		}
 		### ADDS LEADER TRAIT(idk about the name yet)
 		swap_ideas = {
 			remove_idea = DPR_absolutepower2
@@ -2237,6 +2555,10 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_sorryma
 	}
+	random_army_leader = { gain_xp = -100 }
+	random_army_leader = { gain_xp = -100 }
+	random_army_leader = { gain_xp = -100 }
+	random_army_leader = { gain_xp = -100 }
 	completion_reward = {
 		army_experience = -50
 	}
@@ -2254,8 +2576,11 @@ shared_focus = {
 		focus = DPR_destroy_the_remnants_of_the_past
 	}
 	completion_reward = {
+	retire_character = DNR_kozytsin
+	retire_character = DNR_kelin
+	retire_character = DNR_mozhaev
 		country_event = { # REMOVES COSSACK GENERALS
-			id = dpr.931 #PLACEHOLDER --- івент про геноцид козацьких полків та генералітету
+			id = gir.61 # --- івент про геноцид козацьких полків та генералітету
 			days = 1
 		}
 	}
@@ -2273,6 +2598,8 @@ shared_focus = {
 		focus = DPR_end_the_cossacks
 	}
 	completion_reward = {
+	army_experience = 10
+
 		###ADDS LAW NO PROFESIONALISM LMAO
 	}
 }
@@ -2299,10 +2626,14 @@ shared_focus = {
 		add_stability = 0.1
 		add_war_support = 0.1
 		country_event = {
-			id = dpr.932 #PLACEHOLDER
+			id = gir.89
 			days = 1
 		}
-		add_ideas = DPR_unlimitedpower
+		swap_ideas = {
+			remove_idea = DPR_absolutepower3
+			add_idea = DPR_absolutepower4
+		}
+
 	}
 }
 
@@ -2346,7 +2677,21 @@ shared_focus = {
 		focus = DPR_reform_the_little_russian_gubernia
 	}
 	completion_reward = {
-		###ADD DECISIONS TO LOWER RESISTANCE
+		country_event = {
+			id = gir.63
+			days = 1
+		}
+	add_political_power = 10
+	add_manpower = -5000
+	add_war_support = 0.1
+	add_stability = -0.2
+		every_state = {
+			limit = {
+				is_controlled_by = ROOT
+				has_resistance = yes
+			}
+		add_resistance = -20
+		}
 	}
 }
 
@@ -2367,7 +2712,7 @@ shared_focus = {
 			days = 180
 		}
 		country_event = {
-			id = dpr.933 #PLACEHOLDER --- івент про заперечення укр ідентичності (брошура якась)
+			id = gir.87
 			days = 1
 		}
 	}
@@ -2385,6 +2730,34 @@ shared_focus = {
 		focus = DPR_reform_the_little_russian_gubernia
 	}
 	completion_reward = {
+random_core_state = {
+    add_building_construction = {
+    type = situation_centre
+    level = 1
+    instant_build = yes
+}
+}
+random_core_state = {
+    add_building_construction = {
+    type = boot_camp
+    level = 1
+    instant_build = yes
+}
+}
+random_core_state = {
+    add_building_construction = {
+    type = recruiting_center
+    level = 1
+    instant_build = yes
+}
+}
+random_core_state = {
+    add_building_construction = {
+    type = labour_camp
+    level = 1
+    instant_build = yes
+}
+}
 		###BUILDS BUNKERS ON BORDER WITH RUSSIA
 	}
 }
@@ -2402,7 +2775,7 @@ shared_focus = {
 	}
 	completion_reward = {
 		country_event = {
-			id = dpr.934 #PLACEHOLDER --- івент про промову монарха (окремі версії для марії та георгія) до населення рашки (заклик визнати лише їх як своїх правителів та допомогти їм знищити путіна з рештою)
+			id = gir.86 # --- івент про промову монарха до населення рашки (заклик визнати лише їх як своїх правителів та допомогти їм знищити путіна з рештою)
 			days = 1
 		}
 	}
@@ -2415,17 +2788,36 @@ shared_focus = {
 	x = 10
 	y = 1
 	cost = 2
-	prerequisite = {
-		focus = DPR_thereisno_ukraine
-	}
-	prerequisite = {
-		focus = DPR_appeal_to_the_people
-	}
 	completion_reward = {
+	custom_effect_tooltip = total_russian_death_girkin_tt
 		country_event = {
-			id = dpr.935 #PLACEHOLDER --- івент про початок війни імперців з рашкою (епічна промова в стилі ми всєх пабєдім)
+			id = gir.41
 			days = 1
 		}
+if = {
+limit = {
+has_country_leader = {
+	character = DNR_maria
+	ruling_only = yes
+}
+}
+		country_event = {
+			id = gir.65
+			days = 3
+		}
+}
+if = {
+limit = {
+has_country_leader = {
+	character = DNR_george
+	ruling_only = yes
+}
+}
+		country_event = {
+			id = gir.64
+			days = 3
+		}
+}
 		add_timed_idea = { # --- GIVES ATTACK AGAINST RUSSIA BONUS
 			idea = DPR_righteroushike
 			days = 180
@@ -2440,14 +2832,29 @@ shared_focus = {
 	x = 10
 	y = 2
 	cost = 2
+	
+	available = {
+	
+	controls_state = 229
+	controls_state = 119
+	
+	}
 
 	prerequisite = {
 		focus = DPR_righterous_hike
 	}
 	completion_reward = {
-		country_event = { # NEEDS A LOT OF BUFFS FR FR
-			id = dpr.936 #PLACEHOLDER --- івент про триумфальну перемогу імперців проти хуйла
-			days = 1
+		country_event = { 
+			id = gir.70 
+			days = 20
+		}
+		country_event = { 
+			id = gir.67
+			days = 10
+		}
+		news_event = {
+			id = gir.69
+			days = 2
 		}
 		add_ideas = DPR_antimonarchyresistance
 	}
@@ -2466,6 +2873,14 @@ shared_focus = {
 	}
 	completion_reward = {
 		add_stability = 0.1
+		every_controlled_state = {
+limit = {
+NOT = {
+is_core_of = ROOT
+}
+}		
+		add_compliance = 25
+		}
 	}
 }
 
@@ -2482,7 +2897,14 @@ shared_focus = {
 	}
 	completion_reward = {
 		###ADD BONUSES ON FABRIC AND RESOURCES
-		###nat spirit
+		every_controlled_state = { 
+limit = {
+NOT = {
+is_core_of = ROOT
+}
+}
+		add_compliance = 10
+		}
 	}
 }
 
@@ -2498,14 +2920,38 @@ shared_focus = {
 		focus = DPR_blessed_triumph
 	}
 	completion_reward = {
-		country_event = {
-			id = dpr.937 #PLACEHOLDER --- івент про коронацію на імператора в соборі василія блаженного (окремо для мамки та сина)
-			days = 1
+		every_controlled_state = {
+limit = {
+NOT = {
+is_core_of = ROOT
+}
+}		
+		add_compliance = 10
 		}
+if = {
+limit = {
+has_country_leader = {
+	character = DNR_maria
+	ruling_only = yes
+}
+}
 		country_event = {
-			id = dpr.938 #PLACEHOLDER --- івент про коронацію на імператора в соборі василія блаженного (окремо для мамки та сина)
-			days = 1
+			id = gir.79
+			days = 3
 		}
+}
+if = {
+limit = {
+has_country_leader = {
+	character = DNR_george
+	ruling_only = yes
+}
+}
+		country_event = {
+			id = gir.78
+			days = 3
+		}
+}
 	}
 }
 
@@ -2521,8 +2967,16 @@ shared_focus = {
 		focus = DPR_crowingasitbelongs
 	}
 	completion_reward = {
+		every_controlled_state = {
+limit = {
+NOT = {
+is_core_of = ROOT
+}
+}		
+		add_compliance = 5
+		}
 		country_event = { # ADDS DECISION TO DEAL WITH RESISTANCE
-			id = dpr.939 #PLACEHOLDER --- івент про активність анти-монархічних рухів
+			id = gir.88
 			days = 1
 		}
 	}
@@ -2540,7 +2994,7 @@ shared_focus = {
 		focus = DPR_blessed_triumph
 	}
 	completion_reward = {
-		###ADD DECISIONS TO CONQUER CENTRAL ASIA
+		custom_effect_tooltip = DPR_ambitiousness__our_everything_tt
 	}
 }
 
@@ -2558,8 +3012,12 @@ shared_focus = {
 	completion_reward = {
 		###ADD DECISIONS TO CONQUER FINLAND POLAND BALTIC AND NATO
 		country_event = {
-			id = dpr.940 #PLACEHOLDER --- івент про оголошення плани захопити Балтію, Фінляндію та Польщу, оголосити війну НАТО та битись до конца
+			id = gir.71 
 			days = 1
+		}
+		country_event = {
+			id = gir.75 
+			days = 5
 		}
 	}
 }
@@ -2587,8 +3045,8 @@ shared_focus = {
 		add_stability = 0.1
 		add_war_support = 0.1
 		country_event = {
-			id = dpr.941 #PLACEHOLDER
-			days = 1
+			id = gir.76 
+			days = 2
 		}
 	}
 }
@@ -2628,7 +3086,8 @@ shared_focus = {
 		focus = DPR_start_new_economic_cource
 	}
 	completion_reward = {
-		###LAWS AGAINST OLIGARCHs
+	add_ideas = fop_commercial_policy_strategic_tariffs
+	add_ideas = fop_oligarchs_relations_anti_oligarchic_policy
 	}
 }
 
@@ -2644,7 +3103,11 @@ shared_focus = {
 		focus = DPR_declare_war_on_the_oligarchy
 	}
 	completion_reward = {
-		###
+	add_ideas = fop_commercial_policy_heavy_protectionism
+swap_ideas = {
+    remove_idea = DPR_neweconomiccourse
+    add_idea = DPR_neweconomiccourse_2
+}
 	}
 }
 
@@ -2656,11 +3119,18 @@ shared_focus = {
 	y = 2
 	cost = 2
 
+available = {
+has_idea = DPR_neweconomiccourse_2
+}
+
 	prerequisite = {
 		focus = DPR_start_new_economic_cource
 	}
 	completion_reward = {
-		###
+swap_ideas = {
+    remove_idea = DPR_neweconomiccourse_2
+    add_idea = DPR_neweconomiccourse_3
+}
 	}
 }
 
@@ -2676,7 +3146,10 @@ shared_focus = {
 		focus = DPR_policy_of_mass_nationalisation
 	}
 	completion_reward = {
-		###ADDS RESOURCES
+swap_ideas = {
+    remove_idea = DPR_neweconomiccourse_3
+    add_idea = DPR_neweconomiccourse_4
+}
 	}
 }
 
@@ -2695,7 +3168,10 @@ shared_focus = {
 		focus = DPR_full_exploitation_of_the_land
 	}
 	completion_reward = {
-		###
+swap_ideas = {
+    remove_idea = DPR_neweconomiccourse_4
+    add_idea = DPR_neweconomiccourse_5
+}
 	}
 }
 
@@ -2711,7 +3187,7 @@ shared_focus = {
 		focus = DPR_course_to_full_economy_independence
 	}
 	completion_reward = {
-		###
+	add_political_power = 50
 	}
 }
 
@@ -2731,6 +3207,11 @@ shared_focus = {
 	x = 2
 	y = 6
 	cost = 2
+	
+	available = {
+    has_country_flag = united_ukraine
+	has_country_leader = DNR_rostislav
+	}
 
 	prerequisite = {
 		focus = DPR_adapt_to_the_role_of_the_role
@@ -2739,7 +3220,15 @@ shared_focus = {
 		focus = DPR_continue_the_nationalisation_policy
 	}
 	completion_reward = {
-		###
+	add_ideas = fop_commercial_policy_free_trade
+add_popularity = {
+    ideology = liberal_democracy
+    popularity = 0.25
+}
+	add_popularity = {
+    ideology = radical_nationalism
+    popularity = -0.2
+}
 	}
 }
 
@@ -2755,7 +3244,7 @@ shared_focus = {
 		focus = DPR_liberalisation_of_the_economic_environment
 	}
 	completion_reward = {
-		###
+	add_offsite_building = { type = arms_factory level = 1 }	
 	}
 }
 
@@ -2771,7 +3260,12 @@ shared_focus = {
 		focus = DPR_encourge_foreign_investment
 	}
 	completion_reward = {
-		###
+	add_offsite_building = { type = arms_factory level = 1 }	
+add_equipment_subsidy = {
+    cic = 300
+    equipment_type = support_equipment
+    seller_tags = { EUN }
+}
 	}
 }
 
@@ -2787,7 +3281,21 @@ shared_focus = {
 		focus = DPR_liberalisation_of_the_economic_environment
 	}
 	completion_reward = {
-		###
+random_controlled_state = {
+add_building_construction = {
+    type = industrial_complex
+    level = 1
+    instant_build = yes
+}
+}
+random_controlled_state = {
+add_building_construction = {
+    type = research_complex
+    level = 1
+    instant_build = yes
+}
+}	
+	add_cic = 300
 	}
 }
 
@@ -2803,7 +3311,20 @@ shared_focus = {
 		focus = DPR_state_privatisation_programme
 	}
 	completion_reward = {
-		###
+random_controlled_state = {
+add_building_construction = {
+    type = industrial_complex
+    level = 1
+    instant_build = yes
+}
+}
+random_controlled_state = {
+add_building_construction = {
+    type = industrial_complex
+    level = 1
+    instant_build = yes
+}
+}
 	}
 }
 
@@ -2822,7 +3343,7 @@ shared_focus = {
 		focus = DPR_stimulate_competition_in_the_market
 	}
 	completion_reward = {
-		###
+	add_political_power = 50
 	}
 }
 
@@ -2841,12 +3362,22 @@ shared_focus = {
 	x = 6
 	y = 6
 	cost = 2
+	
+	available = {
+	has_country_flag = united_ukraine
+	NOT = {
+	has_country_leader = DNR_rostislav
+	}
+	}
 
 	prerequisite = {
 		focus = DPR_adapt_to_the_role_of_the_role
 	}
+	mutually_exclusive = {
+		focus = DPR_liberalisation_of_the_economic_environment
+	}
 	completion_reward = {
-		###
+	add_political_power = 50
 	}
 }
 
@@ -2862,7 +3393,21 @@ shared_focus = {
 		focus = DPR_continue_the_nationalisation_policy
 	}
 	completion_reward = {
-		###
+random_controlled_state = {
+add_building_construction = {
+    type = farm_building
+    level = 1
+    instant_build = yes
+}
+}
+random_controlled_state = {
+add_building_construction = {
+    type = farm_building
+    level = 1
+    instant_build = yes
+}
+}
+	add_political_power = 50
 	}
 }
 
@@ -2878,7 +3423,28 @@ shared_focus = {
 		focus = DPR_continue_the_nationalisation_policy
 	}
 	completion_reward = {
-		###
+random_controlled_state = {
+add_building_construction = {
+    type = hospital_building
+    level = 1
+    instant_build = yes
+}
+}
+random_controlled_state = {
+add_building_construction = {
+    type = civilian_resting_place
+    level = 1
+    instant_build = yes
+}
+}
+random_controlled_state = {
+add_building_construction = {
+    type = fuel_silo
+    level = 1
+    instant_build = yes
+}
+}
+	add_fuel = 400
 	}
 }
 
@@ -2897,7 +3463,20 @@ shared_focus = {
 		focus = DPR_monopolise_new_spheres
 	}
 	completion_reward = {
-		###
+random_controlled_state = {
+add_building_construction = {
+    type = industrial_complex
+    level = 1
+    instant_build = yes
+}
+}
+random_controlled_state = {
+add_building_construction = {
+    type = industrial_complex
+    level = 1
+    instant_build = yes
+}
+}
 	}
 }
 
@@ -2916,11 +3495,15 @@ shared_focus = {
 shared_focus = {
 	id = DPR_andwhataboutthemillitary
 	icon = GFX_DPR_andwhataboutthemillitary-495536
-	x = 25
-	y = 1
+	x = 35
+	y = 13
 	cost = 3
 	completion_reward = {
-		###
+    add_political_power = 50
+    add_stability = 0.05
+DNR_girkin = {
+promote_leader = yes
+            }
 	}
 }
 
@@ -2928,15 +3511,16 @@ shared_focus = {
 shared_focus = {
 	id = DPR_reform_recruitment_policy
 	icon = GFX_DPR_reform_recruitment_policy-495536
-	x = 23
-	y = 2
+	x = 33
+	y = 14
 	cost = 2
 
 	prerequisite = {
 		focus = DPR_andwhataboutthemillitary
 	}
 	completion_reward = {
-		###
+	add_manpower = 1000
+	add_ideas = fop_conscription_extensive
 	}
 }
 
@@ -2944,15 +3528,29 @@ shared_focus = {
 shared_focus = {
 	id = DPR_time_for_apitude_tests
 	icon = GFX_DPR_time_for_apitude_tests-495536
-	x = 25
-	y = 2
+	x = 35
+	y = 14
 	cost = 2
 
 	prerequisite = {
 		focus = DPR_andwhataboutthemillitary
 	}
 	completion_reward = {
-		###
+	random_unit_leader = { 
+	add_skill_level = 1
+	}
+	random_unit_leader = { 
+	add_skill_level = 1
+	}
+	random_unit_leader = { 
+	add_skill_level = 1
+	}
+	random_unit_leader = { 
+	add_skill_level = 1
+	}
+	army_experience = 10
+	navy_experience = 10
+	air_experience = 10
 	}
 }
 
@@ -2960,15 +3558,49 @@ shared_focus = {
 shared_focus = {
 	id = DPR_new_logistic_appartus
 	icon = GFX_DPR_new_logistic_appartus-495536
-	x = 27
-	y = 2
+	x = 37
+	y = 14
 	cost = 2
 
 	prerequisite = {
 		focus = DPR_andwhataboutthemillitary
 	}
 	completion_reward = {
-		###
+	random_unit_leader = { 
+	add_logistics = 1
+	}
+random_owned_state = {
+    add_extra_state_shared_building_slots = 1
+add_building_construction = {
+    type = supply_node
+    level = 1
+    instant_build = yes
+}
+}
+random_owned_state = {
+    add_extra_state_shared_building_slots = 1
+add_building_construction = {
+    type = supply_node
+    level = 1
+    instant_build = yes
+}
+}
+random_owned_state = {
+    add_extra_state_shared_building_slots = 1
+add_building_construction = {
+    type = supply_node
+    level = 1
+    instant_build = yes
+}
+}
+random_owned_state = {
+    add_extra_state_shared_building_slots = 1
+add_building_construction = {
+    type = supply_node
+    level = 1
+    instant_build = yes
+}
+}
 	}
 }
 
@@ -2976,8 +3608,8 @@ shared_focus = {
 shared_focus = {
 	id = DPR_one_step_forward
 	icon = GFX_DPR_one_step_forward-495536
-	x = 25
-	y = 3
+	x = 35
+	y = 16
 	cost = 3
 
 	prerequisite = {
@@ -2990,7 +3622,10 @@ shared_focus = {
 		focus = DPR_new_logistic_appartus
 	}
 	completion_reward = {
-		###
+	random_unit_leader = { 
+	add_planning = 1
+	}
+	add_political_power = 30
 	}
 }
 
@@ -2998,15 +3633,22 @@ shared_focus = {
 shared_focus = {
 	id = DPR_launch_a_full_reequipment
 	icon = GFX_DPR_launch_a_full_reequipment-495536
-	x = 23
-	y = 5
+	x = 33
+	y = 18
 	cost = 2
 
 	prerequisite = {
 		focus = DPR_one_step_forward
 	}
 	completion_reward = {
-		###
+random_owned_state = {
+    add_extra_state_shared_building_slots = 1
+add_building_construction = {
+    type = ammunition_plant
+    level = 1
+    instant_build = yes
+}
+}
 	}
 }
 
@@ -3014,15 +3656,19 @@ shared_focus = {
 shared_focus = {
 	id = DPR_loyality_to_traditions
 	icon = GFX_DPR_loyality_to_traditions-495536
-	x = 25
-	y = 4
+	x = 35
+	y = 17
 	cost = 2
 
 	prerequisite = {
 		focus = DPR_one_step_forward
 	}
+	mutually_exclusive = {
+		focus = DPR_we_need_radical_changes
+	}
 	completion_reward = {
-		###
+	army_experience = 10
+	add_manpower = 1800
 	}
 }
 
@@ -3030,15 +3676,36 @@ shared_focus = {
 shared_focus = {
 	id = DPR_pulyaneduranoshtyktozhemolodets
 	icon = GFX_DPR_pulyaneduranoshtyktozhemolodets-495536
-	x = 25
-	y = 5
+	x = 35
+	y = 18
 	cost = 2
 
 	prerequisite = {
 		focus = DPR_loyality_to_traditions
 	}
 	completion_reward = {
-		###
+	random_unit_leader = { 
+	add_attack = 1
+	}
+	random_unit_leader = { 
+	add_attack = 1
+	}
+random_owned_state = {
+    add_extra_state_shared_building_slots = 1
+add_building_construction = {
+    type = ammunition_plant
+    level = 1
+    instant_build = yes
+}
+}
+random_owned_state = {
+    add_extra_state_shared_building_slots = 1
+add_building_construction = {
+    type = ammunition_silo
+    level = 1
+    instant_build = yes
+}
+}
 	}
 }
 
@@ -3046,8 +3713,8 @@ shared_focus = {
 shared_focus = {
 	id = DPR_we_need_radical_changes
 	icon = GFX_DPR_we_need_radical_changes-495536
-	x = 27
-	y = 4
+	x = 37
+	y = 17
 	cost = 2
 
 	prerequisite = {
@@ -3057,7 +3724,9 @@ shared_focus = {
 		focus = DPR_loyality_to_traditions
 	}
 	completion_reward = {
-		###
+	add_political_power = 25
+	add_command_power = 10
+	add_war_support = 0.1
 	}
 }
 
@@ -3065,15 +3734,19 @@ shared_focus = {
 shared_focus = {
 	id = DPR_full_motorisation
 	icon = GFX_DPR_full_motorisation-495536
-	x = 27
-	y = 5
+	x = 37
+	y = 18
 	cost = 2
 
 	prerequisite = {
 		focus = DPR_we_need_radical_changes
 	}
 	completion_reward = {
-		###
+add_tech_bonus = {
+    bonus = 0.55
+    uses = 3
+    category = motorized_equipment
+}
 	}
 }
 
@@ -3081,8 +3754,8 @@ shared_focus = {
 shared_focus = {
 	id = DPR_begin_with_toplevel_trainings
 	icon = GFX_DPR_begin_with_toplevel_trainings-495536
-	x = 25
-	y = 6
+	x = 35
+	y = 19
 	cost = 3
 
 	prerequisite = {
@@ -3091,7 +3764,7 @@ shared_focus = {
 		focus = DPR_full_motorisation
 	}
 	completion_reward = {
-		###
+	add_ideas = fop_training_advanced
 	}
 }
 
@@ -3099,15 +3772,17 @@ shared_focus = {
 shared_focus = {
 	id = DPR_last_moves
 	icon = GFX_DPR_last_moves-495536
-	x = 25
-	y = 7
+	x = 35
+	y = 20
 	cost = 3
 
 	prerequisite = {
 		focus = DPR_begin_with_toplevel_trainings
 	}
 	completion_reward = {
-		###
+	add_political_power = 30
+	army_experience = 5
+	add_command_power = 5
 	}
 }
 
@@ -3115,15 +3790,30 @@ shared_focus = {
 shared_focus = {
 	id = DPR_you_need_to_know_everything_about_your_enemy
 	icon = GFX_DPR_you_need_to_know_everything_about_your_enemy-495536
-	x = 23
-	y = 8
+	x = 33
+	y = 21
 	cost = 2
 
 	prerequisite = {
 		focus = DPR_last_moves
 	}
 	completion_reward = {
-		###
+random_owned_state = {
+    add_extra_state_shared_building_slots = 1
+add_building_construction = {
+    type = radar_station
+    level = 1
+    instant_build = yes
+}
+}
+random_owned_state = {
+    add_extra_state_shared_building_slots = 1
+add_building_construction = {
+    type = radar_station
+    level = 1
+    instant_build = yes
+}
+}
 	}
 }
 
@@ -3131,15 +3821,22 @@ shared_focus = {
 shared_focus = {
 	id = DPR_lands_to_military_enterprises
 	icon = GFX_DPR_lands_to_military_enterprises-495536
-	x = 25
-	y = 8
+	x = 35
+	y = 21
 	cost = 2
 
 	prerequisite = {
 		focus = DPR_last_moves
 	}
 	completion_reward = {
-		###
+random_owned_state = {
+    add_extra_state_shared_building_slots = 1
+add_building_construction = {
+    type = arms_factory
+    level = 1
+    instant_build = yes
+}
+}
 	}
 }
 
@@ -3147,15 +3844,25 @@ shared_focus = {
 shared_focus = {
 	id = DPR_establish_new_military_academics
 	icon = GFX_DPR_establish_new_military_academics-495536
-	x = 27
-	y = 8
+	x = 37
+	y = 21
 	cost = 2
 
 	prerequisite = {
 		focus = DPR_last_moves
 	}
 	completion_reward = {
-		###
+	random_unit_leader = { 
+	add_planning = 1
+	}
+random_owned_state = {
+    add_extra_state_shared_building_slots = 1
+add_building_construction = {
+    type = situation_centre
+    level = 1
+    instant_build = yes
+}
+}
 	}
 }
 
@@ -3163,8 +3870,8 @@ shared_focus = {
 shared_focus = {
 	id = DPR_best_army_in_the_eastern_hemisphere
 	icon = GFX_DPR_best_army_in_the_eastern_hemisphere-495536
-	x = 25
-	y = 9
+	x = 35
+	y = 22
 	cost = 2
 
 	prerequisite = {
@@ -3177,7 +3884,14 @@ shared_focus = {
 		focus = DPR_establish_new_military_academics
 	}
 	completion_reward = {
-		###
+	every_unit_leader = { 
+	add_logistics = 1
+	add_planning = 1
+	}
+	add_manpower = 1000
+	add_political_power = 30
+	army_experience = 10
+	add_command_power = 10
 	}
 }
 
@@ -3197,7 +3911,7 @@ shared_focus = {
 	y = 7
 	cost = 3
 	completion_reward = {
-		###
+	air_experience = 10
 	}
 }
 
@@ -3213,7 +3927,22 @@ shared_focus = {
 		focus = DPR_preparation_of_our_skies
 	}
 	completion_reward = {
-		###
+random_owned_state = {
+    add_extra_state_shared_building_slots = 1
+add_building_construction = {
+    type = air_base
+    level = 1
+    instant_build = yes
+}
+}
+random_owned_state = {
+    add_extra_state_shared_building_slots = 1
+add_building_construction = {
+    type = air_base
+    level = 1
+    instant_build = yes
+}
+}
 	}
 }
 
@@ -3228,8 +3957,21 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_opening_of_new_airfields
 	}
+	mutually_exclusive = {
+		focus = DPR_nothing_is_better_than_own
+	}
 	completion_reward = {
-		###
+	add_political_power = -100
+	add_equipment_to_stockpile = {
+    type = fighter_equipment_1
+    amount = 100
+    producer = USA
+}
+	add_equipment_to_stockpile = {
+    type = jet_fighter_equipment_1
+    amount = 100
+    producer = USA
+}
 	}
 }
 
@@ -3248,7 +3990,12 @@ shared_focus = {
 		focus = DPR_rely_on_foreign_samples
 	}
 	completion_reward = {
-		###
+	add_political_power = -20
+    add_tech_bonus = {
+        bonus = 0.55
+        uses = 3
+        category = air_equipment
+    }
 	}
 }
 
@@ -3264,7 +4011,11 @@ shared_focus = {
 		focus = DPR_preparation_of_our_skies
 	}
 	completion_reward = {
-		###
+    add_tech_bonus = {
+        bonus = 0.55
+        uses = 3
+        category = air_equipment
+    }
 	}
 }
 
@@ -3279,8 +4030,16 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_new_production_programme
 	}
+	mutually_exclusive = {
+		focus = DPR_turn_everything_into_ashes
+	}
 	completion_reward = {
-		###
+add_ace = {
+    name = "Pyotr"
+    surname = "Lastochkin"
+    callsign = "Sokol Novorossii"
+    type = fighter_genius
+}
 	}
 }
 
@@ -3299,7 +4058,21 @@ shared_focus = {
 		focus = DPR_make_the_skies_our_home
 	}
 	completion_reward = {
-		###
+    add_tech_bonus = {
+        bonus = 0.55
+        uses = 3
+        category = tactical_bomber
+    }
+    add_tech_bonus = {
+        bonus = 0.55
+        uses = 3
+        category = cat_strategic_bomber
+    }
+    add_tech_bonus = {
+        bonus = 0.55
+        uses = 3
+        category = cat_strategic_bomber
+    }
 	}
 }
 
@@ -3315,7 +4088,11 @@ shared_focus = {
 		focus = DPR_turn_everything_into_ashes
 	}
 	completion_reward = {
-		###
+    add_tech_bonus = {
+        bonus = 0.55
+        uses = 3
+        category = nuclear
+    }
 	}
 }
 
@@ -3329,16 +4106,15 @@ shared_focus = {
 
 	prerequisite = {
 		focus = DPR_make_the_skies_our_home
+		focus = DPR_turn_everything_into_ashes
 	}
 	prerequisite = {
 		focus = DPR_rely_on_foreign_samples
 		focus = DPR_nothing_is_better_than_own
 	}
-	prerequisite = {
-		focus = DPR_turn_everything_into_ashes
-	}
 	completion_reward = {
-		###
+	add_political_power = 25
+	air_experience = 10
 	}
 }
 
@@ -3359,7 +4135,8 @@ shared_focus = {
 	y = 1
 	cost = 3
 	completion_reward = {
-		###
+    add_political_power = 25
+	navy_experience = 10
 	}
 }
 
@@ -3375,7 +4152,14 @@ shared_focus = {
 		focus = DPR_fleet_of_the_two_seas
 	}
 	completion_reward = {
-		###
+2093 = {
+    add_extra_state_shared_building_slots = 1
+add_building_construction = {
+    type = dockyard
+    level = 1
+    instant_build = yes
+}
+}
 	}
 }
 
@@ -3394,7 +4178,19 @@ shared_focus = {
 		focus = DPR_cruiser_programme
 	}
 	completion_reward = {
-		###
+	set_technology = {
+    early_submarine = 1
+}
+add_equipment_to_stockpile = {
+    type = submarine_4
+    amount = 20
+    producer = RUS
+}
+add_tech_bonus = {
+    bonus = 0.5
+    uses = 1
+    category = submarine_doctrine
+}
 	}
 }
 
@@ -3409,8 +4205,20 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_open_new_shipyards
 	}
+	mutually_exclusive = {
+		focus = DPR_occupy_the_sea_depths
+	}
 	completion_reward = {
-		###
+add_tech_bonus = {
+    bonus = 0.5
+    uses = 1
+    category = naval_equipment
+}
+add_tech_bonus = {
+    bonus = 0.5
+    uses = 1
+    category = ship_modules_tech
+}
 	}
 }
 
@@ -3426,7 +4234,14 @@ shared_focus = {
 		focus = DPR_open_new_shipyards
 	}
 	completion_reward = {
-		###
+ROOT = {
+    create_ship = {
+        type = light_cruiser
+        equipment_variant = "S Class"
+        creator = RUS
+        name = "Aleksandr Zakharchenko"
+    }
+}
 	}
 }
 
@@ -3446,6 +4261,7 @@ shared_focus = {
 		focus = DPR_occupy_the_sea_depths
 	}
 	completion_reward = {
-		###
+	add_political_power = 50
+	navy_experience = 10
 	}
 }
