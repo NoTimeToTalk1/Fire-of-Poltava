@@ -1,10 +1,10 @@
 add_namespace = reg_halychyna
-add_namespace = reg_podolia
-add_namespace = reg_siveria
-add_namespace = reg_dnieper
-add_namespace = reg_dnister
-add_namespace = reg_tavria
-add_namespace = reg_donbas
+add_namespace = reg_podillya
+add_namespace = reg_north
+add_namespace = reg_north_center
+add_namespace = reg_south_west
+add_namespace = reg_south_center
+add_namespace = reg_south_east
 add_namespace = reg_war
 add_namespace = reg_unify
 add_namespace = reg_rename
@@ -202,25 +202,25 @@ country_event = {
 #PODOLYAKI
 
 country_event = {
-	id = reg_podolia.1 #Start of unification Podillya
-	title = reg_podolia.1.t
-	desc = reg_podolia.1.d
+	id = reg_podillya.1 #Start of unification Podillya
+	title = reg_podillya.1.t
+	desc = reg_podillya.1.d
 
 	
 
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_podolia.1.a
+		name = reg_podillya.1.a
 			custom_effect_tooltip = podillya_to_unite
 			set_global_flag = podillya_to_unite
 		}
 }
 
 country_event = {
-	id = reg_podolia.2 #Zhytomyr to Khmelnytsky
-	title = reg_podolia.2.t
-	desc = reg_podolia.2.d
+	id = reg_podillya.2 #Zhytomyr to Khmelnytsky
+	title = reg_podillya.2.t
+	desc = reg_podillya.2.d
 
 	
 
@@ -229,20 +229,20 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_podolia.2.a
+		name = reg_podillya.2.a
 		ZHY = {
 			country_event = {
-				id = reg_podolia.3
+				id = reg_podillya.3
 				days = 5
 			}
 		}
 	}
 
 	option = { 
-		name = reg_podolia.2.b
+		name = reg_podillya.2.b
 		ZHY = {
 			country_event = {
-				id = reg_podolia.4
+				id = reg_podillya.4
 				days = 5
 			}
 		}
@@ -250,9 +250,9 @@ country_event = {
 }
 
 country_event = {
-	id = reg_podolia.3 #Khmelnytsky yes
-	title = reg_podolia.3.t
-	desc = reg_podolia.3.d
+	id = reg_podillya.3 #Khmelnytsky yes
+	title = reg_podillya.3.t
+	desc = reg_podillya.3.d
 
 	picture = podillya
 
@@ -261,7 +261,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_podolia.3.a
+		name = reg_podillya.3.a
 		ZHY = {
 			annex_country = {
 				target = KHM
@@ -277,9 +277,9 @@ country_event = {
 }
 
 country_event = {
-	id = reg_podolia.4 #Khmelnytsky no
-	title = reg_podolia.4.t
-	desc = reg_podolia.4.d
+	id = reg_podillya.4 #Khmelnytsky no
+	title = reg_podillya.4.t
+	desc = reg_podillya.4.d
 
 	picture = podillya
 
@@ -288,7 +288,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_podolia.4.a
+		name = reg_podillya.4.a
 		ZHY = {
 			declare_war_on = {
     				target = KHM
@@ -301,25 +301,25 @@ country_event = {
 #PIVNICH
 
 country_event = {
-	id = reg_siveria.1 #Start of unification North
-	title = reg_siveria.1.t
-	desc = reg_siveria.1.d
+	id = reg_north.1 #Start of unification North
+	title = reg_north.1.t
+	desc = reg_north.1.d
 
 	
 
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_siveria.1.a
+		name = reg_north.1.a
 			custom_effect_tooltip = north_to_unite
 			set_global_flag = north_to_unite
 		}
 }
 
 country_event = {
-	id = reg_siveria.2 #Kyiv to Oblast
-	title = reg_siveria.2.t
-	desc = reg_siveria.2.d
+	id = reg_north.2 #Kyiv to Oblast
+	title = reg_north.2.t
+	desc = reg_north.2.d
 
 	
 
@@ -328,26 +328,26 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_siveria.2.a
+		name = reg_north.2.a
 		ai_chance = {
 			factor = 99
 		}
 		UKR = {
 			country_event = {
-				id = reg_siveria.3
+				id = reg_north.3
 				days = 5
 			}
 		}
 	}
 
 	option = { 
-		name = reg_siveria.2.b
+		name = reg_north.2.b
 		ai_chance = {
 			factor = 1
 		}
 		UKR = {
 			country_event = {
-				id = reg_siveria.4
+				id = reg_north.4
 				days = 5
 			}
 		}
@@ -355,9 +355,9 @@ country_event = {
 }
 
 country_event = {
-	id = reg_siveria.3 #Oblast yes
-	title = reg_siveria.3.t
-	desc = reg_siveria.3.d
+	id = reg_north.3 #Oblast yes
+	title = reg_north.3.t
+	desc = reg_north.3.d
 
 	picture = north
 
@@ -366,7 +366,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_siveria.3.a
+		name = reg_north.3.a
 		UKR = {
 			annex_country = {
 				target = KYI
@@ -382,9 +382,9 @@ country_event = {
 }
 
 country_event = {
-	id = reg_siveria.4 #Oblast no
-	title = reg_siveria.4.t
-	desc = reg_siveria.4.d
+	id = reg_north.4 #Oblast no
+	title = reg_north.4.t
+	desc = reg_north.4.d
 
 	picture = north
 
@@ -393,7 +393,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_siveria.4.a
+		name = reg_north.4.a
 		UKR = {
 			declare_war_on = {
     				target = KYI
@@ -404,9 +404,9 @@ country_event = {
 }
 
 country_event = {
-	id = reg_siveria.5 #to Sumy
-	title = reg_siveria.5.t
-	desc = reg_siveria.5.d
+	id = reg_north.5 #to Sumy
+	title = reg_north.5.t
+	desc = reg_north.5.d
 
 	
 
@@ -415,20 +415,20 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_siveria.5.a
+		name = reg_north.5.a
 		FROM = {
 			country_event = {
-				id = reg_siveria.6
+				id = reg_north.6
 				days = 5
 			}
 		}
 	}
 
 	option = { 
-		name = reg_siveria.5.b
+		name = reg_north.5.b
 		FROM = {
 			country_event = {
-				id = reg_siveria.7
+				id = reg_north.7
 				days = 5
 			}
 		}
@@ -436,9 +436,9 @@ country_event = {
 }
 
 country_event = {
-	id = reg_siveria.6 #Sumy yes
-	title = reg_siveria.6.t
-	desc = reg_siveria.6.d
+	id = reg_north.6 #Sumy yes
+	title = reg_north.6.t
+	desc = reg_north.6.d
 
 	
 
@@ -447,7 +447,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_siveria.6.a
+		name = reg_north.6.a
 		ROOT = {
 			annex_country = {
 				target = SUM
@@ -463,9 +463,9 @@ country_event = {
 }
 
 country_event = {
-	id = reg_siveria.7 #Sumy no
-	title = reg_siveria.7.t
-	desc = reg_siveria.7.d
+	id = reg_north.7 #Sumy no
+	title = reg_north.7.t
+	desc = reg_north.7.d
 
 	
 
@@ -474,7 +474,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_siveria.7.a
+		name = reg_north.7.a
 		ROOT = {
 			declare_war_on = {
     				target = SUM
@@ -485,9 +485,9 @@ country_event = {
 }
 
 country_event = {
-	id = reg_siveria.8 #to Chornobyl
-	title = reg_siveria.8.t
-	desc = reg_siveria.8.d
+	id = reg_north.8 #to Chornobyl
+	title = reg_north.8.t
+	desc = reg_north.8.d
 
 	
 
@@ -496,20 +496,20 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_siveria.8.a
+		name = reg_north.8.a
 		FROM = {
 			country_event = {
-				id = reg_siveria.9
+				id = reg_north.9
 				days = 5
 			}
 		}
 	}
 
 	option = { 
-		name = reg_siveria.8.b
+		name = reg_north.8.b
 		FROM = {
 			country_event = {
-				id = reg_siveria.10
+				id = reg_north.10
 				days = 5
 			}
 		}
@@ -517,9 +517,9 @@ country_event = {
 }
 
 country_event = {
-	id = reg_siveria.9 #Chornobyl yes
-	title = reg_siveria.9.t
-	desc = reg_siveria.9.d
+	id = reg_north.9 #Chornobyl yes
+	title = reg_north.9.t
+	desc = reg_north.9.d
 
 	
 
@@ -528,7 +528,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_siveria.9.a
+		name = reg_north.9.a
 		ROOT = {
 			annex_country = {
 				target = CBL
@@ -544,9 +544,9 @@ country_event = {
 }
 
 country_event = {
-	id = reg_siveria.10 #Chornobyl no
-	title = reg_siveria.10.t
-	desc = reg_siveria.10.d
+	id = reg_north.10 #Chornobyl no
+	title = reg_north.10.t
+	desc = reg_north.10.d
 
 	
 
@@ -555,7 +555,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_siveria.10.a
+		name = reg_north.10.a
 		FROM = {
 			declare_war_on = {
     				target = CBL
@@ -568,16 +568,16 @@ country_event = {
 #NADDNIPRANIT
 
 country_event = {
-	id = reg_dnieper.1 #Start of unification North-Center
-	title = reg_dnieper.1.t
-	desc = reg_dnieper.1.d
+	id = reg_north_center.1 #Start of unification North-Center
+	title = reg_north_center.1.t
+	desc = reg_north_center.1.d
 
 	
 
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_dnieper.1.a
+		name = reg_north_center.1.a
 			custom_effect_tooltip = north_center_to_unite
 			set_global_flag = north_center_to_unite
 		}
@@ -586,25 +586,25 @@ country_event = {
 #OI ADESSA
 
 country_event = {
-	id = reg_dnister.1 #Start of unification South-West
-	title = reg_dnister.1.t
-	desc = reg_dnister.1.d
+	id = reg_south_west.1 #Start of unification South-West
+	title = reg_south_west.1.t
+	desc = reg_south_west.1.d
 
 	
 
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_dnister.1.a
+		name = reg_south_west.1.a
 			custom_effect_tooltip = south_west_to_unite
 			set_global_flag = south_west_to_unite
 		}
 }
 
 country_event = {
-	id = reg_dnister.2 # to Budzhak
-	title = reg_dnister.2.t
-	desc = reg_dnister.2.d
+	id = reg_south_west.2 # to Budzhak
+	title = reg_south_west.2.t
+	desc = reg_south_west.2.d
 
 	
 
@@ -613,20 +613,20 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_dnister.2.a
+		name = reg_south_west.2.a
 		FROM = {
 			country_event = {
-				id = reg_dnister.3
+				id = reg_south_west.3
 				days = 5
 			}
 		}
 	}
 
 	option = { 
-		name = reg_dnister.2.b
+		name = reg_south_west.2.b
 		FROM = {
 			country_event = {
-				id = reg_dnister.4
+				id = reg_south_west.4
 				days = 5
 			}
 		}
@@ -634,9 +634,9 @@ country_event = {
 }
 
 country_event = {
-	id = reg_dnister.3 #Budzhak yes
-	title = reg_dnister.3.t
-	desc = reg_dnister.3.d
+	id = reg_south_west.3 #Budzhak yes
+	title = reg_south_west.3.t
+	desc = reg_south_west.3.d
 
 	picture = south_west
 
@@ -645,7 +645,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_dnister.3.a
+		name = reg_south_west.3.a
 		ROOT = {
 			annex_country = {
 				target = BDZ
@@ -661,9 +661,9 @@ country_event = {
 }
 
 country_event = {
-	id = reg_dnister.4 #Budzhak no
-	title = reg_dnister.4.t
-	desc = reg_dnister.4.d
+	id = reg_south_west.4 #Budzhak no
+	title = reg_south_west.4.t
+	desc = reg_south_west.4.d
 
 	picture = south_west
 
@@ -672,7 +672,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_dnister.4.a
+		name = reg_south_west.4.a
 		ROOT = {
 			declare_war_on = {
     				target = BDZ
@@ -683,9 +683,9 @@ country_event = {
 }
 
 country_event = {
-	id = reg_dnister.5 #to Mykolaiv
-	title = reg_dnister.5.t
-	desc = reg_dnister.5.d
+	id = reg_south_west.5 #to Mykolaiv
+	title = reg_south_west.5.t
+	desc = reg_south_west.5.d
 
 	
 
@@ -694,20 +694,20 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_dnister.5.a
+		name = reg_south_west.5.a
 		FROM = {
 			country_event = {
-				id = reg_dnister.6
+				id = reg_south_west.6
 				days = 5
 			}
 		}
 	}
 
 	option = { 
-		name = reg_dnister.5.b
+		name = reg_south_west.5.b
 		FROM = {
 			country_event = {
-				id = reg_dnister.7
+				id = reg_south_west.7
 				days = 5
 			}
 		}
@@ -715,9 +715,9 @@ country_event = {
 }
 
 country_event = {
-	id = reg_dnister.6 #Mykolaiv yes
-	title = reg_dnister.6.t
-	desc = reg_dnister.6.d
+	id = reg_south_west.6 #Mykolaiv yes
+	title = reg_south_west.6.t
+	desc = reg_south_west.6.d
 
 	
 
@@ -726,7 +726,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_dnister.6.a
+		name = reg_south_west.6.a
 		ROOT = {
 			annex_country = {
 				target = MYK
@@ -742,9 +742,9 @@ country_event = {
 }
 
 country_event = {
-	id = reg_dnister.7 #Mykolaiv no
-	title = reg_dnister.7.t
-	desc = reg_dnister.7.d
+	id = reg_south_west.7 #Mykolaiv no
+	title = reg_south_west.7.t
+	desc = reg_south_west.7.d
 
 	
 
@@ -753,7 +753,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_dnister.7.a
+		name = reg_south_west.7.a
 		ROOT = {
 			declare_war_on = {
     				target = MYK
@@ -766,16 +766,16 @@ country_event = {
 #zaporizzhia kherson
 
 country_event = {
-	id = reg_tavria.1 #Start of unification South-Center
-	title = reg_tavria.1.t
-	desc = reg_tavria.1.d
+	id = reg_south_center.1 #Start of unification South-Center
+	title = reg_south_center.1.t
+	desc = reg_south_center.1.d
 
 	
 
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_tavria.1.a
+		name = reg_south_center.1.a
 			custom_effect_tooltip = south_center_to_unite
 			set_global_flag = south_center_to_unite
 		}
@@ -784,25 +784,25 @@ country_event = {
 #VSTAVAI BAMBAS
 
 country_event = {
-	id = reg_donbas.1 #Start of unification South-East
-	title = reg_donbas.1.t
-	desc = reg_donbas.1.d
+	id = reg_south_east.1 #Start of unification South-East
+	title = reg_south_east.1.t
+	desc = reg_south_east.1.d
 
 	
 
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_donbas.1.a
+		name = reg_south_east.1.a
 			custom_effect_tooltip = south_east_to_unite
 			set_global_flag = south_east_to_unite
 		}
 }
 
 country_event = {
-	id = reg_donbas.2 # to AFU
-	title = reg_donbas.2.t
-	desc = reg_donbas.2.d
+	id = reg_south_east.2 # to AFU
+	title = reg_south_east.2.t
+	desc = reg_south_east.2.d
 
 	
 
@@ -811,26 +811,26 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_donbas.2.a
+		name = reg_south_east.2.a
 		ai_chance = {
 			factor = 10
 		}
 		FROM = {
 			country_event = {
-				id = reg_donbas.3
+				id = reg_south_east.3
 				days = 5
 			}
 		}
 	}
 
 	option = { 
-		name = reg_donbas.2.b
+		name = reg_south_east.2.b
 		ai_chance = {
 			factor = 90
 		}
 		FROM = {
 			country_event = {
-				id = reg_donbas.4
+				id = reg_south_east.4
 				days = 5
 			}
 		}
@@ -838,9 +838,9 @@ country_event = {
 }
 
 country_event = {
-	id = reg_donbas.3 #afu yes
-	title = reg_donbas.3.t
-	desc = reg_donbas.3.d
+	id = reg_south_east.3 #afu yes
+	title = reg_south_east.3.t
+	desc = reg_south_east.3.d
 
 	picture = south_east
 
@@ -849,7 +849,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_donbas.3.a
+		name = reg_south_east.3.a
 		ROOT = {
 			annex_country = {
 				target = AFU
@@ -865,9 +865,9 @@ country_event = {
 }
 
 country_event = {
-	id = reg_donbas.4 #AFU no
-	title = reg_donbas.4.t
-	desc = reg_donbas.4.d
+	id = reg_south_east.4 #AFU no
+	title = reg_south_east.4.t
+	desc = reg_south_east.4.d
 
 	picture = south_east
 
@@ -876,7 +876,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_donbas.4.a
+		name = reg_south_east.4.a
 		ROOT = {
 			declare_war_on = {
     				target = AFU
