@@ -1,0 +1,213 @@
+focus_tree = {
+	id = cherkasy
+	continuous_focus_position = { x = -40 y = 1050 } 
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = CHR
+		}
+	}
+	#Clearly Set the Goal
+	focus = {
+		id = CHR_clearly_set_the_goal
+		icon = GFX_CHR_clearly_set_the_goal-491203
+		x = 7
+		y = 1
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = CHR_cherkasystands  }
+		completion_reward = {
+    war_support_factor = 0.05
+	stability_factor = 0.1
+		}
+	}
+
+	#Cherkasy Stands!
+	focus = {
+		id = CHR_cherkasystands
+		icon = GFX_CHR_cherkasystands-491202
+		x = 7
+		y = 0
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+add_political_power = 50
+        country_event = {
+		id = cherkasy.1
+		days = 2
+		}
+		}
+	}
+
+	#Strenghten Ties With Brothers
+	focus = {
+		id = CHR_strenghten_ties_with_brothers
+		icon = GFX_CHR_strenghten_ties_with_brothers-491204
+		x = 4
+		y = 2
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = CHR_clearly_set_the_goal  }
+		completion_reward = {
+add_opinion_modifier = {
+    target = ZHY
+    modifier = allies_in_the_west
+}
+}
+		}
+
+	#Make Promise to the People
+	focus = {
+		id = CHR_make_promise_to_the_people
+		icon = GFX_CHR_make_promise_to_the_people-491205
+		x = 4
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = CHR_strenghten_ties_with_brothers  }
+		completion_reward = {
+    war_support_factor = 0.1
+	stability_factor = 0.15
+		}
+	}
+
+	#New Economic Policy
+	focus = {
+		id = CHR_new_economic_policy
+		icon = GFX_CHR_new_economic_policy-491206
+		x = 7
+		y = 2
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = CHR_clearly_set_the_goal  }
+		completion_reward = {
+add_political_power = 25
+		}
+	}
+
+	#Infrastructural Innovations
+	focus = {
+		id = CHR_infrastructural_innovations
+		icon = GFX_CHR_infrastructural_innovations-491207
+		x = 7
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = CHR_new_economic_policy  }
+		completion_reward = {
+swap_ideas = {
+    remove_idea = CHR_renovation_programme
+    add_idea = CHR_renovation_programme_2
+}
+		}
+	}
+
+	#Arms Contracts?
+	focus = {
+		id = CHR_armscontracts
+		icon = GFX_CHR_armscontracts-491410
+		x = 12
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = CHR_take_care_of_the_army  }
+		completion_reward = {
+add_equipment_to_stockpile = {
+    type = infantry_equipment
+    amount = 5000
+    producer = UMA
+}
+		}
+	}
+
+	#Take Care of the Army
+	focus = {
+		id = CHR_take_care_of_the_army
+		icon = GFX_CHR_take_care_of_the_army-491408
+		x = 10
+		y = 2
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = CHR_clearly_set_the_goal  }
+		completion_reward = {
+add_ideas = CHR_old_style_genstuff
+		}
+	}
+
+	#Form Combatant Units
+	focus = {
+		id = CHR_form_combatant_units
+		icon = GFX_CHR_form_combatant_units-491409
+		x = 10
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = CHR_take_care_of_the_army  }
+		completion_reward = {
+			CHR = {
+			random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"Teroborona\" division_template = \"Teroborona\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
+				owner = CHR
+					}
+					add_manpower = -1500	
+				}
+			}
+		}
+	}
+
+	#March to the West!
+	focus = {
+		id = CHR_marchtothewest
+		icon = GFX_CHR_marchtothewest-491411
+		x = 7
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = CHR_make_promise_to_the_people  } prerequisite = { focus = CHR_infrastructural_innovations  } prerequisite = { focus = CHR_form_combatant_units  }
+	completion_reward = {
+start_border_war = {
+    change_state_after_war = no
+    attacker = {
+        state = 2066
+        num_provinces = 4
+        on_win = cherkasy.8
+        on_lose = cherkasy.9
+        on_cancel = cherkasy.9
+        modifier = 0.1
+        dig_in_factor = 0
+        terrain_factor = 0
+    }	
+    defender = {
+        state = 2065
+        num_provinces = 4
+        on_win = cherkasy.10
+        on_lose = cherkasy.11
+        on_cancel = cherkasy.10
+    }
+}
+		}
+	}
+
+}

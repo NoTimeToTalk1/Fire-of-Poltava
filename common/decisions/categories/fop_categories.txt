@@ -7,11 +7,11 @@ FOP_warehouses = {
             OR = {
                 has_country_flag = united_galicia
                 has_country_flag = united_podillya
-                has_country_flag = united_north_center
-                has_country_flag = united_north
-                has_country_flag = united_south_west
-                has_country_flag = united_south_center
-                has_country_flag = united_south_east
+                has_country_flag = united_dnieper
+                has_country_flag = united_siveria
+                has_country_flag = united_dnister
+                has_country_flag = united_tavria
+                has_country_flag = united_donbas
                 tag = DNI
             }
         }
@@ -27,11 +27,11 @@ FOP_appeasement = {
             OR = {
                 has_country_flag = united_galicia
                 has_country_flag = united_podillya
-                has_country_flag = united_north_center
-                has_country_flag = united_north
-                has_country_flag = united_south_west
-                has_country_flag = united_south_center
-                has_country_flag = united_south_east
+                has_country_flag = united_dnieper
+                has_country_flag = united_siveria
+                has_country_flag = united_dnister
+                has_country_flag = united_tavria
+                has_country_flag = united_donbas
                 tag = DNI
             }
         }
@@ -47,11 +47,11 @@ FOP_earn_trust = {
             OR = {
                 has_country_flag = united_galicia
                 has_country_flag = united_podillya
-                has_country_flag = united_north_center
-                has_country_flag = united_north
-                has_country_flag = united_south_west
-                has_country_flag = united_south_center
-                has_country_flag = united_south_east
+                has_country_flag = united_dnieper
+                has_country_flag = united_siveria
+                has_country_flag = united_dnister
+                has_country_flag = united_tavria
+                has_country_flag = united_donbas
                 tag = DNI
             }
         }
@@ -67,11 +67,11 @@ FOP_mobilisation = {
             OR = {
                 has_country_flag = united_galicia
                 has_country_flag = united_podillya
-                has_country_flag = united_north_center
-                has_country_flag = united_north
-                has_country_flag = united_south_west
-                has_country_flag = united_south_center
-                has_country_flag = united_south_east
+                has_country_flag = united_dnieper
+                has_country_flag = united_siveria
+                has_country_flag = united_dnister
+                has_country_flag = united_tavria
+                has_country_flag = united_donbas
                 tag = DNI
             }
         }
@@ -83,6 +83,26 @@ FOP_resources = {
 	picture = GFX_mobilization
 	visible = {
 	    has_completed_focus = FOP_Rudimentary_Resource_Production
+        NOT = {
+            OR = {
+                has_country_flag = united_galicia
+                has_country_flag = united_podillya
+                has_country_flag = united_dnieper
+                has_country_flag = united_siveria
+                has_country_flag = united_dnister
+                has_country_flag = united_tavria
+                has_country_flag = united_donbas
+                tag = DNI
+            }
+        }
+	}
+}
+
+FOP_micro_region_development = {
+	icon = GFX_decision_category_dogovornyak
+	picture = GFX_mobilization
+	visible = {
+	    has_completed_focus = FOP_Time_To_Reorganise
         NOT = {
             OR = {
                 has_country_flag = united_galicia

@@ -1,0 +1,486 @@
+focus_tree = {
+	id = rdk
+	continuous_focus_position = { x = -40 y = 1050 } 
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = RDK
+		}
+	}
+	#Heroes and Gods Will Rise From the Grave
+	focus = {
+		id = RDK_heroes_and_gods_will_rise_from_the_grave
+		icon = GFX_RDK_heroes_and_gods_will_rise_from_the_grave
+		x = 14
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = RDK_our_lot_is_not_to_moan  }
+		completion_reward = {
+			add_war_support = 0.1
+			add_ideas = RDK_callofvalhalla
+			
+		}
+	}
+
+	#Our Lot is Not to Moan
+	focus = {
+		id = RDK_our_lot_is_not_to_moan
+		icon = GFX_RDK_our_lot_is_not_to_moan
+		x = 15
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = RDK_courage_leads_to_heaven  }
+		completion_reward = {
+			add_war_support = 0.1
+			add_ideas = RDK_sistersofbattle
+			
+		}
+	}
+
+	#Death Fear Replace the whip
+	focus = {
+		id = RDK_death_fear_replace_the_whip
+		icon = GFX_RDK_death_fear_replace_the_whip
+		x = 16
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = RDK_our_lot_is_not_to_moan  }
+		completion_reward = {
+			add_stability = -0.1
+			add_ideas = RDK_shtafbaty
+			
+		}
+	}
+
+	#The Right of Force is a Blood Right
+	focus = {
+		id = RDK_the_right_of_force_is_a_blood_right
+		icon = GFX_RDK_the_right_of_force_is_a_blood_right
+		x = 15
+		y = 6
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = RDK_heroes_and_gods_will_rise_from_the_grave  } prerequisite = { focus = RDK_death_fear_replace_the_whip  }
+		completion_reward = {
+			add_war_support = 0.1
+			
+		}
+	}
+
+	#Courage Leads to Heaven
+	focus = {
+		id = RDK_courage_leads_to_heaven
+		icon = GFX_RDK_courage_leads_to_heaven
+		x = 15
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = RDK_smashthekremlinsrottensystem  }
+		completion_reward = {
+			add_war_support = 0.25
+			add_ideas = RDK_expandofcorpus
+			
+		}
+	}
+
+	#Became Higher Than Man
+	focus = {
+		id = RDK_became_higher_than_man
+		icon = GFX_RDK_became_higher_than_man
+		x = 12
+		y = 7
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = RDK_we_remember_those_who_continued_fight  }
+		completion_reward = {
+			add_political_power = 10
+			add_ideas = RDK_armed_philosophers
+			
+		}
+	}
+
+	#Oath to White Skin And Fair Hair
+	focus = {
+		id = RDK_oath_to_white_skin_and_fair_hair
+		icon = GFX_RDK_oath_to_white_skin_and_fair_hair
+		x = 12
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = RDK_to_preserve_in_its_pristine_purity  }
+		completion_reward = {
+
+			add_ideas = RDK_whitesuprematism
+			add_ideas = RDK_problemswithnonwhites
+			
+		}
+	}
+
+	#We Remember Those Who Continued Fight
+	focus = {
+		id = RDK_we_remember_those_who_continued_fight
+		icon = GFX_RDK_we_remember_those_who_continued_fight
+		x = 12
+		y = 6
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = RDK_oath_to_white_skin_and_fair_hair  }
+		completion_reward = {
+			random_owned_controlled_state = {
+			limit = {
+			free_building_slots = {
+			building = arms_factory
+			size > 0
+			include_locked = yes
+			}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+			}
+			set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+			}
+			
+			
+		}
+	}
+
+	#Never Forget How a Thief Stole It From Us
+	focus = {
+		id = RDK_never_forget_how_a_thief_stole_it_from_us
+		icon = GFX_RDK_never_forget_how_a_thief_stole_it_from_us
+		x = 9
+		y = 6
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = RDK_birdsongs_at_dusk  } prerequisite = { focus = RDK_wind_of_the_wild_lakes  }
+		completion_reward = {
+			add_political_power = 10
+			add_ideas = RDK_antiputin
+			
+		}
+	}
+
+	#Never Forget Why We Were Born
+	focus = {
+		id = RDK_never_forget_why_we_were_born
+		icon = GFX_RDK_never_forget_why_we_were_born
+		x = 9
+		y = 7
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = RDK_never_forget_how_a_thief_stole_it_from_us  }
+		completion_reward = {
+			add_ideas = RDK_victory_or_death
+			add_ideas = RDK_professional_army
+			
+			
+		}
+	}
+
+	#Russian Pure Soul That is Whiter Than Light...
+	focus = {
+		id = RDK_russianpuresoulthatiswhiterthanlight
+		icon = GFX_RDK_russianpuresoulthatiswhiterthanlight
+		x = 12
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = RDK_smashthekremlinsrottensystem  }
+		completion_reward = {
+			add_stability = 0.25
+			
+			
+		}
+	}
+
+	#To Preserve in its Pristine Purity
+	focus = {
+		id = RDK_to_preserve_in_its_pristine_purity
+		icon = GFX_RDK_to_preserve_in_its_pristine_purity
+		x = 12
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = RDK_russianpuresoulthatiswhiterthanlight  }
+		completion_reward = {
+			add_fuel = 400
+			
+		}
+	}
+
+	#Wind of the Wild Lakes
+	focus = {
+		id = RDK_wind_of_the_wild_lakes
+		icon = GFX_RDK_wind_of_the_wild_lakes
+		x = 10
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = RDK_andwiththehammerinheart  }
+		completion_reward = {
+RDK = {
+    create_ship = {
+        type = ship_hull_submarine_1
+        equipment_variant = "S Class"
+        creator = USA
+        name = "Vinland"
+    }
+}			
+			
+		}
+	}
+
+	#The Dawn is Near!
+	focus = {
+		id = RDK_thedawnisnear
+		icon = GFX_RDK_thedawnisnear
+		x = 12
+		y = 0
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+			add_war_support = 0.25
+			add_ideas = RDK_unstable_positions
+			add_ideas = RDK_farright_revolution
+		}
+	}
+
+	#With an Anvil in the Chest...
+	focus = {
+		id = RDK_withananvilinthechest
+		icon = GFX_RDK_withananvilinthechest
+		x = 9
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = RDK_smashthekremlinsrottensystem  }
+		completion_reward = {
+			random_owned_controlled_state = {
+			limit = {
+			free_building_slots = {
+			building = arms_factory
+			size > 0
+			include_locked = yes
+			}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+			}
+			set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+			}
+			
+			random_owned_controlled_state = {
+			limit = {
+			free_building_slots = {
+			building = industrial_complex
+			size > 0
+			include_locked = yes
+			}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+			}
+			set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+			}
+			
+			
+		}
+	}
+
+	#and with the Hammer in Heart...
+	focus = {
+		id = RDK_andwiththehammerinheart
+		icon = GFX_RDK_andwiththehammerinheart
+		x = 9
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = RDK_withananvilinthechest  }
+		completion_reward = {
+			random_owned_controlled_state = {
+			limit = {
+			free_building_slots = {
+			building = arms_factory
+			size > 0
+			include_locked = yes
+			}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+			}
+			set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+			}
+			
+			
+		}
+	}
+
+	#Birdsongs at Dusk
+	focus = {
+		id = RDK_birdsongs_at_dusk
+		icon = GFX_RDK_birdsongs_at_dusk
+		x = 8
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = RDK_andwiththehammerinheart  }
+		completion_reward = {
+			
+			
+		}
+	}
+
+	#They Feed Us With Anger...
+	focus = {
+		id = RDK_theyfeeduswithanger
+		icon = GFX_RDK_theyfeeduswithanger
+		x = 12
+		y = 8
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = RDK_never_forget_why_we_were_born  } prerequisite = { focus = RDK_became_higher_than_man  } prerequisite = { focus = RDK_our_power__the_gods_with_us  }
+		completion_reward = {
+			add_war_support = 0.1
+			
+			
+		}
+	}
+
+	#Our Power - The Gods With Us
+	focus = {
+		id = RDK_our_power__the_gods_with_us
+		icon = GFX_RDK_our_power__the_gods_with_us
+		x = 15
+		y = 7
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = RDK_the_right_of_force_is_a_blood_right  }
+		completion_reward = {
+			add_war_support = 0.1
+			add_ideas = RDK_proudsonsofwotan
+			
+		}
+	}
+
+	#Banners Above, Brothers!
+	focus = {
+		id = RDK_bannersabovebrothers
+		icon = GFX_RDK_bannersabovebrothers
+		x = 12
+		y = 1
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = RDK_thedawnisnear  }
+		completion_reward = {
+		add_ideas = RDK_railway_terror
+			add_temporary_buff_to_units = {
+			    combat_offense = 0.25
+			    combat_breakthrough = 0.25
+			    org_damage_multiplier = -1.0
+			    str_damage_multiplier = 0.25
+			    war_support_reduction_on_damage = 0.2
+			    cannot_retreat_while_attacking = 1.0
+							
+			    days = 31
+			    tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+			
+			
+			
+		}
+	}
+
+	#Smash the Kremlin's Rotten System
+	focus = {
+		id = RDK_smashthekremlinsrottensystem
+		icon = GFX_RDK_smashthekremlinsrottensystem
+		x = 12
+		y = 2
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = RDK_bannersabovebrothers  }
+		completion_reward = {
+			add_command_power = 10
+			add_ideas = RDK_mobilisation_of_locals
+			
+		}
+	}
+
+	#My Motherland Will Meet Her Sons
+	focus = {
+		id = RDK_my_motherland_will_meet_her_sons
+		icon = GFX_RDK_my_motherland_will_meet_her_sons
+		x = 12
+		y = 9
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = RDK_theyfeeduswithanger  }
+		completion_reward = {
+			add_political_power = 100
+			
+			
+		}
+	}
+
+}

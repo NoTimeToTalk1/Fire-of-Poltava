@@ -433,4 +433,45 @@ set_cosmetic_tag = TRA_ukrainian
         }
     }
 }
+
+on_capitulation = {
+    effect = {
+        if = {
+            limit = {
+                FROM = {
+                    original_tag = AFU
+                }
+
+                ROOT = {
+                    original_tag = KAZ
+                }
+            }
+            FROM = {
+white_peace = ROOT			
+              puppet = {
+          target = ROOT
+}
+            }	
+ROOT = {
+leave_faction = yes
+recruit_character = KAZ_jasulan
+promote_character = KAZ_jasulan
+set_political_party = {
+    ideology = ultranationalism
+    popularity = 50
+}
+set_politics = {
+	ruling_party = ultranationalism
+    elections_allowed = no
+    last_election = "2019.12.17"
+    election_frequency = 48
+    long_name = "Shanyrak"
+    name = "Shanyrak Movement"
+}
+set_cosmetic_tag = KAZ_ultranationalism
+}		
+
+        }
+    }
+}
 }
