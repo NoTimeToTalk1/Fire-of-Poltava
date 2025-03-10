@@ -695,9 +695,7 @@ unite_siveria_ukraine = {
 		available = { 
 			OR = {
 				is_neighbor_of = KYI
-				KYI = {
-					has_subject = KOB
-				}
+				is_neighbor_of = KOB
 			}
 			
 		}
@@ -732,8 +730,13 @@ unite_siveria_ukraine = {
         }
 		remove_effect = {
 			war_with_on_remove = KYI
+			war_with_on_remove = KOB
 			declare_war_on = {
     				target = KYI
+    				type = annex_everything
+			}
+			declare_war_on = {
+    				target = KOB
     				type = annex_everything
 			}
 	  	}
@@ -787,8 +790,13 @@ unite_siveria_ukraine = {
         }
 		remove_effect = {
 			war_with_on_remove = KOB
+			war_with_on_remove = KYI
 			declare_war_on = {
     				target = KOB
+    				type = annex_everything
+			}
+			declare_war_on = {
+    				target = KYI
     				type = annex_everything
 			}
 	  	}
