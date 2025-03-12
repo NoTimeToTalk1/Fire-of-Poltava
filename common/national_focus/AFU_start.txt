@@ -678,4 +678,95 @@
 			}
 		}
 	}
-}
+
+	shared_focus = {
+		id = AFU_we_stand_alone
+		icon = GFX_AFU_We_Stand_Alone
+		x = 0
+		y = 1
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		prerequisite = { focus = AFU_finalize_integration }
+		relative_position_id = AFU_finalize_integration
+		
+		completion_reward = {
+			add_political_power = 50
+			country_lock_all_division_template = no
+			hidden_effect = {
+				remove_ideas = AFU_support_UKR
+				remove_ideas = AFU_support_PRH
+			}
+		}
+	}
+	shared_focus = {
+		id = AFU_the_time_has_not_come
+		icon = GFX_AFU_Time_Has_Not_Yet_Come
+		x = -1
+		y = 1
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		relative_position_id = AFU_we_stand_alone
+		
+		available = {
+			has_completed_focus = AFU_crackdown_on_dissent
+		}
+		
+		prerequisite = { focus = AFU_we_stand_alone }
+		mutually_exclusive = {
+			focus = AFU_elections_elections
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+			hidden_effect = {
+				country_event = afu.34
+			}
+		}
+    }
+    
+	shared_focus = {
+		id = AFU_elections_elections
+		icon = GFX_AFU_Elections_Elections
+		x = 1
+		y = 1
+		
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cost = 2
+		
+		available = {
+			has_completed_focus = AFU_promise_reforms
+		}
+		
+		prerequisite = { focus = AFU_we_stand_alone }
+		relative_position_id = AFU_we_stand_alone
+		mutually_exclusive = {
+			focus = AFU_the_time_has_not_come
+	    }
+		
+		completion_reward = {
+			add_political_power = 50
+			remove_ideas = AFU_millitary_administration
+			remove_ideas = AFU_martial_law
+			hidden_effect = {
+				country_event = afu.25
+				if = {
+					limit = {
+						ultranationalism > 0.2
+					}
+					country_event = {
+						id = azov.1
+						days = 7
+					}
+				}
+			}
+		}
+    }

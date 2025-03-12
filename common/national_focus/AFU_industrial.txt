@@ -9,11 +9,11 @@
 shared_focus = {
 	id = AFU_six_years_of_occupation
 	icon = GFX_AFU_Six_Years_of_Occupation
-	x = 100
-	y = 1
-    cost = 2
+	x = 50
+	y = 5
+    cost = 5
 	completion_reward = {
-		###
+		add_ideas = AFU_revival_of_donbas_1
 	}
 }
 
@@ -22,14 +22,14 @@ shared_focus = {
 	icon = GFX_AFU_Create_Commission
 
 	relative_position_id = AFU_six_years_of_occupation
-	x = -1
+	x = -2
 	y = 1
 
-    cost = 2
+    cost = 6
 	prerequisite = { focus = AFU_six_years_of_occupation }
 
 	completion_reward = {
-		###
+		country_event = AFU_industrial.1
 	}
 }
 
@@ -41,11 +41,25 @@ shared_focus = {
 	x = 0
 	y = 1
 
-    cost = 2
+    cost = 6
 	prerequisite = { focus = AFU_six_years_of_occupation }
 
 	completion_reward = {
-		###
+		every_state = {
+			limit = {
+				is_owned_by = AFU
+				OR = {
+					is_core_of = DPR
+					is_core_of = LPR
+				}
+				infrastructure < 3
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 3
+				instant_build = yes
+			}
+		}
 	}
 }
 
@@ -54,14 +68,17 @@ shared_focus = {
 	icon = GFX_AFU_Allocate_Funding
 
 	relative_position_id = AFU_six_years_of_occupation
-	x = 1
+	x = 2
 	y = 1
 
-    cost = 2
+    cost = 5
 	prerequisite = { focus = AFU_six_years_of_occupation }
 
 	completion_reward = {
-		###
+		swap_ideas = {
+			add_idea = AFU_revival_of_donbas_2
+			remove_idea = AFU_revival_of_donbas_1
+		}
 	}
 }
 
@@ -98,6 +115,10 @@ shared_focus = {
 	relative_position_id = AFU_strategic_approach
 	x = -7
 	y = 1
+
+	allow_branch = {
+		has_country_flag = AFU_khomut
+	}
 
     cost = 2
 	prerequisite = { focus = AFU_strategic_approach }
@@ -188,6 +209,10 @@ shared_focus = {
 	x = -2
 	y = 1
 
+	allow_branch = {
+		has_country_flag = AFU_danilov
+	}
+
     cost = 2
 	prerequisite = { focus = AFU_strategic_approach }
 
@@ -276,6 +301,10 @@ shared_focus = {
 	relative_position_id = AFU_strategic_approach
 	x = 2
 	y = 1
+
+	allow_branch = {
+		has_country_flag = AFU_kryvonos
+	}
 
     cost = 2
 	prerequisite = { focus = AFU_strategic_approach }
@@ -366,6 +395,10 @@ shared_focus = {
 	x = 7
 	y = 1
 
+	allow_branch = {
+		has_country_flag = AFU_savchenko
+	}
+
     cost = 2
 	prerequisite = { focus = AFU_strategic_approach }
 
@@ -447,11 +480,110 @@ shared_focus = {
 ##############################################################################################
 ##############################################################################################
 
+##############################################################################################
+##############################################################################################
+##################   											##############################
+##################             STATE-ORIENTED FOCUSES           ##############################
+##################   											##############################
+##############################################################################################
+##############################################################################################
+
 shared_focus = {
-	id = AFU_
+	id = AFU_focus_on_donetsk
 	icon = GFX_generic_suspend_constitution
-	x = -4
+	x = 6
+	y = 1
+
+    cost = 5
+
+	completion_reward = {
+		###
+	}
+	relative_position_id = AFU_strategic_approach
+	prerequisite = { focus = AFU_strategic_approach }
+}
+
+shared_focus = {
+	id = AFU_restore_donetsk_coal_industry
+	icon = GFX_generic_suspend_constitution
+	x = -1
+	y = 1
+
+    cost = 8
+
+	completion_reward = {
+		557 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		2558 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		2096 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	relative_position_id = AFU_focus_on_donetsk
+	prerequisite = { focus = AFU_focus_on_donetsk }
+}
+
+shared_focus = {
+	id = AFU_solve_communal_problems
+	icon = GFX_generic_suspend_constitution
+	x = 1
+	y = 1
+
+    cost = 8
+
+	completion_reward = {
+		add_stability = 0.1
+		add_political_power = -25
+	}
+	relative_position_id = AFU_focus_on_donetsk
+	prerequisite = { focus = AFU_focus_on_donetsk }
+}
+
+shared_focus = {
+	id = AFU_yuz_legacy
+	icon = GFX_generic_suspend_constitution
+	x = 0
 	y = 2
+
+    cost = 6
+
+	completion_reward = {
+		557 = {
+			add_dynamic_modifier = {modifier = AFU_yuz_legacy} 
+			add_resource = {
+				type = tungsten
+				amount = 8
+			}
+		}
+	}
+	relative_position_id = AFU_focus_on_donetsk
+	prerequisite = { focus = AFU_restore_donetsk_coal_industry }
+	prerequisite = { focus = AFU_solve_communal_problems }
+}
+
+shared_focus = {
+	id = AFU_focus_on_luhansk
+	icon = GFX_generic_suspend_constitution
+	x = 10
+	y = 1
 
     cost = 2
 
@@ -463,49 +595,49 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = AFU_
+	id = AFU_reopen_machine_building
 	icon = GFX_generic_suspend_constitution
-	x = 0
-	y = 2
+	x = 1
+	y = 1
 
     cost = 2
 
 	completion_reward = {
-		###
+		518 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+			}
+		}
 	}
-	relative_position_id = AFU_
-	prerequisite = { focus = AFU_ }
-}
-
-
-shared_focus = {
-	id = AFU_
-	icon = GFX_generic_suspend_constitution
-	x = 4
-	y = 2
-
-    cost = 2
-
-	completion_reward = {
-		###
-	}
-	relative_position_id = AFU_strategic_approach
-	prerequisite = { focus = AFU_strategic_approach }
+	relative_position_id = AFU_focus_on_luhansk
+	prerequisite = { focus = AFU_focus_on_luhansk }
 }
 
 shared_focus = {
-	id = AFU_
+	id = AFU_luhansk_mines
 	icon = GFX_generic_suspend_constitution
-	x = 0
-	y = 2
+	x = -1
+	y = 1
 
     cost = 2
 
 	completion_reward = {
-		###
+		2082 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		2309 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+			}
+		}
 	}
-	relative_position_id = AFU_
-	prerequisite = { focus = AFU_ }
+	relative_position_id = AFU_focus_on_luhansk
+	prerequisite = { focus = AFU_focus_on_luhansk }
 }
 
 ##############################################################################################
@@ -522,13 +654,16 @@ shared_focus = {
 
 	relative_position_id = AFU_strategic_approach
 	x = 0
-	y = 7
+	y = 1
 
     cost = 2
 	prerequisite = { focus = AFU_strategic_approach }
 
 	completion_reward = {
-		###
+		swap_ideas = {
+			add_idea = AFU_revival_of_donbas_3
+			remove_idea = AFU_revival_of_donbas_2
+		}
 	}
 }
 
@@ -561,7 +696,8 @@ shared_focus = {
 	mutually_exclusive = { focus = AFU_nationalize_the_industry }
 
 	completion_reward = {
-		###
+		FOP_corruption_medium_regression = yes
+		add_political_power = 200
 	}
 }
 
@@ -578,7 +714,12 @@ shared_focus = {
 	mutually_exclusive = { focus = AFU_return_industry_to_akhmetov }
 
 	completion_reward = {
-		###
+		add_political_power = -100
+		add_resource = {
+			type = steel
+			amount = 15
+			state = 2031
+		}
 	}
 }
 
@@ -594,7 +735,7 @@ shared_focus = {
 	prerequisite = { focus = AFU_problems_of_donbas }
 
 	completion_reward = {
-		###
+		FOP_unemployment_medium_improvement = yes
 	}
 }
 
@@ -606,12 +747,36 @@ shared_focus = {
 	x = -1
 	y = 1
 
-    cost = 2
+    cost = 7
 	prerequisite = { focus = AFU_create_jobs }
 	mutually_exclusive = { focus = AFU_military_focus }
 
 	completion_reward = {
-		###
+		random_owned_controlled_state ={
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state ={
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state ={
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		add_ideas = AFU_civilian_industrial_focus
 	}
 }
 
@@ -628,7 +793,23 @@ shared_focus = {
 	mutually_exclusive = { focus = AFU_create_jobs }
 
 	completion_reward = {
-		###
+		random_owned_controlled_state ={
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state ={
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		add_ideas = AFU_military_industrial_focus
 	}
 }
 
@@ -646,7 +827,7 @@ shared_focus = {
 	prerequisite = { focus = AFU_civilian_focus focus = AFU_military_focus }
 
 	completion_reward = {
-		###
+		FOP_corruption_small_improvement = yes
 	}
 }
 
@@ -663,7 +844,7 @@ shared_focus = {
 	mutually_exclusive = { focus = AFU_close_unprofitable_enterprises }
 
 	completion_reward = {
-		###
+		add_ideas = AFU_nonprofit_subsidies
 	}
 }
 
@@ -680,7 +861,26 @@ shared_focus = {
 	mutually_exclusive = { focus = AFU_subsidize_unprofitable_enterprises }
 
 	completion_reward = {
-		###
+		AFU = {
+			random_owned_controlled_state = {
+				remove_building = {
+					type = arms_factory
+					level = 1
+				}
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+		}
 	}
 }
 
