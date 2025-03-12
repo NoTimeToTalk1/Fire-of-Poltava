@@ -1,16 +1,6 @@
-﻿focus_tree = {
-	id = DPR_start
-	continuous_focus_position = { x = 0 y = 1000 }
-	country = {
-		factor = 0
-		modifier = {
-			add = 10
-			tag = DPR
-		}
-	}
-
+﻿
 	#Situation in Ukraine
-	focus = {
+	shared_focus = {
 		id = DPR_situation_in_ukraine
 		icon = GFX_DPR_Situation_in_Ukraine
 
@@ -29,7 +19,7 @@
 	}
 
 	#Situation in Our Nation
-	focus = {
+	shared_focus = {
 		id = DPR_situation_in_our_nation
 		icon = GFX_DPR_Situation_in_Our_Nation
 
@@ -50,7 +40,7 @@
 	}
 
 	#Look Around Us
-	focus = {
+	shared_focus = {
 		id = DPR_look_around_us
 		icon = GFX_DPR_Look_Around_Us
 
@@ -67,7 +57,7 @@
 	}
 
 	#Look West
-	focus = {
+	shared_focus = {
 		id = DPR_look_west
 		icon = GFX_DPR_Look_West
 
@@ -88,7 +78,7 @@
 	}
 
 	#Open Old Warehouses
-	focus = {
+	shared_focus = {
 		id = DPR_open_old_warehouses
 		icon = GFX_DPR_Open_Old_Warehouses
 
@@ -106,7 +96,7 @@
 	}
 
 	#Strengthen the Propaganda
-	focus = {
+	shared_focus = {
 		id = DPR_strengthen_the_propaganda
 		icon = GFX_DPR_Strengthen_the_Propaganda
 
@@ -131,7 +121,7 @@
 	}
 
 	#Mobilize Youth And Reserves
-	focus = {
+	shared_focus = {
 		id = DPR_mobilize_youth_and_reserves
 		icon = GFX_DPR_Mobilize_Youth_and_Reserves
 
@@ -162,7 +152,7 @@
     }
 
 	#Look North
-	focus = {
+	shared_focus = {
 		id = DPR_look_north
 		icon = GFX_DPR_Look_North
 
@@ -183,7 +173,7 @@
 	}
 
 	#Remember Novorossiya
-	focus = {
+	shared_focus = {
 		id = DPR_remember_novorossiya
 		icon = GFX_DPR_Remember_Novorossiya
 
@@ -207,7 +197,7 @@
 	}
 
 	#Set Aside Our Differences
-	focus = {
+	shared_focus = {
 		id = DPR_set_aside_our_differences
 		icon = GFX_DPR_Set_Aside_Our_Differences
 
@@ -242,7 +232,7 @@
 	}
 
 	#Unite with LPR
-	focus = {
+	shared_focus = {
 		id = DPR_unite_with_lpr
 		icon = GFX_DPR_Unite_With_LPR
 
@@ -255,7 +245,10 @@
 		prerequisite = { focus = DPR_set_aside_our_differences }
 
 		available = {
-			has_global_flag = DNR_unite
+			OR = {
+				has_global_flag = DNR_unite
+				owns_state = 518
+			}
 		}
 
 		completion_reward = {
@@ -271,7 +264,7 @@
 	}
 
 	#Look East
-	focus = {
+	shared_focus = {
 		id = DPR_look_east
 		icon = GFX_DPR_Look_East
 
@@ -292,7 +285,7 @@
 	}
 
 	#Request Russian Equipment...
-	focus = {
+	shared_focus = {
 		id = DPR_request_russian_equipment
 		icon = GFX_DPR_Request_Russian_Equipment
 
@@ -310,7 +303,7 @@
 	}
 
 	#...And Girkin
-	focus = {
+	shared_focus = {
 		id = DPR_and_volunteers
 		icon = GFX_DPR_and_Volunteers
 
@@ -329,7 +322,7 @@
 	}
 
 	#Supplement Our Corps
-	focus = {
+	shared_focus = {
 		id = DPR_supplement_our_corps
 		icon = GFX_DPR_Supplement_Our_Corps
 
@@ -360,7 +353,7 @@
 	}
 
 	#Test Their Strength
-	focus = {
+	shared_focus = {
 		id = DPR_test_their_strengh
 		icon = GFX_DPR_Test_Their_Strengh
 
@@ -371,6 +364,7 @@
 		cost = 5
 		prerequisite = { focus = DPR_mobilize_youth_and_reserves }
 		prerequisite = { focus = DPR_supplement_our_corps }
+		prerequisite = { focus = DPR_unite_with_lpr }
 
 		will_lead_to_war_with = AFU
 
@@ -396,7 +390,7 @@
 	}
 
 	#Put an End to Ukrainian Army!
-	focus = {
+	shared_focus = {
 		id = DPR_put_an_end_to_ukrainian_army
 		icon = GFX_DPR_Put_an_End_to_Ukrainian_Army
 
@@ -436,7 +430,7 @@
 	#UPD4: YOOO FOP TEAM!!! Your best coder is here again!111! I'll slightly redo the focuses for the COMMIT. Can't wait for Release fr
 
 	#Victory
-	focus = {
+	shared_focus = {
 		id = DPR_victory
 		icon = GFX_DPR_Victory
 
@@ -457,7 +451,7 @@
 	}
 
 	#Start Integration
-	focus = {
+	shared_focus = {
 		id = DPR_start_integration
 		icon = GFX_DPR_Start_Integration
 
@@ -480,7 +474,7 @@
 	}
 
 	#Passportization Programme
-	focus = {
+	shared_focus = {
 		id = DPR_passportization_programme
 		icon = GFX_DPR_Passportization_Programme
 
@@ -503,7 +497,7 @@
 	}
 
 	#Party Integration
-	focus = {
+	shared_focus = {
 		id = DPR_party_integration
 		icon = GFX_DPR_Party_Integration
 
@@ -538,7 +532,7 @@
 	}
 
 	#Increase Patriotism
-	focus = {
+	shared_focus = {
 		id = DPR_increase_patriotism
 		icon = GFX_DPR_Increase_Patriotism
 
@@ -563,7 +557,7 @@
 	}
 
 	#Unite Communications
-	focus = {
+	shared_focus = {
 		id = DPR_unite_communications
 		icon = GFX_DPR_Unite_Communications
 
@@ -580,7 +574,7 @@
 	}
 
 	#Promise the Future
-	focus = {
+	shared_focus = {
 		id = DPR_promise_the_future
 		icon = GFX_DPR_Promise_the_Future
 
@@ -602,7 +596,7 @@
 	}
 
 	#The Great Trial
-	focus = {
+	shared_focus = {
 		id = DPR_tribunal
 		icon = GFX_DPR_Tribunal
 
@@ -640,7 +634,7 @@
 	}
 
 	#Finish Integration
-	focus = {
+	shared_focus = {
 		id = DPR_finish_integration
 		icon = GFX_DPR_Finish_Integration
 
@@ -697,7 +691,7 @@
 	}
 	
 	#Elections
-	focus = {
+	shared_focus = {
 		id = DPR_elections
 		icon = GFX_DPR_Elections
 
@@ -712,4 +706,3 @@
 			#country_event = dnr.
 		}
 	}
-}

@@ -1,0 +1,703 @@
+shared_focus = {
+		id = DPR_opposition_union
+		icon = GFX_Opposition_Union
+		x = 35
+		y = 0
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+            country_event = {
+                    id = DPRelection.2
+                    days = 1
+            }
+			Opposition_pp_increase = yes
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_people_fight
+		icon = GFX_People_Fight_For
+		x = 30
+		y = 1
+		cost = 3
+
+
+
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = DPR_opposition_union  }
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+            country_event = {
+                    id = DPRelection.3
+                    days = 1
+            }
+			Opposition_pp_increase = yes
+			add_political_power = 20
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_equality
+		icon = GFX_Equality
+		x = 32
+		y = 2
+		cost = 3
+
+
+
+		ai_will_do = {
+			factor = 15
+		}
+		search_filters = { shared_focus_FILTER_POLITICAL }
+        prerequisite = { focus = DPR_people_fight }
+        mutually_exclusive = { focus = DPR_freedom }
+        mutually_exclusive = { focus = DPR_nation }		
+		completion_reward = {
+			SWPD_pp_increase = yes
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_freedom
+		icon = GFX_Freedom
+		x = 30
+		y = 2
+		cost = 3
+
+
+
+		ai_will_do = {
+			factor = 15
+		}
+		search_filters = { shared_focus_FILTER_POLITICAL }
+        prerequisite = { focus = DPR_people_fight }	
+        mutually_exclusive = { focus = DPR_equality }
+        mutually_exclusive = { focus = DPR_nation }		
+		completion_reward = {
+			DPN_pp_increase = yes
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_nation
+		icon = GFX_Strong_Nation
+		x = 28
+		y = 2
+		cost = 3
+
+
+
+		ai_will_do = {
+			factor = 15
+		}
+		search_filters = { shared_focus_FILTER_POLITICAL }
+        prerequisite = { focus = DPR_people_fight }	
+        mutually_exclusive = { focus = DPR_equality }
+        mutually_exclusive = { focus = DPR_freedom }		
+		completion_reward = {
+			FDP_pp_increase = yes
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_march
+		icon = GFX_March_on_Donetsk
+		x = 30
+		y = 3
+		cost = 3
+
+
+
+		ai_will_do = {
+			factor = 15
+		}
+		search_filters = { shared_focus_FILTER_POLITICAL }
+        prerequisite = {
+			focus = DPR_nation
+			focus = DPR_freedom
+			focus = DPR_equality
+		}			
+		completion_reward = {
+			country_event = {
+                    id = DPRelection.4
+                    days = 3
+            }
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_cariov_office
+		icon = GFX_In_the_Tsaryov_Office
+		x = 35
+		y = 1
+		cost = 3
+
+
+
+		ai_will_do = {
+			factor = 15
+		}
+		prerequisite = { focus = DPR_opposition_union  }
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+            country_event = {
+                    id = DPRelection.5
+                    days = 2
+            }
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_pragmatic_allience
+		icon = GFX_Pragmatic_Alliance
+		x = 34
+		y = 2
+		cost = 3
+
+
+
+		ai_will_do = {
+			factor = 15
+		}
+		prerequisite = { focus = DPR_cariov_office }
+		search_filters = { shared_focus_FILTER_POLITICAL }
+        mutually_exclusive = {focus = DPR_democratic_block }		
+		completion_reward = {
+            custom_effect_tooltip = DPRelection_CP_to_FDP_tt
+			add_to_variable = { FDP_pp = CP_pp }
+			set_variable = { CP_pp = 0 }
+			hidden_effect = {
+				CP_pp_increase = yes
+			}
+			country_event = {
+                    id = DPRelection.6
+                    days = 1
+            }
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_democratic_block
+		icon = GFX_Democratic_Bloc
+		x = 36
+		y = 2
+		cost = 3
+
+
+
+		ai_will_do = {
+			factor = 15
+		}
+		prerequisite = { focus = DPR_cariov_office }
+		search_filters = { shared_focus_FILTER_POLITICAL }
+        mutually_exclusive = {focus = DPR_pragmatic_allience }		
+		completion_reward = {
+            custom_effect_tooltip = DPRelection_CP_to_DPN_tt
+			add_to_variable = { DPN_pp = CP_pp }
+			set_variable = { CP_pp = 0 }
+			hidden_effect = {
+				CP_pp_increase = yes
+			}
+			country_event = {
+                    id = DPRelection.7
+                    days = 1
+            }
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_second_attempt
+		icon = GFX_Second_Attempt
+		x = 35
+		y = 3
+		cost = 3
+
+
+
+		ai_will_do = {
+			factor = 15
+		}
+		prerequisite = { 
+		    focus = DPR_pragmatic_allience
+			focus = DPR_democratic_block
+		
+		}
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+            country_event = {
+                    id = DPRelection.8
+                    days = 3
+            }
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_workers_strike
+		icon = GFX_Workers_Strike
+		x = 39
+		y = 1
+		cost = 3
+
+
+
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { 
+		    focus = DPR_opposition_union
+		
+		}
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+            Opposition_pp_growth = yes
+			add_stability = -0.1
+			add_political_power = 30
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_help_them
+		icon = GFX_Help_Them
+		x = 38
+		y = 2
+		cost = 3
+
+
+
+		ai_will_do = {
+			factor = 15
+		}
+		prerequisite = { 
+		    focus = DPR_workers_strike
+		
+		}
+		mutually_exclusive = { focus = DPR_better_call_push }
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+            SWPD_pp_increase_strong = yes
+			DPN_pp_increase = yes
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_better_call_push
+		icon = GFX_Better_Call_Pushilin
+		x = 40
+		y = 2
+		cost = 3
+
+
+
+		ai_will_do = {
+			factor = 15
+		}
+		prerequisite = { 
+		   focus = DPR_workers_strike
+		
+		}
+		mutually_exclusive = { focus = DPR_help_them }
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+            country_event = {
+                    id = DPRelection.9
+                    days = 1
+            }
+		hidden_effect = {
+		set_country_flag = DPR_better_call_push_flag
+		}
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_promise_them
+		icon = GFX_Promise_Them
+		x = 39
+		y = 3
+		cost = 3
+
+
+
+		ai_will_do = {
+			factor = 15
+		}
+		prerequisite = { 
+		    focus = DPR_help_them
+		    focus = DPR_better_call_push
+		}
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+            add_political_power = 100
+			add_stability = 0.05
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_road_to_future
+		icon = GFX_Road_to_the_Future
+		x = 35
+		y = 4
+		cost = 1
+
+
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { 
+		    focus = DPR_promise_them
+		}
+		prerequisite = { 
+		    focus = DPR_second_attempt
+		}
+		prerequisite = { 
+			focus = DPR_march
+		}
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+            Opposition_pp_increase = yes
+			Opposition_pp_growth = yes
+		}		
+	}
+	
+	
+	
+	shared_focus = {
+		id = DPR_another_term
+		icon = GFX_Another_Term
+		x = 35
+		y = 0
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+            country_event = {
+                    id = DPRelection.10
+                    days = 1
+            }
+			Pushilin_pp_increase = yes
+			hidden_effect = {
+				country_event = {
+                    id = DPRelection.11
+                    days = 3
+				}
+			}
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_reputation_colapse
+		icon = GFX_Reputation_Collapse
+		x = 35
+		y = 1
+		cost = 1
+
+
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { 
+			focus = DPR_another_term
+		}
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+            country_event = {
+                    id = DPRelection.12
+                    days = 1
+            }	
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_block_sources
+		icon = GFX_Block_the_Sources
+		x = 34
+		y = 2
+		cost = 2
+
+
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { 
+			focus = DPR_reputation_colapse
+		}
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+			Opposition_pp_decrease = yes
+			add_political_power = -20
+			country_event = {
+                    id = DPRelection.13
+                    days = 1
+            }	
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_bribe
+		icon = GFX_Bribe_Whoever_You_Can
+		x = 36
+		y = 2
+		cost = 2
+
+
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { 
+			focus = DPR_reputation_colapse
+		}
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+			add_political_power = -50
+			Pushilin_pp_growth = yes
+			country_event = {
+                    id = DPRelection.14
+                    days = 1
+            }
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_nothing_hapenned
+		icon = GFX_Nothing_Happened
+		x = 35
+		y = 3
+		cost = 3
+
+
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { 
+			focus = DPR_bribe
+		}
+		prerequisite = { 
+			focus = DPR_block_sources
+		}
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+			add_political_power = 20
+			add_stability = 0.05
+			country_event = {
+                    id = DPRelection.15
+                    days = 1
+            }
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_ensure_order
+		icon = GFX_Ensure_Order
+		x = 33
+		y = 4
+		cost = 3
+
+		available = {
+				custom_trigger_tooltip = {
+					tooltip = DPRelection_NOT_ensured_order_tt
+					NOT = {
+						has_country_flag = DPRelection_NOT_ensured_order
+					}
+				}
+		}
+		bypass_if_unavailable = yes
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { 
+			focus = DPR_nothing_hapenned
+		}
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+			add_stability = 0.1
+			custom_effect_tooltip = DPRelection_Pushilin_order_tt
+			set_country_flag = DPRelection_ensure_order
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_sos
+		icon = GFX_Stability_Order_Security
+		x = 33
+		y = 5
+		cost = 3
+
+		available = {
+				custom_trigger_tooltip = {
+					tooltip = DPRelection_ensured_order_tt
+					has_country_flag = DPRelection_ensure_order
+				}
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		prerequisite = { 
+			focus = DPR_ensure_order
+		}
+		mutually_exclusive = { shared_focus = DPR_send_punishers }
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+			Pushilin_pp_increase = yes
+			Pushilin_pp_growth = yes
+			country_event = {
+                    id = DPRelection.16
+                    days = 1
+            }
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_send_punishers
+		icon = GFX_Send_the_Punishers
+		x = 31
+		y = 5
+		cost = 3
+
+		available = {
+				custom_trigger_tooltip = {
+					tooltip = DPRelection_NOT_ensured_order_tt
+						has_country_flag = DPRelection_NOT_ensured_order
+				}
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		prerequisite = { 
+			focus = DPR_ensure_order
+		}
+		mutually_exclusive = { shared_focus = DPR_sos }
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+			country_event = {
+                    id = DPRelection.17
+                    days = 1
+            }
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_call_friend
+		icon = GFX_Call_an_Old_Friend
+		x = 35
+		y = 4
+		cost = 3
+
+
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { 
+			focus = DPR_nothing_hapenned
+		}
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+			country_event = {
+                    id = DPRelection.18
+                    days = 1
+            }
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_spoiler
+		icon = GFX_Candidate_Spoiler
+		x = 35
+		y = 5
+		cost = 3
+
+
+		ai_will_do = {
+			factor = 15
+		}
+		prerequisite = { 
+			focus = DPR_call_friend
+		}
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+			Pushilin_pp_increase_strong = yes
+			CP_pp_increase = yes
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_praise_heroes
+		icon = GFX_Praise_the_Heroes
+		x = 37
+		y = 4
+		cost = 3
+
+
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { 
+			focus = DPR_nothing_hapenned
+		}
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+			add_war_support = 0.1
+			add_stability = 0.05
+			Pushilin_pp_increase = yes
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_cinematography
+		icon = GFX_Run_Cinematography
+		x = 37
+		y = 5
+		cost = 3
+
+
+		ai_will_do = {
+			factor = 15
+		}
+		prerequisite = { 
+			focus = DPR_praise_heroes
+		}
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+			country_event = {
+                    id = DPRelection.19
+                    days = 1
+            }
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_minutes
+		icon = GFX_Last_Minutes
+		x = 35
+		y = 6
+		cost = 4
+
+
+		ai_will_do = {
+			factor = 15
+		}
+		prerequisite = { 
+			focus = DPR_spoiler
+		}
+		
+		prerequisite = { 
+			focus = DPR_cinematography
+		}
+		prerequisite = { 
+			focus = DPR_send_punishers
+			focus = DPR_sos
+		}
+		search_filters = { shared_focus_FILTER_POLITICAL }	
+		completion_reward = {
+			Pushilin_pp_increase_strong = yes
+			Pushilin_pp_growth = yes
+		}		
+	}
