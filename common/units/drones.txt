@@ -1,0 +1,173 @@
+sub_units = {
+    fpv_drone_company = {
+		abbreviation = "RCD"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_support_battalions
+			category_army
+		}
+
+
+		combat_width = 0
+
+		#Size Definitions
+		max_strength = 1
+		max_organisation = 5
+		default_morale = 0.5
+		manpower = 100
+		training_time = 80
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.01
+
+		# Important Ability
+		reliability_factor = 0.1
+		equipment_capture_factor = 0.05
+
+		essential = {
+			support_equipment
+            fpv_drone_equipment
+		}
+
+		need = {
+			support_equipment = 10
+            fpv_drone_equipment = 100
+		}
+	}
+
+    dropper_drone_company = {
+		abbreviation = "RCD"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_support_battalions
+			category_army
+		}
+
+
+		combat_width = 0
+
+		#Size Definitions
+		max_strength = 1
+		max_organisation = 4
+		default_morale = 0.3
+		manpower = 100
+		training_time = 85
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.01
+
+		# Important Ability
+		reliability_factor = 0.2
+		equipment_capture_factor = 0.05
+
+		essential = {
+			support_equipment
+            dropper_drone_equipment
+		}
+
+		need = {
+			support_equipment = 10
+            dropper_drone_equipment = 100
+		}
+	}
+
+    recon_drone_company = {
+		abbreviation = "RDC"
+		sprite = drone
+		map_icon_category = infantry
+		priority = 1000
+		ai_priority = 122
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+		}
+
+
+		combat_width = 0
+
+		#Size Definitions
+		max_strength = 2
+		max_organisation = 10
+		default_morale = 0.3
+		manpower = 50
+		training_time = 100
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.02
+		entrenchment = 5
+
+		defense = 0.1
+		breakthrough = 0.5
+
+		essential = {
+			support_equipment
+            recon_drone_equipment
+		}
+
+		need = {
+			recon_drone_equipment = 100
+			support_equipment = 15
+		}
+
+		forest = {
+			attack = -0.2
+            recon = -0.1
+		}
+		hills = {
+			defence = 0.1
+		}
+		marsh = {
+			defence = 0.15
+			movement = 0.1
+		}
+		fort = {
+			attack = 0.1
+			defence = 0.15
+		}
+		river = {
+			defence = 0.1
+			attack = 0.15
+            recon = 0.1
+		}
+	}
+}

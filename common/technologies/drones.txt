@@ -1,0 +1,774 @@
+#####-------------------------------------------------------> Modified by MihaVar
+
+technologies = {
+	@1900 = 0
+	@1991 = 2
+	@2019 = 6
+	@2021 = 9
+	@2022 = 12
+	@2024 = 15
+	@2026 = 17
+	@2028 = 20
+	@2030 = 22
+
+## DRONES ##
+
+	drone_equipment_usage = {
+
+        enable_equipments = {
+			recon_drone_equipment_0
+			fpv_drone_equipment_0
+			dropper_drone_equipment_0
+		}
+
+		enable_subunits = {
+			recon_drone_company
+			fpv_drone_company
+			dropper_drone_company
+		}
+
+		path = {
+			leads_to_tech = recon_drone_1
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = fpv_drone_1
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = dropper_drone_1
+			research_cost_coeff = 1
+		}
+
+
+		research_cost = 1
+		start_year = 2019
+		folder = {
+			name = support_folder
+			position = { x = 19 y = @2019 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	recon_drone_1 = {
+
+		enable_equipments = {
+			recon_drone_equipment_1
+		}
+
+		path = {
+			leads_to_tech = recon_drone_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2021
+		folder = {
+			name = support_folder
+			position = { x = 15 y = @2021 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	recon_drone_2 = {
+
+		enable_equipments = {
+			recon_drone_equipment_2
+		}
+
+		path = {
+            leads_to_tech = recon_drone_2_upgrade_1
+			research_cost_coeff = 1
+		}
+
+		path = {
+            leads_to_tech = recon_drone_2_upgrade_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2022
+		folder = {
+			name = support_folder
+			position = { x = 15 y = @2022 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	recon_drone_2_upgrade_1 = {
+
+		recon_drone_company = {
+			recon = 1
+		}
+
+		xor = {
+			recon_drone_2_upgrade_2
+		}
+
+		path = {
+			leads_to_tech = recon_drone_3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2024
+		folder = {
+			name = support_folder
+			position = { x = 14 y = @2024 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	recon_drone_2_upgrade_2 = {
+
+		recon_drone_company = {
+			reliability = 0.05
+		}
+
+		path = {
+			leads_to_tech = recon_drone_3
+			research_cost_coeff = 1
+		}
+
+		xor = {
+			recon_drone_2_upgrade_1
+		}
+
+		research_cost = 1.5
+		start_year = 2024
+		folder = {
+			name = support_folder
+			position = { x = 16 y = @2024 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	recon_drone_3 = {
+
+		enable_equipments = {
+			recon_drone_equipment_3
+		}
+
+		path = {
+            leads_to_tech = recon_drone_3_upgrade_1
+			research_cost_coeff = 1
+		}
+
+		path = {
+            leads_to_tech = recon_drone_3_upgrade_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2026
+		folder = {
+			name = support_folder
+			position = { x = 15 y = @2026 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	recon_drone_3_upgrade_1 = {
+
+		recon_drone_company = {
+			build_cost_ic = -0.1
+		}
+
+		xor = {
+			recon_drone_3_upgrade_2
+		}
+
+		path = {
+			leads_to_tech = recon_drone_4
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2028
+		folder = {
+			name = support_folder
+			position = { x = 14 y = @2028 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	recon_drone_3_upgrade_2 = {
+
+		recon_drone_company = {
+			land_night_attack = 0.1
+		}
+
+		path = {
+			leads_to_tech = recon_drone_4
+			research_cost_coeff = 1
+		}
+
+		xor = {
+			recon_drone_2_upgrade_1
+		}
+
+		research_cost = 1.5
+		start_year = 2028
+		folder = {
+			name = support_folder
+			position = { x = 16 y = @2028 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	recon_drone_4 = {
+
+		enable_equipments = {
+			recon_drone_equipment_4
+		}
+
+		research_cost = 1.5
+		start_year = 2030
+		folder = {
+			name = support_folder
+			position = { x = 15 y = @2030 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	fpv_drone_1 = {
+
+		enable_equipments = {
+			fpv_drone_equipment_1
+		}
+
+		path = {
+			leads_to_tech = fpv_drone_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2021
+		folder = {
+			name = support_folder
+			position = { x = 19 y = @2021 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	fpv_drone_2 = {
+
+		enable_equipments = {
+			fpv_drone_equipment_2
+		}
+
+		path = {
+            leads_to_tech = fpv_drone_2_upgrade_1
+			research_cost_coeff = 1
+		}
+
+		path = {
+            leads_to_tech = fpv_drone_2_upgrade_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2022
+		folder = {
+			name = support_folder
+			position = { x = 19 y = @2022 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	fpv_drone_2_upgrade_1 = {
+
+		fpv_drone_company = {
+			build_cost_ic = -0.15
+			soft_attack = -0.1
+		}
+
+		xor = {
+			fpv_drone_2_upgrade_2
+		}
+
+		path = {
+			leads_to_tech = fpv_drone_3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2024
+		folder = {
+			name = support_folder
+			position = { x = 18 y = @2024 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	fpv_drone_2_upgrade_2 = {
+
+		fpv_drone_company = {
+			breakthrough = 0.05
+			reliability = 0.1
+		}
+
+		path = {
+			leads_to_tech = fpv_drone_3
+			research_cost_coeff = 1
+		}
+
+		xor = {
+			fpv_drone_2_upgrade_1
+		}
+
+		research_cost = 1.5
+		start_year = 2024
+		folder = {
+			name = support_folder
+			position = { x = 20 y = @2024 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	fpv_drone_3 = {
+
+		enable_equipments = {
+			fpv_drone_equipment_3
+		}
+
+		path = {
+            leads_to_tech = fpv_drone_3_upgrade_1
+			research_cost_coeff = 1
+		}
+
+		path = {
+            leads_to_tech = fpv_drone_3_upgrade_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2026
+		folder = {
+			name = support_folder
+			position = { x = 19 y = @2026 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	fpv_drone_3_upgrade_1 = {
+
+		fpv_drone_company = {
+			soft_attack = 0.2
+		}
+
+		xor = {
+			fpv_drone_3_upgrade_2
+		}
+
+		path = {
+			leads_to_tech = fpv_drone_4
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2028
+		folder = {
+			name = support_folder
+			position = { x = 18 y = @2028 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	fpv_drone_3_upgrade_2 = {
+
+		fpv_drone_company = {
+			hard_attack = 0.4
+		}
+
+		path = {
+			leads_to_tech = fpv_drone_4
+			research_cost_coeff = 1
+		}
+
+		xor = {
+			fpv_drone_2_upgrade_1
+		}
+
+		research_cost = 1.5
+		start_year = 2028
+		folder = {
+			name = support_folder
+			position = { x = 20 y = @2028 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	fpv_drone_4 = {
+
+		enable_equipments = {
+			fpv_drone_equipment_4
+		}
+
+		research_cost = 1.5
+		start_year = 2030
+		folder = {
+			name = support_folder
+			position = { x = 19 y = @2030 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	dropper_drone_1 = {
+
+		enable_equipments = {
+			dropper_drone_equipment_1
+		}
+
+		path = {
+			leads_to_tech = dropper_drone_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2021
+		folder = {
+			name = support_folder
+			position = { x = 24 y = @2021 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	dropper_drone_2 = {
+
+		enable_equipments = {
+			dropper_drone_equipment_2
+		}
+
+		path = {
+            leads_to_tech = dropper_drone_2_upgrade_1
+			research_cost_coeff = 1
+		}
+
+		path = {
+            leads_to_tech = dropper_drone_2_upgrade_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2022
+		folder = {
+			name = support_folder
+			position = { x = 24 y = @2022 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	dropper_drone_2_upgrade_1 = {
+
+		dropper_drone_company = {
+			recon = 1
+		}
+
+		xor = {
+			dropper_drone_2_upgrade_2
+		}
+
+		path = {
+			leads_to_tech = dropper_drone_3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2024
+		folder = {
+			name = support_folder
+			position = { x = 23 y = @2024 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	dropper_drone_2_upgrade_2 = {
+
+		dropper_drone_company = {
+			reliability = 0.05
+		}
+
+		path = {
+			leads_to_tech = dropper_drone_3
+			research_cost_coeff = 1
+		}
+
+		xor = {
+			dropper_drone_2_upgrade_1
+		}
+
+		research_cost = 1.5
+		start_year = 2024
+		folder = {
+			name = support_folder
+			position = { x = 25 y = @2024 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	dropper_drone_3 = {
+
+		enable_equipments = {
+			dropper_drone_equipment_3
+		}
+
+		path = {
+            leads_to_tech = dropper_drone_3_upgrade_1
+			research_cost_coeff = 1
+		}
+
+		path = {
+            leads_to_tech = dropper_drone_3_upgrade_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2026
+		folder = {
+			name = support_folder
+			position = { x = 24 y = @2026 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	dropper_drone_3_upgrade_1 = {
+
+		dropper_drone_company = {
+			build_cost_ic = -0.1
+		}
+
+		xor = {
+			dropper_drone_3_upgrade_2
+		}
+
+		path = {
+			leads_to_tech = dropper_drone_4
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2028
+		folder = {
+			name = support_folder
+			position = { x = 23 y = @2028 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	dropper_drone_3_upgrade_2 = {
+
+		dropper_drone_company = {
+			land_night_attack = 0.1
+		}
+
+		path = {
+			leads_to_tech = dropper_drone_4
+			research_cost_coeff = 1
+		}
+
+		xor = {
+			dropper_drone_2_upgrade_1
+		}
+
+		research_cost = 1.5
+		start_year = 2028
+		folder = {
+			name = support_folder
+			position = { x = 25 y = @2028 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	dropper_drone_4 = {
+
+		enable_equipments = {
+			dropper_drone_equipment_4
+		}
+
+		research_cost = 1.5
+		start_year = 2030
+		folder = {
+			name = support_folder
+			position = { x = 24 y = @2030 }
+		}
+
+		categories = {
+			drone
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+	}
+}
