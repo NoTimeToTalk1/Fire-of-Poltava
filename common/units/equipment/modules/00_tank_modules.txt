@@ -2,245 +2,552 @@ equipment_modules = {
 	limit = {
 		has_dlc = "No Step Back" 
 	}
-### Engine Types
-
-	tank_gasoline_engine = {
-		abbreviation = "gas"
-		category = tank_engine_type
+### ENGINES ###
+   ## DIESEL ##
+	tank_diesel_engine_gen1 = {
+		abbreviation = "die1"
+		category = tank_diesel_engine
 		sfx = sfx_ui_sd_module_engine
 
 		add_stats = {
 			build_cost_ic = 1
-			fuel_consumption = 2
-			maximum_speed = 0.5
+			fuel_consumption = 3.5
+			maximum_speed = 7
 		}
-		multiply_stats = {
-			maximum_speed = 0.15
+		can_convert_from = {
+			module_category = tank_diesel_engine
+			convert_cost_ic = 1.15
+		}
+		can_convert_from = {
+			module_category = tank_turbine_engine
+			convert_cost_ic = 1.15
+		}
+		can_convert_from = {
+			module_category = tank_electric_engine
+			convert_cost_ic = 1.15
 		}
 
+		xp_cost = 3
 	}
 
-	tank_diesel_engine = {
-		abbreviation = "die"
-		category = tank_engine_type
+	tank_diesel_engine_gen2 = {
+		abbreviation = "die2"
+		category = tank_diesel_engine
 		sfx = sfx_ui_sd_module_engine
+		parent = tank_diesel_engine_gen1
 
 		add_stats = {
-			build_cost_ic = 1 
-			fuel_consumption = 2
-			reliability = 0.25
+			build_cost_ic = 1.15
+			fuel_consumption = 4.1
+			maximum_speed = 8.5
 		}
-		multiply_stats = {  }
+		can_convert_from = {
+			module_category = tank_diesel_engine
+			convert_cost_ic = 1.15
+		}
+		can_convert_from = {
+			module_category = tank_turbine_engine
+			convert_cost_ic = 1.15
+		}
+		can_convert_from = {
+			module_category = tank_electric_engine
+			convert_cost_ic = 1.15
+		}
+
+		xp_cost = 3
 	}
 
-	tank_petrol_electric_engine = {
-		abbreviation = "pel"
-		category = tank_engine_type
+	tank_diesel_engine_gen3 = {
+		abbreviation = "die3"
+		category = tank_diesel_engine
 		sfx = sfx_ui_sd_module_engine
+		parent = tank_diesel_engine_gen2
 
 		add_stats = {
-			fuel_consumption = 2
+			build_cost_ic = 1.3
+			fuel_consumption = 4.7
+			maximum_speed = 10
+		}
+		can_convert_from = {
+			module_category = tank_diesel_engine
+			convert_cost_ic = 1.25
+		}
+		can_convert_from = {
+			module_category = tank_turbine_engine
+			convert_cost_ic = 1.25
+		}
+		can_convert_from = {
+			module_category = tank_electric_engine
+			convert_cost_ic = 1.25
+		}
+
+		xp_cost = 3
+	}
+
+	tank_diesel_engine_gen4 = {
+		abbreviation = "die4"
+		category = tank_diesel_engine
+		sfx = sfx_ui_sd_module_engine
+		parent = tank_diesel_engine_gen3
+
+		add_stats = {
+			build_cost_ic = 1.5
+			fuel_consumption = 5.3
+			maximum_speed = 11.25
+		}
+		can_convert_from = {
+			module_category = tank_diesel_engine
+			convert_cost_ic = 1.5
+		}
+		can_convert_from = {
+			module_category = tank_turbine_engine
+			convert_cost_ic = 1.5
+		}
+		can_convert_from = {
+			module_category = tank_electric_engine
+			convert_cost_ic = 1.5
+		}
+
+		xp_cost = 3
+	}
+
+	tank_diesel_engine_gen5 = {
+		abbreviation = "die5"
+		category = tank_diesel_engine
+		sfx = sfx_ui_sd_module_engine
+		parent = tank_diesel_engine_gen4
+
+		add_stats = {
+			build_cost_ic = 1.85
+			fuel_consumption = 5.9
+			maximum_speed = 12.75
+		}
+		can_convert_from = {
+			module_category = tank_diesel_engine
+			convert_cost_ic = 1.80
+		}
+		can_convert_from = {
+			module_category = tank_turbine_engine
+			convert_cost_ic = 1.80
+		}
+		can_convert_from = {
+			module_category = tank_electric_engine
+			convert_cost_ic = 1.80
+		}
+
+		xp_cost = 3
+	}
+
+	tank_diesel_engine_gen6 = {
+		abbreviation = "die6"
+		category = tank_diesel_engine
+		sfx = sfx_ui_sd_module_engine
+		parent = tank_diesel_engine_gen5
+
+		add_stats = {
 			build_cost_ic = 2
-			reliability = -0.5
-			breakthrough = 2
-			defense = 2
+			fuel_consumption = 6.5
+			maximum_speed = 14.25
 		}
-		multiply_stats = {
-			breakthrough = 0.15
-			defense = 0.15
-			build_cost_ic = 0.15
+		can_convert_from = {
+			module_category = tank_diesel_engine
+			convert_cost_ic = 2
 		}
+		can_convert_from = {
+			module_category = tank_turbine_engine
+			convert_cost_ic = 2
+		}
+		can_convert_from = {
+			module_category = tank_electric_engine
+			convert_cost_ic = 2
+		}
+
+		xp_cost = 3
 	}
 
-	tank_gas_turbine_engine = {
-		abbreviation = "tur"
-		category = tank_engine_type
+	tank_diesel_engine_gen7 = {
+		abbreviation = "die7"
+		category = tank_diesel_engine
+		sfx = sfx_ui_sd_module_engine
+		parent = tank_diesel_engine_gen6
+
+		add_stats = {
+			build_cost_ic = 2.3
+			fuel_consumption = 7
+			maximum_speed = 15.75
+		}
+		can_convert_from = {
+			module_category = tank_diesel_engine
+			convert_cost_ic = 2.4
+		}
+		can_convert_from = {
+			module_category = tank_turbine_engine
+			convert_cost_ic = 2.4
+		}
+		can_convert_from = {
+			module_category = tank_electric_engine
+			convert_cost_ic = 2.4
+		}
+
+		xp_cost = 3
+	}
+
+	## GAS TURBINE ##
+
+	tank_gas_turbine_engine_gen1 = {
+		abbreviation = "gte1"
+		category = tank_turbine_engine
+		sfx = sfx_ui_sd_module_engine
+
+		add_stats = {
+			build_cost_ic = 1.25
+			fuel_consumption = 5.3
+			maximum_speed = 9.8
+			reliability = -0.1
+		}
+		can_convert_from = {
+			module_category = tank_diesel_engine
+			convert_cost_ic = 1.5
+		}
+		can_convert_from = {
+			module_category = tank_turbine_engine
+			convert_cost_ic = 1.5
+		}
+		can_convert_from = {
+			module_category = tank_electric_engine
+			convert_cost_ic = 1.5
+		}
+
+		xp_cost = 3
+	}
+
+	tank_gas_turbine_engine_gen2 = {
+		abbreviation = "gte2"
+		category = tank_turbine_engine
+		sfx = sfx_ui_sd_module_engine
+		parent = tank_gas_turbine_engine_gen1
+
+		add_stats = {
+			build_cost_ic = 1.4
+			fuel_consumption = 6.1
+			maximum_speed = 11.25
+		}
+		can_convert_from = {
+			module_category = tank_diesel_engine
+			convert_cost_ic = 1.65
+		}
+		can_convert_from = {
+			module_category = tank_turbine_engine
+			convert_cost_ic = 1.65
+		}
+		can_convert_from = {
+			module_category = tank_electric_engine
+			convert_cost_ic = 1.65
+		}
+
+		xp_cost = 3
+	}
+
+	tank_gas_turbine_engine_gen3 = {
+		abbreviation = "gte3"
+		category = tank_turbine_engine
+		sfx = sfx_ui_sd_module_engine
+		parent = tank_gas_turbine_engine_gen2
+
+		add_stats = {
+			build_cost_ic = 1.65
+			fuel_consumption = 6.9
+			maximum_speed = 13
+		}
+		can_convert_from = {
+			module_category = tank_diesel_engine
+			convert_cost_ic = 1.85
+		}
+		can_convert_from = {
+			module_category = tank_turbine_engine
+			convert_cost_ic = 1.85
+		}
+		can_convert_from = {
+			module_category = tank_electric_engine
+			convert_cost_ic = 1.85
+		}
+
+		xp_cost = 3
+	}
+
+	tank_gas_turbine_engine_gen4 = {
+		abbreviation = "gte4"
+		category = tank_turbine_engine
+		sfx = sfx_ui_sd_module_engine
+		parent = tank_gas_turbine_engine_gen3
+
+		add_stats = {
+			build_cost_ic = 2
+			fuel_consumption = 7.7
+			maximum_speed = 14.75
+		}
+		can_convert_from = {
+			module_category = tank_diesel_engine
+			convert_cost_ic = 2.25
+		}
+		can_convert_from = {
+			module_category = tank_turbine_engine
+			convert_cost_ic = 2.25
+		}
+		can_convert_from = {
+			module_category = tank_electric_engine
+			convert_cost_ic = 2.25
+		}
+
+		xp_cost = 3
+	}
+
+	tank_gas_turbine_engine_gen5 = {
+		abbreviation = "gte5"
+		category = tank_turbine_engine
+		sfx = sfx_ui_sd_module_engine
+		parent = tank_gas_turbine_engine_gen4
+
+		add_stats = {
+			build_cost_ic = 2.2
+			fuel_consumption = 8.5
+			maximum_speed = 16.5
+		}
+		can_convert_from = {
+			module_category = tank_diesel_engine
+			convert_cost_ic = 2.4
+		}
+		can_convert_from = {
+			module_category = tank_turbine_engine
+			convert_cost_ic = 2.4
+		}
+		can_convert_from = {
+			module_category = tank_electric_engine
+			convert_cost_ic = 2.4
+		}
+
+		xp_cost = 3
+	}
+
+	tank_gas_turbine_engine_gen6 = {
+		abbreviation = "gte6"
+		category = tank_turbine_engine
+		sfx = sfx_ui_sd_module_engine
+		parent = tank_gas_turbine_engine_gen5
+
+		add_stats = {
+			build_cost_ic = 2.5
+			fuel_consumption = 9.1
+			maximum_speed = 17.75
+		}
+		can_convert_from = {
+			module_category = tank_diesel_engine
+			convert_cost_ic = 2.75
+		}
+		can_convert_from = {
+			module_category = tank_turbine_engine
+			convert_cost_ic = 2.75
+		}
+		can_convert_from = {
+			module_category = tank_electric_engine
+			convert_cost_ic = 2.75
+		}
+
+		xp_cost = 3
+	}
+
+	## ELECTRIC ##
+	tank_electric_engine_gen1 = {
+		abbreviation = "ee1"
+		category = tank_electric_engine
 		sfx = sfx_ui_sd_module_engine
 
 		add_stats = {
 			build_cost_ic = 3
-			fuel_consumption = 4
-			reliability = -0.1
-			maximum_speed = 0.5
+			fuel_consumption = 0.5
+			maximum_speed = 14.5
 		}
-
-		multiply_stats = {
-			maximum_speed = 0.25
+		can_convert_from = {
+			module_category = tank_diesel_engine
+			convert_cost_ic = 3.25
 		}
-	}
-
-	###Armor Types
-
-	tank_riveted_armor = {
-		abbreviation = "riv"
-		category = tank_armor_type
-		sfx = sfx_ui_sd_module_sonar
-
-		add_stats = {
-			#soft_attack = 1 # that's when rivets shoot back because they got dislodged by the shock. That was in fact the first reactive armor.
-			
-			defense = 2
-			breakthrough = 2
+		can_convert_from = {
+			module_category = tank_turbine_engine
+			convert_cost_ic = 3.25
 		}
-		xp_cost = 8
-		multiply_stats = {
-			build_cost_ic = -0.2
-
+		can_convert_from = {
+			module_category = tank_electric_engine
+			convert_cost_ic = 3.25
 		}
-	}
-
-	tank_cast_armor = {
-		abbreviation = "cas"
-		category = tank_armor_type
-		sfx = sfx_ui_sd_module_sonar
-
-		add_stats = {
-			defense = 3
-			breakthrough = 3
-			hardness = 0.02	
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 8
-		multiply_stats = {
-			build_cost_ic = 0.2
-			armor_value = 0.3
-		}
-	}
-
-	tank_welded_armor = {
-		abbreviation = "wel"
-		category = tank_armor_type
-		sfx = sfx_ui_sd_module_sonar
-		xp_cost = 8
-
-		add_stats = {
-			defense = 4
-			breakthrough = 4
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 8
-		multiply_stats = {
-			armor_value = 0.3
-		}
-
 		build_cost_resources = {
 			chromium = 1
 		}
+
+		xp_cost = 3
 	}
 
-	NOR_tank_rikstanken_armor = { # Rikstanken Armor
-		abbreviation = "msa"
+	tank_electric_engine_gen2 = {
+		abbreviation = "ee2"
+		category = tank_electric_engine
+		sfx = sfx_ui_sd_module_engine
+		parent = tank_electric_engine_gen1
+
+		add_stats = {
+			build_cost_ic = 3.5
+			fuel_consumption = 0.5
+			maximum_speed = 15.5
+		}
+		can_convert_from = {
+			module_category = tank_diesel_engine
+			convert_cost_ic = 3.75
+		}
+		can_convert_from = {
+			module_category = tank_turbine_engine
+			convert_cost_ic = 3.75
+		}
+		can_convert_from = {
+			module_category = tank_electric_engine
+			convert_cost_ic = 3.75
+		}
+		build_cost_resources = {
+			chromium = 1
+		}
+
+		xp_cost = 3
+	}
+
+
+	###Armor Types
+
+	## STEEL ##
+	tank_steel_armor_gen1 = {
+		abbreviation = "ste1"
 		category = tank_armor_type
 		sfx = sfx_ui_sd_module_sonar
 
 		add_stats = {
-			
-			defense = 1
-			breakthrough = 0
-			hardness = -0.3
+			defense = 2
+			breakthrough = 6
 		}
-		xp_cost = 8
+		xp_cost = 3
 		multiply_stats = {
-			build_cost_ic = -0.3
-		}
-	}
-	###Suspension Types
-
-	tank_torsion_bar_suspension = {
-		abbreviation = "tor"
-		category = tank_suspension_type
-		sfx = sfx_ui_sd_module_sonar
-
-		add_stats = {
-			build_cost_ic = 1
-			reliability = 0.15
-		}
-		dismantle_cost_ic  = 2
-
-		multiply_stats = {
-		}
-	}
-
-	tank_christie_suspension = {
-		abbreviation = "chr"
-		category = tank_suspension_type
-		sfx = sfx_ui_sd_module_sonar
-
-		add_stats = {
-			build_cost_ic = 1
-		}
-		dismantle_cost_ic  = 2
-
-		multiply_stats =  {
-			maximum_speed = 0.2
-		}
-	}
-
-	tank_bogie_suspension = {
-		abbreviation = "bog"
-		category = tank_suspension_type
-		sfx = sfx_ui_sd_module_sonar
-
-		add_stats = {
-		}
-		dismantle_cost_ic  = 1
-
-	}
-
-	tank_interleaved_suspension = {
-		abbreviation = "int"
-		category = tank_suspension_type
-		sfx = sfx_ui_sd_module_sonar
-
-		add_stats = {
-			build_cost_ic = 2
-			breakthrough = 4
-		}
-		dismantle_cost_ic  = 2
-
-		multiply_stats =  {
-		}
-
-		can_convert_from = {
-			module = tank_torsion_bar_suspension
-			convert_cost_ic = 0.5
-		}
-	}
-
-	tank_wheeled_suspension = {
-		abbreviation = "whe"
-		category = tank_non_tracked_suspension_type
-		sfx = sfx_ui_sd_module_sonar
-
-		add_stats = {
-			reliability = -0.2
-		}
-		dismantle_cost_ic  = 0.5
-
-		multiply_stats =  {
 			build_cost_ic = -0.1
-			hardness = -0.4
 		}
 	}
 
-	tank_half_track_suspension = {
-		abbreviation = "htr"
-		category = tank_non_tracked_suspension_type
+	tank_steel_armor_gen2 = {
+		abbreviation = "ste2"
+		category = tank_armor_type
+		sfx = sfx_ui_sd_module_sonar
+		parent = tank_steel_armor_gen1
+
+		add_stats = {
+			defense = 5
+			breakthrough = 11
+			armor_value = 5
+			maximum_speed = -1.5
+		}
+		xp_cost = 3
+		multiply_stats = {
+			build_cost_ic = -0.05
+		}
+	}
+
+	tank_steel_armor_gen3 = {
+		abbreviation = "ste3"
+		category = tank_armor_type
+		sfx = sfx_ui_sd_module_sonar
+		parent = tank_steel_armor_gen2
+
+		add_stats = {
+			defense = 8
+			breakthrough = 16
+			armor_value = 9
+			maximum_speed = -2
+		}
+		xp_cost = 3
+		multiply_stats = {
+			build_cost_ic = -0.05
+		}
+	}
+
+	## COMPOSITE ##
+	tank_composite_armor_gen1 = {
+		abbreviation = "tca1"
+		category = tank_heavy_armor_type
 		sfx = sfx_ui_sd_module_sonar
 
 		add_stats = {
-			reliability = -0.1
+			defense = 4
+			breakthrough = 8
+			armor_value = 20
+			maximum_speed = -1.5
+			build_cost_ic = 2
 		}
-		dismantle_cost_ic  = 0.5
-
-		multiply_stats =  {
-			build_cost_ic = -0.05
-			hardness = -0.3
+		xp_cost = 3
+		multiply_stats = { }
+		build_cost_resources = {
+			steel = 1
 		}
+	}
 
-		can_convert_from = {
-			module = tank_wheeled_suspension
-			convert_cost_ic = 0.5
+	tank_composite_armor_gen2 = {
+		abbreviation = "tca2"
+		category = tank_heavy_armor_type
+		sfx = sfx_ui_sd_module_sonar
+		parent = tank_composite_armor_gen1
+
+		add_stats = {
+			defense = 6.5
+			breakthrough = 11.5
+			armor_value = 30
+			maximum_speed = -2.5
+			build_cost_ic = 2.35
+		}
+		xp_cost = 3
+		multiply_stats = { }
+		build_cost_resources = {
+			steel = 1
+		}
+	}
+
+	tank_composite_armor_gen3 = {
+		abbreviation = "tca3"
+		category = tank_heavy_armor_type
+		sfx = sfx_ui_sd_module_sonar
+		parent = tank_composite_armor_gen2
+
+		add_stats = {
+			defense = 9
+			breakthrough = 15
+			armor_value = 40
+			maximum_speed = -3.5
+			build_cost_ic = 2.7
+		}
+		xp_cost = 3
+		multiply_stats = { }
+		build_cost_resources = {
+			steel = 3
+		}
+	}
+
+	tank_composite_armor_gen4 = {
+		abbreviation = "tca4"
+		category = tank_heavy_armor_type
+		sfx = sfx_ui_sd_module_sonar
+		parent = tank_composite_armor_gen3
+
+		add_stats = {
+			defense = 11.5
+			breakthrough = 18.5
+			armor_value = 50
+			maximum_speed = -4.5
+			build_cost_ic = 3
+		}
+		xp_cost = 3
+		multiply_stats = { }
+		build_cost_resources = {
+			steel = 4
 		}
 	}
 
@@ -616,629 +923,141 @@ equipment_modules = {
 
 	###Weapons
 
-	tank_heavy_machine_gun = {
-		abbreviation = "hmg"
-		category = tank_small_main_armament
+	## BARRELS ##
+		## RIFLED ##
+
+	tank_rifled_barrel_gen1 = {
+		abbreviation = "rifled1"
+		category = tank_barrel_rifled
 		sfx = sfx_ui_sd_module_turret
 
 		add_stats = {
-			soft_attack = 8
-			hard_attack = 2
-			ap_attack = 6
+			soft_attack = 9.5
+			hard_attack = 3
+			reliability = -0.2
+			ap_attack = 2
 			build_cost_ic = 0.5
 
 		}
 		dismantle_cost_ic = 0.5
 
 		can_convert_from = {
-			module_category = tank_small_main_armament
+			module_category = tank_barrel_rifled
 			convert_cost_ic = 0.5
 		}
 		xp_cost = 1
 	}
 
-	flamethrower = { #Hans, hol den Flammenwerfer!
-		abbreviation = "flt"
-		category = tank_flamethrower
+	tank_rifled_barrel_gen2 = {
+		abbreviation = "rifled2"
+		category = tank_barrel_rifled
 		sfx = sfx_ui_sd_module_turret
-		allow_equipment_type = flame
+
+		add_stats = {
+			soft_attack = 12.75
+			hard_attack = 5
+			reliability = -0.5
+			ap_attack = 3
+			build_cost_ic = 0.6
+
+		}
+		dismantle_cost_ic = 0.5
+
+		can_convert_from = {
+			module_category = tank_barrel_rifled
+			convert_cost_ic = 0.6
+		}
+		xp_cost = 1
+	}
+
+	tank_rifled_barrel_gen3 = {
+		abbreviation = "rifled3"
+		category = tank_barrel_rifled
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			soft_attack = 18.5
+			hard_attack = 8
+			reliability = -0.5
+			ap_attack = 7
+			build_cost_ic = 0.7
+
+		}
+		dismantle_cost_ic = 0.5
+
+		can_convert_from = {
+			module_category = tank_barrel_rifled
+			convert_cost_ic = 0.5
+		}
+		xp_cost = 2
+	}
+
+	## SMOOTHBORE ## 
+
+	tank_smoothbore_barrel_gen1 = {
+		abbreviation = "smoothbore1"
+		category = tank_barrel_smoothbore
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			soft_attack = 4
+			hard_attack = 9.5
+			reliability = 0.2
+			ap_attack = 15
+			build_cost_ic = 0.5
+
+		}
+		dismantle_cost_ic = 0.5
+
+		can_convert_from = {
+			module_category = tank_barrel_smoothbore
+			convert_cost_ic = 0.5
+		}
+		xp_cost = 1
+	}
+
+	tank_smoothbore_barrel_gen2 = {
+		abbreviation = "smoothbore2"
+		category = tank_barrel_smoothbore
+		sfx = sfx_ui_sd_module_turret
 
 		add_stats = {
 			soft_attack = 5
-			build_cost_ic = 0.5
-			reliability = -0.05
+			hard_attack = 11.75
+			reliability = 0.5
+			ap_attack = 19
+			build_cost_ic = 0.6
+
 		}
 		dismantle_cost_ic = 0.5
 
 		can_convert_from = {
-			module_category = tank_small_main_armament
-			convert_cost_ic = 0.5
+			module_category = tank_barrel_smoothbore
+			convert_cost_ic = 0.6
 		}
 		xp_cost = 1
 	}
 
-	tank_auto_cannon = {
-		abbreviation = "ac1"
-		category = tank_small_main_armament
+	tank_smoothbore_barrel_gen3 = {
+		abbreviation = "smoothbore3"
+		category = tank_barrel_smoothbore
 		sfx = sfx_ui_sd_module_turret
-
-		add_stats = {
-			soft_attack = 15
-			hard_attack = 5
-			ap_attack = 20
-			build_cost_ic = 1.5
-			maximum_speed = -0.1
-			reliability = -0.1
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		can_convert_from = {
-			module_category = tank_small_main_armament
-			convert_cost_ic = 1.5
-		}
-	}
-
-	tank_auto_cannon_2 = {
-		abbreviation = "ac2"
-		category = tank_small_main_armament
-		sfx = sfx_ui_sd_module_turret
-		parent = tank_auto_cannon
-		add_stats = {
-			soft_attack = 20
-			hard_attack = 7
-			ap_attack = 35
-			build_cost_ic = 2
-			maximum_speed = -0.1
-			reliability = -0.1
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		can_convert_from = {
-			module_category = tank_small_main_armament
-			convert_cost_ic = 2
-		}
-	}
-
-	tank_anti_air_cannon = {
-		abbreviation = "aa1"
-		category = tank_small_main_armament
-		sfx = sfx_ui_sd_module_turret
-		allow_equipment_type = anti_air
-		forbid_equipment_type_exact_match = armor
 
 		add_stats = {
 			soft_attack = 6
-			hard_attack = 2
-			ap_attack = 10
-			air_attack = 18
-			build_cost_ic = 2
-			reliability = -0.1
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		can_convert_from = {
-			module_category = tank_small_main_armament
-			convert_cost_ic = 2
-		}
-	}
-
-	tank_anti_air_cannon_2 = {
-		abbreviation = "aa2"
-		category = tank_small_main_armament
-		sfx = sfx_ui_sd_module_turret
-		allow_equipment_type = anti_air
-		forbid_equipment_type_exact_match = armor
-		parent = tank_anti_air_cannon
-		add_stats = {
-			soft_attack = 8
-			hard_attack = 5
-			ap_attack = 20
-			air_attack = 36
-			build_cost_ic = 3
-			reliability = -0.1
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		can_convert_from = {
-			module_category = tank_small_main_armament
-			convert_cost_ic = 3
-		}
-		build_cost_resources = {
-			steel = 2
-			tungsten = 1
-		}
-	}
-
-	tank_anti_air_cannon_3 = {
-		abbreviation = "aa3"
-		category = tank_medium_main_armament
-		sfx = sfx_ui_sd_module_turret
-		allow_equipment_type = anti_air
-		forbid_equipment_type_exact_match = armor
-		parent = tank_anti_air_cannon_2
-		add_stats = {
-			soft_attack = 10
-			hard_attack = 5
-			ap_attack = 30
-			air_attack = 46
-			build_cost_ic = 4
-			reliability = -0.1
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		can_convert_from = {
-			module_category = tank_medium_main_armament
-			convert_cost_ic = 4
-		}
-		build_cost_resources = {
-			steel = 3
-			tungsten = 1
-		}
-	}
-
-	tank_small_cannon = {
-		abbreviation = "sc1"
-		category = tank_small_main_armament
-		sfx = sfx_ui_sd_module_turret
-
-		add_stats = {
-			soft_attack = 10
-			hard_attack = 6
-			ap_attack = 25
-			build_cost_ic = 1.5
-			maximum_speed = -0.1
-			reliability = -0.1
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		can_convert_from = {
-			module_category = tank_small_main_armament
-			convert_cost_ic = 1.5
-		}
-	}
-
-	tank_small_cannon_2 = {
-		abbreviation = "sc2"
-		category = tank_small_main_armament
-		sfx = sfx_ui_sd_module_turret
-		parent = tank_small_cannon
-		add_stats = {
-			soft_attack = 15
 			hard_attack = 15
-			ap_attack = 50
-			build_cost_ic = 3
-			maximum_speed = -0.1
-			reliability = -0.1
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		can_convert_from = {
-			module_category = tank_small_main_armament
-			convert_cost_ic = 3
-		}
-	}
+			reliability = 0.5
+			ap_attack = 23
+			build_cost_ic = 0.6
 
-	tank_close_support_gun = {
-		abbreviation = "cs"
-		category = tank_small_main_armament
-		sfx = sfx_ui_sd_module_turret
-		allow_equipment_type = artillery
-		add_stats = {
-			soft_attack = 25
-			hard_attack = 5
-			ap_attack = 10
-			build_cost_ic = 4
-			maximum_speed = -0.2
-			reliability = -0.1
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		can_convert_from = {
-			module_category = tank_small_main_armament
-			convert_cost_ic = 4
-		}
-		build_cost_resources = {
-			steel = 1
-		}
-	}
-
-	tank_medium_cannon = {
-		abbreviation = "mc1"
-		category = tank_medium_main_armament
-		sfx = sfx_ui_sd_module_turret
-		allow_equipment_type = anti_tank
-
-		add_stats = {
-			soft_attack = 20
-			hard_attack = 15
-			ap_attack = 60
-			build_cost_ic = 3
-			maximum_speed = -0.2
-			reliability = -0.15
-			breakthrough = 2
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		can_convert_from = {
-			module_category = tank_medium_main_armament
-			convert_cost_ic = 3
-		}
-
-		build_cost_resources = {
-			tungsten = 1
-			steel = 1
-		}
-	}
-
-	tank_medium_cannon_2 = {
-		abbreviation = "mc2"
-		category = tank_medium_main_armament
-		sfx = sfx_ui_sd_module_turret
-		allow_equipment_type = anti_tank
-		parent = tank_medium_cannon
-		dismantle_cost_ic = 1
-		add_stats = {
-			soft_attack = 32
-			hard_attack = 20
-			ap_attack = 90
-			build_cost_ic = 4
-			maximum_speed = -0.3
-			reliability = -0.15
-			breakthrough = 4
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		can_convert_from = {
-			module_category = tank_medium_main_armament
-			convert_cost_ic = 4
-		}
-		build_cost_resources = {
-			tungsten = 1
-			steel = 2
-			chromium = 1
-		}
-	}
-
-	tank_medium_howitzer = {
-		abbreviation = "mh1"
-		category = tank_medium_main_armament
-		sfx = sfx_ui_sd_module_turret
-		allow_equipment_type = artillery
-
-		add_stats = {
-			soft_attack = 35
-			hard_attack = 1
-			ap_attack = 20
-			build_cost_ic = 4
-			maximum_speed = -0.3
-			reliability = -0.2
-			breakthrough = -2
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		can_convert_from = {
-			module_category = tank_medium_main_armament
-			convert_cost_ic = 4
-		}
-		build_cost_resources = {
-			tungsten = 1
-			steel = 2
-		}
-	}
-
-	tank_medium_howitzer_2 = {
-		abbreviation = "mh2"
-		category = tank_medium_main_armament
-		sfx = sfx_ui_sd_module_turret
-		allow_equipment_type = artillery
-		parent = tank_medium_howitzer
-		add_stats = {
-			soft_attack = 45
-			hard_attack = 2
-			ap_attack = 30
-			build_cost_ic = 5.5
-			maximum_speed = -0.4
-			reliability = -0.2
-			breakthrough = -2
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		can_convert_from = {
-			module_category = tank_medium_main_armament
-			convert_cost_ic = 5.5
-		}
-		build_cost_resources = {
-			tungsten = 1
-			steel = 3
-			chromium = 1
-		}
-	}
-
-	tank_rocket_launcher = {
-		abbreviation = "rk1"
-		category = tank_medium_main_armament
-		sfx = sfx_ui_sd_module_turret
-		allow_equipment_type = artillery
-		forbid_equipment_type_exact_match = armor
-
-		add_stats = {
-			soft_attack = 25
-			hard_attack = 1
-			ap_attack = 2
-			build_cost_ic = 4
-			maximum_speed = -0.1
-			reliability = -0.1
-			breakthrough = -4
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		can_convert_from = {
-			module_category = tank_medium_main_armament
-			convert_cost_ic = 4
-		}
-
-		build_cost_resources = {
-			tungsten = 2
-			steel = 1
-		}
-	}
-
-	tank_rocket_launcher_2 = {
-		abbreviation = "rk2"
-		category = tank_medium_main_armament
-		sfx = sfx_ui_sd_module_turret
-		allow_equipment_type = artillery
-		parent = tank_rocket_launcher
-		forbid_equipment_type_exact_match = armor
-		add_stats = {
-			soft_attack = 35
-			hard_attack = 1
-			ap_attack = 2
-			build_cost_ic = 5
-			maximum_speed = -0.2
-			reliability = -0.1
-			breakthrough = -4
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		can_convert_from = {
-			module_category = tank_medium_main_armament
-			convert_cost_ic = 5
-		}
-		build_cost_resources = {
-			tungsten = 2
-			steel = 1
-		}
-	}
-
-	tank_high_velocity_cannon = {
-		abbreviation = "hv1"
-		category = tank_small_main_armament
-		sfx = sfx_ui_sd_module_turret
-		allow_equipment_type = anti_tank
-
-		add_stats = {
-			soft_attack = 10
-			hard_attack = 26
-			ap_attack = 68
-			build_cost_ic = 3
-			maximum_speed = -0.1
-			reliability = -0.05
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		can_convert_from = {
-			module_category = tank_small_main_armament
-			convert_cost_ic = 3
-		}
-		build_cost_resources = {
-			tungsten = 2
-			steel = 2
-		}
-	}
-
-	tank_high_velocity_cannon_2 = {
-		abbreviation = "hv2"
-		category = tank_medium_main_armament
-		sfx = sfx_ui_sd_module_turret
-		allow_equipment_type = anti_tank
-
-		add_stats = {
-			soft_attack = 20
-			hard_attack = 35
-			ap_attack = 125
-			build_cost_ic = 5
-			maximum_speed = -0.3
-			reliability = -0.175
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		can_convert_from = {
-			module_category = tank_medium_main_armament
-			convert_cost_ic = 5
-		}
-		build_cost_resources = {
-			tungsten = 2
-			chromium = 1
-			steel = 2
-		}
-	}
-	tank_high_velocity_cannon_3 = {
-		abbreviation = "hv3"
-		category = tank_heavy_main_armament
-		sfx = sfx_ui_sd_module_turret
-		allow_equipment_type = anti_tank
-
-		add_stats = {
-			soft_attack = 25
-			hard_attack = 45
-			ap_attack = 200
-			build_cost_ic = 7
-			maximum_speed = -0.4
-			reliability = -0.2
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		can_convert_from = {
-			module_category = tank_heavy_main_armament
-			convert_cost_ic = 7
-		}
-		build_cost_resources = {
-			tungsten = 2
-			chromium = 1
-			steel = 3
-		}
-	}
-
-	tank_heavy_cannon = {
-		abbreviation = "hc1"
-		category = tank_heavy_main_armament
-		sfx = sfx_ui_sd_module_turret
-		allow_equipment_type = anti_tank
-
-		add_stats = {
-			soft_attack = 20
-			hard_attack = 20
-			ap_attack = 90
-			build_cost_ic = 6
-			maximum_speed = -0.3
-			reliability = -0.25
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		can_convert_from = {
-			module_category = tank_heavy_main_armament
-			convert_cost_ic = 6
-		}
-		build_cost_resources = {
-			tungsten = 1
-			chromium = 1
-			steel = 2
-		}
-	}
-
-	tank_heavy_cannon_2 = {
-		abbreviation = "hc2"
-		category = tank_heavy_main_armament
-		sfx = sfx_ui_sd_module_turret
-		allow_equipment_type = anti_tank
-		parent = tank_heavy_cannon
-		add_stats = {
-			soft_attack = 25
-			hard_attack = 35
-			ap_attack = 125
-			build_cost_ic = 7
-			maximum_speed = -0.4
-			reliability = -0.25
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		can_convert_from = {
-			module_category = tank_heavy_main_armament
-			convert_cost_ic = 7
-		}
-		build_cost_resources = {
-			tungsten = 2
-			chromium = 1
-			steel = 2
-		}
-	}
-
-	tank_heavy_cannon_3 = {
-		abbreviation = "hc3"
-		category = tank_heavy_main_armament
-		sfx = sfx_ui_sd_module_turret
-		allow_equipment_type = anti_tank
-		parent = tank_heavy_cannon_2
-		add_stats = {
-			soft_attack = 30
-			hard_attack = 40
-			ap_attack = 170
-			build_cost_ic = 8
-			maximum_speed = -0.5
-			reliability = -0.3
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		can_convert_from = {
-			module_category = tank_heavy_main_armament
-			convert_cost_ic = 8
-		}
-		build_cost_resources = {
-			tungsten = 3
-			chromium = 1
-			steel = 3
-		}
-	}
-
-	tank_heavy_howitzer = {
-		abbreviation = "hh1"
-		category = tank_heavy_main_armament
-		sfx = sfx_ui_sd_module_turret
-		allow_equipment_type = artillery
-
-		add_stats = {
-			soft_attack = 55
-			hard_attack = 2
-			ap_attack = 60
-			build_cost_ic = 7
-			maximum_speed = -0.5
-			reliability = -0.3
-			breakthrough = -4
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		can_convert_from = {
-			module_category = tank_heavy_main_armament
-			convert_cost_ic = 7
-		}
-
-		build_cost_resources = {
-			tungsten = 1
-			chromium = 1
-			steel = 3
-		}
-	}
-
-	tank_super_heavy_cannon = {
-		abbreviation = "sh1"
-		category = tank_super_heavy_main_armament
-		sfx = sfx_ui_sd_module_turret
-		allow_equipment_type = anti_tank
-
-		add_stats = {
-			soft_attack = 35
-			hard_attack = 45
-			ap_attack = 225
-			build_cost_ic = 12.5
-			maximum_speed = -0.6
-			reliability = -0.35
-		}
-		dismantle_cost_ic = 1
-		xp_cost = 1
-		build_cost_resources = {
-			tungsten = 5
-			chromium = 2
-		}
-	}
-
-
-	NOR_rikstanken_turret = {
-		abbreviation = "mst"
-		category = tank_light_turret_type
-		sfx = sfx_ui_sd_module_turret
-
-		add_stats = {
-			build_cost_ic = 0.1
-			breakthrough = 1	
-			reliability = -0.25
 		}
 		dismantle_cost_ic = 0.5
-		xp_cost = 2
-		multiply_stats = {
-			
-		}
 
+		can_convert_from = {
+			module_category = tank_barrel_smoothbore
+			convert_cost_ic = 0.5
+		}
+		xp_cost = 2
 	}
 
 	###Special Modules
