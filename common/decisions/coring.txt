@@ -1,5 +1,5 @@
-coring = {
-	install_administration = {
+FOP_coring_micro_region = {
+	FOP_install_administration_micro_region = {
 		available = {
 			ROOT = {
 				FROM = {
@@ -17,7 +17,7 @@ coring = {
 				}
 			}
 		}
-		cost = 15
+		cost = 20
 		fire_only_once = yes
 		days_remove = 5
 		modifier = {
@@ -35,10 +35,10 @@ coring = {
 				set_state_flag = core.1
 				clr_state_flag = poc
 			}
-			add_political_power = 5
+			add_political_power = 10
 		}
 	}
-	crush_desedents = {
+	FOP_crush_dissidents_micro_region = {
 		available = {
 			FROM = {
 				compliance > 20
@@ -81,7 +81,7 @@ coring = {
 			}
 		}
 	}
-	core_state = {
+	FOP_core_state_micro_region = {
 		available = {
 			FROM = {
 				has_state_flag = core.2
@@ -119,7 +119,7 @@ coring = {
 		}
 	}
 	### difficult region for core
-	hard_integration = {
+	FOP_hard_integration_micro_region = {
 		available = {
 			FROM = {
 				compliance > 30
@@ -142,7 +142,214 @@ coring = {
 				}
 			}
 		}
-		cost = 20
+		cost = 25
+		fire_only_once = yes
+		days_remove = 50
+		modifier = {
+			compliance_growth = 0.05
+			weekly_manpower = -2500
+		}
+		visible = {
+			FROM = {
+				any_neighbor_state = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		remove_effect = {
+			FROM = {
+				clr_state_flag = hardint
+				set_state_flag = poc
+				add_manpower = -500
+			}
+			add_political_power = 15
+		}
+	}
+	FOP_integration_campaign_micro_region = {
+		available = {
+			ROOT = {
+				FROM = {
+					compliance < 20
+				}
+			}
+		}
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = controlled_states
+		target_trigger = {
+			FROM = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		cost = 10
+		fire_only_once = no
+		days_remove = 10
+		modifier = {
+			compliance_growth = 0.5
+		}
+		visible = {
+			FROM = {
+				NOT = {
+					is_core_of = ROOT
+				}
+				has_active_resistance = yes
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_compliance = 4
+			}
+		}
+	}
+}
+
+FOP_coring_region = {
+	FOP_install_administration_region = {
+		available = {
+			ROOT = {
+				FROM = {
+					compliance > 10
+				}
+			}
+		}
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = controlled_states
+		target_trigger = {
+			FROM = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		cost = 10
+		fire_only_once = yes
+		days_remove = 5
+		modifier = {
+			compliance_growth = 0.5
+		}
+		visible = {
+			FROM = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		remove_effect = {
+			FROM = {
+				set_state_flag = core.1
+				clr_state_flag = poc
+			}
+			add_political_power = 5
+		}
+	}
+	FOP_crush_dissidents_region = {
+		available = {
+			FROM = {
+				compliance > 20
+				has_state_flag = core.1
+			}
+		}
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = controlled_states
+		target_trigger = {
+			FROM = {
+				has_state_flag = core.1
+				compliance > 10
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 30
+		modifier = {
+			compliance_growth = 0.2
+			state_resources_factor = 0.2
+		}
+		visible = {
+			# FROM = {
+				#  has_state_flag = core.1
+			# }
+		}
+		custom_cost_text = decision_cost_CP_5
+        complete_effect = {
+            add_command_power = -5
+        }
+		remove_effect = {
+			FROM = {
+				clr_state_flag = core.1
+				set_state_flag = core.2
+				add_manpower = -500
+				cancel_resistance = yes
+			}
+		}
+	}
+	FOP_core_state_region = {
+		available = {
+			FROM = {
+				has_state_flag = core.2
+			}
+		}
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = controlled_states
+		target_trigger = {
+			FROM = {
+				has_state_flag = core.2
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		cost = 10
+		fire_only_once = yes
+		days_remove = 30
+		modifier = {
+			political_power_factor = -0.05
+			compliance_growth = 0.5
+			state_resources_factor = 0.2
+		}
+		visible = {
+			FROM = {
+				has_state_flag = core.2
+			}
+		}
+		remove_effect = {
+			FROM = {
+				clr_state_flag = core.2
+				add_core_of = ROOT
+			}
+		}
+	}
+	### difficult region for core
+	FOP_hard_integration_region = {
+		available = {
+			FROM = {
+				compliance > 30
+				any_neighbor_state = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = controlled_states
+		target_trigger = {
+			FROM = {
+				has_state_flag = hardint
+				NOT = {
+					is_core_of = ROOT
+					all_neighbor_state = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+		cost = 15
 		fire_only_once = yes
 		days_remove = 50
 		modifier = {
@@ -165,7 +372,7 @@ coring = {
 			add_political_power = 5
 		}
 	}
-	integration_campaign = {
+	FOP_integration_campaign_region = {
 		available = {
 			ROOT = {
 				FROM = {
@@ -183,7 +390,421 @@ coring = {
 				}
 			}
 		}
+		cost = 5
+		fire_only_once = no
+		days_remove = 10
+		modifier = {
+			compliance_growth = 0.5
+		}
+		visible = {
+			FROM = {
+				NOT = {
+					is_core_of = ROOT
+				}
+				has_active_resistance = yes
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_compliance = 4
+			}
+		}
+	}
+}
+
+FOP_coring_super_region = {
+	FOP_install_administration_super_region = {
+		available = {
+			ROOT = {
+				FROM = {
+					compliance > 10
+				}
+			}
+		}
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = controlled_states
+		target_trigger = {
+			FROM = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		cost = 5
+		fire_only_once = yes
+		days_remove = 5
+		modifier = {
+			compliance_growth = 0.5
+		}
+		visible = {
+			FROM = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		remove_effect = {
+			FROM = {
+				set_state_flag = core.1
+				clr_state_flag = poc
+			}
+			add_political_power = 5
+		}
+	}
+	FOP_crush_dissidents_super_region = {
+		available = {
+			FROM = {
+				compliance > 20
+				has_state_flag = core.1
+			}
+		}
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = controlled_states
+		target_trigger = {
+			FROM = {
+				has_state_flag = core.1
+				compliance > 10
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 30
+		modifier = {
+			compliance_growth = 0.2
+			state_resources_factor = 0.2
+		}
+		visible = {
+			# FROM = {
+				#  has_state_flag = core.1
+			# }
+		}
+		custom_cost_text = decision_cost_CP_5
+        complete_effect = {
+            add_command_power = -5
+        }
+		remove_effect = {
+			FROM = {
+				clr_state_flag = core.1
+				set_state_flag = core.2
+				add_manpower = -500
+				cancel_resistance = yes
+			}
+		}
+	}
+	FOP_core_state_super_region = {
+		available = {
+			FROM = {
+				has_state_flag = core.2
+			}
+		}
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = controlled_states
+		target_trigger = {
+			FROM = {
+				has_state_flag = core.2
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		cost = 5
+		fire_only_once = yes
+		days_remove = 30
+		modifier = {
+			political_power_factor = -0.05
+			compliance_growth = 0.5
+			state_resources_factor = 0.2
+		}
+		visible = {
+			FROM = {
+				has_state_flag = core.2
+			}
+		}
+		remove_effect = {
+			FROM = {
+				clr_state_flag = core.2
+				add_core_of = ROOT
+			}
+		}
+	}
+	### difficult region for core
+	FOP_hard_integration_super_region = {
+		available = {
+			FROM = {
+				compliance > 30
+				any_neighbor_state = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = controlled_states
+		target_trigger = {
+			FROM = {
+				has_state_flag = hardint
+				NOT = {
+					is_core_of = ROOT
+					all_neighbor_state = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
 		cost = 10
+		fire_only_once = yes
+		days_remove = 50
+		modifier = {
+			compliance_growth = 0.05
+			weekly_manpower = -2500
+		}
+		visible = {
+			FROM = {
+				any_neighbor_state = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		remove_effect = {
+			FROM = {
+				clr_state_flag = hardint
+				set_state_flag = poc
+				add_manpower = -500
+			}
+			add_political_power = 5
+		}
+	}
+	FOP_integration_campaign_super_region = {
+		available = {
+			ROOT = {
+				FROM = {
+					compliance < 20
+				}
+			}
+		}
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = controlled_states
+		target_trigger = {
+			FROM = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		cost = 2
+		fire_only_once = no
+		days_remove = 10
+		modifier = {
+			compliance_growth = 0.5
+		}
+		visible = {
+			FROM = {
+				NOT = {
+					is_core_of = ROOT
+				}
+				has_active_resistance = yes
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_compliance = 4
+			}
+		}
+	}
+}
+
+FOP_coring_ukraine = {
+	FOP_install_administration_ukraine = {
+		available = {
+			ROOT = {
+				FROM = {
+					compliance > 10
+				}
+			}
+		}
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = controlled_states
+		target_trigger = {
+			FROM = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		cost = 2
+		fire_only_once = yes
+		days_remove = 5
+		modifier = {
+			compliance_growth = 0.5
+		}
+		visible = {
+			FROM = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		remove_effect = {
+			FROM = {
+				set_state_flag = core.1
+				clr_state_flag = poc
+			}
+			add_political_power = 2
+		}
+	}
+	FOP_crush_dissidents_ukraine = {
+		available = {
+			FROM = {
+				compliance > 20
+				has_state_flag = core.1
+			}
+		}
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = controlled_states
+		target_trigger = {
+			FROM = {
+				has_state_flag = core.1
+				compliance > 10
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 30
+		modifier = {
+			compliance_growth = 0.2
+			state_resources_factor = 0.2
+		}
+		visible = {
+			# FROM = {
+				#  has_state_flag = core.1
+			# }
+		}
+		custom_cost_text = decision_cost_CP_5
+        complete_effect = {
+            add_command_power = -5
+        }
+		remove_effect = {
+			FROM = {
+				clr_state_flag = core.1
+				set_state_flag = core.2
+				add_manpower = -500
+				cancel_resistance = yes
+			}
+		}
+	}
+	FOP_core_state_ukraine = {
+		available = {
+			FROM = {
+				has_state_flag = core.2
+			}
+		}
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = controlled_states
+		target_trigger = {
+			FROM = {
+				has_state_flag = core.2
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		cost = 2
+		fire_only_once = yes
+		days_remove = 30
+		modifier = {
+			political_power_factor = -0.05
+			compliance_growth = 0.5
+			state_resources_factor = 0.2
+		}
+		visible = {
+			FROM = {
+				has_state_flag = core.2
+			}
+		}
+		remove_effect = {
+			FROM = {
+				clr_state_flag = core.2
+				add_core_of = ROOT
+			}
+		}
+	}
+	### difficult region for core
+	FOP_hard_integration_ukraine = {
+		available = {
+			FROM = {
+				compliance > 30
+				any_neighbor_state = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = controlled_states
+		target_trigger = {
+			FROM = {
+				has_state_flag = hardint
+				NOT = {
+					is_core_of = ROOT
+					all_neighbor_state = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+		cost = 5
+		fire_only_once = yes
+		days_remove = 50
+		modifier = {
+			compliance_growth = 0.05
+			weekly_manpower = -2500
+		}
+		visible = {
+			FROM = {
+				any_neighbor_state = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		remove_effect = {
+			FROM = {
+				clr_state_flag = hardint
+				set_state_flag = poc
+				add_manpower = -500
+			}
+			add_political_power = 5
+		}
+	}
+	FOP_integration_campaign_ukraine = {
+		available = {
+			ROOT = {
+				FROM = {
+					compliance < 20
+				}
+			}
+		}
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = controlled_states
+		target_trigger = {
+			FROM = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		cost = 2
 		fire_only_once = no
 		days_remove = 10
 		modifier = {

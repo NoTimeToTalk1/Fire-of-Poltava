@@ -116,4 +116,75 @@ FOP_micro_region_development = {
             }
         }
 	}
+    visible_when_empty = yes
+}
+
+FOP_coring_micro_region = {
+	icon = GFX_decision_category_generic_civil_support
+
+	allowed = {
+		OR = {
+			is_left_bank_ukraine = yes
+			is_right_bank_ukraine = yes
+		}
+	}
+    visible_when_empty = yes
+	visible = {
+	}
+}
+
+FOP_coring_region = {
+	icon = GFX_decision_category_generic_civil_support
+
+	allowed = {
+		OR = {
+			is_left_bank_ukraine = yes
+			is_right_bank_ukraine = yes
+		}
+		OR = {
+			tag = WST
+			tag = CNT
+			tag = STH
+			tag = ESN
+		}
+		NOT = {
+			tag = RBU
+			tag = LBU
+		}
+	}
+    visible_when_empty = yes
+	visible = {
+	}
+}
+
+FOP_coring_super_region = {
+	icon = GFX_decision_category_generic_civil_support
+
+	allowed = {
+		OR = {
+			is_left_bank_ukraine = yes
+			is_right_bank_ukraine = yes
+		}
+		OR = {
+			tag = RBU
+			tag = LBU
+		}
+		NOT = {
+			tag = UKR
+		}
+	}
+    visible_when_empty = yes
+	visible = {
+	}
+}
+
+FOP_coring_ukraine = {
+	icon = GFX_decision_category_generic_civil_support
+
+	allowed = {
+		tag = UKR
+	}
+    visible_when_empty = yes
+	visible = {
+	}
 }

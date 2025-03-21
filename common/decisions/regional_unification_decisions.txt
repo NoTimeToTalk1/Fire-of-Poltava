@@ -1,7 +1,7 @@
 unite_galicia_ukraine = {
 	unite_galicia_ukraine = {			
 
-		icon = GFX_decision_unite_ukraine
+		icon = GFX_decision_unite_galicia
 		
 		
 		available = { 
@@ -24,52 +24,68 @@ unite_galicia_ukraine = {
 		complete_effect = {
 			custom_effect_tooltip = galicia_unite_tt
 			hidden_effect = {
-			save_global_event_target_as = UKR_galicia_unifier
-			if = {
-				limit = {
-						original_tag = HAL
+				save_global_event_target_as = UKR_galicia_unifier
+				if = {
+					limit = {
+							original_tag = HAL
+					}
+					set_cosmetic_tag = HAL_regional_galicia
+					add_political_power = 50
 				}
-				set_cosmetic_tag = HAL_regional_galicia
-				add_political_power = 50
-			}
-			if = {
-				limit = {
-						original_tag = HUT
+				if = {
+					limit = {
+							original_tag = HUT
+					}
+					set_cosmetic_tag = HUT_regional_galicia
+					add_political_power = 50
 				}
-				set_cosmetic_tag = HUT_regional_galicia
-				add_political_power = 50
-			}
-			if = {
-				limit = {
-						original_tag = ZAK
+				if = {
+					limit = {
+							original_tag = ZAK
+					}
+					set_cosmetic_tag = ZAK_regional_galicia
+					add_political_power = 50
 				}
-				set_cosmetic_tag = ZAK_regional_galicia
-				add_political_power = 50
-			}
-			if = {
-				limit = {
-						original_tag = RIV
+				if = {
+					limit = {
+							original_tag = RIV
+					}
+					set_cosmetic_tag = RIV_regional_galicia
+					add_political_power = 50
 				}
-				set_cosmetic_tag = RIV_regional_galicia
-				add_political_power = 50
-			}
-			if = {
-				limit = {
-						original_tag = VOL
+				if = {
+					limit = {
+							original_tag = VOL
+					}
+					set_cosmetic_tag = VOL_regional_galicia
+					add_political_power = 50
 				}
-				set_cosmetic_tag = VOL_regional_galicia
-				add_political_power = 50
-			}
-			if = {
-				limit = {
-						original_tag = TER
+				if = {
+					limit = {
+							original_tag = TER
+					}
+					set_cosmetic_tag = TER_regional_galicia
+					add_political_power = 50
 				}
-				set_cosmetic_tag = TER_regional_galicia
-				add_political_power = 50
-			}
-			set_country_flag = united_galicia
-			load_focus_tree = fop_generic_one
-	  	}
+				set_country_flag = united_galicia
+				load_focus_tree = fop_generic_one
+				set_variable = {
+					var = FOP_west_allegiance
+					value = 0
+				}
+				clamp_variable = {
+					var = FOP_west_allegiance
+					min = 0
+				}
+				set_variable = {
+					var = FOP_east_allegiance
+					value = 0
+				}
+				clamp_variable = {
+					var = FOP_east_allegiance
+					min = 0
+				}
+	  		}
 		}
 		ai_will_do = {	
 			base = 10		
@@ -505,6 +521,22 @@ unite_podolia_ukraine = {
 			}
 			set_country_flag = united_podolia
 			load_focus_tree = fop_generic_one
+			set_variable = {
+				var = FOP_west_allegiance
+				value = 0
+			}
+			clamp_variable = {
+				var = FOP_west_allegiance
+				min = 0
+			}
+			set_variable = {
+				var = FOP_east_allegiance
+				value = 0
+			}
+			clamp_variable = {
+				var = FOP_east_allegiance
+				min = 0
+			}
 			}
 		}
 		ai_will_do = {	
@@ -627,6 +659,22 @@ unite_siveria_ukraine = {
 			set_country_flag = united_siveria
 			save_global_event_target_as = UKR_siverian_unifier
 			load_focus_tree = fop_generic_one
+			set_variable = {
+				var = FOP_west_allegiance
+				value = 0
+			}
+			clamp_variable = {
+				var = FOP_west_allegiance
+				min = 0
+			}
+			set_variable = {
+				var = FOP_east_allegiance
+				value = 0
+			}
+			clamp_variable = {
+				var = FOP_east_allegiance
+				min = 0
+			}
 	  		}
 		}
 		ai_will_do = {	
@@ -1107,6 +1155,22 @@ unite_dnieper_ukraine = {
 			set_country_flag = united_dnieper
 			save_global_event_target_as = UKR_dnieper_unifier
 			load_focus_tree = fop_generic_one
+			set_variable = {
+				var = FOP_west_allegiance
+				value = 0
+			}
+			clamp_variable = {
+				var = FOP_west_allegiance
+				min = 0
+			}
+			set_variable = {
+				var = FOP_east_allegiance
+				value = 0
+			}
+			clamp_variable = {
+				var = FOP_east_allegiance
+				min = 0
+			}
 	  		}
 		}
 		ai_will_do = {	
@@ -1427,6 +1491,22 @@ unite_dnister_ukraine = {
 			}
 			set_country_flag = united_dnister
 			load_focus_tree = fop_generic_one
+			set_variable = {
+				var = FOP_west_allegiance
+				value = 0
+			}
+			clamp_variable = {
+				var = FOP_west_allegiance
+				min = 0
+			}
+			set_variable = {
+				var = FOP_east_allegiance
+				value = 0
+			}
+			clamp_variable = {
+				var = FOP_east_allegiance
+				min = 0
+			}
 	  		}
 		}
 		ai_will_do = {	
@@ -1741,6 +1821,22 @@ unite_tavria_ukraine = {
 			}
 			set_country_flag = united_tavria
 			load_focus_tree = fop_generic_one
+			set_variable = {
+				var = FOP_west_allegiance
+				value = 0
+			}
+			clamp_variable = {
+				var = FOP_west_allegiance
+				min = 0
+			}
+			set_variable = {
+				var = FOP_east_allegiance
+				value = 0
+			}
+			clamp_variable = {
+				var = FOP_east_allegiance
+				min = 0
+			}
 	  		}
 		}
 		ai_will_do = {	
@@ -1889,6 +1985,22 @@ unite_donbas_ukraine = {
 				}
 				add_political_power = 50
 				load_focus_tree = fop_generic_one
+			set_variable = {
+				var = FOP_west_allegiance
+				value = 0
+			}
+			clamp_variable = {
+				var = FOP_west_allegiance
+				min = 0
+			}
+			set_variable = {
+				var = FOP_east_allegiance
+				value = 0
+			}
+			clamp_variable = {
+				var = FOP_east_allegiance
+				min = 0
+			}
 			}
 			if = {
 				limit = {
@@ -1913,6 +2025,22 @@ unite_donbas_ukraine = {
 				set_cosmetic_tag = LPR_regional_donbasern
 				add_political_power = 50
 				load_focus_tree = fop_generic_one
+			set_variable = {
+				var = FOP_west_allegiance
+				value = 0
+			}
+			clamp_variable = {
+				var = FOP_west_allegiance
+				min = 0
+			}
+			set_variable = {
+				var = FOP_east_allegiance
+				value = 0
+			}
+			clamp_variable = {
+				var = FOP_east_allegiance
+				min = 0
+			}
 			}
 			set_country_flag = united_donbas
 	  		}
@@ -5028,6 +5156,7 @@ unite_ukraine = {
 		complete_effect = {
 			set_capital = {state = 2081}
 			custom_effect_tooltip = ukraine_unite_tt
+			save_global_event_target_as = UKR_ukraine_unifier
 			hidden_effect = {
 			if = {
 				limit = {
