@@ -6,6 +6,19 @@ technologies = {
 	@2024 = 12
 	@2028 = 16
 
+	@enginede = 2
+	@enginegt = 3
+	@engineee = 4
+	@armorst = 6
+	@armorca = 7
+	@barrelri = 9
+	@barrelsm = 10
+	@loader = 12
+	@turret = 14
+	@suspension = 16
+	@spec1 = 18
+	@spec2 = 19
+
 ## edit later
 MBT1 = {
 
@@ -14,17 +27,10 @@ MBT1 = {
 		}
 
 		enable_equipment_modules = {
-			tank_torsion_bar_suspension
-			tank_base_tank_turret
-			tank_soviet_turret
-			tank_oscillating_turret
-			tank_no_turret
-			tank_steel_armor_gen1
+			tank_three_man_turret
+			tank_two_man_turret
+			auto_loading
 			manual_loading
-			automatic_loading
-			revolver_magazine
-			chassis_tank_gen0
-			spaa_chassis_tank_gen0
 		}
 
 		path = {
@@ -35,7 +41,7 @@ MBT1 = {
 		research_cost = 2
 		start_year = 1991
 		folder = {
-			name = armour_folder
+			name = nsb_armour_folder
 			position = { x = 2 y = @1991 }
 		}
 
@@ -49,4 +55,126 @@ MBT1 = {
 			MBT
 		}
 	}
+}
+
+MBT2 = {
+
+		enable_equipments = {
+			MBT_equipment_2
+		}
+
+		enable_equipment_modules = {
+			tank_composite_armor_gen1
+		}
+
+		path = {
+			leads_to_tech = MBT3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 4
+		start_year = 2020
+		folder = {
+			name = nsb_armour_folder
+			position = { x = 2 y = @2020 }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			armor
+			AFV
+			MBT
+		}
+	}
+}
+
+MBT3 = {
+
+		enable_equipments = {
+			MBT_equipment_3
+		}
+
+		enable_equipment_modules = {
+			unmanned_turret
+			tank_gas_turbine_engine_gen1
+		}
+
+		path = {
+			leads_to_tech = MBT4
+			research_cost_coeff = 1
+		}
+
+		research_cost = 7.5
+		start_year = 2024
+		folder = {
+			name = nsb_armour_folder
+			position = { x = 2 y = @2024 }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			armor
+			AFV
+			MBT
+		}
+	}
+}
+
+MBT4 = {
+
+		enable_equipments = {
+			MBT_equipment_4
+		}
+
+		enable_equipment_modules = {
+			tank_electric_engine_gen1
+		}
+
+		path = {
+			research_cost_coeff = 1
+		}
+
+		research_cost = 10
+		start_year = 2028
+		folder = {
+			name = nsb_armour_folder
+			position = { x = 2 y = @2028 }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			armor
+			AFV
+			MBT
+		}
+	}
+}
+
+diesel_engine_tech1 = {
+	
+	enable_equipments = {
+			tank_diesel_engine_gen1
+		}
+
+		path = {
+			leads_to_tech = diesel_engine_tech2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 10
+		start_year = 1991
+		folder = {
+			name = nsb_armour_folder
+			position = { x = @enginede y = @1991 }
+		}
+
 }
