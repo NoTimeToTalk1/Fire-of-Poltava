@@ -2,11 +2,11 @@
 
 technologies = {
 
-	@1991 = 0
+	@1991 = 2
 	@2020 = 4
-	@2022 = 8
-	@2025 = 12
-	@2028 = 16
+	@2022 = 6
+	@2025 = 8
+	@2028 = 10
 
 ## STRATEGIC BOMBER(SB) ##
 
@@ -29,9 +29,9 @@ technologies = {
 		}
 
 		categories = {
+			cat_strategic_bomber
 			heavy_air
 			air_equipment
-			cat_strategic_bomber
 		}
 
 		ai_will_do = {
@@ -63,9 +63,9 @@ technologies = {
 		}
 
 		categories = {
+			cat_strategic_bomber
 			heavy_air
 			air_equipment
-			cat_strategic_bomber
 		}
 
 		ai_will_do = {
@@ -97,9 +97,9 @@ technologies = {
 		}
 
 		categories = {
+			cat_strategic_bomber
 			heavy_air
 			air_equipment
-			cat_strategic_bomber
 		}
 
 		ai_will_do = {
@@ -131,9 +131,9 @@ technologies = {
 		}
 
 		categories = {
+			cat_strategic_bomber
 			heavy_air
 			air_equipment
-			cat_strategic_bomber
 		}
 
 		ai_will_do = {
@@ -162,9 +162,9 @@ technologies = {
 		}
 
 		categories = {
+			cat_strategic_bomber
 			heavy_air
 			air_equipment
-			cat_strategic_bomber
 		}
 
 		ai_will_do = {
@@ -200,8 +200,8 @@ technologies = {
 		}
 
 		categories = {
-			naval_air
 			naval_bomber
+			naval_air
 			air_equipment
 		}
 
@@ -237,8 +237,8 @@ technologies = {
 		}
 
 		categories = {
-			naval_air
 			naval_bomber
+			naval_air
 			air_equipment
 		}
 
@@ -273,14 +273,10 @@ technologies = {
 			position = { x = 0 y = @2022 }
 		}
 
-		sub_technologies = {
-			cv_naval_bomber2
-		}
-
 		categories = {
+			naval_bomber
 			naval_air
 			air_equipment
-			naval_bomber
 		}
 
 		ai_will_do = {
@@ -322,8 +318,8 @@ technologies = {
 		}
 
 		categories = {
-			naval_air
 			naval_bomber
+			naval_air
 			air_equipment
 		}
 
@@ -361,8 +357,8 @@ technologies = {
 		}
 
 		categories = {
-			naval_air
 			naval_bomber
+			naval_air
 			air_equipment
 		}
 
@@ -400,10 +396,10 @@ technologies = {
 		}
 
 		research_cost = 1
-		start_year = 1990
+		start_year = 1991
 		folder = {
 			name = air_techs_folder
-			position = { x = 0 y = @1990 }
+			position = { x = 0 y = @1991 }
 		}
 
 		categories = {
@@ -768,19 +764,21 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		research_cost = 1
+		research_cost = 2
 		start_year = 2020
 		folder = {
 			name = air_techs_folder
-			position = { x = 2 y = @2020 }
+			position = { x = 3 y = @2020 }
+		}
+
+		categories = {
+			light_fighter
+			light_air
+			air_equipment
 		}
 
 		ai_will_do = {
 			factor = 1
-		}
-
-		categories = {
-			air_equipment
 		}
 	}
 	
@@ -795,19 +793,21 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		research_cost = 1
+		research_cost = 2
 		start_year = 2022
 		folder = {
 			name = air_techs_folder
-			position = { x = 2 y = @2022 }
+			position = { x = 3 y = @2022 }
+		}
+
+		categories = {
+			light_fighter
+			light_air
+			air_equipment
 		}
 
 		ai_will_do = {
 			factor = 1
-		}
-
-		categories = {
-			air_equipment
 		}
 	}
 	
@@ -822,19 +822,21 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		research_cost = 1
+		research_cost = 2
 		start_year = 2025
 		folder = {
 			name = air_techs_folder
-			position = { x = 2 y = @2025 }
+			position = { x = 3 y = @2025 }
+		}
+
+		categories = {
+			light_fighter
+			light_air
+			air_equipment
 		}
 
 		ai_will_do = {
 			factor = 1
-		}
-
-		categories = {
-			air_equipment
 		}
 	}
 
@@ -844,19 +846,21 @@ technologies = {
 			mr_fighter_equipment_4
 		}
 
-		research_cost = 1
+		research_cost = 2
 		start_year = 2028
 		folder = {
 			name = air_techs_folder
-			position = { x = 2 y = @2028 }
+			position = { x = 3 y = @2028 }
+		}
+
+		categories = {
+			light_fighter
+			light_air
+			air_equipment
 		}
 
 		ai_will_do = {
 			factor = 1
-		}
-
-		categories = {
-			air_equipment
 		}
 	}
 
@@ -870,6 +874,10 @@ technologies = {
 
 		path = {
 			leads_to_tech = CAS1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = strike_fighter1
 			research_cost_coeff = 1
 		}
 
@@ -994,7 +1002,118 @@ technologies = {
 		}
 	}
 
+	## STRIKE FIGHTER(SF) ##
 
+	strike_fighter1 = {
+
+		enable_equipments = {
+			strike_fighter_equipment_1
+		}
+
+		path = {
+			leads_to_tech = strike_fighter2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 2020
+		folder = {
+			name = air_techs_folder
+			position = { x = -3 y = @2020 }
+		}
+
+		categories = {
+			cas_bomber
+			light_air
+			air_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	strike_fighter2 = {
+
+		enable_equipments = {
+			strike_fighter_equipment_2
+		}
+
+		path = {
+			leads_to_tech = strike_fighter3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 2022
+		folder = {
+			name = air_techs_folder
+			position = { x = -3 y = @2022 }
+		}
+
+		categories = {
+			cas_bomber
+			light_air
+			air_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	strike_fighter3 = {
+
+		enable_equipments = {
+			strike_fighter_equipment_3
+		}
+
+		path = {
+			leads_to_tech = strike_fighter4
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 2025
+		folder = {
+			name = air_techs_folder
+			position = { x = -3 y = @2025 }
+		}
+
+		categories = {
+			cas_bomber
+			light_air
+			air_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	strike_fighter4 = {
+
+		enable_equipments = {
+			strike_fighter_equipment_4
+		}
+
+		research_cost = 2
+		start_year = 2028
+		folder = {
+			name = air_techs_folder
+			position = { x = -3 y = @2028 }
+		}
+
+		categories = {
+			cas_bomber
+			light_air
+			air_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
 
 
