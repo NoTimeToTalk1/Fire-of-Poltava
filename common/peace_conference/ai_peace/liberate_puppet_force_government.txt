@@ -2,7 +2,7 @@
 # See documentation.info file for more detailed scripting information.
 
 peace_ai_desires = {
-	do_not_puppet_liberate_or_force_government = {
+	base_puppet_liberate_force_government_desire = {
 		peace_action_type = { puppet liberate force_government }
 		enable = {
 			always = yes
@@ -10,43 +10,86 @@ peace_ai_desires = {
 		ai_desire = -400
 	}
 
-	liberate_countries_in_africa = {
-		peace_action_type = { liberate }
+	ignore_puppet_liberate_or_force_government_if_claimed = {
+		peace_action_type = { puppet liberate force_government }
 		enable = {
 			ROOT.FROM.FROM.FROM = {
-				is_on_continent = africa
-				NOT = { is_claimed_by = ROOT.FROM }
-				NOT = { is_core_of = ROOT.FROM }
-				NOT = { has_variable = ambition_area_@ROOT.FROM }
-			}
-			is_in_africa = no
-			ROOT.FROM = {
-				is_in_africa = yes
-				exists = no
-				is_in_north_africa = no
-				NOT = { original_tag = SAF }
+				OR = {
+					is_claimed_by = ROOT
+					is_core_of = ROOT
+					has_variable = ambition_area_@ROOT
+				}
 			}
 		}
-		ai_desire = 400 #offsets do_not_puppet_liberate_or_force_government
+		ai_desire = -1000
 	}
 
-	force_government_in_africa_if_already_exists = {
-		peace_action_type = { force_government }
+	ignore_puppet_liberate_or_force_government_if_claimed_by_ally = {
+		peace_action_type = { puppet liberate force_government }
 		enable = {
-			ROOT.FROM.FROM.FROM = {
-				is_on_continent = africa
-				NOT = { is_claimed_by = ROOT.FROM }
-				NOT = { is_core_of = ROOT.FROM }
-				NOT = { has_variable = ambition_area_@ROOT.FROM }
+			if = {
+				limit = { is_in_faction = yes }
+				any_allied_country = {
+					pc_is_winner = yes
+					if = {
+						limit = { is_subject = yes }
+						ROOT.FROM.FROM.FROM = {
+							OR = {
+								is_claimed_by = PREV
+								is_core_of = PREV
+							}
+						}
+					}
+					else = {
+						ROOT.FROM.FROM.FROM = {
+							OR = {
+								is_claimed_by = PREV
+								is_core_of = PREV
+								has_variable = ambition_area_@PREV
+							}
+						}
+					}
+				}
 			}
-			is_in_africa = no
-			ROOT.FROM = {
-				is_in_africa = yes
-				exists = yes
-				is_in_north_africa = no
-				NOT = { original_tag = SAF }
+			else_if = {
+				limit = { is_subject = yes }
+				any_of_scopes = {
+					array = global.pc_winners_array
+					pc_is_winner = yes
+					is_ally_with = ROOT.overlord
+					if = {
+						limit = { is_subject = yes }
+						ROOT.FROM.FROM.FROM = {
+							OR = {
+								is_claimed_by = PREV
+								is_core_of = PREV
+							}
+						}
+					}
+					else = {
+						ROOT.FROM.FROM.FROM = {
+							OR = {
+								is_claimed_by = PREV
+								is_core_of = PREV
+								has_variable = ambition_area_@PREV
+							}
+						}
+					}
+				}
+			}
+			else = {
+				num_subjects > 0
+				any_subject_country = {
+					pc_is_winner = yes
+					ROOT.FROM.FROM.FROM = {
+						OR = {
+							is_claimed_by = PREV
+							is_core_of = PREV
+						}
+					}
+				}
 			}
 		}
-		ai_desire = 400 #offsets do_not_puppet_liberate_or_force_government
+		ai_desire = -1000
 	}
 }
