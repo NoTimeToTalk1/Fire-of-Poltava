@@ -68,10 +68,10 @@
 		}
     }
 
-	#Speak to Tyler
+	#Reach out to Biletsky
 	shared_focus = {
-		id = AFU_speak_to_tyler
-		icon = GFX_AFU_Speak_to_Tyler
+		id = AFU_reach_out_to_biletsky
+		icon = GFX_AFU_Reach_Out_To_Biletsky
 
 		relative_position_id = AFU_reaching_out
 		x = -2
@@ -81,11 +81,11 @@
 		prerequisite = { focus = AFU_reaching_out }
 
 		available = {
-			ZAP = { exists = yes }
+			PLT = { exists = yes }
 		}
 
 		completion_reward = {
-			ZAP = {
+			PLT = {
 				country_event = afu.7
 			}
 		}
@@ -276,6 +276,8 @@
 		x = -1
 		y = 1
 
+		mutually_exclusive = { focus = AFU_turn_blind_eye_on_the_far_right }
+
 		cost = 1
 		prerequisite = { focus = AFU_enhanced_training focus = AFU_rely_on_militias }
 
@@ -285,6 +287,24 @@
 				remove_idea = AFU_nationalist_agendas 
 				add_idea = AFU_nationalist_agendas_2
 			}
+		}
+	}
+	#Turn a blind eye on far right
+	shared_focus = {
+		id = AFU_turn_blind_eye_on_the_far_right
+		icon = GFX_AFU_Turn_Blind_Eye_on_the_Far_Right
+
+		relative_position_id = AFU_rely_on_militias
+		x = 1
+		y = 1
+
+		mutually_exclusive = { focus = AFU_sideline_the_far_right_elements }
+
+		cost = 1
+		prerequisite = { focus = AFU_enhanced_training focus = AFU_rely_on_militias }
+
+		completion_reward = {
+			add_political_power = 25
 		}
 	}
 
@@ -586,19 +606,18 @@
 
 	#Demine the Roads
 	shared_focus = {
-		id = AFU_demine_the_roads
-		icon = GFX_AFU_Demine_the_Roads
+		id = AFU_mass_demining_program
+		icon = GFX_AFU_Mass_Demining_Program
 
 		relative_position_id = AFU_begin_integration
 		x = -2
 		y = 1
 
-		cost = 2
+		cost = 6
 		prerequisite = { focus = AFU_begin_integration }
 
 		completion_reward = {
-			add_political_power = 10
-			country_event = afu.11
+			add_stability = 0.1
 		}
 	}
 
@@ -611,49 +630,67 @@
 		x = 0
 		y = 1
 
-		cost = 2
+		cost = 5
 		prerequisite = { focus = AFU_begin_integration }
 
 		completion_reward = {
-			add_political_power = 10
-			country_event = afu.11
+			add_stability = -0.05
+			add_popularity = {
+				ideology = communism
+				popularity = -0.02
+			}
 		}
 	}
 
-	#Demolish the Past
+	#Derussify Ukrainian Donbas
 	shared_focus = {
-		id = AFU_demolish_the_past
-		icon = GFX_AFU_Demolish_the_Past
+		id = AFU_derussify_ukrainian_donbas
+		icon = GFX_AFU_Derussify_Ukrainian_Donbas
 
 		relative_position_id = AFU_begin_integration
 		x = 2
 		y = 1
 
-		cost = 2
+		cost = 5
 		prerequisite = { focus = AFU_begin_integration }
 
 		completion_reward = {
-			add_political_power = 10
-			country_event = afu.11
+			add_timed_idea = {
+				idea = AFU_fucking_fsb
+				days = 90
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -250
+			}
 		}
 	}
 	
-	#Trial of Separatists
+	#Trial for Separatists
 	shared_focus = {
-		id = AFU_trial_of_separatists
-		icon = GFX_AFU_Trial_of_Separatists
+		id = AFU_trials_for_separatists
+		icon = GFX_AFU_Trials_for_Separatists
 
-		relative_position_id = AFU_demine_the_roads
+		relative_position_id = AFU_mass_demining_program
 		x = 1
 		y = 1
 
-		cost = 2
-		prerequisite = { focus = AFU_demine_the_roads }
+		cost = 5
+		prerequisite = { focus = AFU_mass_demining_program }
 		prerequisite = { focus = AFU_rename_the_cities }
 
 		completion_reward = {
-			add_political_power = 10
-			country_event = afu.11
+			add_manpower = -2000
+			DNR_Pidor = {
+				retire = yes
+			}
+			LNR_Huy = {
+				retire = yes
+			}
+			add_timed_idea = {
+				idea = AFU_filtration
+				days = 60
+			}
 		}
 	}
 
@@ -662,17 +699,24 @@
 		id = AFU_cultural_integration
 		icon = GFX_AFU_Cultural_Integration
 
-		relative_position_id = AFU_demolish_the_past
+		relative_position_id = AFU_derussify_ukrainian_donbas
 		x = -1
 		y = 1
 
-		cost = 2
-		prerequisite = { focus = AFU_demolish_the_past }
+		cost = 7
+		prerequisite = { focus = AFU_derussify_ukrainian_donbas }
 		prerequisite = { focus = AFU_rename_the_cities }
 
 		completion_reward = {
-			add_political_power = 10
-			country_event = afu.11
+			add_political_power = -35
+			add_popularity = {
+				ideology = national_democracy
+				popularity = 0.02
+			}
+			add_popularity = {
+				ideology = oligarchism
+				popularity = -0.02
+			}
 		}
 	}
 
@@ -686,27 +730,14 @@
 		y = 1
 
 		cost = 2
-		prerequisite = { focus = AFU_trial_of_separatists }
+		prerequisite = { focus = AFU_trials_for_separatists }
 		prerequisite = { focus = AFU_cultural_integration }
-
-		available = {
-			has_country_flag = AFUintfinish
-		}
 
 		completion_reward = {
 			add_political_power = 30
 			country_event = afu.12
 			hidden_effect = {
 				country_event = afu.25
-				if = {
-					limit = {
-						radical_nationalism > 0.2
-					}
-					country_event = {
-						id = azov.1
-						days = 7
-					}
-				}
 			}
 		}
 	}
@@ -759,6 +790,18 @@
 			add_political_power = 50
 			hidden_effect = {
 				country_event = afu.34
+				if = {
+					limit = {
+						OR = {
+							ultranationalism > 0.2
+							has_completed_focus = AFU_turn_blind_eye_on_the_far_right
+						}
+					}
+					country_event = {
+						id = azov.1
+						days = 7
+					}
+				}
 			}
 		}
     }
@@ -792,7 +835,10 @@
 				country_event = afu.25
 				if = {
 					limit = {
-						ultranationalism > 0.2
+						OR = {
+							ultranationalism > 0.2
+							has_completed_focus = AFU_turn_blind_eye_on_the_far_right
+						}
 					}
 					country_event = {
 						id = azov.1

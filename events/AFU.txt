@@ -175,7 +175,7 @@ country_event = { #Poroshenko didn't help us
 	}
 }
 
-country_event = { #Tyler - Helping ZSU?
+country_event = { #Biletsky - Helping ZSU?
 	id = afu.7
 	title = afu.7.t
 	desc = afu.7.d
@@ -187,7 +187,7 @@ country_event = { #Tyler - Helping ZSU?
 	option = { #YES
 		name = afu.7.a
 		ai_chance = {
-			factor = 80
+			factor = 90
 		}
 		send_equipment = {
 			type = support_equipment
@@ -215,14 +215,14 @@ country_event = { #Tyler - Helping ZSU?
 	option = { #NO
 		name = afu.7.b
 		ai_chance = {
-			factor = 20
+			factor = 10
 		}
 		AFU = { country_event = afu.72 }
 		add_stability = -0.05
 	}
 }
 
-country_event = { #Tyler helped us
+country_event = { #Biletsky helped us
 	id = afu.71
 	title = afu.71.t
 	desc = afu.71.d
@@ -233,11 +233,14 @@ country_event = { #Tyler helped us
 
 	option = {
 		name = afu.71.a
-		add_political_power = 10
+		add_popularity = {
+			ideology = ultranationalism
+			popularity = 0.02
+		}
 	}
 }
 
-country_event = { #Tyler didn't help us
+country_event = { #Biletsky didn't help us
 	id = afu.72
 	title = afu.72.t
 	desc = afu.72.d
