@@ -2214,7 +2214,7 @@ unite_eastern_ukraine = {
 		available = { 
 			custom_trigger_tooltip = {
 				tooltip = unite_eastern_ukraine_tt
-				is_eastern_ukraine = yes
+				is_east_ukraine = yes
 				can_unite_eastern_ukraine = yes
 			}
 			date > 2024.01.01
@@ -2224,9 +2224,9 @@ unite_eastern_ukraine = {
         	days_remove = 0		
 
 		visible = {	
-			is_eastern_ukraine = yes
+			is_east_ukraine = yes
 			OR = {
-				has_country_flag = united_donbas
+				tag = DBS
 				original_tag = DNI
 			}
 		}		
@@ -2307,7 +2307,7 @@ unite_eastern_ukraine = {
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_donbas
+					tag = DBS
 					original_tag = DNI
 				}
             }
@@ -2327,7 +2327,7 @@ unite_eastern_ukraine = {
         visible = {
 				OR = {
 					original_tag = DNI
-					has_country_flag = united_donbas
+					tag = DBS
 				}
 				NOT = {
 					has_country_flag = east_war
@@ -2359,18 +2359,94 @@ unite_eastern_ukraine = {
         }
 	}
 
+	prepare_elections_east = {
+		available = {
+			date > 2024.01.01
+		}
+        target_trigger = {
+            FROM = {
+				OR = {
+					tag = DBS
+					tag = DPO
+				}
+            }
+        }
+		visible = {
+			can_do_elections = yes
+			NOT = {
+					has_country_flag = east_war
+					has_country_flag = east_elections
+					has_country_flag = east_dogovornyak
+				}
+				NOT = {
+					has_country_flag = unification_choice_made
+				}
+		}
+		fire_only_once = yes
+        	days_remove = 0	
+		complete_effect = {
+			set_country_flag = unification_choice_made
+			FROM = {
+				country_event = {
+					id = reg_exp_east.5
+					days = 1
+				}
+				set_country_flag = unification_choice_made
+			}			
+		}
+
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
+	prepare_elections_west_agreed = {
+		visible = {
+			has_country_flag = elections_agreed
+			NOT = {
+				has_country_flag = west_elections
+			}
+		}
+		fire_only_once = yes
+        	days_remove = 0
+			ai_will_do = {
+				base = 10
+			}	
+		complete_effect = {
+			DBS = {
+				set_variable = {
+					var = donbas_rates
+					value = 50.00
+				}
+				set_variable = {
+					var = donbas_rates_grow
+					value = 2
+				}
+				set_country_flag = west_elections
+				add_political_power = 100
+			}
+			DPO = {
+				set_variable = {
+					var = dnipro_rates
+					value = 50.00
+				}
+				set_variable = {
+					var = dnipro_rates_grow
+					value = 2
+				}
+				set_country_flag = east_elections
+				add_political_power = 100
+			}
+		}
+
+		ai_will_do = {	
+			base = 10		
+		}
+	}
+
 	prepare_dogovornyak_east = {
 		visible = {
-			OR = {
-				original_tag = DNI
-				original_tag = KHA
-				AFU = {
-					OR = {
-						has_cosmetic_tag = AFU_dan
-						has_cosmetic_tag = AFU_homut
-					}
-				}
-			}			
+			can_do_dogovornyak = yes		
 			NOT = {
 					has_country_flag = east_war
 					has_country_flag = east_elections
@@ -2383,7 +2459,7 @@ unite_eastern_ukraine = {
 				NOT = {
 					has_country_flag = unification_choice_made
 				}
-			DNP = {
+			DPO = {
 				exists = yes
 			}
 			DBS = {
@@ -2393,7 +2469,7 @@ unite_eastern_ukraine = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_donbas
+					tag = DBS
 					original_tag = DNI
 				}
             }
@@ -2560,7 +2636,7 @@ unite_southern_ukraine = {
 		available = { 
 			custom_trigger_tooltip = {
 				tooltip = unite_southern_ukraine_tt
-				is_southern_ukraine = yes
+				is_south_ukraine = yes
 				can_unite_southern_ukraine = yes
 			}
 			date > 2024.01.01
@@ -2570,10 +2646,10 @@ unite_southern_ukraine = {
         	days_remove = 0		
 
 		visible = {	
-			is_southern_ukraine = yes
+			is_south_ukraine = yes
 			OR = {
-				has_country_flag = united_tavria
-				has_country_flag = united_dnister
+				tag = TVR
+				tag = DSR
 			}
 		}		
 
@@ -2657,7 +2733,7 @@ unite_southern_ukraine = {
 		fire_only_once = yes
 
 		complete_effect = {
-			if = { limit = { tag = DST } country_event = reg_capital.2}
+			if = { limit = { tag = DSR } country_event = reg_capital.2}
 			if = { limit = { tag = TVR } country_event = reg_capital.3}
 		}
 
@@ -2672,8 +2748,8 @@ unite_southern_ukraine = {
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_dnister
-					has_country_flag = united_tavria
+					tag = DSR
+					tag = TVR
 				}
             }
         }
@@ -2691,8 +2767,8 @@ unite_southern_ukraine = {
 
         visible = {
 				OR = {
-					has_country_flag = united_tavria
-					has_country_flag = united_dnister
+					tag = TVR
+					tag = DSR
 				}
 				NOT = {
 					has_country_flag = south_war
@@ -2721,13 +2797,11 @@ unite_southern_ukraine = {
     }
 
 	prepare_elections_south = {
-		available = {
-		}
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_dnister
-					has_country_flag = united_tavria
+					tag = TVR
+					tag = DSR
 				}
             }
         }
@@ -2735,11 +2809,7 @@ unite_southern_ukraine = {
 			date > 2024.01.01
 		}
 		visible = {
-			is_southern_ukraine = yes
-			OR = {
-				has_country_flag = united_dnister
-				has_country_flag = united_tavria
-			}
+			can_do_elections = yes
 			NOT = {
 					has_country_flag = south_war
 					has_country_flag = south_elections
@@ -2752,15 +2822,6 @@ unite_southern_ukraine = {
 				NOT = {
 					has_country_flag = unification_choice_made
 				}
-			OR = {
-				original_tag = ZAP
-				original_tag = MYK
-				original_tag = BDZ
-				AND = {
-					country_exists = SHT
-                    country_exists = OPZ
-				}
-			}
 		}
 		fire_only_once = yes
         	days_remove = 0	
@@ -2826,10 +2887,7 @@ unite_southern_ukraine = {
 
 	prepare_dogovornyak_south = {
 		visible = {
-			OR = {
-				original_tag = ZAP
-				original_tag = ODE
-			}
+			can_do_dogovornyak = yes
 				NOT = {
 					has_country_flag = south_war
 					has_country_flag = south_elections
@@ -2855,8 +2913,8 @@ unite_southern_ukraine = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_dnister
-					has_country_flag = united_tavria
+					tag = DSR
+					tag = TVR
 				}
             }
         }
@@ -2943,7 +3001,7 @@ unite_southern_ukraine = {
 		visible = {
 			if = {
 				limit = {
-					tag = DST
+					tag = DSR
 				}
 				NOT = {
 					country_exists = TVR
@@ -2973,7 +3031,7 @@ unite_southern_ukraine = {
 			hidden_effect = {
 				if = {
 					limit = {
-						tag = DST
+						tag = DSR
 					}
 					DST = {
 						declare_war_on = {
@@ -3035,7 +3093,7 @@ unite_central_ukraine = {
 		available = { 
 			custom_trigger_tooltip = {
 				tooltip = unite_central_ukraine_tt
-				is_central_ukraine = yes
+				is_center_ukraine = yes
 				can_unite_central_ukraine = yes
 			}
 			date > 2024.01.01
@@ -3045,10 +3103,10 @@ unite_central_ukraine = {
         	days_remove = 0		
 
 		visible = {	
-			is_central_ukraine = yes
+			is_center_ukraine = yes
 			OR = {
-				has_country_flag = united_siveria
-				has_country_flag = united_dnieper
+				tag = SIV
+				tag = DIR
 			}
 		}		
 
@@ -3150,7 +3208,7 @@ unite_central_ukraine = {
 		fire_only_once = yes
 
 		complete_effect = {
-			if = { limit = { tag = DNP } country_event = reg_capital.4}
+			if = { limit = { tag = DIR } country_event = reg_capital.4}
 			if = { limit = { tag = SIV } country_event = reg_capital.5}
 		}
 
@@ -3160,22 +3218,16 @@ unite_central_ukraine = {
 	}
 
 	prepare_elections_center = {
-		available = {
-		}
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_siveria
-					has_country_flag = united_dnieper
+					tag = SIV
+					tag = DIR
 				}
             }
         }
 		visible = {
-			is_central_ukraine = yes
-			OR = {
-				has_country_flag = united_siveria
-				has_country_flag = united_dnieper
-			}
+			can_do_elections = yes
 			NOT = {
 					has_country_flag = center_war
 					has_country_flag = center_elections
@@ -3188,28 +3240,6 @@ unite_central_ukraine = {
 				NOT = {
 					has_country_flag = unification_choice_made
 				}
-			OR = {
-				AND = {
-					SIV = {
-						OR = {
-							original_tag = KYI
-							original_tag = CHR
-							original_tag = SUM
-						}
-					}
-					DNP = {
-						OR = {
-							original_tag = CHE
-						}
-					}	
-				}
-			}
-			NOT = {
-				AND = {
-					original_tag = SUM
-					has_government = ultranationalism
-				}
-			}
 		}
 		available = {
 			date > 2024.01.01
@@ -3278,26 +3308,7 @@ unite_central_ukraine = {
 
 	prepare_dogovornyak_center = {
 		visible = {
-			AND = {
-				SIV = {
-					OR = {
-						original_tag = KYI
-						original_tag = CHR
-						AND = {
-							original_tag = SUM
-							NOT = {
-								has_government = ultranationalism
-							}
-						}
-					}
-				}
-				DNP = {
-					OR = {
-						original_tag = UMA
-						original_tag = CHE
-					}
-				}
-			}
+			can_do_dogovornyak = yes
 			NOT = {
 					has_country_flag = center_war
 					has_country_flag = center_elections
@@ -3323,8 +3334,8 @@ unite_central_ukraine = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_siveria
-					has_country_flag = united_dnieper
+					tag = SIV
+					tag = DIR
 				}
             }
         }
@@ -3407,8 +3418,8 @@ unite_central_ukraine = {
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_siveria
-					has_country_flag = united_dnieper
+					tag = SIV
+					tag = DIR
 				}
             }
         }
@@ -3426,8 +3437,8 @@ unite_central_ukraine = {
 
         visible = {
 				OR = {
-					has_country_flag = united_dnieper
-					has_country_flag = united_siveria
+					tag = DIR
+					tag = SIV
 				}
 				NOT = {
 					has_country_flag = center_war
@@ -3475,7 +3486,7 @@ unite_central_ukraine = {
 			}
 			if = {
 				limit = {
-					tag = DNP
+					tag = DIR
 				}
 				NOT = {
 					country_exists = SIV
@@ -3497,7 +3508,7 @@ unite_central_ukraine = {
 			hidden_effect = {
 				if = {
 					limit = {
-						tag = DNP
+						tag = DIR
 					}
 					DNP = {
 							declare_war_on = {
@@ -3564,7 +3575,7 @@ unite_western_ukraine = {
 		available = { 
 			custom_trigger_tooltip = {
 				tooltip = unite_western_ukraine_tt
-				is_western_ukraine = yes
+				is_west_ukraine = yes
 				can_unite_western_ukraine = yes
 			}
 			date > 2024.01.01
@@ -3574,10 +3585,10 @@ unite_western_ukraine = {
         	days_remove = 0		
 
 		visible = {	
-			is_western_ukraine = yes
+			is_west_ukraine = yes
 			OR = {
-				has_country_flag = united_galicia
-				has_country_flag = united_podolia
+				tag = GLY
+				tag = PDL
 			}
 		}		
 
@@ -3672,26 +3683,18 @@ unite_western_ukraine = {
 
 	prepare_elections_west = {
 		available = {
-			OR = {
-				original_tag = HAL
-				original_tag = ZHY
-			}
 			date > 2024.01.01
 		}
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_galicia
-					has_country_flag = united_podolia
+					tag = GLY
+					tag = PDL
 				}
             }
         }
 		visible = {
-			is_western_ukraine = yes
-			OR = {
-				has_country_flag = united_galicia
-				has_country_flag = united_podolia
-			}
+			can_do_elections = yes
 			NOT = {
 					has_country_flag = west_war
 					has_country_flag = west_elections
@@ -3707,7 +3710,7 @@ unite_western_ukraine = {
 			set_country_flag = unification_choice_made
 			FROM = {
 				country_event = {
-					id = reg_exp_south.5
+					id = reg_exp_west.5
 					days = 1
 				}
 				set_country_flag = unification_choice_made
@@ -3765,10 +3768,7 @@ unite_western_ukraine = {
 
 	prepare_dogovornyak_west = {
 		visible = {
-			OR = {
-				original_tag = HAL
-				original_tag = ZHY
-			}
+			can_do_dogovornyak = yes
 			NOT = {
 					has_country_flag = west_war
 					has_country_flag = west_elections
@@ -3790,8 +3790,8 @@ unite_western_ukraine = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_galicia
-					has_country_flag = united_podolia
+					tag = GLY
+					tag = PDL
 				}
             }
         }
@@ -3874,8 +3874,8 @@ unite_western_ukraine = {
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_galicia
-					has_country_flag = united_podolia
+					tag = GLY
+					tag = PDL
 				}
             }
         }
@@ -3893,8 +3893,8 @@ unite_western_ukraine = {
 
         visible = {
 				OR = {
-					has_country_flag = united_podolia
-					has_country_flag = united_galicia
+					tag = GLY
+					tag = PDL
 				}
 				NOT = {
 					has_country_flag = west_war
@@ -4028,8 +4028,8 @@ unite_left_bank_ukraine = {
 		visible = {	
 			is_left_bank_ukraine = yes
 			OR = {
-				has_country_flag = united_east
-				has_country_flag = united_south
+				tag = ESN
+				tag = STH
 			}
 		}		
 
@@ -4200,17 +4200,13 @@ unite_left_bank_ukraine = {
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_east
-					has_country_flag = united_south
+					tag = ESN
+					tag = STH
 				}
             }
         }
 		visible = {
-			is_left_bank_ukraine = yes
-			OR = {
-				has_country_flag = united_east
-				has_country_flag = united_south
-			}
+			can_do_elections = yes
 			NOT = {
 					has_country_flag = left_bank_war
 					has_country_flag = left_bank_elections
@@ -4340,34 +4336,7 @@ unite_left_bank_ukraine = {
 
 	prepare_dogovornyak_left_bank = {
 		visible = {
-            OR = {
-               	ESN = {
-                    OR = {
-                        original_tag = KHA
-                        AFU = {
-                            has_cosmetic_tag = AFU_dan
-                        }
-                    }
-                }
-                STH = {
-                    OR = {
-                        original_tag = ODE
-                        original_tag = ZAP
-                    }
-                }
-                AND = {
-                    ESN = {
-                        original_tag = DPR
-                    }
-                    STH = {
-                        OR = {
-                            original_tag = OPZ
-                            original_tag = SHT
-                        }
-                    }
-                } 
-            }
-
+			can_do_dogovornyak = yes
 			NOT = {
 					has_country_flag = left_bank_war
 					has_country_flag = left_bank_elections
@@ -4393,8 +4362,8 @@ unite_left_bank_ukraine = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_east
-					has_country_flag = united_south
+					tag = ESN
+					tag = STH
 				}
             }
         }
@@ -4426,8 +4395,8 @@ unite_left_bank_ukraine = {
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_south
-					has_country_flag = united_east
+					tag = STH
+					tag = ESN
 				}
             }
         }
@@ -4445,8 +4414,8 @@ unite_left_bank_ukraine = {
 
         visible = {
 				OR = {
-					has_country_flag = united_east
-					has_country_flag = united_south
+					tag = ESN
+					tag = STH
 				}
 				NOT = {
 					has_country_flag = left_bank_war
@@ -4519,7 +4488,7 @@ unite_left_bank_ukraine = {
 					}
 					every_country = {
 						limit = {
-							is_southern_ukraine = yes
+							is_south_ukraine = yes
 						}
 						ESN = {
 							declare_war_on = {
@@ -4545,7 +4514,7 @@ unite_left_bank_ukraine = {
 					}
 					every_country = {
 						limit = {
-							is_eastern_ukraine = yes
+							is_east_ukraine = yes
 						}
 						STH = {
 							declare_war_on = {
@@ -4591,8 +4560,8 @@ unite_right_bank_ukraine = {
 		visible = {	
 		is_right_bank_ukraine = yes
 			OR = {
-				has_country_flag = united_center
-				has_country_flag = united_west
+				tag = CNT
+				tag = WST
 			}
 		}		
 
@@ -4765,16 +4734,16 @@ unite_right_bank_ukraine = {
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_west
-					has_country_flag = united_center
+					tag = WST
+					tag = CNT
 				}
             }
         }
 		visible = {
-			is_right_bank_ukraine = yes
+			can_do_elections = yes
 			OR = {
-				has_country_flag = united_west
-				has_country_flag = united_center
+				tag = WST
+				tag = CNT
 			}
 			NOT = {
 					has_country_flag = right_bank_war
@@ -4905,26 +4874,7 @@ unite_right_bank_ukraine = {
 
 	prepare_dogovornyak_right_bank = {
 		visible = {
-               	WST = {
-					OR = {
-						original_tag = VOL
-						original_tag = ZHY
-					}					
-                }
-                CNT = {
-                    OR = {
-						original_tag = CHR
-						original_tag = KYI
-						AND = {
-							original_tag = SUM
-							NOT = {
-								SUM = {
-									has_government = ultranationalism
-								}
-							}
-						}
-					}
-                }
+            can_do_dogovornyak = yes
 			NOT = {
 					has_country_flag = right_bank_war
 					has_country_flag = right_bank_elections
@@ -4950,8 +4900,8 @@ unite_right_bank_ukraine = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_west
-					has_country_flag = united_center
+					tag = WST
+					tag = CNT
 				}
             }
         }
@@ -4982,8 +4932,8 @@ unite_right_bank_ukraine = {
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_west
-					has_country_flag = united_center
+					tag = WST
+					tag = CNT
 				}
             }
         }
@@ -5001,8 +4951,8 @@ unite_right_bank_ukraine = {
 
         visible = {
 				OR = {
-					has_country_flag = united_center
-					has_country_flag = united_west
+					tag = CNT
+					tag = WST
 				}
 				NOT = {
 					has_country_flag = right_bank_war
@@ -5075,7 +5025,7 @@ unite_right_bank_ukraine = {
 					}
 					every_country = {
 						limit = {
-							is_western_ukraine = yes
+							is_west_ukraine = yes
 						}
 						CNT = {
 							declare_war_on = {
@@ -5101,7 +5051,7 @@ unite_right_bank_ukraine = {
 					}
 					every_country = {
 						limit = {
-							is_central_ukraine = yes
+							is_center_ukraine = yes
 						}
 						WST = {
 							declare_war_on = {
@@ -5146,8 +5096,8 @@ unite_ukraine = {
 
 		visible = {	
 			OR = {
-				has_country_flag = united_left_bank
-				has_country_flag = united_right_bank
+				tag = LBU
+				tag = RBU
 			}
 		}		
 
@@ -5322,7 +5272,7 @@ unite_ukraine = {
 			if = {
 				limit = {
 						original_tag = AFU
-						has_government = conservative_democracy
+						has_government = conservatism
 				}
 				add_political_power = 50
 				set_cosmetic_tag = AFUdan_reun
@@ -5452,13 +5402,13 @@ unite_ukraine = {
         visible = {
             PLT = {
 				exists = yes
-                has_country_flag = united_right_bank
+                tag = RBU
                 has_country_leader = {
                     character = PLT_abil
                 }
             }
             AFU = {
-                has_country_flag = united_left_bank
+                tag = LBU
                 has_country_leader = {
                     character = AFU_zhorin
                 }
@@ -5486,10 +5436,10 @@ unite_ukraine = {
         visible = {
             TER = {
 				exists = yes
-                has_country_flag = united_right_bank
+                tag = RBU
             }
             AFU = {
-                has_country_flag = united_left_bank
+                tag = LBU
                 has_country_leader = {
                     character = AFU_zhorin
                 }
@@ -5515,32 +5465,7 @@ unite_ukraine = {
 
 	prepare_dogovornyak_ukraine = {
 		visible = {
-               	LBU = {
-					OR = {
-						original_tag = ODE
-						original_tag = DNI
-						original_tag = KHA
-						AFU = {
-							has_cosmetic_tag = AFU_dan
-						}
-					}					
-                }
-                RBU = {
-                    OR = {
-						original_tag = CHR
-						original_tag = KYI
-						original_tag = ZHY
-						original_tag = HAL
-						AND = {
-							original_tag = SUM
-							NOT = {
-								SUM = {
-									has_government = ultranationalism
-								}
-							}
-						}
-					}
-                }
+            can_do_dogovornyak = yes
 			NOT = {
                     has_country_flag = ukraine_war
                     has_country_flag = ukraine_dogovornyak
@@ -5566,8 +5491,8 @@ unite_ukraine = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_left_bank
-					has_country_flag = united_right_bank
+					tag = LBU
+					tag = RBU
 				}
             }
         }
@@ -5695,16 +5620,13 @@ unite_ukraine = {
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_left_bank
-					has_country_flag = united_right_bank
+					tag = LBU
+					tag = RBU
 				}
             }
         }
 		visible = {
-			OR = {
-				has_country_flag = united_left_bank
-				has_country_flag = united_right_bank
-			}
+			can_do_elections = yes
 			NOT = {
                     has_country_flag = ukraine_war
                     has_country_flag = ukraine_dogovornyak
@@ -5716,31 +5638,6 @@ unite_ukraine = {
 			}
 			NOT = {
 				has_country_flag = unification_choice_made_ukraine
-			}
-			LBU = {
-				OR = {
-					original_tag = ZAP
-					original_tag = STR
-					AFU = {
-						has_cosmetic_tag = AFU_savchenko
-					}
-				}
-			}
-			RBU = {
-				OR = {
-					original_tag = KYI
-					original_tag = CHR
-					original_tag = ZHY
-					original_tag = HAL
-					AND = {
-						original_tag = SUM
-						SUM = {
-							NOT = {
-								has_government = ultranationalism
-							}
-						}
-					}
-				}
 			}
 		}
 		fire_only_once = yes
@@ -5767,8 +5664,8 @@ unite_ukraine = {
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_left_bank
-					has_country_flag = united_right_bank
+					tag = LBU
+					tag = RBU
 				}
             }
         }
@@ -5786,8 +5683,8 @@ unite_ukraine = {
 
         visible = {
 				OR = {
-					has_country_flag = united_right_bank
-					has_country_flag = united_left_bank
+					tag = RBU
+					tag = LBU
 				}
 				NOT = {
                     has_country_flag = ukraine_war

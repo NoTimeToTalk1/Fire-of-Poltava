@@ -190,7 +190,7 @@ is_dnister_ukraine = {
 	}
 }
 
-can_unite_dniester_ukraine = {
+can_unite_dnister_ukraine = {
 	AND = {
 		owns_state = 2032
 		owns_state = 2023
@@ -359,5 +359,144 @@ can_unite_ukraine = {
 		owns_state = 2031
 		owns_state = 557
 		owns_state = 518
+	}
+}
+can_do_elections = {
+	OR = {
+		AND = {
+			ROOT = {
+				is_pro_ukrainian = yes
+				NOT = {
+					has_government = paternalism
+					has_government = ultranationalism
+					has_government = esotericism
+					has_government = oligarchism
+				}
+			}
+			FROM = {
+				is_pro_ukrainian = yes
+				NOT = {
+					has_government = paternalism
+					has_government = ultranationalism
+					has_government = esotericism
+					has_government = oligarchism
+				}
+			}
+		}
+		AND = {
+			ROOT = {
+				is_pro_russian = yes
+				NOT = {
+					has_government = paternalism
+					has_government = ultranationalism
+					has_government = esotericism
+					has_government = oligarchism
+				}
+			}
+			FROM = {
+				is_pro_russian = yes
+				NOT = {
+					has_government = paternalism
+					has_government = ultranationalism
+					has_government = esotericism
+					has_government = oligarchism
+				}
+			}
+		}
+	}
+}
+
+can_do_dogovornyak = {
+	OR = {
+		AND = {
+			ROOT = {
+				OR = {
+					is_pro_ukrainian = yes
+					is_a_minority = yes
+				}
+				NOT = {
+					has_government = esotericism
+					has_government = traditionalism
+					has_government = ultranationalism
+				}
+			}
+			FROM = {
+				OR = {
+					is_pro_ukrainian = yes
+					is_a_minority = yes
+				}
+				NOT = {
+					has_government = esotericism
+					has_government = traditionalism
+					has_government = ultranationalism
+				}
+			}
+		}
+		AND = {
+			ROOT = {
+				is_pro_russian = yes
+				NOT = {
+					has_government = esotericism
+					has_government = traditionalism
+					has_government = ultranationalism
+				}
+			}
+			FROM = {
+				is_pro_russian = yes
+				NOT = {
+					has_government = esotericism
+					has_government = traditionalism
+					has_government = ultranationalism
+				}
+			}
+		}
+		AND = {
+			ROOT = {
+				is_pro_ukrainian = yes
+				has_government = ultranationalism
+			}
+			FROM = {
+				is_pro_ukrainian = yes
+				has_government = ultranationalism
+			}
+		}
+		AND = {
+			ROOT = {
+				is_pro_russian = yes
+				has_government = ultranationalism
+			}
+			FROM = {
+				is_pro_russian = yes
+				has_government = ultranationalism
+			}
+		}
+		AND = {
+			ROOT = {
+				has_government = esotericism
+			}
+			FROM = {
+				has_government = esotericism
+			}
+		}
+		AND = {
+			ROOT = {
+				is_pro_ukrainian = yes
+				has_government = traditionalism
+			}
+			FROM = {
+				is_pro_ukrainian = yes
+				has_government = traditionalism
+			}
+		}
+		AND = {
+			ROOT = {
+				is_pro_russian = yes
+				has_government = traditionalism
+			}
+			FROM = {
+				is_pro_russian = yes
+				has_government = traditionalism
+			}
+		}
 	}
 }
