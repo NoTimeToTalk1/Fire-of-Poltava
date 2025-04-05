@@ -189,25 +189,21 @@ country_event = { #Biletsky - Helping ZSU?
 		ai_chance = {
 			factor = 90
 		}
-		send_equipment = {
+		add_equipment = {
 			type = support_equipment
-			amount = 500
-			target = AFU
+			amount = -250
 		}
-		send_equipment = {
-			type = motorized_equipment_1 
-			amount = 150
-			target = AFU
+		add_equipment = {
+			type = motorized_equipment
+			amount = -150
 		}
-		send_equipment = {
-			type = mechanized_equipment_1
-			amount = 20
-			target = AFU
+		add_equipment = {
+			type = IFV_equipment
+			amount = -20
 		}
-		send_equipment = {
-			type = modern_tank_equipment
-			amount = 2
-			target = AFU
+		add_equipment = {
+			type = MBT_equipment
+			amount = -5
 		}
 		AFU = { country_event = afu.71 }
 		add_political_power = -50
@@ -237,6 +233,22 @@ country_event = { #Biletsky helped us
 			ideology = ultranationalism
 			popularity = 0.02
 		}
+		add_equipment = {
+			type = support_equipment
+			amount = 250
+		}
+		add_equipment = {
+			type = motorized_equipment
+			amount = 150
+		}
+		add_equipment = {
+			type = IFV_equipment
+			amount = 20
+		}
+		add_equipment = {
+			type = MBT_equipment
+			amount = 5
+		}
 	}
 }
 
@@ -252,6 +264,10 @@ country_event = { #Biletsky didn't help us
 	option = {
 		name = afu.72.a
 		add_political_power = -10
+		add_popularity = {
+			ideology = ultranationalism
+			popularity = -0.02
+		}
 	}
 }
 
