@@ -70,7 +70,7 @@ deal_with_ter = {
 
 azov_church_politics_decisions = {
 
-AFU_last_stand_christian_decision = {
+	AFU_last_stand_christian_decision = {
 
         icon = GFX_decision_mikhail_azov
         
@@ -79,23 +79,25 @@ AFU_last_stand_christian_decision = {
         }
         
         available = {
-check_variable = {
-    AFU_demuscovitisation_church_v > 0.2
-}        
+			check_variable = {
+				AFU_demuscovitisation_church_v > 75
+			}
+			check_variable = {
+				AFU_pcu_influence_v > 60
+			}        
         }
 
         visible = {
-        has_war = yes
-        has_country_flag = azov_pcu_power_increased
+        	has_war = yes
+        	has_country_flag = azov_pcu_power_increased_4
         
-        ROOT = {
-        surrender_progress > 0.8
-        }
-        
+        	ROOT = {
+        		surrender_progress > 0.8
+        	}
         }
         
         modifier = {
-        political_power_gain = -0.25
+        	political_power_gain = -0.25
         }
         
         days_remove = 7
@@ -112,38 +114,36 @@ check_variable = {
         days_remove = 20
 
 
-remove_effect = {
-            AFU = {
-            random_owned_controlled_state  = {
-            create_unit = {
-                division = "name = \"Teroborona\" division_template = \"Teroborona\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
-                owner = AFU
-                    }
-                    add_manpower = -1500    
-                }
-            random_owned_controlled_state  = {
-            limit = {
-                    is_capital = yes
-                }
-            create_unit = {
-                division = "name = \"Teroborona\" division_template = \"Teroborona\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
-                owner = AFU
-                    }
-                    add_manpower = -1500    
-                }
-            random_owned_controlled_state  = {
-            create_unit = {
-                division = "name = \"Teroborona\" division_template = \"Teroborona\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
-                owner = AFU
-                    }
-                    add_manpower = -1500    
-                }
-            }
-        }
-}
-
-
-AFU_raise_moral_decision = {
+		remove_effect = {
+			AFU = {
+				random_owned_controlled_state  = {
+					create_unit = {
+						division = "name = \"Teroborona\" division_template = \"Teroborona\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
+						owner = AFU
+					}
+					add_manpower = -1500    
+				}
+				random_owned_controlled_state  = {
+					limit = {
+						is_capital = yes
+					}
+					create_unit = {
+						division = "name = \"Teroborona\" division_template = \"Teroborona\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
+						owner = AFU
+					}
+					add_manpower = -1500    
+				}
+				random_owned_controlled_state  = {
+					create_unit = {
+						division = "name = \"Teroborona\" division_template = \"Teroborona\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
+						owner = AFU
+					}
+					add_manpower = -1500    
+				}
+			}
+		}
+	}
+	AFU_raise_moral_decision = {
 
 		icon = GFX_decision_jesus_azov
 		
@@ -152,13 +152,13 @@ AFU_raise_moral_decision = {
 		}
 		
 		available = {
-check_variable = {
-    AFU_demuscovitisation_church_v > 0.2
-}
-NOT = {
-has_country_flag = azov_decision_activate
-}	
-custom_trigger_tooltip = {
+			check_variable = {
+				AFU_demuscovitisation_church_v > 20
+			}
+			NOT = {
+				has_country_flag = azov_decision_activate
+			}	
+			custom_trigger_tooltip = {
                 tooltip = AFU_azov_pcu_influence_v_less_than_50_tt
                 check_variable = { 
                     var = AFU_pcu_influence_v
@@ -169,14 +169,14 @@ custom_trigger_tooltip = {
 		}
 
 		visible = {
-		has_war = yes
-        has_country_flag = azov_pcu_power_increased
+			has_war = yes
+			has_country_flag = azov_pcu_power_increased
 		}
 		
 		modifier = {
-		army_morale_factor = 0.5
-		army_core_defence_factor = 0.25
-		political_power_gain = -0.5
+			army_morale_factor = 0.2
+			army_core_defence_factor = 0.15
+			political_power_gain = -0.2
 		}
 		
 		days_remove = 45
@@ -197,20 +197,18 @@ custom_trigger_tooltip = {
             }
 	  	}
 		
-		cost = 70
+		cost = 35
 		
 		days_remove = 20
 
 
 		remove_effect  = {
-			
 			hidden_effect = {
                clr_country_flag = azov_decision_activate       
 			}
 		}
 	}
-
-AFU_raise_chistian_people_decision = {
+	AFU_raise_chistian_people_decision = {
 
 		icon = GFX_decision_jesus_azov
 		
@@ -219,13 +217,13 @@ AFU_raise_chistian_people_decision = {
 		}
 		
 		available = {
-check_variable = {
-    AFU_demuscovitisation_church_v > 0.2
-}
-NOT = {
-has_country_flag = azov_decision_activate
-}
-custom_trigger_tooltip = {
+			check_variable = {
+				AFU_demuscovitisation_church_v > 20
+			}
+			NOT = {
+				has_country_flag = azov_decision_activate
+			}
+			custom_trigger_tooltip = {
                 tooltip = AFU_azov_pcu_influence_v_less_than_50_tt
                 check_variable = { 
                     var = AFU_pcu_influence_v
@@ -236,12 +234,12 @@ custom_trigger_tooltip = {
 		}
 
 		visible = {
-		has_war = yes
-        has_country_flag = azov_pcu_power_increased
+			has_war = yes
+        	has_country_flag = azov_pcu_power_increased_3
 		}
 		
 		modifier = {
-		political_power_gain = -0.25
+			political_power_gain = -0.25
 		}
 		
 		days_remove = 14
@@ -269,8 +267,7 @@ custom_trigger_tooltip = {
 			}
 		}
 	}
-
-AFU_send_priests_to_the_liberated_territories_decision = {
+	AFU_send_priests_to_the_liberated_territories_decision = {
 
 		icon = GFX_decision_jesus_azov
 		
@@ -279,51 +276,52 @@ AFU_send_priests_to_the_liberated_territories_decision = {
 		}
 		
 		available = {
-check_variable = {
-    AFU_demuscovitisation_church_v > 0.2
-}
-NOT = {
-has_country_flag = azov_decision_activate
-}
-num_occupied_states > 1
-custom_trigger_tooltip = {
+			check_variable = {
+				AFU_demuscovitisation_church_v > 20
+			}
+			NOT = {
+				has_country_flag = azov_decision_activate
+			}
+			num_occupied_states > 1
+			custom_trigger_tooltip = {
                 tooltip = AFU_azov_pcu_influence_v_less_than_50_tt
                 check_variable = { 
                     var = AFU_pcu_influence_v
                     value = 50
                     compare = greater_than_or_equals
                 }
-            }		
+            }
+			has_country_flag = azov_pcu_power_increased_2		
 		}
 
 		visible = {
-		has_war = yes
-        has_country_flag = azov_pcu_power_increased
+			has_war = yes
+        	has_country_flag = azov_pcu_power_increased
 		}
 		
 		modifier = {
-		political_power_gain = -0.5
+			political_power_gain = -0.2
 		}
 		
 		days_remove = 20
 
 		ai_will_do = {
-			factor = 200
+			factor = 20
 		}
 
 		complete_effect = {
-random_owned_state = {
-    limit = {
-	has_resistance = yes
-	}
-add_compliance = 5	
-}
+			random_owned_state = {
+				limit = {
+					has_resistance = yes
+				}
+				add_compliance = 5	
+			}
             hidden_effect = {
                set_country_flag = azov_decision_activate
             }
 	  	}
 		
-		cost = 50
+		cost = 10
 		
 		days_remove = 20
 		
@@ -335,7 +333,6 @@ add_compliance = 5
 			}
 		}
 	}
-	
 	azov_military_clergy_decisions_2 = {
 
 		icon = GFX_decision_pcu5
@@ -345,20 +342,22 @@ add_compliance = 5
 			tag = AFU				
 			has_war = yes
 			has_country_flag = azov_military_clergy_decisions_2
+			check_variable = {
+				AFU_pcu_influence_v > 40
+			}
 		}
 		
 		available = {
-NOT = {
-has_country_flag = azov_decision_activate
-}			
-		
+			NOT = {
+				has_country_flag = azov_decision_activate
+			}				
 		}
 	
 
 		modifier = {
-		army_attack_speed_factor = 0.5
-		political_power_gain = -0.5
-		stability_factor = -0.5
+			army_attack_speed_factor = 0.5
+			political_power_gain = -0.5
+			stability_factor = -0.5
 		}
 		
 		days_remove = 45
@@ -401,20 +400,22 @@ has_country_flag = azov_decision_activate
 			tag = AFU				
 			has_war = yes
 			has_country_flag = azov_military_clergy_decisions_2
+			check_variable = {
+				AFU_pcu_influence_v > 60
+			}
 		}
 		
 		available = {
-NOT = {
-has_country_flag = azov_decision_activate
-}			
-		
+			NOT = {
+				has_country_flag = azov_decision_activate
+			}					
 		}
 	
 
 		modifier = {
-		breakthrough_factor = 0.5
-		political_power_gain = -0.5
-		stability_factor = -0.5
+			breakthrough_factor = 0.2
+			political_power_gain = -0.25
+			stability_factor = -0.1
 		}
 		
 		days_remove = 45
@@ -442,7 +443,7 @@ has_country_flag = azov_decision_activate
         }
 
 		remove_effect  = {
-		army_experience = 2
+			army_experience = 2
             hidden_effect = {
                clr_country_flag = azov_decision_activate
             }
@@ -456,22 +457,24 @@ has_country_flag = azov_decision_activate
 		visible = {				
 			has_war = yes
 			has_country_flag = azov_military_clergy_decisions_2
+			check_variable = {
+				AFU_pcu_influence_v > 80
+			}
 		}
 		
 		available = {
-NOT = {
-has_country_flag = azov_decision_activate
-}			
-		
+			NOT = {
+				has_country_flag = azov_decision_activate
+			}				
 		}
 	
 
 		modifier = {
-		org_loss_when_moving = -0.5
-		org_loss_at_low_org_factor = -0.5
-		experience_loss_factor = -0.5
-		political_power_gain = -0.5
-		stability_factor = -0.5
+			org_loss_when_moving = -0.25
+			org_loss_at_low_org_factor = -0.25
+			experience_loss_factor = -0.3
+			political_power_gain = -0.2
+			stability_factor = -0.15
 		}
 		
 		days_remove = 45
@@ -505,8 +508,7 @@ has_country_flag = azov_decision_activate
             }
 		}
 	}
-
-AFU_invite_Military_Clergy_decision = {
+	AFU_invite_Military_Clergy_decision = {
 
 		icon = GFX_decision_pcu5
 		
@@ -515,9 +517,9 @@ AFU_invite_Military_Clergy_decision = {
 		}
 		
 		available = {
-NOT = {
-has_country_flag = azov_decision_activate_2
-}	
+			NOT = {
+				has_country_flag = azov_decision_activate_2
+			}	
 		}
 
 		visible = {
@@ -555,8 +557,7 @@ has_country_flag = azov_decision_activate_2
 			}
 		}
 	}
-	
-AFU_increase_power_of_pcu_decision_2 = {
+	AFU_increase_power_of_pcu_decision = {
 
 		icon = GFX_decision_pcu
 		
@@ -565,19 +566,60 @@ AFU_increase_power_of_pcu_decision_2 = {
 		}
 		
 		available = {
-check_variable = {
-    AFU_demuscovitisation_church_v > 0.23
-}	
-check_variable = {
-    AFU_pcu_influence_v > 30
-}		
+			check_variable = {
+				AFU_demuscovitisation_church_v > 20
+			}		
 		}
 
 		visible = {
-        has_country_flag = azov_pcu_power_increased        
+        
 		}
 		
-		cost = 70
+		cost = 30
+		
+		days_remove = 20
+		
+		fire_only_once = yes
+
+
+		remove_effect  = {
+			add_to_variable = {
+				var =  AFU_pcu_influence_v
+				value = 20
+				tooltip = azov_pcu_power_increased
+			}
+			clamp_variable = {
+				var = AFU_demuscovitisation_church_v
+				min = 0
+				max = 100
+			}
+			hidden_effect = {
+				set_country_flag = azov_pcu_power_increased
+			}
+		}
+	}
+	AFU_increase_power_of_pcu_decision_2 = {
+
+		icon = GFX_decision_pcu
+		
+		ai_will_do = {	
+			factor = 20		
+		}
+		
+		available = {
+			check_variable = {
+				AFU_demuscovitisation_church_v > 30
+			}	
+			check_variable = {
+				AFU_pcu_influence_v > 20
+			}		
+		}
+
+		visible = {
+        	has_country_flag = azov_pcu_power_increased        
+		}
+		
+		cost = 30
 		
 		days_remove = 20
 		
@@ -586,12 +628,99 @@ check_variable = {
 
 		remove_effect  = {
 			hidden_effect = {
-			set_country_flag = azov_pcu_power_increased_2
+				set_country_flag = azov_pcu_power_increased_2
 			}
 		}
 	}
+	AFU_increase_power_of_pcu_decision_3 = {
 
-AFU_fate_of_uocmp_priests_decision = {
+		icon = GFX_decision_pcu
+		
+		ai_will_do = {	
+			factor = 20		
+		}
+		
+		available = {
+			check_variable = {
+				AFU_demuscovitisation_church_v > 50
+			}	
+			check_variable = {
+				AFU_pcu_influence_v > 40
+			}	
+		}
+
+		visible = {
+			has_country_flag = azov_pcu_power_increased_2
+		}
+		
+		cost = 30
+		
+		days_remove = 20
+		
+		fire_only_once = yes
+
+
+		remove_effect  = {
+			add_to_variable = {
+				var =  AFU_pcu_influence_v
+				value = 20
+				tooltip = azov_pcu_power_increased
+			}
+			clamp_variable = {
+				var = AFU_demuscovitisation_church_v
+				min = 0
+				max = 100
+			}
+			hidden_effect = {
+				set_country_flag = azov_pcu_power_increased_3
+			}
+		}
+	}
+	AFU_increase_power_of_pcu_decision_4 = {
+
+		icon = GFX_decision_pcu
+		
+		ai_will_do = {	
+			factor = 20		
+		}
+		
+		available = {
+			check_variable = {
+				AFU_demuscovitisation_church_v > 75
+			}	
+			check_variable = {
+				AFU_pcu_influence_v > 60
+			}	
+		}
+
+		visible = {
+			has_country_flag = azov_pcu_power_increased_3
+		}
+		
+		cost = 30
+		
+		days_remove = 20
+		
+		fire_only_once = yes
+
+
+		remove_effect  = {
+			add_to_variable = {
+				var =  AFU_pcu_influence_v
+				value = 20
+				tooltip = azov_pcu_power_increased
+			}
+			clamp_variable = {
+				var = AFU_demuscovitisation_church_v
+				min = 0
+				max = 100
+			}
+			hidden_effect = {
+				set_country_flag = azov_pcu_power_increased_4
+			}
+		}
+	}
+	AFU_fate_of_uocmp_priests_decision = {
 
 		icon = GFX_decision_upcmp
 		
@@ -600,17 +729,17 @@ AFU_fate_of_uocmp_priests_decision = {
 		}
 		
 		available = {
-NOT = {
-has_country_flag = azov_decision_activate_2
-}	
+			NOT = {
+				has_country_flag = azov_decision_activate_2
+			}	
 		}
 
 		visible = {
-        has_country_flag = azov_pcu_power_increased
+        	has_country_flag = azov_pcu_power_increased
 		}
 		
 		modifier = {
-		political_power_gain = -0.25
+			political_power_gain = -0.25
 		}
 		
 		days_remove = 20
@@ -631,15 +760,14 @@ has_country_flag = azov_decision_activate_2
 		
 		fire_only_once = yes
 
-		remove_effect  = {
-		country_event = { id = azov.52 }
+		remove_effect = {
+			country_event = { id = azov.52 }
 			hidden_effect = {
                clr_country_flag = azov_decision_activate_2     
 			}
 		}
 	}	
-
-AFU_nationalise_upcmp_churches_decision = {
+	AFU_nationalise_upcmp_churches_decision = {
 
 		icon = GFX_decision_pcu2
 		
@@ -648,13 +776,13 @@ AFU_nationalise_upcmp_churches_decision = {
 		}
 		
 		available = {
-NOT = {
-has_country_flag = azov_decision_activate_2
-}	
+			NOT = {
+			has_country_flag = azov_decision_activate_2
+			}	
 		}
 
 		visible = {
-        has_country_flag = azov_pcu_power_increased
+        	has_country_flag = azov_pcu_power_increased
 		}
 		
 		modifier = {
@@ -669,12 +797,12 @@ has_country_flag = azov_decision_activate_2
 		}
 
 		complete_effect = {
-random_owned_state = {
-    limit = {
-	has_resistance = yes
-	}
-add_resistance = 10	
-}
+			random_owned_state = {
+				limit = {
+				has_resistance = yes
+				}
+			add_resistance = 10	
+			}
             hidden_effect = {
                set_country_flag = azov_decision_activate_2
             }
@@ -697,37 +825,36 @@ add_resistance = 10
 				min = 0
 				max = 100
 			}
-random_core_state = {
-add_extra_state_shared_building_slots = 1  
-add_building_construction = {
-    type = religious_building
-    level = 1
-    instant_build = yes
-}  
-}
-random_core_state = {
-add_extra_state_shared_building_slots = 1  
-add_building_construction = {
-    type = religious_building
-    level = 1
-    instant_build = yes
-}  
-}
-random_core_state = {
-add_extra_state_shared_building_slots = 1  
-add_building_construction = {
-    type = religious_building
-    level = 1
-    instant_build = yes
-}  
-}
+			random_core_state = {
+				add_extra_state_shared_building_slots = 1  
+				add_building_construction = {
+					type = religious_building
+					level = 1
+					instant_build = yes
+				}  
+			}
+			random_core_state = {
+				add_extra_state_shared_building_slots = 1  
+				add_building_construction = {
+					type = religious_building
+					level = 1
+					instant_build = yes
+				}  
+			}
+			random_core_state = {
+				add_extra_state_shared_building_slots = 1  
+				add_building_construction = {
+					type = religious_building
+					level = 1
+					instant_build = yes
+				}  
+			}
 			hidden_effect = {
                clr_country_flag = azov_decision_activate_2     
 			}
 		}
 	}
-
-AFU_Support_for_Transitional_Religious_Communities_decision = {
+	AFU_Support_for_Transitional_Religious_Communities_decision = {
 
 		icon = GFX_decision_pcu3
 		
@@ -736,17 +863,17 @@ AFU_Support_for_Transitional_Religious_Communities_decision = {
 		}
 		
 		available = {
-NOT = {
-has_country_flag = azov_decision_activate_2
-}	
+			NOT = {
+				has_country_flag = azov_decision_activate_2
+			}	
 		}
 
 		visible = {
-        has_country_flag = azov_pcu_power_increased
+        	has_country_flag = azov_pcu_power_increased_2
 		}
 		
 		modifier = {
-		political_power_gain = -0.2
+			political_power_gain = -0.2
 		}
 		
 		days_remove = 20
@@ -761,16 +888,24 @@ has_country_flag = azov_decision_activate_2
             }
 	  	}
 		
-		cost = 50
+		cost = 10
 		
 		days_remove = 20
-		
-		fire_only_once = yes
 
 		remove_effect  = {
 			add_to_variable = {
+				var =  AFU_demuscovitisation_church_v
+				value = 0.1
+				tooltip = AFU_demuscovitisation_church_v_tt
+			}
+			clamp_variable = {
+				var =  AFU_demuscovitisation_church_v
+				min = 0
+				max = 100
+			}
+			add_to_variable = {
 				var =  AFU_pcu_influence_v
-				value = 3
+				value = 1
 				tooltip = AFU_pcu_influence_v_strong_tt
 			}
 			clamp_variable = {
@@ -783,8 +918,7 @@ has_country_flag = azov_decision_activate_2
 			}
 		}
 	}
-
-AFU_Christian_marches_decision = {
+	AFU_Christian_marches_decision = {
 
 		icon = GFX_decision_pcu4
 		
@@ -793,18 +927,17 @@ AFU_Christian_marches_decision = {
 		}
 		
 		available = {
-NOT = {
-has_country_flag = azov_decision_activate_2
-}	
+			NOT = {
+				has_country_flag = azov_decision_activate_2
+			}	
 		}
 
 		visible = {
-        has_country_flag = azov_pcu_power_increased
+        	has_country_flag = azov_pcu_power_increased_2
 		}
 		
 		modifier = {
-		political_power_gain = -0.45
-		stability_factor = -0.2
+			political_power_gain = -0.25
 		}
 		
 		days_remove = 20
@@ -819,7 +952,7 @@ has_country_flag = azov_decision_activate_2
             }
 	  	}
 		
-		cost = 50
+		cost = 25
 		
 		days_remove = 20
 		
@@ -828,7 +961,7 @@ has_country_flag = azov_decision_activate_2
 		remove_effect  = {
 			add_to_variable = {
 				var =  AFU_pcu_influence_v
-				value = 5
+				value = 1
 				tooltip = AFU_pcu_influence_v_strong_tt
 			}
 			clamp_variable = {
@@ -840,1206 +973,102 @@ has_country_flag = azov_decision_activate_2
                clr_country_flag = azov_decision_activate_2     
 			}
 		}
-	}	
-
-AFU_increase_power_of_pcu_decision = {
-
-		icon = GFX_decision_pcu
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
+	}
+	AFU_azov_destroy_muscovite_church_in_state = {
 		available = {
-check_variable = {
-    AFU_demuscovitisation_church_v > 0.2
-}		
+			ROOT = {
+				FROM = {
+					has_state_flag = upc_mp_activity
+				}
+			}
 		}
-
-		visible = {
-        
+		icon = GFX_decision_noupcmp
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = controlled_states
+		target_trigger = {
+			FROM = {
+				has_state_flag = upc_mp_activity
+			}
 		}
-		
-		cost = 70
-		
-		days_remove = 20
-		
+		cost = 5
 		fire_only_once = yes
-
-
-		remove_effect  = {
+		days_remove = 20
+		modifier = {
+			resistance_activity = 0.2
+		}
+		visible = {
+			FROM = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			base = 15
+		}
+		remove_effect = {
+			FROM = {
+				clr_state_flag = upc_mp_activity
+			}
 			add_to_variable = {
-				var =  AFU_pcu_influence_v
-				value = 10
-				tooltip = azov_pcu_power_increased
+				var =  AFU_demuscovitisation_church_v
+				value = 0.5
+				tooltip = AFU_demuscovitisation_church_v_tt
 			}
 			clamp_variable = {
 				var = AFU_demuscovitisation_church_v
 				min = 0
 				max = 100
 			}
-			hidden_effect = {
-			set_country_flag = azov_pcu_power_increased
-			}
 		}
 	}
-
-AFU_azov_fight_muscovites_church_decision_1 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
+	AFU_azov_destroy_muscovite_church_in_state_hard = {
 		available = {
-		controls_state = 557
+			ROOT = {
+				FROM = {
+					has_state_flag = upc_mp_high_activity
+				}
+			}
 		}
-
-		visible = {
-        controls_state = 557
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = controlled_states
+		target_trigger = {
+			FROM = {
+				has_state_flag = upc_mp_high_activity
+			}
 		}
-		
-		cost = 50
-		
+		icon = GFX_decision_noupcmp
+		cost = 10
+		fire_only_once = yes
 		days_remove = 20
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.02
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
+		modifier = {
+			resistance_activity = 0.5
 		}
-	}
-	
-AFU_azov_fight_muscovites_church_decision_2 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 2093
-		}
-
 		visible = {
-        controls_state = 2093
+			FROM = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		}
-		
-		cost = 50
-		
-		days_remove = 20
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
+		ai_will_do = {
+			base = 15
+		}
+		remove_effect = {
+			FROM = {
+				clr_state_flag = upc_mp_activity
+			}
 			add_to_variable = {
 				var =  AFU_demuscovitisation_church_v
-				value = 0.02
+				value = 1
 				tooltip = AFU_demuscovitisation_church_v_tt
 			}
 			clamp_variable = {
 				var = AFU_demuscovitisation_church_v
 				min = 0
-				max = 1
-			}
-		}
-	}
-	
-AFU_azov_fight_muscovites_church_decision_3 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 2310
-		}
-
-		visible = {
-        controls_state = 2310
-		}
-		
-		cost = 50
-		
-		days_remove = 20
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.02
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_4 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 2096
-		}
-
-		visible = {
-        controls_state = 2096
-		}
-		
-		cost = 50
-		
-		days_remove = 20
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.02
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-	
-AFU_azov_fight_muscovites_church_decision_5 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 2308
-		}
-
-		visible = {
-        controls_state = 2308
-		}
-		
-		cost = 50
-		
-		days_remove = 20
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.02
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-
-AFU_azov_fight_muscovites_church_decision_6 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 518
-		}
-
-		visible = {
-        controls_state = 518
-		}
-		
-		cost = 50
-		
-		days_remove = 20
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.02
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-	
-AFU_azov_fight_muscovites_church_decision_7 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 2099
-		}
-
-		visible = {
-        controls_state = 2099
-		}
-		
-		cost = 50
-		
-		days_remove = 20
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.02
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-
-AFU_azov_fight_muscovites_church_decision_8 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 2095
-		}
-
-		visible = {
-        controls_state = 2095
-		}
-		
-		cost = 50
-		
-		days_remove = 20
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.03
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_9 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 2307
-		}
-
-		visible = {
-        controls_state = 2307
-		}
-		
-		cost = 50
-		
-		days_remove = 20
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.02
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_10 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 2098
-		}
-
-		visible = {
-        controls_state = 2098
-		}
-		
-		cost = 50
-		
-		days_remove = 20
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.02
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_11 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 497
-		}
-
-		visible = {
-        controls_state = 497
-		}
-		
-		cost = 80
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.03
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_12 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 2079
-		}
-
-		visible = {
-        controls_state = 2079
-		}
-		
-		cost = 100
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.05
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_13 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 623
-		}
-
-		visible = {
-        controls_state = 623
-		}
-		
-		cost = 80
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.03
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_14 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 2085
-		}
-
-		visible = {
-        controls_state = 2085
-		}
-		
-		cost = 80
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.03
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_15 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 614
-		}
-
-		visible = {
-        controls_state = 614
-		}
-		
-		cost = 80
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.03
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_16 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 2045
-		}
-
-		visible = {
-        controls_state = 2045
-		}
-		
-		cost = 100
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.03
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_17 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 2073
-		}
-
-		visible = {
-        controls_state = 2073
-		}
-		
-		cost = 100
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.03
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_18 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 2112
-		}
-
-		visible = {
-        controls_state = 2112
-		}
-		
-		cost = 80
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.03
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-
-AFU_azov_fight_muscovites_church_decision_19 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 2067
-		}
-
-		visible = {
-        controls_state = 2067
-		}
-		
-		cost = 80
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.03
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_20 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 2115
-		}
-
-		visible = {
-        controls_state = 2115
-		}
-		
-		cost = 80
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.03
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_21 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 397
-		}
-
-		visible = {
-        controls_state = 397
-		}
-		
-		cost = 80
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.03
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_22 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 2081
-		}
-
-		visible = {
-        controls_state = 2081
-		}
-		
-		cost = 120
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.02
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_23 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 436
-		}
-
-		visible = {
-        controls_state = 436
-		}
-		
-		cost = 80
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.03
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_24 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 527
-		}
-
-		visible = {
-        controls_state = 527
-		}
-		
-		cost = 80
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.03
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_25 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 493
-		}
-
-		visible = {
-        controls_state = 493
-		}
-		
-		cost = 60
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.03
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_26 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 671
-		}
-
-		visible = {
-        controls_state = 671
-		}
-		
-		cost = 50
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.03
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_27 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 1030
-		}
-
-		visible = {
-        controls_state = 1030
-		}
-		
-		cost = 45
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.03
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_28 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 1294
-		}
-
-		visible = {
-        controls_state = 1294
-		}
-		
-		cost = 30
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.02
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_29 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 1164
-		}
-
-		visible = {
-        controls_state = 1164
-		}
-		
-		cost = 30
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.02
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_30 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 1292
-		}
-
-		visible = {
-        controls_state = 1292
-		}
-		
-		cost = 20
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.02
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_31 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 593
-		}
-
-		visible = {
-        controls_state = 593
-		}
-		
-		cost = 40
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.02
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
-			}
-		}
-	}
-AFU_azov_fight_muscovites_church_decision_32 = {
-
-		icon = GFX_decision_noupcmp
-		
-		ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-		controls_state = 1599
-		}
-
-		visible = {
-        controls_state = 1599
-		}
-		
-		cost = 20
-		
-		days_remove = 40
-		
-		fire_only_once = yes
-
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_demuscovitisation_church_v
-				value = 0.02
-				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
+				max = 100
 			}
 		}
 	}
@@ -2440,49 +1469,6 @@ has_country_flag = azov_decision_activate
 		}
 	}
 
-
-	azov_slavic_traditions_decisions_1 = {
-
-		icon = GFX_decision_kolovrat2
-
-
-		visible = {
-			tag = AFU
-			has_completed_focus = AFU_start_the_paganisation
-		}
-	
-
-		modifier = {
-		political_power_gain = -0.3
-		}
-		
-		cost = 30
-		
-		days_remove = 20
-
-		ai_will_do = {
-			factor = 200
-		}
-
-		fire_only_once = yes
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_azov_paganisation_v
-				value = 1
-				tooltip = azov_paganisation_progress_tt
-			}
-			clamp_variable = {
-				var =  AFU_azov_paganisation_v
-				min = 0
-				max = 100
-			}
-		hidden_effect = {
-		country_event = { id = azov.38 }
-		}
-		}
-	}
-
 	azov_slavic_traditions_decisions_1 = {
 
 		icon = GFX_decision_kolovrat2
@@ -2496,10 +1482,10 @@ has_country_flag = azov_decision_activate
 	
 
 		modifier = {
-		political_power_gain = 0.3
-		stability_factor = -0.3
-		production_speed_buildings_factor = -0.5 
-		industrial_capacity_factory = -0.5
+		political_power_gain = 0.1
+		stability_factor = -0.1
+		production_speed_buildings_factor = -0.1 
+		industrial_capacity_factory = -0.1
 		}
 		
 		cost = 30

@@ -71,6 +71,43 @@ on_actions = {
                 }
 
             }
+            every_state = {
+                limit = {
+                    OR = {
+                        is_core_of = VOL
+                        is_core_of = RIV
+                        is_core_of = KHM
+                        is_core_of = ZHY
+                        is_core_of = VIN
+                        is_core_of = KOB
+                        is_core_of = KYI
+                        is_core_of = CHR
+                        is_core_of = SUM
+                        is_core_of = ODE
+                        is_core_of = MYK
+                        is_core_of = KIR
+                        is_core_of = CHE
+                        is_core_of = PLT
+                        is_core_of = KRM
+                        is_core_of = UMA
+                        is_core_of = KHE
+                        is_core_of = ZAP
+                        is_core_of = KHA
+                        is_core_of = ZAK
+                    }
+                }
+                set_state_flag = upc_mp_activity
+            }
+            every_state = {
+                limit = {
+                    OR = {
+                        is_core_of = DPR
+                        is_core_of = LPR
+                        is_core_of = AFU
+                    }
+                }
+                set_state_flag = upc_mp_high_activity
+            }
         }
     }
 
