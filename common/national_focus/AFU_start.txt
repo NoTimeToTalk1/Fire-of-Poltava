@@ -4,7 +4,7 @@
 		icon = GFX_AFU_On_Our_Own
 
 		x = 14
-		y = 0
+		y = 1
 
 		cost = 1
 
@@ -282,10 +282,13 @@
 		prerequisite = { focus = AFU_enhanced_training focus = AFU_rely_on_militias }
 
 		completion_reward = {
-			country_event = afu.16
-			swap_ideas = { 
-				remove_idea = AFU_nationalist_agendas 
-				add_idea = AFU_nationalist_agendas_2
+			custom_effect_tooltip = fop_azov_sideline_tt
+			hidden_effect = {
+				country_event = afu.16
+				swap_ideas = { 
+					remove_idea = AFU_nationalist_agendas 
+					add_idea = AFU_nationalist_agendas_2
+				}
 			}
 		}
 	}
@@ -304,7 +307,7 @@
 		prerequisite = { focus = AFU_enhanced_training focus = AFU_rely_on_militias }
 
 		completion_reward = {
-			add_political_power = 25
+			custom_effect_tooltip = fop_azov_blind_eye_tt
 		}
 	}
 
