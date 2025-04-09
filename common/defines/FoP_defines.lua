@@ -21,6 +21,7 @@ NDefines.NDiplomacy.NUM_DAYS_TO_ENABLE_KICKING_NEW_MEMBERS_OF_FACTION = 90		-- N
 NDefines.NDiplomacy.NUM_DAYS_TO_ENABLE_REINVITE_KICKED_NATIONS = 60				-- Number of days before being able to re invite a kicked nation to your faction
 
 
+NDefines.NCountry.POPULATION_YEARLY_GROWTH_BASE = -0.675		-- basic population growth per year, used for monthly manpower gain
 
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 30						-- Events are checked every X day per country or state (1 is ideal, but CPU heavy)
 

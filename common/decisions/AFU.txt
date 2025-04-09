@@ -1,0 +1,870 @@
+AFU_mobilization_category = {
+
+	afu_mobilization_1 = {
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {	
+			has_completed_focus = AFU_mobilize_our_forces	
+		}
+		
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+		
+		fire_only_once = yes
+        days_remove = 10
+		
+		remove_effect = {
+		    add_manpower = 2500		
+			hidden_effect = {
+				set_country_flag = AFUmob1
+			}
+		}
+	}
+	afu_mobilization_2 = {
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			has_completed_focus = AFU_mobilize_our_forces
+		}
+		
+		available = {
+			has_country_flag = AFUmob1
+		}
+		
+		fire_only_once = yes
+        days_remove = 20
+		
+		cost = 60
+		ai_will_do = {
+			factor = 100
+		}
+		
+		remove_effect = {
+		    add_manpower = 5000
+			hidden_effect = {
+				clr_country_flag = AFUmob1
+				set_country_flag = AFUmob2
+			}
+		}
+	}
+	afu_mobilization_3 = {
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			has_completed_focus = AFU_mobilize_our_forces
+		}
+		
+		available = {
+			has_country_flag = AFUmob2
+		}
+		
+		fire_only_once = yes
+        days_remove = 30	
+		
+		cost = 75
+		ai_will_do = {
+			factor = 100
+		}
+		
+		remove_effect = {
+		    add_manpower = 10000
+			add_ideas = extensive_conscription
+			hidden_effect = {
+				clr_country_flag = AFUmob2
+				set_country_flag = AFUmob3
+			}
+		}
+	}
+	afu_mobilization_4 = {
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			has_completed_focus = AFU_mobilize_our_forces
+		}
+		
+		available = {
+			has_country_flag = AFUmob3
+		}
+		
+		fire_only_once = yes
+        days_remove = 65
+		
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+		
+		remove_effect = {
+		    add_manpower = 17500
+		}
+	}
+	afu_mobilization_5 = {
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			has_completed_focus = AFU_mobilize_our_forces
+		}
+		
+		available = {
+			has_country_flag = AFUmob4
+		}
+		
+		fire_only_once = yes
+        days_remove = 100
+		
+		cost = 100
+		ai_will_do = {
+			factor = 100
+		}
+		
+		remove_effect = {
+		    add_manpower = 30000
+		}
+	}
+}
+
+AFU_teroborona_category = {
+
+	afu_teroborona_1 = {
+		
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			has_completed_focus = AFU_territorial_defence_forces
+		}
+		
+        fire_only_once = yes
+		days_remove = 25
+		
+		cost = 50
+		ai_will_do = {	
+			factor = 100		
+		}
+		
+		remove_effect = {
+			AFU = {
+				add_manpower = -2000
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"Teroborona\" division_template = \"Teroborona\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
+						owner = AFU
+					}
+				}
+			}
+		}
+	}
+	afu_teroborona_2 = {
+		
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			has_completed_focus = AFU_territorial_defence_forces
+		}
+		
+        fire_only_once = yes
+		days_remove = 25
+		
+		cost = 50
+		ai_will_do = {	
+			factor = 100		
+		}
+		
+		remove_effect = {
+			AFU = {
+			add_manpower = -1500
+				random_owned_controlled_state  = {
+					create_unit = {
+						division = "name = \"Teroborona\" division_template = \"Teroborona\" start_experience_factor = 0.1 start_equipment_factor = 0.7"
+						owner = AFU
+					}
+				}
+			}
+		}
+	}
+	afu_teroborona_3 = {
+		
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			has_completed_focus = AFU_territorial_defence_forces
+		}
+		
+        fire_only_once = yes
+		days_remove = 25
+		
+		cost = 50
+		ai_will_do = {	
+			factor = 100		
+		}
+		
+		remove_effect = {
+			AFU = {
+				add_manpower = -1500
+				random_owned_controlled_state  = {
+					create_unit = {
+						division = "name = \"Teroborona\" division_template = \"Teroborona\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+						owner = AFU
+					}
+				}
+			}
+		}
+	}
+	afu_teroborona_4 = {
+		
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			has_completed_focus = AFU_territorial_defence_forces
+		}
+		
+        fire_only_once = yes
+		days_remove = 25
+		
+		cost = 50
+		ai_will_do = {	
+			factor = 100		
+		}
+		
+		remove_effect = {
+			AFU = {
+				add_manpower = -1000
+				random_owned_controlled_state  = {
+					create_unit = {
+						division = "name = \"Teroborona\" division_template = \"Teroborona\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
+						owner = AFU
+					}
+				}
+			}
+		}
+	}
+}
+
+AFU_integration_category = {
+
+	afu_integration_1 = {
+		
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			has_completed_focus = AFU_start_intergration
+		}
+		
+		fire_only_once = yes
+        days_remove = 20
+		
+		cost = 20
+		ai_will_do = {
+			factor = 100
+		}
+		
+		remove_effect = {
+			add_manpower = -2000
+			DPR = {
+				remove_country_leader_role = {
+					character = DNR_Pidor
+					ideology = kleptocracy
+				}
+			}
+			LPR = {
+				remove_country_leader_role = {
+					character = LNR_Huy
+					ideology = kleptocracy
+				}
+			}
+
+			hidden_effect = {
+				DPR = {
+					remove_country_leader_role = {
+						character = LNR_Huy
+						ideology = kleptocracy
+					}
+				}
+				set_country_flag = AFUint1
+			}
+		}
+	}
+	afu_integration_2 = {
+		
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			has_completed_focus = AFU_start_intergration
+		}
+		
+		fire_only_once = yes
+        days_remove = 20
+		
+		cost = 20
+		ai_will_do = {
+			factor = 100
+		}
+		
+		remove_effect = {
+			557 = { add_manpower = -2500 }
+			2310 = { add_manpower = -1000 }
+			2028 = { add_manpower = -1000 }
+			2310 = { add_manpower = -1000 }
+			2029 = { add_manpower = -1000 }
+			2309 = { add_manpower = -1000 }
+			518 = { add_manpower = -2500 }
+			2308 = { add_manpower = -1000 }
+			hidden_effect = {
+				set_country_flag = AFUint2
+			}
+		}
+    }
+	afu_integration_3 = {
+		
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			has_country_flag = AFUint1
+			has_country_flag = AFUint2
+		}
+		
+		fire_only_once = yes
+        days_remove = 10
+		
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+			has_equipment = {
+				infantry_equipment > 200
+			}
+		}
+		
+		remove_effect = {
+			add_timed_idea = {
+				idea = AFU_fucking_fsb
+				days = 90
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -200
+			}
+			hidden_effect = {
+				clr_country_flag = AFUint1
+				clr_country_flag = AFUint2
+				set_country_flag = AFUint3
+			}
+		}
+	}
+	afu_integration_4 = {
+		
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			has_country_flag = AFUint3
+		}
+		
+		fire_only_once = yes
+        days_remove = 10
+		
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+		
+		remove_effect = {
+			add_stability = 0.1
+			hidden_effect = {
+				set_country_flag = AFUint4
+			}
+		}
+	}
+	afu_integration_5 = {
+		
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			has_country_flag = AFUint3
+		}
+		
+		fire_only_once = yes
+        days_remove = 10
+		
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+		
+		remove_effect = {
+			add_stability = 0.1
+			hidden_effect = {
+				set_country_flag = AFUint5
+			}
+		}
+	}
+	afu_integration_6 = {
+		
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			has_country_flag = AFUint3
+		}
+		
+		fire_only_once = yes
+        days_remove = 50
+		
+		cost = 30
+		ai_will_do = {
+			factor = 100
+		}
+		
+		remove_effect = {
+			add_timed_idea = {
+				idea = AFU_filtration
+				days = 60
+			}
+			hidden_effect = {
+				set_country_flag = AFUint6
+			}
+		}
+	}
+	afu_integration_7 = {
+		
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			has_country_flag = AFUint4
+			has_country_flag = AFUint5
+			has_country_flag = AFUint6
+		}
+		
+		fire_only_once = yes
+        days_remove = 5
+		
+		cost = 100
+		ai_will_do = {
+			factor = 100
+		}
+		
+		remove_effect = {
+			custom_effect_tooltip = AFUintfinalise
+			set_country_flag = AFUintfinish
+			hidden_effect = {
+				clr_country_flag = AFUint3
+				clr_country_flag = AFUint4
+				clr_country_flag = AFUint5
+				clr_country_flag = AFUint6
+			}
+		}
+	}
+}
+
+AFU_emergency_makeshift_fortifications_category = {
+
+	siverskyi_donets_line = {
+		icon = generic_fort
+		
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			OR = {
+				has_war_with = DPR
+				has_war_with = LPR
+			}
+		}
+		
+		fire_only_once = yes
+        days_remove = 30
+		
+		cost = 100
+		ai_will_do = {
+			factor = 100
+		}
+		
+		modifier = {
+			civilian_factory_use = 6
+		}
+		
+		remove_effect = {
+			2305 = {
+				add_building_construction = { type = bunker level = 4 province = 13142 instant_build = yes }
+				add_building_construction = { type = bunker level = 2 province = 2801 instant_build = yes }
+			}
+			2307 = {
+				add_building_construction = { type = bunker level = 3 province = 13163 instant_build = yes }
+			}
+			2097 = {
+				add_building_construction = { type = bunker level = 5 province = 7149 instant_build = yes }
+				add_building_construction = { type = bunker level = 2 province = 13189 instant_build = yes }
+				add_building_construction = { type = bunker level = 3 province = 13391 instant_build = yes }
+			}
+		}
+	}
+}
+
+AFU_azov_support_category = {
+
+    afu_ask_azov_for_help = {
+		
+		available = { 
+			has_war_support > 0.3
+		}
+		
+		visible = {	
+			has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements	
+		}
+		
+		cost = 20
+		ai_will_do = {
+			factor = 100
+		}
+		
+		fire_only_once = no
+        days_remove = 20
+		
+		remove_effect = {
+			add_popularity = {
+				ideology = ultranationalism
+				popularity = 0.01
+			}
+			add_war_support = 0.05
+			add_command_power = 5
+	   	}
+	}
+    afu_ask_azov_for_help_2 = {			
+		
+		available = { 
+			has_war_support > 0.5
+		}
+		
+		visible = {	
+			has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements	
+		}
+		
+		cost = 35
+		ai_will_do = {
+			factor = 100
+		}
+		
+		fire_only_once = no
+        days_remove = 25
+		
+		remove_effect = {
+			add_popularity = {
+				ideology = ultranationalism
+				popularity = 0.03
+			}
+			add_war_support = 0.05
+			add_command_power = 5
+	   	}
+	}
+    afu_ask_azov_for_help_3 = {			
+		
+		available = { 
+			has_war_support > 0.7
+		}
+		
+        cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+		
+		fire_only_once = no
+        days_remove = 30
+		
+		remove_effect = {
+			add_popularity = {
+				ideology = ultranationalism
+				popularity = 0.05
+			}
+			add_war_support = 0.05
+			add_command_power = 25
+	   	}
+	}
+}
+
+AFU_weapon_shipment_category = {
+	
+	buy_trucks = {
+		
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			has_completed_focus = AFU_cooperation_with_east_europe
+		}
+		
+		cost = 50
+		ai_will_do = {
+			factor = 50
+		}
+		
+		fire_only_once = no
+		days_remove = 120
+		
+		modifier = {
+            civilian_factory_use = 3
+            consumer_goods_factor = 0.1
+		}
+		
+		remove_effect = {
+			add_equipment_to_stockpile = {
+                type = motorized_equipment
+                amount = 100
+				producer = EUN
+            }
+		}
+    }	
+	buy_artillery = {
+        
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			has_completed_focus = AFU_cooperation_with_east_europe
+		}
+		
+		cost = 75
+		ai_will_do = {
+			factor = 50
+		}
+		
+		fire_only_once = no
+		days_remove = 140
+		
+		modifier = {
+            civilian_factory_use = 3
+            consumer_goods_factor = 0.1
+		}
+		
+		remove_effect = {
+			add_equipment_to_stockpile = {
+                type = artillery_equipment
+                amount = 75
+				producer = EUN
+            }
+		}
+    }
+	buy_IFVs = {
+        
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			has_completed_focus = AFU_cooperation_with_east_europe
+		}
+		
+		cost = 80
+		ai_will_do = {
+			factor = 50
+		}
+		
+		fire_only_once = no
+		days_remove = 175
+		
+		modifier = {
+            civilian_factory_use = 4
+            consumer_goods_factor = 0.2
+		}
+		
+		remove_effect = {
+			add_equipment_to_stockpile = {
+                type = mechanized_equipment
+                amount = 50
+				producer = EUN
+            }
+		}
+    }
+	buy_MBTs = {
+        
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			has_completed_focus = AFU_cooperation_with_east_europe
+		}
+		
+		cost = 100
+		ai_will_do = {
+			factor = 50
+		}
+		
+		fire_only_once = no
+		days_remove = 200
+		
+		modifier = {
+            civilian_factory_use = 5
+            consumer_goods_factor = 0.25
+		}
+		
+		remove_effect = {
+			add_equipment_to_stockpile = {
+                type = MBT_equipment
+                amount = 21
+				producer = EUN
+            }
+		}
+    }
+}
+
+AFU_plane_shipment_category = {
+	buy_planes_from_kazakhstan = {
+        icon = generic_decision
+
+		allowed = {
+		}
+		
+		cost = 50
+
+		days_remove = 90
+
+		modifier = {
+            civilian_factory_use = 3
+            consumer_goods_factor = 0.1
+		}
+
+		fire_only_once = yes
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+                type = jet_fighter_equipment_1
+                amount = 10
+				producer = KAZ
+            }
+		}
+    }
+
+	buy_planes_from_georgia = {
+        icon = generic_decision
+
+		allowed = {
+		}
+		
+		cost = 50
+
+		days_remove = 90
+
+		modifier = {
+            civilian_factory_use = 3
+            consumer_goods_factor = 0.1
+		}
+
+		fire_only_once = yes
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+                type = jet_fighter_equipment_1
+                amount = 10
+				producer = GEO
+            }
+		}
+    }
+
+	buy_planes_from_europe = {
+        icon = generic_decision
+
+		allowed = {
+		}
+		
+		cost = 75
+
+		days_remove = 120
+
+		modifier = {
+            civilian_factory_use = 5
+            consumer_goods_factor = 0.1
+		}
+
+		fire_only_once = yes
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+                type = jet_fighter_equipment_1
+                amount = 30
+				producer = EUN
+            }
+		}
+    }
+
+	buy_planes_from_africa = {
+        icon = generic_decision
+
+		allowed = {
+		}
+
+		visible = {
+			has_completed_focus = AFU_buy_planes_from_africa
+		}
+		
+		cost = 100
+
+		days_remove = 90
+
+		modifier = {
+            civilian_factory_use = 3
+            consumer_goods_factor = 0.1
+		}
+
+		fire_only_once = yes
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+                type = jet_fighter_equipment_1
+                amount = 50
+				producer = LAS
+            }
+		}
+    }
+}

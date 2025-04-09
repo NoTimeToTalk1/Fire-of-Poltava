@@ -1,0 +1,1184 @@
+AFU_elections_category = {
+
+	afu_elections_end = {
+        icon = mission_icon
+		is_good = yes
+		
+		activation = {
+            has_country_flag = afu_elections_flag
+        }
+		
+        available = {
+			always = no
+			has_country_flag = afu_elections_flag
+        }
+
+		days_mission_timeout = 180
+		fire_only_once = yes
+        
+		complete_effect = {
+			###
+        }
+
+		cancel_trigger = {
+			has_government = ultranationalism
+		}		
+		
+        timeout_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_government = ultranationalism
+					}
+					AND = {
+						check_variable = { AFU_danilov_power > AFU_savchenko_power }
+						check_variable = { AFU_danilov_power > AFU_khomut_power }
+					}
+				}
+				hidden_effect = {
+					clr_country_flag = AFU_elections_flag
+					clr_country_flag = AFU_elections_play_danilov
+					clr_country_flag = AFU_elections_play_savchenko
+					clr_country_flag = AFU_elections_play_khomut
+				}
+				country_event = afu.22
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_government = ultranationalism
+					}
+					AND = {
+						check_variable = { AFU_khomut_power > AFU_danilov_power }
+						check_variable = { AFU_khomut_power > AFU_savchenko_power }
+					}
+				}
+				hidden_effect = {
+					clr_country_flag = AFU_elections_flag
+					clr_country_flag = AFU_elections_play_danilov
+					clr_country_flag = AFU_elections_play_savchenko
+					clr_country_flag = AFU_elections_play_khomut
+				}
+				country_event = afu.23
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_government = ultranationalism
+					}
+					AND = {
+						check_variable = { AFU_savchenko_power > AFU_danilov_power }
+						check_variable = { AFU_savchenko_power > AFU_khomut_power }
+					}
+				}
+				hidden_effect = {
+					clr_country_flag = AFU_elections_flag
+					clr_country_flag = AFU_elections_play_danilov
+					clr_country_flag = AFU_elections_play_savchenko
+					clr_country_flag = AFU_elections_play_khomut
+				}
+				country_event = afu.24
+			}
+			if = {
+				limit = {
+					has_government = ultranationalism
+				}
+				hidden_effect = {
+					clr_country_flag = AFU_elections_flag
+					clr_country_flag = AFU_elections_play_danilov
+					clr_country_flag = AFU_elections_play_savchenko
+					clr_country_flag = AFU_elections_play_khomut
+				}
+			}
+        }
+    }
+
+	afu_increase_popularity = {
+		icon = GFX_ZAK_rada_election
+		
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			has_country_flag = AFU_elections_flag
+		}
+		
+		days_remove = 14
+		
+		cost = 30
+		ai_will_do = {	
+			base = 100
+		}
+		
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = AFU_elections_play_danilov
+				}
+				
+				random_list = {
+					50 = {
+						add_to_variable = {
+							var = AFU_danilov_power
+							value = 0.5
+							tooltip = AFU_danilov_power_tt
+						}
+						clamp_variable = {
+							var = AFU_danilov_power
+							min = 0
+							max = 100
+						}
+						
+						random_list = {
+							50 = {
+								add_to_variable = {
+									var = AFU_khomut_power
+									value = -0.5
+									tooltip = AFU_khomut_power_tt
+								}
+								clamp_variable = {
+									var = AFU_khomut_power
+									min = 0
+									max = 100
+								}
+							}
+							50 = {
+								add_to_variable = {
+									var = AFU_savchenko_power
+									value = -0.5
+									tooltip = AFU_savchenko_power_tt
+								}
+								clamp_variable = {
+									var = AFU_savchenko_power
+									min = 0
+									max = 100
+								}
+							}
+						}
+					}
+					35 = {
+						add_to_variable = {
+							var = AFU_danilov_power
+							value = 1
+							tooltip = AFU_danilov_power_tt
+						}
+						clamp_variable = {
+							var = AFU_danilov_power
+							min = 0
+							max = 100
+						}
+						
+						random_list = {
+							50 = {
+								add_to_variable = {
+									var = AFU_khomut_power
+									value = -1
+									tooltip = AFU_khomut_power_tt
+								}
+								clamp_variable = {
+									var = AFU_khomut_power
+									min = 0
+									max = 100
+								}
+							}
+							50 = {
+								add_to_variable = {
+									var = AFU_savchenko_power
+									value = -1
+									tooltip = AFU_savchenko_power_tt
+								}
+								clamp_variable = {
+									var = AFU_savchenko_power
+									min = 0
+									max = 100
+								}
+							}
+						}
+					}
+					15 = {
+						add_to_variable = {
+							var = AFU_danilov_power
+							value = 3
+							tooltip = AFU_danilov_power_tt
+						}
+						clamp_variable = {
+							var = AFU_danilov_power
+							min = 0
+							max = 100
+						}
+						
+						random_list = {
+							50 = {
+								add_to_variable = {
+									var = AFU_khomut_power
+									value = -3
+									tooltip = AFU_khomut_power_tt
+								}
+								clamp_variable = {
+									var = AFU_khomut_power
+									min = 0
+									max = 100
+								}
+							}
+							50 = {
+								add_to_variable = {
+									var = AFU_savchenko_power
+									value = -3
+									tooltip = AFU_savchenko_power_tt
+								}
+								clamp_variable = {
+									var = AFU_savchenko_power
+									min = 0
+									max = 100
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					has_country_flag = AFU_elections_play_khomut
+				}
+				
+				random_list = {
+					50 = {
+						add_to_variable = {
+							var = AFU_khomut_power
+							value = 2.5
+							tooltip = AFU_khomut_power_tt
+						}
+						clamp_variable = {
+							var = AFU_khomut_power
+							min = 0
+							max = 100
+						}
+						
+						random_list = {
+							50 = {
+								add_to_variable = {
+									var = AFU_danilov_power
+									value = -2.5
+									tooltip = AFU_danilov_power_tt
+								}
+								clamp_variable = {
+									var = AFU_danilov_power
+									min = 0
+									max = 100
+								}
+							}
+							50 = {
+								add_to_variable = {
+									var = AFU_savchenko_power
+									value = -2.5
+									tooltip = AFU_savchenko_power_tt
+								}
+								clamp_variable = {
+									var = AFU_savchenko_power
+									min = 0
+									max = 100
+								} 
+							}
+						}
+					}
+					30 = {
+						add_to_variable = {
+							var = AFU_khomut_power
+							value = 3
+							tooltip = AFU_khomut_power_tt
+						}
+						clamp_variable = {
+							var = AFU_khomut_power
+							min = 0
+							max = 100
+						}
+						
+						random_list = {
+							50 = {
+								add_to_variable = {
+									var = AFU_danilov_power
+									value = -3
+									tooltip = AFU_danilov_power_tt
+								}
+								clamp_variable = {
+									var = AFU_danilov_power
+									min = 0
+									max = 100
+								}
+							}
+							50 = {
+								add_to_variable = {
+									var = AFU_savchenko_power
+									value = -3
+									tooltip = AFU_savchenko_power_tt
+								}
+								clamp_variable = {
+									var = AFU_savchenko_power
+									min = 0
+									max = 100
+								}
+							}
+						}
+					}
+					20 = {
+						add_to_variable = {
+							var = AFU_khomut_power
+							value = 3.5
+							tooltip = AFU_khomut_power_tt
+						}
+						clamp_variable = {
+							var = AFU_khomut_power
+							min = 0
+							max = 100
+						}
+						
+						random_list = {
+							50 = {
+								add_to_variable = {
+									var = AFU_danilov_power
+									value = -3.5
+									tooltip = AFU_danilov_power_tt
+								}
+								clamp_variable = {
+									var = AFU_danilov_power
+									min = 0
+									max = 100
+								}
+							}
+							50 = {
+								add_to_variable = {
+									var = AFU_savchenko_power
+									value = -3.5
+									tooltip = AFU_savchenko_power_tt
+								}
+								clamp_variable = {
+									var = AFU_savchenko_power
+									min = 0
+									max = 100
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					has_country_flag = AFU_elections_play_savchenko
+				}
+				
+				random_list = {
+					50 = {
+						add_to_variable = {
+							var = AFU_savchenko_power
+							value = 2.5
+							tooltip = AFU_savchenko_power_tt
+						}
+						clamp_variable = {
+							var = AFU_savchenko_power
+							min = 0
+							max = 100
+						}
+						
+						random_list = {
+							50 = {
+								add_to_variable = {
+									var = AFU_danilov_power
+									value = -2.5
+									tooltip = AFU_danilov_power_tt
+								}
+								clamp_variable = {
+									var = AFU_danilov_power
+									min = 0
+									max = 100
+								}
+							}
+							50 = {
+								add_to_variable = {
+									var = AFU_khomut_power
+									value = -2.5
+									tooltip = AFU_khomut_power_tt
+								}
+								clamp_variable = {
+									var = AFU_khomut_power
+									min = 0
+									max = 100
+								}
+							}
+						}
+					}
+					30 = {
+						add_to_variable = {
+							var = AFU_savchenko_power
+							value = 3
+							tooltip = AFU_savchenko_power_tt
+						}
+						clamp_variable = {
+							var = AFU_savchenko_power
+							min = 0
+							max = 100
+						}
+						
+						random_list = {
+							50 = {
+								add_to_variable = {
+									var = AFU_danilov_power
+									value = -3
+									tooltip = AFU_danilov_power_tt
+								}
+								clamp_variable = {
+									var = AFU_danilov_power
+									min = 0
+									max = 100
+								}
+							}
+							50 = {
+								add_to_variable = {
+									var = AFU_khomut_power
+									value = -3
+									tooltip = AFU_khomut_power_tt
+								}
+								clamp_variable = {
+									var = AFU_khomut_power
+									min = 0
+									max = 100
+								}
+							}
+						}
+					}
+					20 = {
+						add_to_variable = {
+							var = AFU_savchenko_power
+							value = 3.5
+							tooltip = AFU_savchenko_power_tt
+						}
+						clamp_variable = {
+							var = AFU_savchenko_power
+							min = 0
+							max = 100
+						}
+						
+						random_list = {
+							50 = {
+								add_to_variable = {
+									var = AFU_danilov_power
+									value = -3.5
+									tooltip = AFU_danilov_power_tt
+								}
+								clamp_variable = {
+									var = AFU_danilov_power
+									min = 0
+									max = 100
+								}
+							}
+							50 = {
+								add_to_variable = {
+									var = AFU_khomut_power
+									value = -3.5
+									tooltip = AFU_khomut_power_tt
+								}
+								clamp_variable = {
+									var = AFU_khomut_power
+									min = 0
+									max = 100
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	afu_danilov_talk_with_soldiers = {
+		icon = GFX_decision_afu_elections_danilov_party
+		
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			AND = {
+				has_country_flag = AFU_elections_flag
+				has_country_flag = AFU_elections_play_danilov
+			}
+		}
+		
+		days_remove = 21
+		
+		cost = 25
+		ai_will_do = {	
+			base = 100
+		}
+		
+		remove_effect = {
+			random_list = {
+				50 = {
+					add_to_variable = {
+						var = AFU_danilov_power
+						value = 2
+						tooltip = AFU_danilov_power_tt
+					}
+					clamp_variable = {
+						var = AFU_danilov_power
+						min = 0
+						max = 100
+					}
+					
+					random_list = {
+						50 = {
+							add_to_variable = {
+								var = AFU_khomut_power
+								value = -2
+								tooltip = AFU_khomut_power_tt
+							}
+							clamp_variable = {
+								var = AFU_khomut_power
+								min = 0
+								max = 100
+							}
+						}
+						50 = {
+							add_to_variable = {
+								var = AFU_savchenko_power
+								value = -2
+								tooltip = AFU_savchenko_power_tt
+							}
+							clamp_variable = {
+								var = AFU_savchenko_power
+								min = 0
+								max = 100
+							}
+						}
+					}
+				}
+				50 = {
+					add_to_variable = {
+						var = AFU_danilov_power
+						value = 3
+						tooltip = AFU_danilov_power_tt
+					}
+					clamp_variable = {
+						var = AFU_danilov_power
+						min = 0
+						max = 100
+					}
+					
+					random_list = {
+						50 = {
+							add_to_variable = {
+								var = AFU_khomut_power
+								value = -3
+								tooltip = AFU_khomut_power_tt
+							}
+							clamp_variable = {
+								var = AFU_khomut_power
+								min = 0
+								max = 100
+							}
+						}
+						50 = {
+							add_to_variable = {
+								var = AFU_savchenko_power
+								value = -3
+								tooltip = AFU_savchenko_power_tt
+							}
+							clamp_variable = {
+								var = AFU_savchenko_power
+								min = 0
+								max = 100
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	afu_savchenko_talk_with_workers = {
+		icon = GFX_decision_afu_elections_savchenko_party
+		
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			AND = {
+				has_country_flag = AFU_elections_flag
+				has_country_flag = AFU_elections_play_savchenko
+			}
+		}
+		
+		days_remove = 21
+		
+		cost = 25
+		ai_will_do = {	
+			base = 100
+		}
+		
+        complete_effect = {
+			hidden_effect = {
+				random_list = {
+					20 = {
+						country_event = {
+							id = afu.26
+							days = 8
+						}
+					}
+					20 = {
+						country_event = {
+							id = afu.27
+							days = 8
+						}
+					}
+					10 = {
+						country_event = {
+							id = afu.28
+							days = 8
+						}
+					}
+					10 = {
+						country_event = {
+							id = afu.29
+							days = 8
+						}
+					}
+					10 = {
+						country_event = {
+							id = afu.30
+							days = 8
+						}	
+					}
+					10 = {
+						country_event = {
+							id = afu.31
+							days = 8
+						}
+					}
+					10 = {
+						country_event = {
+							id = afu.32
+							days = 8
+						}
+					}
+					10 = {
+						country_event = {
+							id = afu.33
+							days = 8
+						}
+					}
+				}
+			}
+		}
+		
+		remove_effect = {
+			random_list = {
+				50 = {
+					add_to_variable = {
+						var = AFU_savchenko_power
+						value = 2
+						tooltip = AFU_savchenko_power_tt
+					}
+					clamp_variable = {
+						var = AFU_savchenko_power
+						min = 0
+						max = 100
+					}
+					
+					random_list = {
+						50 = {
+							add_to_variable = {
+								var = AFU_danilov_power
+								value = -2
+								tooltip = AFU_danilov_power_tt
+							}
+							clamp_variable = {
+								var = AFU_danilov_power
+								min = 0
+								max = 100
+							}
+						}
+						50 = {
+							add_to_variable = {
+								var = AFU_khomut_power
+								value = -2
+								tooltip = AFU_khomut_power_tt
+							}
+							clamp_variable = {
+								var = AFU_khomut_power
+								min = 0
+								max = 100
+							} 
+						}
+					}
+				}
+				50 = {
+					add_to_variable = {
+						var = AFU_savchenko_power
+						value = 3
+						tooltip = AFU_savchenko_power_tt
+					}
+					clamp_variable = {
+						var = AFU_savchenko_power
+						min = 0
+						max = 100
+					}
+					
+					random_list = {
+						50 = {
+							add_to_variable = {
+								var = AFU_danilov_power
+								value = -3
+								tooltip = AFU_danilov_power_tt
+							}
+							clamp_variable = {
+								var = AFU_danilov_power
+								min = 0
+								max = 100
+							}
+						}
+						50 = {
+							add_to_variable = {
+								var = AFU_khomut_power
+								value = -3
+								tooltip = AFU_khomut_power_tt
+							}
+							clamp_variable = {
+								var = AFU_khomut_power
+								min = 0
+								max = 100
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	afu_khomut_talk_with_oligarchs = {
+		icon = GFX_decision_afu_elections_homut_party
+		
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {
+			AND = {
+				has_country_flag = AFU_elections_flag
+				has_country_flag = AFU_elections_play_khomut
+			}
+		}
+		
+		days_remove = 21
+		
+		cost = 25
+		ai_will_do = {	
+			base = 100
+		}
+		
+		remove_effect = {
+			random_list = {
+				50 = {
+					add_to_variable = {
+						var = AFU_khomut_power
+						value = 2
+						tooltip = AFU_khomut_power_tt
+					}
+					clamp_variable = {
+						var = AFU_khomut_power
+						min = 0
+						max = 100
+					}
+					
+					random_list = {
+						50 = {
+							add_to_variable = {
+								var = AFU_danilov_power
+								value = -2
+								tooltip = AFU_danilov_power_tt
+							}
+							clamp_variable = {
+								var = AFU_danilov_power
+								min = 0
+								max = 100
+							}
+						}
+						50 = {
+							add_to_variable = {
+								var = AFU_savchenko_power
+								value = -2
+								tooltip = AFU_savchenko_power_tt
+							}
+							clamp_variable = {
+								var = AFU_savchenko_power
+								min = 0
+								max = 100
+							}
+						}
+					}
+				}
+				50 = {
+					add_to_variable = {
+						var = AFU_khomut_power
+						value = 3
+						tooltip = AFU_khomut_power_tt
+					}
+					clamp_variable = {
+						var = AFU_khomut_power
+						min = 0
+						max = 100
+					}
+					
+					random_list = {
+						50 = {
+							add_to_variable = {
+								var = AFU_danilov_power
+								value = -3
+								tooltip = AFU_danilov_power_tt
+							}
+							clamp_variable = {
+								var = AFU_danilov_power
+								min = 0
+								max = 100
+							}
+						}
+						50 = {
+							add_to_variable = {
+								var = AFU_savchenko_power
+								value = -3
+								tooltip = AFU_savchenko_power_tt
+							}
+							clamp_variable = {
+								var = AFU_savchenko_power
+								min = 0
+								max = 100
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	afu_danilov_makes_his_move = {
+        icon = GFX_decision_afu_elections_savchenko_party
+		is_good = yes
+		
+		allowed = {
+			original_tag = AFU
+		}
+		
+		available = {
+			always = no
+        }
+		
+		fire_only_once = no
+		days_mission_timeout = 10
+		
+		activation = {
+			AND = {
+				has_country_flag = afu_elections_flag
+				NOT = {
+					has_country_flag = AFU_elections_play_danilov
+				}
+			}
+        }
+		
+        timeout_effect = {
+			random_list = {
+				70 = {
+					add_to_variable = {
+						var = AFU_danilov_power
+						value = 2.5
+						tooltip = AFU_danilov_power_tt
+					}
+					clamp_variable = {
+						var = AFU_danilov_power
+						min = 0
+						max = 100
+					}
+					
+					random_list = {
+						50 = {
+							add_to_variable = {
+								var = AFU_khomut_power
+								value = -2.5
+								tooltip = AFU_khomut_power_tt
+							}
+							clamp_variable = {
+								var = AFU_khomut_power
+								min = 0
+								max = 100
+							}
+						}
+						50 = {
+							add_to_variable = {
+								var = AFU_savchenko_power
+								value = -2.5
+								tooltip = AFU_savchenko_power_tt
+							}
+							clamp_variable = {
+								var = AFU_savchenko_power
+								min = 0
+								max = 100
+							}
+						}
+					}
+				}
+				30 = {
+					add_to_variable = {
+						var = AFU_danilov_power
+						value = 3
+						tooltip = AFU_danilov_power_tt
+					}
+					clamp_variable = {
+						var = AFU_danilov_power
+						min = 0
+						max = 100
+					}
+					
+					random_list = {
+						50 = {
+							add_to_variable = {
+								var = AFU_khomut_power
+								value = -3
+								tooltip = AFU_khomut_power_tt
+							}
+							clamp_variable = {
+								var = AFU_khomut_power
+								min = 0
+								max = 100
+							}
+						}
+						50 = {
+							add_to_variable = {
+								var = AFU_savchenko_power
+								value = -3
+								tooltip = AFU_savchenko_power_tt
+							}
+							clamp_variable = {
+								var = AFU_savchenko_power
+								min = 0
+								max = 100
+							} 
+						}
+					}
+				}
+			}
+		}
+	}
+	afu_savchenko_makes_her_move = {
+		icon = GFX_decision_afu_elections_savchenko_party
+		is_good = yes
+		
+		allowed = {
+			original_tag = AFU
+		}
+		
+		available = {
+			always = no
+        }
+		
+		fire_only_once = no
+		days_mission_timeout = 10
+		
+		activation = {
+			AND = {
+				has_country_flag = afu_elections_flag
+				NOT = {
+					has_country_flag = AFU_elections_play_savchenko
+				}
+			}
+        }
+		
+        timeout_effect = {
+			random_list = {
+				70 = {
+					add_to_variable = {
+						var = AFU_savchenko_power
+						value = 2.5
+						tooltip = AFU_savchenko_power_tt
+					}
+					clamp_variable = {
+						var = AFU_savchenko_power
+						min = 0
+						max = 100
+					}
+					
+					random_list = {
+						50 = {
+							add_to_variable = {
+								var = AFU_danilov_power
+								value = -2.5
+								tooltip = AFU_danilov_power_tt
+							}
+							clamp_variable = {
+								var = AFU_danilov_power
+								min = 0
+								max = 100
+							}
+						}
+						50 = {
+							add_to_variable = {
+								var = AFU_khomut_power
+								value = -2.5
+								tooltip = AFU_khomut_power_tt
+							}
+							clamp_variable = {
+								var = AFU_khomut_power
+								min = 0
+								max = 100
+							}
+						}
+					}
+				}
+				30 = {
+					add_to_variable = {
+						var = AFU_savchenko_power
+						value = 3
+						tooltip = AFU_savchenko_power_tt
+					}
+					clamp_variable = {
+						var = AFU_savchenko_power
+						min = 0
+						max = 100
+					}
+					
+					random_list = {
+						50 = {
+							add_to_variable = {
+								var = AFU_danilov_power
+								value = -3
+								tooltip = AFU_danilov_power_tt
+							}
+							clamp_variable = {
+								var = AFU_danilov_power
+								min = 0
+								max = 100
+							}
+						}
+						50 = {
+							add_to_variable = {
+								var = AFU_khomut_power
+								value = -3
+								tooltip = AFU_khomut_power_tt
+							}
+							clamp_variable = {
+								var = AFU_khomut_power
+								min = 0
+								max = 100
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	afu_khomut_makes_his_move = {
+        icon = GFX_decision_afu_elections_homut_party
+		is_good = yes
+		
+		allowed = {
+			original_tag = AFU
+		}
+		
+		available = {
+			always = no
+        }
+		
+		fire_only_once = no
+		days_mission_timeout = 10
+		
+		activation = {
+			AND = {
+				has_country_flag = afu_elections_flag
+				NOT = {
+					has_country_flag = AFU_elections_play_khomut
+				}
+			}
+        }
+		
+        timeout_effect = {
+			random_list = {
+				70 = {
+					add_to_variable = {
+						var = AFU_khomut_power
+						value = 2.5
+						tooltip = AFU_khomut_power_tt
+					}
+					clamp_variable = {
+						var = AFU_khomut_power
+						min = 0
+						max = 100
+					}
+					
+					random_list = {
+						50 = {
+							add_to_variable = {
+								var = AFU_danilov_power
+								value = -2.5
+								tooltip = AFU_danilov_power_tt
+							}
+							clamp_variable = {
+								var = AFU_danilov_power
+								min = 0
+								max = 100
+							}
+						}
+						50 = {
+							add_to_variable = {
+								var = AFU_savchenko_power
+								value = -2.5
+								tooltip = AFU_savchenko_power_tt
+							}
+							clamp_variable = {
+								var = AFU_savchenko_power
+								min = 0
+								max = 100
+							} 
+						}
+					}
+				}
+				30 = {
+					add_to_variable = {
+						var = AFU_khomut_power
+						value = 3
+						tooltip = AFU_khomut_power_tt
+					}
+					clamp_variable = {
+						var = AFU_khomut_power
+						min = 0
+						max = 100
+					}
+					
+					random_list = {
+						50 = {
+							add_to_variable = {
+								var = AFU_danilov_power
+								value = -3
+								tooltip = AFU_danilov_power_tt
+							}
+							clamp_variable = {
+								var = AFU_danilov_power
+								min = 0
+								max = 100
+							}
+						}
+						50 = {
+							add_to_variable = {
+								var = AFU_savchenko_power
+								value = -3
+								tooltip = AFU_savchenko_power_tt
+							}
+							clamp_variable = {
+								var = AFU_savchenko_power
+								min = 0
+								max = 100
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
