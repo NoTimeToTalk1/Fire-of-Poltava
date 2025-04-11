@@ -4,7 +4,7 @@
 		icon = GFX_AFU_On_Our_Own
 
 		x = 14
-		y = 1
+		y = 0
 
 		cost = 1
 
@@ -28,7 +28,7 @@
 		completion_reward = {
 			add_timed_idea = {
 				idea = AFU_state_of_emergency
-				days = 120
+				days = 240
 			}
 			add_war_support = 0.05
 		}
@@ -68,10 +68,10 @@
 		}
     }
 
-	#Reach out to Biletsky
+	#Speak to Biletsky
 	shared_focus = {
-		id = AFU_reach_out_to_biletsky
-		icon = GFX_AFU_Reach_Out_To_Biletsky
+		id = AFU_speak_to_biletsky
+		icon = GFX_AFU_Speak_to_Biletsky
 
 		relative_position_id = AFU_reaching_out
 		x = -2
@@ -179,40 +179,22 @@
 		}
 	}
 
-	#Special Operations Forces
+	#Territorial Defence Forces
 	shared_focus = {
-		id = AFU_special_operations_forces
-		icon = GFX_AFU_Special_Operations_Forces
+		id = AFU_territorial_defence_forces
+		icon = GFX_AFU_Territorial_Defence_Forces
 
 		relative_position_id = AFU_mobilize_our_forces
 		x = -3
 		y = 1
 
-		cost = 5
+		cost = 3
 		prerequisite = { focus = AFU_mobilize_our_forces }
 
-		completion_reward = {
-			country_event = afu.14
+		completion_reward = { 
+			country_event = afu.13
 		}
 	}
-
-	#Enhanced Training
-	shared_focus = {
-		id = AFU_enhanced_training
-		icon = GFX_AFU_Enhanced_Training
-
-		relative_position_id = AFU_mobilize_our_forces
-		x = -1
-		y = 1
-
-		cost = 5
-		prerequisite = { focus = AFU_mobilize_our_forces }
-		mutually_exclusive = { focus = AFU_rely_on_militias }
-
-		completion_reward = {
-			add_ideas = AFU_improved_training_methods
-		}
-    }
 
 	#Rely on Militias
 	shared_focus = {
@@ -220,7 +202,7 @@
 		icon = GFX_AFU_Rely_on_Militias
 
 		relative_position_id = AFU_mobilize_our_forces
-		x = 1
+		x = -1
 		y = 1
 
 		cost = 5
@@ -232,20 +214,38 @@
 		}
     }
 
-	#Territorial Defence Forces
+	#Enhanced Training
 	shared_focus = {
-		id = AFU_territorial_defence_forces
-		icon = GFX_AFU_Territorial_Defence_Forces
+		id = AFU_enhanced_training
+		icon = GFX_AFU_Enhanced_Training
+
+		relative_position_id = AFU_mobilize_our_forces
+		x = 1
+		y = 1
+
+		cost = 5
+		prerequisite = { focus = AFU_mobilize_our_forces }
+		mutually_exclusive = { focus = AFU_rely_on_militias }
+
+		completion_reward = {
+			add_ideas = AFU_improved_training_methods
+		}
+    }
+
+	#Special Operations Forces
+	shared_focus = {
+		id = AFU_special_operations_forces
+		icon = GFX_AFU_Special_Operations_Forces
 
 		relative_position_id = AFU_mobilize_our_forces
 		x = 3
 		y = 1
 
-		cost = 3
+		cost = 5
 		prerequisite = { focus = AFU_mobilize_our_forces }
 
-		completion_reward = { 
-			country_event = afu.13
+		completion_reward = {
+			country_event = afu.14
 		}
 	}
 
@@ -255,7 +255,7 @@
 		icon = GFX_AFU_Reform_the_General_Staff
 
 		relative_position_id = AFU_enhanced_training
-		x = -1
+		x = 1
 		y = 1
 
 		cost = 5
@@ -267,19 +267,36 @@
 		}
     }
 
+	#Ignore the Far-Right Elements
+	shared_focus = {
+		id = AFU_turn_a_blind_eye_to_far_right_elements
+		icon = GFX_AFU_Turn_a_Blind_Eye_to_Far_Right_Elements
+
+		relative_position_id = AFU_rely_on_militias
+		x = -1
+		y = 1
+
+		cost = 1
+		prerequisite = { focus = AFU_enhanced_training focus = AFU_rely_on_militias }
+		mutually_exclusive = { focus = AFU_sideline_the_far_right_elements }
+
+		completion_reward = {
+			custom_effect_tooltip = fop_azov_blind_eye_tt
+		}
+	}
+
 	#Sideline the Far-Right Elements
 	shared_focus = {
 		id = AFU_sideline_the_far_right_elements
 		icon = GFX_AFU_Sideline_the_Far_Right_Elements
 
 		relative_position_id = AFU_rely_on_militias
-		x = -1
+		x = 1
 		y = 1
-
-		mutually_exclusive = { focus = AFU_turn_blind_eye_on_the_far_right }
 
 		cost = 1
 		prerequisite = { focus = AFU_enhanced_training focus = AFU_rely_on_militias }
+		mutually_exclusive = { focus = AFU_turn_a_blind_eye_to_far_right_elements }
 
 		completion_reward = {
 			custom_effect_tooltip = fop_azov_sideline_tt
@@ -292,24 +309,6 @@
 			}
 		}
 	}
-	#Turn a blind eye on far right
-	shared_focus = {
-		id = AFU_turn_blind_eye_on_the_far_right
-		icon = GFX_AFU_Turn_Blind_Eye_on_the_Far_Right
-
-		relative_position_id = AFU_rely_on_militias
-		x = 1
-		y = 1
-
-		mutually_exclusive = { focus = AFU_sideline_the_far_right_elements }
-
-		cost = 1
-		prerequisite = { focus = AFU_enhanced_training focus = AFU_rely_on_militias }
-
-		completion_reward = {
-			custom_effect_tooltip = fop_azov_blind_eye_tt
-		}
-	}
 
 	#Professional Army
 	shared_focus = {
@@ -317,11 +316,11 @@
 		icon = GFX_AFU_Professional_Army
 
 		relative_position_id = AFU_sideline_the_far_right_elements
-		x = 0
+		x = 1
 		y = 1
 
 		cost = 5
-		prerequisite = { focus = AFU_sideline_the_far_right_elements focus = AFU_turn_blind_eye_on_the_far_right }
+		prerequisite = { focus = AFU_sideline_the_far_right_elements }
         prerequisite = { focus = AFU_reform_the_general_staff }
 
 		completion_reward = {
@@ -335,7 +334,7 @@
 		icon = GFX_AFU_Prepare_for_the_Inevitable
 
 		relative_position_id = AFU_assessing_the_situation
-		x = 12
+		x = 13
 		y = 1
 
 		cost = 3
@@ -411,9 +410,11 @@
 
 		bypass = {
 			OR = {
-				has_war = no
-				DPR = { exists = no }
-				LPR = { exists = no }
+				has_war = yes
+				AND = {
+					DPR = { exists = no }
+					LPR = { exists = no }
+				}
 			}
 		}
 
@@ -437,9 +438,11 @@
 
 		bypass = {
 			OR = {
-				has_war = no
-				DPR = { exists = no }
-				LPR = { exists = no }
+				has_war = yes
+				AND = {
+					DPR = { exists = no }
+					LPR = { exists = no }
+				}
 			}
 		}
 
@@ -534,7 +537,7 @@
 
 		relative_position_id = AFU_establish_military_administration
 		x = -2
-		y = 1
+		y = 2
 
 		cost = 5
 		prerequisite = { focus = AFU_establish_military_administration }
@@ -553,7 +556,7 @@
 
 		relative_position_id = AFU_establish_military_administration
 		x = 2
-		y = 1
+		y = 2
 
 		cost = 2
 		prerequisite = { focus = AFU_establish_military_administration }
@@ -572,7 +575,7 @@
 
 		relative_position_id = AFU_establish_military_administration
 		x = 0
-		y = 2
+		y = 4
 
 		cost = 3
 		prerequisite = { focus = AFU_promise_reforms focus = AFU_crackdown_on_dissent }
@@ -609,8 +612,8 @@
 
 	#Demine the Roads
 	shared_focus = {
-		id = AFU_mass_demining_program
-		icon = GFX_AFU_Mass_Demining_Program
+		id = AFU_mass_demining_programme
+		icon = GFX_AFU_Mass_Demining_Programme
 
 		relative_position_id = AFU_begin_integration
 		x = -2
@@ -645,7 +648,7 @@
 		}
 	}
 
-	#Derussify Ukrainian Donbas
+	#Demolish the Past
 	shared_focus = {
 		id = AFU_derussify_ukrainian_donbas
 		icon = GFX_AFU_Derussify_Ukrainian_Donbas
@@ -668,18 +671,18 @@
 			}
 		}
 	}
-	
-	#Trial for Separatists
+
+	#Trials for Separatists
 	shared_focus = {
 		id = AFU_trials_for_separatists
 		icon = GFX_AFU_Trials_for_Separatists
 
-		relative_position_id = AFU_mass_demining_program
-		x = 1
+		relative_position_id = AFU_rename_the_cities
+		x = -1
 		y = 1
 
 		cost = 5
-		prerequisite = { focus = AFU_mass_demining_program }
+		prerequisite = { focus = AFU_mass_demining_programme }
 		prerequisite = { focus = AFU_rename_the_cities }
 
 		completion_reward = {
@@ -702,8 +705,8 @@
 		id = AFU_cultural_integration
 		icon = GFX_AFU_Cultural_Integration
 
-		relative_position_id = AFU_derussify_ukrainian_donbas
-		x = -1
+		relative_position_id = AFU_rename_the_cities
+		x = 1
 		y = 1
 
 		cost = 7
@@ -739,26 +742,21 @@
 		completion_reward = {
 			add_political_power = 30
 			country_event = afu.12
-			hidden_effect = {
-				country_event = afu.25
-			}
 		}
 	}
 
+	#We Stand Alone
 	shared_focus = {
 		id = AFU_we_stand_alone
 		icon = GFX_AFU_We_Stand_Alone
+
+		relative_position_id = AFU_finalize_integration
 		x = 0
 		y = 1
-		
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		cost = 2
-		
 		prerequisite = { focus = AFU_finalize_integration }
-		relative_position_id = AFU_finalize_integration
-		
+
 		completion_reward = {
 			add_political_power = 50
 			country_lock_all_division_template = no
@@ -768,85 +766,77 @@
 			}
 		}
 	}
+
+	#Election Time!
 	shared_focus = {
-		id = AFU_the_time_has_not_come
-		icon = GFX_AFU_Time_Has_Not_Yet_Come
+		id = AFU_election_time
+		icon = GFX_AFU_Elections_Time
+
+		relative_position_id = AFU_we_stand_alone
 		x = -1
 		y = 1
-		
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		cost = 2
-		relative_position_id = AFU_we_stand_alone
-		
-		available = {
-			has_completed_focus = AFU_crackdown_on_dissent
-		}
-		
 		prerequisite = { focus = AFU_we_stand_alone }
-		mutually_exclusive = {
-			focus = AFU_elections_elections
-	    }
-		
+		mutually_exclusive = { focus = AFU_the_time_has_not_yet_come }
+
+		available = {
+			has_completed_focus = AFU_promise_reforms
+		}
+
 		completion_reward = {
 			add_political_power = 50
+			remove_ideas = AFU_millitary_administration
+			remove_ideas = AFU_martial_law
 			hidden_effect = {
-				country_event = afu.34
 				if = {
 					limit = {
-						OR = {
-							ultranationalism > 0.2
-							has_completed_focus = AFU_turn_blind_eye_on_the_far_right
-						}
+						has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements
 					}
 					country_event = {
 						id = azov.1
 						days = 7
 					}
 				}
+				else = {
+					country_event = afu.25
+				}
 			}
 		}
     }
-    
+
+	#The Time Has Not Yet Come
 	shared_focus = {
-		id = AFU_elections_elections
-		icon = GFX_AFU_Elections_Elections
+		id = AFU_the_time_has_not_yet_come
+		icon = GFX_AFU_The_Time_Has_Not_Yet_Come
+
+		relative_position_id = AFU_we_stand_alone
 		x = 1
 		y = 1
 		
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
 		cost = 2
 		
-		available = {
-			has_completed_focus = AFU_promise_reforms
-		}
-		
 		prerequisite = { focus = AFU_we_stand_alone }
-		relative_position_id = AFU_we_stand_alone
-		mutually_exclusive = {
-			focus = AFU_the_time_has_not_come
-	    }
-		
+		mutually_exclusive = { focus = AFU_election_time }
+
+		available = {
+			has_completed_focus = AFU_crackdown_on_dissent
+		}
+
 		completion_reward = {
 			add_political_power = 50
-			remove_ideas = AFU_millitary_administration
-			remove_ideas = AFU_martial_law
 			hidden_effect = {
-				country_event = afu.25
 				if = {
 					limit = {
-						OR = {
-							ultranationalism > 0.2
-							has_completed_focus = AFU_turn_blind_eye_on_the_far_right
-						}
+						has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements
 					}
 					country_event = {
 						id = azov.1
 						days = 7
 					}
+				}
+				else = {
+					country_event = afu.34
 				}
 			}
 		}
