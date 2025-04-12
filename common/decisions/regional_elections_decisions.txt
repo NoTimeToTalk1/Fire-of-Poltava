@@ -1418,14 +1418,14 @@ west_elections = {
 	}
 }
 
-center_elections = {
-		center_elections_countdown = {			
+north_elections = {
+		north_elections_countdown = {			
 		activation = {
-			has_country_flag = center_elections
+			has_country_flag = north_elections
 		}
 		available = {
 			NOT = {
-				has_country_flag = center_elections
+				has_country_flag = north_elections
 			}
 		}
 		is_good = no
@@ -1433,10 +1433,10 @@ center_elections = {
 		selectable_mission = no
 		timeout_effect = {
 			SIV = {
-				clr_country_flag = center_elections
+				clr_country_flag = north_elections
 			}
 			DNP = {
-				clr_country_flag = center_elections
+				clr_country_flag = north_elections
 			}
 			if = {
 				limit = {
@@ -1476,13 +1476,13 @@ center_elections = {
 		}
 	}
 
-	center_change_in_popularity = {			
+	north_change_in_popularity = {			
 		activation = {
-			has_country_flag = center_elections
+			has_country_flag = north_elections
 		}
 		available = {
 			NOT = {
-				has_country_flag = center_elections
+				has_country_flag = north_elections
 			}
 		}
 		is_good = yes
@@ -1490,7 +1490,7 @@ center_elections = {
 		selectable_mission = no
 		fire_only_once = no
 		timeout_effect = {
-			activate_mission = center_change_in_popularity
+			activate_mission = north_change_in_popularity
 			if = {
 				limit = {
 					tag = SIV
@@ -1647,7 +1647,7 @@ center_elections = {
    	}
 
 
-	center_agitation = {
+	north_agitation = {
 		available = {
 			NOT = {
 				has_country_flag = elect_action
@@ -1766,7 +1766,7 @@ center_elections = {
 		}
 	}
 
-	center_reach_out = {
+	north_reach_out = {
 		available = {
 			NOT = {
 				has_country_flag = elect_action
@@ -1828,7 +1828,7 @@ center_elections = {
 		}
 	}
 
-	center_discredit_opponent = {
+	north_discredit_opponent = {
 		available = {
 			NOT = {
 				has_country_flag = elect_action
@@ -1947,7 +1947,7 @@ center_elections = {
 		}
 	}
 	
-	center_disrupt_opponent_agitation = {
+	north_disrupt_opponent_agitation = {
 		available = {
 			NOT = {
 				if = {
@@ -2008,7 +2008,7 @@ center_elections = {
 		}
 	}
 
-	center_improve_our_position = {
+	north_improve_our_position = {
 		available = {
 			NOT = {
 				if = {
@@ -2726,7 +2726,7 @@ right_bank_elections = {
 		days_mission_timeout = 150
 		selectable_mission = no
 		timeout_effect = {
-			CNT = {
+			NRT = {
 				clr_country_flag = right_bank_elections
 			}
 			WST = {
@@ -2734,14 +2734,14 @@ right_bank_elections = {
 			}
 			if = {
 				limit = {
-					check_variable = {CNT.center_rates > WST.west_rates}
+					check_variable = {NRT.north_rates > WST.west_rates}
 				}
 				WST = {
 					every_core_state = {
-						add_core_of = CNT
+						add_core_of = NRT
 					}
 				}
-				CNT = {
+				NRT = {
 					annex_country = {
 						target = WST
 						transfer_troops = yes
@@ -2750,16 +2750,16 @@ right_bank_elections = {
 			}
 			else_if = {
 				limit = {
-					check_variable = {WST.west_rates > CNT.center_rates}
+					check_variable = {WST.west_rates > NRT.north_rates}
 				}
-				CNT = {
+				NRT = {
 					every_core_state = {
 						add_core_of = WST
 					}
 				}
 				WST = {
 					annex_country = {
-						target = CNT
+						target = NRT
 						transfer_troops = yes
 					}
 				}
@@ -2787,15 +2787,15 @@ right_bank_elections = {
 			activate_mission = right_bank_change_in_popularity
 			if = {
 				limit = {
-					tag = CNT
+					tag = NRT
 				}
 				if = {
 					limit = {
-						check_variable = {CNT.center_rates_grow = 3}
+						check_variable = {NRT.north_rates_grow = 3}
 					}
 					custom_effect_tooltip = elections_high_rate
 					add_to_variable = {
-						var = center_rates
+						var = north_rates
 						value = 2.50
 					}
 					WST = {
@@ -2807,11 +2807,11 @@ right_bank_elections = {
 				}
 				else_if = {
 					limit = {
-						check_variable = {CNT.center_rates_grow = 2}
+						check_variable = {NRT.north_rates_grow = 2}
 					}
 					custom_effect_tooltip = elections_medium_rate
 					add_to_variable = {
-						var = center_rates
+						var = north_rates
 						value = 1.50
 					}
 					WST = {
@@ -2823,11 +2823,11 @@ right_bank_elections = {
 				}
 				else_if = {
 					limit = {
-						check_variable = {CNT.center_rates_grow = 1}
+						check_variable = {NRT.north_rates_grow = 1}
 					}
 					custom_effect_tooltip = elections_low_rate
 					add_to_variable = {
-						var = center_rates
+						var = north_rates
 						value = 0.50
 					}
 					WST = {
@@ -2851,9 +2851,9 @@ right_bank_elections = {
 						var = west_rates
 						value = 2.50
 					}
-					CNT = {
+					NRT = {
 						add_to_variable = {
-							var = center_rates
+							var = north_rates
 							value = -2.50
 						}
 					}
@@ -2867,9 +2867,9 @@ right_bank_elections = {
 						var = west_rates
 						value = 1.50
 					}
-					CNT = {
+					NRT = {
 						add_to_variable = {
-							var = center_rates
+							var = north_rates
 							value = -1.50
 						}
 					}
@@ -2883,9 +2883,9 @@ right_bank_elections = {
 						var = west_rates
 						value = 0.50
 					}
-					CNT = {
+					NRT = {
 						add_to_variable = {
-							var = center_rates
+							var = north_rates
 							value = -0.50
 						}
 					}
@@ -2897,19 +2897,19 @@ right_bank_elections = {
 				}
 				if = {
 					limit = {
-						check_variable = {CNT.center_rates_grow = 3}
+						check_variable = {NRT.north_rates_grow = 3}
 					}
 					custom_effect_tooltip = elections_high_rate
 				}
 				else_if = {
 					limit = {
-						check_variable = {CNT.center_rates_grow = 2}
+						check_variable = {NRT.north_rates_grow = 2}
 					}
 					custom_effect_tooltip = elections_medium_rate
 				}
 				else_if = {
 					limit = {
-						check_variable = {CNT.center_rates_grow = 1}
+						check_variable = {NRT.north_rates_grow = 1}
 					}
 					custom_effect_tooltip = elections_low_rate
 				}		
@@ -2949,7 +2949,7 @@ right_bank_elections = {
 		}
 		visible = {
 			OR = {
-				tag = CNT
+				tag = NRT
 				tag = WST
 			}
 		}
@@ -2965,14 +2965,14 @@ right_bank_elections = {
 			clr_country_flag = elect_action
 			if = {
 				limit = {
-					tag = CNT
+					tag = NRT
 				}
 				custom_effect_tooltip = elections_agitation
 				hidden_effect = {
 					random_list = {
 						20 = {
 							add_to_variable = {
-								var = center_rates
+								var = north_rates
 								value = 5.00
 							}
 							WST= {
@@ -2985,7 +2985,7 @@ right_bank_elections = {
 						}
 						30 = {
 							add_to_variable = {
-								var = center_rates
+								var = north_rates
 								value = 3.50
 							}
 							WST = {
@@ -2997,7 +2997,7 @@ right_bank_elections = {
 						}
 						50 = {
 							add_to_variable = {
-								var = center_rates
+								var = north_rates
 								value = 2.00
 							}
 							WST = {
@@ -3022,9 +3022,9 @@ right_bank_elections = {
 								var = west_rates
 								value = 5.00
 							}
-							CNT = {
+							NRT = {
 								add_to_variable = {
-									var = center_rates
+									var = north_rates
 									value = -5.00
 								}
 							}
@@ -3034,9 +3034,9 @@ right_bank_elections = {
 								var = west_rates
 								value = 3.50
 							}
-							CNT = {
+							NRT = {
 								add_to_variable = {
-									var = center_rates
+									var = north_rates
 									value = -3.50
 								}
 							}
@@ -3046,9 +3046,9 @@ right_bank_elections = {
 								var = west_rates
 								value = 2.00
 							}
-							CNT = {
+							NRT = {
 								add_to_variable = {
-									var = center_rates
+									var = north_rates
 									value = -2.00
 								}
 							}
@@ -3068,7 +3068,7 @@ right_bank_elections = {
 		}
 		visible = {
 			OR = {
-				tag = CNT
+				tag = NRT
 				tag = WST
 			}
 		}
@@ -3085,15 +3085,15 @@ right_bank_elections = {
 			clr_country_flag = elect_action
 			if = {
 				limit = {
-					tag = CNT
+					tag = NRT
 				}
 				custom_effect_tooltip = elections_reach_out
 				hidden_effect = {
 					add_to_variable = {
-						var = center_rates
+						var = north_rates
 						value = 10.00
 					}
-					CNT = {
+					NRT = {
 						add_to_variable = {
 							var = west_rates
 							value = -10.00
@@ -3111,9 +3111,9 @@ right_bank_elections = {
 						var = west_rates
 						value = 10.00
 					}
-					CNT = {
+					NRT = {
 						add_to_variable = {
-							var = center_rates
+							var = north_rates
 							value = -10.00
 						}
 					}
@@ -3130,7 +3130,7 @@ right_bank_elections = {
 		}
 		visible = {
 			OR = {
-				tag = CNT
+				tag = NRT
 				tag = WST
 			}
 		}
@@ -3152,9 +3152,9 @@ right_bank_elections = {
 			hidden_effect = {
 				random_list = {
 					20 = {
-						CNT = {
+						NRT = {
 							add_to_variable = {
-								var = center_rates
+								var = north_rates
 								value = -3.00
 							}
 						}
@@ -3164,9 +3164,9 @@ right_bank_elections = {
 						}
 					}
 					30 = {
-						CNT = {
+						NRT = {
 							add_to_variable = {
-								var = center_rates
+								var = north_rates
 								value = -1.50
 							}
 						}
@@ -3176,9 +3176,9 @@ right_bank_elections = {
 						}
 					}
 					50 = {
-						CNT = {
+						NRT = {
 							add_to_variable = {
-								var = center_rates
+								var = north_rates
 								value = -1.00
 							}
 						}
@@ -3192,7 +3192,7 @@ right_bank_elections = {
 		}
 		else_if = {
 			limit = {
-				tag = CNT
+				tag = NRT
 			}
 			custom_effect_tooltip = elections_discredit_opponent
 			hidden_effect = {
@@ -3205,7 +3205,7 @@ right_bank_elections = {
 							}
 						}
 						add_to_variable = {
-							var = center_rates
+							var = north_rates
 							value = 3.00
 						}
 					}
@@ -3217,7 +3217,7 @@ right_bank_elections = {
 							}
 						}
 						add_to_variable = {
-							var = center_rates
+							var = north_rates
 							value = 1.50
 						}
 					}
@@ -3229,7 +3229,7 @@ right_bank_elections = {
 							}
 						}
 						add_to_variable = {
-							var = center_rates
+							var = north_rates
 							value = 1.00
 						}
 					}
@@ -3246,7 +3246,7 @@ right_bank_elections = {
 			NOT = {
 				if = {
 					limit = {
-						tag = CNT
+						tag = NRT
 					}
 					check_variable = {WST.west_rates_grow = 1}
 				}
@@ -3254,7 +3254,7 @@ right_bank_elections = {
 					limit = {
 						tag = WST
 					}
-					check_variable = {CNT.center_rates_grow = 1}
+					check_variable = {NRT.north_rates_grow = 1}
 				}
 				has_country_flag = elect_action
 			}
@@ -3262,7 +3262,7 @@ right_bank_elections = {
 		}
 		visible = {
 			OR = {
-				tag = CNT
+				tag = NRT
 				tag = WST
 			}
 		}
@@ -3279,7 +3279,7 @@ right_bank_elections = {
 			clr_country_flag = elect_action
 			if = {
 				limit = {
-					tag = CNT
+					tag = NRT
 				}
 				WST = {
 					add_to_variable = {
@@ -3292,9 +3292,9 @@ right_bank_elections = {
 				limit = {
 					tag = WST
 				}
-				CNT = {
+				NRT = {
 					add_to_variable = {
-						var = center_rates_grow
+						var = north_rates_grow
 						value = -1
 					}
 				}
@@ -3307,9 +3307,9 @@ right_bank_elections = {
 			NOT = {
 				if = {
 					limit = {
-						tag = CNT
+						tag = NRT
 					}
-					check_variable = {CNT.center_rates_grow = 3}
+					check_variable = {NRT.north_rates_grow = 3}
 				}
 				else_if = {
 					limit = {
@@ -3322,7 +3322,7 @@ right_bank_elections = {
 		}
 		visible = {
 			OR = {
-				tag = CNT
+				tag = NRT
 				tag = WST
 			}
 		}=
@@ -3339,10 +3339,10 @@ right_bank_elections = {
 			clr_country_flag = elect_action
 			if = {
 				limit = {
-					tag = CNT
+					tag = NRT
 				}
 					add_to_variable = {
-						var = center_rates_grow
+						var = north_rates_grow
 						value = 1
 					}
 				}

@@ -578,37 +578,37 @@ south_war = {
 	}   
 }
 
-center_war = {
-    center_pick_doctrine_offensive = {
+north_war = {
+    north_pick_doctrine_offensive = {
         icon = GFX_ZAK_rada_election
         available = {
         }
         fire_only_once = yes
         visible = {
-            has_country_flag = center_war
+            has_country_flag = north_war
             NOT = {
                 OR = {
-                    has_country_flag = center_offensive
-                    has_country_flag = center_defensive
+                    has_country_flag = north_offensive
+                    has_country_flag = north_defensive
                 }
             }
         }
         cost = 25
         complete_effect = {
-            set_country_flag = center_offensive
+            set_country_flag = north_offensive
         }
         ai_will_do = {
             base = 10
         }
     }
 
-    center_declare_mobilisation = {
+    north_declare_mobilisation = {
         icon = GFX_ZAK_rada_election
         available = {
         }
         fire_only_once = yes
         visible = {
-            has_country_flag = center_war
+            has_country_flag = north_war
         }
         cost = 50
         days_remove = 30
@@ -620,13 +620,13 @@ center_war = {
         }
     }
 
-    center_war_economy = {
+    north_war_economy = {
         icon = GFX_ZAK_rada_election
         available = {
         }
         fire_only_once = yes
         visible = {
-            has_country_flag = center_war
+            has_country_flag = north_war
         }
         cost = 25
         days_remove = 10
@@ -638,26 +638,26 @@ center_war = {
         }
     }
 
-    center_raise_morale = {
+    north_raise_morale = {
         icon = GFX_ZAK_rada_election
         available = {
         }
         fire_only_once = yes
         visible = {
-            has_country_flag = center_war
+            has_country_flag = north_war
         }
         cost = 25
         days_remove = 20
         remove_effect = {
             if = {
                 limit = {
-                    has_country_flag = center_defensive
+                    has_country_flag = north_defensive
                 }
                 add_ideas = regional_raise_morale_def
             }
             if = {
                 limit = {
-                    has_country_flag = center_pffensive
+                    has_country_flag = north_pffensive
                 }
                 add_ideas = regional_raise_morale_atk
             }
@@ -667,7 +667,7 @@ center_war = {
         }
     }
 
-    center_gather_intel = {
+    north_gather_intel = {
         icon = GFX_ZAK_rada_election
         target_trigger = {
             FROM = {
@@ -681,7 +681,7 @@ center_war = {
         }
         fire_only_once = yes
         visible = {
-            has_country_flag = center_war
+            has_country_flag = north_war
         }
         days_remove = 40
         custom_cost_trigger = {
@@ -705,13 +705,13 @@ center_war = {
         }
     }
 
-    center_sabotage = {
+    north_sabotage = {
         icon = GFX_ZAK_rada_election
         available = {
         }
         fire_only_once = yes
         visible = {
-            has_country_flag = center_war
+            has_country_flag = north_war
         }
         days_remove = 30
         custom_cost_trigger = {
@@ -774,13 +774,13 @@ center_war = {
         }
     }
 
-    center_expand_supply_routes = {
+    north_expand_supply_routes = {
         icon = GFX_ZAK_rada_election
         available = {
         }
         fire_only_once = yes
         visible = {
-            has_country_flag = center_war
+            has_country_flag = north_war
         }
         days_remove = 10
         custom_cost_trigger = {
@@ -838,36 +838,36 @@ center_war = {
         }
     }
 
-    center_pick_doctrine_defensive = {
+    north_pick_doctrine_defensive = {
         icon = GFX_ZAK_rada_election
         available = {
         }
         fire_only_once = yes
         visible = {
-            has_country_flag = center_war
+            has_country_flag = north_war
             NOT = {
                 OR = {
-                    has_country_flag = center_offensive
-                    has_country_flag = center_defensive
+                    has_country_flag = north_offensive
+                    has_country_flag = north_defensive
                 }
             }
         }
         cost = 25
         complete_effect = {
-            set_country_flag = center_defensive
+            set_country_flag = north_defensive
         }
         ai_will_do = {
             base = 10
         }
     }
 
-    center_raise_defences = {
+    north_raise_defences = {
         icon = GFX_ZAK_rada_election
         available = {
         }
         fire_only_once = yes
         visible = {
-            has_country_flag = center_defensive
+            has_country_flag = north_defensive
         }
         days_remove = 40
         custom_cost_trigger = {
@@ -1182,13 +1182,13 @@ center_war = {
         }
     }
 
-    center_secondary_defences = {
+    north_secondary_defences = {
         icon = GFX_ZAK_rada_election
         available = {
         }
         fire_only_once = yes
         visible = {
-            has_country_flag = center_defensive
+            has_country_flag = north_defensive
         }
         days_remove = 20
         custom_cost_trigger = {
@@ -1437,15 +1437,15 @@ center_war = {
         }
     }
 
-    center_war = {
+    north_war = {
         activation = {
             always = no
         }
         available = {
             NOT = {
-                has_country_flag = center_war
+                has_country_flag = north_war
             }
-			has_country_flag = center_war_escalated
+			has_country_flag = north_war_escalated
         }
         target_trigger = {
             FROM = {
@@ -1453,7 +1453,7 @@ center_war = {
                     tag = SIV
                     tag = DNP
                 }
-                has_country_flag = center_war
+                has_country_flag = north_war
             }
         }
         is_good = no
@@ -1465,33 +1465,33 @@ center_war = {
                 target = FROM
                 type = annex_everything
             }
-            set_country_flag = center_war_escalated
-			clr_country_flag = center_war
+            set_country_flag = north_war_escalated
+			clr_country_flag = north_war
             FROM = {
-                set_country_flag = center_war_escalated
-				clr_country_flag = center_war
+                set_country_flag = north_war_escalated
+				clr_country_flag = north_war
             }
             if = {
                 limit = {
-                    has_country_flag = center_offensive
+                    has_country_flag = north_offensive
                 }
                 add_ideas = regional_commend_the_offensive
-                set_country_flag = center_capture_cities
+                set_country_flag = north_capture_cities
             }
             if = {
                 limit = {
-                    has_country_flag = center_defensive
+                    has_country_flag = north_defensive
                 }
                 add_ideas = regional_ready_to_hold
-                set_country_flag = center_hold_positions
+                set_country_flag = north_hold_positions
             }
         }
     }
 
-    center_capture_cities = {
+    north_capture_cities = {
         activation = {
             ROOT = {
-                has_country_flag = center_capture_cities
+                has_country_flag = north_capture_cities
             }
         }
         available = {
@@ -1505,11 +1505,11 @@ center_war = {
                     tag = SIV
                     tag = DNP
                 }
-                has_country_flag = center_war_escalated
+                has_country_flag = north_war_escalated
             }
             ROOT = {
                 NOT = {
-                    has_country_flag = center_defensive
+                    has_country_flag = north_defensive
 					has_ideas = regional_failed_plans
                 }
             }
@@ -1519,18 +1519,18 @@ center_war = {
         selectable_mission = no
         timeout_effect = {
             add_ideas = regional_failed_plans
-			clr_country_flag = center_capture_cities
+			clr_country_flag = north_capture_cities
         }
         complete_effect = {
             add_war_support = 0.1
             add_stability = 0.15
-			clr_country_flag = center_capture_cities
+			clr_country_flag = north_capture_cities
         }
     }
 
-    center_hold_positions = {
+    north_hold_positions = {
         activation = {
-            has_country_flag = scenter_hold_positions
+            has_country_flag = snorth_hold_positions
         }
         available = {
             ROOT = {
@@ -1543,11 +1543,11 @@ center_war = {
                     tag = SIV
                     tag = DNP
                 }
-                has_country_flag = center_war_escalated
+                has_country_flag = north_war_escalated
             }
             ROOT = {
                 NOT = {
-                    has_country_flag = center_offensive
+                    has_country_flag = north_offensive
 					has_ideas = regional_counter_attack
                 }
             }
@@ -1557,12 +1557,12 @@ center_war = {
         selectable_mission = no
         timeout_effect = {
             add_ideas = regional_counter_attack
-			clr_country_flag = center_hold_positions
+			clr_country_flag = north_hold_positions
         }
         complete_effect = {
             add_war_support = -0.1
             add_stability = -0.3
-			clr_country_flag = center_hold_positions
+			clr_country_flag = north_hold_positions
         }
     }
 }
@@ -3599,7 +3599,7 @@ right_bank_war = {
             FROM = {
 				OR = {
 					tag = WST
-					tag = CNT
+					tag = NRT
 				}
                 
             }
@@ -3665,7 +3665,7 @@ right_bank_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					tag = CNT
+					tag = NRT
 				}
 				436 = {
 					damage_building = {
@@ -3735,7 +3735,7 @@ right_bank_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					tag = CNT
+					tag = NRT
 				}
 				2065 = {
 					add_building_construction = { type = supply_node level = 1 province = 13183 instant_build = yes}
@@ -3818,7 +3818,7 @@ right_bank_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					tag = CNT
+					tag = NRT
 				}
 				2068 = {
 					add_building_construction = { type = bunker level = 2 province = 8917 instant_build = yes }
@@ -3922,7 +3922,7 @@ right_bank_war = {
 		remove_effect = {
 			if = {
 				limit = {
-					tag = CNT
+					tag = NRT
 				}
 				2074 = {
 					add_building_construction = { type = bunker level = 4 province = 13147 instant_build = yes }
@@ -4003,7 +4003,7 @@ right_bank_war = {
             FROM = {
 				OR = {
 					tag = WST
-					tag = CNT
+					tag = NRT
 				}
 				has_country_flag = right_bank_war
             }
@@ -4055,7 +4055,7 @@ right_bank_war = {
             FROM = {
 				OR = {
 					tag = WST
-					tag = CNT
+					tag = NRT
 				}
 				has_country_flag = right_bank_war_escalated
             }
@@ -4093,7 +4093,7 @@ right_bank_war = {
             FROM = {
 				OR = {
 					tag = WST
-					tag = CNT
+					tag = NRT
 				}
 				has_country_flag = right_bank_war_escalated
             }

@@ -6,7 +6,7 @@ unite_galicia_ukraine = {
 		
 		available = { 
 			custom_trigger_tooltip = {
-				tooltip = unite_western_ukraine_tt
+				tooltip = unite_west_ukraine_tt
 				is_galicia_ukraine = yes
 				can_unite_galicia = yes
 			}
@@ -2205,17 +2205,17 @@ unite_donbas_ukraine = {
 	}
 }
 
-unite_eastern_ukraine = {
-	unite_eastern_ukraine = {			
+unite_east_ukraine = {
+	unite_east_ukraine = {			
 
 		icon = GFX_decision_unite_ukraine
 		
 		
 		available = { 
 			custom_trigger_tooltip = {
-				tooltip = unite_eastern_ukraine_tt
+				tooltip = unite_east_ukraine_tt
 				is_east_ukraine = yes
-				can_unite_eastern_ukraine = yes
+				can_unite_east_ukraine = yes
 			}
 			date > 2024.01.01
 		}
@@ -2586,7 +2586,7 @@ unite_eastern_ukraine = {
 		}
 
 		remove_effect = {
-			custom_effect_tooltip = unite_eastern_ukraine_zachystka_tt
+			custom_effect_tooltip = unite_east_ukraine_zachystka_tt
 			hidden_effect = {
 				if = {
 					limit = {
@@ -2627,17 +2627,17 @@ unite_eastern_ukraine = {
     }
 }
 
-unite_southern_ukraine = {
-	unite_southern_ukraine = {			
+unite_south_ukraine = {
+	unite_south_ukraine = {			
 
 		icon = GFX_decision_unite_ukraine
 		
 		
 		available = { 
 			custom_trigger_tooltip = {
-				tooltip = unite_southern_ukraine_tt
+				tooltip = unite_south_ukraine_tt
 				is_south_ukraine = yes
-				can_unite_southern_ukraine = yes
+				can_unite_south_ukraine = yes
 			}
 			date > 2024.01.01
 		}
@@ -3027,7 +3027,7 @@ unite_southern_ukraine = {
 		}
 
 		remove_effect = {
-			custom_effect_tooltip = unite_southern_ukraine_zachystka_tt
+			custom_effect_tooltip = unite_south_ukraine_zachystka_tt
 			hidden_effect = {
 				if = {
 					limit = {
@@ -3084,17 +3084,17 @@ unite_southern_ukraine = {
     }
 }
 
-unite_central_ukraine = {
-	unite_central_ukraine = {			
+unite_north_ukraine = {
+	unite_north_ukraine = {			
 
 		icon = GFX_decision_unite_ukraine
 		
 		
 		available = { 
 			custom_trigger_tooltip = {
-				tooltip = unite_central_ukraine_tt
-				is_center_ukraine = yes
-				can_unite_central_ukraine = yes
+				tooltip = unite_north_ukraine_tt
+				is_north_ukraine = yes
+				can_unite_north_ukraine = yes
 			}
 			date > 2024.01.01
 		}
@@ -3103,7 +3103,7 @@ unite_central_ukraine = {
         	days_remove = 0		
 
 		visible = {	
-			is_center_ukraine = yes
+			is_north_ukraine = yes
 			OR = {
 				tag = SIV
 				tag = DIR
@@ -3113,9 +3113,9 @@ unite_central_ukraine = {
 		cost = 0
 
 		complete_effect = {
-			custom_effect_tooltip = center_unite_tt
+			custom_effect_tooltip = north_unite_tt
 			hidden_effect = {
-			save_global_event_target_as = UKR_center_unifier
+			save_global_event_target_as = UKR_north_unifier
 			if = {
 				limit = {
 						original_tag = KYI
@@ -3229,9 +3229,9 @@ unite_central_ukraine = {
 		visible = {
 			can_do_elections = yes
 			NOT = {
-					has_country_flag = center_war
-					has_country_flag = center_elections
-					has_country_flag = center_dogovornyak
+					has_country_flag = north_war
+					has_country_flag = north_elections
+					has_country_flag = north_dogovornyak
 				}
 				NOT = {
 					has_country_flag = dogovornyak_agreed
@@ -3262,11 +3262,11 @@ unite_central_ukraine = {
 		}
 	}
 
-	prepare_elections_center_agreed = {
+	prepare_elections_north_agreed = {
 		visible = {
 			has_country_flag = elections_agreed
 			NOT = {
-				has_country_flag = center_elections
+				has_country_flag = north_elections
 			}
 		}
 		fire_only_once = yes
@@ -3310,9 +3310,9 @@ unite_central_ukraine = {
 		visible = {
 			can_do_dogovornyak = yes
 			NOT = {
-					has_country_flag = center_war
-					has_country_flag = center_elections
-					has_country_flag = center_dogovornyak
+					has_country_flag = north_war
+					has_country_flag = north_elections
+					has_country_flag = north_dogovornyak
 				}
 				NOT = {
 					has_country_flag = dogovornyak_agreed
@@ -3360,11 +3360,11 @@ unite_central_ukraine = {
 		}
 	}
 
-	prepare_dogovornyak_center_agreed = {
+	prepare_dogovornyak_north_agreed = {
 		visible = {
 			has_country_flag = dogovornyak_agreed
 			NOT = {
-				has_country_flag = center_dogovornyak
+				has_country_flag = north_dogovornyak
 			}
 		}
 		fire_only_once = yes
@@ -3374,14 +3374,14 @@ unite_central_ukraine = {
 			}	
 		complete_effect = {
 			DNP = {
-					set_country_flag = center_dogovornyak
+					set_country_flag = north_dogovornyak
 					add_political_power = 100
 					set_variable = {
 						var = dnieper_spendible_influence
 						value = 21
 					}
 					set_variable = {
-						var = center_done_themes
+						var = north_done_themes
 						value = 0
 					}
 					set_variable = {
@@ -3390,14 +3390,14 @@ unite_central_ukraine = {
 					}
 				}
 			SIV = {
-					set_country_flag = center_dogovornyak	
+					set_country_flag = north_dogovornyak	
 					add_political_power = 100
 					set_variable = {
 						var = siveria_spendible_influence
 						value = 21
 					}
 					set_variable = {
-						var = center_done_themes
+						var = north_done_themes
 						value = 0
 					}
 					set_variable = {
@@ -3441,9 +3441,9 @@ unite_central_ukraine = {
 					tag = SIV
 				}
 				NOT = {
-					has_country_flag = center_war
-					has_country_flag = center_elections
-					has_country_flag = center_dogovornyak
+					has_country_flag = north_war
+					has_country_flag = north_elections
+					has_country_flag = north_dogovornyak
 				}
 				NOT = {
 					has_country_flag = dogovornyak_agreed
@@ -3460,10 +3460,10 @@ unite_central_ukraine = {
             FROM = {
 				country_event = reg_exp_center.4
 				set_country_flag = unification_choice_made
-				set_country_flag = center_war
+				set_country_flag = north_war
 			}
 			set_country_flag = unification_choice_made
-			set_country_flag = center_war
+			set_country_flag = north_war
         }
 
 	}
@@ -3504,7 +3504,7 @@ unite_central_ukraine = {
 		}
 
 		remove_effect = {
-			custom_effect_tooltip = unite_central_ukraine_zachystka_tt
+			custom_effect_tooltip = unite_north_ukraine_zachystka_tt
 			hidden_effect = {
 				if = {
 					limit = {
@@ -3565,18 +3565,18 @@ unite_central_ukraine = {
     }	
 }
 
-unite_western_ukraine = {
+unite_west_ukraine = {
 
-	unite_western_ukraine = {			
+	unite_west_ukraine = {			
 
 		icon = GFX_decision_unite_ukraine
 		
 		
 		available = { 
 			custom_trigger_tooltip = {
-				tooltip = unite_western_ukraine_tt
+				tooltip = unite_west_ukraine_tt
 				is_west_ukraine = yes
-				can_unite_western_ukraine = yes
+				can_unite_west_ukraine = yes
 			}
 			date > 2024.01.01
 		}
@@ -3954,7 +3954,7 @@ unite_western_ukraine = {
 		}
 
 		remove_effect = {
-			custom_effect_tooltip = unite_western_ukraine_zachystka_tt
+			custom_effect_tooltip = unite_west_ukraine_zachystka_tt
 			hidden_effect = {
 				if = {
 					limit = {
@@ -4560,7 +4560,7 @@ unite_right_bank_ukraine = {
 		visible = {	
 		is_right_bank_ukraine = yes
 			OR = {
-				tag = CNT
+				tag = NRT
 				tag = WST
 			}
 		}		
@@ -4720,7 +4720,7 @@ unite_right_bank_ukraine = {
 
 		complete_effect = {
 			if = { limit = { tag = WST } country_event = reg_capital.8}
-			if = { limit = { tag = CNT } country_event = reg_capital.9}
+			if = { limit = { tag = NRT } country_event = reg_capital.9}
 		}
 		ai_will_do = {	
 			base = 10		
@@ -4735,7 +4735,7 @@ unite_right_bank_ukraine = {
             FROM = {
 				OR = {
 					tag = WST
-					tag = CNT
+					tag = NRT
 				}
             }
         }
@@ -4743,7 +4743,7 @@ unite_right_bank_ukraine = {
 			can_do_elections = yes
 			OR = {
 				tag = WST
-				tag = CNT
+				tag = NRT
 			}
 			NOT = {
 					has_country_flag = right_bank_war
@@ -4801,13 +4801,13 @@ unite_right_bank_ukraine = {
 				set_country_flag = right_bank_elections
 				add_political_power = 100
 			}
-			CNT = {
+			NRT = {
 				set_variable = {
-					var = center_rates
+					var = north_rates
 					value = 50.00
 				}
 				set_variable = {
-					var = center_rates_grow
+					var = north_rates_grow
 					value = 2
 				}
 				set_country_flag = right_bank_elections
@@ -4833,11 +4833,11 @@ unite_right_bank_ukraine = {
 				base = 10
 			}	
 		complete_effect = {
-			CNT = {
+			NRT = {
 				set_country_flag = right_bank_dogovornyak
 				add_political_power = 100
 				set_variable = {
-					var = center_spendible_influence
+					var = north_spendible_influence
 					value = 21
 				}
 				set_variable = {
@@ -4845,7 +4845,7 @@ unite_right_bank_ukraine = {
 					value = 0
 				}
 				set_variable = {
-					var = center_influence
+					var = north_influence
 					value = 0
 				}
 			}
@@ -4890,7 +4890,7 @@ unite_right_bank_ukraine = {
 			WST = {
 				exists = yes
 			}
-			CNT = {
+			NRT = {
 				exists = yes
 			}
 		}
@@ -4901,7 +4901,7 @@ unite_right_bank_ukraine = {
             FROM = {
 				OR = {
 					tag = WST
-					tag = CNT
+					tag = NRT
 				}
             }
         }
@@ -4933,7 +4933,7 @@ unite_right_bank_ukraine = {
             FROM = {
 				OR = {
 					tag = WST
-					tag = CNT
+					tag = NRT
 				}
             }
         }
@@ -4951,7 +4951,7 @@ unite_right_bank_ukraine = {
 
         visible = {
 				OR = {
-					tag = CNT
+					tag = NRT
 					tag = WST
 				}
 				NOT = {
@@ -4991,7 +4991,7 @@ unite_right_bank_ukraine = {
 		visible = {
 			if = {
 				limit = {
-					tag = CNT
+					tag = NRT
 				}
 				NOT = {
 					country_exists = WST
@@ -5002,7 +5002,7 @@ unite_right_bank_ukraine = {
 					tag = WST
 				}
 				NOT = {
-					country_exists = CNT
+					country_exists = NRT
 				}
 			}
 			#date > 2027.01.01
@@ -5021,20 +5021,20 @@ unite_right_bank_ukraine = {
 			hidden_effect = {
 				if = {
 					limit = {
-						tag = CNT
+						tag = NRT
 					}
 					every_country = {
 						limit = {
 							is_west_ukraine = yes
 						}
-						CNT = {
+						NRT = {
 							declare_war_on = {
 								target = PREV
 								type = annex_everything
 							}
 						}
 					}
-					CNT = {
+					NRT = {
 						declare_war_on = {
 							target = GLY
 							type = annex_everything
@@ -5051,7 +5051,7 @@ unite_right_bank_ukraine = {
 					}
 					every_country = {
 						limit = {
-							is_center_ukraine = yes
+							is_north_ukraine = yes
 						}
 						WST = {
 							declare_war_on = {
@@ -5793,7 +5793,7 @@ unite_ukraine = {
 					}
 					LBU = {
 						declare_war_on = {
-							target = CNT
+							target = NRT
 							type = annex_everything
 						}
 						declare_war_on = {
