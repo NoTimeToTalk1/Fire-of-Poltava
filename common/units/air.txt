@@ -1,6 +1,16 @@
 sub_units = {
 	# Small airframe
 
+	light_combat_plane = {
+		sprite = light_plane
+		priority = 1
+		active = yes
+		type = fighter
+		need = { small_plane_light_combat_airframe = 1 }
+		categories = { category_cas }
+		land_air_wing_size = 100
+	}
+
 	fighter = {
 		sprite = light_plane
 		priority = 1
@@ -8,16 +18,6 @@ sub_units = {
 		type = fighter
 		need = { small_plane_airframe = 1 }
 		categories = { category_fighter }
-		land_air_wing_size = 100
-	}
-	cv_fighter = {
-		sprite = light_plane
-		priority = 1
-		active = yes
-		type = fighter
-		need = { cv_small_plane_airframe = 1 }
-		categories = { category_fighter }
-		carrier_air_wing_size = 10
 		land_air_wing_size = 100
 	}
 
@@ -28,54 +28,6 @@ sub_units = {
 		type = cas
 		need = { small_plane_cas_airframe = 1 }
 		categories = { category_cas }
-		land_air_wing_size = 100
-	}
-	cv_cas = {
-		sprite = light_plane
-		priority = 2
-		active = yes
-		type = cas
-		need = { cv_small_plane_cas_airframe = 1 }
-		categories = { category_cas }
-		carrier_air_wing_size = 10
-		land_air_wing_size = 100
-	}
-
-	nav_bomber = {
-		sprite = light_plane
-		priority = 3
-		active = yes
-		type = naval_bomber
-		need = { small_plane_naval_bomber_airframe = 1 }
-		categories = { category_nav_bomber }
-		land_air_wing_size = 100
-	}
-	cv_nav_bomber = {
-		sprite = light_plane
-		priority = 3
-		active = yes
-		type = naval_bomber
-		need = { cv_small_plane_naval_bomber_airframe = 1 }
-		categories = { category_nav_bomber }
-		carrier_air_wing_size = 10
-		land_air_wing_size = 100
-	}
-
-	suicide_craft = {
-		sprite = light_plane
-		priority = 9
-		active = yes
-		type = suicide
-		need = { small_plane_suicide_airframe = 1 }
-		land_air_wing_size = 100
-	}
-	cv_suicide_craft = {
-		sprite = light_plane
-		priority = 9
-		active = yes
-		type = suicide
-		need = { cv_small_plane_suicide_airframe = 1 }
-		carrier_air_wing_size = 10
 		land_air_wing_size = 100
 	}
 
@@ -91,16 +43,6 @@ sub_units = {
 		land_air_wing_size = 100
 	}
 
-	heavy_fighter = {
-		sprite = medium_plane
-		priority = 1
-		active = yes
-		type = heavy_fighter
-		need = { medium_plane_fighter_airframe = 1 }
-		categories = { category_heavy_fighter }
-		land_air_wing_size = 100
-	}
-
 	scout_plane = {
 		sprite = light_plane
 		priority = 1
@@ -109,6 +51,15 @@ sub_units = {
 		need = { medium_plane_scout_plane_airframe = 1 }
 		categories = { category_scout_plane }
 		land_air_wing_size = 10
+	}
+
+	suicide_craft = {
+		sprite = light_plane
+		priority = 9
+		active = yes
+		type = suicide
+		need = { medium_plane_suicide_airframe = 1 }
+		land_air_wing_size = 100
 	}
 
 	# Large airframe
@@ -133,47 +84,6 @@ sub_units = {
 		land_air_wing_size = 10
 	}
 
-	# Non-BBA archetypes
-
-	jet_fighter = {
-		sprite = jet_plane
-		priority = 1
-		active = yes
-		type = fighter
-		need = { jet_fighter_equipment = 1 }
-		categories = { category_fighter }
-		land_air_wing_size = 100
-	}
-
-	jet_tac_bomber = {
-		sprite = medium_plane
-		priority = 4
-		active = yes
-		type = tactical_bomber
-		need = { jet_tac_bomber_equipment = 1 }
-		categories = { category_tac_bomber }
-		land_air_wing_size = 100
-	}
-
-	jet_strat_bomber = {
-		sprite = heavy_plane
-		priority = 5
-		active = yes
-		type = strategic_bomber
-		need = { jet_strat_bomber_equipment = 1 }
-		categories = { category_strat_bomber }
-		land_air_wing_size = 100
-	}
-
-	rocket_interceptor = {
-		sprite = light_plane
-		priority = 7
-		active = yes
-		type = interceptor
-		need = { rocket_interceptor_equipment = 1 }
-		land_air_wing_size = 100
-	}
-
 	# Other
 
 	transport_plane = {
@@ -193,4 +103,23 @@ sub_units = {
 		need = { guided_missile_equipment = 1 }
 		land_air_wing_size = 100
 	}
+
+	#heavy_fighter = { ###DELETE
+	#	sprite = medium_plane
+	#	priority = 1
+	#	active = yes
+	#	type = heavy_fighter
+	#	need = { medium_plane_fighter_airframe = 1 }
+	#	categories = { category_heavy_fighter }
+	#	land_air_wing_size = 100
+	#}
+	#nav_bomber = { ###DELETE
+	#	sprite = light_plane
+	#	priority = 3
+	#	active = yes
+	#	type = heavy_plane
+	#	need = { small_plane_naval_bomber_airframe = 1 }
+	#	categories = { category_nav_bomber }
+	#	land_air_wing_size = 100
+	#}
 }
