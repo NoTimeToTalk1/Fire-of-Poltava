@@ -303,7 +303,7 @@
 		prerequisite = { focus = AFU_novi_lad  }
 		completion_reward = {
 			add_stability = -0.05
-			add_ideas = fop_religious_rights_moralism 
+			FOP_change_religious_rights_moralism = yes
 			country_event = azov.36
 		}
 	}
@@ -627,7 +627,7 @@
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
 		completion_reward = {
 			add_stability = -0.05
-			add_ideas = fop_sexual_minorities_criminalized
+			FOP_change_sexual_minorities_criminalized = yes
 			add_popularity = {
 				ideology = progressivism
 				popularity = -0.05
@@ -654,7 +654,7 @@
 				popularity = 0.05
 			}
 			add_stability = 0.05
-			add_ideas = fop_healthcare_system_public
+			FOP_change_healthcare_system_public = yes
 			FOP_healthcare_medium_improvement = yes
 		}
 	}
@@ -674,7 +674,7 @@
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
 		completion_reward = {
 			add_manpower = 5000
-    		add_ideas = fop_women_on_the_frontline
+    		FOP_change_women_on_the_frontline = yes
 			add_ideas = AFU_marichka
 		}
 	}
@@ -693,7 +693,7 @@
 		mutually_exclusive = { focus = AFU_promote_the_legacy_of_joan_of_arc }
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
 		completion_reward = {
-    		add_ideas = fop_women_banned
+    		FOP_change_women_banned
 			add_ideas = AFU_family_tradition
 		}
 	}
@@ -748,7 +748,7 @@
 		prerequisite = { focus = AFU_the_europa_is_in_danger  }
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
 		completion_reward = {
-			add_ideas = fop_racial_integration_segregation
+			FOP_change_racial_integration_segregation = yes
 			add_manpower = -1000
 		}
 	}
@@ -960,6 +960,7 @@
 				ideology = ultranationalism
 				popularity = 0.05
 			}
+			FOP_change_security_opressive_police = yes
 			add_political_power = -100
 		}
 	}
@@ -983,6 +984,7 @@
 				ideology = ultranationalism
 				popularity = -0.15
 			}
+			FOP_change_security_totalitarian_police = yes
 			add_political_power = 100
 		}
 	}
@@ -1447,7 +1449,7 @@
 		}
 		prerequisite = { focus = AFU_the_demand_of_the_nation_is_no_capitulation  }
 		completion_reward = {
-    		add_ideas = fop_conscription_all_adults_serve
+    		FOP_change_conscription_all_adults_serve = yes
 			country_event = { id = azov.34 days = 1 }
 		}
 	}
@@ -2582,7 +2584,7 @@
 		
 		completion_reward = {
 			country_event = { id = azov.22 }
-			add_ideas = fop_economic_system_corporatism
+			FOP_change_economic_system_corporatism = yes
 		}
 	}
 
@@ -2690,7 +2692,8 @@
 		prerequisite = { focus = AFU_first_nationalsyndicalist_congress  }
 		mutually_exclusive = { focus = AFU_total_war_economy  }
 		completion_reward = {
-			add_ideas = fop_economic_mobilization_war_economy
+			FOP_change_economic_mobilization_war_economy = yes
+			custom_effect_tooltip = fop_economic_mobilization_early_tt
 		}
 	}
 
@@ -2711,7 +2714,7 @@
 		mutually_exclusive = { focus = AFU_smooth_militarization  }
 		completion_reward = {
 			add_stability = -0.1
-			add_ideas = fop_economic_mobilization_total
+			FOP_change_economic_mobilization_total = yes
 		}
 	}
 
@@ -2729,7 +2732,7 @@
 		completion_reward = {
 			add_political_power = -50
 			add_stability = 0.05
-			add_ideas = fop_forced_labour_work_programs
+			FOP_change_forced_labour_work_programs = yes
 			FOP_unemployment_medium_improvement = yes
 		}
 	}
@@ -2748,7 +2751,7 @@
 		completion_reward = {
 			add_political_power = 10
 			add_stability = -0.1
-			add_ideas = fop_forced_labour_institutionalized
+			FOP_change_forced_labour_institutionalized = yes
 			FOP_unemployment_high_improvement = yes			
 		}
 
@@ -2815,7 +2818,7 @@
 		prerequisite = { focus = AFU_restore_old_donbas_enterprises  }
 		mutually_exclusive = { focus = AFU_all_for_the_sake_of_efficiency  }
 		completion_reward = {
-			add_ideas = fop_pollution_strict_regulations
+			FOP_change_pollution_strict_regulations = yes
 		}
 	}
 
@@ -2835,7 +2838,7 @@
 		prerequisite = { focus = AFU_restore_old_donbas_enterprises  }
 		mutually_exclusive = { focus = AFU_ban_the_destruction_of_ukraine_by_waste  }
 		completion_reward = {
-			add_ideas = fop_pollution_no_controls
+			FOP_change_pollution_no_controls = yes
 		}
 	}
 
@@ -2892,7 +2895,7 @@
 				add_idea = AFU_azov_huge_resistance_3
 				remove_idea = AFU_azov_huge_resistance_2
 			}
-			add_ideas = fop_oligarchs_relations_anti_oligarchic_policy
+			FOP_change_oligarchs_relations_anti_oligarchic_policy = yes
 			FOP_corruption_high_improvement = yes
 		}
 	}
@@ -2943,7 +2946,7 @@
 		completion_reward = {
 			country_event = { id = azov.30 days = 1 }
 			remove_ideas = AFU_azov_huge_resistance_3
-			add_ideas = fop_oligarchs_power_tamed_oligarchs
+			FOP_change_oligarchs_power_tamed_oligarchs = yes
 		}
 	}
 
@@ -2964,8 +2967,8 @@
     			popularity = 0.1
 			}
 			add_stability = 0.1
-			add_ideas = fop_minimum_wage_moderate
-			add_ideas = fop_working_hours_10
+			FOP_change_minimum_wage_moderate = yes
+			FOP_change_working_hours_10 = yes
 			FOP_poverty_medium_improvement = yes
 		}
 	}
