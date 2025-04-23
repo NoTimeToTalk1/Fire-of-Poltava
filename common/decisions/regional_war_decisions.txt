@@ -4409,15 +4409,20 @@ ukraine_war = {
 		custom_cost_text = decision_cost_10_cp
 
 		complete_effect = {
-				add_command_power = -10		
+			add_command_power = -10
 	  	}
+
 		remove_effect = {
 			if = {
 				limit = {
 					tag = RBU
 				}
 				2071 = {
-					add_building_construction = { type = infrastructure level = 1 province = 13183 instant_build = yes}
+					add_building_construction = {
+						type = infrastructure
+						level = 5
+						instant_build = yes
+					}
 				}
 				build_railway = {
 					level = 1

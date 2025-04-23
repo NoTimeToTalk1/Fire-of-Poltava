@@ -3,7 +3,7 @@
 # names is a list of names. Can be a localization entry, or the name directly. A random name will be picked from them.
 
 intelligence_agency = {
-
+	
 	picture = GFX_intelligence_agency_logo_usa
 	names = { "Office of Strategic Services" }
 	
@@ -12,213 +12,90 @@ intelligence_agency = {
 }
 
 intelligence_agency = {
-
+	
 	picture = GFX_intelligence_agency_logo_uk
 	names = { "MI6" "SIS" }
 	
-	default = { tag = ENG }
-	available = { original_tag = ENG }
+	default = { tag = GBR }
+	available = { original_tag = GBR }
 }
 
 intelligence_agency = {
-
+	
 	picture = GFX_intelligence_agency_logo_sov
-	names = { "Federalnaya Sluzhba Bezopasnosti" }
+	names = { "Federal'naya Sluzhba Bezopasnosti" }
 	
 	default = { tag = RUS }
 	available = { original_tag = RUS }
 }
 
 intelligence_agency = {
-
+	
 	picture = GFX_intelligence_agency_logo_bul
-	names = { "Sluzhba Bezpeky Ukrajiny" }
+	names = { "Sluzhba Bezpeky Ukrainy" }
 	
-	default = { tag = UKR }
-	available = { original_tag = UKR }
-}
-
-intelligence_agency = {
-	
-	picture = GFX_intelligence_agency_logo_ger
-	names = { "Sluzhba Bezpeky Ukrajiny" }
-	
-	default = { tag = PRH }
-	available = { original_tag = PRH }
-}
-
-intelligence_agency = {
-	
-	picture = GFX_intelligence_agency_logo_jap
-	names = { "Sluzhba Bezpeky Ukrajiny" }
-	
-	default = { tag = ODE }
-	available = { original_tag = ODE }
-}
-
-intelligence_agency = {
-	
-	picture = GFX_intelligence_agency_logo_ita
-	names = { "Sluzhba Bezpeky Ukrajiny" }
-	
-	default = { tag = GAL }
-	available = { original_tag = GAL }
-}
-
-intelligence_agency = {
-	
-	picture = GFX_intelligence_agency_logo_swe
-	names = { "Sluzhba Bezpeky Ukrajiny" }
-	
-	default = { tag = VOL }
-	available = { original_tag = VOL }
-}
-
-intelligence_agency = {
-	
-	picture = GFX_intelligence_agency_logo_nor
-	names = { "Pahany" }
-	
-	default = { tag = RIV }
-	available = { original_tag = RIV }
-}
-
-intelligence_agency = {
-	
-	picture = GFX_intelligence_agency_logo_bel
-	names = { "Sluzhba Bezpeky Ukrajiny" }
-	
-	default = { tag = PLT }
-	available = { original_tag = PLT }
-}
-
-intelligence_agency = {
-	
-	picture = GFX_intelligence_agency_logo_hol
-	names = { "Sluzhba Bezpeky Ukrajiny" }
-	
-	default = { tag = OPZ }
-	available = { original_tag = OPZ}
-}
-
-intelligence_agency = {
-	
-	picture = GFX_intelligence_agency_logo_rom
-	names = { "Sluzhba Bezpeky Ukrajiny" }
-	
-	available = { always = yes }
-	
-	default = { tag = MYK }
-	available = { original_tag = MYK }
-}
-
-intelligence_agency = {
-	
-	picture = GFX_intelligence_agency_logo_prc
-	names = { "KGB" }
-	
-	available = { always = yes }
-	
-	default = { tag = DPR }
-	available = { original_tag = DPR }
-}
-
-intelligence_agency = {
-	
-	picture = GFX_intelligence_agency_logo_chi
-	names = { "KGB" }
-	
-	available = { always = yes }
-	
-	default = { tag = LPR }
-	available = { original_tag = LPR }
-}
-
-intelligence_agency = {
-	
-	picture = GFX_intelligence_agency_logo_yug
-	names = { "Sluzhba Bezpeky Ukrajiny" }
-	
-	available = { always = yes }
-	
-	default = { tag = KHA }
-	available = { original_tag = KHA }
-}
-
-intelligence_agency = {
-	
-	picture = GFX_intelligence_agency_logo_spr
-	names = { "Sluzhba Bezpeky Ukrajiny" }
-	
-	available = { always = yes }
-	
-	default = { tag = DNI }
-	available = { original_tag = DNI }
-}
-
-intelligence_agency = {
-	
-	picture = GFX_intelligence_agency_logo_spa
-	names = { "Sluzhba Bezpeky Ukrajiny" }
-	
-	available = { always = yes }
-	
-	default = { tag = KIR }
-	available = { original_tag = KIR }
-}
-
-intelligence_agency = {
-	
-	picture = GFX_intelligence_agency_logo_pol
-	names = { "Sluzhba Bezpeky Ukrajiny" }
-	
-	available = { always = yes }
-	
-	default = { tag = CHR }
-	available = { original_tag = CHR }
-}
-
-intelligence_agency = {
-	
-	picture = GFX_intelligence_agency_logo_man
-	names = { "Sluzhba Bezpeky Ukrajiny" }
-	
-	available = { always = yes }
-	
-	default = { tag = UMA }
-	available = { original_tag = UMA }
-}
-
-intelligence_agency = {
-	
-	picture = GFX_intelligence_agency_logo_por
-	names = { "Sluzhba Bezpeky Ukrajiny" }
-	
-	available = { always = yes }
-	
-	default = { tag = ZHY }
-	available = { original_tag = ZHY }
-}
-
-intelligence_agency = {
-	
-	picture = GFX_intelligence_agency_logo_fin
-	names = { "Sluzhba Bezpeky Ukrajiny" }
-	
-	default = { tag = KYI }
-	available = { original_tag = KYI }
-}
-
-intelligence_agency = {
-	
-	picture = GFX_intelligence_agency_logo_tur
-	names = { "Sluzhba Bezpeky Ukrajiny" }
-
-	
-	available = { always = yes }
-	
-	default = { tag = TUR }
-	available = { original_tag = TUR }
+	default = {
+		OR = {
+			tag = BDZ
+			tag = BUK
+			tag = CBL
+			tag = CHE
+			tag = CHR
+			tag = DNI
+			tag = HAL
+			tag = HUT
+			tag = KHA
+			tag = KHE
+			tag = KOB
+			tag = KRM
+			tag = KYI
+			tag = MYK
+			tag = ODE
+			tag = OLD
+			tag = PLT
+			tag = RIV
+			tag = SHA
+			tag = STR
+			tag = SUM
+			tag = UMA
+			tag = VIN
+			tag = VOL
+			tag = ZAK
+			tag = ZAP
+			tag = ZHY
+		}
+	}
+	available = {
+		OR = {
+			original_tag = BDZ
+			original_tag = BUK
+			original_tag = CBL
+			original_tag = CHE
+			original_tag = CHR
+			original_tag = DNI
+			original_tag = HAL
+			original_tag = HUT
+			original_tag = KHA
+			original_tag = KHE
+			original_tag = KOB
+			original_tag = KRM
+			original_tag = KYI
+			original_tag = MYK
+			original_tag = ODE
+			original_tag = OLD
+			original_tag = PLT
+			original_tag = RIV
+			original_tag = SHA
+			original_tag = STR
+			original_tag = SUM
+			original_tag = UMA
+			original_tag = VIN
+			original_tag = VOL
+			original_tag = ZAK
+			original_tag = ZAP
+			original_tag = ZHY
+		}
+	}
 }
 
 intelligence_agency = {
@@ -234,15 +111,33 @@ intelligence_agency = {
 
 intelligence_agency = {
 	
-	picture = GFX_intelligence_agency_logo_fra
-	names = { "Sluzhba Bezpeky Ukrajiny" }
-
-	available = { always = yes }
+	picture = GFX_intelligence_agency_logo_nor
+	names = { "Pahany" }
 	
-	default = { tag = ZAP }
-	available = { original_tag = ZAP }
+	default = { tag = RIV }
+	available = { original_tag = RIV }
 }
 
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_prc
+	names = { "KGB" }
+	
+	available = { always = yes }
+	
+	default = { tag = DPR tag = LPR tag = KIR }
+	available = {
+		OR = {
+			original_tag = DPR
+			original_tag = LPR
+			original_tag = KIR
+		}
+	}
+}
+
+########################
+####	GENERICS    ####
+########################
 intelligence_agency = {
 	
 	picture = GFX_intelligence_agency_logo_generic_1
@@ -321,7 +216,10 @@ intelligence_agency = {
 	names = { "Hammer and Sickle" }
 	
 	available = { 
-		has_government = radical_socialism
+		OR = {
+			has_government = communism
+			has_government = socialism
+		}
 	}
 	
 	default = { always = yes } 
