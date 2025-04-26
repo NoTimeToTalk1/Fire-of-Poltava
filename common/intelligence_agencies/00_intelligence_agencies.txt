@@ -22,7 +22,7 @@ intelligence_agency = {
 
 intelligence_agency = {
 	
-	picture = GFX_intelligence_agency_logo_sov
+	picture = GFX_intelligence_agency_logo_rus
 	names = { "Federal'naya Sluzhba Bezopasnosti" }
 	
 	default = { tag = RUS }
@@ -31,7 +31,7 @@ intelligence_agency = {
 
 intelligence_agency = {
 	
-	picture = GFX_intelligence_agency_logo_bul
+	picture = GFX_intelligence_agency_logo_ukr
 	names = { "Sluzhba Bezpeky Ukrainy" }
 	
 	default = {
@@ -100,7 +100,7 @@ intelligence_agency = {
 
 intelligence_agency = {
 	
-	picture = GFX_intelligence_agency_logo_gre
+	picture = GFX_intelligence_agency_logo_afu
 	names = { "Rozvidka" }
 	
 	available = { always = yes }
@@ -111,7 +111,25 @@ intelligence_agency = {
 
 intelligence_agency = {
 	
-	picture = GFX_intelligence_agency_logo_nor
+	picture = GFX_intelligence_agency_logo_azov
+	names = { "National Security Service" }
+	
+	available = {
+		tag = AFU
+		has_government = ultranationalism
+		has_completed_focus = AFU_form_the_national_security_service
+	}
+	
+	default = {
+		tag = AFU
+		has_government = ultranationalism
+		has_completed_focus = AFU_form_the_national_security_service
+	}
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_riv
 	names = { "Pahany" }
 	
 	default = { tag = RIV }
@@ -120,19 +138,33 @@ intelligence_agency = {
 
 intelligence_agency = {
 	
-	picture = GFX_intelligence_agency_logo_prc
+	picture = GFX_intelligence_agency_logo_sov
 	names = { "KGB" }
+	
+	default = { tag = KIR }
+	available = { original_tag = KIR }
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_dpr
+	names = { "MGB" }
 	
 	available = { always = yes }
 	
-	default = { tag = DPR tag = LPR tag = KIR }
-	available = {
-		OR = {
-			original_tag = DPR
-			original_tag = LPR
-			original_tag = KIR
-		}
-	}
+	default = { tag = DPR }
+	available = { original_tag = DPR }
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_lpr
+	names = { "MGB" }
+	
+	available = { always = yes }
+	
+	default = { tag = LPR }
+	available = { original_tag = LPR }
 }
 
 ########################
