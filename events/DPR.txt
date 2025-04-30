@@ -1,9 +1,77 @@
-﻿add_namespace = dnr
+﻿add_namespace = dpr
+
+country_event = { #Situation in Ukraine
+	id = dpr.1
+	title = dpr.1.t
+	desc = dpr.1.d
+
+	picture = GFX_dpr_encircled
+	
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = dpr.1.a
+		add_political_power = 20
+	}
+}
+
+country_event = { #Situation in Our Country
+	id = dpr.2
+	title = dpr.2.t
+	desc = dpr.2.d
+
+	picture = GFX_dpr_encircled
+	
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = dpr.2.a
+		add_political_power = 5
+	}
+}
+
+country_event = { #Look Around Us
+	id = dpr.3
+	title = dpr.3.t
+	desc = dpr.3.d
+
+	picture = GFX_dpr_encircled
+	
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = dpr.3.a
+		add_political_power = 5
+	}
+}
+
+country_event = { #Look West
+	id = dpr.4
+	title = dpr.4.t
+	desc = dpr.4.d
+
+	picture = GFX_dpr_encircled
+	
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = dpr.4.a
+		add_political_power = 10
+	}
+}
 
 country_event = { # Warehouse found
-	id = dnr.8
-	title = dnr.8.t
-	desc = dnr.8.d
+	id = dpr.5
+	title = dpr.5.t
+	desc = dpr.5.d
 
 	picture = GFX_report_event_carp_rada
 
@@ -12,7 +80,7 @@ country_event = { # Warehouse found
 	is_triggered_only = yes
 
 	option = { 
-		name = dnr.8.a
+		name = dpr.5.a
 		random_list = {
 			50 = {
 				add_equipment_to_stockpile = {
@@ -20,36 +88,32 @@ country_event = { # Warehouse found
 					amount = 500
 				}
 			}
-			
 			30 = {
 				add_equipment_to_stockpile = {
 					type = artillery_equipment
 					amount = 250
 				}
 			}
-
 			15 = {
 				add_equipment_to_stockpile = {
-					type = anti_air_equipment
-					amount = 100
+					type = motorized_equipment
+					amount = 150
 				}
 			}
-
 			5 = {
 				add_equipment_to_stockpile = {
-					type = CAS_equipment
-					amount = 5
+					type = anti_air_equipment
+					amount = 75
 				}
 			}
 		}
 	}
 }
 
-
 country_event = { # No Warehouses were found in the area
-	id = dnr.9
-	title = dnr.9.t
-	desc = dnr.9.d
+	id = dpr.6
+	title = dpr.6.t
+	desc = dpr.6.d
 
 	picture = GFX_report_event_carp_rada
 
@@ -58,118 +122,68 @@ country_event = { # No Warehouses were found in the area
 	is_triggered_only = yes
 
 	option = { 
-		name = dnr.9.a
+		name = dpr.6.a
 		add_political_power = -10
 	}
 }
 
-country_event = { #Situation in Ukraine
-	id = dnr.10
-	title = dnr.10.t
-	desc = dnr.10.d
-
-	picture = GFX_dnr_encircled
-	
-	fire_only_once = yes
-
-	is_triggered_only = yes
-
-	option = {
-		name = dnr.10.a
-		add_political_power = 20
-	}
-}
-
-country_event = { #Look West
-	id = dnr.11
-	title = dnr.11.t
-	desc = dnr.11.d
-
-	picture = GFX_dnr_encircled
-	
-	fire_only_once = yes
-
-	is_triggered_only = yes
-
-	option = {
-		name = dnr.11.a
-		add_political_power = 10
-	}
-}
-
-country_event = { #Situation in Our Country
-	id = dnr.12
-	title = dnr.12.t
-	desc = dnr.12.d
-
-	picture = GFX_dnr_encircled
-	
-	fire_only_once = yes
-
-	is_triggered_only = yes
-
-	option = {
-		name = dnr.12.a
-		add_political_power = 5
-	}
-}
-
 country_event = { #Look East
-	id = dnr.13
-	title = dnr.13.t
-	desc = dnr.13.d
+	id = dpr.7
+	title = dpr.7.t
+	desc = dpr.7.d
 
-	picture = GFX_dnr_encircled
+	picture = GFX_dpr_encircled
 	
 	fire_only_once = yes
 
 	is_triggered_only = yes
 
 	option = {
-		name = dnr.13.a
+		name = dpr.7.a
 		add_political_power = 100
 	}
 }
-country_event = { #Look North
-	id = dnr.14
-	title = dnr.14.t
-	desc = dnr.14.d
 
-	picture = GFX_dnr_encircled
+country_event = { #Look North
+	id = dpr.8
+	title = dpr.8.t
+	desc = dpr.8.d
+
+	picture = GFX_dpr_encircled
 	
 	fire_only_once = yes
 
 	is_triggered_only = yes
 
 	option = {
-		name = dnr.15.a
+		name = dpr.8.a
 		add_political_power = 100
 	}
 }
 
 country_event = { #1 - LPR&DPR Cooperation
-	id = dnr.15
-	title = dnr.15.t
-	desc = dnr.15.d
+	id = dpr.15
+	title = dpr.15.t
+	desc = dpr.15.d
 
-	picture = GFX_dnr_encircled
+	picture = GFX_dpr_encircled
 	
 	fire_only_once = yes
 
 	is_triggered_only = yes
 
 	option = {
-		name = dnr.15.a
+		name = dpr.15.a
 		ai_chance = {
 			factor = 100
 		}
 		LPR = {
-			country_event = dnr.21
+			country_event = dpr.21
 		}
-		set_global_flag  = DNR_tradewar
+		set_global_flag  = dpr_tradewar
 	}
 	option = {
-		name = dnr.15.b
+		name = dpr.15.b
 		ai_chance = {
 			factor = 0
 		}
@@ -177,32 +191,32 @@ country_event = { #1 - LPR&DPR Cooperation
 }
 
 country_event = { #2 - LPR&DPR Cooperation
-	id = dnr.16
-	title = dnr.16.t
-	desc = dnr.16.d
+	id = dpr.16
+	title = dpr.16.t
+	desc = dpr.16.d
 
-	picture = GFX_dnr_encircled
+	picture = GFX_dpr_encircled
 	
 	fire_only_once = yes
 
 	is_triggered_only = yes
 
 	option = {
-		name = dnr.16.a
+		name = dpr.16.a
 		ai_chance = {
 			factor = 30
 		}
 		add_ideas = DPR_corruption
 	}
 	option = {
-		name = dnr.16.b
+		name = dpr.16.b
 		ai_chance = {
 			factor = 35
 		}
 		add_ideas = DPR_problem_with_oligarchs
 	}
 	option = {
-		name = dnr.16.c
+		name = dpr.16.c
 		ai_chance = {
 			factor = 35
 		}
@@ -211,18 +225,18 @@ country_event = { #2 - LPR&DPR Cooperation
 }
 
 country_event = { #3 - LPR&DPR Cooperation
-	id = dnr.17
-	title = dnr.17.t
-	desc = dnr.17.d
+	id = dpr.17
+	title = dpr.17.t
+	desc = dpr.17.d
 
-	picture = GFX_dnr_encircled
+	picture = GFX_dpr_encircled
 	
 	fire_only_once = yes
 
 	is_triggered_only = yes
 
 	option = {
-		name = dnr.17.a
+		name = dpr.17.a
 		ai_chance = {
 			factor = 50
 		}
@@ -234,7 +248,7 @@ country_event = { #3 - LPR&DPR Cooperation
 	}
 
 	option = {
-		name = dnr.17.b
+		name = dpr.17.b
 		ai_chance = {
 			factor = 50
 		}
@@ -247,32 +261,32 @@ country_event = { #3 - LPR&DPR Cooperation
 }
 
 country_event = { #4 - LPR&DPR Cooperation
-	id = dnr.18
-	title = dnr.18.t
-	desc = dnr.18.d
+	id = dpr.18
+	title = dpr.18.t
+	desc = dpr.18.d
 
-	picture = GFX_dnr_encircled
+	picture = GFX_dpr_encircled
 	
 	fire_only_once = yes
 
 	is_triggered_only = yes
 
 	option = {
-		name = dnr.18.a
+		name = dpr.18.a
 		ai_chance = {
 			factor = 40
 		}
 		hidden_effect = {
 			add_ideas = DPR_novorosjablyat
 			promote_character = {
-				character =  DNR_Pidor
+				character =  dpr_Pidor
 				ideology = kleptocracy
 			}
 		}
 	}
 
 	option = {
-		name = dnr.18.b
+		name = dpr.18.b
 		ai_chance = {
 			factor = 40
 		}
@@ -292,7 +306,7 @@ country_event = { #4 - LPR&DPR Cooperation
 	}
 
 	option = {
-		name = dnr.18.c
+		name = dpr.18.c
 		ai_chance = {
 			factor = 20
 		}
@@ -314,35 +328,35 @@ country_event = { #4 - LPR&DPR Cooperation
 
 
 country_event = { #???
-	id = dnr.19
-	title = dnr.19.t
-	desc = dnr.19.d
+	id = dpr.19
+	title = dpr.19.t
+	desc = dpr.19.d
 
-	picture = GFX_dnr_encircled
+	picture = GFX_dpr_encircled
 	
 	fire_only_once = yes
 
 	is_triggered_only = yes
 
 	option = {
-		name = dnr.19.a
+		name = dpr.19.a
 		add_war_support = 0.3
 	}
 }
 
 country_event = { #Novorossiya United!
-	id = dnr.20
-	title = dnr.20.t
-	desc = dnr.20.d
+	id = dpr.20
+	title = dpr.20.t
+	desc = dpr.20.d
 
-	picture = GFX_dnr_encircled
+	picture = GFX_dpr_encircled
 	
 	fire_only_once = yes
 
 	is_triggered_only = yes
 
 	option = {
-		name = dnr.20.a
+		name = dpr.20.a
 		set_cosmetic_tag = NVR
 		LPR = {
 			every_character = {
@@ -355,85 +369,85 @@ country_event = { #Novorossiya United!
 }
 
 country_event = { #Step to Unification?
-	id = dnr.21
-	title = dnr.21.t
-	desc = dnr.21.d
-	picture = GFX_dnr_encircled
+	id = dpr.21
+	title = dpr.21.t
+	desc = dpr.21.d
+	picture = GFX_dpr_encircled
 	
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = { #YES
-		name = dnr.21.a
+		name = dpr.21.a
 		ai_chance = {
 			factor = 100
 		}
-		set_global_flag  = DNR_ok
+		set_global_flag  = dpr_ok
 	}
 	option = { #NO
-		name = dnr.21.b
+		name = dpr.21.b
 		ai_chance = {
 			factor = 0
 		}
 		DPR = { 
-			country_event = dnr.23
+			country_event = dpr.23
 		}
 	}
 }
 
 country_event = { #Novorossiya United?
-	id = dnr.22
-	title = dnr.22.t
-	desc = dnr.22.d
-	picture = GFX_dnr_encircled
+	id = dpr.22
+	title = dpr.22.t
+	desc = dpr.22.d
+	picture = GFX_dpr_encircled
 	
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
-		name = dnr.22.a
+		name = dpr.22.a
 		ai_chance = {
 			factor = 100
 		}
-		set_global_flag  = DNR_unite
+		set_global_flag  = dpr_unite
 		DPR = {
 			country_event = {
-				id = dnr.16
+				id = dpr.16
 				days = 8
 			}
 			country_event = {
-				id = dnr.17
+				id = dpr.17
 				days = 12
 			}
 			country_event = {
-				id = dnr.18
+				id = dpr.18
 				days = 16
 			}
 		}
 	}
 	
 	option = {
-		name = dnr.22.b
+		name = dpr.22.b
 		ai_chance = {
 			factor = 0
 		}
 		DPR = {
-			country_event = dnr.23
+			country_event = dpr.23
 		}
 	}
 }
 
 country_event = { #NO UNIFICATION!
-	id = dnr.23
-	title = dnr.23.t
-	desc = dnr.23.d
-	picture = GFX_dnr_encircled
+	id = dpr.23
+	title = dpr.23.t
+	desc = dpr.23.d
+	picture = GFX_dpr_encircled
 	
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
-		name = dnr.23.a
+		name = dpr.23.a
 		add_political_power = -25
 		hidden_effect = {
 			remove_ideas = DPR_confederation
@@ -450,148 +464,148 @@ country_event = { #NO UNIFICATION!
 }
 
 country_event = {
-	id = dnr.24
-	title = dnr.24.t
-	desc = dnr.24.d
+	id = dpr.24
+	title = dpr.24.t
+	desc = dpr.24.d
 
-	picture = GFX_dnr_encircled
+	picture = GFX_dpr_encircled
 	
 	fire_only_once = yes
 
 	is_triggered_only = yes
 
 	option = {
-		name = dnr.24.a
+		name = dpr.24.a
 	}
 }
 
 country_event = {
-	id = dnr.25
-	title = dnr.25.t
-	desc = dnr.25.d
+	id = dpr.25
+	title = dpr.25.t
+	desc = dpr.25.d
 
-	picture = GFX_dnr_encircled
+	picture = GFX_dpr_encircled
 	
 	fire_only_once = yes
 
 	is_triggered_only = yes
 
 	option = {
-		name = dnr.25.a
+		name = dpr.25.a
 	}
 }
 
 country_event = {
-	id = dnr.26
-	title = dnr.26.t
-	desc = dnr.26.d
+	id = dpr.26
+	title = dpr.26.t
+	desc = dpr.26.d
 
-	picture = GFX_dnr_encircled
+	picture = GFX_dpr_encircled
 	
 	fire_only_once = yes
 
 	is_triggered_only = yes
 
 	option = {
-		name = dnr.26.a
+		name = dpr.26.a
 	}
 }
 
 country_event = {
-	id = dnr.27
-	title = dnr.27.t
-	desc = dnr.27.d
+	id = dpr.27
+	title = dpr.27.t
+	desc = dpr.27.d
 
-	picture = GFX_dnr_encircled
+	picture = GFX_dpr_encircled
 	
 	fire_only_once = yes
 
 	is_triggered_only = yes
 
 	option = {
-		name = dnr.27.a
+		name = dpr.27.a
 	}
 	option = {
-		name = dnr.27.b
-	}
-}
-
-country_event = {
-	id = dnr.28
-	title = dnr.28.t
-	desc = dnr.28.d
-
-	picture = GFX_dnr_encircled
-	
-	fire_only_once = yes
-
-	is_triggered_only = yes
-
-	option = {
-		name = dnr.28.a
+		name = dpr.27.b
 	}
 }
 
 country_event = {
-	id = dnr.29
-	title = dnr.29.t
-	desc = dnr.29.d
+	id = dpr.28
+	title = dpr.28.t
+	desc = dpr.28.d
 
-	picture = GFX_dnr_encircled
+	picture = GFX_dpr_encircled
 	
 	fire_only_once = yes
 
 	is_triggered_only = yes
 
 	option = {
-		name = dnr.29.a
+		name = dpr.28.a
 	}
 }
 
 country_event = {
-	id = dnr.30
-	title = dnr.30.t
-	desc = dnr.30.d
+	id = dpr.29
+	title = dpr.29.t
+	desc = dpr.29.d
 
-	picture = GFX_dnr_encircled
+	picture = GFX_dpr_encircled
 	
 	fire_only_once = yes
 
 	is_triggered_only = yes
 
 	option = {
-		name = dnr.30.a
+		name = dpr.29.a
 	}
 }
 
 country_event = {
-	id = dnr.31
-	title = dnr.31.t
-	desc = dnr.31.d
+	id = dpr.30
+	title = dpr.30.t
+	desc = dpr.30.d
 
-	picture = GFX_dnr_encircled
+	picture = GFX_dpr_encircled
 	
 	fire_only_once = yes
 
 	is_triggered_only = yes
 
 	option = {
-		name = dnr.31.a
+		name = dpr.30.a
 	}
 }
 
 country_event = {
-	id = dnr.32
-	title = dnr.32.t
-	desc = dnr.32.d
+	id = dpr.31
+	title = dpr.31.t
+	desc = dpr.31.d
 
-	picture = GFX_dnr_encircled
+	picture = GFX_dpr_encircled
 	
 	fire_only_once = yes
 
 	is_triggered_only = yes
 
 	option = {
-		name = dnr.32.a
+		name = dpr.31.a
+	}
+}
+
+country_event = {
+	id = dpr.32
+	title = dpr.32.t
+	desc = dpr.32.d
+
+	picture = GFX_dpr_encircled
+	
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = dpr.32.a
 	}
 }
