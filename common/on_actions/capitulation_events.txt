@@ -1,507 +1,463 @@
 on_actions = {
 
-on_capitulation = {
-    effect = {
-        if = {
-            limit = {
-                FROM = {
-                    original_tag = DPR
-                }
-
-                ROOT = {
-                    original_tag = AFU
-                }
-            }
-every_country = {
-    limit = {
-        is_pro_ukrainian = yes
-    }
-	country_event = { id = evac.3 days = 2 }
-}
-            KYI = {
-            country_event = { id = evac.1 days = 2 }
-            }
-            PLT = {
-            country_event = { id = evac.2 days = 2 }
-            }
-            ZAP = {
-            country_event = { id = evac.4 days = 2 }
-            }
-        }
-    }
-}
-on_capitulation = {
-    effect = {
-        if = {
-            limit = {
-                FROM = {
-                    original_tag = AFU
-                }
-
-                ROOT = {
-                    original_tag = KHA
-        has_country_leader = {
-    character = KHA_Avakov
-    ruling_only = yes
-}
-                }
-            }
-            FROM = {
-            country_event = { id = cap.1 days = 2 }
-            }
-        }
-    }
-}
-on_capitulation = {
-    effect = {
-        if = {
-            limit = {
-                FROM = {
-                    original_tag = SHA
-                }
-
-                ROOT = {
-	AND = {
-                    original_tag = MYK
-        has_country_leader = {
-    character = MYK_kim
-    ruling_only = yes
-	}
-}
-                }
-            }
-            FROM = {
-            country_event = { id = cap.2 days = 2 }
-            }
-        }
-    }
-}
-
-on_capitulation = {
-    effect = {
-        if = {
-            limit = {
-                FROM = {
-                    original_tag = AFU
-                }
-
-                ROOT = {
-                    original_tag = DNI
-                }
-            }
-            FROM = {
-            country_event = { id = cap.3 days = 2 }
-            }
-        }
-    }
-}
-
-on_capitulation = {
-    effect = {
-        if = {
-            limit = {
-                FROM = {
-                    original_tag = AFU
-                }
-
-                ROOT = {
-                    original_tag = OPZ
-                }
-            }
-            FROM = {
-            country_event = { id = cap.4 days = 2 }
-            }
-        }
-    }
-}
-on_capitulation = {
-    effect = {
-        if = {
-            limit = {
-                FROM = {
-                    original_tag = PRH
-                }
-
-                ROOT = {
-                    original_tag = UKR
-                }
-            }
-            FROM = {
-			annex_country = {
-				transfer_troops = yes
-				target = UKR
-			}
+	on_capitulation = {
+		effect = {
 			if = {
-			limit = {
-			KYI = {
-			is_subject_of = UKR
-			}
-			}
-			annex_country = {
-				transfer_troops = yes
-				target = KYI
-			}	
-            }			
-            news_event = { id = cap.5 days = 2 }
-            }
-        }
-    }
-}
-on_capitulation = {
-    effect = {
-        if = {
-            limit = {
-                FROM = {
-                    original_tag = UKR
-                }
-
-                ROOT = {
-                    original_tag = PRH
-                }
-            }
-            FROM = {
-			annex_country = {
-				transfer_troops = yes
-				target = PRH
-			}		
-            news_event = { id = cap.6 days = 2 }
-            }
-        }
-    }
-}
-on_capitulation = {
-    effect = {
-        if = {
-            limit = {
-                FROM = {
-                    original_tag = KYI
-                }
-
-                ROOT = {
-                    original_tag = PRH
-                }
-            }
-            UKR = {
-			annex_country = {
-				transfer_troops = yes
-				target = PRH
-			}		
-            news_event = { id = cap.6 days = 2 }
-            }
-        }
-    }
-}
-on_capitulation = {
-    effect = {
-        if = {
-            limit = {
-                FROM = {
-                    original_tag = UMA
-                }
-
-                ROOT = {
-                    original_tag = CHR
-                }
-            }
-            FROM = {
-			annex_country = {
-				target = CHR
-			}		
-            country_event = { id = cap.7 days = 2 }
-            }
-        }
-    }
-}
-on_capitulation = {
-    effect = {
-        if = {
-            limit = {
-                FROM = {
-                    original_tag = CHR
-                }
-
-                ROOT = {
-                    original_tag = UMA
-                }
-            }
-            FROM = {
-			annex_country = {
-				target = UMA
-			}		
-            country_event = { id = cap.8 days = 2 }
-            }
-        }
-    }
-}
-on_capitulation = {
-    effect = {
-        if = {
-            limit = {
-                FROM = {
-                    original_tag = RIV
-                }
-
-                ROOT = {
-                    original_tag = VOL
-                }
-            }
-            FROM = {
-			annex_country = {
-				target = VOL
-			}		
-            news_event = { id = cap.9 days = 2 }
-            }
-        }
-    }
-}
-on_capitulation = {
-    effect = {
-        if = {
-            limit = {
-                FROM = {
-                    original_tag = VOL
-                }
-
-                ROOT = {
-                    original_tag = RIV
-                }
-            }
-            FROM = {
-			annex_country = {
-				target = RIV
-			}		
-            news_event = { id = cap.10 days = 2 }
-            }
-        }
-    }
-}
-on_capitulation = {
-    effect = {
-        if = {
-            limit = {
-                FROM = {
-				
-                    original_tag = AFU
-                }
-
-                ROOT = {
-				OR = {
-                    original_tag = PRH
-					original_tag = UKR
-					original_tag = ZHY
-				}
-                }
-            }
-            FROM = {
-			annex_country = {
-				transfer_troops = yes
-				target = ROOT
-			}		
-            news_event = { id = cap.11 days = 2 }
-            }
-        }
-    }
-}
-on_capitulation = {
-    effect = {
-        if = {
-            limit = {
-                FROM = {
-				
-                    original_tag = AFU
-                }
-
-                ROOT = {
-                    original_tag = PLT
-                }
-            }
-            FROM = {
-			annex_country = {
-				transfer_troops = yes
-				target = PLT
-			}		
-            news_event = { id = cap.12 days = 2 }
-            }
-        }
-    }
-}
-on_capitulation = {
-    effect = {
-        if = {
-            limit = {
-                FROM = {
-                    original_tag = RDK
-                }
-
-                ROOT = {
-                    original_tag = RUS
-                }
-            }
-            FROM = {
-			annex_country = {
-				transfer_troops = yes
-				target = ROOT
-			}		
-            news_event = { id = cap.13 days = 2 }
-            }
-        }
-    }
-}
-on_capitulation = {
-    effect = {
-        if = {
-            limit = {
-                FROM = {
-                    original_tag = OPZ
-                }
-
-                ROOT = {
-                    original_tag = ZAP
-                }
-            }
-            FROM = {
-			annex_country = {
-				transfer_troops = yes
-				target = ROOT
-			}		
-            news_event = { id = cap.14 days = 2 }
-            }
-        }
-    }
-}
-on_capitulation = {
-    effect = {
-        if = {
-            limit = {
-                FROM = {
-                    original_tag = ZAP
-                }
-
-                ROOT = {
-                    original_tag = OPZ
-                }
-            }
-            FROM = {
-			annex_country = {
-				transfer_troops = yes
-				target = ROOT
-			}		
-            news_event = { id = cap.15 days = 2 }
-            }
-        }
-    }
-}
-on_capitulation = {
-    effect = {
-        if = {
-            limit = {
-                FROM = {
-                    original_tag = RUS
-                }
-
-                ROOT = {
-                    original_tag = AFU
-                }
-            }
-            VSR = {
-			annex_country = {
-				target = ROOT
-			}		
-            }
-        }
-    }
-}
-on_capitulation = {
-    effect = {
-        if = {
-            limit = {
-                FROM = {
-				OR = {
-                    original_tag = AFU
-					original_tag = UKR
-					original_tag = ODE
-					original_tag = STR
-					original_tag = ZHY
-					original_tag = GAL
-					original_tag = PLT
-					original_tag = PRH
-					original_tag = MYK
-					original_tag = ZAK
-					original_tag = ZAP
+				limit = {
+					FROM = {
+						original_tag = DPR
 					}
-                }
 
-                ROOT = {
-                    original_tag = TRA
-                }
-            }
-            FROM = {
-white_peace = ROOT			
-              puppet = {
-          target = ROOT
-}
-            }	
-ROOT = {
-leave_faction = yes
-recruit_character = TRN_karpyk
-promote_character = TRN_karpyk
-set_political_party = {
-    ideology = millitary_junta
-    popularity = 50
-}
-set_politics = {
-	ruling_party = millitary_junta
-    elections_allowed = no
-    last_election = "2019.12.17"
-    election_frequency = 48
-    long_name = "Tiraspol Civil-Military Administration"
-    name = "Tiraspol Civil-Military Administration"
-}
-set_cosmetic_tag = TRA_ukrainian
-}		
+					ROOT = {
+						original_tag = AFU
+					}
+				}
+				every_country = {
+					limit = {
+						is_pro_ukrainian = yes
+					}
+					country_event = { id = evac.3 days = 2 }
+				}
+				KYI = {
+					country_event = { id = evac.1 days = 2 }
+				}
+				PLT = {
+					country_event = { id = evac.2 days = 2 }
+				}
+				ZAP = {
+					country_event = { id = evac.4 days = 2 }
+				}
+			}
+		}
+	}
 
-        }
-    }
-}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = AFU
+					}
 
-on_capitulation = {
-    effect = {
-        if = {
-            limit = {
-                FROM = {
-                    original_tag = AFU
-                }
+					ROOT = {
+						original_tag = KHA
+						has_country_leader = {
+							character = KHA_Avakov
+							ruling_only = yes
+						}
+					}
+				}
+				FROM = {
+					country_event = { id = cap.1 days = 2 }
+				}
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = SHA
+					}
 
-                ROOT = {
-                    original_tag = KAZ
-                }
-            }
-            FROM = {
-white_peace = ROOT			
-              puppet = {
-          target = ROOT
-}
-            }	
-ROOT = {
-leave_faction = yes
-recruit_character = KAZ_jasulan
-promote_character = KAZ_jasulan
-set_political_party = {
-    ideology = ultranationalism
-    popularity = 50
-}
-set_politics = {
-	ruling_party = ultranationalism
-    elections_allowed = no
-    last_election = "2019.12.17"
-    election_frequency = 48
-    long_name = "Shanyrak"
-    name = "Shanyrak Movement"
-}
-set_cosmetic_tag = KAZ_ultranationalism
-}		
+					ROOT = {
+						original_tag = MYK
+						has_country_leader = {
+							character = MYK_kim
+							ruling_only = yes
+						}
+					}
+				}
+				FROM = {
+					country_event = { id = cap.2 days = 2 }
+				}
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = AFU
+					}
 
-        }
-    }
-}
-}
+					ROOT = {
+						original_tag = DNI
+					}
+				}
+				FROM = {
+					country_event = { id = cap.3 days = 2 }
+				}
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = AFU
+					}
+
+					ROOT = {
+						original_tag = KHE
+					}
+				}
+				FROM = {
+					country_event = { id = cap.4 days = 2 }
+				}
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = CHR
+					}
+
+					ROOT = {
+						original_tag = UKR
+					}
+				}
+				FROM = {
+					annex_country = {
+						transfer_troops = yes
+						target = UKR
+					}
+					if = {
+						limit = {
+							KOB = {
+								is_subject_of = KYI
+							}
+						}
+						annex_country = {
+							transfer_troops = yes
+							target = KOB
+						}
+					}			
+					news_event = { id = cap.5 days = 2 }
+				}
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						OR = {
+							original_tag = KYI
+							original_tag = KOB
+						}
+					}
+
+					ROOT = {
+						original_tag = CHR
+					}
+				}
+				FROM = {
+					annex_country = {
+						transfer_troops = yes
+						target = CHR
+					}
+					news_event = { id = cap.6 days = 2 }
+				}
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = UMA
+					}
+
+					ROOT = {
+						original_tag = CHE
+					}
+				}
+				FROM = {
+					annex_country = {
+						target = CHE
+					}
+					country_event = { id = cap.7 days = 2 }
+				}
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = CHE
+					}
+
+					ROOT = {
+						original_tag = UMA
+					}
+				}
+				FROM = {
+					annex_country = {
+						target = UMA
+					}
+					country_event = { id = cap.8 days = 2 }
+				}
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = RIV
+					}
+
+					ROOT = {
+						original_tag = VOL
+					}
+				}
+				FROM = {
+				annex_country = {
+					target = VOL
+				}		
+				news_event = { id = cap.9 days = 2 }
+				}
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = VOL
+					}
+
+					ROOT = {
+						original_tag = RIV
+					}
+				}
+				FROM = {
+					annex_country = {
+						target = RIV
+					}
+					news_event = { id = cap.10 days = 2 }
+				}
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = AFU
+					}
+
+					ROOT = {
+						OR = {
+							original_tag = CHR
+							original_tag = KYI
+							original_tag = ZHY
+						}
+					}
+				}
+				FROM = {
+					annex_country = {
+						transfer_troops = yes
+						target = ROOT
+					}
+					news_event = { id = cap.11 days = 2 }
+				}
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = AFU
+					}
+
+					ROOT = {
+						original_tag = PLT
+					}
+				}
+				FROM = {
+					annex_country = {
+						transfer_troops = yes
+						target = PLT
+					}
+					news_event = { id = cap.12 days = 2 }
+				}
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = RVC
+					}
+
+					ROOT = {
+						original_tag = RUS
+					}
+				}
+				FROM = {
+					annex_country = {
+						transfer_troops = yes
+						target = ROOT
+					}
+					news_event = { id = cap.13 days = 2 }
+				}
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = KHE
+					}
+
+					ROOT = {
+						original_tag = ZAP
+					}
+				}
+				FROM = {
+					annex_country = {
+						transfer_troops = yes
+						target = ROOT
+					}
+					ews_event = { id = cap.14 days = 2 }
+				}
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = ZAP
+					}
+
+					ROOT = {
+						original_tag = KHE
+					}
+				}
+				FROM = {
+					annex_country = {
+						transfer_troops = yes
+						target = ROOT
+					}
+					news_event = { id = cap.15 days = 2 }
+				}
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+					OR = {
+						original_tag = AFU
+						original_tag = KYI
+						original_tag = ODE
+						original_tag = STR
+						original_tag = ZHY
+						original_tag = HAL
+						original_tag = PLT
+						original_tag = CHR
+						original_tag = MYK
+						original_tag = ZAK
+						original_tag = ZAP
+						}
+					}
+
+					ROOT = {
+						original_tag = TRN
+					}
+				}
+				FROM = {
+	white_peace = ROOT			
+				  puppet = {
+			  target = ROOT
+	}
+				}	
+	ROOT = {
+	leave_faction = yes
+	recruit_character = TRN_karpyk
+	promote_character = TRN_karpyk
+	set_political_party = {
+		ideology = millitary_junta
+		popularity = 50
+	}
+	set_politics = {
+		ruling_party = millitary_junta
+		elections_allowed = no
+		last_election = "2019.12.17"
+		election_frequency = 48
+		long_name = "Tiraspol Civil-Military Administration"
+		name = "Tiraspol Civil-Military Administration"
+	}
+	set_cosmetic_tag = TRA_ukrainian
+	}		
+
+			}
+		}
+	}
+
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = AFU
+					}
+
+					ROOT = {
+						original_tag = KAZ
+					}
+				}
+				FROM = {
+	white_peace = ROOT			
+				  puppet = {
+			  target = ROOT
+	}
+				}	
+	ROOT = {
+	leave_faction = yes
+	recruit_character = KAZ_jasulan
+	promote_character = KAZ_jasulan
+	set_political_party = {
+		ideology = ultranationalism
+		popularity = 50
+	}
+	set_politics = {
+		ruling_party = ultranationalism
+		elections_allowed = no
+		last_election = "2019.12.17"
+		election_frequency = 48
+		long_name = "Shanyrak"
+		name = "Shanyrak Movement"
+	}
+	set_cosmetic_tag = KAZ_ultranationalism
+	}		
+
+			}
+		}
+	}
+	}

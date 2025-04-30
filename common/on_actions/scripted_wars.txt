@@ -1,0 +1,41 @@
+on_actions = {
+
+	# VOLYN WAR
+	on_startup = {
+		effect = {
+			VOL = {
+				country_event = { 
+					id = hal.1
+					days = 20
+				}
+			}
+		}
+	}
+
+	# HALYCHYNA WAR
+	on_startup = {
+		effect = {
+			HAL = {
+				country_event = { 
+					id = hal.2
+					days = 80
+				}
+			}
+		}
+	}
+
+	# KHERSON WAR
+	on_war = { 
+		effect = {
+			if = {
+				limit = {
+					tag = AFU
+					has_war_with = DPR
+				}
+				KHE = {
+					country_event = { id = hal.3 days = 30 }
+				}
+			}
+		}
+	}
+}
