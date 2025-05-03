@@ -1,0 +1,332 @@
+add_namespace = homut
+
+#khomut victory
+country_event = {
+	id = homut.1
+	title = homut.1.t
+	desc = homut.1.d
+
+	picture = GFX_event_afu_khomut_1
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = homut.1.a
+add_political_power = 10
+		hidden_effect = {
+			
+		}
+	}
+}
+
+
+#messege bondar
+country_event = {
+	id = homut.2
+	title = homut.2.t
+	desc = homut.2.d
+
+	picture = GFX_event_afu_khomut_2
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = homut.2.a
+add_political_power = 10
+		hidden_effect = {
+			
+		}
+	}
+}
+
+
+#messege kinakh
+country_event = {
+	id = homut.3
+	title = homut.3.t
+	desc = homut.3.d
+
+	picture = GFX_event_afu_khomut_2
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = homut.3.a
+add_political_power = 10
+		hidden_effect = {
+			
+		}
+	}
+}
+
+
+#messege kolom
+country_event = {
+	id = homut.4
+	title = homut.4.t
+	desc = homut.4.d
+
+	picture = GFX_event_afu_khomut_3
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = homut.4.a
+add_political_power = 10
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#kolom gift
+country_event = {
+	id = homut.5
+	title = homut.5.t
+	desc = homut.5.d
+
+	picture = GFX_event_afu_khomut_4
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = homut.5.a
+add_political_power = 10
+        add_fuel = 500
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#donetsk clan
+country_event = {
+	id = homut.6
+	title = homut.6.t
+	desc = homut.6.d
+
+	picture = GFX_event_afu_khomut_5
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = homut.6.a
+add_political_power = 10
+		hidden_effect = {
+			
+		}
+	}
+}
+
+
+#moskau
+country_event = {
+	id = homut.7
+	title = homut.7.t
+	desc = homut.7.d
+
+	picture = GFX_event_afu_khomut_6
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = homut.7.a
+	custom_effect_tooltip = homut_7_a_tt	
+		hidden_effect = {
+		set_country_flag = we_call_moscow
+		add_stability = -0.1
+		RUS = {
+				country_event = { 
+					id = homut.8
+					days = 2 
+				}
+			}
+			
+		}
+	}
+	option = {
+		name = homut.7.b
+	custom_effect_tooltip = homut_7_b_tt	
+		hidden_effect = {
+		clr_country_flag = AFU_Open_a_Negotiating_Channel_with_Moscow
+		add_political_power = 10	
+		}
+	}
+}
+
+
+#moskau homut pozvonil
+country_event = {
+	id = homut.8
+	title = homut.8.t
+	desc = homut.8.d
+
+	picture = GFX_event_afu_khomut_6
+
+	is_triggered_only = yes
+	option = {
+		name = homut.8.a	
+		hidden_effect = {
+AFU = {
+				country_event = { 
+					id = homut.9
+					days = 14 
+				}
+}			
+		}
+	}
+	option = {
+		name = homut.8.b	
+		hidden_effect = {
+AFU = {
+				country_event = { 
+					id = homut.10
+					days = 14
+				}
+}			
+		}
+	option = {
+		name = homut.8.c	
+		hidden_effect = {
+AFU = {
+				country_event = { 
+					id = homut.11
+					days = 14
+				}
+}			
+		}
+	}
+	}
+}
+
+
+#russia accept
+country_event = {
+	id = homut.9
+	title = homut.9.t
+	desc = homut.9.d
+
+	picture = GFX_event_afu_khomut_5
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = homut.9.a
+add_political_power = 10
+
+RUS = {
+    give_market_access = AFU
+}	 
+	add_opinion_modifier = {
+    target = RUS
+    modifier = material_support
+    }
+	RUS = {
+	add_opinion_modifier = {
+    target = AFU
+    modifier = material_support
+    }
+    }
+		hidden_effect = {
+		clr_country_flag = we_call_moscow 
+		set_country_flag = russia_accept_big
+		clr_country_flag = russia_ignored 
+		}
+	}
+}
+
+#russia accept 2
+country_event = {
+	id = homut.10
+	title = homut.10.t
+	desc = homut.10.d
+
+	picture = GFX_event_afu_khomut_5
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = homut.10.a
+	add_opinion_modifier = {
+    target = RUS
+    modifier = moral_support
+    }
+	RUS = {
+	add_opinion_modifier = {
+    target = AFU
+    modifier = moral_support
+    }
+    }
+		hidden_effect = {
+		clr_country_flag = we_call_moscow
+		set_country_flag = russia_accept
+		clr_country_flag = russia_ignored 
+		}
+	}
+}
+
+#russia ignore
+country_event = {
+	id = homut.11
+	title = homut.11.t
+	desc = homut.11.d
+
+	picture = GFX_event_afu_khomut_5
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = homut.11.a
+		hidden_effect = {
+		clr_country_flag = we_call_moscow
+		set_country_flag = russia_ignored
+		}
+	}
+}
+
+
+#local outsiders
+country_event = {
+	id = homut.12
+	title = homut.12.t
+	desc = homut.12.d
+
+	picture = GFX_event_afu_khomut_8
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = homut.12.a
+		hidden_effect = {
+
+		}
+	}
+}
+
+
+#pizdilovka
+country_event = {
+	id = homut.13
+	title = homut.13.t
+	desc = homut.13.d
+
+	picture = GFX_event_afu_khomut_7
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = homut.13.a
+add_political_power = -10
+		hidden_effect = {
+			
+		}
+	}
+}
+
+
+#sozdanie partii
+country_event = {
+	id = homut.14
+	title = homut.14.t
+	desc = homut.14.d
+
+	picture = GFX_event_afu_khomut_8
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = homut.14.a
+		hidden_effect = {
+			
+		}
+	}
+}
+
+
