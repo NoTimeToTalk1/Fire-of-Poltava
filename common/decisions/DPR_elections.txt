@@ -1,0 +1,340 @@
+DPR_elections_category = {
+
+    DPR_elections_first_round = {
+		icon = mission_icon
+		is_good = no
+		
+		activation = {
+            has_country_flag = DPRelection_active
+        }
+		
+        available = {
+			always = no
+        }
+		
+		days_mission_timeout = 210
+		fire_only_once = yes
+		
+        complete_effect = {
+			###
+        }
+		
+        timeout_effect = {
+            first_elections_round = yes
+        }
+    }
+
+	DPR_elections_second_round = {
+        icon = mission_icon
+		is_good = no
+		
+		activation = {
+            check_variable = {
+			    opposition_leader > 1
+			}
+			has_country_flag = DPRelection_active
+        }
+		
+        available = {
+			always = no
+        }
+		
+		days_mission_timeout = 21
+		fire_only_once = yes
+		
+        complete_effect = {
+			###
+        }
+		
+        timeout_effect = {
+            second_elections_round = yes
+        }
+    }
+
+	DPR_elections_poll_update = {
+		icon = mission_icon
+		is_good = yes
+		
+		activation = {
+            has_country_flag = DPRelection_active
+        }
+		
+        available = {
+			always = no
+        }
+		
+		days_mission_timeout = 14
+		fire_only_once = no
+		
+        complete_effect = {
+			###
+        }
+		
+        timeout_effect = {
+            Parties_pp_change = yes
+        }
+    }
+
+	DPR_elections_pushilin_move = {
+        icon = mission_icon
+		is_good = no
+		
+		activation = {
+            has_country_flag = DPRelection_active
+			has_country_flag = DPRelection_opposition
+        }
+		
+        available = {
+			always = no
+        }
+		
+		days_mission_timeout = 30
+		fire_only_once = no
+		
+        complete_effect = {
+			###
+        }
+		
+        timeout_effect = {
+            random_list = {
+				50 = {
+					Pushilin_pp_increase = yes
+				}
+	
+				40 = {
+					Pushilin_pp_growth = yes
+				}
+	
+				10 = {
+					Pushilin_pp_increase_strong = yes
+				}
+			}
+        }
+    }
+
+	DPR_elections_opposition_move = {
+        icon = mission_icon
+		is_good = no
+		
+		activation = {
+            has_country_flag = DPRelection_active
+			has_country_flag = DPRelection_government
+        }
+		
+        available = {
+			always = no
+        }
+
+		days_mission_timeout = 30
+		fire_only_once = no
+		
+        complete_effect = {
+			###
+        }
+		
+        timeout_effect = {
+            random_list = {
+				60 = {
+					Opposition_pp_increase = yes
+				}
+	
+				40 = {
+					Opposition_pp_growth = yes
+				}
+			}
+        }
+    }
+
+	DPR_elections_march_on_donetsk = {
+        icon = mission_icon
+		is_good = no
+		
+		activation = {
+            has_country_flag = DPRelection_active
+			has_country_flag = DPRelection_government
+        }
+		
+        available = {
+			has_country_flag = DPRelection_ensure_order
+        }
+		
+		days_mission_timeout = 130
+		fire_only_once = yes
+		
+        complete_effect = {
+			Pushilin_pp_increase_strong = yes
+			add_stability = 0.05
+        }
+		
+        timeout_effect = {
+           country_event = {
+                id = DPRelection.4
+            }
+			set_country_flag = DPRelection_NOT_ensured_order
+			Pushilin_pp_decrease_strong = yes
+			Opposition_pp_growth = yes
+			FDP_pp_increase_strong = yes
+        }
+    }
+
+
+	DPR_elections_opposition_rally = {
+
+		available = {
+			NOT = {
+				has_country_flag = active_decision
+			}		
+		}
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 5
+
+		modifier = {
+			political_power_factor  = -0.05
+		}
+
+		visible = {
+            has_country_flag = DPRelection_opposition
+		}
+
+		complete_effect = {
+			set_country_flag = active_decision
+		}
+
+		remove_effect = {
+            clr_country_flag = active_decision
+			Opposition_pp_increase = yes
+		}
+	}
+
+	DPR_elections_leaflet_handout = {
+
+		available = {
+			NOT = {
+				has_country_flag = active_decision
+			}		
+		}
+
+		cost = 70
+
+		fire_only_once = no
+
+		days_remove = 14
+
+		modifier = {
+			political_power_factor  = -0.1
+		}
+
+		visible = {
+            has_country_flag = DPRelection_opposition
+		}
+
+		complete_effect = {
+			set_country_flag = active_decision
+		}
+
+		remove_effect = {
+            clr_country_flag = active_decision
+			Opposition_pp_growth = yes
+		}
+	}
+
+	DPR_elections_discredit_pushilin = {
+
+		available = {
+			NOT = {
+				has_country_flag = active_decision
+			}		
+		}
+
+		cost = 75
+
+		fire_only_once = no
+
+		days_remove = 14
+
+		modifier = {
+			political_power_factor  = -0.15
+		}
+
+		visible = {
+            has_country_flag = DPRelection_opposition
+		}
+
+		complete_effect = {
+			set_country_flag = active_decision
+		}
+
+		remove_effect = {
+            clr_country_flag = active_decision
+			Pushilin_pp_decrease = yes
+		}
+	}
+
+	DPR_elections_opposition_supression = {
+
+		available = {
+			NOT = {
+				has_country_flag = active_decision
+			}		
+		}
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 5
+
+		modifier = {
+			political_power_factor  = -0.05
+		}
+
+		visible = {
+            has_country_flag = DPRelection_government
+		}
+
+		complete_effect = {
+			set_country_flag = active_decision
+		}
+
+		remove_effect = {
+            clr_country_flag = active_decision
+			Pushilin_pp_increase = yes
+		}
+	}
+
+	DPR_elections_tv_propaganda = {
+
+		available = {
+			NOT = {
+				has_country_flag = active_decision
+			}		
+		}
+
+		cost = 80
+
+		fire_only_once = no
+
+		days_remove = 14
+
+		modifier = {
+			political_power_factor  = -0.15
+		}
+
+		visible = {
+            has_country_flag = DPRelection_government
+		}
+
+		complete_effect = {
+			set_country_flag = active_decision
+		}
+
+		remove_effect = {
+            clr_country_flag = active_decision
+			Pushilin_pp_growth = yes
+		}
+	}
+}

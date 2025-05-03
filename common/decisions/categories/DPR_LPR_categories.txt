@@ -1,4 +1,8 @@
-open_the_warehouses_category = {
+#################
+####  START  ####
+#################
+
+DPR_open_the_warehouses_category = {
 	icon = GFX_decision_category_generic_military_operations
 
 	allowed = {
@@ -10,7 +14,7 @@ open_the_warehouses_category = {
 	}
 }
 
-mobilize_the_youth_and_reserves_category = {
+DPR_mobilize_the_youth_and_reserves_category = {
 	icon = GFX_decision_category_generic_civil_support
 
 	allowed = {
@@ -22,7 +26,7 @@ mobilize_the_youth_and_reserves_category = {
 	}
 }
 
-request_russian_weapons_category = {
+DPR_request_russian_weapons_category = {
 	icon = GFX_decision_category_army_reform
 
 	allowed = {
@@ -34,7 +38,7 @@ request_russian_weapons_category = {
 	}
 }
 
-request_russian_volunteers_category = {
+DPR_request_russian_volunteers_category = {
 	icon = GFX_decision_category_military_operation
 
 	allowed = {
@@ -46,7 +50,7 @@ request_russian_volunteers_category = {
 	}
 }
 
-DPR_verkhovna_rada_decision_category = {
+DPR_verkhovna_duma_category = {
 	icon = GFX_decision_category_duma
 
 	priority = 1000
@@ -56,20 +60,31 @@ DPR_verkhovna_rada_decision_category = {
 	}
 
 	visible = {
-		has_completed_focus = DPR_beginning_of_new_era
+		has_completed_focus = DPR_beginning_of_a_new_era
 	}
+
 	visible_when_empty = yes
 
-	scripted_gui = DPR_rada_scripted_gui
+	scripted_gui = DPR_duma_scripted_gui
 }
 
-vsrf_decisions = {
-	icon = GFX_decision_category_infiltration
-	picture = GFX_mobilization
+DPR_elections_category = {
+	icon = usa_congress
 
-	visible = {
-		tag = RAF
+	# picture = 
+
+	allowed = {
+		original_tag = DPR
 	}
+	
+	visible = {
+		has_country_flag = DPRelection_active
+	}
+
+	priority = 1000
+
+	scripted_gui = DPRelection
+	visible_when_empty = yes
 }
 
 
@@ -100,12 +115,6 @@ konfederation = {
 	visible = {
 		has_idea = DPR_confederation
 	}
-
-gas_gas_gas = {
-	icon = GFX_decision_category_military_operation
-	priority = 9
-
-}
 
 lpr_opening_the_warehouses = {
 icon = GFX_decision_category_military_operation
