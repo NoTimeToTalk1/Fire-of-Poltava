@@ -521,7 +521,7 @@ south_war = {
 			ROOT = {
 				NOT = {
 					has_country_flag = sw_defensive
-					has_ideas = regional_failed_plans
+					has_idea = regional_failed_plans
 				}
 			}
         }
@@ -559,7 +559,7 @@ south_war = {
 			ROOT = {
 				NOT = {
 					has_country_flag = sw_offensive
-					has_ideas = regional_counter_attack
+					has_idea = regional_counter_attack
 				}
 			}
         }
@@ -1510,7 +1510,7 @@ north_war = {
             ROOT = {
                 NOT = {
                     has_country_flag = north_defensive
-					has_ideas = regional_failed_plans
+					has_idea = regional_failed_plans
                 }
             }
         }
@@ -1548,7 +1548,7 @@ north_war = {
             ROOT = {
                 NOT = {
                     has_country_flag = north_offensive
-					has_ideas = regional_counter_attack
+					has_idea = regional_counter_attack
                 }
             }
         }
@@ -2158,7 +2158,7 @@ west_war = {
 			ROOT = {
 					NOT = {
 						has_country_flag = ww_defensive
-						has_ideas = regional_failed_plans
+						has_idea = regional_failed_plans
 					}
 			}
         }
@@ -2196,7 +2196,7 @@ west_war = {
 			ROOT = {
 				NOT = {
                     has_country_flag = ww_offensive
-					has_ideas = regional_counter_attack
+					has_idea = regional_counter_attack
                 }
 			}
         }
@@ -2763,7 +2763,7 @@ east_war = {
 			ROOT = {
 				NOT = {
                     has_country_flag = ew_defensive
-					has_ideas = regional_failed_plans
+					has_idea = regional_failed_plans
                 }
 			}
         }
@@ -2801,7 +2801,7 @@ east_war = {
 			ROOT = {
 				NOT = {
                     has_country_flag = ew_offensive
-					has_ideas = regional_counter_attack
+					has_idea = regional_counter_attack
                 }
 			}
         }
@@ -3413,7 +3413,7 @@ left_bank_war = {
 			ROOT = {
 				NOT = {
                     has_country_flag = lw_defensive
-					has_ideas = regional_failed_plans
+					has_idea = regional_failed_plans
                 }
 			}
         }
@@ -3451,7 +3451,7 @@ left_bank_war = {
 			ROOT = {
 				NOT = {
                     has_country_flag = lw_offensive
-					has_ideas = regional_counter_attack
+					has_idea = regional_counter_attack
                 }
 			}
         }
@@ -4062,7 +4062,7 @@ right_bank_war = {
 			ROOT = {
 				NOT = {
                     has_country_flag = rw_defensive
-					has_ideas = regional_failed_plans
+					has_idea = regional_failed_plans
                 }
 			}
         }
@@ -4100,7 +4100,7 @@ right_bank_war = {
 			ROOT = {
 				NOT = {
                     has_country_flag = rw_offensive
-					has_ideas = regional_counter_attack
+					has_idea = regional_counter_attack
                 }
 			}
         }
@@ -4409,15 +4409,20 @@ ukraine_war = {
 		custom_cost_text = decision_cost_10_cp
 
 		complete_effect = {
-				add_command_power = -10		
+			add_command_power = -10
 	  	}
+
 		remove_effect = {
 			if = {
 				limit = {
 					tag = RBU
 				}
 				2071 = {
-					add_building_construction = { type = infrastructure level = 1 province = 13183 instant_build = yes}
+					add_building_construction = {
+						type = infrastructure
+						level = 5
+						instant_build = yes
+					}
 				}
 				build_railway = {
 					level = 1
@@ -4834,7 +4839,7 @@ ukraine_war = {
 			ROOT = {
 				NOT = {
                     has_country_flag = uw_defensive
-					has_ideas = regional_failed_plans
+					has_idea = regional_failed_plans
                 }
 			}
         }
@@ -4872,7 +4877,7 @@ ukraine_war = {
 			ROOT = {
 				NOT = {
                     has_country_flag = uw_offensive
-					has_ideas = regional_counter_attack
+					has_idea = regional_counter_attack
                 }
 			}
         }

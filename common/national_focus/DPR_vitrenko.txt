@@ -12,7 +12,7 @@
 						option = HIDE
 					}
 				}
-					has_government = radical_socialism
+					has_government = socialism
 			}
 		}
 		search_filters = {
@@ -34,7 +34,7 @@
 		prerequisite = { focus = dnr_vitrenko_victorious  }
 		completion_reward = {
 			add_popularity = {
-    		ideology = radical_socialism
+    		ideology = socialism
     		popularity = 0.07
 			}
 			add_political_power = -25
@@ -70,7 +70,7 @@
 		prerequisite = { focus = dnr_and_punishment_for_untruthworthy }
 		completion_reward = {
 			add_popularity = {
-				ideology = radical_socialism
+				ideology = socialism
 				popularity = 0.1
 			}
 		}
@@ -147,7 +147,7 @@
 		available = {
 			KIR = {
 				exists = yes
-				has_government = radical_socialism
+				has_government = socialism
 			}
 		}
 		prerequisite = { focus = dnr_a_message_to_distitutes }
@@ -190,9 +190,9 @@
 			shared_focus_FILTER_INDUSTRY
 		}
 		available = {
-				OPZ = {
+				KHE = {
 					exists = yes
-					has_government = conservative_democracy
+					has_government = conservatism
 				}
 		}
 		prerequisite = { focus = dnr_a_message_to_distitutes }
@@ -341,7 +341,7 @@
 			add_ideas = high_taxation
 			add_ideas = DPR_welfare
 			add_popularity = {
-				ideology = radical_socialism
+				ideology = socialism
 				popularity = 0.08
 			}
 		}
@@ -404,7 +404,7 @@
 		prerequisite = { focus = dnr_mass_nationalisation }
 		completion_reward = {
 			add_popularity = {
-				ideology = radical_socialism
+				ideology = socialism
 				popularity = 0.1
 			}
 			add_war_support = 0.2
@@ -443,7 +443,7 @@
 				has_country_flag = DPR_vitrenko_bomzhi
 		}
 		prerequisite = { focus = dnr_we_are_the_army_of_the_people }
-		mutually_exclusive = { shared_focus = dnr_the_strongest_warriors_of_socialism }
+		mutually_exclusive = { focus = dnr_the_strongest_warriors_of_socialism }
 		completion_reward = {
 			add_ideas = DPR_peoples_army
 		}
@@ -461,7 +461,7 @@
 				has_country_flag = DPR_vitrenko_sila
 		}
 		prerequisite = { focus = dnr_we_are_the_army_of_the_people }
-		mutually_exclusive = { shared_focus = dnr_peoples_army }
+		mutually_exclusive = { focus = dnr_peoples_army }
 		completion_reward = {
 			add_ideas = DPR_strongest_warriors_of_socialism
 		}
@@ -489,7 +489,7 @@
 		search_filters = {
 			shared_focus_FILTER_INDUSTRY
 		}
-		prerequisite = { shared_focus = dnr_peoples_army shared_focus = dnr_the_strongest_warriors_of_socialism }
+		prerequisite = { focus = dnr_peoples_army focus = dnr_the_strongest_warriors_of_socialism }
 		completion_reward = {
 				2310 = {
 					add_building_construction = {
@@ -613,7 +613,7 @@
 			add_ideas = doctrine_army_wide
 			add_ideas = no_exemptions
 			}
-			else if = {
+			else_if = {
 				limit = {
 					DPR = {
 						has_country_flag = DPR_vitrenko_sila
@@ -655,11 +655,11 @@
 				popularity = -0.1
 			}
 			add_popularity = {
-    		ideology = oligarchy
+    		ideology = oligarchism
     		popularity = -0.05
 			}
 			add_popularity = {
-    		ideology = conservative_democracy
+    		ideology = conservatism
     		popularity = -0.07
 			}
 		}
@@ -722,7 +722,7 @@
 		prerequisite = { focus = dnr_patriotic_studying }
 		completion_reward = {
 			add_popularity = {
-				ideology = radical_socialism
+				ideology = socialism
 				popularity = 0.03
 			}
 			add_ideas = DPR_soyuz_popa_i_komuniaki
@@ -748,12 +748,12 @@
 					name = "SWPD-N"
 				}
 				set_party_name = { 
-					ideology = conservative_democracy
+					ideology = conservatism
 					long_name = "SWPD-Conservative"
 					name = "SWPD-C"
 				}
 				set_party_name = { 
-					ideology = oligarchy
+					ideology = oligarchism
 					long_name = "SWPD-Pushilinist"
 					name = "SWPD-P"
 				}
@@ -767,11 +767,11 @@
 					popularity = 0.1
 				}
 				add_popularity = {
-					ideology = oligarchy
+					ideology = oligarchism
 					popularity = 0.05
 				}
 				add_popularity = {
-					ideology = conservative_democracy
+					ideology = conservatism
 					popularity = 0.1
 				}
 			}
@@ -995,8 +995,8 @@
 			shared_focus_FILTER_INDUSTRY
 		}
 		bypass = {
-			OPZ = {
-				is_in_faction_with = ZAK
+			KHE = {
+				is_in_faction_with = DPR
 			}
 		}
 		prerequisite = { focus = dnr_go_south_the_dnepr }

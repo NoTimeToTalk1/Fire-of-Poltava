@@ -1,16 +1,10 @@
 	#Rule of the Far Right
-
 	shared_focus = {
 		id = AFU_rule_of_the_far_right
 		icon = GFX_AFU_rule_of_the_far_right
 		x = 17
 		y = 0
 		cost = 1
-		search_filters = {
-			
-						FOCUS_FILTER_POLITICAL
-					
-		}
 		
 		completion_reward = {
 			add_political_power = 100
@@ -38,18 +32,13 @@
 	}
 
 	#Secure Our Position
-
 	shared_focus = {
 		id = AFU_secure_our_position
 		icon = GFX_AFU_secure_our_position
 		x = 17
 		y = 1
 		cost = 3
-		search_filters = {
-			
-						FOCUS_FILTER_POLITICAL
-					
-		}
+
 		prerequisite = { focus = AFU_rule_of_the_far_right  }
 		completion_reward = {
 			add_political_power = 15
@@ -60,49 +49,39 @@
 	}
 
 	#Bolster Our Ranks
-
 	shared_focus = {
 		id = AFU_bolster_our_ranks
 		icon = GFX_AFU_bolster_our_ranks
 		x = 19
 		y = 1
 		cost = 3
-		search_filters = {
-			
-						FOCUS_FILTER_POLITICAL
-					
-		}
+
 		prerequisite = { focus = AFU_rule_of_the_far_right  }
 		
-			completion_reward = {
-				add_manpower = 1500
-				add_command_power = 50
-				recruit_character = AFU_kudryashov
-				recruit_character = AFU_dutchak
-				recruit_character = AFU_reins
-				recruit_character = AFU_troyan
-				recruit_character = AFU_nadtochiy
-				recruit_character = AFU_garkovenko
-				country_event = { 
-					id = azov.13 
-					days = 2 
-				}
+		completion_reward = {
+			add_manpower = 1500
+			add_command_power = 50
+			recruit_character = AFU_kudryashov
+			recruit_character = AFU_dutchak
+			recruit_character = AFU_reins
+			recruit_character = AFU_troyan
+			recruit_character = AFU_nadtochiy
+			recruit_character = AFU_garkovenko
+			country_event = { 
+				id = azov.13 
+				days = 2 
 			}
+		}
 	}
 
 	#Uphold the Victorious Spirit
-
 	shared_focus = {
 		id = AFU_uphold_the_victorious_spirit
 		icon = GFX_AFU_uphold_the_victorious_spirit
 		x = 15
 		y = 1
 		cost = 1
-		search_filters = {
-			
-						FOCUS_FILTER_POLITICAL
-					
-		}
+
 		prerequisite = { focus = AFU_rule_of_the_far_right  }
 		completion_reward = {
         	add_war_support = 0.1
@@ -111,18 +90,13 @@
 	}
 
 	#Destroy the Soviet Heritage
-
 	shared_focus = {
 		id = AFU_destroy_the_soviet_heritage
 		icon = GFX_AFU_destroy_the_soviet_heritage
 		x = 15
 		y = 2
 		cost = 2
-		search_filters = {
-			
-						FOCUS_FILTER_POLITICAL
-					
-		}
+
 		prerequisite = { focus = AFU_uphold_the_victorious_spirit  }
 		
 		completion_reward = {
@@ -139,18 +113,13 @@
 	}
 
 	#Reshaping the Mentality
-
 	shared_focus = {
 		id = AFU_reshaping_the_mentality
 		icon = GFX_AFU_reshaping_the_mentality
 		x = 15
 		y = 3
 		cost = 2
-		search_filters = {
-			
-						FOCUS_FILTER_POLITICAL
-					
-		}
+
 		prerequisite = { focus = AFU_destroy_the_soviet_heritage  }
 		
 		completion_reward = {
@@ -166,18 +135,13 @@
 	}
 
 	#Behead the Hydra
-
 	shared_focus = {
 		id = AFU_behead_the_hydra
 		icon = GFX_AFU_behead_the_hydra
 		x = 17
 		y = 2
 		cost = 1
-		search_filters = {
-			
-						FOCUS_FILTER_POLITICAL
-					
-		}
+
 		prerequisite = { focus = AFU_secure_our_position  }
 		
 		completion_reward = {
@@ -190,18 +154,13 @@
 	}
 
 	#"Free Donbas"
-
 	shared_focus = {
 		id = AFU_free_donbas
 		icon = GFX_AFU_free_donbas
 		x = 17
 		y = 3
 		cost = 2
-		search_filters = {
-			
-						FOCUS_FILTER_POLITICAL
-					
-		}
+
 		prerequisite = { focus = AFU_behead_the_hydra  }
 		completion_reward = {
         	add_ideas = AFU_azov_freedonbass
@@ -213,20 +172,16 @@
 	}
 
 	#Call to Battle the Most Reliable Ones
-
 	shared_focus = {
 		id = AFU_call_to_battle_the_most_reliable_ones
 		icon = GFX_AFU_call_to_battle_the_most_reliable_ones
 		x = 19
 		y = 2
 		cost = 2
-		search_filters = {
-			
-						FOCUS_FILTER_POLITICAL
-					
-		}
+
 		prerequisite = { focus = AFU_bolster_our_ranks  }
-			completion_reward = {
+		
+		completion_reward = {
 			custom_effect_tooltip = azov_farright_ukrainian
 			recruit_character = AFU_ignatiev
 			recruit_character = AFU_overchenko
@@ -241,18 +196,13 @@
 	}
 
 	#Hold the Banner High
-
 	shared_focus = {
 		id = AFU_hold_the_banner_high
 		icon = GFX_AFU_hold_the_banner_high
 		x = 19
 		y = 3
 		cost = 2
-		search_filters = {
-			
-						FOCUS_FILTER_POLITICAL
-					
-		}
+
 		prerequisite = { focus = AFU_call_to_battle_the_most_reliable_ones  }
 		
 		completion_reward = {
@@ -272,9 +222,7 @@
 		x = 9
 		y = 7
 		cost = 2
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		completion_reward = {
     		add_political_power = 100
 			swap_ideas = {
@@ -297,9 +245,7 @@
 		x = 4
 		y = 8
 		cost = 1
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_novi_lad  }
 		completion_reward = {
 			add_stability = -0.05
@@ -315,14 +261,13 @@
 		x = 2
 		y = 9
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		available = {
 			has_country_flag = azov_paganism_flag
 		}
 		prerequisite = { focus = AFU_question_of_religion  }
 		mutually_exclusive = { focus = AFU_the_only_true_religion  }
+		
 		completion_reward = {
 			add_stability = -0.15
 			add_political_power = -50
@@ -353,9 +298,7 @@
 		x = 2
 		y = 10
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_new_pagan_dawn  }
 		completion_reward = {
 		    add_ideas = AFU_azov_paganisation_1
@@ -370,9 +313,7 @@
 		x = 2
 		y = 11
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_old_slavic_traditions  }
 		completion_reward = {
 			add_stability = -0.1
@@ -388,9 +329,7 @@
 		x = 2
 		y = 12
 		cost = 7
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_start_the_paganisation  }
 		completion_reward = {
 			add_offsite_building = { type = arms_factory level = 2 }
@@ -418,9 +357,7 @@
 		x = 2
 		y = 13
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_not_churches_but_temples  }
 		completion_reward = {
 			swap_ideas = {
@@ -447,9 +384,7 @@
 		x = 6
 		y = 9
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		available = {
 		has_country_flag = azov_christianity_flag
 		}
@@ -472,9 +407,7 @@
 		x = 6
 		y = 10
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_the_only_true_religion  }
 		completion_reward = {
 			add_political_power = 25
@@ -490,9 +423,7 @@
 		x = 5
 		y = 11
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_destroy_the_satanic_muscovite_church  }
 		mutually_exclusive = { focus = AFU_huge_influence_of_the_church  }
 		completion_reward = {
@@ -510,9 +441,7 @@
 		x = 7
 		y = 11
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_destroy_the_satanic_muscovite_church  }
 		mutually_exclusive = { focus = AFU_integrate_the_church_into_the_state  }
 		completion_reward = {
@@ -527,9 +456,7 @@
 		x = 6
 		y = 12
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_huge_influence_of_the_church  focus = AFU_integrate_the_church_into_the_state  }
 		completion_reward = {
 			add_war_support = 0.1
@@ -552,9 +479,7 @@
 		x = 6
 		y = 13
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_in_the_name_of_the_father_and_of_the_son_and_of_the_holy_spirit  }
 		completion_reward = {
 			add_ideas = AFU_azov_warriors_of_christ
@@ -570,9 +495,7 @@
 		x = 18
 		y = 8
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_novi_lad  }
 		completion_reward = {
     		add_stability = 0.1
@@ -586,9 +509,7 @@
 		x = -6
 		y = 1
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_v_ideyi_natsia_mitsna  }
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
 		completion_reward = {
@@ -620,9 +541,7 @@
 		x = -6
 		y = 2
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_there_is_no_place_for_liberals  }
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
 		completion_reward = {
@@ -642,9 +561,7 @@
 		x = -6
 		y = 3
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_ban_the_lgbt  }
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
 		completion_reward = {
@@ -666,9 +583,7 @@
 		x = -5
 		y = 4
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_take_a_pro_life_stance  }
 		mutually_exclusive = { focus = AFU_preserve_the_family_as_it_is }
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
@@ -686,14 +601,12 @@
 		x = -7
 		y = 4
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_take_a_pro_life_stance  }
 		mutually_exclusive = { focus = AFU_promote_the_legacy_of_joan_of_arc }
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
 		completion_reward = {
-    		FOP_change_women_banned
+    		FOP_change_women_banned = yes
 			add_ideas = AFU_family_tradition
 		}
 	}
@@ -705,9 +618,7 @@
 		x = -6
 		y = 5
 		cost = 8
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_promote_the_legacy_of_joan_of_arc focus = AFU_preserve_the_family_as_it_is  }
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
 		completion_reward = {
@@ -725,9 +636,7 @@
 		x = -4
 		y = 1
 		cost = 4
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_v_ideyi_natsia_mitsna  }
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
 		completion_reward = {
@@ -742,9 +651,7 @@
 		x = -4
 		y = 2
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_the_europa_is_in_danger  }
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
 		completion_reward = {
@@ -760,9 +667,7 @@
 		x = -4
 		y = 3
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_levko_lessons }
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
 		completion_reward = {
@@ -779,9 +684,7 @@
 		x = 0
 		y = 1
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_v_ideyi_natsia_mitsna  }
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
 		completion_reward = {
@@ -789,7 +692,7 @@
 			add_ideas = AFU_national_security_service
 			create_intelligence_agency = {
 				name = "National Security Service"
-				icon = GFX_intelligence_agency_nss_logo
+				icon = GFX_intelligence_agency_logo_azov
 			}
 		}
 	}
@@ -801,9 +704,7 @@
 		x = -2
 		y = 2
 		cost = 7
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_form_the_national_security_service  }
 		mutually_exclusive = {focus = AFU_new_blood}
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
@@ -822,9 +723,7 @@
 		x = 2
 		y = 2
 		cost = 7
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_form_the_national_security_service  }
 		mutually_exclusive = {focus = AFU_rely_on_the_old_wolves}
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
@@ -843,9 +742,7 @@
 		x = 0
 		y = 3
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_rely_on_the_old_wolves focus = AFU_new_blood }
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
 		completion_reward = {
@@ -866,9 +763,7 @@
 		x = -2
 		y = 3
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_rely_on_the_old_wolves focus = AFU_new_blood }
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
 		completion_reward = {
@@ -891,9 +786,7 @@
 		x = 2
 		y = 3
 		cost = 7
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_rely_on_the_old_wolves focus = AFU_new_blood }
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
 		completion_reward = {
@@ -928,9 +821,7 @@
 		x = 0
 		y = 4
 		cost = 8
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_black_list }
 		prerequisite = { focus = AFU_strengthen_control }
 		prerequisite = { focus = AFU_lessons_from_the_colleagues }
@@ -948,9 +839,7 @@
 		x = -2
 		y = 5
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_form_azovnet }
 		mutually_exclusive = { focus = AFU_everyone_who_is_against_us_will_choke_on_blood }
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
@@ -972,9 +861,7 @@
 		x = 2
 		y = 5
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_form_azovnet }
 		mutually_exclusive = { focus = AFU_freedom_tastes_better_under_supervision }
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
@@ -996,9 +883,7 @@
 		x = 5
 		y = 1
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_v_ideyi_natsia_mitsna  }
 		mutually_exclusive = { focus = AFU_only_the_worthy_bear_arms }
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
@@ -1017,11 +902,10 @@
 		x = 5
 		y = 2
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_warrior_holds_the_weapon_and_warrior_is_every_man  }
+
+		prerequisite = { focus = AFU_warrior_holds_the_weapon_and_warrior_is_every_man }
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
+		
 		completion_reward = {
 			add_ideas = AFU_gun_ownership
 		}
@@ -1034,12 +918,11 @@
 		x = 7
 		y = 1
 		cost = 4
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_v_ideyi_natsia_mitsna  }
 		mutually_exclusive = { focus = AFU_warrior_holds_the_weapon_and_warrior_is_every_man }
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
+		
 		completion_reward = {
 			add_popularity = {
 				ideology = ultranationalism
@@ -1056,11 +939,10 @@
 		x = 7
 		y = 2
 		cost = 7
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_only_the_worthy_bear_arms  }
+
+		prerequisite = { focus = AFU_only_the_worthy_bear_arms }
 		relative_position_id = AFU_v_ideyi_natsia_mitsna
+		
 		completion_reward = {
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_2
@@ -1077,9 +959,7 @@
 		x = 20
 		y = 7
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		completion_reward = {
 			add_political_power = 50
 			hidden_effect = {
@@ -1095,10 +975,9 @@
 		x = 20
 		y = 9
 		cost = 7
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_zrodylys_my_velykoyi_hodyny  }
+
+		prerequisite = { focus = AFU_zrodylys_my_velykoyi_hodyny }
+		
 		completion_reward = {
 			swap_ideas = {
 				add_idea = AFU_azov_banner_of_the_victory_2
@@ -1114,10 +993,9 @@
 		x = 22
 		y = 10
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_for_the_national_ukraine  }
+
+		prerequisite = { focus = AFU_for_the_national_ukraine }
+		
 		completion_reward = {
 			add_stability = -0.1
 			add_popularity = {
@@ -1135,10 +1013,9 @@
 		x = 22
 		y = 11
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_and_white_europa  }
+
+		prerequisite = { focus = AFU_and_white_europa }
+		
 		completion_reward = {
         	add_manpower = 1100
 			add_command_power = 20
@@ -1152,10 +1029,9 @@
 		x = 26
 		y = 9
 		cost = 2
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_zrodylys_my_velykoyi_hodyny  }
+
+		prerequisite = { focus = AFU_zrodylys_my_velykoyi_hodyny }
+		
 		completion_reward = {
 			add_political_power = 25
 		}
@@ -1168,11 +1044,10 @@
 		x = 25
 		y = 10
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_the_russian_question  }
-		mutually_exclusive = { focus = AFU_we_have_no_busineness_with_mongoloids  }
+		mutually_exclusive = { focus = AFU_we_have_no_busineness_with_mongoloids }
+		
 		completion_reward = {
         	add_political_power = 25
 			hidden_effect = {
@@ -1189,10 +1064,9 @@
 		x = 22
 		y = 12
 		cost = 9
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_connections_with_ultras  }
+
+		prerequisite = { focus = AFU_connections_with_ultras }
+		
 		completion_reward = {
 			custom_effect_tooltip = azov_farright_european
 			hidden_effect = {
@@ -1208,10 +1082,9 @@
 		x = 22
 		y = 13
 		cost = 10
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_far_right_european_fighters  }
+
+		prerequisite = { focus = AFU_far_right_european_fighters }
+		
 		completion_reward = {
 			custom_effect_tooltip = azov_farright_american
 			hidden_effect = {
@@ -1227,10 +1100,9 @@
 		x = 22
 		y = 14
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_our_brothers_from_the_new_world  }
+		
+		prerequisite = { focus = AFU_our_brothers_from_the_new_world }
+		
 		completion_reward = {
 			country_event = azov.56
 			add_ideas = AFU_azov_harbourforthefarright
@@ -1244,10 +1116,9 @@
 		x = 22
 		y = 15
 		cost = 7
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_the_white_revolution_will_start_here  }
+
+		prerequisite = { focus = AFU_the_white_revolution_will_start_here }
+		
 		completion_reward = {
 			add_popularity = {
 				ideology = ultranationalism
@@ -1267,11 +1138,10 @@
 		x = 27
 		y = 10
 		cost = 2
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_the_russian_question  }
-		mutually_exclusive = { focus = AFU_luhansk_conference  }
+
+		prerequisite = { focus = AFU_the_russian_question }
+		mutually_exclusive = { focus = AFU_luhansk_conference }
+		
 		completion_reward = {
 			country_event = azov.68
 			add_political_power = 25
@@ -1286,10 +1156,9 @@
 		x = 25
 		y = 11
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_luhansk_conference  }
+		
+		prerequisite = { focus = AFU_luhansk_conference }
+		
 		completion_reward = {
 			add_command_power = 25
 			recruit_character = AFU_pomor
@@ -1308,10 +1177,9 @@
 		x = 25
 		y = 12
 		cost = 8
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_invite_russian_far_rights  }
+
+		prerequisite = { focus = AFU_invite_russian_far_rights }
+		
 		completion_reward = {
 			add_political_power = 10
 			custom_effect_tooltip = azov_farright_russian
@@ -1334,10 +1202,9 @@
 		x = 27
 		y = 11
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_we_have_no_busineness_with_mongoloids  }
+
+		prerequisite = { focus = AFU_we_have_no_busineness_with_mongoloids }
+		
 		completion_reward = {
         	add_stability = 0.05
 			add_manpower = -1000
@@ -1351,10 +1218,9 @@
 		x = 27
 		y = 12
 		cost = 8
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_its_not_about_views  }
+
+		prerequisite = { focus = AFU_its_not_about_views }
+		
 		completion_reward = {
 			add_ideas = AFU_azov_rusophobia
    			hidden_effect = {
@@ -1370,10 +1236,9 @@
 		x = 18
 		y = 10
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_for_the_national_ukraine  }
+
+		prerequisite = { focus = AFU_for_the_national_ukraine }
+		
 		completion_reward = {
 			add_ideas = AFU_no_surrender
 		}
@@ -1386,10 +1251,9 @@
 		x = 17
 		y = 12
 		cost = 7
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 		prerequisite = { focus = AFU_second_national_mobilization }
+		
 		completion_reward = {
 			add_popularity = {
 				ideology = ultranationalism 
@@ -1413,10 +1277,9 @@
 		x = 17
 		y = 13
 		cost = 8
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_propaganda_in_schools  }
+
+		prerequisite = { focus = AFU_propaganda_in_schools }
+		
 		completion_reward = {
 			random_core_state = {
 				add_building_construction = {
@@ -1444,10 +1307,9 @@
 		x = 18
 		y = 11
 		cost = 7
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_the_demand_of_the_nation_is_no_capitulation  }
+
+		prerequisite = { focus = AFU_the_demand_of_the_nation_is_no_capitulation }
+		
 		completion_reward = {
     		FOP_change_conscription_all_adults_serve = yes
 			country_event = { id = azov.34 days = 1 }
@@ -1461,10 +1323,9 @@
 		x = 19
 		y = 12
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_second_national_mobilization  }
+		
+		prerequisite = { focus = AFU_second_national_mobilization }
+		
 		completion_reward = {
 			swap_ideas = {
 				add_idea = AFU_azov_nazi_mega_zavodi
@@ -1480,10 +1341,9 @@
 		x = 19
 		y = 13
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_rump_up_the_military_industrial_complex  }
+
+		prerequisite = { focus = AFU_rump_up_the_military_industrial_complex }
+		
 		completion_reward = {
 			swap_ideas = {
 				add_idea = AFU_azov_banner_of_the_victory_3
@@ -1499,10 +1359,11 @@
 		x = 18
 		y = 14
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = AFU_special_summer_military_camps  } prerequisite = { focus = AFU_all_men_are_warriors  }
+		
+
+		prerequisite = { focus = AFU_special_summer_military_camps }
+		prerequisite = { focus = AFU_all_men_are_warriors }
+		
 		completion_reward = {
     		swap_ideas = {
     			remove_idea = AFU_azov_nazi_mega_zavodi
@@ -1528,9 +1389,7 @@
 		available = {
 			date > 2022.09.01
 		}
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		completion_reward = {
 			custom_effect_tooltip = afu_azov_kha_preparations_tt
 		}
@@ -1543,10 +1402,9 @@
 		x = 23
 		y = 2
 		cost = 1
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
-		prerequisite = { focus = AFU_blow_up_their_railways  }
+
+		prerequisite = { focus = AFU_blow_up_their_railways }
+		
 		completion_reward = {
 			KHA = {
 				add_temporary_buff_to_units = {
@@ -1568,10 +1426,9 @@
 		x = 23
 		y = 1
 		cost = 1
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
-		prerequisite = { focus = AFU_march_on_the_kharkiv  }
+
+		prerequisite = { focus = AFU_march_on_the_kharkiv }
+		
 		completion_reward = {
 			KHA = {
 				add_timed_idea = {
@@ -1589,10 +1446,9 @@
 		x = 25
 		y = 1
 		cost = 1
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
-		prerequisite = { focus = AFU_march_on_the_kharkiv  }
+
+		prerequisite = { focus = AFU_march_on_the_kharkiv }
+		
 		completion_reward = {
 			add_manpower = 1000
 			add_war_support = 0.1
@@ -1612,10 +1468,9 @@
 		x = 25
 		y = 2
 		cost = 1
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
-		prerequisite = { focus = AFU_invite_local_loyalists_to_azov  }
+
+		prerequisite = { focus = AFU_invite_local_loyalists_to_azov }
+		
 		completion_reward = {
 			add_ideas = AFU_azov_kharkiv_administration
 		}
@@ -1628,10 +1483,10 @@
 		x = 24
 		y = 4
 		cost = 1
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
-		prerequisite = { focus = AFU_infrastructural_raids  } prerequisite = { focus = AFU_form_the_future_military_administration  }
+
+		prerequisite = { focus = AFU_infrastructural_raids }
+		prerequisite = { focus = AFU_form_the_future_military_administration }
+		
 		completion_reward = {
 			declare_war_on = {
 				target = KHA
@@ -1657,9 +1512,7 @@
 			has_completed_focus = AFU_reshaping_the_mentality
 			has_completed_focus = AFU_hold_the_banner_high
 		}
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		completion_reward = {
 			country_event = { id = azov.35 days = 1 }
 			add_political_power = 10
@@ -1676,10 +1529,9 @@
 		x = 27
 		y = 2
 		cost = 1
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
-		prerequisite = { focus = AFU_nationalist_kharkiv  }
+
+		prerequisite = { focus = AFU_nationalist_kharkiv }
+		
 		completion_reward = {
 			add_command_power = 25
 			KHA = {
@@ -1695,10 +1547,9 @@
 		x = 27
 		y = 4
 		cost = 1
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
-		prerequisite = { focus = AFU_negotatiations_with_ideological_brothers  }
+
+		prerequisite = { focus = AFU_negotatiations_with_ideological_brothers }
+		
 		completion_reward = {
 			annex_country = {
 				target = KHA
@@ -1737,9 +1588,7 @@
 		x = 20
 		y = 30
 		cost = 1
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		completion_reward = {
 			add_stability = 0.1
 			hidden_effect = {
@@ -1758,9 +1607,7 @@
 		x = 20
 		y = 31
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		prerequisite = { focus = AFU_pid_znamenem_slavetnym_ziednavsia_ves_narid }
 		completion_reward = {
 			add_stability = -0.15
@@ -1813,9 +1660,7 @@
 		x = 21
 		y = 32
 		cost = 7
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		prerequisite = { focus = AFU_arrest_the_opposition_leaders }
 		mutually_exclusive = { focus = AFU_forgive_but_not_forget }
 		completion_reward = {
@@ -1839,9 +1684,7 @@
 		x = 19
 		y = 32
 		cost = 7
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		prerequisite = { focus = AFU_arrest_the_opposition_leaders }
 		mutually_exclusive = { focus = AFU_destroy_remaining_partisans }
 		completion_reward = {
@@ -1864,9 +1707,7 @@
 		x = 20
 		y = 33
 		cost = 8
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		prerequisite = { focus = AFU_forgive_but_not_forget focus = AFU_destroy_remaining_partisans  }
 		completion_reward = {
 			add_stability = 0.1
@@ -1887,9 +1728,7 @@
 		x = 19
 		y = 34
 		cost = 8
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		prerequisite = { focus = AFU_create_the_nationalist_constitution  }
 		mutually_exclusive = { focus = AFU_unite_the_right }
 		allow_branch = {
@@ -1921,9 +1760,7 @@
 		x = 19
 		y = 34
 		cost = 8
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		prerequisite = { focus = AFU_create_the_nationalist_constitution  }
 		mutually_exclusive = { focus = AFU_unite_the_right }
 		allow_branch = {
@@ -1955,9 +1792,7 @@
 		x = 21
 		y = 34
 		cost = 8
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		prerequisite = { focus = AFU_create_the_nationalist_constitution  }
 		mutually_exclusive = { focus = AFU_one_party_one_vision_biletsky }
 		mutually_exclusive = { focus = AFU_one_party_one_vision_zhorin }
@@ -1977,9 +1812,7 @@
 		x = 20
 		y = 35
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		prerequisite = { focus = AFU_unite_the_right focus = AFU_one_party_one_vision_biletsky focus = AFU_one_party_one_vision_zhorin  }
 		completion_reward = {
 			add_war_support = 0.2
@@ -1998,9 +1831,7 @@
 		x = 20
 		y = 36
 		cost = 10
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		prerequisite = { focus = AFU_prepare_for_the_final_fight  }
 		completion_reward = {
 			add_manpower = 50000
@@ -2018,9 +1849,7 @@
 		x = 18
 		y = 36
 		cost = 7
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		prerequisite = { focus = AFU_prepare_for_the_final_fight  }
 		completion_reward = {
 			custom_effect_tooltip = azov_bvc_tt
@@ -2049,9 +1878,7 @@
 		x = 22
 		y = 36
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		allow_branch = {
 			has_country_flag = rvc_coop
 		}
@@ -2073,9 +1900,7 @@
 		x = 22
 		y = 36
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		allow_branch = {
 			NOT = {
 				has_country_flag = rvc_coop
@@ -2094,9 +1919,7 @@
 		x = 20
 		y = 37
 		cost = 10
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+		
 		prerequisite = { focus = AFU_coordination_with_the_rvc focus = AFU_by_us_alone  }
 		prerequisite = { focus = AFU_final_mobilization_of_the_whole_country  }
 		prerequisite = { focus = AFU_form_belarusian_volunteer_corps  }
@@ -2113,7 +1936,7 @@
 					limit = {
 						OR = {
 							is_core_of = DAG
-							is_core_of = CHI
+							is_core_of = CHC
 						}
 					}
 					start_resistance = yes
@@ -2131,9 +1954,7 @@
 		x = 20
 		y = 38
 		cost = 4
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+		
 		prerequisite = { focus = AFU_light_the_fire_of_the_revolution_in_the_caucasus }
 		completion_reward = {
 			custom_effect_tooltip = azov_ukraine_russia_war_tt
@@ -2142,7 +1963,7 @@
 					limit = {
 						OR = {
 							is_core_of = DAG
-							is_core_of = CHI
+							is_core_of = CHC
 						}
 					}
 					cancel_resistance = yes
@@ -2150,13 +1971,13 @@
 				}
 				RUS = {
 					release = DAG
-					release = CHI
+					release = CHC
 					declare_war_on = {
 						target = DAG
 						type = annex_everything
 					}
 					declare_war_on = {
-						target = CHI
+						target = CHC
 						type = annex_everything
 					}
 				}
@@ -2166,7 +1987,7 @@
 						type = annex_everything
 					}
 					declare_war_on = {
-						target = TRA
+						target = TRN
 						type = annex_everything
 					}
 					declare_war_on = {
@@ -2183,9 +2004,9 @@
 					}
 					add_ideas = AFU_smo_csto
 				}
-				CHI = {
+				CHC = {
 					add_ideas = AFU_smo_caucasus
-					load_oob = CHI_2109
+					load_oob = CHC_2109
 				}
 				DAG = {
 					add_ideas = AFU_smo_caucasus
@@ -2225,9 +2046,7 @@
 		x = 19
 		y = 39
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		prerequisite = { focus = AFU_special_decommunization_and_demilitarization_operation }
 		mutually_exclusive = { focus = AFU_every_man_a_fighter }
 		completion_reward = {
@@ -2245,9 +2064,7 @@
 		x = 21
 		y = 39
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		prerequisite = { focus = AFU_special_decommunization_and_demilitarization_operation }
 		mutually_exclusive = { focus = AFU_solid_rear }
 		completion_reward = {
@@ -2265,9 +2082,7 @@
 		x = 20
 		y = 40
 		cost = 4
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		prerequisite = { focus = AFU_solid_rear focus = AFU_every_man_a_fighter }
 		completion_reward = {
 			add_ideas = AFU_fop_experience
@@ -2281,9 +2096,7 @@
 		x = 19
 		y = 41
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		prerequisite = { focus = AFU_apply_the_fire_of_poltava_experience }
 		completion_reward = {
 			add_ideas = AFU_fight_till_the_death
@@ -2297,9 +2110,7 @@
 		x = 17
 		y = 39
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		prerequisite = { focus = AFU_special_decommunization_and_demilitarization_operation }
 		completion_reward = {
 			custom_effect_tooltip = azov_enemy_of_my_enemy_tt
@@ -2321,9 +2132,7 @@
 		x = 23
 		y = 39
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		prerequisite = { focus = AFU_special_decommunization_and_demilitarization_operation }
 		completion_reward = {
 			BVC = {
@@ -2365,9 +2174,7 @@
 		x = 21
 		y = 41
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		prerequisite = { focus = AFU_apply_the_fire_of_poltava_experience }
 		completion_reward = {
 			add_ideas = AFU_anti_partisan_operations
@@ -2381,9 +2188,7 @@
 		x = 20
 		y = 36
 		cost = 1
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
+
 		completion_reward = {
 			custom_effect_tooltip = azov_victory_tt
 			hidden_effect = {
@@ -2402,9 +2207,7 @@
 		x = 31
 		y = 9
 		cost = 8
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		prerequisite = { focus = AFU_give_the_oligarchs_a_fight  }
 		completion_reward = {
 			add_ideas = AFU_azov_nationalized_infrastructure
@@ -2418,9 +2221,7 @@
 		x = 34
 		y = 11
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		available = {	
 		has_country_flag = azov_privatization_of_fields_by_workers_flag
 		}
@@ -2468,9 +2269,7 @@
 		x = 35
 		y = 12
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		prerequisite = { focus = AFU_privatization_of_fields_by_workers  focus = AFU_cooperation_with_agrarian_elites  }
 		completion_reward = {
 			add_political_power = 20
@@ -2488,9 +2287,7 @@
 		x = 35
 		y = 13
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		prerequisite = { focus = AFU_collectivist_mind  }
 		completion_reward = {
 			add_research_slot = 1
@@ -2505,9 +2302,7 @@
 		x = 35
 		y = 10
 		cost = 7
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		prerequisite = { focus = AFU_small_business_support  }
 		completion_reward = {
 			country_event = { id = azov.24 days = 2 }	
@@ -2525,9 +2320,7 @@
 		x = 36
 		y = 11
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		available = {	
 		has_country_flag = azov_cooperation_with_agrarian_elites_flag
 		}
@@ -2550,9 +2343,7 @@
 		x = 35
 		y = 9
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+	
 		prerequisite = { focus = AFU_improve_working_conditions  }
 		completion_reward = {
 			add_ideas = AFU_azov_small_business
@@ -2570,9 +2361,8 @@
 		x = 35
 		y = 5
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+		
+
 
 		available = {
 			has_completed_focus = AFU_novi_lad
@@ -2595,9 +2385,7 @@
 		x = 34
 		y = 6
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		prerequisite = { focus = AFU_lessons_from_the_natiocratia  }
 		completion_reward = {
 			add_political_power = 50
@@ -2612,9 +2400,7 @@
 		x = 38
 		y = 12
 		cost = 8
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		prerequisite = { focus = AFU_close_nonprofit_wnterprises  }
 		completion_reward = {
 			swap_ideas = {
@@ -2645,9 +2431,7 @@
 		x = 36
 		y = 6
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		prerequisite = { focus = AFU_lessons_from_the_natiocratia  }
 		completion_reward = {
 			country_event = { id = azov.23 days = 2 }
@@ -2662,9 +2446,7 @@
 		x = 35
 		y = 7
 		cost = 7
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		prerequisite = { focus = AFU_an_opportunity_for_the_best  } prerequisite = { focus = AFU_formation_of_syndicates  }
 		select_effect = { 
 			country_event = { id = azov.25 days = 15 }	
@@ -2683,9 +2465,7 @@
 		x = 37
 		y = 8
 		cost = 8
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		available = {	
 		has_country_flag = azov_smooth_militarization_flag
 		}
@@ -2704,9 +2484,7 @@
 		x = 39
 		y = 8
 		cost = 8
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		available = {	
 		has_country_flag = azov_total_war_economy_flag
 		}
@@ -2725,9 +2503,7 @@
 		x = 37
 		y = 9
 		cost = 7
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		prerequisite = { focus = AFU_smooth_militarization  }
 		completion_reward = {
 			add_political_power = -50
@@ -2744,9 +2520,7 @@
 		x = 39
 		y = 9
 		cost = 7
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		prerequisite = { focus = AFU_total_war_economy  }
 		completion_reward = {
 			add_political_power = 10
@@ -2764,9 +2538,7 @@
 		x = 38
 		y = 10
 		cost = 8
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		prerequisite = { focus = AFU_smooth_militarization  focus = AFU_total_war_economy  }
 		completion_reward = {
 			add_ideas = AFU_azov_natiocracy_economic_politics
@@ -2787,9 +2559,7 @@
 		x = 38
 		y = 11
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		prerequisite = { focus = AFU_renew_the_donbass_mines  }
 		completion_reward = {
 			swap_ideas = {
@@ -2809,9 +2579,7 @@
 		x = 37
 		y = 13
 		cost = 7
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		available = {	
 		has_country_flag = azov_ban_the_destruction_of_ukraine_by_waste_flag
 		}
@@ -2829,9 +2597,7 @@
 		x = 39
 		y = 13
 		cost = 7
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		available = {	
 		has_country_flag = azov_all_for_the_sake_of_efficiency_flag
 		}
@@ -2849,9 +2615,7 @@
 		x = 38
 		y = 14
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		prerequisite = { focus = AFU_all_for_the_sake_of_efficiency  focus = AFU_ban_the_destruction_of_ukraine_by_waste  }
 		completion_reward = {
 			swap_ideas = {
@@ -2885,9 +2649,7 @@
 		x = 32
 		y = 8
 		cost = 6
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		prerequisite = { focus = AFU_first_nationalsyndicalist_congress  }
 		completion_reward = {
 			add_political_power = -100
@@ -2907,9 +2669,7 @@
 		x = 33
 		y = 9
 		cost = 7
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		prerequisite = { focus = AFU_give_the_oligarchs_a_fight  }
 		completion_reward = {
 			2093 = {
@@ -2934,9 +2694,7 @@
 		x = 32
 		y = 10
 		cost = 7
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		available = { 
 			controls_state = 557
 			controls_state = 497
@@ -2957,9 +2715,7 @@
 		x = 35
 		y = 8
 		cost = 5
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
+
 		prerequisite = { focus = AFU_first_nationalsyndicalist_congress  }
 		completion_reward = {
 			add_popularity = {

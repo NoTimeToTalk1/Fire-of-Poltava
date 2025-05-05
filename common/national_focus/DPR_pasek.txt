@@ -73,7 +73,7 @@
 			add_ideas = fop_party_system_multiparty
 			
 set_party_name = {
-    ideology = liberal_democracy
+    ideology = liberalism
     long_name = "Donbass Liberal-Independent Party"
     name = "DLIP"
 }
@@ -286,7 +286,7 @@ hidden_effect = {
 DNR_Pasechnik = {
                 set_portraits = {
                     civilian = {
-                        large = "gfx/leaders/LNR/loh1.dds"
+                        large = "gfx/leaders/LPR/loh1.dds"
                     }
                 }
             }
@@ -310,7 +310,7 @@ DNR_Pasechnik = {
 		add_political_power = 5
 			add_stability = 0.05
 add_popularity = {
-    ideology = conservative_democracy
+    ideology = conservatism
     popularity = 0.15
 }			
 			
@@ -415,7 +415,7 @@ add_opinion_modifier = {
 			add_political_power = 10
 every_country = { 
 limit = {
-has_government = liberal_democracy
+has_government = liberalism
 }
 add_opinion_modifier = {
     target = DPR
@@ -478,7 +478,7 @@ add_opinion_modifier = {
     modifier = potential_traitors
 }
 			}	
-				RGE = {
+				REC = {
 add_opinion_modifier = {
     target = DPR
     modifier = potential_traitors
@@ -490,13 +490,13 @@ add_opinion_modifier = {
     modifier = potential_traitors
 }
 			}			
-				RGE = {
+				REC = {
 add_opinion_modifier = {
     target = DPR
     modifier = potential_traitors
 }
 			}	
-				TRA = {
+				TRN = {
 add_opinion_modifier = {
     target = DPR
     modifier = potential_traitors
@@ -507,7 +507,7 @@ hidden_effect = {
 DNR_Pasechnik = {
                 set_portraits = {
                     civilian = {
-                        large = "gfx/leaders/LNR/loh2.dds"
+                        large = "gfx/leaders/LPR/loh2.dds"
                     }
                 }
             }
@@ -1532,7 +1532,7 @@ add_ideas = fop_supervision_strict_rules
 		completion_reward = {
 			add_stability = 0.1
 			add_popularity = {
-    ideology = conservative_democracy
+    ideology = conservatism
     popularity = 0.25
 }
 			
@@ -1611,7 +1611,7 @@ add_ideas = fop_supervision_strict_rules
 DNR_Pasechnik = {
                 set_portraits = {
                     civilian = {
-                        large = "gfx/leaders/LNR/loh3.dds"
+                        large = "gfx/leaders/LPR/loh3.dds"
                     }
                 }
             }
@@ -1920,13 +1920,13 @@ set_party_name = {
 		mutually_exclusive = { focus = DPR_cornet_will_take_the_helm  }
 		completion_reward = {
 every_possible_country = {
-    limit = { has_character = LNR_Zinaida }
+    limit = { has_character = LPR_Zinaida }
     random_character = {
-        limit = { is_character = LNR_Zinaida }
+        limit = { is_character = LPR_Zinaida }
         set_nationality = ROOT
     }
 }
-promote_character = LNR_Zinaida
+promote_character = LPR_Zinaida
 set_politics = {
     ruling_party = social_democracy
     elections_allowed = no
@@ -1951,13 +1951,13 @@ set_politics = {
 		mutually_exclusive = { focus = DPR_nadion_will_bring_back_stability }
 		completion_reward = {
 every_possible_country = {
-    limit = { has_character = LNR_kornet }
+    limit = { has_character = LPR_kornet }
     random_character = {
-        limit = { is_character = LNR_kornet }
+        limit = { is_character = LPR_kornet }
         set_nationality = ROOT
     }
 }
-promote_character = LNR_kornet
+promote_character = LPR_kornet
 set_politics = {
     ruling_party = ultranationalism
     elections_allowed = no
@@ -1978,7 +1978,7 @@ set_politics = {
 		prerequisite = { focus = DPR_pasichnik_will_lead_the_people_forward  }
 		completion_reward = {
 add_popularity = {
-    ideology = conservative_democracy
+    ideology = conservatism
     popularity = 0.2
 }			
 		}
@@ -2017,9 +2017,9 @@ add_ideas = fop_security_opressive_police
 every_country = { 
 limit = {
 OR = {
-has_government = liberal_democracy
-has_government = conservative_democracy
-has_government = oligarchy
+has_government = liberalism
+has_government = conservatism
+has_government = oligarchism
 }
 }
 			country_event = { 
@@ -2189,7 +2189,7 @@ add_ideas = fop_supervision_encouraged_brutality
 		}
 		prerequisite = { focus = DPR_cornet_will_take_the_helm  }
 		completion_reward = {
-	LNR_kornet = {
+	LPR_kornet = {
 	add_country_leader_trait = intelligence_experience
 	}	
 		}
@@ -2250,12 +2250,10 @@ random_core_state = {
 		}
 		prerequisite = { focus = DPR_war_is_fun  } prerequisite = { focus = DPR_strengthen_the_base  }
 		completion_reward = {
-	LNR_kornet = {
+	LPR_kornet = {
 	add_country_leader_trait = AntiPushilinsentiment
 	}				
 		}
 	}
-
-}
 
 

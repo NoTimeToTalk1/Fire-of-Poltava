@@ -2105,7 +2105,7 @@ south_dogovornyak = {
 			tag = TVR
 		}
 	}
-	dnister_view_influence = {
+	dniester_view_influence = {
 	
 	icon = GFX_decision_dogovornyak_influence
 	
@@ -2136,8 +2136,8 @@ south_dogovornyak = {
 						tag = DST
 					}
 					OR = {
-						check_variable = {DST.dnister_unifier_influence > TVR.tavria_unifier_influence}
-						check_variable = {TVR.tavria_unifier_influence = DST.dnister_unifier_influence}
+						check_variable = {DST.dniester_unifier_influence > TVR.tavria_unifier_influence}
+						check_variable = {TVR.tavria_unifier_influence = DST.dniester_unifier_influence}
 					}
 				}
 				if = {
@@ -2145,8 +2145,8 @@ south_dogovornyak = {
 						tag = TVR
 					}
 					OR = {
-						check_variable = {TVR.tavria_unifier_influence > DST.dnister_unifier_influence}
-						check_variable = {TVR.tavria_unifier_influence = DST.dnister_unifier_influence}
+						check_variable = {TVR.tavria_unifier_influence > DST.dniester_unifier_influence}
+						check_variable = {TVR.tavria_unifier_influence = DST.dniester_unifier_influence}
 					}					
 				}
 		}
@@ -2183,7 +2183,7 @@ south_dogovornyak = {
 			}
 			else_if = {
 				limit = {
-					check_variable = { DST.dnister_unifier_influence = TVR.tavria_unifier_influence }
+					check_variable = { DST.dniester_unifier_influence = TVR.tavria_unifier_influence }
 				}
 				declare_war_on = {
 					target = FROM
@@ -2324,12 +2324,12 @@ south_dogovornyak = {
 			}
 			if = {
 				limit = {
-					check_variable = {DST.dnister_influence_choice > TVR.tavria_influence_choice}
+					check_variable = {DST.dniester_influence_choice > TVR.tavria_influence_choice}
 				}
 				
 				DST = {
 					add_to_variable = {
-						var = dnister_unifier_influence
+						var = dniester_unifier_influence
 						value = 0.5
 					}
 					if = { 
@@ -2376,7 +2376,7 @@ south_dogovornyak = {
 			}
 			if = {
 				limit = {
-					check_variable = {TVR.tavria_influence_choice > DST.dnister_influence_choice}
+					check_variable = {TVR.tavria_influence_choice > DST.dniester_influence_choice}
 				}
 				TVR = {
 					add_to_variable = {
@@ -2436,8 +2436,8 @@ south_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_dnister}
-				check_variable = {DST.dnister_spendible_influence > 0}
+				limit = {has_country_flag = united_dniester}
+				check_variable = {DST.dniester_spendible_influence > 0}
 			}
 			else_if = {
 				limit = {has_country_flag = united_tavria}
@@ -2460,11 +2460,11 @@ south_dogovornyak = {
 					tag = DST
 				}
 				add_to_variable = {
-					var = dnister_spendible_influence
+					var = dniester_spendible_influence
 					value = -3
 				}
 				set_variable = {
-					var = dnister_influence_choice
+					var = dniester_influence_choice
 					value = 3
 				}
 			}
@@ -2492,8 +2492,8 @@ south_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_dnister}
-				check_variable = {DST.dnister_spendible_influence > 0}
+				limit = {has_country_flag = united_dniester}
+				check_variable = {DST.dniester_spendible_influence > 0}
 			}
 			else_if = {
 				limit = {has_country_flag = united_tavria}
@@ -2516,11 +2516,11 @@ south_dogovornyak = {
 					tag = DST
 				}
 				add_to_variable = {
-					var = dnister_spendible_influence
+					var = dniester_spendible_influence
 					value = -2
 				}
 				set_variable = {
-					var = dnister_influence_choice
+					var = dniester_influence_choice
 					value = 2
 				}
 			}
@@ -2548,8 +2548,8 @@ south_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_dnister}
-				check_variable = {DST.dnister_spendible_influence > 0}
+				limit = {has_country_flag = united_dniester}
+				check_variable = {DST.dniester_spendible_influence > 0}
 			}
 			else_if = {
 				limit = {has_country_flag = united_tavria}
@@ -2572,11 +2572,11 @@ south_dogovornyak = {
 					tag = DST
 				}
 				add_to_variable = {
-					var = dnister_spendible_influence
+					var = dniester_spendible_influence
 					value = -1
 				}
 				set_variable = {
-					var = dnister_influence_choice
+					var = dniester_influence_choice
 					value = 1
 				}
 			}
@@ -2604,8 +2604,8 @@ south_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_dnister}
-				check_variable = {DST.dnister_spendible_influence > 0}
+				limit = {has_country_flag = united_dniester}
+				check_variable = {DST.dniester_spendible_influence > 0}
 			}
 			else_if = {
 				limit = {has_country_flag = united_tavria}
@@ -2630,31 +2630,31 @@ south_dogovornyak = {
 				random_list = {
 					30 = {
 						add_to_variable = {
-							var = dnister_spendible_influence
+							var = dniester_spendible_influence
 							value = -1
 						}
 						set_variable = {
-							var = dnister_influence_choice
+							var = dniester_influence_choice
 							value = 1
 						}
 					}
 					50 = {
 						add_to_variable = {
-							var = dnister_spendible_influence
+							var = dniester_spendible_influence
 							value = -2
 						}
 						set_variable = {
-							var = dnister_influence_choice
+							var = dniester_influence_choice
 							value = 2
 						}
 					}
 					20 = {
 						add_to_variable = {
-							var = dnister_spendible_influence
+							var = dniester_spendible_influence
 							value = -3
 						}
 						set_variable = {
-							var = dnister_influence_choice
+							var = dniester_influence_choice
 							value = 3
 						}
 					}
@@ -2729,7 +2729,7 @@ south_dogovornyak = {
 					set_country_flag = economy_base
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = dnister_influence_choice
+						var = dniester_influence_choice
 						value = 0
 					}
 				}
@@ -2773,7 +2773,7 @@ south_dogovornyak = {
 					set_country_flag = economy_freedoms
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = dnister_influence_choice
+						var = dniester_influence_choice
 						value = 0
 					}
 				}
@@ -2817,7 +2817,7 @@ south_dogovornyak = {
 					set_country_flag = army_standarts
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = dnister_influence_choice
+						var = dniester_influence_choice
 						value = 0
 					}
 				}
@@ -2861,7 +2861,7 @@ south_dogovornyak = {
 					set_country_flag = army_structure
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = dnister_influence_choice
+						var = dniester_influence_choice
 						value = 0
 					}
 				}
@@ -2905,7 +2905,7 @@ south_dogovornyak = {
 					set_country_flag = state_control
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = dnister_influence_choice
+						var = dniester_influence_choice
 						value = 0
 					}
 				}
@@ -2949,7 +2949,7 @@ south_dogovornyak = {
 					set_country_flag = civilian_services
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = dnister_influence_choice
+						var = dniester_influence_choice
 						value = 0
 					}
 				}
@@ -2993,7 +2993,7 @@ south_dogovornyak = {
 					set_country_flag = worker_stance
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = dnister_influence_choice
+						var = dniester_influence_choice
 						value = 0
 					}
 				}
@@ -3037,7 +3037,7 @@ south_dogovornyak = {
 					set_country_flag = civilian_liberties
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = dnister_influence_choice
+						var = dniester_influence_choice
 						value = 0
 					}
 				}
@@ -3081,7 +3081,7 @@ south_dogovornyak = {
 					set_country_flag = equality
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = dnister_influence_choice
+						var = dniester_influence_choice
 						value = 0
 					}
 				}
@@ -3125,7 +3125,7 @@ south_dogovornyak = {
 					set_country_flag = community_controls
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = dnister_influence_choice
+						var = dniester_influence_choice
 						value = 0
 					}
 				}

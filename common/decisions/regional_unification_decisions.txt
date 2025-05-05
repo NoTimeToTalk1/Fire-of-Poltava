@@ -10,12 +10,10 @@ unite_galicia_ukraine = {
 				is_galicia_ukraine = yes
 				can_unite_galicia = yes
 			}
-			
-
 		}
 		
 		fire_only_once = yes
-        	days_remove = 0		
+        days_remove = 0	
 
 		visible = {	
 			is_galicia_ukraine = yes
@@ -27,42 +25,42 @@ unite_galicia_ukraine = {
 				save_global_event_target_as = UKR_galicia_unifier
 				if = {
 					limit = {
-							original_tag = HAL
+						original_tag = HAL
 					}
 					set_cosmetic_tag = HAL_regional_galicia
 					add_political_power = 50
 				}
-				if = {
+				else_if = {
 					limit = {
-							original_tag = HUT
+						original_tag = HUT
 					}
 					set_cosmetic_tag = HUT_regional_galicia
 					add_political_power = 50
 				}
-				if = {
+				else_if = {
 					limit = {
-							original_tag = ZAK
+						original_tag = ZAK
 					}
 					set_cosmetic_tag = ZAK_regional_galicia
 					add_political_power = 50
 				}
-				if = {
+				else_if = {
 					limit = {
-							original_tag = RIV
+						original_tag = RIV
 					}
 					set_cosmetic_tag = RIV_regional_galicia
 					add_political_power = 50
 				}
-				if = {
+				else_if = {
 					limit = {
-							original_tag = VOL
+						original_tag = VOL
 					}
 					set_cosmetic_tag = VOL_regional_galicia
 					add_political_power = 50
 				}
-				if = {
+				else_if = {
 					limit = {
-							original_tag = TER
+						original_tag = TER
 					}
 					set_cosmetic_tag = TER_regional_galicia
 					add_political_power = 50
@@ -87,14 +85,14 @@ unite_galicia_ukraine = {
 				}
 	  		}
 		}
-		ai_will_do = {	
-			base = 10		
+		ai_will_do = {
+			base = 10
 		}
    	}
 	
 	attack_galicia = {
 		icon = GFX_decision_swords
-		
+		war_with_on_remove = HAL
 		
 		available = { 
 			is_neighbor_of = HAL
@@ -129,20 +127,20 @@ unite_galicia_ukraine = {
             add_command_power = -15
         }
 		remove_effect = {
-			war_with_on_remove = HAL
 			declare_war_on = {
-    				target = HAL
-    				type = annex_everything
+    			target = HAL
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 40		
+
+		ai_will_do = {
+			base = 40
 		}
 	}
 
 	attack_hutsuls = {
 		icon = GFX_decision_swords
-		
+		war_with_on_remove = HUT
 		
 		available = { 
 			is_neighbor_of = HUT
@@ -180,20 +178,20 @@ unite_galicia_ukraine = {
             add_command_power = -15
         }
 		remove_effect = {
-			war_with_on_remove = HUT
 			declare_war_on = {
-    				target = HUT
-    				type = annex_everything
+    			target = HUT
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 40		
+
+		ai_will_do = {
+			base = 40
 		}
 	}
 
 	attack_ternopil = {
 		icon = GFX_decision_swords
-		
+		war_with_on_remove = TER
 		
 		available = { 
 			is_neighbor_of = TER
@@ -228,20 +226,20 @@ unite_galicia_ukraine = {
             add_command_power = -15
         }
 		remove_effect = {
-			war_with_on_remove = TER
 			declare_war_on = {
-    				target = TER
-    				type = annex_everything
+    			target = TER
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 40		
+
+		ai_will_do = {
+			base = 40
 		}
 	}
 
 	attack_volhynia = {
 		icon = GFX_decision_swords
-		
+		war_with_on_remove = VOL
 		
 		available = { 
 			is_neighbor_of = VOL
@@ -279,14 +277,14 @@ unite_galicia_ukraine = {
             add_command_power = -15
         }
 		remove_effect = {
-			war_with_on_remove = VOL
 			declare_war_on = {
-    				target = VOL
-    				type = annex_everything
+    			target = VOL
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 40		
+
+		ai_will_do = {
+			base = 40
 		}
 	}
 
@@ -317,7 +315,7 @@ unite_galicia_ukraine = {
 			VOL = {
 				exists = yes	
 			}
-				original_tag = HAL
+			original_tag = HAL
 		}		
 
 
@@ -328,14 +326,15 @@ unite_galicia_ukraine = {
 				}
 			}
 	  	}
-		ai_will_do = {	
-			base = 40		
+
+		ai_will_do = {
+			base = 40
 		}
 	}
 
 	attack_zakarpattya = {
 		icon = GFX_decision_swords
-		
+		war_with_on_remove = ZAK
 		
 		available = { 
 			is_neighbor_of = ZAK
@@ -374,13 +373,13 @@ unite_galicia_ukraine = {
         }
 		remove_effect = {
 			declare_war_on = {
-				war_with_on_remove = ZAK
-    				target = ZAK
-    				type = annex_everything
+    			target = ZAK
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 40		
+
+		ai_will_do = {
+			base = 40
 		}
 	}
 
@@ -411,7 +410,7 @@ unite_galicia_ukraine = {
 			ZAK = {
 				exists = yes	
 			}
-				original_tag = HAL
+			original_tag = HAL
 		}		
 
 		
@@ -423,14 +422,15 @@ unite_galicia_ukraine = {
 				}
 			}
 	  	}
-		ai_will_do = {	
-			base = 60		
+
+		ai_will_do = {
+			base = 60
 		}
 	}
 
 	attack_rivne = {
 		icon = GFX_decision_swords
-		
+		war_with_on_remove = RIV
 		
 		available = { 
 			is_neighbor_of = RIV
@@ -466,13 +466,13 @@ unite_galicia_ukraine = {
         }
 		remove_effect = {
 			declare_war_on = {
-					war_with_on_remove = RIV
-    				target = RIV
-    				type = annex_everything
+    			target = RIV
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 40		
+		
+		ai_will_do = {
+			base = 40
 		}
 	}
 }
@@ -489,11 +489,10 @@ unite_podolia_ukraine = {
 				is_podolia_ukraine = yes
 				can_unite_podolia = yes
 			}
-			
 		}
 		
 		fire_only_once = yes
-        	days_remove = 0		
+        days_remove = 0		
 
 		visible = {	
 			is_podolia_ukraine = yes
@@ -502,21 +501,21 @@ unite_podolia_ukraine = {
 		cost = 0
 
 		complete_effect = {
-			custom_effect_tooltip = podillya_unite_tt
+			custom_effect_tooltip = podolia_unite_tt
 			hidden_effect = {
-			save_global_event_target_as = UKR_podillya_unifier
+			save_global_event_target_as = UKR_podolia_unifier
 			if = {
 				limit = {
-						original_tag = ZHY
+					original_tag = ZHY
 				}
-				set_cosmetic_tag = ZHY_regional_podillya
+				set_cosmetic_tag = ZHY_regional_podolia
 				add_political_power = 50
 			}
 			if = {
 				limit = {
-						original_tag = KHM
+					original_tag = KHM
 				}
-				set_cosmetic_tag = KHM_regional_podillya
+				set_cosmetic_tag = KHM_regional_podolia
 				add_political_power = 50
 			}
 			set_country_flag = united_podolia
@@ -539,8 +538,9 @@ unite_podolia_ukraine = {
 			}
 			}
 		}
-		ai_will_do = {	
-			base = 40		
+
+		ai_will_do = {
+			base = 40
 		}
    	}
 
@@ -582,13 +582,14 @@ unite_podolia_ukraine = {
 				}
 			}
 	  	}
-		ai_will_do = {	
-			base = 40		
+
+		ai_will_do = {
+			base = 40
 		}
 	}
 }
 
-unite_siveria_ukraine = {
+	unite_siveria_ukraine = {
 		unite_siveria_ukraine = {			
 
 		icon = GFX_decision_unite_ukraine
@@ -617,41 +618,41 @@ unite_siveria_ukraine = {
 			hidden_effect = {
 			if = {
 				limit = {
-						original_tag = KYI
+					original_tag = KYI
 				}
 				set_cosmetic_tag = UKR_regional_siveria
 				add_political_power = 50
 			}
 			if = {
 				limit = {
-						original_tag = KOB
+					original_tag = KOB
 				}
 				set_cosmetic_tag = KYI_regional_siveria
 				add_political_power = 50
 			}
 			if = {
 				limit = {
-						original_tag = CHR
+					original_tag = CHR
 				}
 				set_cosmetic_tag = PRH_regional_siveria
 				add_political_power = 50
 			}
 			if = {
 				limit = {
-						original_tag = SUM
-						NOT = {
-							has_government = ultranationalism
-						}
+					original_tag = SUM
+					NOT = {
+						has_government = ultranationalism
+					}
 				}
 				set_cosmetic_tag = SUM_regional_siveria
 				add_political_power = 50
 			}
 			if = {
 				limit = {
-						AND = {
+					AND = {
 						original_tag = SUM
 						has_government = ultranationalism
-						}
+					}
 				}
 				set_cosmetic_tag = SUM_AKS_regional_siveria
 				add_political_power = 50
@@ -677,14 +678,15 @@ unite_siveria_ukraine = {
 			}
 	  		}
 		}
-		ai_will_do = {	
-			base = 10		
+
+		ai_will_do = {
+			base = 10
 		}
    	}
 
 	attack_poroh = {
 		icon = GFX_decision_swords
-		
+		war_with_on_remove = CHR
 		
 		available = { 
 			OR = {
@@ -693,7 +695,6 @@ unite_siveria_ukraine = {
 					has_subject = KOB
 				}
 			}
-			
 		}
 
 		target_root_trigger = {
@@ -725,27 +726,27 @@ unite_siveria_ukraine = {
             add_command_power = -15
         }
 		remove_effect = {
-			war_with_on_remove = CHR
 			declare_war_on = {
-    				target = CHR
-    				type = annex_everything
+    			target = CHR
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 40		
+
+		ai_will_do = {
+			base = 40
 		}
 	}
 
 	attack_zeleboba = {
 		icon = GFX_decision_swords
-		
+		war_with_on_remove = KYI
+		war_with_on_remove = KOB
 		
 		available = { 
 			OR = {
 				is_neighbor_of = KYI
 				is_neighbor_of = KOB
 			}
-			
 		}
 
 		target_root_trigger = {
@@ -777,25 +778,26 @@ unite_siveria_ukraine = {
             add_command_power = -15
         }
 		remove_effect = {
-			war_with_on_remove = KYI
-			war_with_on_remove = KOB
+			
 			declare_war_on = {
-    				target = KYI
-    				type = annex_everything
+    			target = KYI
+    			type = annex_everything
 			}
 			declare_war_on = {
-    				target = KOB
-    				type = annex_everything
+    			target = KOB
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 40		
+
+		ai_will_do = {
+			base = 40
 		}
 	}
 
 	attack_kyiv_oblast = {
 		icon = GFX_decision_swords
-		
+		war_with_on_remove = KOB
+		war_with_on_remove = KYI
 		
 		available = { 
 			OR = {
@@ -820,13 +822,12 @@ unite_siveria_ukraine = {
         days_remove = 14		
 
 		visible = {	
-				KOB = {
-					exists = yes
-				}
-				NOT = {
-						original_tag = KYI					
-					}
-
+			KOB = {
+				exists = yes
+			}
+			NOT = {
+				original_tag = KYI					
+			}
 		}		
 
 		custom_cost_trigger = {
@@ -837,28 +838,28 @@ unite_siveria_ukraine = {
             add_command_power = -15
         }
 		remove_effect = {
-			war_with_on_remove = KOB
-			war_with_on_remove = KYI
+			
 			declare_war_on = {
-    				target = KOB
-    				type = annex_everything
+    			target = KOB
+    			type = annex_everything
 			}
 			declare_war_on = {
-    				target = KYI
-    				type = annex_everything
+    			target = KYI
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 40		
+
+		ai_will_do = {
+			base = 40
 		}
 	}
 
 	attack_kyiv_oblast_ukr = {
 		icon = GFX_decision_swords
-		
+		war_with_on_remove = KOB
 		
 		available = { 
-				is_neighbor_of = KOB			
+			is_neighbor_of = KOB			
 		}
 
 		target_root_trigger = {
@@ -877,13 +878,12 @@ unite_siveria_ukraine = {
         days_remove = 14		
 
 		visible = {	
-				original_tag = KYI
-				NOT = {
-					KYI = {
-						has_subject = KOB
-					}
+			original_tag = KYI
+			NOT = {
+				KYI = {
+					has_subject = KOB
 				}
-
+			}
 		}		
 
 		custom_cost_trigger = {
@@ -894,14 +894,15 @@ unite_siveria_ukraine = {
             add_command_power = -15
         }
 		remove_effect = {
-			war_with_on_remove = KOB
+			
 			declare_war_on = {
-    				target = KOB
-    				type = annex_everything
+    			target = KOB
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 40		
+
+		ai_will_do = {
+			base = 40
 		}
 	}
 
@@ -910,7 +911,7 @@ unite_siveria_ukraine = {
 		
 		
 		available = { 
-				is_neighbor_of = KOB			
+			is_neighbor_of = KOB			
 		}
 
 		target_root_trigger = {
@@ -929,11 +930,10 @@ unite_siveria_ukraine = {
         days_remove = 7		
 
 		visible = {	
-				original_tag = KYI
-				KOB = {
-					exists = yes
-				}
-
+			original_tag = KYI
+			KOB = {
+				exists = yes
+			}
 		}		
 
 		
@@ -945,8 +945,9 @@ unite_siveria_ukraine = {
 				}
 			}
 	  	}
-		ai_will_do = {	
-			base = 40		
+
+		ai_will_do = {
+			base = 40
 		}
 	}
 
@@ -955,7 +956,7 @@ unite_siveria_ukraine = {
 		
 		
 		available = { 
-				is_neighbor_of = SUM			
+			is_neighbor_of = SUM			
 		}
 
 		target_root_trigger = {
@@ -974,17 +975,17 @@ unite_siveria_ukraine = {
         days_remove = 7		
 
 		visible = {	
+			SUM = {
+				exists = yes
+			}
+			NOT = {
 				SUM = {
-					exists = yes
+					has_government = ultranationalism
 				}
-				NOT = {
-					SUM = {
-						has_government = ultranationalism
-					}
-				}
+			}
 		}		
 
-		
+
 
 		remove_effect = {
 			SUM = {
@@ -993,17 +994,18 @@ unite_siveria_ukraine = {
 				}
 			}
 	  	}
-		ai_will_do = {	
-			base = 40		
+
+		ai_will_do = {
+			base = 40
 		}
 	}
 
 	attack_sumy = {
 		icon = GFX_decision_swords
-		
+		war_with_on_remove = SUM
 		
 		available = { 
-				is_neighbor_of = SUM			
+			is_neighbor_of = SUM			
 		}
 
 		target_root_trigger = {
@@ -1022,9 +1024,9 @@ unite_siveria_ukraine = {
         days_remove = 14		
 
 		visible = {	
-					SUM = {
-						has_government = ultranationalism
-					}
+			SUM = {
+				has_government = ultranationalism
+			}
 		}		
 
 		custom_cost_trigger = {
@@ -1035,14 +1037,15 @@ unite_siveria_ukraine = {
             add_command_power = -15
         }
 		remove_effect = {
-			war_with_on_remove = SUM
+			
 			declare_war_on = {
-    				target = SUM
-    				type = annex_everything
+    			target = SUM
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 40		
+
+		ai_will_do = {
+			base = 40
 		}
 	}
 
@@ -1051,7 +1054,7 @@ unite_siveria_ukraine = {
 		
 		
 		available = { 
-				is_neighbor_of = CBL			
+			is_neighbor_of = CBL			
 		}
 
 		target_root_trigger = {
@@ -1070,9 +1073,9 @@ unite_siveria_ukraine = {
         days_remove = 7		
 
 		visible = {	
-					CBL = {
-						exists = yes
-					}
+			CBL = {
+				exists = yes
+			}
 		}		
 
 		
@@ -1084,8 +1087,9 @@ unite_siveria_ukraine = {
 				}
 			}
 	  	}
-		ai_will_do = {	
-			base = 40		
+
+		ai_will_do = {
+			base = 40
 		}
 	}
 }
@@ -1119,35 +1123,35 @@ unite_dnieper_ukraine = {
 			hidden_effect = {
 			if = {
 				limit = {
-						original_tag = PLT
+					original_tag = PLT
 				}
 				set_cosmetic_tag = PLT_regional_dnieper
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = KRM
+					original_tag = KRM
 				}
 				set_cosmetic_tag = KRE_regional_dnieper
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = CHE
+					original_tag = CHE
 				}
 				set_cosmetic_tag = CHR_regional_dnieper
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = UMA
+					original_tag = UMA
 				}
 				set_cosmetic_tag = UMA_regional_dnieper
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = KIR
+					original_tag = KIR
 				}
 				set_cosmetic_tag = KIR_regional_dnieper
 				add_political_power = 50
@@ -1173,8 +1177,9 @@ unite_dnieper_ukraine = {
 			}
 	  		}
 		}
-		ai_will_do = {	
-			base = 40		
+
+		ai_will_do = {
+			base = 40
 		}
    	}
 
@@ -1182,9 +1187,8 @@ unite_dnieper_ukraine = {
 		icon = GFX_decision_swords
 		
 		
-		available = { 
-				is_neighbor_of = PLT
-			
+		available = {
+			is_neighbor_of = PLT
 		}
 
 		target_root_trigger = {
@@ -1202,10 +1206,10 @@ unite_dnieper_ukraine = {
 		fire_only_once = yes
         days_remove = 14		
 
-		visible = {	
-				PLT = {
-					exists = yes
-				}
+		visible = {
+			PLT = {
+				exists = yes
+			}
 		}		
 
 		custom_cost_trigger = {
@@ -1217,12 +1221,13 @@ unite_dnieper_ukraine = {
         }
 		remove_effect = {
 			declare_war_on = {
-    				target = PLT
-    				type = annex_everything
+    			target = PLT
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 40		
+
+		ai_will_do = {
+			base = 40
 		}
 	}
 	
@@ -1231,8 +1236,7 @@ unite_dnieper_ukraine = {
 		
 		
 		available = { 
-				is_neighbor_of = KRM
-			
+			is_neighbor_of = KRM
 		}
 
 		target_root_trigger = {
@@ -1250,10 +1254,10 @@ unite_dnieper_ukraine = {
 		fire_only_once = yes
         days_remove = 14		
 
-		visible = {	
-				KRM = {
-					exists = yes
-				}
+		visible = {
+			KRM = {
+				exists = yes
+			}
 		}		
 
 		custom_cost_trigger = {
@@ -1265,12 +1269,13 @@ unite_dnieper_ukraine = {
         }
 		remove_effect = {
 			declare_war_on = {
-    				target = KRM
-    				type = annex_everything
+    			target = KRM
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 40		
+
+		ai_will_do = {
+			base = 40
 		}
 	}
 
@@ -1279,8 +1284,7 @@ unite_dnieper_ukraine = {
 		
 		
 		available = { 
-				is_neighbor_of = KIR
-			
+			is_neighbor_of = KIR
 		}
 
 		target_root_trigger = {
@@ -1298,10 +1302,10 @@ unite_dnieper_ukraine = {
 		fire_only_once = yes
         days_remove = 14		
 
-		visible = {	
-				KIR = {
-					exists = yes
-				}
+		visible = {
+			KIR = {
+				exists = yes
+			}
 		}		
 
 		custom_cost_trigger = {
@@ -1313,12 +1317,13 @@ unite_dnieper_ukraine = {
         }
 		remove_effect = {
 			declare_war_on = {
-    				target = KIR
-    				type = annex_everything
+    			target = KIR
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 40		
+
+		ai_will_do = {
+			base = 40
 		}
 	}
 
@@ -1326,9 +1331,8 @@ unite_dnieper_ukraine = {
 		icon = GFX_decision_swords
 		
 		
-		available = { 
-				is_neighbor_of = CHE
-			
+		available = {
+			is_neighbor_of = CHE
 		}
 
 		target_root_trigger = {
@@ -1344,13 +1348,13 @@ unite_dnieper_ukraine = {
 		}
 		
 		fire_only_once = yes
-        days_remove = 14		
+        days_remove = 14
 
-		visible = {	
-				CHE = {
-					exists = yes
-				}
-		}		
+		visible = {
+			CHE = {
+				exists = yes
+			}
+		}
 
 		custom_cost_trigger = {
 			command_power > 14
@@ -1361,12 +1365,13 @@ unite_dnieper_ukraine = {
         }
 		remove_effect = {
 			declare_war_on = {
-    				target = CHE
-    				type = annex_everything
+    			target = CHE
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 40		
+
+		ai_will_do = {
+			base = 40
 		}
 	}
 
@@ -1375,8 +1380,7 @@ unite_dnieper_ukraine = {
 		
 		
 		available = { 
-				is_neighbor_of = UMA
-			
+			is_neighbor_of = UMA
 		}
 
 		target_root_trigger = {
@@ -1394,10 +1398,10 @@ unite_dnieper_ukraine = {
 		fire_only_once = yes
         days_remove = 14		
 
-		visible = {	
-				UMA = {
-					exists = yes
-				}
+		visible = {
+			UMA = {
+				exists = yes
+			}
 		}		
 
 		custom_cost_trigger = {
@@ -1409,87 +1413,87 @@ unite_dnieper_ukraine = {
         }
 		remove_effect = {
 			declare_war_on = {
-    				target = UMA
-    				type = annex_everything
+    			target = UMA
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
+
+		ai_will_do = {
 			base = 40		
 		}
 	}
 }
 
-unite_dnister_ukraine = {
-		unite_dnister_ukraine = {			
+	unite_dniester_ukraine = {
+		unite_dniester_ukraine = {
 
 		icon = GFX_decision_unite_ukraine
 		
 		
-		available = { 
+		available = {
 			custom_trigger_tooltip = {
-				tooltip = unite_dnister_ukraine_tt
-				is_dnister_ukraine = yes
-				can_unite_dnister_ukraine = yes
+				tooltip = unite_dniester_ukraine_tt
+				is_dniester_ukraine = yes
+				can_unite_dniester_ukraine = yes
 			}
-			
 		}
 		
 		fire_only_once = yes
-        	days_remove = 0		
+        days_remove = 0
 
 		visible = {	
-			is_dnister_ukraine = yes
-		}		
+			is_dniester_ukraine = yes
+		}
 
 		cost = 0
 
 		complete_effect = {
-			custom_effect_tooltip = dnister_unite_tt
+			custom_effect_tooltip = dniester_unite_tt
 			hidden_effect = {
-			save_global_event_target_as = UKR_dnister_unifier
+			save_global_event_target_as = UKR_dniester_unifier
 			if = {
 				limit = {
-						original_tag = ODE
+					original_tag = ODE
 				}
-				set_cosmetic_tag = ODE_regional_dnister
+				set_cosmetic_tag = ODE_regional_dniester
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = STR
+					original_tag = STR
 				}
-				set_cosmetic_tag = STR_regional_dnister
+				set_cosmetic_tag = STR_regional_dniester
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = SHT
+					original_tag = SHA
 				}
-				set_cosmetic_tag = SHT_regional_dnister
+				set_cosmetic_tag = SHA_regional_dniester
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = MYK
+					original_tag = MYK
 				}
-				set_cosmetic_tag = MYK_regional_dnister
+				set_cosmetic_tag = MYK_regional_dniester
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = RGE
+					original_tag = REC
 				}
-				set_cosmetic_tag = RGE_regional_dnister
+				set_cosmetic_tag = REC_regional_dniester
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = BDZ
+					original_tag = BDZ
 				}
-				set_cosmetic_tag = BDZ_regional_dnister
+				set_cosmetic_tag = BDZ_regional_dniester
 				add_political_power = 50
 			}
-			set_country_flag = united_dnister
+			set_country_flag = united_dniester
 			load_focus_tree = fop_generic_one
 			set_variable = {
 				var = FOP_west_allegiance
@@ -1509,8 +1513,9 @@ unite_dnister_ukraine = {
 			}
 	  		}
 		}
-		ai_will_do = {	
-			base = 10		
+
+		ai_will_do = {
+			base = 10
 		}
    	}
 
@@ -1518,8 +1523,8 @@ unite_dnister_ukraine = {
 		icon = GFX_decision_swords
 		
 		
-		available = { 
-				is_neighbor_of = STR
+		available = {
+			is_neighbor_of = STR
 		}
 
 		target_root_trigger = {
@@ -1535,19 +1540,18 @@ unite_dnister_ukraine = {
 		}
 		
 		fire_only_once = yes
-        days_remove = 14		
+        days_remove = 14
 
 		visible = {	
-				STR = {
-					exists = yes
-				}
-				OR = {
-					original_tag = BDZ
-					original_tag = MYK
-					original_tag = ODE
-				}
-				
-		}		
+			STR = {
+				exists = yes
+			}
+			OR = {
+				original_tag = BDZ
+				original_tag = MYK
+				original_tag = ODE
+			}
+		}
 
 		custom_cost_trigger = {
 			command_power > 14
@@ -1559,12 +1563,13 @@ unite_dnister_ukraine = {
 
 		remove_effect = {
 			declare_war_on = {
-    				target = ODE
-    				type = annex_everything
+    			target = STR
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 10		
+
+		ai_will_do = {
+			base = 10
 		}
 	}
 
@@ -1572,37 +1577,36 @@ unite_dnister_ukraine = {
 		icon = GFX_decision_swords
 		
 		
-		available = { 
-				is_neighbor_of = SHT
+		available = {
+			is_neighbor_of = SHA
 		}
 
 		target_root_trigger = {
 			ROOT = {
 				NOT = {
-					original_tag = SHT
+					original_tag = SHA
 				}
 			}
 		}
 
 		targets = {
-			tag = SHT
+			tag = SHA
 		}
 		
 		fire_only_once = yes
-        days_remove = 14		
+        days_remove = 14
 
 		visible = {	
-				SHT = {
-					exists = yes
-				}
-				OR = {
-					original_tag = BDZ
-					original_tag = MYK
-					original_tag = ODE
-					original_tag = RGE
-				}
-				
-		}		
+			SHA = {
+				exists = yes
+			}
+			OR = {
+				original_tag = BDZ
+				original_tag = MYK
+				original_tag = ODE
+				original_tag = REC
+			}
+		}
 
 		custom_cost_trigger = {
 			command_power > 14
@@ -1614,12 +1618,13 @@ unite_dnister_ukraine = {
 
 		remove_effect = {
 			declare_war_on = {
-    				target = SHT
-    				type = annex_everything
+    			target = SHA
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 10		
+
+		ai_will_do = {
+			base = 10
 		}
 	}
 
@@ -1627,8 +1632,8 @@ unite_dnister_ukraine = {
 		icon = GFX_decision_swords
 		
 		
-		available = { 
-				is_neighbor_of = MYK
+		available = {
+			is_neighbor_of = MYK
 		}
 
 		target_root_trigger = {
@@ -1644,20 +1649,19 @@ unite_dnister_ukraine = {
 		}
 		
 		fire_only_once = yes
-        days_remove = 14		
+        days_remove = 14
 
 		visible = {	
-				MYK = {
-					exists = yes
-				}
-				OR = {
-					original_tag = RGE
-					original_tag = ODE
-					original_tag = OLD
-					original_tag = SHT
-				}
-				
-		}		
+			MYK = {
+				exists = yes
+			}
+			OR = {
+				original_tag = REC
+				original_tag = ODE
+				original_tag = OLD
+				original_tag = SHA
+			}
+		}
 
 		custom_cost_trigger = {
 			command_power > 14
@@ -1669,12 +1673,13 @@ unite_dnister_ukraine = {
 
 		remove_effect = {
 			declare_war_on = {
-    				target = MYK
-    				type = annex_everything
+    			target = MYK
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 10		
+
+		ai_will_do = {
+			base = 10
 		}
 	}
 
@@ -1682,8 +1687,8 @@ unite_dnister_ukraine = {
 		icon = GFX_ZAK_rada_election
 		
 		
-		available = { 
-				is_neighbor_of = BDZ			
+		available = {
+			is_neighbor_of = BDZ			
 		}
 
 		target_root_trigger = {
@@ -1699,32 +1704,33 @@ unite_dnister_ukraine = {
 		}
 		
 		fire_only_once = yes
-        days_remove = 7		
+        days_remove = 7
 
 		visible = {	
-				BDZ = {
-					exists = yes
-				}
-				OR = {
-					original_tag = MYK
-					original_tag = STR
-					original_tag = SHT
-					original_tag = RGE
-					original_tag = ODE
-				}
-		}		
+			BDZ = {
+				exists = yes
+			}
+			OR = {
+				original_tag = MYK
+				original_tag = STR
+				original_tag = SHA
+				original_tag = REC
+				original_tag = ODE
+			}
+		}
 
 		
 
 		remove_effect = {
 			SUM = {
 				country_event = {
-					id = reg_dnister.2
+					id = reg_dniester.2
 				}
 			}
 	  	}
-		ai_will_do = {	
-			base = 10		
+
+		ai_will_do = {
+			base = 10
 		}
 	}
 
@@ -1732,8 +1738,8 @@ unite_dnister_ukraine = {
 		icon = GFX_ZAK_rada_election
 		
 		
-		available = { 
-				is_neighbor_of = MYK			
+		available = {
+			is_neighbor_of = MYK			
 		}
 
 		target_root_trigger = {
@@ -1749,55 +1755,54 @@ unite_dnister_ukraine = {
 		}
 		
 		fire_only_once = yes
-        days_remove = 7		
+        days_remove = 7
 
 		visible = {	
-				MYK = {
-					exists = yes
-				}
-				OR = {
-					original_tag = BDZ
-					original_tag = STR
-					original_tag = ODE
-				}
-		}		
+			MYK = {
+				exists = yes
+			}
+			OR = {
+				original_tag = BDZ
+				original_tag = STR
+				original_tag = ODE
+			}
+		}
 
 		
-
 		remove_effect = {
 			MYK = {
 				country_event = {
-					id = reg_dnister.5
+					id = reg_dniester.5
 				}
 			}
 	  	}
-		ai_will_do = {	
-			base = 10		
+
+		ai_will_do = {
+			base = 10
 		}
 	}
 }
 
 unite_tavria_ukraine = {
-		unite_tavria_ukraine = {			
+		unite_tavria_ukraine = {
 
 		icon = GFX_decision_unite_ukraine
 		
 		
-		available = { 
+		available = {
 			custom_trigger_tooltip = {
 				tooltip = unite_tavria_ukraine_tt
 				is_tavria_ukraine = yes
 				can_unite_tavria_ukraine = yes
 			}
-			
 		}
 		
 		fire_only_once = yes
-        	days_remove = 0		
+        days_remove = 0
 
 		visible = {	
 			is_tavria_ukraine = yes
-		}		
+		}
 
 		cost = 0
 
@@ -1807,16 +1812,16 @@ unite_tavria_ukraine = {
 			save_global_event_target_as = UKR_tavrian_unifier
 			if = {
 				limit = {
-						original_tag = ZAP
+					original_tag = ZAP
 				}
-				set_cosmetic_tag = ZAP_regional_south_central
+				set_cosmetic_tag = ZAP_regional_tavria
 				add_political_power = 50
 			}
 			if = {
 				limit = {
-						original_tag = OPZ
+					original_tag = KHE
 				}
-				set_cosmetic_tag = OPZ_regional_south_central
+				set_cosmetic_tag = KHE_regional_tavria
 				add_political_power = 50
 			}
 			set_country_flag = united_tavria
@@ -1839,17 +1844,18 @@ unite_tavria_ukraine = {
 			}
 	  		}
 		}
-		ai_will_do = {	
-			base = 10		
+
+		ai_will_do = {
+			base = 10
 		}
    	}
-	
+
 	attack_zaporizhzhya = {
 		icon = GFX_decision_swords
 		
 		
-		available = { 
-				is_neighbor_of = ZAP
+		available = {
+			is_neighbor_of = ZAP
 		}
 
 		target_root_trigger = {
@@ -1865,14 +1871,13 @@ unite_tavria_ukraine = {
 		}
 		
 		fire_only_once = yes
-        days_remove = 14		
+        days_remove = 14
 
-		visible = {	
-				ZAP = {
-					exists = yes
-				}
-				
-		}		
+		visible = {
+			ZAP = {
+				exists = yes
+			}
+		}
 
 		custom_cost_trigger = {
 			command_power > 14
@@ -1884,12 +1889,13 @@ unite_tavria_ukraine = {
 
 		remove_effect = {
 			declare_war_on = {
-    				target = ZAP
-    				type = annex_everything
+    			target = ZAP
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 10		
+
+		ai_will_do = {
+			base = 10
 		}
 	}
 
@@ -1897,31 +1903,30 @@ unite_tavria_ukraine = {
 		icon = GFX_decision_swords
 		
 		
-		available = { 
-				is_neighbor_of = OPZ
+		available = {
+			is_neighbor_of = KHE
 		}
 
 		target_root_trigger = {
 			ROOT = {
 				NOT = {
-					original_tag = OPZ
+					original_tag = KHE
 				}
 			}
 		}
 
 		targets = {
-			tag = OPZ
+			tag = KHE
 		}
 		
 		fire_only_once = yes
-        days_remove = 14		
+        days_remove = 14
 
-		visible = {	
-				OPZ = {
-					exists = yes
-				}
-				
-		}		
+		visible = {
+			KHE = {
+				exists = yes
+			}
+		}
 
 		custom_cost_trigger = {
 			command_power > 14
@@ -1933,33 +1938,33 @@ unite_tavria_ukraine = {
 
 		remove_effect = {
 			declare_war_on = {
-    				target = OPZ
-    				type = annex_everything
+    			target = KHE
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 10		
+
+		ai_will_do = {
+			base = 10
 		}
 	}
 }
 
 unite_donbas_ukraine = {
-		unite_donbas_ukraine = {			
+		unite_donbas_ukraine = {
 
 		icon = GFX_decision_unite_ukraine
 		
 		
-		available = { 
+		available = {
 			custom_trigger_tooltip = {
 				tooltip = unite_donbas_ukraine_tt
 				is_donbas_ukraine = yes
 				can_unite_donbas_ukraine = yes
 			}
-			
 		}
 		
 		fire_only_once = yes
-        	days_remove = 0		
+        days_remove = 0
 
 		visible = {	
 			is_donbas_ukraine = yes
@@ -1973,15 +1978,15 @@ unite_donbas_ukraine = {
 			save_global_event_target_as = UKR_donbas_unifier
 			if = {
 				limit = {
-						original_tag = AFU
-						has_government = ultranationalism
+					original_tag = AFU
+					has_government = ultranationalism
 				}
 				add_political_power = 50
 				load_focus_tree = AFU_azov_east
 			}
 			if = {
 				limit = {
-						original_tag = KHA
+					original_tag = KHA
 				}
 				add_political_power = 50
 				load_focus_tree = fop_generic_one
@@ -2004,23 +2009,23 @@ unite_donbas_ukraine = {
 			}
 			if = {
 				limit = {
-						original_tag = DPR
-						has_government = ultranationalism
+					original_tag = DPR
+					has_government = ultranationalism
 				}
 				add_political_power = 50
 				load_focus_tree = DPR_strelkov_east
 			}
 			if = {
 				limit = {
-						original_tag = DPR
-						has_cosmetic_tag = VTR
+					original_tag = DPR
+					has_cosmetic_tag = VTR
 				}
 				add_political_power = 50
 				load_focus_tree = DPR_vitrenko
 			}
 			if = {
 				limit = {
-						original_tag = LPR
+					original_tag = LPR
 				}
 				set_cosmetic_tag = LPR_regional_donbasern
 				add_political_power = 50
@@ -2045,8 +2050,9 @@ unite_donbas_ukraine = {
 			set_country_flag = united_donbas
 	  		}
 		}
-		ai_will_do = {	
-			base = 10		
+
+		ai_will_do = {
+			base = 10
 		}
    	}
 
@@ -2055,7 +2061,7 @@ unite_donbas_ukraine = {
 		
 		
 		available = { 
-				is_neighbor_of = AFU
+			is_neighbor_of = AFU
 		}
 
 		target_root_trigger = {
@@ -2071,24 +2077,22 @@ unite_donbas_ukraine = {
 		}
 		
 		fire_only_once = yes
-        days_remove = 7		
+        days_remove = 7
 
-		visible = {	
-				AFU = {
-					exists = yes
+		visible = {
+			AFU = {
+				exists = yes
+			}
+			original_tag = KHA
+			NOT = {
+				OR = {
+					original_tag = DPR
+					original_tag = LPR
 				}
-				original_tag = KHA
-				NOT = {
-					OR = {
-						original_tag = DPR
-						original_tag = LPR
-					}
-				}
-				
-		}		
+			}
+		}
 
 		
-
 		remove_effect = {
 			AFU = {
 				country_event = {
@@ -2096,8 +2100,9 @@ unite_donbas_ukraine = {
 				}
 			}
 	  	}
-		ai_will_do = {	
-			base = 10		
+
+		ai_will_do = {
+			base = 10
 		}
 	}
 
@@ -2105,8 +2110,8 @@ unite_donbas_ukraine = {
 		icon = GFX_decision_swords
 		
 		
-		available = { 
-				is_neighbor_of = DPR
+		available = {
+			is_neighbor_of = DPR
 		}
 
 		target_root_trigger = {
@@ -2125,16 +2130,15 @@ unite_donbas_ukraine = {
 		}
 		
 		fire_only_once = yes
-        days_remove = 14		
+        days_remove = 14
 
-		visible = {	
-				DPR = {
-					exists = yes
-				}
-				NOT = {
-					original_tag = AFU
-				}
-				
+		visible = {
+			DPR = {
+				exists = yes
+			}
+			NOT = {
+				original_tag = AFU
+			}
 		}		
 
 		custom_cost_trigger = {
@@ -2147,12 +2151,13 @@ unite_donbas_ukraine = {
 
 		remove_effect = {
 			declare_war_on = {
-    				target = DPR
-    				type = annex_everything
+    			target = DPR
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 10		
+
+		ai_will_do = {
+			base = 10
 		}
 	}
 
@@ -2160,8 +2165,8 @@ unite_donbas_ukraine = {
 		icon = GFX_decision_swords
 		
 		
-		available = { 
-				is_neighbor_of = KHA
+		available = {
+			is_neighbor_of = KHA
 		}
 
 		target_root_trigger = {
@@ -2177,12 +2182,12 @@ unite_donbas_ukraine = {
 		}
 		
 		fire_only_once = yes
-        days_remove = 14		
+        days_remove = 14
 
-		visible = {	
-				KHA = {
-					exists = yes
-				}				
+		visible = {
+			KHA = {
+				exists = yes
+			}				
 		}		
 
 		custom_cost_trigger = {
@@ -2195,12 +2200,13 @@ unite_donbas_ukraine = {
 
 		remove_effect = {
 			declare_war_on = {
-    				target = KHA
-    				type = annex_everything
+    			target = KHA
+    			type = annex_everything
 			}
 	  	}
-		ai_will_do = {	
-			base = 10		
+
+		ai_will_do = {
+			base = 10
 		}
 	}
 }
@@ -2211,7 +2217,7 @@ unite_east_ukraine = {
 		icon = GFX_decision_unite_ukraine
 		
 		
-		available = { 
+		available = {
 			custom_trigger_tooltip = {
 				tooltip = unite_east_ukraine_tt
 				is_east_ukraine = yes
@@ -2221,9 +2227,9 @@ unite_east_ukraine = {
 		}
 		
 		fire_only_once = yes
-        	days_remove = 0		
+        days_remove = 0
 
-		visible = {	
+		visible = {
 			is_east_ukraine = yes
 			OR = {
 				tag = DBS
@@ -2239,41 +2245,41 @@ unite_east_ukraine = {
 			save_global_event_target_as = UKR_east_unifier
 			if = {
 				limit = {
-						original_tag = AFU
-						has_government = ultranationalism
+					original_tag = AFU
+					has_government = ultranationalism
 				}
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = KHA
+					original_tag = KHA
 				}
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = DPR
+					original_tag = DPR
 				}
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = DPR
-						has_government = ultranationalism
+					original_tag = DPR
+					has_government = ultranationalism
 				}
 				add_political_power = 100
 				load_focus_tree = DPR_strelkov_east
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = LPR
+					original_tag = LPR
 				}
 				set_cosmetic_tag = LPR_regional_eastern
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = DNI
+					original_tag = DNI
 				}
 				set_cosmetic_tag = DNI_regional_eastern
 				add_political_power = 50
@@ -2281,8 +2287,9 @@ unite_east_ukraine = {
 			set_country_flag = united_east
 	  		}
 		}
-		ai_will_do = {	
-			base = 10		
+
+		ai_will_do = {
+			base = 10
 		}
    	}
 
@@ -2661,65 +2668,66 @@ unite_south_ukraine = {
 			save_global_event_target_as = UKR_south_unifier
 			if = {
 				limit = {
-						original_tag = ODE
+					original_tag = ODE
 				}
 				set_cosmetic_tag = ODE_regional_south
 				add_political_power = 50
 			}
 			if = {
 				limit = {
-						original_tag = STR
+					original_tag = STR
 				}
 				set_cosmetic_tag = STR_regional_south
 				add_political_power = 50
 			}
 			if = {
 				limit = {
-						original_tag = SHT
+					original_tag = SHA
 				}
-				set_cosmetic_tag = SHT_regional_south
+				set_cosmetic_tag = SHA_regional_south
 				add_political_power = 50
 			}
 			if = {
 				limit = {
-						original_tag = MYK
+					original_tag = MYK
 				}
 				set_cosmetic_tag = MYK_regional_south
 				add_political_power = 50
 			}
 			if = {
 				limit = {
-						original_tag = RGE
+					original_tag = REC
 				}
-				set_cosmetic_tag = RGE_regional_south
+				set_cosmetic_tag = REC_regional_south
 				add_political_power = 50
 			}
 			if = {
 				limit = {
-						original_tag = BDZ
+					original_tag = BDZ
 				}
 				set_cosmetic_tag = BDZ_regional_south
 				add_political_power = 50
 			}
 			if = {
 				limit = {
-						original_tag = ZAP
+					original_tag = ZAP
 				}
 				set_cosmetic_tag = ZAP_regional_south
 				add_political_power = 50
 			}
 			if = {
 				limit = {
-						original_tag = OPZ
+					original_tag = KHE
 				}
-				set_cosmetic_tag = OPZ_regional_south
+				set_cosmetic_tag = KHE_regional_south
 				add_political_power = 50
 			}
 			set_country_flag = united_south
 			}
 		}
-		ai_will_do = {	
-			base = 10		
+
+		ai_will_do = {
+			base = 10
 		}
    	}
 
@@ -2766,22 +2774,22 @@ unite_south_ukraine = {
 		}
 
         visible = {
-				OR = {
-					tag = TVR
-					tag = DSR
-				}
-				NOT = {
-					has_country_flag = south_war
-					has_country_flag = south_elections
-					has_country_flag = south_dogovornyak
-				}
-				NOT = {
-					has_country_flag = dogovornyak_agreed
-					has_country_flag = elections_agreed
-				}
-				NOT = {
-					has_country_flag = unification_choice_made
-				}
+			OR = {
+				tag = TVR
+				tag = DSR
+			}
+			NOT = {
+				has_country_flag = south_war
+				has_country_flag = south_elections
+				has_country_flag = south_dogovornyak
+			}
+			NOT = {
+				has_country_flag = dogovornyak_agreed
+				has_country_flag = elections_agreed
+			}
+			NOT = {
+				has_country_flag = unification_choice_made
+			}
         }
 
         complete_effect = {
@@ -2811,20 +2819,22 @@ unite_south_ukraine = {
 		visible = {
 			can_do_elections = yes
 			NOT = {
-					has_country_flag = south_war
-					has_country_flag = south_elections
-					has_country_flag = south_dogovornyak
-				}
-				NOT = {
-					has_country_flag = dogovornyak_agreed
-					has_country_flag = elections_agreed
-				}
-				NOT = {
-					has_country_flag = unification_choice_made
-				}
+				has_country_flag = south_war
+				has_country_flag = south_elections
+				has_country_flag = south_dogovornyak
+			}
+			NOT = {
+				has_country_flag = dogovornyak_agreed
+				has_country_flag = elections_agreed
+			}
+			NOT = {
+				has_country_flag = unification_choice_made
+			}
 		}
+		
 		fire_only_once = yes
-        	days_remove = 0	
+        days_remove = 0
+		
 		complete_effect = {
 			FROM = {
 				country_event = {
@@ -2856,11 +2866,11 @@ unite_south_ukraine = {
 		complete_effect = {
 			DST = {
 				set_variable = {
-					var = dnister_rates
+					var = dniester_rates
 					value = 50.00
 				}
 				set_variable = {
-					var = dnister_rates_grow
+					var = dniester_rates_grow
 					value = 2
 				}
 				set_country_flag = south_elections
@@ -2953,36 +2963,36 @@ unite_south_ukraine = {
 			}	
 		complete_effect = {
 			TVR = {
-					set_country_flag = south_dogovornyak
-					add_political_power = 100
-					set_variable = {
-						var = tavria_spendible_influence
-						value = 21
-					}
-					set_variable = {
-						var = south_done_themes
-						value = 0
-					}
-					set_variable = {
-						var = tavrian_unifier_influence
-						value = 0
-					}
+				set_country_flag = south_dogovornyak
+				add_political_power = 100
+				set_variable = {
+					var = tavria_spendible_influence
+					value = 21
 				}
+				set_variable = {
+					var = south_done_themes
+					value = 0
+				}
+				set_variable = {
+					var = tavrian_unifier_influence
+					value = 0
+				}
+			}
 			DST = {
-					set_country_flag = south_dogovornyak	
-					add_political_power = 100
-					set_variable = {
-						var = dnister_spendible_influence
-						value = 21
-					}
-					set_variable = {
-						var = south_done_themes
-						value = 0
-					}
-					set_variable = {
-						var = dnister_unifier_influence
-						value = 0
-					}
+				set_country_flag = south_dogovornyak	
+				add_political_power = 100
+				set_variable = {
+					var = dniester_spendible_influence
+					value = 21
+				}
+				set_variable = {
+					var = south_done_themes
+					value = 0
+				}
+				set_variable = {
+					var = dniester_unifier_influence
+					value = 0
+				}
 			}
 		}
 
@@ -3039,7 +3049,7 @@ unite_south_ukraine = {
 							type = annex_everything
 						}
 						declare_war_on = {
-							target = OPZ
+							target = KHE
 							type = annex_everything
 						}
 					}
@@ -3062,7 +3072,7 @@ unite_south_ukraine = {
 							type = annex_everything
 						}
 						declare_war_on = {
-							target = RGE
+							target = REC
 							type = annex_everything
 						}
 						declare_war_on = {
@@ -3070,7 +3080,7 @@ unite_south_ukraine = {
 							type = annex_everything
 						}
 						declare_war_on = {
-							target = SHT
+							target = SHA
 							type = annex_everything
 						}
 						declare_war_on = {
@@ -3100,7 +3110,7 @@ unite_north_ukraine = {
 		}
 		
 		fire_only_once = yes
-        	days_remove = 0		
+        days_remove = 0
 
 		visible = {	
 			is_north_ukraine = yes
@@ -3118,87 +3128,88 @@ unite_north_ukraine = {
 			save_global_event_target_as = UKR_north_unifier
 			if = {
 				limit = {
-						original_tag = KYI
+					original_tag = KYI
 				}
-				set_cosmetic_tag = UKR_regional_central
+				set_cosmetic_tag = UKR_regional_north
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = KOB
+					original_tag = KOB
 				}
-				set_cosmetic_tag = KYI_regional_central
+				set_cosmetic_tag = KYI_regional_north
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = CHR
+					original_tag = CHR
 				}
-				set_cosmetic_tag = PRH_regional_central
+				set_cosmetic_tag = PRH_regional_north
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = SUM
-						NOT = {
-							has_government = ultranationalism
-						}
-				}
-				set_cosmetic_tag = SUM_regional_central
-				add_political_power = 50
-			}
-			if = {
-				limit = {
-						original_tag = SUM
+					original_tag = SUM
+					NOT = {
 						has_government = ultranationalism
+					}
 				}
-				set_cosmetic_tag = SUM_AKS_regional_central
+				set_cosmetic_tag = SUM_regional_north
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = PLT
+					original_tag = SUM
+					has_government = ultranationalism
 				}
-				set_cosmetic_tag = PLT_regional_central
+				set_cosmetic_tag = SUM_AKS_regional_north
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = KRM
+					original_tag = PLT
 				}
-				set_cosmetic_tag = KRE_regional_central
+				set_cosmetic_tag = PLT_regional_north
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = CHE
+					original_tag = KRM
 				}
-				set_cosmetic_tag = CHR_regional_central
+				set_cosmetic_tag = KRE_regional_north
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = UMA
+					original_tag = CHE
 				}
-				set_cosmetic_tag = UMA_regional_central
+				set_cosmetic_tag = CHR_regional_north
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = KIR
+					original_tag = UMA
 				}
-				set_cosmetic_tag = KIR_regional_central
+				set_cosmetic_tag = UMA_regional_north
 				add_political_power = 50
 			}
-			set_country_flag = united_center
+			else_if = {
+				limit = {
+					original_tag = KIR
+				}
+				set_cosmetic_tag = KIR_regional_north
+				add_political_power = 50
+			}
+			set_country_flag = united_north
 	  		}
 		}
-		ai_will_do = {	
-			base = 10		
+
+		ai_will_do = {
+			base = 10
 		}
    	}
 
-	question_of_capital_center = {
+	question_of_capital_north = {
 	
 	icon = GFX_decision_question_of_capital_east
 
@@ -3277,11 +3288,11 @@ unite_north_ukraine = {
 		complete_effect = {
 			DST = {
 				set_variable = {
-					var = dnister_rates
+					var = dniester_rates
 					value = 50.00
 				}
 				set_variable = {
-					var = dnister_rates_grow
+					var = dniester_rates_grow
 					value = 2
 				}
 				set_country_flag = south_elections
@@ -3407,12 +3418,12 @@ unite_north_ukraine = {
 			}
 		}
 
-		ai_will_do = {	
-			base = 10		
+		ai_will_do = {
+			base = 10
 		}
 	}
 
-	prepare_war_center = {
+	prepare_war_north = {
         icon = GFX_decision_swords
 
         target_trigger = {
@@ -3436,23 +3447,22 @@ unite_north_ukraine = {
 		}
 
         visible = {
-				OR = {
-					tag = DIR
-					tag = SIV
-				}
-				NOT = {
-					has_country_flag = north_war
-					has_country_flag = north_elections
-					has_country_flag = north_dogovornyak
-				}
-				NOT = {
-					has_country_flag = dogovornyak_agreed
-					has_country_flag = elections_agreed
-				}
-				NOT = {
-					has_country_flag = unification_choice_made
-				}
-				
+			OR = {
+				tag = DIR
+				tag = SIV
+			}
+			NOT = {
+				has_country_flag = north_war
+				has_country_flag = north_elections
+				has_country_flag = north_dogovornyak
+			}
+			NOT = {
+				has_country_flag = dogovornyak_agreed
+				has_country_flag = elections_agreed
+			}
+			NOT = {
+				has_country_flag = unification_choice_made
+			}
         }
 
         complete_effect = {
@@ -3499,8 +3509,8 @@ unite_north_ukraine = {
 
 		days_remove = 20
 
-        ai_will_do = {	
-			factor = 50		
+        ai_will_do = {
+			factor = 50
 		}
 
 		remove_effect = {
@@ -3511,26 +3521,26 @@ unite_north_ukraine = {
 						tag = DIR
 					}
 					DNP = {
-							declare_war_on = {
-								target = KOB
-								type = annex_everything
-							}
-							declare_war_on = {
-								target = CHR
-								type = annex_everything
-							}
-							declare_war_on = {
-								target = SUM
-								type = annex_everything
-							}
-							declare_war_on = {
-								target = KYI
-								type = annex_everything
-							}
-							declare_war_on = {
-								target = CBL
-								type = annex_everything
-							}
+						declare_war_on = {
+							target = KOB
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = CHR
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = SUM
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = KYI
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = CBL
+							type = annex_everything
+						}
 					}
 				}
 				if = {
@@ -3600,56 +3610,56 @@ unite_west_ukraine = {
 			save_global_event_target_as = UKR_west_unifier
 			if = {
 				limit = {
-						original_tag = HAL
+					original_tag = HAL
 				}
 				set_cosmetic_tag = HAL_regional_western
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = HUT
+					original_tag = HUT
 				}
 				set_cosmetic_tag = HUT_regional_western
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = ZAK
+					original_tag = ZAK
 				}
 				set_cosmetic_tag = ZAK_regional_western
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = RIV
+					original_tag = RIV
 				}
 				set_cosmetic_tag = RIV_regional_western
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = VOL
+					original_tag = VOL
 				}
 				set_cosmetic_tag = VOL_regional_western
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = TER
+					original_tag = TER
 				}
 				set_cosmetic_tag = TER_regional_western
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = ZHY
+					original_tag = ZHY
 				}
 				set_cosmetic_tag = ZHY_regional_western
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = KHM
+					original_tag = KHM
 				}
 				set_cosmetic_tag = KHM_regional_western
 				add_political_power = 50
@@ -3696,16 +3706,18 @@ unite_west_ukraine = {
 		visible = {
 			can_do_elections = yes
 			NOT = {
-					has_country_flag = west_war
-					has_country_flag = west_elections
-					has_country_flag = west_dogovornyak
-				}
-				NOT = {
-					has_country_flag = unification_choice_made
-				}
+				has_country_flag = west_war
+				has_country_flag = west_elections
+				has_country_flag = west_dogovornyak
+			}
+			NOT = {
+				has_country_flag = unification_choice_made
+			}
 		}
+		
 		fire_only_once = yes
-        	days_remove = 0	
+		days_remove = 0
+		
 		complete_effect = {
 			set_country_flag = unification_choice_made
 			FROM = {
@@ -3770,13 +3782,13 @@ unite_west_ukraine = {
 		visible = {
 			can_do_dogovornyak = yes
 			NOT = {
-					has_country_flag = west_war
-					has_country_flag = west_elections
-					has_country_flag = west_dogovornyak
-				}
-				NOT = {
-					has_country_flag = unification_choice_made
-				}
+				has_country_flag = west_war
+				has_country_flag = west_elections
+				has_country_flag = west_dogovornyak
+			}
+			NOT = {
+				has_country_flag = unification_choice_made
+			}
 			GLY = {
 				exists = yes
 			}
@@ -3795,11 +3807,10 @@ unite_west_ukraine = {
 				}
             }
         }
+		
 		fire_only_once = yes
-        	days_remove = 0
-			ai_will_do = {
-				base = 10
-			}	
+        days_remove = 0
+	
 		complete_effect = {
 			FROM = {
 				country_event = {
@@ -3823,43 +3834,42 @@ unite_west_ukraine = {
 				has_country_flag = west_dogovornyak
 			}
 		}
+		
 		fire_only_once = yes
-        	days_remove = 0
-			ai_will_do = {
-				base = 10
-			}	
+        days_remove = 0
+
 		complete_effect = {
 			GLY = {
-					set_country_flag = west_dogovornyak
-					add_political_power = 100
-					set_variable = {
-						var = galicia_spendible_influence
-						value = 21
-					}
-					set_variable = {
-						var = west_done_themes
-						value = 0
-					}
-					set_variable = {
-						var = galicia_influence
-						value = 0
-					}
+				set_country_flag = west_dogovornyak
+				add_political_power = 100
+				set_variable = {
+					var = galicia_spendible_influence
+					value = 21
 				}
+				set_variable = {
+					var = west_done_themes
+					value = 0
+				}
+				set_variable = {
+					var = galicia_influence
+					value = 0
+				}
+			}
 			PDL = {
-					set_country_flag = west_dogovornyak	
-					add_political_power = 100
+				set_country_flag = west_dogovornyak	
+				add_political_power = 100
+				set_variable = {
+					var = podillya_spendible_influence
+					value = 21
+				}
+				set_variable = {
+					var = west_done_themes
+					value = 0
+				}
 					set_variable = {
-						var = podillya_spendible_influence
-						value = 21
-					}
-					set_variable = {
-						var = west_done_themes
-						value = 0
-					}
-					set_variable = {
-						var = podillya_influence
-						value = 0
-					}
+					var = podillya_influence
+					value = 0
+				}
 			}
 		}
 
@@ -3892,18 +3902,18 @@ unite_west_ukraine = {
 		}
 
         visible = {
-				OR = {
-					tag = GLY
-					tag = PDL
-				}
-				NOT = {
-					has_country_flag = west_war
-					has_country_flag = west_elections
-					has_country_flag = west_dogovornyak
-				}
-				NOT = {
-					has_country_flag = unification_choice_made
-				}
+			OR = {
+				tag = GLY
+				tag = PDL
+			}
+			NOT = {
+				has_country_flag = west_war
+				has_country_flag = west_elections
+				has_country_flag = west_dogovornyak
+			}
+			NOT = {
+				has_country_flag = unification_choice_made
+			}
         }
 
         complete_effect = {
@@ -4041,20 +4051,20 @@ unite_left_bank_ukraine = {
 			save_global_event_target_as = UKR_left_bank_unifier
 			if = {
 				limit = {
-						original_tag = AFU
+					original_tag = AFU
 				}
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = AFU
-						has_government = ultranationalism
+					original_tag = AFU
+					has_government = ultranationalism
 				}
 				add_political_power = 50
 				set_cosmetic_tag = AFU_azov_lb
 				load_focus_tree = AFU_azov_left_bank
 			}
-			if = {
+			else_if = {
 				limit = {
 					original_tag = DPR
 					has_government = ultranationalism
@@ -4063,107 +4073,107 @@ unite_left_bank_ukraine = {
 				load_focus_tree = DPR_strelkov_left_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = KHA
-				NOT = {
-				has_government = ultranationalism
-				has_government = radical_socialism
-				}
+					original_tag = KHA
+					NOT = {
+						has_government = socialism
+						has_government = ultranationalism
+					}
 				}
 				set_cosmetic_tag = KHA_regional_left_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = KHA
-						has_government = ultranationalism
-				}
-				set_cosmetic_tag = KHA_freicor_regional_left_bank
-				add_political_power = 50
-			}
-			if = {
-				limit = {
-						original_tag = KHA
-						has_government = radical_socialism
+					original_tag = KHA
+					has_government = socialism
 				}
 				set_cosmetic_tag = KHA_zhadan_regional_left_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = DPR
+					original_tag = KHA
+					has_government = ultranationalism
+				}
+				set_cosmetic_tag = KHA_freikorps_regional_left_bank
+				add_political_power = 50
+			}
+			else_if = {
+				limit = {
+					original_tag = DPR
 				}
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = LPR
+					original_tag = LPR
 				}
 				set_cosmetic_tag = LPR_regional_left_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = DNI
+					original_tag = DNI
 				}
 				set_cosmetic_tag = DNI_regional_left_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = ODE
+					original_tag = ODE
 				}
 				set_cosmetic_tag = ODE_regional_left_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = STR
+					original_tag = STR
 				}
 				set_cosmetic_tag = STR_regional_left_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = SHT
+					original_tag = SHA
 				}
-				set_cosmetic_tag = SHT_regional_left_bank
+				set_cosmetic_tag = SHA_regional_left_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = MYK
+					original_tag = MYK
 				}
 				set_cosmetic_tag = MYK_regional_left_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = RGE
+					original_tag = REC
 				}
-				set_cosmetic_tag = RGE_regional_left_bank
+				set_cosmetic_tag = REC_regional_left_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = BDZ
+					original_tag = BDZ
 				}
 				set_cosmetic_tag = BDZ_regional_left_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = ZAP
+					original_tag = ZAP
 				}
 				set_cosmetic_tag = ZAP_regional_left_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = OPZ
+					original_tag = KHE
 				}
-				set_cosmetic_tag = OPZ_regional_left_bank
+				set_cosmetic_tag = KHE_regional_left_bank
 				add_political_power = 50
 			}
 			set_country_flag = united_left_bank
@@ -4208,20 +4218,22 @@ unite_left_bank_ukraine = {
 		visible = {
 			can_do_elections = yes
 			NOT = {
-					has_country_flag = left_bank_war
-					has_country_flag = left_bank_elections
-					has_country_flag = left_bank_dogovornyak
-				}
+				has_country_flag = left_bank_war
+				has_country_flag = left_bank_elections
+				has_country_flag = left_bank_dogovornyak
+			}
 			NOT = {
-					has_country_flag = dogovornyak_agreed_banks
-					has_country_flag = elections_agreed_banks
-				}
-				NOT = {
-					has_country_flag = unification_choice_made_banks
-				}
+				has_country_flag = dogovornyak_agreed_banks
+				has_country_flag = elections_agreed_banks
+			}
+			NOT = {
+				has_country_flag = unification_choice_made_banks
+			}
 		}
+		
 		fire_only_once = yes
-        	days_remove = 0	
+        days_remove = 0	
+		
 		complete_effect = {
 			set_country_flag = unification_choice_made_banks
 			FROM = {
@@ -4245,11 +4257,10 @@ unite_left_bank_ukraine = {
 				has_country_flag = left_bank_elections
 			}
 		}
+		
 		fire_only_once = yes
-        	days_remove = 0
-			ai_will_do = {
-				base = 10
-			}	
+        days_remove = 0
+		
 		complete_effect = {
 			STH = {
 				set_variable = {
@@ -4289,43 +4300,42 @@ unite_left_bank_ukraine = {
 				has_country_flag = left_bank_dogovornyak
 			}
 		}
+		
 		fire_only_once = yes
-        	days_remove = 0
-			ai_will_do = {
-				base = 10
-			}	
+        days_remove = 0
+		
 		complete_effect = {
 			ESN = {
-					set_country_flag = left_bank_dogovornyak
-					add_political_power = 100
-					set_variable = {
-						var = east_spendible_influence
-						value = 21
-					}
-					set_variable = {
-						var = left_bank_done_themes
-						value = 0
-					}
-					set_variable = {
-						var = east_influence
-						value = 0
-					}
+				set_country_flag = left_bank_dogovornyak
+				add_political_power = 100
+				set_variable = {
+					var = east_spendible_influence
+					value = 21
 				}
+				set_variable = {
+					var = left_bank_done_themes
+					value = 0
+				}
+				set_variable = {
+					var = east_influence
+					value = 0
+				}
+			}
 			STH = {
-					set_country_flag = left_bank_dogovornyak	
-					add_political_power = 100
-					set_variable = {
-						var = south_spendible_influence
-						value = 21
-					}
-					set_variable = {
-						var = left_bank_done_themes
-						value = 0
-					}
-					set_variable = {
-						var = south_influence
-						value = 0
-					}
+				set_country_flag = left_bank_dogovornyak	
+				add_political_power = 100
+				set_variable = {
+					var = south_spendible_influence
+					value = 21
+				}
+				set_variable = {
+					var = left_bank_done_themes
+					value = 0
+				}
+				set_variable = {
+					var = south_influence
+					value = 0
+				}
 			}
 		}
 
@@ -4338,17 +4348,17 @@ unite_left_bank_ukraine = {
 		visible = {
 			can_do_dogovornyak = yes
 			NOT = {
-					has_country_flag = left_bank_war
-					has_country_flag = left_bank_elections
-					has_country_flag = left_bank_dogovornyak
-				}
-				NOT = {
-					has_country_flag = dogovornyak_agreed_banks
-					has_country_flag = elections_agreed_banks
-				}
-				NOT = {
-					has_country_flag = unification_choice_made_banks
-				}
+				has_country_flag = left_bank_war
+				has_country_flag = left_bank_elections
+				has_country_flag = left_bank_dogovornyak
+			}
+			NOT = {
+				has_country_flag = dogovornyak_agreed_banks
+				has_country_flag = elections_agreed_banks
+			}
+			NOT = {
+				has_country_flag = unification_choice_made_banks
+			}
 			ESN = {
 				exists = yes
 			}
@@ -4369,10 +4379,8 @@ unite_left_bank_ukraine = {
         }
 
 		fire_only_once = yes
-        	days_remove = 0
-			ai_will_do = {
-				base = 10
-			}	
+        days_remove = 0
+
 		complete_effect = {
 			set_country_flag = unification_choice_made_banks
 			FROM = {
@@ -4413,22 +4421,22 @@ unite_left_bank_ukraine = {
 		}
 
         visible = {
-				OR = {
-					tag = ESN
-					tag = STH
-				}
-				NOT = {
-					has_country_flag = left_bank_war
-					has_country_flag = left_bank_elections
-					has_country_flag = left_bank_dogovornyak
-				}
-				NOT = {
-					has_country_flag = dogovornyak_agreed_banks
-					has_country_flag = elections_agreed_banks
-				}
-				NOT = {
-					has_country_flag = unification_choice_made_banks
-				}
+			OR = {
+				tag = ESN
+				tag = STH
+			}
+			NOT = {
+				has_country_flag = left_bank_war
+				has_country_flag = left_bank_elections
+				has_country_flag = left_bank_dogovornyak
+			}
+			NOT = {
+				has_country_flag = dogovornyak_agreed_banks
+				has_country_flag = elections_agreed_banks
+			}
+			NOT = {
+				has_country_flag = unification_choice_made_banks
+			}
         }
 
         complete_effect = {
@@ -4555,10 +4563,10 @@ unite_right_bank_ukraine = {
 		}
 		
 		fire_only_once = yes
-        	days_remove = 0		
+        days_remove = 0		
 
 		visible = {	
-		is_right_bank_ukraine = yes
+			is_right_bank_ukraine = yes
 			OR = {
 				tag = NRT
 				tag = WST
@@ -4573,130 +4581,130 @@ unite_right_bank_ukraine = {
 			save_global_event_target_as = UKR_right_bank_unifier
 			if = {
 				limit = {
-						original_tag = KYI
+					original_tag = KYI
 				}
 				set_cosmetic_tag = UKR_regional_right_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = KOB
+					original_tag = KOB
 				}
 				set_cosmetic_tag = KYI_regional_right_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = CHR
+					original_tag = CHR
 				}
 				set_cosmetic_tag = PRH_regional_right_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = SUM
-						NOT = {
-							has_government = ultranationalism
-						}
+					original_tag = SUM
+					NOT = {
+						has_government = ultranationalism
+					}
 				}
 				set_cosmetic_tag = SUM_regional_right_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = SUM
-						has_government = ultranationalism
+					original_tag = SUM
+					has_government = ultranationalism
 				}
 				set_cosmetic_tag = SUM_AKS_regional_right_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = PLT
+					original_tag = PLT
 				}
 				set_cosmetic_tag = PLT_regional_right_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = KRM
+					original_tag = KRM
 				}
 				set_cosmetic_tag = KRE_regional_right_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = CHE
+					original_tag = CHE
 				}
 				set_cosmetic_tag = CHR_regional_right_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = UMA
+					original_tag = UMA
 				}
 				set_cosmetic_tag = UMA_regional_right_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = KIR
+					original_tag = KIR
 				}
 				set_cosmetic_tag = KIR_regional_right_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = HAL
+					original_tag = HAL
 				}
 				set_cosmetic_tag = HAL_regional_right_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = HUT
+					original_tag = HUT
 				}
 				set_cosmetic_tag = HUT_regional_right_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = ZAK
+					original_tag = ZAK
 				}
 				set_cosmetic_tag = ZAK_regional_right_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = RIV
+					original_tag = RIV
 				}
 				set_cosmetic_tag = RIV_regional_right_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = VOL
+					original_tag = VOL
 				}
 				set_cosmetic_tag = VOL_regional_right_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = TER
+					original_tag = TER
 				}
 				set_cosmetic_tag = TER_regional_right_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = ZHY
+					original_tag = ZHY
 				}
 				set_cosmetic_tag = ZHY_regional_right_bank
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = KHM
+					original_tag = KHM
 				}
 				set_cosmetic_tag = KHM_regional_right_bank
 				add_political_power = 50
@@ -4704,6 +4712,7 @@ unite_right_bank_ukraine = {
 			set_country_flag = united_right_bank
 	  		}
 		}
+		
 		ai_will_do = {	
 			base = 10		
 		}
@@ -4783,11 +4792,10 @@ unite_right_bank_ukraine = {
 				has_country_flag = right_bank_elections
 			}
 		}
+		
 		fire_only_once = yes
-        	days_remove = 0
-			ai_will_do = {
-				base = 10
-			}	
+        days_remove = 0
+
 		complete_effect = {
 			WST = {
 				set_variable = {
@@ -4827,11 +4835,10 @@ unite_right_bank_ukraine = {
 				has_country_flag = right_bank_dogovornyak
 			}
 		}
+		
 		fire_only_once = yes
-        	days_remove = 0
-			ai_will_do = {
-				base = 10
-			}	
+        days_remove = 0
+
 		complete_effect = {
 			NRT = {
 				set_country_flag = right_bank_dogovornyak
@@ -4905,11 +4912,10 @@ unite_right_bank_ukraine = {
 				}
             }
         }
+		
 		fire_only_once = yes
-        	days_remove = 0
-			ai_will_do = {
-				base = 10
-			}	
+        days_remove = 0
+	
 		complete_effect = {
 			set_country_flag = unification_choice_made_banks
 			FROM = {
@@ -5092,7 +5098,7 @@ unite_ukraine = {
 		}
 		
 		fire_only_once = yes
-        	days_remove = 0		
+        days_remove = 0		
 
 		visible = {	
 			OR = {
@@ -5110,261 +5116,282 @@ unite_ukraine = {
 			hidden_effect = {
 			if = {
 				limit = {
-						original_tag = KYI
+					original_tag = KYI
 				}
 				set_cosmetic_tag = UKR_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = KOB
+					original_tag = KOB
 				}
 				set_cosmetic_tag = KYI_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = CHR
-				}
-				set_cosmetic_tag = PRH_united_ukraine
-				add_political_power = 50
-			}
-			if = {
-				limit = {
-						original_tag = SUM
-						NOT = {
-							has_government = ultranationalism
-						}
-				}
-				set_cosmetic_tag = SUM_united_ukraine
-				add_political_power = 50
-			}
-			if = {
-				limit = {
-						original_tag = SUM
-						has_government = ultranationalism
-				}
-				set_cosmetic_tag = SUM_AKS_united_ukraine
-				add_political_power = 50
-			}
-			if = {
-				limit = {
-						original_tag = PLT
-				}
-				set_cosmetic_tag = PLT_united_ukraine
-				add_political_power = 50
-			}
-			if = {
-				limit = {
-						original_tag = KRM
-				}
-				set_cosmetic_tag = KRE_united_ukraine
-				add_political_power = 50
-			}
-			if = {
-				limit = {
-						original_tag = CHE
+					original_tag = CHR
 				}
 				set_cosmetic_tag = CHR_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = UMA
+					original_tag = SUM
+					NOT = {
+						has_government = ultranationalism
+					}
+				}
+				set_cosmetic_tag = SUM_united_ukraine
+				add_political_power = 50
+			}
+			else_if = {
+				limit = {
+					original_tag = SUM
+					has_government = ultranationalism
+				}
+				set_cosmetic_tag = SUM_AKS_united_ukraine
+				add_political_power = 50
+			}
+			else_if = {
+				limit = {
+					original_tag = PLT
+				}
+				set_cosmetic_tag = PLT_united_ukraine
+				add_political_power = 50
+			}
+			else_if = {
+				limit = {
+					original_tag = KRM
+				}
+				set_cosmetic_tag = KRM_united_ukraine
+				add_political_power = 50
+			}
+			else_if = {
+				limit = {
+					original_tag = CHE
+				}
+				set_cosmetic_tag = CHE_united_ukraine
+				add_political_power = 50
+			}
+			else_if = {
+				limit = {
+					original_tag = UMA
 				}
 				set_cosmetic_tag = UMA_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = KIR
+					original_tag = KIR
 				}
 				set_cosmetic_tag = KIR_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = HAL
+					original_tag = HAL
 				}
 				set_cosmetic_tag = HAL_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = HUT
+					original_tag = HUT
 				}
 				set_cosmetic_tag = HUT_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = ZAK
+					original_tag = ZAK
 				}
 				set_cosmetic_tag = ZAK_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = RIV
+					original_tag = RIV
 				}
 				set_cosmetic_tag = RIV_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = VOL
+					original_tag = VOL
 				}
 				set_cosmetic_tag = VOL_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = TER
+					original_tag = TER
 				}
 				set_cosmetic_tag = TER_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = ZHY
+					original_tag = ZHY
 				}
 				set_cosmetic_tag = ZHY_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = KHM
+					original_tag = KHM
 				}
 				set_cosmetic_tag = KHM_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = AFU
-						NOT = {
-							OR = {
-								has_government = ultranationalism
-								has_government = social_democracy
-								has_government = conservative_democracy
-							}
+					original_tag = AFU
+					NOT = {
+						OR = {
+							has_government = social_democracy
+							has_government = liberalism
+							has_government = conservatism
+							has_government = ultranationalism
+							has_government = esotericism
+							has_government = centrism
+							has_government = oligarchism
 						}
+					}
 				}
 				set_cosmetic_tag = AFU_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = AFU
-						has_government = ultranationalism
+					original_tag = AFU
+					has_government = social_democracy
 				}
 				add_political_power = 50
-				set_cosmetic_tag = AFU_azov_reun
+				set_cosmetic_tag = AFU_savchenko_reunited
+			}
+			else_if = {
+				limit = {
+					original_tag = AFU
+					OR = {
+						has_government = liberalism
+						has_government = conservatism
+					}
+				}
+				add_political_power = 50
+				set_cosmetic_tag = AFU_danilov_reunited
+			}
+			else_if = {
+				limit = {
+					original_tag = AFU
+					OR = {
+						has_government = ultranationalism
+						has_government = esotericism
+					}
+				}
+				add_political_power = 50
+				set_cosmetic_tag = AFU_azov_reunited
 				load_focus_tree = AFU_azov_ukraine
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = AFU
-						has_government = social_democracy
+					original_tag = AFU
+					OR = {
+						has_government = centrism
+						has_government = oligarchism
+					}
 				}
 				add_political_power = 50
-				set_cosmetic_tag = AFU_sav_reun
+				set_cosmetic_tag = AFU_khomut_reunited
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = AFU
-						has_government = conservatism
-				}
-				add_political_power = 50
-				set_cosmetic_tag = AFUdan_reun
-			}
-			if = {
-				limit = {
-						original_tag = KHA
-				NOT = {
-				has_government = ultranationalism
-				has_government = radical_socialism
-				}
+					original_tag = KHA
+					NOT = {
+						has_government = socialism
+						has_government = ultranationalism
+					}
 				}
 				set_cosmetic_tag = KHA_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = KHA
-						has_government = ultranationalism
-				}
-				set_cosmetic_tag = KHA_freicor_united_ukraine
-				add_political_power = 50
-			}
-			if = {
-				limit = {
-						original_tag = KHA
-						has_government = radical_socialism
+					original_tag = KHA
+					has_government = socialism
 				}
 				set_cosmetic_tag = KHA_zhadan_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = DNI
+					original_tag = KHA
+					has_government = ultranationalism
+				}
+				set_cosmetic_tag = KHA_freikorps_united_ukraine
+				add_political_power = 50
+			}
+			else_if = {
+				limit = {
+					original_tag = DNI
 				}
 				set_cosmetic_tag = DNI_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = ODE
+					original_tag = ODE
 				}
 				set_cosmetic_tag = ODE_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = STR
+					original_tag = STR
 				}
 				set_cosmetic_tag = STR_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = SHT
+					original_tag = SHA
 				}
-				set_cosmetic_tag = SHT_united_ukraine
+				set_cosmetic_tag = SHA_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = MYK
+					original_tag = MYK
 				}
 				set_cosmetic_tag = MYK_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = RGE
+					original_tag = REC
 				}
-				set_cosmetic_tag = RGE_united_ukraine
+				set_cosmetic_tag = REC_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = BDZ
+					original_tag = BDZ
 				}
 				set_cosmetic_tag = BDZ_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = ZAP
+					original_tag = ZAP
 				}
 				set_cosmetic_tag = ZAP_united_ukraine
 				add_political_power = 50
 			}
-			if = {
+			else_if = {
 				limit = {
-						original_tag = OPZ
+					original_tag = KHE
 				}
-				set_cosmetic_tag = OPZ_united_ukraine
+				set_cosmetic_tag = KHE_united_ukraine
 				add_political_power = 50
 			}
 			set_country_flag = united_ukraine
@@ -5403,12 +5430,14 @@ unite_ukraine = {
             PLT = {
 				exists = yes
                 tag = RBU
+				#has_country_flag = united_right_bank
                 has_country_leader = {
                     character = PLT_Biletsky
                 }
             }
             AFU = {
                 tag = LBU
+				#has_country_flag = united_left_bank
                 has_country_leader = {
                     character = AFU_zhorin
                 }
@@ -5437,9 +5466,11 @@ unite_ukraine = {
             TER = {
 				exists = yes
                 tag = RBU
+				#has_country_flag = united_right_bank
             }
             AFU = {
                 tag = LBU
+				#has_country_flag = united_left_bank
                 has_country_leader = {
                     character = AFU_zhorin
                 }
@@ -5467,9 +5498,9 @@ unite_ukraine = {
 		visible = {
             can_do_dogovornyak = yes
 			NOT = {
-                    has_country_flag = ukraine_war
-                    has_country_flag = ukraine_dogovornyak
-                    has_country_flag = ukraine_elections
+				has_country_flag = ukraine_war
+				has_country_flag = ukraine_dogovornyak
+				has_country_flag = ukraine_elections
 			}
 			NOT = {
 				has_country_flag = dogovornyak_agreed_ua
@@ -5628,9 +5659,9 @@ unite_ukraine = {
 		visible = {
 			can_do_elections = yes
 			NOT = {
-                    has_country_flag = ukraine_war
-                    has_country_flag = ukraine_dogovornyak
-                    has_country_flag = ukraine_elections
+				has_country_flag = ukraine_war
+				has_country_flag = ukraine_dogovornyak
+				has_country_flag = ukraine_elections
 			}
 			NOT = {
 				has_country_flag = dogovornyak_agreed_ua

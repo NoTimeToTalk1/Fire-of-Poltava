@@ -1,0 +1,516 @@
+####### SECOND NKR WAR
+add_namespace = caucas
+# karabakh wine
+country_event = {
+	id = caucas.1
+	title = caucas.1.t
+	desc = caucas.1.d
+	picture = GFX_cherkasy_kobzar
+	fire_only_once = yes
+	is_triggered_only = yes
+	#mean_time_to_happen = { days = 2 }
+	option = {
+		name = caucas.1.a
+		ai_chance = {
+			factor = 85
+		}
+		AZE = {
+			declare_war_on = {
+				target = NKR
+				type = annex_everything
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 50
+			}
+			add_building_construction = {
+				type = supply_node
+				level = 2
+				instant_build = yes
+				province = 5442
+			}
+			country_event = {
+				days = 27
+				id = caucas.4
+			}
+		}
+		ARM = {
+			news_event = caucas.2
+			add_ideas = NKR_karbabach
+		}
+	}
+	option = {
+		name = caucas.1.h
+		ai_chance = {
+			factor = 10
+		}
+		add_war_support = -0.05
+	}
+	option = {
+		name = caucas.1.n
+		ai_chance = {
+			factor = 5
+		}
+		AZE = {
+			declare_war_on = {
+				target = NKR
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = ARM
+				type = annex_everything
+			}
+			country_event = {
+				days = 27
+				id = caucas.4
+			}
+		}
+		ARM = {
+			news_event = caucas.2
+			add_ideas = NKR_karbabach
+		}
+		RUS = {
+			country_event = caucas.5
+		}
+	}
+}
+
+#### brake fucing nkr puppet | remove puppet status from nkr
+# news_event = {
+# 	id = caucas.3
+# 	title = caucas.3.t
+# 	desc = caucas.3.d
+# 	hidden = no
+# 	picture = GFX_cherkasy_kobzar
+# 	fire_only_once = yes
+# 	is_triggered_only = yes
+# 	#mean_time_to_happen = { days = 2 }
+# 	option = {
+# 		name = caucas.3.a
+# 		ARM = {
+# 			end_puppet = NKR
+# 			add_opinion_modifier = {
+# 				target = NKR
+# 				modifier = puppet
+# 			}
+# 		}
+# 		NKR = {
+# 			give_military_access = ARM
+# 			leave_faction = ODKB
+# 		}
+# 		}	
+# 	}
+##### ARM respone to second war in nkr
+news_event = {
+	id = caucas.2
+	title = caucas.2.t
+	desc = caucas.2.d
+	picture = GFX_cherkasy_kobzar
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = caucas.2.a
+		ai_chance = {
+			factor = 20
+		}
+		ARM = {
+			declare_war_on = {
+				target = AZE
+				type = annex_everything
+			}
+			remove_ideas = ARM_odkb_cooperation
+			leave_faction = ODKB
+		}
+		NKR = {
+			give_military_access = ARM
+		}
+		### call russia to conflict
+		RUS = {
+			country_event = caucas.5
+		}
+	}
+	option = {
+		name = caucas.2.b
+		ai_chance = {
+			factor = 40
+		}
+		add_war_support = -0.1
+		add_stability = -0.1
+	}
+	option = {
+		name = caucas.2.h
+		ai_chance = {
+			factor = 40
+		}
+		ARM = {
+			add_ideas = ARM_hybrid_conflict
+			set_rule = {
+				can_send_volunteers = yes
+			}
+		}
+	}
+}
+
+##### azery potrebujut bilshe czasu | add more days to mission
+country_event = {
+	id = caucas.4
+	title = caucas.4.t
+	desc = caucas.4.d
+	hidden = no
+	picture = GFX_cherkasy_kobzar
+	fire_only_once = yes
+	is_triggered_only = yes
+	#mean_time_to_happen = { days = 2 }
+	option = {
+		ai_chance = {
+			factor = 25
+		}
+		name = caucas.4.a
+		add_days_mission_timeout = {
+			mission = ceasefire
+			days = 21
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 75
+		}
+		add_stability = -0.1
+		add_war_support = -0.1
+		AZE = {
+			white_peace = NKR
+			white_peace = ARM
+			white_peace = RUS
+		}
+	}
+}
+
+#### POMOCH BRATIAM SLAVIANAM | russia intervetion
+news_event = {
+	id = caucas.5
+	title = caucas.5.t
+	desc = caucas.5.d
+	hidden = no
+	picture = GFX_cherkasy_kobzar
+	fire_only_once = yes
+	is_triggered_only = yes
+	#mean_time_to_happen = { days = 2 }
+	option = {
+		ai_chance = {
+			factor = 10
+		}
+		name = caucas.5.a
+		RUS = {
+			declare_war_on = {
+				target = AZE
+				type = annex_everything
+			}
+			add_timed_idea = {
+				idea = NKR_karbabach
+				days = 40
+			}
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 90
+		}
+		add_stability = -0.01
+	}
+}
+
+########## destroy nkr in second nkr war
+country_event = {
+	id = caucas.6
+	title = caucas.6.t
+	desc = caucas.6.d
+	hidden = no
+	picture = GFX_cherkasy_kobzar
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		ai_chance = {
+			factor = 20
+		}
+		name = caucas.5.a
+		AZE = {
+			# declare_war_on = {
+			# 	target = NKR
+			# }
+			add_war_support = 0.1
+		}
+		ARM = {
+			country_event = caucas.7
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 60
+		}
+		add_war_support = 0.05
+		white_peace = NKR
+		white_peace = ARM
+		white_peace = RUS
+		set_state_owner = 998
+		set_state_owner = 993
+		set_state_owner = 1020
+		set_state_owner = 2266
+	}
+	option = {
+		name = "WE NEED THIS FUCKING CORRIDOR"
+		ai_chance = {
+			factor = 20
+		}
+		AZE = {
+			activate_mission = NAKHACHIVAN_CORRIDOR
+			add_stability = -0.1
+			add_war_support = -0.2
+			declare_war_on = {
+				target = ARM
+				type = annex_everything
+			}
+
+		}
+	}
+}
+
+######## ormians sturbowani| armians intervetion in destroing nkr
+country_event = {
+	id = caucas.7
+	title = caucas.7.t
+	desc = caucas.7.d
+	picture = GFX_cherkasy_kobzar
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = caucas.7.a
+		ai_chance = {
+			factor = 0
+		}
+		ARM = {
+			declare_war_on = {
+				target = AZE
+				type = annex_everything
+			}
+			remove_ideas = ARM_odkb_cooperation
+			leave_faction = ODKB
+		}
+		NKR = {
+			give_military_access = ARM
+		}
+		### call russia to conflict
+		RUS = {
+			country_event = caucas.5
+		}
+	}
+	option = {
+		name = caucas.7.b
+		ai_chance = {
+			factor = 30
+		}
+		add_war_support = -0.1
+		add_stability = -0.1
+	}
+	option = {
+		name = caucas.7.h
+		ai_chance = {
+			factor = 40
+		}
+		ARM = {
+			add_ideas = ARM_hybrid_conflict
+			set_rule = {
+				can_send_volunteers = yes
+			}
+		}
+	}
+}
+
+###### IRAN INTERVATION
+country_event = {
+	id = caucas.8
+	title = caucas.8.t
+	desc = caucas.8.d
+	hidden = no
+	picture = GFX_cherkasy_kobzar
+	fire_only_once = yes
+	is_triggered_only = yes
+	#mean_time_to_happen = { days = 2 }
+	option = {
+		ai_chance = {
+			factor = 40
+		}
+		name = caucas.8.a
+		IRA = {
+			declare_war_on = {
+				target = AZE
+				type = annex_everything
+			}
+		}
+		TUR = {
+			country_event = caucas.9
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 60
+		}
+		add_stability = -0.1
+		add_war_support = -0.1
+	}
+}
+
+country_event = {
+	id = caucas.9
+	title = caucas.9.t
+	desc = caucas.9.d
+	hidden = no
+	picture = GFX_cherkasy_kobzar
+	fire_only_once = yes
+	is_triggered_only = yes
+	#mean_time_to_happen = { days = 2 }
+	option = {
+		ai_chance = {
+			factor = 90
+		}
+		name = caucas.9.a
+		TUR = {
+			declare_war_on = {
+				target = NKR
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = ARM
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = IRA
+				type = annex_everything
+			}
+			give_military_access = AZE
+		}
+		AZE = {
+			give_military_access = TUR
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = -0.1
+		add_war_support = -0.1
+	}
+}
+## MORE DAYS FOR CORRIDOR MF
+
+country_event = {
+	id = caucas.9
+	title = caucas.9.t
+	desc = caucas.9.d
+	hidden = no
+	picture = GFX_cherkasy_kobzar
+	fire_only_once = yes
+	is_triggered_only = yes
+	#mean_time_to_happen = { days = 2 }
+	option = {
+		ai_chance = {
+			factor = 90
+		}
+		name = caucas.9.a
+			
+		AZE = {
+			give_military_access = TUR
+			add_days_mission_timeout = {
+				mission = NAKHACHIVAN_CORRIDOR
+				days = 60
+			}
+			add_stability = -0.2
+			add_political_power = -50
+			add_popularity = {
+				ideology = ultranationalism
+				popularity = 10
+			}
+			add_popularity = {
+				ideology = millitary_junta
+				popularity = 20
+			}
+			add_popularity = {
+				ideology = conservative_democracy
+				popularity = 10
+			}
+
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = -0.1
+		add_war_support = -0.1
+	}
+}
+
+########### NKR DISASTER
+country_event = {
+	id = caucas.10
+	title = caucas.10.t
+	desc = caucas.10.d
+	hidden = no
+	picture = GFX_cherkasy_kobzar
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		ai_chance = {
+			factor = 50
+		}
+		name = caucas.9.a
+		NKR = {
+				delete_units = {
+					division_template = "Rifle Battalion"
+					disband = yes
+				}
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 50
+		}
+		NKR = {
+			add_ideas = NKR_disaster
+		}
+	}
+}
+
+country_event = {
+	id = caucas.11
+	title = caucas.10.t
+	desc = caucas.10.d
+	hidden = no
+	picture = GFX_cherkasy_kobzar
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		ai_chance = {
+			factor = 90
+		}
+		name = caucas.9.a
+		AZE = {
+			add_ideas = AZE_turkey_supply_2
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -10
+	}
+}

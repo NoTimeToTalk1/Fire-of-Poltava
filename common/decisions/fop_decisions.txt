@@ -2,9 +2,6 @@ FOP_micro_region_development = {
     search_warehouse_1 = {
 		icon = GFX_decision_search_warehouse
 
-		allowed = {
-		}
-
         visible = {
             has_completed_focus = FOP_Find_Warehouses
         }
@@ -49,9 +46,6 @@ FOP_micro_region_development = {
     search_warehouse_2 = {
 		icon = GFX_decision_search_warehouse
 
-		allowed = {
-		}
-
         visible = {
             has_completed_focus = FOP_Find_Warehouses
         }
@@ -68,6 +62,7 @@ FOP_micro_region_development = {
 		fire_only_once = yes
 
 		modifier = {
+			###
 		}
 
         ai_will_do = {	
@@ -102,9 +97,6 @@ FOP_micro_region_development = {
     search_warehouse_3 = {
 		icon = GFX_decision_search_warehouse
 
-		allowed = {
-		}
-
         visible = {
             has_completed_focus = FOP_Find_Warehouses
         }
@@ -121,6 +113,7 @@ FOP_micro_region_development = {
 		fire_only_once = yes
 
 		modifier = {
+			###
 		}
 
         ai_will_do = {	
@@ -156,9 +149,6 @@ FOP_micro_region_development = {
     issue_propaganda_material = {
 		icon = GFX_decision_megaphone
 
-		allowed = {
-		}
-
         visible = {
             has_completed_focus = FOP_Earn_The_Trust
         }
@@ -166,6 +156,7 @@ FOP_micro_region_development = {
 		days_remove = 21
 
 		modifier = {
+			###
 		}
 
         ai_will_do = {	
@@ -193,26 +184,16 @@ FOP_micro_region_development = {
 			}
             if = {
                 limit = {
-                    random_controlled_state = {
-                        limit = {
-                            has_active_resistance = yes
-                        }
+                    any_owned_state = {
+                        has_active_resistance = yes
                     }
                 }
-                random_controlled_state = {
-                        limit = {
-                            has_active_resistance = yes
-                        }
-                        add_compliance = 3
-                    }
+				add_compliance = 3
             }
 		}
 	}
     economic_concessions = {
 		icon = GFX_decision_economic_concessions
-
-		allowed = {
-		}
 
         visible = {
             has_completed_focus = FOP_Earn_The_Trust
@@ -236,26 +217,16 @@ FOP_micro_region_development = {
             add_political_power = 30
             if = {
                 limit = {
-                    random_controlled_state = {
-                        limit = {
-                            has_active_resistance = yes
-                        }
-                    }
-                }
-                random_controlled_state = {
-                    limit = {
+                    any_owned_state = {
                         has_active_resistance = yes
                     }
-                    add_compliance = 5
                 }
+				add_compliance = 5
             }
 		}
 	}
     invest_in_social_buildings = {
         icon = GFX_decision_invest_in_social_buildings
-
-		allowed = {
-		}
 
         visible = {
             has_completed_focus = FOP_Earn_The_Trust
@@ -315,27 +286,17 @@ FOP_micro_region_development = {
 			}
             if = {
                 limit = {
-                    random_controlled_state = {
-                        limit = {
-                            has_active_resistance = yes
-                        }
-                    }
-                }
-                random_controlled_state = {
-                    limit = {
+                    any_owned_state = {
                         has_active_resistance = yes
                     }
-                    add_compliance = 10
                 }
+				add_compliance = 10
             }
 		}
     }
 
     police_raid = {
 		icon = GFX_decision_naruchniki
-
-		allowed = {
-		}
 		
         visible = {
             has_completed_focus = FOP_Appease_The_Populace
@@ -344,6 +305,7 @@ FOP_micro_region_development = {
 		days_remove = 35
 
 		modifier = {
+			###
 		}
 
         ai_will_do = {	
@@ -370,35 +332,25 @@ FOP_micro_region_development = {
                     add_manpower = -500
                 }
 			}
-            if = {
+			if = {
                 limit = {
-                    random_controlled_state = {
-                        limit = {
-                            has_active_resistance = yes
-                        }
-                    }
-                }
-                random_controlled_state = {
-                    limit = {
+                    any_owned_state = {
                         has_active_resistance = yes
                     }
-                    random_list = {
-                        50 = {
-                                add_resistance = -5
-                        }
-                        50 = {
-                                add_resistance  = 5
-                        }
-                    }
                 }
-            } 
+				random_list = {
+					50 = {
+						add_resistance = -5
+					}
+					50 = {
+						add_resistance  = 5
+					}
+				}
+            }
 		}
 	}
     invest_in_populace_control = {
         icon = GFX_decision_invest_in_populace_control
-
-		allowed = {
-		}
 
         visible = {
             has_completed_focus = FOP_Appease_The_Populace
@@ -451,17 +403,12 @@ FOP_micro_region_development = {
             add_manpower = 500
             if = {
                 limit = {
-                    random_controlled_state = {
+                    any_owned_state = {
                         limit = {
                             has_active_resistance = yes
                         }
+						add_resistance = 4
                     }
-                }
-                random_controlled_state = {
-                    limit = {
-                        has_active_resistance = yes
-                    }
-                    add_resistance = 4
                 }
             }
 		}
@@ -470,9 +417,6 @@ FOP_micro_region_development = {
     mobilize_small_amount = {
 		icon = GFX_decision_mobilize_small_amount
 
-		allowed = {
-		}
-
         visible = {
             has_completed_focus = FOP_Mobilisation
         }
@@ -480,6 +424,7 @@ FOP_micro_region_development = {
 		days_remove = 14
 
 		modifier = {
+			###
 		}
 
         ai_will_do = {	
@@ -505,9 +450,6 @@ FOP_micro_region_development = {
     mobilize_medium_amount = {
 		icon = GFX_decision_mobilize_medium_amount
 
-		allowed = {
-		}
-
         visible = {
             has_completed_focus = FOP_Mobilisation
         }
@@ -515,6 +457,7 @@ FOP_micro_region_development = {
 		days_remove = 21
 
 		modifier = {
+			###
 		}
 
         cost = 25
@@ -542,9 +485,6 @@ FOP_micro_region_development = {
     mobilize_large_amount = {
 		icon = GFX_decision_mobilize_large_amount
 
-		allowed = {
-		}
-
         visible = {
             has_completed_focus = FOP_Mobilisation
         }
@@ -552,6 +492,7 @@ FOP_micro_region_development = {
 		days_remove = 35
 
 		modifier = {
+			###
 		}
 
         ai_will_do = {	
@@ -580,9 +521,6 @@ FOP_micro_region_development = {
 
     organise_steel_production = {
 		icon = generic_decision
-
-		allowed = {
-		}
 
         visible = {
             has_completed_focus = FOP_Rudimentary_Resource_Production
@@ -615,9 +553,6 @@ FOP_micro_region_development = {
     organise_tungusten_production = {
 		icon = generic_decision
 
-		allowed = {
-		}
-
         visible = {
             has_completed_focus = FOP_Rudimentary_Resource_Production
         }
@@ -649,9 +584,6 @@ FOP_micro_region_development = {
     organise_aluminium_production = {
 		icon = generic_decision
 
-		allowed = {
-		}
-
         visible = {
             has_completed_focus = FOP_Rudimentary_Resource_Production
         }
@@ -680,14 +612,11 @@ FOP_micro_region_development = {
             }
 		}
 	}
-
 }
+
 FOP_weapon_market = {
     buy_infantry_weapons = {
         icon = GFX_decision_buy_infantry_weapons
-
-		allowed = {
-		}
 		
 		cost = 30
 
@@ -712,9 +641,6 @@ FOP_weapon_market = {
 
     buy_vehicles = {
         icon = GFX_decision_buy_vehicles
-
-		allowed = {
-		}
 		
 		cost = 30
 
@@ -743,9 +669,6 @@ FOP_weapon_market = {
 FOP_building_projects = {
     build_hospital = {
         icon = GFX_decision_build_hospital
-
-		allowed = {
-		}
 		
 		cost = 50
 
@@ -772,9 +695,6 @@ FOP_building_projects = {
     }
     build_education_centre = {
         icon = GFX_decision_build_education_centre
-
-		allowed = {
-		}
 		
 		cost = 50
 
@@ -801,9 +721,6 @@ FOP_building_projects = {
     }
     invest_in_factory = {
         icon = GFX_decision_invest_in_factory
-
-		allowed = {
-		}
 		
 		cost = 30
 
@@ -830,9 +747,6 @@ FOP_building_projects = {
     }
     invest_in_arms_plant = {
         icon = GFX_decision_invest_in_arms_plant
-
-		allowed = {
-		}
 
         visible = {
             has_completed_focus = FOP_Military_Industry_Development
@@ -863,9 +777,6 @@ FOP_building_projects = {
     }
     invest_in_bullets = {
         icon = GFX_decision_invest_in_bullets
-
-		allowed = {
-		}
 
         visible = {
             has_completed_focus = FOP_Military_Industry_Development
@@ -899,9 +810,6 @@ FOP_building_projects = {
 FOP_attract_investments = {
     lend_factories_1 = {
         icon = GFX_decision_economic_concessions
-
-		allowed = {
-		}
 		
 		cost = 25
 
@@ -926,9 +834,6 @@ FOP_attract_investments = {
     }
     lend_factories_2 = {
         icon = GFX_decision_economic_concessions
-
-		allowed = {
-		}
 		
 		cost = 35
 
@@ -953,9 +858,6 @@ FOP_attract_investments = {
     }
     lend_factories_3 = {
         icon = GFX_decision_economic_concessions
-
-		allowed = {
-		}
 		
 		cost = 50
 

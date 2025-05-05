@@ -13,11 +13,11 @@ country_event = {
 	option = {
 		name = kha.1.a
         ai_chance = {
-            base = 80
+            base = 60
         }
 	}
 	option = {
-		name = kha.2.b
+		name = kha.1.b
 		ai_chance = {
             base = 20
         }
@@ -35,23 +35,25 @@ country_event = {
 				KHA_preserving_the_old_ways
 			}
 		}
-		country_event = { id = kha.2 }
 	}
-}
-
-#Tarasenko arrives
-country_event = {
-	id = kha.2
-	title = kha.2.t
-	desc = kha.2.d
-
-	picture = GFX_event_kharkiv_freicor
-	fire_only_once = yes
-	is_triggered_only = yes
-
 	option = {
-		name = kha.2.a
-		retire_country_leader = yes
-		promote_leader = KHA_tarasenko
+		name = kha.1.c
+		ai_chance = {
+            base = 20
+        }
+		set_politics = {
+			ruling_party = socialism
+		}
+		hidden_effect = {
+			add_popularity = {
+				ideology = socialism
+				popularity = 0.2
+			}
+			set_cosmetic_tag = KHA_socialism
+			remove_ideas = {
+				KHA_police_state
+				KHA_preserving_the_old_ways
+			}
+		}
 	}
 }

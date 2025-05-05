@@ -1,70 +1,3 @@
-AFU_azov_foreign_politics_category = {
-
-	deal_with_plt = {
-
-        allowed = {
-            original_tag = AFU
-        }
-
-        visible = {
-            PLT = {
-                has_country_flag = united_right_bank
-                has_country_leader = {
-                    character = PLT_Biletsky
-                }
-            }
-            AFU = {
-                has_country_flag = united_left_bank
-                has_country_leader = {
-                    character = AFU_zhorin
-                }
-            }
-        }
-
-        ai_will_do = {
-            base = 1
-        }
-
-        cost = 0
-        fire_only_once = yes
-
-        complete_effect = {
-            country_event = { id = azov.17 }
-        }
-    }
-	deal_with_ter = {
-
-        allowed = {
-            original_tag = TER
-        }
-
-        visible = {
-            TER = {
-                has_country_flag = united_right_bank
-            }
-            AFU = {
-                has_country_flag = united_left_bank
-                has_country_leader = {
-                    character = AFU_zhorin
-                    ruling_only = yes
-                }
-				has_completed_focus = AFU_start_the_paganisation
-            }
-        }
-
-        ai_will_do = {
-            base = 1
-        }
-
-        cost = 0
-        fire_only_once = yes
-
-        complete_effect = {
-            country_event = { id = azov.18 }
-        }
-    }
-}
-
 AFU_azov_church_politics_category = {
 
 	AFU_last_stand_christian_decision = {
@@ -1465,32 +1398,29 @@ has_country_flag = azov_decision_activate
 	}
 
 	azov_slavic_traditions_decisions_1 = {
-
 		icon = GFX_decision_kolovrat2
 
-
 		visible = {
-		
 			tag = AFU
-		has_completed_focus = AFU_old_slavic_traditions
+			has_completed_focus = AFU_old_slavic_traditions
 		}
-	
+
+		#modifier = {
+		#political_power_gain = -0.3
+		#}
 
 		modifier = {
-		political_power_gain = 0.1
-		stability_factor = -0.1
-		production_speed_buildings_factor = -0.1 
-		industrial_capacity_factory = -0.1
+			political_power_gain = 0.1
+			stability_factor = -0.1
+			production_speed_buildings_factor = -0.1 
+			industrial_capacity_factory = -0.1
 		}
-		
-		cost = 30
-		
-		days_remove = 20
 
+		cost = 30
+		days_remove = 20
 		ai_will_do = {
 			factor = 200
 		}
-
 		fire_only_once = yes
 
 		remove_effect  = {
@@ -1504,12 +1434,13 @@ has_country_flag = azov_decision_activate
 				min = 0
 				max = 100
 			}
-		hidden_effect = {
-		country_event = { id = azov.38 }
-		}
+			hidden_effect = {
+				#country_event = { id = azov.38 }
+				country_event = { id = azov.39 }
+			}
 		}
 	}
-	
+
 	azov_paganisation_small_decisions_1 = {
 
 		icon = GFX_decision_kolovrat
@@ -1633,49 +1564,6 @@ has_country_flag = azov_decision_activate
 				max = 100
 			}
 		hidden_effect = {
-		}
-		}
-	}
-	
-	azov_slavic_traditions_decisions_1 = {
-
-		icon = GFX_decision_kolovrat2
-
-
-		visible = {
-		
-			tag = AFU
-		has_completed_focus = AFU_old_slavic_traditions
-		}
-	
-
-		modifier = {
-		political_power_gain = -0.3
-		}
-		
-		cost = 30
-		
-		days_remove = 20
-
-		ai_will_do = {
-			factor = 200
-		}
-
-		fire_only_once = yes
-
-		remove_effect  = {
-			add_to_variable = {
-				var =  AFU_azov_paganisation_v
-				value = 5
-				tooltip = azov_paganisation_progress_tt
-			}
-			clamp_variable = {
-				var =  AFU_azov_paganisation_v
-				min = 0
-				max = 100
-			}
-		hidden_effect = {
-		country_event = { id = azov.39 }
 		}
 		}
 	}
@@ -1893,61 +1781,6 @@ has_country_flag = azov_decision_activate
 			add_to_variable = {
 				var =  AFU_azov_paganisation_v
 				value = 2
-				tooltip = azov_paganisation_progress_tt
-			}
-			clamp_variable = {
-				var =  AFU_azov_paganisation_v
-				min = 0
-				max = 100
-			}
-		}
-	}
-	
-	azov_paganization_decisions_4 = {
-
-		icon = GFX_decision_kolovrat
-		
-		available = {
-			has_full_control_of_state = 2079
-		}
-
-		visible = {
-		
-			tag = AFU
-		has_completed_focus = AFU_start_the_paganisation
-		has_full_control_of_state = 2079
-		}
-	
-		highlight_states = {
-            highlight_state_targets = { state = 2079 } 
-        }
-
-		modifier = {
-			
-		}
-		
-		cost = 50
-		
-		days_remove = 20
-
-		ai_will_do = {
-			factor = 200
-		}
-
-		fire_only_once = yes
-
-		remove_effect  = {
-			2079 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = religious_building
-					level = 1
-					instant_build = yes
-				}
-			}
-			add_to_variable = {
-				var =  AFU_azov_paganisation_v
-				value = 2.5
 				tooltip = azov_paganisation_progress_tt
 			}
 			clamp_variable = {
@@ -2716,14 +2549,14 @@ AFU_azov_rvc_category = {
 		}
 		
 		available = {
-			has_completed_focus = AFU_invite_russian_farrights	   
+			has_completed_focus = AFU_invite_russian_far_rights	   
 		}
 		
 		fire_only_once = yes
 
 		visible = {
 			AND = {
-				has_completed_focus = AFU_invite_russian_farrights
+				has_completed_focus = AFU_invite_russian_far_rights
 				AFU = { has_war_with = RUS }
 			}
 		}
@@ -2743,11 +2576,11 @@ AFU_azov_rvc_category = {
 		}
 		
 		available = {
-			has_completed_focus = AFU_invite_russian_farrights	
+			has_completed_focus = AFU_invite_russian_far_rights	
 		}
 
 		visible = {
-			has_completed_focus = AFU_invite_russian_farrights	
+			has_completed_focus = AFU_invite_russian_far_rights	
 		}
 		
 		cost = 50
@@ -2775,11 +2608,11 @@ AFU_azov_rvc_category = {
 			check_variable = {
 				AFU_rdk_media > 3
 			}
-			has_completed_focus = AFU_invite_russian_farrights
+			has_completed_focus = AFU_invite_russian_far_rights
 		}
 
 		visible = {
-			has_completed_focus = AFU_invite_russian_farrights
+			has_completed_focus = AFU_invite_russian_far_rights
 			check_variable = {
 				AFU_rdk_media > 3
 			}
@@ -2807,11 +2640,11 @@ AFU_azov_rvc_category = {
 		}
 		
 		available = {
-			has_completed_focus = AFU_invite_russian_farrights
+			has_completed_focus = AFU_invite_russian_far_rights
 		}
 
 		visible = {
-			has_completed_focus = AFU_invite_russian_farrights
+			has_completed_focus = AFU_invite_russian_far_rights
 		}
 		
 		cost = 50
@@ -2838,11 +2671,11 @@ AFU_azov_rvc_category = {
 		}
 		
 		available = {
-			has_completed_focus = AFU_invite_russian_farrights
+			has_completed_focus = AFU_invite_russian_far_rights
 		}
 
 		visible = {
-			has_completed_focus = AFU_invite_russian_farrights
+			has_completed_focus = AFU_invite_russian_far_rights
 		}
 		
 		cost = 100

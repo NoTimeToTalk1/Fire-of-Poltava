@@ -1,14 +1,12 @@
 
 	#Savchenko
 	shared_focus = {
-		id = isr_savchenko
-		icon = GFX_isr_savchenko-495536
+		id = AFU_savchenko
+		icon = GFX_AFU_savchenko
 		x = 12
 		y = 0
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
+
 				completion_reward = { 
          add_political_power = 10
 		}
@@ -16,15 +14,13 @@
 
 	#Greatest Success
 	shared_focus = {
-		id = isr_greatest_success
-		icon = GFX_isr_greatest_success-495536
+		id = AFU_greatest_success
+		icon = GFX_AFU_greatest_success
 		x = 12
 		y = 2
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = isr_savchenko  }
+
+		prerequisite = { focus = AFU_savchenko  }
 				completion_reward = { 
          add_political_power = 10
 		 add_stability = 0.1
@@ -33,15 +29,13 @@
 
 	#Our True Intention
 	shared_focus = {
-		id = isr_our_true_intention
-		icon = GFX_isr_our_true_intention-495536
+		id = AFU_our_true_intention
+		icon = GFX_AFU_our_true_intention
 		x = 12
 		y = 3
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = isr_greatest_success  }
+
+		prerequisite = { focus = AFU_greatest_success  }
 				completion_reward = { 
          add_political_power = 10
 		 add_war_support = 0.1
@@ -51,15 +45,13 @@
 
 	#Arrest Akhmetov
 	shared_focus = {
-		id = isr_arrest_akhmetov
-		icon = GFX_isr_arrest_akhmetov-495536
+		id = AFU_arrest_akhmetov
+		icon = GFX_AFU_arrest_akhmetov
 		x = 6
 		y = 4
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = isr_our_true_intention  }
+
+		prerequisite = { focus = AFU_our_true_intention  }
 				completion_reward = { 
          add_political_power = -10
 		 add_stability = -0.25
@@ -68,15 +60,13 @@
 
 	#Arrest Their Master...
 	shared_focus = {
-		id = isr_arresttheirmaster
-		icon = GFX_isr_arresttheirmaster-495536
+		id = AFU_arresttheirmaster
+		icon = GFX_AFU_arresttheirmaster
 		x = 9
 		y = 4
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
-		}
-		prerequisite = { focus = isr_our_true_intention  }
+
+		prerequisite = { focus = AFU_our_true_intention  }
 				completion_reward = { 
          add_political_power = -10
 		 add_stability = -0.25
@@ -87,16 +77,14 @@
 
 	#Make Them Loyal
 	shared_focus = {
-		id = isr_make_them_loyal
-		icon = GFX_isr_make_them_loyal-495536
+		id = AFU_make_them_loyal
+		icon = GFX_AFU_make_them_loyal
 		x = 5
 		y = 7
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
-		}
-		prerequisite = { focus = isr_arrest_akhmetov  }
-		mutually_exclusive = { focus = isr_nationalise_enterprises  }
+
+		prerequisite = { focus = AFU_arrest_akhmetov  }
+		mutually_exclusive = { focus = AFU_nationalise_enterprises  }
 				completion_reward = { 
           add_political_power = 50
 		}
@@ -104,16 +92,14 @@
 
 	#Nationalise Enterprises
 	shared_focus = {
-		id = isr_nationalise_enterprises
-		icon = GFX_isr_nationalise_enterprises-495536
+		id = AFU_nationalise_enterprises
+		icon = GFX_AFU_nationalise_enterprises
 		x = 7
 		y = 7
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
-		}
-		prerequisite = { focus = isr_arrest_akhmetov  }
-		mutually_exclusive = { focus = isr_make_them_loyal  }
+
+		prerequisite = { focus = AFU_arrest_akhmetov  }
+		mutually_exclusive = { focus = AFU_make_them_loyal  }
 				completion_reward = { 
 				 add_political_power = -10
 		}
@@ -121,15 +107,13 @@
 
 	#...And His Dogs
 	shared_focus = {
-		id = isr_andhisdogs
-		icon = GFX_isr_andhisdogs-495536
+		id = AFU_andhisdogs
+		icon = GFX_AFU_andhisdogs
 		x = 9
 		y = 5
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
-		}
-		prerequisite = { focus = isr_arresttheirmaster  }
+
+		prerequisite = { focus = AFU_arresttheirmaster  }
 				completion_reward = { 
          add_political_power = -10
 		 add_stability = -0.25
@@ -139,20 +123,18 @@
 
 	#Form a New Cabinet
 	shared_focus = {
-		id = isr_form_a_new_cabinet
-		icon = GFX_isr_form_a_new_cabinet-495536
+		id = AFU_form_a_new_cabinet
+		icon = GFX_AFU_form_a_new_cabinet
 		x = 9
 		y = 7
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
-		}
+
 		
 		available = {	
-        has_completed_focus = isr_purge_the_deputies
+        has_completed_focus = AFU_purge_the_deputies
 		}
 		
-		prerequisite = { focus = isr_andhisdogs  }
+		prerequisite = { focus = AFU_andhisdogs  }
 				completion_reward = { 
          add_command_power = 25
 		 add_political_power = 50
@@ -166,15 +148,13 @@
 
 	#Final Cleaning
 	shared_focus = {
-		id = isr_final_cleaning
-		icon = GFX_isr_final_cleaning-495536
+		id = AFU_final_cleaning
+		icon = GFX_AFU_final_cleaning
 		x = 12
 		y = 4
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
-		}
-		prerequisite = { focus = isr_our_true_intention  }
+
+		prerequisite = { focus = AFU_our_true_intention  }
 				completion_reward = { 
          add_command_power = 25
 		}
@@ -182,15 +162,13 @@
 
 	#Loyal Army
 	shared_focus = {
-		id = isr_loyal_army
-		icon = GFX_isr_loyal_army-495536
+		id = AFU_loyal_army
+		icon = GFX_AFU_loyal_army
 		x = 11
 		y = 5
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_WAR_SUPPORT
-		}
-		prerequisite = { focus = isr_final_cleaning  }
+
+		prerequisite = { focus = AFU_final_cleaning  }
 				completion_reward = { 
          add_command_power = 25
 		 army_experience = 10
@@ -200,15 +178,13 @@
 
 	#Purge the Deputies
 	shared_focus = {
-		id = isr_purge_the_deputies
-		icon = GFX_isr_purge_the_deputies-495536
+		id = AFU_purge_the_deputies
+		icon = GFX_AFU_purge_the_deputies
 		x = 13
 		y = 5
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
-		}
-		prerequisite = { focus = isr_final_cleaning  }
+
+		prerequisite = { focus = AFU_final_cleaning  }
 				completion_reward = { 
          add_stability = -0.2
 		 hidden_effect = {
@@ -223,15 +199,13 @@
 
 	#Seize the Power
 	shared_focus = {
-		id = isr_seize_the_power
-		icon = GFX_isr_seize_the_power-495536
+		id = AFU_seize_the_power
+		icon = GFX_AFU_seize_the_power
 		x = 11
 		y = 6
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = isr_loyal_army  }
+
+		prerequisite = { focus = AFU_loyal_army  }
 				completion_reward = { 
          add_stability = 0.2
 		}
@@ -239,15 +213,13 @@
 
 	#Proclaim Us Legitimate
 	shared_focus = {
-		id = isr_proclaim_us_legitimate
-		icon = GFX_isr_proclaim_us_legitimate-495536
+		id = AFU_proclaim_us_legitimate
+		icon = GFX_AFU_proclaim_us_legitimate
 		x = 11
 		y = 7
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = isr_seize_the_power  }
+
+		prerequisite = { focus = AFU_seize_the_power  }
 				completion_reward = { 
          add_ideas = AFU_savchenko_antipresident_campaing
 		}
@@ -255,15 +227,13 @@
 
 	#Iron Bastion
 	shared_focus = {
-		id = isr_iron_bastion
-		icon = GFX_isr_iron_bastion-495536
+		id = AFU_iron_bastion
+		icon = GFX_AFU_iron_bastion
 		x = 14
 		y = 4
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = isr_our_true_intention  }
+
+		prerequisite = { focus = AFU_our_true_intention  }
 				completion_reward = { 
          add_ideas = AFU_savchenko_iron_bastion
 		}
@@ -271,15 +241,13 @@
 
 	#Contacts With the Red Cross
 	shared_focus = {
-		id = isr_contacts_with_the_red_cross
-		icon = GFX_isr_contacts_with_the_red_cross-495536
+		id = AFU_contacts_with_the_red_cross
+		icon = GFX_AFU_contacts_with_the_red_cross
 		x = 16
 		y = 4
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = isr_our_true_intention  }
+
+		prerequisite = { focus = AFU_our_true_intention  }
 				completion_reward = { 
          add_ideas = AFU_savchenko_humanitarian_aid
 		}
@@ -287,15 +255,13 @@
 
 	#Solve Humanitarian Problems
 	shared_focus = {
-		id = isr_solve_humanitarian_problems
-		icon = GFX_isr_solve_humanitarian_problems-495536
+		id = AFU_solve_humanitarian_problems
+		icon = GFX_AFU_solve_humanitarian_problems
 		x = 16
 		y = 5
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = isr_contacts_with_the_red_cross  }
+
+		prerequisite = { focus = AFU_contacts_with_the_red_cross  }
 				completion_reward = { 
          add_stability = 0.25
 		 add_political_power = 75
@@ -304,15 +270,13 @@
 
 	#No More Deception
 	shared_focus = {
-		id = isr_no_more_deception
-		icon = GFX_isr_no_more_deception-495536
+		id = AFU_no_more_deception
+		icon = GFX_AFU_no_more_deception
 		x = 18
 		y = 4
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = isr_our_true_intention  }
+
+		prerequisite = { focus = AFU_our_true_intention  }
 				completion_reward = { 
          add_stability = 0.25
 		 add_political_power = 75
@@ -326,15 +290,13 @@
 
 	#Win the Trust of the People
 	shared_focus = {
-		id = isr_win_the_trust_of_the_people
-		icon = GFX_isr_win_the_trust_of_the_people-495536
+		id = AFU_win_the_trust_of_the_people
+		icon = GFX_AFU_win_the_trust_of_the_people
 		x = 18
 		y = 5
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = isr_no_more_deception  }
+
+		prerequisite = { focus = AFU_no_more_deception  }
 				completion_reward = { 
          add_stability = 0.25
 		 add_war_support = 0.25
@@ -344,15 +306,13 @@
 
 	#Fix the Law
 	shared_focus = {
-		id = isr_fix_the_law
-		icon = GFX_isr_fix_the_law-495536
+		id = AFU_fix_the_law
+		icon = GFX_AFU_fix_the_law
 		x = 17
 		y = 6
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = isr_win_the_trust_of_the_people  } prerequisite = { focus = isr_solve_humanitarian_problems  }
+
+		prerequisite = { focus = AFU_win_the_trust_of_the_people  } prerequisite = { focus = AFU_solve_humanitarian_problems  }
 				completion_reward = { 
 			add_political_power = 50
 		}
@@ -360,15 +320,13 @@
 
 	#Project of the New Constitution
 	shared_focus = {
-		id = isr_project_of_the_new_constitution
-		icon = GFX_isr_project_of_the_new_constitution-495536
+		id = AFU_project_of_the_new_constitution
+		icon = GFX_AFU_project_of_the_new_constitution
 		x = 17
 		y = 7
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = isr_fix_the_law  }
+
+		prerequisite = { focus = AFU_fix_the_law  }
 				completion_reward = { 
          add_stability = 0.25
 		}
@@ -376,15 +334,13 @@
 
 	#Iron Lady
 	shared_focus = {
-		id = isr_iron_lady
-		icon = GFX_isr_iron_lady-495536
+		id = AFU_iron_lady
+		icon = GFX_AFU_iron_lady
 		x = 12
 		y = 8
 		cost = 3
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = isr_form_a_new_cabinet  } prerequisite = { focus = isr_proclaim_us_legitimate  } prerequisite = { focus = isr_iron_bastion  } prerequisite = { focus = isr_project_of_the_new_constitution  }
+
+		prerequisite = { focus = AFU_form_a_new_cabinet  } prerequisite = { focus = AFU_proclaim_us_legitimate  } prerequisite = { focus = AFU_iron_bastion  } prerequisite = { focus = AFU_project_of_the_new_constitution  }
 					completion_reward = { 
          add_command_power = 25
 		 add_war_support = 0.25

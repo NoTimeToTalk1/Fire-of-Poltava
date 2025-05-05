@@ -1,0 +1,99 @@
+add_namespace = rvc
+
+country_event = {
+	id = rdk.1
+	title = rdk.1.t
+	desc = rdk.1.d
+
+	picture = GFX_event_rdk_photo
+	
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = rvc.1.a
+		AFU = {
+			create_faction = LUHANSK_AGREEMENT
+			country_event = {
+				id = rvc.2
+				days = 2
+			}
+		}
+		RVC = {
+			transfer_state = 450
+			add_state_core = 450
+			add_manpower = AFU:AFU_rdk
+		}
+		AFU = { add_to_faction = RVC }
+		RVC = {
+			load_oob = "RDK_2019"
+			declare_war_on = {
+				target = RUS
+				type = annex_everything
+			}
+			add_to_war = {
+				targeted_alliance = AFU
+				enemy = RUS
+				hostility_reason = asked_to_join
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_2
+				amount = 10000
+				producer = AFU
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_1
+				amount = 2500
+				producer = AFU
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 5000
+				producer = AFU
+			}
+		}
+		hidden_effect = {
+			RVC = {
+				set_nationality = {
+					target_country = AFU
+					character = AFU_esenin
+				}
+				set_nationality = {
+					target_country = AFU
+					character = AFU_pomor
+				}
+				set_nationality = {
+					target_country = PLT
+					character = PLT_tesak
+				}
+				set_nationality = {
+					target_country = TER
+					character = TER_lyovkin
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = rvc.2
+	title = rvc.2.t
+	desc = rvc.2.d
+
+	picture = GFX_event_rdk_photo
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = rdk.2.a
+		RVC = {
+			change_tag_from = ROOT
+		}
+	}
+	option = {
+		name = rdk.2.b
+		add_political_power = 25
+	}
+}

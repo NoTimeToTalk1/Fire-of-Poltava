@@ -1,753 +1,877 @@
-##############################################################################################
-##############################################################################################
-##################   											##############################
-##################       THE STARTING KHOMMUTYNNIK FOCUSES      ##############################
-##################   											##############################
-##############################################################################################
-##############################################################################################
-
-shared_focus = {
-	id = AFU_khomutynnik
-	icon = GFX_AFU_Khomutynnik
-	cost = 2
-
-	x = 10
-	y = 0
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_khomutynnik
+		icon = GFX_AFU_khomutynnik
+		x = 7
+		y = 0
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+		custom_effect_tooltip = khomutynnik_tt	
+				country_event = { 
+					id = homut.1
+					days = 2 
+				}
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_contact_bondar
-	icon = GFX_AFU_Contact_Bondar
-	cost = 2
-
-	relative_position_id = AFU_khomutynnik
-	x = -2
-	y = 1
-
-	prerequisite = { focus = AFU_khomutynnik }
-	mutually_exclusive = { focus = AFU_invite_kinakh }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_message_to_bondar
+		icon = GFX_AFU_message_to_bondar
+		x = 5
+		y = 1
+		cost = 4
+		prerequisite = { focus = AFU_khomutynnik }
+		mutually_exclusive = { focus = AFU_call_to_kinakh}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+				country_event = { 
+					id = homut.2
+					days = 2 
+				}			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_talk_with_kolomoyskyi
-	icon = GFX_AFU_Talk_with_Kolomoyskyi
-	cost = 2
-
-	relative_position_id = AFU_contact_bondar
-	x = -2
-	y = 1
-
-	prerequisite = { focus = AFU_contact_bondar }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_call_to_kinakh
+		icon = GFX_AFU_call_to_kinakh
+		x = 9
+		y = 1
+		cost = 4
+		mutually_exclusive = { focus = AFU_message_to_bondar}
+		prerequisite = { focus = AFU_khomutynnik }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+				country_event = { 
+					id = homut.3
+					days = 2 
+				}			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_revival_faction_session
-	icon = GFX_AFU_Revival_Faction_Session
-	cost = 2
-
-	relative_position_id = AFU_message_to_bondar
-	x = 0
-	y = 1
-
-	prerequisite = { focus = AFU_message_to_bondar }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_talk_with_kolomoyskyi
+		icon = GFX_AFU_talk_with_kolomoyskyi
+		x = 3
+		y = 2
+		cost = 7
+		prerequisite = { focus = AFU_message_to_bondar }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+	add_opinion_modifier = {
+    target = DNI
+    modifier = improved_relations
+    }
+	DNI = {
+	give_market_access = AFU
+	add_opinion_modifier = {
+    target = AFU
+    modifier = improved_relations
+    }
 	}
-}
-
-shared_focus = {
-	id = AFU_mutually_beneficial_alliance
-	icon = GFX_Mutually_Beneficial_Alliance
-	cost = 2
-
-	relative_position_id = AFU_revival_faction_session
-	x = -1
-	y = 1
-
-	prerequisite = { focus = AFU_talk_with_kolomoyskyi }
-	prerequisite = { focus = AFU_revival_faction_session }
-
-	completion_reward = {
-		###
+		add_ideas = AFU_Ties_With_a_Good_Old_Friend
+		give_market_access = DNI
+				country_event = { 
+					id = homut.4
+					days = 2 
+				}			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_invite_kinakh
-	icon = GFX_AFU_Invite_Kinakh
-	cost = 2
-
-	relative_position_id = AFU_khomutynnik
-	x = 2
-	y = 1
-
-	prerequisite = { focus = AFU_khomutynnik }
-	mutually_exclusive = { focus = AFU_contact_bondar }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_revival_faction_session
+		icon = GFX_AFU_revival_faction_session
+		x = 5
+		y = 2
+		cost = 7
+		prerequisite = { focus = AFU_message_to_bondar }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			custom_effect_tooltip = AFU_revival_faction_session_tt
+			hidden_effect = {
+		set_country_flag = 	AFU_revival_faction_session
+		}
+		add_ideas = AFU_United_Oligarchic_Alliance	
+		add_ideas = fop_oligarchs_power_high
+		}
 	}
+
+	shared_focus = {
+		id = AFU_mutually_beneficial_alliance
+		icon = GFX_AFU_mutually_beneficial_alliance
+		x = 4
+		y = 3
+		cost = 7
+		prerequisite = { focus = AFU_revival_faction_session }
+		prerequisite = { focus = AFU_talk_with_kolomoyskyi }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+		
+		add_ideas = fop_oligarchs_relations_cooperation
+		
+				country_event = { 
+					id = homut.5
+					days = 2 
+				}		
+		
+		add_offsite_building = { type = fuel_silo level = 1 }
+		
+		random_owned_state = {
+        add_extra_state_shared_building_slots = 1
+        add_building_construction = {
+    type = air_base
+    level = 1
+    instant_build = yes
+    }
+    }
+		
+		add_political_power = 10
+		
+	    DNI = {
+        create_import = {
+            resource = steel
+            amount = 100
+            exporter = AFU
+}	
 }
-
-shared_focus = {
-	id = AFU_integrate_the_party_of_industrialists
-	icon = GFX_AFU_Integrate_the_Party_of_Industrialists
-	cost = 2
-
-	relative_position_id = AFU_invite_kinakh
-	x = 0
-	y = 1
-
-	prerequisite = { focus = AFU_invite_kinakh }
-
-	completion_reward = {
-		###
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_meeting_with_the_donetsk_clan
-	icon = GFX_AFU_Meeting_with_the_Donetsk_Clan
-	cost = 2
-
-	relative_position_id = AFU_invite_kinakh
-	x = 2
-	y = 1
-
-	prerequisite = { focus = AFU_invite_kinakh }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_integrate_the_party_of_industrialist
+		icon = GFX_AFU_integrate_the_party_of_industrialist
+		x = 9
+		y = 2
+		cost = 7
+		prerequisite = { focus = AFU_call_to_kinakh }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			custom_effect_tooltip = AFU_integrate_the_party_of_industrialist_tt
+			hidden_effect = {
+		set_country_flag = 	AFU_integrate_the_party_of_industrialist
+		}	
+set_party_name = {
+    ideology = centrism
+    long_name = "Party of Industrialists and Entrepreneurs of Ukraine"
+    name = "PPPU"
+}			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_negotiation_channel_with_moscow
-	icon = GFX_AFU_Negotiation_Channel_with_Moscow
-	cost = 2
-
-	relative_position_id = AFU_integrate_the_party_of_industrialists
-	x = 1
-	y = 1
-
-	prerequisite = { focus = AFU_integrate_the_party_of_industrialists }
-	prerequisite = { focus = AFU_meeting_with_the_donetsk_clan }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_meeting_with_the_donetsk_clan
+		icon = GFX_AFU_meeting_with_the_donetsk_clan
+		x = 11
+		y = 2
+		cost = 7
+		prerequisite = { focus = AFU_call_to_kinakh }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+		add_ideas = AFU_Return_of_the_Donetsk_Mafia	
+		
+		
+				country_event = { 
+					id = homut.6
+					days = 2 
+				}		
+		hidden_effect = {
+set_country_flag = AFU_meeting_with_the_donetsk_clan
+}		
+				
+				
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_cooperation_with_local_outsiders
-	icon = GFX_AFU_Cooperation_with_Local_Outsiders
-	cost = 2
-	
-	relative_position_id = AFU_khomutynnik
-	x = 0
-	y = 2
-
-	prerequisite = { focus = AFU_contact_bondar focus = AFU_invite_kinakh }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_Open_a_Negotiating_Channel_with_Moscow
+		icon = GFX_AFU_Open_a_Negotiating_Channel_with_Moscow
+		x = 10
+		y = 3
+		cost = 7
+		prerequisite = { focus = AFU_meeting_with_the_donetsk_clan }
+		prerequisite = { focus = AFU_integrate_the_party_of_industrialist }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+				country_event = { 
+					id = homut.7
+					days = 2 
+				}	
+	add_opinion_modifier = {
+    target = RUS
+    modifier = secret_communication_channels
+    }
+	RUS = {
+	add_opinion_modifier = {
+    target = AFU
+    modifier = secret_communication_channels
+    }
+    }
+		hidden_effect = {
+		set_country_flag = AFU_Open_a_Negotiating_Channel_with_Moscow
+}		
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_formation_of_coalition
-	icon = GFX_AFU_Formation_of_Coalition
-	cost = 2
-
-	relative_position_id = AFU_cooperation_with_local_outsiders
-	x = 0
-	y = 1
-
-	prerequisite = { focus = AFU_cooperation_with_local_outsiders }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_cooperation_with_local_outsiders
+		icon = GFX_AFU_cooperation_with_local_outsiders
+		x = 7
+		y = 2
+		cost = 7
+		prerequisite = { focus = AFU_message_to_bondar focus = AFU_call_to_kinakh }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+				country_event = { 
+					id = homut.12
+					days = 2 
+				}	
+		hidden_effect = {
+		set_country_flag = 	AFU_cooperation_with_local_outsiders
+		}			
+		}
 	}
+
+	shared_focus = {
+		id = AFU_formation_of_the_together_for_donbas_coalition
+		icon = GFX_AFU_formation_of_the_together_for_donbas_coalition
+		x = 7
+		y = 3
+		cost = 7
+		prerequisite = { focus = AFU_cooperation_with_local_outsiders }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+		add_ideas = fop_party_system_multiparty
+add_popularity = {
+    ideology = centrism
+    popularity = 0.2
 }
-
-shared_focus = {
-	id = AFU_time_for_great_solutions
-	icon = GFX_AFU_Time_for_Great_Solutions
-	cost = 2
-
-	relative_position_id = AFU_formation_of_coalition
-	x = 0
-	y = 1
-
-	prerequisite = { focus = AFU_formation_of_coalition }
-
-	completion_reward = {
-		###
+add_popularity = {
+    ideology = conservatism
+    popularity = 0.2
+}
+add_popularity = {
+    ideology = progressivism
+    popularity = 0.2
+}
+		hidden_effect = {
+		set_country_flag = 	AFU_formation_of_the_together_for_donbas_coalition
+		}				
+		}
 	}
-}
 
-##############################################################################################
-##############################################################################################
-##################   											##############################
-##################                THE STATE'S WILL              ##############################
-##################   											##############################
-##############################################################################################
-##############################################################################################
-
-shared_focus = {
-	id = AFU_learn_from_the_best
-	icon = GFX_AFU_Learn_From_the_Best
-	cost = 2
-
-	relative_position_id = AFU_time_for_great_solutions
-	x = -4
-	y = 1
-
-	prerequisite = { focus = AFU_time_for_great_solutions }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_time_for_great_solutions
+		icon = GFX_AFU_time_for_great_solutions
+		x = 7
+		y = 4
+		cost = 7
+		prerequisite = { focus = AFU_formation_of_the_together_for_donbas_coalition}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
+
+	shared_focus = {
+		id = AFU_start_deradicalisation_of_society
+		icon = GFX_AFU_start_deradicalisation_of_society
+		x = 6
+		y = 5
+		cost = 7
+		prerequisite = { focus = AFU_time_for_great_solutions }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+
+	hidden_effect = {
+add_to_variable = {
+    var = fulfilment_of_Russian_requirements_variable
+    value = 10
 }
-
-shared_focus = {
-	id = AFU_tax_cuts_for_businesses
-	icon = GFX_AFU_Tax_Cuts_for_Businesses
-	cost = 2
-
-	relative_position_id = AFU_learn_from_the_best
-	x = 0
-	y = 1
-
-	prerequisite = { focus = AFU_learn_from_the_best }
-
-	completion_reward = {
-		###
+    }
+		}
 	}
+
+	shared_focus = {
+		id = AFU_pardons_for_the_ldpr_partecipants
+		icon = GFX_AFU_pardons_for_the_ldpr_partecipants
+		x = 6
+		y = 6
+		cost = 7
+		prerequisite = { focus = AFU_start_deradicalisation_of_society }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+	add_ideas = fop_forced_labour_banned
+	hidden_effect = {
+add_to_variable = {
+    var = fulfilment_of_Russian_requirements_variable
+    value = 10
 }
-
-shared_focus = {
-	id = AFU_special_rights_to_corporations
-	icon = GFX_AFU_Special_Rights_to_Corporations
-	cost = 2
-
-	relative_position_id = AFU_tax_cuts_for_businesses
-	x = 0
-	y = 1
-
-	prerequisite = { focus = AFU_tax_cuts_for_businesses }
-
-	completion_reward = {
-		###
+    }			
+		}
 	}
+
+	shared_focus = {
+		id = AFU_stop_the_ethnic_hatred
+		icon = GFX_AFU_stop_the_ethnic_hatred
+		x = 6
+		y = 7
+		cost = 7
+		prerequisite = { focus = AFU_pardons_for_the_ldpr_partecipants }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+	add_ideas = fop_ethnic_minorities_cultural_acommodation
+	hidden_effect = {
+add_to_variable = {
+    var = fulfilment_of_Russian_requirements_variable
+    value = 10
 }
-
-shared_focus = {
-	id = AFU_deradicalization_of_society
-	icon = GFX_AFU_Deradicalization_of_Society
-	cost = 2
-
-	relative_position_id = AFU_time_for_great_solutions
-	x = -1
-	y = 1
-
-	prerequisite = { focus = AFU_time_for_great_solutions }
-
-	completion_reward = {
-		###
+    }			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_hunt_for_ringleaders
-	icon = GFX_AFU_Hunt_for_Ringleaders
-	cost = 2
-
-	relative_position_id = AFU_deradicalization_of_society
-	x = 0
-	y = 1
-
-	prerequisite = { focus = AFU_deradicalization_of_society }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_hunt_for_the_ringleaders
+		icon = GFX_AFU_hunt_for_the_ringleaders
+		x = 4
+		y = 6
+		cost = 7
+		prerequisite = { focus = AFU_start_deradicalisation_of_society }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
+
+	shared_focus = {
+		id = AFU_disband_the_azov_regiment
+		icon = GFX_AFU_disband_the_azov_regiment
+		x = 4
+		y = 7
+		cost = 7
+		prerequisite = { focus = AFU_hunt_for_the_ringleaders }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+	hidden_effect = {
+add_to_variable = {
+    var = fulfilment_of_Russian_requirements_variable
+    value = 10
 }
-
-shared_focus = {
-	id = AFU_disband_azov
-	icon = GFX_AFU_Disband_Azov
-	cost = 2
-
-	relative_position_id = AFU_hunt_for_ringleaders
-	x = 0
-	y = 1
-
-	prerequisite = { focus = AFU_hunt_for_ringleaders }
-
-	completion_reward = {
-		###
+    }			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_for_the_state
-	icon = GFX_AFU_For_the_State
-	cost = 2
-
-	relative_position_id = AFU_disband_azov
-	x = -1
-	y = 1
-
-	prerequisite = { focus = AFU_special_rights_to_corporations }
-	prerequisite = { focus = AFU_disband_azov }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_learn_from_the_best
+		icon = GFX_AFU_learn_from_the_best
+		x = 2
+		y = 5
+		cost = 7
+		prerequisite = { focus = AFU_time_for_great_solutions }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_strenghten_the_police_force
-	icon = GFX_AFU_Strenghten_the_Police_Force
-	cost = 2
-
-	relative_position_id = AFU_for_the_state
-	x = 0
-	y = 1
-
-	prerequisite = { focus = AFU_for_the_state }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_benefits_for_small_and_medium_sized_businesses
+		icon = GFX_AFU_benefits_for_small_and_medium_sized_businesses
+		x = 2
+		y = 6
+		cost = 7
+		prerequisite = { focus = AFU_learn_from_the_best }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_expand_security_service_funding
-	icon = GFX_AFU_Expand_Security_Service_Funding
-	cost = 2
-
-	relative_position_id = AFU_strenghten_the_police_force
-	x = -1
-	y = 1
-
-	prerequisite = { focus = AFU_strenghten_the_police_force }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_establish_cooperation_of_corporates
+		icon = GFX_AFU_establish_cooperation_of_corporates
+		x = 2
+		y = 7
+		cost = 7
+		prerequisite = { focus = AFU_benefits_for_small_and_medium_sized_businesses }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_stop_inner_conflicts
-	icon = GFX_AFU_Stop_Inner_Conflicts
-	cost = 2
-
-	relative_position_id = AFU_strenghten_the_police_force
-	x = 1
-	y = 1
-
-	prerequisite = { focus = AFU_strenghten_the_police_force }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_in_the_name_of_the_state
+		icon = GFX_AFU_in_the_name_of_the_state
+		x = 3
+		y = 8
+		cost = 7
+		prerequisite = { focus = AFU_establish_cooperation_of_corporates }
+		prerequisite = { focus = AFU_disband_the_azov_regiment }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_form_the_internal_troops
-	icon = GFX_AFU_Form_the_Internal_Troops
-	cost = 2
-
-	relative_position_id = AFU_stop_inner_conflicts
-	x = -1
-	y = 1
-
-	prerequisite = { focus = AFU_expand_security_service_funding }
-	prerequisite = { focus = AFU_stop_inner_conflicts }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_strenghten_the_police_force
+		icon = GFX_AFU_strenghten_the_police_force
+		x = 3
+		y = 9
+		cost = 7
+		prerequisite = { focus = AFU_in_the_name_of_the_state }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
-}
 
-##############################################################################################
-##############################################################################################
-##################   											##############################
-##################                THE PEOPLE'S HOPE             ##############################
-##################   											##############################
-##############################################################################################
-##############################################################################################
-
-shared_focus = {
-	id = AFU_tackle_peoples_problems
-	icon = GFX_AFU_Tackle_Peoples_Problems
-	cost = 2
-
-
-	relative_position_id = AFU_time_for_great_solutions
-	x = -4
-	y = 1
-
-	prerequisite = { focus = AFU_time_for_great_solutions }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_expand_funding_for_the_special_services
+		icon = GFX_AFU_expand_funding_for_the_special_services
+		x = 2
+		y = 10
+		cost = 7
+		prerequisite = { focus = AFU_strenghten_the_police_force }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_distribute_humanitarian_aid
-	icon = GFX_AFU_Distribute_Humanitarian_Aid
-	cost = 2
-
-	relative_position_id = AFU_tackle_peoples_problems
-	x = 0
-	y = 1
-
-	prerequisite = { focus = AFU_tackle_peoples_problems }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_keep_the_inner_adversary_out
+		icon = GFX_AFU_keep_the_inner_adversary_out
+		x = 4
+		y = 10
+		cost = 7
+		prerequisite = { focus = AFU_strenghten_the_police_force }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_increase_veterans_payments
-	icon = GFX_AFU_Increase_Veterans_Payments
-	cost = 2
-
-	relative_position_id = AFU_distribute_humanitarian_aid
-	x = 0
-	y = 1
-
-	prerequisite = { focus = AFU_distribute_humanitarian_aid }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_form_the_internal_troops
+		icon = GFX_AFU_form_the_internal_troops
+		x = 3
+		y = 11
+		cost = 7
+		prerequisite = { focus = AFU_keep_the_inner_adversary_out }
+		prerequisite = { focus = AFU_expand_funding_for_the_special_services }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
+
+	shared_focus = {
+		id = AFU_end_of_kryvonos_era
+		icon = GFX_AFU_end_of_kryvonos_era
+		x = 8
+		y = 5
+		cost = 7
+		prerequisite = { focus = AFU_time_for_great_solutions }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+	hidden_effect = {
+add_to_variable = {
+    var = fulfilment_of_Russian_requirements_variable
+    value = 5
 }
-
-shared_focus = {
-	id = AFU_dismantle_kryvonos_legacy
-	icon = GFX_AFU_Dismantle_Kryvonos_Legacy
-	cost = 2
-
-	relative_position_id = AFU_time_for_great_solutions
-	x = 1
-	y = 1
-
-	prerequisite = { focus = AFU_time_for_great_solutions }
-
-	completion_reward = {
-		###
+    }			
+		}
 	}
+
+	shared_focus = {
+		id = AFU_government_is_for_politicians_not_the_military
+		icon = GFX_AFU_government_is_for_politicians_not_the_military
+		x = 8
+		y = 6
+		cost = 7
+		prerequisite = { focus = AFU_end_of_kryvonos_era }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+	hidden_effect = {
+add_to_variable = {
+    var = fulfilment_of_Russian_requirements_variable
+    value = 5
 }
-
-shared_focus = {
-	id = AFU_abolish_censorship_laws
-	icon = GFX_AFU_Abolish_Censorship_Laws
-	cost = 2
-
-	relative_position_id = AFU_dismantle_kryvonos_legacy
-	x = 1
-	y = 1
-
-	prerequisite = { focus = AFU_dismantle_kryvonos_legacy }
-
-	completion_reward = {
-		###
+    }			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_open_trade_channels
-	icon = GFX_AFU_Open_Trade_Channels
-	cost = 2
-
-	relative_position_id = AFU_abolish_censorship_laws
-	x = 0
-	y = 1
-
-	prerequisite = { focus = AFU_abolish_censorship_laws }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_raise_the_issue_of_generality
+		icon = GFX_AFU_raise_the_issue_of_generality
+		x = 8
+		y = 7
+		cost = 7
+		prerequisite = { focus = AFU_government_is_for_politicians_not_the_military }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_for_the_people
-	icon = GFX_AFU_For_the_People
-	cost = 2
-	
-	relative_position_id = AFU_open_trade_channels
-	x = 1
-	y = 1
-
-	prerequisite = { focus = AFU_open_trade_channels }
-	prerequisite = { focus = AFU_increase_veterans_payments }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_in_the_name_of_nation
+		icon = GFX_AFU_in_the_name_of_nation
+		x = 7
+		y = 8
+		cost = 7
+		prerequisite = { focus = AFU_stop_the_ethnic_hatred }
+		prerequisite = { focus = AFU_raise_the_issue_of_generality }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
+
+	shared_focus = {
+		id = AFU_reform_the_territorial_system
+		icon = GFX_AFU_reform_the_territorial_system
+		x = 6
+		y = 9
+		cost = 7
+		prerequisite = { focus = AFU_in_the_name_of_nation }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+	hidden_effect = {
+add_to_variable = {
+    var = fulfilment_of_Russian_requirements_variable
+    value = 5
 }
-
-shared_focus = {
-	id = AFU_raise_the_living_standarts
-	icon = GFX_AFU_Raise_the_Living_Standarts
-	cost = 2
-
-	relative_position_id = AFU_for_the_people
-	x = 0
-	y = 1
-
-	prerequisite = { focus = AFU_for_the_people }
-
-	completion_reward = {
-		###
+    }			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_golf_the_best_entertainment
-	icon = GFX_generic_suspend_constitution
-	cost = 2
-
-	relative_position_id = AFU_raise_the_living_standarts
-	x = 1
-	y = 1
-
-	prerequisite = { focus = AFU_raise_the_living_standarts }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_project_of_the_presidential_republic
+		icon = GFX_AFU_project_of_the_presidential_republic
+		x = 6
+		y = 10
+		cost = 7
+		prerequisite = { focus = AFU_reform_the_territorial_system }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
+
+	shared_focus = {
+		id = AFU_support_the_regional_minorities
+		icon = GFX_AFU_support_the_regional_minorities
+		x = 8
+		y = 9
+		cost = 7
+		prerequisite = { focus = AFU_in_the_name_of_nation }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+	hidden_effect = {
+add_to_variable = {
+    var = fulfilment_of_Russian_requirements_variable
+    value = 5
 }
-
-shared_focus = {
-	id = AFU_miners_paradise_on_earth
-	icon = GFX_generic_suspend_constitution
-	cost = 2
-
-	relative_position_id = AFU_raise_the_living_standarts
-	x = -1
-	y = 1
-
-	prerequisite = { focus = AFU_raise_the_living_standarts }
-
-	completion_reward = {
-		###
+    }			
+		}
 	}
+
+	shared_focus = {
+		id = AFU_second_language_inicitiative
+		icon = GFX_AFU_second_language_inicitiative
+		x = 8
+		y = 10
+		cost = 7
+		prerequisite = { focus = AFU_support_the_regional_minorities }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+	hidden_effect = {
+add_to_variable = {
+    var = fulfilment_of_Russian_requirements_variable
+    value = 5
 }
-
-shared_focus = {
-	id = AFU_nation_of_hard_workers
-	icon = GFX_generic_suspend_constitution
-	cost = 2
-
-	relative_position_id = AFU_miners_paradise_on_earth
-	x = 1
-	y = 1
-
-	prerequisite = { focus = AFU_miners_paradise_on_earth }
-	prerequisite = { focus = AFU_golf_the_best_entertainment }
-
-	completion_reward = {
-		###
+    }			
+		}
 	}
-}
 
-##############################################################################################
-##############################################################################################
-##################   											##############################
-##################              THE NATION'S FUTURE             ##############################
-##################   											##############################
-##############################################################################################
-##############################################################################################
-
-shared_focus = {
-	id = AFU_pardon_ldpr_participants
-	icon = GFX_AFU_Pardon_LDPR_Participants
-	cost = 2
-
-	relative_position_id = AFU_deradicalization_of_society
-	x = 0
-	y = 1
-
-	prerequisite = { focus = AFU_deradicalization_of_society }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_referendum_that_will_change_everything
+		icon = GFX_AFU_referendum_that_will_change_everything
+		x = 7
+		y = 11
+		cost = 7
+		prerequisite = { focus = AFU_second_language_inicitiative }
+		prerequisite = { focus = AFU_project_of_the_presidential_republic }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_stop_the_ethnic_hatred
-	icon = GFX_AFU_Stop_the_Ethnic_Hatred
-	cost = 2
-
-	relative_position_id = AFU_pardon_ldpr_participants
-	x = 0
-	y = 1
-
-	prerequisite = { focus = AFU_pardon_ldpr_participants }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_tackle_peoples_problem
+		icon = GFX_AFU_tackle_peoples_problem
+		x = 12
+		y = 5
+		cost = 7
+		prerequisite = { focus = AFU_time_for_great_solutions }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_disband_totalitarian_system
-	icon = GFX_AFU_Disband_Totalitarian_System
-	cost = 2
-
-	relative_position_id = AFU_dismantle_kryvonos_legacy
-	x = 0
-	y = 1
-
-	prerequisite = { focus = AFU_dismantle_kryvonos_legacy }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_deploy_the_humanitarian_aid_programme
+		icon = GFX_AFU_deploy_the_humanitarian_aid_programme
+		x = 12
+		y = 6
+		cost = 7
+		prerequisite = { focus = AFU_tackle_peoples_problem }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_raise_the_issue_of_generality
-	icon = GFX_AFU_Raise_the_Issue_of_Generality
-	cost = 2
-
-	relative_position_id = AFU_disband_totalitarian_system
-	x = 0
-	y = 1
-
-	prerequisite = { focus = AFU_disband_totalitarian_system }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_increase_veterans_payments
+		icon = GFX_AFU_increase_veterans_payments
+		x = 12
+		y = 7
+		cost = 7
+		prerequisite = { focus = AFU_deploy_the_humanitarian_aid_programme }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_for_the_nation
-	icon = GFX_AFU_For_the_Nation
-	cost = 2
-
-	relative_position_id = AFU_raise_the_issue_of_generality
-	x = -1
-	y = 1
-
-	prerequisite = { focus = AFU_stop_the_ethnic_hatred }
-	prerequisite = { focus = AFU_raise_the_issue_of_generality }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_abolish_censorship_laws
+		icon = GFX_AFU_abolish_censorship_laws
+		x = 10
+		y = 6
+		cost = 7
+		prerequisite = { focus = AFU_end_of_kryvonos_era }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_reform_the_territorial_system
-	icon = GFX_AFU_Reform_the_Territorial_System
-	cost = 2
-
-	relative_position_id = AFU_for_the_nation
-	x = -1
-	y = 1
-
-	prerequisite = { focus = AFU_for_the_nation }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_market_must_not_be_limited
+		icon = GFX_AFU_market_must_not_be_limited
+		x = 10
+		y = 7
+		cost = 7
+		prerequisite = { focus = AFU_abolish_censorship_laws }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_presidential_republic_project
-	icon = GFX_AFU_Presidential_Republic_Project
-	cost = 2
-
-	relative_position_id = AFU_reform_the_territorial_system
-	x = 0
-	y = 1
-
-	prerequisite = { focus = AFU_reform_the_territorial_system }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_in_the_name_of_the_people
+		icon = GFX_AFU_in_the_name_of_the_people
+		x = 11
+		y = 8
+		cost = 7
+		prerequisite = { focus = AFU_increase_veterans_payments }
+		prerequisite = { focus = AFU_market_must_not_be_limited }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_support_the_regional_minorities
-	icon = GFX_AFU_Support_the_Regional_Minorities
-	cost = 2
-
-	relative_position_id = AFU_for_the_nation
-	x = 1
-	y = 1
-
-	prerequisite = { focus = AFU_for_the_nation }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_raise_the_standard_of_living
+		icon = GFX_AFU_raise_the_standard_of_living
+		x = 11
+		y = 9
+		cost = 7
+		prerequisite = { focus = AFU_in_the_name_of_the_people }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_second_language_initiative
-	icon = GFX_AFU_Second_Language_Initiative
-	cost = 2
-
-	relative_position_id = AFU_support_the_regional_minorities
-	x = 0
-	y = 1
-
-	prerequisite = { focus = AFU_support_the_regional_minorities }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_miners_paradise_on_earth
+		icon = GFX_AFU_miners_paradise_on_earth
+		x = 10
+		y = 10
+		cost = 7
+		prerequisite = { focus = AFU_raise_the_standard_of_living }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
-}
 
-shared_focus = {
-	id = AFU_decisive_referendums
-	icon = GFX_AFU_Decisive_Referendums
-	cost = 2
-
-	relative_position_id = AFU_second_language_initiative
-	x = -1
-	y = 1
-
-	prerequisite = { focus = AFU_presidential_republic_project }
-	prerequisite = { focus = AFU_second_language_initiative }
-
-	completion_reward = {
-		###
+	shared_focus = {
+		id = AFU_golf_the_best_entarteinment
+		icon = GFX_AFU_golf_the_best_entarteinment
+		x = 12
+		y = 10
+		cost = 7
+		prerequisite = { focus = AFU_raise_the_standard_of_living }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
 	}
-}
 
-##############################################################################################
-##############################################################################################
-##################   											##############################
-##################                EXPANSION FOCUSES             ##############################
-##################   											##############################
-##############################################################################################
-##############################################################################################
+	shared_focus = {
+		id = AFU_nation_of_hard_workers
+		icon = GFX_AFU_nation_of_hard_workers
+		x = 11
+		y = 11
+		cost = 7
+		prerequisite = { focus = AFU_miners_paradise_on_earth }
+		prerequisite = { focus = AFU_golf_the_best_entarteinment }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
+	}
 
+	shared_focus = {
+		id = AFU_the_time_of_the_donbas_people_has_come
+		icon = GFX_AFU_the_time_of_the_donbas_people_has_come
+		x = 7
+		y = 12
+		cost = 7
+		prerequisite = { focus = AFU_nation_of_hard_workers }
+		prerequisite = { focus = AFU_referendum_that_will_change_everything }
+		prerequisite = { focus = AFU_form_the_internal_troops }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
+	}
 
+	shared_focus = {
+		id = AFU_one_and_unified_multicultural_state
+		icon = GFX_AFU_one_and_unified_multicultural_state
+		x = 7
+		y = 13
+		cost = 7
+		prerequisite = { focus = AFU_the_time_of_the_donbas_people_has_come }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
+	}
+
+	shared_focus = {
+		id = AFU_issue_of_our_status
+		icon = GFX_AFU_issue_of_our_status
+		x = 7
+		y = 14
+		cost = 7
+		prerequisite = { focus = AFU_one_and_unified_multicultural_state }
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
+	}

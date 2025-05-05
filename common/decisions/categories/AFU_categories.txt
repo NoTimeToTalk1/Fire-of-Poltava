@@ -112,20 +112,6 @@ AFU_elections_category = {
 ####  AZOV  ####
 ################
 
-AFU_azov_foreign_politics_category = {
-	icon = GFX_decision_category_azov
-	picture = GFX_decision_picture_azov
-
-	allowed = {
-		original_tag = AFU
-	}
-
-	visible = {
-		has_completed_focus = afu_ruleofthefarright
-	}
-	visible_when_empty = no
-}
-
 AFU_azov_church_politics_category = {
 	icon = GFX_decision_category_azov
 	picture = GFX_decision_azov_church
@@ -205,7 +191,7 @@ AFU_azov_rvc_category = {
 	}
 
 	visible = {
-		has_completed_focus = AFU_invite_russian_farrights
+		has_completed_focus = AFU_invite_russian_far_rights
 		NOT = {
 			country_exists = RVC
 		}
@@ -243,4 +229,30 @@ AFU_danilov_hunting = {
 	visible = {
 		has_completed_focus = AFU_hunting_for_rats
 	}
+}
+
+afu_diplomacy_with_russia_category = {
+	icon = GFX_decision_category_afu_diplomacy_with_russia
+
+	allowed = {
+		original_tag = AFU
+	}
+
+	visible = {
+		has_country_flag = AFU_Open_a_Negotiating_Channel_with_Moscow
+	}
+	visible_when_empty = yes
+}
+
+afu_homut_party_decisions_category = {
+	icon = GFX_decision
+
+	allowed = {
+		original_tag = AFU
+	}
+
+	visible = {
+		has_country_flag = AFU_formation_of_the_together_for_donbas_coalition
+	}
+	visible_when_empty = yes
 }
