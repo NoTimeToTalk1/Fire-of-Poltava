@@ -658,7 +658,7 @@ unite_podolia_ukraine = {
 				add_political_power = 50
 			}
 			set_country_flag = united_siveria
-			save_global_event_target_as = UKR_siverian_unifier
+			save_global_event_target_as = UKR_siveria_unifier
 			load_focus_tree = fop_generic_one
 			set_variable = {
 				var = FOP_west_allegiance
@@ -3101,11 +3101,6 @@ unite_north_ukraine = {
 		
 		
 		available = { 
-			custom_trigger_tooltip = {
-				tooltip = unite_north_ukraine_tt
-				is_north_ukraine = yes
-				can_unite_north_ukraine = yes
-			}
 			date > 2024.01.01
 		}
 		
@@ -3113,7 +3108,6 @@ unite_north_ukraine = {
         days_remove = 0
 
 		visible = {	
-			is_north_ukraine = yes
 			OR = {
 				tag = SIV
 				tag = DIR
@@ -4047,7 +4041,6 @@ unite_left_bank_ukraine = {
 
 		complete_effect = {
 			custom_effect_tooltip = left_bank_unite_tt
-			hidden_effect = {
 			save_global_event_target_as = UKR_left_bank_unifier
 			if = {
 				limit = {
@@ -4055,7 +4048,7 @@ unite_left_bank_ukraine = {
 				}
 				add_political_power = 50
 			}
-			else_if = {
+			if = {
 				limit = {
 					original_tag = AFU
 					has_government = ultranationalism
@@ -4177,7 +4170,6 @@ unite_left_bank_ukraine = {
 				add_political_power = 50
 			}
 			set_country_flag = united_left_bank
-	  		}
 		}
 		ai_will_do = {	
 			base = 10		
@@ -5110,7 +5102,7 @@ unite_ukraine = {
 		cost = 0
 
 		complete_effect = {
-			set_capital = {state = 2081}
+			set_capital = {state = 2029}
 			custom_effect_tooltip = ukraine_unite_tt
 			save_global_event_target_as = UKR_ukraine_unifier
 			hidden_effect = {
@@ -5290,7 +5282,7 @@ unite_ukraine = {
 					}
 				}
 				add_political_power = 50
-				set_cosmetic_tag = AFU_azov_reunited
+				set_cosmetic_tag = AFU_azov_reun
 				load_focus_tree = AFU_azov_ukraine
 			}
 			else_if = {
