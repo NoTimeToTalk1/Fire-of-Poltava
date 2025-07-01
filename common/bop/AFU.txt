@@ -1,0 +1,42 @@
+AFU_homut_radicalism_political_balance = {
+    initial_value = 0.01
+    left_side = HOMUT_radicalism_bop_left_side
+    right_side = HOMUT_radicalism_right_side
+    decision_category = AFU_HOMUT_radicalism_balance_decisions
+
+	range = {
+		id = HOMUT_radicalism_bop_neutral_side
+		min = -0.05
+		max = 0.05
+		modifier = {
+			
+		}
+
+
+	}
+
+    side = {
+        id = HOMUT_radicalism_bop_left_side
+        icon = GFX_bop_separs_side
+        range = {
+            id = AFU_separs_range
+            min = -1
+            max = -0.05
+            modifier = {
+                stability_weekly = -0.01
+            }
+        }
+    }
+    side = {
+        id = HOMUT_radicalism_right_side
+        icon = GFX_bop_azov_side
+        range = {
+            id = AFU_azov_range
+            min = 0.05
+            max = 1
+            modifier = {
+                war_support_weekly = -0.01
+            }
+        }
+    }
+}

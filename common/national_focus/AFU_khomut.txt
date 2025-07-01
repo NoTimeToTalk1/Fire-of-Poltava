@@ -28,6 +28,7 @@
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
+		activate_advisor = AFU_bondar
 				country_event = { 
 					id = homut.2
 					days = 2 
@@ -47,6 +48,7 @@
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
+		activate_advisor = AFU_kinakh
 				country_event = { 
 					id = homut.3
 					days = 2 
@@ -139,6 +141,7 @@
 		add_political_power = 10
 		
 	    DNI = {
+		add_offsite_building = { type = arms_factory level = 3 }
         create_import = {
             resource = steel
             amount = 100
@@ -291,7 +294,7 @@ add_popularity = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
+		add_political_power = 10
 		}
 	}
 
@@ -306,7 +309,12 @@ add_popularity = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-
+add_popularity = {
+    ideology = ultranationalism
+    popularity = -0.06
+}
+army_experience = -10
+add_war_support = -0.12
 	hidden_effect = {
 add_to_variable = {
     var = fulfilment_of_Russian_requirements_variable
@@ -369,7 +377,9 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
+		send_embargo = PLT
+		send_embargo = TER
+		send_embargo = STR
 		}
 	}
 
@@ -384,6 +394,9 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
+		add_manpower = -3000
+		army_experience = -10
+		add_command_power = -10
 	hidden_effect = {
 add_to_variable = {
     var = fulfilment_of_Russian_requirements_variable
@@ -419,7 +432,15 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
+random_owned_state = {
+add_extra_state_shared_building_slots = 1
+}
+random_owned_state = {
+add_extra_state_shared_building_slots = 1
+}
+random_owned_state = {
+add_extra_state_shared_building_slots = 1
+}			
 		}
 	}
 
