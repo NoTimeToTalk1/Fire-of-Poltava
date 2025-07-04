@@ -797,14 +797,14 @@ add_popularity = {
 
 	afu_homut_party_decisions_koles_1 = {
 
-		icon = GFX_decision_afu_elections_homut_party
+		icon = GFX_decision_homut_party_rzd
 
 
 		visible = {
 		tag = AFU				
 		has_country_flag = AFU_formation_of_the_together_for_donbas_coalition
 
-			AFU_bondar = {
+			AFU_kolesnikov = {
 			is_hired_as_advisor = yes
 			}
 		}
@@ -812,7 +812,7 @@ add_popularity = {
 custom_cost_trigger = {
 oligarchism > 0.05
 }
-custom_cost_text = decision_cost_VIDRO_5_tooltip		
+custom_cost_text = decision_cost_RZD_5_tooltip		
 		
 		available = {
 			AFU_kolesnikov = {
@@ -835,7 +835,7 @@ has_country_flag = afu_homut_party_decisions_activate
 		ai_will_do = {
 			factor = 200
 		}
-		custom_cost_text = decision_cost_VIDRO_5
+		custom_cost_text = decision_cost_RZD_5
 
 		complete_effect = {	
             hidden_effect = {
@@ -865,7 +865,7 @@ add_popularity = {
 
 	afu_homut_party_decisions_koles_3 = {
 
-		icon = GFX_decision_afu_elections_homut_party
+		icon = GFX_decision_homut_party_rzd
 
 
 		visible = {
@@ -880,7 +880,7 @@ add_popularity = {
 custom_cost_trigger = {
 oligarchism > 0.02
 }
-custom_cost_text = decision_cost_VIDRO_2_tooltip		
+custom_cost_text = decision_cost_RZD_2_tooltip		
 		
 		available = {
 			AFU_kolesnikov = {
@@ -904,7 +904,7 @@ oligarchism > 0.02
 		ai_will_do = {
 			factor = 200
 		}
-		custom_cost_text = decision_cost_VIDRO_2
+		custom_cost_text = decision_cost_RZD_2
 
 		complete_effect = {	
             hidden_effect = {
@@ -926,7 +926,7 @@ add_popularity = {
 
 	afu_homut_party_decisions_koles_4 = {
 
-		icon = GFX_decision_afu_elections_homut_party
+		icon = GFX_decision_homut_party_rzd
 
 
 		visible = {
@@ -941,7 +941,7 @@ add_popularity = {
 custom_cost_trigger = {
 oligarchism > 0.02
 }
-custom_cost_text = decision_cost_VIDRO_2_tooltip		
+custom_cost_text = decision_cost_RZD_2_tooltip		
 		
 		available = {
 			AFU_kolesnikov = {
@@ -965,7 +965,7 @@ oligarchism > 0.02
 		ai_will_do = {
 			factor = 200
 		}
-		custom_cost_text = decision_cost_VIDRO_2
+		custom_cost_text = decision_cost_RZD_2
 
 		complete_effect = {	
             hidden_effect = {
@@ -984,5 +984,70 @@ add_popularity = {
 
 		}
 	}
+
+}
+
+AFU_HOMUT_radicalism_balance_decisions = {
+
+
+	homut_test_1 = {
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {	
+		is_debug = yes
+		}
+		
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+		
+		fire_only_once = yes
+        days_remove = 10
+		
+		remove_effect = {	
+add_power_balance_value = {
+    id = AFU_homut_radicalism_political_balance
+    value = -0.1
+    tooltip_side = HOMUT_radicalism_bop_left_side_tt
+}
+			hidden_effect = {
+				set_country_flag = zov
+			}
+		}
+	}
+
+	homut_test_2 = {
+		allowed = {
+			original_tag = AFU
+		}
+		
+		visible = {	
+		is_debug = yes
+		}
+		
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+		
+		fire_only_once = yes
+        days_remove = 10
+		
+		remove_effect = {	
+add_power_balance_value = {
+    id = HOMUT_radicalism_right_side
+    value = 0.1
+    tooltip_side = HHOMUT_radicalism_right_side_tt
+}
+			hidden_effect = {
+				set_country_flag = azov
+			}
+		}
+	}
+
+
 
 }
