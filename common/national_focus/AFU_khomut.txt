@@ -67,6 +67,11 @@
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
+add_to_variable = {
+     var = FOP_corruption_var
+     value = -5
+	 tooltip = add_corruption_var_tt
+}
 	add_opinion_modifier = {
     target = DNI
     modifier = improved_relations
@@ -83,7 +88,8 @@
 				country_event = { 
 					id = homut.4
 					days = 2 
-				}			
+				}	
+set_country_flag = AFU_talk_with_kolomoyskyi				
 		}
 	}
 
@@ -119,7 +125,11 @@
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-		
+add_to_variable = {
+     var = FOP_corruption_var
+     value = -5
+	 tooltip = add_corruption_var_tt
+}		
 		add_ideas = fop_oligarchs_relations_cooperation
 		
 				country_event = { 
@@ -185,6 +195,11 @@ set_party_name = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
+add_to_variable = {
+     var = FOP_corruption_var
+     value = -60
+	 tooltip = add_corruption_var_tt
+}
 		add_ideas = AFU_Return_of_the_Donetsk_Mafia	
 		
 		
@@ -228,6 +243,11 @@ set_country_flag = AFU_meeting_with_the_donetsk_clan
     }
 		hidden_effect = {
 		set_country_flag = AFU_Open_a_Negotiating_Channel_with_Moscow
+}
+add_to_variable = {
+     var = FOP_corruption_var
+     value = -10
+	 tooltip = add_corruption_var_tt
 }		
 		}
 	}
@@ -243,6 +263,16 @@ set_country_flag = AFU_meeting_with_the_donetsk_clan
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
+add_to_variable = {
+     var = FOP_administrative_efficiency_var
+     value = 10
+	 tooltip = add_administrative_efficiency_var_tt
+}
+add_to_variable = {
+     var = FOP_corruption_var
+     value = -5
+	 tooltip = add_corruption_var_tt
+}
 				country_event = { 
 					id = homut.12
 					days = 2 
@@ -295,6 +325,7 @@ add_popularity = {
 		}
 		completion_reward = {
 		add_political_power = 10
+
 set_power_balance = {
     id = AFU_homut_radicalism_political_balance
     left_side = HOMUT_radicalism_left_side
@@ -340,9 +371,29 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
+add_popularity = {
+    ideology = oligarchism
+    popularity = 0.02
+}
+add_popularity = {
+    ideology = communism
+    popularity = 0.03
+}
+add_popularity = {
+    ideology = liberalism
+    popularity = -0.03
+}
+add_timed_idea = {
+    idea = AFU_Amnesty_Fatigue
+    days = 360
+}
 				country_event = { 
 					id = homut.15
 					days = 2 
+				}
+				country_event = { 
+					id = homut.17
+					days = 6
 				}
 	add_ideas = fop_forced_labour_banned
 	hidden_effect = {
@@ -365,6 +416,18 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
+		add_ideas = fop_religious_rights_pluralism
+add_popularity = {
+    ideology = oligarchism
+    popularity = 0.02
+}
+		every_core_state = { 
+add_state_modifier = {
+    modifier = {
+    enemy_operative_detection_chance_factor_over_occupied_tag = 0.15
+    }
+}
+		}
 				country_event = { 
 					id = homut.16
 					days = 2 
@@ -390,6 +453,23 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
+		custom_effect_tooltip = AFU_disband_the_azov_regiment_tt
+set_nationality = {
+    target_country = PLT
+    character = AFU_redys
+}
+set_nationality = {
+    target_country = PLT
+    character = AFU_himik
+}
+set_nationality = {
+    target_country = PLT
+    character = AFU_tavr
+}
+				country_event = { 
+					id = homut.19
+					days = 6
+				}
 		send_embargo = PLT
 		send_embargo = TER
 		send_embargo = STR
@@ -430,7 +510,25 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
+	add_political_power = 30
+add_popularity = {
+    ideology = oligarchism
+    popularity = 0.1
+}
+add_popularity = {
+    ideology = social_democracy
+    popularity = 0.08
+}
+add_tech_bonus = {
+    bonus = 0.5
+    uses = 1
+    category = industry
+}
+add_tech_bonus = {
+    bonus = 0.5
+    uses = 1
+    category = electronics
+}			
 		}
 	}
 
@@ -445,14 +543,33 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-random_owned_state = {
-add_extra_state_shared_building_slots = 1
+add_popularity = {
+    ideology = oligarchism
+    popularity = 0.02
 }
 random_owned_state = {
 add_extra_state_shared_building_slots = 1
+add_state_modifier = {
+    modifier = {
+    state_repair_speed_industrial_complex_factor = 0.3
+    }
+}
 }
 random_owned_state = {
 add_extra_state_shared_building_slots = 1
+add_state_modifier = {
+    modifier = {
+    state_repair_speed_industrial_complex_factor = 0.3
+    }
+}
+}
+random_owned_state = {
+add_extra_state_shared_building_slots = 1
+add_state_modifier = {
+    modifier = {
+    state_repair_speed_industrial_complex_factor = 0.3
+    }
+}
 }			
 		}
 	}
@@ -468,7 +585,37 @@ add_extra_state_shared_building_slots = 1
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
+add_to_variable = {
+     var = FOP_corruption_var
+     value = -20
+	 tooltip = add_corruption_var_tt
+}
+random_owned_state = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+    type = arms_factory
+    level = 1
+    instant_build = yes
+}
+add_state_modifier = {
+    modifier = {
+    state_production_speed_industrial_complex_factor = 0.3
+    }
+}
+}
+random_owned_state = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+    type = arms_factory
+    level = 1
+    instant_build = yes
+}
+add_state_modifier = {
+    modifier = {
+    state_production_speed_industrial_complex_factor = 0.3
+    }
+}
+}			
 		}
 	}
 
@@ -484,7 +631,8 @@ add_extra_state_shared_building_slots = 1
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
+add_political_power = 90
+add_research_slot = 1			
 		}
 	}
 
@@ -499,7 +647,17 @@ add_extra_state_shared_building_slots = 1
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
+create_intelligence_agency = {
+    name = "Sluzhba Bezpeky Ukrajiny"
+    icon = GFX_agency_logo_ukr
+}
+add_ideas = AFU_Counterintelligence_operation_1
+add_to_variable = {
+     var = FOP_administrative_efficiency_var
+     value = 20
+	 tooltip = add_administrative_efficiency_var_tt
+}
+		add_stability = 0.33	
 		}
 	}
 
@@ -514,7 +672,18 @@ add_extra_state_shared_building_slots = 1
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
+swap_ideas = {
+    remove_idea = AFU_Counterintelligence_operation_1
+    add_idea = AFU_Counterintelligence_operation_2
+}
+        upgrade_intelligence_agency = upgrade_form_department
+add_to_variable = {
+     var = FOP_military_professionalism_var
+     value = 10
+	 tooltip = add_military_professionalism_var_tt
+}
+		add_command_power = 20
+		add_political_power = -30	
 		}
 	}
 
@@ -529,7 +698,7 @@ add_extra_state_shared_building_slots = 1
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
+		add_command_power = 20	
 		}
 	}
 
@@ -545,7 +714,10 @@ add_extra_state_shared_building_slots = 1
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
+		add_command_power = 20	
+		army_experience = 10
+		navy_experience = 10
+		air_experience = 10
 		}
 	}
 
@@ -560,6 +732,7 @@ add_extra_state_shared_building_slots = 1
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
+		retire_character = AFU_Krivonis
 	hidden_effect = {
 add_to_variable = {
     var = fulfilment_of_Russian_requirements_variable
@@ -580,6 +753,14 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
+add_to_variable = {
+     var = FOP_administrative_efficiency_var
+     value = 25
+	 tooltip = add_administrative_efficiency_var_tt
+}
+		add_political_power = 100
+		add_stability = -0.1
+		retire_character = AFU_kuts
 	hidden_effect = {
 add_to_variable = {
     var = fulfilment_of_Russian_requirements_variable
@@ -600,7 +781,13 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
+add_popularity = {
+    ideology = authoritarianism
+    popularity = -0.5
+}
+		add_war_support = -0.1
+		add_command_power = -30
+		add_manpower = -100
 		}
 	}
 
@@ -631,6 +818,12 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
+	add_ideas = fop_centralization_federalism
+add_to_variable = {
+     var = FOP_administrative_efficiency_var
+     value = 10
+	 tooltip = add_administrative_efficiency_var_tt
+}
 	hidden_effect = {
 add_to_variable = {
     var = fulfilment_of_Russian_requirements_variable
@@ -651,7 +844,11 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
+AFU_homut = {
+add_trait = {
+    trait = pan_president
+}	
+}		
 		}
 	}
 
@@ -666,6 +863,7 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
+	add_ideas = fop_ethnic_minorities_cultural_autonomy
 	hidden_effect = {
 add_to_variable = {
     var = fulfilment_of_Russian_requirements_variable
@@ -722,7 +920,18 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
+add_popularity = {
+    ideology = oligarchism
+    popularity = 0.05
+}
+		add_ideas = fop_healthcare_system_social_insurance
+		add_ideas = fop_pensions_moderate
+		add_ideas = fop_unemployment_subsidies_moderate
+add_to_variable = {
+     var = FOP_Poverty_var
+     value = 5
+	 tooltip = add_Poverty_var_tt
+}			
 		}
 	}
 
@@ -737,7 +946,16 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
+		add_ideas = AFU_homutarian_aid_1
+add_popularity = {
+    ideology = oligarchism
+    popularity = 0.05
+}
+add_to_variable = {
+     var = FOP_Poverty_var
+     value = 15
+	 tooltip = add_Poverty_var_tt
+}			
 		}
 	}
 
@@ -752,7 +970,24 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
+swap_ideas = {
+    remove_idea = AFU_homutarian_aid_1
+    add_idea = AFU_homutarian_aid_2
+}
+add_popularity = {
+    ideology = oligarchism
+    popularity = 0.05
+}
+add_to_variable = {
+     var = FOP_Healthcare_var
+     value = 10
+	 tooltip = add_Healthcare_var_tt
+}
+add_to_variable = {
+     var = FOP_Poverty_var
+     value = 10
+	 tooltip = add_Poverty_var_tt
+}					
 		}
 	}
 
@@ -767,7 +1002,15 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
+add_popularity = {
+    ideology = oligarchism
+    popularity = 0.03
+}
+add_popularity = {
+    ideology = liberalism
+    popularity = 0.05
+}
+		add_ideas = fop_press_freedom_free		
 		}
 	}
 
@@ -782,7 +1025,7 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
+		add_ideas = fop_commercial_policy_free_trade			
 		}
 	}
 
@@ -813,7 +1056,34 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
+swap_ideas = {
+    remove_idea = AFU_homutarian_aid_2
+    add_idea = AFU_homutarian_aid_3
+}
+add_popularity = {
+    ideology = oligarchism
+    popularity = 0.02
+}
+add_to_variable = {
+     var = FOP_Healthcare_var
+     value = 50
+	 tooltip = add_Healthcare_var_tt
+}
+add_to_variable = {
+     var = FOP_Poverty_var
+     value = 50
+	 tooltip = add_Poverty_var_tt
+}
+add_to_variable = {
+     var = FOP_Unemployment_var
+     value = 50
+	 tooltip = add_Unemployment_var_tt
+}
+add_to_variable = {
+     var = FOP_schooling_var
+     value = 50
+	 tooltip = add_schooling_var_tt
+}				
 		}
 	}
 
@@ -828,7 +1098,25 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
+add_tech_bonus = {
+    bonus = 0.5
+    uses = 3
+    category = excavation_tech
+}
+add_tech_bonus = {
+    bonus = 0.5
+    uses = 3
+    category = construction_tech
+}
+add_popularity = {
+    ideology = oligarchism
+    popularity = 0.02
+}
+add_to_variable = {
+     var = FOP_Industry_var
+     value = 10
+	 tooltip = add_Industry_var_tt
+}			
 		}
 	}
 
@@ -843,7 +1131,27 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
+add_popularity = {
+    ideology = oligarchism
+    popularity = 0.02
+}
+random_owned_state = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+    type = civilian_resting_place
+    level = 1
+    instant_build = yes
+}
+}
+random_owned_state = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+    type = civilian_resting_place
+    level = 1
+    instant_build = yes
+}
+}
+set_country_flag = AFU_golf_the_best_entarteinment			
 		}
 	}
 
@@ -859,7 +1167,12 @@ add_to_variable = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
+add_offsite_building = { type = industrial_complex level = 2 }
+add_to_variable = {
+     var = FOP_Unemployment_var
+     value = 25
+	 tooltip = add_Unemployment_var_tt
+}			
 		}
 	}
 
