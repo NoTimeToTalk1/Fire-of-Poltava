@@ -1,0 +1,160 @@
+scripted_gui = {
+	FOP_Info_Screen_Topbar_Opener = {
+		context_type = player_context
+		parent_window_token = top_bar
+		window_name = "FOP_Info_Screen_Topbar_Opener"
+		effects = {
+			topbar_opening_button_click = {
+				if = {
+					limit = {
+						has_country_flag = FOP_Info_Screen_Visible
+					}
+					clr_country_flag = FOP_Info_Screen_Visible
+				}
+				else = { set_country_flag = FOP_Info_Screen_Visible }
+			}
+		}
+		
+	}
+	
+	FOP_Info_Screen = {
+		context_type = player_context
+		window_name = "FOP_Info_Screen"
+		visible = { has_country_flag = FOP_Info_Screen_Visible }
+		dynamic_lists = {
+			Top_Tabs = {
+				array = Info_Screen_Top_Tab_Array
+				entry_container = "Info_Screen_Top_Tabs_entry"
+				value = tab
+			}
+		}
+		effects = {
+			tab_button_click = {
+				if = {
+					limit = {
+						check_variable = { tab = 4 }
+					}
+					clear_array = Info_Screen_array_main
+					for_each_loop = {
+						array = Info_Screen_Mechanics_store
+						add_to_array = { Info_Screen_array_main = v }
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = { tab = Info_Screen_Tab }
+						}
+					}
+					set_variable = { Info_Screen_Selected = 1 }
+				}
+				set_variable = { Info_Screen_Tab = tab }
+			}
+			closing_button_click = {
+				clr_country_flag = FOP_Info_Screen_Visible
+			}
+		}
+		triggers = {
+			tab_button_visible = {
+				if = {
+					limit = {
+						check_variable = { Info_Screen_Tab = tab }
+					}
+					set_temp_variable = { tab_frame = 1 }
+					set_temp_variable = { tab_icon_y = 9 }
+				}
+				else = {
+					set_temp_variable = { tab_frame = 2 }
+					set_temp_variable = { tab_icon_y = 14 }
+				}
+			}
+			content_glow_visible = {
+				NOT = { has_variable = Info_Screen_Selected }
+			}
+			entry_title_visible = {
+				NOT = {
+					OR = {
+						check_variable = { Info_Screen_Tab = 2 }
+						check_variable = { Info_Screen_Tab = 4 }
+					}
+				}
+			}
+			entry_desc_visible = {
+				NOT = {
+					OR = {
+						check_variable = { Info_Screen_Tab = 2 }
+						check_variable = { Info_Screen_Tab = 4 }
+					}
+				}
+			}
+		}
+		properties = {
+			flag = { image = "[ROOT.GetFlag]" }
+			poster = { image = "[Get_Poster]" }
+
+			tab_button = {
+				frame = tab_frame
+			}
+			tab_text= {
+				y = tab_icon_y
+			}
+		}
+	}
+	
+	FOP_Info_Screen_Tutorial = {
+		parent_window_name = FOP_Info_Screen
+		window_name = "FOP_Info_Screen_Tutorial"
+		context_type = player_context
+		visible = {
+			check_variable = { Info_Screen_Tab = 4 }
+		}
+		dynamic_lists = {
+			entry_gridbox = {
+				array = Info_Screen_array_main
+				entry_container = "[Info_Screen_Get_Entry_Container]"
+				value = entry
+			}
+		}
+		effects = {
+			Content_button_click = {
+				set_variable = { Info_Screen_Selected = entry }
+			}
+		}
+		triggers = {
+			Content_button_visible = {
+				if = {
+					limit = {
+						check_variable = { Info_Screen_Selected = entry }
+					}
+					set_temp_variable = { content_frame = 2 }
+				}
+				else = {
+					set_temp_variable = { content_frame = 1 }
+				}
+			}
+		}
+		properties = {
+			Content_button = 	{ frame = content_frame }
+		}
+	}
+
+	FOP_Info_Screen_Main_Lore = {
+		parent_window_name = FOP_Info_Screen
+		window_name = "FOP_Info_Screen_Main_Lore"
+		context_type = player_context
+		visible = {
+			check_variable = { Info_Screen_Tab = 2 }
+		}
+		triggers = {
+			lore_desc_visible = {
+				check_variable = { Info_Screen_Tab = 2 }
+			}
+			lore_title_visible = {
+				check_variable = { Info_Screen_Tab = 2 }
+			}
+		}
+		properties = {
+			Content_button = 	{ frame = content_frame }
+		}
+	}
+}

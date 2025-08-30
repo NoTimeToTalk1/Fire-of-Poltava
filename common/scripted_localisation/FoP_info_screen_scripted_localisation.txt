@@ -1,0 +1,268 @@
+defined_text = {
+	name = Get_Closing_Closing_Button_Text
+	text = {
+		trigger = { has_country_flag = Info_Screen_HasCustomCloseButton }
+		localization_key = "FOP_Info_Screen_Closing_Button_Text_[THIS.GetTag]"
+	}
+
+	text = {
+		localization_key = FOP_Info_Screen_Closing_Button_Text_Generic
+	}
+}
+
+defined_text = {
+	name = Get_Poster
+	text = {
+		trigger = { FOP_has_content = yes }
+		localization_key = "GFX_FOP_Info_Screen_Poster_[THIS.GetTag]"
+	}
+
+	## Default
+	text = {
+		localization_key = "GFX_FOP_Info_Screen_Poster_No_Content"
+	}
+}
+
+defined_text = {
+	name = Info_Screen_Get_Content_Country
+	text = {
+		trigger = {
+			if = {
+				limit = {
+					NOT = { has_variable = entry }
+				}
+				set_temp_variable = { entry = Info_Screen_Selected }
+			}
+			always = no
+		}
+	}
+	text = {
+		trigger = {
+			check_variable = { Info_Screen_Tab = 2 }
+		}
+		localization_key = "[Get_Main_Lore_Title]"
+	}
+	text = {
+		trigger = {
+			check_variable = { Info_Screen_Tab = 3 }
+		}
+		localization_key = "[Get_Region_Content]"
+	}
+	text = {
+		trigger = {
+			check_variable = { Info_Screen_Tab = 4 }
+		}
+		localization_key = "[Get_Mechanics_Content]"
+	}
+	text = { 
+		trigger = {
+			FOP_has_content = yes
+		}
+		localization_key = "[THIS.GetTag]_Info_Screen_Content" 
+	}
+	text = {
+		localization_key = "FOP_Info_Screen_Content" 
+	}
+}
+
+defined_text = {
+	name = Info_Screen_Get_Content_Desc_Country
+	text = {
+		trigger = {
+			if = {
+				limit = {
+					NOT = { has_variable = entry }
+				}
+				set_temp_variable = { entry = Info_Screen_Selected }
+			}
+			always = no
+		}
+	}
+	text = {
+		trigger = {
+			check_variable = { Info_Screen_Tab = 2 }
+		}
+		localization_key = "[Get_Main_Lore_Desc]"
+	}
+	text = {
+		trigger = {
+			check_variable = { Info_Screen_Tab = 3 }
+		}
+		localization_key = "[Get_Region_Content_Desc]"
+	}
+	text = { 
+		trigger = {
+			FOP_has_content = yes
+		}
+		localization_key = "[THIS.GetTag]_Info_Screen_Content_Desc" 
+	}
+	text = {
+		localization_key = "FOP_Info_Screen_Content_Desc" 
+	}
+}
+
+defined_text = {
+	name = Info_Screen_Get_Mechanics
+	text = {
+		trigger = {
+			if = {
+				limit = {
+					NOT = { has_variable = entry }
+				}
+				set_temp_variable = { entry = Info_Screen_Selected }
+			}
+			always = no
+		}
+	}
+	text = {
+		trigger = {
+			check_variable = { Info_Screen_Tab = 4 }
+		}
+		localization_key = "[Get_Mechanics_Content]"
+	}
+	text = { localization_key = "[THIS.GetTag]_Info_Screen_Content" }
+}
+defined_text = {
+	name = Info_Screen_Get_Mechanics_Desc_Country
+	text = {
+		trigger = {
+			if = {
+				limit = {
+					NOT = { has_variable = entry }
+				}
+				set_temp_variable = { entry = Info_Screen_Selected }
+			}
+			always = no
+		}
+	}
+	text = {
+		trigger = {
+			check_variable = { Info_Screen_Tab = 4 }
+		}
+		localization_key = "[Get_Mechanics_Content_Desc]"
+	}
+	text = { localization_key = "[THIS.GetTag]_Info_Screen_Content_Desc" }
+}
+defined_text = {
+	name = Info_Screen_Get_Entry_Container
+	text = {
+		localization_key = "Info_Screen_Content_Entry"
+	}
+}
+
+defined_text = {
+	name = Info_Screen_Get_Tab_Name
+	text = { localization_key = "Info_Screen_Tab_Name_[?tab]" }
+}
+
+defined_text = {
+	name = Get_Main_Lore_Title
+	text = { localization_key = "Info_Screen_Main_Lore" }
+}
+
+defined_text = {
+	name = Get_Main_Lore_Desc
+	text = { localization_key = "Info_Screen_Main_Lore_Desc" }
+}
+
+defined_text = {
+	name = Get_Region_Content
+	text = { 
+		trigger = {
+			is_galicia_ukraine = yes
+		}
+		localization_key = "Info_Screen_Region_Information_Galicia" 
+	}
+	text = { 
+		trigger = {
+			is_podolia_ukraine = yes
+		}
+		localization_key = "Info_Screen_Region_Information_Podolia" 
+	}
+	text = { 
+		trigger = {
+			is_siveria_ukraine = yes
+		}
+		localization_key = "Info_Screen_Region_Information_Siveria" 
+	}
+	text = { 
+		trigger = {
+			is_dnieper_ukraine = yes
+		}
+		localization_key = "Info_Screen_Region_Information_Dnieper" 
+	}
+	text = { 
+		trigger = {
+			is_dniester_ukraine = yes
+		}
+		localization_key = "Info_Screen_Region_Information_Dnister" 
+	}
+	text = { 
+		trigger = {
+			is_tavria_ukraine = yes
+		}
+		localization_key = "Info_Screen_Region_Information_Tavria" 
+	}
+	text = { 
+		trigger = {
+			is_donbas_ukraine = yes
+		}
+		localization_key = "Info_Screen_Region_Information_Donbas" 
+	}
+}
+
+defined_text = {
+	name = Get_Region_Content_Desc
+	text = { 
+		trigger = {
+			is_galicia_ukraine = yes
+		}
+		localization_key = "Info_Screen_Region_Information_Galicia_Desc" 
+	}
+	text = { 
+		trigger = {
+			is_podolia_ukraine = yes
+		}
+		localization_key = "Info_Screen_Region_Information_Podolia_Desc" 
+	}
+	text = { 
+		trigger = {
+			is_siveria_ukraine = yes
+		}
+		localization_key = "Info_Screen_Region_Information_Siveria_Desc" 
+	}
+	text = { 
+		trigger = {
+			is_dnieper_ukraine = yes
+		}
+		localization_key = "Info_Screen_Region_Information_Dnieper_Desc" 
+	}
+	text = { 
+		trigger = {
+			is_dniester_ukraine = yes
+		}
+		localization_key = "Info_Screen_Region_Information_Dnister_Desc" 
+	}
+	text = { 
+		trigger = {
+			is_tavria_ukraine = yes
+		}
+		localization_key = "Info_Screen_Region_Information_Tavria_Desc" 
+	}
+	text = { 
+		trigger = {
+			is_donbas_ukraine = yes
+		}
+		localization_key = "Info_Screen_Region_Information_Donbas_Desc" 
+	}
+}
+
+defined_text = {
+	name = Get_Mechanics_Content
+	text = { localization_key = "Info_Screen_Mechanics_Content.[?entry]" }
+}
+
+defined_text = {
+	name = Get_Mechanics_Content_Desc
+	text = { localization_key = "Info_Screen_Mechanics_Content_Desc.[?Info_Screen_Selected]" }
+}
