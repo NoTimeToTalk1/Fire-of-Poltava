@@ -53,15 +53,7 @@ is_diplomatic_action_valid_offer_docking_rights = {
 	always = no
 }
 
-is_diplomatic_action_valid_lend_lease = {
-	always = no
-}
-
 is_diplomatic_action_valid_guarantee = {
-	always = no
-}
-
-is_diplomatic_action_valid_incoming_lend_lease = {
 	always = no
 }
 
@@ -179,15 +171,53 @@ DIPLOMACY_OFFER_DOCKING_RIGHTS_ENABLE_TRIGGER = {
 	}
 }
 DIPLOMACY_LEND_LEASE_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
+	if = {
+		limit = {
+			ROOT = {
+				has_country_flag = FOP_reaching_to_warlords
+			}
+			FROM = {
+				OR = {
+					is_left_bank_ukraine = yes
+					is_right_bank_ukraine = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = FOP_warlord_volunteer_tt
+				always = yes
+			}
+		}
+	}
+	else = {
+		custom_trigger_tooltip = {
+			tooltip = feature_disabled
+			always = no
+		}
 	}
 }
 DIPLOMACY_INCOMING_LEND_LEASE_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
+	if = {
+		limit = {
+			FROM = {
+				has_country_flag = FOP_reaching_to_warlords
+			}
+			ROOT = {
+				OR = {
+					is_left_bank_ukraine = yes
+					is_right_bank_ukraine = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = FOP_warlord_volunteer_tt
+				always = yes
+			}
+		}
+	}
+	else = {
+		custom_trigger_tooltip = {
+			tooltip = feature_disabled
+			always = no
+		}
 	}
 }
 DIPLOMACY_REQUEST_LICENSED_PRODUCTION_ENABLE_TRIGGER = {
@@ -248,17 +278,23 @@ DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
 	if = {
 		limit = {
 			ROOT = {
-				has_country_flag = may_send_volunteers_to_@FROM
+				has_country_flag = FOP_reaching_to_warlords
+			}
+			FROM = {
+				OR = {
+					is_left_bank_ukraine = yes
+					is_right_bank_ukraine = yes
+				}
 			}
 			custom_trigger_tooltip = {
-				tooltip = has_proxy_war
+				tooltip = FOP_warlord_volunteer_tt
 				always = yes
 			}
 		}
 	}
 	else = {
 		custom_trigger_tooltip = {
-			tooltip = no_proxy_war
+			tooltip = feature_disabled
 			always = no
 		}
 	}

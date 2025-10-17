@@ -1,6 +1,188 @@
 add_namespace = FOP_generic
 add_namespace = FOP_generic_regional
 add_namespace = FOP_soc_development
+add_namespace = FOP_global_warlord
+
+news_event = {
+	id = FOP_global_warlord.1 #galicia unifier
+	title = FOP_global_warlord.1.t
+	desc = FOP_global_warlord.1.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_global_warlord.1.a
+	}
+}
+
+news_event = {
+	id = FOP_global_warlord.2 #podolia unifier
+	title = FOP_global_warlord.2.t
+	desc = FOP_global_warlord.2.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_global_warlord.2.a
+	}
+}
+
+news_event = {
+	id = FOP_global_warlord.3 #siveria unifier
+	title = FOP_global_warlord.3.t
+	desc = FOP_global_warlord.3.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_global_warlord.3.a	
+	}
+}
+
+news_event = {
+	id = FOP_global_warlord.4 #dnieper unifier
+	title = FOP_global_warlord.4.t
+	desc = FOP_global_warlord.4.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_global_warlord.4.a
+			
+	}
+}
+
+news_event = {
+	id = FOP_global_warlord.5 #dnister unifier
+	title = FOP_global_warlord.5.t
+	desc = FOP_global_warlord.5.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_global_warlord.5.a
+	}
+}
+
+news_event = {
+	id = FOP_global_warlord.6 #tavria unifier
+	title = FOP_global_warlord.6.t
+	desc = FOP_global_warlord.6.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_global_warlord.6.a
+	}
+}
+
+news_event = {
+	id = FOP_global_warlord.7 #donbas unifier
+	title = FOP_global_warlord.7.t
+	desc = FOP_global_warlord.7.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_global_warlord.7.a
+	}
+}
+
+news_event = {
+	id = FOP_global_warlord.8 #east unifier
+	title = FOP_global_warlord.8.t
+	desc = FOP_global_warlord.8.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_global_warlord.8.a
+	}
+}
+
+news_event = {
+	id = FOP_global_warlord.9 #south unifier
+	title = FOP_global_warlord.9.t
+	desc = FOP_global_warlord.9.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_global_warlord.9.a
+	}
+}
+
+news_event = {
+	id = FOP_global_warlord.10 #north unifier
+	title = FOP_global_warlord.10.t
+	desc = FOP_global_warlord.10.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_global_warlord.10.a
+	}
+}
+
+news_event = {
+	id = FOP_global_warlord.11 #west unifier
+	title = FOP_global_warlord.11.t
+	desc = FOP_global_warlord.11.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_global_warlord.11.a
+	}
+}
+
+news_event = {
+	id = FOP_global_warlord.12 #west reaches to world
+	title = FOP_global_warlord.12.t
+	desc = FOP_global_warlord.12.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_global_warlord.12.a
+	}
+}
+
+news_event = {
+	id = FOP_global_warlord.13 #east reaches to world
+	title = FOP_global_warlord.13.t
+	desc = FOP_global_warlord.13.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_global_warlord.13.a
+	}
+}
+
+news_event = {
+	id = FOP_global_warlord.14 #north reaches to world
+	title = FOP_global_warlord.14.t
+	desc = FOP_global_warlord.14.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_global_warlord.14.a
+	}
+}
+
+news_event = {
+	id = FOP_global_warlord.15 #south reaches to world
+	title = FOP_global_warlord.15.t
+	desc = FOP_global_warlord.15.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_global_warlord.15.a
+	}
+}
 
 country_event = { 
 	id = FOP_generic.1
@@ -663,6 +845,637 @@ country_event = {
 		add_ideas = fop_pensions_generous
 	}
 }
+
+country_event = { 
+	id = FOP_generic.25
+	title = FOP_generic.25.t
+	desc = FOP_generic.25.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.25.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				FROM = {
+					check_variable = {FOP_europe_allegiance > 3}
+					add = 10
+				}
+			}
+			modifier = {
+				FROM = {
+					check_variable = {FOP_europe_allegiance > 6}
+					add = 20
+				}
+			}	
+			modifier = {
+				FROM = {
+					check_variable = {FOP_europe_allegiance > 8}
+					add = 30
+				}
+			}	
+		}
+		FROM = {
+			country_event = {
+				id = FOP_generic.26
+				days = 5
+			}
+		}
+	}
+	option = { 
+		name = FOP_generic.25.b
+		ai_chance = {
+			base = 60
+			modifier = {
+				FROM = {
+					check_variable = {FOP_europe_allegiance > 3}
+					add = -10
+				}
+			}
+			modifier = {
+				FROM = {
+					check_variable = {FOP_europe_allegiance > 6}
+					add = -20
+				}
+			}	
+			modifier = {
+				FROM = {
+					check_variable = {FOP_europe_allegiance > 8}
+					add = -30
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = FOP_generic.27
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = { 
+	id = FOP_generic.26
+	title = FOP_generic.26.t
+	desc = FOP_generic.26.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.26.a
+		add_political_power = 50
+		complete_national_focus = FOP_Watch_To_The_West
+	}
+}
+
+country_event = { 
+	id = FOP_generic.27
+	title = FOP_generic.27.t
+	desc = FOP_generic.27.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.27.a
+		add_political_power = -50
+		set_country_flag = eu_refused_help
+	}
+}
+
+country_event = { 
+	id = FOP_generic.28
+	title = FOP_generic.28.t
+	desc = FOP_generic.28.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.28.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				FROM = {
+					check_variable = {FOP_russia_allegiance > 3}
+					add = 10
+				}
+			}
+			modifier = {
+				FROM = {
+					check_variable = {FOP_russia_allegiance > 6}
+					add = 20
+				}
+			}	
+			modifier = {
+				FROM = {
+					check_variable = {FOP_russia_allegiance > 8}
+					add = 30
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = FOP_generic.29
+				days = 5
+			}
+		}
+	}
+	option = { 
+		name = FOP_generic.28.b
+		ai_chance = {
+			base = 40
+			modifier = {
+				FROM = {
+					check_variable = {FOP_russia_allegiance > 3}
+					add = -10
+				}
+			}
+			modifier = {
+				FROM = {
+					check_variable = {FOP_russia_allegiance > 6}
+					add = -20
+				}
+			}	
+			modifier = {
+				FROM = {
+					check_variable = {FOP_russia_allegiance > 8}
+					add = -30
+				}
+			}
+			modifier = {
+				FROM = {
+					check_variable = {FOP_europe_allegiance > 3}
+					add = 10
+				}
+			}
+			modifier = {
+				FROM = {
+					check_variable = {FOP_europe_allegiance > 6}
+					add = 20
+				}
+			}	
+			modifier = {
+				FROM = {
+					check_variable = {FOP_europe_allegiance > 8}
+					add = 30
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = FOP_generic.30
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = { 
+	id = FOP_generic.29
+	title = FOP_generic.29.t
+	desc = FOP_generic.29.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.29.a
+		add_political_power = 50
+		complete_national_focus = FOP_Watch_To_The_East
+	}
+}
+
+country_event = { 
+	id = FOP_generic.30
+	title = FOP_generic.30.t
+	desc = FOP_generic.30.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.30.a
+		add_political_power = -50
+		set_country_flag = ru_refused_help
+	}
+}
+
+country_event = { 
+	id = FOP_generic.31
+	title = FOP_generic.31.t
+	desc = FOP_generic.31.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.31.a
+		add_ideas = fop_supervision_strict_rules
+	}
+	option = { 
+		name = FOP_generic.31.b
+		add_ideas = fop_supervision_no
+	}
+	option = { 
+		name = FOP_generic.31.c
+		add_ideas = fop_supervision_encouraged_brutality
+	}
+}
+
+country_event = { 
+	id = FOP_generic.32
+	title = FOP_generic.32.t
+	desc = FOP_generic.32.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.32.a
+	}
+}
+
+country_event = { 
+	id = FOP_generic.33
+	title = FOP_generic.33.t
+	desc = FOP_generic.33.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.33.a
+		add_ideas = fop_pollution_no_controls
+	}
+	option = { 
+		name = FOP_generic.33.b
+		add_ideas = fop_pollution_some_regulations
+	}
+	option = { 
+		name = FOP_generic.33.c
+		add_ideas = fop_pollution_good_regulations
+	}
+	option = { 
+		name = FOP_generic.33.e
+		add_ideas = fop_pollution_strict_regulations
+	}
+}
+
+country_event = { 
+	id = FOP_generic.34
+	title = FOP_generic.34.t
+	desc = FOP_generic.34.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.34.a
+		add_ideas = fop_immigration_closed_borders
+	}
+	option = { 
+		name = FOP_generic.34.b
+		add_ideas = fop_immigration_quota
+	}
+	option = { 
+		name = FOP_generic.34.c
+		add_ideas = fop_immigration_open_borders
+	}
+	option = { 
+		name = FOP_generic.34.e
+		add_ideas = fop_immigration_encouraged
+	}
+}
+
+country_event = { 
+	id = FOP_generic.35
+	title = FOP_generic.35.t
+	desc = FOP_generic.35.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.35.a
+		add_ideas = fop_gender_rights_restricted
+	}
+	option = { 
+		name = FOP_generic.35.b
+		add_ideas = fop_gender_rights_traditional
+	}
+	option = { 
+		name = FOP_generic.35.c
+		add_ideas = fop_gender_rights_legal_equality
+	}
+	option = { 
+		name = FOP_generic.35.e
+		add_ideas = fop_gender_rights_promoted_equality
+	}
+	option = { 
+		name = FOP_generic.35.f
+		add_ideas = fop_gender_rights_forced_equality
+	}
+}
+
+country_event = { 
+	id = FOP_generic.36
+	title = FOP_generic.36.t
+	desc = FOP_generic.36.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.36.a
+		add_ideas = fop_sexual_minorities_compulsory_sterilization
+	}
+	option = { 
+		name = FOP_generic.36.b
+		add_ideas = fop_sexual_minorities_criminalized
+	}
+	option = { 
+		name = FOP_generic.36.c
+		add_ideas = fop_sexual_minorities_non_recognized
+	}
+	option = { 
+		name = FOP_generic.36.e
+		add_ideas = fop_sexual_minorities_recognized
+	}
+	option = { 
+		name = FOP_generic.36.f
+		add_ideas = fop_sexual_minorities_equal_rights
+	}
+}
+
+country_event = { 
+	id = FOP_generic.37
+	title = FOP_generic.37.t
+	desc = FOP_generic.37.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.37.a
+		add_ideas = fop_ethnic_minorities_opression
+	}
+	option = { 
+		name = FOP_generic.37.b
+		add_ideas = fop_ethnic_minorities_forced_assimilation
+	}
+	option = { 
+		name = FOP_generic.37.c
+		add_ideas = fop_ethnic_minorities_cultural_acommodation
+	}
+	option = { 
+		name = FOP_generic.37.e
+		add_ideas = fop_ethnic_minorities_cultural_autonomy
+	}
+}
+
+country_event = { 
+	id = FOP_generic.38
+	title = FOP_generic.38.t
+	desc = FOP_generic.38.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.38.a
+		add_ideas = fop_party_system_nonpartisan
+	}
+	option = { 
+		name = FOP_generic.38.b
+		add_ideas = fop_party_system_single_party
+	}
+	option = { 
+		name = FOP_generic.38.c
+		add_ideas = fop_party_system_controlled_opposition
+	}
+	option = { 
+		name = FOP_generic.38.e
+		add_ideas = fop_party_system_multiparty
+	}
+}
+
+country_event = { 
+	id = FOP_generic.39
+	title = FOP_generic.39.t
+	desc = FOP_generic.39.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.39.a
+		add_ideas = fop_religious_rights_atheism
+	}
+	option = { 
+		name = FOP_generic.39.b
+		add_ideas = fop_religious_rights_moralism
+	}
+	option = { 
+		name = FOP_generic.39.c
+		add_ideas = fop_religious_rights_secularism
+	}
+	option = { 
+		name = FOP_generic.39.e
+		add_ideas = fop_religious_rights_pluralism
+	}
+}
+
+country_event = { 
+	id = FOP_generic.40
+	title = FOP_generic.40.t
+	desc = FOP_generic.40.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.40.a
+		add_ideas = fop_suffrage_no
+	}
+	option = { 
+		name = FOP_generic.40.b
+		add_ideas = fop_suffrage_elite
+	}
+	option = { 
+		name = FOP_generic.40.c
+		add_ideas = fop_suffrage_universal
+	}
+}
+
+country_event = { 
+	id = FOP_generic.41
+	title = FOP_generic.41.t
+	desc = FOP_generic.41.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.41.a
+		add_ideas = fop_press_freedom_state
+	}
+	option = { 
+		name = FOP_generic.41.b
+		add_ideas = fop_press_freedom_censored
+	}
+	option = { 
+		name = FOP_generic.41.c
+		add_ideas = fop_press_freedom_free
+	}
+}
+
+country_event = { 
+	id = FOP_generic.42
+	title = FOP_generic.42.t
+	desc = FOP_generic.42.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.42.a
+		ai_chance = {
+			base = 50
+		}
+		FROM = {
+			country_event = FOP_generic.43
+		}
+	}
+
+	option = { 
+		name = FOP_generic.42.b
+		ai_chance = {
+			base = 50
+		}
+		FROM = {
+			country_event = FOP_generic.44
+		}
+	}
+}
+
+country_event = { 
+	id = FOP_generic.43
+	title = FOP_generic.43.t
+	desc = FOP_generic.43.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.43.a
+		TUR = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = FOP_trading_with_warlord
+			}
+		}
+		set_country_flag = FOP_trading_with_turkey
+	}
+}
+
+country_event = { 
+	id = FOP_generic.44
+	title = FOP_generic.44.t
+	desc = FOP_generic.44.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.44.a
+		add_political_power = -25
+	}
+}
+
+country_event = { 
+	id = FOP_generic.45
+	title = FOP_generic.45.t
+	desc = FOP_generic.45.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.45.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				FROM = {
+					favourable_for_europe = yes
+				}
+				add = 80
+			}
+		}
+		FROM = {
+			country_event = FOP_generic.46
+		}
+	}
+
+	option = { 
+		name = FOP_generic.45.b
+		ai_chance = {
+			base = 90
+			modifier = {
+				FROM = {
+					favourable_for_europe = yes
+				}
+				add = -80
+			}
+		}
+		FROM = {
+			country_event = FOP_generic.47
+		}
+	}
+}
+
+country_event = { 
+	id = FOP_generic.46
+	title = FOP_generic.46.t
+	desc = FOP_generic.46.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.46.a
+		GBR = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = FOP_trading_with_warlord
+			}
+		}
+		set_country_flag = FOP_trading_with_britain
+	}
+}
+
+country_event = { 
+	id = FOP_generic.47
+	title = FOP_generic.47.t
+	desc = FOP_generic.47.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.47.a
+		add_political_power = -25
+	}
+}
+
+country_event = { 
+	id = FOP_generic.48
+	title = FOP_generic.48.t
+	desc = FOP_generic.48.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.48.a
+		add_political_power = 50
+		set_country_flag = FOP_recognized_by_IMF
+	}
+}
+
+country_event = { 
+	id = FOP_generic.49
+	title = FOP_generic.49.t
+	desc = FOP_generic.49.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.49.a
+		add_political_power = -50
+		set_country_flag = FOP_refused_by_IMF
+	}
+}
+
 
 #Social Development
 

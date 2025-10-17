@@ -68,11 +68,11 @@ unite_galicia_ukraine = {
 				set_country_flag = united_galicia
 				load_focus_tree = fop_generic_one
 				set_variable = {
-					var = FOP_west_allegiance
+					var = FOP_europe_allegiance
 					value = 0
 				}
 				clamp_variable = {
-					var = FOP_west_allegiance
+					var = FOP_europe_allegiance
 					min = 0
 				}
 				set_variable = {
@@ -83,6 +83,7 @@ unite_galicia_ukraine = {
 					var = FOP_east_allegiance
 					min = 0
 				}
+				news_event = FOP_global_warlord.1
 	  		}
 		}
 		ai_will_do = {
@@ -521,11 +522,11 @@ unite_podolia_ukraine = {
 			set_country_flag = united_podolia
 			load_focus_tree = fop_generic_one
 			set_variable = {
-				var = FOP_west_allegiance
+				var = FOP_europe_allegiance
 				value = 0
 			}
 			clamp_variable = {
-				var = FOP_west_allegiance
+				var = FOP_europe_allegiance
 				min = 0
 			}
 			set_variable = {
@@ -634,7 +635,7 @@ unite_podolia_ukraine = {
 				limit = {
 					original_tag = CHR
 				}
-				set_cosmetic_tag = PRH_regional_siveria
+				set_cosmetic_tag = CHR_regional_siveria
 				add_political_power = 50
 			}
 			if = {
@@ -658,14 +659,14 @@ unite_podolia_ukraine = {
 				add_political_power = 50
 			}
 			set_country_flag = united_siveria
-			save_global_event_target_as = UKR_siverian_unifier
+			save_global_event_target_as = UKR_siveria_unifier
 			load_focus_tree = fop_generic_one
 			set_variable = {
-				var = FOP_west_allegiance
+				var = FOP_europe_allegiance
 				value = 0
 			}
 			clamp_variable = {
-				var = FOP_west_allegiance
+				var = FOP_europe_allegiance
 				min = 0
 			}
 			set_variable = {
@@ -778,7 +779,6 @@ unite_podolia_ukraine = {
             add_command_power = -15
         }
 		remove_effect = {
-			
 			declare_war_on = {
     			target = KYI
     			type = annex_everything
@@ -838,7 +838,6 @@ unite_podolia_ukraine = {
             add_command_power = -15
         }
 		remove_effect = {
-			
 			declare_war_on = {
     			target = KOB
     			type = annex_everything
@@ -1139,7 +1138,7 @@ unite_dnieper_ukraine = {
 				limit = {
 					original_tag = CHE
 				}
-				set_cosmetic_tag = CHR_regional_dnieper
+				set_cosmetic_tag = CHE_regional_dnieper
 				add_political_power = 50
 			}
 			else_if = {
@@ -1160,11 +1159,11 @@ unite_dnieper_ukraine = {
 			save_global_event_target_as = UKR_dnieper_unifier
 			load_focus_tree = fop_generic_one
 			set_variable = {
-				var = FOP_west_allegiance
+				var = FOP_europe_allegiance
 				value = 0
 			}
 			clamp_variable = {
-				var = FOP_west_allegiance
+				var = FOP_europe_allegiance
 				min = 0
 			}
 			set_variable = {
@@ -1424,32 +1423,32 @@ unite_dnieper_ukraine = {
 	}
 }
 
+unite_dniester_ukraine = {
 	unite_dniester_ukraine = {
-		unite_dniester_ukraine = {
 
-		icon = GFX_decision_unite_ukraine
-		
-		
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = unite_dniester_ukraine_tt
-				is_dniester_ukraine = yes
-				can_unite_dniester_ukraine = yes
-			}
-		}
-		
-		fire_only_once = yes
-        days_remove = 0
-
-		visible = {	
+	icon = GFX_decision_unite_ukraine
+	
+	
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = unite_dniester_ukraine_tt
 			is_dniester_ukraine = yes
+			can_unite_dniester_ukraine = yes
 		}
+	}
+	
+	fire_only_once = yes
+	days_remove = 0
 
-		cost = 0
+	visible = {	
+		is_dniester_ukraine = yes
+	}
 
-		complete_effect = {
-			custom_effect_tooltip = dniester_unite_tt
-			hidden_effect = {
+	cost = 0
+
+	complete_effect = {
+		custom_effect_tooltip = dniester_unite_tt
+		hidden_effect = {
 			save_global_event_target_as = UKR_dniester_unifier
 			if = {
 				limit = {
@@ -1496,11 +1495,11 @@ unite_dnieper_ukraine = {
 			set_country_flag = united_dniester
 			load_focus_tree = fop_generic_one
 			set_variable = {
-				var = FOP_west_allegiance
+				var = FOP_europe_allegiance
 				value = 0
 			}
 			clamp_variable = {
-				var = FOP_west_allegiance
+				var = FOP_europe_allegiance
 				min = 0
 			}
 			set_variable = {
@@ -1511,8 +1510,8 @@ unite_dnieper_ukraine = {
 				var = FOP_east_allegiance
 				min = 0
 			}
-	  		}
 		}
+	}
 
 		ai_will_do = {
 			base = 10
@@ -1809,7 +1808,7 @@ unite_tavria_ukraine = {
 		complete_effect = {
 			custom_effect_tooltip = tavria_unite_tt
 			hidden_effect = {
-			save_global_event_target_as = UKR_tavrian_unifier
+			save_global_event_target_as = UKR_tavria_unifier
 			if = {
 				limit = {
 					original_tag = ZAP
@@ -1827,11 +1826,11 @@ unite_tavria_ukraine = {
 			set_country_flag = united_tavria
 			load_focus_tree = fop_generic_one
 			set_variable = {
-				var = FOP_west_allegiance
+				var = FOP_europe_allegiance
 				value = 0
 			}
 			clamp_variable = {
-				var = FOP_west_allegiance
+				var = FOP_europe_allegiance
 				min = 0
 			}
 			set_variable = {
@@ -1984,6 +1983,30 @@ unite_donbas_ukraine = {
 				add_political_power = 50
 				load_focus_tree = AFU_azov_east
 			}
+			else_if = {
+				limit = {
+					original_tag = AFU
+					has_government = oligarchism
+				}
+				add_political_power = 50
+				load_focus_tree = AFU_khomut
+			}
+			else_if = {
+				limit = {
+					original_tag = AFU
+					has_government = socialism
+				}
+				add_political_power = 50
+				load_focus_tree = AFU_savchenko
+			}
+			else_if = {
+				limit = {
+					original_tag = AFU
+					has_government = national_democracy
+				}
+				add_political_power = 50
+				load_focus_tree = AFU_danilov
+			}
 			if = {
 				limit = {
 					original_tag = KHA
@@ -1991,11 +2014,11 @@ unite_donbas_ukraine = {
 				add_political_power = 50
 				load_focus_tree = fop_generic_one
 			set_variable = {
-				var = FOP_west_allegiance
+				var = FOP_europe_allegiance
 				value = 0
 			}
 			clamp_variable = {
-				var = FOP_west_allegiance
+				var = FOP_europe_allegiance
 				min = 0
 			}
 			set_variable = {
@@ -2031,11 +2054,11 @@ unite_donbas_ukraine = {
 				add_political_power = 50
 				load_focus_tree = fop_generic_one
 			set_variable = {
-				var = FOP_west_allegiance
+				var = FOP_europe_allegiance
 				value = 0
 			}
 			clamp_variable = {
-				var = FOP_west_allegiance
+				var = FOP_europe_allegiance
 				min = 0
 			}
 			set_variable = {
@@ -2223,7 +2246,10 @@ unite_east_ukraine = {
 				is_east_ukraine = yes
 				can_unite_east_ukraine = yes
 			}
-			date > 2024.01.01
+			OR = {
+				date > 2024.01.01
+				is_debug = yes
+			}
 		}
 		
 		fire_only_once = yes
@@ -2285,6 +2311,8 @@ unite_east_ukraine = {
 				add_political_power = 50
 			}
 			set_country_flag = united_east
+			
+			load_focus_tree = fop_generic_region
 	  		}
 		}
 
@@ -2646,7 +2674,10 @@ unite_south_ukraine = {
 				is_south_ukraine = yes
 				can_unite_south_ukraine = yes
 			}
-			date > 2024.01.01
+			OR = {
+				date > 2024.01.01
+				is_debug = yes
+			}
 		}
 		
 		fire_only_once = yes
@@ -2723,6 +2754,8 @@ unite_south_ukraine = {
 				add_political_power = 50
 			}
 			set_country_flag = united_south
+			
+			load_focus_tree = fop_generic_region
 			}
 		}
 
@@ -3106,7 +3139,10 @@ unite_north_ukraine = {
 				is_north_ukraine = yes
 				can_unite_north_ukraine = yes
 			}
-			date > 2024.01.01
+			OR = {
+				date > 2024.01.01
+				is_debug = yes
+			}
 		}
 		
 		fire_only_once = yes
@@ -3144,7 +3180,7 @@ unite_north_ukraine = {
 				limit = {
 					original_tag = CHR
 				}
-				set_cosmetic_tag = PRH_regional_north
+				set_cosmetic_tag = CHR_regional_north
 				add_political_power = 50
 			}
 			else_if = {
@@ -3183,7 +3219,7 @@ unite_north_ukraine = {
 				limit = {
 					original_tag = CHE
 				}
-				set_cosmetic_tag = CHR_regional_north
+				set_cosmetic_tag = CHE_regional_north
 				add_political_power = 50
 			}
 			else_if = {
@@ -3201,6 +3237,8 @@ unite_north_ukraine = {
 				add_political_power = 50
 			}
 			set_country_flag = united_north
+			
+			load_focus_tree = fop_generic_region
 	  		}
 		}
 
@@ -3588,7 +3626,10 @@ unite_west_ukraine = {
 				is_west_ukraine = yes
 				can_unite_west_ukraine = yes
 			}
-			date > 2024.01.01
+			OR = {
+				date > 2024.01.01
+				is_debug = yes
+			}
 		}
 		
 		fire_only_once = yes
@@ -3665,6 +3706,7 @@ unite_west_ukraine = {
 				add_political_power = 50
 			}
 			set_country_flag = united_west
+			load_focus_tree = fop_generic_region
 	  		}
 		}
 		ai_will_do = {	
@@ -4597,7 +4639,7 @@ unite_right_bank_ukraine = {
 				limit = {
 					original_tag = CHR
 				}
-				set_cosmetic_tag = PRH_regional_right_bank
+				set_cosmetic_tag = CHR_regional_right_bank
 				add_political_power = 50
 			}
 			else_if = {
@@ -4636,7 +4678,7 @@ unite_right_bank_ukraine = {
 				limit = {
 					original_tag = CHE
 				}
-				set_cosmetic_tag = CHR_regional_right_bank
+				set_cosmetic_tag = CHE_regional_right_bank
 				add_political_power = 50
 			}
 			else_if = {

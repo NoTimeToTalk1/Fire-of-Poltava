@@ -634,7 +634,7 @@ FOP_weapon_market = {
 		remove_effect = {
 			add_equipment_to_stockpile = {
                 type = infantry_equipment
-                amount = 1000
+                amount = 750
             }
 		}
     }
@@ -645,8 +645,6 @@ FOP_weapon_market = {
 		cost = 30
 
 		days_remove = 120
-
-        fire_only_once = yes
 
 		modifier = {
             civilian_factory_use = 2
@@ -660,7 +658,331 @@ FOP_weapon_market = {
 		remove_effect = {
 			add_equipment_to_stockpile = {
                 type = motorized_equipment
-                amount = 200
+                amount = 100
+            }
+		}
+    }
+
+    fop_buy_ifvs = {
+        icon = GFX_decision_buy_vehicles
+		
+		cost = 35
+
+		days_remove = 90
+
+        visible = {
+            has_country_flag = FOP_weapon_market_increased
+        }
+
+		modifier = {
+            civilian_factory_use = 4
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+                type = IFV_equipment_1
+                amount = 50
+            }
+		}
+    }
+
+    eu_buy_ifvs = {
+        icon = GFX_decision_buy_vehicles
+		
+		cost = 35
+
+		days_remove = 90
+
+        visible = {
+            has_country_flag = FOP_weapon_market_increased
+            has_country_flag = eu_limited_recognition
+        }
+
+		modifier = {
+            civilian_factory_use = 4
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+                type = IFV_equipment_1
+                amount = 30
+                producer = EUN
+            }
+		}
+    }
+
+    ru_buy_ifvs = {
+        icon = GFX_decision_buy_vehicles
+		
+		cost = 35
+
+		days_remove = 90
+
+        visible = {
+            has_country_flag = FOP_weapon_market_increased
+            has_country_flag = ru_limited_recognition
+        }
+
+		modifier = {
+            civilian_factory_use = 4
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+                type = IFV_equipment_1
+                amount = 70
+                producer = RUS
+            }
+		}
+    }
+
+    tur_buy_ifvs = {
+        icon = GFX_decision_buy_vehicles
+		
+		cost = 25
+
+		days_remove = 90
+
+        visible = {
+            has_country_flag = FOP_weapon_market_increased
+            has_country_flag = FOP_trading_with_turkey
+        }
+
+		modifier = {
+            civilian_factory_use = 3
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+                type = IFV_equipment_1
+                amount = 60
+                producer = TUR
+            }
+		}
+    }
+
+    gbr_buy_ifvs = {
+        icon = GFX_decision_buy_vehicles
+		
+		cost = 25
+
+		days_remove = 60
+
+        visible = {
+            has_country_flag = FOP_weapon_market_increased
+            has_country_flag = FOP_trading_with_britain
+        }
+
+		modifier = {
+            civilian_factory_use = 3
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+                type = IFV_equipment_1
+                amount = 40
+                producer = GBR
+            }
+		}
+    }
+
+    fop_buy_mbt = {
+        icon = GFX_decision_buy_vehicles
+		
+		cost = 35
+
+		days_remove = 90
+
+        visible = {
+            has_country_flag = FOP_weapon_market_increased
+        }
+
+		modifier = {
+            civilian_factory_use = 4
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+                type = MBT_equipment_1
+                amount = 50
+            }
+		}
+    }
+
+    eu_buy_mbt = {
+        icon = GFX_decision_buy_vehicles
+		
+		cost = 35
+
+		days_remove = 90
+
+        visible = {
+            has_country_flag = FOP_weapon_market_increased
+            has_country_flag = eu_limited_recognition
+        }
+
+		modifier = {
+            civilian_factory_use = 4
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+                type = MBT_equipment_1
+                amount = 60
+                producer = EUN
+            }
+		}
+    }
+
+    ru_buy_mbt = {
+        icon = GFX_decision_buy_vehicles
+		
+		cost = 35
+
+		days_remove = 90
+
+        visible = {
+            has_country_flag = FOP_weapon_market_increased
+            has_country_flag = ru_limited_recognition
+        }
+
+		modifier = {
+            civilian_factory_use = 4
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+                type = MBT_equipment_1
+                amount = 50
+                producer = RUS
+            }
+		}
+    }
+
+    tur_buy_mbt = {
+        icon = GFX_decision_buy_vehicles
+		
+		cost = 25
+
+		days_remove = 90
+
+        visible = {
+            has_country_flag = FOP_weapon_market_increased
+            has_country_flag = eu_limited_recognition
+        }
+
+		modifier = {
+            civilian_factory_use = 4
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+                type = MBT_equipment_1
+                amount = 60
+                producer = TUR
+            }
+		}
+    }
+
+    gbr_buy_mbt = {
+        icon = GFX_decision_buy_vehicles
+		
+		cost = 25
+
+		days_remove = 60
+
+        visible = {
+            has_country_flag = FOP_weapon_market_increased
+            has_country_flag = eu_limited_recognition
+        }
+
+		modifier = {
+            civilian_factory_use = 4
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+                type = MBT_equipment_1
+                amount = 60
+                producer = GBR
+            }
+		}
+    }
+
+    buy_old_planes = {
+        icon = GFX_decision_buy_vehicles
+		
+		cost = 50
+
+		days_remove = 150
+
+        visible = {
+            has_country_flag = FOP_planes_purchase
+        }
+
+		modifier = {
+            civilian_factory_use = 5
+            consumer_goods_factor = 0.2
+		}
+
+        ai_will_do = {	
+			factor = 50		
+		}
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+                type = small_plane_airframe_0
+                amount = 30
             }
 		}
     }
@@ -877,6 +1199,1126 @@ FOP_attract_investments = {
             add_timed_idea = {
                 idea = FOP_investments 
                 days = 90
+            }
+		}
+    }
+}
+
+FOP_trading = {
+    approach_turkey_for_trade = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 50
+
+		days_remove = 30
+
+        fire_only_once = yes
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        available = {
+            OR = {
+                tag = STH
+                AND = {
+                    tag = NRT
+                    STH = {
+                        has_country_flag = recognized_by_north_warlord
+                    }
+                }
+                AND = {
+                    tag = ESN
+                    OR = {
+                        STH = {
+                            has_country_flag = recognized_by_east_warlord
+                        }
+                        has_country_flag = ru_limited_recognition
+                    }
+                }
+                AND = {
+                    tag = WST
+                    OR = {
+                        STH = {
+                            has_country_flag = recognized_by_west_warlord
+                        }
+                        has_country_flag = eu_limited_recognition
+                    }
+                }
+            }
+        }
+
+		remove_effect = {
+			TUR = {
+                country_event = FOP_generic.42
+            }
+		}
+    }
+    approach_britain_for_trade = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 50
+
+		days_remove = 30
+
+        fire_only_once = yes
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        available = {
+            OR = {
+                AND = {
+                    tag = WST
+                    has_country_flag = eu_limited_recognition
+                }
+                AND = {
+                    tag = NRT
+                    WST = {
+                        has_country_flag = eu_limited_recognition
+                        has_country_flag = recognized_by_north_warlord
+                    }
+                }
+                AND = {
+                    tag = STH
+                    has_country_flag = eu_limited_recognition
+                }
+                AND = {
+                    tag = ESN
+                    has_country_flag = eu_limited_recognition
+                    has_country_flag = ru_limited_recognition
+                }
+            }
+        }
+
+		remove_effect = {
+			GBR = {
+                country_event = FOP_generic.45
+            }
+		}
+    }
+    import_tungsten = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 35
+
+		days_remove = 90
+
+        fire_only_once = yes
+
+		modifier = {
+            civilian_factory_use = 2
+            consumer_goods_factor = 0.1
+		}
+
+        visible = {
+            has_country_flag = FOP_imports
+        }
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+                add_resource = {
+                    type = tungsten
+                    amount = 8
+                }
+            }
+		}
+    }
+    import_steel = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 25
+
+		days_remove = 90
+
+        fire_only_once = yes
+
+		modifier = {
+            civilian_factory_use = 2
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_imports
+        }
+
+		remove_effect = {
+			random_owned_controlled_state = {
+                add_resource = {
+                    type = steel
+                    amount = 15
+                }
+            }
+		}
+    }
+    import_rubber = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 35
+
+		days_remove = 90
+
+        fire_only_once = yes
+
+		modifier = {
+            civilian_factory_use = 3
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_imports
+        }
+
+		remove_effect = {
+			random_owned_controlled_state = {
+                add_resource = {
+                    type = rubber
+                    amount = 3
+                }
+            }
+		}
+    }
+    import_aluminium = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 30
+
+		days_remove = 90
+
+        available = {
+            has_country_flag = eu_limited_recognition
+        }
+
+        fire_only_once = yes
+
+		modifier = {
+            civilian_factory_use = 3
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_imports
+        }
+
+		remove_effect = {
+			random_owned_controlled_state = {
+                add_resource = {
+                    type = aluminium
+                    amount = 7
+                }
+            }
+		}
+    }
+    tur_import_steel = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 15
+
+		days_remove = 60
+
+        fire_only_once = yes
+
+		modifier = {
+            civilian_factory_use = 3
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_imports
+            has_country_flag = FOP_trading_with_turkey
+        }
+
+		remove_effect = {
+			random_owned_controlled_state = {
+                add_resource = {
+                    type = steel
+                    amount = 30
+                }
+            }
+		}
+    }
+    gbr_import_steel = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 15
+
+		days_remove = 50
+
+        fire_only_once = yes
+
+		modifier = {
+            civilian_factory_use = 3
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_imports
+            has_country_flag = FOP_trading_with_britain
+        }
+
+		remove_effect = {
+			random_owned_controlled_state = {
+                add_resource = {
+                    type = steel
+                    amount = 25
+                }
+            }
+		}
+    }
+    eu_import_tungsten = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 25
+
+		days_remove = 90
+
+        available = {
+            has_country_flag = eu_limited_recognition
+        }
+
+        fire_only_once = yes
+
+		modifier = {
+            civilian_factory_use = 3
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_imports
+        }
+
+		remove_effect = {
+			random_owned_controlled_state = {
+                add_resource = {
+                    type = tungsten
+                    amount = 15
+                }
+            }
+		}
+    }
+    eu_import_steel = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 15
+
+		days_remove = 90
+
+        available = {
+            has_country_flag = eu_limited_recognition
+        }
+
+        fire_only_once = yes
+
+		modifier = {
+            civilian_factory_use = 2
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_imports
+        }
+
+		remove_effect = {
+			random_owned_controlled_state = {
+                add_resource = {
+                    type = steel
+                    amount = 35
+                }
+            }
+		}
+    }
+    eu_import_rubber = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 35
+
+		days_remove = 90
+
+        available = {
+            has_country_flag = eu_limited_recognition
+        }
+
+        fire_only_once = yes
+
+		modifier = {
+            civilian_factory_use = 3
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_imports
+        }
+
+		remove_effect = {
+			random_owned_controlled_state = {
+                add_resource = {
+                    type = rubber
+                    amount = 10
+                }
+            }
+		}
+    }
+    eu_import_aluminium = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 20
+
+		days_remove = 90
+
+        available = {
+            has_country_flag = eu_limited_recognition
+        }
+
+        fire_only_once = yes
+
+		modifier = {
+            civilian_factory_use = 3
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_imports
+        }
+
+		remove_effect = {
+			random_owned_controlled_state = {
+                add_resource = {
+                    type = aluminium
+                    amount = 15
+                }
+            }
+		}
+    }
+    ru_import_tungsten = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 25
+
+		days_remove = 90
+
+        available = {
+            has_country_flag = ru_limited_recognition
+        }
+
+        fire_only_once = yes
+
+		modifier = {
+            civilian_factory_use = 2
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_imports
+        }
+
+		remove_effect = {
+			random_owned_controlled_state = {
+                limit = {
+                    industrial_complex > 1
+                }
+                add_resource = {
+                    type = tungsten
+                    amount = 20
+                }
+                remove_building = {
+                    type = industrial_complex
+                    level = 1
+                }
+            }
+		}
+    }
+    ru_import_steel = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 25
+
+		days_remove = 90
+
+        available = {
+            has_country_flag = ru_limited_recognition
+        }
+
+        fire_only_once = yes
+
+		modifier = {
+            civilian_factory_use = 2
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_imports
+        }
+
+		remove_effect = {
+			random_owned_controlled_state = {
+                limit = {
+                    industrial_complex > 1
+                }
+                add_resource = {
+                    type = steel
+                    amount = 40
+                }
+                remove_building = {
+                    type = industrial_complex
+                    level = 1
+                }
+            }
+		}
+    }
+    ru_import_rubber = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 25
+
+		days_remove = 90
+
+        available = {
+            has_country_flag = ru_limited_recognition
+        }
+
+        fire_only_once = yes
+
+		modifier = {
+            civilian_factory_use = 3
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_imports
+        }
+
+		remove_effect = {
+			random_owned_controlled_state = {
+                limit = {
+                    industrial_complex > 1
+                }
+                add_resource = {
+                    type = rubber
+                    amount = 20
+                }
+                remove_building = {
+                    type = industrial_complex
+                    level = 1
+                }
+            }
+		}
+    }
+    ru_import_aluminium = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 20
+
+		days_remove = 90
+
+        available = {
+            has_country_flag = ru_limited_recognition
+        }
+
+        fire_only_once = yes
+
+		modifier = {
+            civilian_factory_use = 3
+            consumer_goods_factor = 0.1
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_imports
+        }
+
+		remove_effect = {
+			random_owned_controlled_state = {
+                limit = {
+                    industrial_complex > 1
+                }
+                add_resource = {
+                    type = aluminium
+                    amount = 20
+                }
+                remove_building = {
+                    type = industrial_complex
+                    level = 1
+                }
+            }
+		}
+    }
+    export_agriculture = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 10
+
+		days_remove = 120
+
+        available = {
+
+        }
+
+		modifier = {
+            consumer_goods_factor = -0.1
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_exports
+        }
+
+		remove_effect = {
+			add_to_variable = {
+                var = FOP_agriculture_var
+                value = -10
+                tooltip = add_Agriculture_var_tt
+            }
+		}
+    }
+    export_black_metals = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 10
+
+		days_remove = 120
+
+        available = {
+
+        }
+
+		modifier = {
+            consumer_goods_factor = -0.05
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_exports
+        }
+
+		remove_effect = {
+			random_owned_controlled_state = {
+                limit = {
+                    steel > 5
+                }
+                add_resource = {
+                    type = steel
+                    amount = -5
+                }
+            }
+		}
+    }
+    export_woodland = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 10
+
+		days_remove = 90
+
+        available = {
+
+        }
+
+		modifier = {
+            consumer_goods_factor = -0.05
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_exports
+        }
+
+        complete_effect = {
+            add_stability = -0.01
+        }
+
+		remove_effect = {
+			
+		}
+    }
+    eu_export_agriculture = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 10
+
+		days_remove = 120
+
+        available = {
+            has_country_flag = eu_limited_recognition
+        }
+
+		modifier = {
+            consumer_goods_factor = -0.1
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_exports
+        }
+
+		remove_effect = {
+			add_to_variable = {
+                var = FOP_agriculture_var
+                value = -5
+                tooltip = add_Agriculture_var_tt
+            }
+		}
+    }
+    eu_export_black_metals = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 10
+
+		days_remove = 120
+
+        available = {
+            has_country_flag = eu_limited_recognition
+        }
+
+		modifier = {
+            consumer_goods_factor = -0.05
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_exports
+        }
+
+		remove_effect = {
+			random_owned_controlled_state = {
+                limit = {
+                    steel > 3
+                }
+                add_resource = {
+                    type = steel
+                    amount = -3
+                }
+            }
+		}
+    }
+    eu_export_woodland = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 10
+
+		days_remove = 90
+
+        available = {
+            has_country_flag = eu_limited_recognition
+        }
+
+		modifier = {
+            consumer_goods_factor = -0.05
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_exports
+        }
+
+        complete_effect = {
+            add_stability = -0.005
+        }
+
+		remove_effect = {
+			
+		}
+    }
+    ru_export_agriculture = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 10
+
+		days_remove = 120
+
+        available = {
+            has_country_flag = ru_limited_recognition
+        }
+
+		modifier = {
+            consumer_goods_factor = -0.15
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_exports
+        }
+
+		remove_effect = {
+			add_to_variable = {
+                var = FOP_agriculture_var
+                value = -15
+                tooltip = add_Agriculture_var_tt
+            }
+		}
+    }
+    ru_export_black_metals = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 10
+
+		days_remove = 120
+
+        available = {
+            has_country_flag = ru_limited_recognition
+        }
+
+		modifier = {
+            consumer_goods_factor = -0.15
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_exports
+        }
+
+		remove_effect = {
+			random_owned_controlled_state = {
+                limit = {
+                    steel > 8
+                }
+                add_resource = {
+                    type = steel
+                    amount = -8
+                }
+            }
+		}
+    }
+    ru_export_woodland = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 10
+
+		days_remove = 90
+
+        available = {
+            has_country_flag = ru_limited_recognition
+        }
+
+		modifier = {
+            consumer_goods_factor = -0.1
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_exports
+        }
+
+        complete_effect = {
+            add_stability = -0.03
+        }
+
+		remove_effect = {
+			
+		}
+    }
+    eu_export_agriculture = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 10
+
+		days_remove = 120
+
+        available = {
+            has_country_flag = eu_limited_recognition
+        }
+
+		modifier = {
+            consumer_goods_factor = -0.1
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_exports
+        }
+
+		remove_effect = {
+			add_to_variable = {
+                var = FOP_agriculture_var
+                value = -5
+                tooltip = add_Agriculture_var_tt
+            }
+		}
+    }
+    eu_export_black_metals = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 10
+
+		days_remove = 120
+
+        available = {
+            has_country_flag = eu_limited_recognition
+        }
+
+		modifier = {
+            consumer_goods_factor = -0.05
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_exports
+        }
+
+		remove_effect = {
+			random_owned_controlled_state = {
+                limit = {
+                    steel > 3
+                }
+                add_resource = {
+                    type = steel
+                    amount = -3
+                }
+            }
+		}
+    }
+    eu_export_woodland = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 10
+
+		days_remove = 90
+
+        available = {
+            has_country_flag = eu_limited_recognition
+        }
+
+		modifier = {
+            consumer_goods_factor = -0.05
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_exports
+        }
+
+        complete_effect = {
+            add_stability = -0.005
+        }
+
+		remove_effect = {
+			
+		}
+    }
+    gbr_export_agriculture = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 15
+
+		days_remove = 90
+
+        available = {
+
+        }
+
+		modifier = {
+            consumer_goods_factor = -0.1
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_exports
+            has_country_flag = FOP_trading_with_britain
+        }
+
+		remove_effect = {
+			add_to_variable = {
+                var = FOP_agriculture_var
+                value = -5
+                tooltip = add_Agriculture_var_tt
+            }
+		}
+    }
+    gbr_export_black_metals = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 10
+
+		days_remove = 100
+
+        available = {
+
+        }
+
+		modifier = {
+            consumer_goods_factor = -0.1
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_exports
+            has_country_flag = FOP_trading_with_britain
+        }
+
+		remove_effect = {
+			random_owned_controlled_state = {
+                limit = {
+                    steel > 3
+                }
+                add_resource = {
+                    type = steel
+                    amount = -3
+                }
+            }
+		}
+    }
+    tur_export_agriculture = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 10
+
+		days_remove = 80
+
+        available = {
+
+        }
+
+		modifier = {
+            consumer_goods_factor = -0.1
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_exports
+            has_country_flag = FOP_trading_with_turkey
+        }
+
+		remove_effect = {
+			add_to_variable = {
+                var = FOP_agriculture_var
+                value = -5
+                tooltip = add_Agriculture_var_tt
+            }
+		}
+    }
+    tur_export_black_metals = {
+        icon = GFX_decision_economic_concessions
+		
+		cost = 10
+
+		days_remove = 100
+
+        available = {
+
+        }
+
+		modifier = {
+            consumer_goods_factor = -0.07
+		}
+
+        ai_will_do = {	
+			factor = 20		
+		}
+
+        visible = {
+            has_country_flag = FOP_exports
+            has_country_flag = FOP_trading_with_turkey
+        }
+
+		remove_effect = {
+			random_owned_controlled_state = {
+                limit = {
+                    steel > 3
+                }
+                add_resource = {
+                    type = steel
+                    amount = -3
+                }
             }
 		}
     }

@@ -51,7 +51,7 @@ unite_dniester_ukraine = {
 	icon = GFX_decision_dniester
 	picture = GFX_mobilization
 	visible = {
-		has_global_flag = dneister_to_unite
+		has_global_flag = dnister_to_unite
 		is_dniester_ukraine = yes
 		NOT = {
 			has_country_flag = united_dniester
@@ -104,8 +104,8 @@ unite_south_ukraine = {
 	visible = {
 		is_south_ukraine = yes
 		OR = {
-			has_country_flag = united_tavria
-			has_country_flag = united_dniester
+			tag = TVR
+			tag = DSR
 		}
 		NOT = {
 			has_country_flag = united_south
@@ -119,11 +119,11 @@ unite_north_ukraine = {
 	visible = {
 		is_north_ukraine = yes
 		OR = {
-			has_country_flag = united_siveria
-			has_country_flag = united_dnieper
+			tag = SIV
+			tag = DIR
 		}
 		NOT = {
-			has_country_flag = united_center
+			has_country_flag = united_north
 		}
 	}
 }
@@ -134,8 +134,8 @@ unite_west_ukraine = {
 	visible = {
 		is_west_ukraine = yes
 		OR = {
-			has_country_flag = united_galicia
-			has_country_flag = united_podolia
+			tag = GLY
+			tag = PDL
 		}
 		NOT = {
 			has_country_flag = united_west
@@ -149,8 +149,8 @@ unite_left_bank_ukraine = {
 	visible = {
 		is_left_bank_ukraine = yes
 		OR = {
-			has_country_flag = united_south
-			has_country_flag = united_east
+			tag = STH
+			tag = ESN
 		}
 		NOT = {
 			has_country_flag = united_left_bank
@@ -164,8 +164,8 @@ unite_right_bank_ukraine = {
 	visible = {
 		is_right_bank_ukraine = yes
 		OR = {
-			has_country_flag = united_center
-			has_country_flag = united_west
+			tag = NRT
+			tag = WST
 		}
 		NOT = {
 			has_country_flag = united_right_bank
@@ -178,8 +178,8 @@ unite_ukraine = {
 	picture = GFX_mobilization
 	visible = {
 		OR = {
-			has_country_flag = united_left_bank
-			has_country_flag = united_right_bank
+			tag = LBU
+			tag = RBU
 		}
 		NOT = {
 			has_country_flag = united_ukraine
@@ -196,7 +196,7 @@ north_elections = {
 			SIV = {
 				exists = yes
 			}
-			DIR = {
+			DNP = {
 				exists = yes
 			}
 		}
@@ -215,7 +215,7 @@ north_dogovornyak = {
 			SIV = {
 				exists = yes
 			}
-			DIR = {
+			DNP = {
 				exists = yes
 			}
 		}
@@ -234,7 +234,7 @@ north_war = {
 			SIV = {
 				exists = yes
 			}
-			DIR = {
+			DNP = {
 				exists = yes
 			}
 		}
@@ -570,4 +570,40 @@ ukraine_war = {
 			has_country_flag = united_ukraine
 		}
 	}
+}
+
+world_legitimacy = {
+	icon = GFX_decision_category_infiltration
+	picture = GFX_mobilization
+	visible = {
+		OR = {
+			tag = STH
+			tag = NRT
+			tag = WST
+			tag = ESN
+			tag = LBU
+			tag = RBU
+			tag = UKR
+			tag = CRN
+		}
+	}
+	visible_when_empty = yes
+}
+
+warlord_legitimacy = {
+	icon = GFX_decision_category_infiltration
+	picture = GFX_mobilization
+	visible = {
+		OR = {
+			tag = STH
+			tag = NRT
+			tag = WST
+			tag = ESN
+			tag = LBU
+			tag = RBU
+			tag = UKR
+			tag = CRN
+		}
+	}
+	visible_when_empty = yes
 }

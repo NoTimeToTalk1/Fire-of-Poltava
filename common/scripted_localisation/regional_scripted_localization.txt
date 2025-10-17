@@ -866,3 +866,950 @@ defined_text = {
             localization_key = ChoiceNone
 	    }
 }
+
+defined_text = {
+        name = GetWestWarlord
+        text = {
+                trigger = {
+                        WST = {
+                                exists = yes
+                        }
+                }
+                localization_key = WestWarlord
+        }
+        text = {
+                localization_key = NoWarlord
+        }
+}
+
+defined_text = {
+        name = GetNorthWarlord
+        text = {
+                trigger = {
+                        NRT = {
+                                exists = yes
+                        }
+                }
+                localization_key = NorthWarlord
+        }
+        text = {
+                localization_key = NoWarlord
+        }
+}
+
+defined_text = {
+        name = GetSouthWarlord
+        text = {
+                trigger = {
+                        STH = {
+                                exists = yes
+                        }
+                }
+                localization_key = SouthWarlord
+        }
+        text = {
+                localization_key = NoWarlord
+        }
+}
+
+defined_text = {
+        name = GetEastWarlord
+        text = {
+                trigger = {
+                        ESN = {
+                                exists = yes
+                        }
+                }
+                localization_key = EastWarlord
+        }
+        text = {
+                localization_key = NoWarlord
+        }
+}
+
+defined_text = {
+        name = GetLegitimacyAid
+        text = {
+                trigger = {
+                        has_country_flag = eu_limited_recognition
+                }
+                localization_key = EUHelp
+        }
+        text = {
+                trigger = {
+                        has_country_flag = ru_limited_recognition
+                }
+                localization_key = RUHelp
+        }
+        text = {
+                trigger = {
+                        has_country_flag = us_limited_recognition
+                }
+                localization_key = USHelp
+        }
+        text = {
+                localization_key = NoHelp
+        }
+}
+
+defined_text = {
+        name = GetEuropeAllegiance
+        text = {
+                trigger = {
+                        check_variable = {FOP_europe_allegiance = 0}
+                }
+                localization_key = EuropeNoAllegiance
+        }
+        text = {
+                trigger = {
+                        AND = {
+                                check_variable = {FOP_europe_allegiance < 2}
+                                check_variable = {FOP_europe_allegiance > 0}
+                        }
+                }
+                localization_key = EuropeVeryLowAllegiance
+        }
+        text = {
+                trigger = {
+                        AND = {
+                                check_variable = {FOP_europe_allegiance < 4}
+                                check_variable = {FOP_europe_allegiance > 1}
+                        }
+                }
+                localization_key = EuropeLowAllegiance
+        }
+        text = {
+                trigger = {
+                        AND = {
+                                check_variable = {FOP_europe_allegiance < 6}
+                                check_variable = {FOP_europe_allegiance > 3}
+                        }
+                }
+                localization_key = EuropeMediocreAllegiance
+        }
+        text = {
+                trigger = {
+                        AND = {
+                                check_variable = {FOP_europe_allegiance < 8}
+                                check_variable = {FOP_europe_allegiance > 5}
+                        }
+                }
+                localization_key = EuropeCoolAllegiance
+        }
+        text = {
+                trigger = {
+                        check_variable = {FOP_europe_allegiance > 7}
+                }
+                localization_key = EuropeEligibleForHelp
+        }
+}
+
+defined_text = {
+        name = GetRussiaAllegiance
+        text = {
+                trigger = {
+                        check_variable = {FOP_russia_allegiance = 0}
+                }
+                localization_key = RussiaNoAllegiance
+        }
+        text = {
+                trigger = {
+                        AND = {
+                                check_variable = {FOP_russia_allegiance < 2}
+                                check_variable = {FOP_russia_allegiance > 0}
+                        }
+                }
+                localization_key = RussiaVeryLowAllegiance
+        }
+        text = {
+                trigger = {
+                        AND = {
+                                check_variable = {FOP_russia_allegiance < 4}
+                                check_variable = {FOP_russia_allegiance > 1}
+                        }
+                }
+                localization_key = RussiaLowAllegiance
+        }
+        text = {
+                trigger = {
+                        AND = {
+                                check_variable = {FOP_russia_allegiance < 6}
+                                check_variable = {FOP_russia_allegiance > 3}
+                        }
+                }
+                localization_key = RussiaMediocreAllegiance
+        }
+        text = {
+                trigger = {
+                        AND = {
+                                check_variable = {FOP_russia_allegiance < 8}
+                                check_variable = {FOP_russia_allegiance > 5}
+                        }
+                }
+                localization_key = RussiaCoolAllegiance
+        }
+        text = {
+                trigger = {
+                        check_variable = {FOP_russia_allegiance > 7}
+                }
+                localization_key = RussiaEligibleForHelp
+        }
+}
+
+defined_text = {
+        name = GetAmericaAllegiance
+        text = {
+                trigger = {
+                        check_variable = {FOP_america_allegiance = 0}
+                }
+                localization_key = AmericaNoAllegiance
+        }
+        text = {
+                trigger = {
+                        AND = {
+                                check_variable = {FOP_america_allegiance < 2}
+                                check_variable = {FOP_america_allegiance > 0}
+                        }
+                }
+                localization_key = AmericaVeryLowAllegiance
+        }
+        text = {
+                trigger = {
+                        AND = {
+                                check_variable = {FOP_america_allegiance < 4}
+                                check_variable = {FOP_america_allegiance > 1}
+                        }
+                }
+                localization_key = AmericaLowAllegiance
+        }
+        text = {
+                trigger = {
+                        AND = {
+                                check_variable = {FOP_america_allegiance < 6}
+                                check_variable = {FOP_america_allegiance > 3}
+                        }
+                }
+                localization_key = AmericaMediocreAllegiance
+        }
+        text = {
+                trigger = {
+                        AND = {
+                                check_variable = {FOP_america_allegiance < 8}
+                                check_variable = {FOP_america_allegiance > 5}
+                        }
+                }
+                localization_key = AmericaCoolAllegiance
+        }
+        text = {
+                trigger = {
+                        check_variable = {FOP_america_allegiance > 9}
+                }
+                localization_key = AmericaEligibleForHelp
+        }
+}
+defined_text = {
+        name = GetGaliciaGlobalEventDesc
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = HAL
+                        }
+                }
+                localization_key = HalychynaUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = VOL
+                        }
+                }
+                localization_key = VolhyniaUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = RIV
+                        }
+                }
+                localization_key = RivneUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = TER
+                        }
+                }
+                localization_key = TernopilUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = ZAK
+                        }
+                }
+                localization_key = ZakarpattyaUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = HUT
+                        }
+                }
+                localization_key = HutsulUnifierDesc
+        }
+}
+defined_text = {
+        name = GetGaliciaGlobalEventOption
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = HAL
+                        }
+                }
+                localization_key = HalychynaUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = VOL
+                        }
+                }
+                localization_key = VolhyniaUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = RIV
+                        }
+                }
+                localization_key = RivneUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = TER
+                        }
+                }
+                localization_key = TernopilUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = ZAK
+                        }
+                }
+                localization_key = ZakarpattyaUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = HUT
+                        }
+                }
+                localization_key = HutsulUnifierOption
+        }
+}
+defined_text = {
+        name = GetPodoliaGlobalEventDesc
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = KHM
+                        }
+                }
+                localization_key = KhmelnytskyUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = ZHY
+                        }
+                }
+                localization_key = ZhytomyrUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = VIN
+                        }
+                }
+                localization_key = VinnytsiaUnifierDesc
+        }
+}
+defined_text = {
+        name = GetPodoliaGlobalEventOption
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = KHM
+                        }
+                }
+                localization_key = KhmelnytskyUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = ZHY
+                        }
+                }
+                localization_key = ZhytomyrUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = VIN
+                        }
+                }
+                localization_key = VinnytsiaUnifierOption
+        }
+}
+defined_text = {
+        name = GetSiveriaGlobalEventDesc
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = CBL
+                        }
+                }
+                localization_key = ChornobylUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = KOB
+                        }
+                }
+                localization_key = KyivOblastUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = KYI
+                        }
+                }
+                localization_key = KyivUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = CHR
+                        }
+                }
+                localization_key = ChernihivUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = SUM
+                                has_government = liberalism
+                        }
+                }
+                localization_key = YushchenkoUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = SUM
+                                has_government = centrism
+                        }
+                }
+                localization_key = SmeshkoUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = SUM
+                                has_government = traditionalism
+                        }
+                }
+                localization_key = AKSUnifierDesc
+        }
+}
+defined_text = {
+        name = GetSiveriaGlobalEventOption
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = CBL
+                        }
+                }
+                localization_key = ChornobylUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = KOB
+                        }
+                }
+                localization_key = KyivOblastUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = KYI
+                        }
+                }
+                localization_key = KyivUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = CHR
+                        }
+                }
+                localization_key = ChernihivUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = SUM
+                                has_government = liberalism
+                        }
+                }
+                localization_key = YushchenkoUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = SUM
+                                has_government = centrism
+                        }
+                }
+                localization_key = SmeshkoUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = SUM
+                                has_government = traditionalism
+                        }
+                }
+                localization_key = AKSUnifierOption
+        }
+}
+defined_text = {
+        name = GetDnieperGlobalEventDesc
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = CHE
+                        }
+                }
+                localization_key = CherkasyUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = UMA
+                        }
+                }
+                localization_key = UmanUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = KIR
+                        }
+                }
+                localization_key = KirovogradUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = KRM
+                        }
+                }
+                localization_key = KremenchukUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = PLT
+                        }
+                }
+                localization_key = PoltavaUnifierDesc
+        }
+}
+defined_text = {
+        name = GetDnieperGlobalEventOption
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = CHE
+                        }
+                }
+                localization_key = CherkasyUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = UMA
+                        }
+                }
+                localization_key = UmanUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = KIR
+                        }
+                }
+                localization_key = KirovogradUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = KRM
+                        }
+                }
+                localization_key = KremenchukUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = PLT
+                        }
+                }
+                localization_key = PoltavaUnifierOption
+        }
+}
+defined_text = {
+        name = GetDnisterGlobalEventDesc
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = ODE
+                        }
+                }
+                localization_key = OdesaUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = MYK
+                        }
+                }
+                localization_key = MykolaivUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = STR
+                        }
+                }
+                localization_key = SternenkoUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = SHA
+                        }
+                }
+                localization_key = SharixUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = REC
+                        }
+                }
+                localization_key = RECUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = BDZ
+                        }
+                }
+                localization_key = BudzhakUnifierDesc
+        }
+}
+defined_text = {
+        name = GetDnisterGlobalEventOption
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = ODE
+                        }
+                }
+                localization_key = OdesaUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = MYK
+                        }
+                }
+                localization_key = MykolaivUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = STR
+                        }
+                }
+                localization_key = SternenkoUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = SHA
+                        }
+                }
+                localization_key = SharixUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = REC
+                        }
+                }
+                localization_key = RECUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = BDZ
+                        }
+                }
+                localization_key = BudzhakUnifierOption
+        }
+}
+defined_text = {
+        name = GetTavriaGlobalEventDesc
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = ZAP
+                        }
+                }
+                localization_key = ZaporizhzhiaUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = KHE
+                        }
+                }
+                localization_key = KhersonUnifierDesc
+        }
+}
+defined_text = {
+        name = GetTavriaGlobalEventOption
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = ZAP
+                        }
+                }
+                localization_key = ZaporizhzhiaUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = KHE
+                        }
+                }
+                localization_key = KhersonUnifierOption
+        }
+}
+defined_text = {
+        name = GetDonbasGlobalEventDesc
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = KHA
+                        }
+                }
+                localization_key = KharkivUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = AFU
+                                has_government = authoritarianism
+                        }
+                }
+                localization_key = KryvonosUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = AFU
+                                has_government = socialism
+                        }
+                }
+                localization_key = SavchenkoUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = AFU
+                                has_government = national_democracy
+                        }
+                }
+                localization_key = DanilovUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = AFU
+                                has_government = oligarchism
+                        }
+                }
+                localization_key = KhomutynnikUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = AFU
+                                has_government = ultranationalism
+                        }
+                }
+                localization_key = AzovUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = DPR
+                                has_government = oligarchism
+                        }
+                }
+                localization_key = DushilinUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = DPR
+                                has_government = socialism
+                        }
+                }
+                localization_key = VitrenkoUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = DPR
+                                has_government = national_democracy
+                        }
+                }
+                localization_key = PasechnikUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = DPR
+                                has_government = ultranationalism
+                        }
+                }
+                localization_key = GirkinUnifierDesc
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = LPR
+                        }
+                }
+                localization_key = LuhanskUnifierDesc
+        }
+}
+defined_text = {
+        name = GetDonbasGlobalEventOption
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = KHA
+                        }
+                }
+                localization_key = KharkivUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = AFU
+                                has_government = authoritarianism
+                        }
+                }
+                localization_key = KryvonosUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = AFU
+                                has_government = socialism
+                        }
+                }
+                localization_key = SavchenkoUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = AFU
+                                has_government = national_democracy
+                        }
+                }
+                localization_key = DanilovUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = AFU
+                                has_government = oligarchism
+                        }
+                }
+                localization_key = KhomutynnikUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = AFU
+                                has_government = ultranationalism
+                        }
+                }
+                localization_key = AzovUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = DPR
+                                has_government = oligarchism
+                        }
+                }
+                localization_key = DushilinUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = DPR
+                                has_government = communism
+                        }
+                }
+                localization_key = VitrenkoUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = DPR
+                                has_government = national_democracy
+                        }
+                }
+                localization_key = PasechnikUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = DPR
+                                has_government = ultranationalism
+                        }
+                }
+                localization_key = GirkinUnifierOption
+        }
+        text = {
+                trigger = {
+                        FROM = {
+                                original_tag = LPR
+                        }
+                }
+                localization_key = LuhanskUnifierOption
+        }
+}

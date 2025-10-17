@@ -1003,3 +1003,130 @@ add_community_control = {
 		add_ideas = fop_immigration_quota
 	}
 }
+
+set_foreign_relations = {
+	if = {
+		limit = {
+			favourable_for_europe = yes
+			NOT = {
+				has_idea = fop_ethnic_minorities_opression
+			}
+		}
+		add_to_variable = {
+			var = FOP_europe_allegiance
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			favourable_for_europe = yes
+			NOT = {
+				has_idea = fop_forced_labour_institutionalized
+			}
+		}
+		add_to_variable = {
+			var = FOP_europe_allegiance
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			favourable_for_europe = yes
+			NOT = {
+				has_idea = fop_oligarchs_power_direct_control
+			}
+		}
+		add_to_variable = {
+			var = FOP_europe_allegiance
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			favourable_for_europe = yes
+			NOT = {
+				has_idea = fop_racial_integration_segregation
+			}
+		}
+		add_to_variable = {
+			var = FOP_europe_allegiance
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			favourable_for_europe = yes
+			NOT = {
+				OR = {
+					has_idea = fop_sexual_minorities_compulsory_sterilization
+					has_idea = fop_sexual_minorities_criminalized
+				}
+			}
+		}
+		add_to_variable = {
+			var = FOP_europe_allegiance
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			favourable_for_europe = yes
+			NOT = {
+				OR = {
+					has_idea = fop_supervision_encouraged_brutality
+					has_idea = fop_supervision_no
+				}
+			}
+		}
+		add_to_variable = {
+			var = FOP_europe_allegiance
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			is_pro_russian = yes
+		}
+		add_to_variable = {
+			var = FOP_russia_allegiance
+			value = 6
+		}
+	}
+	if = {
+		limit = {
+			USA = {
+				has_country_leader = {
+					character = USA_biden
+				}
+			}
+		}
+		set_variable = {
+			var = FOP_america_allegiance
+			value = FOP_europe_allegiance
+		}
+	}
+	set_variable = {
+		var = FOP_britain_allegiance
+		value = FOP_europe_allegiance
+	}
+	clamp_variable = {
+		var = FOP_britain_allegiance
+		min = 0
+	}
+	clamp_variable = {
+		var = FOP_turkey_allegiance
+		min = 0
+	}
+	clamp_variable = {
+		var = FOP_europe_allegiance
+		min = 0
+	}
+	clamp_variable = {
+		var = FOP_russia_allegiance
+		min = 0
+	}
+	clamp_variable = {
+		var = FOP_america_allegiance
+		min = 0
+	}
+}
