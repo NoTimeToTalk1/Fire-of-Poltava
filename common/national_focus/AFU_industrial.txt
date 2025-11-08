@@ -56,7 +56,7 @@ shared_focus = {
 			}
 			add_building_construction = {
 				type = infrastructure
-				level = 3
+				level = 1
 				instant_build = yes
 			}
 		}
@@ -120,11 +120,16 @@ shared_focus = {
 		has_country_flag = AFU_khomut
 	}
 
-    cost = 2
+    cost = 5
 	prerequisite = { focus = AFU_strategic_approach }
 
 	completion_reward = {
-		###
+		add_to_variable = {
+			var = FOP_corruption_var
+			value = -10
+			tooltip = add_corruption_var_tt
+		}
+		add_political_power = 50
 	}
 }
 
@@ -136,44 +141,65 @@ shared_focus = {
 	x = -1
 	y = 1
 
-    cost = 2
+    cost = 6
 	prerequisite = { focus = AFU_bet_on_big_players }
 
 	completion_reward = {
-		###
+		add_research_slot = 1
+		FOP_science_medium_improvement = yes
 	}
 }
 
 shared_focus = {
-	id = AFU_find_foreign_investors
+	id = AFU_cut_business_taxes
 	icon = GFX_AFU_Find_Foreign_Investors
 
 	relative_position_id = AFU_bet_on_big_players
 	x = 1
 	y = 1
 
-    cost = 2
+    cost = 4
 	prerequisite = { focus = AFU_bet_on_big_players }
 
 	completion_reward = {
-		###
+		add_ideas = AFU_profits_for_business
 	}
 }
 
 shared_focus = {
-	id = AFU_promote_the_development
+	id = AFU_promote_social_infrastructure_development
 	icon = GFX_AFU_Promote_the_Development
 
 	relative_position_id = AFU_bet_on_big_players
 	x = 0
 	y = 2
 
-    cost = 2
+    cost = 7
 	prerequisite = { focus = AFU_restore_research_industry }
-	prerequisite = { focus = AFU_find_foreign_investors }
+	prerequisite = { focus = AFU_cut_business_taxes }
 
 	completion_reward = {
-		###
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = hospital_building
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = civil_education_centre
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = civilian_resting_place
+				level = 1
+				instant_build = yes
+			}
+		}
 	}
 }
 
@@ -181,15 +207,104 @@ shared_focus = {
 	id = AFU_establish_state_cooperation
 	icon = GFX_AFU_Establish_State_Cooperation
 
-	relative_position_id = AFU_promote_the_development
+	relative_position_id = AFU_promote_social_infrastructure_development
 	x = 0
 	y = 1
 
-    cost = 2
-	prerequisite = { focus = AFU_promote_the_development }
+    cost = 5
+	prerequisite = { focus = AFU_promote_social_infrastructure_development }
 
 	completion_reward = {
 		###
+	}
+}
+
+shared_focus = {
+	id = AFU_contacts_in_odesa
+	icon = GFX_AFU_Contacts_In_Odesa
+
+	relative_position_id = AFU_establish_state_cooperation
+	x = 0
+	y = 1
+
+	allow_branch = {
+		has_country_flag = united_left_bank
+		has_country_flag = afu_khomut
+	}
+
+    cost = 5
+	prerequisite = { focus = AFU_establish_state_cooperation }
+
+	completion_reward = {
+		add_popularity = {
+			ideology = oligarchism
+			popularity = 0.03
+		}
+		add_to_variable = {
+			var = FOP_corruption_var
+			value = -10
+			tooltip = add_corruption_var_tt
+		}
+	}
+}
+
+shared_focus = {
+	id = AFU_a_helping_hand
+	icon = GFX_AFU_A_Helping_Hand
+
+	relative_position_id = AFU_contacts_in_odesa
+	x = -1
+	y = 1
+
+    cost = 5
+	prerequisite = { focus = AFU_contacts_in_odesa }
+
+	completion_reward = {
+		custom_effect_tooltip = fop_pensions_moderate_tt
+		custom_effect_tooltip = fop_minimum_wage_moderate_tt
+		hidden_effect = {
+			add_ideas = {
+				fop_pensions_moderate
+				fop_minimum_wage_moderate
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = AFU_a_dealing_hand
+	icon = GFX_AFU_A_Dealing_Hand
+
+	relative_position_id = AFU_contacts_in_odesa
+	x = 1
+	y = 1
+
+    cost = 5
+	prerequisite = { focus = AFU_contacts_in_odesa }
+
+	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 3
+			category = decentralized_industry
+		}
+	}
+}
+
+shared_focus = {
+	id = AFU_a_winning_hand
+	icon = GFX_AFU_A_Winning_Hand
+
+	relative_position_id = AFU_contacts_in_odesa
+	x = 0
+	y = 2
+
+    cost = 5
+	prerequisite = { focus = AFU_a_helping_hand }
+	prerequisite = { focus = AFU_a_dealing_hand }
+
+	completion_reward = {
+		add_political_power = 100
 	}
 }
 
@@ -206,7 +321,7 @@ shared_focus = {
 	icon = GFX_AFU_Everything_for_the_People
 
 	relative_position_id = AFU_strategic_approach
-	x = -2
+	x = -8
 	y = 1
 
 	allow_branch = {
@@ -233,7 +348,10 @@ shared_focus = {
 	prerequisite = { focus = AFU_everything_for_the_people }
 
 	completion_reward = {
-		###
+		add_timed_idea = {
+			idea = AFU_infrastructure_revitalization
+			days = 150
+		}
 	}
 }
 
@@ -241,15 +359,16 @@ shared_focus = {
 	id = AFU_help_the_countryside
 	icon = GFX_AFU_Help_the_Countryside
 
-	relative_position_id = AFU_revitalization_of_infrastructure
-	x = 0
-	y = 2
+	relative_position_id = AFU_everything_for_the_people
+	x = -1
+	y = 1
 
     cost = 2
-	prerequisite = { focus = AFU_revitalization_of_infrastructure }
+	prerequisite = { focus = AFU_everything_for_the_people }
 
 	completion_reward = {
-		###
+		FOP_agriculture_medium_improvement = yes
+		add_ideas = AFU_farmers_subsidies
 	}
 }
 
@@ -262,10 +381,15 @@ shared_focus = {
 	y = 2
 
     cost = 2
-	prerequisite = { focus = AFU_everything_for_the_people }
+	prerequisite = { focus = AFU_help_the_countryside }
+	prerequisite = { focus = AFU_revitalization_of_infrastructure }
 
 	completion_reward = {
-		###
+		add_ideas = AFU_psychological_assistance
+		add_popularity = {
+			ideology = national_democracy
+			popularity = 0.05
+		}
 	}
 }
 
@@ -275,14 +399,102 @@ shared_focus = {
 
 	relative_position_id = AFU_centres_of_psychological_assistance
 	x = 0
-	y = 2
+	y = 1
 
     cost = 2
 	prerequisite = { focus = AFU_centres_of_psychological_assistance }
 	prerequisite = { focus = AFU_help_the_countryside }
 
 	completion_reward = {
-		###
+		custom_effect_tooltip = fop_pensions_low_tt
+		custom_effect_tooltip = fop_minimum_wage_low_tt
+		custom_effect_tooltip = fop_unemployment_subsidies_low_tt
+		hidden_effect = {
+			add_ideas = {
+				fop_pensions_low
+				fop_minimum_wage_low
+				fop_unemployment_subsidies_low
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = AFU_improving_connections
+	icon = GFX_AFU_Improving_Connections
+
+	relative_position_id = AFU_joy_in_prosperity_and_modesty
+	x = 0
+	y = 1
+
+	allow_branch = {
+		has_country_flag = AFU_danilov
+		has_country_flag = united_left_bank
+	}
+
+    cost = 2
+	prerequisite = { focus = AFU_joy_in_prosperity_and_modesty }
+
+	completion_reward = {
+		add_timed_idea = {
+			idea = AFU_railway_building
+			days = 90
+		}
+	}
+}
+
+shared_focus = {
+	id = AFU_establish_semi_national_corporations
+	icon = GFX_AFU_Establish_Semi_National_Corporations
+
+	relative_position_id = AFU_improving_connections
+	x = 1
+	y = 1
+
+    cost = 2
+	prerequisite = { focus = AFU_improving_connections }
+
+	completion_reward = {
+		add_ideas = AFU_private_investments
+	}
+}
+
+shared_focus = {
+	id = AFU_business_relief_bill
+	icon = GFX_AFU_Business_Relief_Bill
+
+	relative_position_id = AFU_improving_connections
+	x = -1
+	y = 1
+
+    cost = 2
+	prerequisite = { focus = AFU_improving_connections }
+
+	completion_reward = {
+		add_timed_idea = {
+			idea = AFU_business_relief
+			days = 240
+		}
+	}
+}
+
+shared_focus = {
+	id = AFU_danilovnomics
+	icon = GFX_AFU_Danilovnomics
+
+	relative_position_id = AFU_improving_connections
+	x = 0
+	y = 2
+
+    cost = 2
+	prerequisite = { focus = AFU_establish_semi_national_corporations }
+	prerequisite = { focus = AFU_business_relief_bill }
+
+	completion_reward = {
+		custom_effect_tooltip = fop_commercial_policy_free_trade_tt
+		hidden_effect = {
+			add_ideas = fop_commercial_policy_free_trade
+		}
 	}
 }
 
@@ -299,7 +511,7 @@ shared_focus = {
 	icon = GFX_AFU_General_Staff_Plan
 
 	relative_position_id = AFU_strategic_approach
-	x = 2
+	x = -5
 	y = 1
 
 	allow_branch = {
@@ -310,7 +522,7 @@ shared_focus = {
 	prerequisite = { focus = AFU_strategic_approach }
 
 	completion_reward = {
-		###
+		add_ideas = AFU_military_approach
 	}
 }
 
@@ -326,7 +538,18 @@ shared_focus = {
 	prerequisite = { focus = AFU_general_staff_plan }
 
 	completion_reward = {
-		###
+		2093 = {
+			add_resource = {
+				type = tungsten
+				amount = 6
+			}
+		}
+		2031 = {
+			add_resource = {
+				type = steel
+				amount = 8
+			}
+		}
 	}
 }
 
@@ -342,7 +565,18 @@ shared_focus = {
 	prerequisite = { focus = AFU_expand_resource_wells }
 
 	completion_reward = {
-		###
+		every_state = {
+			limit = {
+				OR = {
+					state = 2305
+					state = 2308
+					state = 2082
+				}
+			}
+			add_dynamic_modifier = {
+				modifier = AFU_donbas_industrial_park
+			}
+		}
 	}
 }
 
@@ -358,7 +592,13 @@ shared_focus = {
 	prerequisite = { focus = AFU_general_staff_plan }
 
 	completion_reward = {
-		###
+		add_to_variable = {
+			var = FOP_unemployment_var
+			value = 20
+			tooltip = add_Unemployment_var_tt
+		}
+		add_manpower = 30000
+		add_stability = -0.05
 	}
 }
 
@@ -375,7 +615,101 @@ shared_focus = {
 	prerequisite = { focus = AFU_create_industrial_parks }
 
 	completion_reward = {
-		###
+		custom_effect_tooltip = fop_economic_mobilization_partial_tt
+		hidden_effect = {
+			add_ideas = fop_economic_mobilization_partial
+		}
+	}
+}
+
+shared_focus = {
+	id = AFU_form_special_economical_council
+	icon = GFX_AFU_Form_Special_Economical_Council
+
+	relative_position_id = AFU_economy_on_warpath
+	x = 0
+	y = 1
+
+    cost = 2
+	prerequisite = { focus = AFU_economy_on_warpath }
+
+	allow_branch = {
+		has_country_flag = AFU_kryvonos
+		has_country_flag = united_left_bank
+	}
+
+	completion_reward = {
+		custom_effect_tooltip = fop_commercial_policy_heavy_protectionism_tt
+		hidden_effect = {
+			add_ideas = fop_commercial_policy_heavy_protectionism
+		}
+		add_ideas = AFU_economy_council_1
+	}
+}
+
+shared_focus = {
+	id = AFU_direct_businesses
+	icon = GFX_AFU_Direct_Businesses
+
+	relative_position_id = AFU_form_special_economical_council
+	x = 1
+	y = 1
+
+    cost = 2
+	prerequisite = { focus = AFU_form_special_economical_council }
+
+	completion_reward = {
+		swap_ideas = {
+			add_idea = AFU_economy_council_2
+			remove_idea = AFU_economy_council_1
+		}
+	}
+}
+
+shared_focus = {
+	id = AFU_military_contractors
+	icon = GFX_AFU_Military_Contractors
+
+	relative_position_id = AFU_form_special_economical_council
+	x = -1
+	y = 1
+
+    cost = 2
+	prerequisite = { focus = AFU_form_special_economical_council }
+
+	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 2
+			category = infantry_weapons
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 2
+			category = armor
+		}
+	}
+}
+
+shared_focus = {
+	id = AFU_order_in_economy
+	icon = GFX_AFU_Order_In_Economy
+
+	relative_position_id = AFU_form_special_economical_council
+	x = 0
+	y = 2
+
+    cost = 2
+	prerequisite = { focus = AFU_direct_businesses }
+	prerequisite = { focus = AFU_military_contractors }
+
+	completion_reward = {
+		add_stability = -0.1
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 2
+			category = centralized_industry
+		}
 	}
 }
 
@@ -392,7 +726,7 @@ shared_focus = {
 	icon = GFX_AFU_Whatever_It_Takes
 
 	relative_position_id = AFU_strategic_approach
-	x = 7
+	x = -7
 	y = 1
 
 	allow_branch = {
@@ -403,7 +737,7 @@ shared_focus = {
 	prerequisite = { focus = AFU_strategic_approach }
 
 	completion_reward = {
-		###
+		add_ideas = AFU_savchenko_social_package_1
 	}
 }
 
@@ -415,11 +749,19 @@ shared_focus = {
 	x = -1
 	y = 1
 
-    cost = 2
+    cost = 3
 	prerequisite = { focus = AFU_whatever_it_takes }
 
 	completion_reward = {
-		###
+		add_to_variable = {
+			var = FOP_unemployment_var
+			value = 7
+			tooltip = add_Unemployment_var_tt
+		}
+		swap_ideas = {
+			add_idea = AFU_savchenko_social_package_2
+			remove_idea = AFU_savchenko_social_package_1
+		}
 	}
 }
 
@@ -431,11 +773,16 @@ shared_focus = {
 	x = 1
 	y = 1
 
-    cost = 2
+    cost = 6
 	prerequisite = { focus = AFU_whatever_it_takes }
 
 	completion_reward = {
-		###
+		FOP_corruption_small_improvement = yes
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -750
+		}
+		add_command_power = -30
 	}
 }
 
@@ -447,12 +794,100 @@ shared_focus = {
 	x = 0
 	y = 2
 
-    cost = 2
+    cost = 5
 	prerequisite = { focus = AFU_quotas_for_veterans }
 	prerequisite = { focus = AFU_war_on_banditry }
 
 	completion_reward = {
-		###
+		swap_ideas = {
+			remove_idea = AFU_savchenko_social_package_2
+			add_idea = AFU_savchenko_social_package_3
+		}
+		add_popularity = {
+			ideology = social_democracy
+			popularity = 0.1
+		}
+		random_owned_controlled_state = {
+			remove_building = {
+				type = industrial_complex
+				amount = 1
+			}
+		}
+		random_owned_controlled_state = {
+			remove_building = {
+				type = industrial_complex
+				amount = 1
+			}
+		}
+		random_owned_controlled_state = {
+			remove_building = {
+				type = industrial_complex
+				amount = 1
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = AFU_revive_dead_mining_villages
+	icon = GFX_AFU_revive_dead_mining_villages
+
+	relative_position_id = AFU_partial_collectivization
+	x = 0
+	y = 1
+
+    cost = 8
+	prerequisite = { focus = AFU_partial_collectivization }
+
+	completion_reward = {
+		557 = {
+			add_manpower = -10000
+		}
+		2558 = {
+			add_manpower = -7500
+		}
+		518 = {
+			add_manpower = -10000
+		}
+		2031 = {
+			add_manpower = -5000
+		}
+		2095 = {
+			add_manpower = -3500
+		}
+		2305 = {
+			add_manpower = 7500
+		}
+		2302 = {
+			add_manpower = 5000
+		}
+		2308 = {
+			add_manpower = 7500
+		}
+		2303 = {
+			add_manpower = 8000
+		}
+		2082 = {
+			add_manpower = 3000
+		}
+		2856 = {
+			add_manpower = 5000
+		}
+		every_state = {
+			limit = {
+				OR = {
+					state = 2305
+					state = 2302
+					state = 2308
+					state = 2303
+					state = 2082
+					state = 2856
+				}
+			}
+			add_dynamic_modifier = {
+				modifier = AFU_mining_villages_resettlement
+			}
+		}
 	}
 }
 
@@ -460,15 +895,113 @@ shared_focus = {
 	id = AFU_for_people_and_survival
 	icon = GFX_AFU_For_People_and_Survival
 
-	relative_position_id = AFU_partial_collectivization
+	relative_position_id = AFU_revive_dead_mining_villages
 	x = 0
 	y = 1
 
     cost = 2
-	prerequisite = { focus = AFU_partial_collectivization }
+	prerequisite = { focus = AFU_revive_dead_mining_villages }
 
 	completion_reward = {
 		###
+	}
+}
+
+shared_focus = {
+	id = AFU_expand_welfare
+	icon = GFX_AFU_Expand_Welfare
+
+	relative_position_id = AFU_for_people_and_survival
+	x = 0
+	y = 1
+
+    cost = 2
+	prerequisite = { focus = AFU_for_people_and_survival }
+
+	allow_branch = {
+		has_country_flag = united_left_bank
+		has_country_flag = afu_savchenko
+	}
+
+	completion_reward = {
+		FOP_healthcare_medium_improvement = yes
+		FOP_poverty_medium_improvement = yes
+		swap_ideas = {
+			add_idea = AFU_savchenko_social_package_4
+			remove_idea = AFU_savchenko_social_package_3
+		}
+	}
+}
+
+shared_focus = {
+	id = AFU_strike_down_oligarchy
+	icon = GFX_AFU_Strike_Down_Oligarchy
+
+	relative_position_id = AFU_expand_welfare
+	x = 1
+	y = 1
+
+    cost = 2
+	prerequisite = { focus = AFU_expand_welfare }
+
+	completion_reward = {
+		add_political_power = -50
+		custom_effect_tooltip = fop_oligarchs_relations_anti_oligarchic_policy_tt
+		custom_effect_tooltip = fop_oligarchs_power_tamed_oligarchs_tt
+		hidden_effect = {
+			add_ideas = fop_oligarchs_relations_anti_oligarchic_policy
+			add_ideas = fop_oligarchs_power_tamed_oligarchs
+		}
+	}
+}
+
+shared_focus = {
+	id = AFU_new_collectives
+	icon = GFX_AFU_New_Collectives
+
+	relative_position_id = AFU_expand_welfare
+	x = -1
+	y = 1
+
+    cost = 2
+	prerequisite = { focus = AFU_expand_welfare }
+
+	completion_reward = {
+		every_state = {
+			limit = {
+				OR = {
+					state = 2094
+					state = 2105
+					state = 2079
+					state = 2090
+					state = 2088
+					state = 613
+				}
+			}
+			add_dynamic_modifier = {
+				modifier = AFU_collectives
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = AFU_economy_with_savchenko_characteristics
+	icon = GFX_AFU_Economy_With_Savchenko_Characteristics
+
+	relative_position_id = AFU_expand_welfare
+	x = 0
+	y = 2
+
+    cost = 2
+	prerequisite = { focus = AFU_strike_down_oligarchy }
+	prerequisite = { focus = AFU_new_collectives }
+
+	completion_reward = {
+		custom_effect_tooltip = fop_economic_system_mixed_tt
+		hidden_effect = {
+			add_ideas = fop_economic_system_mixed
+		}
 	}
 }
 
@@ -567,11 +1100,7 @@ shared_focus = {
 
 	completion_reward = {
 		557 = {
-			add_dynamic_modifier = {modifier = AFU_yuz_legacy} 
-			add_resource = {
-				type = tungsten
-				amount = 8
-			}
+			add_dynamic_modifier = { modifier = AFU_yuz_legacy } 
 		}
 	}
 	relative_position_id = AFU_focus_on_donetsk
@@ -607,6 +1136,7 @@ shared_focus = {
 			add_building_construction = {
 				type = industrial_complex
 				level = 1
+				instant_build = yes
 			}
 		}
 	}
@@ -615,7 +1145,7 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = AFU_luhansk_mines
+	id = AFU_luhansk_chemical_investments
 	icon = GFX_generic_suspend_constitution
 	x = -1
 	y = 1
@@ -627,14 +1157,17 @@ shared_focus = {
 			add_building_construction = {
 				type = industrial_complex
 				level = 1
+				instant_build = yes
 			}
 		}
 		2309 = {
 			add_building_construction = {
 				type = industrial_complex
 				level = 1
+				instant_build = yes
 			}
 		}
+		set_country_flag = AFU_luhansk_chemical_complex
 	}
 	relative_position_id = AFU_focus_on_luhansk
 	prerequisite = { focus = AFU_focus_on_luhansk }
