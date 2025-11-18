@@ -1,0 +1,4343 @@
+##############################################################################################
+##############################################################################################
+##################   											##############################
+##################   THE STARTING TREE(RIGHT AFTER ELECTIONS)   ##############################
+##################   											##############################
+##############################################################################################
+##############################################################################################
+
+
+
+#Beginning of a New Era
+shared_focus = {
+	id = DPR_beginning_of_a_new_era
+	icon = GFX_DPR_Beginning_of_a_New_Era
+	cost = 3
+
+	x = 10
+	y = 0
+
+	completion_reward = {
+		add_ideas = DPR_peoples_opposition_1
+		add_political_power = 40
+		country_event = {
+			id = dpr.901 #PLACEHOLDER --- Вуличні протести виборців вітренко та пасєки
+			days = 1
+		}
+	}
+}
+
+#Give Them a Fight
+shared_focus = {
+	id = DPR_give_them_a_fight
+	icon = GFX_DPR_Give_Them_a_Fight
+	cost = 2
+
+	relative_position_id = DPR_beginning_of_a_new_era
+	x = -1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_beginning_of_a_new_era
+	}
+	mutually_exclusive = {
+		focus = DPR_give_them_guarantees
+	}
+
+	completion_reward = {
+		###DEVIL TOOLTIP DEATHS BLOOD HAHAHAAHAH
+		add_popularity = {
+			ideology = traditionalism
+			popularity = 0.3
+		}
+	}
+}
+
+#Arm the Loyalists
+shared_focus = {
+	id = DPR_arm_the_loyalists
+	icon = GFX_DPR_Arm_the_Loyalists
+	cost = 2
+
+	relative_position_id = DPR_give_them_a_fight
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_give_them_a_fight
+	}
+
+	completion_reward = {
+		#swap_ideas = { --- ADD THIS TO EVENT INSTEAD
+		#	remove_idea = DPR_peoples_opposition_1
+		#	add_idea = DPR_peoples_opposition_2
+		#}
+		add_manpower = 6000
+		country_event = {
+			id = dpr.902 #PLACEHOLDER --- Перші криваві зіткнення на вулицях
+			days = 1
+		}
+	}
+}
+
+#Discrediting Always Works
+shared_focus = {
+	id = DPR_discrediting_always_works
+	icon = GFX_DPR_Discrediting_Always_Works
+	cost = 2
+
+	relative_position_id = DPR_arm_the_loyalists
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_arm_the_loyalists
+	}
+
+	completion_reward = {
+		add_popularity = {
+			ideology = conservatism
+			popularity = -0.1
+		}
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.1
+		}
+		add_popularity = {
+			ideology = socialism
+			popularity = -0.1
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = -0.1
+		}
+		add_political_power = -80
+		country_event = {
+			id = dpr.903 #PLACEHOLDER --- Вирізка з газети про дискредитацію Вітренко й Пасєки (відомі вони разом як "Народна Опозиція")
+			days = 1
+		}
+	}
+}
+
+#Punch in the Liver, Nobody's Forever
+shared_focus = {
+	id = DPR_punch_in_the_liver_nobodys_forever
+	icon = GFX_DPR_Punch_in_the_Liver_Nobodys_Forever
+	cost = 2
+
+	relative_position_id = DPR_discrediting_always_works
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_discrediting_always_works
+	}
+
+	completion_reward = {
+		#swap_ideas = { --- ADD THIS TO EVENT INSTEAD, ALSO DEMILITARIZE REGIONS AND OPEN DECISIONS
+		#	remove_idea = DPR_peoples_opposition_2
+		#	add_idea = DPR_peoples_opposition_3
+		#}
+		add_stability = -0.2
+		country_event = {
+			id = dpr.904 #PLACEHOLDER --- Війна гіркіна та лоялістів з опозицією в містах та селах
+			days = 1
+		}
+	}
+}
+
+#Give Them 'Guarantees'
+shared_focus = {
+	id = DPR_give_them_guarantees
+	icon = GFX_DPR_Give_Them_Guarantees
+	cost = 2
+
+	relative_position_id = DPR_beginning_of_a_new_era
+	x = 1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_beginning_of_a_new_era
+	}
+	mutually_exclusive = {
+		focus = DPR_give_them_a_fight
+	}
+
+	completion_reward = {
+		###ANGEL TOOLTIP CANDYS HAPINESS ETC.
+		add_popularity = {
+			ideology = traditionalism
+			popularity = -0.2
+		}
+	}
+}
+
+#Liberalize the Constitution
+shared_focus = {
+	id = DPR_liberalize_the_constituion
+	icon = GFX_DPR_Liberalize_the_Constituion
+	cost = 2
+
+	relative_position_id = DPR_beginning_of_a_new_era
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_give_them_guarantees
+	}
+
+	completion_reward = {
+		add_political_power = 200
+		remove_ideas = DPR_peoples_opposition_1
+		add_popularity = {
+			ideology = conservatism
+			popularity = 0.06
+		}
+		add_popularity = {
+			ideology = liberalism
+			popularity = 0.04
+		}
+		add_popularity = {
+			ideology = socialism
+			popularity = 0.07
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.03
+		}
+		country_event = {
+			id = dpr.905 #PLACEHOLDER --- Лібералізація конституції гіркіном, уряд пішов на поступки опозиції (стратегічний хід, далі більше)
+			days = 1
+		}
+	}
+}
+
+#Prepare for Hell
+shared_focus = {
+	id = DPR_prepare_for_hell
+	icon = GFX_DPR_Prepare_for_Hell
+	cost = 2
+
+	relative_position_id = DPR_liberalize_the_constituion
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_liberalize_the_constituion
+	}
+
+	completion_reward = {
+		country_event = {
+			id = dpr.906 #PLACEHOLDER --- Штурм ячейки Народної Опозиції (сценарій з лібералізацією)
+			days = 1
+		}
+	}
+}
+
+#Colonel's Gambit
+shared_focus = {
+	id = DPR_colonels_gambit
+	icon = GFX_DPR_Colonels_Gambit
+	cost = 2
+
+	relative_position_id = DPR_prepare_for_hell
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_prepare_for_hell
+	}
+
+	completion_reward = {
+		country_event = {
+			id = dpr.907 #PLACEHOLDER --- Відміна правок, шок контент
+			days = 1
+		}
+	}
+}
+
+#Keep the Order
+shared_focus = {
+	id = DPR_keep_the_order
+	icon = GFX_DPR_Keep_the_Order
+	cost = 3
+
+	relative_position_id = DPR_colonels_gambit
+	x = -1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_punch_in_the_liver_nobodys_forever
+		focus = DPR_colonels_gambit
+	}
+
+	completion_reward = {
+		country_event = {
+			id = dpr.908 #PLACEHOLDER --- Опис подальшої ситуації (народ в страху, в державі анархія)
+			days = 1
+		}
+		###GUI FOR DEMILITARIZATION OF REGIONS(WHAT???)
+		###+ADD DECISIONS TO FUCK WITH VITRENKO AND PASECHNIK(part of gui)
+	}
+}
+
+#Contract with the Devil
+shared_focus = {
+	id = DPR_contract_with_the_devil
+	icon = GFX_DPR_Contract_with_the_Devil
+	cost = 2
+
+	relative_position_id = DPR_keep_the_order
+	x = -1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_keep_the_order
+	}
+	mutually_exclusive = {
+		focus = DPR_facing_the_problems_alone
+	}
+
+	completion_reward = {
+		#Нацдух про вагнер дати, який прибирається коли береш фокус на інтеграцію в регулярні війська
+		add_popularity = {
+			ideology = traditionalism
+			popularity = -0.1
+		}
+		add_popularity = {
+			ideology = oligarchism
+			popularity = 0.05
+		}
+		country_event = {
+			id = dpr.909 #PLACEHOLDER --- Телефонний діалог гіркіна та пріґожина
+			days = 1
+		}
+	}
+}
+
+#Integration of PMCs
+shared_focus = {
+	id = DPR_integration_of_pmcs
+	icon = GFX_DPR_Integration_of_PMCs
+	cost = 2
+
+	relative_position_id = DPR_contract_with_the_devil
+	x = -1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_contract_with_the_devil
+	}
+
+	completion_reward = {
+		###ADDS 3 ELITE UNITS(PRIGHOZIN AND OTHER NOOBS AS GENERALS TOO)
+		country_event = {
+			id = dpr.910 #PLACEHOLDER --- Інтеграція Вагнера в регулярні війська
+			days = 1
+		}
+	}
+}
+
+#Facing the Problems Alone
+shared_focus = {
+	id = DPR_facing_the_problems_alone
+	icon = GFX_DPR_Facing_the_Problems_Alone
+	cost = 2
+
+	relative_position_id = DPR_keep_the_order
+	x = 1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_keep_the_order
+	}
+	mutually_exclusive = {
+		focus = DPR_contract_with_the_devil
+	}
+
+	completion_reward = {
+		add_popularity = {
+			ideology = traditionalism
+			popularity = 0.05
+		}
+		add_stability = -0.05
+	}
+}
+
+#Plan — the Key to Success
+shared_focus = {
+	id = DPR_plan_the_key_to_success
+	icon = GFX_DPR_Plan_the_Key_to_Success
+	cost = 2
+
+	relative_position_id = DPR_facing_the_problems_alone
+	x = -1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_contract_with_the_devil
+		focus = DPR_facing_the_problems_alone
+	}
+
+	completion_reward = {
+		add_ideas = DPR_colonels_plan_1
+		add_political_power = 50
+		country_event = {
+			id = dpr.911 #PLACEHOLDER --- івент про геніальність гіркіна як стратега на воєнному й державному рівнях
+			days = 1
+		}
+	}
+}
+
+#Call to Old Friends
+shared_focus = {
+	id = DPR_call_to_old_friends
+	icon = GFX_DPR_Call_to_Old_Friends
+	cost = 3
+
+	relative_position_id = DPR_plan_the_key_to_success
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_plan_the_key_to_success
+	}
+
+	completion_reward = {
+		add_command_power = 50
+		country_event = {
+			id = dpr.912 #PLACEHOLDER --- HIDDEN івент про фсб
+			days = 1
+		}
+	}
+}
+
+#Use Proven Methods
+shared_focus = {
+	id = DPR_use_proven_methods
+	icon = GFX_DPR_Use_Proven_Methods
+	cost = 3
+
+	relative_position_id = DPR_call_to_old_friends
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_call_to_old_friends
+	}
+
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = LPR_FSB
+			add_idea = DPR_FSB_1
+		}
+		country_event = {
+			id = dpr.913 #PLACEHOLDER --- Івент про методи дій фсб
+			days = 1
+		}
+	}
+}
+
+#Security Service Of Novorossiya
+shared_focus = {
+	id = DPR_security_service_of_novorossiya
+	icon = GFX_DPR_Security_Service_of_Novorossiya
+	cost = 3
+
+	relative_position_id = DPR_use_proven_methods
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_use_proven_methods
+	}
+
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_FSB_1
+			add_idea = DPR_FSB_2
+		}
+		create_intelligence_agency = {
+			name = "Security Service of Novorossiya"
+			icon = GFX_intelligence_agency_logo_agency
+		}
+		country_event = {
+			id = dpr.914 #PLACEHOLDER --- Операція новостворенної Служби Безпеки Новоросії по затримці рандомних держзрадників
+			days = 1
+		}
+	}
+}
+
+#Contact the ROVS
+shared_focus = {
+	id = DPR_contact_the_rovs
+	icon = GFX_DPR_Contact_the_ROVS
+	cost = 3
+
+	relative_position_id = DPR_plan_the_key_to_success
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_plan_the_key_to_success
+	}
+	
+	completion_reward = {
+		if = {
+			limit = {
+				has_idea = DPR_new_friends_2
+			}
+			swap_ideas = {
+				remove_idea = DPR_new_friends_2
+				add_idea = DPR_new_friends_3
+			}
+		}
+		else = {
+			add_ideas = {
+				DPR_new_friends_1
+			}
+		}
+		country_event = {
+			id = dpr.915 #PLACEHOLDER --- HIDDEN Івент про РОВС (історія, хто шо, відносно коротко, основна увага на 2014-зараз)
+			days = 1
+		}
+		country_event = {
+			id = dpr.916 #PLACEHOLDER --- Зустріч Гіркіна та Іванова - лідера РОВС
+			days = 7
+		}
+	}
+}
+
+#Recognize Whites' Legitimacy
+shared_focus = {
+	id = DPR_recognize_whites_legitimacy
+	icon = GFX_DPR_Recognize_Whites_Legitimacy
+	cost = 3
+
+	relative_position_id = DPR_contact_the_rovs
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_contact_the_rovs
+	}
+
+	completion_reward = {
+		if = {
+			limit = {
+				any_other_country = {
+					OR = {
+						has_government = communism
+						has_government = socialism
+					}
+				}
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = spirit_of_novorosiya
+			}
+		}
+		country_event = {
+			id = dpr.917 #PLACEHOLDER --- Івент про те як Біла Гвардія насправді не програла а червоні просто оголосили про перемогу не добивши їх - білі досі легітимні й базовані
+			days = 1
+		}
+	}
+}
+
+#How Glorious Is Our Lord in Zion
+shared_focus = {
+	id = DPR_how_glorious_is_our_lord_in_zion
+	icon = GFX_DPR_How_Glorious_Is_Our_Lord_in_Zion
+	cost = 3
+
+	
+	relative_position_id = DPR_recognize_whites_legitimacy
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_recognize_whites_legitimacy
+	}
+
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_colonels_plan_1
+			add_idea = DPR_colonels_plan_2
+		}
+		###ADD IHOR IVANOV AS ADVISOR
+	}
+}
+
+#Message to Cossacks
+shared_focus = {
+	id = DPR_message_to_cossacks
+	icon = GFX_DPR_Message_to_Cossacks
+	cost = 3
+
+	relative_position_id = DPR_plan_the_key_to_success
+	x = 2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_plan_the_key_to_success
+	}
+
+	completion_reward = {
+		if = {
+			limit = {
+				has_idea = DPR_new_friends_1
+			}
+			swap_ideas = {
+				remove_idea = DPR_new_friends_1
+				add_idea = DPR_new_friends_3
+			}
+		}
+		else = {
+			add_ideas = {
+				DPR_new_friends_2
+			}
+		}
+		country_event = {
+			id = dpr.918 #PLACEHOLDER --- Історія Донського козацтва (відносно коротко, основна увага на 2014-зараз)
+			days = 1
+		}
+	}
+}
+
+#Invite Local Leaders
+shared_focus = {
+	id = DPR_invite_local_leaders
+	icon = GFX_DPR_Invite_Local_Leaders
+	cost = 3
+
+	relative_position_id = DPR_message_to_cossacks
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_message_to_cossacks
+	}
+
+	completion_reward = {
+		###ADD DECISIONS TO RECRUIT COSSACK LEADERS
+	}
+}
+
+#Restore the Don Host
+shared_focus = {
+	id = DPR_restore_the_don_host
+	icon = GFX_DPR_Restore_the_Don_Host
+	cost = 3
+
+	relative_position_id = DPR_invite_local_leaders
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_invite_local_leaders
+	}
+
+	completion_reward = {
+		###ADD 4 COSSACK BRIGADES(4 horse, 2 infantry, 1 truck)
+		country_event = {
+			id = dpr.919 #PLACEHOLDER --- Івент про марш-парад Донських кізяків по Донецьку
+			days = 1
+		}
+	}
+}
+
+#From the Ground Up
+shared_focus = {
+	id = DPR_from_the_ground_up
+	icon = GFX_DPR_From_the_Ground_Up
+	cost = 2
+
+	relative_position_id = DPR_restore_the_don_host
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_security_service_of_novorossiya
+	}
+	prerequisite = {
+		focus = DPR_how_glorious_is_our_lord_in_zion
+	}
+	prerequisite = {
+		focus = DPR_restore_the_don_host
+	}
+
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_colonels_plan_2
+			add_idea = DPR_colonels_plan_3
+		}
+	}
+}
+
+#Remember Our True Roots
+shared_focus = {
+	id = DPR_remember_our_true_roots
+	icon = GFX_DPR_Remember_Our_True_Roots
+	cost = 3
+
+	relative_position_id = DPR_from_the_ground_up
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_from_the_ground_up
+	}
+
+	completion_reward = {
+		add_ideas = DPR_white_legacy
+	}
+}
+
+#Rematch of 1917
+shared_focus = {
+	id = DPR_rematch_of_1917
+	icon = GFX_DPR_Rematch_of_1917
+	cost = 3
+
+	relative_position_id = DPR_remember_our_true_roots
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_remember_our_true_roots
+	}
+
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_colonels_plan_3
+			add_idea = DPR_colonels_plan_4
+		}
+		country_event = {
+			id = dpr.920 #PLACEHOLDER --- Пафосний івент про те як нащадки рос консерватизму та монархізму покажуть всім кузькіну мать
+			days = 1
+		}
+	}
+}
+
+#Revival of Spirituality
+shared_focus = {
+	id = DPR_revival_of_spirituality
+	icon = GFX_DPR_Revival_of_Spirituality
+	cost = 2
+	
+	relative_position_id = DPR_rematch_of_1917
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_rematch_of_1917
+	}
+
+	completion_reward = {
+		add_ideas = DPR_promoting_orthodoxy
+		country_event = {
+			id = dpr.921 #PLACEHOLDER --- Івент про рос православну церкву за кордоном
+			days = 1
+		}
+	}
+}
+
+#Return of the Canonical Church from Overseas
+shared_focus = {
+	id = DPR_return_of_the_canonical_church
+	icon = GFX_DPR_Return_of_the_Canonical_Church
+	cost = 2
+
+	relative_position_id = DPR_revival_of_spirituality
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_revival_of_spirituality
+	}
+
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_promoting_orthodoxy
+			add_idea = DPR_russian_church
+		}
+		country_event = {
+			id = dpr.922 #PLACEHOLDER --- Івент про приїзд митрополита Іларіона в новососію де він підпише з Гіркіним угоду про переїзд церкви сюди
+			days = 1
+		}
+	}
+}
+
+#The First All-Russian Monarchical Congress
+shared_focus = {
+	id = DPR_the_first_all_russian_monarchical_congress
+	icon = GFX_DPR_The_First_All_Russian_Monarchical_Congress
+	cost = 2
+
+	relative_position_id = DPR_rematch_of_1917
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_rematch_of_1917
+	}
+
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_newfriends2
+			add_idea = DPR_monarchical_coalition_1
+		}
+		country_event = {
+			id = dpr.923 #PLACEHOLDER --- Івент про перший з'їзд всеросійського монархічного конгресу
+			days = 1
+		}
+	}
+}
+
+#Overcome the Disputes
+shared_focus = {
+	id = DPR_overcome_the_disputes
+	icon = GFX_DPR_Overcome_the_Disputes
+	cost = 2
+
+	relative_position_id = DPR_the_first_all_russian_monarchical_congress
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_the_first_all_russian_monarchical_congress
+	}
+
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_monarchical_coalition_1
+			add_idea = DPR_monarchical_coalition_2
+		}
+	}
+}
+
+#Glorify the True Heroes
+shared_focus = {
+	id = DPR_glorify_the_true_heroes
+	icon = GFX_DPR_Glorify_the_True_Heroes
+	cost = 2
+
+	relative_position_id = DPR_rematch_of_1917
+	x = 2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_rematch_of_1917
+	}
+
+	completion_reward = {
+		add_ideas = DPR_white_culture_1
+	}
+}
+
+#Renounce the Soviet Heritage
+shared_focus = {
+	id = DPR_renounce_the_soviet_heritage
+	icon = GFX_DPR_Renounce_the_Soviet_Heritage
+	cost = 2
+
+	relative_position_id = DPR_glorify_the_true_heroes
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_glorify_the_true_heroes
+	}
+
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_white_culture_1
+			add_idea = DPR_white_culture_2
+		}
+		country_event = {
+			id = dpr.924 #PLACEHOLDER --- Івент про декомунізацію
+			days = 1
+		}
+	}
+}
+
+#United Traditionalist Front
+shared_focus = {
+	id = DPR_united_traditionalist_front
+	icon = GFX_DPR_United_Traditionalist_Front
+	cost = 3
+
+	relative_position_id = DPR_renounce_the_soviet_heritage
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_return_of_the_canonical_church
+	}
+	prerequisite = {
+		focus = DPR_overcome_the_disputes
+	}
+	prerequisite = {
+		focus = DPR_renounce_the_soviet_heritage
+	}
+
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_monarchical_coalition_2
+			add_idea = DPR_monarchical_coalition_3
+		}
+		country_event = {
+			id = dpr.925 #PLACEHOLDER --- Івент про святкову промову Гіркіна на честь єдинства всеросійського монархічного конгресу
+			days = 1
+		}
+	}
+}
+
+#Dive into 'Big Politics'
+shared_focus = {
+	id = DPR_dive_into_big_politics
+	icon = GFX_DPR_Dive_into_Big_Politics
+	cost = 3
+
+	relative_position_id = DPR_from_the_ground_up
+	x = 2
+	y = 1
+
+	available = {
+		has_completed_focus = DPR_united_traditionalists_front
+	}
+	prerequisite = {
+		focus = DPR_from_the_ground_up
+	}
+
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_colonels_plan_4
+			add_idea = DPR_colonels_plan_5
+		}
+	}
+}
+
+#Time for Strategic Games
+shared_focus = {
+	id = DPR_time_for_strategic_games
+	icon = GFX_DPR_Time_for_Strategic_Games
+	cost = 3
+
+	relative_position_id = DPR_dive_into_big_politics
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_dive_into_big_politics
+	}
+
+	completion_reward = {
+		add_idea = DPR_strategic_initiative
+	}
+}
+
+#Claim Our Real Borders
+shared_focus = {
+	id = DPR_claim_our_real_borders
+	icon = GFX_DPR_Claim_Our_Real_Borders
+	cost = 3
+
+	relative_position_id = DPR_time_for_strategic_games
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_time_for_strategic_games
+	}
+
+	completion_reward = {
+		###DECISIONS FOR CONQUERING NOVOROSSIYA(also Crimea and Transnistria diplomatically)
+		country_event = {
+			id = dpr.926 #PLACEHOLDER --- Івент про кордони новососії і чому вони правильні
+			days = 1
+		}
+	}
+}
+
+#Find the Loyal Ones
+shared_focus = {
+	id = DPR_find_the_loyal_ones
+	icon = GFX_DPR_Find_the_Loyal_Ones
+	cost = 3
+
+	relative_position_id = DPR_claim_our_real_borders
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_claim_our_real_borders
+	}
+
+	completion_reward = {
+		###INCREASES COMPLIANCE ON NEW CONQUERED LAND
+		###AND DECISIONS TO LOWER RESISTANCE(REAL)
+	}
+}
+
+#Consolidation of the South
+shared_focus = {
+	id = DPR_consolidation_of_the_south
+	icon = GFX_DPR_Consolidation_of_the_South
+	cost = 3
+
+	relative_position_id = DPR_find_the_loyal_ones
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_find_the_loyal_ones
+	}
+
+	completion_reward = {
+		###CORES ON CONQUERED STATES
+	}
+}
+
+#Start the Debate
+shared_focus = {
+	id = DPR_start_the_debate
+	icon = GFX_DPR_Start_the_Debate
+	cost = 5
+
+	relative_position_id = DPR_find_the_loyal_ones
+	x = -2
+	y = 2
+
+	prerequisite = {
+		focus = DPR_united_traditionalist_front
+	}
+	prerequisite = {
+		focus = DPR_consolidation_of_the_south
+	}
+
+	completion_reward = {
+		country_event = {
+			id = dpr.927 #PLACEHOLDER --- Івент про засідання поців в тому монархічному конгерсі і як вони дискутують кому віддати корону на початку виконання
+			days = 1
+		}
+		country_event = {
+			id = dpr.928 #PLACEHOLDER --- Івент про Марію Романову (біографія, чому вона має стати монархом) в процесі виконання
+			days = 1
+		}
+		country_event = {
+			id = dpr.929 #PLACEHOLDER --- Івент про Ростіслава Романова (біографія, чому він має стати монархом) в процесі виконання
+			days = 1
+		}
+	}
+}
+
+#Return Power to the Rightful Hands...
+shared_focus = {
+	id = DPR_return_power_to_the_rightful_hands
+	icon = GFX_DPR_Return_Power_to_the_Rightful_Hands
+	cost = 1
+
+	relative_position_id = DPR_start_the_debate
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_start_the_debate
+	}
+
+	completion_reward = {
+		country_event = {
+			id = dpr.930 #PLACEHOLDER --- івент про вибір монарха рос імперії (або ростіслав або машка) --- IN THIS EVENT NEW PARTY POPULARITIES NEED TO BE SET UP FOR EVERY VARIANT+NEW RULING PARTY+PARTY NAMES CHANGED+PARTY LEADERS CHANGED+NEW LEADER+NEW PREMIER+ADVISORS
+			days = 1
+		}
+		#swap_ideas = { ### ADD THIS TO EVENT CONSTITUTIONAL PATH INSTEAD OF FOCUS
+		#	remove_idea = DPR_colonels_plan_5
+		#	add_idea = DPR_colonels_plan_6
+		#}
+		swap_ideas = {
+			remove_idea = DPR_white_legacy
+			add_idea = DPR_empire_strikes_back
+		}
+	}
+}
+
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################      CONSTITUTIONAL MONARCHY PATH(Splits into 2 paths later)     ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+
+
+#...and Become a Mentor
+shared_focus = {
+	id = DPR_and_become_a_mentor
+	icon = GFX_DPR_and_Become_a_Mentor
+	cost = 2
+
+	x = 10
+	y = 1
+
+	completion_reward = {
+		### THIS FOCUS GETS AUTOCOMPLETED
+		country_event = {
+			id = dpr.931 #PLACEHOLDER --- івент про коронацію Ростіслава Романова імператором всеросійським
+			days = 1
+		}
+	}
+}
+
+#Protect the New Order
+shared_focus = {
+	id = DPR_protect_the_new_order
+	icon = GFX_DPR_Protect_the_New_Order
+	cost = 2
+
+	relative_position_id = DPR_and_become_a_mentor
+	x = -1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_and_become_a_mentor
+	}
+
+	completion_reward = {
+		add_stability = 0.10
+		add_political_power = 20
+	}
+}
+
+#Rejoice in What We Have
+shared_focus = {
+	id = DPR_rejoice_in_what_we_have
+	icon = GFX_DPR_Rejoice_in_What_We_Have
+	cost = 2
+
+	relative_position_id = DPR_protect_the_new_order
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_protect_the_new_order
+	}
+
+	completion_reward = {
+		add_war_support = -0.1
+		add_popularity = {
+			ideology = ultranationalism
+			popularity = -0.05
+		}
+		add_popularity = {
+			ideology = traditionalism
+			popularity = -0.05
+		}
+		country_event = {
+			id = dpr.932 #івент про проголошення про відмову від притензій на землі рф імператором Ростіславом (текст документу, можна скорочено з вирізаними моментами)
+			days = 1
+		}
+	}
+}
+
+#Unite Little Russia
+shared_focus = {
+	id = DPR_unite_little_russia
+	icon = GFX_DPR_Unite_Little_Russia
+	cost = 2
+
+	relative_position_id = DPR_rejoice_in_what_we_have
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_rejoice_in_what_we_have
+	}
+
+	completion_reward = {
+		###ADD CLAIMS ON WHOLE OKRAINA
+		add_ideas = DPR_malorussia_will_be_ours # --- +10% ATTACK AGAINST UKR WARLORDS, WORKS UNTIL UKRAINE IS UNITED
+	}
+}
+
+#No More Mistakes of the Past
+shared_focus = {
+	id = DPR_no_more_mistakes_of_the_past
+	icon = GFX_DPR_No_More_Mistakes_of_the_Past
+	cost = 2
+
+	relative_position_id = DPR_unite_little_russia
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_unite_little_russia
+	}
+
+	completion_reward = {
+		###CHANGING LAWS(IDK WHICH ONES THO)
+	}
+}
+
+#Conflict of Interests
+shared_focus = {
+	id = DPR_conflict_of_interests
+	icon = GFX_DPR_Conflict_of_Interests
+	cost = 2
+
+	relative_position_id = DPR_and_become_a_mentor
+	x = 2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_and_become_a_mentor
+	}
+
+	completion_reward = {
+		country_event = { # --- !!! START BALANCE OF POWER GAME BETWEEN GIRKIN AND ROSTIK !!!
+			id = dpr.933 #PLACEHOLDER --- івент про початок суперництва гіркіна та ростіслава (перший за консервативний традиціоналізм та ізоляціонізм з культом білої гвардії, другий за союз з заходом, лібералізацію та демократизацію)
+			days = 1
+		}
+	}
+}
+
+#New Times — New Politics
+shared_focus = {
+	id = DPR_new_times_new_politics
+	icon = GFX_DPR_New_Times_New_Politics
+	cost = 2
+
+	relative_position_id = DPR_and_become_a_mentor
+	x = -1
+	y = 1
+
+	available = { # --- IF YOU CHOOSE ROSTIK IN EVENT
+		has_country_flag = DPR_rostik_choice
+	}
+	prerequisite = {
+		focus = DPR_conflict_of_interests
+	}
+	mutually_exclusive = {
+		focus = DPR_on_guard_of_heritage
+	}
+
+	completion_reward = {
+		###GIVES POINTS TO ROSTIK IN BoP(Balance of Power) game
+	}
+}
+
+#Decentralization is What We Need
+shared_focus = {
+	id = DPR_decentralization_is_what_we_need
+	icon = GFX_DPR_Decentralization_is_What_We_Need
+	cost = 2
+
+	relative_position_id = DPR_new_times_new_politics
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_new_times_new_politics
+	}
+
+	completion_reward = {
+		###CHANGE LAWS TO FUCKING FEDERATION OR AUTONOMISM
+	}
+}
+
+#We Belong to the Civilized World
+shared_focus = {
+	id = DPR_we_belong_to_the_civilized_world
+	icon = GFX_DPR_We_Belong_to_the_Civilized_World
+	cost = 2
+
+	relative_position_id = DPR_decentralization_is_what_we_need
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_decentralization_is_what_we_need
+	}
+
+	completion_reward = {
+		###GIVES POINTS TO ROSTIK IN BoP(Balance of Power) game
+	}
+}
+
+#On Guard of Heritage
+shared_focus = {
+	id = DPR_on_guard_of_heritage
+	icon = GFX_DPR_On_Guard_of_Heritage
+	cost = 2
+
+	relative_position_id = DPR_and_become_a_mentor
+	x = 1
+	y = 1
+
+	available = { # --- IF YOU CHOOSE GIRKIN IN EVENT
+		has_country_flag = DPR_girkin_choice
+	}
+	prerequisite = {
+		focus = DPR_conflict_of_interests
+	}
+	mutually_exclusive = {
+		focus = DPR_new_times_new_politics
+	}
+
+	completion_reward = {
+		###GIVES POINTS TO GIRKIN IN BoP(Balance of Power) game
+	}
+}
+
+#Power Belongs to the Strongest
+shared_focus = {
+	id = DPR_power_belongs_to_the_strongest
+	icon = GFX_DPR_Power_Belongs_to_the_Strongest
+	cost = 2
+
+	relative_position_id = DPR_on_guard_of_heritage
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_on_guard_of_heritage
+	}
+
+	completion_reward = {
+		###CHANGE LAWS TO CENTRALIZED STATE
+	}
+}
+
+#We Only Need Ourselves
+shared_focus = {
+	id = DPR_we_only_need_ourselves
+	icon = GFX_DPR_We_Only_Need_Ourselves
+	cost = 2
+
+	relative_position_id = DPR_power_belongs_to_the_strongest
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_power_belongs_to_the_strongest
+	}
+
+	completion_reward = {
+		###GIVES POINTS TO GIRKIN IN BoP(Balance of Power) game
+	}
+}
+
+#Time to Resolve the Issue
+shared_focus = {
+	id = DPR_time_to_resolve_the_issue
+	icon = GFX_DPR_Time_to_Resolve_the_Issue
+	cost = 4
+
+	relative_position_id = DPR_we_only_need_ourselves
+	x = -3
+	y = 1
+
+	prerequisite = {
+		focus = DPR_no_more_mistakes_of_the_past
+		focus = DPR_we_belong_to_the_civilized_world
+	}
+	prerequisite = {
+		DPR_no_more_mistakes_of_the_past
+		focus = DPR_we_only_need_ourselves
+	}
+
+	completion_reward = {
+		custom_effect_tooltip = romanov_vs_girkin_conclusion_tt
+		hidden_effect = {
+			### !!! ADD CHECK CONDITION WHO HAS MORE POINTS in BoP game !!!
+			country_event = { # --- IF ROSTIK HAS MORE POINTS
+				id = dpr.934 #PLACEHOLDER --- івент про позбавлення гіркіна посади прем'єра ростіславом як наслідок внутрішньої боротьби та передача йому повноважень головнокомандуючого (гіркіна попустили, більше жодних денікінів) (писати з погляду ростіслава)
+				days = 1
+			}
+			country_event = { # --- IF GIRKIN HAS MORE POINTS
+				id = dpr.935 #PLACEHOLDER --- івент про попуск царя
+				days = 1
+			}
+		}
+	}
+}
+
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################              LOVELY LIBERAL MONARCHY ROSTISLAV PATH              ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+#Emperor by the Will of the People
+shared_focus = {
+	id = DPR_emperor_by_the_will_of_the_people
+	icon = GFX_DPR_Emperor_by_the_Will_of_the_People
+	cost = 2
+
+	x = 10
+	y = 1
+
+	prerequisite = {
+		focus = DPR_time_to_resolve_the_issue
+	}
+
+	completion_reward = {
+		### just pp
+	}
+}
+
+#Contact the United Nations
+shared_focus = {
+	id = DPR_contact_the_united_nations
+	icon = GFX_DPR_Contact_the_United_Nations
+	cost = 2
+
+	relative_position_id = DPR_emperor_by_the_will_of_the_people
+	x = -3
+	y = 1
+
+	prerequisite = {
+		focus = DPR_emperor_by_the_will_of_the_people
+	}
+
+	completion_reward = {
+		add_stability = 0.05
+		country_event = {
+			id = dpr.936 #PLACEHOLDER --- івент про вислання делегації рос імперії ростіслава до ООН (початок побудови міжнародних стосунків)
+			days = 1
+		}
+	}
+}
+
+#New Frontiers of Civilization
+shared_focus = {
+	id = DPR_new_frontiers_of_civilization
+	icon = GFX_DPR_New_Frontiers_of_Civilization
+	cost = 2
+
+	relative_position_id = DPR_contact_the_united_nations
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_contact_the_united_nations
+	}
+
+	completion_reward = {
+		###ADD OPINION MODIFIER WITH EU AND USA AND BRITIAN
+		country_event = { # --- HIDDEN EVENT BTW
+			id = dpr.837 #PLACEHOLDER --- From ORIH, "Echoes of Freedom" (gir.98)
+			days = 1
+		}
+	}
+}
+
+#Gain International Recognition
+shared_focus = {
+	id = DPR_gain_international_recognition
+	icon = GFX_DPR_Gain_International_Recognition
+	cost = 2
+
+	relative_position_id = DPR_new_frontiers_of_civilization
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_new_frontiers_of_civilization
+	}
+
+	completion_reward = {
+		country_event = {
+			id = dpr.937 #PLACEHOLDER --- івент про офіційне перейняття рос імперією ростіка українського крісла при ООН
+			days = 1
+		}
+		###CHANGE LAW TO OPEN BORDERS(BLESSED)
+	}
+}
+
+#Parliamentarism is the Future
+shared_focus = {
+	id = DPR_parliamentarism_is_the_future
+	icon = GFX_DPR_Parliamentarism_is_the_Future
+	cost = 2
+
+	relative_position_id = DPR_emperor_by_the_will_of_the_people
+	x = -1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_emperor_by_the_will_of_the_people
+	}
+
+	completion_reward = {
+		add_timed_idea = { ###GIVES PARTY POPULARITY
+			idea = DPR_parliamentarism_propaganda
+			days = 180
+		}
+		country_event = { # --- HIDDEN EVENT BTW
+			id = dpr.839 #PLACEHOLDER --- From ORIH, "Rostislav takes a course towards parliamentarism" (gir.99)
+			days = 1
+		}
+	}
+}
+
+#The Rule Guided by the People's Desires
+shared_focus = {
+	id = DPR_the_rule_guided_by_the_peoples_desires
+	icon = GFX_DPR_The_Rule_Guided_by_the_Peoples_Desires
+	cost = 2
+
+	relative_position_id = DPR_parliamentarism_is_the_future
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_parliamentarism_is_the_future
+	}
+
+	completion_reward = {
+		add_popularity = {
+			ideology = ultranationalism
+			popularity = -0.1
+		}
+		add_popularity = {
+			ideology = traditionalism
+			popularity = -0.05
+		}
+		add_popularity = {
+			ideology = authoritarianism
+			popularity = -0.05
+		}
+		country_event = { # --- HIDDEN EVENT BTW
+			id = dpr.840 #PLACEHOLDER --- From ORIH, "Liberalization" (gir.100)
+			days = 1
+		}
+	}
+}
+
+#Form the Verkhovna Duma
+shared_focus = {
+	id = DPR_form_the_verkhovna_duma
+	icon = GFX_DPR_Form_the_Verkhovna_Duma
+	cost = 2
+
+	relative_position_id = DPR_the_rule_guided_by_the_peoples_desires
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_the_rule_guided_by_the_peoples_desires
+	}
+
+	completion_reward = {
+		###ADDS DUMA GUI WHICH ORIH AND IHOR HAD DONE
+		country_event = { # --- HIDDEN EVENT BTW
+			id = dpr.841 #PLACEHOLDER --- From ORIH, "The first meeting of the Verkhovna Duma" (gir.101)
+			days = 1
+		}
+	}
+}
+
+#Reviving the Vision of a Liberal Empire
+shared_focus = {
+	id = DPR_reviving_the_vision_of_a_liberal_empire
+	icon = GFX_DPR_Reviving_the_Vision_of_a_Liberal_Empire
+	cost = 3
+
+	relative_position_id = DPR_form_the_verkhovna_duma
+	x = -1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_gain_international_recognition
+	}
+	prerequisite = {
+		focus = DPR_form_the_verkhovna_duma
+	}
+
+	completion_reward = {
+		add_ideas = DPR_liberal_empire
+		country_event = { # --- HIDDEN EVENT BTW
+			id = dpr.842 #PLACEHOLDER --- From ORIH, "Liberal empire" (gir.102)
+			days = 1
+		}
+	}
+}
+
+#The Key is Love, not Fear
+shared_focus = {
+	id = DPR_the_key_is_love_not_fear
+	icon = GFX_DPR_The_Key_is_Love_not_Fear
+	cost = 2
+
+	relative_position_id = DPR_emperor_by_the_will_of_the_people
+	x = 1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_emperor_by_the_will_of_the_people
+	}
+
+	completion_reward = {
+		###CHANGE LAWS TO MULTICULTURALISM THING(NO HATE <3)
+	}
+}
+
+#Emperor of All Men
+shared_focus = {
+	id = DPR_emperor_of_all_men
+	icon = GFX_DPR_Emperor_of_All_Men
+	cost = 2
+
+	relative_position_id = DPR_the_key_is_love_not_fear
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_the_key_is_love_not_fear
+	}
+
+	completion_reward = {
+		###GIVES LEADER TRAIT (EMPEROR OF ALL MEN)
+		country_event = { # --- HIDDEN EVENT BTW
+			id = dpr.843 #PLACEHOLDER --- From ORIH, "The most important student" (gir.103)
+			days = 1
+		}
+	}
+}
+
+#Embrace Ukrainianness
+shared_focus = {
+	id = DPR_embrace_ukrainianness
+	icon = GFX_DPR_Embrace_Ukrainianness
+	cost = 2
+
+	relative_position_id = DPR_emperor_of_all_men
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_emperor_of_all_man
+	}
+
+	completion_reward = {
+		country_event = {
+			id = dpr.938 #PLACEHOLDER --- івент про промову Гіркіна українською (лохам не брати, якщо встигну сам зроблю)
+			days = 1
+		}
+		add_timed_idea = { ###COMPLIANCE + POLIT POWER GROW FASTER
+			idea = DPR_embracing_ukrainianness
+			days = 360
+		}
+	}
+}
+
+#Show Ideological Tolerance
+shared_focus = {
+	id = DPR_show_ideological_tolerance
+	icon = GFX_DPR_Show_Ideological_Tolerance
+	cost = 2
+
+	relative_position_id = DPR_emperor_by_the_will_of_the_people
+	x = 3
+	y = 1
+
+	prerequisite = {
+		focus = DPR_emperor_by_the_will_of_the_people
+	}
+
+	completion_reward = {
+		add_popularity = {
+			ideology = conservatism
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = liberalism
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = progressivism
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = social_democracy
+			popularity = 0.05
+		}
+		###CHANGES LAWS TO SMTH
+	}
+}
+
+#Quoting the Peace of Augsburg
+shared_focus = {
+	id = DPR_quoting_the_peace_of_augsburg
+	icon = GFX_DPR_Quoting_the_Peace_of_Augsburg
+	cost = 2
+
+	relative_position_id = DPR_show_ideological_tolerance
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_show_ideological_tolerance
+	}
+
+	completion_reward = {
+		###CHANGES LAWS TO FUCKING SECULARISM
+		### EVENT ABOUT CONFLICT WITH POPE LOL???
+	}
+}
+
+#Time to Come Back to Life
+shared_focus = {
+	id = DPR_time_to_come_back_to_life
+	icon = GFX_DPR_Time_to_Come_Back_to_Life
+	cost = 2
+
+	relative_position_id = DPR_quoting_the_peace_of_augsburg
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_quoting_the_peace_of_augsburg
+	}
+
+	completion_reward = {
+		###CHANGES LAWS TO DEMILITARIZATION LMAO NO ARMY BOZO
+	}
+}
+
+#Everyone is Welcome Here
+shared_focus = {
+	id = DPR_everyone_is_welcome_here
+	icon = GFX_DPR_Everyone_is_Welcome_Here
+	cost = 3
+
+	relative_position_id = DPR_time_to_come_back_to_life
+	x = -1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_embrace_ukrainianness
+	}
+	prerequisite = {
+		focus = DPR_time_to_come_back_to_life
+	}
+
+	completion_reward = {
+		###OPEN BORDERS LAW
+	}
+}
+
+#A Truly New Era
+shared_focus = {
+	id = DPR_a_truly_new_era
+	icon = GFX_DPR_A_Truly_New_Era
+	cost = 5
+
+	relative_position_id = DPR_everyone_is_welcome_here
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_reviving_the_vision_of_a_liberal_empire
+	}
+	prerequisite = {
+		focus = DPR_everyone_is_welcome_here
+	}
+
+	completion_reward = {
+		add_political_power = 100
+		add_stability = 0.1
+		add_war_support = 0.1
+		country_event = {
+			id = dpr.939 #PLACEHOLDER --- фінальний івент до гілки Ростіслава, розсипати бази про те як він об'єднав всі народи на теренах України та як зміг об'єднати Україну (свою імперію) з Заходом
+			days = 1
+		}
+		add_ideas = DPR_truly_new_era
+	}
+}
+
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################                SCARY PUPPET MONARCHY GIRKIN PATH                 ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+
+
+#Exercise Our Right
+shared_focus = {
+	id = DPR_exercise_our_right
+	icon = GFX_DPR_Exercise_Our_Right
+	cost = 2
+
+	x = 10
+	y = 1
+
+	prerequisite = {
+		focus = DPR_time_to_resolve_the_issue
+	}
+
+	completion_reward = {
+		### just pp
+	}
+}
+
+#Return Allies to the Game
+shared_focus = {
+	id = DPR_return_allies_to_the_game
+	icon = GFX_DPR_Return_Allies_to_the_Game
+	cost = 2
+
+	relative_position_id = DPR_exercise_our_right
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_exercise_our_right
+	}
+
+	completion_reward = {
+		###ADD ADVISORS AND POLITICANS(ROVS, IMPERIAL LEGION)
+	}
+}
+
+#Expand Our Private Club
+shared_focus = {
+	id = DPR_expand_our_private_club
+	icon = GFX_DPR_Expand_Our_Private_Club
+	cost = 2
+
+	relative_position_id = DPR_return_allies_to_the_game
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_return_allies_to_the_game
+	}
+
+	completion_reward = {
+		###ADD SOME NEW COOL ADVISOR GUYS 2.0(BORODAI, MIHEEV etc.)
+	}
+}
+
+#Relieve the Tsar of the 'Boring Work'
+shared_focus = {
+	id = DPR_relieve_the_tsar_of_the_boring_work
+	icon = GFX_DPR_Relieve_the_Tsar_of_the_Boring_Work
+	cost = 2
+
+	relative_position_id = DPR_exercise_our_right
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_exercise_our_right
+	}
+
+	completion_reward = {
+		country_event = {
+			id = dpr.940 #PLACEHOLDER --- івент про те як гіркін з колєгами забирають в царя Ростіка "скучну роботу" у вигляді багатьох адміністративних повноважень (він клює на лоха)
+			days = 1
+		}
+	}
+}
+
+#Constitutional Nuance
+shared_focus = {
+	id = DPR_constitutional_nuance
+	icon = GFX_DPR_Constitutional_Nuance
+	cost = 2
+
+	relative_position_id = DPR_relieve_the_tsar_of_the_boring_work
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_relieve_the_tsar_of_the_boring_work
+	}
+
+	completion_reward = {
+		###CHANGE LAWS TO ONE PARTY/NO PARTY SYSTEM
+	}
+}
+
+#Safeguard the Ideals
+shared_focus = {
+	id = DPR_safeguard_the_ideals
+	icon = GFX_DPR_Safeguard_the_Ideals
+	cost = 2
+
+	relative_position_id = DPR_exercise_our_right
+	x = 2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_exercise_our_right
+	}
+
+	completion_reward = {
+		### може бафати вже існуючу ідею на білу культуру(too lazy to search)
+		add_popularity = {
+			ideology = communism
+			popularity = -0.1
+		}
+		add_popularity = {
+			ideology = socialism
+			popularity = -0.1
+		}
+	}
+}
+
+#No Compromises
+shared_focus = {
+	id = DPR_no_compromises
+	icon = GFX_DPR_No_Compromises
+	cost = 2
+
+	relative_position_id = DPR_safeguard_the_ideals
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_safeguard_the_ideals
+	}
+
+	completion_reward = {
+		add_popularity = {
+			ideology = social_democracy
+			popularity = -0.1
+		}
+		###CHJANGE LAW FOR PRESS RIGHTS OR SMTH
+	}
+}
+
+#New State Cabinet
+shared_focus = {
+	id = DPR_new_state_cabinet
+	icon = GFX_DPR_New_State_Cabinet
+	cost = 2
+
+	relative_position_id = DPR_no_compromises
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_expand_our_private_club
+	}
+	prerequisite = {
+		focus = DPR_constitutional_nuance
+	}
+	prerequisite = {
+		focus = DPR_no_compromises
+	}
+
+	completion_reward = {
+		###Maybe add ministers?
+		country_event = {
+			id = dpr.941
+			days = 1
+		}
+	}
+}
+
+#In Denikin's Footsteps
+shared_focus = {
+	id = DPR_in_denikins_footsteps
+	icon = GFX_DPR_In_Denikins_Footsteps
+	cost = 3
+
+	relative_position_id = DPR_new_state_cabinet
+	x = -1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_new_state_cabinet
+	}
+
+	completion_reward = {
+		###ADD LEADER TRAIT "NEW DENIKIN" or smth
+		swap_ideas = {
+			remove_idea = DPR_colonels_plan_6
+			add_idea = DPR_colonels_plan_7
+		}
+	}
+}
+
+#New White Guard
+shared_focus = {
+	id = DPR_new_white_guard
+	icon = GFX_DPR_New_White_Guard
+	cost = 3
+
+	relative_position_id = DPR_in_denikins_footsteps
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_in_denikins_footsteps
+	}
+
+	completion_reward = {
+		###SPAWN 2 ELITE WHITE DIVISIONS
+		army_experience = 25
+	}
+}
+
+#Let Them Feel the Whip
+shared_focus = {
+	id = DPR_let_them_feel_the_whip
+	icon = GFX_DPR_Let_Them_Feel_the_Whip
+	cost = 3
+
+	relative_position_id = DPR_new_state_cabinet
+	x = 1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_new_state_cabinet
+	}
+
+	completion_reward = {
+		country_event = {
+			id = dpr.942 #PLACEHOLDER --- івент про розстріл антиокупаційної демонстрації вкраїнчиків у Львові/Києві (на вибір) гіркінськими військами
+			days = 1
+		}
+		country_event = {
+			id = dpr.943 #PLACEHOLDER --- івент про написання антиурядової пісні на основі тієї з "Голодних Ігор" й про коротку реакцію уряду в стилі "от хохли дебіли, заборонити нахуй"
+			days = 7
+		}
+		country_event = { # --- Continuation of previous event about song
+			id = dpr.849 #PLACEHOLDER --- From ORIH, (gir.93, gir.94, gir.95)
+			days = 7
+		}
+	}
+}
+
+#Crush the Dissatisfied
+shared_focus = {
+	id = DPR_crush_the_dissatisfied
+	icon = GFX_DPR_Crush_the_Dissatisfied
+	cost = 3
+
+	relative_position_id = DPR_let_them_feel_the_whip
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_let_them_feel_the_whip
+	}
+
+	completion_reward = {
+		add_political_power = -100
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.2
+		}
+		add_popularity = {
+			ideology = progressivism
+			popularity = -0.2
+		}
+		add_popularity = {
+			ideology = conservatism
+			popularity = -0.2
+		}
+		add_popularity = {
+			ideology = national_democracy
+			popularity = -0.1
+		}
+		add_manpower = -10000
+		country_event = { # --- HIDDEN EVENT BTW
+			id = dpr.850 #PLACEHOLDER --- From ORIH, "Terrible evening" (gir.104)
+			days = 1
+		}
+		country_event = { # --- HIDDEN EVENT BTW
+			id = dpr.944 #PLACEHOLDER --- From ORIH, "Liquidation of a Ukrainian agitation cell" (gir.91)
+			days = 7
+		}
+	}
+}
+
+#Emperor on the Icon, Generalissimo on the Throne
+shared_focus = {
+	id = DPR_emperor_on_the_icon_generalissimo_on_the_throne
+	icon = GFX_DPR_Emperor_on_the_Icon_Generalissimo_on_the_Throne
+	cost = 5
+
+	relative_position_id = DPR_let_them_feel_the_whip
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_new_white_guard
+	}
+	prerequisite = {
+		focus = DPR_crush_the_dissatisfied
+	}
+
+	completion_reward = {
+		add_political_power = 100
+		add_stability = 0.1
+		add_war_support = 0.1
+		country_event = { # --- ALSO HIDDEN EVENT
+			id = dpr.945 #PLACEHOLDER --- івент про повну перемогою білого руху та гіркіна над ростіком й іншими й те що Гіркін побудує державу зі своїм культом
+			days = 1
+		}
+		swap_ideas = {
+			remove_idea = DPR_colonels_plan_7
+			add_idea = DPR_generalissimos_plan
+		}
+		### ADD LEADER TRAIT "GENERALISSIMO"
+	}
+}
+
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################         ABSOLUTIST MONARCHY PATH(Splits into 2 paths later)      ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+#...and Restore Historical Justice
+shared_focus = {
+	id = DPR_and_restore_historical_justice
+	icon = GFX_DPR_and_Restore_Historical_Justice
+	cost = 2
+
+	x = 10
+	y = 1
+
+	completion_reward = {
+		###THIS FOCUS AUTO COMPLETES
+		country_event = {
+			id = dpr.946 #PLACEHOLDER --- івент про коронацію Марії Романової імператрицею всеросійською
+			days = 1
+		}
+		country_event = { # --- !!! START BALANCE OF POWER GAME BETWEEN MARIA AND GRIGORIY !!!
+			id = dpr.947 #PLACEHOLDER --- івент про напружені відносини Марії та її сина Григорія (син не лояльний владі матері та хотів сам стати імператором, але перевагу надали їй. Тож він хоче більше влади, бабла, та повноважень)
+			days = 1
+		}
+	}
+}
+
+#Loyalty Check
+shared_focus = {
+	id = DPR_loyalty_check
+	icon = GFX_DPR_Loyalty_Check
+	cost = 2
+
+	relative_position_id = DPR_and_restore_historical_justice
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_and_restore_historical_justice
+	}
+
+	completion_reward = {
+		###REMOVES DISLOYAL TO MARIA MINISTERS
+	}
+}
+
+#Secure the Dynasty Once and for All
+shared_focus = {
+	id = DPR_secure_the_dynasty_once_and_for_all
+	icon = GFX_DPR_Secure_the_Dynasty_Once_and_for_All
+	cost = 2
+
+	relative_position_id = DPR_loyalty_check
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_loyalty_check
+	}
+
+	completion_reward = {
+		country_event = {
+			id = dpr.948 #PLACEHOLDER --- івент про промову Машки адресованої всьому світові що рашн емпайр іс соу бек (вони хочуть все відвоювати, але це прямо не згадуйте:PrideandFallreference:)
+			days = 1
+		}
+	}
+}
+
+#Summon the Courtiers
+shared_focus = {
+	id = DPR_summon_the_courtiers
+	icon = GFX_DPR_Summon_the_Courtiers
+	cost = 2
+
+	relative_position_id = DPR_and_restore_historical_justice
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_and_restore_historical_justice
+	}
+
+	completion_reward = {
+		###ADD LOYAL MARIA MINISTERS :3
+		add_popularity = {
+			ideology = authoritarianism
+			popularity = 0.1
+		}
+	}
+}
+
+#Consolidate Power in Worthy Hands
+shared_focus = {
+	id = DPR_consolidate_power_in_worthy_hands
+	icon = GFX_DPR_Consolidate_Power_in_Worthy_Hands
+	cost = 2
+
+	relative_position_id = DPR_summon_the_courtiers
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_summon_the_courtiers
+	}
+
+	completion_reward = {
+		###ADD LOYAL MARIA MINISTERS :3
+		add_popularity = {
+			ideology = traditionalism
+			popularity = 0.1
+		}
+	}
+}
+
+#Deprive Girkin of His Arrogance
+shared_focus = {
+	id = DPR_deprive_girkin_of_his_arrogance
+	icon = GFX_DPR_Deprive_Girkin_of_His_Arrogance
+	cost = 2
+
+	relative_position_id = DPR_and_restore_historical_justice
+	x = 2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_and_restore_historical_justice
+	}
+
+	completion_reward = {
+		country_event = { # --- REMOVES GIRKIN AS GENERAL
+			id = dpr.949 #PLACEHOLDER --- івент про те як гіркіна попускає Машка і він стає звичайним генералом (життя лайно і в нього депресія)
+			days = 1
+		}
+		add_popularity = {
+			ideology = ultranationalism
+			popularity = -0.15
+		}
+	}
+}
+
+#End the White Guard
+shared_focus = {
+	id = DPR_end_the_white_guard
+	icon = GFX_DPR_End_the_White_Guard
+	cost = 2
+
+	relative_position_id = DPR_deprive_girkin_of_his_arrogance
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_deprive_girkin_of_his_arrogance
+	}
+
+	completion_reward = {
+		###REMOVE GIRKIN GENERALS
+		country_event = { # --- REMOVES MANPOWER BTW
+			id = dpr.950 #PLACEHOLDER --- івент про штурм головної резиденції ровс спецназом, заборону організації та ліквідацію Іванова з прибічниками (мочать його в офісі)
+			days = 1
+		}
+		add_popularity = {
+			ideology = ultranationalism
+			popularity = -0.10
+		}
+	}
+}
+
+#About the Mother-Son Relationship
+shared_focus = {
+	id = DPR_about_the_mother_son_relationship
+	icon = GFX_DPR_About_the_Mother_Son_Relationship
+	cost = 4
+
+	relative_position_id = DPR_end_the_white_guard
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_secure_the_dynasty_once_and_for_all
+	}
+	prerequisite = {
+		focus = DPR_consolidate_power_in_worthy_hands
+	}
+	prerequisite = {
+		focus = DPR_end_the_white_guard
+	}
+
+	completion_reward = {
+		custom_effect_tooltip = maria_vs_grigoriy_conclusion_tt
+		hidden_effect = {
+			### !!! ADD CHECK CONDITION WHO HAS MORE POINTS in BoP game !!!
+			country_event = { # --- IF MARIA HAS MORE POINTS
+				id = dpr.951 #PLACEHOLDER --- івент про тріумф матері
+				days = 1
+			}
+			country_event = { # --- IF GRIGORIY HAS MORE POINTS
+				id = dpr.952 #PLACEHOLDER --- івент про вбивсто Машки сином (в ночі в імператорському палаці, вину кидає син на її козацьку гвардію)
+				days = 1
+			}
+		}
+	}
+}
+
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################              DOMINATIVE MAMA MARIA MONARCHY PATH                 ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+
+
+#United in Blood and Purpose
+shared_focus = {
+	id = DPR_united_in_blood_and_purpose
+	icon = GFX_DPR_United_in_Blood_and_Purpose
+	cost = 1
+
+	x = 10
+	y = 1
+
+	prerequisite = {
+		focus = DPR_about_the_mother_son_relationship
+	}
+
+	completion_reward = {
+		add_ideas = DPR_unitedinbloodandpurpose
+	}
+}
+
+#Protect Cossack Privileges
+shared_focus = {
+	id = DPR_protect_cossack_privileges
+	icon = GFX_DPR_Protect_Cossack_Privileges
+	cost = 3
+
+	relative_position_id = DPR_united_in_blood_and_purpose
+	x = -2
+	y = 2
+
+	prerequisite = {
+		focus = DPR_united_in_blood_and_purpose
+	}
+
+	completion_reward = {
+		###NEW COSSACK ADVISORS
+		###ALSO ADD SOME COSSACK DIVISIONS
+	}
+}
+
+#Fair Distribution of Power
+shared_focus = {
+	id = DPR_fair_distribution_of_power
+	icon = GFX_DPR_Fair_Distribution_of_Power
+	cost = 3
+
+	relative_position_id = DPR_protect_cossack_privileges
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_protect_cossack_privileges
+	}
+
+	completion_reward = {
+		country_event = {
+			id = dpr.953 #PLACEHOLDER --- івент про відновлення соціальних станів періодну імперії (основні сословія - шляхта, церква, козаки)
+			days = 1
+		}
+	}
+}
+
+#Form the Imperial Cabinet
+shared_focus = {
+	id = DPR_form_the_imperial_cabinet
+	icon = GFX_DPR_Form_the_Imperial_Cabinet
+	cost = 3
+
+	relative_position_id = DPR_protect_cossack_privileges
+	x = 0
+	y = 2
+
+	prerequisite = {
+		focus = DPR_fair_distribution_of_power
+	}
+
+	completion_reward = {
+		add_popularity = {
+			ideology = traditionalism
+			popularity = 0.2
+		}
+		###ALSO ADDS LEADER TRAIT
+	}
+}
+
+#Peace and Harmony in the Empire
+shared_focus = {
+	id = DPR_peace_and_harmony
+	icon = GFX_DPR_Peace_and_Harmony
+	cost = 5
+
+	relative_position_id = DPR_protect_cossack_privileges
+	x = -1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_protect_cossack_privileges
+	}
+	prerequisite = {
+		focus = DPR_form_the_imperial_cabinet
+	}
+
+	completion_reward = {
+		add_political_power = 100
+		add_stability = 0.1
+		add_war_support = 0.1
+		country_event = {
+			id = dpr.954 #PLACEHOLDER --- фінальний івент матері Марії
+			days = 1
+		}
+		add_ideas = DPR_perfect_society
+	}
+}
+
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################             CRAZY SON GEORGIY(GOSHA) MONARCHY PATH               ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+
+
+#Sorry, Ma
+shared_focus = {
+	id = DPR_sorry_ma
+	icon = GFX_DPR_Sorry_Ma
+	cost = 1
+
+	x = 10
+	y = 1
+
+	prerequisite = {
+		focus = DPR_about_the_mother_son_relationship
+	}
+
+	completion_reward = {
+		###I am fucking dying please save me
+	}
+}
+
+#Standing Up to Consequences
+shared_focus = {
+	id = DPR_standing_up_to_consequences
+	icon = GFX_DPR_Standing_Up_to_Consequences
+	cost = 2
+
+	relative_position_id = DPR_sorry_ma
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_sorry_ma
+	}
+
+	completion_reward = {
+		add_ideas = DPR_bad_consequences
+		country_event = {
+			id = dpr.955 #PLACEHOLDER --- івент про коронацію Георгія Романова імператором після смерті матері
+			days = 1
+		}
+	}
+}
+
+#Witch Hunt
+shared_focus = {
+	id = DPR_witch_hunt
+	icon = GFX_DPR_Witch_Hunt
+	cost = 2
+
+	relative_position_id = DPR_standing_up_to_consequences
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_standing_up_to_consequences
+	}
+
+	completion_reward = {
+		add_manpower = -300
+		add_popularity = {
+			ideology = traditionalism
+			popularity = -0.15
+		}
+		#REMOVES MARIA LOYAL MINISTERS AND ADDS GRIGORIY LOYAL ONES
+		country_event = {
+			id = dpr.956 #PLACEHOLDER --- івент про полювання на про-мамкінських поців в уряді силами Георгія
+			days = 1
+		}
+	}
+}
+
+#Time to Wash Our Hands
+shared_focus = {
+	id = DPR_time_to_wash_our_hands
+	icon = GFX_DPR_Time_to_Wash_Our_Hands
+	cost = 2
+
+	relative_position_id = DPR_witch_hunt
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_witch_hunt
+	}
+
+	completion_reward = {
+		country_event = {
+			id = dpr.957 #PLACEHOLDER --- івент про повне очищення ім‘я та «совісті» Георгія після вбивства матері та успішного знищення своїх супротивників
+			days = 1
+		}
+		#remove_ideas = DPR_badconsequences --- ADD THIS TO EVENT INSTEAD
+	}
+}
+
+#Enshrining Absolutism
+shared_focus = {
+	id = DPR_enshrining_absolutism
+	icon = GFX_DPR_Enshrining_Absolutism
+	cost = 2
+
+	relative_position_id = DPR_sorry_ma
+	x = 2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_sorry_ma
+	}
+
+	completion_reward = {
+		###LAWS LAWS MORE LAWS
+		add_ideas = DPR_absolute_power_1
+	}
+}
+
+#No One is Above the Tsar
+shared_focus = {
+	id = DPR_no_one_is_above_the_tsar
+	icon = GFX_DPR_No_One_is_Above_the_Tsar
+	cost = 2
+
+	relative_position_id = DPR_enshrining_absolutism
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_enshrining_absolutism
+	}
+
+	completion_reward = {
+		###REMOVE GENERALS LOYAL TO MARIA
+		swap_ideas = {
+			remove_idea = DPR_absolute_power_1
+			add_idea = DPR_absolute_power_2
+		}
+	}
+}
+
+#L'État, C'est Moi
+shared_focus = {
+	id = DPR_letat_cest_moi
+	icon = GFX_DPR_LEtat_Cest_Moi
+	cost = 2
+
+	relative_position_id = DPR_no_one_is_above_the_tsar
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_no_one_is_above_the_tsar
+	}
+
+	completion_reward = {
+		### ADDS LEADER TRAIT(idk about the name yet)
+		swap_ideas = {
+			remove_idea = DPR_absolute_power_2
+			add_idea = DPR_absolute_power_3
+		}
+	}
+}
+
+#Destroy the Remnants of the Past
+shared_focus = {
+	id = DPR_destroy_the_remnants_of_the_past
+	icon = GFX_DPR_Destroy_the_Remnants_of_the_Past
+	cost = 2
+
+	relative_position_id = DPR_sorry_ma
+	x = 4
+	y = 1
+
+	prerequisite = {
+		focus = DPR_sorry_ma
+	}
+
+	completion_reward = {
+		army_experience = -50
+	}
+}
+
+#Suppress the Cossacks
+shared_focus = {
+	id = DPR_suppress_the_cossacks
+	icon = GFX_DPR_Suppress_the_Cossacks
+	cost = 2
+
+	relative_position_id = DPR_destroy_the_remnants_of_the_past
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_destroy_the_remnants_of_the_past
+	}
+
+	completion_reward = {
+		country_event = { # REMOVES COSSACK GENERALS
+			id = dpr.958 #PLACEHOLDER --- івент про геноцид козацьких полків та генералітету
+			days = 1
+		}
+	}
+}
+
+#Generals of the First Class
+shared_focus = {
+	id = DPR_generals_of_the_first_class
+	icon = GFX_DPR_Generals_of_the_First_Class
+	cost = 2
+
+	relative_position_id = DPR_suppress_the_cossacks
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_suppress_the_cossacks
+	}
+
+	completion_reward = {
+		###ADDS LAW NO PROFESIONALISM LMAO
+	}
+}
+
+#Unlimited Power!
+shared_focus = {
+	id = DPR_unlimited_power
+	icon = GFX_DPR_Unlimited_Power
+	cost = 2
+
+	relative_position_id = DPR_generals_of_the_first_class
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_time_to_wash_our_hands
+	}
+	prerequisite = {
+		focus = DPR_letat_cest_moi
+	}
+	prerequisite = {
+		focus = DPR_generals_of_the_first_class
+	}
+
+	completion_reward = {
+		add_political_power = 100
+		add_stability = 0.1
+		add_war_support = 0.1
+		country_event = {
+			id = dpr.959 #PLACEHOLDER --- фінальний івент до Георгія (втілення його планів та амбіцій, тепер він єдина владна людина в країні)
+			days = 1
+		}
+		swap_ideas = {
+			remove_idea = DPR_absolute_power_3
+			add_idea = DPR_unlimited_power
+		}
+	}
+}
+
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################             EXPANSION FOCUSES FOR ABSOLUTISTS(Mama+Son)          ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+#Re-establish the Malorossiya Governorate
+shared_focus = {
+	id = DPR_reestablish_the_malorossiya_governorate
+	icon = GFX_DPR_Reestablish_the_Malorossiya_Governorate
+	cost = 1
+
+	x = 10
+	y = 1
+
+	prerequisite = {
+		focus = DPR_united_in_blood_and_purpose
+		focus = DPR_sorry_ma
+	}
+
+	completion_reward = {
+		###ADD CLAIMS ON WHOLE OKRAINA
+		###ADD DECISIONS TO GO FIGHT THE UKROPS
+		add_war_support = 0.1
+	}
+}
+
+#Quell Resistance
+shared_focus = {
+	id = DPR_quell_resistance
+	icon = GFX_DPR_Quell_Resistance
+	cost = 2
+
+	relative_position_id = DPR_reestablish_the_malorossiya_governorate
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_reestablish_the_malorossiya_governorate
+	}
+
+	completion_reward = {
+		###ADD DECISIONS TO LOWER RESISTANCE
+	}
+}
+
+#There is no Ukraine!
+shared_focus = {
+	id = DPR_there_is_no_ukraine
+	icon = GFX_DPR_There_is_no_Ukraine
+	cost = 2
+
+	relative_position_id = DPR_quell_resistance
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_quell_resistance
+	}
+
+	completion_reward = {
+		add_timed_idea = { # --- GIVES COMPLIANCE GROWS
+			idea = DPR_no_ukraine
+			days = 180
+		}
+		country_event = {
+			id = dpr.960 #PLACEHOLDER --- івент про заперечення укр ідентичності (брошура якась)
+			days = 1
+		}
+	}
+}
+
+#Strengthen Our New Bastion
+shared_focus = {
+	id = DPR_strengthen_our_new_bastion
+	icon = GFX_DPR_Strengthen_Our_New_Bastion
+	cost = 2
+
+	relative_position_id = DPR_reestablish_the_malorossiya_governorate
+	x = 2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_reestablish_the_malorossiya_governorate
+	}
+
+	completion_reward = {
+		###BUILDS BUNKERS ON BORDER WITH RUSSIA
+		country_event = { # --- NEWS EVENT
+			id = dpr.868 #PLACEHOLDER --- From ORIH, "Empire vs. Federation?" (war.4)
+			days = 1
+		}
+	}
+}
+
+#Appeal to the People
+shared_focus = {
+	id = DPR_appeal_to_the_people
+	icon = GFX_DPR_Appeal_to_the_People
+	cost = 2
+
+	relative_position_id = DPR_strengthen_our_new_bastion
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_strengthen_our_new_bastion
+	}
+
+	completion_reward = {
+		country_event = {
+			id = dpr.961 #PLACEHOLDER --- івент про промову монарха (окремі версії для марії та георгія) до населення рашки (заклик визнати лише їх як своїх правителів та допомогти їм знищити путіна з рештою)
+			days = 1
+		}
+		country_event = {
+			id = dpr.962 #PLACEHOLDER --- івент про промову монарха (окремі версії для марії та георгія) до населення рашки (заклик визнати лише їх як своїх правителів та допомогти їм знищити путіна з рештою)
+			days = 1
+		}
+	}
+}
+
+#Righteous Hike
+shared_focus = {
+	id = DPR_righteous_hike
+	icon = GFX_DPR_Righteous_Hike
+	cost = 3
+
+	relative_position_id = DPR_strengthen_our_new_bastion
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_there_is_no_ukraine
+	}
+	prerequisite = {
+		focus = DPR_appeal_to_the_people
+	}
+
+	completion_reward = {
+		country_event = {
+			id = dpr.963 #PLACEHOLDER --- івент про початок війни імперців з рашкою (епічна промова в стилі ми всєх пабєдім)
+			days = 1
+		}
+		add_timed_idea = { # --- GIVES ATTACK AGAINST RUSSIA BONUS
+			idea = DPR_with_righteous_hike
+			days = 180
+		}
+	}
+}
+
+#Blessed Triumph
+shared_focus = {
+	id = DPR_blessed_triumph
+	icon = GFX_DPR_Blessed_Triumph
+	cost = 1
+
+	relative_position_id = DPR_righteous_hike
+	x = 0
+	y = 2
+
+	prerequisite = {
+		focus = DPR_righteous_hike
+	}
+
+	completion_reward = {
+		country_event = { # NEEDS A LOT OF BUFFS FR FR
+			id = dpr.964 #PLACEHOLDER --- івент про триумфальну перемогу імперців проти хуйла
+			days = 1
+		}
+		add_ideas = DPR_anti_monarchist_resistance
+	}
+}
+
+#Restoration of Imperial Culture
+shared_focus = {
+	id = DPR_restoration_of_imperial_culture
+	icon = GFX_DPR_Restoration_of_Imperial_Culture
+	cost = 2
+
+	relative_position_id = DPR_blessed_triumph
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_blessed_triumph
+	}
+
+	completion_reward = {
+		add_stability = 0.1
+	}
+}
+
+#Harness All the Wealth of the Motherland
+shared_focus = {
+	id = DPR_harness_all_the_wealth_of_the_motherland
+	icon = GFX_DPR_Harness_All_the_Wealth_of_the_Motherland
+	cost = 2
+
+	relative_position_id = DPR_restoration_of_imperial_culture
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_restoration_of_imperial_culture
+	}
+
+	completion_reward = {
+		###ADD BONUSES ON FABRIC AND RESOURCES
+		add_timed_idea = {
+			idea = DPR_harnessed_wealth
+			days = 180
+		}
+	}
+}
+
+#Crowning, as it Belongs
+shared_focus = {
+	id = DPR_crowning_as_it_belongs
+	icon = GFX_DPR_Crowning_as_it_Belongs
+	cost = 2
+
+	relative_position_id = DPR_blessed_triumph
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_blessed_triumph
+	}
+
+	completion_reward = {
+		country_event = {
+			id = dpr.965 #PLACEHOLDER --- івент про коронацію на імператора в соборі василія блаженного (окремо для мамки та сина)
+			days = 1
+		}
+	}
+}
+
+#Learn from the Past
+shared_focus = {
+	id = DPR_learn_from_the_past
+	icon = GFX_DPR_Learn_from_the_Past
+	cost = 2
+
+	relative_position_id = DPR_crowning_as_it_belongs
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_crowning_as_it_belongs
+	}
+
+	completion_reward = {
+		country_event = { # ADDS DECISION TO DEAL WITH RESISTANCE (gir.88 from ORIH can be useful)
+			id = dpr.966 #PLACEHOLDER --- івент про активність анти-монархічних рухів після перемоги над Рашкою
+			days = 1
+		}
+	}
+}
+
+#Ambitiousness — Our Everything
+shared_focus = {
+	id = DPR_ambitiousness_our_everything
+	icon = GFX_DPR_Ambitiousness_Our_Everything
+	cost = 2
+
+	relative_position_id = DPR_blessed_triumph
+	x = 2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_blessed_triumph
+	}
+
+	completion_reward = {
+		###ADD DECISIONS TO CONQUER CENTRAL ASIA
+	}
+}
+
+#Challenge the World
+shared_focus = {
+	id = DPR_challenge_the_world
+	icon = GFX_DPR_Challenge_the_World
+	cost = 2
+
+	relative_position_id = DPR_ambitiousness_our_everything
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_ambitiousness_our_everything
+	}
+
+	completion_reward = {
+		###ADD DECISIONS TO CONQUER FINLAND POLAND BALTIC AND NATO
+		country_event = {
+			id = dpr.967 #PLACEHOLDER --- івент про оголошення плани захопити Балтію, Фінляндію та Польщу, оголосити війну НАТО та битись до конца
+			days = 1
+		}
+	}
+}
+
+#God is with Us — World is for Us
+shared_focus = {
+	id = DPR_god_is_with_us_world_is_for_us
+	icon = GFX_DPR_God_is_with_Us_World_is_for_Us
+	cost = 6
+
+	relative_position_id = DPR_challenge_the_world
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_harness_all_the_wealth_of_the_motherland
+	}
+	prerequisite = {
+		focus = DPR_learn_from_the_past
+	}
+	prerequisite = {
+		focus = DPR_challenge_the_world
+	}
+
+	completion_reward = {
+		###NATIONALIZE NEW TERRITORIES
+		add_political_power = 100
+		add_stability = 0.1
+		add_war_support = 0.1
+		country_event = {
+			id = dpr.968 #PLACEHOLDER --- івент про втілення імперських амбіцій рашки з завоюванням Центральної Азії, Кавказу, Балтії, Фінляндії, та Польщі
+			days = 1
+		}
+	}
+}
+
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################   THE START OF ECONOMY TREE(for Girkin right after elections )   ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+
+
+#Embark on a New Economic Course
+shared_focus = {
+	id = DPR_embark_on_a_new_economic_course
+	icon = GFX_DPR_Embark_on_a_New_Economic_Course
+	cost = 3
+
+	x = 10
+	y = 1
+
+	completion_reward = {
+		add_ideas = DPR_new_economic_course_1
+	}
+}
+
+#Declare War on Oligarchy
+shared_focus = {
+	id = DPR_declare_war_on_oligarchy
+	icon = GFX_DPR_Declare_War_on_Oligarchy
+	cost = 2
+
+	relative_position_id = DPR_embark_on_a_new_economic_course
+	x = -1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_embark_on_a_new_economic_course
+	}
+
+	completion_reward = {
+		###LAWS AGAINST OLIGARCHs
+		add_ideas = fop_oligarchs_relations_anti_oligarchic_policy
+	}
+}
+
+#Omnipresent State Monopolies
+shared_focus = {
+	id = DPR_omnipresent_state_monopolies
+	icon = GFX_DPR_Omnipresent_State_Monopolies
+	cost = 2
+
+	relative_position_id = DPR_declare_war_on_oligarchy
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_declare_war_on_oligarchy
+	}
+
+	completion_reward = {
+		add_ideas = fop_commercial_policy_heavy_protectionism
+		swap_ideas = {
+			remove_idea = DPR_new_economic_course_1
+			add_idea = DPR_new_economic_course_2
+		}
+	}
+}
+
+#Policy of Mass Nationalization
+shared_focus = {
+	id = DPR_policy_of_mass_nationalization
+	icon = GFX_DPR_Policy_of_Mass_Nationalization
+	cost = 2
+
+	relative_position_id = DPR_embark_on_a_new_economic_course
+	x = 1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_embark_on_a_new_economic_course
+	}
+
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_new_economic_course_2
+			add_idea = DPR_new_economic_course_3
+		}
+	}
+}
+
+#Full Exploitation of Land
+shared_focus = {
+	id = DPR_full_exploitation_of_land
+	icon = GFX_DPR_Full_Exploitation_of_Land
+	cost = 2
+
+	relative_position_id = DPR_policy_of_mass_nationalization
+	x = 1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_policy_of_mass_nationalization
+	}
+
+	completion_reward = {
+		###ADDS RESOURCES
+	}
+}
+
+#Towards Total Economic Independence
+shared_focus = {
+	id = DPR_towards_total_economic_independence
+	icon = GFX_DPR_Towards_Total_Economic_Independence
+	cost = 2
+
+	relative_position_id = DPR_full_exploitation_of_land
+	x = -1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_omnipresent_state_monopolies
+	}
+	prerequisite = {
+		focus = DPR_full_exploitation_of_land
+	}
+
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = DPR_new_economic_course_3
+			add_idea = DPR_new_economic_course_4
+		}
+	}
+}
+
+#Embrace the Role of the Lord
+shared_focus = {
+	id = DPR_embrace_the_role_of_the_lord
+	icon = GFX_DPR_Embrace_the_Role_of_the_Lord
+	cost = 2
+
+	relative_position_id = DPR_towards_total_economic_independence
+	x = 1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_towards_total_economic_independence
+	}
+
+	completion_reward = {
+		add_research_slot = 1
+		swap_ideas = {
+			remove_idea = DPR_new_economic_course_4
+			add_idea = DPR_new_economic_course_5
+		}
+	}
+}
+
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################           ECONOMIC TREE PART FOR LIBERAL ROSTISLAV               ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+#Liberalization of the Economic Environment - Economic Environment Liberalization
+shared_focus = {
+	id = DPR_liberalization_of_the_economic_environment
+	icon = GFX_DPR_Liberalization_of_the_Economic_Environment
+	cost = 2
+
+	relative_position_id = DPR_embrace_the_role_of_the_lord
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_embrace_the_role_of_the_lord
+	}
+
+	completion_reward = {
+		add_ideas = fop_commercial_policy_free_trade
+		add_ideas = fop_taxes_progressive
+		add_ideas = fop_forced_labour_banned
+		add_popularity = {
+			ideology = liberalism
+			popularity = 0.10
+		}
+		add_popularity = {
+			ideology = traditionalism
+			popularity = -0.05
+		}
+	}
+}
+
+#Encourage Foreign Investments
+shared_focus = {
+	id = DPR_encourage_foreign_investments
+	icon = GFX_DPR_Encourage_Foreign_Investments
+	cost = 2
+
+	relative_position_id = DPR_liberalization_of_the_economic_environment
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_liberalization_of_the_economic_environment
+	}
+
+	completion_reward = {
+		add_offsite_building = { type = industrial_complex level = 1 }
+	}
+}
+
+#Sign Contracts with Magnates
+shared_focus = {
+	id = DPR_sign_contracts_with_magnates
+	icon = GFX_DPR_Sign_Contracts_with_Magnates
+	cost = 2
+
+	relative_position_id = DPR_encourage_foreign_investments
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_encourage_foreign_investments
+	}
+
+	completion_reward = {
+		add_offsite_building = { type = industrial_complex level = 1 }
+		add_equipment_subsidy = {
+			cic = 1000
+			equipment_type = support_equipment
+			seller_tags = { EUN }
+		}
+	}
+}
+
+#State Privatization Programme
+shared_focus = {
+	id = DPR_state_privatization_programme
+	icon = GFX_DPR_State_Privatization_Programme
+	cost = 2
+
+	relative_position_id = DPR_liberalization_of_the_economic_environment
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_liberalization_of_the_economic_environment
+	}
+
+	completion_reward = {
+		random_controlled_state = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_controlled_state = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+#Promote Competition in the Market
+shared_focus = {
+	id = DPR_promote_market_competition
+	icon = GFX_DPR_Promote_Market_Competition
+	cost = 2
+
+	relative_position_id = DPR_state_privatization_programme
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_state_privatization_programme
+	}
+
+	completion_reward = {
+		random_controlled_state = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_controlled_state = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+#Enshrining Western-Style Economics
+shared_focus = {
+	id = DPR_enshrining_western_style_economics
+	icon = GFX_DPR_Enshrining_Western_Style_Economics
+	cost = 4
+
+	relative_position_id = DPR_promote_market_competition
+	x = -1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_sign_contracts_with_magnates
+	}
+	prerequisite = {
+		focus = DPR_promote_market_competition
+	}
+
+	completion_reward = {
+		add_ideas = fop_economic_system_capitalism
+	}
+}
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################     ECONOMIC TREE PART FOR LITERALLY ANYONE EXCEPT ROSTISALV     ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+#Continue the Nationalization Policy
+shared_focus = {
+	id = DPR_continue_the_nationalization_policy
+	icon = GFX_DPR_Continue_the_Nationalization_Policy
+	cost = 2
+
+	relative_position_id = DPR_embrace_the_role_of_the_lord
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_embrace_the_role_of_the_lord
+	}
+
+	completion_reward = {
+		add_popularity = {
+			ideology = traditionalism
+			popularity = 0.10
+		}
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.05
+		}
+		random_controlled_state = {
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_controlled_state = {
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+#Implement Land Trade Quotas
+shared_focus = {
+	id = DPR_implement_land_trade_quotas
+	icon = GFX_DPR_Implement_Land_Trade_Quotas
+	cost = 2
+
+	relative_position_id = DPR_continue_the_nationalization_policy
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_continue_the_nationalization_policy
+	}
+
+	completion_reward = {
+		random_controlled_state = {
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_controlled_state = {
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+#Monopolize New Spheres
+shared_focus = {
+	id = DPR_monopolize_new_spheres
+	icon = GFX_DPR_Monopolize_New_Spheres
+	cost = 2
+
+	relative_position_id = DPR_continue_the_nationalization_policy
+	x = 2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_continue_the_nationalization_policy
+	}
+
+	completion_reward = {
+		country_event = {
+			id = dpr.969 #PLACEHOLDER --- івент для економічної гілки коли імперці завойовують Україну (буде для Ростіка й машки) й про можливості цієї землі
+			days = 1
+		}
+	}
+}
+
+#State — the Best Economist
+shared_focus = {
+	id = DPR_state_the_best_economist
+	icon = GFX_DPR_State_the_Best_Economist
+	cost = 2
+
+	relative_position_id = DPR_monopolize_new_spheres
+	x = -1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_implement_land_trade_quotas
+	}
+	prerequisite = {
+		focus = DPR_monopolize_new_spheres
+	}
+
+	completion_reward = {
+		add_ideas = fop_economic_system_autarky
+	}
+}
+
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################                      ARMYYYYYYY TREEEEEEEEEE                     ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+
+
+#And What About the Military?
+shared_focus = {
+	id = DPR_and_what_about_the_military
+	icon = GFX_DPR_And_What_About_the_Military
+	cost = 3
+
+	x = 30
+	y = 1
+
+	completion_reward = {
+		add_command_power = 30
+		add_ideas = DPR_military_reorganization_1
+		add_ideas = fop_military_professionalism_outdated_army
+	}
+}
+
+#Revise Recruitment Policy
+shared_focus = {
+	id = DPR_revise_recruitment_policy
+	icon = GFX_DPR_Revise_Recruitment_Policy
+	cost = 2
+
+	relative_position_id = DPR_and_what_about_the_military
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_and_what_about_the_military
+	}
+
+	completion_reward = {
+		add_ideas = fop_conscription_extensive
+		add_ideas = fop_supervision_strict_rules
+	}
+}
+
+#Time for Aptitude Tests
+shared_focus = {
+	id = DPR_time_for_aptitude_tests
+	icon = GFX_DPR_Time_for_Aptitude_Tests
+	cost = 2
+
+	relative_position_id = DPR_and_what_about_the_military
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_and_what_about_the_military
+	}
+
+	completion_reward = {
+		completion_reward = {
+			random_unit_leader = { 
+				add_skill_level = 1
+			}
+			random_unit_leader = { 
+				add_skill_level = 1
+			}
+			random_unit_leader = { 
+				add_skill_level = 1
+			}
+			random_unit_leader = { 
+				add_skill_level = 1
+			}
+			army_experience = 50
+			navy_experience = 25
+			air_experience = 25
+	}
+}
+
+#New Logistic Apparatus
+shared_focus = {
+	id = DPR_new_logistic_apparatus
+	icon = GFX_DPR_New_Logistic_Apparatus
+	cost = 2
+
+	relative_position_id = DPR_and_what_about_the_military
+	x = 2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_and_what_about_the_military
+	}
+
+	completion_reward = {
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			set_building_level = {
+				type = infrastructure
+				level = 5
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			set_building_level = {
+				type = infrastructure
+				level = 5
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			set_building_level = {
+				type = infrastructure
+				level = 5
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			set_building_level = {
+				type = infrastructure
+				level = 5
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			set_building_level = {
+				type = infrastructure
+				level = 5
+				instant_build = yes
+			}
+		}
+	}
+}
+
+#One Step Forward
+shared_focus = {
+	id = DPR_one_step_forward
+	icon = GFX_DPR_One_Step_Forward
+	cost = 4
+
+	relative_position_id = DPR_new_logistic_appartus
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_revise_recruitment_policy
+	}
+	prerequisite = {
+		focus = DPR_time_for_aptitude_tests
+	}
+	prerequisite = {
+		focus = DPR_new_logistic_apparatus
+	}
+
+	completion_reward = {
+		add_ideas = DPR_military_reorganization_2
+		add_ideas = fop_military_professionalism_politicized_army
+	}
+}
+
+#Loyalty to Traditions
+shared_focus = {
+	id = DPR_loyalty_to_traditions
+	icon = GFX_DPR_Loyalty_to_Traditions
+	cost = 2
+
+	relative_position_id = DPR_one_step_forward
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_one_step_forward
+	}
+	mutually_exclusive = {
+		focus = DPR_radical_changes_are_essential
+	}
+
+	completion_reward = {
+		random_unit_leader = { 
+			add_planning = 1
+		}
+		random_unit_leader = { 
+			add_planning = 1
+		}
+		random_unit_leader = { 
+			add_planning = 1
+		}
+	}
+}
+
+#Bullet is a Fool, Bayonet is a Hero
+shared_focus = {
+	id = DPR_bullet_is_a_fool_bayonet_is_a_hero
+	icon = GFX_DPR_Bullet_is_a_Fool_Bayonet_is_a_Hero
+	cost = 2
+
+	relative_position_id = DPR_loyalty_to_traditions
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_loyalty_to_traditions
+	}
+
+	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.75
+			uses = 2
+			category = infantry_weapons
+		}
+	}
+}
+
+#Radical Changes Are Essential
+shared_focus = {
+	id = DPR_radical_changes_are_essential
+	icon = GFX_DPR_Radical_Changes_Are_Essential
+	cost = 2
+
+	relative_position_id = DPR_one_step_forward
+	x = 2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_one_step_forward
+	}
+	mutually_exclusive = {
+		focus = DPR_loyalty_to_traditions
+	}
+
+	completion_reward = {
+		random_unit_leader = { 
+			add_attack = 1
+		}
+		random_unit_leader = { 
+			add_attack = 1
+		}
+		random_unit_leader = { 
+			add_attack = 1
+		}
+	}
+}
+
+#Army-Wide Motorization
+shared_focus = {
+	id = DPR_army_wide_motorization
+	icon = GFX_DPR_Army_Wide_Motorization
+	cost = 2
+
+	relative_position_id = DPR_radical_changes_are_essential
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_radical_changes_are_essential
+	}
+
+	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.75
+			uses = 1
+			category = motorized_equipment
+		}
+	}
+}
+
+#Launch Full Re-equipment
+shared_focus = {
+	id = DPR_launch_full_reequipment
+	icon = GFX_DPR_Launch_Full_Reequipment
+	cost = 2
+
+	relative_position_id = DPR_one_step_forward
+	x = 0
+	y = 2
+
+	prerequisite = {
+		focus = DPR_one_step_forward
+	}
+
+	completion_reward = {
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 5000
+			producer = DPR
+		}
+	}
+}
+
+#Conduct Top-Level Trainings
+shared_focus = {
+	id = DPR_conduct_top_level_trainings
+	icon = GFX_DPR_Conduct_Top_Level_Trainings
+	cost = 3
+
+	relative_position_id = DPR_launch_full_reequipment
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_bullet_is_a_fool_bayonet_is_a_hero
+		focus = DPR_army_wide_motorization
+	}
+	prerequisite = {
+		focus = DPR_launch_full_reequipment
+	}
+	completion_reward = {
+		add_ideas = fop_training_advanced
+	}
+}
+
+#Final Steps
+shared_focus = {
+	id = DPR_final_moves
+	icon = GFX_DPR_Final_Moves
+	cost = 5
+
+	relative_position_id = DPR_conduct_top_level_trainings
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_conduct_top_level_trainings
+	}
+
+	completion_reward = {
+		add_ideas = DPR_military_reorganization_3
+		add_ideas = fop_military_professionalism_professional_army
+	}
+}
+
+#Knowing the Enemy Inside and Out
+shared_focus = {
+	id = DPR_knowing_the_enemy_inside_and_out
+	icon = GFX_DPR_Knowing_the_Enemy_Inside_and_Out
+	cost = 2
+
+	relative_position_id = DPR_final_moves
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_final_moves
+	}
+
+	completion_reward = {
+		add_operation_token = {
+			tag = RUS
+			token = token_test
+		}
+		add_intel = {
+			target = RUS #maybe also ukr warlods but idk how
+			civilian_intel = 5
+			army_intel = 5
+			navy_intel = 5
+			airforce_intel = 5
+		}
+	}
+}
+
+#Allocate Lands for Military Enterprises
+shared_focus = {
+	id = DPR_allocate_lands_for_military_enterprises
+	icon = GFX_DPR_Allocate_Lands_for_Military_Enterprises
+	cost = 2
+
+	relative_position_id = DPR_final_moves
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_final_moves
+	}
+
+	completion_reward = {
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+#Found New Military Academies
+shared_focus = {
+	id = DPR_found_new_military_academies
+	icon = GFX_DPR_Found_New_Military_Academies
+	cost = 2
+
+	relative_position_id = DPR_final_moves
+	x = 2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_final_moves
+	}
+
+	completion_reward = {
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = situation_centre #idk what that is
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+#Best Army in the Eastern Hemisphere
+shared_focus = {
+	id = DPR_best_army_in_the_eastern_hemisphere
+	icon = GFX_DPR_Best_Army_in_the_Eastern_Hemisphere
+	cost = 2
+
+	relative_position_id = DPR_found_new_military_academies
+	x = -2
+	y = 1
+
+	prerequisite = {
+		focus = DPR_knowing_the_enemy_inside_and_out
+	}
+	prerequisite = {
+		focus = DPR_allocate_lands_for_military_enterprises
+	}
+	prerequisite = {
+		focus = DPR_found_new_military_academies
+	}
+
+	completion_reward = {
+		add_ideas = DPR_military_reorganization_4
+		add_ideas = fop_military_professionalism_prussian_standart
+	}
+}
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################                      AIRFLEET TREEEEEEEEEE                       ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+#Securing the Airspace
+shared_focus = {
+	id = DPR_securing_the_airspace
+	icon = GFX_DPR_Securing_the_Airspace
+	cost = 3
+
+	x = 50
+	y = 1
+
+	completion_reward = {
+		air_experience = 30
+	}
+}
+
+#Open New Airfields
+shared_focus = {
+	id = DPR_open_new_airfields
+	icon = GFX_DPR_Open_New_Airfields
+	cost = 2
+
+	relative_position_id = DPR_securing_the_airspace
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_securing_the_airspace
+	}
+
+	completion_reward = {
+		random_owned_state = {
+			add_building_construction = {
+				type = air_base
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_building_construction = {
+				type = air_base
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_building_construction = {
+				type = air_base
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+#Rely on Foreign Samples
+shared_focus = {
+	id = DPR_rely_on_foreign_samples
+	icon = GFX_DPR_Rely_on_Foreign_Samples
+	cost = 2
+
+	relative_position_id = DPR_open_new_airfields
+	x = -1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_open_new_airfields
+	}
+	mutually_exclusive = {
+		focus = DPR_nothing_is_better_than_ones_own
+	}
+
+	completion_reward = {
+		add_equipment_to_stockpile = {
+			type = cas_equipment
+			amount = 250
+			producer = RUS
+		}
+		add_equipment_to_stockpile = {
+			type = mr_fighter_equipment
+			amount = 250
+			producer = RUS
+		}
+	}
+}
+
+#Nothing is Better than One's Own
+shared_focus = {
+	id = DPR_nothing_is_better_than_ones_own
+	icon = GFX_DPR_Nothing_is_Better_than_Ones_Own
+	cost = 2
+
+	relative_position_id = DPR_open_new_airfields
+	x = 1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_open_new_airfields
+	}
+	mutually_exclusive = {
+		focus = DPR_rely_on_foreign_samples
+	}
+
+	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.55
+			uses = 3
+			category = air_equipment
+		}
+	}
+}
+
+#New Aircraft Production Programme
+shared_focus = {
+	id = DPR_new_aircraft_production_programme
+	icon = GFX_DPR_New_Aircraft_Production_Programme
+	cost = 2
+
+	relative_position_id = DPR_securing_the_airspace
+	x = 5
+	y = 1
+
+	prerequisite = {
+		focus = DPR_securing_the_airspace
+	}
+
+	completion_reward = {
+		###add aircraft production or smth idk
+	}
+}
+
+#Make the Skies Our Home
+shared_focus = {
+	id = DPR_make_the_skies_our_home
+	icon = GFX_DPR_Make_the_Skies_Our_Home
+	cost = 2
+
+	relative_position_id = DPR_new_aircraft_production_programme
+	x = -1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_new_production_programme
+	}
+	mutually_exclusive = {
+		focus = DPR_turn_everything_into_ashes
+	}
+
+	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.75
+			uses = 2
+			category = light_air
+		}
+	}
+}
+
+#Turn Everything into Ashes
+shared_focus = {
+	id = DPR_turn_everything_into_ashes
+	icon = GFX_DPR_Turn_Everything_into_Ashes
+	cost = 2
+
+	relative_position_id = DPR_new_aircraft_production_programme
+	x = 1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_new_aircraft_production_programme
+	}
+	mutually_exclusive = {
+		focus = DPR_make_the_skies_our_home
+	}
+
+	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.75
+			uses = 2
+			category = medium_air
+		}
+	}
+}
+
+#We Will Become the Destroyers of the World
+shared_focus = {
+	id = DPR_we_will_become_the_destroyers_of_the_world
+	icon = GFX_DPR_We_Will_Become_the_Destroyers_of_the_World
+	cost = 3
+
+	relative_position_id = DPR_turn_everything_into_ashes
+	x = 1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_turn_everything_into_ashes
+	}
+
+	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.80
+			uses = 1
+			category = heavy_air
+		}
+	}
+}
+
+#New Advanced Air Force
+shared_focus = {
+	id = DPR_new_advanced_air_force
+	icon = GFX_DPR_New_Advanced_Air_Force
+	cost = 4
+
+	relative_position_id = DPR_turn_everything_into_ashes
+	x = -3
+	y = 2
+
+	prerequisite = {
+		focus = DPR_rely_on_foreign_samples
+		focus = DPR_nothing_is_better_than_ones_own
+	}
+	prerequisite = {
+		focus = DPR_make_the_skies_our_home
+		focus = DPR_turn_everything_into_ashes
+	}
+
+	completion_reward = {
+		add_ace = {
+			name = "Pyotr"
+			surname = "Lastochkin"
+			callsign = "Sokol Novorossii"
+			type = fighter_genius
+		}
+		air_experience = 100
+	}
+}
+
+##############################################################################################################
+##############################################################################################################
+##################   																##########################
+##################                AND FINALLYYYYYY: SEAFLEET TREE(xd)               ##########################
+##################   																##########################
+##############################################################################################################
+##############################################################################################################
+
+
+#Fleet of the Two Seas
+shared_focus = {
+	id = DPR_fleet_of_the_two_seas
+	icon = GFX_DPR_Fleet_of_the_Two_Seas
+	cost = 3
+
+	x = 45
+	y = 1
+
+	completion_reward = {
+		navy_experience = 30
+	}
+}
+
+#Open New Shipyards
+shared_focus = {
+	id = DPR_open_new_shipyards
+	icon = GFX_DPR_Open_New_Shipyards
+	cost = 2
+
+	relative_position_id = DPR_fleet_of_the_two_seas
+	x = 0
+	y = 1
+
+	prerequisite = {
+		focus = DPR_fleet_of_the_two_seas
+	}
+
+	completion_reward = {
+		add_building_construction = {
+			type = naval_base
+			level = 5
+			instant_build = yes
+			province = {
+				all_provinces = yes
+				limit_to_coastal = yes
+				limit_to_victory_point > 3
+			}
+		}
+		add_building_construction = {
+			type = naval_base
+			level = 5
+			instant_build = yes
+			province = {
+				all_provinces = yes
+				limit_to_coastal = yes
+				limit_to_victory_point > 3
+			}
+		}
+		add_building_construction = {
+			type = naval_base
+			level = 5
+			instant_build = yes
+			province = {
+				all_provinces = yes
+				limit_to_coastal = yes
+				limit_to_victory_point > 3
+			}
+		}
+	}
+}
+
+#Dominate the Sea Depths
+shared_focus = {
+	id = DPR_dominate_the_sea_depths
+	icon = GFX_DPR_Dominate_the_Sea_Depths
+	cost = 2
+
+	relative_position_id = DPR_open_new_shipyards
+	x = -3
+	y = 1
+
+	prerequisite = {
+		focus = DPR_open_new_shipyards
+	}
+	mutually_exclusive = {
+		focus = DPR_cruiser_development_programme
+	}
+
+	completion_reward = {
+		###submarine bonus
+	}
+}
+
+#Cruiser Development Programme
+shared_focus = {
+	id = DPR_cruiser_development_programme
+	icon = GFX_DPR_Cruiser_Development_Programme
+	cost = 2
+
+	relative_position_id = DPR_open_new_shipyards
+	x = -1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_open_new_shipyards
+	}
+	mutually_exclusive = {
+		focus = DPR_dominate_the_sea_depths
+	}
+
+	completion_reward = {
+		###cruiser bonus
+	}
+}
+
+#New Black Sea Pearl
+shared_focus = {
+	id = DPR_new_black_sea_pearl
+	icon = GFX_DPR_New_Black_Sea_Pearl
+	cost = 2
+
+	relative_position_id = DPR_open_new_shipyards
+	x = 1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_open_new_shipyards
+	}
+
+	completion_reward = {
+		ROOT = {
+			create_ship = {
+				type = light_cruiser
+				equipment_variant = "S Class"
+				creator = DPR
+				name = "Aleksandr Zakharchenko"
+			}
+		}
+	}
+}
+
+#All-Powerful Navy
+shared_focus = {
+	id = DPR_all_powerfull_navy
+	icon = GFX_DPR_All_Powerful_Navy
+	cost = 4
+
+	relative_position_id = DPR_open_new_shipyards
+	x = -1
+	y = 1
+
+	prerequisite = {
+		focus = DPR_dominate_the_sea_depths
+		focus = DPR_cruiser_development_programme
+	}
+	prerequisite = {
+		focus = DPR_new_black_sea_pearl
+	}
+
+	completion_reward = {
+		navy_experience = 100
+	}
+}
