@@ -14,7 +14,7 @@ shared_focus = {
 	icon = GFX_DPR_Beginning_of_a_New_Era
 	cost = 3
 
-	x = 10
+	x = 15
 	y = 0
 
 	completion_reward = {
@@ -178,7 +178,7 @@ shared_focus = {
 	icon = GFX_DPR_Liberalize_the_Constituion
 	cost = 2
 
-	relative_position_id = DPR_beginning_of_a_new_era
+	relative_position_id = DPR_give_them_guarantees
 	x = 0
 	y = 1
 
@@ -666,10 +666,22 @@ shared_focus = {
 		focus = DPR_restore_the_don_host
 	}
 
+	#available = {
+	#	CIVIL_WAR_IS_OVER = yes
+	#}
+
 	completion_reward = {
+		declare_war_on = {
+			target = KHA
+			type = annex_everything
+		}
 		swap_ideas = {
 			remove_idea = DPR_colonels_plan_2
 			add_idea = DPR_colonels_plan_3
+		}
+
+		hidden_effect = { #FOCUS RELOAD
+			country_event = generic_debug.1
 		}
 	}
 }
@@ -690,6 +702,10 @@ shared_focus = {
 
 	completion_reward = {
 		add_ideas = DPR_white_legacy
+	}
+
+	allow_branch = {
+		has_completed_focus = DPR_from_the_ground_up
 	}
 }
 
@@ -784,7 +800,7 @@ shared_focus = {
 
 	completion_reward = {
 		swap_ideas = {
-			remove_idea = DPR_newfriends2
+			remove_idea = DPR_new_friends_3
 			add_idea = DPR_monarchical_coalition_1
 		}
 		country_event = {
@@ -890,6 +906,7 @@ shared_focus = {
 			id = dpr.925 #PLACEHOLDER --- Івент про святкову промову Гіркіна на честь єдинства всеросійського монархічного конгресу
 			days = 1
 		}
+		### SET APROPRIATE PARTY NAMES FOR TRD, ULTRNAT, AUTH.
 	}
 }
 
@@ -904,7 +921,7 @@ shared_focus = {
 	y = 1
 
 	available = {
-		has_completed_focus = DPR_united_traditionalists_front
+		has_completed_focus = DPR_united_traditionalist_front
 	}
 	prerequisite = {
 		focus = DPR_from_the_ground_up
@@ -915,6 +932,13 @@ shared_focus = {
 			remove_idea = DPR_colonels_plan_4
 			add_idea = DPR_colonels_plan_5
 		}
+		hidden_effect = { #Idk what that does but Orig cooked smth
+			set_country_flag = girkin_foreign_politics_flag
+		}
+	}
+
+	allow_branch = {
+		has_completed_focus = DPR_from_the_ground_up
 	}
 }
 
@@ -934,6 +958,10 @@ shared_focus = {
 
 	completion_reward = {
 		add_idea = DPR_strategic_initiative
+		DNR_girkin = { ###Orih cooked yet again
+			add_planning = 1
+			add_random_trait = { old_guard brilliant_strategist inflexible_strategist }
+		}
 	}
 }
 
@@ -995,7 +1023,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###CORES ON CONQUERED STATES
+		###DECISIONS TO CORE NEW CONQUERED STATES
 	}
 }
 
@@ -1059,6 +1087,10 @@ shared_focus = {
 			remove_idea = DPR_white_legacy
 			add_idea = DPR_empire_strikes_back
 		}
+		load_focus_tree = {
+			tree = DPR_constitutionalist_rostislav
+			keep_completed = yes
+		}
 	}
 }
 
@@ -1079,7 +1111,7 @@ shared_focus = {
 	icon = GFX_DPR_and_Become_a_Mentor
 	cost = 2
 
-	x = 10
+	x = 15
 	y = 1
 
 	completion_reward = {
@@ -1225,6 +1257,11 @@ shared_focus = {
 
 	completion_reward = {
 		###GIVES POINTS TO ROSTIK IN BoP(Balance of Power) game
+		add_power_balance_value = {
+			id = DPR_rostislave_girkin_political_balance
+			value = 0.33
+			tooltip_side = girkin_influence_growth
+		}
 	}
 }
 
@@ -1379,7 +1416,7 @@ shared_focus = {
 	icon = GFX_DPR_Emperor_by_the_Will_of_the_People
 	cost = 2
 
-	x = 10
+	x = 15
 	y = 1
 
 	prerequisite = {
@@ -1622,7 +1659,7 @@ shared_focus = {
 	y = 1
 
 	prerequisite = {
-		focus = DPR_emperor_of_all_man
+		focus = DPR_emperor_of_all_men
 	}
 
 	completion_reward = {
@@ -1779,7 +1816,7 @@ shared_focus = {
 	icon = GFX_DPR_Exercise_Our_Right
 	cost = 2
 
-	x = 10
+	x = 15
 	y = 1
 
 	prerequisite = {
@@ -1885,7 +1922,10 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		### може бафати вже існуючу ідею на білу культуру(too lazy to search)
+		swap_ideas = {
+			remove_idea = DPR_white_culture_2
+			add_idea = DPR_white_culture_3
+		}
 		add_popularity = {
 			ideology = communism
 			popularity = -0.1
@@ -2114,7 +2154,7 @@ shared_focus = {
 	icon = GFX_DPR_and_Restore_Historical_Justice
 	cost = 2
 
-	x = 10
+	x = 15
 	y = 1
 
 	completion_reward = {
@@ -2323,7 +2363,7 @@ shared_focus = {
 	icon = GFX_DPR_United_in_Blood_and_Purpose
 	cost = 1
 
-	x = 10
+	x = 15
 	y = 1
 
 	prerequisite = {
@@ -2446,7 +2486,7 @@ shared_focus = {
 	icon = GFX_DPR_Sorry_Ma
 	cost = 1
 
-	x = 10
+	x = 15
 	y = 1
 
 	prerequisite = {
@@ -2688,7 +2728,7 @@ shared_focus = {
 		}
 		swap_ideas = {
 			remove_idea = DPR_absolute_power_3
-			add_idea = DPR_unlimited_power
+			add_idea = DPR_absolute_power_4
 		}
 	}
 }
@@ -3046,8 +3086,12 @@ shared_focus = {
 	icon = GFX_DPR_Embark_on_a_New_Economic_Course
 	cost = 3
 
-	x = 10
+	x = 25
 	y = 1
+
+	available = {
+		has_completed_focus = DPR_from_the_ground_up
+	}
 
 	completion_reward = {
 		add_ideas = DPR_new_economic_course_1
@@ -3126,7 +3170,7 @@ shared_focus = {
 	cost = 2
 
 	relative_position_id = DPR_policy_of_mass_nationalization
-	x = 1
+	x = 0
 	y = 1
 
 	prerequisite = {
@@ -3170,7 +3214,7 @@ shared_focus = {
 	cost = 2
 
 	relative_position_id = DPR_towards_total_economic_independence
-	x = 1
+	x = 0
 	y = 1
 
 	prerequisite = {
@@ -3220,6 +3264,13 @@ shared_focus = {
 		add_popularity = {
 			ideology = traditionalism
 			popularity = -0.05
+		}
+	}
+
+	allow_branch = {
+		has_country_leader = {
+			character = DPR_Rostislav
+			ruling_only = yes
 		}
 	}
 }
@@ -3368,7 +3419,7 @@ shared_focus = {
 	cost = 2
 
 	relative_position_id = DPR_embrace_the_role_of_the_lord
-	x = -2
+	x = 2
 	y = 1
 
 	prerequisite = {
@@ -3396,6 +3447,15 @@ shared_focus = {
 				type = arms_factory
 				level = 1
 				instant_build = yes
+			}
+		}
+	}
+	
+	allow_branch = {
+		NOT = {
+			has_country_leader = {
+				character = DPR_Rostislav
+				ruling_only = yes
 			}
 		}
 	}
@@ -3494,8 +3554,12 @@ shared_focus = {
 	icon = GFX_DPR_And_What_About_the_Military
 	cost = 3
 
-	x = 30
+	x = 32
 	y = 1
+
+	available = {
+		has_completed_focus = DPR_from_the_ground_up
+	}
 
 	completion_reward = {
 		add_command_power = 30
@@ -3539,22 +3603,21 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		completion_reward = {
-			random_unit_leader = { 
-				add_skill_level = 1
-			}
-			random_unit_leader = { 
-				add_skill_level = 1
-			}
-			random_unit_leader = { 
-				add_skill_level = 1
-			}
-			random_unit_leader = { 
-				add_skill_level = 1
-			}
-			army_experience = 50
-			navy_experience = 25
-			air_experience = 25
+		random_unit_leader = { 
+			add_skill_level = 1
+		}
+		random_unit_leader = { 
+			add_skill_level = 1
+		}
+		random_unit_leader = { 
+			add_skill_level = 1
+		}
+		random_unit_leader = { 
+			add_skill_level = 1
+		}
+		army_experience = 50
+		navy_experience = 25
+		air_experience = 25
 	}
 }
 
@@ -3622,7 +3685,7 @@ shared_focus = {
 	icon = GFX_DPR_One_Step_Forward
 	cost = 4
 
-	relative_position_id = DPR_new_logistic_appartus
+	relative_position_id = DPR_new_logistic_apparatus
 	x = -2
 	y = 1
 
@@ -3637,7 +3700,10 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		add_ideas = DPR_military_reorganization_2
+		swap_ideas = {
+			remove_idea = DPR_military_reorganization_1
+			add_idea = DPR_military_reorganization_2
+		}
 		add_ideas = fop_military_professionalism_politicized_army
 	}
 }
@@ -3808,7 +3874,10 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		add_ideas = DPR_military_reorganization_3
+		swap_ideas = {
+			remove_idea = DPR_military_reorganization_2
+			add_idea = DPR_military_reorganization_3
+		}
 		add_ideas = fop_military_professionalism_professional_army
 	}
 }
@@ -3918,7 +3987,7 @@ shared_focus = {
 
 	relative_position_id = DPR_found_new_military_academies
 	x = -2
-	y = 1
+	y = 2
 
 	prerequisite = {
 		focus = DPR_knowing_the_enemy_inside_and_out
@@ -3931,7 +4000,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		add_ideas = DPR_military_reorganization_4
+		remove_ideas = DPR_military_reorganization_3
 		add_ideas = fop_military_professionalism_prussian_standart
 	}
 }
@@ -3950,8 +4019,12 @@ shared_focus = {
 	icon = GFX_DPR_Securing_the_Airspace
 	cost = 3
 
-	x = 50
+	x = 45
 	y = 1
+
+	available = {
+		has_completed_focus = DPR_from_the_ground_up
+	}
 
 	completion_reward = {
 		air_experience = 30
@@ -4193,8 +4266,12 @@ shared_focus = {
 	icon = GFX_DPR_Fleet_of_the_Two_Seas
 	cost = 3
 
-	x = 45
+	x = 40
 	y = 1
+
+	available = {
+		has_completed_focus = DPR_from_the_ground_up
+	}
 
 	completion_reward = {
 		navy_experience = 30
@@ -4321,11 +4398,11 @@ shared_focus = {
 
 #All-Powerful Navy
 shared_focus = {
-	id = DPR_all_powerfull_navy
+	id = DPR_all_powerful_navy
 	icon = GFX_DPR_All_Powerful_Navy
 	cost = 4
 
-	relative_position_id = DPR_open_new_shipyards
+	relative_position_id = DPR_new_black_sea_pearl
 	x = -1
 	y = 1
 
