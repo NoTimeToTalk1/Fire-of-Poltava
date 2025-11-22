@@ -669,6 +669,9 @@ shared_focus = {
 	#available = {
 	#	CIVIL_WAR_IS_OVER = yes
 	#}
+	available = {
+		has_country_flag = DPR_civil_war_is_over
+	}
 
 	completion_reward = {
 		declare_war_on = {
@@ -684,6 +687,7 @@ shared_focus = {
 			country_event = generic_debug.1
 		}
 	}
+	will_lead_to_war_with = KHA
 }
 
 #Remember Our True Roots
@@ -1087,9 +1091,9 @@ shared_focus = {
 			remove_idea = DPR_white_legacy
 			add_idea = DPR_empire_strikes_back
 		}
-		load_focus_tree = {
-			tree = DPR_constitutionalist_rostislav
-			keep_completed = yes
+		set_country_flag = DPR_path_constitutionalist
+		hidden_effect = { #FOCUS RELOAD
+			country_event = generic_debug.1
 		}
 	}
 }
@@ -1111,7 +1115,7 @@ shared_focus = {
 	icon = GFX_DPR_and_Become_a_Mentor
 	cost = 2
 
-	x = 15
+	x = 10
 	y = 1
 
 	completion_reward = {
@@ -1120,6 +1124,10 @@ shared_focus = {
 			id = dpr.931 #PLACEHOLDER --- івент про коронацію Ростіслава Романова імператором всеросійським
 			days = 1
 		}
+	}
+
+	allow_branch = {
+		has_country_flag = DPR_path_constitutionalist
 	}
 }
 
@@ -1241,7 +1249,7 @@ shared_focus = {
 	icon = GFX_DPR_New_Times_New_Politics
 	cost = 2
 
-	relative_position_id = DPR_and_become_a_mentor
+	relative_position_id = DPR_conflict_of_interests
 	x = -1
 	y = 1
 
@@ -1309,7 +1317,7 @@ shared_focus = {
 	icon = GFX_DPR_On_Guard_of_Heritage
 	cost = 2
 
-	relative_position_id = DPR_and_become_a_mentor
+	relative_position_id = DPR_conflict_of_interests
 	x = 1
 	y = 1
 
@@ -1378,10 +1386,9 @@ shared_focus = {
 
 	prerequisite = {
 		focus = DPR_no_more_mistakes_of_the_past
-		focus = DPR_we_belong_to_the_civilized_world
 	}
 	prerequisite = {
-		DPR_no_more_mistakes_of_the_past
+		focus = DPR_we_belong_to_the_civilized_world
 		focus = DPR_we_only_need_ourselves
 	}
 
@@ -1397,6 +1404,7 @@ shared_focus = {
 				id = dpr.935 #PLACEHOLDER --- івент про попуск царя
 				days = 1
 			}
+			country_event = generic_debug.1
 		}
 	}
 }
@@ -1416,7 +1424,8 @@ shared_focus = {
 	icon = GFX_DPR_Emperor_by_the_Will_of_the_People
 	cost = 2
 
-	x = 15
+	relative_position_id = DPR_time_to_resolve_the_issue
+	x = -4
 	y = 1
 
 	prerequisite = {
@@ -1425,6 +1434,13 @@ shared_focus = {
 
 	completion_reward = {
 		### just pp
+	}
+
+	allow_branch = {
+		has_country_flag = DPR_path_constitutionalist_rostislav
+	#	NOT = {
+	#		has_country_flag = DPR_path_constitutionalist_strelkov
+	#	}
 	}
 }
 
@@ -1808,15 +1824,14 @@ shared_focus = {
 ##############################################################################################################
 ##############################################################################################################
 
-
-
 #Exercise Our Right
 shared_focus = {
 	id = DPR_exercise_our_right
 	icon = GFX_DPR_Exercise_Our_Right
 	cost = 2
 
-	x = 15
+	relative_position_id = DPR_time_to_resolve_the_issue
+	x = 3
 	y = 1
 
 	prerequisite = {
@@ -1825,6 +1840,13 @@ shared_focus = {
 
 	completion_reward = {
 		### just pp
+	}
+
+	allow_branch = {
+		has_country_flag = DPR_path_constitutionalist_strelkov
+	#	NOT = {
+	#		DPR_path_constitutionalist_rostislav
+	#	}
 	}
 }
 
@@ -2112,8 +2134,8 @@ shared_focus = {
 	icon = GFX_DPR_Emperor_on_the_Icon_Generalissimo_on_the_Throne
 	cost = 5
 
-	relative_position_id = DPR_let_them_feel_the_whip
-	x = 0
+	relative_position_id = DPR_crush_the_dissatisfied
+	x = -1
 	y = 1
 
 	prerequisite = {
@@ -2148,13 +2170,15 @@ shared_focus = {
 ##############################################################################################################
 ##############################################################################################################
 
+
+
 #...and Restore Historical Justice
 shared_focus = {
 	id = DPR_and_restore_historical_justice
 	icon = GFX_DPR_and_Restore_Historical_Justice
 	cost = 2
 
-	x = 15
+	x = 10
 	y = 1
 
 	completion_reward = {
@@ -2167,6 +2191,10 @@ shared_focus = {
 			id = dpr.947 #PLACEHOLDER --- івент про напружені відносини Марії та її сина Григорія (син не лояльний владі матері та хотів сам стати імператором, але перевагу надали їй. Тож він хоче більше влади, бабла, та повноважень)
 			days = 1
 		}
+	}
+
+	allow_branch = {
+		has_country_flag = DPR_path_absolutist
 	}
 }
 
@@ -2331,7 +2359,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		custom_effect_tooltip = maria_vs_grigoriy_conclusion_tt
+		custom_effect_tooltip = maria_vs_george_conclusion_tt
 		hidden_effect = {
 			### !!! ADD CHECK CONDITION WHO HAS MORE POINTS in BoP game !!!
 			country_event = { # --- IF MARIA HAS MORE POINTS
@@ -2355,15 +2383,14 @@ shared_focus = {
 ##############################################################################################################
 ##############################################################################################################
 
-
-
 #United in Blood and Purpose
 shared_focus = {
 	id = DPR_united_in_blood_and_purpose
 	icon = GFX_DPR_United_in_Blood_and_Purpose
 	cost = 1
 
-	x = 15
+	relative_position_id = DPR_about_the_mother_son_relationship
+	x = -4
 	y = 1
 
 	prerequisite = {
@@ -2371,27 +2398,14 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		add_ideas = DPR_unitedinbloodandpurpose
-	}
-}
-
-#Protect Cossack Privileges
-shared_focus = {
-	id = DPR_protect_cossack_privileges
-	icon = GFX_DPR_Protect_Cossack_Privileges
-	cost = 3
-
-	relative_position_id = DPR_united_in_blood_and_purpose
-	x = -2
-	y = 2
-
-	prerequisite = {
-		focus = DPR_united_in_blood_and_purpose
+		add_ideas = DPR_in_blood_and_purpose
 	}
 
-	completion_reward = {
-		###NEW COSSACK ADVISORS
-		###ALSO ADD SOME COSSACK DIVISIONS
+	allow_branch = {
+		has_country_flag = DPR_path_absolutist_maria
+	#	NOT = {
+	#		DPR_path_absolutist_george
+	#	}
 	}
 }
 
@@ -2401,12 +2415,12 @@ shared_focus = {
 	icon = GFX_DPR_Fair_Distribution_of_Power
 	cost = 3
 
-	relative_position_id = DPR_protect_cossack_privileges
-	x = 0
+	relative_position_id = DPR_united_in_blood_and_purpose
+	x = -2
 	y = 1
 
 	prerequisite = {
-		focus = DPR_protect_cossack_privileges
+		focus = DPR_united_in_blood_and_purpose
 	}
 
 	completion_reward = {
@@ -2423,7 +2437,7 @@ shared_focus = {
 	icon = GFX_DPR_Form_the_Imperial_Cabinet
 	cost = 3
 
-	relative_position_id = DPR_protect_cossack_privileges
+	relative_position_id = DPR_fair_distribution_of_power
 	x = 0
 	y = 2
 
@@ -2440,6 +2454,26 @@ shared_focus = {
 	}
 }
 
+#Protect Cossack Privileges
+shared_focus = {
+	id = DPR_protect_cossack_privileges
+	icon = GFX_DPR_Protect_Cossack_Privileges
+	cost = 3
+
+	relative_position_id = DPR_united_in_blood_and_purpose
+	x = 0
+	y = 2
+
+	prerequisite = {
+		focus = DPR_united_in_blood_and_purpose
+	}
+
+	completion_reward = {
+		###NEW COSSACK ADVISORS
+		###ALSO ADD SOME COSSACK DIVISIONS
+	}
+}
+
 #Peace and Harmony in the Empire
 shared_focus = {
 	id = DPR_peace_and_harmony
@@ -2448,13 +2482,13 @@ shared_focus = {
 
 	relative_position_id = DPR_protect_cossack_privileges
 	x = -1
-	y = 1
+	y = 2
 
 	prerequisite = {
-		focus = DPR_protect_cossack_privileges
+		focus = DPR_form_the_imperial_cabinet
 	}
 	prerequisite = {
-		focus = DPR_form_the_imperial_cabinet
+		focus = DPR_protect_cossack_privileges
 	}
 
 	completion_reward = {
@@ -2478,15 +2512,14 @@ shared_focus = {
 ##############################################################################################################
 ##############################################################################################################
 
-
-
 #Sorry, Ma
 shared_focus = {
 	id = DPR_sorry_ma
 	icon = GFX_DPR_Sorry_Ma
 	cost = 1
 
-	x = 15
+	relative_position_id = DPR_about_the_mother_son_relationship
+	x = 4
 	y = 1
 
 	prerequisite = {
@@ -2495,6 +2528,13 @@ shared_focus = {
 
 	completion_reward = {
 		###I am fucking dying please save me
+	}
+
+	allow_branch = {
+		has_country_flag = DPR_path_absolutist_george
+	#	NOT = {
+	#		has_country_flag = DPR_path_absolutist_maria
+	#	}
 	}
 }
 
@@ -2748,7 +2788,8 @@ shared_focus = {
 	icon = GFX_DPR_Reestablish_the_Malorossiya_Governorate
 	cost = 1
 
-	x = 10
+	relative_position_id = DPR_sorry_ma
+	x = -4
 	y = 1
 
 	prerequisite = {
@@ -2761,6 +2802,13 @@ shared_focus = {
 		###ADD DECISIONS TO GO FIGHT THE UKROPS
 		add_war_support = 0.1
 	}
+
+	allow_branch = {
+		OR = {
+			has_country_flag = DPR_path_absolutist_george
+			has_country_flag = DPR_path_absolutist_maria
+		}
+	}
 }
 
 #Quell Resistance
@@ -2770,7 +2818,7 @@ shared_focus = {
 	cost = 2
 
 	relative_position_id = DPR_reestablish_the_malorossiya_governorate
-	x = -2
+	x = -1
 	y = 1
 
 	prerequisite = {
@@ -2815,7 +2863,7 @@ shared_focus = {
 	cost = 2
 
 	relative_position_id = DPR_reestablish_the_malorossiya_governorate
-	x = 2
+	x = 1
 	y = 1
 
 	prerequisite = {
@@ -2863,8 +2911,8 @@ shared_focus = {
 	icon = GFX_DPR_Righteous_Hike
 	cost = 3
 
-	relative_position_id = DPR_strengthen_our_new_bastion
-	x = 0
+	relative_position_id = DPR_appeal_to_the_people
+	x = -1
 	y = 1
 
 	prerequisite = {
@@ -2875,6 +2923,10 @@ shared_focus = {
 	}
 
 	completion_reward = {
+		declare_war_on = {
+			target = RUS
+			type = annex_everything
+		}
 		country_event = {
 			id = dpr.963 #PLACEHOLDER --- івент про початок війни імперців з рашкою (епічна промова в стилі ми всєх пабєдім)
 			days = 1
@@ -2884,6 +2936,7 @@ shared_focus = {
 			days = 180
 		}
 	}
+	will_lead_to_war_with = RUS
 }
 
 #Blessed Triumph
@@ -2899,6 +2952,10 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_righteous_hike
 	}
+	
+	available = {
+		RUS = { exists = no }
+	}
 
 	completion_reward = {
 		country_event = { # NEEDS A LOT OF BUFFS FR FR
@@ -2906,6 +2963,10 @@ shared_focus = {
 			days = 1
 		}
 		add_ideas = DPR_anti_monarchist_resistance
+	}
+
+	allow_branch = {
+		RUS = { exists = no }
 	}
 }
 
@@ -3086,7 +3147,7 @@ shared_focus = {
 	icon = GFX_DPR_Embark_on_a_New_Economic_Course
 	cost = 3
 
-	x = 25
+	x = 24
 	y = 1
 
 	available = {
@@ -3268,10 +3329,7 @@ shared_focus = {
 	}
 
 	allow_branch = {
-		has_country_leader = {
-			character = DPR_Rostislav
-			ruling_only = yes
-		}
+		has_country_flag = DPR_path_constitutionalist_rostislav
 	}
 }
 
@@ -3450,13 +3508,12 @@ shared_focus = {
 			}
 		}
 	}
-	
+
 	allow_branch = {
-		NOT = {
-			has_country_leader = {
-				character = DPR_Rostislav
-				ruling_only = yes
-			}
+		OR = {
+			has_country_flag = DPR_path_constitutionalist_strelkov
+			has_country_flag = DPR_path_absolutist_maria
+			has_country_flag = DPR_path_absolutist_george
 		}
 	}
 }
@@ -3554,11 +3611,11 @@ shared_focus = {
 	icon = GFX_DPR_And_What_About_the_Military
 	cost = 3
 
-	x = 32
+	x = 35
 	y = 1
 
 	available = {
-		has_completed_focus = DPR_from_the_ground_up
+		has_country_flag = DPR_civil_war_is_over
 	}
 
 	completion_reward = {
@@ -4013,17 +4070,19 @@ shared_focus = {
 ##############################################################################################################
 ##############################################################################################################
 
+
+
 #Securing the Airspace
 shared_focus = {
 	id = DPR_securing_the_airspace
 	icon = GFX_DPR_Securing_the_Airspace
 	cost = 3
 
-	x = 45
-	y = 1
+	x = 28
+	y = 11
 
 	available = {
-		has_completed_focus = DPR_from_the_ground_up
+		has_country_flag = DPR_civil_war_is_over
 	}
 
 	completion_reward = {
@@ -4260,17 +4319,18 @@ shared_focus = {
 ##############################################################################################################
 
 
+
 #Fleet of the Two Seas
 shared_focus = {
 	id = DPR_fleet_of_the_two_seas
 	icon = GFX_DPR_Fleet_of_the_Two_Seas
 	cost = 3
 
-	x = 40
-	y = 1
+	x = 22
+	y = 11
 
 	available = {
-		has_completed_focus = DPR_from_the_ground_up
+		has_country_flag = DPR_civil_war_is_over
 	}
 
 	completion_reward = {
