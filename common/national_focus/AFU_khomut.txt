@@ -1,1224 +1,1224 @@
-	shared_focus = {
-		id = AFU_khomutynnik
-		icon = GFX_AFU_khomutynnik
-		x = 7
-		y = 0
-		cost = 2
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-		custom_effect_tooltip = khomutynnik_tt	
-				country_event = { 
-					id = homut.1
-					days = 2 
-				}
+shared_focus = {
+	id = AFU_khomutynnik
+	icon = GFX_AFU_khomutynnik
+	x = 7
+	y = 0
+	cost = 2
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		custom_effect_tooltip = khomutynnik_tt
+		country_event = {
+			id = homut.1
+			days = 2
 		}
 	}
-
-	shared_focus = {
-		id = AFU_message_to_bondar
-		icon = GFX_AFU_message_to_bondar
-		x = 5
-		y = 1
-		cost = 4
-		prerequisite = { focus = AFU_khomutynnik }
-		mutually_exclusive = { focus = AFU_call_to_kinakh}
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-		activate_advisor = AFU_bondar
-				country_event = { 
-					id = homut.2
-					days = 2 
-				}			
-		}
-	}
-
-	shared_focus = {
-		id = AFU_call_to_kinakh
-		icon = GFX_AFU_call_to_kinakh
-		x = 9
-		y = 1
-		cost = 4
-		mutually_exclusive = { focus = AFU_message_to_bondar}
-		prerequisite = { focus = AFU_khomutynnik }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-		activate_advisor = AFU_kinakh
-				country_event = { 
-					id = homut.3
-					days = 2 
-				}			
-		}
-	}
-
-	shared_focus = {
-		id = AFU_talk_with_kolomoyskyi
-		icon = GFX_AFU_talk_with_kolomoyskyi
-		x = 3
-		y = 2
-		cost = 7
-		prerequisite = { focus = AFU_message_to_bondar }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-add_to_variable = {
-     var = FOP_corruption_var
-     value = -5
-	 tooltip = add_corruption_var_tt
 }
-	add_opinion_modifier = {
-    target = DNI
-    modifier = improved_relations
-    }
-	DNI = {
-	give_market_access = AFU
-	add_opinion_modifier = {
-    target = AFU
-    modifier = improved_relations
-    }
+
+shared_focus = {
+	id = AFU_message_to_bondar
+	icon = GFX_AFU_message_to_bondar
+	x = 5
+	y = 1
+	cost = 4
+	prerequisite = { focus = AFU_khomutynnik }
+	mutually_exclusive = { focus = AFU_call_to_kinakh}
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
 	}
+	completion_reward = {
+		activate_advisor = AFU_bondar
+		country_event = {
+			id = homut.2
+			days = 2
+		}
+	}
+}
+
+shared_focus = {
+	id = AFU_call_to_kinakh
+	icon = GFX_AFU_call_to_kinakh
+	x = 9
+	y = 1
+	cost = 4
+	mutually_exclusive = { focus = AFU_message_to_bondar}
+	prerequisite = { focus = AFU_khomutynnik }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		activate_advisor = AFU_kinakh
+		country_event = {
+			id = homut.3
+			days = 2
+		}
+	}
+}
+
+shared_focus = {
+	id = AFU_talk_with_kolomoyskyi
+	icon = GFX_AFU_talk_with_kolomoyskyi
+	x = 3
+	y = 2
+	cost = 7
+	prerequisite = { focus = AFU_message_to_bondar }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		add_to_variable = {
+			var = FOP_corruption_var
+			value = -5
+			tooltip = add_corruption_var_tt
+		}
+		add_opinion_modifier = {
+			target = DNI
+			modifier = improved_relations
+		}
+		DNI = {
+			give_market_access = AFU
+			add_opinion_modifier = {
+				target = AFU
+				modifier = improved_relations
+			}
+		}
 		add_ideas = AFU_Ties_With_a_Good_Old_Friend
 		give_market_access = DNI
-				country_event = { 
-					id = homut.4
-					days = 2 
-				}	
-set_country_flag = AFU_talk_with_kolomoyskyi				
+		country_event = {
+			id = homut.4
+			days = 2
 		}
+		set_country_flag = AFU_talk_with_kolomoyskyi
 	}
+}
 
-	shared_focus = {
-		id = AFU_revival_faction_session
-		icon = GFX_AFU_revival_faction_session
-		x = 5
-		y = 2
-		cost = 7
-		prerequisite = { focus = AFU_message_to_bondar }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
+shared_focus = {
+	id = AFU_revival_faction_session
+	icon = GFX_AFU_revival_faction_session
+	x = 5
+	y = 2
+	cost = 7
+	prerequisite = { focus = AFU_message_to_bondar }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		custom_effect_tooltip = AFU_revival_faction_session_tt
+		hidden_effect = {
+			set_country_flag = 	AFU_revival_faction_session
 		}
-		completion_reward = {
-			custom_effect_tooltip = AFU_revival_faction_session_tt
-			hidden_effect = {
-		set_country_flag = 	AFU_revival_faction_session
-		}
-		add_ideas = AFU_United_Oligarchic_Alliance	
+		add_ideas = AFU_United_Oligarchic_Alliance
 		add_ideas = fop_oligarchs_power_high
-		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_mutually_beneficial_alliance
-		icon = GFX_AFU_mutually_beneficial_alliance
-		x = 4
-		y = 3
-		cost = 7
-		prerequisite = { focus = AFU_revival_faction_session }
-		prerequisite = { focus = AFU_talk_with_kolomoyskyi }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
+shared_focus = {
+	id = AFU_mutually_beneficial_alliance
+	icon = GFX_AFU_mutually_beneficial_alliance
+	x = 4
+	y = 3
+	cost = 7
+	prerequisite = { focus = AFU_revival_faction_session }
+	prerequisite = { focus = AFU_talk_with_kolomoyskyi }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		add_to_variable = {
+			var = FOP_corruption_var
+			value = -5
+			tooltip = add_corruption_var_tt
 		}
-		completion_reward = {
-add_to_variable = {
-     var = FOP_corruption_var
-     value = -5
-	 tooltip = add_corruption_var_tt
-}		
 		add_ideas = fop_oligarchs_relations_cooperation
 		
-				country_event = { 
-					id = homut.5
-					days = 2 
-				}		
+		country_event = {
+			id = homut.5
+			days = 2
+		}
 		
 		add_offsite_building = { type = fuel_silo level = 1 }
 		
 		random_owned_state = {
-        add_extra_state_shared_building_slots = 1
-        add_building_construction = {
-    type = air_base
-    level = 1
-    instant_build = yes
-    }
-    }
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = air_base
+				level = 1
+				instant_build = yes
+			}
+		}
 		
 		add_political_power = 10
 		
-	    DNI = {
-		add_offsite_building = { type = arms_factory level = 3 }
-        create_import = {
-            resource = steel
-            amount = 100
-            exporter = AFU
-}	
-}
+		DNI = {
+			add_offsite_building = { type = arms_factory level = 3 }
+			create_import = {
+				resource = steel
+				amount = 100
+				exporter = AFU
+			}
 		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_integrate_the_party_of_industrialist
-		icon = GFX_AFU_integrate_the_party_of_industrialist
-		x = 9
-		y = 2
-		cost = 7
-		prerequisite = { focus = AFU_call_to_kinakh }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
+shared_focus = {
+	id = AFU_integrate_the_party_of_industrialist
+	icon = GFX_AFU_integrate_the_party_of_industrialist
+	x = 9
+	y = 2
+	cost = 7
+	prerequisite = { focus = AFU_call_to_kinakh }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		custom_effect_tooltip = AFU_integrate_the_party_of_industrialist_tt
+		hidden_effect = {
+			set_country_flag = 	AFU_integrate_the_party_of_industrialist
 		}
-		completion_reward = {
-			custom_effect_tooltip = AFU_integrate_the_party_of_industrialist_tt
-			hidden_effect = {
-		set_country_flag = 	AFU_integrate_the_party_of_industrialist
-		}	
-set_party_name = {
-    ideology = centrism
-    long_name = "Party of Industrialists and Entrepreneurs of Ukraine"
-    name = "PPPU"
-}			
+		set_party_name = {
+			ideology = centrism
+			long_name = "Party of Industrialists and Entrepreneurs of Ukraine"
+			name = "PPPU"
 		}
 	}
-
-	shared_focus = {
-		id = AFU_meeting_with_the_donetsk_clan
-		icon = GFX_AFU_meeting_with_the_donetsk_clan
-		x = 11
-		y = 2
-		cost = 7
-		prerequisite = { focus = AFU_call_to_kinakh }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-add_to_variable = {
-     var = FOP_corruption_var
-     value = -60
-	 tooltip = add_corruption_var_tt
 }
-		add_ideas = AFU_Return_of_the_Donetsk_Mafia	
+
+shared_focus = {
+	id = AFU_meeting_with_the_donetsk_clan
+	icon = GFX_AFU_meeting_with_the_donetsk_clan
+	x = 11
+	y = 2
+	cost = 7
+	prerequisite = { focus = AFU_call_to_kinakh }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		add_to_variable = {
+			var = FOP_corruption_var
+			value = -60
+			tooltip = add_corruption_var_tt
+		}
+		add_ideas = AFU_Return_of_the_Donetsk_Mafia
 		
 		
-				country_event = { 
-					id = homut.6
-					days = 2 
-				}		
+		country_event = {
+			id = homut.6
+			days = 2
+		}
 		hidden_effect = {
-set_country_flag = AFU_meeting_with_the_donetsk_clan
-}		
+			set_country_flag = AFU_meeting_with_the_donetsk_clan
+		}
 				
 				
-		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_Open_a_Negotiating_Channel_with_Moscow
-		icon = GFX_AFU_Open_a_Negotiating_Channel_with_Moscow
-		x = 10
-		y = 3
-		cost = 7
-		prerequisite = { focus = AFU_meeting_with_the_donetsk_clan }
-		prerequisite = { focus = AFU_integrate_the_party_of_industrialist }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
+shared_focus = {
+	id = AFU_Open_a_Negotiating_Channel_with_Moscow
+	icon = GFX_AFU_Open_a_Negotiating_Channel_with_Moscow
+	x = 10
+	y = 3
+	cost = 7
+	prerequisite = { focus = AFU_meeting_with_the_donetsk_clan }
+	prerequisite = { focus = AFU_integrate_the_party_of_industrialist }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		country_event = {
+			id = homut.7
+			days = 2
 		}
-		completion_reward = {
-				country_event = { 
-					id = homut.7
-					days = 2 
-				}	
-	add_opinion_modifier = {
-    target = RUS
-    modifier = secret_communication_channels
-    }
-	RUS = {
-	add_opinion_modifier = {
-    target = AFU
-    modifier = secret_communication_channels
-    }
-    }
+		add_opinion_modifier = {
+			target = RUS
+			modifier = secret_communication_channels
+		}
+		RUS = {
+			add_opinion_modifier = {
+				target = AFU
+				modifier = secret_communication_channels
+			}
+		}
 		hidden_effect = {
-		set_country_flag = AFU_Open_a_Negotiating_Channel_with_Moscow
-}
-add_to_variable = {
-     var = FOP_corruption_var
-     value = -10
-	 tooltip = add_corruption_var_tt
-}		
+			set_country_flag = AFU_Open_a_Negotiating_Channel_with_Moscow
+		}
+		add_to_variable = {
+			var = FOP_corruption_var
+			value = -10
+			tooltip = add_corruption_var_tt
 		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_cooperation_with_local_outsiders
-		icon = GFX_AFU_cooperation_with_local_outsiders
-		x = 7
-		y = 2
-		cost = 7
-		prerequisite = { focus = AFU_message_to_bondar focus = AFU_call_to_kinakh }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
+shared_focus = {
+	id = AFU_cooperation_with_local_outsiders
+	icon = GFX_AFU_cooperation_with_local_outsiders
+	x = 7
+	y = 2
+	cost = 7
+	prerequisite = { focus = AFU_message_to_bondar focus = AFU_call_to_kinakh }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		add_to_variable = {
+			var = FOP_administrative_efficiency_var
+			value = 10
+			tooltip = add_administrative_efficiency_var_tt
 		}
-		completion_reward = {
-add_to_variable = {
-     var = FOP_administrative_efficiency_var
-     value = 10
-	 tooltip = add_administrative_efficiency_var_tt
-}
-add_to_variable = {
-     var = FOP_corruption_var
-     value = -5
-	 tooltip = add_corruption_var_tt
-}
-				country_event = { 
-					id = homut.12
-					days = 2 
-				}	
+		add_to_variable = {
+			var = FOP_corruption_var
+			value = -5
+			tooltip = add_corruption_var_tt
+		}
+		country_event = {
+			id = homut.12
+			days = 2
+		}
 		hidden_effect = {
-		set_country_flag = 	AFU_cooperation_with_local_outsiders
-		}			
+			set_country_flag = 	AFU_cooperation_with_local_outsiders
 		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_formation_of_the_together_for_donbas_coalition
-		icon = GFX_AFU_formation_of_the_together_for_donbas_coalition
-		x = 7
-		y = 3
-		cost = 7
-		prerequisite = { focus = AFU_cooperation_with_local_outsiders }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
+shared_focus = {
+	id = AFU_formation_of_the_together_for_donbas_coalition
+	icon = GFX_AFU_formation_of_the_together_for_donbas_coalition
+	x = 7
+	y = 3
+	cost = 7
+	prerequisite = { focus = AFU_cooperation_with_local_outsiders }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
 		add_ideas = fop_party_system_multiparty
-add_popularity = {
-    ideology = centrism
-    popularity = 0.2
-}
-add_popularity = {
-    ideology = conservatism
-    popularity = 0.2
-}
-add_popularity = {
-    ideology = progressivism
-    popularity = 0.2
-}
+		add_popularity = {
+			ideology = centrism
+			popularity = 0.2
+		}
+		add_popularity = {
+			ideology = conservatism
+			popularity = 0.2
+		}
+		add_popularity = {
+			ideology = progressivism
+			popularity = 0.2
+		}
 		hidden_effect = {
-		set_country_flag = 	AFU_formation_of_the_together_for_donbas_coalition
-		}				
+			set_country_flag = 	AFU_formation_of_the_together_for_donbas_coalition
 		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_time_for_great_solutions
-		icon = GFX_AFU_time_for_great_solutions
-		x = 7
-		y = 4
-		cost = 7
-		prerequisite = { focus = AFU_formation_of_the_together_for_donbas_coalition}
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
+shared_focus = {
+	id = AFU_time_for_great_solutions
+	icon = GFX_AFU_time_for_great_solutions
+	x = 7
+	y = 4
+	cost = 7
+	prerequisite = { focus = AFU_formation_of_the_together_for_donbas_coalition}
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
 		add_political_power = 10
 
-set_power_balance = {
-    id = AFU_homut_radicalism_political_balance
-    left_side = HOMUT_radicalism_left_side
-    right_side = HOMUT_radicalism_right_side
-}
+		set_power_balance = {
+			id = AFU_homut_radicalism_political_balance
+			left_side = HOMUT_radicalism_left_side
+			right_side = HOMUT_radicalism_right_side
 		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_start_deradicalisation_of_society
-		icon = GFX_AFU_start_deradicalisation_of_society
-		x = 6
-		y = 5
-		cost = 7
-		prerequisite = { focus = AFU_time_for_great_solutions }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
+shared_focus = {
+	id = AFU_start_deradicalisation_of_society
+	icon = GFX_AFU_start_deradicalisation_of_society
+	x = 6
+	y = 5
+	cost = 7
+	prerequisite = { focus = AFU_time_for_great_solutions }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		add_popularity = {
+			ideology = ultranationalism
+			popularity = -0.06
 		}
-		completion_reward = {
-add_popularity = {
-    ideology = ultranationalism
-    popularity = -0.06
-}
-army_experience = -10
-add_war_support = -0.12
-	hidden_effect = {
-add_to_variable = {
-    var = fulfilment_of_Russian_requirements_variable
-    value = 10
-}
-    }
+		army_experience = -10
+		add_war_support = -0.12
+		hidden_effect = {
+			add_to_variable = {
+				var = fulfilment_of_Russian_requirements_variable
+				value = 10
+			}
 		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_pardons_for_the_ldpr_partecipants
-		icon = GFX_AFU_pardons_for_the_ldpr_partecipants
-		x = 6
-		y = 6
-		cost = 7
-		prerequisite = { focus = AFU_start_deradicalisation_of_society }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
+shared_focus = {
+	id = AFU_pardons_for_the_ldpr_partecipants
+	icon = GFX_AFU_pardons_for_the_ldpr_partecipants
+	x = 6
+	y = 6
+	cost = 7
+	prerequisite = { focus = AFU_start_deradicalisation_of_society }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		add_popularity = {
+			ideology = oligarchism
+			popularity = 0.02
 		}
-		completion_reward = {
-add_popularity = {
-    ideology = oligarchism
-    popularity = 0.02
-}
-add_popularity = {
-    ideology = communism
-    popularity = 0.03
-}
-add_popularity = {
-    ideology = liberalism
-    popularity = -0.03
-}
-add_timed_idea = {
-    idea = AFU_Amnesty_Fatigue
-    days = 360
-}
-				country_event = { 
-					id = homut.15
-					days = 2 
-				}
-				country_event = { 
-					id = homut.17
-					days = 6
-				}
-	add_ideas = fop_forced_labour_banned
-	hidden_effect = {
-add_to_variable = {
-    var = fulfilment_of_Russian_requirements_variable
-    value = 10
-}
-    }			
+		add_popularity = {
+			ideology = communism
+			popularity = 0.03
+		}
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.03
+		}
+		add_timed_idea = {
+			idea = AFU_Amnesty_Fatigue
+			days = 360
+		}
+		country_event = {
+			id = homut.15
+			days = 2
+		}
+		country_event = {
+			id = homut.17
+			days = 6
+		}
+		add_ideas = fop_forced_labour_banned
+		hidden_effect = {
+			add_to_variable = {
+				var = fulfilment_of_Russian_requirements_variable
+				value = 10
+			}
 		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_stop_the_ethnic_hatred
-		icon = GFX_AFU_stop_the_ethnic_hatred
-		x = 6
-		y = 7
-		cost = 7
-		prerequisite = { focus = AFU_pardons_for_the_ldpr_partecipants }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
+shared_focus = {
+	id = AFU_stop_the_ethnic_hatred
+	icon = GFX_AFU_stop_the_ethnic_hatred
+	x = 6
+	y = 7
+	cost = 7
+	prerequisite = { focus = AFU_pardons_for_the_ldpr_partecipants }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
 		add_ideas = fop_religious_rights_pluralism
-add_popularity = {
-    ideology = oligarchism
-    popularity = 0.02
-}
-		every_core_state = { 
-add_state_modifier = {
-    modifier = {
-    enemy_operative_detection_chance_factor_over_occupied_tag = 0.15
-    }
-}
+		add_popularity = {
+			ideology = oligarchism
+			popularity = 0.02
 		}
-				country_event = { 
-					id = homut.16
-					days = 2 
+		every_core_state = {
+			add_state_modifier = {
+				modifier = {
+					enemy_operative_detection_chance_factor_over_occupied_tag = 0.15
 				}
-	add_ideas = fop_ethnic_minorities_cultural_acommodation
-	hidden_effect = {
-add_to_variable = {
-    var = fulfilment_of_Russian_requirements_variable
-    value = 10
-}
-    }			
+			}
+		}
+		country_event = {
+			id = homut.16
+			days = 2
+		}
+		add_ideas = fop_ethnic_minorities_cultural_acommodation
+		hidden_effect = {
+			add_to_variable = {
+				var = fulfilment_of_Russian_requirements_variable
+				value = 10
+			}
 		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_hunt_for_the_ringleaders
-		icon = GFX_AFU_hunt_for_the_ringleaders
-		x = 4
-		y = 6
-		cost = 7
-		prerequisite = { focus = AFU_start_deradicalisation_of_society }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
+shared_focus = {
+	id = AFU_hunt_for_the_ringleaders
+	icon = GFX_AFU_hunt_for_the_ringleaders
+	x = 4
+	y = 6
+	cost = 7
+	prerequisite = { focus = AFU_start_deradicalisation_of_society }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
 		custom_effect_tooltip = AFU_disband_the_azov_regiment_tt
-set_nationality = {
-    target_country = PLT
-    character = AFU_redys
-}
-set_nationality = {
-    target_country = PLT
-    character = AFU_himik
-}
-set_nationality = {
-    target_country = PLT
-    character = AFU_tavr
-}
-				country_event = { 
-					id = homut.19
-					days = 6
-				}
+		set_nationality = {
+			target_country = PLT
+			character = AFU_redys
+		}
+		set_nationality = {
+			target_country = PLT
+			character = AFU_himik
+		}
+		set_nationality = {
+			target_country = PLT
+			character = AFU_tavr
+		}
+		country_event = {
+			id = homut.19
+			days = 6
+		}
 		send_embargo = PLT
 		send_embargo = TER
 		send_embargo = STR
-		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_disband_the_azov_regiment
-		icon = GFX_AFU_disband_the_azov_regiment
-		x = 4
-		y = 7
-		cost = 7
-		prerequisite = { focus = AFU_hunt_for_the_ringleaders }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
+shared_focus = {
+	id = AFU_disband_the_azov_regiment
+	icon = GFX_AFU_disband_the_azov_regiment
+	x = 4
+	y = 7
+	cost = 7
+	prerequisite = { focus = AFU_hunt_for_the_ringleaders }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
 		add_manpower = -3000
 		army_experience = -10
 		add_command_power = -10
-	hidden_effect = {
-add_to_variable = {
-    var = fulfilment_of_Russian_requirements_variable
-    value = 10
-}
-    }			
+		hidden_effect = {
+			add_to_variable = {
+				var = fulfilment_of_Russian_requirements_variable
+				value = 10
+			}
 		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_learn_from_the_best
-		icon = GFX_AFU_learn_from_the_best
-		x = 2
-		y = 5
-		cost = 7
-		prerequisite = { focus = AFU_time_for_great_solutions }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
+shared_focus = {
+	id = AFU_learn_from_the_best
+	icon = GFX_AFU_learn_from_the_best
+	x = 2
+	y = 5
+	cost = 7
+	prerequisite = { focus = AFU_time_for_great_solutions }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		add_political_power = 30
+		add_popularity = {
+			ideology = oligarchism
+			popularity = 0.1
 		}
-		completion_reward = {
-	add_political_power = 30
-add_popularity = {
-    ideology = oligarchism
-    popularity = 0.1
-}
-add_popularity = {
-    ideology = social_democracy
-    popularity = 0.08
-}
-add_tech_bonus = {
-    bonus = 0.5
-    uses = 1
-    category = industry
-}
-add_tech_bonus = {
-    bonus = 0.5
-    uses = 1
-    category = electronics
-}			
+		add_popularity = {
+			ideology = social_democracy
+			popularity = 0.08
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = industry
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = electronics
 		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_benefits_for_small_and_medium_sized_businesses
-		icon = GFX_AFU_benefits_for_small_and_medium_sized_businesses
-		x = 2
-		y = 6
-		cost = 7
-		prerequisite = { focus = AFU_learn_from_the_best }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
+shared_focus = {
+	id = AFU_benefits_for_small_and_medium_sized_businesses
+	icon = GFX_AFU_benefits_for_small_and_medium_sized_businesses
+	x = 2
+	y = 6
+	cost = 7
+	prerequisite = { focus = AFU_learn_from_the_best }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		add_popularity = {
+			ideology = oligarchism
+			popularity = 0.02
 		}
-		completion_reward = {
-add_popularity = {
-    ideology = oligarchism
-    popularity = 0.02
-}
-random_owned_state = {
-add_extra_state_shared_building_slots = 1
-add_state_modifier = {
-    modifier = {
-    state_repair_speed_industrial_complex_factor = 0.3
-    }
-}
-}
-random_owned_state = {
-add_extra_state_shared_building_slots = 1
-add_state_modifier = {
-    modifier = {
-    state_repair_speed_industrial_complex_factor = 0.3
-    }
-}
-}
-random_owned_state = {
-add_extra_state_shared_building_slots = 1
-add_state_modifier = {
-    modifier = {
-    state_repair_speed_industrial_complex_factor = 0.3
-    }
-}
-}			
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_state_modifier = {
+				modifier = {
+					state_repair_speed_industrial_complex_factor = 0.3
+				}
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_state_modifier = {
+				modifier = {
+					state_repair_speed_industrial_complex_factor = 0.3
+				}
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_state_modifier = {
+				modifier = {
+					state_repair_speed_industrial_complex_factor = 0.3
+				}
+			}
 		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_establish_cooperation_of_corporates
-		icon = GFX_AFU_establish_cooperation_of_corporates
-		x = 2
-		y = 7
-		cost = 7
-		prerequisite = { focus = AFU_benefits_for_small_and_medium_sized_businesses }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
+shared_focus = {
+	id = AFU_establish_cooperation_of_corporates
+	icon = GFX_AFU_establish_cooperation_of_corporates
+	x = 2
+	y = 7
+	cost = 7
+	prerequisite = { focus = AFU_benefits_for_small_and_medium_sized_businesses }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		add_to_variable = {
+			var = FOP_corruption_var
+			value = -20
+			tooltip = add_corruption_var_tt
 		}
-		completion_reward = {
-add_to_variable = {
-     var = FOP_corruption_var
-     value = -20
-	 tooltip = add_corruption_var_tt
-}
-random_owned_state = {
-add_extra_state_shared_building_slots = 1
-add_building_construction = {
-    type = arms_factory
-    level = 1
-    instant_build = yes
-}
-add_state_modifier = {
-    modifier = {
-    state_production_speed_industrial_complex_factor = 0.3
-    }
-}
-}
-random_owned_state = {
-add_extra_state_shared_building_slots = 1
-add_building_construction = {
-    type = arms_factory
-    level = 1
-    instant_build = yes
-}
-add_state_modifier = {
-    modifier = {
-    state_production_speed_industrial_complex_factor = 0.3
-    }
-}
-}			
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+			add_state_modifier = {
+				modifier = {
+					state_production_speed_industrial_complex_factor = 0.3
+				}
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+			add_state_modifier = {
+				modifier = {
+					state_production_speed_industrial_complex_factor = 0.3
+				}
+			}
 		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_in_the_name_of_the_state
-		icon = GFX_AFU_in_the_name_of_the_state
-		x = 3
-		y = 8
-		cost = 7
-		prerequisite = { focus = AFU_establish_cooperation_of_corporates }
-		prerequisite = { focus = AFU_disband_the_azov_regiment }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-add_political_power = 90
-add_research_slot = 1			
-		}
+shared_focus = {
+	id = AFU_in_the_name_of_the_state
+	icon = GFX_AFU_in_the_name_of_the_state
+	x = 3
+	y = 8
+	cost = 7
+	prerequisite = { focus = AFU_establish_cooperation_of_corporates }
+	prerequisite = { focus = AFU_disband_the_azov_regiment }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
 	}
-
-	shared_focus = {
-		id = AFU_strenghten_the_police_force
-		icon = GFX_AFU_strenghten_the_police_force
-		x = 3
-		y = 9
-		cost = 7
-		prerequisite = { focus = AFU_in_the_name_of_the_state }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-create_intelligence_agency = {
-    name = "Sluzhba Bezpeky Ukrajiny"
-    icon = GFX_agency_logo_ukr
-}
-add_ideas = AFU_Counterintelligence_operation_1
-add_to_variable = {
-     var = FOP_administrative_efficiency_var
-     value = 20
-	 tooltip = add_administrative_efficiency_var_tt
-}
-		add_stability = 0.33	
-		}
+	completion_reward = {
+		add_political_power = 90
+		add_research_slot = 1
 	}
+}
 
-	shared_focus = {
-		id = AFU_expand_funding_for_the_special_services
-		icon = GFX_AFU_expand_funding_for_the_special_services
-		x = 2
-		y = 10
-		cost = 7
-		prerequisite = { focus = AFU_strenghten_the_police_force }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
+shared_focus = {
+	id = AFU_strenghten_the_police_force
+	icon = GFX_AFU_strenghten_the_police_force
+	x = 3
+	y = 9
+	cost = 7
+	prerequisite = { focus = AFU_in_the_name_of_the_state }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		create_intelligence_agency = {
+			name = "Sluzhba Bezpeky Ukrajiny"
+			icon = GFX_agency_logo_ukr
 		}
-		completion_reward = {
-swap_ideas = {
-    remove_idea = AFU_Counterintelligence_operation_1
-    add_idea = AFU_Counterintelligence_operation_2
+		add_ideas = AFU_Counterintelligence_operation_1
+		add_to_variable = {
+			var = FOP_administrative_efficiency_var
+			value = 20
+			tooltip = add_administrative_efficiency_var_tt
+		}
+		add_stability = 0.33
+	}
 }
-        upgrade_intelligence_agency = upgrade_form_department
-add_to_variable = {
-     var = FOP_military_professionalism_var
-     value = 10
-	 tooltip = add_military_professionalism_var_tt
-}
+
+shared_focus = {
+	id = AFU_expand_funding_for_the_special_services
+	icon = GFX_AFU_expand_funding_for_the_special_services
+	x = 2
+	y = 10
+	cost = 7
+	prerequisite = { focus = AFU_strenghten_the_police_force }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = AFU_Counterintelligence_operation_1
+			add_idea = AFU_Counterintelligence_operation_2
+		}
+		upgrade_intelligence_agency = upgrade_form_department
+		add_to_variable = {
+			var = FOP_military_professionalism_var
+			value = 10
+			tooltip = add_military_professionalism_var_tt
+		}
 		add_command_power = 20
-		add_political_power = -30	
-		}
+		add_political_power = -30
 	}
+}
 
-	shared_focus = {
-		id = AFU_keep_the_inner_adversary_out
-		icon = GFX_AFU_keep_the_inner_adversary_out
-		x = 4
-		y = 10
-		cost = 7
-		prerequisite = { focus = AFU_strenghten_the_police_force }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-		add_command_power = 20	
-		}
+shared_focus = {
+	id = AFU_keep_the_inner_adversary_out
+	icon = GFX_AFU_keep_the_inner_adversary_out
+	x = 4
+	y = 10
+	cost = 7
+	prerequisite = { focus = AFU_strenghten_the_police_force }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
 	}
+	completion_reward = {
+		add_command_power = 20
+	}
+}
 
-	shared_focus = {
-		id = AFU_form_the_internal_troops
-		icon = GFX_AFU_form_the_internal_troops
-		x = 3
-		y = 11
-		cost = 7
-		prerequisite = { focus = AFU_keep_the_inner_adversary_out }
-		prerequisite = { focus = AFU_expand_funding_for_the_special_services }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-		add_command_power = 20	
+shared_focus = {
+	id = AFU_form_the_internal_troops
+	icon = GFX_AFU_form_the_internal_troops
+	x = 3
+	y = 11
+	cost = 7
+	prerequisite = { focus = AFU_keep_the_inner_adversary_out }
+	prerequisite = { focus = AFU_expand_funding_for_the_special_services }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		add_command_power = 20
 		army_experience = 10
 		navy_experience = 10
 		air_experience = 10
-		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_end_of_kryvonos_era
-		icon = GFX_AFU_end_of_kryvonos_era
-		x = 8
-		y = 5
-		cost = 7
-		prerequisite = { focus = AFU_time_for_great_solutions }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
+shared_focus = {
+	id = AFU_end_of_kryvonos_era
+	icon = GFX_AFU_end_of_kryvonos_era
+	x = 8
+	y = 5
+	cost = 7
+	prerequisite = { focus = AFU_time_for_great_solutions }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
 		retire_character = AFU_Krivonis
-	hidden_effect = {
-add_to_variable = {
-    var = fulfilment_of_Russian_requirements_variable
-    value = 5
-}
-    }			
+		hidden_effect = {
+			add_to_variable = {
+				var = fulfilment_of_Russian_requirements_variable
+				value = 5
+			}
 		}
 	}
-
-	shared_focus = {
-		id = AFU_government_is_for_politicians_not_the_military
-		icon = GFX_AFU_government_is_for_politicians_not_the_military
-		x = 8
-		y = 6
-		cost = 7
-		prerequisite = { focus = AFU_end_of_kryvonos_era }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-add_to_variable = {
-     var = FOP_administrative_efficiency_var
-     value = 25
-	 tooltip = add_administrative_efficiency_var_tt
 }
+
+shared_focus = {
+	id = AFU_government_is_for_politicians_not_the_military
+	icon = GFX_AFU_government_is_for_politicians_not_the_military
+	x = 8
+	y = 6
+	cost = 7
+	prerequisite = { focus = AFU_end_of_kryvonos_era }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		add_to_variable = {
+			var = FOP_administrative_efficiency_var
+			value = 25
+			tooltip = add_administrative_efficiency_var_tt
+		}
 		add_political_power = 100
 		add_stability = -0.1
 		retire_character = AFU_kuts
-	hidden_effect = {
-add_to_variable = {
-    var = fulfilment_of_Russian_requirements_variable
-    value = 5
-}
-    }			
+		hidden_effect = {
+			add_to_variable = {
+				var = fulfilment_of_Russian_requirements_variable
+				value = 5
+			}
 		}
 	}
-
-	shared_focus = {
-		id = AFU_raise_the_issue_of_generality
-		icon = GFX_AFU_raise_the_issue_of_generality
-		x = 8
-		y = 7
-		cost = 7
-		prerequisite = { focus = AFU_government_is_for_politicians_not_the_military }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-add_popularity = {
-    ideology = authoritarianism
-    popularity = -0.5
 }
+
+shared_focus = {
+	id = AFU_raise_the_issue_of_generality
+	icon = GFX_AFU_raise_the_issue_of_generality
+	x = 8
+	y = 7
+	cost = 7
+	prerequisite = { focus = AFU_government_is_for_politicians_not_the_military }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		add_popularity = {
+			ideology = authoritarianism
+			popularity = -0.5
+		}
 		add_war_support = -0.1
 		add_command_power = -30
 		add_manpower = -100
-		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_in_the_name_of_nation
-		icon = GFX_AFU_in_the_name_of_nation
-		x = 7
-		y = 8
-		cost = 7
-		prerequisite = { focus = AFU_stop_the_ethnic_hatred }
-		prerequisite = { focus = AFU_raise_the_issue_of_generality }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
+shared_focus = {
+	id = AFU_in_the_name_of_nation
+	icon = GFX_AFU_in_the_name_of_nation
+	x = 7
+	y = 8
+	cost = 7
+	prerequisite = { focus = AFU_stop_the_ethnic_hatred }
+	prerequisite = { focus = AFU_raise_the_issue_of_generality }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
 			
-		}
 	}
-
-	shared_focus = {
-		id = AFU_reform_the_territorial_system
-		icon = GFX_AFU_reform_the_territorial_system
-		x = 6
-		y = 9
-		cost = 7
-		prerequisite = { focus = AFU_in_the_name_of_nation }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-	add_ideas = fop_centralization_federalism
-add_to_variable = {
-     var = FOP_administrative_efficiency_var
-     value = 10
-	 tooltip = add_administrative_efficiency_var_tt
 }
-	hidden_effect = {
-add_to_variable = {
-    var = fulfilment_of_Russian_requirements_variable
-    value = 5
+
+shared_focus = {
+	id = AFU_reform_the_territorial_system
+	icon = GFX_AFU_reform_the_territorial_system
+	x = 6
+	y = 9
+	cost = 7
+	prerequisite = { focus = AFU_in_the_name_of_nation }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		add_ideas = fop_centralization_federalism
+		add_to_variable = {
+			var = FOP_administrative_efficiency_var
+			value = 10
+			tooltip = add_administrative_efficiency_var_tt
+		}
+		hidden_effect = {
+			add_to_variable = {
+				var = fulfilment_of_Russian_requirements_variable
+				value = 5
+			}
+		}
+	}
 }
-    }			
+
+shared_focus = {
+	id = AFU_project_of_the_presidential_republic
+	icon = GFX_AFU_project_of_the_presidential_republic
+	x = 6
+	y = 10
+	cost = 7
+	prerequisite = { focus = AFU_reform_the_territorial_system }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		AFU_homut = {
+			add_trait = {
+				trait = pan_president
+			}
 		}
 	}
-
-	shared_focus = {
-		id = AFU_project_of_the_presidential_republic
-		icon = GFX_AFU_project_of_the_presidential_republic
-		x = 6
-		y = 10
-		cost = 7
-		prerequisite = { focus = AFU_reform_the_territorial_system }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-AFU_homut = {
-add_trait = {
-    trait = pan_president
-}	
-}		
-		}
-	}
-
-	shared_focus = {
-		id = AFU_support_the_regional_minorities
-		icon = GFX_AFU_support_the_regional_minorities
-		x = 8
-		y = 9
-		cost = 7
-		prerequisite = { focus = AFU_in_the_name_of_nation }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-	add_ideas = fop_ethnic_minorities_cultural_autonomy
-	hidden_effect = {
-add_to_variable = {
-    var = fulfilment_of_Russian_requirements_variable
-    value = 5
 }
-    }			
+
+shared_focus = {
+	id = AFU_support_the_regional_minorities
+	icon = GFX_AFU_support_the_regional_minorities
+	x = 8
+	y = 9
+	cost = 7
+	prerequisite = { focus = AFU_in_the_name_of_nation }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		add_ideas = fop_ethnic_minorities_cultural_autonomy
+		hidden_effect = {
+			add_to_variable = {
+				var = fulfilment_of_Russian_requirements_variable
+				value = 5
+			}
 		}
 	}
-
-	shared_focus = {
-		id = AFU_second_language_inicitiative
-		icon = GFX_AFU_second_language_inicitiative
-		x = 8
-		y = 10
-		cost = 7
-		prerequisite = { focus = AFU_support_the_regional_minorities }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-	hidden_effect = {
-add_to_variable = {
-    var = fulfilment_of_Russian_requirements_variable
-    value = 5
 }
-    }			
+
+shared_focus = {
+	id = AFU_second_language_inicitiative
+	icon = GFX_AFU_second_language_inicitiative
+	x = 8
+	y = 10
+	cost = 7
+	prerequisite = { focus = AFU_support_the_regional_minorities }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		hidden_effect = {
+			add_to_variable = {
+				var = fulfilment_of_Russian_requirements_variable
+				value = 5
+			}
 		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_referendum_that_will_change_everything
-		icon = GFX_AFU_referendum_that_will_change_everything
-		x = 7
-		y = 11
-		cost = 7
-		prerequisite = { focus = AFU_second_language_inicitiative }
-		prerequisite = { focus = AFU_project_of_the_presidential_republic }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
+shared_focus = {
+	id = AFU_referendum_that_will_change_everything
+	icon = GFX_AFU_referendum_that_will_change_everything
+	x = 7
+	y = 11
+	cost = 7
+	prerequisite = { focus = AFU_second_language_inicitiative }
+	prerequisite = { focus = AFU_project_of_the_presidential_republic }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
 			
-		}
 	}
-
-	shared_focus = {
-		id = AFU_tackle_peoples_problem
-		icon = GFX_AFU_tackle_peoples_problem
-		x = 12
-		y = 5
-		cost = 7
-		prerequisite = { focus = AFU_time_for_great_solutions }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-add_popularity = {
-    ideology = oligarchism
-    popularity = 0.05
 }
+
+shared_focus = {
+	id = AFU_tackle_peoples_problem
+	icon = GFX_AFU_tackle_peoples_problem
+	x = 12
+	y = 5
+	cost = 7
+	prerequisite = { focus = AFU_time_for_great_solutions }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		add_popularity = {
+			ideology = oligarchism
+			popularity = 0.05
+		}
 		add_ideas = fop_healthcare_system_social_insurance
 		add_ideas = fop_pensions_moderate
 		add_ideas = fop_unemployment_subsidies_moderate
-add_to_variable = {
-     var = FOP_Poverty_var
-     value = 5
-	 tooltip = add_Poverty_var_tt
-}			
+		add_to_variable = {
+			var = FOP_Poverty_var
+			value = 5
+			tooltip = add_Poverty_var_tt
 		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_deploy_the_humanitarian_aid_programme
-		icon = GFX_AFU_deploy_the_humanitarian_aid_programme
-		x = 12
-		y = 6
-		cost = 7
-		prerequisite = { focus = AFU_tackle_peoples_problem }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
+shared_focus = {
+	id = AFU_deploy_the_humanitarian_aid_programme
+	icon = GFX_AFU_deploy_the_humanitarian_aid_programme
+	x = 12
+	y = 6
+	cost = 7
+	prerequisite = { focus = AFU_tackle_peoples_problem }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
 		add_ideas = AFU_homutarian_aid_1
-add_popularity = {
-    ideology = oligarchism
-    popularity = 0.05
-}
-add_to_variable = {
-     var = FOP_Poverty_var
-     value = 15
-	 tooltip = add_Poverty_var_tt
-}			
+		add_popularity = {
+			ideology = oligarchism
+			popularity = 0.05
+		}
+		add_to_variable = {
+			var = FOP_Poverty_var
+			value = 15
+			tooltip = add_Poverty_var_tt
 		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_increase_veterans_payments
-		icon = GFX_AFU_increase_veterans_payments
-		x = 12
-		y = 7
-		cost = 7
-		prerequisite = { focus = AFU_deploy_the_humanitarian_aid_programme }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
+shared_focus = {
+	id = AFU_increase_veterans_payments
+	icon = GFX_AFU_increase_veterans_payments
+	x = 12
+	y = 7
+	cost = 7
+	prerequisite = { focus = AFU_deploy_the_humanitarian_aid_programme }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = AFU_homutarian_aid_1
+			add_idea = AFU_homutarian_aid_2
 		}
-		completion_reward = {
-swap_ideas = {
-    remove_idea = AFU_homutarian_aid_1
-    add_idea = AFU_homutarian_aid_2
-}
-add_popularity = {
-    ideology = oligarchism
-    popularity = 0.05
-}
-add_to_variable = {
-     var = FOP_Healthcare_var
-     value = 10
-	 tooltip = add_Healthcare_var_tt
-}
-add_to_variable = {
-     var = FOP_Poverty_var
-     value = 10
-	 tooltip = add_Poverty_var_tt
-}					
+		add_popularity = {
+			ideology = oligarchism
+			popularity = 0.05
+		}
+		add_to_variable = {
+			var = FOP_Healthcare_var
+			value = 10
+			tooltip = add_Healthcare_var_tt
+		}
+		add_to_variable = {
+			var = FOP_Poverty_var
+			value = 10
+			tooltip = add_Poverty_var_tt
 		}
 	}
-
-	shared_focus = {
-		id = AFU_abolish_censorship_laws
-		icon = GFX_AFU_abolish_censorship_laws
-		x = 10
-		y = 6
-		cost = 7
-		prerequisite = { focus = AFU_end_of_kryvonos_era }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-add_popularity = {
-    ideology = oligarchism
-    popularity = 0.03
 }
-add_popularity = {
-    ideology = liberalism
-    popularity = 0.05
+
+shared_focus = {
+	id = AFU_abolish_censorship_laws
+	icon = GFX_AFU_abolish_censorship_laws
+	x = 10
+	y = 6
+	cost = 7
+	prerequisite = { focus = AFU_end_of_kryvonos_era }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		add_popularity = {
+			ideology = oligarchism
+			popularity = 0.03
+		}
+		add_popularity = {
+			ideology = liberalism
+			popularity = 0.05
+		}
+		add_ideas = fop_press_freedom_free
+	}
 }
-		add_ideas = fop_press_freedom_free		
-		}
-	}
 
-	shared_focus = {
-		id = AFU_market_must_not_be_limited
-		icon = GFX_AFU_market_must_not_be_limited
-		x = 10
-		y = 7
-		cost = 7
-		prerequisite = { focus = AFU_abolish_censorship_laws }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-		add_ideas = fop_commercial_policy_free_trade			
-		}
+shared_focus = {
+	id = AFU_market_must_not_be_limited
+	icon = GFX_AFU_market_must_not_be_limited
+	x = 10
+	y = 7
+	cost = 7
+	prerequisite = { focus = AFU_abolish_censorship_laws }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
 	}
+	completion_reward = {
+		add_ideas = fop_commercial_policy_free_trade
+	}
+}
 
-	shared_focus = {
-		id = AFU_in_the_name_of_the_people
-		icon = GFX_AFU_in_the_name_of_the_people
-		x = 11
-		y = 8
-		cost = 7
-		prerequisite = { focus = AFU_increase_veterans_payments }
-		prerequisite = { focus = AFU_market_must_not_be_limited }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
+shared_focus = {
+	id = AFU_in_the_name_of_the_people
+	icon = GFX_AFU_in_the_name_of_the_people
+	x = 11
+	y = 8
+	cost = 7
+	prerequisite = { focus = AFU_increase_veterans_payments }
+	prerequisite = { focus = AFU_market_must_not_be_limited }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
 			
+	}
+}
+
+shared_focus = {
+	id = AFU_raise_the_standard_of_living
+	icon = GFX_AFU_raise_the_standard_of_living
+	x = 11
+	y = 9
+	cost = 7
+	prerequisite = { focus = AFU_in_the_name_of_the_people }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = AFU_homutarian_aid_2
+			add_idea = AFU_homutarian_aid_3
+		}
+		add_popularity = {
+			ideology = oligarchism
+			popularity = 0.02
+		}
+		add_to_variable = {
+			var = FOP_Healthcare_var
+			value = 50
+			tooltip = add_Healthcare_var_tt
+		}
+		add_to_variable = {
+			var = FOP_Poverty_var
+			value = 50
+			tooltip = add_Poverty_var_tt
+		}
+		add_to_variable = {
+			var = FOP_Unemployment_var
+			value = 50
+			tooltip = add_Unemployment_var_tt
+		}
+		add_to_variable = {
+			var = FOP_schooling_var
+			value = 50
+			tooltip = add_schooling_var_tt
 		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_raise_the_standard_of_living
-		icon = GFX_AFU_raise_the_standard_of_living
-		x = 11
-		y = 9
-		cost = 7
-		prerequisite = { focus = AFU_in_the_name_of_the_people }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
+shared_focus = {
+	id = AFU_miners_paradise_on_earth
+	icon = GFX_AFU_miners_paradise_on_earth
+	x = 10
+	y = 10
+	cost = 7
+	prerequisite = { focus = AFU_raise_the_standard_of_living }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 3
+			category = excavation_tech
 		}
-		completion_reward = {
-swap_ideas = {
-    remove_idea = AFU_homutarian_aid_2
-    add_idea = AFU_homutarian_aid_3
-}
-add_popularity = {
-    ideology = oligarchism
-    popularity = 0.02
-}
-add_to_variable = {
-     var = FOP_Healthcare_var
-     value = 50
-	 tooltip = add_Healthcare_var_tt
-}
-add_to_variable = {
-     var = FOP_Poverty_var
-     value = 50
-	 tooltip = add_Poverty_var_tt
-}
-add_to_variable = {
-     var = FOP_Unemployment_var
-     value = 50
-	 tooltip = add_Unemployment_var_tt
-}
-add_to_variable = {
-     var = FOP_schooling_var
-     value = 50
-	 tooltip = add_schooling_var_tt
-}				
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 3
+			category = construction_tech
+		}
+		add_popularity = {
+			ideology = oligarchism
+			popularity = 0.02
+		}
+		add_to_variable = {
+			var = FOP_Industry_var
+			value = 10
+			tooltip = add_Industry_var_tt
 		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_miners_paradise_on_earth
-		icon = GFX_AFU_miners_paradise_on_earth
-		x = 10
-		y = 10
-		cost = 7
-		prerequisite = { focus = AFU_raise_the_standard_of_living }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
+shared_focus = {
+	id = AFU_golf_the_best_entarteinment
+	icon = GFX_AFU_golf_the_best_entarteinment
+	x = 12
+	y = 10
+	cost = 7
+	prerequisite = { focus = AFU_raise_the_standard_of_living }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		add_popularity = {
+			ideology = oligarchism
+			popularity = 0.02
 		}
-		completion_reward = {
-add_tech_bonus = {
-    bonus = 0.5
-    uses = 3
-    category = excavation_tech
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = civilian_resting_place
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = civilian_resting_place
+				level = 1
+				instant_build = yes
+			}
+		}
+		set_country_flag = AFU_golf_the_best_entarteinment
+	}
 }
-add_tech_bonus = {
-    bonus = 0.5
-    uses = 3
-    category = construction_tech
-}
-add_popularity = {
-    ideology = oligarchism
-    popularity = 0.02
-}
-add_to_variable = {
-     var = FOP_Industry_var
-     value = 10
-	 tooltip = add_Industry_var_tt
-}			
+
+shared_focus = {
+	id = AFU_nation_of_hard_workers
+	icon = GFX_AFU_nation_of_hard_workers
+	x = 11
+	y = 11
+	cost = 7
+	prerequisite = { focus = AFU_miners_paradise_on_earth }
+	prerequisite = { focus = AFU_golf_the_best_entarteinment }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	completion_reward = {
+		add_offsite_building = { type = industrial_complex level = 2 }
+		add_to_variable = {
+			var = FOP_Unemployment_var
+			value = 25
+			tooltip = add_Unemployment_var_tt
 		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_golf_the_best_entarteinment
-		icon = GFX_AFU_golf_the_best_entarteinment
-		x = 12
-		y = 10
-		cost = 7
-		prerequisite = { focus = AFU_raise_the_standard_of_living }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-add_popularity = {
-    ideology = oligarchism
-    popularity = 0.02
-}
-random_owned_state = {
-add_extra_state_shared_building_slots = 1
-add_building_construction = {
-    type = civilian_resting_place
-    level = 1
-    instant_build = yes
-}
-}
-random_owned_state = {
-add_extra_state_shared_building_slots = 1
-add_building_construction = {
-    type = civilian_resting_place
-    level = 1
-    instant_build = yes
-}
-}
-set_country_flag = AFU_golf_the_best_entarteinment			
-		}
+shared_focus = {
+	id = AFU_the_time_of_the_donbas_people_has_come
+	icon = GFX_AFU_the_time_of_the_donbas_people_has_come
+	x = 7
+	y = 12
+	cost = 7
+	prerequisite = { focus = AFU_nation_of_hard_workers }
+	prerequisite = { focus = AFU_referendum_that_will_change_everything }
+	prerequisite = { focus = AFU_form_the_internal_troops }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
 	}
-
-	shared_focus = {
-		id = AFU_nation_of_hard_workers
-		icon = GFX_AFU_nation_of_hard_workers
-		x = 11
-		y = 11
-		cost = 7
-		prerequisite = { focus = AFU_miners_paradise_on_earth }
-		prerequisite = { focus = AFU_golf_the_best_entarteinment }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-add_offsite_building = { type = industrial_complex level = 2 }
-add_to_variable = {
-     var = FOP_Unemployment_var
-     value = 25
-	 tooltip = add_Unemployment_var_tt
-}			
-		}
-	}
-
-	shared_focus = {
-		id = AFU_the_time_of_the_donbas_people_has_come
-		icon = GFX_AFU_the_time_of_the_donbas_people_has_come
-		x = 7
-		y = 12
-		cost = 7
-		prerequisite = { focus = AFU_nation_of_hard_workers }
-		prerequisite = { focus = AFU_referendum_that_will_change_everything }
-		prerequisite = { focus = AFU_form_the_internal_troops }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
+	completion_reward = {
 			
-		}
 	}
+}
 
-	shared_focus = {
-		id = AFU_one_and_unified_multicultural_state
-		icon = GFX_AFU_one_and_unified_multicultural_state
-		x = 7
-		y = 13
-		cost = 7
-		prerequisite = { focus = AFU_the_time_of_the_donbas_people_has_come }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-			
-		}
+shared_focus = {
+	id = AFU_one_and_unified_multicultural_state
+	icon = GFX_AFU_one_and_unified_multicultural_state
+	x = 7
+	y = 13
+	cost = 7
+	prerequisite = { focus = AFU_the_time_of_the_donbas_people_has_come }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
 	}
+	completion_reward = {
+			
+	}
+}
 
-	shared_focus = {
-		id = AFU_issue_of_our_status
-		icon = GFX_AFU_issue_of_our_status
-		x = 7
-		y = 14
-		cost = 7
-		prerequisite = { focus = AFU_one_and_unified_multicultural_state }
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		completion_reward = {
-			
-		}
+shared_focus = {
+	id = AFU_issue_of_our_status
+	icon = GFX_AFU_issue_of_our_status
+	x = 7
+	y = 14
+	cost = 7
+	prerequisite = { focus = AFU_one_and_unified_multicultural_state }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
 	}
+	completion_reward = {
+			
+	}
+}
