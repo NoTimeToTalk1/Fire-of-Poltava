@@ -1,18 +1,23 @@
 add_namespace = dpr_girkin
+add_namespcae = dpr_girkin_lore
 country_event = {
 	id = dpr_girkin.1
 	title = dpr_girkin.1.t
 	desc = dpr_girkin.1.d
+
 	picture = none
+
 	is_triggered_only = yes
+
 	fire_only_once = yes
+
 	trigger = {
 		DPR = {
 			has_government = ultranationalism
 		}
 	}
 	option = {
-		name = dpr_vitrenko.1.a
+		name = dpr_girkin.1.a
 		DPR = {
 			set_cosmetic_tag = GRK
 			remove_ideas = DPR_clown
@@ -23,52 +28,357 @@ country_event = {
 }
 
 country_event = {
-	id = dpr_girkin.2
+	id = dpr_girkin.2 #opposition is against
 	title = dpr_girkin.2.t
 	desc = dpr_girkin.2.d
+
 	picture = none
+
 	is_triggered_only = yes
+
 	fire_only_once = yes
-	trigger = {
-		DPR = {
-			has_government = ultranationalism
-		}
-	}
+
 	option = {
-		name = dpr_vitrenko.2.a
-		DPR = {
-			add_manpower = 6000
+		name = dpr_girkin.2.a
+		add_popularity = {
+			ideology = socialism
+			popularity = 0.03
+		}
+		add_popularity = {
+			ideology = national_democracy
+			popularity = 0.03
 		}
 	}
 }
 
 country_event = {
-	id = dpr_girkin.3
+	id = dpr_girkin.3 #arming loyalists, opposition nervous
 	title = dpr_girkin.3.t
 	desc = dpr_girkin.3.d
+
 	picture = none
+
 	is_triggered_only = yes
+
 	fire_only_once = yes
-	trigger = {
-		DPR = {
-			has_government = ultranationalism
+
+	option = {
+		name = dpr_girkin.3.a
+		swap_ideas = {
+			remove_idea = DPR_peoples_opposition_1
+			add_idea = DPR_peoples_opposition_2
 		}
 	}
-	option = {
-		name = dpr_vitrenko.3.a
-		DPR = {
-			add_popularity = {
-				ideology = ultranationalism
-				popularity = -0.08
-			}
-			add_stability = 0.1
-			load_focus_tree = {
-				tree = DPR_strelkov
-				keep_completed = yes
+}
 
-			}
-			complete_national_focus = DPR_contract_with_the_devil
-			complete_national_focus = DPR_facing_the_problems_alone
+country_event = {
+	id = dpr_girkin.4 #discrediting
+	title = dpr_girkin.4.t
+	desc = dpr_girkin.4.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = dpr_girkin.4.a
+		add_popularity = {
+			ideology = conservatism
+			popularity = -0.02
 		}
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = socialism
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = -0.02
+		}
+	}
+}
+
+country_event = {
+	id = dpr_girkin.5 #unrest
+	title = dpr_girkin.5.t
+	desc = dpr_girkin.5.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = dpr_girkin.5.a
+		swap_ideas = {
+			remove_idea = DPR_peoples_opposition_2
+			add_idea = DPR_peoples_opposition_3
+		}
+	}
+}
+
+country_event = {
+	id = dpr_girkin.6 #amendments
+	title = dpr_girkin.6.t
+	desc = dpr_girkin.6.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = dpr_girkin.6.a
+		add_political_power = 50
+	}
+}
+
+country_event = {
+	id = dpr_girkin.7 #raid on opposition
+	title = dpr_girkin.7.t
+	desc = dpr_girkin.7.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = dpr_girkin.7.a
+		add_stability = -0.1
+	}
+}
+
+country_event = {
+	id = dpr_girkin.8 #no amendments
+	title = dpr_girkin.8.t
+	desc = dpr_girkin.8.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = dpr_girkin.8.a
+		add_stability = -0.1
+	}
+}
+
+country_event = {
+	id = dpr_girkin.9 #fight with opposition
+	title = dpr_girkin.9.t
+	desc = dpr_girkin.9.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = dpr_girkin.9.a
+		add_stability = -0.15
+		add_war_support = -0.2
+		every_state = {
+			limit = {
+				OR = {
+					state = 2346
+					state = 2094
+					state = 2083
+					state = 2093
+					state = 2031
+					state = 2098
+					state = 2099
+					state = 2097
+					state = 2724
+					state = 2310
+					state = 2081
+				}
+			}
+			set_demilitarized_zone = yes
+		}
+		unlock_decision_category_tooltip = DPR_putting_down_the_unrest
+		set_country_flag = DPR_girkin_crackdown
+		if = {
+			limit = {
+				has_completed_focus = DPR_give_them_guarantees
+			}
+			set_country_flag = DPR_girkin_crackdown_hard
+		}
+	}
+}
+
+country_event = {
+	id = dpr_girkin.10 #kill pasechnik
+	title = dpr_girkin.10.t
+	desc = dpr_girkin.10.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = dpr_girkin.10.a
+		kill_ideology_leader = national_democracy
+	}
+}
+
+country_event = {
+	id = dpr_girkin.11 #kill vitrenko
+	title = dpr_girkin.11.t
+	desc = dpr_girkin.11.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = dpr_girkin.11.a
+		kill_ideology_leader = socialism
+	}
+}
+
+country_event = {
+	id = dpr_girkin.12 #alyo eto prigozhin zhenya a et ya igor strelkov ooo blya zdarova
+	title = dpr_girkin.12.t
+	desc = dpr_girkin.12.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = dpr_girkin.12.a
+	}
+}
+
+country_event = {
+	id = dpr_girkin.13 #integration of wagner
+	title = dpr_girkin.13.t
+	desc = dpr_girkin.13.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = dpr_girkin.13.a
+		add_war_support = 0.01
+	}
+}
+
+country_event = {
+	id = dpr_girkin.14 #girkin's genius
+	title = dpr_girkin.14.t
+	desc = dpr_girkin.14.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = dpr_girkin.14.a
+	}
+}
+
+country_event = {
+	id = dpr_girkin.15 #purge of unloyal
+	title = dpr_girkin.15.t
+	desc = dpr_girkin.15.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = dpr_girkin.15.a
+		add_manpower = -1000
+	}
+}
+
+country_event = {
+	id = dpr_girkin.16 #girkin meets rovs
+	title = dpr_girkin.16.t
+	desc = dpr_girkin.16.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = dpr_girkin.16.a
+	}
+}
+
+
+country_event = {
+	id = dpr_girkin_lore.1 #fsb
+	title = dpr_girkin_lore.1.t
+	desc = dpr_girkin_lore.1.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = dpr_girkin_lore.1.a
+	}
+}
+
+country_event = {
+	id = dpr_girkin_lore.2 #rovs
+	title = dpr_girkin_lore.2.t
+	desc = dpr_girkin_lore.2.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = dpr_girkin_lore.2.a
+	}
+}
+
+country_event = {
+	id = dpr_girkin_lore.3 #cossacks
+	title = dpr_girkin_lore.3.t
+	desc = dpr_girkin_lore.3.d
+
+	picture = none
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = dpr_girkin_lore.3.a
 	}
 }

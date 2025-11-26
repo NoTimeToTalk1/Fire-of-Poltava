@@ -21,8 +21,8 @@ shared_focus = {
 		add_ideas = DPR_peoples_opposition_1
 		add_political_power = 40
 		country_event = {
-			id = dpr.901 #PLACEHOLDER --- Вуличні протести виборців вітренко та пасєки
-			days = 1
+			id = dpr_girkin.2
+			days = 3
 		}
 	}
 }
@@ -45,7 +45,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###DEVIL TOOLTIP DEATHS BLOOD HAHAHAAHAH
+		custom_effect_tooltip = dpr_girking_fight_tt
 		add_popularity = {
 			ideology = traditionalism
 			popularity = 0.3
@@ -68,14 +68,10 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		#swap_ideas = { --- ADD THIS TO EVENT INSTEAD
-		#	remove_idea = DPR_peoples_opposition_1
-		#	add_idea = DPR_peoples_opposition_2
-		#}
-		add_manpower = 6000
+		add_manpower = 3000
 		country_event = {
-			id = dpr.902 #PLACEHOLDER --- Перші криваві зіткнення на вулицях
-			days = 1
+			id = dpr_girkin.3
+			days = 3
 		}
 	}
 }
@@ -95,26 +91,10 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		add_popularity = {
-			ideology = conservatism
-			popularity = -0.1
-		}
-		add_popularity = {
-			ideology = liberalism
-			popularity = -0.1
-		}
-		add_popularity = {
-			ideology = socialism
-			popularity = -0.1
-		}
-		add_popularity = {
-			ideology = communism
-			popularity = -0.1
-		}
-		add_political_power = -80
+		add_political_power = -50
 		country_event = {
-			id = dpr.903 #PLACEHOLDER --- Вирізка з газети про дискредитацію Вітренко й Пасєки (відомі вони разом як "Народна Опозиція")
-			days = 1
+			id = dpr_girkin.4
+			days = 4
 		}
 	}
 }
@@ -134,14 +114,10 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		#swap_ideas = { --- ADD THIS TO EVENT INSTEAD, ALSO DEMILITARIZE REGIONS AND OPEN DECISIONS
-		#	remove_idea = DPR_peoples_opposition_2
-		#	add_idea = DPR_peoples_opposition_3
-		#}
 		add_stability = -0.2
 		country_event = {
-			id = dpr.904 #PLACEHOLDER --- Війна гіркіна та лоялістів з опозицією в містах та селах
-			days = 1
+			id = dpr_girkin.5
+			days = 4
 		}
 	}
 }
@@ -164,7 +140,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###ANGEL TOOLTIP CANDYS HAPINESS ETC.
+		custom_effect_tooltip = dpr_girking_deal_tt
 		add_popularity = {
 			ideology = traditionalism
 			popularity = -0.2
@@ -187,27 +163,26 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		add_political_power = 200
 		remove_ideas = DPR_peoples_opposition_1
 		add_popularity = {
 			ideology = conservatism
-			popularity = 0.06
-		}
-		add_popularity = {
-			ideology = liberalism
 			popularity = 0.04
 		}
 		add_popularity = {
+			ideology = liberalism
+			popularity = 0.03
+		}
+		add_popularity = {
 			ideology = socialism
-			popularity = 0.07
+			popularity = 0.04
 		}
 		add_popularity = {
 			ideology = communism
 			popularity = 0.03
 		}
 		country_event = {
-			id = dpr.905 #PLACEHOLDER --- Лібералізація конституції гіркіном, уряд пішов на поступки опозиції (стратегічний хід, далі більше)
-			days = 1
+			id = dpr_girkin.6
+			days = 3
 		}
 	}
 }
@@ -228,8 +203,8 @@ shared_focus = {
 
 	completion_reward = {
 		country_event = {
-			id = dpr.906 #PLACEHOLDER --- Штурм ячейки Народної Опозиції (сценарій з лібералізацією)
-			days = 1
+			id = dpr_girkin.7
+			days = 7
 		}
 	}
 }
@@ -250,8 +225,8 @@ shared_focus = {
 
 	completion_reward = {
 		country_event = {
-			id = dpr.907 #PLACEHOLDER --- Відміна правок, шок контент
-			days = 1
+			id = dpr_girkin.8
+			days = 5
 		}
 	}
 }
@@ -272,9 +247,43 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		country_event = {
-			id = dpr.908 #PLACEHOLDER --- Опис подальшої ситуації (народ в страху, в державі анархія)
-			days = 1
+		if = {
+			limit = {
+				has_completed_focus = DPR_give_them_guarantees
+			}
+			custom_effect_tooltip = dpr_girkin_random_civil_war_tt
+			hidden_effect = {
+				random_list = {
+					50 = {
+						country_event = {
+							id = dpr_girkin.10
+							days = 8
+						}
+						country_event = {
+							id = dpr_girkin.11
+							days = 11
+						}
+					}
+					50 = {
+						country_event = {
+							id = dpr_girkin.9
+							days = 5
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_completed_focus = DPR_give_them_a_fight
+			}
+			country_event = {
+				id = dpr_girkin.9
+				days = 5
+			}
+		}
+		else = {
+			custom_effect_tooltip = dpr_girkin_not_decided_tt
 		}
 		###GUI FOR DEMILITARIZATION OF REGIONS(WHAT???)
 		###+ADD DECISIONS TO FUCK WITH VITRENKO AND PASECHNIK(part of gui)
@@ -299,7 +308,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		#Нацдух про вагнер дати, який прибирається коли береш фокус на інтеграцію в регулярні війська
+		add_ideas = DPR_wagner_contract
 		add_popularity = {
 			ideology = traditionalism
 			popularity = -0.1
@@ -308,10 +317,7 @@ shared_focus = {
 			ideology = oligarchism
 			popularity = 0.05
 		}
-		country_event = {
-			id = dpr.909 #PLACEHOLDER --- Телефонний діалог гіркіна та пріґожина
-			days = 1
-		}
+		country_event = dpr_girkin.12
 	}
 }
 
@@ -330,10 +336,51 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###ADDS 3 ELITE UNITS(PRIGHOZIN AND OTHER NOOBS AS GENERALS TOO)
+		division_template = {
+			name = "Wagner Detachment"
+			is_locked = yes
+			regiments = {
+				APC = { x = 0 y = 0 }
+				IFV = { x = 0 y = 1 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				artillery_brigade = { x = 2 y = 0 }
+				motorized = { x = 3 y = 0 }
+				motorized = { x = 3 y = 1 }
+			}
+			support = {
+				mot_recon = { x = 0 y = 0 }
+				engineer = { x = 0 y = 1 }
+				signal_company = { x = 0 y = 2 }
+			}
+		}
+		random_owned_controlled_state = {
+			create_unit = {
+				division = "name = \"Wagner Detachment\" 
+				division_template = \"Wagner Detachment\" 
+				start_experience_factor = 0.3 
+				start_equipment_factor = 0.7"
+				owner = DPR
+			}
+			create_unit = {
+				division = "name = \"Wagner Detachment\" 
+				division_template = \"Wagner Detachment\" 
+				start_experience_factor = 0.3 
+				start_equipment_factor = 0.7"
+				owner = DPR
+			}
+			create_unit = {
+				division = "name = \"Wagner Detachment\" 
+				division_template = \"Wagner Detachment\" 
+				start_experience_factor = 0.3 
+				start_equipment_factor = 0.7"
+				owner = DPR
+			}
+		}
+		recruit_character = DNR_pisya	
 		country_event = {
-			id = dpr.910 #PLACEHOLDER --- Інтеграція Вагнера в регулярні війська
-			days = 1
+			id = dpr_girkin.13
+			days = 7
 		}
 	}
 }
@@ -383,7 +430,7 @@ shared_focus = {
 		add_ideas = DPR_colonels_plan_1
 		add_political_power = 50
 		country_event = {
-			id = dpr.911 #PLACEHOLDER --- івент про геніальність гіркіна як стратега на воєнному й державному рівнях
+			id = dpr_girkin.14
 			days = 1
 		}
 	}
@@ -405,9 +452,11 @@ shared_focus = {
 
 	completion_reward = {
 		add_command_power = 50
-		country_event = {
-			id = dpr.912 #PLACEHOLDER --- HIDDEN івент про фсб
-			days = 1
+		hidden_effect = {
+			country_event = {
+				id = dpr_girkin_lore.1
+				days = 1
+			}
 		}
 	}
 }
@@ -432,7 +481,7 @@ shared_focus = {
 			add_idea = DPR_FSB_1
 		}
 		country_event = {
-			id = dpr.913 #PLACEHOLDER --- Івент про методи дій фсб
+			id = dpr_girkin.14
 			days = 1
 		}
 	}
@@ -462,8 +511,8 @@ shared_focus = {
 			icon = GFX_intelligence_agency_logo_agency
 		}
 		country_event = {
-			id = dpr.914 #PLACEHOLDER --- Операція новостворенної Служби Безпеки Новоросії по затримці рандомних держзрадників
-			days = 1
+			id = dpr_girkin.15
+			days = 3
 		}
 	}
 }
@@ -497,12 +546,14 @@ shared_focus = {
 				DPR_new_friends_1
 			}
 		}
-		country_event = {
-			id = dpr.915 #PLACEHOLDER --- HIDDEN Івент про РОВС (історія, хто шо, відносно коротко, основна увага на 2014-зараз)
-			days = 1
+		hidden_effect = {
+			country_event = {
+				id = dpr_girkin_lore.2
+				days = 4
+			}
 		}
 		country_event = {
-			id = dpr.916 #PLACEHOLDER --- Зустріч Гіркіна та Іванова - лідера РОВС
+			id = dpr_girkin.16
 			days = 7
 		}
 	}
@@ -538,7 +589,7 @@ shared_focus = {
 			}
 		}
 		country_event = {
-			id = dpr.917 #PLACEHOLDER --- Івент про те як Біла Гвардія насправді не програла а червоні просто оголосили про перемогу не добивши їх - білі досі легітимні й базовані
+			id = dpr_girkin.17 
 			days = 1
 		}
 	}
@@ -564,7 +615,7 @@ shared_focus = {
 			remove_idea = DPR_colonels_plan_1
 			add_idea = DPR_colonels_plan_2
 		}
-		###ADD IHOR IVANOV AS ADVISOR
+		recruit_character = DNR_ivanov
 	}
 }
 
@@ -597,9 +648,11 @@ shared_focus = {
 				DPR_new_friends_2
 			}
 		}
-		country_event = {
-			id = dpr.918 #PLACEHOLDER --- Історія Донського козацтва (відносно коротко, основна увага на 2014-зараз)
-			days = 1
+		hidden_effect = {
+			country_event = {
+				id = dpr_girkin_lore.3
+				days = 1
+			}
 		}
 	}
 }
@@ -619,7 +672,8 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###ADD DECISIONS TO RECRUIT COSSACK LEADERS
+		unlock_decision_category_tooltip = DPR_invite_cossack_leaders
+		set_country_flag = DPR_girkin_cossacks
 	}
 }
 
@@ -638,9 +692,54 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###ADD 4 COSSACK BRIGADES(4 horse, 2 infantry, 1 truck)
+		division_template = {
+			name = "Elite Cossaks Division"
+			is_locked = yes
+			regiments = {
+				cavalry = { x = 0 y = 0 }
+				cavalry = { x = 0 y = 1 }
+				cavalry = { x = 0 y = 2 }
+				cavalry = { x = 0 y = 3 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				motorized = { x = 2 y = 0 }
+			}
+			support = {
+				recon = { x = 0 y = 0 }
+			}
+		}
+		random_owned_controlled_state = {
+			create_unit = {
+				division = "name = \"1-ya Dobrovol'cheskaya Kazachya Divisiya\" 
+				division_template = \"Elite Cossaks Division\" 
+				start_experience_factor = 0.3 
+				start_equipment_factor = 0.7"
+				owner = DPR
+			}
+			create_unit = {
+				division = "name = \"2-ya Dobrovol'cheskaya Kazachya Divisiya\" 
+				division_template = \"Elite Cossaks Division\" 
+				start_experience_factor = 0.2 
+				start_equipment_factor = 0.9"
+				owner = DPR
+			}
+			create_unit = {
+				division = "name = \"3-ya Dobrovol'cheskaya Kazachya Divisiya\" 
+				division_template = \"Elite Cossaks Division\" 
+				start_experience_factor = 0.2 
+				start_equipment_factor = 0.8"
+				owner = DPR
+			}
+			create_unit = {
+				division = "name = \"4-ya Dobrovol'cheskaya Kazachya Divisiya\" 
+				division_template = \"Elite Cossaks Division\" 
+				start_experience_factor = 0.2 
+				start_equipment_factor = 0.6"
+				owner = DPR
+			}	
+		}
 		country_event = {
-			id = dpr.919 #PLACEHOLDER --- Івент про марш-парад Донських кізяків по Донецьку
+			id = dpr_girkin.18
 			days = 1
 		}
 	}
