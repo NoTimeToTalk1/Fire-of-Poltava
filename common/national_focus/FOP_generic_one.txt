@@ -1,6 +1,5 @@
 focus_tree = {
 	id = fop_generic_one
-	continuous_focus_position = { x = 0 y = 1000 }
 	country = {
 		factor = 0
 		modifier = {
@@ -17,9 +16,11 @@ focus_tree = {
 focus = {
 	id = FOP_We_Stand_On_Ground
 	icon = GFX_FOP_We_Stand_On_Ground
+	cost = 1
+
 	x = 50
 	y = 1
-    cost = 1
+
 	completion_reward = {
 		country_event = FOP_generic.8
 	}
@@ -28,11 +29,14 @@ focus = {
 focus = {
 	id = FOP_Establish_Regional_Administration
 	icon = GFX_FOP_Establish_Regional_Administration
-	x = -1
-	y = 1
     cost = 2
-    relative_position_id = FOP_We_Stand_On_Ground
+
+	relative_position_id = FOP_We_Stand_On_Ground
+    x = -1
+	y = 1
+
     prerequisite = { focus = FOP_We_Stand_On_Ground }
+
 	completion_reward = {
 		add_political_power = 150
 	}
@@ -41,11 +45,14 @@ focus = {
 focus = {
 	id = FOP_Appeal_To_The_People
 	icon = GFX_FOP_Appeal_To_The_People
-	x = 1
-	y = 1
-    cost = 2
+	cost = 2
+
     relative_position_id = FOP_We_Stand_On_Ground
-    prerequisite = { focus = FOP_We_Stand_On_Ground }
+    x = 1
+	y = 1
+    
+	prerequisite = { focus = FOP_We_Stand_On_Ground }
+
 	completion_reward = {
 		country_event = {
 			id = FOP_generic.9
@@ -57,12 +64,15 @@ focus = {
 focus = {
 	id = FOP_Open_For_Business
 	icon = GFX_FOP_Open_For_Business
+    cost = 2
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 0
 	y = 2
-    cost = 2
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Appeal_To_The_People }
     prerequisite = { focus = FOP_Establish_Regional_Administration }
+	
 	completion_reward = {
 		add_stability = 0.1
 	}
@@ -71,11 +81,14 @@ focus = {
 focus = {
 	id = FOP_Army_Reorganisation
 	icon = GFX_FOP_Army_Reorganisation
+    cost = 2
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -30
 	y = 3
-    cost = 2
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Open_For_Business }
+
 	completion_reward = {
 		army_experience = 25
 	}
@@ -84,11 +97,14 @@ focus = {
 focus = {
 	id = FOP_Expand_Staff
 	icon = GFX_FOP_Expand_Staff
+    cost = 4
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -30
 	y = 4
-    cost = 4
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Army_Reorganisation }
+
 	completion_reward = {
 		swap_ideas = {
 			remove_idea = FOP_starting_general_stuff
@@ -100,11 +116,14 @@ focus = {
 focus = {
 	id = FOP_Weapon_Markets
 	icon = GFX_FOP_Weapon_Markets
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -35
 	y = 5
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
-    prerequisite = { focus = FOP_Expand_Staff }
+    
+	prerequisite = { focus = FOP_Expand_Staff }
+
 	completion_reward = {
 		unlock_decision_category_tooltip = FOP_weapon_market
 		set_country_flag = FOP_weapon_market
@@ -114,11 +133,14 @@ focus = {
 focus = {
 	id = FOP_Military_Industry_Development
 	icon = GFX_FOP_Military_Industry_Development
+    cost = 6
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -33
 	y = 5
-    cost = 6
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Expand_Staff }
+
 	completion_reward = {
 		random_owned_controlled_state = {
 			add_building_construction = {
@@ -154,11 +176,14 @@ focus = {
 focus = {
 	id = FOP_Gather_Munitions_From_Citizens
 	icon = GFX_FOP_Gather_Munitions_From_Citizens
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -35
 	y = 6
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Weapon_Markets }
+
 	completion_reward = {
 		add_political_power = -20
 		add_equipment_to_stockpile = {
@@ -171,11 +196,14 @@ focus = {
 focus = {
 	id = FOP_Encourage_Local_Workshops
 	icon = GFX_FOP_Encourage_Local_Workshops
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -33
 	y = 6
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Military_Industry_Development }
+	
 	completion_reward = {
 		add_ideas = FOP_local_workshops
 	}
@@ -184,12 +212,15 @@ focus = {
 focus = {
 	id = FOP_Recruitment_Issue
 	icon = GFX_FOP_Recruitment_Issue
-	x = -34
-	y = 7
     cost = 2
+
     relative_position_id = FOP_We_Stand_On_Ground
+   	x = -34
+	y = 7
+
     prerequisite = { focus = FOP_Encourage_Local_Workshops }
 	prerequisite = { focus = FOP_Gather_Munitions_From_Citizens }
+	
 	completion_reward = {
 	}
 }
@@ -197,12 +228,15 @@ focus = {
 focus = {
 	id = FOP_Who_Was_Made_To_Serve
 	icon = GFX_FOP_Who_Was_Made_To_Serve
-	x = -36
-	y = 8
     cost = 2
+
     relative_position_id = FOP_We_Stand_On_Ground
-    prerequisite = { focus = FOP_Recruitment_Issue }
+    x = -36
+	y = 8
+ 
+    prerequisite = { focus = FOP_Recruitment_Issue }  
 	mutually_exclusive = { focus = FOP_Army_Service_Will_Touch_Everyone }
+	
 	completion_reward = {
 		add_ideas = fop_conscription_limited
 		add_war_support = -0.03
@@ -212,12 +246,15 @@ focus = {
 focus = {
 	id = FOP_Army_Service_Will_Touch_Everyone
 	icon = GFX_FOP_Army_Service_Will_Touch_Everyone
-	x = -32
-	y = 8
     cost = 2
+
     relative_position_id = FOP_We_Stand_On_Ground
-    prerequisite = { focus = FOP_Recruitment_Issue }
-	mutually_exclusive = { focus = FOP_Who_Was_Made_To_Serve }
+    x = -32
+	y = 8
+    
+	prerequisite = { focus = FOP_Recruitment_Issue }
+    mutually_exclusive = { focus = FOP_Who_Was_Made_To_Serve }
+	
 	completion_reward = {
 		add_ideas = fop_conscription_service_by_requirement
 		add_stability = -0.1
@@ -227,11 +264,14 @@ focus = {
 focus = {
 	id = FOP_Mandated_Rearline_Jobs
 	icon = GFX_FOP_Mandated_Rearline_Jobs
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -37
 	y = 9
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Who_Was_Made_To_Serve }
+
 	completion_reward = {
 		add_ideas = FOP_rearline_jobs
 	}
@@ -240,11 +280,14 @@ focus = {
 focus = {
 	id = FOP_Self_Defence_Training_Programmes
 	icon = GFX_FOP_Self_Defence_Training_Programmes
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -35
 	y = 9
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
-    prerequisite = { focus = FOP_Who_Was_Made_To_Serve }
+    
+	prerequisite = { focus = FOP_Who_Was_Made_To_Serve }
+
 	completion_reward = {
 		add_ideas = FOP_self_defence_training
 	}
@@ -253,11 +296,14 @@ focus = {
 focus = {
 	id = FOP_Ease_Up_Conscription_Requirements
 	icon = GFX_FOP_Ease_Up_Conscription_Requirements
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -33
 	y = 9
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Army_Service_Will_Touch_Everyone }
+	
 	completion_reward = {
 		add_ideas = fop_women_military_assistance
 		add_ideas = FOP_lowered_conscription_age
@@ -268,11 +314,14 @@ focus = {
 focus = {
 	id = FOP_Good_Mobilization_Bonuses
 	icon = GFX_FOP_Good_Mobilization_Bonuses
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -31
 	y = 9
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Army_Service_Will_Touch_Everyone }
+	
 	completion_reward = {
 		add_ideas = FOP_mobilisation_bonuses
 		add_stability = 0.05
@@ -282,11 +331,14 @@ focus = {
 focus = {
 	id = FOP_NATO_Standarts
 	icon = GFX_FOP_NATO_Standarts
+    cost = 3
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -28
 	y = 5
-    cost = 3
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Expand_Staff }
+	
 	mutually_exclusive = { focus = FOP_Lessons_From_Old_Mistakes }
 	mutually_exclusive = { focus = FOP_Takticheskaya_Doctrine }
 	mutually_exclusive = { focus = FOP_New_Army_Way }
@@ -298,11 +350,14 @@ focus = {
 focus = {
 	id = FOP_Contact_NATO_Countries
 	icon = GFX_FOP_Contact_NATO_Countries
-	x = -28
-	y = 6
     cost = 5
+
     relative_position_id = FOP_We_Stand_On_Ground
+    x = -28
+	y = 6
+
     prerequisite = { focus = FOP_NATO_Standarts }
+
 	completion_reward = {
 		every_country = {
 			limit = {
@@ -323,11 +378,14 @@ focus = {
 focus = {
 	id = FOP_Learn_From_NATO_Books
 	icon = GFX_FOP_Learn_From_NATO_Books
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -28
 	y = 7
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Contact_NATO_Countries }
+
 	completion_reward = {
 		swap_ideas = {
 			add_idea = FOP_nato_methodics
@@ -339,11 +397,14 @@ focus = {
 focus = {
 	id = FOP_Lessons_From_Old_Mistakes
 	icon = GFX_FOP_Lessons_From_Old_Mistakes
+    cost = 3
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -26
 	y = 5
-    cost = 3
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Expand_Staff }
+
 	mutually_exclusive = { focus = FOP_NATO_Standarts }
 	mutually_exclusive = { focus = FOP_Takticheskaya_Doctrine }
 	mutually_exclusive = { focus = FOP_New_Army_Way }
@@ -355,11 +416,14 @@ focus = {
 focus = {
 	id = FOP_Cleaning_Up_Soviet_Trash
 	icon = GFX_FOP_Cleaning_Up_Soviet_Trash
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -26
 	y = 6
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Lessons_From_Old_Mistakes }
+	
 	completion_reward = {
 		swap_ideas = {
 			add_idea = FOP_army_improvements
@@ -375,11 +439,14 @@ focus = {
 focus = {
 	id = FOP_Our_Own_Weaponry
 	icon = GFX_FOP_Our_Own_Weaponry
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -26
 	y = 7
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Cleaning_Up_Soviet_Trash }
+	
 	completion_reward = {
 		add_ideas = FOP_own_guns
 	}
@@ -388,11 +455,14 @@ focus = {
 focus = {
 	id = FOP_Takticheskaya_Doctrine
 	icon = GFX_FOP_Takticheskaya_Doctrine
+    cost = 3
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -24
 	y = 5
-    cost = 3
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Expand_Staff }
+	
 	mutually_exclusive = { focus = FOP_Lessons_From_Old_Mistakes }
 	mutually_exclusive = { focus = FOP_NATO_Standarts }
 	mutually_exclusive = { focus = FOP_New_Army_Way }
@@ -404,11 +474,14 @@ focus = {
 focus = {
 	id = FOP_Contact_CSTO_Countries
 	icon = GFX_FOP_Contact_CSTO_Countries
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -24
 	y = 6
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Takticheskaya_Doctrine }
+	
 	completion_reward = {
 		every_country = {
 			limit = {
@@ -428,11 +501,14 @@ focus = {
 focus = {
 	id = FOP_Respect_The_Command
 	icon = GFX_FOP_Respect_The_Command
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -24
 	y = 7
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Contact_CSTO_Countries }
+	
 	completion_reward = {
 		swap_ideas = {
 			add_idea = FOP_huita_ruskiiiii
@@ -444,11 +520,14 @@ focus = {
 focus = {
 	id = FOP_New_Army_Way
 	icon = GFX_FOP_New_Army_Way
+    cost = 3
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -22
 	y = 5
-    cost = 3
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Expand_Staff }
+	
 	mutually_exclusive = { focus = FOP_Lessons_From_Old_Mistakes }
 	mutually_exclusive = { focus = FOP_Takticheskaya_Doctrine }
 	mutually_exclusive = { focus = FOP_NATO_Standarts }
@@ -460,11 +539,14 @@ focus = {
 focus = {
 	id = FOP_Army_Reform_Comitee
 	icon = GFX_FOP_Army_Reform_Comitee
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -22
 	y = 6
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_New_Army_Way }
+	
 	completion_reward = {
 		add_timed_idea = {
 			idea = FOP_army_reforms
@@ -477,11 +559,14 @@ focus = {
 focus = {
 	id = FOP_Encourage_Youth
 	icon = GFX_FOP_Encourage_Youth
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -22
 	y = 7
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Army_Reform_Comitee }
+	
 	completion_reward = {
 		add_manpower = 1000
 		add_ideas = FOP_army_youth
@@ -491,12 +576,15 @@ focus = {
 focus = {
 	id = FOP_We_Fight_For_Future
 	icon = GFX_FOP_We_Fight_For_Future
+    cost = 2
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -30
 	y = 10
-    cost = 2
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Mandated_Rearline_Jobs focus = FOP_Self_Defence_Training_Programmes focus = FOP_Ease_Up_Conscription_Requirements focus = FOP_Good_Mobilization_Bonuses }
 	prerequisite = { focus = FOP_Learn_From_NATO_Books focus = FOP_Our_Own_Weaponry focus = FOP_Respect_The_Command focus = FOP_Encourage_Youth }
+	
 	completion_reward = {
 		army_experience = 50
 		add_ideas = FOP_formed_army
@@ -506,11 +594,14 @@ focus = {
 focus = {
 	id = FOP_Government_Reforms
 	icon = GFX_FOP_Government_Reforms
+    cost = 2
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 0
 	y = 3
-    cost = 2
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Open_For_Business }
+
 	completion_reward = {
 		add_political_power = 100
 	}
@@ -519,11 +610,14 @@ focus = {
 focus = {
 	id = FOP_Reforming_The_Cabinet
 	icon = GFX_FOP_Reforming_The_Cabinet
+    cost = 3
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -15
 	y = 4
-    cost = 3
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Government_Reforms}
+
 	completion_reward = {
 	}
 }
@@ -531,11 +625,14 @@ focus = {
 focus = {
 	id = FOP_New_Faces_In_Charge
 	icon = GFX_FOP_New_Faces_In_Charge
+    cost = 2
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -16
 	y = 5
-    cost = 2
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Reforming_The_Cabinet}
+
 	mutually_exclusive = { focus = FOP_Rely_On_Old_Ones }
 	completion_reward = {
 		add_political_power = -50
@@ -546,11 +643,14 @@ focus = {
 focus = {
 	id = FOP_Rely_On_Old_Ones
 	icon = GFX_FOP_Rely_On_Old_Ones
+    cost = 2
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -14
 	y = 5
-    cost = 2
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Reforming_The_Cabinet }
+
 	mutually_exclusive = { focus = FOP_New_Faces_In_Charge }
 	completion_reward = {
 		add_political_power = 50
@@ -561,11 +661,14 @@ focus = {
 focus = {
 	id = FOP_Ensure_Completion_Of_Duties
 	icon = GFX_FOP_Ensure_Completion_Of_Duties
+    cost = 4
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -17
 	y = 6
-    cost = 4
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_New_Faces_In_Charge focus = FOP_Rely_On_Old_Ones }
+	
 	completion_reward = {
 		add_timed_idea = {
 			idea = FOP_stronger_political_observation
@@ -577,11 +680,14 @@ focus = {
 focus = {
 	id = FOP_Look_For_Jurists
 	icon = GFX_FOP_Look_For_Jurists
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -15
 	y = 6
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_New_Faces_In_Charge focus = FOP_Rely_On_Old_Ones }
+	
 	completion_reward = {
 		add_political_power = -25
 	}
@@ -590,11 +696,14 @@ focus = {
 focus = {
 	id = FOP_Expand_Administrational_Capabilities
 	icon = GFX_FOP_Expand_Administrational_Capabilities
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -13
 	y = 6
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_New_Faces_In_Charge focus = FOP_Rely_On_Old_Ones }
+	
 	completion_reward = {
 		swap_ideas = {
 			add_idea = FOP_expanding_administration
@@ -607,13 +716,16 @@ focus = {
 focus = {
 	id = FOP_Call_Law_Revision_Comission
 	icon = GFX_FOP_Call_Law_Revision_Comission
+    cost = 3
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -15
 	y = 7
-    cost = 3
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Ensure_Completion_Of_Duties }
 	prerequisite = { focus = FOP_Look_For_Jurists }
 	prerequisite = { focus = FOP_Expand_Administrational_Capabilities }
+	
 	completion_reward = {
 		#tooltip
 	}
@@ -622,11 +734,14 @@ focus = {
 focus = {
 	id = FOP_Revisiting_The_Law
 	icon = GFX_FOP_Revisiting_The_Law
+    cost = 2
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 0
 	y = 4
-    cost = 2
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Government_Reforms}
+	
 	available = {
 		has_completed_focus = FOP_Call_Law_Revision_Comission
 	}
@@ -638,11 +753,14 @@ focus = {
 focus = {
 	id = FOP_Our_Own_Vision
 	icon = GFX_FOP_Our_Own_Vision
+    cost = 4
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -5
 	y = 5
-    cost = 4
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Revisiting_The_Law}
+	
 	mutually_exclusive = { focus = FOP_Readopt_Ukrainian_Constitution }
 	completion_reward = {
 		add_timed_idea = {
@@ -658,8 +776,11 @@ focus = {
 	x = 5
 	y = 5
     cost = 3
+
     relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Revisiting_The_Law }
+	
 	mutually_exclusive = { focus = FOP_Our_Own_Vision}
 	completion_reward = {
 		add_ideas = FOP_ukrainian_constitution
@@ -669,11 +790,14 @@ focus = {
 focus = {
 	id = FOP_European_Standart_Of_Law
 	icon = GFX_FOP_European_Standart_Of_Law
+    cost = 8
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -8
 	y = 6
-    cost = 8
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Our_Own_Vision }
+	
 	mutually_exclusive = { focus = FOP_We_Know_Law_Better }
 	mutually_exclusive = { focus = FOP_Rule_Of_Hard_Hand }
 	completion_reward = {
@@ -687,11 +811,14 @@ focus = {
 focus = {
 	id = FOP_We_Know_Law_Better
 	icon = GFX_FOP_We_Know_Law_Better
+    cost = 2
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -5
 	y = 6
-    cost = 2
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Our_Own_Vision }
+	
 	mutually_exclusive = { focus = FOP_European_Standart_Of_Law }
 	mutually_exclusive = { focus = FOP_Rule_Of_Hard_Hand }
 	completion_reward = {
@@ -702,11 +829,14 @@ focus = {
 focus = {
 	id = FOP_Rule_Of_Hard_Hand
 	icon = GFX_FOP_Rule_Of_Hard_Hand
+    cost = 8
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -2
 	y = 6
-    cost = 8
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Our_Own_Vision }
+	
 	mutually_exclusive = { focus = FOP_European_Standart_Of_Law }
 	mutually_exclusive = { focus = FOP_We_Know_Law_Better}
 	completion_reward = {
@@ -720,11 +850,14 @@ focus = {
 focus = {
 	id = FOP_Media_Question
 	icon = GFX_FOP_Media_Question
+    cost = 2
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -5
 	y = 7
-    cost = 2
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_We_Know_Law_Better }
+
 	completion_reward = {
 		country_event = FOP_generic.17
 	}
@@ -733,11 +866,14 @@ focus = {
 focus = {
 	id = FOP_Police_Enforcement
 	icon = GFX_FOP_Police_Enforcement
+    cost = 2
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -3
 	y = 7
-    cost = 2
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_We_Know_Law_Better }
+
 	completion_reward = {
 		country_event = FOP_generic.18
 	}
@@ -746,11 +882,14 @@ focus = {
 focus = {
 	id = FOP_Elections_Question
 	icon = GFX_FOP_Elections_Question
+    cost = 2
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -7
 	y = 7
-    cost = 2
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_We_Know_Law_Better }
+
 	completion_reward = {
 		country_event = FOP_generic.19
 	}
@@ -759,11 +898,14 @@ focus = {
 focus = {
 	id = FOP_New_Laws_New_Times
 	icon = GFX_FOP_New_Laws_New_Times
+    cost = 2
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = -5
 	y = 8
-    cost = 2
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_European_Standart_Of_Law focus = FOP_Elections_Question focus = FOP_Media_Question focus = FOP_Police_Enforcement focus = FOP_Rule_Of_Hard_Hand }
+	
 	completion_reward = {
 		add_stability = 0.05
 	}
@@ -772,11 +914,14 @@ focus = {
 focus = {
 	id = FOP_Review_Law_Holes
 	icon = GFX_FOP_Review_Law_Holes
+    cost = 4
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 4
 	y = 6
-    cost = 4
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Readopt_Ukrainian_Constitution }
+	
 	completion_reward = {
 		if = { 
 			limit = {has_completed_focus = FOP_Solve_Long_Lasting_Issues}
@@ -797,11 +942,14 @@ focus = {
 focus = {
 	id = FOP_Solve_Long_Lasting_Issues
 	icon = GFX_FOP_Solve_Long_Lasting_Issues
+    cost = 4
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 6
 	y = 6
-    cost = 4
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Readopt_Ukrainian_Constitution }
+	
 	completion_reward = {
 		if = { 
 			limit = {has_completed_focus = FOP_Review_Law_Holes}
@@ -822,12 +970,15 @@ focus = {
 focus = {
 	id = FOP_Laws_How_They_Meant_To_Be
 	icon = GFX_FOP_Laws_How_They_Meant_To_Be
+    cost = 2
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 5
 	y = 7
-    cost = 2
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Review_Law_Holes }
 	prerequisite = { focus = FOP_Solve_Long_Lasting_Issues }
+	
 	completion_reward = {
 		swap_ideas = {
 			add_idea = FOP_improved_constitution
@@ -839,11 +990,14 @@ focus = {
 focus = {
 	id = FOP_Allow_Mild_Changes
 	icon = GFX_FOP_Allow_Mild_Changes
+    cost = 2
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 4
 	y = 8
-    cost = 2
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Laws_How_They_Meant_To_Be }
+	
 	mutually_exclusive = { focus = FOP_Law_Stays_As_He_Was }
 	completion_reward = {
 		add_political_power = -25
@@ -853,11 +1007,14 @@ focus = {
 focus = {
 	id = FOP_Law_Stays_As_He_Was
 	icon = GFX_FOP_Law_Stays_As_He_Was
+    cost = 2
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 6
 	y = 8
-    cost = 2
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Laws_How_They_Meant_To_Be }
+	
 	mutually_exclusive = { focus = FOP_Allow_Mild_Changes }
 	completion_reward = {
 		add_political_power = 50
@@ -867,11 +1024,14 @@ focus = {
 focus = {
 	id = FOP_Social_Reforms
 	icon = GFX_FOP_Social_Reforms
+    cost = 1
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 10
 	y = 4
-    cost = 1
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Government_Reforms }
+	
 	available = {
 		OR = {
 			has_completed_focus = FOP_Allow_Mild_Changes
@@ -886,12 +1046,15 @@ focus = {
 focus = {
 	id = FOP_Healthcare_Issue
 	icon = GFX_FOP_Healthcare_Issue
+    cost = 3
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 10
 	y = 5
-    cost = 3
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Social_Reforms }
-	completion_reward = {
+
+completion_reward = {
 		country_event = FOP_generic.20
 	}
 }
@@ -899,11 +1062,14 @@ focus = {
 focus = {
 	id = FOP_Social_Insurance
 	icon = GFX_FOP_Social_Insurance
+    cost = 3
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 9
 	y = 6
-    cost = 3
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Healthcare_Issue }
+
 	completion_reward = {
 		country_event = FOP_generic.21
 	}
@@ -912,11 +1078,14 @@ focus = {
 focus = {
 	id = FOP_Minimal_Wages
 	icon = GFX_FOP_Minimal_Wages
+    cost = 3
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 11
 	y = 6
-    cost = 3
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Healthcare_Issue }
+
 	completion_reward = {
 		country_event = FOP_generic.22
 	}
@@ -925,12 +1094,15 @@ focus = {
 focus = {
 	id = FOP_Workers_Rights
 	icon = GFX_FOP_Workers_Rights
+    cost = 3
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 10
 	y = 7
-    cost = 3
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Social_Insurance }
 	prerequisite = { focus = FOP_Minimal_Wages }
+	
 	completion_reward = {
 		country_event = FOP_generic.23
 	}
@@ -939,11 +1111,14 @@ focus = {
 focus = {
 	id = FOP_Elderly_Treatment
 	icon = GFX_FOP_Elderly_Treatment
+    cost = 2
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 10
 	y = 8
-    cost = 2
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Workers_Rights }
+	
 	completion_reward = {
 		country_event = FOP_generic.24
 	}
@@ -952,11 +1127,14 @@ focus = {
 focus = {
 	id = FOP_With_Renewed_Hope_We_Continue_Forward
 	icon = GFX_FOP_With_Renewed_Hope_We_Continue_Forward
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 0
 	y = 9
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Allow_Mild_Changes focus = FOP_Law_Stays_As_He_Was focus = FOP_New_Laws_New_Times}
+	
 	completion_reward = {
 		swap_ideas = {
 			add_idea = FOP_ruin_4
@@ -968,11 +1146,14 @@ focus = {
 focus = {
 	id = FOP_Restructuring_Economy
 	icon = GFX_FOP_Restructuring_Economy
+    cost = 3
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 20
 	y = 3
-    cost = 3
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Open_For_Business }
+	
 	completion_reward = {
 		add_stability = 0.1
 	}
@@ -980,12 +1161,15 @@ focus = {
 
 focus = {
 	id = FOP_Electricity_Management
-	icon = GFX_FOP_Electricity_Management
-	x = 19
-	y = 4
+	icon = GFX_FOP_Electricity_Managementx
     cost = 8
+
     relative_position_id = FOP_We_Stand_On_Ground
+	x = 20
+	y = 3
+
     prerequisite = { focus = FOP_Restructuring_Economy }
+	
 	completion_reward = {
 		swap_ideas = {
 			add_idea = FOP_solving_energy_crisis
@@ -998,11 +1182,14 @@ focus = {
 focus = {
 	id = FOP_New_Markets
 	icon = GFX_FOP_New_Markets
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 21
 	y = 4
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+	
     prerequisite = { focus = FOP_Restructuring_Economy }
+
 	completion_reward = {
 		swap_ideas = {
 			add_idea = FOP_shadow_economy_deterioration
@@ -1015,12 +1202,15 @@ focus = {
 focus = {
 	id = FOP_Economy_Model
 	icon = GFX_FOP_Economy_Model
+    cost = 1
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 20
 	y = 5
-    cost = 1
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Electricity_Management }
 	prerequisite = { focus = FOP_New_Markets}
+	
 	completion_reward = {
 		#tooltip
 	}
@@ -1029,11 +1219,14 @@ focus = {
 focus = {
 	id = FOP_Market_Paradise
 	icon = GFX_FOP_Market_Paradise
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 17
 	y = 6
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Economy_Model }
+	
 	mutually_exclusive = { focus = FOP_Social_Economy }
 	mutually_exclusive = { focus = FOP_Regulations }
 	mutually_exclusive = { focus = FOP_State_Controlled_Economy }
@@ -1046,11 +1239,14 @@ focus = {
 focus = {
 	id = FOP_Social_Economy
 	icon = GFX_FOP_Social_Economy
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 19
 	y = 6
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Economy_Model }
+	
 	mutually_exclusive = { focus = FOP_Market_Paradise }
 	mutually_exclusive = { focus = FOP_Regulations }
 	mutually_exclusive = { focus = FOP_State_Controlled_Economy }
@@ -1063,11 +1259,14 @@ focus = {
 focus = {
 	id = FOP_Regulations
 	icon = GFX_FOP_Regulations
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 21
 	y = 6
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Economy_Model }
+
 	mutually_exclusive = { focus = FOP_Social_Economy }
 	mutually_exclusive = { focus = FOP_Market_Paradise }
 	mutually_exclusive = { focus = FOP_State_Controlled_Economy }
@@ -1080,11 +1279,14 @@ focus = {
 focus = {
 	id = FOP_State_Controlled_Economy
 	icon = GFX_FOP_State_Controlled_Economy
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 23
 	y = 6
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Economy_Model }
+	
 	mutually_exclusive = { focus = FOP_Social_Economy }
 	mutually_exclusive = { focus = FOP_Regulations }
 	mutually_exclusive = { focus = FOP_Market_Paradise }
@@ -1097,11 +1299,14 @@ focus = {
 focus = {
 	id = FOP_Local_Deals
 	icon = GFX_FOP_Local_Deals
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 17
 	y = 7
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Market_Paradise focus = FOP_Social_Economy focus = FOP_Regulations focus = FOP_State_Controlled_Economy }
+	
 	mutually_exclusive = { focus = FOP_Oligarchs_Banned }
 	completion_reward = {
 		add_ideas = fop_oligarchs_relations_cooperation
@@ -1112,11 +1317,14 @@ focus = {
 focus = {
 	id = FOP_Oligarchs_Banned
 	icon = GFX_generic_suspend_constitution
+    cost = 7
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 19
 	y = 7
-    cost = 7
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Market_Paradise focus = FOP_Social_Economy focus = FOP_Regulations focus = FOP_State_Controlled_Economy }
+	
 	mutually_exclusive = { focus = FOP_Local_Deals }
 	completion_reward = {
 		add_ideas = fop_oligarchs_relations_anti_oligarchic_policy
@@ -1131,11 +1339,14 @@ focus = {
 focus = {
 	id = FOP_New_Currency
 	icon = GFX_FOP_New_Currency
+    cost = 7
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 21
 	y = 7
-    cost = 7
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Market_Paradise focus = FOP_Social_Economy focus = FOP_Regulations focus = FOP_State_Controlled_Economy }
+	
 	mutually_exclusive = { focus = FOP_Revaluate_Hryvnia }
 	completion_reward = {
 		add_ideas = FOP_own_currency
@@ -1154,11 +1365,14 @@ focus = {
 focus = {
 	id = FOP_Revaluate_Hryvnia
 	icon = GFX_FOP_Revaluate_Hryvnia
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 23
 	y = 7
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Market_Paradise focus = FOP_Social_Economy focus = FOP_Regulations focus = FOP_State_Controlled_Economy }
+	
 	mutually_exclusive = { focus = FOP_New_Currency }
 	completion_reward = {
 		add_ideas = FOP_revaluated_hryvnia
@@ -1169,12 +1383,15 @@ focus = {
 focus = {
 	id = FOP_Attract_Investments
 	icon = GFX_FOP_Attract_Investments
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 18
 	y = 8
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Oligarchs_Banned focus = FOP_Local_Deals }
 	prerequisite = { focus = FOP_New_Currency focus = FOP_Revaluate_Hryvnia }
+	
 	completion_reward = {
 		unlock_decision_category_tooltip = FOP_attract_investments
 	}
@@ -1183,12 +1400,15 @@ focus = {
 focus = {
 	id = FOP_Production_Development
 	icon = GFX_FOP_Production_Development
+    cost = 4
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 20
 	y = 8
-    cost = 4
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Oligarchs_Banned focus = FOP_Local_Deals }
 	prerequisite = { focus = FOP_New_Currency focus = FOP_Revaluate_Hryvnia }
+	
 	completion_reward = {
 		random_owned_controlled_state = {
             	add_building_construction = {
@@ -1210,12 +1430,15 @@ focus = {
 focus = {
 	id = FOP_Building_Projects
 	icon = GFX_FOP_Building_Projects
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 22
 	y = 8
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Oligarchs_Banned focus = FOP_Local_Deals }
 	prerequisite = { focus = FOP_New_Currency focus = FOP_Revaluate_Hryvnia }
+	
 	completion_reward = {
 		unlock_decision_category_tooltip = FOP_building_projects
 	}
@@ -1224,13 +1447,16 @@ focus = {
 focus = {
 	id = FOP_Let_Us_Strive
 	icon = GFX_FOP_Let_Us_Strive
+    cost = 5
+
+    relative_position_id = FOP_We_Stand_On_Ground
 	x = 20
 	y = 9
-    cost = 5
-    relative_position_id = FOP_We_Stand_On_Ground
+
     prerequisite = { focus = FOP_Attract_Investments }
 	prerequisite = { focus = FOP_Production_Development }
 	prerequisite = { focus = FOP_Building_Projects }
+	
 	completion_reward = {
 		swap_ideas = {
 			add_idea = FOP_ruined_economy_5

@@ -18,9 +18,11 @@ focus_tree = {
     focus = {
         id = FOP_Unification_Of_The_Region
         icon = GFX_FOP_Unification_Of_The_Region
-        x = 50
-        y = 1
         cost = 1
+
+		x = 50
+        y = 1
+
         completion_reward = {
             
         }
@@ -29,11 +31,14 @@ focus_tree = {
     focus = {
         id = FOP_Regional_Administration_Expansion
         icon = GFX_FOP_Regional_Administration_Expansion
+        cost = 5
+
+        relative_position_id = FOP_Unification_Of_The_Region
         x = 1
         y = 1
-        cost = 5
-        relative_position_id = FOP_Unification_Of_The_Region
+       
         prerequisite = { focus = FOP_Unification_Of_The_Region }
+        
         completion_reward = {
             FOP_administrative_efficiency_medium_improvement = yes
             add_political_power = 250
@@ -43,11 +48,14 @@ focus_tree = {
     focus = {
         id = FOP_Prepare_To_Work_Further
         icon = GFX_FOP_Prepare_To_Work_Further
+        cost = 5
+
+        relative_position_id = FOP_Unification_Of_The_Region
         x = -1
         y = 1
-        cost = 5
-        relative_position_id = FOP_Unification_Of_The_Region
+       
         prerequisite = { focus = FOP_Unification_Of_The_Region }
+      
         completion_reward = {
             add_stability = 0.05
         }
@@ -56,12 +64,16 @@ focus_tree = {
     focus = {
         id = FOP_Lets_Go
         icon = GFX_FOP_Lets_Go
+        cost = 1
+
+       
+        relative_position_id = FOP_Unification_Of_The_Region
         x = 0
         y = 2
-        cost = 1
-        relative_position_id = FOP_Unification_Of_The_Region
+
         prerequisite = { focus = FOP_Regional_Administration_Expansion }
         prerequisite = { focus = FOP_Prepare_To_Work_Further }
+       
         completion_reward = {
             
         }
@@ -70,11 +82,14 @@ focus_tree = {
     focus = {
         id = FOP_Expansion_Of_The_Military
         icon = GFX_FOP_Expansion_Of_The_Military
+        cost = 1
+
+        relative_position_id = FOP_Unification_Of_The_Region
         x = -20
         y = 3
-        cost = 1
-        relative_position_id = FOP_Unification_Of_The_Region
+        
         prerequisite = { focus = FOP_Lets_Go }
+       
         completion_reward = {
             army_experience = 30
         }
@@ -83,11 +98,14 @@ focus_tree = {
     focus = {
         id = FOP_Doctrinal_Enhancement
         icon = GFX_FOP_Doctrinal_Enhancement
+        cost = 1
+
+        relative_position_id = FOP_Expansion_Of_The_Military
         x = 3
         y = 1
-        cost = 1
-        relative_position_id = FOP_Expansion_Of_The_Military
+      
         prerequisite = { focus = FOP_Expansion_Of_The_Military }
+      
         completion_reward = {
             add_doctrine_cost_reduction = {
                 cost_reduction = 0.6
@@ -100,11 +118,14 @@ focus_tree = {
     focus = {
         id = FOP_Military_Excercises 
         icon = GFX_FOP_Military_Excercises 
+        cost = 1
+
+        relative_position_id = FOP_Expansion_Of_The_Military
         x = 2
         y = 2
-        cost = 1
-        relative_position_id = FOP_Expansion_Of_The_Military
+       
         prerequisite = { focus = FOP_Doctrinal_Enhancement }
+      
         completion_reward = {
             army_experience = 15
         }
@@ -113,11 +134,14 @@ focus_tree = {
     focus = {
         id = FOP_Keeping_Professionalism_Growing
         icon = GFX_FOP_Keeping_Professionalism_Growing
+        cost = 1
+
+        relative_position_id = FOP_Expansion_Of_The_Military
         x = 4
         y = 2
-        cost = 1
-        relative_position_id = FOP_Expansion_Of_The_Military
+      
         prerequisite = { focus = FOP_Doctrinal_Enhancement }
+      
         completion_reward = {
             FOP_military_professionalism_medium_improvement = yes
         }
@@ -126,11 +150,14 @@ focus_tree = {
     focus = {
         id = FOP_Open_Military_Education_Facilities
         icon = GFX_FOP_Open_Military_Education_Facilities
+        cost = 6
+
+        relative_position_id = FOP_Expansion_Of_The_Military
         x = 2
         y = 3
-        cost = 6
-        relative_position_id = FOP_Expansion_Of_The_Military
+       
         prerequisite = { focus = FOP_Keeping_Professionalism_Growing focus = FOP_Military_Excercises }
+       
         completion_reward = {
             random_owned_controlled_state = {
                 add_building_construction = {
@@ -155,8 +182,11 @@ focus_tree = {
         x = 4
         y = 3
         cost = 5
+
         relative_position_id = FOP_Expansion_Of_The_Military
+       
         prerequisite = { focus = FOP_Keeping_Professionalism_Growing focus = FOP_Military_Excercises }
+       
         completion_reward = {
             every_army_leader = {
                 add_skill_level = 1
@@ -169,11 +199,14 @@ focus_tree = {
     focus = {
         id = FOP_More_Military_Complex_Investments
         icon = GFX_FOP_More_Military_Complex_Investments
+        cost = 1
+
+        relative_position_id = FOP_Expansion_Of_The_Military
         x = -4
         y = 1
-        cost = 1
-        relative_position_id = FOP_Expansion_Of_The_Military
+        
         prerequisite = { focus = FOP_Expansion_Of_The_Military }
+       
         completion_reward = {
             add_timed_idea = {
                 idea = FOP_military_investments
@@ -185,11 +218,14 @@ focus_tree = {
     focus = {
         id = FOP_Look_Into_Skies
         icon = GFX_FOP_Look_Into_Skies
+        cost = 1
+
+        relative_position_id = FOP_Expansion_Of_The_Military
         x = -2
         y = 2
-        cost = 1
-        relative_position_id = FOP_Expansion_Of_The_Military
+       
         prerequisite = { focus = FOP_More_Military_Complex_Investments }
+       
         completion_reward = {
             air_experience = 15
         }
@@ -198,11 +234,14 @@ focus_tree = {
     focus = {
         id = FOP_Restore_Airbases
         icon = GFX_FOP_Restore_Airbases
+        cost = 1
+
+        relative_position_id = FOP_Expansion_Of_The_Military
         x = -3
         y = 3
-        cost = 1
-        relative_position_id = FOP_Expansion_Of_The_Military
+       
         prerequisite = { focus = FOP_Look_Into_Skies }
+        
         completion_reward = {
             random_owned_controlled_state = {
                 add_building_construction = {
@@ -224,11 +263,14 @@ focus_tree = {
     focus = {
         id = FOP_Start_Planes_Production
         icon = GFX_FOP_Start_Planes_Production
+        cost = 1
+
+        relative_position_id = FOP_Expansion_Of_The_Military
         x = -1
         y = 3
-        cost = 1
-        relative_position_id = FOP_Expansion_Of_The_Military
+        
         prerequisite = { focus = FOP_Look_Into_Skies }
+       
         completion_reward = {
             add_ideas = FOP_air_production
             add_tech_bonus = {
@@ -242,11 +284,14 @@ focus_tree = {
     focus = {
         id = FOP_Look_For_Foreign_Airplanes
         icon = GFX_FOP_Look_For_Foreign_Airplanes
+        cost = 1
+
+        relative_position_id = FOP_Expansion_Of_The_Military
         x = -3
         y = 4
-        cost = 1
-        relative_position_id = FOP_Expansion_Of_The_Military
+       
         prerequisite = { focus = FOP_Restore_Airbases focus = FOP_Start_Planes_Production }
+       
         completion_reward = {
             unlock_decision_category_tooltip = FOP_foreign_air
             set_country_flag = FOP_planes_purchase
@@ -256,11 +301,14 @@ focus_tree = {
     focus = {
         id = FOP_Open_Pilot_Academy
         icon = GFX_FOP_Open_Pilot_Academy
+        cost = 1
+
+        relative_position_id = FOP_Expansion_Of_The_Military
         x = -1
         y = 4
-        cost = 1
-        relative_position_id = FOP_Expansion_Of_The_Military
+       
         prerequisite = { focus = FOP_Restore_Airbases focus = FOP_Start_Planes_Production }
+       
         completion_reward = {
             add_ideas = FOP_pilot_education
         }
@@ -269,11 +317,14 @@ focus_tree = {
     focus = {
         id = FOP_Enhance_Arms_Production_Capabilities
         icon = GFX_FOP_Enhance_Arms_Production_Capabilities
+        cost = 1
+
+        relative_position_id = FOP_Expansion_Of_The_Military
         x = -6
         y = 2
-        cost = 1
-        relative_position_id = FOP_Expansion_Of_The_Military
-        prerequisite = { focus = FOP_More_Military_Complex_Investments }
+       
+       prerequisite = { focus = FOP_More_Military_Complex_Investments }
+      
         completion_reward = {
             add_ideas = FOP_increased_army_production
         }
@@ -282,11 +333,14 @@ focus_tree = {
     focus = {
         id = FOP_New_Weapon_Market_Opportunities
         icon = GFX_FOP_New_Weapon_Market_Opportunities
+        cost = 1
+
+        relative_position_id = FOP_Expansion_Of_The_Military
         x = -7
         y = 3
-        cost = 1
-        relative_position_id = FOP_Expansion_Of_The_Military
+       
         prerequisite = { focus = FOP_Enhance_Arms_Production_Capabilities }
+       
         completion_reward = {
             unlock_decision_category_tooltip = FOP_weapon_market_increased
             set_country_flag = FOP_weapon_market_increased
@@ -296,11 +350,14 @@ focus_tree = {
     focus = {
         id = FOP_Create_More_Military_Jobs
         icon = GFX_FOP_Create_More_Military_Jobs
+        cost = 1
+
+        relative_position_id = FOP_Expansion_Of_The_Military
         x = -5
         y = 3
-        cost = 1
-        relative_position_id = FOP_Expansion_Of_The_Military
+       
         prerequisite = { focus = FOP_Enhance_Arms_Production_Capabilities }
+       
         completion_reward = {
             add_to_variable = {
                 var = FOP_unemployment_var
@@ -313,11 +370,14 @@ focus_tree = {
     focus = {
         id = FOP_Engaging_In_Politics
         icon = GFX_FOP_Engaging_In_Politics
+        cost = 1
+
+        relative_position_id = FOP_Unification_Of_The_Region
         x = -6
         y = 3
-        cost = 1
-        relative_position_id = FOP_Unification_Of_The_Region
+      
         prerequisite = { focus = FOP_Lets_Go }
+       
         available = {
             has_completed_focus = FOP_Fire_Of_Poltava_Extinguishes
         }
@@ -333,11 +393,14 @@ focus_tree = {
     focus = {
         id = FOP_Set_Up_Our_MFA
         icon = GFX_FOP_Set_Up_Our_MFA
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = 0
         y = 1
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+        
         prerequisite = { focus = FOP_Engaging_In_Politics }
+       
         completion_reward = {
             add_ideas = FOP_established_mfa
         }
@@ -346,11 +409,14 @@ focus_tree = {
     focus = {
         id = FOP_Organize_International_Communication
         icon = GFX_FOP_Organize_International_Communication
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = 2
         y = 1
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+        
         prerequisite = { focus = FOP_Engaging_In_Politics }
+      
         completion_reward = {
             if = {
                 limit = {
@@ -382,11 +448,14 @@ focus_tree = {
     focus = {
         id = FOP_Watching_Around_Us
         icon = GFX_FOP_Watching_Around_Us
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = -2
         y = 1
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+      
         prerequisite = { focus = FOP_Engaging_In_Politics }
+      
         completion_reward = {
             set_country_flag = FOP_reaching_to_warlords
             custom_effect_tooltip = FOP_warlord_volunteer_tt
@@ -396,12 +465,15 @@ focus_tree = {
     focus = {
         id = FOP_Seek_International_Recognition
         icon = GFX_FOP_Seek_International_Recognition
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = 4
         y = 2
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+      
         prerequisite = { focus = FOP_Set_Up_Our_MFA }
         prerequisite = { focus = FOP_Organize_International_Communication }
+       
         completion_reward = {
             set_country_flag = FOP_world_legitimacy
             custom_effect_tooltip = fop_world_legitimacy_tt
@@ -412,11 +484,14 @@ focus_tree = {
     focus = {
         id = FOP_Watch_To_The_West
         icon = GFX_FOP_Watch_To_The_West
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = 2
         y = 3
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+       
         prerequisite = { focus = FOP_Seek_International_Recognition}
+       
         available = {
             NOT = {
                 has_completed_focus = FOP_We_Are_Alone
@@ -436,11 +511,14 @@ focus_tree = {
     focus = {
         id = FOP_Open_Gates_To_Europe
         icon = GFX_FOP_Open_Gates_To_Europe
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = 2
         y = 4
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+      
         prerequisite = { focus = FOP_Watch_To_The_West} 
+       
         completion_reward = {
             add_to_variable = {
                 var = FOP_europe_allegiance
@@ -453,11 +531,14 @@ focus_tree = {
     focus = {
         id = FOP_Western_Investments
         icon = GFX_FOP_Western_Investments
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = 2
         y = 5
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+       
         prerequisite = { focus = FOP_Open_Gates_To_Europe } 
+       
         completion_reward = {
             every_country = {
                 limit = {
@@ -479,11 +560,14 @@ focus_tree = {
     focus = {
         id = FOP_Alignment_With_Free_World
         icon = GFX_FOP_Alignment_With_Free_World
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = 2
         y = 6
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+       
         prerequisite = { focus = FOP_Western_Investments } 
+       
         completion_reward = {
             every_country = {
                 limit = {
@@ -504,11 +588,14 @@ focus_tree = {
     focus = {
         id = FOP_We_Are_Alone
         icon = GFX_FOP_We_Are_Alone
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = 4
         y = 3
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+       
         prerequisite = { focus = FOP_Seek_International_Recognition}
+       
         available = {
             NOT = {
                 has_completed_focus = FOP_Watch_To_The_West
@@ -523,11 +610,14 @@ focus_tree = {
     focus = {
         id = FOP_Thinking_Of_Self_Sufficiency
         icon = GFX_FOP_Thinking_Of_Self_Sufficiency
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = 4
         y = 4
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+        
         prerequisite = { focus = FOP_We_Are_Alone } 
+       
         completion_reward = {
             add_ideas = FOP_autarky
         }
@@ -536,11 +626,14 @@ focus_tree = {
     focus = {
         id = FOP_Window_For_Questionable_Opportunities
         icon = GFX_FOP_Window_For_Questionable_Opportunities
+        cost = 1
+        
+        relative_position_id = FOP_Engaging_In_Politics
         x = 4
         y = 5
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+       
         prerequisite = { focus = FOP_Thinking_Of_Self_Sufficiency } 
+       
         completion_reward = {
             country_event = FOP_generic.31
         }
@@ -549,11 +642,14 @@ focus_tree = {
     focus = {
         id = FOP_We_Will_Survive_Without_Anyone
         icon = GFX_FOP_We_Will_Survive_Without_Anyone
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = 4
         y = 6
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+       
         prerequisite = { focus = FOP_Window_For_Questionable_Opportunities } 
+       
         completion_reward = {
             swap_ideas = {
                 add_idea = FOP_doctrine_of_self_defence
@@ -565,11 +661,14 @@ focus_tree = {
     focus = {
         id = FOP_Watch_To_The_East
         icon = GFX_FOP_Watch_To_The_East
+        cost = 5
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = 6
         y = 3
-        cost = 5
-        relative_position_id = FOP_Engaging_In_Politics
+       
         prerequisite = { focus = FOP_Seek_International_Recognition }
+      
         available = {
             NOT = {
                 has_completed_focus = FOP_We_Are_Alone
@@ -589,11 +688,14 @@ focus_tree = {
     focus = {
         id = FOP_Closer_To_Multipolar_World
         icon = GFX_FOP_Closer_To_Multipolar_World
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = 6
         y = 4
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+        
         prerequisite = { focus = FOP_Watch_To_The_East } 
+       
         completion_reward = {
             add_to_variable = {
                 var = FOP_russia_allegiance
@@ -606,11 +708,14 @@ focus_tree = {
     focus = {
         id = FOP_Offer_What_We_Can
         icon = GFX_FOP_Offer_What_We_Can
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = 6
         y = 5
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+       
         prerequisite = { focus = FOP_Closer_To_Multipolar_World } 
+       
         completion_reward = {
             every_country = {
                 limit = {
@@ -632,11 +737,14 @@ focus_tree = {
     focus = {
         id = FOP_Eastern_Connections
         icon = GFX_FOP_Eastern_Connections
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = 6
         y = 6
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+        
         prerequisite = { focus = FOP_Offer_What_We_Can } 
+       
         completion_reward = {
             every_country = {
                 limit = {
@@ -658,12 +766,15 @@ focus_tree = {
     focus = {
         id = FOP_Engage_With_Ukrainian_Warlords
         icon = GFX_FOP_Engage_With_Ukrainian_Warlords
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = -4
         y = 2
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+       
         prerequisite = { focus = FOP_Set_Up_Our_MFA }
         prerequisite = { focus = FOP_Watching_Around_Us }
+       
         completion_reward = {
             unlock_decision_category_tooltip = warlord_legitimacy
         }
@@ -672,12 +783,15 @@ focus_tree = {
     focus = {
         id = FOP_Look_For_Diplomacy
         icon = GFX_FOP_Look_For_Diplomacy
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = -6
         y = 3
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+       
         prerequisite = { focus = FOP_Engage_With_Ukrainian_Warlords }
         mutually_exclusive = { focus = FOP_Entrench_Ourselves }
+
         completion_reward = {
             
         }
@@ -686,11 +800,14 @@ focus_tree = {
     focus = {
         id = FOP_Send_Diplomats_To_Warlords
         icon = GFX_FOP_Send_Diplomats_To_Warlords
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = -6
         y = 4
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+       
         prerequisite = { focus = FOP_Look_For_Diplomacy }
+       
         completion_reward = {
             every_country = {
                 limit = {
@@ -711,11 +828,14 @@ focus_tree = {
     focus = {
         id = FOP_Establish_Intelligence_Service
         icon = GFX_FOP_Establish_Intelligence_Service
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = -4
         y = 4
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+        
         prerequisite = { focus = FOP_Look_For_Diplomacy focus = FOP_Entrench_Ourselves }
+        
         completion_reward = {
             create_intelligence_agency = {
                 name = "Intelligence Service"
@@ -726,11 +846,14 @@ focus_tree = {
     focus = {
         id = FOP_Mutual_Aid
         icon = GFX_FOP_Mutual_Aid
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = -6
         y = 5
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+       
         prerequisite = { focus = FOP_Send_Diplomats_To_Warlords }
+       
         completion_reward = {
             every_country = {
                 limit = {
@@ -754,11 +877,14 @@ focus_tree = {
     focus = {
         id = FOP_Entrench_Ourselves
         icon = GFX_FOP_Entrench_Ourselves
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = -2
         y = 3
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+       
         prerequisite = { focus = FOP_Engage_With_Ukrainian_Warlords }
+        
         mutually_exclusive = { focus = FOP_Look_For_Diplomacy }
         completion_reward = {
             add_ideas = FOP_surrounded_by_enemies
@@ -768,11 +894,14 @@ focus_tree = {
     focus = {
         id = FOP_Reinforce_Secureness
         icon = GFX_FOP_Reinforce_Secureness
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = -2
         y = 4
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+        
         prerequisite = { focus = FOP_Entrench_Ourselves }
+       
         completion_reward = {
             add_command_power = 25
         }
@@ -781,11 +910,14 @@ focus_tree = {
     focus = {
         id = FOP_We_Need_No_Allies
         icon = GFX_FOP_We_Need_No_Allies
+        cost = 1
+
+        relative_position_id = FOP_Engaging_In_Politics
         x = -2
         y = 5
-        cost = 1
-        relative_position_id = FOP_Engaging_In_Politics
+       
         prerequisite = { focus = FOP_Reinforce_Secureness }
+      
         completion_reward = {
             every_country = {
                 limit = {
@@ -808,11 +940,14 @@ focus_tree = {
     focus = {
         id = FOP_Slow_Return_To_Normalcy
         icon = GFX_FOP_Slow_Return_To_Normalcy
+        cost = 1
+
+        relative_position_id = FOP_Lets_Go
         x = 4
         y = 1
-        cost = 1
-        relative_position_id = FOP_Lets_Go
+    
         prerequisite = { focus = FOP_Lets_Go }
+     
         completion_reward = {
             swap_ideas = {
                 add_idea = FOP_ruin_5
@@ -824,9 +959,8 @@ focus_tree = {
     focus = {
         id = FOP_Political_Laws_Revision
         icon = GFX_FOP_Political_Laws_Revision
-        x = 1
-        y = 1
         cost = 5
+
         select_effect = {
             country_event = { id = FOP_generic.33 days = 7 }
             country_event = { id = FOP_generic.34 days = 14 }
@@ -834,8 +968,13 @@ focus_tree = {
             country_event = { id = FOP_generic.36 days = 28 }
             country_event = { id = FOP_generic.37 days = 35 }
         }
+        
         relative_position_id = FOP_Slow_Return_To_Normalcy
+        x = 1
+        y = 1
+       
         prerequisite = { focus = FOP_Slow_Return_To_Normalcy }
+      
         completion_reward = {
             custom_effect_tooltip = fop_political_revision_tt
         }
@@ -844,17 +983,21 @@ focus_tree = {
     focus = {
         id = FOP_Community_Laws_Revision
         icon = GFX_FOP_Community_Laws_Revision
-        x = -1
-        y = 1
         cost = 28
+
         select_effect = {
             country_event = { id = FOP_generic.38 days = 7 }
             country_event = { id = FOP_generic.39 days = 14 }
             country_event = { id = FOP_generic.40 days = 21 }
             country_event = { id = FOP_generic.41 days = 28 }
         }
+
         relative_position_id = FOP_Slow_Return_To_Normalcy
+        x = -1
+        y = 1
+      
         prerequisite = { focus = FOP_Slow_Return_To_Normalcy }
+        
         completion_reward = {
             custom_effect_tooltip = fop_community_revision_tt
         }
@@ -863,11 +1006,14 @@ focus_tree = {
     focus = {
         id = FOP_Set_Up_National_Medias
         icon = GFX_FOP_Set_Up_National_Medias
+        cost = 1
+
+        relative_position_id = FOP_Slow_Return_To_Normalcy
         x = 2
         y = 2
-        cost = 1
-        relative_position_id = FOP_Slow_Return_To_Normalcy
+     
         prerequisite = { focus = FOP_Political_Laws_Revision }
+       
         completion_reward = {
             add_ideas = FOP_regional_media
         }
@@ -876,11 +1022,14 @@ focus_tree = {
     focus = {
         id = FOP_Public_Relations
         icon = GFX_FOP_Public_Relations
+        cost = 1
+
+        relative_position_id = FOP_Slow_Return_To_Normalcy
         x = -2
         y = 2
-        cost = 1
-        relative_position_id = FOP_Slow_Return_To_Normalcy
+       
         prerequisite = { focus = FOP_Community_Laws_Revision }
+      
         completion_reward = {
             add_stability = 0.05
         }
@@ -889,11 +1038,14 @@ focus_tree = {
     focus = {
         id = FOP_Invest_In_Education
         icon = GFX_FOP_Invest_In_Education
+        cost = 1
+
+        relative_position_id = FOP_Slow_Return_To_Normalcy
         x = 0
         y = 2
-        cost = 1
-        relative_position_id = FOP_Slow_Return_To_Normalcy
+       
         prerequisite = { focus = FOP_Community_Laws_Revision focus = FOP_Political_Laws_Revision}
+       
         completion_reward = {
             FOP_schooling_medium_improvement = yes
             random_owned_controlled_state = {
@@ -916,14 +1068,17 @@ focus_tree = {
     focus = {
         id = FOP_Everything_For_People
         icon = GFX_FOP_Everything_For_People
+        cost = 1
+
+        relative_position_id = FOP_Slow_Return_To_Normalcy
         x = -1
         y = 3
-        cost = 1
-        relative_position_id = FOP_Slow_Return_To_Normalcy
+       
         prerequisite = { focus = FOP_Set_Up_National_Medias }
         prerequisite = { focus = FOP_Public_Relations }
         prerequisite = { focus = FOP_Invest_In_Education }
         mutually_exclusive = { focus = FOP_Everything_For_State }
+       
         completion_reward = {
             add_ideas = FOP_social_state
         }
@@ -932,13 +1087,16 @@ focus_tree = {
     focus = {
         id = FOP_Everything_For_State
         icon = GFX_FOP_Everything_For_State
+        cost = 1
+
+        relative_position_id = FOP_Slow_Return_To_Normalcy
         x = 1
         y = 3
-        cost = 1
-        relative_position_id = FOP_Slow_Return_To_Normalcy
+       
         prerequisite = { focus = FOP_Set_Up_National_Medias }
         prerequisite = { focus = FOP_Public_Relations }
         prerequisite = { focus = FOP_Invest_In_Education }
+       
         mutually_exclusive = { focus = FOP_Everything_For_People }
         completion_reward = {
             add_ideas = FOP_state_control
@@ -948,12 +1106,15 @@ focus_tree = {
     focus = {
         id = FOP_Fire_Of_Poltava_Extinguishes
         icon = GFX_FOP_Fire_Of_Poltava_Extinguishes
+        cost = 1
+
+        relative_position_id = FOP_Slow_Return_To_Normalcy
         x = 0
         y = 4
-        cost = 1
-        relative_position_id = FOP_Slow_Return_To_Normalcy
+       
         prerequisite = { focus = FOP_Everything_For_People }
         prerequisite = { focus = FOP_Everything_For_State }
+       
         completion_reward = {
             remove_ideas = FOP_ruin_5
         }
@@ -962,11 +1123,14 @@ focus_tree = {
     focus = {
         id = FOP_Water_The_Seeds_For_Economy
         icon = GFX_FOP_Water_The_Seeds_For_Economy
+        cost = 1
+
+        relative_position_id = FOP_Lets_Go
         x = 14
         y = 1
-        cost = 1
-        relative_position_id = FOP_Lets_Go
+       
         prerequisite = { focus = FOP_Lets_Go }
+      
         completion_reward = {
             add_timed_idea = {
                 idea = FOP_watering_seeds
@@ -978,11 +1142,14 @@ focus_tree = {
     focus = {
         id = FOP_Coming_To_International_Market
         icon = GFX_FOP_Coming_To_International_Market
+        cost = 1
+
+        relative_position_id = FOP_Water_The_Seeds_For_Economy
         x = 3
         y = 1
-        cost = 1
-        relative_position_id = FOP_Water_The_Seeds_For_Economy
+        
         prerequisite = { focus = FOP_Water_The_Seeds_For_Economy }
+       
         completion_reward = {
             unlock_decision_category_tooltip = FOP_trading
             set_country_flag = FOP_trading
@@ -992,11 +1159,14 @@ focus_tree = {
     focus = {
         id = FOP_Negotiate_For_Exports
         icon = GFX_FOP_Negotiate_For_Exports
+        cost = 1
+
+        relative_position_id = FOP_Water_The_Seeds_For_Economy
         x = 4
         y = 2
-        cost = 1
-        relative_position_id = FOP_Water_The_Seeds_For_Economy
+       
         prerequisite = { focus = FOP_Coming_To_International_Market }
+       
         completion_reward = {
             unlock_decision_category_tooltip = FOP_exports
             set_country_flag = FOP_exports
@@ -1006,11 +1176,14 @@ focus_tree = {
     focus = {
         id = FOP_Look_For_Imports
         icon = GFX_FOP_Look_For_Imports
+        cost = 1
+
+        relative_position_id = FOP_Water_The_Seeds_For_Economy
         x = 2
         y = 2
-        cost = 1
-        relative_position_id = FOP_Water_The_Seeds_For_Economy
+       
         prerequisite = { focus = FOP_Coming_To_International_Market }
+        
         completion_reward = {
             unlock_decision_category_tooltip = FOP_imports
             set_country_flag = FOP_imports
@@ -1020,12 +1193,15 @@ focus_tree = {
     focus = {
         id = FOP_Become_Reliable_Trade_Partners
         icon = GFX_FOP_Become_Reliable_Trade_Partners
+        cost = 1
+
+        relative_position_id = FOP_Water_The_Seeds_For_Economy
         x = 3
         y = 3
-        cost = 1
-        relative_position_id = FOP_Water_The_Seeds_For_Economy
+       
         prerequisite = { focus = FOP_Look_For_Imports }
         prerequisite = { focus = FOP_Negotiate_For_Exports }
+       
         completion_reward = {
             if = {
                 limit = {
@@ -1063,11 +1239,14 @@ focus_tree = {
     focus = {
         id = FOP_Focus_On_Domestic_Issues
         icon = GFX_FOP_Focus_On_Domestic_Issues
+        cost = 1
+
+        relative_position_id = FOP_Water_The_Seeds_For_Economy
         x = -3
         y = 1
-        cost = 1
-        relative_position_id = FOP_Water_The_Seeds_For_Economy
+       
         prerequisite = { focus = FOP_Water_The_Seeds_For_Economy }
+       
         completion_reward = {
             #tooltip
         }
@@ -1076,11 +1255,14 @@ focus_tree = {
     focus = {
         id = FOP_Industrial_Restoration
         icon = GFX_FOP_Industrial_Restoration
+        cost = 5
+
+        relative_position_id = FOP_Water_The_Seeds_For_Economy
         x = -3
         y = 2
-        cost = 5
-        relative_position_id = FOP_Water_The_Seeds_For_Economy
+       
         prerequisite = { focus = FOP_Focus_On_Domestic_Issues }
+       
         completion_reward = {
             FOP_industry_medium_improvement = yes
             random_owned_controlled_state = {
@@ -1103,11 +1285,14 @@ focus_tree = {
     focus = {
         id = FOP_Revitalize_Agriculture
         icon = GFX_FOP_Revitalize_Agriculture
+        cost = 5
+
+        relative_position_id = FOP_Water_The_Seeds_For_Economy
         x = -1
         y = 3
-        cost = 5
-        relative_position_id = FOP_Water_The_Seeds_For_Economy
+       
         prerequisite = { focus = FOP_Industrial_Restoration }
+        
         completion_reward = {
             FOP_agriculture_medium_improvement = yes
             random_owned_controlled_state = {
@@ -1130,11 +1315,14 @@ focus_tree = {
     focus = {
         id = FOP_Scientific_Investments
         icon = GFX_FOP_Scientific_Investments
+        cost = 1
+
+        relative_position_id = FOP_Water_The_Seeds_For_Economy
         x = -3
         y = 3
-        cost = 1
-        relative_position_id = FOP_Water_The_Seeds_For_Economy
+       
         prerequisite = { focus = FOP_Industrial_Restoration }
+        
         completion_reward = {
             add_research_slot = 2
         }
@@ -1143,11 +1331,14 @@ focus_tree = {
     focus = {
         id = FOP_Construction_Works
         icon = GFX_FOP_Construction_Works
+        cost = 1
+
+        relative_position_id = FOP_Water_The_Seeds_For_Economy
         x = -5
         y = 3
-        cost = 1
-        relative_position_id = FOP_Water_The_Seeds_For_Economy
+       
         prerequisite = { focus = FOP_Industrial_Restoration }
+       
         completion_reward = {
             add_political_power = -25
             add_timed_idea = {
@@ -1160,9 +1351,8 @@ focus_tree = {
     focus = {
         id = FOP_Contact_The_IMF
         icon = GFX_FOP_Contact_The_IMF
-        x = -1
-        y = 4
         cost = 5
+
         select_effect = {
             if = {
                 limit = {
@@ -1185,11 +1375,15 @@ focus_tree = {
             }
         }
         relative_position_id = FOP_Water_The_Seeds_For_Economy
+        x = -1
+        y = 4
+       
         prerequisite = { focus = FOP_Revitalize_Agriculture }
         prerequisite = { focus = FOP_Scientific_Investments }
         prerequisite = { focus = FOP_Construction_Works }
         prerequisite = { focus = FOP_Become_Reliable_Trade_Partners }
         mutually_exclusive = { focus = FOP_Embrace_Shadow_Economy }
+      
         available = {
             NOT = {
                 has_country_flag = FOP_refused_by_IMF
@@ -1203,13 +1397,16 @@ focus_tree = {
     focus = {
         id = FOP_Embrace_Shadow_Economy
         icon = GFX_FOP_Embrace_Shadow_Economy
+        cost = 1
+
+        relative_position_id = FOP_Water_The_Seeds_For_Economy
         x = 1
         y = 4
-        cost = 1
-        relative_position_id = FOP_Water_The_Seeds_For_Economy
+       
         prerequisite = { focus = FOP_Revitalize_Agriculture }
         prerequisite = { focus = FOP_Scientific_Investments }
         prerequisite = { focus = FOP_Construction_Works }
+       
         mutually_exclusive = { focus = FOP_Contact_The_IMF }
         completion_reward = {
             add_ideas = FOP_shadow_economy
@@ -1219,11 +1416,14 @@ focus_tree = {
     focus = {
         id = FOP_New_Economic_Miracle
         icon = GFX_FOP_New_Economic_Miracle
+        cost = 1
+
+        relative_position_id = FOP_Water_The_Seeds_For_Economy
         x = 0
         y = 5
-        cost = 1
-        relative_position_id = FOP_Water_The_Seeds_For_Economy
+        
         prerequisite = { focus = FOP_Embrace_Shadow_Economy focus = FOP_Contact_The_IMF }
+       
         completion_reward = {
             add_timed_idea = {
                 idea = FOP_economic_miracle
