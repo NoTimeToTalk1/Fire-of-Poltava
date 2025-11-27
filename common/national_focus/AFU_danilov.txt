@@ -1,574 +1,669 @@
 
-	#Subsidies for Educational Institutions
-	shared_focus = {
-		id = AFU_subsidies_for_educational_institutions
-		icon = GFX_AFU_subsidies_for_educational_institutions
-		x = 25
-		y = 5
-		cost = 3
+#Subsidies for Educational Institutions
+shared_focus = {
+	id = AFU_subsidies_for_educational_institutions
+	icon = GFX_AFU_subsidies_for_educational_institutions
+	cost = 3
 
-		prerequisite = { focus = AFU_restoration_of_the_scientific_field  }
-				completion_reward = {
-        add_ideas = education_excessive				
-		country_event = { id = dan.29 } 
-		}
+	x = 25
+	y = 5
+	
+
+	prerequisite = { focus = AFU_restoration_of_the_scientific_field  }
+
+	completion_reward = {
+		add_ideas = education_excessive
+		country_event = { id = dan.29 }
 	}
+}
 
-	#State Security Strategy
-	shared_focus = {
-		id = AFU_state_security_strategy
-		icon = GFX_AFU_state_security_strategy
-		x = 13
-		y = 0
-		available = {
-    has_country_flag = danilov_new_focuses
-    }
-		cost = 4
+#State Security Strategy
+shared_focus = {
+	id = AFU_state_security_strategy
+	icon = GFX_AFU_state_security_strategy
 
-				completion_reward = { 
-				army_experience = 10
-				add_command_power = 25
-		country_event = { id = dan.30 } 
-		}
+	x = 13
+	y = 0
+
+	available = {
+		has_country_flag = danilov_new_focuses
 	}
+	cost = 4
 
-	#Danilov
-	shared_focus = {
-		id = AFU_danilov
-		icon = GFX_AFU_danilov-529497
-		x = 5
-		y = 0
-		cost = 2
-
-		completion_reward = {
-    custom_effect_tooltip = danilov_in_power
-		}
+	completion_reward = {
+		army_experience = 10
+		add_command_power = 25
+		country_event = { id = dan.30 }
 	}
+}
 
-	#We are Not Alone
-	shared_focus = {
-		id = AFU_we_are_not_alone
-		icon = GFX_AFU_we_are_not_alone-529498
-		x = 5
-		y = 1
-		cost = 3
+#Danilov
+shared_focus = {
+	id = AFU_danilov
+	icon = GFX_AFU_danilov-529497
+	cost = 2
 
-		prerequisite = { focus = AFU_danilov  }
-		completion_reward = {
-        add_political_power = 10		
-		country_event = { id = dan.1 }		
-		}
+	x = 5
+	y = 0
+	
+
+	completion_reward = {
+		custom_effect_tooltip = danilov_in_power
 	}
+}
 
-	#The Only Ones Fighting For a Common Goal
-	shared_focus = {
-		id = AFU_the_only_ones_fighting_for_a_common_goal
-		icon = GFX_AFU_the_only_ones_fighting_for_a_common_goal
-		x = 5
-		y = 3
-		cost = 3
+#We are Not Alone
+shared_focus = {
+	id = AFU_we_are_not_alone
+	icon = GFX_AFU_we_are_not_alone-529498
+	cost = 3
 
-		prerequisite = { focus = AFU_we_are_not_alone  }
-		mutually_exclusive = { 
+	x = 5
+	y = 1
+	
+
+	prerequisite = { focus = AFU_danilov  }
+
+	completion_reward = {
+		add_political_power = 10
+		country_event = { id = dan.1 }
+	}
+}
+
+#The Only Ones Fighting For a Common Goal
+shared_focus = {
+	id = AFU_the_only_ones_fighting_for_a_common_goal
+	icon = GFX_AFU_the_only_ones_fighting_for_a_common_goal
+	cost = 3
+
+	x = 5
+	y = 3
+	
+
+	prerequisite = { focus = AFU_we_are_not_alone  }
+
+	mutually_exclusive = {
 		focus = AFU_align_with_the_legetimists
-		focus = AFU_trust_the_old_faces  
-		}
+		focus = AFU_trust_the_old_faces
+	}
 	completion_reward = {
 	
-    custom_effect_tooltip = danilov_allow_focuses
+		custom_effect_tooltip = danilov_allow_focuses
 	
-	hidden_effect = {
-	set_country_flag = danilov_new_focuses
+		hidden_effect = {
+			set_country_flag = danilov_new_focuses
 	
-		country_event = { id = dan.3 } 
+			country_event = { id = dan.3 }
 		}
 		add_political_power = 10
 	}
-	}
+}
 
-	#Align with the Legetimists
-	shared_focus = {
-		id = AFU_align_with_the_legetimists
-		icon = GFX_AFU_align_with_the_legetimists
-		x = 3
-		y = 3
-		cost = 3
+#Align with the Legetimists
+shared_focus = {
+	id = AFU_align_with_the_legetimists
+	icon = GFX_AFU_align_with_the_legetimists
+	cost = 3
 
-				available = {
-				AND = {
-	country_exists = UKR
-    UKR = {
-	has_character = UKR_Zelensky
-	   }
+	x = 3
+	y = 3
+	
+
+	available = {
+		AND = {
+			country_exists = UKR
+			UKR = {
+				has_character = UKR_Zelensky
+			}
+		}
 	}
-             }
-		prerequisite = { focus = AFU_we_are_not_alone  }
-		mutually_exclusive = { 
+	prerequisite = { focus = AFU_we_are_not_alone  }
+
+	mutually_exclusive = {
 		focus = AFU_the_only_ones_fighting_for_a_common_goal
-		focus = AFU_trust_the_old_faces  
-		}
+		focus = AFU_trust_the_old_faces
+	}
 	completion_reward = {
 	
-    custom_effect_tooltip = danilov_allow_focuses
+		custom_effect_tooltip = danilov_allow_focuses
 		create_faction = ZE_FACTION_NAME
-	AFU = { add_to_faction = UKR }
-		country_event = { 
-		id = dan.7 
-		days = 2 
+		AFU = { add_to_faction = UKR }
+		country_event = {
+			id = dan.7
+			days = 2
 		}
 	
-	hidden_effect = {
-	set_country_flag = danilov_new_focuses
+		hidden_effect = {
+			set_country_flag = danilov_new_focuses
 		}
 		
 	}
-	}
+}
 
-	#Trust the Old Faces
-	shared_focus = {
-		id = AFU_trust_the_old_faces
-		icon = GFX_AFU_trust_the_old_faces
-		x = 7
-		y = 3
-		cost = 3
+#Trust the Old Faces
+shared_focus = {
+	id = AFU_trust_the_old_faces
+	icon = GFX_AFU_trust_the_old_faces
+	cost = 3
 
-				available = {
-				AND = {
-	country_exists = CHR
-    CHR = {
-	has_character = UAR_Poroshenko
-	   }
-	}
-             }
-		prerequisite = { focus = AFU_we_are_not_alone  }
-		mutually_exclusive = { 
-		focus = AFU_the_only_ones_fighting_for_a_common_goal 
-		focus = AFU_align_with_the_legetimists  
+	x = 7
+	y = 3
+	
+
+	available = {
+		AND = {
+			country_exists = CHR
+			CHR = {
+				has_character = UAR_Poroshenko
+			}
 		}
+	}
+	prerequisite = { focus = AFU_we_are_not_alone  }
+
+	mutually_exclusive = {
+		focus = AFU_the_only_ones_fighting_for_a_common_goal
+		focus = AFU_align_with_the_legetimists
+	}
 		
 	completion_reward = {
 	
-    custom_effect_tooltip = danilov_allow_focuses
+		custom_effect_tooltip = danilov_allow_focuses
 		create_faction = CHR_FACTION_NAME
-	AFU = { add_to_faction = CHR }
-		country_event = { 
-		id = dan.5
-		days = 2 
+		AFU = { add_to_faction = CHR }
+		country_event = {
+			id = dan.5
+			days = 2
 		}
 	
-	hidden_effect = {
-	set_country_flag = danilov_new_focuses
+		hidden_effect = {
+			set_country_flag = danilov_new_focuses
 		}
 		
-	  }
-    }
+	}
+}
 
-	#New Minister of Economy
-	shared_focus = {
-		id = AFU_new_minister_of_economy
-		icon = GFX_AFU_new_minister_of_economy
-		x = 4
-		y = 5
-		cost = 3
+#New Minister of Economy
+shared_focus = {
+	id = AFU_new_minister_of_economy
+	icon = GFX_AFU_new_minister_of_economy
+	cost = 3
 
-		prerequisite = { focus = AFU_the_only_ones_fighting_for_a_common_goal  }
-		mutually_exclusive = { focus = AFU_industrial_redistribution  }
+	x = 4
+	y = 5
+	
+
+	prerequisite = { focus = AFU_the_only_ones_fighting_for_a_common_goal  }
+
+	mutually_exclusive = { focus = AFU_industrial_redistribution  }
 		
-		completion_reward = {
-				SWI = {
-                set_nationality = {
-                    target_country = AFU
-                    character = AFU_rinat
-                }
-			}	
-		country_event = { id = dan.9 } 
+	completion_reward = {
+		SWI = {
+			set_nationality = {
+				target_country = AFU
+				character = AFU_rinat
+			}
 		}
+		country_event = { id = dan.9 }
 	}
+}
 
-	#Industrial Redistribution
-	shared_focus = {
-		id = AFU_industrial_redistribution
-		icon = GFX_AFU_industrial_redistribution
-		x = 6
-		y = 5
-		cost = 3
+#Industrial Redistribution
+shared_focus = {
+	id = AFU_industrial_redistribution
+	icon = GFX_AFU_industrial_redistribution
+	cost = 3
 
-		prerequisite = { focus = AFU_the_only_ones_fighting_for_a_common_goal  }
-		mutually_exclusive = { focus = AFU_new_minister_of_economy  }
-			completion_reward = {
-        add_timed_idea = {
-    idea = AFU_industrial_redistribution_1
-    days = 60
-}		
-    add_popularity = {
-    ideology = conservatism
-    popularity = 0.1
-}	
-		country_event = { id = dan.10 } 
+	x = 6
+	y = 5
+	
+
+	prerequisite = { focus = AFU_the_only_ones_fighting_for_a_common_goal  }
+
+	mutually_exclusive = { focus = AFU_new_minister_of_economy  }
+	completion_reward = {
+		add_timed_idea = {
+			idea = AFU_industrial_redistribution_1
+			days = 60
 		}
-	}
-
-	#Our State-Corporate Monopoly
-	shared_focus = {
-		id = AFU_our_statecorporate_monopoly
-		icon = GFX_AFU_our_statecorporate_monopoly
-		x = 5
-		y = 7
-		cost = 3
-
-		prerequisite = { focus = AFU_industrial_redistribution  focus = AFU_new_minister_of_economy  }
-					completion_reward = {
-        add_extra_state_shared_building_slots = 2
-    add_popularity = {
-    ideology = conservatism
-    popularity = 0.05
-}	
-		country_event = { id = dan.11 } 
+		add_popularity = {
+			ideology = conservatism
+			popularity = 0.1
 		}
+		country_event = { id = dan.10 }
 	}
+}
 
-	#Rehabilitation of the Population
-	shared_focus = {
-		id = AFU_rehabilitation_of_the_population
-		icon = GFX_AFU_rehabilitation_of_the_population
-		x = 10
-		y = 1
-		cost = 3
+#Our State-Corporate Monopoly
+shared_focus = {
+	id = AFU_our_statecorporate_monopoly
+	icon = GFX_AFU_our_statecorporate_monopoly
+	cost = 3
 
-		prerequisite = { focus = AFU_state_security_strategy  }
-					completion_reward = { 
-		country_event = { id = dan.12 } 
+	x = 5
+	y = 7
+	
+
+	prerequisite = { focus = AFU_industrial_redistribution  focus = AFU_new_minister_of_economy  }
+
+	completion_reward = {
+		add_extra_state_shared_building_slots = 2
+		add_popularity = {
+			ideology = conservatism
+			popularity = 0.05
 		}
+		country_event = { id = dan.11 }
 	}
+}
 
-	#Legacy of ATO
-	shared_focus = {
-		id = AFU_legacy_of_ato
-		icon = GFX_AFU_legacy_of_ato
-		x = 16
-		y = 1
-		cost = 3
+#Rehabilitation of the Population
+shared_focus = {
+	id = AFU_rehabilitation_of_the_population
+	icon = GFX_AFU_rehabilitation_of_the_population
+	cost = 3
 
-		prerequisite = { focus = AFU_state_security_strategy  }
-		completion_reward = { 
+	x = 10
+	y = 1
+	
+
+	prerequisite = { focus = AFU_state_security_strategy  }
+
+	completion_reward = {
+		country_event = { id = dan.12 }
+	}
+}
+
+#Legacy of ATO
+shared_focus = {
+	id = AFU_legacy_of_ato
+	icon = GFX_AFU_legacy_of_ato
+	cost = 3
+
+	x = 16
+	y = 1
+	
+
+	prerequisite = { focus = AFU_state_security_strategy  }
+
+	completion_reward = {
 		add_ideas = AFU_legacy_of_ato_1
 		add_command_power = 25
-		country_event = { id = dan.13 } 
-		}
+		country_event = { id = dan.13 }
 	}
-
-	#Support Veterans
-	shared_focus = {
-		id = AFU_support_veterans
-		icon = GFX_AFU_support_veterans
-		x = 13
-		y = 2
-		cost = 3
-
-		prerequisite = { focus = AFU_rehabilitation_of_the_population  } prerequisite = { focus = AFU_legacy_of_ato  }
-				completion_reward = { 
-				custom_effect_tooltip = danilov_unlock_new_decisions
-				add_political_power = 10
-				    add_popularity = {
-    ideology = conservatism
-    popularity = 0.05
 }
-		country_event = { id = dan.14 } 
+
+#Support Veterans
+shared_focus = {
+	id = AFU_support_veterans
+	icon = GFX_AFU_support_veterans
+	cost = 3
+
+	x = 13
+	y = 2
+	
+
+	prerequisite = { focus = AFU_rehabilitation_of_the_population  }
+	prerequisite = { focus = AFU_legacy_of_ato  }
+
+	completion_reward = {
+		custom_effect_tooltip = danilov_unlock_new_decisions
+		add_political_power = 10
+		add_popularity = {
+			ideology = conservatism
+			popularity = 0.05
 		}
+		country_event = { id = dan.14 }
 	}
-
-	#Request Humanitarian Aid
-	shared_focus = {
-		id = AFU_request_humanitarian_aid
-		icon = GFX_AFU_request_humanitarian_aid
-		x = 10
-		y = 3
-		cost = 3
-
-		prerequisite = { focus = AFU_support_veterans  }
-				completion_reward = { 
-add_timed_idea = {
-    idea = AFU_humanitarian_aid_1
-    days = 365
 }
-		country_event = { id = dan.15 } 
+
+#Request Humanitarian Aid
+shared_focus = {
+	id = AFU_request_humanitarian_aid
+	icon = GFX_AFU_request_humanitarian_aid
+	cost = 3
+
+	x = 10
+	y = 3
+	
+
+	prerequisite = { focus = AFU_support_veterans  }
+
+	completion_reward = {
+		add_timed_idea = {
+			idea = AFU_humanitarian_aid_1
+			days = 365
+		}
+		country_event = { id = dan.15 }
 		
-		}
 	}
+}
 
-	#Borders Under Control
-	shared_focus = {
-		id = AFU_borders_under_control
-		icon = GFX_AFU_borders_under_control
-		x = 16
-		y = 3
-		cost = 3
+#Borders Under Control
+shared_focus = {
+	id = AFU_borders_under_control
+	icon = GFX_AFU_borders_under_control
+	cost = 3
 
-		prerequisite = { focus = AFU_support_veterans  }
-				completion_reward = { 
-				custom_effect_tooltip = danilov_unlock_new_decisions
-		country_event = { id = dan.16 } 
-		}
+	x = 16
+	y = 3
+	
+
+	prerequisite = { focus = AFU_support_veterans  }
+
+	completion_reward = {
+		custom_effect_tooltip = danilov_unlock_new_decisions
+		country_event = { id = dan.16 }
 	}
+}
 
-	#Keep the Army in Shape
-	shared_focus = {
-		id = AFU_keep_the_army_in_shape
-		icon = GFX_AFU_keep_the_army_in_shape
-		x = 13
-		y = 4
-		cost = 3
+#Keep the Army in Shape
+shared_focus = {
+	id = AFU_keep_the_army_in_shape
+	icon = GFX_AFU_keep_the_army_in_shape
+	cost = 3
 
-		prerequisite = { focus = AFU_request_humanitarian_aid  } prerequisite = { focus = AFU_borders_under_control  }
-						completion_reward = {
-						add_command_power = 50
+	x = 13
+	y = 4
+	
+
+	prerequisite = { focus = AFU_request_humanitarian_aid  } 
+	prerequisite = { focus = AFU_borders_under_control  }
+
+	completion_reward = {
+		add_command_power = 50
 						
-		country_event = { id = dan.17 } 
-		}
+		country_event = { id = dan.17 }
 	}
+}
 
-	#System of Counter-Propaganda
-	shared_focus = {
-		id = AFU_system_of_counterpropaganda
-		icon = GFX_AFU_system_of_counterpropaganda
-		x = 10
-		y = 5
-		cost = 3
+#System of Counter-Propaganda
+shared_focus = {
+	id = AFU_system_of_counterpropaganda
+	icon = GFX_AFU_system_of_counterpropaganda
+	cost = 3
 
-		prerequisite = { focus = AFU_keep_the_army_in_shape  }
-						completion_reward = {
-        custom_effect_tooltip = danilov_unlock_new_decisions						
-		country_event = { id = dan.18 } 
-		}
+	x = 10
+	y = 5
+	
+
+	prerequisite = { focus = AFU_keep_the_army_in_shape  }
+
+	completion_reward = {
+		custom_effect_tooltip = danilov_unlock_new_decisions
+		country_event = { id = dan.18 }
 	}
+}
 
-	#Hunting for rats
-	shared_focus = {
-		id = AFU_hunting_for_rats
-		icon = GFX_AFU_hunting_for_rats
-		x = 16
-		y = 5
-		cost = 3
+#Hunting for rats
+shared_focus = {
+	id = AFU_hunting_for_rats
+	icon = GFX_AFU_hunting_for_rats
+	cost = 3
 
-		prerequisite = { focus = AFU_keep_the_army_in_shape  }
-		completion_reward = { 
+	x = 16
+	y = 5
+	
+
+	prerequisite = { focus = AFU_keep_the_army_in_shape  }
+
+	completion_reward = {
 		custom_effect_tooltip = danilov_unlock_new_decisions
 		add_command_power = 25
-		country_event = { id = dan.19 } 
-		}
+		country_event = { id = dan.19 }
 	}
+}
 
-	#Never Again!
-	shared_focus = {
-		id = AFU_neveragain
-		icon = GFX_AFU_neveragain
-		x = 13
-		y = 7
-		cost = 4
+#Never Again!
+shared_focus = {
+	id = AFU_neveragain
+	icon = GFX_AFU_neveragain
+	cost = 4
 
-		prerequisite = { focus = AFU_system_of_counterpropaganda  } prerequisite = { focus = AFU_hunting_for_rats  }
-				completion_reward = { 
-				add_command_power = 25
-		country_event = { id = dan.20 } 
-		}
-	}
-
-	#Enterprise Support Program
-	shared_focus = {
-		id = AFU_enterprise_support_program
-		icon = GFX_AFU_enterprise_support_program
-		x = 21
-		y = 0
-	available = {
-    has_country_flag = danilov_new_focuses
-    }
-		cost = 4
-
-				completion_reward = {
-        				
-		country_event = { id = dan.21 } 
-		}
-	}
-
-	#Policy of Gentle Ukrainization
-	shared_focus = {
-		id = AFU_policy_of_gentle_ukrainization
-		icon = GFX_AFU_policy_of_gentle_ukrainization
-		x = 25
-		y = 1
-		cost = 3
-
-		prerequisite = { focus = AFU_enterprise_support_program  }
-				completion_reward = {
-        custom_effect_tooltip = danilov_unlock_new_decisions				
-		country_event = { id = dan.22 } 
-		}
-	}
-
-	#Restoration of the Scientific Field
-	shared_focus = {
-		id = AFU_restoration_of_the_scientific_field
-		icon = GFX_AFU_restoration_of_the_scientific_field
-		x = 27
-		y = 3
-		cost = 3
-
-		prerequisite = { focus = AFU_policy_of_gentle_ukrainization  }
-				completion_reward = { 
-		country_event = { id = dan.23 } 
-		}
-	}
-
-	#Way to Energy Independence
-	shared_focus = {
-		id = AFU_way_to_energy_independence
-		icon = GFX_AFU_way_to_energy_independence
-		x = 21
-		y = 7
-		cost = 3
-
-		prerequisite = { focus = AFU_explorations_of_donbas_mines  }
-				completion_reward = { 
-		add_political_power = 25
-		country_event = { id = dan.24 } 
-		}
-	}
-
-	#Reform of the Tax System
-	shared_focus = {
-		id = AFU_reform_of_the_tax_system
-		icon = GFX_AFU_reform_of_the_tax_system
-		x = 23
-		y = 2
-		cost = 3
-
-		prerequisite = { focus = AFU_enterprise_support_program  }
-				completion_reward = {
-        add_ideas = fop_taxes_progressive				
-		country_event = { id = dan.25 } 
-		}
-	}
-
-	#Big Repair
-	shared_focus = {
-		id = AFU_big_repair
-		icon = GFX_AFU_big_repair
-		x = 19
-		y = 2
-		cost = 3
-
-		prerequisite = { focus = AFU_enterprise_support_program  }
-				completion_reward = {
-        add_ideas = AFU_buduemo				
-		country_event = { id = dan.26 } 
-		}
-	}
-
-	#We Will Find a Job for Everyone
-	shared_focus = {
-		id = AFU_we_will_find_a_job_for_everyone
-		icon = GFX_AFU_we_will_find_a_job_for_everyone
-		x = 21
-		y = 3
-		cost = 3
-
-		prerequisite = { focus = AFU_big_repair  } prerequisite = { focus = AFU_reform_of_the_tax_system  }
-				completion_reward = {
-        add_ideas = AFU_labour_mobilisation				
-		country_event = { id = dan.27 } 
-		}
-	}
-
-	#Explorations of Donbas Mines
-	shared_focus = {
-		id = AFU_explorations_of_donbas_mines
-		icon = GFX_AFU_explorations_of_donbas_mines
-		x = 21
-		y = 5
-		cost = 3
-
-		prerequisite = { focus = AFU_we_will_find_a_job_for_everyone  }
-				completion_reward = {
-        custom_effect_tooltip = danilov_unlock_new_decisions				
-		country_event = { id = dan.28 } 
-		}
-	}
+	x = 13
+	y = 7
 	
-	#Preparing for the Unification
-	shared_focus = {
-		id = AFU_preparing_for_the_unification
-		icon = GFX_AFU_preparing_for_the_unification
-		x = 9
-		y = 8
-		cost = 3
-		available = {
-    has_country_flag = danilov_new_focuses
-    }
 
-				completion_reward = {
+	prerequisite = { focus = AFU_system_of_counterpropaganda  }
+	prerequisite = { focus = AFU_hunting_for_rats  }
 
-		}
+	completion_reward = {
+		add_command_power = 25
+		country_event = { id = dan.20 }
 	}
-
-	#Attack on Kharkiv
-	shared_focus = {
-		id = AFU_attack_on_kharkiv
-		icon = GFX_AFU_attack_on_kharkiv
-		x = 8
-		y = 9
-		cost = 3
-
-		available = {
-	has_war = no
- }
-		prerequisite = { focus = AFU_preparing_for_the_unification  }
-				completion_reward = {
- declare_war_on = {
-    target = KHA
-    type = annex_everything
 }
-		}
+
+#Enterprise Support Program
+shared_focus = {
+	id = AFU_enterprise_support_program
+	icon = GFX_AFU_enterprise_support_program
+
+	x = 21
+	y = 0
+
+	available = {
+		has_country_flag = danilov_new_focuses
 	}
+	cost = 4
 
-	#Subdue Dnipro
-	shared_focus = {
-		id = AFU_subdue_dnipro
-		icon = GFX_AFU_subdue_dnipro
-		x = 10
-		y = 9
-		cost = 3
-
-		available = {
-	has_war = no
- }
-		prerequisite = { focus = AFU_preparing_for_the_unification  }
-				completion_reward = {
- declare_war_on = {
-    target = DNI
-    type = annex_everything
+	completion_reward = {
+        				
+		country_event = { id = dan.21 }
+	}
 }
+
+#Policy of Gentle Ukrainization
+shared_focus = {
+	id = AFU_policy_of_gentle_ukrainization
+	icon = GFX_AFU_policy_of_gentle_ukrainization
+	cost = 3
+
+	x = 25
+	y = 1
+	
+
+	prerequisite = { focus = AFU_enterprise_support_program  }
+
+	completion_reward = {
+		custom_effect_tooltip = danilov_unlock_new_decisions
+		country_event = { id = dan.22 }
+	}
+}
+
+#Restoration of the Scientific Field
+shared_focus = {
+	id = AFU_restoration_of_the_scientific_field
+	icon = GFX_AFU_restoration_of_the_scientific_field
+	cost = 3
+
+	x = 27
+	y = 3
+	
+
+	prerequisite = { focus = AFU_policy_of_gentle_ukrainization  }
+
+	completion_reward = {
+		country_event = { id = dan.23 }
+	}
+}
+
+#Way to Energy Independence
+shared_focus = {
+	id = AFU_way_to_energy_independence
+	icon = GFX_AFU_way_to_energy_independence
+	cost = 3
+
+	x = 21
+	y = 7
+	
+
+	prerequisite = { focus = AFU_explorations_of_donbas_mines  }
+
+	completion_reward = {
+		add_political_power = 25
+		country_event = { id = dan.24 }
+	}
+}
+
+#Reform of the Tax System
+shared_focus = {
+	id = AFU_reform_of_the_tax_system
+	icon = GFX_AFU_reform_of_the_tax_system
+	cost = 3
+
+	x = 23
+	y = 2
+	
+
+	prerequisite = { focus = AFU_enterprise_support_program  }
+
+	completion_reward = {
+		add_ideas = fop_taxes_progressive
+		country_event = { id = dan.25 }
+	}
+}
+
+#Big Repair
+shared_focus = {
+	id = AFU_big_repair
+	icon = GFX_AFU_big_repair
+	cost = 3
+
+	x = 19
+	y = 2
+	
+
+	prerequisite = { focus = AFU_enterprise_support_program  }
+
+	completion_reward = {
+		add_ideas = AFU_buduemo
+		country_event = { id = dan.26 }
+	}
+}
+
+#We Will Find a Job for Everyone
+shared_focus = {
+	id = AFU_we_will_find_a_job_for_everyone
+	icon = GFX_AFU_we_will_find_a_job_for_everyone	
+	cost = 3
+
+	x = 21
+	y = 3
+	
+
+
+	prerequisite = { focus = AFU_big_repair  }
+	prerequisite = { focus = AFU_reform_of_the_tax_system  }
+
+	completion_reward = {
+		add_ideas = AFU_labour_mobilisation
+		country_event = { id = dan.27 }
+	}
+}
+
+#Explorations of Donbas Mines
+shared_focus = {
+	id = AFU_explorations_of_donbas_mines
+	icon = GFX_AFU_explorations_of_donbas_mines
+	cost = 3
+
+	x = 21
+	y = 5
+	
+
+	prerequisite = { focus = AFU_we_will_find_a_job_for_everyone  }
+
+	completion_reward = {
+		custom_effect_tooltip = danilov_unlock_new_decisions
+		country_event = { id = dan.28 }
+	}
+}
+	
+#Preparing for the Unification
+shared_focus = {
+	id = AFU_preparing_for_the_unification
+	icon = GFX_AFU_preparing_for_the_unification
+	cost = 3
+
+	x = 9
+	y = 8
+	
+	available = {
+		has_country_flag = danilov_new_focuses
+	}
+
+	completion_reward = {
+
+	}
+}
+
+#Attack on Kharkiv
+shared_focus = {
+	id = AFU_attack_on_kharkiv
+	icon = GFX_AFU_attack_on_kharkiv
+	cost = 3
+
+	x = 8
+	y = 9
+	
+
+	available = {
+		has_war = no
+	}
+	prerequisite = { focus = AFU_preparing_for_the_unification  }
+
+	completion_reward = {
+		declare_war_on = {
+			target = KHA
+			type = annex_everything
 		}
 	}
+}
 
-	#Integration of New Territories
-	shared_focus = {
-		id = AFU_integration_of_new_territories
-		icon = GFX_AFU_integration_of_new_territories
-		x = 9
-		y = 10
-		cost = 3
+#Subdue Dnipro
+shared_focus = {
+	id = AFU_subdue_dnipro
+	icon = GFX_AFU_subdue_dnipro
+	cost = 3
 
-		available = {
-	has_war = no
-    AND = {
-	NOT = {
-	country_exists = KHA
-	country_exists = DNI
+	x = 10
+	y = 9
+	
+
+	available = {
+		has_war = no
 	}
-   }
- }
-		prerequisite = { focus = AFU_attack_on_kharkiv  } prerequisite = { focus = AFU_subdue_dnipro  }
-				completion_reward = {
+	prerequisite = { focus = AFU_preparing_for_the_unification  }
+
+	completion_reward = {
+		declare_war_on = {
+			target = DNI
+			type = annex_everything
+		}
+	}
+}
+
+#Integration of New Territories
+shared_focus = {
+	id = AFU_integration_of_new_territories
+	icon = GFX_AFU_integration_of_new_territories
+	cost = 3
+
+	x = 9
+	y = 10
+	
+
+	available = {
+		has_war = no
+		AND = {
+			NOT = {
+				country_exists = KHA
+				country_exists = DNI
+			}
+		}
+	}
+	prerequisite = { focus = AFU_attack_on_kharkiv  } 
+	prerequisite = { focus = AFU_subdue_dnipro  }
+
+	completion_reward = {
 		every_state = {
 			limit = {
 				is_core_of = DNI
@@ -585,32 +680,35 @@ add_timed_idea = {
 			remove_core_of = KHA
 			add_core_of = AFU
 		}
-				hidden_effect = {
-		AFU_danilov = {
-                set_portraits = {
-                    civilian = {
-                        large = "gfx/leaders/AFU/danilov2.dds"
-                    }
-                }
-            }
-		    }
+		hidden_effect = {
+			AFU_danilov = {
+				set_portraits = {
+					civilian = {
+						large = "gfx/leaders/AFU/danilov2.dds"
+					}
+				}
+			}
 		}
 	}
+}
 
-	#This is just the beginning!
-	shared_focus = {
-		id = AFU_thisisjustthebeginning
-		icon = GFX_AFU_thisisjustthebeginning
-		x = 9
-		y = 11
-		cost = 3
+#This is just the beginning!
+shared_focus = {
+	id = AFU_thisisjustthebeginning
+	icon = GFX_AFU_thisisjustthebeginning
+	cost = 3
 
-		prerequisite = { focus = AFU_integration_of_new_territories  }
-		completion_reward = {
-				hidden_effect = {
-		add_political_power = 100
-		add_command_power = 60
-		set_country_flag = ukrwarlord
-		    }
+	x = 9
+	y = 11
+	
+
+	prerequisite = { focus = AFU_integration_of_new_territories  }
+
+	completion_reward = {
+		hidden_effect = {
+			add_political_power = 100
+			add_command_power = 60
+			set_country_flag = ukrwarlord
 		}
 	}
+}
