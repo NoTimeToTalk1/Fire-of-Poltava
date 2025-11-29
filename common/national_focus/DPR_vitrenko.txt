@@ -1,55 +1,55 @@
+	#Vitrenko is Victorious!
 	shared_focus = {
-		id = dnr_vitrenko_victorious
-		icon = GFX_DPR_Vitrenko_victorious
+		id = DPR_vitrenko_is_victorious
+		icon = GFX_DPR_Vitrenko_is_Victorious
+		cost = 1
+
 		x = 35
 		y = 0
-		cost = 1
-		allow_branch = {
-			if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_shared_focus_branches_visibility
-						option = HIDE
-					}
-				}
-					has_government = socialism
-			}
-		}
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
-		}
+
 		completion_reward = {
-				add_political_power = 50
+			add_political_power = 50
 		}
 	}
+
+	#A Hand for the Poor...
 	shared_focus = {
-		id = dnr_a_hand_for_the_poor
+		id = DPR_a_hand_for_the_poor
 		icon = GFX_DPR_A_Hand_for_the_Poor
-		x = 33
+		cost = 2
+
+		relative_position_id = DPR_vitrenko_is_victorious
+		x = -2
 		y = 1
-		cost = 1
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		prerequisite = {
+			focus = DPR_vitrenko_is_victorious
 		}
-		prerequisite = { focus = dnr_vitrenko_victorious  }
+
 		completion_reward = {
-			add_popularity = {
-    		ideology = socialism
-    		popularity = 0.07
-			}
 			add_political_power = -25
+			add_popularity = {
+				ideology = socialism
+				popularity = 0.05
+			}
+			add_ideas = fop_healthcare_system_public
 		}
 	}
+
+	#...and Punishment for the Untrustworthy!
 	shared_focus = {
-		id = dnr_and_punishment_for_untruthworthy
-		icon = GFX_DPR_And_Punishment_for_Untrustworthy
-		x = 37
+		id = DPR_and_punishment_for_the_untrustworthy
+		icon = GFX_DPR_and_Punishment_for_the_Untrustworthy
+		cost = 2
+		
+		relative_position_id = DPR_vitrenko_is_victorious
+		x = 2
 		y = 1
-		cost = 1
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		prerequisite = {
+			focus = DPR_vitrenko_is_victorious
 		}
-		prerequisite = { focus = dnr_vitrenko_victorious  }
+
 		completion_reward = {
 			country_event = {
 				id = dpr_vitrenko.3
@@ -57,17 +57,24 @@
 			}
 		}
 	}
+
+	#Socialism on the Rise
 	shared_focus = {
-		id = dnr_socialism_on_the_rise
+		id = DPR_socialism_on_the_rise
 		icon = GFX_DPR_Socialism_on_the_Rise
-		x = 35
-		y = 2
-		cost = 2
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+		cost = 3
+
+		relative_position_id = DPR_and_punishment_for_the_untrustworthy
+		x = -2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_a_hand_for_the_poor
 		}
-		prerequisite = { focus = dnr_a_hand_for_the_poor }
-		prerequisite = { focus = dnr_and_punishment_for_untruthworthy }
+		prerequisite = {
+			focus = DPR_and_punishment_for_the_untrustworthy
+		}
+
 		completion_reward = {
 			add_popularity = {
 				ideology = socialism
@@ -75,58 +82,80 @@
 			}
 		}
 	}
+
+
+	#In Search of Allies
 	shared_focus = {
-		id = dnr_looking_for_the_allies
-		icon = GFX_DPR_Looking_for_Allies
-		x = 5
-		y = 4
+		id = DPR_in_search_of_allies
+		icon = GFX_DPR_In_Search_of_Allies
 		cost = 1
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		relative_position_id = DPR_socialism_on_the_rise
+		x = -25
+		y = 2
+
+		prerequisite = {
+			focus = DPR_socialism_on_the_rise
 		}
-		prerequisite = { focus = dnr_socialism_on_the_rise }
+
 		completion_reward = {
-			custom_effect_tooltip = DPR_looking_for_the_allies
+			custom_effect_tooltip = DPR_in_search_of_allies_tt
 		}
 	}
+
+	#A Message to Those in Need
 	shared_focus = {
-		id = dnr_a_message_to_distitutes
-		icon = GFX_DPR_A_Message_to_Destitutes
-		x = 3
-		y = 5
+		id = DPR_a_message_to_those_in_need
+		icon = GFX_DPR_A_Message_to_Those_in_Need
 		cost = 5
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		relative_position_id = DPR_in_search_of_allies
+		x = -2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_in_search_of_allies
 		}
-		prerequisite = { focus = dnr_looking_for_the_allies }
+
 		completion_reward = {
 			add_manpower = 50000
+			add_ideas = fop_unemployment_subsidies_generous
 		}
 	}
+
+	#Outreach to the Media
 	shared_focus = {
-		id = dnr_outreach_to_the_media
-		icon = GFX_DPR_Outreach_to_The_Media
-		x = 5
-		y = 5
+		id = DPR_outreach_to_the_media
+		icon = GFX_DPR_Outreach_to_the_Media
 		cost = 5
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		relative_position_id = DPR_in_search_of_allies
+		x = 0
+		y = 1
+
+		prerequisite = {
+			focus = DPR_in_search_of_allies
 		}
-		prerequisite = { focus = dnr_looking_for_the_allies }
+
 		completion_reward = {
-			add_ideas = DPR_vitrenko_tv
+			add_ideas = DPR_spreading_our_word
 		}
 	}
+
+	#Workers of the World, Join Us!
 	shared_focus = {
-		id = dnr_workers_of_the_world_come_to_us
-		icon = GFX_DPR_Workers_of_the_World_Come_to_Us
-		x = 7
-		y = 5
-		cost = 6
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+		id = DPR_workers_of_the_world_join_us
+		icon = GFX_DPR_Workers_of_the_World_Join_Us
+		cost = 5
+
+		relative_position_id = DPR_in_search_of_allies
+		x = 2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_in_search_of_allies
 		}
-		prerequisite = { focus = dnr_looking_for_the_allies }
+
 		completion_reward = {
 			add_manpower = 7000
 			country_event = {
@@ -135,162 +164,233 @@
 			}
 		}
 	}
+
+	#Alliance of Revolutionaries
 	shared_focus = {
-		id = dnr_alliance_of_revolutionaries
+		id = DPR_alliance_of_revolutionaries
 		icon = GFX_DPR_Alliance_of_Revolutionaries
-		x = 3
-		y = 6
-		cost = 2
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+		cost = 3
+
+		relative_position_id = DPR_workers_of_the_world_join_us
+		x = -4
+		y = 1
+
+		prerequisite = {
+			focus = DPR_a_message_to_those_in_need
 		}
+		prerequisite = {
+			focus = DPR_outreach_to_the_media
+		}
+		prerequisite = {
+			focus = DPR_workers_of_the_world_join_us
+		}
+		mutually_exclusive = {
+			focus = DPR_we_can_do_it_alone
+		}
+		mutually_exclusive = {
+			focus = DPR_a_good_old_friend
+		}
+
 		available = {
 			KIR = {
 				exists = yes
-				has_government = socialism
+				has_government = communism
 			}
 		}
-		prerequisite = { focus = dnr_a_message_to_distitutes }
-		prerequisite = { focus = dnr_outreach_to_the_media }
-		prerequisite = { focus = dnr_workers_of_the_world_come_to_us }
-		mutually_exclusive = { focus = dnr_we_can_do_it_alone }
-		mutually_exclusive = { focus = dnr_good_old_friend }
+
 		completion_reward = {
 			country_event = {
 				id = dpr_vitrenko.5
 			}
 		}
 	}
+
+	#We Can Do It Alone
 	shared_focus = {
-		id = dnr_we_can_do_it_alone
+		id = DPR_we_can_do_it_alone
 		icon = GFX_DPR_We_Can_Do_It_Alone
-		x = 5
-		y = 6
-		cost = 1
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+		cost = 2
+
+		relative_position_id = DPR_workers_of_the_world_join_us
+		x = -2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_a_message_to_those_in_need
 		}
-		prerequisite = { focus = dnr_a_message_to_distitutes }
-		prerequisite = { focus = dnr_outreach_to_the_media }
-		prerequisite = { focus = dnr_workers_of_the_world_come_to_us }
-		mutually_exclusive = { focus = dnr_alliance_of_revolutionaries }
-		mutually_exclusive = { focus = dnr_good_old_friend }
+		prerequisite = {
+			focus = DPR_outreach_to_the_media
+		}
+		prerequisite = {
+			focus = DPR_workers_of_the_world_join_us
+		}
+		mutually_exclusive = {
+			focus = DPR_alliance_of_revolutionaries
+		}
+		mutually_exclusive = {
+			focus = DPR_a_good_old_friend
+		}
+
 		completion_reward = {
 			add_political_power = 100
 			add_war_support = 0.05
 		}
 	}
+
+	#A Good Old Friend
 	shared_focus = {
-		id = dnr_good_old_friend
-		icon = GFX_DPR_Good_Old_Friend
-		x = 7
-		y = 6
-		cost = 2
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+		id = DPR_a_good_old_friend
+		icon = GFX_DPR_A_Good_Old_Friend
+		cost = 3
+
+		relative_position_id = DPR_workers_of_the_world_join_us
+		x = 0
+		y = 1
+
+		prerequisite = {
+			focus = DPR_a_message_to_those_in_need
 		}
+		prerequisite = {
+			focus = DPR_outreach_to_the_media
+		}
+		prerequisite = {
+			focus = DPR_workers_of_the_world_join_us
+		}
+		mutually_exclusive = {
+			focus = DPR_alliance_of_revolutionaries
+		}
+		mutually_exclusive = {
+			focus = DPR_we_can_do_it_alone
+		}
+
 		available = {
-				KHE = {
-					exists = yes
-					has_government = conservatism
-				}
+			KHE = {
+				exists = yes
+				has_government = social_democracy
+			}
 		}
-		prerequisite = { focus = dnr_a_message_to_distitutes }
-		prerequisite = { focus = dnr_outreach_to_the_media }
-		prerequisite = { focus = dnr_workers_of_the_world_come_to_us }
-		mutually_exclusive = { focus = dnr_alliance_of_revolutionaries }
-		mutually_exclusive = { focus = dnr_we_can_do_it_alone }
+
 		completion_reward = {
 			country_event = {
 				id = dpr_vitrenko.8
 			}
 		}
 	}
+
+	#World, Here We Go!
 	shared_focus = {
-		id = dnr_world_here_we_go
+		id = DPR_world_here_we_go
 		icon = GFX_DPR_World_Here_We_Go
-		x = 5
-		y = 8
-		cost = 2
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+		cost = 6
+
+		relative_position_id = DPR_a_good_old_friend
+		x = -2
+		y = 2
+
+		prerequisite = {
+			focus = DPR_alliance_of_revolutionaries
+			focus = DPR_we_can_do_it_alone
+			focus = DPR_a_good_old_friend
 		}
-		prerequisite = { focus = dnr_alliance_of_revolutionaries focus = dnr_we_can_do_it_alone focus = dnr_good_old_friend }
+
 		completion_reward = {
-			add_ideas = DPR_world_here_we_go
+			add_ideas = DPR_here_we_go
 		}
 	}
+
+
+	#Socialization of Domestic Affairs
 	shared_focus = {
-		id = dnr_socialisation_of_the_domestic_affairs
-		icon = GFX_DPR_Socialisation_of_the_Domestic_Affairs
-		x = 25
-		y = 4
+		id = DPR_socialization_of_domestic_affairs
+		icon = GFX_DPR_Socialization_of_the_Domestic_Affairs
 		cost = 1
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		relative_position_id = DPR_socialism_on_the_rise
+		x = -10
+		y = 2
+
+		prerequisite = {
+			focus = DPR_socialism_on_the_rise
 		}
-		prerequisite = { focus = dnr_socialism_on_the_rise }
+
 		completion_reward = {
-			custom_effect_tooltip = DPR_socialisation_of_the_domestic_affairs
+			custom_effect_tooltip = DPR_socialization_of_domestic_affairs_tt
 		}
 	}
+
+	#Helping Hand for the Workers
 	shared_focus = {
-		id = dnr_a_helping_hand_for_workers
-		icon = GFX_DPR_A_Helping_Hand_for_Workers
-		x = 23
-		y = 5
+		id = DPR_helping_hand_for_the_workers
+		icon = GFX_DPR_Helping_Hand_for_the_Workers
 		cost = 5
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		relative_position_id = DPR_socialization_of_domestic_affairs
+		x = -2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_socialization_of_domestic_affairs
 		}
-		prerequisite = { focus = dnr_socialisation_of_the_domestic_affairs }
+
 		completion_reward = {
-				remove_ideas = healthcare_no
-				add_ideas = fop_healthcare_system_social_insurance
-				add_ideas = fop_working_hours_8
+			add_ideas = fop_minimum_wage_generous
+			add_ideas = fop_working_hours_8
 		}
 	}
+
+	#Care for the Elderly
 	shared_focus = {
-		id = dnr_driving_out_unprofitable_enterprises
-		icon = GFX_DPR_Driving_Out_Unprofitable_Enterprises
-		x = 27
-		y = 5
-		cost = 3
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+		id = DPR_care_for_the_elderly
+		icon = GFX_DPR_Care_for_the_Elderly
+		cost = 2
+
+		relative_position_id = DPR_helping_hand_for_the_workers
+		x = -2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_helping_hand_for_the_workers
 		}
-		prerequisite = { focus = dnr_socialisation_of_the_domestic_affairs }
+
+		completion_reward = {
+			add_ideas = DPR_elderly_care
+			add_ideas = fop_pensions_generous
+		}
+	}
+
+	#Driving Out Unprofitable Enterprises
+	shared_focus = {
+		id = DPR_driving_out_unprofitable_enterprises
+		icon = GFX_DPR_Driving_Out_Unprofitable_Enterprises
+		cost = 5
+
+		relative_position_id = DPR_socialization_of_domestic_affairs
+		x = 2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_socialization_of_domestic_affairs
+		}
+
 		completion_reward = {
 			add_ideas = fop_commercial_policy_heavy_protectionism
 		}
 	}
+
+	#Workers' Domestic Front
 	shared_focus = {
-		id = dnr_careship_for_old_ones
-		icon = GFX_DPR_Careship_for_Old_Ones
-		x = 21
-		y = 6
-		cost = 3
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = dnr_a_helping_hand_for_workers }
-		completion_reward = {
-			add_ideas = DPR_babushkas
-			add_ideas = fop_conscription_limited
-			add_ideas = fop_pensions_generous
-		}
-	}
-	shared_focus = {
-		id = dnr_workers_domestic_front
+		id = DPR_workers_domestic_front
 		icon = GFX_DPR_Workers_Domestic_Front
-		x = 29
-		y = 6
-		cost = 5
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+		cost = 2
+
+		relative_position_id = DPR_driving_out_unprofitable_enterprises
+		x = 2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_driving_out_unprofitable_enterprises
 		}
-		prerequisite = { focus = dnr_a_helping_hand_for_workers }
-		prerequisite = { focus = dnr_driving_out_unprofitable_enterprises }
+
 		completion_reward = {
 			2098 = {
 				add_building_construction = {
@@ -306,39 +406,55 @@
 					instant_build = yes
 				}
 			}
-			add_ideas = DPR_workers_domestic_front
+			add_ideas = DPR_domestic_front
 		}
 	}
+
+	#Deal with the Wealthy
 	shared_focus = {
-		id = dnr_a_deal_with_wealthy
-		icon = GFX_DPR_A_Deal_with_Wealthy
-		x = 25
-		y = 6
+		id = DPR_deal_with_the_wealthy
+		icon = GFX_DPR_Deal_with_the_Wealthy
 		cost = 2
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		relative_position_id = DPR_driving_out_unprofitable_enterprises
+		x = -2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_helping_hand_for_the_workers
 		}
-		prerequisite = { focus = dnr_driving_out_unprofitable_enterprises }
+		prerequisite = {
+			focus = DPR_driving_out_unprofitable_enterprises
+		}
+
 		completion_reward = {
 			country_event = {
 				id = dpr_vitrenko.11
 				days = 3
 			}
+			add_ideas = fop_oligarchs_relations_cooperation
 		}
 	}
+
+	#Welfare for the Lower Class
 	shared_focus = {
-		id = dnr_welfare_for_lower_class
-		icon = GFX_DPR_Welfare_for_Lower_Class
-		x = 23
-		y = 7
-		cost = 4
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+		id = DPR_welfare_for_the_lower_class
+		icon = GFX_DPR_Welfare_for_the_Lower_Class
+		cost = 3
+
+		relative_position_id = DPR_deal_with_the_wealthy
+		x = -2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_care_for_the_elderly
 		}
-		prerequisite = { focus = dnr_careship_for_old_ones }
-		prerequisite = { focus = dnr_workers_domestic_front }
+		prerequisite = {
+			focus = DPR_deal_with_the_wealthy
+		}
+
 		completion_reward = {
-			add_ideas = high_taxation
+			add_ideas = fop_minimum_wage_generous
 			add_ideas = DPR_welfare
 			add_popularity = {
 				ideology = socialism
@@ -346,17 +462,24 @@
 			}
 		}
 	}
+
+	#Nationalization Nationwide
 	shared_focus = {
-		id = dnr_mass_nationalisation
-		icon = GFX_DPR_Mass_Nationalisation
-		x = 27
-		y = 7
-		cost = 7
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+		id = DPR_nationalization_nationwide
+		icon = GFX_DPR_Nationalization_Nationwide
+		cost = 3
+
+		relative_position_id = DPR_deal_with_the_wealthy
+		x = 2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_deal_with_the_wealthy
 		}
-		prerequisite = { focus = dnr_a_deal_with_wealthy }
-		prerequisite = { focus = dnr_workers_domestic_front }
+		prerequisite = {
+			focus = DPR_workers_domestic_front
+		}
+
 		completion_reward = {
 			add_ideas = manufacturing
 			2093 = {
@@ -386,363 +509,439 @@
 				}
 			}
 			add_timed_idea = {
-				idea = DPR_mass_nationalisation
+				idea = DPR_mass_nationalization
 				days = 180
 			}
 		}
 	}
+
+	#Socialist Paradise
 	shared_focus = {
-		id = dnr_socialist_paradise
+		id = DPR_socialist_paradise
 		icon = GFX_DPR_Socialist_Paradise
-		x = 25
-		y = 8
-		cost = 2
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+		cost = 6
+
+		relative_position_id = DPR_nationalization_nationwide
+		x = -2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_welfare_for_the_lower_class
 		}
-		prerequisite = { focus = dnr_welfare_for_lower_class }
-		prerequisite = { focus = dnr_mass_nationalisation }
+		prerequisite = {
+			focus = DPR_nationalization_nationwide
+		}
+
 		completion_reward = {
 			add_popularity = {
 				ideology = socialism
-				popularity = 0.1
+				popularity = 0.20
 			}
-			add_war_support = 0.2
-			add_ideas = fop_economic_system_mixed
-			add_ideas = fop_oligarchs_relations_cooperation
+			add_ideas = fop_economic_system_state_socialism
 		}
 	}
+
+
+	#The Army to Protect Us
 	shared_focus = {
-		id = dnr_we_are_the_army_of_the_people
-		icon = GFX_DPR_We_are_the_Army_of_the_People
-		x = 45
-		y = 4
+		id = DPR_the_army_to_protect_us
+		icon = GFX_DPR_The_Army_to_Protect_Us
 		cost = 1
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		relative_position_id = DPR_socialism_on_the_rise
+		x = 10
+		y = 2
+
+		prerequisite = {
+			focus = DPR_socialism_on_the_rise
 		}
-		prerequisite = { focus = dnr_socialism_on_the_rise }
+
 		completion_reward = {
-			custom_effect_tooltip = DPR_we_are_the_army_of_the_people
+			custom_effect_tooltip = DPR_the_army_to_protect_us_tt
 			country_event = {
 				id = dpr_vitrenko.12
 				days = 5
 			}
 		}
 	}
+
+	#The People's Militia
 	shared_focus = {
-		id = dnr_peoples_army
-		icon = GFX_DPR_Peoples_Army
-		x = 43
-		y = 5
-		cost = 1
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+		id = DPR_the_peoples_militia
+		icon = GFX_DPR_The_Peoples_Militia
+		cost = 2
+
+		relative_position_id = DPR_the_army_to_protect_us
+		x = -2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_the_army_to_protect_us
 		}
+		mutually_exclusive = {
+			focus = DPR_strongest_warriors_of_socialism
+		}
+
 		available = {
-				has_country_flag = DPR_vitrenko_bomzhi
+			has_country_flag = DPR_quantity
 		}
-		prerequisite = { focus = dnr_we_are_the_army_of_the_people }
-		mutually_exclusive = { focus = dnr_the_strongest_warriors_of_socialism }
+
 		completion_reward = {
-			add_ideas = DPR_peoples_army
+			add_ideas = DPR_peoples_militia
 		}
 	}
+
+	#Mass Recruitment Drive
 	shared_focus = {
-		id = dnr_the_strongest_warriors_of_socialism
-		icon = GFX_DPR_Strongest_Warriors_of_Socialism
-		x = 47
-		y = 5
-		cost = 1
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
-		}
-		available = {
-				has_country_flag = DPR_vitrenko_sila
-		}
-		prerequisite = { focus = dnr_we_are_the_army_of_the_people }
-		mutually_exclusive = { focus = dnr_peoples_army }
-		completion_reward = {
-			add_ideas = DPR_strongest_warriors_of_socialism
-		}
-	}
-	shared_focus = {
-		id = dnr_mass_recruitment
-		icon = GFX_DPR_Mass_Recruitment
-		x = 39
-		y = 6
+		id = DPR_mass_recruitment_drive
+		icon = GFX_DPR_Mass_Recruitment_Drive
 		cost = 5
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		relative_position_id = DPR_the_peoples_militia
+		x = -2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_the_peoples_militia
 		}
-		prerequisite = { focus = dnr_peoples_army }
+
 		completion_reward = {
 			add_ideas = DPR_mass_recruitment
+			add_ideas = fop_conscription_all_adults_serve
 		}
 	}
+
+	#Put Everyone We Can on the Frontline
 	shared_focus = {
-		id = dnr_new_military_complex
-		icon = GFX_DPR_New_Military_Complex
-		x = 43
-		y = 6
-		cost = 7
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = dnr_peoples_army focus = dnr_the_strongest_warriors_of_socialism }
-		completion_reward = {
-				2310 = {
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
-				}
-				2031 = {
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
-				}
-				2028 = {
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
-				}
-				add_ideas = DPR_new_military_complex
-			}
-	}
-	shared_focus = {
-		id = dnr_a_work_for_our_defenders
-		icon = GFX_DPR_A_Work_for_Our_Defenders
-		x = 47
-		y = 6
+		id = DPR_put_everyone_we_can_on_the_frontline
+		icon = GFX_DPR_Put_Everyone_We_Can_on_the_Frontline
 		cost = 5
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		relative_position_id = DPR_mass_recruitment_drive
+		x = 0
+		y = 1
+
+		prerequisite = {
+			focus = DPR_mass_recruitment_drive
 		}
-		prerequisite = { focus = dnr_peoples_army shared_focus = dnr_the_strongest_warriors_of_socialism }
+
 		completion_reward = {
-			add_ideas = DPR_a_work_for_our_defenders
+			add_ideas = DPR_poor_recruitment_standarts
+			add_ideas = fop_training_minimal
 		}
 	}
+
+	#Strongest Warriors of Socialism
 	shared_focus = {
-		id = dnr_legacy_of_28_panfilovets
-		icon = GFX_DPR_Legacy_of_the_28_Ponfilovets
-		x = 50
-		y = 6
+		id = DPR_strongest_warriors_of_socialism
+		icon = GFX_DPR_Strongest_Warriors_of_Socialism
+		cost = 2
+
+		relative_position_id = DPR_the_army_to_protect_us
+		x = 2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_the_army_to_protect_us
+		}
+		mutually_exclusive = {
+			focus = DPR_the_peoples_militia
+		}
+
+		available = {
+			has_country_flag = DPR_quality
+		}
+
+		completion_reward = {
+			add_ideas = DPR_warriors_of_socialism
+		}
+	}
+
+	#Legacy of Panfilov's Men
+	shared_focus = {
+		id = DPR_legacy_of_panfilovs_men
+		icon = GFX_DPR_Legacy_of_Panfilovs_Men
 		cost = 5
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		relative_position_id = DPR_strongest_warriors_of_socialism
+		x = 2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_strongest_warriors_of_socialism
 		}
-		prerequisite = { focus = dnr_the_strongest_warriors_of_socialism }
+
 		completion_reward = {
-			add_ideas = DPR_28_pidorasov
+			add_ideas = DPR_panfilovs_men
 		}
 	}
+
+	#Invite Foreign Specialists
 	shared_focus = {
-		id = dnr_put_everyone_we_can_in_charge
-		icon = GFX_DPR_Put_Everyone_We_Can_in_Charge
-		x = 41
-		y = 7
-		cost = 3
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = dnr_mass_recruitment }
-		completion_reward = {
-			add_ideas = DPR_bomzhi_v_armii
-		}
-	}
-	shared_focus = {
-		id = dnr_get_back_politheads
-		icon = GFX_DPR_Get_Back_Politheads
-		x = 45
-		y = 7
-		cost = 5
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = dnr_new_military_complex }
-		prerequisite = { focus = dnr_a_work_for_our_defenders }
-		completion_reward = {
-			add_ideas = DPR_politheads
-		}
-	}
-	shared_focus = {
-		id = dnr_invite_foreign_specialists
+		id = DPR_invite_foreign_specialists
 		icon = GFX_DPR_Invite_Foreign_Specialists
-		x = 50
-		y = 7
 		cost = 5
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		relative_position_id = DPR_legacy_of_panfilovs_men
+		x = 0
+		y = 1
+
+		prerequisite = {
+			focus = DPR_legacy_of_panfilovs_men
 		}
-		prerequisite = { focus = dnr_legacy_of_28_panfilovets }
+
 		completion_reward = {
 			add_manpower = 5000
-			add_ideas = volunteers_limited
 			country_event = {
 				id = dpr_vitrenko.13
 			}
 			recruit_character = LNR_abab
 		}
 	}
+
+	#Strengthen the Military-Industrial Complex
 	shared_focus = {
-		id = dnr_legacy_of_our_grandfathers
-		icon = GFX_DPR_Legacy_of_Our_Grandfathers
-		x = 45
-		y = 8
-		cost = 2
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+		id = DPR_strengthen_the_military_industrial_complex
+		icon = GFX_DPR_Strengthen_the_Military_Industrial_Complex
+		cost = 6
+
+		relative_position_id = DPR_strongest_warriors_of_socialism
+		x = -4
+		y = 1
+
+		prerequisite = {
+			focus = DPR_the_peoples_militia
+			focus = DPR_strongest_warriors_of_socialism
 		}
-		prerequisite = { focus = dnr_get_back_politheads }
-		prerequisite = { focus = dnr_invite_foreign_specialists focus = dnr_put_everyone_we_can_in_charge }
+
 		completion_reward = {
-		custom_effect_tooltip = DPR_army_choice
+			add_ideas = DPR_socialist_military_industrial_complex
+			2310 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			2031 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			2028 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Our Defenders of Labour
+	shared_focus = {
+		id = DPR_our_defenders_of_labour
+		icon = GFX_DPR_Our_Defenders_of_Labour
+		cost = 6
+
+		relative_position_id = DPR_strongest_warriors_of_socialism
+		x = 0
+		y = 1
+
+		prerequisite = {
+			focus = DPR_the_peoples_militia
+			focus = DPR_strongest_warriors_of_socialism
+		}
+
+		completion_reward = {
+			add_ideas = DPR_a_work_for_our_defenders
+		}
+	}
+
+	#Bring Back Politruks
+	shared_focus = {
+		id = DPR_bring_back_politruks
+		icon = GFX_DPR_Bring_Back_Politruks
+		cost = 5
+
+		relative_position_id = DPR_our_defenders_of_labour
+		x = -2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_strengthen_the_military_industrial_complex
+		}
+		prerequisite = {
+			focus = DPR_our_defenders_of_labour
+		}
+
+		completion_reward = {
+			add_ideas = DPR_politruks
+		}
+	}
+
+	#In the Footsteps of Our Grandfathers
+	shared_focus = {
+		id = DPR_in_the_footsteps_of_our_grandfathers
+		icon = GFX_DPR_In_the_Footsteps_of_Our_Grandfathers
+		cost = 6
+
+		relative_position_id = DPR_bring_back_politruks
+		x = 0
+		y = 1
+
+		prerequisite = {
+			focus = DPR_bring_back_politruks
+		}
+		prerequisite = {
+			focus = DPR_put_everyone_we_can_on_the_frontline
+			focus = DPR_invite_foreign_specialists
+		}
+
+		completion_reward = {
 			if = {
 				limit = {
 					DPR = {
-						has_country_flag = DPR_vitrenko_bomzhi
+						has_country_flag = DPR_quantity
 					}
 				}
-			add_ideas = doctrine_army_wide
-			add_ideas = no_exemptions
+				add_ideas = doctrine_army_wide
+				add_ideas = no_exemptions
 			}
 			else_if = {
 				limit = {
 					DPR = {
-						has_country_flag = DPR_vitrenko_sila
+						has_country_flag = DPR_quality
 					}
 				}
-			add_ideas = soldier_full
-			add_ideas = officer_planning
-			add_ideas = doctrine_army_plan
+				add_ideas = soldier_full
+				add_ideas = officer_planning
+				add_ideas = doctrine_army_plan
+			}
+			else = {
+				custom_effect_tooltip = DPR_army_choice_tt
 			}
 		}
 	}
+
+	#Rebuilding the State Apparatus
 	shared_focus = {
-		id = dnr_establishment_of_the_apparatus
-		icon = GFX_DPR_Establishment_of_the_Apparatus
-		x = 65
-		y = 4
+		id = DPR_rebuilding_the_state_apparatus
+		icon = GFX_DPR_Rebuilding_the_State_Apparatus
 		cost = 1
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		relative_position_id = DPR_socialism_on_the_rise
+		x = 25
+		y = 2
+
+		prerequisite = {
+			focus = DPR_socialism_on_the_rise
 		}
-		prerequisite = { focus = dnr_socialism_on_the_rise }
+
 		completion_reward = {
-			custom_effect_tooltip = DPR_establishment_of_the_apparatus
+			custom_effect_tooltip = DPR_rebuilding_the_state_apparatus_tt
+			add_ideas = fop_administrative_efficiency_functional_administrative_system
 		}
 	}
+
+	#Control the Media
 	shared_focus = {
-		id = dnr_one_right_party
-		icon = GFX_DPR_One_Right_Party
-		x = 65
-		y = 5
+		id = DPR_control_the_media
+		icon = GFX_DPR_Control_the_Media
 		cost = 3
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		relative_position_id = DPR_rebuilding_the_state_apparatus
+		x = -4
+		y = 1
+
+		prerequisite = {
+			focus = DPR_rebuilding_the_state_apparatus
 		}
-		prerequisite = { focus = dnr_establishment_of_the_apparatus }
-		completion_reward = {
-			add_popularity = {
-				ideology = ultranationalism
-				popularity = -0.1
-			}
-			add_popularity = {
-    		ideology = oligarchism
-    		popularity = -0.05
-			}
-			add_popularity = {
-    		ideology = conservatism
-    		popularity = -0.07
-			}
-		}
-	}
-	shared_focus = {
-		id = dnr_trustworthy_media
-		icon = GFX_DPR_Trustworthy_Media
-		x = 61
-		y = 5
-		cost = 5
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = dnr_establishment_of_the_apparatus }
+
 		completion_reward = {
 			country_event = {
 				id = dpr_vitrenko.15
 			}
+			add_ideas = fop_press_freedom_state
 		}
 	}
+
+	#Countrywide Agitation
 	shared_focus = {
-		id = dnr_patriotic_studying
-		icon = GFX_DPR_Patriotic_Studying
-		x = 69
-		y = 5
-		cost = 5
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+		id = DPR_countrywide_agitation
+		icon = GFX_DPR_Countrywide_Agitation
+		cost = 4
+
+		relative_position_id = DPR_control_the_media
+		x = -2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_control_the_media
 		}
-		prerequisite = { focus = dnr_establishment_of_the_apparatus }
-		completion_reward = {
-			add_ideas = education_propagandized
-		}
-	}
-	shared_focus = {
-		id = dnr_agitation_countrywide
-		icon = GFX_DPR_Agitation_Countrywide
-		x = 59
-		y = 6
-		cost = 7
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = dnr_trustworthy_media }
-		completion_reward = {
-			add_ideas = mass_media_propaganda
-		}
-	}
-	shared_focus = {
-		id = dnr_reconcile_orthodoxy_and_socialism
-		icon = GFX_DPR_Reconcile_Orthodoxy_and_Socialism
-		x = 65
-		y = 6
-		cost = 3
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = dnr_one_right_party }
-		prerequisite = { focus = dnr_trustworthy_media }
-		prerequisite = { focus = dnr_patriotic_studying }
+
 		completion_reward = {
 			add_popularity = {
 				ideology = socialism
-				popularity = 0.03
+				popularity = 0.20
 			}
-			add_ideas = DPR_soyuz_popa_i_komuniaki
 		}
 	}
+
+	#The Only Right Party
 	shared_focus = {
-		id = dnr_a_big_tent_concept
-		icon = GFX_DPR_A_Big_Tent_Concept
-		x = 63
-		y = 6
+		id = DPR_the_only_right_party
+		icon = GFX_DPR_The_Only_Right_Party
 		cost = 5
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		relative_position_id = DPR_rebuilding_the_state_apparatus
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = DPR_rebuilding_the_state_apparatus
 		}
-		prerequisite = { focus = dnr_trustworthy_media }
-		prerequisite = { focus = dnr_one_right_party }
+
 		completion_reward = {
-			custom_effect_tooltip = DPR_big_tent
+			add_ideas = fop_party_system_single_party
+			add_popularity = {
+				ideology = ultranationalism
+				popularity = -0.15
+			}
+			add_popularity = {
+				ideology = liberalism
+				popularity = -0.10
+			}
+			add_popularity = {
+				ideology = conservatism
+				popularity = -0.10
+			}
+		}
+	}
+
+	#'Big Tent' Concept
+	shared_focus = {
+		id = DPR_big_tent_concept
+		icon = GFX_DPR_Big_Tent_Concept
+		cost = 4
+
+		relative_position_id = DPR_the_only_right_party
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = DPR_control_the_media
+		}
+		prerequisite = {
+			focus = DPR_the_only_right_party
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = DPR_big_tent_tt
 			hidden_effect = {
-					set_party_name = { 
+				set_party_name = { 
 					ideology = ultranationalism
 					long_name = "SWPD-Nationalist"
 					name = "SWPD-N"
@@ -753,7 +952,7 @@
 					name = "SWPD-C"
 				}
 				set_party_name = { 
-					ideology = oligarchism
+					ideology = liberalism
 					long_name = "SWPD-Pushilinist"
 					name = "SWPD-P"
 				}
@@ -764,315 +963,502 @@
 				}
 				add_popularity = {
 					ideology = ultranationalism
-					popularity = 0.1
+					popularity = 0.10
 				}
 				add_popularity = {
-					ideology = oligarchism
+					ideology = liberalism
 					popularity = 0.05
 				}
 				add_popularity = {
 					ideology = conservatism
-					popularity = 0.1
+					popularity = 0.05
 				}
 			}
 		}
 	}
+
+	#Return of the Iron Fist
 	shared_focus = {
-		id = dnr_issue_of_state_language
-		icon = GFX_DPR_Issue_of_State_Language
-		x = 67
-		y = 6
-		cost = 3
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+		id = DPR_return_of_the_iron_fist
+		icon = GFX_DPR_Return_of_the_Iron_Fist
+		cost = 2
+
+		relative_position_id = DPR_big_tent_concept
+		x = -2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_countrywide_agitation
 		}
-		prerequisite = { focus = dnr_patriotic_studying }
-		prerequisite = { focus = dnr_one_right_party }
+		prerequisite = {
+			focus = DPR_big_tent_concept
+		}
+		prerequisite = {
+			focus = DPR_the_issue_of_state_language
+		}
+		prerequisite = {
+			focus = DPR_bright_new_generation
+		}
+		mutually_exclusive = {
+			focus = DPR_the_new_ottepel
+		}
+
+		completion_reward = {
+			add_country_leader_trait = steel_lady
+		}
+	}
+
+	#Patriotism Through Education
+	shared_focus = {
+		id = DPR_patriotism_through_education
+		icon = GFX_DPR_Patriotism_Through_Education
+		cost = 3
+
+		relative_position_id = DPR_rebuilding_the_state_apparatus
+		x = 4
+		y = 1
+
+		prerequisite = {
+			focus = DPR_rebuilding_the_state_apparatus
+		}
+
+		completion_reward = {
+			add_ideas = education_propagandized
+		}
+	}
+
+	#The Bright New Generation
+	shared_focus = {
+		id = DPR_the_bright_new_generation
+		icon = GFX_DPR_The_Bright_New_Generation
+		cost = 4
+
+		relative_position_id = DPR_patriotism_through_education
+		x = 2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_patriotism_through_education
+		}
+
+		completion_reward = {
+			add_ideas = DPR_detskiy_trud
+		}
+	}
+
+	#Reconcile Orthodoxy and Socialism
+	shared_focus = {
+		id = DPR_reconcile_orthodoxy_and_socialism
+		icon = GFX_DPR_Reconcile_Orthodoxy_and_Socialism
+		cost = 5
+
+		relative_position_id = DPR_rebuilding_the_state_apparatus
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = DPR_rebuilding_the_state_apparatus
+		}
+
+		completion_reward = {
+			add_popularity = {
+				ideology = socialism
+				popularity = 0.03
+			}
+			add_ideas = DPR_union_of_socialism_and_religion
+			add_ideas = fop_religious_rights_moralism
+		}
+	}
+
+	#The Issue of State Language
+	shared_focus = {
+		id = DPR_the_issue_of_state_language
+		icon = GFX_DPR_The_Issue_of_State_Language
+		cost = 4
+
+		relative_position_id = DPR_reconcile_orthodoxy_and_socialism
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = DPR_reconcile_orthodoxy_and_socialism
+		}
+		prerequisite = {
+			focus = DPR_patriotism_through_education
+		}
+
 		completion_reward = {
 			country_event = {
 				id = dpr_vitrenko.16
 			}
 		}
 	}
-	shared_focus = {
-		id = dnr_new_bright_generation
-		icon = GFX_DPR_New_Bright_Generation
-		x = 71
-		y = 6
-		cost = 5
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = dnr_patriotic_studying }
-		prerequisite = { focus = dnr_one_right_party }
-		completion_reward = {
-			add_ideas = DPR_detskiy_trud
-		}
-	}
-	shared_focus = {
-		id = dnr_return_to_iron_fist
-		icon = GFX_DPR_Return_to_Iron_Fist
-		x = 61
-		y = 7
-		cost = 2
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = dnr_agitation_countrywide }
-		prerequisite = { focus = dnr_a_big_tent_concept }
-		prerequisite = { focus = dnr_issue_of_state_language }
-		prerequisite = { focus = dnr_new_bright_generation }
 
-		mutually_exclusive = { focus = dnr_new_ottepel }
-		completion_reward = {
-			add_country_leader_trait = steel_lady
-		}
-	}
+	#The New 'Ottepel'
 	shared_focus = {
-		id = dnr_new_ottepel
-		icon = GFX_DPR_New_Ottepel
-		x = 69
-		y = 7
+		id = DPR_the_new_ottepel
+		icon = GFX_DPR_The_New_Ottepel
 		cost = 2
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = dnr_agitation_countrywide }
-		prerequisite = { focus = dnr_a_big_tent_concept }
-		prerequisite = { focus = dnr_issue_of_state_language }
-		prerequisite = { focus = dnr_new_bright_generation }
 
-		mutually_exclusive = { focus = dnr_return_to_iron_fist }
+		relative_position_id = DPR_the_issue_of_state_language
+		x = 2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_countrywide_agitation
+		}
+		prerequisite = {
+			focus = DPR_big_tent_concept
+		}
+		prerequisite = {
+			focus = DPR_the_issue_of_state_language
+		}
+		prerequisite = {
+			focus = DPR_bright_new_generation
+		}
+		mutually_exclusive = {
+			focus = DPR_return_of_the_iron_fist
+		}
+
 		completion_reward = {
-			add_country_leader_trait = khrushevna
+			add_country_leader_trait = khrushchevna
 		}
 	}
+
+	#Nostalgia for the Past
 	shared_focus = {
-		id = dnr_nostalgia_for_the_past
+		id = DPR_nostalgia_for_the_past
 		icon = GFX_DPR_Nostalgia_for_the_Past
-		x = 65
-		y = 8
 		cost = 2
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		relative_position_id = DPR_the_new_ottepel
+		x = -4
+		y = 1
+
+		prerequisite = {
+			focus = DPR_return_of_the_iron_fist
+			focus = DPR_the_new_ottepel
 		}
-		prerequisite = { focus = dnr_return_to_iron_fist focus = dnr_new_ottepel }
+
 		completion_reward = {
-			add_ideas = head_president
 			add_ideas = DPR_nostalgia
 		}
 	}
+
+
+	#The Future Awaits
 	shared_focus = {
-		id = dnr_the_future_awaits_us
-		icon = GFX_DPR_The_Future_Awaits_Us
-		x = 35
-		y = 10
+		id = DPR_the_future_awaits
+		icon = GFX_DPR_The_Future_Awaits
 		cost = 1
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		relative_position_id = DPR_nostalgia_for_the_past
+		x = -30
+		y = 1
+
+		prerequisite = {
+			focus = DPR_world_here_we_go
 		}
-		prerequisite = { focus = dnr_world_here_we_go }
-		prerequisite = { focus = dnr_socialist_paradise }
-		prerequisite = { focus = dnr_legacy_of_our_grandfathers }
-		prerequisite = { focus = dnr_nostalgia_for_the_past }
+		prerequisite = {
+			focus = DPR_socialist_paradise
+		}
+		prerequisite = {
+			focus = DPR_in_the_footsteps_of_our_grandfathers
+		}
+		prerequisite = {
+			focus = DPR_nostalgia_for_the_past
+		}
+
 		completion_reward = {
-			custom_effect_tooltip = dpr_the_future_awaits_us_tt
+			custom_effect_tooltip = DPR_the_future_awaits_tt
 			unlock_decision_category_tooltip = unification_of_ukraine
 		}
 	}
+
+	#Head South on the Dnepr
 	shared_focus = {
-		id = dnr_liberate_kharkov
-		icon = GFX_DPR_Liberate_Kharkov
-		x = 29
-		y = 11
+		id = DPR_head_south_on_the_dnepr
+		icon = GFX_DPR_Head_South_on_the_Dnepr
 		cost = 2
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		relative_position_id = DPR_the_future_awaits
+		x = -2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_the_future_awaits
 		}
-		prerequisite = { focus = dnr_the_future_awaits_us }
+
 		completion_reward = {
-			custom_effect_tooltip = dpr_liberate_kharkov_tt
+			custom_effect_tooltip = DPR_head_south_on_the_dnepr_tt
+		}
+
+		bypass = {
+			ZAP = { exists = no }
 		}
 	}
+
+	#Subjugate the Tavrian Steppe
 	shared_focus = {
-		id = dnr_march_on_dnepropetrovsk
-		icon = GFX_DPR_March_on_Dnepropetrovsk
-		x = 33
-		y = 11
+		id = DPR_subjugate_the_tavrian_steppe
+		icon = GFX_DPR_Subjugate_the_Tavrian_Steppe
 		cost = 2
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		relative_position_id = DPR_head_south_on_the_dnepr
+		x = 0
+		y = 2
+
+		prerequisite = {
+			focus = DPR_head_south_on_the_dnepr
 		}
-		prerequisite = { focus = dnr_the_future_awaits_us }
+		prerequisite = {
+			focus = DPR_march_on_dnepropetrovsk
+		}
+
 		completion_reward = {
-			custom_effect_tooltip = dpr_march_on_dnepropetrovsk_tt
+			custom_effect_tooltip = DPR_subjugate_the_tavrian_steppe_tt
+		}
+
+		bypass = {
+			OR = {
+				KHE = {
+					is_in_faction_with = DPR
+				}
+				KHE = { exists = no }
+			}
 		}
 	}
+
+	#The Crimean Question
 	shared_focus = {
-		id = dnr_at_the_heart_of_ruin
-		icon = GFX_DPR_At_the_Heart_of_the_Ruin
-		x = 31
-		y = 12
-		cost = 2
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+		id = DPR_the_crimean_question
+		icon = GFX_DPR_The_Crimean_Question
+		cost = 1
+
+		relative_position_id = DPR_subjugate_the_tavrian_steppe
+		x = 2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_subjugate_the_tavrian_steppe
 		}
-		prerequisite = { focus = dnr_liberate_kharkov }
-		prerequisite = { focus = dnr_march_on_dnepropetrovsk }
+
 		completion_reward = {
-			custom_effect_tooltip = dpr_at_the_heart_of_ruin_tt
+			custom_effect_tooltip = DPR_the_crimean_question_tt
 		}
 	}
+
+	#Ah, Odessa, a Pearl by the Sea
 	shared_focus = {
-		id = dnr_approaching_podolye
-		icon = GFX_DPR_Approaching_Podolye
-		x = 31
-		y = 13
-		cost = 2
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+		id = DPR_ah_odessa_a_pearl_by_the_sea
+		icon = GFX_DPR_Ah_Odessa_a_Pearl_by_the_Sea
+		cost = 3
+
+		relative_position_id = DPR_subjugate_the_tavrian_steppe
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = DPR_subjugate_the_tavrian_steppe
 		}
-		prerequisite = { focus = dnr_at_the_heart_of_ruin }
+
 		completion_reward = {
-			custom_effect_tooltip = dpr_approaching_podolye_tt
+			custom_effect_tooltip = DPR_ah_odessa_a_pearl_by_the_sea_tt
 		}
 	}
+
+	#Legacy of Kirov
 	shared_focus = {
-		id = dnr_legacy_of_kirov
+		id = DPR_legacy_of_kirov
 		icon = GFX_DPR_Legacy_of_Kirov
-		x = 38
-		y = 14
-		cost = 2
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+		cost = 4
+
+		relative_position_id = DPR_ah_odessa_a_pearl_by_the_sea
+		x = 0
+		y = 1
+
+		prerequisite = {
+			focus = DPR_ah_odessa_a_pearl_by_the_sea
 		}
+
+		completion_reward = {
+			custom_effect_tooltip = DPR_legacy_of_kirov_tt
+		}
+
 		bypass = {
 			KIR = {
 				is_in_faction_with = ZAK
 			}
 		}
-		prerequisite = { focus = dnr_akh_odessa_zhemchuzhyna_u_moria }
-		prerequisite = { focus = dnr_crimean_issue }
-		completion_reward = {
-			custom_effect_tooltip = dpr_legacy_of_kirov_tt
-		}
 	}
+
+	#Liberate Kharkov
 	shared_focus = {
-		id = dnr_a_blow_to_zapadentsy
-		icon = GFX_DPR_A_Blow_to_Zadapentsy
-		x = 31
-		y = 14
+		id = DPR_liberate_kharkov
+		icon = GFX_DPR_Liberate_Kharkov
 		cost = 2
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		relative_position_id = DPR_the_future_awaits
+		x = 2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_the_future_awaits
 		}
-		prerequisite = { focus = dnr_approaching_podolye }
+
 		completion_reward = {
-			custom_effect_tooltip = dpr_a_blow_to_zapadentsy_tt
+			custom_effect_tooltip = DPR_liberate_kharkov_tt
 		}
-	}
-	shared_focus = {
-		id = dnr_go_south_the_dnepr
-		icon = GFX_DPR_Go_South_the_Dnepr
-		x = 38
-		y = 11
-		cost = 2
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = dnr_the_future_awaits_us }
-		completion_reward = {
-			custom_effect_tooltip = dpr_go_south_the_dnepr_tt
-		}
-	}
-	shared_focus = {
-		id = dnr_to_kherson
-		icon = GFX_DPR_To_Kherson
-		x = 38
-		y = 12
-		cost = 2
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
-		}
+
 		bypass = {
-			KHE = {
-				is_in_faction_with = DPR
-			}
-		}
-		prerequisite = { focus = dnr_go_south_the_dnepr }
-		completion_reward = {
-			custom_effect_tooltip = dpr_to_kherson_tt
+			KHA = { exists = no }
 		}
 	}
+
+	#March on Dnepropetrovsk
 	shared_focus = {
-		id = dnr_crimean_issue
-		icon = GFX_DPR_Crimean_Issue
-		x = 36
-		y = 13
+		id = DPR_march_on_dnepropetrovsk
+		icon = GFX_DPR_March_on_Dnepropetrovsk
 		cost = 2
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		relative_position_id = DPR_liberate_kharkov
+		x = -2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_head_south_on_the_dnepr
+			focus = DPR_liberate_kharkov
 		}
-		prerequisite = { focus = dnr_to_kherson }
+
 		completion_reward = {
-			custom_effect_tooltip = dpr_crimea_issue_tt
+			custom_effect_tooltip = DPR_march_on_dnepropetrovsk_tt
+		}
+
+		bypass = {
+			DNI = { exists = no }
 		}
 	}
+
+	#At the Heart of Ruin
 	shared_focus = {
-		id = dnr_akh_odessa_zhemchuzhyna_u_moria
-		icon = GFX_DPR_Akh_Odessa_Zhemchuzhyna_U_Moria
-		x = 40
-		y = 13
-		cost = 2
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = dnr_to_kherson }
-		completion_reward = {
-			custom_effect_tooltip = dpr_akh_odessa_zhemchuzhyna_u_moria_tt
-		}
-	}
-	shared_focus = {
-		id = dnr_a_shining_whole_ukraine
-		icon = GFX_DPR_A_Shining_Whole_Ukraine
-		x = 32
-		y = 16
+		id = DPR_at_the_heart_of_ruin
+		icon = GFX_DPR_At_the_Heart_of_Ruin
 		cost = 3
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+
+		relative_position_id = DPR_march_on_dnepropetrovsk
+		x = 2
+		y = 1
+
+		prerequisite = {
+			focus = DPR_march_on_dnepropetrovsk
 		}
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = vitrenko_total_s_victory
-				vitrenko_total_s_victory = yes
-			}
+		prerequisite = {
+			focus = DPR_liberate_kharkov
 		}
-		prerequisite = { focus = dnr_a_blow_to_zapadentsy }
-		prerequisite = { focus = dnr_legacy_of_kirov }
-		mutually_exclusive = { focus = dnr_renewal_of_union_system }
+
 		completion_reward = {
-			custom_effect_tooltip = dpr_a_shining_whole_ukraine_tt
+			custom_effect_tooltip = DPR_at_the_heart_of_ruin_tt
 		}
 	}
+
+	#Approaching Podolye
 	shared_focus = {
-		id = dnr_renewal_of_union_system
-		icon = GFX_DPR_Renewal_of_Union_System
-		x = 38
-		y = 16
-		cost = 5
-		search_filters = {
-			shared_focus_FILTER_INDUSTRY
+		id = DPR_approaching_podolye
+		icon = GFX_DPR_Approaching_Podolye
+		cost = 4
+
+		relative_position_id = DPR_at_the_heart_of_ruin
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = DPR_at_the_heart_of_ruin
 		}
+
+		completion_reward = {
+			custom_effect_tooltip = DPR_approaching_podolye_tt
+		}
+	}
+
+	#A Blow to Zapadentsy
+	shared_focus = {
+		id = DPR_a_blow_to_zapadentsy
+		icon = GFX_DPR_A_Blow_to_Zapadentsy
+		cost = 5
+
+		relative_position_id = DPR_approaching_podolye
+		x = 0
+		y = 1
+
+		prerequisite = {
+			focus = DPR_approaching_podolye
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = DPR_a_blow_to_zapadentsy_tt
+		}
+	}
+
+	#A Shining, Whole Ukraine
+	shared_focus = {
+		id = DPR_a_shining_whole_ukraine
+		icon = GFX_DPR_A_Shining_Whole_Ukraine
+		cost = 10
+
+		relative_position_id = DPR_a_blow_to_zapadentsy
+		x = -6
+		y = 2
+
+		prerequisite = {
+			focus = DPR_legacy_of_kirov
+		}
+		prerequisite = {
+			focus = DPR_a_blow_to_zapadentsy
+		}
+		mutually_exclusive = {
+			focus = DPR_renewal_of_the_union_system
+		}
+
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = vitrenko_total_s_victory
 				vitrenko_total_s_victory = yes
 			}
 		}
-		prerequisite = { focus = dnr_a_blow_to_zapadentsy }
-		prerequisite = { focus = dnr_legacy_of_kirov }
-		mutually_exclusive = { focus = dnr_a_shining_whole_ukraine }
+
 		completion_reward = {
-			custom_effect_tooltip = dpr_renewal_of_union_system_tt
+			custom_effect_tooltip = DPR_a_shining_whole_ukraine_tt
+		}
+	}
+
+	#Renewal of the Union System
+	shared_focus = {
+		id = DPR_renewal_of_the_union_system
+		icon = GFX_DPR_Renewal_of_the_Union_System
+		cost = 10
+
+		relative_position_id = DPR_a_blow_to_zapadentsy
+		x = 0
+		y = 2
+
+		prerequisite = {
+			focus = DPR_legacy_of_kirov
+		}
+		prerequisite = {
+			focus = DPR_a_blow_to_zapadentsy
+		}
+		mutually_exclusive = {
+			focus = DPR_a_shining_whole_ukraine
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = vitrenko_total_s_victory
+				vitrenko_total_s_victory = yes
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = DPR_renewal_of_the_union_system_tt
 		}
 	}

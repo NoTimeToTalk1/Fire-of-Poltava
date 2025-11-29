@@ -324,6 +324,7 @@
 
 		completion_reward = {
 			add_ideas = AFU_ready_military
+			add_ideas = fop_military_professionalism_professional_army
 		}
     }
 
@@ -589,6 +590,11 @@
 			news_event = newsfop.4
 			country_event = afu.10
 		}
+
+		allow_branch = {
+			DPR = { exists = no }
+			LPR = { exists = no }
+		}
 	}
 
 	#Begin Integration
@@ -785,7 +791,7 @@
 
 		completion_reward = {
 			add_political_power = 50
-			remove_ideas = AFU_millitary_administration
+			remove_ideas = AFU_military_administration
 			remove_ideas = AFU_martial_law
 			hidden_effect = {
 				if = {

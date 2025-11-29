@@ -169,7 +169,7 @@ news_event = { #afu win poltava
 		add_political_power = 10
 	}
 }
-news_event = { #rdk win pidoraha
+news_event = { #RVC win putin
 	id = cap.13
 	title = cap.13.t
 	desc = cap.13.d
@@ -180,15 +180,16 @@ news_event = { #rdk win pidoraha
 	
 	option = {
 		name = cap.13.a
+		
 		RVC = {
 			set_cosmetic_tag = RDK_russia_united
 		}
-				if = {
-			limit = {is_ai = no}
-		    set_global_flag = super_rdk_win
-            set_global_flag = Super_Event_Visible
+		if = {
+			limit = { is_ai = no }
+			set_global_flag = super_rdk_win
+			set_global_flag = Super_Event_Visible
 			play_song = "superev_rdk_win"
-			}
+		}
 	}
 }
 country_event = { #opz win zap

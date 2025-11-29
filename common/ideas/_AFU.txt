@@ -7,16 +7,14 @@ ideas = {
 			picture = AFU_apathy_of_the_population
 
 			modifier = {
-				war_support_factor = -0.4
-				monthly_population = -0.3
-				weekly_manpower = -300
+				war_support_factor = -0.05
+				recruitable_population_factor = -0.15
 			}
 
 		    cancel = {
-				OR = {
-					has_war_with = AFU
-					has_war_with = DPR
-				}
+				has_war_with = AFU
+				has_war_with = DPR
+				has_war_with = LPR
 		    }
 	    }
 
@@ -50,7 +48,7 @@ ideas = {
 			modifier = {
 				consumer_goods_factor = 0.1
 				industrial_capacity_factory = 0.1
-				production_factory_efficiency_gain_factor = -0.1
+				production_factory_efficiency_gain_factor = -0.15
                 production_factory_max_efficiency_factor = -0.05
 				production_speed_industrial_complex_factor = 0.1
 				production_speed_rail_way_factor = 0.05
@@ -95,7 +93,7 @@ ideas = {
 			picture = AFU_continuation_of_emergency_state
 
 			modifier = {
-               stability_factor = -0.1
+               stability_weekly = -0.02
 			}
 		}
 
@@ -105,8 +103,8 @@ ideas = {
 
 			modifier = {
                industrial_capacity_factory = 0.15
-			   production_factory_max_efficiency_factor = 0.15
-			   production_lack_of_resource_penalty_factor = -0.2
+			   production_factory_max_efficiency_factor = 0.05
+			   production_lack_of_resource_penalty_factor = -0.1
 			}
 
 			equipment_bonus = {
@@ -122,7 +120,7 @@ ideas = {
 			picture = AFU_harsh_quotas
 
 			modifier = {
-				stability_factor = -0.1
+				stability_factor = 0.1
 				consumer_goods_factor = -0.1
 			}
 		}
@@ -134,7 +132,7 @@ ideas = {
 			modifier = {
 				industrial_capacity_factory = -0.25
 				industrial_capacity_dockyard = -0.25
-				political_power_gain = -0.25
+				political_power_gain = -0.5
 			}
 		}
 
@@ -155,9 +153,9 @@ ideas = {
 			picture = AFU_bezlad
 
 			modifier = {
-				stability_factor = -0.25
+				stability_factor = -0.3
 				consumer_goods_factor = 0.2
-				political_power_cost = 0.5
+				political_power_cost = -0.5
 			}
 		}
 
@@ -207,13 +205,6 @@ ideas = {
 				resistance_activity = -0.25
 				compliance_growth_on_our_occupied_states = -0.2
 			}
-
-			available = {
-				OR = {
-					country_exists = DPR
-					country_exists = LPR
-				}
-			}
 		}
 
 		AFU_improved_training_methods = {
@@ -230,13 +221,6 @@ ideas = {
 				army_org_regain = 0.1
 				pocket_penalty = -0.1
 				land_reinforce_rate = 0.05
-			}
-
-			available = {
-				OR = {
-					country_exists = DPR
-					country_exists = LPR
-				}
 			}
 		}
 
@@ -256,13 +240,6 @@ ideas = {
 				local_supply_impact_factor = -0.5
 				experience_loss_factor = 0.15
 			}
-
-			available = {
-				OR = {
-					country_exists = DPR
-					country_exists = LPR
-				}
-			}
 		}
 
 		AFU_ce_baza_ce_genshtab = {
@@ -274,13 +251,6 @@ ideas = {
 		        planning_speed = 0.1
 		        army_leader_start_level = 1
 		        army_leader_start_planning_level = 1
-			}
-
-			available = {
-				OR = {
-					country_exists = DPR
-					country_exists = LPR
-				}
 			}
 		}
 
@@ -299,10 +269,8 @@ ideas = {
 			}
 
 			available = {
-				OR = {
-					country_exists = DPR
-					country_exists = LPR
-				}
+				country_exists = DPR
+				country_exists = LPR
 			}
 		}
 
@@ -321,10 +289,8 @@ ideas = {
 			}
 
 			available = {
-				OR = {
-					country_exists = DPR
-					country_exists = LPR
-				}
+				country_exists = DPR
+				country_exists = LPR
 			}
 		}
 
@@ -782,6 +748,7 @@ ideas = {
 				production_factory_efficiency_gain_factor = 0.1
 			}
 		}
+
 		AFU_savchenko_social_package_1 = {
 			modifier = {
 				political_power_cost = 0.05
@@ -896,7 +863,7 @@ ideas = {
 			traits = { domestic_company }
 
 			available = {
-				has_country_flag = AFU_luhansk_chemical_complex
+				has_completed_focus = AFU_luhansk_chemical_industry
 			}
 
 			cost = 25

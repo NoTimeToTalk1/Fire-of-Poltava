@@ -19,10 +19,11 @@ NDefines.NDiplomacy.DIPLOMACY_REQUEST_EXPIRY_DAYS = 30
 NDefines.NDiplomacy.TRUCE_PERIOD_AFTER_KICKING_FROM_FACTION = 30				-- Truce period after kicking someone from faction in days.
 NDefines.NDiplomacy.NUM_DAYS_TO_ENABLE_KICKING_NEW_MEMBERS_OF_FACTION = 90		-- Number of days before being able to kick a new member of faction
 NDefines.NDiplomacy.NUM_DAYS_TO_ENABLE_REINVITE_KICKED_NATIONS = 60				-- Number of days before being able to re invite a kicked nation to your faction
-NDefines.NDiplomacy.POLITICAL_POWER_LOWER_CAP = -500.0
-NDefines.NDiplomacy.POLITICAL_POWER_UPPER_CAP = 2000.0
 
-NDefines.NCountry.POPULATION_YEARLY_GROWTH_BASE = -0.00675 -- basic population growth per year, used for monthly manpower gain
+NDefines.NDiplomacy.VOLUNTEERS_DIVISIONS_REQUIRED = 6			-- This many divisons are required for the country to be able to send volunteers.
+
+
+NDefines.NCountry.POPULATION_YEARLY_GROWTH_BASE = -0.006		-- basic population growth per year, used for monthly manpower gain
 
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 30						-- Events are checked every X day per country or state (1 is ideal, but CPU heavy)
 
@@ -126,5 +127,3 @@ NDefines_Graphics.NGraphics.MINIMUM_PROVINCE_SIZE_IN_PIXELS = 4			-- Provinces t
 
 NDefines_Graphics.NFrontend.CAMERA_MIN_HEIGHT = 30.0
 NDefines_Graphics.NFrontend.CAMERA_MAX_HEIGHT = 3800.0
-
-NDefines.NDiplomacy.VOLUNTEERS_DIVISIONS_REQUIRED = 5

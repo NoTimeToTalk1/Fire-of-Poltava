@@ -50,23 +50,44 @@ DPR_request_russian_volunteers_category = {
 	}
 }
 
-DPR_verkhovna_duma_category = {
-	icon = GFX_decision_category_duma
+##################
+###  VITRENKO  ###
+##################
 
-	priority = 1000
+DPR_unification_of_ukraine_category = {
+	icon = GFX_decision_category_generic_military_operations
 
 	allowed = {
 		original_tag = DPR
 	}
 
 	visible = {
-		has_completed_focus = DPR_beginning_of_a_new_era
+		has_completed_focus = DPR_the_future_awaits 
+		NOT = {
+			has_country_flag = DPR_vitrenko_reunited
+		}
+	}
+}
+
+DPR_state_construction_category = {
+	icon = GFX_decision_category_generic_military_operations
+
+	allowed = {
+		original_tag = DPR
 	}
 
-	visible_when_empty = yes
-
-	scripted_gui = DPR_duma_scripted_gui
+	visible = {
+		OR = {
+			has_completed_focus = DPR_a_shining_whole_ukraine
+			has_completed_focus = DPR_renewal_of_the_union_system 
+		}
+		has_country_flag = DPR_vitrenko_reunited
+	}
 }
+
+#################
+###  LUHANSK  ###
+#################
 
 DPR_elections_category = {
 	icon = usa_congress
@@ -154,6 +175,28 @@ icon = GFX_decision_category_generic_civil_support
 		tag = LPR
 		has_completed_focus = lpr_let_daynego_come_up_with_something
 	}
+}
+
+################
+###  GIRKIN  ###
+################
+
+DPR_verkhovna_duma_category = {
+	icon = GFX_decision_category_duma
+
+	priority = 1000
+
+	allowed = {
+		original_tag = DPR
+	}
+
+	visible = {
+		has_completed_focus = DPR_beginning_of_a_new_era
+	}
+
+	visible_when_empty = yes
+
+	scripted_gui = DPR_duma_scripted_gui
 }
 
 girkin_invite_cossaks_decisions = {
@@ -270,6 +313,10 @@ icon = GFX_decision_category_russian_empire
 	}
 }
 
+################
+###  PASEKA  ###
+################
+
 DPR_execution_of_hardliners_decisions = {
 icon = GFX_decision_category_generic_civil_support
 
@@ -313,35 +360,4 @@ icon = GFX_decision_category_generic_civil_support
 	}
 	
 	visible_when_empty = yes
-}
-
-DPR_putting_down_the_unrest = {
-	icon = GFX_decision_category_generic_civil_support
-
-	allowed = {
-		tag = DPR
-	}
-
-	visible = {
-		tag = DPR
-		has_country_flag = DPR_girkin_crackdown
-		NOT = {
-			every_owned_state = {
-				is_demilitarized_zone = no
-			}
-		}
-	}
-}
-
-DPR_invite_cossack_leaders = {
-	icon = GFX_decision_category_generic_civil_support
-
-	allowed = {
-		tag = DPR
-	}
-
-	visible = {
-		tag = DPR
-		has_country_flag = DPR_girkin_cossacks
-	}
 }

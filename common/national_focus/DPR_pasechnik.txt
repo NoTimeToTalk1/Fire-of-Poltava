@@ -14,26 +14,19 @@ shared_focus = {
 		add_manpower = 300
 		add_equipment_to_stockpile = {
 			type = artillery_equipment
-   
 			amount = 300
-   
 			producer = EUN
 		}
 		add_equipment_to_stockpile = {
 			type = motorized_equipment
-   
 			amount = 300
-   
 			producer = EUN
 		}
 		add_equipment_to_stockpile = {
 			type = drone_0_equipment
-   
 			amount = 300
-   
 			producer = EUN
 		}
-			
 	}
 }
 
@@ -52,7 +45,6 @@ shared_focus = {
 		custom_effect_tooltip = DPR_referendum_of_ii_language_status_tt
 		add_political_power = 10
 		add_ideas = fop_ethnic_minorities_cultural_autonomy
-			
 	}
 }
 
@@ -82,7 +74,6 @@ shared_focus = {
 			long_name = "People-Citizens' Movement"
 			name = "PCM"
 		}
-			
 		add_country_leader_role = {
 			character = DNR_zhuravlov
 			promote_leader = yes
@@ -104,24 +95,6 @@ shared_focus = {
 	}
 }
 
-#Establish Polling Stations
-shared_focus = {
-	id = DPR_establish_polling_stations
-	icon = GFX_DPR_establish_polling_stations
-	cost = 3
-
-	x = 19
-	y = 14
-
-	prerequisite = { focus = DPR_cosmetical_preparations  }
-
-	completion_reward = {
-		add_political_power = 10
-			
-			
-	}
-}
-
 #I have a Dream
 shared_focus = {
 	id = DPR_i_have_a_dream
@@ -135,7 +108,6 @@ shared_focus = {
 
 	completion_reward = {
 		custom_effect_tooltip = DPR_i_have_a_dream_tt
-		add_stability = 0.1	
 	}
 }
 
@@ -166,7 +138,6 @@ shared_focus = {
 
 	completion_reward = {
 		custom_effect_tooltip = DPR_kick_russian_boot_out_of_our_head_tt
-		add_stability = 0.1
 	}
 }
 
@@ -202,23 +173,17 @@ shared_focus = {
 		add_political_power = 10
 		add_equipment_to_stockpile = {
 			type = artillery_equipment
-   
 			amount = 250
-   
 			producer = EUN
 		}
 		add_equipment_to_stockpile = {
 			type = motorized_equipment
-   
 			amount = 10
-   
 			producer = EUN
 		}
 		add_equipment_to_stockpile = {
 			type = drone_0_equipment
-   
 			amount = 300
-   
 			producer = EUN
 		}
 	}
@@ -234,7 +199,7 @@ shared_focus = {
 	y = 1
 
 	completion_reward = {
-		add_stability = 0.1
+		###
 	}
 }
 
@@ -250,7 +215,6 @@ shared_focus = {
 	prerequisite = { focus = DPR_rethinking_and_conclusions }
 
 	completion_reward = {
-		add_political_power = 10
 		add_ideas = pasek_resuscitation_of_the_economy
 	}
 }
@@ -265,7 +229,6 @@ shared_focus = {
 	y = 1
 
 	completion_reward = {
-		add_political_power = 5
 		add_timed_idea = {
 			idea = pasek_euphoria_after_victory
 			days = 180
@@ -279,7 +242,6 @@ shared_focus = {
 				}
 			}
 		}
-			
 	}
 }
 
@@ -301,7 +263,6 @@ shared_focus = {
 			ideology = conservatism
 			popularity = 0.15
 		}
-			
 	}
 }
 
@@ -966,13 +927,13 @@ shared_focus = {
 shared_focus = {
 	id = DPR_integration_of_our_industry
 	icon = GFX_DPR_integration_of_our_industry
+	cost = 3
+
 	x = 28
 	y = 4
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_INDUSTRY
-	}
-	prerequisite = { focus = DPR_russians_will_pay  }
+
+	prerequisite = { focus = DPR_russians_will_pay }
+
 	completion_reward = {
 		random_owned_controlled_state = {
 			limit = {
@@ -988,8 +949,6 @@ shared_focus = {
 				level = 1
 				instant_build = yes
 			}
-			
-			
 		}
 	}
 }
@@ -998,17 +957,15 @@ shared_focus = {
 shared_focus = {
 	id = DPR_enslaved_but_ensured
 	icon = GFX_DPR_enslaved_but_ensured
+	cost = 3
+
 	x = 28
 	y = 5
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_INDUSTRY
-	}
-	prerequisite = { focus = DPR_integration_of_our_industry  }
+
+	prerequisite = { focus = DPR_integration_of_our_industry }
+
 	completion_reward = {
 		add_political_power = 60
-			
-			
 	}
 }
 
@@ -1016,19 +973,20 @@ shared_focus = {
 shared_focus = {
 	id = DPR_atract_the_perspectives
 	icon = GFX_DPR_atract_the_perspectives
+	cost = 3
+
 	x = 30
 	y = 3
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_INDUSTRY
-	}
+
 	available = {
 		OR = {
 			has_completed_focus = DPR_stay_on_our_boat
 			has_completed_focus = DPR_open_the_window
 		}
 	}
-	prerequisite = { focus = DPR_economic_decisions  }
+
+	prerequisite = { focus = DPR_economic_decisions }
+
 	completion_reward = {
 		add_ideas = fop_taxes_progressive
 		random_owned_controlled_state = {
@@ -1045,8 +1003,6 @@ shared_focus = {
 				level = 1
 				instant_build = yes
 			}
-			
-			
 		}
 	}
 }
@@ -1055,13 +1011,13 @@ shared_focus = {
 shared_focus = {
 	id = DPR_reopen_factories
 	icon = GFX_DPR_reopen_factories
+	cost = 4
+	
 	x = 30
 	y = 4
-	cost = 4
-	search_filters = {
-		FOCUS_FILTER_INDUSTRY
-	}
-	prerequisite = { focus = DPR_atract_the_perspectives  }
+
+	prerequisite = { focus = DPR_atract_the_perspectives }
+
 	completion_reward = {
 		random_owned_controlled_state = {
 			limit = {
@@ -1077,8 +1033,6 @@ shared_focus = {
 				level = 1
 				instant_build = yes
 			}
-			
-			
 		}
 	}
 }
@@ -1087,20 +1041,18 @@ shared_focus = {
 shared_focus = {
 	id = DPR_favorable_conditions
 	icon = GFX_DPR_favorable_conditions
+	cost = 4
+	
 	x = 30
 	y = 5
-	cost = 4
-	search_filters = {
-		FOCUS_FILTER_INDUSTRY
-	}
-	prerequisite = { focus = DPR_reopen_factories  }
+
+	prerequisite = { focus = DPR_reopen_factories }
+
 	completion_reward = {
 		add_ideas = fop_unemployment_subsidies_moderate
 		add_ideas = fop_working_hours_8
 		add_ideas = fop_minimum_wage_moderate
 		add_stability = 0.1
-			
-			
 	}
 }
 
@@ -1108,13 +1060,13 @@ shared_focus = {
 shared_focus = {
 	id = DPR_invite_old_richies
 	icon = GFX_DPR_invite_old_richies
+	cost = 4
+
 	x = 30
 	y = 6
-	cost = 4
-	search_filters = {
-		FOCUS_FILTER_INDUSTRY
-	}
-	prerequisite = { focus = DPR_favorable_conditions  }
+
+	prerequisite = { focus = DPR_favorable_conditions }
+
 	completion_reward = {
 		random_owned_controlled_state = {
 			limit = {
@@ -1130,7 +1082,6 @@ shared_focus = {
 				level = 1
 				instant_build = yes
 			}
-			
 		}
 	}
 }
@@ -1139,17 +1090,16 @@ shared_focus = {
 shared_focus = {
 	id = DPR_not_so_bad_place
 	icon = GFX_DPR_not_so_bad_place
+	cost = 3
+
 	x = 30
 	y = 7
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_INDUSTRY
-	}
-	prerequisite = { focus = DPR_invite_old_richies  }
+
+	prerequisite = { focus = DPR_invite_old_richies }
+
 	completion_reward = {
 		add_political_power = 50
 		add_ideas = fop_immigration_encouraged
-			
 	}
 }
 
@@ -1157,16 +1107,13 @@ shared_focus = {
 shared_focus = {
 	id = DPR_time_to_go_on
 	icon = GFX_DPR_time_to_go_on
+	cost = 4
+
 	x = 35
 	y = 1
-	cost = 4
-	search_filters = {
-		FOCUS_FILTER_WAR_SUPPORT
-	}
+
 	completion_reward = {
 		add_war_support = 0.1
-			
-			
 	}
 }
 
@@ -1174,20 +1121,19 @@ shared_focus = {
 shared_focus = {
 	id = DPR_demining
 	icon = GFX_DPR_demining
+	cost = 4
+
 	x = 33
 	y = 2
-	cost = 4
-	search_filters = {
-		FOCUS_FILTER_STABILITY
-	}
-	prerequisite = { focus = DPR_time_to_go_on  }
+
+	prerequisite = { focus = DPR_time_to_go_on }
+
 	completion_reward = {
 		add_war_support = 0.1
 		add_timed_idea = {
 			idea = pasek_demining
 			days = 180
 		}
-			
 	}
 }
 
@@ -1195,20 +1141,19 @@ shared_focus = {
 shared_focus = {
 	id = DPR_unbuild_fortifications
 	icon = GFX_DPR_unbuild_fortifications
+	cost = 4
+
 	x = 35
 	y = 2
-	cost = 4
-	search_filters = {
-		FOCUS_FILTER_STABILITY
-	}
-	prerequisite = { focus = DPR_time_to_go_on  }
+
+	prerequisite = { focus = DPR_time_to_go_on }
+
 	completion_reward = {
 		add_stability = 0.1
 		add_timed_idea = {
 			idea = pasek_rebuild_the_fortifications
 			days = 300
 		}
-			
 	}
 }
 
@@ -1216,17 +1161,16 @@ shared_focus = {
 shared_focus = {
 	id = DPR_secure_our_border
 	icon = GFX_DPR_secure_our_border
+	cost = 4
+
 	x = 37
 	y = 2
-	cost = 4
-	search_filters = {
-		FOCUS_FILTER_STABILITY
-	}
-	prerequisite = { focus = DPR_time_to_go_on  }
+
+	prerequisite = { focus = DPR_time_to_go_on }
+
 	completion_reward = {
 		add_war_support = 0.1
 		add_ideas = pasek_improved_security_services
-			
 	}
 }
 
@@ -1234,20 +1178,21 @@ shared_focus = {
 shared_focus = {
 	id = DPR_safe_state
 	icon = GFX_DPR_safe_state
+	cost = 5
+
 	x = 35
 	y = 3
-	cost = 5
-	search_filters = {
-		FOCUS_FILTER_STABILITY
-	}
-	prerequisite = { focus = DPR_demining  } prerequisite = { focus = DPR_unbuild_fortifications  } prerequisite = { focus = DPR_secure_our_border  }
+
+	prerequisite = { focus = DPR_demining }
+	prerequisite = { focus = DPR_unbuild_fortifications }
+	prerequisite = { focus = DPR_secure_our_border }
+
 	completion_reward = {
 		add_stability = 0.1
 		swap_ideas = {
 			remove_idea = pasek_improved_security_services
 			add_idea = pasek_improved_security_services_2
 		}
-			
 	}
 }
 
@@ -1255,24 +1200,24 @@ shared_focus = {
 shared_focus = {
 	id = DPR_we_and_older_brother
 	icon = GFX_DPR_we_and_older_brother
+	cost = 4
+	
 	x = 33
 	y = 5
-	cost = 4
-	search_filters = {
-		FOCUS_FILTER_WAR_SUPPORT
-	}
+
 	available = {
 		has_completed_focus = DPR_stay_on_our_boat
 	}
-	prerequisite = { focus = DPR_reforms  }
-	mutually_exclusive = { focus = DPR_our_own_production  }
+
+	prerequisite = { focus = DPR_reforms }
+	mutually_exclusive = { focus = DPR_our_own_production }
+
 	completion_reward = {
 		add_war_support = 0.1
 		swap_ideas = {
 			remove_idea = pasek_new_army
 			add_idea = pasek_russian_podsos
 		}
-			
 	}
 }
 
@@ -1280,17 +1225,16 @@ shared_focus = {
 shared_focus = {
 	id = DPR_trainings_with_csto
 	icon = GFX_DPR_trainings_with_csto
+	cost = 4
+
 	x = 33
 	y = 6
-	cost = 4
-	search_filters = {
-		FOCUS_FILTER_WAR_SUPPORT
-	}
-	prerequisite = { focus = DPR_we_and_older_brother  }
+
+	prerequisite = { focus = DPR_we_and_older_brother }
+
 	completion_reward = {
 		army_experience = 10
 		add_ideas = pasek_russian_podsos_odkb
-			
 	}
 }
 
@@ -1298,13 +1242,13 @@ shared_focus = {
 shared_focus = {
 	id = DPR_form_military_production_unit
 	icon = GFX_DPR_form_military_production_unit
+	cost = 4
+
 	x = 33
 	y = 7
-	cost = 4
-	search_filters = {
-		FOCUS_FILTER_WAR_SUPPORT
-	}
-	prerequisite = { focus = DPR_trainings_with_csto  }
+
+	prerequisite = { focus = DPR_trainings_with_csto }
+
 	completion_reward = {
 		random_owned_controlled_state = {
 			limit = {
@@ -1320,8 +1264,6 @@ shared_focus = {
 				level = 1
 				instant_build = yes
 			}
-			
-			
 		}
 	}
 }
@@ -1330,20 +1272,19 @@ shared_focus = {
 shared_focus = {
 	id = DPR_russian_army_presence
 	icon = GFX_DPR_russian_army_presence
+	cost = 5
+
 	x = 33
 	y = 8
-	cost = 5
-	search_filters = {
-		FOCUS_FILTER_MANPOWER
-	}
-	prerequisite = { focus = DPR_form_military_production_unit  }
+
+	prerequisite = { focus = DPR_form_military_production_unit }
+
 	completion_reward = {
 		add_manpower = 1991
 		swap_ideas = {
 			remove_idea = pasek_russian_podsos
 			add_idea = pasek_russian_podsos_2
 		}
-			
 	}
 }
 
@@ -1351,20 +1292,21 @@ shared_focus = {
 shared_focus = {
 	id = DPR_our_own_production
 	icon = GFX_DPR_our_own_production
+	cost = 4
+
 	x = 37
 	y = 5
-	cost = 4
-	search_filters = {
-		FOCUS_FILTER_WAR_SUPPORT
-	}
+
 	available = {
 		OR = {
 			has_completed_focus = DPR_stay_on_our_boat
 			has_completed_focus = DPR_open_the_window
 		}
 	}
-	prerequisite = { focus = DPR_reforms  }
-	mutually_exclusive = { focus = DPR_we_and_older_brother  }
+
+	prerequisite = { focus = DPR_reforms }
+	mutually_exclusive = { focus = DPR_we_and_older_brother }
+
 	completion_reward = {
 		random_owned_controlled_state = {
 			limit = {
@@ -1380,9 +1322,7 @@ shared_focus = {
 				level = 1
 				instant_build = yes
 			}
-			
 		}
-			
 	}
 }
 
@@ -1390,17 +1330,16 @@ shared_focus = {
 shared_focus = {
 	id = DPR_reforms
 	icon = GFX_DPR_reforms
+	cost = 5
+
 	x = 35
 	y = 4
-	cost = 5
-	search_filters = {
-		FOCUS_FILTER_WAR_SUPPORT
-	}
-	prerequisite = { focus = DPR_safe_state  }
+
+	prerequisite = { focus = DPR_safe_state }
+
 	completion_reward = {
 		add_war_support = 0.1
 		add_ideas = pasek_new_army
-			
 	}
 }
 
@@ -1408,13 +1347,13 @@ shared_focus = {
 shared_focus = {
 	id = DPR_destroy_dedovschina
 	icon = GFX_DPR_destroy_dedovschina
+	cost = 4
+
 	x = 37
 	y = 6
-	cost = 4
-	search_filters = {
-		FOCUS_FILTER_WAR_SUPPORT
-	}
-	prerequisite = { focus = DPR_our_own_production  }
+
+	prerequisite = { focus = DPR_our_own_production }
+
 	completion_reward = {
 		army_experience = 10
 		swap_ideas = {
@@ -1422,7 +1361,6 @@ shared_focus = {
 			add_idea = pasek_new_army_2
 		}
 		add_ideas = fop_supervision_strict_rules
-			
 	}
 }
 
@@ -1430,17 +1368,15 @@ shared_focus = {
 shared_focus = {
 	id = DPR_drive_out_mercenaries
 	icon = GFX_DPR_drive_out_mercenaries
+	cost = 4
+
 	x = 37
 	y = 7
-	cost = 4
-	search_filters = {
-		FOCUS_FILTER_WAR_SUPPORT
-	}
-	prerequisite = { focus = DPR_destroy_dedovschina  }
+
+	prerequisite = { focus = DPR_destroy_dedovschina }
+
 	completion_reward = {
 		add_manpower = -1000
-			
-			
 	}
 }
 
@@ -1448,17 +1384,15 @@ shared_focus = {
 shared_focus = {
 	id = DPR_invicible_and_victorious
 	icon = GFX_DPR_invicible_and_victorious
+	cost = 4
+
 	x = 35
 	y = 9
 	cost = 4
-	search_filters = {
-		FOCUS_FILTER_WAR_SUPPORT
-	}
-	prerequisite = { focus = DPR_contracts_with_paris  focus = DPR_russian_army_presence  }
+
+	prerequisite = { focus = DPR_contracts_with_paris focus = DPR_russian_army_presence }
 	completion_reward = {
 		add_manpower = 1000
-			
-			
 	}
 }
 
@@ -1466,19 +1400,16 @@ shared_focus = {
 shared_focus = {
 	id = DPR_stay_on_our_boat
 	icon = GFX_DPR_stay_on_our_boat
+	cost = 3
+	
 	x = 19
 	y = 4
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_our_place_in_the_world  }
-	mutually_exclusive = { focus = DPR_open_the_window  }
+
+	prerequisite = { focus = DPR_our_place_in_the_world }
+	mutually_exclusive = { focus = DPR_open_the_window }
+
 	completion_reward = {
 		custom_effect_tooltip = DPR_stay_on_our_boat_tt
-		add_political_power = 10
-			
-			
 	}
 }
 
@@ -1486,20 +1417,15 @@ shared_focus = {
 shared_focus = {
 	id = DPR_begin_demobilization
 	icon = GFX_DPR_begin_demobilization
+	cost = 3
+	
 	x = 19
 	y = 5
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_stay_on_our_boat  }
+
+	prerequisite = { focus = DPR_stay_on_our_boat }
+
 	completion_reward = {
-		add_stability = 0.1
-		add_popularity = {
-			ideology = conservatism
-			popularity = 0.25
-		}
-			
+		###
 	}
 }
 
@@ -1507,17 +1433,15 @@ shared_focus = {
 shared_focus = {
 	id = DPR_future_of_new_generation
 	icon = GFX_DPR_future_of_new_generation
+	cost = 3
+	
 	x = 19
 	y = 6
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_begin_demobilization  }
+
+	prerequisite = { focus = DPR_begin_demobilization }
+
 	completion_reward = {
-		add_political_power = 10
-			
-			
+		###
 	}
 }
 
@@ -1525,17 +1449,16 @@ shared_focus = {
 shared_focus = {
 	id = DPR_improve_soviet_educational_system
 	icon = GFX_DPR_improve_soviet_educational_system
-	x = 21
-	y = 7
 	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_future_of_new_generation  }
+
+	relative_position_id = DPR_future_of_new_generation
+	x = -1
+	y = 1
+
+	prerequisite = { focus = DPR_future_of_new_generation }
+
 	completion_reward = {
-		add_war_support = 0.1
-			
-			
+		###
 	}
 }
 
@@ -1543,17 +1466,16 @@ shared_focus = {
 shared_focus = {
 	id = DPR_invite_teachers_from_motherland
 	icon = GFX_DPR_invite_teachers_from_motherland
-	x = 21
-	y = 8
 	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_improve_soviet_educational_system  }
+
+	relative_position_id = DPR_future_of_new_generation
+	x = 1
+	y = 1
+
+	prerequisite = { focus = DPR_future_of_new_generation }
+
 	completion_reward = {
-		add_war_support = 0.1
-			
-			
+		###
 	}
 }
 
@@ -1561,13 +1483,15 @@ shared_focus = {
 shared_focus = {
 	id = DPR_propaganda_of_our_identity
 	icon = GFX_DPR_propaganda_of_our_identity
-	x = 19
-	y = 9
 	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_future_of_new_generation  }
+
+	relative_position_id = DPR_invite_teachers_from_motherland
+	x = -1
+	y = 1
+
+	prerequisite = { focus = DPR_improve_soviet_educational_system }
+	prerequisite = { focus = DPR_invite_teachers_from_motherland }
+
 	completion_reward = {
 		add_political_power = 10
 		add_ideas = pasek_russian_simp
@@ -1583,41 +1507,20 @@ shared_focus = {
 	}
 }
 
-#Glorification of Russia
-shared_focus = {
-	id = DPR_glorification_of_russia
-	icon = GFX_DPR_glorification_of_russia
-	x = 21
-	y = 10
-	cost = 2
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_invite_teachers_from_motherland  } prerequisite = { focus = DPR_propaganda_of_our_identity  }
-	completion_reward = {
-		add_war_support = 0.1
-		swap_ideas = {
-			remove_idea = pasek_russian_simp
-			add_idea = pasek_russian_simp_1
-		}
-	}
-}
-
 #Sweep Ukrainian Partisans
 shared_focus = {
 	id = DPR_sweep_ukrainian_partisans
 	icon = GFX_DPR_sweep_ukrainian_partisans
-	x = 17
-	y = 10
 	cost = 2
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_invite_teachers_from_motherland  } prerequisite = { focus = DPR_propaganda_of_our_identity  }
+
+	relative_position_id = DPR_propaganda_of_our_identity
+	x = -2
+	y = 1
+
+	prerequisite = { focus = DPR_propaganda_of_our_identity }
+
 	completion_reward = {
-		add_stability = 0.1
 		add_ideas = pasek_antiukrainian_politics
-			
 	}
 }
 
@@ -1625,17 +1528,16 @@ shared_focus = {
 shared_focus = {
 	id = DPR_prohibite_their_language
 	icon = GFX_DPR_prohibite_their_language
-	x = 16
-	y = 11
 	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_sweep_ukrainian_partisans  }
+
+	relative_position_id = DPR_sweep_ukrainian_partisans
+	x = -1
+	y = 1
+
+	prerequisite = { focus = DPR_sweep_ukrainian_partisans }
+
 	completion_reward = {
-		add_stability = 0.1
 		add_ideas = fop_ethnic_minorities_forced_assimilation
-			
 	}
 }
 
@@ -1643,13 +1545,14 @@ shared_focus = {
 shared_focus = {
 	id = DPR_infiltrate_the_remains
 	icon = GFX_DPR_infiltrate_the_remains
-	x = 18
-	y = 11
 	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_sweep_ukrainian_partisans  }
+
+	relative_position_id = DPR_sweep_ukrainian_partisans
+	x = 1
+	y = 1
+
+	prerequisite = { focus = DPR_sweep_ukrainian_partisans }
+
 	completion_reward = {
 		add_political_power = 10
 		random_core_state = {
@@ -1660,7 +1563,6 @@ shared_focus = {
 				instant_build = yes
 			}
 		}
-			
 	}
 }
 
@@ -1668,15 +1570,16 @@ shared_focus = {
 shared_focus = {
 	id = DPR_establish_rusuchlag
 	icon = GFX_DPR_establish_rusuchlag
-	x = 17
-	y = 12
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_prohibite_their_language  } prerequisite = { focus = DPR_infiltrate_the_remains  }
+	cost = 4
+
+	relative_position_id = DPR_infiltrate_the_remains
+	x = -1
+	y = 1
+
+	prerequisite = { focus = DPR_prohibite_their_language }
+	prerequisite = { focus = DPR_infiltrate_the_remains }
+
 	completion_reward = {
-		add_political_power = 10
 		swap_ideas = {
 			remove_idea = pasek_antiukrainian_politics
 			add_idea = pasek_antiukrainian_politics_1
@@ -1689,7 +1592,26 @@ shared_focus = {
 				instant_build = yes
 			}
 		}
-			
+	}
+}
+
+#Glorification of Russia
+shared_focus = {
+	id = DPR_glorification_of_russia
+	icon = GFX_DPR_glorification_of_russia
+	cost = 2
+
+	relative_position_id = DPR_propaganda_of_our_identity
+	x = 2
+	y = 1
+
+	prerequisite = { focus = DPR_propaganda_of_our_identity }
+
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = pasek_russian_simp
+			add_idea = pasek_russian_simp_1
+		}
 	}
 }
 
@@ -1697,17 +1619,16 @@ shared_focus = {
 shared_focus = {
 	id = DPR_bring_our_speech_to_every_house
 	icon = GFX_DPR_bring_our_speech_to_every_house
-	x = 20
-	y = 11
 	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_glorification_of_russia  }
+
+	relative_position_id = DPR_glorification_of_russia
+	x = -1
+	y = 1
+
+	prerequisite = { focus = DPR_glorification_of_russia }
+
 	completion_reward = {
-		add_political_power = 10
-			
-			
+		###
 	}
 }
 
@@ -1715,17 +1636,16 @@ shared_focus = {
 shared_focus = {
 	id = DPR_zombification_of_population
 	icon = GFX_DPR_zombification_of_population
-	x = 22
-	y = 11
 	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_glorification_of_russia  }
+
+	relative_position_id = DPR_glorification_of_russia
+	x = 1
+	y = 1
+
+	prerequisite = { focus = DPR_glorification_of_russia }
+
 	completion_reward = {
-		add_war_support = 0.1
-			
-			
+		###
 	}
 }
 
@@ -1733,20 +1653,21 @@ shared_focus = {
 shared_focus = {
 	id = DPR_loyal_and_subjugated
 	icon = GFX_DPR_loyal_and_subjugated
-	x = 21
-	y = 12
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_bring_our_speech_to_every_house  } prerequisite = { focus = DPR_zombification_of_population  }
+	cost = 4
+
+	relative_position_id = DPR_zombification_of_population
+	x = -1
+	y = 1
+
+	prerequisite = { focus = DPR_bring_our_speech_to_every_house }
+	prerequisite = { focus = DPR_zombification_of_population }
+
 	completion_reward = {
 		add_political_power = 10
 		swap_ideas = {
 			remove_idea = pasek_russian_simp_1
 			add_idea = pasek_russian_simp_2
 		}
-			
 	}
 }
 
@@ -1754,17 +1675,34 @@ shared_focus = {
 shared_focus = {
 	id = DPR_cosmetical_preparations
 	icon = GFX_DPR_cosmetical_preparations
-	x = 19
-	y = 13
 	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_establish_rusuchlag  } prerequisite = { focus = DPR_loyal_and_subjugated  }
+
+	relative_position_id = DPR_loyal_and_subjugated
+	x = -2
+	y = 1
+
+	prerequisite = { focus = DPR_establish_rusuchlag }
+	prerequisite = { focus = DPR_loyal_and_subjugated }
+
 	completion_reward = {
-		add_political_power = 10
-			
-			
+		###
+	}
+}
+
+#Establish Polling Stations
+shared_focus = {
+	id = DPR_establish_polling_stations
+	icon = GFX_DPR_establish_polling_stations
+	cost = 2
+
+	relative_position_id = DPR_cosmetical_preparations
+	x = 0
+	y = 1
+
+	prerequisite = { focus = DPR_cosmetical_preparations  }
+
+	completion_reward = {
+		###
 	}
 }
 
@@ -1772,17 +1710,16 @@ shared_focus = {
 shared_focus = {
 	id = DPR_vote
 	icon = GFX_DPR_vote
-	x = 19
-	y = 15
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_establish_polling_stations  }
+	cost = 1
+
+	relative_position_id = DPR_establish_polling_stations
+	x = 0
+	y = 1
+
+	prerequisite = { focus = DPR_establish_polling_stations }
+
 	completion_reward = {
-		add_political_power = 10
-			
-			
+		###
 	}
 }
 
@@ -1790,434 +1727,15 @@ shared_focus = {
 shared_focus = {
 	id = DPR_united_in_glory
 	icon = GFX_DPR_united_in_glory
-	x = 19
-	y = 16
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_vote  }
-	completion_reward = {
-		add_political_power = 1945
-			
-			
-	}
-}
+	cost = 5
 
-##############################################################################################
-##############################################################################################
-##################   											##############################
-##################   CIvil war                                  ##############################
-##################   											##############################
-##############################################################################################
-##############################################################################################
-
-#Civil War
-shared_focus = {
-	id = DPR_civil_war
-	icon = GFX_DPR_civil_war
-	x = 7
+	relative_position_id = DPR_vote
+	x = 0
 	y = 1
-	cost = 2
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
+
+	prerequisite = { focus = DPR_vote }
+
 	completion_reward = {
-		add_political_power = 10
-		country_event = {
-			id = paseka.6
-			days = 1
-		}
-		hidden_effect = {
-			set_party_name = {
-				ideology = social_democracy
-				long_name = "Luganskiy Economicheskiy Soyuz"
-				name = "LES"
-			}
-			set_party_name = {
-				ideology = ultranationalism
-				long_name = "Oficerskyi shtab"
-				name = "Officers"
-			}
-		
-		}
-			
+		###
 	}
 }
-
-#Pasichnik Will Lead the People Forward
-shared_focus = {
-	id = DPR_pasichnik_will_lead_the_people_forward
-	icon = GFX_DPR_pasichnik_will_lead_the_people_forward
-	x = 11
-	y = 2
-	cost = 2
-	available = {
-		has_country_flag = paseka_stay
-	}
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_civil_war  }
-	completion_reward = {
-		add_political_power = 10
-		DNR_Pasechnik = {
-			add_country_leader_trait = Democratic_dictator
-		}
-	}
-}
-
-#Nadion Will Bring Back Stability
-shared_focus = {
-	id = DPR_nadion_will_bring_back_stability
-	icon = GFX_DPR_nadion_will_bring_back_stability
-	x = 7
-	y = 2
-	cost = 2
-	available = {
-		has_country_flag = paseka_dont_stay
-	}
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_civil_war  }
-	mutually_exclusive = { focus = DPR_cornet_will_take_the_helm  }
-	completion_reward = {
-		every_possible_country = {
-			limit = { has_character = LPR_Zinaida }
-			random_character = {
-				limit = { is_character = LPR_Zinaida }
-				set_nationality = ROOT
-			}
-		}
-		promote_character = LPR_Zinaida
-		set_politics = {
-			ruling_party = social_democracy
-			elections_allowed = no
-		}
-	}
-}
-
-#Cornet Will Take the Helm
-shared_focus = {
-	id = DPR_cornet_will_take_the_helm
-	icon = GFX_DPR_cornet_will_take_the_helm
-	x = 3
-	y = 2
-	cost = 3
-	available = {
-		has_country_flag = paseka_dont_stay
-	}
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_civil_war  }
-	mutually_exclusive = { focus = DPR_nadion_will_bring_back_stability }
-	completion_reward = {
-		every_possible_country = {
-			limit = { has_character = LPR_kornet }
-			random_character = {
-				limit = { is_character = LPR_kornet }
-				set_nationality = ROOT
-			}
-		}
-		promote_character = LPR_kornet
-		set_politics = {
-			ruling_party = ultranationalism
-			elections_allowed = no
-		}
-	}
-}
-
-#Secure the Democractic Way
-shared_focus = {
-	id = DPR_secure_the_democractic_way
-	icon = GFX_DPR_secure_the_democractic_way
-	x = 10
-	y = 3
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_pasichnik_will_lead_the_people_forward  }
-	completion_reward = {
-		add_popularity = {
-			ideology = conservatism
-			popularity = 0.2
-		}
-	}
-
-}
-
-#Elimination of the Opposition
-shared_focus = {
-	id = DPR_elimination_of_the_opposition
-	icon = GFX_DPR_elimination_of_the_opposition
-	x = 10
-	y = 4
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_secure_the_democractic_way  }
-	completion_reward = {
-		add_ideas = fop_party_system_single_party
-		add_ideas = fop_security_opressive_police
-	}
-}
-
-#Ask the For Help
-shared_focus = {
-	id = DPR_ask_the_for_help
-	icon = GFX_DPR_ask_the_for_help
-	x = 12
-	y = 3
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_pasichnik_will_lead_the_people_forward  }
-	completion_reward = {
-		every_country = {
-			limit = {
-				OR = {
-					has_government = liberalism
-					has_government = conservatism
-					has_government = oligarchism
-				}
-			}
-			country_event = {
-				id = paseka.4
-				days = 1
-			}
-
-		}
-	}
-
-}
-
-#Propaganda Machine
-shared_focus = {
-	id = DPR_propaganda_machine
-	icon = GFX_DPR_propaganda_machine
-	x = 12
-	y = 4
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_ask_the_for_help  }
-	completion_reward = {
-		add_ideas = fop_press_freedom_censored
-	}
-}
-
-#The Traitors' Tribunal
-shared_focus = {
-	id = DPR_thetraitorstribunal
-	icon = GFX_DPR_thetraitorstribunal
-	x = 11
-	y = 5
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_elimination_of_the_opposition  } prerequisite = { focus = DPR_propaganda_machine  }
-	completion_reward = {
-		DNR_Pasechnik = {
-			add_country_leader_trait = AntiPushilinsentiment
-		}
-	}
-}
-
-#Nationalisation of Strategic Enterprises
-shared_focus = {
-	id = DPR_nationalisation_of_strategic_enterprises
-	icon = GFX_DPR_nationalisation_of_strategic_enterprises
-	x = 8
-	y = 3
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_nadion_will_bring_back_stability  }
-	completion_reward = {
-		add_ideas = fop_economic_system_state_socialism
-	}
-}
-
-#Economic Stabilisation
-shared_focus = {
-	id = DPR_economic_stabilisation
-	icon = GFX_DPR_economic_stabilisation
-	x = 8
-	y = 4
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_nationalisation_of_strategic_enterprises  }
-}
-
-#The Collective Rear
-shared_focus = {
-	id = DPR_the_collective_rear
-	icon = GFX_DPR_the_collective_rear
-	x = 6
-	y = 3
-	cost = 2
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_nadion_will_bring_back_stability  }
-	completion_reward = {
-		add_ideas = fop_commercial_policy_heavy_protectionism
-	}
-}
-
-#Assistance to Those Affected
-shared_focus = {
-	id = DPR_assistance_to_those_affected
-	icon = GFX_DPR_assistance_to_those_affected
-	x = 6
-	y = 4
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_the_collective_rear  }
-	completion_reward = {
-		add_ideas = fop_healthcare_system_public
-	}
-}
-
-#Expanding Social Influence
-shared_focus = {
-	id = DPR_expanding_social_influence
-	icon = GFX_DPR_expanding_social_influence
-	x = 7
-	y = 5
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_economic_stabilisation  } prerequisite = { focus = DPR_assistance_to_those_affected  }
-	completion_reward = {
-		add_ideas = fop_minimum_wage_generous
-		add_ideas = fop_pensions_generous
-	}
-}
-
-#Restoration of the Army
-shared_focus = {
-	id = DPR_restoration_of_the_army
-	icon = GFX_DPR_restoration_of_the_army
-	x = 4
-	y = 3
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_cornet_will_take_the_helm  }
-	completion_reward = {
-		add_ideas = fop_economic_mobilization_war_economy
-		add_ideas = fop_conscription_extensive
-	}
-}
-
-#War is Fun
-shared_focus = {
-	id = DPR_war_is_fun
-	icon = GFX_DPR_war_is_fun
-	x = 4
-	y = 4
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_restoration_of_the_army  }
-	completion_reward = {
-		add_ideas = fop_supervision_encouraged_brutality
-	}
-}
-
-#The Counterintelligence
-shared_focus = {
-	id = DPR_the_counterintelligence
-	icon = GFX_DPR_the_counterintelligence
-	x = 2
-	y = 3
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_cornet_will_take_the_helm  }
-	completion_reward = {
-		LPR_kornet = {
-			add_country_leader_trait = intelligence_experience
-		}
-	}
-}
-
-#Strengthen the Base
-shared_focus = {
-	id = DPR_strengthen_the_base
-	icon = GFX_DPR_strengthen_the_base
-	x = 2
-	y = 4
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_the_counterintelligence  }
-	completion_reward = {
-		random_core_state = {
-			add_building_construction = {
-				type = situation_centre
-				level = 1
-				instant_build = yes
-			}
-		}
-		random_core_state = {
-			add_building_construction = {
-				type = boot_camp
-				level = 1
-				instant_build = yes
-			}
-		}
-		random_core_state = {
-			add_building_construction = {
-				type = recruiting_center
-				level = 1
-				instant_build = yes
-			}
-		}
-		random_core_state = {
-			add_building_construction = {
-				type = labour_camp
-				level = 1
-				instant_build = yes
-			}
-		}
-	}
-}
-
-#Put an End to the Traitors
-shared_focus = {
-	id = DPR_put_an_end_to_the_traitors
-	icon = GFX_DPR_put_an_end_to_the_traitors
-	x = 3
-	y = 5
-	cost = 3
-	search_filters = {
-		FOCUS_FILTER_POLITICAL
-	}
-	prerequisite = { focus = DPR_war_is_fun  } prerequisite = { focus = DPR_strengthen_the_base  }
-	completion_reward = {
-		LPR_kornet = {
-			add_country_leader_trait = AntiPushilinsentiment
-		}
-	}
-}
-
-

@@ -292,7 +292,7 @@ debug_decisions = {
 			load_focus_tree = AFU_azov
 		}
 	}
-	azov_east_tree_load = {
+	azov_regional_tree_load = {
 		priority = 100
 
 		allowed = {
@@ -309,11 +309,10 @@ debug_decisions = {
 		}
 
 		complete_effect = {
-			load_focus_tree = AFU_azov_east
+			load_focus_tree = AFU_azov_regional
 		}
 	}
-
-	azov_left_bank_tree_load = {
+	azov_super_regional_tree_load = {
 		priority = 100
 
 		allowed = {
@@ -330,10 +329,10 @@ debug_decisions = {
 		}
 
 		complete_effect = {
-			load_focus_tree = AFU_azov_left_bank
+			load_focus_tree = AFU_azov_super_regional
 		}
 	}
-	azov_unification_tree_load = {
+	azov_national_tree_load = {
 		priority = 100
 
 		allowed = {
@@ -350,7 +349,7 @@ debug_decisions = {
 		}
 
 		complete_effect = {
-			load_focus_tree = AFU_azov_ukraine
+			load_focus_tree = AFU_azov_national
 		}
 	}
 	kryvonos_tree_load = {
@@ -511,10 +510,10 @@ debug_decisions = {
 		}
 
 		complete_effect = {
-			load_focus_tree = DPR_strelkov
+			load_focus_tree = DPR_girkin
 		}
 	}
-	girkin_east_tree_load = {
+	constitutionalist_tree_load = {
 		priority = 100
 
 		allowed = {
@@ -531,10 +530,20 @@ debug_decisions = {
 		}
 
 		complete_effect = {
-			load_focus_tree = DPR_strelkov_east
+			clr_country_flag = DPR_path_constitutionalist_rostislav
+			clr_country_flag = DPR_path_constitutionalist_strelkov
+			clr_country_flag = DPR_path_absolutist_maria
+			clr_country_flag = DPR_path_absolutist_george
+			clr_country_flag = DPR_path_absolutist
+			set_country_flag = DPR_path_constitutionalist
+			load_focus_tree = {
+				tree = DPR_constitutionalist
+				keep_completed = yes
+			}
+			mark_focus_tree_layout_dirty = yes
 		}
 	}
-	girkin_left_bank_tree_load = {
+	constitutionalist_rostislav_tree_load = {
 		priority = 100
 
 		allowed = {
@@ -551,10 +560,16 @@ debug_decisions = {
 		}
 
 		complete_effect = {
-			load_focus_tree = DPR_strelkov_left_bank
+			load_focus_tree = {
+				tree = DPR_constitutionalist
+				keep_completed = yes
+			}
+			set_country_flag = DPR_path_constitutionalist_rostislav
+			clr_country_flag = DPR_path_constitutionalist_strelkov
+			mark_focus_tree_layout_dirty = yes
 		}
 	}
-	girkin_absolutist_tree_load = {
+	constitutionalist_strelkov_tree_load = {
 		priority = 100
 
 		allowed = {
@@ -571,10 +586,16 @@ debug_decisions = {
 		}
 
 		complete_effect = {
-			load_focus_tree = DPR_strelkov_absolutist
+			load_focus_tree = {
+				tree = DPR_constitutionalist
+				keep_completed = yes
+			}
+			set_country_flag = DPR_path_constitutionalist_strelkov
+			clr_country_flag = DPR_path_constitutionalist_rostislav
+			mark_focus_tree_layout_dirty = yes
 		}
 	}
-	girkin_srunov_tree_load = {
+	absolutist_tree_load = {
 		priority = 100
 
 		allowed = {
@@ -591,7 +612,69 @@ debug_decisions = {
 		}
 
 		complete_effect = {
-			load_focus_tree = DPR_strelkov_srunov
+			clr_country_flag = DPR_path_constitutionalist_rostislav
+			clr_country_flag = DPR_path_constitutionalist_strelkov
+			clr_country_flag = DPR_path_absolutist_maria
+			clr_country_flag = DPR_path_absolutist_george
+			clr_country_flag = DPR_path_constitutionalist
+			set_country_flag = DPR_path_absolutist
+			load_focus_tree = {
+				tree = DPR_absolutist
+				keep_completed = yes
+			}
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	absolutist_maria_tree_load = {
+		priority = 100
+
+		allowed = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		visible = {
+			is_ai = no
+			is_debug = yes
+			tag = DPR
+		}
+
+		complete_effect = {
+			load_focus_tree = {
+				tree = DPR_absolutist
+				keep_completed = yes
+			}
+			set_country_flag = DPR_path_absolutist_maria
+			clr_country_flag = DPR_path_absolutist_george
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	absolutist_george_tree_load = {
+		priority = 100
+
+		allowed = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		visible = {
+			is_ai = no
+			is_debug = yes
+			tag = DPR
+		}
+
+		complete_effect = {
+			load_focus_tree = {
+				tree = DPR_absolutist
+				keep_completed = yes
+			}
+			set_country_flag = DPR_path_absolutist_george
+			clr_country_flag = DPR_path_absolutist_maria
+			mark_focus_tree_layout_dirty = yes
 		}
 	}
 	
