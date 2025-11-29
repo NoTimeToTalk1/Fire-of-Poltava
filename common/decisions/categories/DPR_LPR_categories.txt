@@ -181,6 +181,37 @@ icon = GFX_decision_category_generic_civil_support
 ###  GIRKIN  ###
 ################
 
+DPR_putting_down_the_unrest = {
+	icon = GFX_decision_category_generic_civil_support
+
+	allowed = {
+		tag = DPR
+	}
+
+	visible = {
+		tag = DPR
+		has_country_flag = DPR_girkin_crackdown
+		NOT = {
+			every_owned_state = {
+				is_demilitarized_zone = no
+			}
+		}
+	}
+}
+
+DPR_invite_cossack_leaders = {
+	icon = GFX_decision_category_generic_civil_support
+
+	allowed = {
+		tag = DPR
+	}
+
+	visible = {
+		tag = DPR
+		has_country_flag = DPR_girkin_cossacks
+	}
+}
+
 DPR_verkhovna_duma_category = {
 	icon = GFX_decision_category_duma
 
