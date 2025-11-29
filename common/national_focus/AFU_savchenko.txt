@@ -5,12 +5,12 @@ shared_focus = {
 	icon = GFX_AFU_savchenko
 	cost = 3
 
-	x = 12
+	x = 20
 	y = 0
 	
 
 	completion_reward = {
-		###
+		add_political_power = 100
 	}
 }
 
@@ -20,14 +20,15 @@ shared_focus = {
 	icon = GFX_AFU_greatest_success
 	cost = 3
 
-	x = 12
-	y = 2
+	x = 0
+	y = 1
 	
+	relative_position_id = AFU_savchenko
 
 	prerequisite = { focus = AFU_savchenko }
 
 	completion_reward = {
-		###
+		add_stability = 0.1
 	}
 }
 
@@ -37,13 +38,18 @@ shared_focus = {
 	icon = GFX_AFU_our_true_intention
 	cost = 3
 
-	x = 12
-	y = 3
+	x = 0
+	y = 1
+
+	relative_position_id = AFU_greatest_success
 
 	prerequisite = { focus = AFU_greatest_success }
 
 	completion_reward = {
-		###
+		add_popularity = {
+			ideology = social_democracy
+			popularity = 0.02
+		}
 	}
 }
 
@@ -53,29 +59,37 @@ shared_focus = {
 	icon = GFX_AFU_arrest_akhmetov
 	cost = 3
 
-	x = 6
-	y = 4
+	x = 3
+	y = 2
+
+	relative_position_id = AFU_our_true_intention
 
 	prerequisite = { focus = AFU_our_true_intention }
 
 	completion_reward = {
-		###
+		add_popularity = {
+			ideology = social_democracy
+			popularity = 0.1
+		}
+		add_political_power = -70
 	}
 }
 
 #Arrest Their Master...
 shared_focus = {
-	id = AFU_arresttheirmaster
-	icon = GFX_AFU_arresttheirmaster
+	id = AFU_arrest_their_master
+	icon = GFX_AFU_arrest_their_master
 	cost = 3
 
-	x = 9
-	y = 4
+	x = -2
+	y = 1
+
+	relative_position_id = AFU_our_true_intention
 
 	prerequisite = { focus = AFU_our_true_intention }
 
 	completion_reward = {
-		###
+		retire_character = AFU_kryvonos
 	}
 }
 
@@ -85,47 +99,69 @@ shared_focus = {
 	icon = GFX_AFU_make_them_loyal
 	cost = 3
 
-	x = 5
-	y = 7
+	x = 1
+	y = 1
+
+	relative_position_id = AFU_arrest_akhmetov
 
 	prerequisite = { focus = AFU_arrest_akhmetov }
-	mutually_exclusive = { focus = AFU_nationalise_enterprises }
+	mutually_exclusive = { focus = AFU_nationalize_enterprises }
 
 	completion_reward = {
-		###
+		add_to_variable = {
+			var = FOP_corruption_var
+			value = -20
+			tooltip = add_corruption_var_tt
+		}
+		add_political_power = 50
 	}
 }
 
-#Nationalise Enterprises
+#Nationalize Enterprises
 shared_focus = {
-	id = AFU_nationalise_enterprises
-	icon = GFX_AFU_nationalise_enterprises
+	id = AFU_nationalize_enterprises
+	icon = GFX_AFU_nationalize_enterprises
 	cost = 3
 
-	x = 7
-	y = 7
+	x = -1
+	y = 1
+
+	relative_position_id = AFU_arrest_akhmetov
 
 	prerequisite = { focus = AFU_arrest_akhmetov }
 	mutually_exclusive = { focus = AFU_make_them_loyal }
 
 	completion_reward = {
-		add_political_power = -10
+		add_political_power = -25
+		2031 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
 	}
 }
 
 #...And His Dogs
 shared_focus = {
-	id = AFU_andhisdogs
-	icon = GFX_AFU_andhisdogs
+	id = AFU_and_his_dogs
+	icon = GFX_AFU_and_his_dogs
 	cost = 3
 
-	x = 9
-	y = 5
+	x = 0
+	y = 1
 
-	prerequisite = { focus = AFU_arresttheirmaster }
+	relative_position_id = AFU_arrest_their_master
+
+	prerequisite = { focus = AFU_arrest_their_master }
 
 	completion_reward = {
-		###
+		add_stability = -0.05
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -500
+		}
 	}
 }
 
@@ -135,16 +171,19 @@ shared_focus = {
 	icon = GFX_AFU_form_a_new_cabinet
 	cost = 3
 
-	x = 9
-	y = 7
+	x = 0
+	y = 1
 	
 	available = {
 		has_completed_focus = AFU_purge_the_deputies
 	}
 
-	prerequisite = { focus = AFU_andhisdogs }
+	relative_position_id = AFU_and_his_dogs
+
+	prerequisite = { focus = AFU_and_his_dogs }
 
 	completion_reward = {
+		add_political_power = 25
 		recruit_character = AFU_solovyova
 		recruit_character = AFU_arhipov
 		recruit_character = AFU_diyakiv
@@ -159,13 +198,18 @@ shared_focus = {
 	icon = GFX_AFU_final_cleaning
 	cost = 3
 
-	x = 12
-	y = 4
+	x = 7
+	y = 1
+
+	relative_position_id = AFU_our_true_intention
 
 	prerequisite = { focus = AFU_our_true_intention }
 
 	completion_reward = {
-		###
+		add_timed_idea = {
+			idea = AFU_savchenko_purges
+			days = 120
+		}
 	}
 }
 
@@ -175,13 +219,15 @@ shared_focus = {
 	icon = GFX_AFU_loyal_army
 	cost = 3
 
-	x = 11
-	y = 5
+	x = 1
+	y = 1
+
+	relative_position_id = AFU_final_cleaning
 
 	prerequisite = { focus = AFU_final_cleaning }
 
 	completion_reward = {
-		###
+		add_command_power = 25
 	}
 }
 
@@ -191,8 +237,10 @@ shared_focus = {
 	icon = GFX_AFU_purge_the_deputies
 	cost = 3
 
-	x = 13
-	y = 5
+	x = -1
+	y = 1
+
+	relative_position_id = AFU_final_cleaning
 
 	prerequisite = { focus = AFU_final_cleaning }
 
@@ -214,13 +262,16 @@ shared_focus = {
 	icon = GFX_AFU_seize_the_power
 	cost = 3
 
-	x = 11
-	y = 6
+	x = 0
+	y = 1
 
-	prerequisite = { focus = AFU_loyal_army }
+	relative_position_id = AFU_purge_the_deputies
+
+	prerequisite = { focus = AFU_purge_the_deputies }
 
 	completion_reward = {
-		###
+		add_political_power = 25
+		add_stability = 0.1
 	}
 }
 
@@ -230,10 +281,13 @@ shared_focus = {
 	icon = GFX_AFU_proclaim_us_legitimate
 	cost = 3
 
-	x = 11
-	y = 7
+	x = 0
+	y = 3
+
+	relative_position_id = AFU_final_cleaning
 
 	prerequisite = { focus = AFU_seize_the_power }
+	prerequisite = { focus = AFU_iron_bastion }
 
 	completion_reward = {
 		add_ideas = AFU_savchenko_antipresident_campaing
@@ -246,10 +300,12 @@ shared_focus = {
 	icon = GFX_AFU_iron_bastion
 	cost = 3
 
-	x = 14
-	y = 4
+	x = 0
+	y = 1
 
-	prerequisite = { focus = AFU_our_true_intention }
+	relative_position_id = AFU_loyal_army
+
+	prerequisite = { focus = AFU_loyal_army }
 
 	completion_reward = {
 		add_ideas = AFU_savchenko_iron_bastion
@@ -262,8 +318,10 @@ shared_focus = {
 	icon = GFX_AFU_contacts_with_the_red_cross
 	cost = 3
 
-	x = 16
-	y = 4
+	x = -5
+	y = 1
+
+	relative_position_id = AFU_our_true_intention
 
 	prerequisite = { focus = AFU_our_true_intention }
 
@@ -278,31 +336,17 @@ shared_focus = {
 	icon = GFX_AFU_solve_humanitarian_problems
 	cost = 3
 
-	x = 16
-	y = 5
+	x = 0
+	y = 1
+
+	relative_position_id = AFU_contacts_with_the_red_cross
 
 	prerequisite = { focus = AFU_contacts_with_the_red_cross }
 
 	completion_reward = {
-		###
-	}
-}
-
-#No More Deception
-shared_focus = {
-	id = AFU_no_more_deception
-	icon = GFX_AFU_no_more_deception
-	cost = 3
-
-	x = 18
-	y = 4
-
-	prerequisite = { focus = AFU_our_true_intention }
-
-	completion_reward = {
-		add_opinion_modifier = {
-			target = RUS
-			modifier = Enemy_state
+		add_timed_idea = {
+			idea = AFU_helping_in_crisis
+			days = 180
 		}
 	}
 }
@@ -313,13 +357,18 @@ shared_focus = {
 	icon = GFX_AFU_win_the_trust_of_the_people
 	cost = 3
 
-	x = 18
-	y = 5
+	x = 0
+	y = 1
 
-	prerequisite = { focus = AFU_no_more_deception }
+	relative_position_id = AFU_our_true_intention
+
+	prerequisite = { focus = AFU_our_true_intention }
 
 	completion_reward = {
-		###
+		add_popularity = {
+			ideology = social_democracy
+			popularity = 0.05
+		}
 	}
 }
 
@@ -329,14 +378,16 @@ shared_focus = {
 	icon = GFX_AFU_fix_the_law
 	cost = 3
 
-	x = 17
-	y = 6
+	x = 0
+	y = 1
+
+	relative_position_id = AFU_win_the_trust_of_the_people
 
 	prerequisite = { focus = AFU_win_the_trust_of_the_people }
 	prerequisite = { focus = AFU_solve_humanitarian_problems }
 
 	completion_reward = {
-		###
+		add_ideas = AFU_savchenko_fixes
 	}
 }
 
@@ -346,13 +397,18 @@ shared_focus = {
 	icon = GFX_AFU_project_of_the_new_constitution
 	cost = 3
 
-	x = 17
-	y = 7
+	x = 0
+	y = 1
+
+	relative_position_id = AFU_fix_the_law
 
 	prerequisite = { focus = AFU_fix_the_law }
 
 	completion_reward = {
-		###
+		swap_ideas = {
+			add_idea = AFU_savchenko_constitution
+			remove_idea = AFU_savchenko_fixes
+		}
 	}
 }
 
@@ -362,15 +418,21 @@ shared_focus = {
 	icon = GFX_AFU_iron_lady
 	cost = 3
 
-	x = 12
-	y = 8
+	x = 0
+	y = 5
+
+	relative_position_id = AFU_our_true_intention
 
 	prerequisite = { focus = AFU_form_a_new_cabinet }
-	prerequisite = { focus = AFU_proclaim_us_legitimate } 
-	prerequisite = { focus = AFU_iron_bastion }
+	prerequisite = { focus = AFU_proclaim_us_legitimate }
 	prerequisite = { focus = AFU_project_of_the_new_constitution }
+	prerequisite = { focus = AFU_nationalize_enterprises focus = AFU_make_them_loyal }
 
 	completion_reward = {
-		###
+		add_political_power = 200
+		add_trait = {
+			character = AFU_savchenko
+			trait = iron_lady
+		}
 	}
 }
