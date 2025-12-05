@@ -29,7 +29,10 @@ shared_focus = {
 	y = 0
 	
 	completion_reward = {
-		###
+		add_popularity = {
+			ideology = authoritarianism
+			popularity = -0.1
+		}
 	}
 }
 
@@ -46,7 +49,9 @@ shared_focus = {
 	prerequisite = { focus = AFU_there_is_no_time_for_democracy }
 
 	completion_reward = {
-		###
+		add_stability = 0.1
+		add_political_power = -25
+		country_event = afu_kryv.1
 	}
 }
 
@@ -99,7 +104,7 @@ shared_focus = {
 	completion_reward = {
 		add_timed_idea = {
 			idea = AFU_repairing_zavodi
-			days = 300
+			days = 200
 		}
 	}
 }
@@ -135,15 +140,22 @@ shared_focus = {
 	prerequisite = { focus = AFU_armaments_programme }
 
 	completion_reward = {
-		add_offsite_building = { type = arms_factory level = 4 }
+		add_offsite_building = { type = arms_factory level = 2 }
 		random_owned_state = {
 			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
 		}
 		random_owned_state = {
-			add_extra_state_shared_building_slots = 2
-		}
-		random_owned_state = {
-			add_extra_state_shared_building_slots = 2
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
 		}
 	}
 }
@@ -169,10 +181,11 @@ shared_focus = {
 	prerequisite = { focus = AFU_opening_of_new_plants }
 
 	completion_reward = {
-		add_political_power = 30
-		army_experience = 10
-		navy_experience = 10
-		air_experience = 10
+		add_political_power = 50
+		army_experience = 15
+		navy_experience = 15
+		air_experience = 15
+		add_command_power = 25
 	}
 }
 
@@ -192,7 +205,7 @@ shared_focus = {
 		add_political_power = 30
 		army_experience = 10
 		add_equipment_to_stockpile = {
-			type = medium_tank_chassis_3
+			type = MBT_equipment
 			amount = 100
 			producer = AFU
 		}
@@ -231,12 +244,12 @@ shared_focus = {
 		add_political_power = 30
 		air_experience = 10
 		add_equipment_to_stockpile = {
-			type = combat_drone_0
+			type = drone_equipment
 			amount = 100
 			producer = AFU
 		}
 		add_equipment_to_stockpile = {
-			type = cv_small_plane_cas_airframe
+			type = fighter_equipment_0
 			amount = 40
 			producer = AFU
 		}
@@ -272,8 +285,9 @@ shared_focus = {
 	prerequisite = { focus = AFU_officersstaffconvention }
 
 	completion_reward = {
-		add_political_power = 30
-		add_command_power = 20
+		add_political_power = -30
+		add_command_power = 30
+		country_event = afu_kryv.5
 	}
 }
 
@@ -289,29 +303,13 @@ shared_focus = {
 
 	prerequisite = { focus = AFU_syrskysplanthejerk }
 
+	available = {
+		date > 2024.01.01
+	}
+
 	completion_reward = {
 		declare_war_on = {
 			target = DNI
-			type = annex_everything
-		}
-		declare_war_on = {
-			target = BAN
-			type = annex_everything
-		}
-		declare_war_on = {
-			target = KRS
-			type = annex_everything
-		}
-		declare_war_on = {
-			target = UWF
-			type = annex_everything
-		}
-		declare_war_on = {
-			target = OPM
-			type = annex_everything
-		}
-		declare_war_on = {
-			target = PMU
 			type = annex_everything
 		}
 	}
@@ -345,6 +343,7 @@ shared_focus = {
 			}
 			add_core_of = AFU
 		}
+		country_event = afu_kryv.6
 	}
 }
 
@@ -377,6 +376,7 @@ shared_focus = {
 
 	completion_reward = {
 		add_command_power = 25
+		country_event = afu_kryv.4
 	}
 }
 
@@ -393,7 +393,10 @@ shared_focus = {
 
 	completion_reward = {
 		add_ideas = AFU_krivreformed_police
-		add_ideas = fop_security_regulated_police
+		custom_effect_tooltip = fop_security_regulated_police_tt
+		hidden_effect = {
+			add_ideas = fop_security_regulated_police
+		}
 	}
 }
 
@@ -407,6 +410,11 @@ shared_focus = {
 	y = 5
 
 	prerequisite = { focus = AFU_dontforgetabouttheeasternneighbour }
+
+	available = {
+		tag = LBU
+		has_country_flag = eu_limited_recognition
+	}
 
 	completion_reward = {
 		activate_advisor = AFU_gonchar
@@ -457,7 +465,7 @@ shared_focus = {
 	prerequisite = { focus = AFU_reinforce_the_army }
 
 	completion_reward = {
-		###
+		add_ideas = AFU_buckle_up
 	}
 }
 
@@ -473,7 +481,18 @@ shared_focus = {
 	prerequisite = { focus = AFU_take_a_sober_look_at_the_situation }
 
 	completion_reward = {
-		###
+		if = {
+			limit = {
+				has_idea = AFU_reaching_out_for_manpower
+			}
+			swap_ideas = {
+				add_idea = AFU_buckle_up_2
+				remove_idea = AFU_reaching_out_for_manpower
+			}
+		}
+		else = {
+			add_ideas = AFU_counter_propaganda
+		}
 	}
 }
 
@@ -489,7 +508,18 @@ shared_focus = {
 	prerequisite = { focus = AFU_take_a_sober_look_at_the_situation }
 
 	completion_reward = {
-		###
+		if = {
+			limit = {
+				has_idea = AFU_counter_propaganda
+			}
+			swap_ideas = {
+				add_idea = AFU_buckle_up_2
+				remove_idea = AFU_counter_propaganda
+			}
+		}
+		else = {
+			add_ideas = AFU_reaching_out_for_manpower
+		}
 	}
 }
 
@@ -523,7 +553,7 @@ shared_focus = {
 	prerequisite = { focus = AFU_legalise_pmcs }
 
 	completion_reward = {
-		###
+		add_ideas = AFU_swiss_model
 	}
 }
 
@@ -540,7 +570,10 @@ shared_focus = {
 	prerequisite = { focus = AFU_administrative_reform }
 
 	completion_reward = {
-		add_ideas = AFU_order_above_all_else_idea
+		swap_ideas = {
+			add_idea = AFU_order_above_all_else_idea_2
+			remove_idea = AFU_order_above_all_else_idea_1
+		}
 	}
 }
 
@@ -556,7 +589,8 @@ shared_focus = {
 	prerequisite = { focus = AFU_eastern_military_administration }
 
 	completion_reward = {
-		###
+		country_event = afu_kryv.7
+		unlock_decision_category_tooltip = AFU_kryvonos_allies
 	}
 }
 
@@ -573,7 +607,16 @@ shared_focus = {
 	prerequisite = { focus = AFU_kozackomy_rodu_nema_prevodu  }
 
 	completion_reward = {
-		###
+		custom_effect_tooltip = fop_press_freedom_free_tt
+		custom_effect_tooltip = fop_party_system_controlled_opposition_tt
+		custom_effect_tooltip = fop_suffrage_universal_tt
+		hidden_effect = {
+			add_ideas = {
+				fop_press_freedom_free
+				fop_party_system_controlled_opposition
+				fop_suffrage_universal
+			}
+		}
 	}
 }
 
@@ -589,7 +632,22 @@ shared_focus = {
 	prerequisite = { focus = AFU_kryvonys_political_career }
 
 	completion_reward = {
-		###
+		add_popularity = {
+			ideology = centrism
+			popularity = party_popularity@authoritarianism
+		}
+		set_politics = {
+			ruling_party = centrism
+		}
+		add_country_leader_role = {
+			character = AFU_kryvonos
+			promote_leader = yes
+			country_leader = {
+				ideology = big_tent
+				expire = "2077.1.1.1"
+			}
+		}
+		country_event = afu_kryv.3
 	}
 }
 
@@ -604,9 +662,13 @@ shared_focus = {
 
 	prerequisite = { focus = AFU_friends_in_need } 
 	prerequisite = { focus = AFU_thunder_and_fire }
+	available = {
+		has_country_flag = united_ukraine
+	}
 
 	completion_reward = {
-		###
+		add_political_power = 200
+		add_stability = 0.2
 	}
 }
 
@@ -622,7 +684,8 @@ shared_focus = {
 	prerequisite = { focus = AFU_eastern_military_administration }
 
 	completion_reward = {
-		###
+		country_event = afu_kryv.8
+		unlock_decision_category_tooltip = AFU_kryvonos_enemies
 	}
 }
 
@@ -638,7 +701,7 @@ shared_focus = {
 	prerequisite = { focus = AFU_strengthen_population_control }
 
 	completion_reward = {
-		###
+		add_ideas = AFU_order_above_all_else_idea_1
 	}
 }
 
@@ -717,7 +780,7 @@ shared_focus = {
 	prerequisite = { focus = AFU_andatsea }
 
 	completion_reward = {
-		###
+		add_ideas = AFU_ridna_ukraina_peremozhe
 	}
 }
 
@@ -733,7 +796,11 @@ shared_focus = {
 	prerequisite = { focus = AFU_reinforce_the_army }
 
 	completion_reward = {
-		###
+		swap_ideas = {
+			add_idea = AFU_use_everything_idea
+			remove_idea = AFU_reinforce_army_idea
+		}
+		country_event = afu_kryv.2
 	}
 }
 
@@ -750,6 +817,10 @@ shared_focus = {
 
 	completion_reward = {
 		add_ideas = AFU_militarisation_of_society
+		custom_effect_tooltip = fop_women_military_tt
+		hidden_effect = {
+			add_ideas = fop_women_military_assistance
+		}
 	}
 }
 
@@ -804,7 +875,7 @@ shared_focus = {
 		random_owned_state = {
 			add_extra_state_shared_building_slots = 2
 			add_building_construction = {
-				type = ammunition_plant
+				type = arms_factory
 				level = 1
 				instant_build = yes
 			}
@@ -816,6 +887,11 @@ shared_focus = {
 				level = 1
 				instant_build = yes
 			}
+		}
+		add_to_variable = {
+			var = FOP_Unemployment_var
+			value = 20
+			tooltip = add_Unemployment_var_tt
 		}
 	}
 }
@@ -833,7 +909,8 @@ shared_focus = {
 	mutually_exclusive = { focus = AFU_kozackomy_rodu_nema_prevodu }
 
 	completion_reward = {
-		###
+		add_war_support = -0.1
+		add_stability = 0.1
 	}
 }
 
@@ -849,7 +926,7 @@ shared_focus = {
 	prerequisite = { focus = AFU_keep_military_dictatorship }
 
 	completion_reward = {
-		###
+		add_ideas = AFU_council_of_generals
 	}
 }
 
@@ -865,7 +942,10 @@ shared_focus = {
 	prerequisite = { focus = AFU_keep_military_dictatorship }
 
 	completion_reward = {
-		###
+		custom_effect_tooltip = fop_press_freedom_state_tt
+		hidden_effect = {
+			add_ideas = fop_press_freedom_state
+		}
 	}
 }
 
@@ -881,6 +961,7 @@ shared_focus = {
 	prerequisite = { focus = AFU_kozackomy_rodu_nema_prevodu }
 
 	completion_reward = {
+		add_ideas = AFU_legalized_pmcs
 		hidden_effect = {
 			country_event = { id = afu.35 days = 7 }
 		}
@@ -897,6 +978,10 @@ shared_focus = {
 	y = 7
 
 	prerequisite = { focus = AFU_syrskysplanthejerk }
+
+	available = {
+		date > 2022.06.01
+	}
 
 	completion_reward = {
 		declare_war_on = {

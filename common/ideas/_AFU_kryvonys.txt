@@ -2,26 +2,56 @@ ideas = {
 
 	country = {
 	
-AFU_reinforce_army_idea = {
+		AFU_reinforce_army_idea = {
 
 			picture = AFU_reinforce_army
 
 			modifier = {
 				consumer_goods_factor = -0.1
 				political_power_cost = -0.05	
-				production_speed_buildings_factor = -0.5 
-				global_building_slots_factor = 0.1
+				production_speed_arms_factory_factor = 0.2
+				training_time_factor = 0.1
+				experience_gain_army_factor = 0.1
 			}
 		}
+
+		AFU_use_everything_idea = {
+
+			picture = AFU_reinforce_army
+
+			modifier = {
+				consumer_goods_factor = -0.2
+				political_power_cost = -0.05	
+				production_speed_arms_factory_factor = 0.2
+				training_time_factor = 0.1
+				experience_gain_army_factor = 0.1
+				equipment_capture_factor = 0.2
+				conversion_cost_civ_to_mil_factor = -0.1
+			}
+		}
+
 		AFU_armnament_programe_idea = {
 
 			picture = AFU_armnament_programe
 
 			modifier = {
-				equipment_capture = 0.15
 				base_fuel_gain_factor = 0.2
-				industrial_capacity_factory = 0.14
+				industrial_capacity_factory = 0.1
 			}
+			equipment_bonus = {
+                infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.15
+                }
+                artillery_equipment = {
+                    instant = yes
+					build_cost_ic = -0.05
+                }
+				anti_tank_equipment = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+            }
 		}
 
 		AFU_repairing_zavodi = {
@@ -41,10 +71,10 @@ AFU_reinforce_army_idea = {
 
 			modifier = {
 				base_fuel_gain_factor = 0.2
-				supply_factor = 0.12
+				supply_factor = 0.15
 				out_of_supply_factor = -0.1
 				attrition = -0.05
-				winter_attrition = -0.07
+				winter_attrition = -0.1
 				production_speed_labour_camp_factor = 0.1
 			}
 		}
@@ -54,8 +84,8 @@ AFU_reinforce_army_idea = {
 			picture = AFU_krivreformed_police
 
 			modifier = {
-				equipment_capture_for_controller = 0.12
-				compliance_growth = 0.25
+				equipment_capture_for_controller = 0.1
+				resistance_activity = -0.15
 				local_org_regain = -0.05
 			}
 		}
@@ -76,20 +106,50 @@ AFU_reinforce_army_idea = {
 			picture = AFU_nato_observers
 
 			modifier = {
-				war_stability_factor = 0.12
-				political_power_gain = 0.12
-				army_breakthrough_against_minor_factor = 0.07
+				war_stability_factor = 0.15
+				political_power_gain = 0.15
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.1
+				army_attack_against_major_factor = 0.1
+				army_defence_against_major_factor = 0.1
 			}
 		}
 		
-		AFU_order_above_all_else_idea = {
+		AFU_order_above_all_else_idea_1 = {
 
 			picture = AFU_order_above_all_else_idea
 
 			modifier = {
-				special_forces_training_time_factor = -0.3
+				experience_gain_army_unit_factor = 0.2
+				resistance_activity = -0.3
+				army_attack_against_minor_factor = 0.1
+				stability_factor = 0.1
+			}
+		}
+
+		AFU_order_above_all_else_idea_2 = {
+
+			picture = AFU_order_above_all_else_idea
+
+			modifier = {
+				experience_gain_army_unit_factor = 0.2
 				resistance_activity = -0.5
-				command_power_gain = 0.1
+				army_attack_against_minor_factor = 0.1
+				stability_factor = 0.1
+				army_morale_factor = 0.15
+				army_attack_against_major_factor = 0.1
+				army_defence_against_major_factor = 0.1
+			}
+		}
+
+		AFU_ridna_ukraina_peremozhe = {
+			picture = AFU_order_above_all_else_idea
+
+			modifier = {
+				breakthrough_factor = 0.2
+				army_org_factor = 0.1
+				army_armor_attack_factor = 0.1
+				army_armor_speed_factor = 0.1
 			}
 		}
 		
@@ -113,7 +173,74 @@ AFU_reinforce_army_idea = {
 			training_time_factor = 0.15
 			}
 		}
-	
+
+		AFU_legalized_pmcs = {
+			picture = AFU_legalized_pmcs
+			modifier = {
+				special_forces_training_time_factor = -0.2
+				special_forces_cap_flat = 8
+			}
+		}
+
+		AFU_council_of_generals = {
+			picture = AFU_council_of_generals
+			modifier = {
+				command_power_gain_mult = 0.1
+				max_command_power_mult = 0.1
+				experience_gain_army_factor = 0.1
+				resistance_growth = -0.2
+			}
+		}
+
+		AFU_swiss_model = {
+			picture = AFU_swiss_model
+			modifier = {
+				resistance_growth_on_our_occupied_states = 0.2
+				resistance_damage_to_garrison_on_our_occupied_states = 0.3
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+                }
+			}
+		}
+
+		AFU_buckle_up_1 = {
+			picture = AFU_buckle_up
+			modifier = {
+				stability_factor = 0.1
+			}
+		}
+
+		AFU_counter_propaganda = {
+			picture = AFU_buckle_up
+			modifier = {
+				drift_defence_factor = 0.15
+				war_support_factor = 0.1
+				stability_factor = 0.1
+			}
+		}
+
+		AFU_reaching_out_for_manpower = {
+			picture = AFU_buckle_up
+			modifier = {
+				weekly_manpower = 50
+				stability_factor = 0.1
+				compliance_growth = 0.15
+			}
+		}
+
+		AFU_buckle_up_2 = {
+			picture = AFU_buckle_up
+			modifier = {
+				drift_defence_factor = 0.15
+				war_support_factor = 0.1
+				weekly_manpower = 50
+				stability_factor = 0.1
+				compliance_growth = 0.15
+			}
+		}
 	}
 	
 }
