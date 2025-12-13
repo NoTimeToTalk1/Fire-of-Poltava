@@ -6,7 +6,7 @@ shared_focus = {
 	y = 1
     cost = 2
 	completion_reward = {
-		###
+		add_ideas = AFU_army_troubles
 	}
 }
 
@@ -142,13 +142,8 @@ shared_focus = {
     cost = 2
 	completion_reward = {
 		add_equipment_to_stockpile = {
-    		type = MBT_tank_chassis_3
-    		amount = 50
-			producer = EUN
-		}
-		add_equipment_to_stockpile = {
-    		type = MBT_tank_chassis_2
-    		amount = 50
+    		type = MBT_equipment
+    		amount = 100
 			producer = EUN
 		}
 	}
@@ -165,7 +160,7 @@ shared_focus = {
 	completion_reward = {
 		add_equipment_to_stockpile = {
     		type = artillery_equipment
-    		amount = 250
+    		amount = 350
 			producer = EUN
 		}
 	}
@@ -181,8 +176,8 @@ shared_focus = {
     cost = 2
 	completion_reward = {
 		add_equipment_to_stockpile = {
-    		type = mechanised_equipment
-    		amount = 100
+    		type = IFV_equipment
+    		amount = 200
 			producer = EUN
 		}
 	}
@@ -322,14 +317,14 @@ shared_focus = {
     cost = 2
 	completion_reward = {
 		if = {
-			limit = {ROOT = {has_idea = AFU_army_troubles_2} }
+			limit = { has_idea = AFU_army_troubles_2 }
 			swap_ideas = {
 				add_idea = AFU_army_troubles_3
 				remove_idea = AFU_army_troubles_2
 			}
 		}
 		if = {
-			limit = {ROOT = {has_idea = AFU_army_troubles_3} }
+			limit = { has_idea = AFU_army_troubles_3 }
 			swap_ideas = {
 				add_idea = AFU_army_troubles_4
 				remove_idea = AFU_army_troubles_3
@@ -354,7 +349,7 @@ shared_focus = {
     cost = 2
 	completion_reward = {
 		if = {
-			limit = {ROOT = {has_idea = AFU_army_troubles_2} }
+			limit = { has_idea = AFU_army_troubles_2 }
 			swap_ideas = {
 				add_idea = AFU_army_troubles_4
 				remove_idea = AFU_army_troubles_2
@@ -380,7 +375,7 @@ shared_focus = {
     cost = 2
 	completion_reward = {
 		if = {
-			limit = {ROOT = {has_idea = AFU_army_troubles_2} }
+			limit = { has_idea = AFU_army_troubles_2 }
 			swap_ideas = {
 				add_idea = AFU_army_troubles_3
 				remove_idea = AFU_army_troubles_2
@@ -407,7 +402,7 @@ shared_focus = {
     cost = 2
 	completion_reward = {
 		if = {
-			limit = {ROOT = {has_idea = AFU_army_troubles_3} }
+			limit = { has_idea = AFU_army_troubles_3 }
 			swap_ideas = {
 				add_idea = AFU_army_improved
 				remove_idea = AFU_army_troubles_3
@@ -503,7 +498,10 @@ shared_focus = {
 	y = 1
     cost = 2
 	completion_reward = {
-		unlock_decision_category_tooltip = afu_planes_shipment
+		add_equipment_to_stockpile = {
+			type = small_plane_airframe
+			amount = 35
+		}
 	}
 	relative_position_id = AFU_reform_PS
 	prerequisite = { focus = AFU_reform_PS }
@@ -567,7 +565,11 @@ shared_focus = {
 	y = 1
     cost = 2
 	completion_reward = {
-		custom_effect_tooltip = afu_african_planes_tt
+		add_equipment_to_stockpile = {
+			type = small_plane_airframe
+			amount = 50
+			producer = LAS
+		}
 	}
 	relative_position_id = AFU_buy_rockets
 	prerequisite = { focus = AFU_buy_rockets }
@@ -585,7 +587,9 @@ shared_focus = {
 		}
 	}
 	completion_reward = {
-		###
+		set_technology = {
+			improved_rocket_engines = 1
+		}
 	}
 	relative_position_id = AFU_buy_rockets
 	prerequisite = { focus = AFU_buy_rockets }
@@ -812,7 +816,6 @@ shared_focus = {
 	allow_branch = {
 		OR = {
 			has_country_flag = AFU_dan
-			has_country_flag = AFU_sav
 			has_country_flag = AFU_kryvonis
 		}
 	}
@@ -880,11 +883,6 @@ shared_focus = {
 	prerequisite = { focus = AFU_trainings_in_belarus focus = AFU_remind_about_eternal_enemy }
 }
 
-
-
-
-
-
 shared_focus = {
 	id = AFU_new_ways_of_war
 	icon = GFX_AFU_New_ways_of_war
@@ -892,7 +890,11 @@ shared_focus = {
 	y = 1
     cost = 2
 	completion_reward = {
-		###
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 2
+			category = drone
+		}
 	}
 	relative_position_id = AFU_general_condition
 	prerequisite = { focus = AFU_general_condition }
@@ -905,7 +907,7 @@ shared_focus = {
 	y = 1
     cost = 2
 	completion_reward = {
-		###
+		add_ideas = AFU_drone_production
 	}
 	relative_position_id = AFU_new_ways_of_war
 	prerequisite = { focus = AFU_new_ways_of_war }
@@ -918,7 +920,7 @@ shared_focus = {
 	y = 1
     cost = 2
 	completion_reward = {
-		###
+		add_ideas = AFU_drone_operators_training
 	}
 	relative_position_id = AFU_mass_drone_production
 	prerequisite = { focus = AFU_mass_drone_production }
@@ -952,14 +954,6 @@ shared_focus = {
 	relative_position_id = AFU_centre_of_psyop_operations
 	prerequisite = { focus = AFU_centre_of_psyop_operations }
 }
-
-
-
-
-
-
-
-
 
 shared_focus = {
 	id = AFU_naval_reform
@@ -1038,20 +1032,11 @@ shared_focus = {
 	y = 2
     cost = 2
 	completion_reward = {
-		###
+		add_ideas = AFU_reborn_marines
 	}
 	relative_position_id = AFU_naval_reform
 	prerequisite = { focus = AFU_return_old_fleet focus = AFU_light_ships_tactic }
 }
-
-
-
-
-
-
-
-
-
 
 shared_focus = {
 	id = AFU_death_from_above
@@ -1060,7 +1045,7 @@ shared_focus = {
 	y = 1
     cost = 2
 	completion_reward = {
-		###
+		add_ideas = AFU_death_from_above
 	}
 	relative_position_id = AFU_naval_reform
 	prerequisite = { focus = AFU_naval_reform }
@@ -1073,7 +1058,7 @@ shared_focus = {
 	y = 1
     cost = 2
 	completion_reward = {
-		###
+		add_ideas = AFU_production_of_naval_rockets
 	}
 	relative_position_id = AFU_death_from_above
 	prerequisite = { focus = AFU_death_from_above }
@@ -1087,7 +1072,11 @@ shared_focus = {
 	y = 1
     cost = 2
 	completion_reward = {
-		###
+		add_political_power = -25
+		add_equipment_to_stockpile = {
+			type = anti_tank_equipment
+			amount = 250
+		}
 	}
 	relative_position_id = AFU_death_from_above
 	prerequisite = { focus = AFU_death_from_above }
