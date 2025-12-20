@@ -1,69 +1,33 @@
-add_namespace = dpr_girkin
-add_namespcae = dpr_girkin_lore
-country_event = {
-	id = dpr_girkin.1
-	title = dpr_girkin.1.t
-	desc = dpr_girkin.1.d
+﻿add_namespace = gir
 
+#PLACEHOLDER --- Вуличні протести виборців вітренко та пасєки
+country_event = {
+	id = gir.1
+	title = gir.1.t
+	desc = gir.1.d
 	picture = none
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
-	fire_only_once = yes
-
-	trigger = {
-		DPR = {
-			has_government = ultranationalism
-		}
-	}
 	option = {
-		name = dpr_girkin.1.a
-		DPR = {
-			set_cosmetic_tag = GRK
-			remove_ideas = DPR_clown
-			remove_ideas = DPR_FSB
-			load_focus_tree = DPR_strelkov
-		}
+		name = gir.1.a
+		add_ideas = DPR_peoples_opposition_1
 	}
 }
 
+#PLACEHOLDER --- Перші криваві зіткнення на вулицях
 country_event = {
-	id = dpr_girkin.2 #opposition is against
-	title = dpr_girkin.2.t
-	desc = dpr_girkin.2.d
-
+	id = gir.2
+	title = gir.2.t
+	desc = gir.2.d
 	picture = none
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
-	fire_only_once = yes
-
 	option = {
-		name = dpr_girkin.2.a
-		add_popularity = {
-			ideology = socialism
-			popularity = 0.03
-		}
-		add_popularity = {
-			ideology = national_democracy
-			popularity = 0.03
-		}
-	}
-}
-
-country_event = {
-	id = dpr_girkin.3 #arming loyalists, opposition nervous
-	title = dpr_girkin.3.t
-	desc = dpr_girkin.3.d
-
-	picture = none
-
-	is_triggered_only = yes
-
-	fire_only_once = yes
-
-	option = {
-		name = dpr_girkin.3.a
+		name = gir.2.a
 		swap_ideas = {
 			remove_idea = DPR_peoples_opposition_1
 			add_idea = DPR_peoples_opposition_2
@@ -71,52 +35,51 @@ country_event = {
 	}
 }
 
+#PLACEHOLDER --- Вирізка з газети про дискредитацію Вітренко й Пасєки (відомі вони разом як "Народна Опозиція")
 country_event = {
-	id = dpr_girkin.4 #discrediting
-	title = dpr_girkin.4.t
-	desc = dpr_girkin.4.d
-
+	id = gir.3
+	title = gir.3.t
+	desc = gir.3.d
 	picture = none
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
-	fire_only_once = yes
-
 	option = {
-		name = dpr_girkin.4.a
+		name = gir.3.a
 		add_popularity = {
-			ideology = conservatism
-			popularity = -0.02
-		}
-		add_popularity = {
-			ideology = liberalism
-			popularity = -0.02
+			ideology = communism
+			popularity = -0.1
 		}
 		add_popularity = {
 			ideology = socialism
-			popularity = -0.02
+			popularity = -0.1
 		}
 		add_popularity = {
-			ideology = communism
-			popularity = -0.02
+			ideology = liberalism
+			popularity = -0.1
+		}
+		add_popularity = {
+			ideology = conservatism
+			popularity = -0.1
 		}
 	}
 }
 
+#PLACEHOLDER --- Війна гіркіна та лоялістів з опозицією в містах та селах
 country_event = {
-	id = dpr_girkin.5 #unrest
-	title = dpr_girkin.5.t
-	desc = dpr_girkin.5.d
-
+	id = gir.4
+	title = gir.4.t
+	desc = gir.4.d
 	picture = none
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
-	fire_only_once = yes
-
 	option = {
-		name = dpr_girkin.5.a
-		swap_ideas = {
+		name = gir.4.a
+		add_stability = -0.2
+		swap_ideas = { --- ADD THIS TO EVENT INSTEAD, ALSO DEMILITARIZE REGIONS AND OPEN DECISIONS
 			remove_idea = DPR_peoples_opposition_2
 			add_idea = DPR_peoples_opposition_3
 		}
@@ -124,261 +87,1069 @@ country_event = {
 }
 
 country_event = {
-	id = dpr_girkin.6 #amendments
-	title = dpr_girkin.6.t
-	desc = dpr_girkin.6.d
-
+	id = gir.5
+	title = gir.5.t
+	desc = gir.5.d
 	picture = none
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
+	option = {
+		name = gir.5.a
+		remove_ideas = DPR_peoples_opposition_1
+	}
+}
+
+#PLACEHOLDER --- Штурм ячейки Народної Опозиції (сценарій з лібералізацією)
+country_event = {
+	id = gir.6
+	title = gir.6.t
+	desc = gir.6.d
+	picture = none
+
 	fire_only_once = yes
+	is_triggered_only = yes
 
 	option = {
-		name = dpr_girkin.6.a
-		add_political_power = 50
+		name = gir.6.a
+	}
+}
+
+#PLACEHOLDER --- Відміна правок, шок контент
+country_event = {
+	id = gir.7
+	title = gir.7.t
+	desc = gir.7.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.7.a
+	}
+}
+
+#PLACEHOLDER --- Опис подальшої ситуації (народ в страху, в державі анархія)
+country_event = {
+	id = gir.8
+	title = gir.8.t
+	desc = gir.8.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.8.a
 	}
 }
 
 country_event = {
-	id = dpr_girkin.7 #raid on opposition
-	title = dpr_girkin.7.t
-	desc = dpr_girkin.7.d
-
+	id = gir.9
+	title = gir.9.t
+	desc = gir.9.d
 	picture = none
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
-	fire_only_once = yes
-
 	option = {
-		name = dpr_girkin.7.a
-		add_stability = -0.1
+		name = gir.9.a
 	}
 }
 
 country_event = {
-	id = dpr_girkin.8 #no amendments
-	title = dpr_girkin.8.t
-	desc = dpr_girkin.8.d
-
+	id = gir.10
+	title = gir.10.t
+	desc = gir.10.d
 	picture = none
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
-	fire_only_once = yes
-
 	option = {
-		name = dpr_girkin.8.a
-		add_stability = -0.1
+		name = gir.10.a
 	}
 }
 
 country_event = {
-	id = dpr_girkin.9 #fight with opposition
-	title = dpr_girkin.9.t
-	desc = dpr_girkin.9.d
-
+	id = gir.11
+	title = gir.11.t
+	desc = gir.11.d
 	picture = none
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
-	fire_only_once = yes
-
 	option = {
-		name = dpr_girkin.9.a
-		add_stability = -0.15
-		add_war_support = -0.2
-		every_state = {
-			limit = {
-				OR = {
-					state = 2346
-					state = 2094
-					state = 2083
-					state = 2093
-					state = 2031
-					state = 2098
-					state = 2099
-					state = 2097
-					state = 2724
-					state = 2310
-					state = 2081
-				}
-			}
-			set_demilitarized_zone = yes
-		}
-		unlock_decision_category_tooltip = DPR_putting_down_the_unrest
-		set_country_flag = DPR_girkin_crackdown
-		if = {
-			limit = {
-				has_completed_focus = DPR_give_them_guarantees
-			}
-			set_country_flag = DPR_girkin_crackdown_hard
-		}
+		name = gir.11.a
 	}
 }
 
 country_event = {
-	id = dpr_girkin.10 #kill pasechnik
-	title = dpr_girkin.10.t
-	desc = dpr_girkin.10.d
-
+	id = gir.12
+	title = gir.12.t
+	desc = gir.12.d
 	picture = none
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
-	fire_only_once = yes
-
 	option = {
-		name = dpr_girkin.10.a
-		kill_ideology_leader = national_democracy
+		name = gir.12.a
 	}
 }
 
 country_event = {
-	id = dpr_girkin.11 #kill vitrenko
-	title = dpr_girkin.11.t
-	desc = dpr_girkin.11.d
-
+	id = gir.13
+	title = gir.13.t
+	desc = gir.13.d
 	picture = none
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
-	fire_only_once = yes
-
 	option = {
-		name = dpr_girkin.11.a
-		kill_ideology_leader = socialism
+		name = gir.13.a
 	}
 }
 
 country_event = {
-	id = dpr_girkin.12 #alyo eto prigozhin zhenya a et ya igor strelkov ooo blya zdarova
-	title = dpr_girkin.12.t
-	desc = dpr_girkin.12.d
-
+	id = gir.14
+	title = gir.14.t
+	desc = gir.14.d
 	picture = none
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
-	fire_only_once = yes
-
 	option = {
-		name = dpr_girkin.12.a
+		name = gir.14.a
 	}
 }
 
 country_event = {
-	id = dpr_girkin.13 #integration of wagner
-	title = dpr_girkin.13.t
-	desc = dpr_girkin.13.d
-
+	id = gir.15
+	title = gir.15.t
+	desc = gir.15.d
 	picture = none
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
-	fire_only_once = yes
-
 	option = {
-		name = dpr_girkin.13.a
-		add_war_support = 0.01
+		name = gir.15.a
 	}
 }
 
 country_event = {
-	id = dpr_girkin.14 #girkin's genius
-	title = dpr_girkin.14.t
-	desc = dpr_girkin.14.d
-
+	id = gir.16
+	title = gir.16.t
+	desc = gir.16.d
 	picture = none
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
-	fire_only_once = yes
-
 	option = {
-		name = dpr_girkin.14.a
+		name = gir.16.a
 	}
 }
 
 country_event = {
-	id = dpr_girkin.15 #purge of unloyal
-	title = dpr_girkin.15.t
-	desc = dpr_girkin.15.d
-
+	id = gir.17
+	title = gir.17.t
+	desc = gir.17.d
 	picture = none
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
-	fire_only_once = yes
-
 	option = {
-		name = dpr_girkin.15.a
-		add_manpower = -1000
+		name = gir.17.a
 	}
 }
 
 country_event = {
-	id = dpr_girkin.16 #girkin meets rovs
-	title = dpr_girkin.16.t
-	desc = dpr_girkin.16.d
-
+	id = gir.18
+	title = gir.18.t
+	desc = gir.18.d
 	picture = none
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
-	fire_only_once = yes
-
 	option = {
-		name = dpr_girkin.16.a
-	}
-}
-
-
-country_event = {
-	id = dpr_girkin_lore.1 #fsb
-	title = dpr_girkin_lore.1.t
-	desc = dpr_girkin_lore.1.d
-
-	picture = none
-
-	is_triggered_only = yes
-
-	fire_only_once = yes
-
-	option = {
-		name = dpr_girkin_lore.1.a
+		name = gir.18.a
 	}
 }
 
 country_event = {
-	id = dpr_girkin_lore.2 #rovs
-	title = dpr_girkin_lore.2.t
-	desc = dpr_girkin_lore.2.d
-
+	id = gir.19
+	title = gir.19.t
+	desc = gir.19.d
 	picture = none
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
-	fire_only_once = yes
-
 	option = {
-		name = dpr_girkin_lore.2.a
+		name = gir.19.a
 	}
 }
 
 country_event = {
-	id = dpr_girkin_lore.3 #cossacks
-	title = dpr_girkin_lore.3.t
-	desc = dpr_girkin_lore.3.d
-
+	id = gir.20
+	title = gir.20.t
+	desc = gir.20.d
 	picture = none
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
+	option = {
+		name = gir.20.a
+	}
+}
+
+country_event = {
+	id = gir.21
+	title = gir.21.t
+	desc = gir.21.d
+	picture = none
+
 	fire_only_once = yes
+	is_triggered_only = yes
 
 	option = {
-		name = dpr_girkin_lore.3.a
+		name = gir.21.a
+	}
+}
+
+country_event = {
+	id = gir.22
+	title = gir.22.t
+	desc = gir.22.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.22.a
+	}
+}
+
+country_event = {
+	id = gir.23
+	title = gir.23.t
+	desc = gir.23.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.23.a
+	}
+}
+
+country_event = {
+	id = gir.24
+	title = gir.24.t
+	desc = gir.24.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.24.a
+	}
+}
+
+country_event = {
+	id = gir.25
+	title = gir.25.t
+	desc = gir.25.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.25.a
+	}
+}
+
+country_event = {
+	id = gir.26
+	title = gir.26.t
+	desc = gir.26.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.26.a
+	}
+}
+
+country_event = {
+	id = gir.27
+	title = gir.27.t
+	desc = gir.27.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.27.a
+	}
+}
+
+country_event = {
+	id = gir.28
+	title = gir.28.t
+	desc = gir.28.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.28.a
+	}
+}
+
+country_event = {
+	id = gir.29
+	title = gir.29.t
+	desc = gir.29.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.29.a
+	}
+}
+
+country_event = {
+	id = gir.30
+	title = gir.30.t
+	desc = gir.30.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.30.a
+	}
+}
+
+country_event = {
+	id = gir.31
+	title = gir.31.t
+	desc = gir.31.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.31.a
+	}
+}
+
+country_event = {
+	id = gir.32
+	title = gir.32.t
+	desc = gir.32.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.32.a
+	}
+}
+
+country_event = {
+	id = gir.33
+	title = gir.33.t
+	desc = gir.33.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.33.a
+	}
+}
+
+country_event = {
+	id = gir.34
+	title = gir.34.t
+	desc = gir.34.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.34.a
+	}
+}
+
+country_event = {
+	id = gir.35
+	title = gir.35.t
+	desc = gir.35.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.35.a
+	}
+}
+
+country_event = {
+	id = gir.36
+	title = gir.36.t
+	desc = gir.36.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.36.a
+	}
+}
+
+country_event = {
+	id = gir.37
+	title = gir.37.t
+	desc = gir.37.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.37.a
+	}
+}
+
+country_event = {
+	id = gir.38
+	title = gir.38.t
+	desc = gir.38.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.38.a
+	}
+}
+
+country_event = {
+	id = gir.39
+	title = gir.39.t
+	desc = gir.39.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.39.a
+	}
+}
+
+country_event = {
+	id = gir.40
+	title = gir.40.t
+	desc = gir.40.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.40.a
+	}
+}
+
+country_event = {
+	id = gir.41
+	title = gir.41.t
+	desc = gir.41.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.41.a
+	}
+}
+
+country_event = {
+	id = gir.42
+	title = gir.42.t
+	desc = gir.42.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.42.a
+	}
+}
+
+country_event = {
+	id = gir.43
+	title = gir.43.t
+	desc = gir.43.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.43.a
+	}
+}
+
+country_event = {
+	id = gir.44
+	title = gir.44.t
+	desc = gir.44.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.44.a
+	}
+}
+
+country_event = {
+	id = gir.45
+	title = gir.45.t
+	desc = gir.45.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.45.a
+	}
+}
+
+country_event = {
+	id = gir.46
+	title = gir.46.t
+	desc = gir.46.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.46.a
+	}
+}
+
+country_event = {
+	id = gir.47
+	title = gir.47.t
+	desc = gir.47.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.47.a
+	}
+}
+
+country_event = {
+	id = gir.48
+	title = gir.48.t
+	desc = gir.48.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.48.a
+	}
+}
+
+country_event = {
+	id = gir.49
+	title = gir.49.t
+	desc = gir.49.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.49.a
+	}
+}
+
+country_event = {
+	id = gir.50
+	title = gir.50.t
+	desc = gir.50.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.50.a
+	}
+}
+
+country_event = {
+	id = gir.51
+	title = gir.51.t
+	desc = gir.51.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.51.a
+	}
+}
+
+country_event = {
+	id = gir.52
+	title = gir.52.t
+	desc = gir.52.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.52.a
+	}
+}
+
+country_event = {
+	id = gir.53
+	title = gir.53.t
+	desc = gir.53.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.53.a
+	}
+}
+
+country_event = {
+	id = gir.54
+	title = gir.54.t
+	desc = gir.54.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.54.a
+	}
+}
+
+country_event = {
+	id = gir.55
+	title = gir.55.t
+	desc = gir.55.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.55.a
+	}
+}
+
+country_event = {
+	id = gir.56
+	title = gir.56.t
+	desc = gir.56.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.56.a
+	}
+}
+
+country_event = {
+	id = gir.57
+	title = gir.57.t
+	desc = gir.57.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.57.a
+	}
+}
+
+country_event = {
+	id = gir.58
+	title = gir.58.t
+	desc = gir.58.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.58.a
+	}
+}
+
+country_event = {
+	id = gir.59
+	title = gir.59.t
+	desc = gir.59.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.59.a
+	}
+}
+
+country_event = {
+	id = gir.60
+	title = gir.60.t
+	desc = gir.60.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.60.a
+	}
+}
+
+country_event = {
+	id = gir.61
+	title = gir.61.t
+	desc = gir.61.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.61.a
+	}
+}
+
+country_event = {
+	id = gir.62
+	title = gir.62.t
+	desc = gir.62.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.62.a
+	}
+}
+
+country_event = {
+	id = gir.63
+	title = gir.63.t
+	desc = gir.63.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.63.a
+	}
+}
+
+country_event = {
+	id = gir.64
+	title = gir.64.t
+	desc = gir.64.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.64.a
+	}
+}
+
+country_event = {
+	id = gir.65
+	title = gir.65.t
+	desc = gir.65.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.65.a
+	}
+}
+
+country_event = {
+	id = gir.66
+	title = gir.66.t
+	desc = gir.66.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.66.a
+	}
+}
+
+country_event = {
+	id = gir.67
+	title = gir.67.t
+	desc = gir.67.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.67.a
+	}
+}
+
+country_event = {
+	id = gir.68
+	title = gir.68.t
+	desc = gir.68.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.68.a
+	}
+}
+
+country_event = {
+	id = gir.69
+	title = gir.69.t
+	desc = gir.69.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.69.a
+	}
+}
+
+country_event = {
+	id = gir.70
+	title = gir.70.t
+	desc = gir.70.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.70.a
+	}
+}
+
+country_event = {
+	id = gir.71
+	title = gir.71.t
+	desc = gir.71.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.71.a
+	}
+}
+
+country_event = {
+	id = gir.72
+	title = gir.72.t
+	desc = gir.72.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.72.a
+	}
+}
+
+country_event = {
+	id = gir.73
+	title = gir.73.t
+	desc = gir.73.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.73.a
+	}
+}
+
+country_event = {
+	id = gir.74
+	title = gir.74.t
+	desc = gir.74.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.74.a
+	}
+}
+
+country_event = {
+	id = gir.75
+	title = gir.75.t
+	desc = gir.75.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.75.a
+	}
+}
+
+country_event = {
+	id = gir.76
+	title = gir.76.t
+	desc = gir.76.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.76.a
+	}
+}
+
+country_event = {
+	id = gir.77
+	title = gir.77.t
+	desc = gir.77.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.77.a
+	}
+}
+
+country_event = {
+	id = gir.78
+	title = gir.78.t
+	desc = gir.78.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.78.a
+	}
+}
+
+country_event = {
+	id = gir.79
+	title = gir.79.t
+	desc = gir.79.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.79.a
+	}
+}
+
+country_event = {
+	id = gir.80
+	title = gir.80.t
+	desc = gir.80.d
+	picture = none
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.80.a
 	}
 }
