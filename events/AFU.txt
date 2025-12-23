@@ -417,7 +417,7 @@ country_event = { #Territorial Defence Forces
 		division_template = {
 			name = "Teroborona"
 			is_locked = yes
-			division_names_group = BLR_INF_01
+			division_names_group = UKR_INF_01
 			priority = 0
 			template_counter = 0
 			regiments = {
@@ -1047,5 +1047,60 @@ country_event = { # Navy forces
 
 	option = {
 		name = AFU_army.3.a
+	}
+}
+
+country_event = { # Generals decision
+	id = AFU_army.4
+	title = AFU_army.4.t
+	desc = AFU_army.4.d
+	
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = AFU_army.4.a
+		retire_character = AFU_Syrskyi
+		retire_character = AFU_Bessarab
+		set_country_flag = AFU_purge_small
+	}
+
+	option = {
+		name = AFU_army.4.b
+		retire_character = AFU_Syrskyi
+		retire_character = AFU_Naiev
+		retire_character = AFU_Tantsyura
+		retire_character = AFU_Bessarab
+		retire_character = AFU_Shevtsov
+		set_country_flag = AFU_purge_big
+	}
+
+	option = {
+		name = AFU_army.4.c
+		add_command_power = 50
+		army_experience = -35
+		set_country_flag = AFU_no_purge
+	}
+}
+
+country_event = { # SSO decision
+	id = AFU_army.5
+	title = AFU_army.5.t
+	desc = AFU_army.5.d
+	
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = AFU_army.5.a
+		retire_character = AFU_Lunyov
+		add_command_power = -25
+	}
+
+	option = {
+		name = AFU_army.5.b
+		add_stability = -0.01
 	}
 }

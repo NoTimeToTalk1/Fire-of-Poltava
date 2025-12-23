@@ -2,9 +2,9 @@
 shared_focus = {
 	id = AFU_army_problems
 	icon = GFX_AFU_question_of_the_army
-	x = 70
+	x = 90
 	y = 1
-    cost = 2
+    cost = 1
 	completion_reward = {
 		add_ideas = AFU_army_troubles
 	}
@@ -24,7 +24,7 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = AFU_zvit_1
+	id = AFU_land_forces_report
 	icon = GFX_AFU_zvit_land
 	x = -2
 	y = 1
@@ -37,7 +37,7 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = AFU_zvit_2
+	id = AFU_air_forces_report
 	icon = GFX_AFU_zvit_air
 	x = 0
 	y = 1
@@ -50,7 +50,7 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = AFU_zvit_3
+	id = AFU_naval_forces_report
 	icon = GFX_AFU_zvit_sea
 	x = 2
 	y = 1
@@ -71,10 +71,10 @@ shared_focus = {
 	completion_reward = {
 		custom_effect_tooltip = afu_army_reform_tt
 	}
-	relative_position_id = AFU_zvit_2
-	prerequisite = { focus = AFU_zvit_1 }
-	prerequisite = { focus = AFU_zvit_2 }
-	prerequisite = { focus = AFU_zvit_3 }
+	relative_position_id = AFU_air_forces_report
+	prerequisite = { focus = AFU_land_forces_report }
+	prerequisite = { focus = AFU_air_forces_report }
+	prerequisite = { focus = AFU_naval_forces_report }
 }
 
 shared_focus = {
@@ -82,18 +82,11 @@ shared_focus = {
 	icon = GFX_AFU_development_of_military_industry
 	x = -14
 	y = 2
-    cost = 2
+    cost = 5
 	completion_reward = {
 		random_owned_controlled_state = {
 			add_building_construction = {
 				type = arms_factory
-				level = 1
-				instant_build = yes
-			}
-		}
-		random_owned_controlled_state = {
-			add_building_construction = {
-				type = ammunition_plant
 				level = 1
 				instant_build = yes
 			}
@@ -108,103 +101,110 @@ shared_focus = {
 	icon = GFX_AFU_purchase_abroad
 	x = -2
 	y = 1
-    cost = 2
+    cost = 5
+	available = {
+		has_country_flag = eu_limited_recognition
+	}
 	completion_reward = {
 		custom_effect_tooltip = afu_army_buy_weapons_tt
 	}
 	relative_position_id = AFU_development_of_the_military_industry
 	prerequisite = { focus = AFU_development_of_the_military_industry }
-	mutually_exclusive = { focus = AFU_own_production_facilities }
+	mutually_exclusive = { focus = AFU_our_own_production }
 }
 
 shared_focus = {
-	id = AFU_buy_military_trucks
+	id = AFU_purchase_trucks
 	icon = GFX_AFU_buy_new_trucks
 	x = -5
 	y = 1
-    cost = 2
+    cost = 5
 	completion_reward = {
 		add_equipment_to_stockpile = {
     		type = motorized_equipment
     		amount = 750
 			producer = EUN
 		}
+		add_political_power = -20
 	}
 	relative_position_id = AFU_purchases_abroad
 	prerequisite = { focus = AFU_purchases_abroad }
 }
 
 shared_focus = {
-	id = AFU_buy_tanks
+	id = AFU_buy_german_tanks
 	icon = GFX_AFU_germa_tanks
 	x = -3
 	y = 1
-    cost = 2
+    cost = 5
 	completion_reward = {
 		add_equipment_to_stockpile = {
     		type = MBT_equipment
     		amount = 100
 			producer = EUN
 		}
+		add_political_power = -40
 	}
 	relative_position_id = AFU_purchases_abroad
 	prerequisite = { focus = AFU_purchases_abroad }
 }
 
 shared_focus = {
-	id = AFU_buy_artillery
+	id = AFU_buy_czech_and_bulgarian_artillery
 	icon = GFX_AFU_buy_czhech_and_bulgarian
 	x = -1
 	y = 1
-    cost = 2
+    cost = 5
 	completion_reward = {
 		add_equipment_to_stockpile = {
     		type = artillery_equipment
     		amount = 350
 			producer = EUN
 		}
+		add_political_power = -20
 	}
 	relative_position_id = AFU_purchases_abroad
 	prerequisite = { focus = AFU_purchases_abroad }
 }
 
 shared_focus = {
-	id = AFU_buy_bmp
+	id = AFU_buy_croatian_and_slovenian_ifv
 	icon = GFX_AFU_buy_croatian_and_slovenian_bmp
 	x = 1
 	y = 1
-    cost = 2
+    cost = 5
 	completion_reward = {
 		add_equipment_to_stockpile = {
     		type = IFV_equipment
     		amount = 200
 			producer = EUN
 		}
+		add_political_power = -25
 	}
 	relative_position_id = AFU_purchases_abroad
 	prerequisite = { focus = AFU_purchases_abroad }
 }
 
 shared_focus = {
-	id = AFU_cooperation_with_east_europe
+	id = AFU_eastern_european_cooperation
 	icon = GFX_AFU_eastern_european_cooperation
 	x = -1
 	y = 2
-    cost = 2
+    cost = 5
 	completion_reward = {
 		add_ideas = AFU_eastern_europe_cooperation
-		unlock_decision_category_tooltip = afu_weapons_shipment
+		unlock_decision_category_tooltip = AFU_weapon_shipment_category
 	}
-	relative_position_id = AFU_buy_artillery
-	prerequisite = { focus = AFU_buy_military_trucks focus = AFU_buy_tanks focus = AFU_buy_artillery focus = AFU_buy_bmp }
+	relative_position_id = AFU_buy_czech_and_bulgarian_artillery
+	prerequisite = { focus = AFU_purchase_trucks focus = AFU_buy_german_tanks focus = AFU_buy_czech_and_bulgarian_artillery focus = AFU_buy_croatian_and_slovenian_ifv }
 }
 
 shared_focus = {
-	id = AFU_own_production_facilities
+	id = AFU_our_own_production
 	icon = GFX_AFU_our_own_production
 	x = 2
 	y = 1
-    cost = 2
+    cost = 7
 	completion_reward = {
 		random_owned_controlled_state = {
 			add_building_construction = {
@@ -224,12 +224,12 @@ shared_focus = {
 	icon = GFX_AFU_khbtz
 	x = -1
 	y = 1
-    cost = 2
+    cost = 7
 	completion_reward = {
 		add_ideas = AFU_promising_projects
 	}
-	relative_position_id = AFU_own_production_facilities
-	prerequisite = { focus = AFU_own_production_facilities }
+	relative_position_id = AFU_our_own_production
+	prerequisite = { focus = AFU_our_own_production }
 }
 
 shared_focus = {
@@ -237,7 +237,7 @@ shared_focus = {
 	icon = GFX_AFU_reniew_soviet_projects
 	x = 1
 	y = 1
-    cost = 2
+    cost = 8
 	completion_reward = {
 		random_owned_controlled_state = {
 			add_building_construction = {
@@ -262,8 +262,8 @@ shared_focus = {
 		}
 		add_ideas = AFU_industry_development 
 	}
-	relative_position_id = AFU_own_production_facilities
-	prerequisite = { focus = AFU_own_production_facilities }
+	relative_position_id = AFU_our_own_production
+	prerequisite = { focus = AFU_our_own_production }
 }
 
 shared_focus = {
@@ -271,15 +271,16 @@ shared_focus = {
 	icon = GFX_AFU_further_modernization
 	x = 0
 	y = 2
-    cost = 2
+    cost = 7
 	completion_reward = {
 		swap_ideas = {
 			add_idea = AFU_better_industrial_capabilities
 			remove_idea = AFU_industry_development
 		}
+		FOP_industry_medium_improvement = yes
 	}
-	relative_position_id = AFU_own_production_facilities
-	prerequisite = { focus = AFU_own_production_facilities }
+	relative_position_id = AFU_our_own_production
+	prerequisite = { focus = AFU_our_own_production }
 }
 
 shared_focus = {
@@ -287,7 +288,7 @@ shared_focus = {
 	icon = GFX_AFU_return_old_industry_strenght
 	x = 0
 	y = 2
-    cost = 2
+    cost = 6
 	completion_reward = {
 		add_ideas = AFU_industrial_giant
 		add_political_power = 50
@@ -297,24 +298,25 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = AFU_reform_SV
+	id = AFU_land_forces_reform
 	icon = GFX_AFU_ground_forces_reform
 	x = -6
 	y = 2
-    cost = 2
+    cost = 3
 	completion_reward = {
-		custom_effect_tooltip = afu_army_reform_sv_tt
+		custom_effect_tooltip = afu_army_reform_land_tt
+		army_experience = 25
 	}
 	relative_position_id = AFU_general_condition
 	prerequisite = { focus = AFU_general_condition }
 }
 
 shared_focus = {
-	id = AFU_improve_training_standards
+	id = AFU_improve_training_conditions
 	icon = GFX_AFU_improve_training_conditions
 	x = 1
 	y = 1
-    cost = 2
+    cost = 5
 	completion_reward = {
 		if = {
 			limit = { has_idea = AFU_army_troubles_2 }
@@ -337,16 +339,16 @@ shared_focus = {
 			}
 		}
 	}
-	relative_position_id = AFU_reform_SV
-	prerequisite = { focus = AFU_reform_SV }
+	relative_position_id = AFU_land_forces_reform
+	prerequisite = { focus = AFU_land_forces_reform }
 }
 
 shared_focus = {
-	id = AFU_revise_doctrines
+	id = AFU_north_atlantic_standarts
 	icon = GFX_AFU_nato_standarts
 	x = -1
 	y = 1
-    cost = 2
+    cost = 5
 	completion_reward = {
 		if = {
 			limit = { has_idea = AFU_army_troubles_2 }
@@ -361,18 +363,19 @@ shared_focus = {
 				remove_idea = AFU_army_troubles
 			}
 		}
+		FOP_military_professionalism_medium_improvement = yes
 	}
-	relative_position_id = AFU_reform_SV
-	prerequisite = { focus = AFU_reform_SV }
-	mutually_exclusive = { focus = AFU_improve_soviet_doctrines }
+	relative_position_id = AFU_land_forces_reform
+	prerequisite = { focus = AFU_land_forces_reform }
+	mutually_exclusive = { focus = AFU_our_own_way }
 }
 
 shared_focus = {
-	id = AFU_improve_soviet_doctrines
+	id = AFU_our_own_way
 	icon = GFX_AFU_our_own_way
 	x = -3
 	y = 1
-    cost = 2
+    cost = 5
 	completion_reward = {
 		if = {
 			limit = { has_idea = AFU_army_troubles_2 }
@@ -388,18 +391,19 @@ shared_focus = {
 			}
 		}
 		add_ideas = AFU_army_revised_lessons
+		FOP_military_professionalism_small_improvement = yes
 	}
-	relative_position_id = AFU_reform_SV
-	prerequisite = { focus = AFU_reform_SV }
-	mutually_exclusive = { focus = AFU_revise_doctrines }
+	relative_position_id = AFU_land_forces_reform
+	prerequisite = { focus = AFU_land_forces_reform }
+	mutually_exclusive = { focus = AFU_north_atlantic_standarts }
 }
 
 shared_focus = {
-	id = AFU_give_way_to_young_officers
+	id = AFU_new_generation_of_officers
 	icon = GFX_AFU_new_generations_of_officers
 	x = 0
 	y = 2
-    cost = 2
+    cost = 6
 	completion_reward = {
 		if = {
 			limit = { has_idea = AFU_army_troubles_3 }
@@ -415,63 +419,105 @@ shared_focus = {
 			}
 		}
 	}
-	relative_position_id = AFU_reform_SV
-	prerequisite = { focus = AFU_improve_training_standards }
-	prerequisite = { focus = AFU_revise_doctrines focus = AFU_improve_soviet_doctrines }
+	relative_position_id = AFU_land_forces_reform
+	prerequisite = { focus = AFU_improve_training_conditions }
+	prerequisite = { focus = AFU_north_atlantic_standarts focus = AFU_our_own_way }
 }
 
 shared_focus = {
-	id = AFU_new_staffing_structure
+	id = AFU_reform_brigades_structure
 	icon = GFX_AFU_reform_structures_of_the_brigades
 	x = 0
 	y = 1
-    cost = 2
+    cost = 6
 	completion_reward = {
 		swap_ideas = {
 			add_idea = AFU_army_improved_2
 			remove_idea = AFU_army_improved
 		}
 	}
-	relative_position_id = AFU_give_way_to_young_officers
-	prerequisite = { focus = AFU_give_way_to_young_officers }
+	relative_position_id = AFU_new_generation_of_officers
+	prerequisite = { focus = AFU_new_generation_of_officers }
 }
 
 shared_focus = {
-	id = AFU_refresh_officer_corps
+	id = AFU_refresh_military_stuff
 	icon = GFX_AFU_clean_military_stuff
 	x = -1
 	y = 1
-    cost = 2
-	completion_reward = {
-		swap_ideas = {
-			add_idea = AFU_army_improved_3
-			remove_idea = AFU_army_improved_2
+    cost = 6
+	select_effect = {
+		country_event = {
+			id = AFU_army.4
+			days = 14
 		}
 	}
-	relative_position_id = AFU_new_staffing_structure
-	prerequisite = { focus = AFU_new_staffing_structure }
+	completion_reward = {
+		if = {
+			limit = {
+				has_country_flag = AFU_purge_small
+			}
+			swap_ideas = {
+				add_idea = AFU_army_improved_3_1
+				remove_idea = AFU_army_improved_2
+			}
+			add_timed_ideas = {
+				idea = AFU_army_purge_recovery_1
+				days = 90
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = AFU_purge_big
+			}
+			swap_ideas = {
+				add_idea = AFU_army_improved_3_2
+				remove_idea = AFU_army_improved_2
+			}
+			add_timed_ideas = {
+				idea = AFU_army_purge_recovery_2
+				days = 120
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = AFU_no_purge
+			}
+			swap_ideas = {
+				add_idea = AFU_army_improved_3_3
+				remove_idea = AFU_army_improved_2
+			}
+		}
+		else = {
+			custom_effect_tooltip = afu_army_refreshment_tt
+		}
+		add_command_power = -50
+	}
+	relative_position_id = AFU_reform_brigades_structure
+	prerequisite = { focus = AFU_reform_brigades_structure }
 }
 
 shared_focus = {
-	id = AFU_support_units
+	id = AFU_improvement_of_support_units
 	icon = GFX_AFU_improve_the_support_equipment
 	x = 1
 	y = 1
-    cost = 2
+    cost = 6
 	completion_reward = {
 		add_ideas = AFU_support_battalions
 	}
-	relative_position_id = AFU_new_staffing_structure
-	prerequisite = { focus = AFU_new_staffing_structure }
+	relative_position_id = AFU_reform_brigades_structure
+	prerequisite = { focus = AFU_reform_brigades_structure }
 }
 
 shared_focus = {
-	id = AFU_reform_PS
+	id = AFU_air_forces_reform
 	icon = GFX_AFU_air_reform
 	x = 0
 	y = 2
-    cost = 2
+    cost = 3
 	completion_reward = {
+		custom_effect_tooltip = afu_army_reform_air_tt
 		air_experience = 50
 	}
 	relative_position_id = AFU_general_condition
@@ -479,105 +525,120 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = AFU_modernize_MiG
+	id = AFU_modernize_what_we_can
 	icon = GFX_AFU_modernize_what_we_can
 	x = 2
 	y = 1
-    cost = 2
+    cost = 6
 	completion_reward = {
 		add_ideas = AFU_modernized_mig_models
 	}
-	relative_position_id = AFU_reform_PS
-	prerequisite = { focus = AFU_reform_PS }
+	relative_position_id = AFU_air_forces_reform
+	prerequisite = { focus = AFU_air_forces_reform }
 }
 
 shared_focus = {
-	id = AFU_buy_planes
+	id = AFU_purchase_soviet_airplanes
 	icon = GFX_AFU_post_soviet_air_cooperation
 	x = -2
 	y = 1
-    cost = 2
+    cost = 4
 	completion_reward = {
 		add_equipment_to_stockpile = {
 			type = small_plane_airframe
 			amount = 35
 		}
+		add_political_power = -35
+		unlock_decision_category_tooltip = AFU_plane_shipment_category
 	}
-	relative_position_id = AFU_reform_PS
-	prerequisite = { focus = AFU_reform_PS }
+	relative_position_id = AFU_air_forces_reform
+	prerequisite = { focus = AFU_air_forces_reform }
 }
 
 shared_focus = {
-	id = AFU_pilot_training_in_other_countries
+	id = AFU_pilot_training_abroad
 	icon = GFX_AFU_training_abroad
 	x = 1
 	y = 1
-    cost = 2
+    cost = 5
+	available = {
+		OR = {
+			has_country_flag = eu_limited_recognition
+			has_country_flag = ru_limited_recognition
+		}
+	}
 	completion_reward = {
 		add_ideas = AFU_foreign_trained_pilots
 	}
-	relative_position_id = AFU_buy_planes
-	prerequisite = { focus = AFU_buy_planes }
-	prerequisite = { focus = AFU_modernize_MiG }
-	mutually_exclusive = { focus = AFU_pilot_training_in_donetsk }
+	relative_position_id = AFU_purchase_soviet_airplanes
+	prerequisite = { focus = AFU_purchase_soviet_airplanes }
+	prerequisite = { focus = AFU_modernize_what_we_can }
+	mutually_exclusive = { focus = AFU_air_exercises }
 }
 
 shared_focus = {
-	id = AFU_pilot_training_in_donetsk
+	id = AFU_air_exercises
 	icon = GFX_AFU_air_forces_exercises
 	x = 3
 	y = 1
-    cost = 2
+    cost = 5
 	completion_reward = {
 		add_ideas = AFU_homeland_trained_pilots
 	}
-	relative_position_id = AFU_buy_planes
-	prerequisite = { focus = AFU_buy_planes }
-	prerequisite = { focus = AFU_modernize_MiG }
-	mutually_exclusive = { focus = AFU_pilot_training_in_other_countries }
+	relative_position_id = AFU_purchase_soviet_airplanes
+	prerequisite = { focus = AFU_purchase_soviet_airplanes }
+	prerequisite = { focus = AFU_modernize_what_we_can }
+	mutually_exclusive = { focus = AFU_pilot_training_abroad }
 }
 
 shared_focus = {
-	id = AFU_buy_rockets
+	id = AFU_buy_new_rockets
 	icon = GFX_AFU_buy_new_rockets
 	x = -1
 	y = 1
-    cost = 2
+    cost = 4
 	completion_reward = {
 		if = {
 			limit = {
 				has_idea = AFU_homeland_trained_pilots
 			}
-			add_ideas = AFU_homeland_trained_pilots_rockets
+			swap_ideas = {
+				add_idea = AFU_homeland_trained_pilots_rockets
+				remove_idea = AFU_homeland_trained_pilots
+			}
 		}
 		else = {
-			add_ideas = AFU_foreign_trained_pilots_rockets
+			swap_ideas = {
+				add_idea = AFU_foreign_trained_pilots_rockets
+				remove_idea = AFU_foreign_trained_pilots
+			}
 		}
 	}
-	relative_position_id = AFU_pilot_training_in_donetsk
-	prerequisite = { focus = AFU_pilot_training_in_other_countries focus = AFU_pilot_training_in_donetsk }
+	relative_position_id = AFU_air_exercises
+	prerequisite = { focus = AFU_pilot_training_abroad focus = AFU_air_exercises }
 }
 
 shared_focus = {
-	id = AFU_buy_planes_from_africa
+	id = AFU_solutions_from_other_continents
 	icon = GFX_AFU_solution_from_another_continents
 	x = -1
 	y = 1
-    cost = 2
+    cost = 5
 	completion_reward = {
 		add_equipment_to_stockpile = {
 			type = small_plane_airframe
 			amount = 50
 			producer = LAS
 		}
+		add_political_power = -30
 	}
-	relative_position_id = AFU_buy_rockets
-	prerequisite = { focus = AFU_buy_rockets }
+	relative_position_id = AFU_buy_new_rockets
+	prerequisite = { focus = AFU_buy_new_rockets }
 }
 
 shared_focus = {
 	id = AFU_sapsan_2
-	icon = GFX_AFU_sapsan2
+	icon = GFX_AFU_renew_the_sapsan_project
 	x = 1
 	y = 1
     cost = 2
@@ -591,37 +652,41 @@ shared_focus = {
 			improved_rocket_engines = 1
 		}
 	}
-	relative_position_id = AFU_buy_rockets
-	prerequisite = { focus = AFU_buy_rockets }
+	relative_position_id = AFU_buy_new_rockets
+	prerequisite = { focus = AFU_buy_new_rockets }
 }
 
 shared_focus = {
-	id = AFU_reform_sso
+	id = AFU_special_operation_forces_reform
 	icon = GFX_AFU_SSO_Reform
 	x = 6
 	y = 2
-    cost = 2
+    cost = 3
 	completion_reward = {
+		custom_effect_tooltip = afu_army_reform_sof_tt
 		army_experience = 25
+		hidden_effect = {
+			country_event = AFU_army.5
+		}
 	}
 	relative_position_id = AFU_general_condition
 	prerequisite = { focus = AFU_general_condition }
 }
 
 shared_focus = {
-	id = AFU_new_sso_deployment
+	id = AFU_new_sof_deployment
 	icon = GFX_AFU_Form_the_new_sso_brigades
 	x = -2
 	y = 1
-    cost = 2
+    cost = 6
 	completion_reward = {
 		set_technology = {
     		afu_special_forces = 1
 		}
 		division_template = {
 			name = "Special Operation Forces"
-			division_names_group = BLR_INF_01
-			priority = 0
+			division_names_group = UKR_INF_01
+			priority = 2
 			template_counter = 0
 			regiments = {
 				afu_sof = { x = 0 y = 0 }
@@ -637,23 +702,42 @@ shared_focus = {
 				mot_recon = { x = 0 y = 2 }
 				signal_company = { x = 0 y = 3 }
 			}
+			override_model = UKR_Special_Forces_3_entity
+		}
+		random_owned_controlled_state = {
+			create_unit = {
+				division = "name = \"1-yy Polk Syl Spetsopratsiy\" division_template = \"Special Operation Forces\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
+				owner = AFU
+			}
+		}
+		random_owned_controlled_state = {
+			create_unit = {
+				division = "name = \"2-yy Polk Syl Spetsopratsiy\" division_template = \"Special Operation Forces\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
+				owner = AFU
+			}
+		}
+		random_owned_controlled_state = {
+			create_unit = {
+				division = "name = \"3-iy Polk Syl Spetsopratsiy\" division_template = \"Special Operation Forces\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
+				owner = AFU
+			}
 		}
 	}
-	relative_position_id = AFU_reform_sso
-	prerequisite = { focus = AFU_reform_sso }
+	relative_position_id = AFU_special_operation_forces_reform
+	prerequisite = { focus = AFU_special_operation_forces_reform }
 }
 
 shared_focus = {
-	id = AFU_intensify_sso_training
+	id = AFU_intensive_training
 	icon = GFX_AFU_Intensive_trainings
 	x = 2
 	y = 1
-    cost = 2
+    cost = 5
 	completion_reward = {
-		add_ideas = AFU_intensified_sso_training
+		add_ideas = AFU_sso_1
 	}
-	relative_position_id = AFU_reform_sso
-	prerequisite = { focus = AFU_reform_sso }
+	relative_position_id = AFU_special_operation_forces_reform
+	prerequisite = { focus = AFU_special_operation_forces_reform }
 }
 
 shared_focus = {
@@ -661,13 +745,16 @@ shared_focus = {
 	icon = GFX_AFU_Prepare_for_the_extremal_conditions
 	x = 0
 	y = 2
-    cost = 2
+    cost = 5
 	completion_reward = {
-		add_ideas = AFU_better_fighting_conditions
+		swap_ideas = {
+			add_idea = AFU_sso_2
+			remove_idea = AFU_sso_1
+		}
 	}
-	relative_position_id = AFU_reform_sso
-	prerequisite = { focus = AFU_new_sso_deployment }
-	prerequisite = { focus = AFU_intensify_sso_training }
+	relative_position_id = AFU_special_operation_forces_reform
+	prerequisite = { focus = AFU_new_sof_deployment }
+	prerequisite = { focus = AFU_intensive_training }
 }
 
 shared_focus = {
@@ -675,11 +762,11 @@ shared_focus = {
 	icon = GFX_AFU_Modern_Rifles
 	x = 0
 	y = 1
-    cost = 2
+    cost = 6
 	completion_reward = {
 		swap_ideas = {
-			add_idea = AFU_special_forces_etalon
-			remove_idea = AFU_intensified_sso_training
+			add_idea = AFU_sso_3
+			remove_idea = AFU_sso_2
 		}
 	}
 	relative_position_id = AFU_special_conditions
@@ -691,21 +778,21 @@ shared_focus = {
 	icon = GFX_AFU_Foreign_mercenaries
 	x = -1
 	y = 1
-    cost = 2
+    cost = 3
 	completion_reward = {
 		add_ideas = AFU_foreign_mercenaries
 	}
 	relative_position_id = AFU_final_weapon_replacement
 	prerequisite = { focus = AFU_final_weapon_replacement }
-	mutually_exclusive = { focus = AFU_integration_of_air_tactics }
+	mutually_exclusive = { focus = AFU_integration_of_airborne_tactics }
 }
 
 shared_focus = {
-	id = AFU_integration_of_air_tactics
+	id = AFU_integration_of_airborne_tactics
 	icon = GFX_AFU_Integration_of_airborne_tactics
 	x = 1
 	y = 1
-    cost = 2
+    cost = 4
 	completion_reward = {
 		add_ideas = AFU_integration_of_paratroopers
 	}
@@ -724,9 +811,9 @@ shared_focus = {
 		army_experience = 50
 	}
 	relative_position_id = AFU_sapsan_2
-	prerequisite = { focus = AFU_refresh_officer_corps focus = AFU_support_units }
-	prerequisite = { focus = AFU_buy_planes_from_africa focus = AFU_sapsan_2 }
-	prerequisite = { focus = AFU_foreign_mercenaries focus = AFU_integration_of_air_tactics }
+	prerequisite = { focus = AFU_refresh_military_stuff focus = AFU_improvement_of_support_units }
+	prerequisite = { focus = AFU_solutions_from_other_continents focus = AFU_sapsan_2 }
+	prerequisite = { focus = AFU_foreign_mercenaries focus = AFU_integration_of_airborne_tactics }
 }
 
 shared_focus = {
@@ -734,12 +821,10 @@ shared_focus = {
 	icon = GFX_AFU_our_common_history
 	x = 0
 	y = 1
-    cost = 2
-	allow_branch = { 
-		OR = {
-			has_country_flag = AFU_homut
-			has_country_flag = AFU_sav
-		}
+    cost = 3
+	allow_branch = {
+		has_country_flag = united_left_bank
+		is_pro_russian = yes
 	 }
 	completion_reward = {
 		add_opinion_modifier = {
@@ -749,15 +834,15 @@ shared_focus = {
 	}
 	relative_position_id = AFU_army_reformed
 	prerequisite = { focus = AFU_army_reformed }
-	mutually_exclusive = { focus = AFU_remember_true_nature }
+	mutually_exclusive = { focus = AFU_remember_our_roots }
 }
 
 shared_focus = {
-	id = AFU_attache_in_moskow
+	id = AFU_moscow_attache
 	icon = GFX_AFU_moscow_attache
 	x = 2
 	y = 2
-    cost = 2
+    cost = 4
 	completion_reward = {
 		add_equipment_to_stockpile = {
 			type = mechanized_equipment
@@ -776,24 +861,24 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = AFU_compensation_for_crimea
-	icon = GFX_AFU_buy_shaheds_in_iran
+	id = AFU_buy_iranian_drones
+	icon = GFX_AFU_buy_iranian_drones
 	x = -2
 	y = 2
-    cost = 2
+    cost = 5
 	completion_reward = {
-		add_ideas = AFU_crimea_compensation
+		# WE NEED COMBAT DRONES TECH
 	}
 	relative_position_id = AFU_army_reformed
 	prerequisite = { focus = AFU_remember_shared_history }
 }
 
 shared_focus = {
-	id = AFU_trainings_in_belarus
+	id = AFU_joint_exercises_in_belarus
 	icon = GFX_AFU_joint_training_in_belarus
 	x = 0
 	y = 3
-    cost = 2
+    cost = 5
 	completion_reward = {
 		add_opinion_modifier = {
 			target = BLR
@@ -803,21 +888,19 @@ shared_focus = {
 		add_ideas = AFU_CSTO_training
 	}
 	relative_position_id = AFU_army_reformed
-	prerequisite = { focus = AFU_compensation_for_crimea }
-	prerequisite = { focus = AFU_attache_in_moskow }
+	prerequisite = { focus = AFU_buy_iranian_drones }
+	prerequisite = { focus = AFU_moscow_attache }
 }
 
 shared_focus = {
-	id = AFU_remember_true_nature
+	id = AFU_remember_our_roots
 	icon = GFX_AFU_remember_our_roots
 	x = 0
 	y = 1
-    cost = 2
+    cost = 3
 	allow_branch = {
-		OR = {
-			has_country_flag = AFU_dan
-			has_country_flag = AFU_kryvonis
-		}
+		has_country_flag = united_left_bank
+		is_pro_ukrainian = yes
 	}
 	completion_reward = {
 		add_ideas = AFU_true_ukrainian_nature
@@ -828,16 +911,16 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = AFU_cossack_spirit_lmao
+	id = AFU_kozak_spirit_lmao
 	icon = GFX_AFU_cossaks_spirit
 	x = 2
 	y = 2
-    cost = 2
+    cost = 5
 	completion_reward = {
 		add_ideas = AFU_i_love_haydamaking
 	}
 	relative_position_id = AFU_army_reformed
-	prerequisite = { focus = AFU_remember_true_nature }
+	prerequisite = { focus = AFU_remember_our_roots }
 }
 
 shared_focus = {
@@ -845,7 +928,7 @@ shared_focus = {
 	icon = GFX_AFU_oun_statute
 	x = -2
 	y = 2
-    cost = 2
+    cost = 6
 	completion_reward = {
 		swap_ideas = {
 			add_idea = AFU_OUN_pilled
@@ -853,7 +936,7 @@ shared_focus = {
 		}
 	}
 	relative_position_id = AFU_army_reformed
-	prerequisite = { focus = AFU_remember_true_nature }
+	prerequisite = { focus = AFU_remember_our_roots }
 }
 
 shared_focus = {
@@ -861,13 +944,13 @@ shared_focus = {
 	icon = GFX_AFU_remember_about_eternal_enemy
 	x = 0
 	y = 3
-    cost = 2
+    cost = 5
 	completion_reward = {
 		add_ideas = AFU_eternal_enemy
 	}
 	relative_position_id = AFU_army_reformed
 	prerequisite = { focus = AFU_introduce_OUN_statutes }
-	prerequisite = { focus = AFU_cossack_spirit_lmao }
+	prerequisite = { focus = AFU_kozak_spirit_lmao }
 }
 
 shared_focus = {
@@ -880,7 +963,7 @@ shared_focus = {
 		army_experience = 100
 	}
 	relative_position_id = AFU_army_reformed
-	prerequisite = { focus = AFU_trainings_in_belarus focus = AFU_remind_about_eternal_enemy }
+	prerequisite = { focus = AFU_joint_exercises_in_belarus focus = AFU_remind_about_eternal_enemy }
 }
 
 shared_focus = {
@@ -888,7 +971,7 @@ shared_focus = {
 	icon = GFX_AFU_New_ways_of_war
 	x = 12
 	y = 1
-    cost = 2
+    cost = 5
 	completion_reward = {
 		add_tech_bonus = {
 			bonus = 0.5
@@ -905,7 +988,7 @@ shared_focus = {
 	icon = GFX_AFU_Start_the_mass_drone_production
 	x = -1
 	y = 1
-    cost = 2
+    cost = 5
 	completion_reward = {
 		add_ideas = AFU_drone_production
 	}
@@ -914,11 +997,11 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = AFU_training_of_the_drone_operators
-	icon = GFX_AFU_Training_of_the_drone_operators
+	id = AFU_drone_operators_training
+	icon = GFX_AFU_drone_operators_training
 	x = 0
 	y = 1
-    cost = 2
+    cost = 6
 	completion_reward = {
 		add_ideas = AFU_drone_operators_training
 	}
@@ -931,7 +1014,7 @@ shared_focus = {
 	icon = GFX_AFU_Center_of_Psychological_operations
 	x = 1
 	y = 1
-    cost = 2
+    cost = 6
 	completion_reward = {
 		add_ideas = AFU_ipso
 	}
@@ -944,7 +1027,7 @@ shared_focus = {
 	icon = GFX_AFU_Hybrid_war
 	x = 0
 	y = 1
-    cost = 2
+    cost = 6
 	completion_reward = {
 		swap_ideas = {
 			add_idea = AFU_hybrid_war_tactics
@@ -960,8 +1043,9 @@ shared_focus = {
 	icon = GFX_AFU_Naval_Reform
 	x = 16
 	y = 1
-    cost = 2
+    cost = 3
 	completion_reward = {
+		custom_effect_tooltip = afu_army_reform_navy_tt
 		navy_experience = 50
 	}
 	relative_position_id = AFU_general_condition
@@ -973,7 +1057,7 @@ shared_focus = {
 	icon = GFX_AFU_Return_the_good_old_BlackSea_fleet
 	x = -1
 	y = 1
-    cost = 2
+    cost = 7
 	completion_reward = {
 		add_ideas = AFU_old_fleet
 	}
@@ -987,7 +1071,7 @@ shared_focus = {
 	icon = GFX_AFU_New_equpement_for_the_old_ships
 	x = 0
 	y = 2
-    cost = 2
+    cost = 6
 	completion_reward = {
 		add_ideas = AFU_modern_ships_equipment
 	}
@@ -1000,7 +1084,7 @@ shared_focus = {
 	icon = GFX_AFU_Light_ships_tactic
 	x = 1
 	y = 1
-    cost = 2
+    cost = 5
 	completion_reward = {
 		add_ideas = AFU_light_ships
 	}
@@ -1014,7 +1098,7 @@ shared_focus = {
 	icon = GFX_AFU_Fast_raids
 	x = 0
 	y = 2
-    cost = 2
+    cost = 6
 	completion_reward = {
 		swap_ideas = {
 			add_idea = AFU_fast_raids_tactic
@@ -1026,11 +1110,11 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = AFU_marine_reborn
+	id = AFU_marines_reborn
 	icon = GFX_AFU_Marine_reborn
 	x = 0
 	y = 2
-    cost = 2
+    cost = 6
 	completion_reward = {
 		add_ideas = AFU_reborn_marines
 	}
@@ -1043,7 +1127,7 @@ shared_focus = {
 	icon = GFX_AFU_Death_from_above
 	x = 3
 	y = 1
-    cost = 2
+    cost = 5
 	completion_reward = {
 		add_ideas = AFU_death_from_above
 	}
@@ -1052,33 +1136,37 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = AFU_neptun_production
+	id = AFU_mass_neptun_production
 	icon = GFX_AFU_Mass_Neptun_production
 	x = -1
 	y = 1
-    cost = 2
+    cost = 6
 	completion_reward = {
 		add_ideas = AFU_production_of_naval_rockets
 	}
 	relative_position_id = AFU_death_from_above
 	prerequisite = { focus = AFU_death_from_above }
-	mutually_exclusive = { focus = AFU_buy_british_drones }
+	mutually_exclusive = { focus = AFU_buy_british_anti_ship_rockets }
 }
 
 shared_focus = {
-	id = AFU_buy_british_drones
+	id = AFU_buy_british_anti_ship_rockets
 	icon = GFX_AFU_Buy_British_Anti_Ship_Rockets
 	x = 1
 	y = 1
-    cost = 2
+    cost = 4
+	available = {
+		has_country_flag = united_left_bank
+		has_country_flag = eu_limited_recognition
+	}
 	completion_reward = {
 		add_political_power = -25
 		add_equipment_to_stockpile = {
 			type = anti_tank_equipment
-			amount = 250
+			amount = 500
 		}
 	}
 	relative_position_id = AFU_death_from_above
 	prerequisite = { focus = AFU_death_from_above }
-	mutually_exclusive = { focus = AFU_neptun_production }
+	mutually_exclusive = { focus = AFU_mass_neptun_production }
 }
