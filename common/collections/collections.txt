@@ -1,0 +1,225 @@
+########################################
+
+ ##   ##  #  # #  # ### ###  ### ###  ##     
+#  # #  # #  # ## #  #  #  #  #  #   #       
+#    #  # #  # # ##  #  ###   #  ##   #      
+#  # #  # #  # #  #  #  #  #  #  #     #     
+ ##   ##   ##  #  #  #  #  # ### ### ## 
+
+########################################     
+
+world_at_peace_countries = {
+	input = game:all_countries
+	operators = {
+		limit = {
+			has_war = no 
+		}
+	}
+	name = COLLECTION_COUNTRIES_AT_PEACE
+}
+
+#########################
+
+ ## ###  ##  ### ###  ## 
+#    #  #  #  #  #   #   
+ #   #  ####  #  ##   #  
+  #  #  #  #  #  #     # 
+##   #  #  #  #  ### ##  
+
+########################
+
+
+faction_owned_core_states = {
+	input = game:scope
+	operators = {
+		faction_members
+		owned_states
+		limit = {
+			is_core_of = PREV 
+		}
+	}
+	name = COLLECTION_FACTION_OWNED_CORE_STATES
+}
+
+faction_controlled_non_core_states = {
+	input = game:scope
+	operators = {
+		faction_members
+		controlled_states
+		limit = {
+			NOT = { is_core_of = PREV }
+		}
+	}
+	name = COLLECTION_FACTION_CONTROLLED_NON_CORE_STATES
+}
+
+
+country_and_all_subjects_controlled_non_core_states = {
+	input = game:scope
+	operators = {
+		country_and_all_subjects
+		controlled_states
+		limit = {
+			NOT = { is_core_of = PREV }
+		}
+	}
+	name = COLLECTION_COUNTRY_AND_SUBJECTS_CONTROLLED_NON_CORE_STATES
+
+
+states_in_the_baltics = {
+	input = game:all_states
+	operators = {
+		limit = {
+			OR = {
+				region = 37
+				state = 763 
+				state = 784  
+				state = 208  
+				state = 209   
+			}
+		}
+	}
+	name = COLLECTION_STATES_IN_BALTICS
+}
+
+faction_states_in_the_baltics = {
+	input = game:scope
+	operators = {
+		faction_members
+		controlled_states
+		limit = {
+			OR = {
+				region = 37
+				state = 763 
+				state = 784  
+				state = 208  
+				state = 209   
+			}
+		}
+	}
+	name = COLLECTION_FACTION_CONTROLLED_STATES_IN_BALTICS
+}
+
+states_in_the_nordics = {
+	input = game:all_states
+	operators = {
+		limit = {
+			OR = {
+				region = 275 
+				region = 10
+				region = 11
+				region = 192
+				region = 276
+				region = 191
+				region = 277
+				region = 278
+				region = 13
+				region = 161
+				region = 36 
+				region = 45 
+			}
+		}
+	}
+	name = COLLECTION_STATES_IN_NORDICS
+}
+
+faction_states_in_the_nordics = {
+	input = game:scope
+	operators = {
+		faction_members
+		controlled_states
+		limit = {
+			OR = {
+				region = 275 
+				region = 10
+				region = 11
+				region = 192
+				region = 276
+				region = 191
+				region = 277
+				region = 278
+				region = 13
+				region = 161
+				region = 36 
+				region = 45 
+			}
+		}
+	}
+	name = COLLECTION_FACTION_CONTROLLED_STATES_IN_NORDICS
+}
+
+states_in_europe = {
+	input = game:all_states
+	operators = {
+		limit = {
+			is_on_continent = europe			
+		}
+	}
+	name = COLLECTION_STATES_IN_EUROPE
+}
+
+faction_states_in_europe = {
+	input = game:scope
+	operators = {
+		faction_members
+		controlled_states
+		limit = {
+			is_on_continent = europe			
+		}
+	}
+	name = COLLECTION_FACTION_CONTROLLED_STATES_IN_EUROPE
+}
+
+faction_states_on_my_continent = {
+	input = game:all_states
+	operators = {
+		limit = {
+			is_on_same_continent_as = ROOT
+			is_controlled_by_ROOT_or_ally = yes 
+		}
+	}
+	name = COLLECTION_FACTION_STATES_MY_CONTINENT
+}
+states_on_my_continent = {
+	input = game:all_states
+	operators = {
+		limit = {
+			is_on_same_continent_as = ROOT
+		}
+	}
+	name = COLLECTION_STATES_MY_CONTINENT
+}
+
+states_controlled_by_faction_member_and_core_holder = {
+	input = game:scope
+	operators = {
+		faction_members
+		controlled_states
+		limit = {
+			is_core_of = controller
+		}
+	}
+	name = COLLECTION_STATES_CONTROLLED_BY_FACTION_MEMBER_AND_CORE_HOLDER
+}
+
+countries_my_continent = {
+	input = game:all_countries
+	name = COLLECTION_ALL_SAME_CONTINENT_COUNTRIES
+	operators = {
+		limit = {
+			is_on_same_continent_as = ROOT
+		}
+	}
+}
+
+puppet_controlled_border_states = {
+	input = collection:neighboring_states_to_leader
+	name = COLLECTION_CONTROLLED_PUPPET_BORDER_STATES
+	operators = {
+		limit = {
+			controller = {
+				is_subject_of = ROOT
+			}
+		}
+	}
+}
