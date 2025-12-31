@@ -124,164 +124,10 @@ ROOT_inherit_current_scope_wars_effect = {
 	}
 }
 
-get_best_alliance_match_democratic_effect = { #arguably a trigger, but it does stuff so we keep it in here. If this is your first time seeing this, welcome to my personal hell.
-	if = {
-		limit = {
-			any_other_country = {
-				is_faction_leader = yes
-				is_major = yes
-				has_government = democratic
-				not = { has_war_with = ROOT }
-				set_temp_variable = { ROOT.best_leader = this }
-				set_temp_variable = { ROOT.best_leader_score = 0 }
-			}
-		}
-	}
-	if = {
-		limit = {
-			all_other_country = {
-				is_faction_leader = yes
-				is_major = yes
-				has_government = democratic
-				not = { has_war_with = ROOT }
-				set_temp_variable = { this.leader_score = num_of_factories }
-				add_to_temp_variable = { this.leader_score = num_battalions }
-				all_of_scopes = {
-					array = allies
-					add_to_temp_variable = { PREV.leader_score = num_of_factories }
-					add_to_temp_variable = { PREV.leader_score = num_battalions }
-				}
-				if = {
-					limit = {
-						capital_scope = {
-							is_on_continent = ROOT
-						}
-					}
-					multiply_temp_variable = { leader_score = 2 }
-				}
-				if = {
-					limit = {
-						any_neighbor_country = { tag = ROOT }
-					}
-					multiply_temp_variable = { leader_score = 1.25 }
-				}
-				if = {
-					limit = {
-						check_variable = { ROOT.best_leader_score < leader_score }
-						set_temp_variable = { ROOT.best_leader = this }
-						set_temp_variable = { ROOT.best_leader_score = leader_score }
-					}
-				}
-			}
-		}
-	}
-}
-
-get_best_alliance_match_fascism_effect = { #arguably a trigger, but it does stuff so we keep it in here. If this is your first time seeing this, welcome to my personal hell.
-	if = {
-		limit = {
-			any_other_country = {
-				is_faction_leader = yes
-				is_major = yes
-				has_government = fascism
-				not = { has_war_with = ROOT }
-				set_temp_variable = { ROOT.best_leader = this }
-				set_temp_variable = { ROOT.best_leader_score = 0 }
-			}
-		}
-	}
-	if = {
-		limit = {
-			all_other_country = {
-
-				is_faction_leader = yes
-				is_major = yes
-				has_government = fascism
-				not = { has_war_with = ROOT }
-
-				set_temp_variable = { this.leader_score = num_of_factories }
-				add_to_temp_variable = { this.leader_score = num_battalions }
-				all_of_scopes = {
-					array = allies
-					add_to_temp_variable = { PREV.leader_score = num_of_factories }
-					add_to_temp_variable = { PREV.leader_score = num_battalions }
-				}
-				if = {
-					limit = {
-						capital_scope = {
-							is_on_continent = ROOT
-						}
-					}
-					multiply_temp_variable = { this.leader_score = 2 }
-				}
-				if = {
-					limit = {
-						any_neighbor_country = { tag = ROOT }
-					}
-					multiply_temp_variable = { this.leader_score = 1.25 }
-				}
-				if = {
-					limit = {
-						check_variable = { ROOT.best_leader_score < this.leader_score }
-					}
-					set_temp_variable = { ROOT.best_leader = this }
-					set_temp_variable = { ROOT.best_leader_score = this.leader_score }
-				}
-			}
-		}
-	}
-}
-
-get_best_alliance_match_communism_effect = { #arguably a trigger, but it does stuff so we keep it in here. If this is your first time seeing this, welcome to my personal hell.
-	if = {
-		limit = {
-			any_other_country = {
-				is_faction_leader = yes
-				is_major = yes
-				has_government = communism
-				not = { has_war_with = ROOT }
-				set_temp_variable = { ROOT.best_leader = this }
-				set_temp_variable = { ROOT.best_leader_score = 0 }
-			}
-		}
-	}
-	if = {
-		limit = {
-			all_other_country = {
-				is_faction_leader = yes
-				is_major = yes
-				has_government = communism
-				not = { has_war_with = ROOT }
-				set_temp_variable = { this.leader_score = num_of_factories }
-				add_to_temp_variable = { this.leader_score = num_battalions }
-				all_of_scopes = {
-					array = allies
-					add_to_temp_variable = { PREV.leader_score = num_of_factories }
-					add_to_temp_variable = { PREV.leader_score = num_battalions }
-				}
-				if = {
-					limit = {
-						capital_scope = {
-							is_on_continent = ROOT
-						}
-					}
-					multiply_temp_variable = { leader_score = 2 }
-				}
-				if = {
-					limit = {
-						any_neighbor_country = { tag = ROOT }
-					}
-					multiply_temp_variable = { leader_score = 1.25 }
-				}
-				if = {
-					limit = {
-						check_variable = { ROOT.best_leader_score < leader_score }
-						set_temp_variable = { ROOT.best_leader = this }
-						set_temp_variable = { ROOT.best_leader_score = leader_score }
-					}
-				}
-			}
-		}
+print_variable_log_effect = {
+	print_variables = {
+		file = variables_yug
+		append = yes
 	}
 }
 
@@ -301,25 +147,35 @@ clear_sabotaged_resources_if_necesary = {
 		clear_variable = sabotaged_tungsten
 		clear_variable = sabotaged_steel
 		clear_variable = sabotaged_chromium
+		clear_variable = sabotaged_coal
 	}
 }
 
 remove_from_allowed_party = {
 	if = {
-		limit = { has_government = democratic }
-		set_temp_variable = { allowed_party_democratic = 0 }
-	}
-	else_if = {
-		limit = { has_government = fascism }
-		set_temp_variable = { allowed_party_fascism = 0 }
-	}
-	else_if = {
-		limit = { has_government = communism }
+		limit = { ideology_is_socialist = yes }
 		set_temp_variable = { allowed_party_communism = 0 }
+		set_temp_variable = { allowed_party_socialism = 0 }
 	}
 	else_if = {
-		limit = { has_government = neutrality }
-		set_temp_variable = { allowed_party_neutrality = 0 }
+		limit = { ideology_is_democratic = yes }
+		set_temp_variable = { allowed_party_social_democracy = 0 }
+		set_temp_variable = { allowed_party_progressivism = 0 }
+		set_temp_variable = { allowed_party_centrism = 0 }
+		set_temp_variable = { allowed_party_liberalism = 0 }
+		set_temp_variable = { allowed_party_conservatism = 0 }
+		set_temp_variable = { allowed_party_national_democracy = 0 }
+	}
+	else_if = {
+		limit = { ideology_is_conservative = yes }
+		set_temp_variable = { allowed_party_traditionalism = 0 }
+		set_temp_variable = { allowed_party_authoritarianism = 0 }
+	}
+	else_if = {
+		limit = { ideology_is_fascist = yes }
+		set_temp_variable = { allowed_party_ultranationalism = 0 }
+		set_temp_variable = { allowed_party_esotericism = 0 }
+		set_temp_variable = { allowed_party_oligarchism = 0 }
 	}
 }
 
@@ -375,504 +231,496 @@ instantiate_collaboration_government = {
 	}
 }
 
-upgrade_economy_law = {
-	if = {
-		limit = {
-			has_idea = civilian_economy
-		}
-		add_ideas = low_economic_mobilisation
-	}
-	else_if = {
-		limit = {
-			has_idea = low_economic_mobilisation
-		}
-		add_ideas = partial_economic_mobilisation
-	}
-	else_if = {
-		limit = {
-			has_idea = partial_economic_mobilisation
-		}
-		add_ideas = war_economy
-	}
-	else_if = {
-		limit = {
-			has_idea = war_economy
-		}
-		add_ideas = tot_economic_mobilisation
-	}
-	else = {
-		add_political_power = 150
-	}
-}
-
-#Should remove any and all fascist foreign influence, to be updated
-remove_fascist_spirits_effect = {
-	if = {
-		limit = { has_idea = fascist_influence }
-		remove_ideas = fascist_influence
-	}
-}
-
-#Should remove any and all communist foreign influence
-remove_communist_spirits_effect = {
-	if = {
-		limit = { has_idea = agitated_peasants }
-		remove_ideas = agitated_peasants
-	}
-	if = {
-		limit = { has_idea = armed_communist_militants }
-		remove_ideas = armed_communist_militants
-	}
-}
-
-#Should remove any and all democratic foreign influence
-remove_democratic_spirits_effect = {
-	if = {
-		limit = { has_idea = democratic_influence }
-		remove_ideas = democratic_influence
-	}
-}
-
-#Adds current ruling popularity to a new ideology - useful to represent ideological shifts within the same party
-add_ruling_to_dem = {
-	custom_effect_tooltip = add_ruling_to_dem_tt
+gain_random_agency_upgrade = { #Gives a random agency upgrade or grants a free agency if one has not yet been established
+	custom_effect_tooltip = free_agency_upgrade_tt
 	hidden_effect = {
 		if = {
 			limit = {
-				has_government = neutrality
+				has_intelligence_agency = no
 			}
-			set_variable = {
-				var = neutrality_support_var
-				value = party_popularity_100@neutrality
-			}
-			set_variable = {
-				var = democratic_support_var
-				value = party_popularity_100@democratic
-			}
-			set_variable = {
-				var = communism_support_var
-				value = party_popularity_100@communism
-			}
-			set_variable = {
-				var = fascism_support_var
-				value = party_popularity_100@fascism
-			}
-			add_to_variable = {
-				democratic_support_var = neutrality_support_var
-			}
-			set_variable = {
-				var = neutrality_support_var
-				value = 0
-			}
+			create_intelligence_agency = yes
 		}
-		if = {
-			limit = {
-				has_government = communism
+		else = {
+			random_list = {
+				1 = {
+					upgrade_intelligence_agency = upgrade_economy_civilian
+					modifier = {
+						factor = 0
+						has_done_agency_upgrade = upgrade_economy_civilian
+					}
+				}
+				1 = {
+					upgrade_intelligence_agency = upgrade_army_department
+					modifier = {
+						factor = 0
+						has_done_agency_upgrade = upgrade_army_department
+					}
+				}
+				1 = {
+					upgrade_intelligence_agency = upgrade_naval_department
+					modifier = {
+						factor = 0
+						has_done_agency_upgrade = upgrade_naval_department
+					}
+				}
+				1 = {
+					upgrade_intelligence_agency = upgrade_airforce_department
+					modifier = {
+						factor = 0
+						has_done_agency_upgrade = upgrade_airforce_department
+					}
+				}
+				1 = {
+					upgrade_intelligence_agency = upgrade_passive_defense
+					modifier = {
+						factor = 0
+						has_done_agency_upgrade = upgrade_passive_defense
+					}
+				}
+				1 = {
+					upgrade_intelligence_agency = upgrade_anti_partisan
+					modifier = {
+						factor = 0
+						has_done_agency_upgrade = upgrade_anti_partisan
+					}
+				}
+				1 = {
+					upgrade_intelligence_agency = upgrade_blueprint_stealing
+					modifier = {
+						factor = 0
+						has_done_agency_upgrade = upgrade_blueprint_stealing
+					}
+				}
+				1 = {
+					upgrade_intelligence_agency = upgrade_portable_radios
+					modifier = {
+						factor = 0
+						has_done_agency_upgrade = upgrade_portable_radios
+					}
+				}
+				1 = {
+					upgrade_intelligence_agency = upgrade_invisible_ink
+					modifier = {
+						factor = 0
+						has_done_agency_upgrade = upgrade_invisible_ink
+					}
+				}
+				1 = {
+					upgrade_intelligence_agency = upgrade_plastic_explosives
+					modifier = {
+						factor = 0
+						has_done_agency_upgrade = upgrade_plastic_explosives
+					}
+				}
+				1 = {
+					upgrade_intelligence_agency = upgrade_suicide_pills
+					modifier = {
+						factor = 0
+						has_done_agency_upgrade = upgrade_suicide_pills
+					}
+				}
+				1 = {
+					upgrade_intelligence_agency = upgrade_training_centers
+					modifier = {
+						factor = 0
+						has_done_agency_upgrade = upgrade_training_centers
+					}
+				}
+				1 = {
+					upgrade_intelligence_agency = upgrade_commando_training
+					modifier = {
+						factor = 0
+						has_done_agency_upgrade = upgrade_commando_training
+					}
+				}
+				1 = {
+					upgrade_intelligence_agency = upgrade_interrogation_techniques
+					modifier = {
+						factor = 0
+						has_done_agency_upgrade = upgrade_interrogation_techniques
+					}
+				}
+				1 = {
+					upgrade_intelligence_agency = upgrade_diplo_training
+					modifier = {
+						factor = 0
+						has_done_agency_upgrade = upgrade_diplo_training
+					}
+				}
+				1 = {
+					upgrade_intelligence_agency = upgrade_psycho_warfare
+					modifier = {
+						factor = 0
+						has_done_agency_upgrade = upgrade_psycho_warfare
+					}
+				}
+				1 = {
+					upgrade_intelligence_agency = upgrade_form_department
+					modifier = {
+						factor = 0
+						has_done_agency_upgrade = upgrade_form_department
+					}
+				}
+				1 = {
+					upgrade_intelligence_agency = upgrade_decryption_boost
+					modifier = {
+						factor = 0
+						OR = {
+							has_done_agency_upgrade = upgrade_decryption_boost
+							NOT = { has_done_agency_upgrade = upgrade_form_department }
+						}
+					}
+				}
+				1 = {
+					upgrade_intelligence_agency = upgrade_decryption_boost_2
+					modifier = {
+						factor = 0
+						OR = {
+							has_done_agency_upgrade = upgrade_decryption_boost_2
+							NOT = { has_done_agency_upgrade = upgrade_form_department }
+							NOT = { has_done_agency_upgrade = upgrade_decryption_boost }
+						}
+					}
+				}
+				1 = {
+					upgrade_intelligence_agency = upgrade_crypto_strength
+					modifier = {
+						factor = 0
+						OR = {
+							has_done_agency_upgrade = upgrade_crypto_strength
+							NOT = { has_done_agency_upgrade = upgrade_form_department }
+						}
+					}
+				}
+				1 = {
+					upgrade_intelligence_agency = upgrade_crypto_strength_2
+					modifier = {
+						factor = 0
+						OR = {
+							has_done_agency_upgrade = upgrade_crypto_strength_2
+							NOT = { has_done_agency_upgrade = upgrade_form_department }
+							NOT = { has_done_agency_upgrade = upgrade_crypto_strength }
+						}
+					}
+				}
 			}
-			set_variable = {
-				var = neutrality_support_var
-				value = party_popularity_100@neutrality
-			}
-			set_variable = {
-				var = democratic_support_var
-				value = party_popularity_100@democratic
-			}
-			set_variable = {
-				var = communism_support_var
-				value = party_popularity_100@communism
-			}
-			set_variable = {
-				var = fascism_support_var
-				value = party_popularity_100@fascism
-			}
-			add_to_variable = {
-				democratic_support_var = communism_support_var
-			}
-			set_variable = {
-				var = communism_support_var
-				value = 0
-			}
-		}
-		if = {
-			limit = {
-				has_government = fascism
-			}
-			set_variable = {
-				var = neutrality_support_var
-				value = party_popularity_100@neutrality
-			}
-			set_variable = {
-				var = democratic_support_var
-				value = party_popularity_100@democratic
-			}
-			set_variable = {
-				var = communism_support_var
-				value = party_popularity_100@communism
-			}
-			set_variable = {
-				var = fascism_support_var
-				value = party_popularity_100@fascism
-			}
-			add_to_variable = {
-				democratic_support_var = fascism_support_var
-			}
-			set_variable = {
-				var = fascism_support_var
-				value = 0
-			}
-		}
-		set_popularities = {
-			democratic = democratic_support_var
-			neutrality = neutrality_support_var
-			fascism = fascism_support_var
-			communism = communism_support_var
 		}
 	}
 }
-add_ruling_to_fas = {
-	custom_effect_tooltip = add_ruling_to_fas_tt
+
+
+remove_any_country_role_from_character = { #Expected to be used inside the character scope
+	#log = "I am [THIS.GetName]"
+	if = {
+		limit = {
+			is_character_slot = air_chief
+		}
+		remove_advisor_role = { slot = air_chief }
+	}
+	if = {
+		limit = {
+			is_character_slot = army_chief
+		}
+		remove_advisor_role = { slot = army_chief }
+	}
+	if = {
+		limit = {
+			is_character_slot = navy_chief
+		}
+		remove_advisor_role = { slot = navy_chief }
+	}
+	if = {
+		limit = {
+			is_character_slot = high_command
+		}
+		remove_advisor_role = { slot = high_command }
+	}
+	if = {
+		limit = {
+			is_character_slot = theorist
+		}
+		remove_advisor_role = { slot = theorist }
+	}
+	if = {
+		limit = {
+			is_character_slot = political_advisor
+		}
+		remove_advisor_role = { slot = political_advisor }
+	}
+}
+
+### Paratroopers
+SF_PARA_sabotage_effect = { #When changing this, update the research tooltip
+	damage_building = {
+		type = infrastructure
+		damage = 2
+	}
+	damage_building = {
+		type = industrial_complex
+		damage = 1
+	}
+	damage_building = {
+		type = arms_factory
+		damage = 1
+	}
+	set_state_flag = {
+		flag = para_drop_effect
+		days = 30
+	}
+}
+
+SF_PARA_combat_effect = { #When changing this, update the research tooltip
+	every_state_division = {
+		limit = { 
+			OWNER = { has_war_with = FROM }
+		}
+		set_unit_organization = 0.50
+	}
+	set_state_flag = {
+		flag = para_drop_effect
+		days = 30
+	}
+}
+
+### Muuuurrrriiinnnnneeeeessssss
+SF_marine_demoliton_effect = { #When changing this, update the research tooltip
+	damage_building = {
+		type = radar_station
+		damage = 1
+	}
+	damage_building = {
+		type = naval_base
+		damage = 1
+	}
+	damage_building = {
+		type = dockyard
+		damage = 1
+	}
+	damage_building = {
+		type = nuclear_reactor
+		damage = 1
+	}
+	damage_building = {
+		type = rocket_site
+		damage = 1
+	}
+	damage_building = {
+		type = fuel_silo
+		damage = 1
+	}
+	set_state_flag = {
+		flag = marines_commando_effect
+		days = 30
+	}
+}
+
+###########################################################################################
+###########################################################################################
+###########################################################################################
+
+							########    ###       ###    ######## 
+							   ##      ## ##     ## ##      ##    
+							   ##     ##   ##   ##   ##     ##    
+							   ##    ##     ## ##     ##    ##    
+							   ##    ######### #########    ##    
+							   ##    ##     ## ##     ##    ##    
+							   ##    ##     ## ##     ##    ##    
+
+###########################################################################################
+###########################################################################################
+###########################################################################################
+
+# The idea is that you can use these effects to store the party popularities (and, if desired, the ruling party) when puppeting or possibly when starting civil wars, and then use the "restore" effects to reset it after the puppeting has happened, so that you don't have to use the overlord's ideology if you don't want to. 
+get_current_ideology_popularities = {
+	set_variable = { ROOT.communist_support_before_change = ROOT.party_popularity_100@communism }
+	set_variable = { ROOT.socialist_support_before_change = ROOT.party_popularity_100@socialism }
+	set_variable = { ROOT.social_democratic_support_before_change = ROOT.party_popularity_100@social_democracy }
+	set_variable = { ROOT.progressivist_support_before_change = ROOT.party_popularity_100@progressivism }
+	set_variable = { ROOT.centrist_support_before_change = ROOT.party_popularity_100@centrism }
+	set_variable = { ROOT.liberal_support_before_change = ROOT.party_popularity_100@liberalism }
+	set_variable = { ROOT.conservatist_support_before_change = ROOT.party_popularity_100@conservatism }
+	set_variable = { ROOT.national_democratic_support_before_change = ROOT.party_popularity_100@national_democracy }
+	set_variable = { ROOT.traditionalist_support_before_change = ROOT.party_popularity_100@traditionalism }
+	set_variable = { ROOT.authoritarianist_support_before_change = ROOT.party_popularity_100@authoritarianism }
+	set_variable = { ROOT.ultranationalist_support_before_change = ROOT.party_popularity_100@ultranationalism }
+	set_variable = { ROOT.esotericist_support_before_change = ROOT.party_popularity_100@esotericism }
+	set_variable = { ROOT.oligarchist_support_before_change = ROOT.party_popularity_100@oligarchism }
+}
+get_current_ruling_party = {
+	set_variable = { ROOT.ruling_ideology_before_change = ROOT.current_party_ideology_group }
+}
+restore_ideology_popularities = {
 	hidden_effect = {
-		if = {
-			limit = {
-				has_government = neutrality
-			}
-			set_variable = {
-				var = neutrality_support_var
-				value = party_popularity_100@neutrality
-			}
-			set_variable = {
-				var = democratic_support_var
-				value = party_popularity_100@democratic
-			}
-			set_variable = {
-				var = communism_support_var
-				value = party_popularity_100@communism
-			}
-			set_variable = {
-				var = fascism_support_var
-				value = party_popularity_100@fascism
-			}
-			add_to_variable = {
-				fascism_support_var = neutrality_support_var
-			}
-			set_variable = {
-				var = neutrality_support_var
-				value = 0
-			}
-		}
-		if = {
-			limit = {
-				has_government = communism
-			}
-			set_variable = {
-				var = neutrality_support_var
-				value = party_popularity_100@neutrality
-			}
-			set_variable = {
-				var = democratic_support_var
-				value = party_popularity_100@democratic
-			}
-			set_variable = {
-				var = communism_support_var
-				value = party_popularity_100@communism
-			}
-			set_variable = {
-				var = fascism_support_var
-				value = party_popularity_100@fascism
-			}
-			add_to_variable = {
-				fascism_support_var = communism_support_var
-			}
-			set_variable = {
-				var = communism_support_var
-				value = 0
-			}
-		}
-		if = {
-			limit = {
-				has_government = democratic
-			}
-			set_variable = {
-				var = neutrality_support_var
-				value = party_popularity_100@neutrality
-			}
-			set_variable = {
-				var = democratic_support_var
-				value = party_popularity_100@democratic
-			}
-			set_variable = {
-				var = communism_support_var
-				value = party_popularity_100@communism
-			}
-			set_variable = {
-				var = fascism_support_var
-				value = party_popularity_100@fascism
-			}
-			add_to_variable = {
-				fascism_support_var = democratic_support_var
-			}
-			set_variable = {
-				var = democratic_support_var
-				value = 0
-			}
-		}
+		# Reset popluarities to what they were before puppeting 
 		set_popularities = {
-			democratic = democratic_support_var
-			neutrality = neutrality_support_var
-			fascism = fascism_support_var
-			communism = communism_support_var
+			communism = ROOT.communist_support_before_change
+			socialism = ROOT.socialist_support_before_change
+			social_democracy = ROOT.social_democratic_support_before_change
+			progressivism = ROOT.progressivist_support_before_change
+			centrism = ROOT.centrist_support_before_change
+			liberalism = ROOT.liberal_support_before_change
+			conservatism = ROOT.conservatist_support_before_change
+			national_democracy = ROOT.national_democratic_support_before_change
+			traditionalism = ROOT.traditionalist_support_before_change
+			authoritarianism = ROOT.authoritarianist_support_before_change
+			ultranationalism = ROOT.ultranationalist_support_before_change
+			esotericism = ROOT.esotericist_support_before_change
+			oligarchism = ROOT.oligarchist_support_before_change
 		}
+		clear_variable = ROOT.communist_support_before_change
+		clear_variable = ROOT.socialist_support_before_change
+		clear_variable = ROOT.social_democratic_support_before_change
+		clear_variable = ROOT.progressivist_support_before_change
+		clear_variable = ROOT.centrist_support_before_change
+		clear_variable = ROOT.liberal_support_before_change
+		clear_variable = ROOT.conservatist_support_before_change
+		clear_variable = ROOT.national_democratic_support_before_change
+		clear_variable = ROOT.traditionalist_support_before_change
+		clear_variable = ROOT.authoritarianist_support_before_change
+		clear_variable = ROOT.ultranationalist_support_before_change
+		clear_variable = ROOT.esotericist_support_before_change
+		clear_variable = ROOT.oligarchist_support_before_change
 	}
 }
-add_ruling_to_com = {
-	custom_effect_tooltip = add_ruling_to_com_tt
-	hidden_effect = {
-		if = {
-			limit = {
-				has_government = neutrality
-			}
-			set_variable = {
-				var = neutrality_support_var
-				value = party_popularity_100@neutrality
-			}
-			set_variable = {
-				var = democratic_support_var
-				value = party_popularity_100@democratic
-			}
-			set_variable = {
-				var = communism_support_var
-				value = party_popularity_100@communism
-			}
-			set_variable = {
-				var = fascism_support_var
-				value = party_popularity_100@fascism
-			}
-			add_to_variable = {
-				communism_support_var = neutrality_support_var
-			}
-			set_variable = {
-				var = neutrality_support_var
-				value = 0
-			}
-		}
-		if = {
-			limit = {
-				has_government = fascism
-			}
-			set_variable = {
-				var = neutrality_support_var
-				value = party_popularity_100@neutrality
-			}
-			set_variable = {
-				var = democratic_support_var
-				value = party_popularity_100@democratic
-			}
-			set_variable = {
-				var = communism_support_var
-				value = party_popularity_100@communism
-			}
-			set_variable = {
-				var = fascism_support_var
-				value = party_popularity_100@fascism
-			}
-			add_to_variable = {
-				communism_support_var = fascism_support_var
-			}
-			set_variable = {
-				var = fascism_support_var
-				value = 0
-			}
-		}
-		if = {
-			limit = {
-				has_government = democratic
-			}
-			set_variable = {
-				var = neutrality_support_var
-				value = party_popularity_100@neutrality
-			}
-			set_variable = {
-				var = democratic_support_var
-				value = party_popularity_100@democratic
-			}
-			set_variable = {
-				var = communism_support_var
-				value = party_popularity_100@communism
-			}
-			set_variable = {
-				var = fascism_support_var
-				value = party_popularity_100@fascism
-			}
-			add_to_variable = {
-				communism_support_var = democratic_support_var
-			}
-			set_variable = {
-				var = democratic_support_var
-				value = 0
-			}
-		}
-		set_popularities = {
-			democratic = democratic_support_var
-			neutrality = neutrality_support_var
-			fascism = fascism_support_var
-			communism = communism_support_var
-		}
-	}
-}
-add_ruling_to_neu = {
-	custom_effect_tooltip = add_ruling_to_neu_tt
-	hidden_effect = {
-		if = {
-			limit = {
-				has_government = communism
-			}
-			set_variable = {
-				var = neutrality_support_var
-				value = party_popularity_100@neutrality
-			}
-			set_variable = {
-				var = democratic_support_var
-				value = party_popularity_100@democratic
-			}
-			set_variable = {
-				var = communism_support_var
-				value = party_popularity_100@communism
-			}
-			set_variable = {
-				var = fascism_support_var
-				value = party_popularity_100@fascism
-			}
-			add_to_variable = {
-				neutrality_support_var = communism_support_var
-			}
-			set_variable = {
-				var = communism_support_var
-				value = 0
-			}
-		}
-		if = {
-			limit = {
-				has_government = fascism
-			}
-			set_variable = {
-				var = neutrality_support_var
-				value = party_popularity_100@neutrality
-			}
-			set_variable = {
-				var = democratic_support_var
-				value = party_popularity_100@democratic
-			}
-			set_variable = {
-				var = communism_support_var
-				value = party_popularity_100@communism
-			}
-			set_variable = {
-				var = fascism_support_var
-				value = party_popularity_100@fascism
-			}
-			add_to_variable = {
-				neutrality_support_var = fascism_support_var
-			}
-			set_variable = {
-				var = fascism_support_var
-				value = 0
-			}
-		}
-		if = {
-			limit = {
-				has_government = democratic
-			}
-			set_variable = {
-				var = neutrality_support_var
-				value = party_popularity_100@neutrality
-			}
-			set_variable = {
-				var = democratic_support_var
-				value = party_popularity_100@democratic
-			}
-			set_variable = {
-				var = communism_support_var
-				value = party_popularity_100@communism
-			}
-			set_variable = {
-				var = fascism_support_var
-				value = party_popularity_100@fascism
-			}
-			add_to_variable = {
-				neutrality_support_var = democratic_support_var
-			}
-			set_variable = {
-				var = democratic_support_var
-				value = 0
-			}
-		}
-		set_popularities = {
-			democratic = democratic_support_var
-			neutrality = neutrality_support_var
-			fascism = fascism_support_var
-			communism = communism_support_var
+restore_ruling_party = {
+	ROOT = {
+		set_politics = {
+			ruling_party = var:ROOT.ruling_ideology_before_change
 		}
 	}
 }
 
 
-on_daily = {
+#Upgrades state cat to the next valid level. Called from state scope
+increase_state_category = {
+	if = {
+		limit = {
+			has_state_category = tiny_island
+		}
+		set_state_category = small_island
+		effect_tooltip = {
+			add_extra_state_shared_building_slots = 1
+		}
+	}
 
-}
+	if = {
+		limit = {
+			has_state_category = small_island
+		}
+		set_state_category = large_island
+		effect_tooltip = {
+			add_extra_state_shared_building_slots = 1
+		}
+	}
 
-#on_daily_USA = {
-#	# you can specify an on daily action for a specific country
-#}
-
-set_subject_cosmetic_tags = {
-	every_country = {
+	if = {
 		limit = {
 			OR = {
-				is_subject_of = ENG
-				is_subject_of = FRA
+				has_state_category = wasteland
+				has_state_category = enclave
 			}
 		}
-		if = {
-			limit = {
-				tag = UAE
-				is_subject_of = ENG
-			}
-			set_cosmetic_tag = UAE_ENG
+		set_state_category = pastoral
+		effect_tooltip = {
+			add_extra_state_shared_building_slots = 1
 		}
-		if = {
-			limit = {
-				tag = BHR
-				is_subject_of = ENG
-			}
-			set_cosmetic_tag = BHR_ENG
+	}
+	else_if = {
+		limit = {
+			has_state_category = pastoral
 		}
-		if = {
-			limit = {
-				tag = QAT
-				is_subject_of = ENG
-			}
-			set_cosmetic_tag = QAT_ENG
+		set_state_category = rural
+		effect_tooltip = {
+			add_extra_state_shared_building_slots = 1
 		}
-		if = {
-			limit = {
-				tag = KUW
-				is_subject_of = ENG
-			}
-			set_cosmetic_tag = KUW_ENG
+	}
+	else_if = {
+		limit = {
+			has_state_category = rural
 		}
-		if = {
-			limit = {
-				tag = TUN
-				is_subject_of = FRA
-			}
-			set_cosmetic_tag = TUN_FRA
+		set_state_category = town
+		effect_tooltip = {
+			add_extra_state_shared_building_slots = 2
 		}
-		if = {
-			limit = {
-				tag = MOR
-				is_subject_of = FRA
+	}
+	else_if = {
+		limit = {
+			has_state_category = town
+		}
+		set_state_category = large_town
+		effect_tooltip = {
+			add_extra_state_shared_building_slots = 1
+		}
+	}
+	else_if = {
+		limit = {
+			has_state_category = large_town
+		}
+		set_state_category = city
+		effect_tooltip = {
+			add_extra_state_shared_building_slots = 1
+		}
+	}
+	else_if = {
+		limit = {
+			has_state_category = city
+		}
+		set_state_category = large_city
+		effect_tooltip = {
+			add_extra_state_shared_building_slots = 2
+		}
+	}
+
+	else_if = {
+		limit = {
+			has_state_category = large_city
+		}
+		set_state_category = metropolis
+		effect_tooltip = {
+			add_extra_state_shared_building_slots = 2
+		}
+	}
+
+	else_if = {
+		limit = {
+			has_state_category = metropolis
+		} 
+		set_state_category = megalopolis
+		effect_tooltip = {
+			add_extra_state_shared_building_slots = 2
+		}
+	}
+
+}
+
+add_potential_special_forces_tree = {
+	custom_effect_tooltip = add_potential_special_forces_tree_tt
+	if = {
+		limit = { NOT = { has_variable = sf_trees } }
+		set_variable = { sf_trees = 2 }
+	}
+	else = {
+		add_to_variable = { sf_trees = 1 }
+	}
+}
+
+remove_potential_special_forces_tree = {
+	if = {
+		limit = { NOT = { has_variable = sf_trees } }
+		set_variable = { sf_trees = 0 }
+	}
+	else = {
+		subtract_from_variable = { sf_trees = 1 }
+	}
+}
+
+store_core_states_on_game_start = { #Should be called from history file
+	every_core_state = {
+		ROOT = {
+			add_to_array = {
+				array = core_states_at_game_start
+				value = PREV
 			}
-			set_cosmetic_tag = MOR_FRA
 		}
 	}
 }
