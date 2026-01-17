@@ -1,7 +1,7 @@
 #Attracting investment
 shared_focus = {
 	id = DPR_attracting_investment
-	icon = GFX_DPR_attracting_investment
+	icon = GFX_DPR_attracting_investment-479359
 	cost = 3
 
 	x = 8
@@ -11,6 +11,20 @@ shared_focus = {
 
 	completion_reward = {
 		add_political_power = 10
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
 		country_event = {
 			id = push_pushilin_elections.3
 		}
@@ -29,6 +43,36 @@ shared_focus = {
 	prerequisite = { focus = DPR_thisgentelmanwillpayforeverything }
 	completion_reward = {
 		add_political_power = 10
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_state_modifier = {
+				modifier = {
+					state_repair_speed_industrial_complex_factor = 0.3
+					state_production_speed_industrial_complex_factor = 0.3
+					state_resources_factor = 0.2
+				}
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_state_modifier = {
+				modifier = {
+					state_repair_speed_industrial_complex_factor = 0.3
+					state_production_speed_industrial_complex_factor = 0.3
+					state_resources_factor = 0.2
+				}
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_state_modifier = {
+				modifier = {
+					state_repair_speed_industrial_complex_factor = 0.3
+					state_production_speed_industrial_complex_factor = 0.3
+					state_resources_factor = 0.2
+				}
+			}
+		}
 		country_event = {
 			id = push_pushilin_elections.5
 		}
@@ -91,6 +135,9 @@ shared_focus = {
 			popularity = 0.2
 		}
 		country_event = {
+		add_ideas = fop_minimum_wage_low
+		add_ideas = fop_unemployment_subsidies_low
+		add_ideas = fop_pensions_low
 			id = push_pushilin_elections.4
 		}
 	}
@@ -107,6 +154,7 @@ shared_focus = {
 
 	prerequisite = { focus = DPR_openforbusiness  }
 	completion_reward = {
+		add_ideas = fop_commercial_policy_free_trade
 		random_core_state = {
 			add_extra_state_shared_building_slots = 2
 			add_building_construction = {
@@ -140,6 +188,21 @@ shared_focus = {
 		}
 		country_event = {
 			id = push_pushilin_elections.8
+add_tech_bonus = {
+    bonus = 0.5
+    uses = 1
+    category = industry
+}
+add_tech_bonus = {
+    bonus = 0.5
+    uses = 1
+    category = decentralized_industry_category
+}
+add_tech_bonus = {
+    bonus = 0.5
+    uses = 1
+    category = centralized_industry_category
+}
 		}
 	}
 }
@@ -163,8 +226,33 @@ shared_focus = {
 				instant_build = yes
 			}
 		}
+		random_core_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = situation_centre
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_core_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = boot_camp
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_core_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = boot_camp
+				level = 1
+				instant_build = yes
+			}
+		}
 		country_event = {
 			id = push_pushilin_elections.7
+			add_manpower = 1000
 		}
 	}
 }
@@ -181,6 +269,7 @@ shared_focus = {
 	prerequisite = { focus = DPR_openforbusiness  }
 	completion_reward = {
 		add_manpower = 1000
+		add_ideas = fop_immigration_encouraged
 		country_event = {
 			id = push_pushilin_elections.19
 		}
@@ -255,6 +344,7 @@ shared_focus = {
 
 	prerequisite = { focus = DPR_redistribution_of_industry  }
 	completion_reward = {
+		add_ideas = fop_press_freedom_state
 		add_manpower = -1000
 		country_event = {
 			id = push_pushilin_elections.13

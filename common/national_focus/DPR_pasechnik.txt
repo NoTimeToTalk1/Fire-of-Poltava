@@ -1391,7 +1391,7 @@ shared_focus = {
 
 	prerequisite = { focus = DPR_contracts_with_paris focus = DPR_russian_army_presence }
 	completion_reward = {
-		add_manpower = 1000
+		add_manpower = 1945
 	}
 }
 
@@ -1409,6 +1409,12 @@ shared_focus = {
 
 	completion_reward = {
 		custom_effect_tooltip = DPR_stay_on_our_boat_tt
+		add_stability = 0.1
+		add_war_support = 0.1
+		add_popularity = {
+			ideology = authoritarianism
+			popularity = 0.1
+		}
 	}
 }
 
@@ -1424,7 +1430,11 @@ shared_focus = {
 	prerequisite = { focus = DPR_stay_on_our_boat }
 
 	completion_reward = {
-		###
+		add_ideas = fop_conscription_volunteer_only
+		add_popularity = {
+			ideology = oligarchism
+			popularity = 0.1
+		}
 	}
 }
 
@@ -1440,7 +1450,21 @@ shared_focus = {
 	prerequisite = { focus = DPR_begin_demobilization }
 
 	completion_reward = {
-		###
+		add_to_variable = {
+			var = FOP_administrative_efficiency_var
+			value = 5
+			tooltip = add_administrative_efficiency_var_tt
+		}
+		add_to_variable = {
+			var = FOP_schooling_var
+			value = 5
+			tooltip = add_schooling_var_tt
+		}
+		add_to_variable = {
+			var = FOP_science_var
+			value = 5
+			tooltip = add_science_var_tt
+		}
 	}
 }
 
@@ -1457,7 +1481,11 @@ shared_focus = {
 	prerequisite = { focus = DPR_future_of_new_generation }
 
 	completion_reward = {
-		###
+		add_to_variable = {
+			var = FOP_schooling_var
+			value = 10
+			tooltip = add_schooling_var_tt
+		}
 	}
 }
 
@@ -1474,7 +1502,16 @@ shared_focus = {
 	prerequisite = { focus = DPR_future_of_new_generation }
 
 	completion_reward = {
-		###
+			add_building_construction = {
+				type = civil_education_centre
+				level = 1
+				instant_build = yes
+			}
+		add_to_variable = {
+			var = FOP_schooling_var
+			value = 10
+			tooltip = add_schooling_var_tt
+		}
 	}
 }
 
@@ -1498,7 +1535,7 @@ shared_focus = {
 			DNR_Pasechnik = {
 				set_portraits = {
 					civilian = {
-						large = "gfx/leaders/LPR/loh3.dds"
+						large = "gfx/leaders/LPR/Pasechnik1.dds"
 					}
 				}
 			}
@@ -1536,6 +1573,41 @@ shared_focus = {
 	prerequisite = { focus = DPR_sweep_ukrainian_partisans }
 
 	completion_reward = {
+		random_owned_state = {
+			add_state_modifier = {
+				modifier = {
+					compliance_gain = 0.01
+				}
+			}
+		}
+		random_owned_state = {
+			add_state_modifier = {
+				modifier = {
+					compliance_gain = 0.01
+				}
+			}
+		}
+		random_owned_state = {
+			add_state_modifier = {
+				modifier = {
+					compliance_gain = 0.01
+				}
+			}
+		}
+		random_owned_state = {
+			add_state_modifier = {
+				modifier = {
+					compliance_gain = 0.01
+				}
+			}
+		}
+		random_owned_state = {
+			add_state_modifier = {
+				modifier = {
+					compliance_gain = 0.01
+				}
+			}
+		}
 		add_ideas = fop_ethnic_minorities_forced_assimilation
 	}
 }
@@ -1554,6 +1626,30 @@ shared_focus = {
 
 	completion_reward = {
 		add_political_power = 10
+		random_owned_state = {
+			add_state_modifier = {
+				modifier = {
+					compliance_gain = 0.01
+					enemy_operative_detection_chance_factor_over_occupied_tag = 0.5
+				}
+			}
+		}
+		random_owned_state = {
+			add_state_modifier = {
+				modifier = {
+					compliance_gain = 0.01
+					enemy_operative_detection_chance_factor_over_occupied_tag = 0.5
+				}
+			}
+		}
+		random_owned_state = {
+			add_state_modifier = {
+				modifier = {
+					compliance_gain = 0.01
+					enemy_operative_detection_chance_factor_over_occupied_tag = 0.5
+				}
+			}
+		}
 		random_core_state = {
 			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
@@ -1584,11 +1680,38 @@ shared_focus = {
 			add_idea = pasek_antiukrainian_politics_1
 		}
 		random_core_state = {
+			add_state_modifier = {
+				modifier = {
+					compliance_gain = 0.01
+					enemy_operative_detection_chance_factor_over_occupied_tag = 0.5
+				}
+			}
 			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
 				type = labour_camp
 				level = 1
 				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_state_modifier = {
+				modifier = {
+					compliance_gain = 0.01
+				}
+			}
+		}
+		random_owned_state = {
+			add_state_modifier = {
+				modifier = {
+					compliance_gain = 0.01
+				}
+			}
+		}
+		random_owned_state = {
+			add_state_modifier = {
+				modifier = {
+					compliance_gain = 0.01
+				}
 			}
 		}
 	}
@@ -1627,7 +1750,7 @@ shared_focus = {
 	prerequisite = { focus = DPR_glorification_of_russia }
 
 	completion_reward = {
-		###
+		add_war_support = 0.25
 	}
 }
 
@@ -1644,7 +1767,7 @@ shared_focus = {
 	prerequisite = { focus = DPR_glorification_of_russia }
 
 	completion_reward = {
-		###
+		add_ideas = fop_press_freedom_censored
 	}
 }
 
@@ -1662,6 +1785,8 @@ shared_focus = {
 	prerequisite = { focus = DPR_zombification_of_population }
 
 	completion_reward = {
+		add_ideas = fop_security_opressive_police
+		add_ideas = fop_party_system_single_party
 		add_political_power = 10
 		swap_ideas = {
 			remove_idea = pasek_russian_simp_1
