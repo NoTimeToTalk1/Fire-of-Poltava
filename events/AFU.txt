@@ -1061,25 +1061,68 @@ country_event = { # Generals decision
 
 	option = {
 		name = AFU_army.4.a
-		retire_character = AFU_Syrskyi
-		retire_character = AFU_Bessarab
-		set_country_flag = AFU_purge_small
+		trigger = {
+			NOT = {
+				OR = {
+					has_country_leader = {
+						character = AFU_Kryvonos
+					}
+					has_government = ultranationalism
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					character = AFU_Savchenko
+				}
+			}
+			retire_character = AFU_Syrskyi
+			retire_character = AFU_Naiev
+			retire_character = AFU_Muzhenko
+			retire_character = AFU_Tantsyura
+			retire_character = AFU_Bessarab
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					character = AFU_Danilov
+				}
+			}
+			retire_character = AFU_Kryvonos
+			retire_character = AFU_Tantsyura
+			retire_character = AFU_Bessarab
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					character = AFU_Khomutynnik
+				}
+			}
+			retire_character = AFU_Tantsyura
+			retire_character = AFU_Shevtsov
+		}
+		add_command_power = -50
+		set_country_flag = AFU_purge_done
 	}
 
 	option = {
 		name = AFU_army.4.b
-		retire_character = AFU_Syrskyi
-		retire_character = AFU_Naiev
-		retire_character = AFU_Tantsyura
-		retire_character = AFU_Bessarab
-		retire_character = AFU_Shevtsov
-		set_country_flag = AFU_purge_big
-	}
-
-	option = {
-		name = AFU_army.4.c
-		add_command_power = 50
-		army_experience = -35
+		if = {
+			limit = {
+				OR = {
+					has_country_leader = {
+						character = AFU_Kryvonos
+					}
+					has_government = ultranationalism
+				}
+			}
+			add_command_power = 20
+		}
+		else = {
+			add_command_power = 50
+			army_experience = -35
+		}
 		set_country_flag = AFU_no_purge
 	}
 }

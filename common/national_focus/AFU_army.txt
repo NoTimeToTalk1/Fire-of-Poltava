@@ -455,28 +455,15 @@ shared_focus = {
 	completion_reward = {
 		if = {
 			limit = {
-				has_country_flag = AFU_purge_small
+				has_country_flag = AFU_purge_done
 			}
 			swap_ideas = {
 				add_idea = AFU_army_improved_3_1
 				remove_idea = AFU_army_improved_2
 			}
 			add_timed_ideas = {
-				idea = AFU_army_purge_recovery_1
-				days = 90
-			}
-		}
-		if = {
-			limit = {
-				has_country_flag = AFU_purge_big
-			}
-			swap_ideas = {
-				add_idea = AFU_army_improved_3_2
-				remove_idea = AFU_army_improved_2
-			}
-			add_timed_ideas = {
-				idea = AFU_army_purge_recovery_2
-				days = 120
+				idea = AFU_army_purge_recovery
+				days = 100
 			}
 		}
 		if = {
@@ -484,14 +471,23 @@ shared_focus = {
 				has_country_flag = AFU_no_purge
 			}
 			swap_ideas = {
-				add_idea = AFU_army_improved_3_3
+				add_idea = AFU_army_improved_3_2
 				remove_idea = AFU_army_improved_2
 			}
 		}
-		else = {
-			custom_effect_tooltip = afu_army_refreshment_tt
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = AFU_purge_done
+					has_country_flag = AFU_no_purge
+				}
+			}
+			swap_ideas = {
+				add_idea = AFU_army_improved_3_1
+				remove_idea = AFU_army_improved_2
+			}
 		}
-		add_command_power = -50
+		custom_effect_tooltip = afu_army_refreshment_tt
 	}
 	relative_position_id = AFU_reform_brigades_structure
 	prerequisite = { focus = AFU_reform_brigades_structure }
