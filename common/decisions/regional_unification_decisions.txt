@@ -4144,6 +4144,20 @@ unite_left_bank_ukraine = {
 	prepare_elections_left_bank = {
 		available = {
 			date > 2027.01.01
+			STH = {
+				has_country_flag = recognized_by_east_warlord
+				OR = {
+					has_guaranteed = ESN
+					has_military_access_to = ESN
+				}
+			}
+			ESN = {
+				has_country_flag = recognized_by_south_warlord
+				OR = {
+					has_guaranteed = STH
+					has_military_access_to = STH
+				}
+			}
 		}
         target_trigger = {
             FROM = {
@@ -4283,6 +4297,23 @@ unite_left_bank_ukraine = {
 	}
 
 	prepare_dogovornyak_left_bank = {
+		available = {
+			date > 2027.01.01
+			STH = {
+				has_country_flag = recognized_by_east_warlord
+				OR = {
+					has_guaranteed = ESN
+					has_military_access_to = ESN
+				}
+			}
+			ESN = {
+				has_country_flag = recognized_by_south_warlord
+				OR = {
+					has_guaranteed = STH
+					has_military_access_to = STH
+				}
+			}
+		}
 		visible = {
 			can_do_dogovornyak = yes
 			NOT = {
@@ -4303,9 +4334,6 @@ unite_left_bank_ukraine = {
 			STH = {
 				exists = yes
 			}
-		}
-		available = {
-			date > 2027.01.01
 		}
 		target_trigger = {
             FROM = {
@@ -4677,6 +4705,20 @@ unite_right_bank_ukraine = {
 	prepare_elections_right_bank = {
 		available = {
 			date > 2027.01.01
+			NRT = {
+				has_country_flag = recognized_by_west_warlord
+				OR = {
+					has_guaranteed = WST
+					has_military_access_to = WST
+				}
+			}
+			WST = {
+				has_country_flag = recognized_by_north_warlord
+				OR = {
+					has_guaranteed = NRT
+					has_military_access_to = NRT
+				}
+			}
 		}
         target_trigger = {
             FROM = {
@@ -4818,6 +4860,23 @@ unite_right_bank_ukraine = {
 	}
 
 	prepare_dogovornyak_right_bank = {
+		available = {
+			date > 2027.01.01
+			NRT = {
+				has_country_flag = recognized_by_west_warlord
+				OR = {
+					has_guaranteed = WST
+					has_military_access_to = WST
+				}
+			}
+			WST = {
+				has_country_flag = recognized_by_north_warlord
+				OR = {
+					has_guaranteed = NRT
+					has_military_access_to = NRT
+				}
+			}
+		}
 		visible = {
             can_do_dogovornyak = yes
 			NOT = {
@@ -4838,9 +4897,6 @@ unite_right_bank_ukraine = {
 			NRT = {
 				exists = yes
 			}
-		}
-		available = {
-			date > 2027.01.01
 		}
 		target_trigger = {
             FROM = {

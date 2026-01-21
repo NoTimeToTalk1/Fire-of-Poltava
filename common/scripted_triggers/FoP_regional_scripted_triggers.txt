@@ -35,15 +35,18 @@ can_unite_podolia = {
 }
 
 is_west_ukraine = {
-	OR = {
-		original_tag = HAL
-		original_tag = HUT
-		original_tag = TER
-		original_tag = RIV
-		original_tag = VOL
-		original_tag = KHM
-		original_tag = VIN
-		original_tag = ZHY
+	custom_trigger_tooltip = {
+		tooltip = is_west_ukraine_tt
+		OR = {
+			original_tag = HAL
+			original_tag = HUT
+			original_tag = TER
+			original_tag = RIV
+			original_tag = VOL
+			original_tag = KHM
+			original_tag = VIN
+			original_tag = ZHY
+		}
 	}
 }
 
@@ -101,16 +104,19 @@ can_unite_dnieper_ukraine = {
 }
 
 is_north_ukraine = {
-	OR = {
-		original_tag = KYI
-		original_tag = KOB
-		original_tag = CHR
-		original_tag = SUM
-		original_tag = PLT
-		original_tag = KRM
-		original_tag = CHE
-		original_tag = UMA
-		original_tag = KIR
+	custom_trigger_tooltip = {
+		tooltip = is_north_ukraine_tt
+		OR = {
+			original_tag = KYI
+			original_tag = KOB
+			original_tag = CHR
+			original_tag = SUM
+			original_tag = PLT
+			original_tag = KRM
+			original_tag = CHE
+			original_tag = UMA
+			original_tag = KIR
+		}
 	}
 }
 
@@ -131,24 +137,27 @@ can_unite_north_ukraine = {
 
 
 is_right_bank_ukraine = {
-	OR = {
-		original_tag = HAL
-		original_tag = HUT
-		original_tag = TER
-		original_tag = RIV
-		original_tag = VOL
-		original_tag = KHM
-		original_tag = VIN
-		original_tag = ZHY
-		original_tag = KYI
-		original_tag = KOB
-		original_tag = CHR
-		original_tag = SUM
-		original_tag = PLT
-		original_tag = KRM
-		original_tag = CHE
-		original_tag = UMA
-		original_tag = KIR
+	custom_trigger_tooltip = {
+		tooltip = is_right_bank_ukraine_tt
+		OR = {
+			original_tag = HAL
+			original_tag = HUT
+			original_tag = TER
+			original_tag = RIV
+			original_tag = VOL
+			original_tag = KHM
+			original_tag = VIN
+			original_tag = ZHY
+			original_tag = KYI
+			original_tag = KOB
+			original_tag = CHR
+			original_tag = SUM
+			original_tag = PLT
+			original_tag = KRM
+			original_tag = CHE
+			original_tag = UMA
+			original_tag = KIR
+		}
 	}
 }
 
@@ -210,14 +219,17 @@ can_unite_tavria_ukraine = {
 }
 
 is_south_ukraine = {
-	OR = {
-		original_tag = ODE
-		original_tag = STR
-		original_tag = REC
-		original_tag = MYK
-		original_tag = SHA
-		original_tag = KHE
-		original_tag = ZAP
+	custom_trigger_tooltip = {
+		tooltip = is_south_ukraine_tt
+		OR = {
+			original_tag = ODE
+			original_tag = STR
+			original_tag = REC
+			original_tag = MYK
+			original_tag = SHA
+			original_tag = KHE
+			original_tag = ZAP
+		}
 	}
 }
 
@@ -259,12 +271,15 @@ can_unite_donbas_ukraine = {
 }
 
 is_east_ukraine = {
-	OR = {
-		original_tag = DNI
-		original_tag = KHA
-		original_tag = AFU
-		original_tag = DPR
-		original_tag = LPR
+	custom_trigger_tooltip = {
+		tooltip = is_east_ukraine_tt
+		OR = {
+			original_tag = DNI
+			original_tag = KHA
+			original_tag = AFU
+			original_tag = DPR
+			original_tag = LPR
+		}
 	}
 }
 
@@ -278,20 +293,23 @@ can_unite_east_ukraine = {
 
 
 is_left_bank_ukraine = {
-	OR = {
-		original_tag = ODE
-		original_tag = STR
-		original_tag = REC
-		original_tag = MYK
-		original_tag = SHA
-		original_tag = KHE
-		original_tag = ZAP
-		original_tag = DNI
-		original_tag = KHA
-		original_tag = AFU
-		original_tag = DPR
-		original_tag = LPR
-	}
+	custom_trigger_tooltip = {
+		tooltip = is_left_bank_ukraine_tt
+		OR = {
+			original_tag = ODE
+			original_tag = STR
+			original_tag = REC
+			original_tag = MYK
+			original_tag = SHA
+			original_tag = KHE
+			original_tag = ZAP
+			original_tag = DNI
+			original_tag = KHA
+			original_tag = AFU
+			original_tag = DPR
+			original_tag = LPR
+		}
+	} 
 }
 
 can_unite_left_bank_ukraine = {
@@ -351,48 +369,51 @@ can_unite_ukraine = {
 	}
 }
 can_do_elections = {
-	OR = {
-		AND = {
-			ROOT = {
-				is_pro_ukrainian = yes
-				NOT = {
-					has_government = communism
-					has_government = authoritarianism
-					has_government = ultranationalism
-					has_government = esotericism
-					has_government = oligarchism
+	custom_trigger_tooltip = {
+		tooltip = can_do_elections
+		OR = {
+			AND = {
+				ROOT = {
+					is_pro_ukrainian = yes
+					NOT = {
+						has_government = communism
+						has_government = authoritarianism
+						has_government = ultranationalism
+						has_government = esotericism
+						has_government = oligarchism
+					}
+				}
+				FROM = {
+					is_pro_ukrainian = yes
+					NOT = {
+						has_government = communism
+						has_government = authoritarianism
+						has_government = ultranationalism
+						has_government = esotericism
+						has_government = oligarchism
+					}
 				}
 			}
-			FROM = {
-				is_pro_ukrainian = yes
-				NOT = {
-					has_government = communism
-					has_government = authoritarianism
-					has_government = ultranationalism
-					has_government = esotericism
-					has_government = oligarchism
+			AND = {
+				ROOT = {
+					is_pro_russian = yes
+					NOT = {
+						has_government = communism
+						has_government = authoritarianism
+						has_government = ultranationalism
+						has_government = esotericism
+						has_government = oligarchism
+					}
 				}
-			}
-		}
-		AND = {
-			ROOT = {
-				is_pro_russian = yes
-				NOT = {
-					has_government = communism
-					has_government = authoritarianism
-					has_government = ultranationalism
-					has_government = esotericism
-					has_government = oligarchism
-				}
-			}
-			FROM = {
-				is_pro_russian = yes
-				NOT = {
-					has_government = communism
-					has_government = authoritarianism
-					has_government = ultranationalism
-					has_government = esotericism
-					has_government = oligarchism
+				FROM = {
+					is_pro_russian = yes
+					NOT = {
+						has_government = communism
+						has_government = authoritarianism
+						has_government = ultranationalism
+						has_government = esotericism
+						has_government = oligarchism
+					}
 				}
 			}
 		}
@@ -400,97 +421,100 @@ can_do_elections = {
 }
 
 can_do_dogovornyak = {
-	OR = {
-		AND = {
-			ROOT = {
-				OR = {
+	custom_trigger_tooltip = {
+		tooltip = can_do_dogovornyak_tt
+		OR = {
+			AND = {
+				ROOT = {
+					OR = {
+						is_pro_ukrainian = yes
+						is_a_minority = yes
+					}
+					NOT = {
+						has_government = esotericism
+						has_government = traditionalism
+						has_government = ultranationalism
+					}
+				}
+				FROM = {
+					OR = {
+						is_pro_ukrainian = yes
+						is_a_minority = yes
+					}
+					NOT = {
+						has_government = esotericism
+						has_government = traditionalism
+						has_government = ultranationalism
+					}
+				}
+			}
+			AND = {
+				ROOT = {
+					is_pro_russian = yes
+					NOT = {
+						has_government = esotericism
+						has_government = traditionalism
+						has_government = ultranationalism
+					}
+				}
+				FROM = {
+					is_pro_russian = yes
+					NOT = {
+						has_government = esotericism
+						has_government = traditionalism
+						has_government = ultranationalism
+					}
+				}
+			}
+			AND = {
+				ROOT = {
 					is_pro_ukrainian = yes
-					is_a_minority = yes
-				}
-				NOT = {
-					has_government = esotericism
-					has_government = traditionalism
 					has_government = ultranationalism
 				}
-			}
-			FROM = {
-				OR = {
+				FROM = {
 					is_pro_ukrainian = yes
-					is_a_minority = yes
-				}
-				NOT = {
-					has_government = esotericism
-					has_government = traditionalism
 					has_government = ultranationalism
 				}
 			}
-		}
-		AND = {
-			ROOT = {
-				is_pro_russian = yes
-				NOT = {
-					has_government = esotericism
-					has_government = traditionalism
+			AND = {
+				ROOT = {
+					is_pro_russian = yes
+					has_government = ultranationalism
+				}
+				FROM = {
+					is_pro_russian = yes
 					has_government = ultranationalism
 				}
 			}
-			FROM = {
-				is_pro_russian = yes
-				NOT = {
+			AND = {
+				ROOT = {
 					has_government = esotericism
-					has_government = traditionalism
-					has_government = ultranationalism
+				}
+				FROM = {
+					has_government = esotericism
 				}
 			}
-		}
-		AND = {
-			ROOT = {
-				is_pro_ukrainian = yes
-				has_government = ultranationalism
+			AND = {
+				ROOT = {
+					is_pro_ukrainian = yes
+					has_government = traditionalism
+				}
+				FROM = {
+					is_pro_ukrainian = yes
+					has_government = traditionalism
+				}
 			}
-			FROM = {
-				is_pro_ukrainian = yes
-				has_government = ultranationalism
+			AND = {
+				ROOT = {
+					is_pro_russian = yes
+					has_government = traditionalism
+				}
+				FROM = {
+					is_pro_russian = yes
+					has_government = traditionalism
+				}
 			}
-		}
-		AND = {
-			ROOT = {
-				is_pro_russian = yes
-				has_government = ultranationalism
-			}
-			FROM = {
-				is_pro_russian = yes
-				has_government = ultranationalism
-			}
-		}
-		AND = {
-			ROOT = {
-				has_government = esotericism
-			}
-			FROM = {
-				has_government = esotericism
-			}
-		}
-		AND = {
-			ROOT = {
-				is_pro_ukrainian = yes
-				has_government = traditionalism
-			}
-			FROM = {
-				is_pro_ukrainian = yes
-				has_government = traditionalism
-			}
-		}
-		AND = {
-			ROOT = {
-				is_pro_russian = yes
-				has_government = traditionalism
-			}
-			FROM = {
-				is_pro_russian = yes
-				has_government = traditionalism
-			}
-		}
+		}	
 	}
 }
 
