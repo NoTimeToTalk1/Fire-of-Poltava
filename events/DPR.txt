@@ -4,7 +4,7 @@ country_event = { #Situation in Ukraine
 	id = dpr.1
 	title = dpr.1.t
 	desc = dpr.1.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -19,7 +19,7 @@ country_event = { #Situation in Our Country
 	id = dpr.2
 	title = dpr.2.t
 	desc = dpr.2.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -34,7 +34,7 @@ country_event = { #Look Around Us
 	id = dpr.3
 	title = dpr.3.t
 	desc = dpr.3.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -49,7 +49,7 @@ country_event = { #Look West
 	id = dpr.4
 	title = dpr.4.t
 	desc = dpr.4.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -119,7 +119,7 @@ country_event = { #Look East
 	id = dpr.7
 	title = dpr.7.t
 	desc = dpr.7.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -134,7 +134,7 @@ country_event = { #Look North
 	id = dpr.8
 	title = dpr.8.t
 	desc = dpr.8.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -149,7 +149,7 @@ country_event = { #1 - LPR&DPR Cooperation
 	id = dpr.15
 	title = dpr.15.t
 	desc = dpr.15.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -176,7 +176,7 @@ country_event = { #2 - LPR&DPR Cooperation
 	id = dpr.16
 	title = dpr.16.t
 	desc = dpr.16.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -208,7 +208,7 @@ country_event = { #3 - LPR&DPR Cooperation
 	id = dpr.17
 	title = dpr.17.t
 	desc = dpr.17.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -222,7 +222,10 @@ country_event = { #3 - LPR&DPR Cooperation
 			idea = DPR_crisis_in_administration
 			days = 180
 		}
-		add_ideas = DPR_federation
+		add_ideas = fop_centralization_federalism
+		LPR = {
+		add_ideas = fop_centralization_federalism
+		}
 	}
 
 	option = {
@@ -234,7 +237,10 @@ country_event = { #3 - LPR&DPR Cooperation
 			idea = DPR_crisis_in_administration
 			days = 90
 		}
-		add_ideas = DPR_confederation
+		add_ideas = fop_centralization_confederalism
+		LPR = {
+		add_ideas = fop_centralization_confederalism
+		}
 	}
 }
 
@@ -242,64 +248,23 @@ country_event = { #4 - LPR&DPR Cooperation
 	id = dpr.18
 	title = dpr.18.t
 	desc = dpr.18.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_pushilin
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = dpr.18.a
-		ai_chance = {
-			factor = 40
-		}
+        add_country_leader_trait = great_patriot_of_novorossiya
 		hidden_effect = {
 			add_ideas = DPR_novorosjablyat
 			promote_character = {
-				character =  dpr_Pidor
+				character =  DNR_Pidor
 				ideology = kleptocracy
 			}
 		}
 	}
 
-	option = {
-		name = dpr.18.b
-		ai_chance = {
-			factor = 40
-		}
-		create_country_leader = {
-			name = "Leonid Pasechnik"
-			desc = "POLITICS_LEONID_PASECHNIK_DESC"
-			picture = "GFX_loh"
-			expire = "3000.1.1"
-			ideology = kleptocracy
-			traits = { }
-		}
-
-		hidden_effect = {
-			add_ideas = DPR_novorosjablyat
-		}
-		remove_ideas = DPR_clown
-	}
-
-	option = {
-		name = dpr.18.c
-		ai_chance = {
-			factor = 20
-		}
-		create_country_leader = {
-			name = "Сollegial Government"
-			desc = "POLITICS_PETER_II_DESC"
-			picture = "GFX_banda"
-			expire = "3000.1.1"
-			ideology = kleptocracy
-			traits = { }
-		}
-
-		hidden_effect = {
-			add_ideas = DPR_novorosjablyat
-		}
-		remove_ideas = DPR_clown
-	}
 }
 
 
@@ -307,7 +272,7 @@ country_event = { #???
 	id = dpr.19
 	title = dpr.19.t
 	desc = dpr.19.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -322,7 +287,7 @@ country_event = { #Novorossiya United!
 	id = dpr.20
 	title = dpr.20.t
 	desc = dpr.20.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -344,7 +309,7 @@ country_event = { #Step to Unification?
 	id = dpr.21
 	title = dpr.21.t
 	desc = dpr.21.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -371,7 +336,7 @@ country_event = { #Novorossiya United?
 	id = dpr.22
 	title = dpr.22.t
 	desc = dpr.22.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -413,7 +378,7 @@ country_event = { #NO UNIFICATION!
 	id = dpr.23
 	title = dpr.23.t
 	desc = dpr.23.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -439,7 +404,7 @@ country_event = {
 	id = dpr.24
 	title = dpr.24.t
 	desc = dpr.24.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -454,7 +419,7 @@ country_event = {
 	id = dpr.25
 	title = dpr.25.t
 	desc = dpr.25.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -468,7 +433,7 @@ country_event = {
 	id = dpr.26
 	title = dpr.26.t
 	desc = dpr.26.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -482,7 +447,7 @@ country_event = {
 	id = dpr.27
 	title = dpr.27.t
 	desc = dpr.27.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -499,7 +464,7 @@ country_event = {
 	id = dpr.28
 	title = dpr.28.t
 	desc = dpr.28.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -513,7 +478,7 @@ country_event = {
 	id = dpr.29
 	title = dpr.29.t
 	desc = dpr.29.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -527,7 +492,7 @@ country_event = {
 	id = dpr.30
 	title = dpr.30.t
 	desc = dpr.30.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -541,7 +506,7 @@ country_event = {
 	id = dpr.31
 	title = dpr.31.t
 	desc = dpr.31.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -555,7 +520,7 @@ country_event = {
 	id = dpr.32
 	title = dpr.32.t
 	desc = dpr.32.d
-	picture = GFX_dpr_encircled
+	picture = GFX_event_dnr_encircled
 
 	fire_only_once = yes
 	is_triggered_only = yes
