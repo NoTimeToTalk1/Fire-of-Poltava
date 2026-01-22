@@ -16,6 +16,8 @@ technologies = {
 		path = { leads_to_tech = basic_factory_conversion }
 		path = { leads_to_tech = construction_fundamentals }
 		path = { leads_to_tech = workforce_administration }
+		path = { leads_to_tech = fuel_and_chemical_engineering_base }
+		path = { leads_to_tech = improvised_mining_operations }
 
 		folder = {
 			name = industry_folder
@@ -926,6 +928,159 @@ cooperative_management = {
 
 	folder = { name = industry_folder position = { x = 24 y = 10 } }
 	categories = { industry workforce discipline incentive_workforce }
+}
+
+### =====================================================
+### MINING
+### =====================================================
+
+improvised_mining_operations = {
+    research_cost = 3
+    start_year = 2015
+
+    local_resources_factor = 0.05
+
+    path = { leads_to_tech = manual_extraction_teams }
+
+    folder = { name = industry_folder position = { x = 26 y = 2 } }
+    categories = { industry excavation_tech }
+}
+
+manual_extraction_teams = {
+    research_cost = 4
+    start_year = 2016
+
+    local_resources_factor = 0.05
+
+    path = { leads_to_tech = upgrade_working_conditions }
+
+    folder = { name = industry_folder position = { x = 26 y = 4 } }
+    categories = { industry excavation_tech }
+}
+
+upgrade_working_conditions = {
+    research_cost = 5.5
+    start_year = 2017
+
+    local_resources_factor = 0.05
+
+    path = { leads_to_tech = mechanized_extraction }
+
+    folder = { name = industry_folder position = { x = 26 y = 6 } }
+    categories = { industry excavation_tech }
+}
+
+mechanized_extraction = {
+    research_cost = 5.5
+    start_year = 2018
+
+    local_resources_factor = 0.05
+
+    path = { leads_to_tech = heavy_mining_equipment }
+
+    folder = { name = industry_folder position = { x = 26 y = 8 } }
+    categories = { industry excavation_tech }
+}
+
+heavy_mining_equipment = {
+    research_cost = 6
+    start_year = 2019
+
+    local_resources_factor = 0.05
+
+    path = { leads_to_tech = tribute_based_resource_collection }
+
+    folder = { name = industry_folder position = { x = 26 y = 10 } }
+    categories = { industry excavation_tech }
+}
+
+tribute_based_resource_collection = {
+    research_cost = 6
+    start_year = 2020
+
+    local_resources_factor = 0.1
+
+    folder = { name = industry_folder position = { x = 26 y = 12 } }
+    categories = { industry excavation_tech }
+}
+
+# ENERGY 
+
+fuel_and_chemical_engineering_base = {
+    research_cost = 3
+    start_year = 2019
+
+    	base_fuel_gain_factor = 0.05
+
+    path = { leads_to_tech = volatile_production }
+
+enable_building = {
+    building = synthetic_refinery
+    level = 3
+}
+
+enable_building = {
+    building = fuel_silo
+    level = 1
+}
+
+
+    folder = { name = industry_folder position = { x = 28 y = 2 } }
+    categories = { industry fuel synth_resources }
+}
+
+volatile_production = {
+    research_cost = 4
+    start_year = 2020
+
+    	base_fuel_gain_factor = 0.05
+		fuel_gain_factor_from_states = 0.1
+
+    path = { leads_to_tech = Strategic_Energy_Control }
+
+    folder = { name = industry_folder position = { x = 28 y = 4 } }
+    categories = { industry fuel }
+}
+
+Strategic_Energy_Control = {
+    research_cost = 5
+    start_year = 2021
+
+	    army_fuel_consumption_factor = -0.05
+	    air_fuel_consumption_factor = -0.05
+	    navy_fuel_consumption_factor = -0.05
+
+    path = { leads_to_tech = Priority_Allocation }
+
+    folder = { name = industry_folder position = { x = 28 y = 6 } }
+    categories = { industry fuel }
+}
+
+Priority_Allocation = {
+    research_cost = 6
+    start_year = 2022
+
+    	base_fuel_gain_factor = 0.05
+		max_fuel_factor = 0.05
+
+    path = { leads_to_tech = Power_Grid_Protection }
+
+    folder = { name = industry_folder position = { x = 28 y = 8 } }
+    categories = { industry fuel }
+}
+
+Power_Grid_Protection = {
+    research_cost = 6
+    start_year = 2023
+
+    	base_fuel_gain_factor = 0.05
+		max_fuel_factor = 0.1
+		factory_energy_consumption = -0.1
+
+    folder = { name = industry_folder position = { x = 28 y = 10 } }
+    categories = { industry fuel }
+	
+
 }
 
 }
