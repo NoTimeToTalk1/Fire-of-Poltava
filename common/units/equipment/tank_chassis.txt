@@ -1,22 +1,387 @@
+# This file must be evaluated after the file(s) defining the archetypes being duplicated.
+# The equipment attributes alias, type, variant_name, and derived_variant_name are not duplicated.
+
+duplicate_archetypes = {
+
+	# APC
+
+	APC_aa_chassis = {
+		archetype = APC_chassis
+		type = { armor anti_air }
+
+		for_each = {
+			# For each duplicated equipment type (excluding the archetype), set variant_name by taking what would be
+			# used as the localization key (the name of the type) and run a find-and-replace on it.
+			# Example: light_tank_aa_chassis_1 gets variant_name light_tank_aa_equipment_1.
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			hardness = { set = 0.5 }
+		}
+	}
+
+	APC_artillery_chassis = {
+		archetype = APC_chassis
+		type = { armor artillery }
+
+		for_each = {
+			# For each duplicated equipment type (excluding the archetype), set variant_name by taking what would be
+			# used as the localization key (the name of the type) and run a find-and-replace on it.
+			# Example: light_tank_aa_chassis_1 gets variant_name light_tank_aa_equipment_1.
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			hardness = { set = 0.5 }
+		}
+	}
+
+	APC_destroyer_chassis = {
+		archetype = APC_chassis
+		type = { armor anti_tank }
+
+		for_each = {
+			# For each duplicated equipment type (excluding the archetype), set variant_name by taking what would be
+			# used as the localization key (the name of the type) and run a find-and-replace on it.
+			# Example: light_tank_aa_chassis_1 gets variant_name light_tank_aa_equipment_1.
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			hardness = { set = 0.5 }
+		}
+	}
+
+	# IFV
+
+	IFV_aa_chassis = {
+		archetype = IFV_chassis
+		type = { armor anti_air }
+
+		for_each = {
+			# For each duplicated equipment type (excluding the archetype), set variant_name by taking what would be
+			# used as the localization key (the name of the type) and run a find-and-replace on it.
+			# Example: light_tank_aa_chassis_1 gets variant_name light_tank_aa_equipment_1.
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			hardness = { set = 0.5 }
+		}
+	}
+
+	IFV_artillery_chassis = {
+		archetype = IFV_chassis
+		type = { armor artillery }
+
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			hardness = { set = 0.5 }
+		}
+	}
+
+	IFV_amphibious_chassis = {
+		archetype = IFV_chassis
+		type = { armor amphibious }
+
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			hardness = { set = 0.5 }
+		}
+	}
+
+	IFV_flame_chassis = {
+		archetype = IFV_chassis
+		type = { armor flame }
+
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			hardness = { set = 0.5 }
+		}
+	}
+
+	# MBT
+
+	MBT_aa_chassis = {
+		archetype = MBT_chassis
+		type = { armor anti_air }
+
+		for_each = {
+			# For each duplicated equipment type (excluding the archetype), set variant_name by taking what would be
+			# used as the localization key (the name of the type) and run a find-and-replace on it.
+			# Example: light_tank_aa_chassis_1 gets variant_name light_tank_aa_equipment_1.
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			hardness = { set = 0.5 }
+		}
+	}
+
+	MBT_artillery_chassis = {
+		archetype = MBT_chassis
+		type = { armor artillery }
+
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			hardness = { set = 0.5 }
+		}
+	}
+
+	MBT_amphibious_chassis = {
+		archetype = MBT_chassis
+		type = { armor amphibious }
+
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			hardness = { set = 0.5 }
+		}
+	}
+
+	MBT_flame_chassis = {
+		archetype = MBT_chassis
+		type = { armor flame }
+
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			hardness = { set = 0.5 }
+		}
+	}
+}
+
 equipments = {
-	
-	### Helpful handy information: modules that depend on other modules (ie, big guns require fixed turrets)
-	### require that the module slots for their equipment archetype are defined in operational order for AI + historical templates.
-	### tldr; If your gun requires a specific turret: define the turret slot first.
-	
+
+	MBT_equipment = {
+
+
+		is_archetype = yes
+		is_buildable = no
+		picture = archetype_modern_tank_equipment
+		type = armor
+		group_by = archetype
+
+		interface_category = interface_category_armor
+
+		upgrades = {
+			tank_reliability_upgrade
+			tank_engine_upgrade
+			tank_armor_upgrade
+			tank_gun_upgrade
+		}
+
+		#Misc Abilities
+		maximum_speed = 10
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 9
+		breakthrough = 56
+		hardness = 0.9
+		armor_value = 100
+
+		#Offensive Abilities
+		soft_attack = 33
+		hard_attack = 32
+		ap_attack = 130
+		air_attack = 1
+
+		#Space taken in convoy
+		lend_lease_cost = 15
+
+		build_cost_ic = 30
+		resources = {
+			steel = 3
+			tungsten = 2
+		}
+
+		fuel_consumption = 3.6
+	}
+
+	MBT_equipment_0 = {
+		year = 1900
+
+		archetype = MBT_equipment
+		priority = 5
+		visual_level = 0
+	}
+
+	MBT_equipment_1 = {
+		year = 1991
+
+		archetype = MBT_equipment
+		priority = 5
+		visual_level = 1
+
+		upgrades = {
+			tank_reliability_upgrade
+			tank_engine_upgrade
+			tank_armor_upgrade
+			tank_gun_upgrade
+		}
+
+		#Misc Abilities
+		maximum_speed = 13
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 12
+		breakthrough = 78
+		hardness = 0.9
+		armor_value = 120
+
+		#Offensive Abilities
+		soft_attack = 41
+		hard_attack = 40
+		ap_attack = 160
+		air_attack = 8
+
+		#Space taken in convoy
+		lend_lease_cost = 15
+
+		build_cost_ic = 36
+		resources = {
+			steel = 3
+			tungsten = 2
+		}
+
+		fuel_consumption = 3.6
+	}
+
+	MBT_equipment_2 = {
+		year = 2020
+
+		archetype = MBT_equipment
+		priority = 5
+		visual_level = 2
+
+		upgrades = {
+			tank_reliability_upgrade
+			tank_engine_upgrade
+			tank_armor_upgrade
+			tank_gun_upgrade
+		}
+
+		#Misc Abilities
+		maximum_speed = 16
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 15
+		breakthrough = 100
+		hardness = 0.9
+		armor_value = 150
+
+		#Offensive Abilities
+		soft_attack = 51
+		hard_attack = 50
+		ap_attack = 200
+		air_attack = 15
+
+		#Space taken in convoy
+		lend_lease_cost = 15
+
+		build_cost_ic = 44
+		resources = {
+			steel = 3
+			tungsten = 3
+		}
+
+		fuel_consumption = 3.6
+	}
+
+	MBT_equipment_3 = {
+		year = 2024
+
+		archetype = MBT_equipment
+		priority = 5
+		visual_level = 3
+
+		upgrades = {
+			tank_reliability_upgrade
+			tank_engine_upgrade
+			tank_armor_upgrade
+			tank_gun_upgrade
+		}
+
+		#Misc Abilities
+		maximum_speed = 18
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 18
+		breakthrough = 122
+		hardness = 0.9
+		armor_value = 190
+
+		#Offensive Abilities
+		soft_attack = 63
+		hard_attack = 62
+		ap_attack = 250
+		air_attack = 22
+
+		#Space taken in convoy
+		lend_lease_cost = 15
+
+		build_cost_ic = 50
+		resources = {
+			steel = 3
+			tungsten = 3
+		}
+
+		fuel_consumption = 3.6
+	}
+
+	MBT_equipment_4 = {
+		year = 2028
+
+		archetype = MBT_equipment
+		priority = 5
+		visual_level = 4
+
+		upgrades = {
+			tank_reliability_upgrade
+			tank_engine_upgrade
+			tank_armor_upgrade
+			tank_gun_upgrade
+		}
+
+		#Misc Abilities
+		maximum_speed = 22
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 21
+		breakthrough = 148
+		hardness = 0.9
+		armor_value = 240
+
+		#Offensive Abilities
+		soft_attack = 77
+		hard_attack = 76
+		ap_attack = 310
+		air_attack = 29
+
+		#Space taken in convoy
+		lend_lease_cost = 15
+
+		build_cost_ic = 60
+		resources = {
+			steel = 3
+			tungsten = 3
+		}
+
+		fuel_consumption = 3.6
+	}
+
 	mbt_chassis = {
 		year = 1991
 		is_archetype = yes
 		is_buildable = no
-		picture = archetype_mbt_tank_equipment
+
+		picture = archetype_mbt_equipment
 		type = armor
 		group_by = archetype
 		interface_category = interface_category_armor
 		priority = 2000
 
-		module_slots = {
+		
 
-			turret_type_slot = {
+		module_slots = {	
+
+			loader_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_loader_type
+				}
+			}		
+
+			turret_type_slot = { #Turrets must go at the top
 				required = yes
 				allowed_module_categories = {
 					tank_turret_type
@@ -26,15 +391,16 @@ equipments = {
 			main_armament_slot = {
 				required = yes
 				allowed_module_categories = {
-					tank_barrel_rifled
-					tank_barrel_smoothbore
+					tank_small_main_armament
+					tank_flamethrower
 				}
 			}
-
+			
 			suspension_type_slot = {
 				required = yes
 				allowed_module_categories = {
 					tank_suspension_type
+					tank_non_tracked_suspension_type
 				}
 			}
 
@@ -49,9 +415,10 @@ equipments = {
 			engine_type_slot = {
 				required = yes
 				allowed_module_categories = {
-					tank_diesel_engine
-					tank_turbine_engine
-					tank_electric_engine
+					tank_diesel_engine_type
+					tank_gasoline_engine_type
+					tank_electric_engine_type
+					tank_turbine_engine_type
 				}
 			}
 
@@ -60,6 +427,7 @@ equipments = {
 				allowed_module_categories = {
 					tank_special_module
 					tank_radio_module
+					tank_secondary_turret
 				}
 			}
 
@@ -68,6 +436,7 @@ equipments = {
 				allowed_module_categories = {
 					tank_special_module
 					tank_radio_module
+					tank_secondary_turret
 				}
 			}
 
@@ -75,6 +444,8 @@ equipments = {
 				required = no
 				allowed_module_categories = {
 					tank_special_module
+					tank_radio_module
+					tank_secondary_turret
 				}
 			}
 
@@ -82,49 +453,159 @@ equipments = {
 				required = no
 				allowed_module_categories = {
 					tank_special_module
+					tank_radio_module
+					tank_secondary_turret
 				}
 			}
-
+			
 		}
-		
+		module_count_limit = {
+			module = sloped_armor
+			count < 2
+		}	
 		module_count_limit = {
 			category = tank_radio_module
 			count < 2
 		}
-
 		module_count_limit = {
-			module = auto_loading
-			count < 1
+			category = tank_secondary_turret
+			count < 2
+		}
+		module_count_limit = {
+			module = amphibious_drive
+			count < 2
 		}
 
 		module_count_limit = {
-			module = mangal_cope_cage
-			count < 1
+			module = wet_ammo_storage
+			count < 2
 		}
 
+		module_count_limit = {
+			module = squeezebore_adaptor
+			count < 2
+		}
+
+		module_count_limit = {
+			module = armor_skirts
+			count < 2
+		}
+
+		module_count_limit = {
+			module = dozer_blade
+			count < 2
+		}
+
+		module_count_limit = {
+			module = easy_maintenance
+			count < 2
+		}
+		module_count_limit = {
+			module = auto_loader
+			count < 2
+		}
+		module_count_limit = {
+			module = stabilizer
+			count < 2
+		}
 		default_modules = {
 			main_armament_slot = empty
-			turret_type_slot = tank_three_man_turret
+			loader_slot = manual_loading
+			turret_type_slot = tank_light_one_man_tank_turret
 			suspension_type_slot = tank_bogie_suspension
-			armor_type_slot = tank_steel_armor_gen1
-			engine_type_slot = tank_diesel_engine_gen2
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
 		}
 
 		fuel_consumption = 0
-		maximum_speed = 7
-		build_cost_ic = 6
-		reliability = 1.2
-		armor_value = 65
-		hardness = 0.95
+		maximum_speed = 4
+		build_cost_ic = 2
+		reliability = 0.8
+		hardness = 0.8
+		armor_value = 10
 		resources = {
-			steel = 2
-			chromium = 1
+			steel = 1
 		}
 
-		lend_lease_cost = 13
+		lend_lease_cost = 10
 
 		manpower = 2
 
 	}
-}
 
+	MBT_chassis_0 = {
+		abbreviation = "lt0"
+		derived_variant_name = light_tank_equipment_0
+		visual_level = 0
+		year = 1964
+		archetype = mbt_chassis
+		priority = 2000
+		module_slots = inherit
+
+		upgrades = {
+			tank_nsb_engine_upgrade
+			tank_nsb_armor_upgrade
+		}
+	}
+
+
+	MBT_chassis_1 = {
+		abbreviation = "MBT1"
+		derived_variant_name = light_tank_equipment_1
+		visual_level = 0
+		year = 1991
+		archetype = mbt_chassis
+		parent = MBT_chassis_1
+		priority = 2000
+		module_slots = inherit
+		maximum_speed = 5
+		build_cost_ic = 2.35
+		reliability = 0.95
+		armor_value = 15
+	}
+
+	MBT_chassis_2 = {
+		abbreviation = "MBT2"
+		derived_variant_name = light_tank_equipment_1
+		visual_level = 0
+		year = 2020
+		archetype = mbt_chassis
+		parent = MBT_chassis_1
+		priority = 2000
+		module_slots = inherit
+		maximum_speed = 5
+		build_cost_ic = 3.35
+		reliability = 0.95
+		armor_value = 18
+	}
+
+	MBT_chassis_3 = {
+		abbreviation = "MBT3"
+		derived_variant_name = light_tank_equipment_1
+		visual_level = 0
+		year = 2024
+		archetype = mbt_chassis
+		parent = MBT_chassis_2
+		priority = 2000
+		module_slots = inherit
+		maximum_speed = 6
+		build_cost_ic = 3.65
+		reliability = 0.95
+		armor_value = 18
+	}
+
+	MBT_chassis_4 = {
+		abbreviation = "MBT3"
+		derived_variant_name = light_tank_equipment_1
+		visual_level = 0
+		year = 2028
+		archetype = mbt_chassis
+		parent = MBT_chassis_3
+		priority = 2000
+		module_slots = inherit
+		maximum_speed = 7
+		build_cost_ic = 4.07
+		reliability = 0.95
+		armor_value = 18
+	}
+}

@@ -1,10 +1,10 @@
 technologies = {
 
-	@1900 = 0
-	@1991 = 4
-	@2020 = 8
-	@2024 = 12
-	@2028 = 16
+	@1964 = 0
+	@1991 = 2
+	@2020 = 4
+	@2024 = 6
+	@2028 = 8
 
 	@enginede = 2
 	@enginegt = 3
@@ -17,10 +17,9 @@ technologies = {
 	@spec1 = 14
 	@spec2 = 16
 
-MBT1 = {
-
+MBT0_chassis = {
 		enable_equipments = {
-			MBT_equipment_1
+			MBT_chassis_0
 		}
 
 		enable_equipment_modules = {
@@ -28,10 +27,51 @@ MBT1 = {
 			tank_two_man_turret
 			auto_loading
 			manual_loading
+			tank_diesel_engine_gen1
+			tank_torsion_bar_suspension
+			tank_christie_suspension
+			tank_bogie_suspension
+			tank_interleaved_suspension
+			night_vision
+			smoke_launcher
+			mangal_cope_cage
+			blow_out_panels
+			mbt_machine_gun
+			reactive_armour
+			active_protection_system
 		}
 
 		path = {
-			leads_to_tech = MBT2
+			leads_to_tech = MBT1_chassis
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 1964
+		folder = {
+			name = nsb_armour_folder
+			position = { x = @1964 y = 0 }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		categories = {
+			armor
+			AFV
+			MBT
+		}
+}
+
+MBT1_chassis = {
+
+		enable_equipments = {
+			MBT_chassis_1
+		}
+
+		path = {
+			leads_to_tech = MBT2_chassis
 			research_cost_coeff = 1
 		}
 
@@ -39,7 +79,7 @@ MBT1 = {
 		start_year = 1991
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 2 y = @1991 }
+			position = { x = @1991 y = 0 }
 		}
 
 		ai_will_do = {
@@ -53,14 +93,14 @@ MBT1 = {
 		}
 	}
 
-MBT2 = {
+MBT2_chassis = {
 
 		enable_equipments = {
-			MBT_equipment_2
+			MBT_chassis_2
 		}
 
 		path = {
-			leads_to_tech = MBT3
+			leads_to_tech = MBT3_chassis
 			research_cost_coeff = 1
 		}
 
@@ -68,7 +108,7 @@ MBT2 = {
 		start_year = 2020
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 2 y = @2020 }
+			position = { x = @2020 y = 0 }
 		}
 
 		ai_will_do = {
@@ -82,10 +122,10 @@ MBT2 = {
 		}
 	}
 
-MBT3 = {
+MBT3_chassis = {
 
 		enable_equipments = {
-			MBT_equipment_3
+			MBT_chassis_3
 		}
 
 		enable_equipment_modules = {
@@ -93,7 +133,7 @@ MBT3 = {
 		}
 
 		path = {
-			leads_to_tech = MBT4
+			leads_to_tech = MBT4_chassis
 			research_cost_coeff = 1
 		}
 
@@ -101,7 +141,7 @@ MBT3 = {
 		start_year = 2024
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 2 y = @2024 }
+			position = { x = @2024 y = 0 }
 		}
 
 		ai_will_do = {
@@ -115,10 +155,10 @@ MBT3 = {
 		}
 	}
 
-MBT4 = {
+MBT4_chassis = {
 
 		enable_equipments = {
-			MBT_equipment_4
+			MBT_chassis_4
 		}
 
 		enable_equipment_modules = {
@@ -133,7 +173,7 @@ MBT4 = {
 		start_year = 2028
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 2 y = @2028 }
+			position = { x = @2028 y = 0 }
 		}
 
 		ai_will_do = {
@@ -151,7 +191,7 @@ MBT4 = {
 
 diesel_engine_tech1 = {
 	
-	enable_equipments = {
+		enable_equipment_modules = {
 			tank_diesel_engine_gen1
 		}
 
@@ -164,20 +204,23 @@ diesel_engine_tech1 = {
 		start_year = 1991
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 2 y = @1991 }
+			position = { x = @1991 y = 0 }
+		}
+
+		categories = {
+			armor
 		}
 
 }
 
 diesel_engine_tech2 = {
 	
-	enable_equipments = {
+		enable_equipment_modules = {
 			tank_diesel_engine_gen2
 		}
 
 		path = {
 			leads_to_tech = diesel_engine_tech3
-			leads_to_tech = gte_tech1
 			research_cost_coeff = 1
 		}
 
@@ -185,14 +228,17 @@ diesel_engine_tech2 = {
 		start_year = 2020
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 2 y = @2020 }
+			position = { x = @2020 y = 0 }
 		}
 
+		categories = {
+			armor
+		}
 }
 
 diesel_engine_tech3 = {
 	
-	enable_equipments = {
+		enable_equipment_modules = {
 			tank_diesel_engine_gen3
 		}
 
@@ -205,14 +251,17 @@ diesel_engine_tech3 = {
 		start_year = 2024
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 2 y = @2024 }
+			position = { x = @2024 y = 0 }
 		}
 
+		categories = {
+			armor
+		}
 }
 
 diesel_engine_tech4 = {
 	
-	enable_equipments = {
+		enable_equipment_modules = {
 			tank_diesel_engine_gen4
 		}
 
@@ -221,14 +270,18 @@ diesel_engine_tech4 = {
 		start_year = 2028
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 2 y = @2028 }
+			position = { x = @2028 y = 0 }
+		}
+
+		categories = {
+			armor
 		}
 
 }
 
 gas_turbine_engine_tech1 = {
 	
-	enable_equipments = {
+		enable_equipment_modules = {
 			tank_gas_turbine_engine_gen1
 		}
 
@@ -241,14 +294,18 @@ gas_turbine_engine_tech1 = {
 		start_year = 2020
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 3 y = @2020 }
+			position = { x = @2020 y = 0 }
+		}
+
+		categories = {
+			armor
 		}
 
 }
 
 gas_turbine_engine_tech2 = {
 	
-	enable_equipments = {
+		enable_equipment_modules = {
 			tank_gas_turbine_engine_gen2
 		}
 
@@ -261,14 +318,18 @@ gas_turbine_engine_tech2 = {
 		start_year = 2024
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 3 y = @2024 }
+			position = { x = @2024 y = 0 }
+		}
+
+		categories = {
+			armor
 		}
 
 }
 
 gas_turbine_engine_tech3 = {
 	
-	enable_equipments = {
+		enable_equipment_modules = {
 			tank_gas_turbine_engine_gen3
 		}
 
@@ -276,14 +337,18 @@ gas_turbine_engine_tech3 = {
 		start_year = 2028
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 3 y = @2028 }
+			position = { x = @2028 y = 0 }
+		}
+
+		categories = {
+			armor
 		}
 
 }
 
 electric_engine_tech1 = {
 	
-	enable_equipments = {
+		enable_equipment_modules = {
 			tank_electric_engine_gen1
 		}
 
@@ -296,14 +361,18 @@ electric_engine_tech1 = {
 		start_year = 2024
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 4 y = @2024 }
+			position = { x = @2024 y = 0 }
+		}
+
+		categories = {
+			armor
 		}
 
 }
 
 electric_engine_tech2 = {
 	
-	enable_equipments = {
+		enable_equipment_modules = {
 			tank_electric_engine_gen1
 		}
 
@@ -311,7 +380,11 @@ electric_engine_tech2 = {
 		start_year = 2028
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 4 y = @2028 }
+			position = { x = @2028 y = 0 }
+		}
+
+		categories = {
+			armor
 		}
 
 }
@@ -320,12 +393,12 @@ electric_engine_tech2 = {
 
 tank_steel_armor_tech1 = {
 	
-	enable_equipments = {
+		enable_equipment_modules = {
 			tank_steel_armor_gen1
 		}
 
 		path = {
-			leads_to_tech = tank_steel_armor_gen2
+			leads_to_tech = tank_steel_armor_tech2
 			research_cost_coeff = 1
 		}
 
@@ -333,20 +406,23 @@ tank_steel_armor_tech1 = {
 		start_year = 1991
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 6 y = @1991 }
+			position = { x = @1991 y = 0 }
+		}
+
+		categories = {
+			armor
 		}
 
 }
 
 tank_steel_armor_tech2 = {
 	
-	enable_equipments = {
+		enable_equipment_modules = {
 			tank_steel_armor_gen2
 		}
 
 		path = {
-			leads_to_tech = tank_steel_armor_gen3
-			leads_to_tech = tank_composite_armor_gen1
+			leads_to_tech = tank_steel_armor_tech3
 			research_cost_coeff = 1
 		}
 
@@ -354,14 +430,18 @@ tank_steel_armor_tech2 = {
 		start_year = 2020
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 6 y = @2020 }
+			position = { x = @2020 y = 0 }
+		}
+
+		categories = {
+			armor
 		}
 
 }
 
 tank_steel_armor_tech3 = {
 	
-	enable_equipments = {
+		enable_equipment_modules = {
 			tank_steel_armor_gen3
 		}
 
@@ -369,19 +449,23 @@ tank_steel_armor_tech3 = {
 		start_year = 2024
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 6 y = @2024 }
+			position = { x = @2024 y = 0 }
+		}
+
+		categories = {
+			armor
 		}
 
 }
 
 tank_composite_armor_tech1 = {
 	
-	enable_equipments = {
+		enable_equipment_modules = {
 			tank_composite_armor_gen1
 		}
 
 		path = {
-			leads_to_tech = tank_composite_armor_gen2
+			leads_to_tech = tank_composite_armor_tech2
 			research_cost_coeff = 1
 		}
 
@@ -389,14 +473,18 @@ tank_composite_armor_tech1 = {
 		start_year = 2020
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 7 y = @2020 }
+			position = { x = @2020 y = 0 }
+		}
+
+		categories = {
+			armor
 		}
 
 }
 
 tank_composite_armor_tech2 = {
 	
-	enable_equipments = {
+		enable_equipment_modules = {
 			tank_composite_armor_gen2
 		}
 
@@ -404,7 +492,11 @@ tank_composite_armor_tech2 = {
 		start_year = 2024
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 7 y = @2024 }
+			position = { x = @2024 y = 0 }
+		}
+
+		categories = {
+			armor
 		}
 
 }
@@ -413,12 +505,12 @@ tank_composite_armor_tech2 = {
 
 tank_rifled_barrel_tech1 = {
 	
-	enable_equipments = {
+		enable_equipment_modules = {
 			tank_rifled_barrel_gen1
 		}
 
 		path = {
-			leads_to_tech = tank_rifled_barrel_gen2
+			leads_to_tech = tank_rifled_barrel_tech2
 			research_cost_coeff = 1
 		}
 
@@ -426,19 +518,23 @@ tank_rifled_barrel_tech1 = {
 		start_year = 2020
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 9 y = @2020 }
+			position = { x = @2020 y = 0 }
+		}
+
+		categories = {
+			armor
 		}
 
 }
 
 tank_rifled_barrel_tech2 = {
 	
-	enable_equipments = {
+		enable_equipment_modules = {
 			tank_rifled_barrel_gen2
 		}
 
 		path = {
-			leads_to_tech = tank_rifled_barrel_gen3
+			leads_to_tech = tank_rifled_barrel_tech3
 			research_cost_coeff = 1
 		}
 
@@ -446,14 +542,18 @@ tank_rifled_barrel_tech2 = {
 		start_year = 2024
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 9 y = @2024 }
+			position = { x = @2024 y = 0 }
+		}
+
+		categories = {
+			armor
 		}
 
 }
 
 tank_rifled_barrel_tech3 = {
 	
-	enable_equipments = {
+		enable_equipment_modules = {
 			tank_rifled_barrel_gen3
 		}
 
@@ -461,14 +561,18 @@ tank_rifled_barrel_tech3 = {
 		start_year = 2028
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 9 y = @2028 }
+			position = { x = @2028 y = 0 }
+		}
+
+		categories = {
+			armor
 		}
 
 }
 
 tank_smoothbore_barrel_tech1 = {
 	
-	enable_equipments = {
+		enable_equipment_modules = {
 			tank_smoothbore_barrel_gen1
 		}
 
@@ -481,14 +585,18 @@ tank_smoothbore_barrel_tech1 = {
 		start_year = 2020
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 10 y = @2020 }
+			position = { x = @2020 y = 0 }
+		}
+
+		categories = {
+			armor
 		}
 
 }
 
 tank_smoothbore_barrel_tech2 = {
 	
-	enable_equipments = {
+		enable_equipment_modules = {
 			tank_smoothbore_barrel_gen2
 		}
 
@@ -501,14 +609,18 @@ tank_smoothbore_barrel_tech2 = {
 		start_year = 2024
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 10 y = @2024 }
+			position = { x = @2024 y = 0 }
+		}
+
+		categories = {
+			armor
 		}
 
 }
 
 tank_smoothbore_barrel_tech3 = {
 	
-	enable_equipments = {
+		enable_equipment_modules = {
 			tank_smoothbore_barrel_gen3
 		}
 
@@ -516,7 +628,7 @@ tank_smoothbore_barrel_tech3 = {
 		start_year = 2028
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 10 y = @2028 }
+			position = { x = @2028 y = 0 }
 		}
 
 }
@@ -554,8 +666,8 @@ tank_smoothbore_barrel_tech3 = {
 		research_cost = 1
 		start_year = 1900
 		folder = {
-			name = armour_folder
-			position = { x = 0 y = @1900 }
+			name = nsb_armour_folder
+			position = { x = @1964 y = 0 }
 		}
 
 		ai_will_do = {
@@ -586,12 +698,12 @@ tank_smoothbore_barrel_tech3 = {
 		research_cost = 2
 		start_year = 1991
 		folder = {
-			name = armour_folder
-			position = { x = 0 y = @1991 }
+			name = nsb_armour_folder
+			position = { x = @1991 y = -2 }
 		}
 		folder = {
 			name = support_folder
-			position = { x = 7 y = 9 }
+			position = { x = 0 y = 9 }
 		}
 
 		ai_will_do = {
@@ -634,8 +746,8 @@ tank_smoothbore_barrel_tech3 = {
 		research_cost = 2
 		start_year = 2020
 		folder = {
-			name = armour_folder
-			position = { x = 0 y = @2020 }
+			name = nsb_armour_folder
+			position = { x = @2020 y = -2 }
 		}
 
 		ai_will_do = {
@@ -678,8 +790,8 @@ tank_smoothbore_barrel_tech3 = {
 		research_cost = 2
 		start_year = 2024
 		folder = {
-			name = armour_folder
-			position = { x = 0 y = @2024 }
+			name = nsb_armour_folder
+			position = { x = @2024 y = -2 }
 		}
 
 		ai_will_do = {
@@ -717,8 +829,8 @@ tank_smoothbore_barrel_tech3 = {
 		research_cost = 2
 		start_year = 2028
 		folder = {
-			name = armour_folder
-			position = { x = 0 y = @2028 }
+			name = nsb_armour_folder
+			position = { x = @2028 y = -2 }
 		}
 
 		ai_will_do = {
@@ -764,8 +876,8 @@ tank_smoothbore_barrel_tech3 = {
 		research_cost = 2
 		start_year = 1991
 		folder = {
-			name = armour_folder
-			position = { x = 2 y = @1991 }
+			name = nsb_armour_folder
+			position = { x = @1991 y = 2 }
 		}
 
 		ai_will_do = {
@@ -805,8 +917,8 @@ tank_smoothbore_barrel_tech3 = {
 		research_cost = 2
 		start_year = 2020
 		folder = {
-			name = armour_folder
-			position = { x = 2 y = @2020 }
+			name = nsb_armour_folder
+			position = { x = @2020 y = 2 }
 		}
 
 		ai_will_do = {
@@ -846,8 +958,8 @@ tank_smoothbore_barrel_tech3 = {
 		research_cost = 2
 		start_year = 2024
 		folder = {
-			name = armour_folder
-			position = { x = 2 y = @2024 }
+			name = nsb_armour_folder
+			position = { x = @2024 y = 2 }
 		}
 
 		ai_will_do = {
@@ -882,8 +994,8 @@ tank_smoothbore_barrel_tech3 = {
 		research_cost = 2
 		start_year = 2028
 		folder = {
-			name = armour_folder
-			position = { x = 2 y = @2028 }
+			name = nsb_armour_folder
+			position = { x = @2028 y = 2 }
 		}
 
 		ai_will_do = {
@@ -943,8 +1055,8 @@ tank_smoothbore_barrel_tech3 = {
 		research_cost = 1
 		start_year = 1900
 		folder = {
-			name = armour_folder
-			position = { x = 0 y = @1900 }
+			name = nsb_armour_folder
+			position = { x = @1964 y = 0 }
 		}
 
 		ai_will_do = {
@@ -973,8 +1085,8 @@ tank_smoothbore_barrel_tech3 = {
 		research_cost = 1.5
 		start_year = 1991
 		folder = {
-			name = armour_folder
-			position = { x = -2 y = @1991 }
+			name = nsb_armour_folder
+			position = { x = @1991 y = -2 }
 		}
 
 		ai_will_do = {
@@ -1002,8 +1114,8 @@ tank_smoothbore_barrel_tech3 = {
 		research_cost = 2
 		start_year = 2020
 		folder = {
-			name = armour_folder
-			position = { x = -2 y = @2020 }
+			name = nsb_armour_folder
+			position = { x = @2020 y = -2 }
 		}
 
 		ai_will_do = {
@@ -1031,8 +1143,8 @@ tank_smoothbore_barrel_tech3 = {
 		research_cost = 2
 		start_year = 2024
 		folder = {
-			name = armour_folder
-			position = { x = -2 y = @2024 }
+			name = nsb_armour_folder
+			position = { x = @2024 y = -2 }
 		}
 
 		ai_will_do = {
@@ -1055,8 +1167,8 @@ tank_smoothbore_barrel_tech3 = {
 		research_cost = 2
 		start_year = 2028
 		folder = {
-			name = armour_folder
-			position = { x = -2 y = @2028 }
+			name = nsb_armour_folder
+			position = { x = @2028 y = -2 }
 		}
 
 		ai_will_do = {
@@ -1086,8 +1198,8 @@ tank_smoothbore_barrel_tech3 = {
 		research_cost = 1.5
 		start_year = 1991
 		folder = {
-			name = armour_folder
-			position = { x = 0 y = @1991 }
+			name = nsb_armour_folder
+			position = { x = @1991 y = 2 }
 		}
 
 		ai_will_do = {
@@ -1115,8 +1227,8 @@ tank_smoothbore_barrel_tech3 = {
 		research_cost = 2
 		start_year = 2020
 		folder = {
-			name = armour_folder
-			position = { x = 0 y = @2020 }
+			name = nsb_armour_folder
+			position = { x = @2020 y = 2 }
 		}
 
 		ai_will_do = {
@@ -1144,8 +1256,8 @@ tank_smoothbore_barrel_tech3 = {
 		research_cost = 2
 		start_year = 2024
 		folder = {
-			name = armour_folder
-			position = { x = 0 y = @2024 }
+			name = nsb_armour_folder
+			position = { x = @2024 y = 2 }
 		}
 
 		ai_will_do = {
@@ -1168,8 +1280,8 @@ tank_smoothbore_barrel_tech3 = {
 		research_cost = 2
 		start_year = 2028
 		folder = {
-			name = armour_folder
-			position = { x = 0 y = @2028 }
+			name = nsb_armour_folder
+			position = { x = @2028 y = 2 }
 		}
 
 		ai_will_do = {
