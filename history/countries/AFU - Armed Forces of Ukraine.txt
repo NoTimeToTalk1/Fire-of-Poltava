@@ -51,9 +51,78 @@ set_technology = {
     utility_vehicle1 = 1
 	armored_car1 = 1
 	AFV = 1
-    MBT1 = 1
     IFV1 = 1
     APC1 = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	create_equipment_variant = {
+		name = "T-64"
+		type = MBT_chassis_0
+		parent_version = 0
+		model = AFU_main_battle_tank_entity
+		modules = {
+			loader_slot = manual_loading
+			main_armament_slot = tank_smoothbore_barrel_gen0
+			turret_type_slot = tank_two_man_turret
+			suspension_type_slot = tank_torsion_bar_suspension
+			armor_type_slot = tank_composite_armor_gen0
+			engine_type_slot = tank_diesel_engine_gen0
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 1
+			tank_nsb_armor_upgrade = 1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "BM 'Oplot'"
+		type = MBT_chassis_1
+		parent_version = 1
+		model = AFU_main_battle_tank_2_entity
+		modules = {
+			loader_slot = manual_loading
+			main_armament_slot = tank_smoothbore_barrel_gen1
+			turret_type_slot = tank_two_man_turret
+			suspension_type_slot = tank_torsion_bar_suspension
+			armor_type_slot = tank_composite_armor_gen0
+			engine_type_slot = tank_diesel_engine_gen0
+			special_type_slot_1 = reactive_armour
+			special_type_slot_2 = thermal_scope
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 1
+			tank_nsb_armor_upgrade = 2
+		}
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		MBT0_chassis = 1
+		MBT1_chassis = 1
+		tank_diesel_engine_gen1 = 1
+		tank_steel_armor_gen1 = 1
+		tank_composite_armor_gen1 = 1
+		tank_rifled_barrel_gen1 = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "No Step Back"
+		}
+	}
+	set_technology = {
+		MBT1 = 1
+	}
 }
 
 set_politics = {

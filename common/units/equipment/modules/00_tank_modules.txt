@@ -4,8 +4,8 @@ equipment_modules = {
 	}
 ### ENGINES ###
    ## DIESEL ##
-	tank_diesel_engine_gen1 = {
-		abbreviation = "die1"
+	tank_diesel_engine_gen0 = {
+		abbreviation = "dis0"
 		category = tank_diesel_engine_type
 		sfx = sfx_ui_sd_module_engine
 
@@ -30,8 +30,35 @@ equipment_modules = {
 		xp_cost = 3
 	}
 
+	tank_diesel_engine_gen1 = {
+		abbreviation = "dis1"
+		category = tank_diesel_engine_type
+		sfx = sfx_ui_sd_module_engine
+		parent = tank_diesel_engine_gen0
+
+		add_stats = {
+			build_cost_ic = 1
+			fuel_consumption = 3.5
+			maximum_speed = 7
+		}
+		can_convert_from = {
+			module_category = tank_diesel_engine_type
+			convert_cost_ic = 1.15
+		}
+		can_convert_from = {
+			module_category = tank_turbine_engine_type
+			convert_cost_ic = 1.15
+		}
+		can_convert_from = {
+			module_category = tank_electric_engine_type
+			convert_cost_ic = 1.15
+		}
+
+		xp_cost = 3
+	}
+
 	tank_diesel_engine_gen2 = {
-		abbreviation = "die2"
+		abbreviation = "dis2"
 		category = tank_diesel_engine_type
 		sfx = sfx_ui_sd_module_engine
 		parent = tank_diesel_engine_gen1
@@ -58,7 +85,7 @@ equipment_modules = {
 	}
 
 	tank_diesel_engine_gen3 = {
-		abbreviation = "die3"
+		abbreviation = "dis3"
 		category = tank_diesel_engine_type
 		sfx = sfx_ui_sd_module_engine
 		parent = tank_diesel_engine_gen2
@@ -85,7 +112,7 @@ equipment_modules = {
 	}
 
 	tank_diesel_engine_gen4 = {
-		abbreviation = "die4"
+		abbreviation = "dis4"
 		category = tank_diesel_engine_type
 		sfx = sfx_ui_sd_module_engine
 		parent = tank_diesel_engine_gen3
@@ -258,10 +285,26 @@ equipment_modules = {
 	###Armor Types
 
 	## STEEL ##
+	tank_steel_armor_gen0 = {
+		abbreviation = "ste0"
+		category = tank_steel_armor
+		sfx = sfx_ui_sd_module_sonar
+
+		add_stats = {
+			defense = 2
+			breakthrough = 6
+		}
+		xp_cost = 3
+		multiply_stats = {
+			build_cost_ic = -0.1
+		}
+	}
+
 	tank_steel_armor_gen1 = {
 		abbreviation = "ste1"
 		category = tank_steel_armor
 		sfx = sfx_ui_sd_module_sonar
+		parent = tank_steel_armor_gen0
 
 		add_stats = {
 			defense = 2
@@ -310,8 +353,8 @@ equipment_modules = {
 	}
 
 	## COMPOSITE ##
-	tank_composite_armor_gen1 = {
-		abbreviation = "tca1"
+	tank_composite_armor_gen0 = {
+		abbreviation = "com0"
 		category = tank_comp_armor
 		sfx = sfx_ui_sd_module_sonar
 
@@ -328,9 +371,28 @@ equipment_modules = {
 			steel = 1
 		}
 	}
+	tank_composite_armor_gen1 = {
+		abbreviation = "com1"
+		category = tank_comp_armor
+		sfx = sfx_ui_sd_module_sonar
+		parent = tank_composite_armor_gen0
+
+		add_stats = {
+			defense = 4
+			breakthrough = 8
+			armor_value = 20
+			maximum_speed = -1.5
+			build_cost_ic = 2
+		}
+		xp_cost = 3
+		multiply_stats = { }
+		build_cost_resources = {
+			steel = 1
+		}
+	}
 
 	tank_composite_armor_gen2 = {
-		abbreviation = "tca2"
+		abbreviation = "com2"
 		category = tank_comp_armor
 		sfx = sfx_ui_sd_module_sonar
 		parent = tank_composite_armor_gen1
@@ -449,10 +511,33 @@ equipment_modules = {
 	## BARRELS ##
 		## RIFLED ##
 
+	tank_rifled_barrel_gen0 = {
+		abbreviation = "rifled0"
+		category = tank_barrel_rifled
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			soft_attack = 9.5
+			hard_attack = 5
+			reliability = -0.2
+			ap_attack = 2
+			build_cost_ic = 0.5
+
+		}
+		dismantle_cost_ic = 0.5
+
+		can_convert_from = {
+			module_category = tank_barrel_rifled
+			convert_cost_ic = 0.5
+		}
+		xp_cost = 1
+	}
+
 	tank_rifled_barrel_gen1 = {
 		abbreviation = "rifled1"
 		category = tank_barrel_rifled
 		sfx = sfx_ui_sd_module_turret
+		parent = tank_rifled_barrel_gen0
 
 		add_stats = {
 			soft_attack = 9.5
@@ -518,9 +603,8 @@ equipment_modules = {
 	}
 
 	## SMOOTHBORE ## 
-
-	tank_smoothbore_barrel_gen1 = {
-		abbreviation = "smoothbore1"
+	tank_smoothbore_barrel_gen0 = {
+		abbreviation = "smbr0"
 		category = tank_barrel_smoothbore
 		sfx = sfx_ui_sd_module_turret
 
@@ -541,8 +625,31 @@ equipment_modules = {
 		xp_cost = 1
 	}
 
+	tank_smoothbore_barrel_gen1 = {
+		abbreviation = "smbr1"
+		category = tank_barrel_smoothbore
+		sfx = sfx_ui_sd_module_turret
+		parent = tank_smoothbore_barrel_gen0
+
+		add_stats = {
+			soft_attack = 4
+			hard_attack = 8.5
+			reliability = 0.2
+			ap_attack = 14
+			build_cost_ic = 0.5
+
+		}
+		dismantle_cost_ic = 0.5
+
+		can_convert_from = {
+			module_category = tank_barrel_smoothbore
+			convert_cost_ic = 0.5
+		}
+		xp_cost = 1
+	}
+
 	tank_smoothbore_barrel_gen2 = {
-		abbreviation = "smoothbore2"
+		abbreviation = "smbr2"
 		category = tank_barrel_smoothbore
 		sfx = sfx_ui_sd_module_turret
 		parent = tank_smoothbore_barrel_gen1
@@ -565,7 +672,7 @@ equipment_modules = {
 	}
 
 	tank_smoothbore_barrel_gen3 = {
-		abbreviation = "smoothbore3"
+		abbreviation = "smbr3"
 		category = tank_barrel_smoothbore
 		sfx = sfx_ui_sd_module_turret
 		parent = tank_smoothbore_barrel_gen2
@@ -714,7 +821,7 @@ equipment_modules = {
 		xp_cost = 1
 	}
 
-	blow_out_panels {
+	blow_out_panels = {
 		abbreviation = "blowout"
 		category = tank_special_module
 		sfx = sfx_ui_sd_module_turret
@@ -729,8 +836,8 @@ equipment_modules = {
 		xp_cost = 2
 	}
 
-	night_vision {
-		abbreviation = "blowout"
+	thermal_scope = {
+		abbreviation = "thermal"
 		category = tank_special_module
 		sfx = sfx_ui_sd_module_turret
 		add_stats = {
