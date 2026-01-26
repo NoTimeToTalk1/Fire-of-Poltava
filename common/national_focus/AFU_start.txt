@@ -507,6 +507,12 @@
 				idea = AFU_harsh_quotas
 				days = 180
 			}
+			add_ideas = fop_forced_labour_penal_labour
+		add_tech_bonus = {
+			bonus = 0.25
+			uses = 1
+			category = discipline
+		}
 		}
     }
 
@@ -523,8 +529,13 @@
 		prerequisite = { focus = AFU_harshen_the_quotas }
 
 		completion_reward = {
+		add_to_variable = {
+			var = FOP_administrative_efficiency_var
+			value = 10
+			tooltip = add_administrative_efficiency_var_tt
+		}
 			swap_ideas = {
-				remove_idea = AFU_disorganised_administration
+				remove_idea = AFU_disorganized_administration
 				add_idea = AFU_millitary_administration
 			}
 		}
@@ -546,6 +557,8 @@
 		completion_reward = {
 			add_political_power = -25
 			remove_ideas = AFU_strikes
+			
+			custom_effect_tooltip = afu_AFU_promise_reforms_tt
 		}
     }
 
@@ -565,6 +578,8 @@
 		completion_reward = {
 			add_political_power = -125
 			remove_ideas = AFU_strikes
+			
+			custom_effect_tooltip = afu_AFU_crackdown_on_dissent_tt
 		}
     }
 

@@ -98,78 +98,6 @@ shared_focus = {
 	}
 }
 
-#Align with the Legetimists
-shared_focus = {
-	id = AFU_align_with_the_legetimists
-	icon = GFX_AFU_align_with_the_legetimists
-	cost = 3
-
-	x = 3
-	y = 3
-
-	available = {
-		AND = {
-			country_exists = UKR
-			UKR = {
-				has_character = UKR_Zelensky
-			}
-		}
-	}
-	prerequisite = { focus = AFU_we_are_not_alone }
-
-	mutually_exclusive = {
-		focus = AFU_the_only_ones_fighting_for_a_common_goal
-		focus = AFU_trust_the_old_faces
-	}
-
-	completion_reward = {
-		custom_effect_tooltip = danilov_allow_focuses
-		create_faction = ZE_FACTION_NAME
-		AFU = { add_to_faction = UKR }
-		country_event = {
-			id = dan.7
-			days = 2
-		}
-		set_country_flag = danilov_new_focuses
-	}
-}
-
-#Trust the Old Faces
-shared_focus = {
-	id = AFU_trust_the_old_faces
-	icon = GFX_AFU_trust_the_old_faces
-	cost = 3
-
-	x = 7
-	y = 3
-
-	available = {
-		AND = {
-			country_exists = CHR
-			CHR = {
-				has_character = UAR_Poroshenko
-			}
-		}
-	}
-
-	prerequisite = { focus = AFU_we_are_not_alone }
-	mutually_exclusive = {
-		focus = AFU_the_only_ones_fighting_for_a_common_goal
-		focus = AFU_align_with_the_legetimists
-	}
-
-	completion_reward = {
-		custom_effect_tooltip = danilov_allow_focuses
-		create_faction = CHR_FACTION_NAME
-		AFU = { add_to_faction = CHR }
-		country_event = {
-			id = dan.5
-			days = 2
-		}
-		set_country_flag = danilov_new_focuses
-	}
-}
-
 #New Minister of Economy
 shared_focus = {
 	id = AFU_new_minister_of_economy
@@ -294,11 +222,6 @@ shared_focus = {
 				modifier = {
 					state_production_speed_industrial_complex_factor = 0.3
 				}
-			}
-			add_building_construction = {
-				type = civilian_resting_place
-				level = 1
-				instant_build = yes
 			}
 		}
 	}
