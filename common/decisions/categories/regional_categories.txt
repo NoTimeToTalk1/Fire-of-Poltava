@@ -47,14 +47,14 @@ unite_dnieper_ukraine = {
 	}
 }
 
-unite_dniester_ukraine = {
-	icon = GFX_decision_dniester
+unite_buh_ukraine = {
+	icon = GFX_decision_buh
 	picture = GFX_mobilization
 	visible = {
-		has_global_flag = dniester_to_unite
-		is_dniester_ukraine = yes
+		has_global_flag = buh_to_unite
+		is_buh_ukraine = yes
 		NOT = {
-			has_country_flag = united_dniester
+			has_country_flag = united_buh
 		}
 	}
 }
@@ -105,7 +105,7 @@ unite_south_ukraine = {
 		is_south_ukraine = yes
 		OR = {
 			tag = TVR
-			tag = DSR
+			tag = BUH
 		}
 		NOT = {
 			has_country_flag = united_south
@@ -250,7 +250,7 @@ south_war = {
 	visible = {
 		has_country_flag = south_war
 		AND = {
-			DSR = {
+			BUH = {
 				exists = yes
 			}
 			TVR = {
@@ -269,7 +269,7 @@ south_dogovornyak = {
 	visible = {
 		has_country_flag = south_dogovornyak
 		AND = {
-			DSR = {
+			BUH = {
 				exists = yes
 			}
 			TVR = {
@@ -289,7 +289,7 @@ south_elections = {
 	visible = {
 		has_country_flag = south_elections
 		AND = {
-			DSR = {
+			BUH = {
 				exists = yes
 			}
 			TVR = {
