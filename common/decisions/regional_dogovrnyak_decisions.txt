@@ -2105,7 +2105,7 @@ south_dogovornyak = {
 			tag = TVR
 		}
 	}
-	dniester_view_influence = {
+	buh_view_influence = {
 	
 	icon = GFX_decision_dogovornyak_influence
 	
@@ -2114,7 +2114,7 @@ south_dogovornyak = {
 		}
 		visible = {
 			has_country_flag = south_dogovornyak
-			tag = DST
+			tag = BUH
 		}
 	}
 	south_current_topic = {
@@ -2133,11 +2133,11 @@ south_dogovornyak = {
 				check_variable = {south_done_themes = 10}
 				if = {
 					limit = {
-						tag = DST
+						tag = BUH
 					}
 					OR = {
-						check_variable = {DST.dniester_unifier_influence > TVR.tavria_unifier_influence}
-						check_variable = {TVR.tavria_unifier_influence = DST.dniester_unifier_influence}
+						check_variable = {BUH.buh_unifier_influence > TVR.tavria_unifier_influence}
+						check_variable = {TVR.tavria_unifier_influence = BUH.buh_unifier_influence}
 					}
 				}
 				if = {
@@ -2145,15 +2145,15 @@ south_dogovornyak = {
 						tag = TVR
 					}
 					OR = {
-						check_variable = {TVR.tavria_unifier_influence > DST.dniester_unifier_influence}
-						check_variable = {TVR.tavria_unifier_influence = DST.dniester_unifier_influence}
+						check_variable = {TVR.tavria_unifier_influence > BUH.buh_unifier_influence}
+						check_variable = {TVR.tavria_unifier_influence = BUH.buh_unifier_influence}
 					}					
 				}
 		}
 		target_trigger = {
 			FROM = {
 				OR = {
-					tag = DST
+					tag = BUH
 					tag = TVR
 				}
 			}
@@ -2176,14 +2176,14 @@ south_dogovornyak = {
 			clr_country_flag = community_controls
 			if = {
 				limit = {
-					check_variable = { DST.south_done_themes < 10 }
+					check_variable = { BUH.south_done_themes < 10 }
 					check_variable = { TVR.south_done_themes < 10 }
 				}
 				custom_effect_tooltip = dogovornyak_not_decided
 			}
 			else_if = {
 				limit = {
-					check_variable = { DST.dniester_unifier_influence = TVR.tavria_unifier_influence }
+					check_variable = { BUH.buh_unifier_influence = TVR.tavria_unifier_influence }
 				}
 				declare_war_on = {
 					target = FROM
@@ -2310,7 +2310,7 @@ south_dogovornyak = {
 		timeout_effect = {
 			clr_country_flag = dogovornyak_choice
 			clr_country_flag = dogovornyak_choice_made
-			DST = {
+			BUH = {
 					add_to_variable = {
 						var = south_done_themes
 						value = 0.5
@@ -2324,12 +2324,12 @@ south_dogovornyak = {
 			}
 			if = {
 				limit = {
-					check_variable = {DST.dniester_influence_choice > TVR.tavria_influence_choice}
+					check_variable = {BUH.buh_influence_choice > TVR.tavria_influence_choice}
 				}
 				
-				DST = {
+				BUH = {
 					add_to_variable = {
-						var = dniester_unifier_influence
+						var = buh_unifier_influence
 						value = 0.5
 					}
 					if = { 
@@ -2376,7 +2376,7 @@ south_dogovornyak = {
 			}
 			if = {
 				limit = {
-					check_variable = {TVR.tavria_influence_choice > DST.dniester_influence_choice}
+					check_variable = {TVR.tavria_influence_choice > BUH.buh_influence_choice}
 				}
 				TVR = {
 					add_to_variable = {
@@ -2436,8 +2436,8 @@ south_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_dniester}
-				check_variable = {DST.dniester_spendible_influence > 0}
+				limit = {has_country_flag = united_buh}
+				check_variable = {BUH.buh_spendible_influence > 0}
 			}
 			else_if = {
 				limit = {has_country_flag = united_tavria}
@@ -2457,14 +2457,14 @@ south_dogovornyak = {
 			set_country_flag = dogovornyak_choice_made
 			if = {
 				limit = {
-					tag = DST
+					tag = BUH
 				}
 				add_to_variable = {
-					var = dniester_spendible_influence
+					var = buh_spendible_influence
 					value = -3
 				}
 				set_variable = {
-					var = dniester_influence_choice
+					var = buh_influence_choice
 					value = 3
 				}
 			}
@@ -2492,8 +2492,8 @@ south_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_dniester}
-				check_variable = {DST.dniester_spendible_influence > 0}
+				limit = {has_country_flag = united_buh}
+				check_variable = {BUH.buh_spendible_influence > 0}
 			}
 			else_if = {
 				limit = {has_country_flag = united_tavria}
@@ -2513,14 +2513,14 @@ south_dogovornyak = {
 			set_country_flag = dogovornyak_choice_made
 			if = {
 				limit = {
-					tag = DST
+					tag = BUH
 				}
 				add_to_variable = {
-					var = dniester_spendible_influence
+					var = buh_spendible_influence
 					value = -2
 				}
 				set_variable = {
-					var = dniester_influence_choice
+					var = buh_influence_choice
 					value = 2
 				}
 			}
@@ -2548,8 +2548,8 @@ south_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_dniester}
-				check_variable = {DST.dniester_spendible_influence > 0}
+				limit = {has_country_flag = united_buh}
+				check_variable = {BUH.buh_spendible_influence > 0}
 			}
 			else_if = {
 				limit = {has_country_flag = united_tavria}
@@ -2569,14 +2569,14 @@ south_dogovornyak = {
 			set_country_flag = dogovornyak_choice_made
 			if = {
 				limit = {
-					tag = DST
+					tag = BUH
 				}
 				add_to_variable = {
-					var = dniester_spendible_influence
+					var = buh_spendible_influence
 					value = -1
 				}
 				set_variable = {
-					var = dniester_influence_choice
+					var = buh_influence_choice
 					value = 1
 				}
 			}
@@ -2604,8 +2604,8 @@ south_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_dniester}
-				check_variable = {DST.dniester_spendible_influence > 0}
+				limit = {has_country_flag = united_buh}
+				check_variable = {BUH.buh_spendible_influence > 0}
 			}
 			else_if = {
 				limit = {has_country_flag = united_tavria}
@@ -2625,36 +2625,36 @@ south_dogovornyak = {
 			set_country_flag = dogovornyak_choice_made
 			if = {
 				limit = {
-					tag = DST
+					tag = BUH
 				}
 				random_list = {
 					30 = {
 						add_to_variable = {
-							var = dniester_spendible_influence
+							var = buh_spendible_influence
 							value = -1
 						}
 						set_variable = {
-							var = dniester_influence_choice
+							var = buh_influence_choice
 							value = 1
 						}
 					}
 					50 = {
 						add_to_variable = {
-							var = dniester_spendible_influence
+							var = buh_spendible_influence
 							value = -2
 						}
 						set_variable = {
-							var = dniester_influence_choice
+							var = buh_influence_choice
 							value = 2
 						}
 					}
 					20 = {
 						add_to_variable = {
-							var = dniester_spendible_influence
+							var = buh_spendible_influence
 							value = -3
 						}
 						set_variable = {
-							var = dniester_influence_choice
+							var = buh_influence_choice
 							value = 3
 						}
 					}
@@ -2723,13 +2723,13 @@ south_dogovornyak = {
 				base = 10
 			}
 			complete_effect = {
-				DST = {
+				BUH = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = economy_base
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = dniester_influence_choice
+						var = buh_influence_choice
 						value = 0
 					}
 				}
@@ -2767,13 +2767,13 @@ south_dogovornyak = {
 				base = 10
 			}
 			complete_effect = {
-				DST = {
+				BUH = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = economy_freedoms
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = dniester_influence_choice
+						var = buh_influence_choice
 						value = 0
 					}
 				}
@@ -2811,13 +2811,13 @@ south_dogovornyak = {
 				base = 10
 			}
 			complete_effect = {
-				DST = {
+				BUH = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = army_standarts
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = dniester_influence_choice
+						var = buh_influence_choice
 						value = 0
 					}
 				}
@@ -2855,13 +2855,13 @@ south_dogovornyak = {
 				base = 10
 			}
 			complete_effect = {
-				DST = {
+				BUH = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = army_structure
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = dniester_influence_choice
+						var = buh_influence_choice
 						value = 0
 					}
 				}
@@ -2899,13 +2899,13 @@ south_dogovornyak = {
 				base = 10
 			}
 			complete_effect = {
-				DST = {
+				BUH = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = state_control
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = dniester_influence_choice
+						var = buh_influence_choice
 						value = 0
 					}
 				}
@@ -2943,13 +2943,13 @@ south_dogovornyak = {
 				base = 10
 			}
 			complete_effect = {
-				DST = {
+				BUH = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = civilian_services
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = dniester_influence_choice
+						var = buh_influence_choice
 						value = 0
 					}
 				}
@@ -2987,13 +2987,13 @@ south_dogovornyak = {
 				base = 10
 			}
 			complete_effect = {
-				DST = {
+				BUH = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = worker_stance
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = dniester_influence_choice
+						var = buh_influence_choice
 						value = 0
 					}
 				}
@@ -3031,13 +3031,13 @@ south_dogovornyak = {
 				base = 10
 			}
 			complete_effect = {
-				DST = {
+				BUH = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = civilian_liberties
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = dniester_influence_choice
+						var = buh_influence_choice
 						value = 0
 					}
 				}
@@ -3075,13 +3075,13 @@ south_dogovornyak = {
 				base = 10
 			}
 			complete_effect = {
-				DST = {
+				BUH = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = equality
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = dniester_influence_choice
+						var = buh_influence_choice
 						value = 0
 					}
 				}
@@ -3119,13 +3119,13 @@ south_dogovornyak = {
 				base = 10
 			}
 			complete_effect = {
-				DST = {
+				BUH = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = community_controls
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = dniester_influence_choice
+						var = buh_influence_choice
 						value = 0
 					}
 				}
