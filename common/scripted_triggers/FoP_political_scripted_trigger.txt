@@ -23,14 +23,18 @@ is_pro_ukrainian = {
 		original_tag = ZAK
 		original_tag = ZAP #
 		original_tag = ZHY
-		AFU = {
-			OR = {
-				has_country_flag = AFU_dan
-				has_country_flag = AFU_kryvonos
-				AND = {
-					has_country_flag = AFU_khomut
-					NOT = {
-						has_country_flag = we_call_moscow
+		AND = {
+			original_tag = AFU
+			AFU = {
+				OR = {
+					has_country_flag = AFU_dan
+					has_country_flag = AFU_kryvonos
+					has_country_flag = AFU_sav
+					AND = {
+						has_country_flag = AFU_khomut
+						NOT = {
+							has_country_flag = we_call_moscow
+						}
 					}
 				}
 			}
@@ -48,9 +52,9 @@ is_pro_russian = {
 		original_tag = REC
 		#original_tag = RUS
 		original_tag = SHA
-		AFU = {
-			OR = {
-				has_country_flag = AFU_sav
+		AND = {
+			original_tag = AFU
+			AFU = {
 				AND = {
 					has_country_flag = AFU_khomut
 					has_country_flag = we_call_moscow

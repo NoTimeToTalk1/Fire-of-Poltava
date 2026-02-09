@@ -1435,35 +1435,35 @@ north_elections = {
 			SIV = {
 				clr_country_flag = north_elections
 			}
-			DNP = {
+			DIR = {
 				clr_country_flag = north_elections
 			}
 			if = {
 				limit = {
-					check_variable = {SIV.siveria_rates > DNP.dnieper_rates}
+					check_variable = {SIV.siveria_rates > DIR.dnieper_rates}
 				}
-				DNP = {
+				DIR = {
 					every_core_state = {
 						add_core_of = SIV
 					}
 				}
 				SIV = {
 					annex_country = {
-						target = DNP
+						target = DIR
 						transfer_troops = yes
 					}
 				}
 			}
 			else_if = {
 				limit = {
-					check_variable = {DNP.dnieper_rates > SIV.siveria_rates}
+					check_variable = {DIR.dnieper_rates > SIV.siveria_rates}
 				}
 				SIV = {
 					every_core_state = {
-						add_core_of = DNP
+						add_core_of = DIR
 					}
 				}
-				DNP = {
+				DIR = {
 					annex_country = {
 						target = SIV
 						transfer_troops = yes
@@ -1504,7 +1504,7 @@ north_elections = {
 						var = siveria_rates
 						value = 2.50
 					}
-					DNP = {
+					DIR = {
 						add_to_variable = {
 							var = dnieper_rates
 							value = -2.50
@@ -1520,7 +1520,7 @@ north_elections = {
 						var = siveria_rates
 						value = 1.50
 					}
-					DNP = {
+					DIR = {
 						add_to_variable = {
 							var = dnieper_rates
 							value = -1.50
@@ -1536,7 +1536,7 @@ north_elections = {
 						var = siveria_rates
 						value = 0.50
 					}
-					DNP = {
+					DIR = {
 						add_to_variable = {
 							var = dnieper_rates
 							value = -0.50
@@ -1546,11 +1546,11 @@ north_elections = {
 			}
 			else_if = {
 				limit = {
-					tag = DNP
+					tag = DIR
 				}
 				if = {
 					limit = {
-						check_variable = {DNP.dnieper_rates_grow = 3}
+						check_variable = {DIR.dnieper_rates_grow = 3}
 					}
 					custom_effect_tooltip = elections_high_rate
 					add_to_variable = {
@@ -1566,7 +1566,7 @@ north_elections = {
 				}
 				else_if = {
 					limit = {
-						check_variable = {DNP.dnieper_rates_grow = 2}
+						check_variable = {DIR.dnieper_rates_grow = 2}
 					}
 					custom_effect_tooltip = elections_medium_rate
 					add_to_variable = {
@@ -1582,7 +1582,7 @@ north_elections = {
 				}
 				else_if = {
 					limit = {
-						check_variable = {DNP.dnieper_rates_grow = 1}
+						check_variable = {DIR.dnieper_rates_grow = 1}
 					}
 					custom_effect_tooltip = elections_low_rate
 					add_to_variable = {
@@ -1626,19 +1626,19 @@ north_elections = {
 				}
 				if = {
 					limit = {
-						check_variable = {DNP.dnieper_rates_grow = 3}
+						check_variable = {DIR.dnieper_rates_grow = 3}
 					}
 					custom_effect_tooltip = elections_high_rate
 				}
 				else_if = {
 					limit = {
-						check_variable = {DNP.dnieper_rates_grow = 2}
+						check_variable = {DIR.dnieper_rates_grow = 2}
 					}
 					custom_effect_tooltip = elections_medium_rate
 				}
 				else_if = {
 					limit = {
-						check_variable = {DNP.dnieper_rates_grow = 1}
+						check_variable = {DIR.dnieper_rates_grow = 1}
 					}
 					custom_effect_tooltip = elections_low_rate
 				}		
@@ -1656,7 +1656,7 @@ north_elections = {
 		visible = {
 			OR = {
 				tag = SIV
-				tag = DNP
+				tag = DIR
 			}
 		}
 		days_remove = 7
@@ -1681,7 +1681,7 @@ north_elections = {
 								var = siveria_rates
 								value = 5.00
 							}
-							DNP= {
+							DIR= {
 								add_to_variable = {
 									var = dnieper_rates
 									value = -5.00
@@ -1694,7 +1694,7 @@ north_elections = {
 								var = siveria_rates
 								value = 3.50
 							}
-							DNP = {
+							DIR = {
 								add_to_variable = {
 									var = dnieper_rates
 									value = -3.50
@@ -1706,7 +1706,7 @@ north_elections = {
 								var = siveria_rates
 								value = 2.00
 							}
-							DNP = {
+							DIR = {
 								add_to_variable = {
 									var = dnieper_rates
 									value = -2.00
@@ -1718,7 +1718,7 @@ north_elections = {
 			}
 			else_if = {
 				limit = {
-					tag = DNP
+					tag = DIR
 				}
 				custom_effect_tooltip = elections_agitation
 				hidden_effect = {
@@ -1775,7 +1775,7 @@ north_elections = {
 		visible = {
 			OR = {
 				tag = SIV
-				tag = DNP
+				tag = DIR
 			}
 		}
 		days_remove = 5
@@ -1809,7 +1809,7 @@ north_elections = {
 			}
 			else_if = {
 				limit = {
-					tag = DNP
+					tag = DIR
 				}
 				custom_effect_tooltip = elections_reach_out
 				hidden_effect = {
@@ -1837,7 +1837,7 @@ north_elections = {
 		visible = {
 			OR = {
 				tag = SIV
-				tag = DNP
+				tag = DIR
 			}
 		}
 		days_remove = 7
@@ -1852,7 +1852,7 @@ north_elections = {
 		clr_country_flag = elect_action
 		if = {
 			limit = {
-				tag = DNP
+				tag = DIR
 			}
 			custom_effect_tooltip = elections_discredit_opponent
 			hidden_effect = {
@@ -1904,7 +1904,7 @@ north_elections = {
 			hidden_effect = {
 				random_list = {
 					20 = {
-						DNP = {
+						DIR = {
 							add_to_variable = {
 								var = dnieper_rates
 								value = -3.00
@@ -1916,7 +1916,7 @@ north_elections = {
 						}
 					}
 					30 = {
-						DNP = {
+						DIR = {
 							add_to_variable = {
 								var = dnieper_rates
 								value = -1.50
@@ -1928,7 +1928,7 @@ north_elections = {
 						}
 					}
 					50 = {
-						DNP = {
+						DIR = {
 							add_to_variable = {
 								var = dnieper_rates
 								value = -1.00
@@ -1954,11 +1954,11 @@ north_elections = {
 					limit = {
 						tag = SIV
 					}
-					check_variable = {DNP.dnieper_rates_grow = 1}
+					check_variable = {DIR.dnieper_rates_grow = 1}
 				}
 				else_if = {
 					limit = {
-						tag = DNP
+						tag = DIR
 					}
 					check_variable = {SIV.siveria_rates_grow = 1}
 				}
@@ -1969,7 +1969,7 @@ north_elections = {
 		visible = {
 			OR = {
 				tag = SIV
-				tag = DNP
+				tag = DIR
 			}
 		}
 		days_remove = 7
@@ -1987,7 +1987,7 @@ north_elections = {
 				limit = {
 					tag = SIV
 				}
-				DNP = {
+				DIR = {
 					add_to_variable = {
 						var = dnieper_rates_grow
 						value = -1
@@ -1996,7 +1996,7 @@ north_elections = {
 			}
 			else_if = {
 				limit = {
-					tag = DNP
+					tag = DIR
 				}
 				SIV = {
 					add_to_variable = {
@@ -2019,9 +2019,9 @@ north_elections = {
 				}
 				else_if = {
 					limit = {
-						tag = DNP
+						tag = DIR
 					}
-					check_variable = {DNP.dnieper_rates_grow = 3}
+					check_variable = {DIR.dnieper_rates_grow = 3}
 				}
 				has_country_flag = elect_action
 			}
@@ -2029,7 +2029,7 @@ north_elections = {
 		visible = {
 			OR = {
 				tag = SIV
-				tag = DNP
+				tag = DIR
 			}
 		}
 		days_remove = 7
@@ -2054,7 +2054,7 @@ north_elections = {
 				}
 			else_if = {
 				limit = {
-					tag = DNP
+					tag = DIR
 				}
 					add_to_variable = {
 						var = dnieper_rates_grow

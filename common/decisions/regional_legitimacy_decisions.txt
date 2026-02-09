@@ -13,6 +13,7 @@ world_legitimacy = {
 			NOT = {
                 has_idea = fop_press_freedom_free
             }
+            FOP_has_content = no
 		}		
 
 		cost = 25
@@ -47,6 +48,7 @@ world_legitimacy = {
                     has_idea = fop_suffrage_elite
                 }
             }
+            FOP_has_content = no
 		}		
 
 		cost = 25
@@ -71,6 +73,7 @@ world_legitimacy = {
 		visible = {
             has_country_flag = FOP_world_legitimacy	
 			has_idea = fop_party_system_nonpartisan
+            FOP_has_content = no
 		}		
 
 		cost = 50
@@ -95,6 +98,7 @@ world_legitimacy = {
 		visible = {
             has_country_flag = FOP_world_legitimacy
             has_idea = fop_ethnic_minorities_opression
+            FOP_has_content = no
 		}		
 
 		cost = 15
@@ -119,6 +123,7 @@ world_legitimacy = {
 		visible = {	
             has_country_flag = FOP_world_legitimacy
             has_idea = fop_sexual_minorities_compulsory_sterilization
+            FOP_has_content = no
 		}		
 
 		cost = 15
@@ -141,6 +146,7 @@ world_legitimacy = {
 
 		visible = {	
             has_country_flag = eu_help
+            FOP_has_content = no
 		}
 
         modifier = {
@@ -154,6 +160,7 @@ world_legitimacy = {
     imf_ask_for_loan = {
         visible = {
             has_country_flag = IMF_accepted
+            FOP_has_content = no
         }
         modifier = {
             consumer_goods_factor = -0.1
@@ -175,6 +182,7 @@ world_legitimacy = {
 
 		visible = {	
             has_country_flag = FOP_world_legitimacy
+            FOP_has_content = no
 		}		
 
 		cost = 30
@@ -195,7 +203,8 @@ world_legitimacy = {
         days_remove = 30
 
 		visible = {
-            has_country_flag = FOP_world_legitimacy	
+            has_country_flag = FOP_world_legitimacy
+            FOP_has_content = no
 		}		
 
 		cost = 30
@@ -235,6 +244,7 @@ world_legitimacy = {
 			NOT = {
                 has_idea = fop_sexual_minorities_criminalized
             }
+            FOP_has_content = no
 		}		
 
 		cost = 30
@@ -299,6 +309,7 @@ world_legitimacy = {
                     character = USA_trump
                 }
             }
+            FOP_has_content = no
 		}		
 
 		cost = 30
@@ -326,6 +337,7 @@ world_legitimacy = {
                 }
             }
             has_country_flag = tr_ready_to_trade
+            FOP_has_content = no
 		}
         modifier = {
             consumer_goods_factor = 0.2
@@ -355,6 +367,7 @@ world_legitimacy = {
                     character = USA_trump
                 }
             }
+            FOP_has_content = no
 		}		
 		cost = 30
 
@@ -366,6 +379,88 @@ world_legitimacy = {
                 tooltip = FOP_america_allegiance_tt
             }
    	    }
+    }
+    ask_europe_for_recognition = {
+        available = {
+            hidden_trigger = {
+                FOP_has_content = yes
+            }
+        }
+
+        visible = {
+            FOP_has_content = yes
+        }
+
+        days_remove = 30
+
+        cost = 25
+
+        complete_effect = {
+            EUN = {
+                country_event = { id = FOP_generic.25 days = 14 }
+            }
+        }
+
+        remove_effect = {
+            custom_effect_tooltip = eu_recognition_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        NOT = {
+                            has_country_flag = eu_refused_help
+                        }
+                    }
+                    set_country_flag = eu_limited_recognition
+                }
+            }
+        }
+    }
+    ask_russia_for_recognition = {
+        available = {
+            hidden_trigger = {
+                FOP_has_content = yes
+            }
+        }
+
+        visible = {
+            FOP_has_content = yes
+        }
+
+        days_remove = 30
+
+        cost = 25
+
+        ai_will_do = {
+            base = 0
+            modifier = {
+                add = 50
+                is_pro_russian = yes
+            }
+            modifier = {
+                add = -50
+                is_pro_russian = no
+            }
+        }
+
+        complete_effect = {
+            RUS = {
+                country_event = { id = FOP_generic.28 days = 14 }
+            }
+        }
+
+        remove_effect = {
+            custom_effect_tooltip = ru_recognition_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        NOT = {
+                            has_country_flag = ru_refused_help
+                        }
+                    }
+                    set_country_flag = ru_limited_recognition
+                }
+            }
+        }
     }
 }
 warlord_legitimacy = {

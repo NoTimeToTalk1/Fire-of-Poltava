@@ -20,7 +20,7 @@ north_dogovornyak = {
 		}
 		visible = {
 			has_country_flag = north_dogovornyak
-			tag = DNP
+			tag = DIR
 		}
 	}
 	north_current_topic = {
@@ -39,11 +39,11 @@ north_dogovornyak = {
 			check_variable = { north_done_themes = 10 }
 				if = {
 					limit = {
-						tag = DNP
+						tag = DIR
 					}
 					OR = {
-						check_variable = {DNP.dnieper_unifier_influence > SIV.siveria_unifier_influence}
-						check_variable = {DNP.dnieper_unifier_influence = SIV.siveria_unifier_influence}
+						check_variable = {DIR.dnieper_unifier_influence > SIV.siveria_unifier_influence}
+						check_variable = {DIR.dnieper_unifier_influence = SIV.siveria_unifier_influence}
 					}
 				}
 				if = {
@@ -51,15 +51,15 @@ north_dogovornyak = {
 						tag = SIV
 					}
 					OR = {
-						check_variable = {SIV.siveria_unifier_influence > DNP.dnieper_unifier_influence}
-						check_variable = {DNP.dnieper_unifier_influence = SIV.siveria_unifier_influence}
+						check_variable = {SIV.siveria_unifier_influence > DIR.dnieper_unifier_influence}
+						check_variable = {DIR.dnieper_unifier_influence = SIV.siveria_unifier_influence}
 					}					
 				}
 		}
 		target_trigger = {
 			FROM = {
 				OR = {
-					tag = DNP
+					tag = DIR
 					tag = SIV
 				}
 			}
@@ -82,14 +82,14 @@ north_dogovornyak = {
 			clr_country_flag = community_controls
 			if = {
 				limit = {
-					check_variable = { DNP.north_done_themes < 10 }
+					check_variable = { DIR.north_done_themes < 10 }
 					check_variable = { SIV.north_done_themes < 10 }
 				}
 				custom_effect_tooltip = dogovornyak_not_decided
 			}
 			else_if = {
 				limit = {
-					check_variable = { DNP.dnieper_unifier_influence = SIV.siveria_unifier_influence }
+					check_variable = { DIR.dnieper_unifier_influence = SIV.siveria_unifier_influence }
 				}
 				declare_war_on = {
 					target = FROM
@@ -222,10 +222,10 @@ north_dogovornyak = {
 			}
 			if = {
 				limit = {
-					check_variable = {DNP.dnieper_influence_choice > SIV.siveria_influence_choice}
+					check_variable = {DIR.dnieper_influence_choice > SIV.siveria_influence_choice}
 				}
 				
-				DNP = {
+				DIR = {
 					add_to_variable = {
 						var = dnieper_unifier_influence
 						value = 0.5
@@ -274,7 +274,7 @@ north_dogovornyak = {
 			}
 			if = {
 				limit = {
-					check_variable = {SIV.siveria_influence_choice > DNP.dnieper_influence_choice}
+					check_variable = {SIV.siveria_influence_choice > DIR.dnieper_influence_choice}
 				}
 				SIV = {
 					add_to_variable = {
@@ -335,7 +335,7 @@ north_dogovornyak = {
 			}
 			if = {
 				limit = {has_country_flag = united_dnieper}
-				check_variable = {DNP.dnieper_spendible_influence > 0}
+				check_variable = {DIR.dnieper_spendible_influence > 0}
 			}
 			else_if = {
 				limit = {has_country_flag = united_siveria}
@@ -355,7 +355,7 @@ north_dogovornyak = {
 			set_country_flag = dogovornyak_choice_made
 			if = {
 				limit = {
-					tag = DNP
+					tag = DIR
 				}
 				add_to_variable = {
 					var = dnieper_spendible_influence
@@ -391,7 +391,7 @@ north_dogovornyak = {
 			}
 			if = {
 				limit = {has_country_flag = united_dnieper}
-				check_variable = {DNP.dnieper_spendible_influence > 0}
+				check_variable = {DIR.dnieper_spendible_influence > 0}
 			}
 			else_if = {
 				limit = {has_country_flag = united_siveria}
@@ -411,7 +411,7 @@ north_dogovornyak = {
 			set_country_flag = dogovornyak_choice_made
 			if = {
 				limit = {
-					tag = DNP
+					tag = DIR
 				}
 				add_to_variable = {
 					var = dnieper_spendible_influence
@@ -447,7 +447,7 @@ north_dogovornyak = {
 			}
 			if = {
 				limit = {has_country_flag = united_dnieper}
-				check_variable = {DNP.dnieper_spendible_influence > 0}
+				check_variable = {DIR.dnieper_spendible_influence > 0}
 			}
 			else_if = {
 				limit = {has_country_flag = united_siveria}
@@ -467,7 +467,7 @@ north_dogovornyak = {
 			set_country_flag = dogovornyak_choice_made
 			if = {
 				limit = {
-					tag = DNP
+					tag = DIR
 				}
 				add_to_variable = {
 					var = dnieper_spendible_influence
@@ -503,7 +503,7 @@ north_dogovornyak = {
 			}
 			if = {
 				limit = {has_country_flag = united_dnieper}
-				check_variable = {DNP.dnieper_spendible_influence > 0}
+				check_variable = {DIR.dnieper_spendible_influence > 0}
 			}
 			else_if = {
 				limit = {has_country_flag = united_siveria}
@@ -523,7 +523,7 @@ north_dogovornyak = {
 			set_country_flag = dogovornyak_choice_made
 			if = {
 				limit = {
-					tag = DNP
+					tag = DIR
 				}
 				random_list = {
 					30 = {
@@ -619,7 +619,7 @@ north_dogovornyak = {
 				base = 10
 			}
 			complete_effect = {
-				DNP = {
+				DIR = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = economy_base
@@ -663,7 +663,7 @@ north_dogovornyak = {
 				base = 10
 			}
 			complete_effect = {
-				DNP = {
+				DIR = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = economy_freedoms
@@ -707,7 +707,7 @@ north_dogovornyak = {
 				base = 10
 			}
 			complete_effect = {
-				DNP = {
+				DIR = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = army_standarts
@@ -751,7 +751,7 @@ north_dogovornyak = {
 				base = 10
 			}
 			complete_effect = {
-				DNP = {
+				DIR = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = army_structure
@@ -795,7 +795,7 @@ north_dogovornyak = {
 				base = 10
 			}
 			complete_effect = {
-				DNP = {
+				DIR = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = state_control
@@ -839,7 +839,7 @@ north_dogovornyak = {
 				base = 10
 			}
 			complete_effect = {
-				DNP = {
+				DIR = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = civilian_services
@@ -883,7 +883,7 @@ north_dogovornyak = {
 				base = 10
 			}
 			complete_effect = {
-				DNP = {
+				DIR = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = worker_stance
@@ -927,7 +927,7 @@ north_dogovornyak = {
 				base = 10
 			}
 			complete_effect = {
-				DNP = {
+				DIR = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = civilian_liberties
@@ -971,7 +971,7 @@ north_dogovornyak = {
 				base = 10
 			}
 			complete_effect = {
-				DNP = {
+				DIR = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = equality
@@ -1015,7 +1015,7 @@ north_dogovornyak = {
 				base = 10
 			}
 			complete_effect = {
-				DNP = {
+				DIR = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = community_controls
