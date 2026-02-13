@@ -86,6 +86,7 @@ country_event = {
 	}
 }
 
+#PLACEHOLDER --- Лібералізація конституції гіркіном, уряд пішов на поступки опозиції (стратегічний хід, далі більше)
 country_event = {
 	id = gir.5
 	title = gir.5.t
@@ -101,11 +102,22 @@ country_event = {
 	}
 }
 
-#PLACEHOLDER --- Штурм ячейки Народної Опозиції (сценарій з лібералізацією)
+# Штурм ячейки Народної Опозиції (сценарій з лібералізацією) 1/2
 country_event = {
 	id = gir.6
 	title = gir.6.t
-	desc = gir.6.d
+	desc = {
+		text = gir.6.d.a
+		trigger = {
+			has_country_flag = DPR_raid_success
+		}
+	}
+	desc = {
+		text = gir.6.d.b
+		trigger = {
+			has_country_flag = DPR_raid_fail
+		}
+	}
 	picture = none
 
 	fire_only_once = yes
@@ -113,14 +125,26 @@ country_event = {
 
 	option = {
 		name = gir.6.a
+		country_event = gir.7
 	}
 }
 
-#PLACEHOLDER --- Відміна правок, шок контент
+# Штурм ячейки Народної Опозиції (сценарій з лібералізацією) 2/2
 country_event = {
 	id = gir.7
 	title = gir.7.t
-	desc = gir.7.d
+	desc = {
+		text = gir.7.d.a
+		trigger = {
+			has_country_flag = DPR_raid_success
+		}
+	}
+	desc = {
+		text = gir.7.d.b
+		trigger = {
+			has_country_flag = DPR_raid_fail
+		}
+	}
 	picture = none
 
 	fire_only_once = yes
@@ -128,9 +152,22 @@ country_event = {
 
 	option = {
 		name = gir.7.a
+		trigger = {
+            has_country_flag = DPR_raid_success
+        }
+		add_political_power = 10
+	}
+
+	option = {
+		name = gir.7.b
+		trigger = {
+            has_country_flag = DPR_raid_fail
+        }
+		add_manpower = -1
 	}
 }
 
+#PLACEHOLDER --- Відміна правок, шок контент
 #PLACEHOLDER --- Опис подальшої ситуації (народ в страху, в державі анархія)
 country_event = {
 	id = gir.8
