@@ -1,8 +1,177 @@
 guiTypes = {
 
 	containerWindowType = {
+		name = "political_system_container_diplo"
+		position = { x = 50 y = 160 }
+		size = { width = 100% height = 100% }
+		clipping = yes
+
+		containerWindowType = {
+			name = "political_system_name_container_diplo"
+			position = { x = 225 y = 150 }
+			size = { width = 255 height = 60 }
+			clipping = no
+
+			instantTextboxType = {
+				name = "political_system_name_diplo"
+				position = { x = 4 y = 42 }
+				font = "hoi_20bs"
+				text = "[GetGovernmentType]"
+				maxWidth = 160
+				maxHeight = 20
+				format = centre
+				vertical_alignment = center
+				fixedsize = yes
+			}
+		}
+
+		iconType = {
+			name = "no_political_system_icon"
+			position = { x = 393 y = 130 } #x = 386 y = 142
+			spriteType = "GFX_ideology_unknown"
+			scale = 0.9 #delete
+		}
+		iconType = {
+			name = "fop_political_system_natiocracy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_natiocracy"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_oligarchy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_oligarchy"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_stratocracy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_stratocracy"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_theocracy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_theocracy"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_absolute_monarchy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_absolute_monarchy"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_personalistic_dictatorship_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_personalistic_dictatorship"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_military_dictatorship_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_military_dictatorship"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_civilian_dictatorship_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_civilian_dictatorship"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_anocracy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_anocracy"
+			#pdx_tooltip = ""
+		}
+		iconType = {
+			name = "fop_political_system_guided_democracy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_guided_democracy"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_transitioning_democracy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_transitioning_democracy"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_dominant_party_democracy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_dominant_party_democracy"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_liberal_democracy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_liberal_democracy"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_minarchy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_minarchy"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_provisional_government_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_provisional_government"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_partisan_movement_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_partisan_movement"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_anarchic_community_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_anarchic_community"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+	}
+
+	containerWindowType = {
+		name = "subideology_container_diplo"
+		position = { x = 225 y = 150 }
+		
+		instantTextboxType = {
+			name = "subideology_name"
+			position = { x = 4 y = 14 }
+			font = "hoi_20bs"
+			text = "[GetRulingIdeologySubtype]"
+			#pdx_tooltip = "GetRulingIdeologySubtype"
+			maxWidth = 160
+			maxHeight = 20
+			format = centre
+			vertical_alignment = center
+			fixedsize = yes
+		}
+	}
+
+	containerWindowType = {
 		name = "countrydiplomacyview"
-		position = { x = -606 y = 78}
+		position = { x = -606 y = 78 }
 		show_position = { x = -6 y = 78 }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
@@ -134,13 +303,13 @@ guiTypes = {
 			iconType = {
 				name = "stability_bg"
 				spriteType = "GFX_diplo_unity_bg"
-				position = { x= 447 y = 1 }
+				position = { x = 447 y = 1 }
 			}
 
 			iconType = {
 				name = "stability_icon"
 				spriteType = "GFX_stability_icon"
-				position = { x= 455 y = 9 }
+				position = { x = 455 y = 9 }
 			}
 
 			instantTextboxType = {
@@ -247,20 +416,12 @@ guiTypes = {
 						position = { x = -15 y = -3 }
 					}
 				}
-				
+
 				iconType = {
 					name = "ideology_icon"
 					spriteType = "GFX_ideology_unknown"
 					position = { x = 133 y = 130 } #x = 126 y = 142
 					Orientation = "UPPER_LEFT"
-					frame = 1
-					scale = 0.89 #delete
-				}
-				iconType = {
-					name = "ideology_icon2"
-					spriteType = "GFX_ideology_unknown"
-					position = { x = 393 y = 130 } #x = 386 y = 142
-					Orientation = "UPPER_RIGHT"
 					frame = 1
 					scale = 0.89 #delete
 				}
@@ -284,7 +445,7 @@ guiTypes = {
 
 					instantTextboxType = {
 						name = "ideology_name"
-						position = { x = 4 y = 14 }
+						position = { x = 9999 y = 9999 }
 						font = "hoi_20bs"
 						text = "ideology"
 						maxWidth = 160

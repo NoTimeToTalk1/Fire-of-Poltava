@@ -40,6 +40,178 @@ guiTypes = {
 	}
 
 	containerWindowType = {
+		name = "political_system_container"
+		position = { x = 175 y = 255 }
+		size = { width = 100% height = 100% }
+		clipping = yes
+
+		containerWindowType = {
+			name = "political_system_name_container"
+			position = { x = 0 y = 0 }
+			size = { width = 300 height = 60 }
+			clipping = no
+			
+			instantTextboxType = {
+				name = "political_system_name"
+				position = { x = -10 y = -6 }
+				font = "hoi_18mbs"
+				text = "[GetGovernmentType]"
+				maxWidth = 90
+				maxHeight = 40
+				format = centre
+				vertical_alignment = center
+				fixedsize = yes
+			}
+		}
+
+		iconType = {
+			name = "no_political_system_icon"
+			position = { x = -6 y = 26 }
+			spriteType = "GFX_ideology_unknown"
+			scale = 0.7
+		}
+		iconType = {
+			name = "fop_political_system_natiocracy_icon"
+			position = { x = -6 y = 26 }
+			spriteType = "GFX_political_system_natiocracy"
+			#pdx_tooltip = ""
+			scale = 0.7
+		}
+		iconType = {
+			name = "fop_political_system_oligarchy_icon"
+			position = { x = -6 y = 26 }
+			spriteType = "GFX_political_system_oligarchy"
+			#pdx_tooltip = ""
+			scale = 0.7
+		}
+		iconType = {
+			name = "fop_political_system_stratocracy_icon"
+			position = { x = -6 y = 26 }
+			spriteType = "GFX_political_system_stratocracy"
+			#pdx_tooltip = ""
+			scale = 0.7
+		}
+		iconType = {
+			name = "fop_political_system_theocracy_icon"
+			position = { x = -6 y = 26 }
+			spriteType = "GFX_political_system_theocracy"
+			#pdx_tooltip = ""
+			scale = 0.7
+		}
+		iconType = {
+			name = "fop_political_system_absolute_monarchy_icon"
+			position = { x = -6 y = 26 }
+			spriteType = "GFX_political_system_absolute_monarchy"
+			#pdx_tooltip = ""
+			scale = 0.7
+		}
+		iconType = {
+			name = "fop_political_system_personalistic_dictatorship_icon"
+			position = { x = -6 y = 26 }
+			spriteType = "GFX_political_system_personalistic_dictatorship"
+			#pdx_tooltip = ""
+			scale = 0.7
+		}
+		iconType = {
+			name = "fop_political_system_military_dictatorship_icon"
+			position = { x = -6 y = 26 }
+			spriteType = "GFX_political_system_military_dictatorship"
+			#pdx_tooltip = ""
+			scale = 0.7
+		}
+		iconType = {
+			name = "fop_political_system_civilian_dictatorship_icon"
+			position = { x = -6 y = 26 }
+			spriteType = "GFX_political_system_civilian_dictatorship"
+			#pdx_tooltip = ""
+			scale = 0.7
+		}
+		iconType = {
+			name = "fop_political_system_anocracy_icon"
+			position = { x = -6 y = 26 }
+			spriteType = "GFX_political_system_anocracy"
+			#pdx_tooltip = ""
+			scale = 0.7
+		}
+		iconType = {
+			name = "fop_political_system_guided_democracy_icon"
+			position = { x = -6 y = 26 }
+			spriteType = "GFX_political_system_guided_democracy"
+			#pdx_tooltip = ""
+			scale = 0.7
+		}
+		iconType = {
+			name = "fop_political_system_transitioning_democracy_icon"
+			position = { x = -6 y = 26 }
+			spriteType = "GFX_political_system_transitioning_democracy"
+			#pdx_tooltip = ""
+			scale = 0.7
+		}
+		iconType = {
+			name = "fop_political_system_dominant_party_democracy_icon"
+			position = { x = -6 y = 26 }
+			spriteType = "GFX_political_system_dominant_party_democracy"
+			#pdx_tooltip = ""
+			scale = 0.7
+		}
+		iconType = {
+			name = "fop_political_system_liberal_democracy_icon"
+			position = { x = -6 y = 26 }
+			spriteType = "GFX_political_system_liberal_democracy"
+			#pdx_tooltip = ""
+			scale = 0.7
+		}
+		iconType = {
+			name = "fop_political_system_minarchy_icon"
+			position = { x = -6 y = 26 }
+			spriteType = "GFX_political_system_minarchy"
+			#pdx_tooltip = ""
+			scale = 0.7
+		}
+		iconType = {
+			name = "fop_political_system_provisional_government_icon"
+			position = { x = -6 y = 26 }
+			spriteType = "GFX_political_system_provisional_government"
+			#pdx_tooltip = ""
+			scale = 0.7
+		}
+		iconType = {
+			name = "fop_political_system_partisan_movement_icon"
+			position = { x = -6 y = 26 }
+			spriteType = "GFX_political_system_partisan_movement"
+			#pdx_tooltip = ""
+			scale = 0.7
+		}
+		iconType = {
+			name = "fop_political_system_anarchic_community_icon"
+			position = { x = -6 y = 26 }
+			spriteType = "GFX_political_system_anarchic_community"
+			#pdx_tooltip = ""
+			scale = 0.7
+		}
+	}
+	
+	containerWindowType = {
+		name = "subideology_container"
+		position = { x = 240 y = 280 }
+		size = { width = 255 height = 60 }
+		clipping = no
+
+		instantTextboxType = {
+			name = "subideology_name"
+			position = { x = 17 y = -32 } #-73
+			font = "hoi_18mbs"
+			text = "[GetRulingIdeologySubtype]"
+			#pdx_tooltip = "GetRulingIdeologySubtype"
+			maxWidth = 90
+			maxHeight = 40
+			format = centre
+			vertical_alignment = center
+			fixedsize = yes
+		}
+	}
+
+	containerWindowType = {
 		name = "countrypoliticsview"
 		position = { x = -605 y = 87 }	
 		show_position = { x = -5 y = 87 }
@@ -317,16 +489,8 @@ guiTypes = {
 
 		iconType = {
 			name = "pol_faction_icon"
-			#spriteType = "GFX_pol_factions_strip"
-			position = { x = 276 y = 280 }
-			Orientation = "UPPER_LEFT"
-			frame = 1
-			scale = 0.69
-		}
-		iconType = {
-			name = "pol_faction_icon2"
 			spriteType = "GFX_pol_factions_strip"
-			position = { x = 170 y = 280 }
+			position = { x = 276 y = 280 }
 			Orientation = "UPPER_LEFT"
 			frame = 1
 			scale = 0.69
@@ -364,7 +528,8 @@ guiTypes = {
 
 			instantTextboxType = {
 				name = "ideology"
-				position = { x = 17 y = -32 } #-73
+				position = { x = 9999 y = 9999 }
+				#position = { x = 17 y = -32 } #-73
 				font = "hoi_18mbs"
 				text = "ideology"
 				maxWidth = 90
@@ -376,7 +541,7 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "faction"
-				position = { x = 100 y = -50}
+				position = { x = 400 y = -50 }
 				size = { width = 175 height = 20 }
 				clipping = no
 
