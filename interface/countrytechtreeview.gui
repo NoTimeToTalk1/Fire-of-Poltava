@@ -1297,6 +1297,102 @@ guiTypes = {
 		}
 
 		containerWindowType = {
+			name = "drones_folder"
+			position = { x = 0 y = 47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 2 right = 2 }
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+			scroll_wheel_factor = 40
+
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x = 0 y = 0 }
+				clipping = no
+
+				size = {
+					width = 1239 height = 1000
+					min = { width = 100%% height = 100%% }
+				}
+
+				background = {
+					name = "Background"
+					quadTextureSprite = "GFX_techtree_stripes"
+				}
+
+				iconType = {
+					name = "artillery_techtree_bg"
+					spriteType = "GFX_artillery_techtree_bg"
+					position = { x = 0 y = 0 }
+					alwaystransparent = yes
+				}
+
+				instantTextBoxType = {
+					name = "drones_year2"
+					position = { x = 275 y = 50 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 4 }
+					text = "1900"
+					maxWidth = 130
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "drones_year3"
+					position = { x = 550 y = 50 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 4 }
+					text = "1991"
+					maxWidth = 130
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "drones_year4"
+					position = { x = 0 y = 278 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 4 }
+					text = "2019"
+					maxWidth = 130
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "drones_year5"
+					position = { x = 0 y = 420 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 4 }
+					text = "2020"
+					maxWidth = 130
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+			}
+
+			gridboxtype = {
+				name = "drone_equipment_usage_tree"
+				position = { x = 220 y = 40 }
+				size = { width = 70% height = 60% }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+		}
+
+		containerWindowType = {
 			name = "naval_folder"
 			position = { x=0 y=47 }
 			size = { width = 100%% height = 100%% }
@@ -3006,42 +3102,50 @@ guiTypes = {
 			}
 
 			buttonType = {
-				name = "naval_folder_tab"
+				name = "drones_folder_tab"
 				position = { x = 378 y = 0 }
+				quadTextureSprite = "GFX_armour_folder_tab"
+				frame = 1
+				clicksound = ui_research_tab_armor
+			}
+
+			buttonType = {
+				name = "naval_folder_tab"
+				position = { x = 467 y = 0 }
 				quadTextureSprite = "GFX_naval_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_naval
 			}
 			buttonType = {
 				name = "mtgnavalfolder_tab"
-				position = { x = 378 y = 0 }
+				position = { x = 467 y = 0 }
 				quadTextureSprite = "GFX_naval_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_naval
 			}
 			buttonType = {
 				name = "mtgnavalsupportfolder_tab"
-				position = { x = 467 y = 0 }
+				position = { x = 556 y = 0 }
 				quadTextureSprite = "GFX_naval_support_tab"
 				frame = 1
 				clicksound = ui_research_tab_naval
 			}
 			buttonType = {
 				name = "air_techs_folder_tab"
-				position = { x = 556 y = 0 }
+				position = { x = 645 y = 0 }
 				quadTextureSprite = "GFX_air_techs_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_air
 			}
 			buttonType = {
 				name = "bba_air_techs_folder_tab"
-				position = { x = 556 y = 0 }
+				position = { x = 645 y = 0 }
 				quadTextureSprite = "GFX_air_techs_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_air
 			}
 			buttonType = {
-				position = { x = 645 y = 0 }
+				position = { x = 734 y = 0 }
 				name = "electronics_folder_tab"
 				quadTextureSprite = "GFX_techtree_engineering_tab"
 				frame = 1
@@ -3051,13 +3155,13 @@ guiTypes = {
 			iconType = {
 				name = "highlight_engineering_folder"
 				spriteType = "GFX_tutorial_research_folder_icon_glow"
-				position = { x=645 y=0}
+				position = { x=734 y=0}
 				hide = yes
 				alwaystransparent = yes
 			}
 
 			buttonType = {
-				position = { x = 734 y = 0 }
+				position = { x = 823 y = 0 }
 				name = "industry_folder_tab"
 				quadTextureSprite = "GFX_industry_folder_tab"
 				frame = 1
@@ -3067,7 +3171,7 @@ guiTypes = {
 			iconType = {
 				name = "highlight_industry_folder"
 				spriteType = "GFX_tutorial_research_folder_icon_glow"
-				position = { x=734 y=0}
+				position = { x=823 y=0}
 				hide = yes
 				alwaystransparent = yes
 			}
@@ -3853,6 +3957,104 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "techtree_nsb_armour_folder_small_item"
+		position = { x=0 y=0 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=3 y=3 }
+			spriteType = "GFX_technology_medium"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+			textureFile = ""
+			font = "hoi_16mbs"
+			borderSize = {x = 4 y = 4}
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_drones_folder_item"
+		position = { x=0 y=0 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=74 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 6 y = -1 }
+			textureFile = ""
+			font = "hoi_20bs"
+			borderSize = {x = 4 y = 4}
+			text = "Happy-Go-Lucky-Tank"
+			maxWidth = 176
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=111 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 111 y = -22 }
+			textureFile = ""
+			font = "hoi_16mbs"
+			borderSize = {x = 4 y = 4}
+			text = "lol boat"
+			maxWidth = 80
+			maxHeight = 20
+			format = center
+		}
+
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_drones_folder_small_item"
 		position = { x=0 y=0 }
 		size = { width = 72 height = 72 }
 		clipping = no
