@@ -11,7 +11,7 @@ country_event = { #On Our Own
 
 	option = {
 		name = afu.1.a
-		add_political_power = 200
+		add_political_power = 150
 	}
 }
 
@@ -45,7 +45,7 @@ country_event = { #Asessing the Situation
 	}
 }
 
-country_event = { #Life in the Donbass
+country_event = { #Life in the Donbas
 	id = afu.4
 	title = afu.4.t
 	desc = afu.4.d
@@ -130,7 +130,7 @@ country_event = { #Poroshenko - Helping ZSU?
 	option = { #YES
 		name = afu.6.a
 		ai_chance = {
-			factor = 60
+			factor = 70
 		}
 		AFU = { country_event = afu.61 }
 		add_political_power = -50
@@ -138,7 +138,7 @@ country_event = { #Poroshenko - Helping ZSU?
 	option = { #NO
 		name = afu.6.b
 		ai_chance = {
-			factor = 40
+			factor = 30
 		}
 		AFU = { country_event = afu.62 }
 		add_stability = -0.05
@@ -188,38 +188,42 @@ country_event = { #Biletsky - Helping ZSU?
 	option = { #YES
 		name = afu.7.a
 		ai_chance = {
-			factor = 80
+			factor = 90
 		}
-		send_equipment = {
+		add_equipment_to_stockpile = {
 			type = support_equipment
-			amount = 500
-			target = AFU
+			amount = -250
+			producer = PLT
 		}
-		send_equipment = {
-			type = motorized_equipment_1 
-			amount = 150
-			target = AFU
+		add_equipment_to_stockpile = {
+			type = motorized_equipment
+			amount = -150
+			producer = PLT
 		}
-		send_equipment = {
-			type = mechanized_equipment_1
-			amount = 20
-			target = AFU
+		add_equipment_to_stockpile = {
+			type = APC_equipment
+			amount = -20
+			producer = PLT
 		}
-		send_equipment = {
-			type = modern_tank_equipment
-			amount = 2
-			target = AFU
+		add_equipment_to_stockpile = {
+			type = MBT_chassis_0
+			amount = -2
+			producer = PLT
 		}
 		AFU = { country_event = afu.71 }
-		add_political_power = -50
+		add_political_power = -30
 	}
 	option = { #NO
 		name = afu.7.b
 		ai_chance = {
-			factor = 20
+			factor = 10
 		}
 		AFU = { country_event = afu.72 }
 		add_stability = -0.05
+		add_popularity = {
+			ideology = ultranationalism
+			popularity = -0.02
+		}
 	}
 }
 
@@ -234,6 +238,26 @@ country_event = { #Biletsky helped us
 
 	option = {
 		name = afu.71.a
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 250
+			producer = PLT
+		}
+		add_equipment_to_stockpile = {
+			type = motorized_equipment
+			amount = 150
+			producer = PLT
+		}
+		add_equipment_to_stockpile = {
+			type = APC_equipment
+			amount = 20
+			producer = PLT
+		}
+		add_equipment_to_stockpile = {
+			type = MBT_chassis_0
+			amount = 2
+			producer = PLT
+		}
 		add_popularity = {
 			ideology = ultranationalism
 			popularity = 0.02
@@ -253,6 +277,10 @@ country_event = { #Biletsky didn't help us
 	option = {
 		name = afu.72.a
 		add_political_power = -10
+		add_popularity = {
+			ideology = ultranationalism
+			popularity = -0.02
+		}
 	}
 }
 
@@ -554,38 +582,32 @@ country_event = {
 	
 	option = {
 		name = afu.19.a
-    		
-			VSR = {
+		RAF = {
 			transfer_state = 2031
 			transfer_state = 2030
 			set_province_controller = 1495
 			set_province_controller = 12927
 			set_province_controller = 12999
 			set_province_controller = 5825
-			
-			add_ideas = VSR_kramatorsk_in_three_days
-			add_ideas = VSR_unprepared
-			
-			
 			declare_war_on = {
 				target = AFU
 				type = annex_everything
 			}
 		}
-		   RUS = {
-			give_military_access = VSR
+		RUS = {
+			give_military_access = RAF
 		}
-			DPR = { 
-			add_to_faction = VSR
-	      }
-	     hidden_effect = {
-					VSR = { 
-						add_timed_idea = { idea = gas_gas_gas days = 10 }
-						activate_mission = 7_days_free
-						
-						load_oob = "VSRF_2019"
-					}
-				}
+		DPR = { 
+			add_to_faction = RAF
+	    }
+	    hidden_effect = {
+			RAF = { 
+				add_timed_idea = { idea = gas_gas_gas days = 10 }
+				activate_mission = 7_days_free
+				
+				load_oob = "RAF"
+			}
+		}
 	}
 }
 country_event = {

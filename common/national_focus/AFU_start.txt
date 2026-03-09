@@ -319,7 +319,7 @@
 		y = 1
 
 		cost = 5
-		prerequisite = { focus = AFU_sideline_the_far_right_elements }
+		prerequisite = { focus = AFU_sideline_the_far_right_elements focus = AFU_turn_a_blind_eye_to_far_right_elements }
         prerequisite = { focus = AFU_reform_the_general_staff }
 
 		completion_reward = {
@@ -361,7 +361,7 @@
 		x = 0
 		y = 1
 
-		cost = 8
+		cost = 7
 		prerequisite = { focus = AFU_prepare_for_the_inevitable }
 
 		bypass = {
@@ -404,7 +404,7 @@
 		x = -1
 		y = 1
 
-		cost = 5
+		cost = 3
 		prerequisite = { focus = AFU_prepare_the_reserve_line }
 		mutually_exclusive = { focus = AFU_its_time_to_put_an_end_to_the_separatists }
 
@@ -432,7 +432,7 @@
 		x = 1
 		y = 1
 
-		cost = 10
+		cost = 7
 		prerequisite = { focus = AFU_prepare_the_reserve_line }
 		mutually_exclusive = { focus = AFU_and_now_we_wait }
 
@@ -507,12 +507,15 @@
 				idea = AFU_harsh_quotas
 				days = 180
 			}
+			FOP_change_pensions_no = yes
+			FOP_change_unemployment_subsidies_no = yes
+			FOP_change_working_hours_10 = yes
 			add_ideas = fop_forced_labour_penal_labour
-		add_tech_bonus = {
-			bonus = 0.25
-			uses = 1
-			category = discipline
-		}
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				category = discipline
+			}
 		}
     }
 
@@ -811,7 +814,10 @@
 			hidden_effect = {
 				if = {
 					limit = {
-						has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements
+						OR = {
+							ultranationalism > 0.2
+							has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements
+						}
 					}
 					country_event = {
 						id = azov.1

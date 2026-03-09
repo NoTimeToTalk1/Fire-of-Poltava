@@ -250,7 +250,7 @@ AFU_teroborona_category = {
 				add_manpower = -1000
 				random_owned_controlled_state  = {
 					create_unit = {
-						division = "name = \"Teroborona\" division_template = \"Teroborona\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
+						division = "name = \"Teroborona\" division_template = \"Teroborona\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
 						owner = AFU
 					}
 				}
@@ -506,9 +506,9 @@ AFU_emergency_makeshift_fortifications_category = {
 		}
 		
 		fire_only_once = yes
-        days_remove = 30
+        days_remove = 14
 		
-		cost = 100
+		cost = 50
 		ai_will_do = {
 			factor = 100
 		}
@@ -543,7 +543,7 @@ AFU_azov_support_category = {
 		}
 		
 		visible = {	
-			has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements	
+			has_completed_focus = AFU_sideline_the_far_right_elements
 		}
 		
 		cost = 20
@@ -559,8 +559,9 @@ AFU_azov_support_category = {
 				ideology = ultranationalism
 				popularity = 0.01
 			}
+			add_manpower = 200
 			add_war_support = 0.05
-			add_command_power = 5
+			add_command_power = 10
 	   	}
 	}
     afu_ask_azov_for_help_2 = {			
@@ -570,10 +571,10 @@ AFU_azov_support_category = {
 		}
 		
 		visible = {	
-			has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements	
+			has_completed_focus = AFU_sideline_the_far_right_elements	
 		}
 		
-		cost = 35
+		cost = 25
 		ai_will_do = {
 			factor = 100
 		}
@@ -587,7 +588,8 @@ AFU_azov_support_category = {
 				popularity = 0.03
 			}
 			add_war_support = 0.05
-			add_command_power = 5
+			add_command_power = 20
+			add_manpower = 300
 	   	}
 	}
     afu_ask_azov_for_help_3 = {			
@@ -595,8 +597,12 @@ AFU_azov_support_category = {
 		available = { 
 			has_war_support > 0.7
 		}
+
+		visible = {	
+			has_completed_focus = AFU_sideline_the_far_right_elements	
+		}
 		
-        cost = 50
+        cost = 30
 		ai_will_do = {
 			factor = 100
 		}
@@ -609,6 +615,7 @@ AFU_azov_support_category = {
 				ideology = ultranationalism
 				popularity = 0.05
 			}
+			add_manpower = 500
 			add_war_support = 0.05
 			add_command_power = 25
 	   	}
@@ -627,7 +634,7 @@ AFU_weapon_shipment_category = {
 			has_completed_focus = AFU_eastern_european_cooperation
 		}
 		
-		cost = 50
+		cost = 30
 		ai_will_do = {
 			factor = 50
 		}
@@ -658,7 +665,7 @@ AFU_weapon_shipment_category = {
 			has_completed_focus = AFU_eastern_european_cooperation
 		}
 		
-		cost = 75
+		cost = 40
 		ai_will_do = {
 			factor = 50
 		}
@@ -689,7 +696,7 @@ AFU_weapon_shipment_category = {
 			has_completed_focus = AFU_eastern_european_cooperation
 		}
 		
-		cost = 80
+		cost = 50
 		ai_will_do = {
 			factor = 50
 		}
@@ -720,7 +727,7 @@ AFU_weapon_shipment_category = {
 			has_completed_focus = AFU_eastern_european_cooperation
 		}
 		
-		cost = 100
+		cost = 60
 		ai_will_do = {
 			factor = 50
 		}

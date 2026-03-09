@@ -89,7 +89,7 @@
 		x = 0
 		y = 1
 
-		cost = 4
+		cost = 5
 		prerequisite = { focus = DPR_look_west }
 
 		completion_reward = {
@@ -138,19 +138,6 @@
 		completion_reward = {
 			add_manpower = 1250
 			unlock_decision_category_tooltip = DPR_mobilize_the_youth_and_reserves_category
-			division_template = {
-				name = "Opolchenci"
-				is_locked = yes
-				division_names_group = BLR_INF_01
-				priority = 0
-				template_counter = 0
-				regiments = { 
-					infantry = { x = 0 y = 0 } 
-					infantry = { x = 1 y = 0 }
-					infantry = { x = 2 y = 0 }
-					infantry = { x = 1 y = 1 } 
-				}
-			}
 		}
     }
 
@@ -300,7 +287,7 @@
 		x = 0
 		y = 1
 
-		cost = 4
+		cost = 5
 		prerequisite = { focus = DPR_look_east }
 
 		completion_reward = {
@@ -318,7 +305,7 @@
 		x = 0
 		y = 1
 		
-		cost = 5
+		cost = 6
 		prerequisite = { focus = DPR_request_russian_equipment }
 		
 		completion_reward = {
@@ -382,14 +369,12 @@
 					num_provinces = 2
 					on_win = donbass_war.1 #Event on win
 					on_lose = donbass_war.2 #Event on loss
-					on_cancel = japan_border_conflict.4 #Event on cancel
 				}
 				defender = {
-					state = 2306
+					state = 2301
 					num_provinces = 2
-					on_win = japan_border_conflict.3 #Even on win
-					on_lose = japan_border_conflict.2 #Even on loss
-					on_cancel = japan_border_conflict.4 #Event on cancel
+					on_win = donbass_war.1 #Event on win
+					on_lose = donbass_war.2 #Event on loss
 				}
 			}
 		}
@@ -409,7 +394,7 @@
 
 		bypass = {
 			AFU = {
-				has_capitulated = yes
+				exists = no
 			}
 		}
 
@@ -419,6 +404,12 @@
 			declare_war_on = {
 				target = AFU
 				type = annex_everything
+			}
+			LPR = {
+				declare_war_on = {
+					target = AFU
+					type = annex_everything
+				}
 			}
 			hidden_effect = {
 				add_timed_idea = {
@@ -697,6 +688,8 @@
 					add_core_of = DPR
 				}
 			}
+
+			country_lock_all_division_template = no
 		}
 	}
 	
