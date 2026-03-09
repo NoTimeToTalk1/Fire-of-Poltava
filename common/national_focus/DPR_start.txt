@@ -89,7 +89,7 @@
 		x = 0
 		y = 1
 
-		cost = 5
+		cost = 4
 		prerequisite = { focus = DPR_look_west }
 
 		completion_reward = {
@@ -287,7 +287,7 @@
 		x = 0
 		y = 1
 
-		cost = 5
+		cost = 4
 		prerequisite = { focus = DPR_look_east }
 
 		completion_reward = {
@@ -305,7 +305,7 @@
 		x = 0
 		y = 1
 		
-		cost = 6
+		cost = 5
 		prerequisite = { focus = DPR_request_russian_equipment }
 		
 		completion_reward = {
@@ -394,7 +394,10 @@
 
 		bypass = {
 			AFU = {
-				exists = no
+				OR = {
+					exists = no
+					has_war_with = DPR
+				}
 			}
 		}
 
