@@ -462,18 +462,10 @@ leader_traits = {
 		trait_type = personality_trait
 		unit_type = {
 			type = cavalry
-			type = camelry
-			type = motorized
-			type = mechanized
 		}
 		
 		unit_trigger = {
-			OR = {
 				division_has_majority_template = cavalry
-				division_has_majority_template = camelry
-				division_has_majority_template = motorized
-				division_has_majority_template = mechanized
-			}
 			owner = {
 				NOT = {
 					OR = {
@@ -528,10 +520,7 @@ leader_traits = {
 		
 		unit_trigger = {
 			OR = {
-				division_has_majority_template = light_armor
 				division_has_majority_template = medium_armor
-				division_has_majority_template = heavy_armor
-				division_has_majority_template = super_heavy_armor
 				
 				owner = {
 					has_idea = mobile_warfare_academy_spirit
@@ -543,7 +532,6 @@ leader_traits = {
 					OR = {
 						has_idea = best_of_the_best_spirit
 						has_idea = academy_scholarships_spirit
-						has_idea = SOV_purged_junior_army_officers_3
 					}
 				}
 			}
@@ -651,17 +639,11 @@ leader_traits = {
 		}
 
 		unit_type = {
-			type = cavalry
-			type = camelry
 			type = irregular_infantry
 		}
 
 		unit_trigger = {
-			OR = {
-				division_has_majority_template = cavalry
-				division_has_majority_template = camelry
 				division_has_majority_template = irregular_infantry
-			}
 			owner = {
 				OR = {
 					original_tag = ITA
