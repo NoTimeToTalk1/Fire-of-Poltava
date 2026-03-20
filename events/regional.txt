@@ -11,7 +11,7 @@ add_namespace = reg_rename
 add_namespace = reg_exp_east
 add_namespace = reg_exp_south
 add_namespace = reg_exp_west
-add_namespace = reg_exp_center
+add_namespace = reg_exp_north
 add_namespace = reg_exp_left_bank
 add_namespace = reg_exp_right_bank
 add_namespace = reg_exp_ukraine
@@ -1108,6 +1108,70 @@ country_event = { #east war
 	}
 }
 
+country_event = { #east elections
+	id = reg_exp_east.5
+	title = reg_exp_east.5.t
+	desc = reg_exp_east.5.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_east.5.a #yes
+		country_event = {
+			id = reg_exp_east.6
+			days = 3
+		}
+		FROM = {
+			country_event = {
+				id = reg_exp_east.6
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = reg_exp_east.5.b #maybe deal
+		FROM = {
+			country_event = {
+				id = reg_exp_east.1
+				days = 3
+			}
+		}
+	}
+	option = {
+		country_event = {
+			id = reg_exp_east.3
+			days = 3
+		}
+		name = reg_exp_east.5.c #no
+		FROM = {
+			country_event = {
+				id = reg_exp_east.3
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #east elect
+	id = reg_exp_east.6
+	title = reg_exp_east.6.t
+	desc = reg_exp_east.6.d
+
+	
+
+	is_triggered_only = yes
+
+	option = {
+		name = reg_exp_east.6.a #nah
+		set_country_flag = elections_agreed
+		FROM = {
+			set_country_flag = elections_agreed
+		}
+	}
+}
+
 country_event = { #south dogovornyak
 	id = reg_exp_south.1
 	title = reg_exp_south.1.t
@@ -1433,9 +1497,9 @@ country_event = { #west elect
 }
 
 country_event = { #center dogovornyak
-	id = reg_exp_center.1
-	title = reg_exp_center.1.t
-	desc = reg_exp_center.1.d
+	id = reg_exp_north.1
+	title = reg_exp_north.1.t
+	desc = reg_exp_north.1.d
 
 	
 
@@ -1443,26 +1507,26 @@ country_event = { #center dogovornyak
 
 	option = { 
 		country_event = {
-			id = reg_exp_center.2
+			id = reg_exp_north.2
 			days = 3
 		}
-		name = reg_exp_center.1.a #uhuh
+		name = reg_exp_north.1.a #uhuh
 		FROM = {
 			country_event = {
-				id = reg_exp_center.2
+				id = reg_exp_north.2
 				days = 3
 			}
 		}
 	}
 	option = {
 		country_event = {
-			id = reg_exp_center.3
+			id = reg_exp_north.3
 			days = 3
 		}
-		name = reg_exp_center.1.b #nah
+		name = reg_exp_north.1.b #nah
 		FROM = {
 			country_event = {
-				id = reg_exp_center.3
+				id = reg_exp_north.3
 				days = 3
 			}
 		}
@@ -1470,16 +1534,16 @@ country_event = { #center dogovornyak
 }
 
 country_event = { #center dogovornyak yes
-	id = reg_exp_center.2
-	title = reg_exp_center.2.t
-	desc = reg_exp_center.2.d
+	id = reg_exp_north.2
+	title = reg_exp_north.2.t
+	desc = reg_exp_north.2.d
 
 	
 
 	is_triggered_only = yes
 
 	option = { 
-		name = reg_exp_center.2.a #uhuh
+		name = reg_exp_north.2.a #uhuh
 		set_country_flag = dogovornyak_agreed
 		FROM = {
 			set_country_flag = dogovornyak_agreed
@@ -1488,39 +1552,39 @@ country_event = { #center dogovornyak yes
 }
 
 country_event = { #center dogovornyak no
-	id = reg_exp_center.3
-	title = reg_exp_center.3.t
-	desc = reg_exp_center.3.d
+	id = reg_exp_north.3
+	title = reg_exp_north.3.t
+	desc = reg_exp_north.3.d
 
 	
 
 	is_triggered_only = yes
 
 	option = {
-		name = reg_exp_center.3.a #nah
+		name = reg_exp_north.3.a #nah
 		set_country_flag = north_war
 	}
 }
 
 country_event = { #center war
-	id = reg_exp_center.4
-	title = reg_exp_center.4.t
-	desc = reg_exp_center.4.d
+	id = reg_exp_north.4
+	title = reg_exp_north.4.t
+	desc = reg_exp_north.4.d
 
 	
 
 	is_triggered_only = yes
 
 	option = {
-		name = reg_exp_center.4.a #nah
+		name = reg_exp_north.4.a #nah
 		set_country_flag = north_war
 	}
 }
 
 country_event = { #center elections
-	id = reg_exp_center.5
-	title = reg_exp_center.5.t
-	desc = reg_exp_center.5.d
+	id = reg_exp_north.5
+	title = reg_exp_north.5.t
+	desc = reg_exp_north.5.d
 
 	
 
@@ -1528,35 +1592,35 @@ country_event = { #center elections
 
 	option = {
 		country_event = {
-			id = reg_exp_center.6
+			id = reg_exp_north.6
 			days = 3
 		}
-		name = reg_exp_center.5.a #yes
+		name = reg_exp_north.5.a #yes
 		FROM = {
 			country_event = {
-				id = reg_exp_center.6
+				id = reg_exp_north.6
 				days = 3
 			}
 		}
 	}
 	option = {
-		name = reg_exp_center.5.b #maybe deal
+		name = reg_exp_north.5.b #maybe deal
 		FROM = {
 			country_event = {
-				id = reg_exp_center.1
+				id = reg_exp_north.1
 				days = 3
 			}
 		}
 	}
 	option = {
 		country_event = {
-			id = reg_exp_center.3
+			id = reg_exp_north.3
 			days = 3
 		}
-		name = reg_exp_center.5.c #no
+		name = reg_exp_north.5.c #no
 		FROM = {
 			country_event = {
-				id = reg_exp_center.3
+				id = reg_exp_north.3
 				days = 3
 			}
 		}
@@ -1564,16 +1628,16 @@ country_event = { #center elections
 }
 
 country_event = { #center elect
-	id = reg_exp_center.6
-	title = reg_exp_center.6.t
-	desc = reg_exp_center.6.d
+	id = reg_exp_north.6
+	title = reg_exp_north.6.t
+	desc = reg_exp_north.6.d
 
 	
 
 	is_triggered_only = yes
 
 	option = {
-		name = reg_exp_center.6.a #nah
+		name = reg_exp_north.6.a #nah
 		set_country_flag = elections_agreed
 			FROM = {
 				set_country_flag = elections_agreed

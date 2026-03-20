@@ -2,10 +2,10 @@ unite_galicia_ukraine = {
 	icon = GFX_decision_galicia
 	picture = GFX_mobilization
 	visible = {
-		has_global_flag = galychyna_to_unite
+		has_global_flag = galicia_to_unite
 		is_galicia_ukraine = yes
 		NOT = {
-			has_country_flag = united_galicia
+			tag = GLY
 		}
 	}
 	
@@ -30,7 +30,7 @@ unite_siveria_ukraine = {
 		has_global_flag = siveria_to_unite
 		is_siveria_ukraine = yes
 		NOT = {
-			has_country_flag = united_siveria
+			tag = SIV
 		}
 	}
 }
@@ -42,7 +42,7 @@ unite_dnieper_ukraine = {
 		has_global_flag = dnieper_to_unite
 		is_dnieper_ukraine = yes
 		NOT = {
-			has_country_flag = united_dnieper
+			tag = DIR
 		}
 	}
 }
@@ -54,7 +54,7 @@ unite_buh_ukraine = {
 		has_global_flag = buh_to_unite
 		is_buh_ukraine = yes
 		NOT = {
-			has_country_flag = united_buh
+			tag = BUH
 		}
 	}
 }
@@ -66,7 +66,7 @@ unite_tavria_ukraine = {
 		has_global_flag = tavria_to_unite
 		is_tavria_ukraine = yes
 		NOT = {
-			has_country_flag = united_tavria
+			tag = TVR
 		}
 	}
 }
@@ -78,7 +78,7 @@ unite_donbas_ukraine = {
 		has_global_flag = donbas_to_unite
 		is_donbas_ukraine = yes
 		NOT = {
-			has_country_flag = united_donbas
+			tag = DBS
 		}
 	}
 }
@@ -93,7 +93,7 @@ unite_east_ukraine = {
 			original_tag = DNI
 		}
 		NOT = {
-			has_country_flag = united_east
+			tag = ESN
 		}
 	}
 }
@@ -108,7 +108,7 @@ unite_south_ukraine = {
 			tag = BUH
 		}
 		NOT = {
-			has_country_flag = united_south
+			tag = STH
 		}
 	}
 }
@@ -123,7 +123,7 @@ unite_north_ukraine = {
 			tag = DIR
 		}
 		NOT = {
-			has_country_flag = united_north
+			tag = NRT
 		}
 	}
 }
@@ -138,7 +138,7 @@ unite_west_ukraine = {
 			tag = PDL
 		}
 		NOT = {
-			has_country_flag = united_west
+			tag = WST
 		}
 	}
 }
@@ -168,7 +168,7 @@ unite_right_bank_ukraine = {
 			tag = WST
 		}
 		NOT = {
-			has_country_flag = united_right_bank
+			tag = RBU
 		}
 	}
 }
@@ -182,7 +182,7 @@ unite_ukraine = {
 			tag = RBU
 		}
 		NOT = {
-			has_country_flag = united_ukraine
+			tag = UKR
 		}
 	}
 }
@@ -201,7 +201,7 @@ north_elections = {
 			}
 		}
 		NOT = {
-			has_country_flag = united_center
+			tag = NRT
 		}
 	}
 }
@@ -220,7 +220,7 @@ north_dogovornyak = {
 			}
 		}
 		NOT = {
-			has_country_flag = united_center
+			tag = NRT
 		}
 	}
 }
@@ -228,6 +228,11 @@ north_dogovornyak = {
 north_war = {
 	icon = GFX_decision_category_infiltration
 	picture = GFX_mobilization
+	allowed = {
+		NOT = {
+			tag = NRT
+		}
+	}
 	visible = {
 		has_country_flag = north_war
 		AND = {
@@ -239,7 +244,7 @@ north_war = {
 			}
 		}
 		NOT = {
-			has_country_flag = united_center
+			tag = NRT
 		}
 	}
 }
@@ -247,6 +252,11 @@ north_war = {
 south_war = {
 	icon = GFX_decision_category_infiltration
 	picture = GFX_mobilization
+	allowed = {
+		NOT = {
+			tag = STH
+		}
+	}
 	visible = {
 		has_country_flag = south_war
 		AND = {
@@ -258,7 +268,7 @@ south_war = {
 			}
 		}
 		NOT = {
-			has_country_flag = united_south
+			tag = STH
 		}
 	}
 }
@@ -277,7 +287,7 @@ south_dogovornyak = {
 			}
 		}
 		NOT = {
-			has_country_flag = united_south
+			tag = STH
 		}
 	}
 	
@@ -297,7 +307,7 @@ south_elections = {
 			}
 		}
 		NOT = {
-			has_country_flag = united_south
+			tag = STH
 		}
 	}
 }
@@ -316,15 +326,39 @@ east_dogovornyak = {
 			}
 		}
 		NOT = {
-			has_country_flag = united_east
+			tag = ESN
 		}
 	}
 	
 }
 
+east_elections = {
+	icon = GFX_decision_category_infiltration
+	picture = GFX_mobilization
+	visible = {
+		has_country_flag = east_elections
+		AND = {
+			DBS = {
+				exists = yes
+			}
+			DNP = {
+				exists = yes
+			}
+		}
+		NOT = {
+			tag = ESN
+		}		
+	}
+}
+
 east_war = {
 	icon = GFX_decision_category_infiltration
 	picture = GFX_mobilization
+	allowed = {
+		NOT = {
+			tag = ESN
+		}
+	}
 	visible = {
 		has_country_flag = east_war
 		AND = {
@@ -336,7 +370,7 @@ east_war = {
 			}
 		}
 		NOT = {
-			has_country_flag = united_east
+			tag = ESN
 		}
 	}
 }
@@ -355,7 +389,7 @@ west_dogovornyak = {
 			}
 		}
 		NOT = {
-			has_country_flag = united_west
+			tag = WST
 		}
 	}
 	
@@ -375,7 +409,7 @@ west_elections = {
 			}
 		}
 		NOT = {
-			has_country_flag = united_west
+			tag = WST
 		}		
 	}
 }
@@ -383,6 +417,11 @@ west_elections = {
 west_war = {
 	icon = GFX_decision_category_infiltration
 	picture = GFX_mobilization
+	allowed = {
+		NOT = {
+			tag = WST
+		}
+	}
 	visible = {
 		has_country_flag = west_war
 		AND = {
@@ -394,7 +433,7 @@ west_war = {
 			}
 		}
 		NOT = {
-			has_country_flag = united_west
+			tag = WST
 		}
 	}
 }
@@ -442,6 +481,11 @@ left_bank_elections = {
 left_bank_war = {
 	icon = GFX_decision_category_infiltration
 	picture = GFX_mobilization
+	allowed = {
+		NOT = {
+			has_country_flag = united_left_bank
+		}
+	}
 	visible = {
 		has_country_flag = left_bank_war
 		AND = {
@@ -472,7 +516,7 @@ right_bank_dogovornyak = {
 			}
 		}
 		NOT = {
-			has_country_flag = united_right_bank
+			tag = RBU
 		}
 	}
 }
@@ -491,7 +535,7 @@ right_bank_elections = {
 			}
 		}
 		NOT = {
-			has_country_flag = united_right_bank
+			tag = RBU
 		}
 	}
 }
@@ -499,6 +543,11 @@ right_bank_elections = {
 right_bank_war = {
 	icon = GFX_decision_category_infiltration
 	picture = GFX_mobilization
+	allowed = {
+		NOT = {
+			tag = RBU
+		}
+	}
 	visible = {
 		has_country_flag = right_bank_war
 		AND = {
@@ -510,7 +559,7 @@ right_bank_war = {
 			}
 		}
 		NOT = {
-			has_country_flag = united_right_bank
+			tag = RBU
 		}
 	}
 }
@@ -529,7 +578,7 @@ ukraine_elections = {
 			}
 		}
 		NOT = {
-			has_country_flag = united_ukraine
+			tag = UKR
 		}
 	}
 }
@@ -548,7 +597,7 @@ ukraine_dogovornyak = {
 			}
 		}
 		NOT = {
-			has_country_flag = united_ukraine
+			tag = UKR
 		}
 	}
 }
@@ -556,6 +605,11 @@ ukraine_dogovornyak = {
 ukraine_war = {
 	icon = GFX_decision_category_infiltration
 	picture = GFX_mobilization
+	allowed = {
+		NOT = {
+			tag = UKR
+		}
+	}
 	visible = {
 		has_country_flag = ukraine_war
 		AND = {
@@ -567,7 +621,7 @@ ukraine_war = {
 			}
 		}
 		NOT = {
-			has_country_flag = united_ukraine
+			tag = UKR
 		}
 	}
 }

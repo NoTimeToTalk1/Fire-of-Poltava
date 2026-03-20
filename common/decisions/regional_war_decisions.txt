@@ -450,7 +450,16 @@ south_war = {
 
 	sw_war = {
 		activation = {
-			always = no
+			OR = {
+				AND = {
+					tag = BUH
+					country_exists = TVR
+				}
+				AND = {
+					tag = TVR
+					country_exists = BUH
+				}
+			}
 		}
 		available = {
 			NOT = {

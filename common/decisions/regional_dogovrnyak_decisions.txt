@@ -82,8 +82,8 @@ north_dogovornyak = {
 			clr_country_flag = community_controls
 			if = {
 				limit = {
-					check_variable = { DIR.north_done_themes < 10 }
-					check_variable = { SIV.north_done_themes < 10 }
+					check_variable = { DIR.dnieper_done_themes < 10 }
+					check_variable = { SIV.siveria_done_themes < 10 }
 				}
 				custom_effect_tooltip = dogovornyak_not_decided
 			}
@@ -334,11 +334,11 @@ north_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_dnieper}
+				limit = {tag = DIR}
 				check_variable = {DIR.dnieper_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_siveria}
+				limit = {tag = SIV}
 				check_variable = {SIV.siveria_spendible_influence > 0}
 			}
 		}
@@ -349,7 +349,7 @@ north_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
@@ -390,11 +390,11 @@ north_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_dnieper}
+				limit = {tag = DIR}
 				check_variable = {DIR.dnieper_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_siveria}
+				limit = {tag = SIV}
 				check_variable = {SIV.siveria_spendible_influence > 0}
 			}
 		}
@@ -405,7 +405,7 @@ north_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
@@ -446,11 +446,11 @@ north_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_dnieper}
+				limit = {tag = DIR}
 				check_variable = {DIR.dnieper_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_siveria}
+				limit = {tag = SIV}
 				check_variable = {SIV.siveria_spendible_influence > 0}
 			}
 		}
@@ -461,7 +461,7 @@ north_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
@@ -502,11 +502,11 @@ north_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_dnieper}
+				limit = {tag = DIR}
 				check_variable = {DIR.dnieper_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_siveria}
+				limit = {tag = SIV}
 				check_variable = {SIV.siveria_spendible_influence > 0}
 			}
 		}
@@ -517,8 +517,9 @@ north_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
+		fixed_random_seed = no
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
 			if = {
@@ -1379,11 +1380,11 @@ west_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_galicia}
+				limit = {tag = GLY}
 				check_variable = {GLY.galicia_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_podillya}
+				limit = {tag = PDL}
 				check_variable = {PDL.podillya_spendible_influence > 0}
 			}
 		}
@@ -1394,7 +1395,7 @@ west_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
@@ -1435,11 +1436,11 @@ west_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_galicia}
+				limit = {tag = GLY}
 				check_variable = {GLY.galicia_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_podillya}
+				limit = {tag = PDL}
 				check_variable = {PDL.podillya_spendible_influence > 0}
 			}
 		}
@@ -1450,7 +1451,7 @@ west_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
@@ -1491,11 +1492,11 @@ west_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_galicia}
+				limit = {tag = GLY}
 				check_variable = {GLY.galicia_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_podillya}
+				limit = {tag = PDL}
 				check_variable = {PDL.podillya_spendible_influence > 0}
 			}
 		}
@@ -1506,7 +1507,7 @@ west_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
@@ -1547,11 +1548,11 @@ west_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_galicia}
+				limit = {tag = GLY}
 				check_variable = {GLY.galicia_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_podillya}
+				limit = {tag = PDL}
 				check_variable = {PDL.podillya_spendible_influence > 0}
 			}
 		}
@@ -1562,8 +1563,9 @@ west_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
+		fixed_random_seed = no
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
 			if = {
@@ -2436,11 +2438,11 @@ south_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_buh}
+				limit = {tag = BUH}
 				check_variable = {BUH.buh_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_tavria}
+				limit = {tag = TVR}
 				check_variable = {TVR.tavria_spendible_influence > 0}
 			}
 		}
@@ -2451,7 +2453,7 @@ south_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
@@ -2492,11 +2494,11 @@ south_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_buh}
+				limit = {tag = BUH}
 				check_variable = {BUH.buh_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_tavria}
+				limit = {tag = TVR}
 				check_variable = {TVR.tavria_spendible_influence > 0}
 			}
 		}
@@ -2507,7 +2509,7 @@ south_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
@@ -2548,11 +2550,11 @@ south_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_buh}
+				limit = {tag = BUH}
 				check_variable = {BUH.buh_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_tavria}
+				limit = {tag = TVR}
 				check_variable = {TVR.tavria_spendible_influence > 0}
 			}
 		}
@@ -2563,7 +2565,7 @@ south_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
@@ -2604,11 +2606,11 @@ south_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_buh}
+				limit = {tag = BUH}
 				check_variable = {BUH.buh_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_tavria}
+				limit = {tag = TVR}
 				check_variable = {TVR.tavria_spendible_influence > 0}
 			}
 		}
@@ -2619,8 +2621,9 @@ south_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
+		fixed_random_seed = no
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
 			if = {
@@ -3161,7 +3164,7 @@ east_dogovornyak = {
 		}
 		visible = {
 			has_country_flag = east_dogovornyak
-			tag = DPO
+			tag = DNP
 		}
 	}
 	east_current_topic = {
@@ -3176,11 +3179,11 @@ east_dogovornyak = {
 			check_variable = { east_done_themes = 10 }
 				if = {
 					limit = {
-						tag = DPO
+						tag = DNP
 					}
 					OR = {
-						check_variable = {DPO.dnipro_influence > DBS.donbas_unifier_influence}
-						check_variable = {DPO.dnipro_influence = DBS.donbas_unifier_influence}
+						check_variable = {DNP.dnipro_influence > DBS.donbas_unifier_influence}
+						check_variable = {DNP.dnipro_influence = DBS.donbas_unifier_influence}
 					}
 				}
 				if = {
@@ -3188,15 +3191,15 @@ east_dogovornyak = {
 						tag = DBS
 					}
 					OR = {
-						check_variable = {DBS.donbas_unifier_influence > DPO.dnipro_influence}
-						check_variable = {DPO.dnipro_influence = DBS.donbas_unifier_influence}
+						check_variable = {DBS.donbas_unifier_influence > DNP.dnipro_influence}
+						check_variable = {DNP.dnipro_influence = DBS.donbas_unifier_influence}
 					}
 				}			
 		}
 		target_trigger = {
 			FROM = {
 				OR = {
-					tag = DPO
+					tag = DNP
 					tag = DBS
 				}
 			}
@@ -3219,14 +3222,14 @@ east_dogovornyak = {
 			clr_country_flag = community_controls
 			if = {
 				limit = {
-					check_variable = { DPO.east_done_themes < 10 }
+					check_variable = { DNP.east_done_themes < 10 }
 					check_variable = { DBS.east_done_themes < 10 }
 				}
 				custom_effect_tooltip = dogovornyak_not_decided
 			}
 			else_if = {
 				limit = {
-					check_variable = { DPO.dnipro_influence = DBS.donbas_unifier_influence }
+					check_variable = { DNP.dnipro_influence = DBS.donbas_unifier_influence }
 				}
 				declare_war_on = {
 					target = FROM
@@ -3351,7 +3354,7 @@ east_dogovornyak = {
 		timeout_effect = {
 			clr_country_flag = dogovornyak_choice
 			clr_country_flag = dogovornyak_choice_made
-			DPO = {
+			DNP = {
 					add_to_variable = {
 						var = east_done_themes
 						value = 0.5
@@ -3365,9 +3368,9 @@ east_dogovornyak = {
 			}
 			if = {
 				limit = {
-					check_variable = {DPO.dnipro_influence_choice > DBS.donbas_influence_choice}
+					check_variable = {DNP.dnipro_influence_choice > DBS.donbas_influence_choice}
 				}
-				DPO = {
+				DNP = {
 					add_to_variable = {
 						var = dnipro_influence
 						value = 0.5
@@ -3416,7 +3419,7 @@ east_dogovornyak = {
 			}
 			if = {
 				limit = {
-					check_variable = {DBS.donbas_influence_choice > DPO.dnipro_influence_choice}
+					check_variable = {DBS.donbas_influence_choice > DNP.dnipro_influence_choice}
 				}
 				DBS = {
 					add_to_variable = {
@@ -3474,11 +3477,11 @@ east_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {tag = DPO}
-				check_variable = {DPO.dnipro_spendible_influence > 0}
+				limit = {tag = DNP}
+				check_variable = {DNP.dnipro_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_donbas}
+				limit = {tag = DBS}
 				check_variable = {DBS.donbas_spendible_influence > 0}
 			}
 		}
@@ -3489,13 +3492,13 @@ east_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
 			if = {
 				limit = {
-					tag = DPO
+					tag = DNP
 				}
 				add_to_variable = {
 					var = dnipro_spendible_influence
@@ -3528,11 +3531,11 @@ east_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {tag = DPO}
-				check_variable = {DPO.dnipro_spendible_influence > 0}
+				limit = {tag = DNP}
+				check_variable = {DNP.dnipro_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_donbas}
+				limit = {tag = DBS}
 				check_variable = {DBS.donbas_spendible_influence > 0}
 			}
 		}
@@ -3543,13 +3546,13 @@ east_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
 			if = {
 				limit = {
-					tag = DPO
+					tag = DNP
 				}
 				add_to_variable = {
 					var = dnipro_spendible_influence
@@ -3582,11 +3585,11 @@ east_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {tag = DPO}
-				check_variable = {DPO.dnipro_spendible_influence > 0}
+				limit = {tag = DNP}
+				check_variable = {DNP.dnipro_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_donbas}
+				limit = {tag = DBS}
 				check_variable = {DBS.donbas_spendible_influence > 0}
 			}
 		}
@@ -3597,13 +3600,13 @@ east_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
 			if = {
 				limit = {
-					tag = DPO
+					tag = DNP
 				}
 				add_to_variable = {
 					var = dnipro_spendible_influence
@@ -3636,11 +3639,11 @@ east_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {tag = DPO}
-				check_variable = {DPO.dnipro_spendible_influence > 0}
+				limit = {tag = DNP}
+				check_variable = {DNP.dnipro_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_donbas}
+				limit = {tag = DBS}
 				check_variable = {DBS.donbas_spendible_influence > 0}
 			}
 		}
@@ -3651,13 +3654,14 @@ east_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
+		fixed_random_seed = no
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
 			if = {
 				limit = {
-					tag = DPO
+					tag = DNP
 				}
 				random_list = {
 					30 = {
@@ -3763,7 +3767,7 @@ east_dogovornyak = {
 						value = 0
 					}
 				}
-				DPO = {
+				DNP = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = economy_base
@@ -3807,7 +3811,7 @@ east_dogovornyak = {
 						value = 0
 					}
 				}
-				DPO = {
+				DNP = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = economy_freedoms
@@ -3851,7 +3855,7 @@ east_dogovornyak = {
 						value = 0
 					}
 				}
-				DPO = {
+				DNP = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = army_standarts
@@ -3895,7 +3899,7 @@ east_dogovornyak = {
 						value = 0
 					}
 				}
-				DPO = {
+				DNP = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = army_structure
@@ -3939,7 +3943,7 @@ east_dogovornyak = {
 						value = 0
 					}
 				}
-				DPO = {
+				DNP = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = state_control
@@ -3983,7 +3987,7 @@ east_dogovornyak = {
 						value = 0
 					}
 				}
-				DPO = {
+				DNP = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = civilian_services
@@ -4027,7 +4031,7 @@ east_dogovornyak = {
 						value = 0
 					}
 				}
-				DPO = {
+				DNP = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = worker_stance
@@ -4071,7 +4075,7 @@ east_dogovornyak = {
 						value = 0
 					}
 				}
-				DPO = {
+				DNP = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = civilian_liberties
@@ -4115,7 +4119,7 @@ east_dogovornyak = {
 						value = 0
 					}
 				}
-				DPO = {
+				DNP = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = equality
@@ -4159,7 +4163,7 @@ east_dogovornyak = {
 						value = 0
 					}
 				}
-				DPO = {
+				DNP = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = community_controls
@@ -4505,11 +4509,11 @@ left_bank_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_east}
+				limit = {tag = ESN}
 				check_variable = {ESN.east_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_south}
+				limit = {tag = STH}
 				check_variable = {STH.south_spendible_influence > 0}
 			}
 		}
@@ -4520,7 +4524,7 @@ left_bank_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
@@ -4559,11 +4563,11 @@ left_bank_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_east}
+				limit = {tag = ESN}
 				check_variable = {ESN.east_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_south}
+				limit = {tag = STH}
 				check_variable = {STH.south_spendible_influence > 0}
 			}
 		}
@@ -4574,7 +4578,7 @@ left_bank_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
@@ -4613,11 +4617,11 @@ left_bank_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_east}
+				limit = {tag = ESN}
 				check_variable = {ESN.east_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_south}
+				limit = {tag = STH}
 				check_variable = {STH.south_spendible_influence > 0}
 			}
 		}
@@ -4628,7 +4632,7 @@ left_bank_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
@@ -4667,11 +4671,11 @@ left_bank_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_east}
+				limit = {tag = ESN}
 				check_variable = {ESN.east_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_south}
+				limit = {tag = STH}
 				check_variable = {STH.south_spendible_influence > 0}
 			}
 		}
@@ -4682,8 +4686,9 @@ left_bank_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
+		fixed_random_seed = no
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
 			if = {
@@ -5535,11 +5540,11 @@ right_bank_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_west}
+				limit = {tag = WST}
 				check_variable = {WST.west_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_center}
+				limit = {tag = NRT}
 				check_variable = {NRT.north_spendible_influence > 0}
 			}
 		}
@@ -5550,7 +5555,7 @@ right_bank_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
@@ -5589,11 +5594,11 @@ right_bank_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_west}
+				limit = {tag = WST}
 				check_variable = {WST.west_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_center}
+				limit = {tag = NRT}
 				check_variable = {NRT.north_spendible_influence > 0}
 			}
 		}
@@ -5604,7 +5609,7 @@ right_bank_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
@@ -5643,11 +5648,11 @@ right_bank_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_west}
+				limit = {tag = WST}
 				check_variable = {WST.west_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_center}
+				limit = {tag = NRT}
 				check_variable = {NRT.north_spendible_influence > 0}
 			}
 		}
@@ -5658,7 +5663,7 @@ right_bank_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
@@ -5697,11 +5702,11 @@ right_bank_dogovornyak = {
 				has_country_flag = dogovornyak_choice_made
 			}
 			if = {
-				limit = {has_country_flag = united_west}
+				limit = {tag = WST}
 				check_variable = {WST.west_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_center}
+				limit = {tag = NRT}
 				check_variable = {NRT.north_spendible_influence > 0}
 			}
 		}
@@ -5712,8 +5717,9 @@ right_bank_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
+		fixed_random_seed = no
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
 			if = {
@@ -6573,7 +6579,7 @@ ukraine_dogovornyak = {
 				check_variable = {LBU.left_bank_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_right_bank}
+				limit = {tag = RBU}
 				check_variable = {RBU.right_bank_spendible_influence > 0}
 			}
 		}
@@ -6584,7 +6590,7 @@ ukraine_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
@@ -6627,7 +6633,7 @@ ukraine_dogovornyak = {
 				check_variable = {LBU.left_bank_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_right_bank}
+				limit = {tag = RBU}
 				check_variable = {RBU.right_bank_spendible_influence > 0}
 			}
 		}
@@ -6638,7 +6644,7 @@ ukraine_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
@@ -6681,7 +6687,7 @@ ukraine_dogovornyak = {
 				check_variable = {LBU.left_bank_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_right_bank}
+				limit = {tag = RBU}
 				check_variable = {RBU.right_bank_spendible_influence > 0}
 			}
 		}
@@ -6692,7 +6698,7 @@ ukraine_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
@@ -6735,7 +6741,7 @@ ukraine_dogovornyak = {
 				check_variable = {LBU.left_bank_spendible_influence > 0}
 			}
 			else_if = {
-				limit = {has_country_flag = united_right_bank}
+				limit = {tag = RBU}
 				check_variable = {RBU.right_bank_spendible_influence > 0}
 			}
 		}
@@ -6746,8 +6752,9 @@ ukraine_dogovornyak = {
 		days_remove = 0
 		cost = 0
 		ai_will_do = {
-			base = 15
+			base = 90
 		}
+		fixed_random_seed = no
 		complete_effect = {
 			set_country_flag = dogovornyak_choice_made
 			if = {

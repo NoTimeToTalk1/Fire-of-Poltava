@@ -11,8 +11,8 @@ south_elections = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_buh
-					has_country_flag = united_tavria
+					tag = BUH
+					tag = TVR
 				}
 				has_country_flag = south_elections
             }
@@ -67,8 +67,8 @@ south_elections = {
 		activation = {
 			has_country_flag = south_elections
 			OR = {
-				has_country_flag = united_buh
-				has_country_flag = united_tavria
+				tag = BUH
+				tag = TVR
 			}
 		}
 		available = {
@@ -79,8 +79,8 @@ south_elections = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_buh
-					has_country_flag = united_tavria
+					tag = BUH
+					tag = TVR
 				}
 				has_country_flag = south_elections
             }
@@ -92,7 +92,7 @@ south_elections = {
 		timeout_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_buh
+					tag = BUH
 				}
 				if = {
 					limit = {
@@ -145,7 +145,7 @@ south_elections = {
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_tavria
+					tag = TVR
 				}
 				if = {
 					limit = {
@@ -198,7 +198,7 @@ south_elections = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_tavria
+					tag = TVR
 				}
 				if = {
 					limit = {
@@ -221,7 +221,7 @@ south_elections = {
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_buh
+					tag = BUH
 				}
 				if = {
 					limit = {
@@ -254,15 +254,15 @@ south_elections = {
 		}
 		visible = {
 			OR = {
-				has_country_flag = united_tavria
-				has_country_flag = united_buh
+				tag = TVR
+				tag = BUH
 			}
 		}
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_buh
-					has_country_flag = united_tavria
+					tag = BUH
+					tag = TVR
 				}
             }
         }
@@ -278,7 +278,7 @@ south_elections = {
 			clr_country_flag = elect_action
 			if = {
 				limit = {
-					has_country_flag = united_buh
+					tag = BUH
 				}
 				custom_effect_tooltip = elections_agitation
 				hidden_effect = {
@@ -325,7 +325,7 @@ south_elections = {
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_tavria
+					tag = TVR
 				}
 				custom_effect_tooltip = elections_agitation
 				hidden_effect = {
@@ -381,15 +381,15 @@ south_elections = {
 		}
 		visible = {
 			OR = {
-				has_country_flag = united_tavria
-				has_country_flag = united_buh
+				tag = TVR
+				tag = BUH
 			}
 		}
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_buh
-					has_country_flag = united_tavria
+					tag = BUH
+					tag = TVR
 				}
             }
         }
@@ -406,7 +406,7 @@ south_elections = {
 			clr_country_flag = elect_action
 			if = {
 				limit = {
-					has_country_flag = united_buh
+					tag = BUH
 				}
 				custom_effect_tooltip = elections_reach_out
 				hidden_effect = {
@@ -424,7 +424,7 @@ south_elections = {
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_tavria
+					tag = TVR
 				}
 				custom_effect_tooltip = elections_reach_out
 				hidden_effect = {
@@ -451,15 +451,15 @@ south_elections = {
 		}
 		visible = {
 			OR = {
-				has_country_flag = united_tavria
-				has_country_flag = united_buh
+				tag = TVR
+				tag = BUH
 			}
 		}
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_buh
-					has_country_flag = united_tavria
+					tag = BUH
+					tag = TVR
 				}
             }
         }
@@ -476,7 +476,7 @@ south_elections = {
 		if = {
 			limit = {
 				FROM = {
-					has_country_flag = united_buh
+					tag = BUH
 				}
 			}
 			custom_effect_tooltip = elections_discredit_opponent
@@ -524,7 +524,7 @@ south_elections = {
 		else_if = {
 			limit = {
 				FROM = {
-					has_country_flag = united_tavria
+					tag = TVR
 				}
 			}
 			custom_effect_tooltip = elections_discredit_opponent
@@ -579,13 +579,13 @@ south_elections = {
 			NOT = {
 				if = {
 					limit = {
-						has_country_flag = united_buh
+						tag = BUH
 					}
 					check_variable = {TVR.tavria_rates_grow = 1}
 				}
 				else_if = {
 					limit = {
-						has_country_flag = united_tavria
+						tag = TVR
 					}
 					check_variable = {BUH.buh_rates_grow = 1}
 				}
@@ -595,15 +595,15 @@ south_elections = {
 		}
 		visible = {
 			OR = {
-				has_country_flag = united_tavria
-				has_country_flag = united_buh
+				tag = TVR
+				tag = BUH
 			}
 		}
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_buh
-					has_country_flag = united_tavria
+					tag = BUH
+					tag = TVR
 				}
             }
         }
@@ -620,7 +620,7 @@ south_elections = {
 			clr_country_flag = elect_action
 			if = {
 				limit = {
-					has_country_flag = united_buh
+					tag = BUH
 				}
 				FROM = {
 					add_to_variable = {
@@ -631,7 +631,7 @@ south_elections = {
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_tavria
+					tag = TVR
 				}
 				FROM = {
 					add_to_variable = {
@@ -648,13 +648,13 @@ south_elections = {
 			NOT = {
 				if = {
 					limit = {
-						has_country_flag = united_buh
+						tag = BUH
 					}
 					check_variable = {BUH.buh_rates_grow = 3}
 				}
 				else_if = {
 					limit = {
-						has_country_flag = united_tavria
+						tag = TVR
 					}
 					check_variable = {TVR.tavria_rates_grow = 3}
 				}
@@ -663,15 +663,15 @@ south_elections = {
 		}
 		visible = {
 			OR = {
-				has_country_flag = united_tavria
-				has_country_flag = united_buh
+				tag = TVR
+				tag = BUH
 			}
 		}
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_buh
-					has_country_flag = united_tavria
+					tag = BUH
+					tag = TVR
 				}
             }
         }
@@ -688,7 +688,7 @@ south_elections = {
 			clr_country_flag = elect_action
 			if = {
 				limit = {
-					has_country_flag = united_buh
+					tag = BUH
 				}
 					add_to_variable = {
 						var = buh_rates_grow
@@ -697,7 +697,7 @@ south_elections = {
 				}
 			else_if = {
 				limit = {
-					has_country_flag = united_tavria
+					tag = TVR
 				}
 					add_to_variable = {
 						var = tavria_rates_grow
@@ -721,8 +721,8 @@ west_elections = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_galicia
-					has_country_flag = united_podillya
+					tag = GLY
+					tag = PDL
 				}
 				has_country_flag = west_elections
             }
@@ -737,7 +737,7 @@ west_elections = {
 			}
 			if = {
 				limit = {
-					check_variable = {GLY.galicia_rates > PDL.podillya_rates}
+					check_variable = {GLY.galicia_rates > PDL.podolia_rates}
 				}
 				PDL = {
 					every_core_state = {
@@ -753,7 +753,7 @@ west_elections = {
 			}
 			else_if = {
 				limit = {
-					check_variable = {PDL.podillya_rates > GLY.galicia_rates}
+					check_variable = {PDL.podolia_rates > GLY.galicia_rates}
 				}
 				GLY = {
 					every_core_state = {
@@ -777,8 +777,8 @@ west_elections = {
 		activation = {
 			has_country_flag = west_elections
 			OR = {
-				has_country_flag = united_galicia
-				has_country_flag = united_podillya
+				tag = GLY
+				tag = PDL
 			}
 		}
 		available = {
@@ -789,8 +789,8 @@ west_elections = {
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_galicia
-					has_country_flag = united_podillya
+					tag = GLY
+					tag = PDL
 				}
 				has_country_flag = west_elections
             }
@@ -802,7 +802,7 @@ west_elections = {
 		timeout_effect = {
 			if = {
 				limit = {
-					has_country_flag = united_galicia
+					tag = GLY
 				}
 				if = {
 					limit = {
@@ -815,7 +815,7 @@ west_elections = {
 					}
 					FROM = {
 						add_to_variable = {
-							var = podillya_rates
+							var = podolia_rates
 							value = -2.50
 						}
 					}
@@ -831,7 +831,7 @@ west_elections = {
 					}
 					FROM = {
 						add_to_variable = {
-							var = podillya_rates
+							var = podolia_rates
 							value = -1.50
 						}
 					}
@@ -847,7 +847,7 @@ west_elections = {
 					}
 					FROM = {
 						add_to_variable = {
-							var = podillya_rates
+							var = podolia_rates
 							value = -0.50
 						}
 					}
@@ -855,15 +855,15 @@ west_elections = {
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_podillya
+					tag = PDL
 				}
 				if = {
 					limit = {
-						check_variable = {PDL.podillya_rates_grow = 3}
+						check_variable = {PDL.podolia_rates_grow = 3}
 					}
 					custom_effect_tooltip = elections_high_rate
 					add_to_variable = {
-						var = podillya_rates
+						var = podolia_rates
 						value = 2.50
 					}
 					FROM = {
@@ -875,11 +875,11 @@ west_elections = {
 				}
 				else_if = {
 					limit = {
-						check_variable = {PDL.podillya_rates_grow = 2}
+						check_variable = {PDL.podolia_rates_grow = 2}
 					}
 					custom_effect_tooltip = elections_medium_rate
 					add_to_variable = {
-						var = podillya_rates
+						var = podolia_rates
 						value = 1.50
 					}
 					FROM = {
@@ -891,11 +891,11 @@ west_elections = {
 				}
 				else_if = {
 					limit = {
-						check_variable = {PDL.podillya_rates_grow = 1}
+						check_variable = {PDL.podolia_rates_grow = 1}
 					}
 					custom_effect_tooltip = elections_low_rate
 					add_to_variable = {
-						var = podillya_rates
+						var = podolia_rates
 						value = 0.50
 					}
 					FROM = {
@@ -908,7 +908,7 @@ west_elections = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_podillya
+					tag = PDL
 				}
 				if = {
 					limit = {
@@ -931,23 +931,23 @@ west_elections = {
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_galicia
+					tag = GLY
 				}
 				if = {
 					limit = {
-						check_variable = {PDL.podillya_rates_grow = 3}
+						check_variable = {PDL.podolia_rates_grow = 3}
 					}
 					custom_effect_tooltip = elections_high_rate
 				}
 				else_if = {
 					limit = {
-						check_variable = {PDL.podillya_rates_grow = 2}
+						check_variable = {PDL.podolia_rates_grow = 2}
 					}
 					custom_effect_tooltip = elections_medium_rate
 				}
 				else_if = {
 					limit = {
-						check_variable = {PDL.podillya_rates_grow = 1}
+						check_variable = {PDL.podolia_rates_grow = 1}
 					}
 					custom_effect_tooltip = elections_low_rate
 				}		
@@ -964,15 +964,15 @@ west_elections = {
 		}
 		visible = {
 			OR = {
-				has_country_flag = united_podillya
-				has_country_flag = united_galicia
+				tag = PDL
+				tag = GLY
 			}
 		}
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_galicia
-					has_country_flag = united_podillya
+					tag = GLY
+					tag = PDL
 				}
             }
         }
@@ -988,7 +988,7 @@ west_elections = {
 			clr_country_flag = elect_action
 			if = {
 				limit = {
-					has_country_flag = united_galicia
+					tag = GLY
 				}
 				custom_effect_tooltip = elections_agitation
 				hidden_effect = {
@@ -1000,7 +1000,7 @@ west_elections = {
 							}
 							FROM = {
 								add_to_variable = {
-									var = podillya_rates
+									var = podolia_rates
 									value = -5.00
 								}
 							}
@@ -1013,7 +1013,7 @@ west_elections = {
 							}
 							FROM = {
 								add_to_variable = {
-									var = podillya_rates
+									var = podolia_rates
 									value = -3.50
 								}
 							}
@@ -1025,7 +1025,7 @@ west_elections = {
 							}
 							FROM = {
 								add_to_variable = {
-									var = podillya_rates
+									var = podolia_rates
 									value = -2.00
 								}
 							}
@@ -1035,14 +1035,14 @@ west_elections = {
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_podillya
+					tag = PDL
 				}
 				custom_effect_tooltip = elections_agitation
 				hidden_effect = {
 					random_list = {
 						20 = {
 							add_to_variable = {
-								var = podillya_rates
+								var = podolia_rates
 								value = 5.00
 							}
 							FROM = {
@@ -1054,7 +1054,7 @@ west_elections = {
 						}
 						30 = {
 							add_to_variable = {
-								var = podillya_rates
+								var = podolia_rates
 								value = 3.50
 							}
 							FROM = {
@@ -1066,7 +1066,7 @@ west_elections = {
 						}
 						50 = {
 							add_to_variable = {
-								var = podillya_rates
+								var = podolia_rates
 								value = 2.00
 							}
 							FROM = {
@@ -1091,15 +1091,15 @@ west_elections = {
 		}
 		visible = {
 			OR = {
-				has_country_flag = united_podillya
-				has_country_flag = united_galicia
+				tag = PDL
+				tag = GLY
 			}
 		}
 		target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_galicia
-					has_country_flag = united_podillya
+					tag = GLY
+					tag = PDL
 				}
             }
         }
@@ -1116,7 +1116,7 @@ west_elections = {
 			clr_country_flag = elect_action
 			if = {
 				limit = {
-					has_country_flag = united_galicia
+					tag = GLY
 				}
 				custom_effect_tooltip = elections_reach_out
 				hidden_effect = {
@@ -1126,7 +1126,7 @@ west_elections = {
 					}
 					FROM = {
 						add_to_variable = {
-							var = podillya_rates
+							var = podolia_rates
 							value = -10.00
 						}
 					}
@@ -1134,12 +1134,12 @@ west_elections = {
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_podillya
+					tag = PDL
 				}
 				custom_effect_tooltip = elections_reach_out
 				hidden_effect = {
 					add_to_variable = {
-						var = podillya_rates
+						var = podolia_rates
 						value = 10.00
 					}
 					FROM = {
@@ -1161,15 +1161,15 @@ west_elections = {
 		}
 		visible = {
 			OR = {
-				has_country_flag = united_podillya
-				has_country_flag = united_galicia
+				tag = PDL
+				tag = GLY
 			}
 		}
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_galicia
-					has_country_flag = united_podillya
+					tag = GLY
+					tag = PDL
 				}
             }
         }
@@ -1186,7 +1186,7 @@ west_elections = {
 		if = {
 			limit = {
 				FROM = {
-					has_country_flag = united_galicia
+					tag = GLY
 				}
 			}
 			custom_effect_tooltip = elections_discredit_opponent
@@ -1200,7 +1200,7 @@ west_elections = {
 							}
 						}
 						add_to_variable = {
-							var = podillya_rates
+							var = podolia_rates
 							value = 3.00
 						}
 					}
@@ -1212,7 +1212,7 @@ west_elections = {
 							}
 						}
 						add_to_variable = {
-							var = podillya_rates
+							var = podolia_rates
 							value = 1.50
 						}
 					}
@@ -1224,7 +1224,7 @@ west_elections = {
 							}
 						}
 						add_to_variable = {
-							var = podillya_rates
+							var = podolia_rates
 							value = 1.00
 						}
 					}
@@ -1234,7 +1234,7 @@ west_elections = {
 		else_if = {
 			limit = {
 				FROM = {
-					has_country_flag = united_podillya
+					tag = PDL
 				}
 			}
 			custom_effect_tooltip = elections_discredit_opponent
@@ -1243,7 +1243,7 @@ west_elections = {
 					20 = {
 						FROM = {
 							add_to_variable = {
-								var = podillya_rates
+								var = podolia_rates
 								value = -3.00
 							}
 						}
@@ -1255,7 +1255,7 @@ west_elections = {
 					30 = {
 						FROM = {
 							add_to_variable = {
-								var = podillya_rates
+								var = podolia_rates
 								value = -1.50
 							}
 						}
@@ -1267,7 +1267,7 @@ west_elections = {
 					50 = {
 						FROM = {
 							add_to_variable = {
-								var = podillya_rates
+								var = podolia_rates
 								value = -1.00
 							}
 						}
@@ -1289,13 +1289,13 @@ west_elections = {
 			NOT = {
 				if = {
 					limit = {
-						has_country_flag = united_galicia
+						tag = GLY
 					}
-					check_variable = {PDL.podillya_rates_grow = 1}
+					check_variable = {PDL.podolia_rates_grow = 1}
 				}
 				else_if = {
 					limit = {
-						has_country_flag = united_podillya
+						tag = PDL
 					}
 					check_variable = {GLY.galicia_rates_grow = 1}
 				}
@@ -1305,15 +1305,15 @@ west_elections = {
 		}
 		visible = {
 			OR = {
-				has_country_flag = united_podillya
-				has_country_flag = united_galicia
+				tag = PDL
+				tag = GLY
 			}
 		}
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_galicia
-					has_country_flag = united_podillya
+					tag = GLY
+					tag = PDL
 				}
             }
         }
@@ -1330,18 +1330,18 @@ west_elections = {
 			clr_country_flag = elect_action
 			if = {
 				limit = {
-					has_country_flag = united_galicia
+					tag = GLY
 				}
 				FROM = {
 					add_to_variable = {
-						var = podillya_rates_grow
+						var = podolia_rates_grow
 						value = -1
 					}
 				}
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_podillya
+					tag = PDL
 				}
 				FROM = {
 					add_to_variable = {
@@ -1358,30 +1358,30 @@ west_elections = {
 			NOT = {
 				if = {
 					limit = {
-						has_country_flag = united_galicia
+						tag = GLY
 					}
 					check_variable = {GLY.galicia_rates_grow = 3}
 				}
 				else_if = {
 					limit = {
-						has_country_flag = united_podillya
+						tag = PDL
 					}
-					check_variable = {PDL.podillya_rates_grow = 3}
+					check_variable = {PDL.podolia_rates_grow = 3}
 				}
 				has_country_flag = elect_action
 			}
 		}
 		visible = {
 			OR = {
-				has_country_flag = united_podillya
-				has_country_flag = united_galicia
+				tag = PDL
+				tag = GLY
 			}
 		}
         target_trigger = {
             FROM = {
 				OR = {
-					has_country_flag = united_galicia
-					has_country_flag = united_podillya
+					tag = GLY
+					tag = PDL
 				}
             }
         }
@@ -1398,7 +1398,7 @@ west_elections = {
 			clr_country_flag = elect_action
 			if = {
 				limit = {
-					has_country_flag = united_galicia
+					tag = GLY
 				}
 					add_to_variable = {
 						var = galicia_rates_grow
@@ -1407,10 +1407,10 @@ west_elections = {
 				}
 			else_if = {
 				limit = {
-					has_country_flag = united_podillya
+					tag = PDL
 				}
 					add_to_variable = {
-						var = podillya_rates_grow
+						var = podolia_rates_grow
 						value = 1
 					}
 			}				
@@ -1599,7 +1599,7 @@ north_elections = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_dnieper
+					tag = DIR
 				}
 				if = {
 					limit = {
@@ -1622,7 +1622,7 @@ north_elections = {
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_siveria
+					tag = SIV
 				}
 				if = {
 					limit = {
@@ -2065,6 +2065,653 @@ north_elections = {
 	}
 }
 
+east_elections = {
+		east_elections_countdown = {			
+		activation = {
+			has_country_flag = east_elections
+		}
+		available = {
+			NOT = {
+				has_country_flag = east_elections
+			}
+		}
+		is_good = no
+		days_mission_timeout = 150
+		selectable_mission = no
+		timeout_effect = {
+			DBS = {
+				clr_country_flag = east_elections
+			}
+			DNP = {
+				clr_country_flag = east_elections
+			}
+			if = {
+				limit = {
+					check_variable = {DBS.donbas_rates > DNP.dnipro_rates}
+				}
+				DNP = {
+					every_core_state = {
+						add_core_of = DBS
+					}
+				}
+				DBS = {
+					annex_country = {
+						target = DNP
+						transfer_troops = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {DNP.dnipro_rates > DBS.donbas_rates}
+				}
+				DBS = {
+					every_core_state = {
+						add_core_of = DNP
+					}
+				}
+				DNP = {
+					annex_country = {
+						target = DBS
+						transfer_troops = yes
+					}
+				}
+			}
+			else = {
+					custom_effect_tooltip = elections_not_decided
+			}
+		}
+	}
+
+	east_change_in_popularity = {			
+		activation = {
+			has_country_flag = east_elections
+		}
+		available = {
+			NOT = {
+				has_country_flag = east_elections
+			}
+		}
+		is_good = yes
+		days_mission_timeout = 10
+		selectable_mission = no
+		fire_only_once = no
+		timeout_effect = {
+			activate_mission = east_change_in_popularity
+			if = {
+				limit = {
+					tag = DBS
+				}
+				if = {
+					limit = {
+						check_variable = {DBS.donbas_rates_grow = 3}
+					}
+					custom_effect_tooltip = elections_high_rate
+					add_to_variable = {
+						var = donbas_rates
+						value = 2.50
+					}
+					DNP = {
+						add_to_variable = {
+							var = dnipro_rates
+							value = -2.50
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {DBS.donbas_rates_grow = 2}
+					}
+					custom_effect_tooltip = elections_medium_rate
+					add_to_variable = {
+						var = donbas_rates
+						value = 1.50
+					}
+					DNP = {
+						add_to_variable = {
+							var = dnipro_rates
+							value = -1.50
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {DBS.donbas_rates_grow = 1}
+					}
+					custom_effect_tooltip = elections_low_rate
+					add_to_variable = {
+						var = donbas_rates
+						value = 0.50
+					}
+					DNP = {
+						add_to_variable = {
+							var = dnipro_rates
+							value = -0.50
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					tag = DNP
+				}
+				if = {
+					limit = {
+						check_variable = {DNP.dnipro_rates_grow = 3}
+					}
+					custom_effect_tooltip = elections_high_rate
+					add_to_variable = {
+						var = dnipro_rates
+						value = 2.50
+					}
+					DBS = {
+						add_to_variable = {
+							var = donbas_rates
+							value = -2.50
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {DNP.dnipro_rates_grow = 2}
+					}
+					custom_effect_tooltip = elections_medium_rate
+					add_to_variable = {
+						var = dnipro_rates
+						value = 1.50
+					}
+					DBS = {
+						add_to_variable = {
+							var = donbas_rates
+							value = -1.50
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {DNP.dnipro_rates_grow = 1}
+					}
+					custom_effect_tooltip = elections_low_rate
+					add_to_variable = {
+						var = dnipro_rates
+						value = 0.50
+					}
+					DBS = {
+						add_to_variable = {
+							var = donbas_rates
+							value = -0.50
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = DNP
+				}
+				if = {
+					limit = {
+						check_variable = {DBS.donbas_rates_grow = 3}
+					}
+					custom_effect_tooltip = elections_high_rate
+				}
+				else_if = {
+					limit = {
+						check_variable = {DBS.donbas_rates_grow = 2}
+					}
+					custom_effect_tooltip = elections_medium_rate
+				}
+				else_if = {
+					limit = {
+						check_variable = {DBS.donbas_rates_grow = 1}
+					}
+					custom_effect_tooltip = elections_low_rate
+				}		
+			}
+			else_if = {
+				limit = {
+					tag = DBS
+				}
+				if = {
+					limit = {
+						check_variable = {DNP.dnipro_rates_grow = 3}
+					}
+					custom_effect_tooltip = elections_high_rate
+				}
+				else_if = {
+					limit = {
+						check_variable = {DNP.dnipro_rates_grow = 2}
+					}
+					custom_effect_tooltip = elections_medium_rate
+				}
+				else_if = {
+					limit = {
+						check_variable = {DNP.dnipro_rates_grow = 1}
+					}
+					custom_effect_tooltip = elections_low_rate
+				}		
+			}
+    	}
+   	}
+
+
+	east_agitation = {
+		available = {
+			NOT = {
+				has_country_flag = elect_action
+			}
+		}
+		visible = {
+			OR = {
+				tag = DBS
+				tag = DNP
+			}
+		}
+		days_remove = 7
+		cost = 10
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			set_country_flag = elect_action
+		}
+		remove_effect = {
+			clr_country_flag = elect_action
+			if = {
+				limit = {
+					tag = DBS
+				}
+				custom_effect_tooltip = elections_agitation
+				hidden_effect = {
+					random_list = {
+						20 = {
+							add_to_variable = {
+								var = donbas_rates
+								value = 5.00
+							}
+							DNP= {
+								add_to_variable = {
+									var = dnipro_rates
+									value = -5.00
+								}
+							}
+							
+						}
+						30 = {
+							add_to_variable = {
+								var = donbas_rates
+								value = 3.50
+							}
+							DNP = {
+								add_to_variable = {
+									var = dnipro_rates
+									value = -3.50
+								}
+							}
+						}
+						50 = {
+							add_to_variable = {
+								var = donbas_rates
+								value = 2.00
+							}
+							DNP = {
+								add_to_variable = {
+									var = dnipro_rates
+									value = -2.00
+								}
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					tag = DNP
+				}
+				custom_effect_tooltip = elections_agitation
+				hidden_effect = {
+					random_list = {
+						20 = {
+							add_to_variable = {
+								var = dnipro_rates
+								value = 5.00
+							}
+							DBS = {
+								add_to_variable = {
+									var = donbas_rates
+									value = -5.00
+								}
+							}
+						}
+						30 = {
+							add_to_variable = {
+								var = dnipro_rates
+								value = 3.50
+							}
+							DBS = {
+								add_to_variable = {
+									var = donbas_rates
+									value = -3.50
+								}
+							}
+						}
+						50 = {
+							add_to_variable = {
+								var = dnipro_rates
+								value = 2.00
+							}
+							DBS = {
+								add_to_variable = {
+									var = donbas_rates
+									value = -2.00
+								}
+							}
+						}
+					}
+				}
+			}
+			
+		}
+	}
+
+	east_reach_out = {
+		available = {
+			NOT = {
+				has_country_flag = elect_action
+			}
+		}
+		visible = {
+			OR = {
+				tag = DBS
+				tag = DNP
+			}
+		}
+		days_remove = 5
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			set_country_flag = elect_action
+		}
+		remove_effect = {
+			clr_country_flag = elect_action
+			if = {
+				limit = {
+					tag = DBS
+				}
+				custom_effect_tooltip = elections_reach_out
+				hidden_effect = {
+					add_to_variable = {
+						var = donbas_rates
+						value = 10.00
+					}
+					DBS = {
+						add_to_variable = {
+							var = dnipro_rates
+							value = -10.00
+						}
+					}
+				}				
+			}
+			else_if = {
+				limit = {
+					tag = DNP
+				}
+				custom_effect_tooltip = elections_reach_out
+				hidden_effect = {
+					add_to_variable = {
+						var = dnipro_rates
+						value = 10.00
+					}
+					DBS = {
+						add_to_variable = {
+							var = donbas_rates
+							value = -10.00
+						}
+					}
+				}
+			}
+		}
+	}
+
+	east_discredit_opponent = {
+		available = {
+			NOT = {
+				has_country_flag = elect_action
+			}
+		}
+		visible = {
+			OR = {
+				tag = DBS
+				tag = DNP
+			}
+		}
+		days_remove = 7
+		cost = 20
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			set_country_flag = elect_action
+		}
+		remove_effect = {
+		clr_country_flag = elect_action
+		if = {
+			limit = {
+				tag = DNP
+			}
+			custom_effect_tooltip = elections_discredit_opponent
+			hidden_effect = {
+				random_list = {
+					20 = {
+						DBS = {
+							add_to_variable = {
+								var = donbas_rates
+								value = -3.00
+							}
+						}
+						add_to_variable = {
+							var = dnipro_rates
+							value = 3.00
+						}
+					}
+					30 = {
+						DBS = {
+							add_to_variable = {
+								var = donbas_rates
+								value = -1.50
+							}
+						}
+						add_to_variable = {
+							var = dnipro_rates
+							value = 1.50
+						}
+					}
+					50 = {
+						DBS = {
+							add_to_variable = {
+								var = donbas_rates
+								value = -1.00
+							}
+						}
+						add_to_variable = {
+							var = dnipro_rates
+							value = 1.00
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				tag = DBS
+			}
+			custom_effect_tooltip = elections_discredit_opponent
+			hidden_effect = {
+				random_list = {
+					20 = {
+						DNP = {
+							add_to_variable = {
+								var = dnipro_rates
+								value = -3.00
+							}
+						}
+						add_to_variable = {
+							var = donbas_rates
+							value = 3.00
+						}
+					}
+					30 = {
+						DNP = {
+							add_to_variable = {
+								var = dnipro_rates
+								value = -1.50
+							}
+						}
+						add_to_variable = {
+							var = donbas_rates
+							value = 1.50
+						}
+					}
+					50 = {
+						DNP = {
+							add_to_variable = {
+								var = dnipro_rates
+								value = -1.00
+							}
+						}
+						add_to_variable = {
+							var = donbas_rates
+							value = 1.00
+						}
+					}
+				}
+			}
+			
+		}
+			
+		}
+	}
+	
+	east_disrupt_opponent_agitation = {
+		available = {
+			NOT = {
+				if = {
+					limit = {
+						tag = DBS
+					}
+					check_variable = {DNP.dnipro_rates_grow = 1}
+				}
+				else_if = {
+					limit = {
+						tag = DNP
+					}
+					check_variable = {DBS.donbas_rates_grow = 1}
+				}
+				has_country_flag = elect_action
+			}
+			
+		}
+		visible = {
+			OR = {
+				tag = DBS
+				tag = DNP
+			}
+		}
+		days_remove = 7
+		cost = 10
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			set_country_flag = elect_action
+		}
+		remove_effect = {
+			custom_effect_tooltip = elections_disrupt_agitation
+			clr_country_flag = elect_action
+			if = {
+				limit = {
+					tag = DBS
+				}
+				DNP = {
+					add_to_variable = {
+						var = dnipro_rates_grow
+						value = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					tag = DNP
+				}
+				DBS = {
+					add_to_variable = {
+						var = donbas_rates_grow
+						value = -1
+					}
+				}
+			}				
+		}
+	}
+
+	east_improve_our_position = {
+		available = {
+			NOT = {
+				if = {
+					limit = {
+						tag = DBS
+					}
+					check_variable = {DBS.donbas_rates_grow = 3}
+				}
+				else_if = {
+					limit = {
+						tag = DNP
+					}
+					check_variable = {DNP.dnipro_rates_grow = 3}
+				}
+				has_country_flag = elect_action
+			}
+		}
+		visible = {
+			OR = {
+				tag = DBS
+				tag = DNP
+			}
+		}
+		days_remove = 7
+		cost = 10
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			set_country_flag = elect_action
+		}
+		remove_effect = {
+			custom_effect_tooltip = elections_improve_agitation
+			clr_country_flag = elect_action
+			if = {
+				limit = {
+					tag = DBS
+				}
+					add_to_variable = {
+						var = donbas_rates_grow
+						value = 1
+					}
+				}
+			else_if = {
+				limit = {
+					tag = DNP
+				}
+					add_to_variable = {
+						var = dnipro_rates_grow
+						value = 1
+					}
+			}				
+		}
+	}
+}
+
 left_bank_elections = {
 		left_bank_elections_countdown = {			
 		activation = {
@@ -2246,7 +2893,7 @@ left_bank_elections = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_dnieper
+					tag = DIR
 				}
 				if = {
 					limit = {
@@ -2269,7 +2916,7 @@ left_bank_elections = {
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_siveria
+					tag = SIV
 				}
 				if = {
 					limit = {
@@ -2893,7 +3540,7 @@ right_bank_elections = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_dnieper
+					tag = DIR
 				}
 				if = {
 					limit = {
@@ -2916,7 +3563,7 @@ right_bank_elections = {
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_siveria
+					tag = SIV
 				}
 				if = {
 					limit = {
@@ -3540,7 +4187,7 @@ ukraine_elections = {
 			}
 			if = {
 				limit = {
-					has_country_flag = united_siveria_right_bank
+					tag = SIV_right_bank
 				}
 				if = {
 					limit = {
@@ -3563,7 +4210,7 @@ ukraine_elections = {
 			}
 			else_if = {
 				limit = {
-					has_country_flag = united_siveria
+					tag = SIV
 				}
 				if = {
 					limit = {

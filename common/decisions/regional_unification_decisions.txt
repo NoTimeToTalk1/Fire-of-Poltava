@@ -29,7 +29,7 @@ unite_galicia_ukraine = {
 	  		}
 		}
 		ai_will_do = {
-			base = 10
+			base = 90
 		}
    	}
 	
@@ -423,7 +423,7 @@ unite_podolia_ukraine = {
 		}
 
 		ai_will_do = {
-			base = 40
+			base = 90
 		}
    	}
 
@@ -506,7 +506,7 @@ unite_siveria_ukraine = {
 		}
 
 		ai_will_do = {
-			base = 10
+			base = 90
 		}
    	}
 
@@ -927,7 +927,7 @@ unite_dnieper_ukraine = {
 		}
 
 		ai_will_do = {
-			base = 40
+			base = 90
 		}
    	}
 
@@ -1180,7 +1180,7 @@ unite_buh_ukraine = {
 	}
 
 		ai_will_do = {
-			base = 10
+			base = 90
 		}
    	}
 
@@ -1229,7 +1229,7 @@ unite_buh_ukraine = {
 	  	}
 
 		ai_will_do = {
-			base = 10
+			base = 50
 		}
 	}
 
@@ -1279,7 +1279,7 @@ unite_buh_ukraine = {
 	  	}
 
 		ai_will_do = {
-			base = 10
+			base = 50
 		}
 	}
 
@@ -1329,7 +1329,7 @@ unite_buh_ukraine = {
 	  	}
 
 		ai_will_do = {
-			base = 10
+			base = 50
 		}
 	}
 
@@ -1380,7 +1380,7 @@ unite_buh_ukraine = {
 	  	}
 
 		ai_will_do = {
-			base = 10
+			base = 50
 		}
 	}
 
@@ -1428,7 +1428,7 @@ unite_buh_ukraine = {
 	  	}
 
 		ai_will_do = {
-			base = 10
+			base = 50
 		}
 	}
 }
@@ -1466,7 +1466,7 @@ unite_tavria_ukraine = {
 		}
 
 		ai_will_do = {
-			base = 10
+			base = 90
 		}
    	}
 
@@ -1510,7 +1510,7 @@ unite_tavria_ukraine = {
 	  	}
 
 		ai_will_do = {
-			base = 10
+			base = 50
 		}
 	}
 
@@ -1554,7 +1554,7 @@ unite_tavria_ukraine = {
 	  	}
 
 		ai_will_do = {
-			base = 10
+			base = 50
 		}
 	}
 }
@@ -1592,7 +1592,7 @@ unite_donbas_ukraine = {
 		}
 
 		ai_will_do = {
-			base = 10
+			base = 90
 		}
    	}
 
@@ -1642,7 +1642,7 @@ unite_donbas_ukraine = {
 	  	}
 
 		ai_will_do = {
-			base = 10
+			base = 50
 		}
 	}
 
@@ -1654,19 +1654,13 @@ unite_donbas_ukraine = {
 			is_neighbor_of = DPR
 		}
 
-		target_root_trigger = {
-			ROOT = {
-				NOT = {
-					OR = {
-						original_tag = DPR
-						original_tag = LPR
-					}
+		target_trigger = {
+			FROM = {
+				OR = {
+					original_tag = DPR
+					original_tag = LPR
 				}
 			}
-		}
-
-		targets = {
-			tag = DPR
 		}
 		
 		fire_only_once = yes
@@ -1692,7 +1686,7 @@ unite_donbas_ukraine = {
 	  	}
 
 		ai_will_do = {
-			base = 10
+			base = 50
 		}
 	}
 
@@ -1736,7 +1730,7 @@ unite_donbas_ukraine = {
 	  	}
 
 		ai_will_do = {
-			base = 10
+			base = 50
 		}
 	}
 }
@@ -1782,7 +1776,7 @@ unite_east_ukraine = {
 		}
 
 		ai_will_do = {
-			base = 10
+			base = 90
 		}
    	}
 
@@ -1816,9 +1810,9 @@ unite_east_ukraine = {
         fire_only_once = yes
         
 
-        ai_will_do = {
-            base = 100
-        }
+        ai_will_do = {	
+			base = 50		
+		}
 
         available = {
 			date > 2024.01.01
@@ -1860,72 +1854,59 @@ unite_east_ukraine = {
 	}
 
 	prepare_elections_east = {
-		available = {
-			date > 2024.01.01
-		}
         target_trigger = {
             FROM = {
 				OR = {
 					tag = DBS
-					tag = DPO
+					tag = DNP
 				}
             }
         }
 		visible = {
-			can_do_elections = yes
 			NOT = {
-					has_country_flag = east_war
-					has_country_flag = east_elections
-					has_country_flag = east_dogovornyak
-				}
-				NOT = {
-					has_country_flag = unification_choice_made
-				}
+				has_country_flag = east_war
+				has_country_flag = east_elections
+				has_country_flag = east_dogovornyak
+			}
+			NOT = {
+				has_country_flag = dogovornyak_agreed
+				has_country_flag = elections_agreed
+			}
+			NOT = {
+				has_country_flag = unification_choice_made
+			}
 		}
+		
 		fire_only_once = yes
-        	days_remove = 0	
+        days_remove = 0
+		
 		complete_effect = {
-			set_country_flag = unification_choice_made
 			FROM = {
 				country_event = {
 					id = reg_exp_east.5
 					days = 1
 				}
 				set_country_flag = unification_choice_made
-			}			
+			}
+			set_country_flag = unification_choice_made
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 60		
 		}
 	}
 
-	prepare_elections_west_agreed = {
+	prepare_elections_east_agreed = {
 		visible = {
 			has_country_flag = elections_agreed
 			NOT = {
-				has_country_flag = west_elections
+				has_country_flag = east_elections
 			}
 		}
 		fire_only_once = yes
         	days_remove = 0
-			ai_will_do = {
-				base = 10
-			}	
 		complete_effect = {
-			DBS = {
-				set_variable = {
-					var = donbas_rates
-					value = 50.00
-				}
-				set_variable = {
-					var = donbas_rates_grow
-					value = 2
-				}
-				set_country_flag = west_elections
-				add_political_power = 100
-			}
-			DPO = {
+			DNP = {
 				set_variable = {
 					var = dnipro_rates
 					value = 50.00
@@ -1935,12 +1916,26 @@ unite_east_ukraine = {
 					value = 2
 				}
 				set_country_flag = east_elections
+				clr_country_flag = elections_agreed
+				add_political_power = 100
+			}
+			DBS = {
+				set_variable = {
+					var = donbas_rates
+					value = 50.00
+				}
+				set_variable = {
+					var = donbas_rates_grow
+					value = 2
+				}
+				set_country_flag = east_elections
+				clr_country_flag = elections_agreed
 				add_political_power = 100
 			}
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 60		
 		}
 	}
 
@@ -1959,7 +1954,7 @@ unite_east_ukraine = {
 				NOT = {
 					has_country_flag = unification_choice_made
 				}
-			DPO = {
+			DNP = {
 				exists = yes
 			}
 			DBS = {
@@ -1979,9 +1974,6 @@ unite_east_ukraine = {
 		}
 		fire_only_once = yes
         	days_remove = 0
-			ai_will_do = {
-				base = 10
-			}	
 		complete_effect = {
 			FROM = {
 				country_event = {
@@ -1994,7 +1986,7 @@ unite_east_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 70		
 		}
 	}
 
@@ -2007,9 +1999,6 @@ unite_east_ukraine = {
 		}
 		fire_only_once = yes
         	days_remove = 0
-			ai_will_do = {
-				base = 10
-			}	
 		complete_effect = {
 			DNP = {
 				set_country_flag = east_dogovornyak
@@ -2046,7 +2035,7 @@ unite_east_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 70		
 		}
 	}
 
@@ -2068,7 +2057,7 @@ unite_east_ukraine = {
 		days_remove = 14
 
         ai_will_do = {	
-			factor = 50		
+			base = 90	
 		}
 
 		remove_effect = {
@@ -2102,7 +2091,7 @@ unite_east_ukraine = {
 		days_remove = 14
 
         ai_will_do = {	
-			factor = 50		
+			base = 90	
 		}
 
 		target_trigger = {
@@ -2166,7 +2155,7 @@ unite_south_ukraine = {
 		}
 
 		ai_will_do = {
-			base = 10
+			base = 90
 		}
    	}
 
@@ -2185,7 +2174,7 @@ unite_south_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 30		
 		}
 	}
 
@@ -2204,9 +2193,9 @@ unite_south_ukraine = {
         fire_only_once = yes
         
 
-        ai_will_do = {
-            base = 10
-        }
+        ai_will_do = {	
+			base = 50	
+		}
 
         available = {
 			date > 2024.01.01
@@ -2286,7 +2275,7 @@ unite_south_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 60		
 		}
 	}
 
@@ -2298,10 +2287,7 @@ unite_south_ukraine = {
 			}
 		}
 		fire_only_once = yes
-        	days_remove = 0
-			ai_will_do = {
-				base = 10
-			}	
+        days_remove = 0
 		complete_effect = {
 			BUH = {
 				set_variable = {
@@ -2313,6 +2299,7 @@ unite_south_ukraine = {
 					value = 2
 				}
 				set_country_flag = south_elections
+				clr_country_flag = elections_agreed
 				add_political_power = 100
 			}
 			TVR = {
@@ -2325,12 +2312,13 @@ unite_south_ukraine = {
 					value = 2
 				}
 				set_country_flag = south_elections
+				clr_country_flag = elections_agreed
 				add_political_power = 100
 			}
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 60		
 		}
 	}
 
@@ -2370,7 +2358,7 @@ unite_south_ukraine = {
 		fire_only_once = yes
         	days_remove = 0
 			ai_will_do = {
-				base = 10
+				base = 70
 			}	
 		complete_effect = {
 			FROM = {
@@ -2384,7 +2372,7 @@ unite_south_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 30		
 		}
 	}
 
@@ -2397,9 +2385,6 @@ unite_south_ukraine = {
 		}
 		fire_only_once = yes
         	days_remove = 0
-			ai_will_do = {
-				base = 10
-			}	
 		complete_effect = {
 			TVR = {
 				set_country_flag = south_dogovornyak
@@ -2436,7 +2421,7 @@ unite_south_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 70		
 		}
 	}
 
@@ -2458,7 +2443,7 @@ unite_south_ukraine = {
 		days_remove = 14
 
         ai_will_do = {	
-			factor = 50		
+			base = 50		
 		}
 
 		target_trigger = {
@@ -2498,7 +2483,7 @@ unite_south_ukraine = {
 		days_remove = 14
 
         ai_will_do = {	
-			factor = 50		
+			base = 50		
 		}
 
 		target_trigger = {
@@ -2562,7 +2547,7 @@ unite_north_ukraine = {
 		}
 
 		ai_will_do = {
-			base = 10
+			base = 90
 		}
    	}
 
@@ -2581,11 +2566,11 @@ unite_north_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 30		
 		}
 	}
 
-	prepare_elections_center = {
+	prepare_elections_north = {
         target_trigger = {
             FROM = {
 				OR = {
@@ -2617,7 +2602,7 @@ unite_north_ukraine = {
 		complete_effect = {
 			FROM = {
 				country_event = {
-					id = reg_exp_center.5
+					id = reg_exp_north.5
 					days = 1
 				}
 				set_country_flag = unification_choice_made
@@ -2626,7 +2611,7 @@ unite_north_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 60		
 		}
 	}
 
@@ -2639,42 +2624,41 @@ unite_north_ukraine = {
 		}
 		fire_only_once = yes
         	days_remove = 0
-			ai_will_do = {
-				base = 10
-			}	
 		complete_effect = {
-			BUH = {
+			SIV = {
 				set_variable = {
-					var = buh_rates
+					var = siveria_rates
 					value = 50.00
 				}
 				set_variable = {
-					var = buh_rates_grow
+					var = siveria_rates_grow
 					value = 2
 				}
-				set_country_flag = south_elections
+				set_country_flag = north_elections
+				clr_country_flag = elections_agreed
 				add_political_power = 100
 			}
-			TVR = {
+			DIR = {
 				set_variable = {
-					var = tavria_rates
+					var = dnieper_rates
 					value = 50.00
 				}
 				set_variable = {
-					var = tavria_rates_grow
+					var = dnieper_rates_grow
 					value = 2
 				}
-				set_country_flag = south_elections
+				set_country_flag = north_elections
+				clr_country_flag = elections_agreed
 				add_political_power = 100
 			}
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 60		
 		}
 	}
 
-	prepare_dogovornyak_center = {
+	prepare_dogovornyak_north = {
 		visible = {
 			can_do_dogovornyak = yes
 			NOT = {
@@ -2708,14 +2692,11 @@ unite_north_ukraine = {
             }
         }
 		fire_only_once = yes
-        	days_remove = 0
-			ai_will_do = {
-				base = 10
-			}	
+        	days_remove = 0	
 		complete_effect = {
 			FROM = {
 				country_event = {
-					id = reg_exp_center.1
+					id = reg_exp_north.1
 					days = 1
 				}
 				set_country_flag = unification_choice_made
@@ -2724,7 +2705,7 @@ unite_north_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 70		
 		}
 	}
 
@@ -2736,10 +2717,7 @@ unite_north_ukraine = {
 			}
 		}
 		fire_only_once = yes
-        	days_remove = 0
-			ai_will_do = {
-				base = 10
-			}	
+        	days_remove = 0	
 		complete_effect = {
 			DNP = {
 					set_country_flag = north_dogovornyak
@@ -2776,7 +2754,7 @@ unite_north_ukraine = {
 		}
 
 		ai_will_do = {
-			base = 10
+			base = 70
 		}
 	}
 
@@ -2796,7 +2774,7 @@ unite_north_ukraine = {
         
 
         ai_will_do = {
-            base = 100
+            base = 50
         }
 
         available = {
@@ -2823,9 +2801,9 @@ unite_north_ukraine = {
         }
 
         complete_effect = {
-			country_event = reg_exp_center.4
+			country_event = reg_exp_north.4
             FROM = {
-				country_event = reg_exp_center.4
+				country_event = reg_exp_north.4
 				set_country_flag = unification_choice_made
 				set_country_flag = north_war
 			}
@@ -2835,7 +2813,7 @@ unite_north_ukraine = {
 
 	}
 
-	capture_territory_center_dnieper = {
+	capture_territory_north_dnieper = {
         icon = generic_decision
 
 		available = {
@@ -2853,7 +2831,7 @@ unite_north_ukraine = {
 		days_remove = 14
 
         ai_will_do = {
-			factor = 50
+			base = 50
 		}
 
 		target_trigger = {
@@ -2875,7 +2853,7 @@ unite_north_ukraine = {
 		}
     }
 
-	capture_territory_center_siveria = {
+	capture_territory_north_siveria = {
         icon = generic_decision
 
 		available = {
@@ -2893,7 +2871,7 @@ unite_north_ukraine = {
 		days_remove = 14
 
         ai_will_do = {
-			factor = 50
+			base = 50
 		}
 
 		target_trigger = {
@@ -2957,7 +2935,7 @@ unite_west_ukraine = {
 	  		}
 		}
 		ai_will_do = {	
-			base = 10		
+			base = 90		
 		}
    	}
 
@@ -2976,7 +2954,7 @@ unite_west_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 30		
 		}
 	}
 
@@ -3019,7 +2997,7 @@ unite_west_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 60		
 		}
 	}
 
@@ -3032,9 +3010,6 @@ unite_west_ukraine = {
 		}
 		fire_only_once = yes
         	days_remove = 0
-			ai_will_do = {
-				base = 10
-			}	
 		complete_effect = {
 			GLY = {
 				set_variable = {
@@ -3046,24 +3021,26 @@ unite_west_ukraine = {
 					value = 2
 				}
 				set_country_flag = west_elections
+				clr_country_flag = elections_agreed
 				add_political_power = 100
 			}
 			PDL = {
 				set_variable = {
-					var = podillya_rates
+					var = podolia_rates
 					value = 50.00
 				}
 				set_variable = {
-					var = podillya_rates_grow
+					var = podolia_rates_grow
 					value = 2
 				}
 				set_country_flag = west_elections
+				clr_country_flag = elections_agreed
 				add_political_power = 100
 			}
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 60		
 		}
 	}
 
@@ -3112,7 +3089,7 @@ unite_west_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 70		
 		}
 	}
 
@@ -3163,7 +3140,7 @@ unite_west_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 70		
 		}
 	}
 
@@ -3182,9 +3159,9 @@ unite_west_ukraine = {
         fire_only_once = yes
         
 
-        ai_will_do = {
-            base = 10
-        }
+        ai_will_do = {	
+			base = 50		
+		}
 
         available = {
 			date > 2024.01.01
@@ -3221,6 +3198,7 @@ unite_west_ukraine = {
         icon = generic_decision
 
 		available = {
+			date > 2024.01.01
 		}
 
 		visible = {
@@ -3233,7 +3211,7 @@ unite_west_ukraine = {
 		days_remove = 14
 
         ai_will_do = {	
-			factor = 50		
+			base = 50		
 		}
 
 		target_trigger = {
@@ -3272,7 +3250,7 @@ unite_west_ukraine = {
 		days_remove = 14
 
         ai_will_do = {	
-			factor = 50		
+			base = 50		
 		}
 
 		target_trigger = {
@@ -3332,7 +3310,7 @@ unite_left_bank_ukraine = {
 	  		}
 		}
 		ai_will_do = {	
-			base = 10		
+			base = 90		
 		}
    	}
 
@@ -3351,7 +3329,7 @@ unite_left_bank_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 30		
 		}
 	}
 
@@ -3412,7 +3390,7 @@ unite_left_bank_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 60		
 		}
 	}
 
@@ -3438,6 +3416,7 @@ unite_left_bank_ukraine = {
 					value = 2
 				}
 				set_country_flag = left_bank_elections
+				clr_country_flag = elections_agreed
 				add_political_power = 100
 			}
 			ESN = {
@@ -3450,12 +3429,13 @@ unite_left_bank_ukraine = {
 					value = 2
 				}
 				set_country_flag = left_bank_elections
+				clr_country_flag = elections_agreed
 				add_political_power = 100
 			}
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 60		
 		}
 	}
 
@@ -3506,7 +3486,7 @@ unite_left_bank_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 70		
 		}
 	}
 
@@ -3573,7 +3553,7 @@ unite_left_bank_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 70		
 		}
 	}
 
@@ -3592,9 +3572,9 @@ unite_left_bank_ukraine = {
         fire_only_once = yes
         
 
-        ai_will_do = {
-            base = 10
-        }
+        ai_will_do = {	
+			base = 50		
+		}
 
         available = {
 			date > 2027.01.01
@@ -3650,7 +3630,7 @@ unite_left_bank_ukraine = {
 		days_remove = 14
 
         ai_will_do = {	
-			factor = 50		
+			base = 50		
 		}
 
 		target_trigger = {
@@ -3690,7 +3670,7 @@ unite_left_bank_ukraine = {
 		days_remove = 14
 
         ai_will_do = {	
-			factor = 50		
+			base = 50		
 		}
 
 		target_trigger = {
@@ -3751,7 +3731,7 @@ unite_right_bank_ukraine = {
 		}
 		
 		ai_will_do = {	
-			base = 10		
+			base = 90		
 		}
    	}
 
@@ -3769,7 +3749,7 @@ unite_right_bank_ukraine = {
 			if = { limit = { tag = NRT } country_event = reg_capital.9}
 		}
 		ai_will_do = {	
-			base = 10		
+			base = 30		
 		}
 	}
 
@@ -3832,7 +3812,7 @@ unite_right_bank_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 60		
 		}
 	}
 
@@ -3858,6 +3838,7 @@ unite_right_bank_ukraine = {
 					value = 2
 				}
 				set_country_flag = right_bank_elections
+				clr_country_flag = elections_agreed
 				add_political_power = 100
 			}
 			NRT = {
@@ -3870,12 +3851,13 @@ unite_right_bank_ukraine = {
 					value = 2
 				}
 				set_country_flag = right_bank_elections
+				clr_country_flag = elections_agreed
 				add_political_power = 100
 			}
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 60		
 		}
 	}
 
@@ -3926,7 +3908,7 @@ unite_right_bank_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 70		
 		}
 	}
 
@@ -3993,7 +3975,7 @@ unite_right_bank_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 70		
 		}
 	}
 
@@ -4012,9 +3994,9 @@ unite_right_bank_ukraine = {
         fire_only_once = yes
         
 
-        ai_will_do = {
-            base = 10
-        }
+        ai_will_do = {	
+			base = 50		
+		}
 
         available = {
 			date > 2027.01.01
@@ -4070,7 +4052,7 @@ unite_right_bank_ukraine = {
 		days_remove = 14
 
         ai_will_do = {	
-			factor = 50		
+			base = 50		
 		}
 
 		target_trigger = {
@@ -4110,7 +4092,7 @@ unite_right_bank_ukraine = {
 		days_remove = 14
 
         ai_will_do = {	
-			factor = 50		
+			base = 50		
 		}
 
 		target_trigger = {
@@ -4170,7 +4152,7 @@ unite_ukraine = {
 	  		}
 		}
 		ai_will_do = {	
-			base = 10		
+			base = 90		
 		}
    	}
 
@@ -4189,7 +4171,7 @@ unite_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 30		
 		}
 	}
 
@@ -4202,14 +4184,14 @@ unite_ukraine = {
             PLT = {
 				exists = yes
                 tag = RBU
-				#has_country_flag = united_right_bank
+				#tag = RBU
                 has_country_leader = {
                     character = PLT_Biletsky
                 }
             }
             AFU = {
                 tag = LBU
-				#has_country_flag = united_left_bank
+				#tag = LBU
                 has_country_leader = {
                     character = AFU_zhorin
                 }
@@ -4217,7 +4199,7 @@ unite_ukraine = {
         }
 
         ai_will_do = {
-            base = 100
+            base = 90
         }
 
         cost = 0
@@ -4238,11 +4220,11 @@ unite_ukraine = {
             TER = {
 				exists = yes
                 tag = RBU
-				#has_country_flag = united_right_bank
+				#tag = RBU
             }
             AFU = {
                 tag = LBU
-				#has_country_flag = united_left_bank
+				#tag = LBU
                 has_country_leader = {
                     character = AFU_zhorin
                 }
@@ -4255,7 +4237,7 @@ unite_ukraine = {
         }
 
         ai_will_do = {
-            base = 100
+            base = 90
         }
 
         cost = 0
@@ -4301,9 +4283,6 @@ unite_ukraine = {
         }
 		fire_only_once = yes
         	days_remove = 0
-			ai_will_do = {
-				base = 10
-			}	
 		complete_effect = {
 			set_country_flag = unification_choice_made_ukraine
 			FROM = {
@@ -4316,7 +4295,7 @@ unite_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 70		
 		}
 	}
 
@@ -4329,9 +4308,6 @@ unite_ukraine = {
 		}
 		fire_only_once = yes
         	days_remove = 0
-			ai_will_do = {
-				base = 10
-			}	
 		complete_effect = {
 			LBU = {
 				set_variable = {
@@ -4343,6 +4319,7 @@ unite_ukraine = {
 					value = 2
 				}
 				set_country_flag = ukraine_elections
+				clr_country_flag = elections_agreed
 				add_political_power = 100
 			}
 			RBU = {
@@ -4355,12 +4332,13 @@ unite_ukraine = {
 					value = 2
 				}
 				set_country_flag = ukraine_elections
+				clr_country_flag = elections_agreed
 				add_political_power = 100
 			}
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 60		
 		}
 	}
 
@@ -4373,9 +4351,6 @@ unite_ukraine = {
 		}
 		fire_only_once = yes
         	days_remove = 0
-			ai_will_do = {
-				base = 10
-			}	
 		complete_effect = {
 			LBU = {
 				set_country_flag = ukraine_dogovornyak
@@ -4412,7 +4387,7 @@ unite_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 70		
 		}
 	}
 
@@ -4457,7 +4432,7 @@ unite_ukraine = {
 		}
 
 		ai_will_do = {	
-			base = 10		
+			base = 60		
 		}
 	}
 
@@ -4476,9 +4451,9 @@ unite_ukraine = {
         fire_only_once = yes
         
 
-        ai_will_do = {
-            base = 10
-        }
+        ai_will_do = {	
+			base = 50		
+		}
 
         available = {
 			date > 2030.01.01
@@ -4533,7 +4508,7 @@ unite_ukraine = {
 		days_remove = 14
 
         ai_will_do = {	
-			factor = 50		
+			base = 50		
 		}
 
 		target_trigger = {
@@ -4573,7 +4548,7 @@ unite_ukraine = {
 		days_remove = 14
 
         ai_will_do = {	
-			factor = 50		
+			base = 50		
 		}
 
 		target_trigger = {
