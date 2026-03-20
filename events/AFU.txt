@@ -15,7 +15,7 @@ country_event = { #On Our Own
 	}
 }
 
-country_event = { #Contacting the Government
+country_event = { #Contacting The Government
 	id = afu.2
 	title = afu.2.t
 	desc = afu.2.d
@@ -30,7 +30,7 @@ country_event = { #Contacting the Government
 	}
 }
 
-country_event = { #Assessing the Situation
+country_event = { #Asessing the Situation
 	id = afu.3
 	title = afu.3.t
 	desc = afu.3.d
@@ -45,7 +45,7 @@ country_event = { #Assessing the Situation
 	}
 }
 
-country_event = { #Life in Donbas
+country_event = { #Life in the Donbas
 	id = afu.4
 	title = afu.4.t
 	desc = afu.4.d
@@ -72,7 +72,7 @@ country_event = { #Zelenskyy - Helping ZSU?
 	option = { #YES
 		name = afu.5.a
 		ai_chance = {
-			factor = 60
+			factor = 70
 		}
 		AFU = { country_event = afu.51 }
 		add_political_power = -50
@@ -80,7 +80,7 @@ country_event = { #Zelenskyy - Helping ZSU?
 	option = { #NO
 		name = afu.5.b
 		ai_chance = {
-			factor = 40
+			factor = 30
 		}
 		AFU = { country_event = afu.52 }
 		add_stability = -0.05
@@ -188,7 +188,7 @@ country_event = { #Biletsky - Helping ZSU?
 	option = { #YES
 		name = afu.7.a
 		ai_chance = {
-			factor = 80
+			factor = 90
 		}
 		add_equipment_to_stockpile = {
 			type = support_equipment
@@ -216,7 +216,7 @@ country_event = { #Biletsky - Helping ZSU?
 	option = { #NO
 		name = afu.7.b
 		ai_chance = {
-			factor = 20
+			factor = 10
 		}
 		AFU = { country_event = afu.72 }
 		add_stability = -0.05
@@ -563,12 +563,17 @@ country_event = { #oh fuck
     immediate = {
         hidden_effect = {
             AFU = {
-                country_event = { id = afu.19 days = 5 }
+                country_event = { id = afu.19 days = 7 }
 				set_country_flag = AFU_5
                 unlock_decision_category_tooltip = emergency_makeshift_fortifications
             }
         }
     }
+
+	option = {
+		name = afu.18.a
+		unlock_decision_category_tooltip = emergency_makeshift_fortifications
+	}
 }
 country_event = {
 	id = afu.19
@@ -584,7 +589,6 @@ country_event = {
 		name = afu.19.a
 		RAF = {
 			transfer_state = 2031
-			transfer_state = 2030
 			set_province_controller = 1495
 			set_province_controller = 12927
 			set_province_controller = 12999
@@ -602,8 +606,7 @@ country_event = {
 	    }
 	    hidden_effect = {
 			RAF = { 
-				add_timed_idea = { idea = gas_gas_gas days = 10 }
-				activate_mission = 7_days_free
+				add_timed_idea = { idea = RAF_incursion days = 14 }
 				
 				load_oob = "RAF"
 			}

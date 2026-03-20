@@ -15,9 +15,9 @@ DPR_open_the_warehouses_category = {
 			}
 		}
 		
-		cost = 25
+		cost = 15
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		fire_only_once = yes
@@ -49,9 +49,9 @@ DPR_open_the_warehouses_category = {
 			}
 		}
 		
-		cost = 25
+		cost = 15
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		fire_only_once = yes
@@ -83,9 +83,9 @@ DPR_open_the_warehouses_category = {
 			}
 		}
 		
-		cost = 25
+		cost = 15
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		fire_only_once = yes
@@ -117,9 +117,9 @@ DPR_open_the_warehouses_category = {
 			}
 		}
 		
-		cost = 25
+		cost = 15
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		fire_only_once = yes
@@ -151,9 +151,9 @@ DPR_open_the_warehouses_category = {
 			}
 		}
 		
-		cost = 25
+		cost = 15
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		fire_only_once = yes
@@ -185,9 +185,9 @@ DPR_open_the_warehouses_category = {
 			}
 		}
 		
-		cost = 25
+		cost = 15
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		fire_only_once = yes
@@ -207,61 +207,6 @@ DPR_open_the_warehouses_category = {
 }
 
 DPR_mobilize_the_youth_and_reserves_category = {
-	mobilization_in_dokuchayevsk = {
-		allowed = {
-			original_tag = DPR
-		}
-		
-		visible = {
-			has_completed_focus = DPR_mobilize_youth_and_reserves
-		}
-		
-		highlight_states = {
-			highlight_state_targets = {
-				state = 2083
-			}
-		}
-		
-		cost = 20
-		ai_will_do = {
-			factor = 100
-		}
-		
-		fire_only_once = yes
-        days_remove = 20
-		
-		remove_effect = {
-			add_manpower = 2500
-		}
-	}
-	mobilization_in_amvrosievka = {
-		allowed = {
-			original_tag = DPR
-		}
-		
-		visible = {
-			has_completed_focus = DPR_mobilize_youth_and_reserves
-		}
-		
-		highlight_states = {
-			highlight_state_targets = {
-				state = 2310
-			}
-		}
-		
-		cost = 30
-		ai_will_do = {
-			factor = 100
-		}
-		
-		fire_only_once = yes
-        days_remove = 30
-		
-		remove_effect = {
-			#add_timed_idea = { idea = DPR_mobiks1  days = 5 }
-			add_manpower = 5000
-		}
-	}
 	mobilization_in_torez = {
 		allowed = {
 			original_tag = DPR
@@ -277,9 +222,9 @@ DPR_mobilize_the_youth_and_reserves_category = {
 			}
 		}
 		
-		cost = 40
+		cost = 10
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		fire_only_once = yes
@@ -287,7 +232,10 @@ DPR_mobilize_the_youth_and_reserves_category = {
 		
 		remove_effect = {
 			#add_timed_idea = { idea = DPR_mobiks1  days = 20 }
-			add_manpower = 10000
+			add_manpower = 4000
+			2856 = {
+				add_manpower = -4000
+			}
 		}
 	}
 	mobilization_in_makeyevka = {
@@ -305,9 +253,9 @@ DPR_mobilize_the_youth_and_reserves_category = {
 			}
 		}
 		
-		cost = 50
+		cost = 10
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		fire_only_once = yes
@@ -315,7 +263,10 @@ DPR_mobilize_the_youth_and_reserves_category = {
 		
 		remove_effect = {
 			#add_timed_idea = { idea = DPR_mobiks2  days = 14 }
-			add_manpower = 20000
+			add_manpower = 5000
+			2558 = {
+				add_manpower = -5000
+			}
 		}
 	}
 	mobilization_in_gorlovka = {
@@ -333,9 +284,9 @@ DPR_mobilize_the_youth_and_reserves_category = {
 			has_completed_focus = DPR_mobilize_youth_and_reserves
 		}
 		
-		cost = 60
+		cost = 20
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		fire_only_once = yes
@@ -343,7 +294,10 @@ DPR_mobilize_the_youth_and_reserves_category = {
 		
 		remove_effect = {
 			#add_timed_idea = { idea = DPR_mobiks2  days = 30 }
-			add_manpower = 50000
+			add_manpower = 8000
+			2096 = {
+				add_manpower = -8000
+			}
 		}
 	}
 	mobilization_in_donetsk = {
@@ -361,9 +315,9 @@ DPR_mobilize_the_youth_and_reserves_category = {
 			}
 		}
 		
-		cost = 75
+		cost = 30
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		fire_only_once = yes
@@ -371,7 +325,11 @@ DPR_mobilize_the_youth_and_reserves_category = {
 		
 		remove_effect = {
 			#add_timed_idea = { idea = DPR_mobiks3  days = 30 }
-			add_manpower = 200000
+			add_manpower = 10000
+			557 = {
+				add_manpower = -10000
+			}
+			add_stability = -0.02
 		}
 	}
 }
@@ -389,10 +347,12 @@ DPR_request_russian_weapons_category = {
 		
 		cost = 25
 		ai_will_do = {
-			factor = 100
+			base = 150
 		}
+
+		fire_only_once = yes
 		
-		days_remove = 5
+		days_remove = 7
 		
 		modifier = {
 			political_power_gain = -0.25
@@ -417,10 +377,12 @@ DPR_request_russian_weapons_category = {
 		
 		cost = 25
 		ai_will_do = {
-			factor = 100
+			base = 150
 		}
+
+		fire_only_once = yes
 		
-		days_remove = 5
+		days_remove = 14
 		
 		modifier = {
 			political_power_gain = -0.25
@@ -445,10 +407,12 @@ DPR_request_russian_weapons_category = {
 		
 		cost = 25
 		ai_will_do = {
-			factor = 100
+			base = 150
 		}
+
+		fire_only_once = yes
 		
-		days_remove = 5
+		days_remove = 21
 		
 		modifier = {
 			political_power_gain = -0.25
@@ -473,10 +437,12 @@ DPR_request_russian_weapons_category = {
 		
 		cost = 25
 		ai_will_do = {
-			factor = 100
+			base = 150
 		}
+
+		fire_only_once = yes
 		
-		days_remove = 5
+		days_remove = 21
 		
 		modifier = {
 			political_power_gain = -0.25
@@ -501,10 +467,12 @@ DPR_request_russian_weapons_category = {
 		
 		cost = 35
 		ai_will_do = {
-			factor = 100
+			base = 150
 		}
+
+		fire_only_once = yes
 		
-		days_remove = 5
+		days_remove = 21
 		
 		modifier = {
 			political_power_gain = -0.25
@@ -531,12 +499,14 @@ DPR_request_russian_volunteers_category = {
 			has_completed_focus = DPR_and_volunteers
 		}
 		
-		cost = 30
+		cost = 10
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
+
+		fire_only_once = yes
 		
-		days_remove = 5
+		days_remove = 35
 		
 		remove_effect = {
 			random_list = {
@@ -561,12 +531,14 @@ DPR_request_russian_volunteers_category = {
 			has_completed_focus = DPR_and_volunteers
 		}
 		
-		cost = 30
+		cost = 10
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
+
+		fire_only_once = yes
 		
-		days_remove = 5
+		days_remove = 35
 		
 		remove_effect = {
 			random_list = {
@@ -591,12 +563,14 @@ DPR_request_russian_volunteers_category = {
 			has_completed_focus = DPR_and_volunteers
 		}
 		
-		cost = 30
+		cost = 10
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
+
+		fire_only_once = yes
 		
-		days_remove = 5
+		days_remove = 35
 		
 		remove_effect = {
 			random_list = {

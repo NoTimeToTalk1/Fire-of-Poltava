@@ -712,3 +712,24 @@ FOP_has_content = {
 		original_tag = DPR
 	}
 }
+
+locked_coring = {
+	OR = {
+		AND = {
+			original_tag = AFU
+			AFU = {
+				NOT = {
+					has_completed_focus = AFU_finalize_integration
+				}
+			}
+		}
+		AND = {
+			original_tag = DPR
+			DPR = {
+				NOT = {
+					has_completed_focus = DPR_finish_integration
+				}
+			}
+		}
+	}
+}
