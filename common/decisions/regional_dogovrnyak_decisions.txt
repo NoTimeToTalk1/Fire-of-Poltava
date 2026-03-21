@@ -1041,7 +1041,7 @@ north_dogovornyak = {
 }
 
 west_dogovornyak = {
-	podillya_view_influence = {
+	podolia_view_influence = {
 	
 	icon = GFX_decision_dogovornyak_influence
 	
@@ -1084,8 +1084,8 @@ west_dogovornyak = {
 						tag = GLY
 					}
 					OR = {
-						check_variable = {GLY.galicia_influence > PDL.podillya_influence}
-						check_variable = {GLY.galicia_influence = PDL.podillya_influence}
+						check_variable = {GLY.galicia_influence > PDL.podolia_influence}
+						check_variable = {GLY.galicia_influence = PDL.podolia_influence}
 					}
 				}
 				if = {
@@ -1093,8 +1093,8 @@ west_dogovornyak = {
 						tag = PDL
 					}
 					OR = {
-						check_variable = {PDL.podillya_influence > GLY.galicia_influence}
-						check_variable = {GLY.galicia_influence = PDL.podillya_influence}
+						check_variable = {PDL.podolia_influence > GLY.galicia_influence}
+						check_variable = {GLY.galicia_influence = PDL.podolia_influence}
 					}					
 				}	
 		}
@@ -1128,7 +1128,7 @@ west_dogovornyak = {
 			}
 			else_if = {
 				limit = {
-					check_variable = { GLY.galicia_influence = PDL.podillya_influence }
+					check_variable = { GLY.galicia_influence = PDL.podolia_influence }
 				}
 				declare_war_on = {
 					target = FROM
@@ -1269,7 +1269,7 @@ west_dogovornyak = {
 			}
 			if = {
 				limit = {
-					check_variable = {GLY.galicia_influence_choice > PDL.podillya_influence_choice}
+					check_variable = {GLY.galicia_influence_choice > PDL.podolia_influence_choice}
 				}			
 				GLY = {
 					add_to_variable = {
@@ -1320,11 +1320,11 @@ west_dogovornyak = {
 			}
 			if = {
 				limit = {
-					check_variable = {PDL.podillya_influence_choice > GLY.galicia_influence_choice}
+					check_variable = {PDL.podolia_influence_choice > GLY.galicia_influence_choice}
 				}
 				PDL = {
 					add_to_variable = {
-						var = podillya_influence
+						var = podolia_influence
 						value = 0.5
 					}
 					if = { 
@@ -1385,7 +1385,7 @@ west_dogovornyak = {
 			}
 			else_if = {
 				limit = {tag = PDL}
-				check_variable = {PDL.podillya_spendible_influence > 0}
+				check_variable = {PDL.podolia_spendible_influence > 0}
 			}
 		}
 		visible = {
@@ -1417,11 +1417,11 @@ west_dogovornyak = {
 					tag = PDL
 				}
 				add_to_variable = {
-					var = podillya_spendible_influence
+					var = podolia_spendible_influence
 					value = -3
 				}
 				set_variable = {
-					var = podillya_influence_choice
+					var = podolia_influence_choice
 					value = 3
 				}
 			}
@@ -1441,7 +1441,7 @@ west_dogovornyak = {
 			}
 			else_if = {
 				limit = {tag = PDL}
-				check_variable = {PDL.podillya_spendible_influence > 0}
+				check_variable = {PDL.podolia_spendible_influence > 0}
 			}
 		}
 		visible = {
@@ -1473,11 +1473,11 @@ west_dogovornyak = {
 					tag = PDL
 				}
 				add_to_variable = {
-					var = podillya_spendible_influence
+					var = podolia_spendible_influence
 					value = -2
 				}
 				set_variable = {
-					var = podillya_influence_choice
+					var = podolia_influence_choice
 					value = 2
 				}
 			}
@@ -1497,7 +1497,7 @@ west_dogovornyak = {
 			}
 			else_if = {
 				limit = {tag = PDL}
-				check_variable = {PDL.podillya_spendible_influence > 0}
+				check_variable = {PDL.podolia_spendible_influence > 0}
 			}
 		}
 		visible = {
@@ -1529,11 +1529,11 @@ west_dogovornyak = {
 					tag = PDL
 				}
 				add_to_variable = {
-					var = podillya_spendible_influence
+					var = podolia_spendible_influence
 					value = -1
 				}
 				set_variable = {
-					var = podillya_influence_choice
+					var = podolia_influence_choice
 					value = 1
 				}
 			}
@@ -1553,7 +1553,7 @@ west_dogovornyak = {
 			}
 			else_if = {
 				limit = {tag = PDL}
-				check_variable = {PDL.podillya_spendible_influence > 0}
+				check_variable = {PDL.podolia_spendible_influence > 0}
 			}
 		}
 		visible = {
@@ -1612,31 +1612,31 @@ west_dogovornyak = {
 				random_list = {
 					30 = {
 						add_to_variable = {
-							var = podillya_spendible_influence
+							var = podolia_spendible_influence
 							value = -1
 						}
 						set_variable = {
-							var = podillya_influence_choice
+							var = podolia_influence_choice
 							value = 1
 						}
 					}
 					50 = {
 						add_to_variable = {
-							var = podillya_spendible_influence
+							var = podolia_spendible_influence
 							value = -2
 						}
 						set_variable = {
-							var = podillya_influence_choice
+							var = podolia_influence_choice
 							value = 2
 						}
 					}
 					20 = {
 						add_to_variable = {
-							var = podillya_spendible_influence
+							var = podolia_spendible_influence
 							value = -3
 						}
 						set_variable = {
-							var = podillya_influence_choice
+							var = podolia_influence_choice
 							value = 3
 						}
 					}
@@ -1684,7 +1684,7 @@ west_dogovornyak = {
 					set_country_flag = economy_base
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = podillya_influence_choice
+						var = podolia_influence_choice
 						value = 0
 					}				
 				}
@@ -1730,7 +1730,7 @@ west_dogovornyak = {
 					set_country_flag = economy_freedoms
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = podillya_influence_choice
+						var = podolia_influence_choice
 						value = 0
 					}				
 				}
@@ -1776,7 +1776,7 @@ west_dogovornyak = {
 					set_country_flag = army_standarts
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = podillya_influence_choice
+						var = podolia_influence_choice
 						value = 0
 					}				
 				}
@@ -1822,7 +1822,7 @@ west_dogovornyak = {
 					set_country_flag = army_structure
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = podillya_influence_choice
+						var = podolia_influence_choice
 						value = 0
 					}				
 				}
@@ -1866,7 +1866,7 @@ west_dogovornyak = {
 					set_country_flag = state_control
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = podillya_influence_choice
+						var = podolia_influence_choice
 						value = 0
 					}				
 				}
@@ -1910,7 +1910,7 @@ west_dogovornyak = {
 					set_country_flag = civilian_services
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = podillya_influence_choice
+						var = podolia_influence_choice
 						value = 0
 					}				
 				}
@@ -1954,7 +1954,7 @@ west_dogovornyak = {
 					set_country_flag = worker_stance
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = podillya_influence_choice
+						var = podolia_influence_choice
 						value = 0
 					}				
 				}
@@ -1998,7 +1998,7 @@ west_dogovornyak = {
 					set_country_flag = civilian_liberties
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = podillya_influence_choice
+						var = podolia_influence_choice
 						value = 0
 					}				
 				}
@@ -2042,7 +2042,7 @@ west_dogovornyak = {
 					set_country_flag = equality
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = podillya_influence_choice
+						var = podolia_influence_choice
 						value = 0
 					}				
 				}
@@ -2086,7 +2086,7 @@ west_dogovornyak = {
 					set_country_flag = community_controls
 					set_country_flag = dogovornyak_choice
 					set_variable = {
-						var = podillya_influence_choice
+						var = podolia_influence_choice
 						value = 0
 					}				
 				}
