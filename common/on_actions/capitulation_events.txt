@@ -425,6 +425,28 @@ on_actions = {
 			if = {
 				limit = {
 					FROM = {
+						is_ukrainian_warlord = yes
+					}
+
+					ROOT = {
+						is_ukrainian_warlord = yes
+					}
+				}
+				FROM = {
+					annex_country = {
+						transfer_troops = no
+						target = ROOT
+					}
+				}
+			}
+		}
+	}
+
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
 						original_tag = AFU
 					}
 
