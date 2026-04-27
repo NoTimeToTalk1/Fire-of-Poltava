@@ -1,0 +1,426 @@
+
+
+shared_focus = {
+    id = FOP_Last_Steps
+    icon = GFX_FOP_Last_Steps
+    cost = 1
+
+    x = 50
+    y = 32
+
+    allow_branch = {
+        OR = {
+            tag = LBU
+            tag = RBU
+        }
+        FOP_has_content = no
+    }
+
+    completion_reward = {
+        add_political_power = 50
+    }
+}
+
+shared_focus = {
+    id = FOP_Assert_River_Bank_Control
+    icon = GFX_FOP_Assert_River_Bank_Control
+    cost = 3
+
+    x = 0
+    y = 1
+
+    relative_position_id = FOP_Last_Steps
+
+    prerequisite = { focus = FOP_Last_Steps }
+
+    completion_reward = {
+        every_state = {
+			limit = {
+				is_owned_and_controlled_by = ROOT
+				has_active_resistance = yes
+			}
+			add_compliance = 5
+		}
+    }
+}
+
+shared_focus = {
+    id = FOP_Forwards
+    icon = GFX_FOP_Forwards
+    cost = 1
+
+    x = 0
+    y = 1
+
+    relative_position_id = FOP_Assert_River_Bank_Control
+
+    prerequisite = { focus = FOP_Assert_River_Bank_Control }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Get_On_World_Stage
+    icon = GFX_FOP_Get_On_World_Stage
+    cost = 2
+
+    x = -10
+    y = 1
+
+    relative_position_id = FOP_Forwards
+
+    prerequisite = { focus = FOP_Forwards}
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Path_Of_Recognition
+    icon = GFX_FOP_Path_Of_Recognition
+    cost = 3
+
+    x = -3
+    y = 1
+
+    relative_position_id = FOP_Get_On_World_Stage
+
+    prerequisite = { focus = FOP_Get_On_World_Stage }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Ask_West_For_Recognition
+    icon = GFX_FOP_Ask_West_For_Recognition
+    cost = 7
+
+    x = -1
+    y = 1
+
+    relative_position_id = FOP_Path_Of_Recognition
+
+    select_effect = {
+        EUN = {
+            country_event = { id = FOP_generic.50 days = 14 }
+        }
+    }
+
+    prerequisite = { focus = FOP_Path_Of_Recognition }
+
+    completion_reward = {
+        
+    }
+}
+
+shared_focus = {
+    id = FOP_Ask_East_For_Recognition
+    icon = GFX_FOP_Ask_West_For_Recognition
+    cost = 7
+
+    x = 1
+    y = 1
+
+    relative_position_id = FOP_Path_Of_Recognition
+
+    select_effect = {
+        RUS = {
+            country_event = { id = FOP_generic.53 days = 14 }
+        }
+    }
+
+    prerequisite = { focus = FOP_Path_Of_Recognition }
+
+    completion_reward = {
+        
+    }
+}
+
+shared_focus = {
+    id = FOP_We_Are_Legitimate
+    icon = GFX_FOP_We_Are_Legitimate
+    cost = 4
+
+    x = 0
+    y = 2
+
+    relative_position_id = FOP_Path_Of_Recognition
+
+    prerequisite = {
+        focus = FOP_Ask_East_For_Recognition
+        focus = FOP_Ask_West_For_Recognition
+    }
+
+    completion_reward = {
+        add_stability = 0.1
+        add_political_power = 35
+    }
+}
+
+shared_focus = {
+    id = FOP_Path_Of_Self_Sufficiency
+    icon = GFX_FOP_Path_Of_Self_Sufficiency
+    cost = 4
+
+    x = 3
+    y = 1
+
+    relative_position_id = FOP_Get_On_World_Stage
+
+    prerequisite = { focus = FOP_Get_On_World_Stage }
+
+    completion_reward = {
+        add_stability = -0.1
+    }
+}
+
+shared_focus = {
+    id = FOP_Closer_To_Closed_Economy
+    icon = GFX_FOP_Closer_To_Closed_Economy
+    cost = 4
+
+    x = 0
+    y = 1
+
+    relative_position_id = FOP_Path_Of_Self_Sufficiency
+
+    prerequisite = { focus = FOP_Path_Of_Self_Sufficiency }
+
+    completion_reward = {
+        #natspirit
+    }
+}
+
+shared_focus = {
+    id = FOP_Deals_With_Questionable_Partners
+    icon = GFX_FOP_Deals_With_Questionable_Partners
+    cost = 4
+
+    x = 0
+    y = 1
+
+    relative_position_id = FOP_Closer_To_Closed_Economy
+
+    prerequisite = { focus = FOP_Closer_To_Closed_Economy }
+
+    completion_reward = {
+        #decisions
+    }
+}
+
+shared_focus = {
+    id = FOP_Continue_Our_Course
+    icon = GFX_FOP_Continue_Our_Course
+    cost = 4
+
+    x = 4
+    y = 1
+
+    relative_position_id = FOP_Forwards
+
+    prerequisite = { focus = FOP_Forwards }
+
+    completion_reward = {
+        add_political_power = 50
+    }
+}
+
+shared_focus = {
+    id = FOP_Reinforce_Our_Army
+    icon = GFX_FOP_Reinforce_Our_Army
+    cost = 4
+
+    x = -5
+    y = 1
+
+    relative_position_id = FOP_Continue_Our_Course
+
+    prerequisite = { focus = FOP_Continue_Our_Course }
+
+    completion_reward = {
+        army_experience = 10
+    }
+}
+
+shared_focus = {
+    id = FOP_Air_Force_Expansion
+    icon = GFX_FOP_Air_Force_Expansion
+    cost = 4
+
+    x = 1
+    y = 1
+
+    relative_position_id = FOP_Reinforce_Our_Army
+
+    prerequisite = { focus = FOP_Reinforce_Our_Army }
+
+    completion_reward = {
+        air_experience = 25
+    }
+}
+
+shared_focus = {
+    id = FOP_Integrated_Military_Complex
+    icon = GFX_FOP_Integrated_Military_Complex
+    cost = 4
+
+    x = -1
+    y = 1
+
+    relative_position_id = FOP_Reinforce_Our_Army
+
+    prerequisite = { focus = FOP_Reinforce_Our_Army }
+
+    completion_reward = {
+        random_owned_controlled_state = {
+            random_owned_controlled_state = {
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+    }
+}
+
+shared_focus = {
+    id = FOP_Reinforce_Domestic_Policy
+    icon = GFX_FOP_Reinforce_Domestic_Policy
+    cost = 4
+
+    x = 0
+    y = 1
+
+    relative_position_id = FOP_Continue_Our_Course
+
+    prerequisite = { focus = FOP_Continue_Our_Course }
+
+    completion_reward = {
+        add_stability = 0.05
+    }
+}
+
+shared_focus = {
+    id = FOP_New_Scientific_Institutes
+    icon = GFX_FOP_New_Scientific_Institutes
+    cost = 4
+
+    x = -2
+    y = 1
+
+    relative_position_id = FOP_Reinforce_Domestic_Policy
+
+    prerequisite = { focus = FOP_Reinforce_Domestic_Policy }
+
+    completion_reward = {
+        add_to_variable = {
+			var = FOP_science_var
+			value = 15
+			tooltip = add_science_var_tt
+		}
+    }
+}
+
+shared_focus = {
+    id = FOP_Look_For_Worker_Immigrants
+    icon = GFX_FOP_Look_For_Worker_Immigrants
+    cost = 4
+
+    x = 0
+    y = 1
+
+    relative_position_id = FOP_Reinforce_Domestic_Policy
+
+    prerequisite = { focus = FOP_Reinforce_Domestic_Policy }
+
+    available = {
+        NOT = {
+            has_ideas = fop_immigration_closed_borders
+        }
+    }
+
+    completion_reward = {
+        set_country_flag = FOP_looking_for_immigrants
+        custom_decision_category_tooltip = FOP_workforce
+    }
+}
+
+shared_focus = {
+    id = FOP_Return_Our_Refugees
+    icon = GFX_FOP_Return_Our_Refugees
+    cost = 4
+
+    x = 2
+    y = 1
+
+    relative_position_id = FOP_Reinforce_Domestic_Policy
+
+    prerequisite = { focus = FOP_Reinforce_Domestic_Policy }
+
+    completion_reward = {
+        set_country_flag = FOP_returning_our_refugees
+        custom_decision_category_tooltip = FOP_workforce
+    }
+}
+
+shared_focus = {
+    id = FOP_Propose_Job_Fundation
+    icon = GFX_FOP_Propose_Job_Fundation
+    cost = 4
+
+    x = 4
+    y = 1
+
+    relative_position_id = FOP_Reinforce_Domestic_Policy
+
+    prerequisite = { focus = FOP_Reinforce_Domestic_Policy }
+
+    completion_reward = {
+        add_to_variable = {
+			var = FOP_unemployment_var
+			value = 15
+			tooltip = add_Unemployment_var_tt
+		}
+    }
+}
+
+shared_focus = {
+    id = FOP_Reinforce_Economy
+    icon = GFX_FOP_Reinforce_Economy
+    cost = 4
+
+    x = 6
+    y = 1
+
+    relative_position_id = FOP_Continue_Our_Course
+
+    prerequisite = { focus = FOP_Continue_Our_Course }
+
+    completion_reward = {
+        #idk
+    }
+}
+
+shared_focus = {
+    id = FOP_Larger_Economic_Opportunities
+    icon = GFX_FOP_Larger_Economic_Opportunities
+    cost = 4
+
+    x = 0
+    y = 1
+
+    relative_position_id = FOP_Reinforce_Economy
+
+    prerequisite = { focus = FOP_Reinforce_Economy }
+
+    completion_reward = {
+        set_country_flag = FOP_trading_expanded
+        custom_decision_category_tooltip = FOP_trading_expanded
+    }
+}  

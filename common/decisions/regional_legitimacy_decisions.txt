@@ -389,6 +389,7 @@ world_legitimacy = {
 
         visible = {
             FOP_has_content = yes
+            favourable_for_europe = yes
         }
 
         days_remove = 30
@@ -424,6 +425,7 @@ world_legitimacy = {
 
         visible = {
             FOP_has_content = yes
+            is_pro_russian = yes
         }
 
         days_remove = 30
@@ -460,6 +462,96 @@ world_legitimacy = {
                     set_country_flag = ru_limited_recognition
                 }
             }
+        }
+    }
+    ask_un_to_return_chernivtsi = {
+        available = {
+
+        }
+
+        visible = {
+            tag = RBU
+            OR = {
+                has_country_flag = eu_recognized_state
+                has_country_flag = ru_recognized_state
+            }
+        }
+
+        days_remove = 30
+
+        cost = 50
+
+        ai_will_do = {
+            base = 120
+        }
+
+        complete_effect = {
+            BUK = {
+                country_event = FOP_generic.56
+            }
+        }
+
+        remove_effect = {
+            
+        }
+    }
+    enter_chernivtsi = {
+        available = {
+
+        }
+
+        visible = {
+            tag = RBU
+        }
+
+        days_remove = 30
+
+        cost = 50
+
+        ai_will_do = {
+            base = 100
+        }
+
+        complete_effect = {
+            
+        }
+
+        remove_effect = {
+            declare_war_on = {
+                target = BUK
+                type = annex_country
+            }
+        }
+    }
+    ask_bosphorus_access = {
+        available = {
+
+        }
+
+        visible = {
+            tag = LBU
+            OR = {
+                has_country_flag = eu_recognized_state
+                has_country_flag = ru_recognized_state
+            }
+        }
+
+        days_remove = 30
+
+        cost = 50
+
+        ai_will_do = {
+            base = 120
+        }
+
+        complete_effect = {
+            TUR = {
+                country_event = FOP_generic.59
+            }
+        }
+
+        remove_effect = {
+            
         }
     }
 }

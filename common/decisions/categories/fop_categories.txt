@@ -238,5 +238,23 @@ FOP_exports = {
 FOP_trading = {
     visible = {
         has_country_flag = FOP_trading
+        NOT = {
+            has_country_flag = FOP_trading_expanded
+        }
+    }
+}
+
+FOP_workforce = {
+    visible = {
+        OR = {
+            has_country_flag = FOP_looking_for_immigrants
+            has_country_flag = FOP_returning_our_refugees
+        }
+    }
+}
+
+FOP_trading_expanded = {
+    visible = {
+        has_country_flag = FOP_trading_expanded
     }
 }
