@@ -83,10 +83,6 @@ leader_traits = {
 				FROM = { has_idea = academy_scholarships_spirit }
 				factor = 0
 			}
-			modifier = { #Purged Junior Army Officers
-				FROM = { has_idea = DPR_purged_junior_army_officers_3 }
-				factor = 0
-			}
 		}
 		
 	}
@@ -111,10 +107,6 @@ leader_traits = {
 			}
 			modifier = {
 				FROM = { has_idea = academy_scholarships_spirit }
-				factor = 0
-			}
-			modifier = { #Purged Junior Army Officers
-				FROM = { has_idea = DPR_purged_junior_army_officers_3 }
 				factor = 0
 			}
 		}
@@ -142,10 +134,6 @@ leader_traits = {
 			}
 			modifier = {
 				FROM = { has_idea = academy_scholarships_spirit }
-				factor = 0
-			}
-			modifier = { #Purged Junior Army Officers
-				FROM = { has_idea = DPR_purged_junior_army_officers_3 }
 				factor = 0
 			}
 		}
@@ -236,10 +224,6 @@ leader_traits = {
 				FROM = { has_idea = academy_scholarships_spirit }
 				factor = 0
 			}
-			modifier = { #Purged Junior Army Officers
-				FROM = { has_idea = DPR_purged_junior_army_officers_3 }
-				factor = 0
-			}
 		}
 		
 		planning_skill_factor = 1
@@ -269,10 +253,6 @@ leader_traits = {
 			}
 			modifier = {
 				FROM = { has_idea = academy_scholarships_spirit }
-				factor = 0
-			}
-			modifier = { #Purged Junior Army Officers
-				FROM = { has_idea = DPR_purged_junior_army_officers_3 }
 				factor = 0
 			}
 		}
@@ -306,10 +286,6 @@ leader_traits = {
 				FROM = { has_idea = academy_scholarships_spirit }
 				factor = 0
 			}
-			modifier = { #Purged Junior Army Officers
-				FROM = { has_idea = DPR_purged_junior_army_officers_3 }
-				factor = 0
-			}
 		}
 		
 		attack_skill_factor = 1
@@ -339,10 +315,6 @@ leader_traits = {
 				FROM = { has_idea = academy_scholarships_spirit }
 				factor = 0
 			}
-			modifier = { #Purged Junior Army Officers
-				FROM = { has_idea = DPR_purged_junior_army_officers_3 }
-				factor = 0
-			}
 		}
 	}
 
@@ -365,10 +337,6 @@ leader_traits = {
 			}
 			modifier = {
 				FROM = { has_idea = academy_scholarships_spirit }
-				factor = 0
-			}
-			modifier = { #Purged Junior Army Officers
-				FROM = { has_idea = DPR_purged_junior_army_officers_3 }
 				factor = 0
 			}
 		}
@@ -398,7 +366,6 @@ leader_traits = {
 		unit_trigger = {
 			OR = {
 				division_has_majority_template = infantry
-				division_has_majority_template = bicycle_battalion
 				division_has_majority_template = marine
 				division_has_majority_template = mountaineers
 				division_has_majority_template = paratrooper
@@ -413,7 +380,6 @@ leader_traits = {
 					OR = {
 						has_idea = best_of_the_best_spirit
 						has_idea = academy_scholarships_spirit
-						has_idea = DPR_purged_junior_army_officers_3
 					}
 				}
 			}
@@ -441,10 +407,6 @@ leader_traits = {
 				FROM = { has_idea = academy_scholarships_spirit }
 				factor = 0
 			}
-			modifier = { #Purged Junior Army Officers
-				FROM = { has_idea = DPR_purged_junior_army_officers_3 }
-				factor = 0
-			}
 			
 			modifier = {
 				FROM = { 
@@ -463,7 +425,6 @@ leader_traits = {
 		trait_type = personality_trait
 		unit_type = {
 			type = cavalry
-			type = camelry
 			type = motorized
 			type = mechanized
 		}
@@ -471,7 +432,6 @@ leader_traits = {
 		unit_trigger = {
 			OR = {
 				division_has_majority_template = cavalry
-				division_has_majority_template = camelry
 				division_has_majority_template = motorized
 				division_has_majority_template = mechanized
 			}
@@ -480,7 +440,6 @@ leader_traits = {
 					OR = {
 						has_idea = best_of_the_best_spirit
 						has_idea = academy_scholarships_spirit
-						has_idea = DPR_purged_junior_army_officers_3
 					}
 				}
 			}
@@ -499,10 +458,6 @@ leader_traits = {
 			}
 			modifier = {
 				FROM = { has_idea = academy_scholarships_spirit }
-				factor = 0
-			}
-			modifier = { #Purged Junior Army Officers
-				FROM = { has_idea = DPR_purged_junior_army_officers_3 }
 				factor = 0
 			}
 			
@@ -544,7 +499,6 @@ leader_traits = {
 					OR = {
 						has_idea = best_of_the_best_spirit
 						has_idea = academy_scholarships_spirit
-						has_idea = DPR_purged_junior_army_officers_3
 					}
 				}
 			}
@@ -566,10 +520,6 @@ leader_traits = {
 			}
 			modifier = {
 				FROM = { has_idea = academy_scholarships_spirit }
-				factor = 0
-			}
-			modifier = { #Purged Junior Army Officers
-				FROM = { has_idea = DPR_purged_junior_army_officers_3 }
 				factor = 0
 			}
 			
@@ -596,9 +546,6 @@ leader_traits = {
 		unit_trigger = {
 			OR = {
 				division_has_battalion_in_template = engineer
-				division_has_battalion_in_template = light_flame_tank
-				division_has_battalion_in_template = medium_flame_tank
-				division_has_battalion_in_template = heavy_flame_tank
 				owner = {
 					has_idea = superior_firepower_academy_spirit
 				}
@@ -647,30 +594,22 @@ leader_traits = {
 
 		allowed = {
 			FROM = {
-				OR = {
-					original_tag = LPR
-					original_tag = KIR
-				}
+				original_tag = ICE
 			}
 		}
 
 		unit_type = {
 			type = cavalry
-			type = camelry
 			type = irregular_infantry
 		}
 
 		unit_trigger = {
 			OR = {
 				division_has_majority_template = cavalry
-				division_has_majority_template = camelry
 				division_has_majority_template = irregular_infantry
 			}
 			owner = {
-				OR = {
-					original_tag = LPR
-					original_tag = KIR
-				}
+				original_tag = ICE
 				NOT = {
 					OR = {
 						has_idea = best_of_the_best_spirit
@@ -683,7 +622,6 @@ leader_traits = {
 		modifier = {
 			modifier_army_sub_unit_irregular_infantry_attack_factor = 0.05
 			modifier_army_sub_unit_cavalry_speed_factor = 0.05
-			modifier_army_sub_unit_camelry_speed_factor = 0.05
 			out_of_supply_factor = -0.1
 			desert = {
 				movement = 0.1
@@ -695,67 +633,13 @@ leader_traits = {
 			modifier = {
 				add = 0.5
 				FROM = { #Looks like the allowed parameter is doing NOTHING :D 
-					OR = {
-						original_tag = LPR
-						original_tag = KIR
-					}
+					original_tag = ICE
 				}
 			}
 		}
 
 		attack_skill_factor = 1
 		planning_skill_factor = 1
-	}
-
-	ascari_officer = { 
-		type = corps_commander
-
-		trait_type = personality_trait
-
-		allowed = {
-			FROM = {
-				original_tag = LPR
-			}
-		}
-
-		unit_type = {
-			type = infantry
-		}
-
-		unit_trigger = {
-			division_has_majority_template = infantry
-			owner = {
-				original_tag = LPR
-				NOT = {
-					OR = {
-						has_idea = best_of_the_best_spirit
-						has_idea = academy_scholarships_spirit
-					}
-				}
-			}
-		}
-		
-		modifier = {
-			modifier_army_sub_unit_infantry_defence_factor = 0.05
-			modifier_army_sub_unit_cavalry_defence_factor = 0.05
-			modifier_army_sub_unit_camelry_defence_factor = 0.05
-			desert = {
-				defence = 0.05
-			}
-		}
-
-		new_commander_weight = {
-			base = 0
-			modifier = {
-				add = 0.5
-				FROM = { #Looks like the allowed parameter is doing NOTHING :D 
-					original_tag = LPR
-				}
-			}
-		}
-
-		defense_skill_factor = 1
-		logistics_skill_factor = 1
 	}
 
 	militias_officer = { 
@@ -765,16 +649,7 @@ leader_traits = {
 
 		allowed = {
 			FROM = {
-				OR = {
-					original_tag = LPR
-					original_tag = DPR
-					original_tag = PLT
-					original_tag = STR
-					original_tag = KIR
-					original_tag = ZHY
-					original_tag = TER # Intentionally not below 
-					original_tag = RIV
-				}
+				original_tag = ICE
 			}
 		}
 
@@ -785,16 +660,7 @@ leader_traits = {
 		unit_trigger = {
 			division_has_majority_template = militia
 			owner = {
-				OR = {
-					original_tag = LPR
-					original_tag = DPR
-					original_tag = PLT
-					original_tag = STR
-					original_tag = KIR
-					original_tag = ZHY
-					original_tag = TER
-					original_tag = RIV
-				}
+				original_tag = ICE
 				NOT = {
 					OR = {
 						has_idea = best_of_the_best_spirit
@@ -815,10 +681,7 @@ leader_traits = {
 			modifier = {
 				add = 0.5
 				FROM = { #Looks like the allowed parameter is doing NOTHING :D 
-					OR = {
-						original_tag = LPR
-						original_tag = DPR
-					}
+					original_tag = ICE
 				}
 			}
 		}
@@ -834,7 +697,7 @@ leader_traits = {
 		allowed = {
 			FROM = { original_tag = FIN }
 		}
-				
+
 		trait_xp_factor = {
 			trickster = 1     #+100%
 			winter_specialist = 1     #+100%
@@ -2694,10 +2557,6 @@ leader_traits = {
 				FROM = { has_idea = naval_academy_scholarships_spirit }
 				factor = 0
 			}
-			modifier = { #Purged Junior Navy Officers
-				FROM = { has_idea = DPR_purged_junior_navy_officers_3 }
-				factor = 0
-			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -2719,10 +2578,6 @@ leader_traits = {
 			}
 			modifier = {
 				FROM = { has_idea = naval_academy_scholarships_spirit }
-				factor = 0
-			}
-			modifier = { #Purged Junior Navy Officers
-				FROM = { has_idea = DPR_purged_junior_navy_officers_3 }
 				factor = 0
 			}
 		}
@@ -2750,10 +2605,6 @@ leader_traits = {
 				FROM = { has_idea = naval_academy_scholarships_spirit }
 				factor = 0
 			}
-			modifier = { #Purged Junior Navy Officers
-				FROM = { has_idea = DPR_purged_junior_navy_officers_3 }
-				factor = 0
-			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -2777,10 +2628,6 @@ leader_traits = {
 				FROM = { has_idea = naval_academy_scholarships_spirit }
 				factor = 0
 			}
-			modifier = { #Purged Junior Navy Officers
-				FROM = { has_idea = DPR_purged_junior_navy_officers_3 }
-				factor = 0
-			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -2801,10 +2648,6 @@ leader_traits = {
 			}
 			modifier = {
 				FROM = { has_idea = naval_academy_scholarships_spirit }
-				factor = 0
-			}
-			modifier = { #Purged Junior Navy Officers
-				FROM = { has_idea = DPR_purged_junior_navy_officers_3 }
 				factor = 0
 			}
 		}
@@ -2830,10 +2673,6 @@ leader_traits = {
 				FROM = { has_idea = naval_academy_scholarships_spirit }
 				factor = 0
 			}
-			modifier = { #Purged Junior Navy Officers
-				FROM = { has_idea = DPR_purged_junior_navy_officers_3 }
-				factor = 0
-			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -2855,10 +2694,6 @@ leader_traits = {
 			}
 			modifier = {
 				FROM = { has_idea = naval_academy_scholarships_spirit }
-				factor = 0
-			}
-			modifier = { #Purged Junior Navy Officers
-				FROM = { has_idea = DPR_purged_junior_navy_officers_3 }
 				factor = 0
 			}
 		}
@@ -2883,10 +2718,6 @@ leader_traits = {
 				FROM = { has_idea = naval_academy_scholarships_spirit }
 				factor = 0
 			}
-			modifier = { #Purged Junior Navy Officers
-				FROM = { has_idea = DPR_purged_junior_navy_officers_3 }
-				factor = 0
-			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -2908,10 +2739,6 @@ leader_traits = {
 			}
 			modifier = {
 				FROM = { has_idea = naval_academy_scholarships_spirit }
-				factor = 0
-			}
-			modifier = { #Purged Junior Navy Officers
-				FROM = { has_idea = DPR_purged_junior_navy_officers_3 }
 				factor = 0
 			}
 		}
@@ -2939,10 +2766,6 @@ leader_traits = {
 				FROM = { has_idea = naval_academy_scholarships_spirit }
 				factor = 0
 			}
-			modifier = { #Purged Junior Navy Officers
-				FROM = { has_idea = DPR_purged_junior_navy_officers_3 }
-				factor = 0
-			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -2963,10 +2786,6 @@ leader_traits = {
 			}
 			modifier = {
 				FROM = { has_idea = naval_academy_scholarships_spirit }
-				factor = 0
-			}
-			modifier = { #Purged Junior Navy Officers
-				FROM = { has_idea = DPR_purged_junior_navy_officers_3 }
 				factor = 0
 			}
 		}
@@ -2992,10 +2811,6 @@ leader_traits = {
 				FROM = { has_idea = naval_academy_scholarships_spirit }
 				factor = 0
 			}
-			modifier = { #Purged Junior Navy Officers
-				FROM = { has_idea = DPR_purged_junior_navy_officers_3 }
-				factor = 0
-			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -3017,10 +2832,6 @@ leader_traits = {
 			}
 			modifier = {
 				FROM = { has_idea = naval_academy_scholarships_spirit }
-				factor = 0
-			}
-			modifier = { #Purged Junior Navy Officers
-				FROM = { has_idea = DPR_purged_junior_navy_officers_3 }
 				factor = 0
 			}
 		}
@@ -3167,6 +2978,7 @@ leader_traits = {
 			factor = 0
 		}
 	}
+
 ##################################
 # operative traits
 ##################################
@@ -3429,115 +3241,5 @@ leader_traits = {
 			factor = 0  
 		}
 	}
-
-	loyalty_to_britain = {
-		type = { land }
-		trait_type = personality_trait
-		
-		new_commander_weight = {
-			factor = 0  
-		}
-	}
-
-	loyalty_to_pakistan = {
-		type = { land }
-		trait_type = personality_trait
-		
-		new_commander_weight = {
-			factor = 0  
-		}
-	}
-
-	loyalty_to_india = {
-		type = { land }
-		trait_type = personality_trait
-		
-		new_commander_weight = {
-			factor = 0  
-		}
-	}
-
-	IRQ_golden_square_member = {
-		type = { land }
-		trait_type = personality_trait
-		
-		new_commander_weight = {
-			factor = 0  
-		}
-	}
-
-	PRC_survivor_of_the_long_march = {
-		type = { land }
-		trait_type = personality_trait
-		
-		new_commander_weight = {
-			factor = 0  
-		}
-
-		modifier = {
-			out_of_supply_factor = -0.1
-			equipment_capture = 0.03
-		}
-		
-	}
-
-	SIC_dubious_loyalty = {
-		type = { land }
-		trait_type = personality_trait
-		
-		new_commander_weight = {
-			factor = 0  
-		}
-
-		modifier = {
-			
-		}
-		
-	}
-
-	YUN_dubious_loyalty = {
-		type = { land }
-		trait_type = personality_trait
-		
-		new_commander_weight = {
-			factor = 0  
-		}
-
-		modifier = {
-			
-		}
-		
-	}
-	
-	CHI_dubious_loyalty = {
-		type = { land }
-		trait_type = personality_trait
-		
-		new_commander_weight = {
-			factor = 0  
-		}
-
-		modifier = {
-			
-		}
-		
-	}
-
-
-	XSM_dubious_loyalty = {
-		type = { land }
-		trait_type = personality_trait
-		
-		new_commander_weight = {
-			factor = 0  
-		}
-
-		modifier = {
-			
-		}
-		
-	}
-
-
 
 }
