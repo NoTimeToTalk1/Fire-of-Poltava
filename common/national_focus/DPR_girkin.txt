@@ -50,6 +50,8 @@ shared_focus = {
 			ideology = traditionalism
 			popularity = 0.3
 		}
+		
+		set_country_flag = DPR_girkin_fight
 	}
 }
 
@@ -169,6 +171,8 @@ shared_focus = {
 			ideology = traditionalism
 			popularity = -0.2
 		}
+		
+		set_country_flag = DPR_girkin_guarantees
 	}
 }
 
@@ -234,6 +238,14 @@ shared_focus = {
 				}
 				50 = {
 					set_country_flag = DPR_raid_fail
+				}
+			}
+			random_list = {
+				50 = {
+					###
+				}
+				50 = {
+					set_country_flag = DPR_girkin_pushilin_deal
 				}
 			}
 		}
@@ -684,7 +696,7 @@ shared_focus = {
 	#	CIVIL_WAR_IS_OVER = yes
 	#}
 	available = {
-		has_country_flag = DPR_civil_war_is_over
+		NOT = { has_country_flag = DPR_girkin_civil_war }
 	}
 
 	completion_reward = {

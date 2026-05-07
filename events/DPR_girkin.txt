@@ -83,6 +83,16 @@ country_event = {
 			remove_idea = DPR_peoples_opposition_2
 			add_idea = DPR_peoples_opposition_3
 		}
+		
+		2097 = { set_demilitarized_zone = yes }
+		2081 = { set_demilitarized_zone = yes }
+		2099 = { set_demilitarized_zone = yes }
+		2098 = { set_demilitarized_zone = yes }
+		
+		2031 = { set_demilitarized_zone = yes }
+		2093 = { set_demilitarized_zone = yes }
+		2094 = { set_demilitarized_zone = yes }
+		2083 = { set_demilitarized_zone = yes }
 	}
 }
 
@@ -168,7 +178,6 @@ country_event = {
 }
 
 #PLACEHOLDER --- Відміна правок, шок контент
-#PLACEHOLDER --- Опис подальшої ситуації (народ в страху, в державі анархія)
 country_event = {
 	id = gir.8
 	title = gir.8.t
@@ -180,9 +189,58 @@ country_event = {
 
 	option = {
 		name = gir.8.a
+		if = {
+			limit = {
+				AND = {
+					has_country_flag = DPR_raid_fail
+					has_country_flag = DPR_girkin_pushilin_deal
+				}
+			}
+			2097 = { set_demilitarized_zone = yes }
+			2081 = { set_demilitarized_zone = yes }
+			2099 = { set_demilitarized_zone = yes }
+			2098 = { set_demilitarized_zone = yes }
+			
+			2724 = { set_demilitarized_zone = yes }
+			2862 = { set_demilitarized_zone = yes }
+			
+			2031 = { set_demilitarized_zone = yes }
+			2093 = { set_demilitarized_zone = yes }
+			2094 = { set_demilitarized_zone = yes }
+			2083 = { set_demilitarized_zone = yes }
+			
+			2346 = { set_demilitarized_zone = yes }
+			2301 = { set_demilitarized_zone = yes }
+		}
+		else_if = {
+			limit = {
+				AND = {
+					has_country_flag = DPR_raid_fail
+					NOT = { has_country_flag = DPR_girkin_pushilin_deal }
+				}
+			}
+			2097 = { set_demilitarized_zone = yes }
+			2081 = { set_demilitarized_zone = yes }
+			2099 = { set_demilitarized_zone = yes }
+			2098 = { set_demilitarized_zone = yes }
+			
+			2031 = { set_demilitarized_zone = yes }
+			2093 = { set_demilitarized_zone = yes }
+			2094 = { set_demilitarized_zone = yes }
+			2083 = { set_demilitarized_zone = yes }
+			
+			2082 = { set_demilitarized_zone = yes }
+			2309 = { set_demilitarized_zone = yes }
+			2856 = { set_demilitarized_zone = yes }
+			2310 = { set_demilitarized_zone = yes }
+		}
+		else = {
+			add_political_power = 50
+		}
 	}
 }
 
+#PLACEHOLDER --- Опис подальшої ситуації (народ в страху, в державі анархія)
 country_event = {
 	id = gir.9
 	title = gir.9.t
@@ -194,6 +252,8 @@ country_event = {
 
 	option = {
 		name = gir.9.a
+		set_country_flag = DPR_girkin_civil_war
+		unlock_decision_category_tooltip = DPR_putting_down_the_unrest_category
 	}
 }
 

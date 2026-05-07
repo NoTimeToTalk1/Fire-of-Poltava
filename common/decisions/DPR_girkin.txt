@@ -1,794 +1,256 @@
-DPR_putting_down_the_unrest = {
-	DPR_operation_in_stanitsa_luganskaya = {
-		visible = {
-			2081 = {
-				is_demilitarized_zone = yes
-			}
-		}
-		custom_cost_trigger = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				has_equipment = {
-					infantry_equipment > 400
-				}
-			}
-			else = {
-				has_equipment = {
-					infantry_equipment > 250
-				}
-			}
-		}
-		state_target = yes
-		target_trigger = {
-			FROM = {
-				state = 2081
-			}
-		}
-		on_map_mode = map_and_decisions_view
-		ai_will_do = {
-			factor = 100
-		}
-		days_remove = 14
-		fire_only_once = yes
-		remove_effect = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -400
-				}
-			}
-			else = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -250
-				}
-			}
-			2081 = {
-				set_demilitarized_zone = no
-			}
-		}
-	}
-	DPR_operation_in_starobelsk = {
-		visible = {
-			2099 = {
-				is_demilitarized_zone = yes
-			}
-		}
-		available = {
-			2081 = {
-				is_demilitarized_zone = no
-			}
-		}
-		state_target = yes
-		target_trigger = {
-			FROM = {
-				state = 2099
-			}
-		}
-		on_map_mode = map_and_decisions_view
-		custom_cost_trigger = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				has_equipment = {
-					infantry_equipment > 400
-				}
-			}
-			else = {
-				has_equipment = {
-					infantry_equipment > 250
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		days_remove = 14
-		fire_only_once = yes
-		remove_effect = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -400
-				}
-			}
-			else = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -250
-				}
-			}
-			2099 = {
-				set_demilitarized_zone = no
-			}
-		}
-	}
-	DPR_operation_in_svatovo = {
-		visible = {
-			2098 = {
-				is_demilitarized_zone = yes
-			}
-		}
-		available = {
-			2099 = {
-				is_demilitarized_zone = no
-			}
-		}
-		state_target = yes
-		target_trigger = {
-			FROM = {
-				state = 2098
-			}
-		}
-		on_map_mode = map_and_decisions_view
-		custom_cost_trigger = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				has_equipment = {
-					infantry_equipment > 400
-				}
-			}
-			else = {
-				has_equipment = {
-					infantry_equipment > 250
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		days_remove = 14
-		fire_only_once = yes
-		remove_effect = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -400
-				}
-			}
-			else = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -250
-				}
-			}
-			2097 = {
-				set_demilitarized_zone = no
-			}
-		}
-	}
-	DPR_operation_in_krasny_liman = {
-		visible = {
-			2724 = {
-				is_demilitarized_zone = yes
-			}
-		}
-		available = {
-			2098 = {
-				is_demilitarized_zone = no
-			}
-		}
-		state_target = yes
-		target_trigger = {
-			FROM = {
-				state = 2724
-			}
-		}
-		on_map_mode = map_and_decisions_view
-		custom_cost_trigger = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				has_equipment = {
-					infantry_equipment > 400
-				}
-			}
-			else = {
-				has_equipment = {
-					infantry_equipment > 250
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		days_remove = 14
-		fire_only_once = yes
-		remove_effect = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -400
-				}
-			}
-			else = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -250
-				}
-			}
-			2724 = {
-				set_demilitarized_zone = no
-			}
-		}
-	}
-	DPR_take_down_severodonetsk = {
-		visible = {
-			2097 = {
-				is_demilitarized_zone = yes
-			}
-		}
-		available = {
-			2081 = {
-				is_demilitarized_zone = no
-			}
-			2098 = {
-				is_demilitarized_zone = no
-			}
-			2099 = {
-				is_demilitarized_zone = no
-			}
-			2724 = {
-				is_demilitarized_zone = no
-			}
-		}
-		state_target = yes
-		target_trigger = {
-			FROM = {
-				state = 2097
-			}
-		}
-		on_map_mode = map_and_decisions_view
-		custom_cost_trigger = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				has_equipment = {
-					infantry_equipment > 700
-				}
-			}
-			else = {
-				has_equipment = {
-					infantry_equipment > 500
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		days_remove = 14
-		fire_only_once = yes
-		remove_effect = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -750
-				}
-			}
-			else = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -500
-				}
-			}
-			2097 = {
-				set_demilitarized_zone = no
-			}
-		}
-	}
-	DPR_end_pasechnik = {
-		available = {
-			2097 = {
-				is_demilitarized_zone = no
-			}
-		}
-		cost = 25
-		ai_will_do = {
-			factor = 100
-		}
-		days_remove = 7
-		fire_only_once = yes
-		remove_effect = {
-			country_event = dpr_girkin.10
-		}
-	}
-	DPR_operation_in_velikaya_novoselka = {
-		visible = {
-			2346 = {
-				is_demilitarized_zone = yes
-			}
-		}
-		custom_cost_trigger = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				has_equipment = {
-					infantry_equipment > 350
-				}
-			}
-			else = {
-				has_equipment = {
-					infantry_equipment > 200
-				}
-			}
-		}
-		state_target = yes
-		target_trigger = {
-			FROM = {
-				state = 2346
-			}
-		}
-		on_map_mode = map_and_decisions_view
-		ai_will_do = {
-			factor = 100
-		}
-		days_remove = 14
-		fire_only_once = yes
-		remove_effect = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -350
-				}
-			}
-			else = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -200
-				}
-			}
-			2346 = {
-				set_demilitarized_zone = no
-			}
-		}
-	}
-	DPR_operation_in_amvrosievka = {
-		visible = {
-			2310 = {
-				is_demilitarized_zone = yes
-			}
-		}
-		custom_cost_trigger = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				has_equipment = {
-					infantry_equipment > 350
-				}
-			}
-			else = {
-				has_equipment = {
-					infantry_equipment > 200
-				}
-			}
-		}
-		state_target = yes
-		target_trigger = {
-			FROM = {
-				state = 2310
-			}
-		}
-		on_map_mode = map_and_decisions_view
-		ai_will_do = {
-			factor = 100
-		}
-		days_remove = 14
-		fire_only_once = yes
-		remove_effect = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -350
-				}
-			}
-			else = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -200
-				}
-			}
-			2310 = {
-				set_demilitarized_zone = no
-			}
-		}
-	}
-	DPR_operation_in_novoazovsk = {
-		visible = {
-			2083 = {
-				is_demilitarized_zone = yes
-			}
-		}
-		available = {
-			OR = {
-				2310 = {
-					is_demilitarized_zone = no
-				}
-				2094 = {
-					is_demilitarized_zone = no
-				}
-			}
-		}
-		state_target = yes
-		target_trigger = {
-			FROM = {
-				state = 2083
-			}
-		}
-		on_map_mode = map_and_decisions_view
-		custom_cost_trigger = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				has_equipment = {
-					infantry_equipment > 350
-				}
-			}
-			else = {
-				has_equipment = {
-					infantry_equipment > 200
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		days_remove = 14
-		fire_only_once = yes
-		remove_effect = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -350
-				}
-			}
-			else = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -200
-				}
-			}
-			2083 = {
-				set_demilitarized_zone = no
-			}
-		}
-	}
-	DPR_operation_in_volnovakha = {
-		visible = {
-			2094 = {
-				is_demilitarized_zone = yes
-			}
-		}
-		available = {
-			OR = {
-				2083 = {
-					is_demilitarized_zone = no
-				}
-				2346 = {
-					is_demilitarized_zone = no
-				}
-			}
-		}
-		state_target = yes
-		target_trigger = {
-			FROM = {
-				state = 2094
-			}
-		}
-		on_map_mode = map_and_decisions_view
-		custom_cost_trigger = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				has_equipment = {
-					infantry_equipment > 350
-				}
-			}
-			else = {
-				has_equipment = {
-					infantry_equipment > 200
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		days_remove = 14
-		fire_only_once = yes
-		remove_effect = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -350
-				}
-			}
-			else = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -200
-				}
-			}
-			2094 = {
-				set_demilitarized_zone = no
-			}
-		}
-	}
-	DPR_operation_in_mangush = {
-		visible = {
-			2093 = {
-				is_demilitarized_zone = yes
-			}
-		}
-		available = {
-			OR = {
-				2083 = {
-					is_demilitarized_zone = no
-				}
-				2094 = {
-					is_demilitarized_zone = no
-				}
-			}
-		}
-		state_target = yes
-		target_trigger = {
-			FROM = {
-				state = 2093
-			}
-		}
-		on_map_mode = map_and_decisions_view
-		custom_cost_trigger = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				has_equipment = {
-					infantry_equipment > 350
-				}
-			}
-			else = {
-				has_equipment = {
-					infantry_equipment > 200
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		days_remove = 14
-		fire_only_once = yes
-		remove_effect = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -350
-				}
-			}
-			else = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -200
-				}
-			}
-			2094 = {
-				set_demilitarized_zone = no
-			}
-		}
-	}
-	DPR_take_down_mariupol = {
-		visible = {
-			2031 = {
-				is_demilitarized_zone = yes
-			}
-		}
-		available = {
-			2310 = {
-				is_demilitarized_zone = no
-			}
-			2083 = {
-				is_demilitarized_zone = no
-			}
-			2346 = {
-				is_demilitarized_zone = no
-			}
-			2094 = {
-				is_demilitarized_zone = no
-			}
-			2093 = {
-				is_demilitarized_zone = no
-			}
-		}
-		custom_cost_trigger = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				has_equipment = {
-					infantry_equipment > 700
-				}
-			}
-			else = {
-				has_equipment = {
-					infantry_equipment > 500
-				}
-			}
-		}
-		state_target = yes
-		target_trigger = {
-			FROM = {
-				state = 2031
-			}
-		}
-		on_map_mode = map_and_decisions_view
-		ai_will_do = {
-			factor = 100
-		}
-		days_remove = 14
-		fire_only_once = yes
-		remove_effect = {
-			if = {
-				limit = {
-					has_country_flag = DPR_girkin_crackdown_hard
-				}
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -700
-				}
-			}
-			else = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -500
-				}
-			}
-			2031 = {
-				set_demilitarized_zone = no
-			}
-		}
-	}
-	DPR_end_vitrenko = {
-		available = {
-			2031 = {
-				is_demilitarized_zone = no
-			}
-		}
-		cost = 25
-		ai_will_do = {
-			factor = 100
-		}
-		days_remove = 7
-		fire_only_once = yes
-		remove_effect = {
-			country_event = dpr_girkin.11
-		}
-	}
-}
-DPR_invite_cossack_leaders = {
+DPR_putting_down_the_unrest_category = {
 
-	DPR_invite_cuban_cossaks = {			
-		icon = GFX_cuban_cossaks_decision
+    DPR_pacify_region = {
+        on_map_mode = map_and_decisions_view
+        state_target = yes
+
+        visible = {
+            OR = {
+                has_country_flag = DPR_girkin_fight
+                AND = {
+                    has_country_flag = DPR_girkin_guarantees
+                    has_country_flag = DPR_raid_fail
+                }
+            }
+        }
+
+        available = {
+            NOT = { has_country_flag = DPR_pacification_in_progress }
+			
+            if = {
+                limit = { has_country_flag = DPR_raid_fail }
+                has_equipment = { infantry_equipment > 400 }
+            }
+            else = {
+                has_equipment = { infantry_equipment > 250 }
+            }
+        }
+
+        target_trigger = {
+            FROM = {
+                is_owned_by = ROOT
+                is_demilitarized_zone = yes
+                NOT = { state = 2097 }
+                NOT = { state = 2031 }
+                NOT = { state = 2082 }
+                any_neighbor_state = {
+                    is_demilitarized_zone = no
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_color = 1
+            highlight_states_trigger = { #potential = {
+                is_owned_by = ROOT
+                is_demilitarized_zone = yes
+                NOT = { state = 2097 }
+                NOT = { state = 2031 }
+                NOT = { state = 2082 }
+            }
+        }
+
+        custom_cost_trigger = {
+            if = {
+                limit = { has_country_flag = DPR_raid_fail }
+                has_equipment = { infantry_equipment > 400 }
+            }
+            else = {
+                has_equipment = { infantry_equipment > 250 }
+            }
+        }
+        custom_cost_text = DPR_pacify_region_cost
+
+        ai_will_do = { factor = 100 }
+        days_remove = 7
+
+        complete_effect = {
+            set_country_flag = DPR_pacification_in_progress
+			
+            if = {
+                limit = { has_country_flag = DPR_raid_fail }
+                add_equipment_to_stockpile = { type = infantry_equipment amount = -400 }
+            }
+            else = {
+                add_equipment_to_stockpile = { type = infantry_equipment amount = -250 }
+            }
+        }
+
+        remove_effect = {
+            clr_country_flag = DPR_pacification_in_progress
+            FROM = {
+                set_demilitarized_zone = no
+            }
+        }
+    }
+
+    DPR_final_operation = {
+        on_map_mode = map_and_decisions_view
+        state_target = yes
+
+        visible = {
+            OR = {
+                has_country_flag = DPR_girkin_fight
+                AND = {
+                    has_country_flag = DPR_girkin_guarantees
+                    has_country_flag = DPR_raid_fail
+                }
+            }
+        }
+
+        available = {
+            NOT = { has_country_flag = DPR_pacification_in_progress }
+			
+            if = {
+                limit = { has_country_flag = DPR_raid_fail }
+                has_equipment = { infantry_equipment > 800 }
+            }
+            else = {
+                has_equipment = { infantry_equipment > 500 }
+            }
+        }
+
+        target_trigger = {
+            FROM = {
+                is_owned_by = ROOT
+                is_demilitarized_zone = yes
+                OR = {
+                    AND = {
+                        state = 2097
+                        2081 = { is_demilitarized_zone = no }
+                        2099 = { is_demilitarized_zone = no }
+                        2098 = { is_demilitarized_zone = no }
+                        2724 = { is_demilitarized_zone = no }
+						2862 = { is_demilitarized_zone = no }
+                    }
+                    AND = {
+                        state = 2031
+                        2083 = { is_demilitarized_zone = no }
+                        2094 = { is_demilitarized_zone = no }
+                        2093 = { is_demilitarized_zone = no }
+                        2346 = { is_demilitarized_zone = no }
+                        2301 = { is_demilitarized_zone = no }
+                    }
+                    AND = {
+                        state = 2082
+                        2309 = { is_demilitarized_zone = no }
+                        2856 = { is_demilitarized_zone = no }
+                        2310 = { is_demilitarized_zone = no }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_color = 2
+            highlight_states_trigger = { #potential = {
+                is_owned_by = ROOT
+                is_demilitarized_zone = yes
+                OR = {
+                    state = 2097
+                    state = 2031
+                    state = 2082
+                }
+            }
+        }
+
+        custom_cost_trigger = {
+            if = {
+                limit = { has_country_flag = DPR_raid_fail }
+                has_equipment = { infantry_equipment > 800 }
+            }
+            else = {
+                has_equipment = { infantry_equipment > 500 }
+            }
+        }
+        custom_cost_text = DPR_final_operation_cost
+
+        ai_will_do = { factor = 100 }
+        days_remove = 14
+
+        complete_effect = {
+            set_country_flag = DPR_pacification_in_progress
+
+            if = {
+                limit = { has_country_flag = DPR_raid_fail }
+                add_equipment_to_stockpile = { type = infantry_equipment amount = -800 }
+            }
+            else = {
+                add_equipment_to_stockpile = { type = infantry_equipment amount = -500 }
+            }
+        }
+
+        remove_effect = {
+            clr_country_flag = DPR_pacification_in_progress
+            FROM = {
+                set_demilitarized_zone = no
+            }
+        }
+    }
+
+    DPR_end_pasechnik = {
+		available = {
+			2097 = { is_demilitarized_zone = no }
+		}
 		
-		fire_only_once = yes
-		days_remove = 5		
-
-		visible = {	
-			has_country_flag = girkin_invite_cossaks
-		}		
-
-		cost = 10
-
-		ai_will_do = {	
-			factor = 100		
-		}
-
-		remove_effect = {
-			custom_effect_tooltip = invite_cossaks_tt
-			recruit_character = DNR_nutrecov       					
-		}
-	}
-
-	DPR_invite_don_cossaks = {			
-		icon = GFX_don_cossaks_decision
+        cost = 25
+        ai_will_do = { factor = 100 }
+        days_remove = 7
+        fire_only_once = yes
 		
-		fire_only_once = yes
-		days_remove = 5		
+        remove_effect = { country_event = dpr_girkin.10 }
+    }
 
-		visible = {	
-			has_country_flag = girkin_invite_cossaks
-		}		
-
-		cost = 10
-
-		ai_will_do = {	
-			factor = 100		
+    DPR_end_vitrenko = {
+        available = {
+			2031 = { is_demilitarized_zone = no }
 		}
 
-		remove_effect = {
-			custom_effect_tooltip = invite_cossaks_tt
-			recruit_character = DNR_turanov       					
-		}
-	}
+        cost = 25
+        ai_will_do = { factor = 100 }
+        days_remove = 7
+        fire_only_once = yes
 
-	DPR_invite_volga_cossaks = {			
-		icon = GFX_volga_cossaks_decision
+        remove_effect = { country_event = dpr_girkin.11 }
+    }
+
+    DPR_end_pushilin = {
+        visible = {
+            has_country_flag = DPR_raid_fail
+			NOT = { has_country_flag = DPR_girkin_pushilin_deal }
+        }
+
+		available = {
+            2082 = { is_demilitarized_zone = no }
+        }
+	
+        cost = 25
+        ai_will_do = { factor = 100 }
+        days_remove = 7
+        fire_only_once = yes
+
+        remove_effect = { country_event = DPR_pushilin.999 }
+    }
+	
+	DPR_end_the_war = {
+		visible = {
+            2097 = { is_demilitarized_zone = no }
+			2031 = { is_demilitarized_zone = no }
+			2082 = { is_demilitarized_zone = no }
+        }
+
+		available = {
+			has_country_flag = pasechnik_is_dead
+            has_country_flag = vitrenko_is_dead
+			has_country_flag = pushilin_is_dead
+        }
 		
-		fire_only_once = yes
-		days_remove = 5		
-
-		visible = {	
-			has_country_flag = girkin_invite_cossaks
-		}		
-
-		cost = 10
-
-		ai_will_do = {	
-			factor = 100		
-		}
-
-		remove_effect = {
-			custom_effect_tooltip = invite_cossaks_tt
-			recruit_character = DNR_sherstykov      					
-		}
-	}
-
-	DPR_invite_central_cossaks = {			
-		icon = GFX_volga_cossaks_decision
+		cost = 0
+        ai_will_do = { factor = 100 }
+        fire_only_once = yes
 		
-		fire_only_once = yes
-		days_remove = 5		
-
-		visible = {	
-			has_country_flag = girkin_invite_cossaks
-		}		
-
-		cost = 10
-
-		ai_will_do = {	
-			factor = 100		
-		}
-
-		remove_effect = {
-			custom_effect_tooltip = invite_cossaks_tt
-			recruit_character = DNR_chirko    					
+		complete_effect = {
+			clr_country_flag = DPR_girkin_civil_war
 		}
 	}
 }
