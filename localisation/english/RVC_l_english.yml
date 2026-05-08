@@ -1,16 +1,134 @@
 ﻿l_english:
 
-AFU_rdk_war_decision:0 "§RCROSS THE RUBICON§!"
-AFU_rdk_war_decision_desc:0 "After much preparation, we are ready. The Russian Volunteer Corps is ready. The Russian Federation has forced our peoples into war for too long. We will put an end to this wickedness that has taken our people into a yoke. Glory to the Heroes!"
+ # ============================================================
+ #  VARIABLE TOOLTIPS
+ # ============================================================
+
+ rvc_coop: "Cooperation with the Russian Volunteer Corps"
+ contact_with_nswp: "Cooperation with the NSWP"
+
+ AFU_rdk_tt: "Some §Gvolunteers§! join the Russian Volunteer Corps"
+ AFU_rdk_eq_tt: "§Y+1§! §Gequipment tier§! supplied to the RVC - now [?AFU_rdk_eq] / 5"
+ AFU_rdk_media_tt: "§Y+1§! §Gpopularity§! for the Russian Volunteer Corps - now [?AFU_rdk_media] / 10"
+ AFU_rdk_image_tt: "§Gpublic image§! of the Russian Volunteer Corps - now [?AFU_rdk_image] / 10"
+
+ AFU_rdk_points_trickle_tt: "§Y+5§! £GFX_AFU_rdk_points_texticon §GRDK Action Points§! (passive income) - now £GFX_AFU_rdk_points_texticon[?AFU_rdk_points] / 100"
+ AFU_rdk_points_convert_tt: "§Y+10§! £GFX_AFU_rdk_points_texticon §GRDK Action Points§! converted from §RPolitical Power§! - now £GFX_AFU_rdk_points_texticon[?AFU_rdk_points] / 100"
+
+ # Custom cost strings
+ AFU_rdk_points_cost_2_tt:  "£GFX_AFU_rdk_points_texticon §Y2§!"
+ AFU_rdk_points_cost_3_tt:  "£GFX_AFU_rdk_points_texticon §Y3§!"
+ AFU_rdk_points_cost_4_tt:  "£GFX_AFU_rdk_points_texticon §Y4§!"
+ AFU_rdk_points_cost_5_tt:  "£GFX_AFU_rdk_points_texticon §Y5§!"
+ AFU_rdk_points_cost_6_tt:  "£GFX_AFU_rdk_points_texticon §Y6§!"
+ AFU_rdk_points_cost_8_tt:  "£GFX_AFU_rdk_points_texticon §Y8§!"
+ AFU_rdk_points_cost_10_tt: "£GFX_AFU_rdk_points_texticon §Y10§!"
+ 
+ AFU_rdk_points_cost_2_tt_blocked:  "£GFX_AFU_rdk_points_texticon §R2§!"
+ AFU_rdk_points_cost_3_tt_blocked:  "£GFX_AFU_rdk_points_texticon §R3§!"
+ AFU_rdk_points_cost_4_tt_blocked:  "£GFX_AFU_rdk_points_texticon §R4§!"
+ AFU_rdk_points_cost_5_tt_blocked:  "£GFX_AFU_rdk_points_texticon §R5§!"
+ AFU_rdk_points_cost_6_tt_blocked:  "£GFX_AFU_rdk_points_texticon §R6§!"
+ AFU_rdk_points_cost_8_tt_blocked:  "£GFX_AFU_rdk_points_texticon §R8§!"
+ AFU_rdk_points_cost_10_tt_blocked: "£GFX_AFU_rdk_points_texticon §R10§!"
+
+ # ============================================================
+ #  DECISION CATEGORY
+ # ============================================================
+
+ AFU_azov_rvc_category: "Russian Volunteer Corps"
+ AFU_azov_rvc_category_desc: "Manage the preparation and public standing of the §YRussian Volunteer Corps§! before the inevitable confrontation with Russia.\n\n§HCurrent Status:§!\n §YVolunteers:§!         [?AFU_rdk]\n §YEquipment Tier:§!    [?AFU_rdk_eq] / 5\n §YPopularity:§!        [?AFU_rdk_media] / 10\n §YPublic Image:§!      [?AFU_rdk_image] / 10\n £GFX_AFU_rdk_points_texticon §YRDK Action Points:§! [?AFU_rdk_points] / 100\n\n§GPopularity§! determines recruitment efficiency and initial war-start buffs - low popularity will §Rpenalise§! the Corps at the moment of deployment.\n§GPublic Image§! shapes long-term legitimacy: a §Rtarnished§! image locks in recruitment penalties, while a §Grespected§! Corps draws volunteers and national sympathy.\n£GFX_AFU_rdk_points_texticon §GRDK Action Points§! are the operational mana of all Corps decisions. They trickle in passively or can be purchased with §YPolitical Power§!."
+
+ rdk_core: "RVC - Occupied Territory"
+ rdk_core_desc: "Administer territories under the control of the §YRussian Volunteer Corps§!.\n\n§HCurrent Status:§!\n §YPopularity:§!   [?AFU.AFU_rdk_media] / 10\n §YPublic Image:§! [?AFU.AFU_rdk_image] / 10\n\nHigher §YPopularity§! improves the effectiveness of propaganda among local populations."
+
+ # ============================================================
+ #  DECISION NAMES & DESCRIPTIONS
+ # ============================================================
+
+ # --- Points trickle ---
+ AFU_rdk_points_trickle: "Passive RVC Funding"
+ AFU_rdk_points_trickle_desc: "Our support network for the §YRussian Volunteer Corps§! keeps running in the background. Every month a steady stream of donations, logistics fees and sympathiser contributions flows into the fund.\n\n§GEffect:§! +5 §YRDK Action Points§! every 60 days."
+
+ # --- PP conversion ---
+ AFU_rdk_convert_pp: "Redirect State Resources to RVC"
+ AFU_rdk_convert_pp_desc: "We can redirect a portion of our political capital - bureaucratic favours, ministerial time, party connections - to accelerate RVC preparations.\n\n§YCost:§! §R50 Political Power§!\n§GEffect:§! +10 §YRDK Action Points§!"
+
+ # --- War decision ---
+ AFU_rdk_war_decision: "Deploy the Russian Volunteer Corps"
+ AFU_rdk_war_decision_desc: "The war with §RRussia§! has begun. The men and women of the Russian Volunteer Corps - trained, equipped and eager - are ready to cross the border and fight on their homeland's soil.\n\nWith §Y[?AFU_rdk|*]§! volunteers and equipment tier §Y[?AFU_rdk_eq]/5§!, we activate the Corps now."
+
+ # --- Basic recruit ---
+ AFU_rdk_1_decision: "Open Volunteer Recruitment Drive"
+ AFU_rdk_1_decision_desc: "We open registration centres across Ukraine, spreading word through émigré communities and anti-Kremlin networks. The response will be modest but steady.\n\n§GExpected intake:§! ~§Y50 volunteers§! over the next month.\n\n§HRequires:§! §YRDK Action Points§! ≥ 3"
+
+ # --- Media-boosted recruit ---
+ AFU_rdk_2_decision: "High-Profile Recruitment Campaign"
+ AFU_rdk_2_decision_desc: "Leveraging our §Ypopularity rating of [AFU_rdk_media]/10§! we launch a high-visibility campaign - interviews, rallies, social-media blitzes. The Corps' profile attracts far more volunteers than a quiet drive ever could.\n\n§GExpected intake:§! ~§Y100 volunteers§! over the next months.\n\n§HRequires:§! §YPopularity§! > 3 · §YRDK Action Points§! ≥ 5"
+
+ # --- Equipment ---
+ AFU_rdk_eq_1_decision: "Supply Equipment to the RVC"
+ AFU_rdk_eq_1_decision_desc: "We earmark a batch of surplus small-arms, body armour and communications gear for the Volunteer Corps. Proper equipment means less time re-training on the front.\n\n§GEffect:§! §YEquipment Tier §![AFU_rdk_eq] → §Y[AFU_rdk_eq + 1]§! (max 5)\n\n§HRequires:§! §YRDK Action Points§! ≥ 4"
+
+ # --- Media cheap ---
+ AFU_rdk_media_cheap: "Viral Propaganda Push"
+ AFU_rdk_media_cheap_desc: "We flood social media with provocative content about the Corps, emotional testimonies, anti-Kremlin memes. Cheap and effective, but it risks portraying the RVC as §Rradical§! rather than legitimate.\n\n§GEffect:§! §YPopularity§! +1\n§RWarning:§! §YPublic Image§! -1\n\n§HRequires:§! §YRDK Action Points§! ≥ 2"
+
+ # --- Media professional ---
+ AFU_rdk_media_pro: "Professional Media Campaign"
+ AFU_rdk_media_pro_desc: "We commission documentaries, press releases and op-eds in respected outlets. Journalists are embedded with volunteers. The Corps is presented as §Ga legitimate liberation force§!, not a fringe militia.\n\n§GEffect:§! §YPopularity§! +2\n§GImage unchanged§!\n\n§HRequires:§! §YRDK Action Points§! ≥ 6"
+
+ # --- Image cleanup ---
+ AFU_rdk_image_cleanup: "Public Relations Clean-Up"
+ AFU_rdk_image_cleanup_desc: "Recent incidents - controversial statements, extremist accusations, unverified atrocity claims - have damaged the Corps' reputation. We hire a PR firm to manage the fallout, issue official statements and arrange positive coverage.\n\n§GEffect:§! §YPublic Image§! [AFU_rdk_image] → §Y[AFU_rdk_image + 2]§! (max 10)\n\n§HRequires:§! §YRDK Action Points§! ≥ 8"
+
+ # --- Image observers ---
+ AFU_rdk_image_observers: "Invite Foreign Journalists"
+ AFU_rdk_image_observers_desc: "We invite accredited human-rights monitors and foreign journalists to inspect the Corps' training camps and interview its leadership. §GTransparency§! is the most powerful antidote to enemy disinformation.\n\n§GEffect:§! §YPublic Image§! +3 · §YPopularity§! +1\n§YOne-time only§!\n\n§HRequires:§! §YRDK Action Points§! ≥ 10"
+
+ # --- NSWP contact ---
+ AFU_rdk_contact_nswp_decision: "Contact the NSWP Network"
+ AFU_rdk_contact_nswp_decision_desc: "The §YNational Socialist White People's Party§! network maintains clandestine cells inside Russia with access to safe-houses, fake documents and potential sympathisers. Reaching out carries reputational risk but opens new operational avenues.\n\n§GEffect:§! Unlocks NSWP operations\n§HFire once§!\n\n§HRequires:§! §YRDK Action Points§! ≥ 5"
+
+ # --- NSWP operation ---
+ AFU_rdk_nswp_operation_decision: "NSWP Covert Operation"
+ AFU_rdk_nswp_operation_decision_desc: "Using the NSWP network's contacts we orchestrate a clandestine operation inside Russia - sabotage, incitement of desertion, or targeted disinformation. Outcomes are §Yunpredictable§!.\n\n§GChances:§!\n §G60%§! - Minor disruption (§R-0.01 Stability§!, §R-10 Manpower§!)\n §Y30%§! - Notable disruption (§R-0.03 Stability§!, §R-25 Manpower§!)\n §R10%§! - Major disruption (§R-0.05 Stability§!, §R-30 Manpower§!)\n\n§HRequires:§! §YRDK Action Points§! ≥ 6"
+
+ # --- NSWP recruit ---
+ AFU_rdk_nswp_invite_members_decision: "Recruit NSWP Sympathisers"
+ AFU_rdk_nswp_invite_members_decision_desc: "NSWP cells can help funnel §Ydisaffected Russian citizens§! and military defectors toward the Corps. We offer safe passage into Ukraine and enlistment.\n\n§GChances:§!\n §G60%§! - §Y+10 volunteers§!, §R-10 Russian Manpower§!\n §Y30%§! - §Y+25 volunteers§!, §R-25 Russian Manpower§!\n §R10%§! - §Y+30 volunteers§!, §R-30 Russian Manpower§!\n\n§HRequires:§! §YRDK Action Points§! ≥ 6"
+
+ # --- RDK core: nationalisation ---
+ RDK_nationalisation: "Liberate and Claim the Territory"
+ RDK_nationalisation_desc: "As our forces consolidate control over captured §Yterritories§!, we can establish civic authority, remove Russian administrative remnants and formally declare these lands part of a future free Russia.\n\n§GEffect:§! A controlled state gains a §YRDK core§! and loses its §RRussian core§!."
+
+ # --- RDK core: propaganda ---
+ RDK_propaganda: "Propaganda Among the Population"
+ RDK_propaganda_desc: "We broadcast our message of §Gliberation§! to local populations still uncertain about who holds the future. The Corps' §Ypopularity§! directly shapes how receptive these communities are.\n\n§GEffect:§!\n §H[AFU.rdk_media < 3]:§! §Y+5 Compliance§!\n §H[AFU.rdk_media > 2]:§! §Y+10 Compliance§!"
+ 
+# ============================================================
+#  Localisation for ideas
+# ============================================================
 
 
-rvc.1.t:0 "The new crusade against Neo-Bolshevism"
-rvc.1.d:0 "Operation Barbarossa started in June 1941. After six months of heavy battles with the Soviet Empire Wehrmacht reached Moscow and Petrograd and liberated Kyiv, Minsk, Baltics, Smolensk, Belgorod, and many other Russian cities and villages. Don't forget, that we, Russians, Ukrainians, and Belarussians fought against Judeo-Bolshevism like Germans. Remember the Ukrainian Liberation Army,  Lokot Republic,  Belarussian "Black Cat" and Russian Liberation Army. It's a pity, that we fought with our native people, that have been deceived and sent to die by Communist scums.\n\nBut our ancestors lost. We lost. Bolshevism defeated the New European order, that was built by Germany. They made our grandfathers traitors and killers, because they realized, that Marxists in the Kremlin wanted to destroy White Europa, destroy our moral values and our culture. Children of Soviet scum, that killed thousands or even millions of Russians, Ukrainians, and Belarussians are continuing to blame our ancestors in "Nazism and Fascism". The Soviet Union didn't collapse. It was transformed into "Russian Federation", that continuing politic of the Soviet Empire, destroying other nations and making other people slaves of the Jews.\n\nBut our battle for Homeland continues. And in the second time, we will win. Weakened Neo-Bolshevism Soviet Russia will perish in the same way as all empires. The tumor will be removed today in Belgorod, tomorrow in Kursk, Bryansk, or Rostov, Day after tomorrow in Moscow. We are ready for liberation, It doesn't matter how long it will last, because we know, that they will lose. They are scared of the United White Front, who will forget about disagreements. We will liberate our native lands as the Ukrainians did it. And the liberation of all of Europe awaits.\n\nAnd on the ruins of and on the ruins of the empire, we will build our New, Stronger Russia, which hasn't existed since 1917."
-rvc.1.a:0 "Glory to Rus!"
-rvc.2.t:0 "The point of no return"
-rvc.2.d:0 "We, the representatives of the regiments, declare that we are moving forward together, uniting national efforts for change. We bear a great responsibility to the people of Russia. We are called upon to liberate you from the darkness of neo-Bolshevism, the tyranny of Putinism and the greed of the oligarchy.\n\nTogether we stand for the establishment of true people's power, freedom and justice. We believe in the power of national unity and the ability of the people to become the architects of their own future. Our joint declaration is the first step towards a new era in Russia. An era where the unlimited migrants will be put to an end. An era where kegelists and cops get what they deserve. Where the spirit of our ancestors can be proud of us.\n\nHistory shows that great victories begin with great commitments. Today we stand together, ready to lead the people of Russia to a new prosperity where power belongs to the people and freedom is our common way."
-rvc.2.a:0 "Forward, RVC!"
-rvc.2.b:0 "Our brothers in white race have made their move."
+ RDK_poor_image: "Tarnished Reputation"
+ RDK_poor_image_desc: "The Russian Volunteer Corps enters the war under a cloud of international suspicion. §RExtremist links§! and unaddressed scandals hamper recruitment and sap morale."
+ RDK_good_image: "Legitimate Liberation Force"
+ RDK_good_image_desc: "Years of careful public-relations work have paid off. The Corps is widely recognised as a §Gbona-fide anti-authoritarian force§!, drawing volunteers and international sympathy."
+
+
+
+
+
+
+
+ rvc.1.t:0 "The new crusade against Neo-Bolshevism"
+ rvc.1.d:0 "Operation Barbarossa started in June 1941. After six months of heavy battles with the Soviet Empire Wehrmacht reached Moscow and Petrograd and liberated Kyiv, Minsk, Baltics, Smolensk, Belgorod, and many other Russian cities and villages. Don't forget, that we, Russians, Ukrainians, and Belarussians fought against Judeo-Bolshevism like Germans. Remember the Ukrainian Liberation Army,  Lokot Republic,  Belarussian "Black Cat" and Russian Liberation Army. It's a pity, that we fought with our native people, that have been deceived and sent to die by Communist scums.\n\nBut our ancestors lost. We lost. Bolshevism defeated the New European order, that was built by Germany. They made our grandfathers traitors and killers, because they realized, that Marxists in the Kremlin wanted to destroy White Europa, destroy our moral values and our culture. Children of Soviet scum, that killed thousands or even millions of Russians, Ukrainians, and Belarussians are continuing to blame our ancestors in "Nazism and Fascism". The Soviet Union didn't collapse. It was transformed into "Russian Federation", that continuing politic of the Soviet Empire, destroying other nations and making other people slaves of the Jews.\n\nBut our battle for Homeland continues. And in the second time, we will win. Weakened Neo-Bolshevism Soviet Russia will perish in the same way as all empires. The tumor will be removed today in Belgorod, tomorrow in Kursk, Bryansk, or Rostov, Day after tomorrow in Moscow. We are ready for liberation, It doesn't matter how long it will last, because we know, that they will lose. They are scared of the United White Front, who will forget about disagreements. We will liberate our native lands as the Ukrainians did it. And the liberation of all of Europe awaits.\n\nAnd on the ruins of and on the ruins of the empire, we will build our New, Stronger Russia, which hasn't existed since 1917."
+ rvc.1.a:0 "Glory to Rus!"
+ rvc.2.t:0 "The point of no return"
+ rvc.2.d:0 "We, the representatives of the regiments, declare that we are moving forward together, uniting national efforts for change. We bear a great responsibility to the people of Russia. We are called upon to liberate you from the darkness of neo-Bolshevism, the tyranny of Putinism and the greed of the oligarchy.\n\nTogether we stand for the establishment of true people's power, freedom and justice. We believe in the power of national unity and the ability of the people to become the architects of their own future. Our joint declaration is the first step towards a new era in Russia. An era where the unlimited migrants will be put to an end. An era where kegelists and cops get what they deserve. Where the spirit of our ancestors can be proud of us.\n\nHistory shows that great victories begin with great commitments. Today we stand together, ready to lead the people of Russia to a new prosperity where power belongs to the people and freedom is our common way."
+ rvc.2.a:0 "Forward, RVC!"
+ rvc.2.b:0 "Our brothers in white race have made their move."
 
  
  
@@ -65,53 +183,48 @@ rvc.2.b:0 "Our brothers in white race have made their move."
  RVC_my_motherland_will_meet_her_sons:0 "My Motherland Will Meet Her Sons"
  RVC_my_motherland_will_meet_her_sons_desc:0 "Our sad homeland sits in chains waiting for our brave warriors to free it."
 
-
-rdk_core:0 "Strengthening in liberated territories"
-RDK_nationalisation:0 "Sweeping the Vatniks"
-RDK_nationalisation_desc:0 "We will adopt filtration methods to clear these territories of Putin's minions."
-
-RVC_unstable_position:0 "Unstable Position"
-RVC_unstable_position_desc:0 "After the Volunteers came to power, not many agreed to the new orders. The people of Russia are still intimidated by Putin's regime and are afraid of those who came to liberate their land. The RDK fighters will have to make a great effort to ideologically process the population."
-RVC_far_right_revolution:0 "Far-Right Revolution"
-RVC_far_right_revolution_desc:0 "The spirit of revolution of the RDK is driven by extreme political ideologies. Its members are deeply interested in reshaping the political landscape according to far-right principles that may be totally unacceptable in the so-called 'Western world'. Their approach involves radical politics and an unwavering determination to establish a new world order."
-RVC_victory_or_death:0 "Victory or Death"
-RVC_victory_or_death_desc:0 "Determination is unwavering. Fighters with this spirit are willing to do anything to achieve victory, even at the cost of their own lives. Their dedication is absolute. And their battle will go on until the last red star falls from the Kremlin, and until the last Putinist lies in the ground"
-RVC_railway_terror:0 "Railway Terror"
-RVC_railway_terror_desc:0 "Strategic attacks on transport infrastructure by volunteers have become a bone in the Russian regime's throat. By disrupting railway networks, they seek to paralyse the enemy's logistics, creating vulnerability and confusion in its ranks."
-RVC_mobilization_of_locals:0 "People's Militia"
-RVC_mobilization_of_locals_desc:0 "Popular militias are the mobilisation of local communities. Made up of civilians, they defend their homes and communities, they have rebelled against oppressive regimes and joined the ranks of the Dobrovlje. Their resilience stems from a deep connection to the land and a sense of collective responsibility to their twin communities and those who have fallen in battle."
-RVC_anti_putin:0 "War with the Everlasting Enemy"
-RVC_anti_putin_desc:0 "The enemy of the corps is not just Putin. The enemy is the very essence of the system that has developed not only in the Russian Federation but also in the West. To fight this enemy is to find salvation in this turbulent world."
+ RVC_unstable_position:0 "Unstable Position"
+ RVC_unstable_position_desc:0 "After the Volunteers came to power, not many agreed to the new orders. The people of Russia are still intimidated by Putin's regime and are afraid of those who came to liberate their land. The RDK fighters will have to make a great effort to ideologically process the population."
+ RVC_far_right_revolution:0 "Far-Right Revolution"
+ RVC_far_right_revolution_desc:0 "The spirit of revolution of the RDK is driven by extreme political ideologies. Its members are deeply interested in reshaping the political landscape according to far-right principles that may be totally unacceptable in the so-called 'Western world'. Their approach involves radical politics and an unwavering determination to establish a new world order."
+ RVC_victory_or_death:0 "Victory or Death"
+ RVC_victory_or_death_desc:0 "Determination is unwavering. Fighters with this spirit are willing to do anything to achieve victory, even at the cost of their own lives. Their dedication is absolute. And their battle will go on until the last red star falls from the Kremlin, and until the last Putinist lies in the ground"
+ RVC_railway_terror:0 "Railway Terror"
+ RVC_railway_terror_desc:0 "Strategic attacks on transport infrastructure by volunteers have become a bone in the Russian regime's throat. By disrupting railway networks, they seek to paralyse the enemy's logistics, creating vulnerability and confusion in its ranks."
+ RVC_mobilization_of_locals:0 "People's Militia"
+ RVC_mobilization_of_locals_desc:0 "Popular militias are the mobilisation of local communities. Made up of civilians, they defend their homes and communities, they have rebelled against oppressive regimes and joined the ranks of the Dobrovlje. Their resilience stems from a deep connection to the land and a sense of collective responsibility to their twin communities and those who have fallen in battle."
+ RVC_anti_putin:0 "War with the Everlasting Enemy"
+ RVC_anti_putin_desc:0 "The enemy of the corps is not just Putin. The enemy is the very essence of the system that has developed not only in the Russian Federation but also in the West. To fight this enemy is to find salvation in this turbulent world."
 
 
 
 
-RDK_professional_army:0 "Professional Army"
-RDK_professional_army_desc:0 "The RDK is a disciplined and highly trained military force. Adherents of traditional warfare, they favour strategic planning and organised offensive. Their strength lies in the professionalism of their soldiers."
-RDK_ready_for_winter:0 "Ready for Winter"
-RDK_ready_for_winter_desc:0 "Any war in eastern Europe requires careful preparation for harsh conditions. This is an important lesson that history teaches us. Trained to fight in winter conditions, they excel in cold weather. Their ability to endure extreme weather conditions provides a strategic advantage."
-RDK_armed_philosophers:0 "Armed Philosophers and Intellectuals"
-RDK_armed_philosophers_desc:0 "The best representatives of the Russian people are truly fighting for the RDK. Armed philosophers and intellectuals combine intellectual prowess with combat skills. They fight not only with weapons but also with ideas, seeking to shape the ideological landscape of the conflict and to defend the ideas of the RDK not only on the battlefield but also in the hearts of the people."
-RDK_problemswithnonwhites:0 "Problems with non-whites"
-RDK_problemswithnonwhites_desc:0 "RDK promotes ideas about the creation of an ethno-state, with the dominance of the Russian people. But Russian people for a long time already lives with deep signs of multiculturalism and it very much dislikes nationalists"
-RDK_whitesuprematism:0 "White Suprematism"
-RDK_whitesuprematism_desc:0 "The white racial bastion runs through the veins of the RDK fighters. It embodies the extreme ideologues of racial superiority. At the heart of their actions is the desire to create a racially pure state. Their tactics include discriminatory methods and violence against perceived non-conformists."
-RDK_expandofcorpus:0 "Expansion of the Volunteer Corps"
-RDK_expandofcorpus_desc:0 "In order to increase the number of fighters, the RDK began a large-scale recruitment drive in the liberated territories."
-RDK_shtafbaty:0 "Voluntary-compulsory mobilisation of the population"
-RDK_shtafbaty_desc:0 "Many people don't underestimate the power of the corpus. Many do not want to recognise their new order. Many just want everything back to the way it was before this evil war. That is the problem, and the solution is blood money. A good fight will distract the sufferers from unnecessary thoughts and set them on the right path to fight for RDK!"
-RDK_sistersofbattle:0 "Sisters of the Battle"
-RDK_sistersofbattle_desc:0 "Made up of experienced and dedicated women warriors, they have also taken up arms and are fighting for the corps. Mostly doing medical care, but also taking part in battles and slaughtering Putin's scum."
-RDK_callofvalhalla:0 "Call of Valhalla"
-RDK_callofvalhalla_desc:0 "The Vikings believe that honour and glory await them in Valhalla in the afterlife. Their fearlessness in battle is dictated by the promise of a heroic death. And so now, the warriors of the RDK fearlessly fight the enemy, for their courage leads to heaven."
-RDK_proudsonsofwotan:0 "Proud Sons of Wotan"
-RDK_proudsonsofwotan_desc:0 "The North is awakening. Heroes and legends are awakening. In their actions, the warriors of the RDK are guided by their belief in the warrior spirit of Wotan. They see themselves as defenders of their cultural heritage and champions of their mythical heritage, so that their gods may be proud of them."
-RDK_godofwar:0 "Gods of War"
-RDK_finalbattleforrussia:0 "Final Battle for Russia"
-RDK_finalbattleforrussia_desc:0 "The ongoing battle is a decisive moment in the country's history. Fighters with this spirit are ready to give their best in the battle for the future of Russia, which they perceive as decisive."
+ RDK_professional_army:0 "Professional Army"
+ RDK_professional_army_desc:0 "The RDK is a disciplined and highly trained military force. Adherents of traditional warfare, they favour strategic planning and organised offensive. Their strength lies in the professionalism of their soldiers."
+ RDK_ready_for_winter:0 "Ready for Winter"
+ RDK_ready_for_winter_desc:0 "Any war in eastern Europe requires careful preparation for harsh conditions. This is an important lesson that history teaches us. Trained to fight in winter conditions, they excel in cold weather. Their ability to endure extreme weather conditions provides a strategic advantage."
+ RDK_armed_philosophers:0 "Armed Philosophers and Intellectuals"
+ RDK_armed_philosophers_desc:0 "The best representatives of the Russian people are truly fighting for the RDK. Armed philosophers and intellectuals combine intellectual prowess with combat skills. They fight not only with weapons but also with ideas, seeking to shape the ideological landscape of the conflict and to defend the ideas of the RDK not only on the battlefield but also in the hearts of the people."
+ RDK_problemswithnonwhites:0 "Problems with non-whites"
+ RDK_problemswithnonwhites_desc:0 "RDK promotes ideas about the creation of an ethno-state, with the dominance of the Russian people. But Russian people for a long time already lives with deep signs of multiculturalism and it very much dislikes nationalists"
+ RDK_whitesuprematism:0 "White Suprematism"
+ RDK_whitesuprematism_desc:0 "The white racial bastion runs through the veins of the RDK fighters. It embodies the extreme ideologues of racial superiority. At the heart of their actions is the desire to create a racially pure state. Their tactics include discriminatory methods and violence against perceived non-conformists."
+ RDK_expandofcorpus:0 "Expansion of the Volunteer Corps"
+ RDK_expandofcorpus_desc:0 "In order to increase the number of fighters, the RDK began a large-scale recruitment drive in the liberated territories."
+ RDK_shtafbaty:0 "Voluntary-compulsory mobilisation of the population"
+ RDK_shtafbaty_desc:0 "Many people don't underestimate the power of the corpus. Many do not want to recognise their new order. Many just want everything back to the way it was before this evil war. That is the problem, and the solution is blood money. A good fight will distract the sufferers from unnecessary thoughts and set them on the right path to fight for RDK!"
+ RDK_sistersofbattle:0 "Sisters of the Battle"
+ RDK_sistersofbattle_desc:0 "Made up of experienced and dedicated women warriors, they have also taken up arms and are fighting for the corps. Mostly doing medical care, but also taking part in battles and slaughtering Putin's scum."
+ RDK_callofvalhalla:0 "Call of Valhalla"
+ RDK_callofvalhalla_desc:0 "The Vikings believe that honour and glory await them in Valhalla in the afterlife. Their fearlessness in battle is dictated by the promise of a heroic death. And so now, the warriors of the RDK fearlessly fight the enemy, for their courage leads to heaven."
+ RDK_proudsonsofwotan:0 "Proud Sons of Wotan"
+ RDK_proudsonsofwotan_desc:0 "The North is awakening. Heroes and legends are awakening. In their actions, the warriors of the RDK are guided by their belief in the warrior spirit of Wotan. They see themselves as defenders of their cultural heritage and champions of their mythical heritage, so that their gods may be proud of them."
+ RDK_godofwar:0 "Gods of War"
+ RDK_finalbattleforrussia:0 "Final Battle for Russia"
+ RDK_finalbattleforrussia_desc:0 "The ongoing battle is a decisive moment in the country's history. Fighters with this spirit are ready to give their best in the battle for the future of Russia, which they perceive as decisive."
 
 
-RDK_liberal_milities:0 "Liberal Milities"
-RDK_liberal_milities_desc:0 "In search of allies, the RDK allied itself with democratic opponents of the Russian regime. Liberal militias draw inspiration from democratic values and individual freedom. They fight for a liberal vision of the future and oppose authoritarianism. They support diversity and advocate inclusive governance."
-RDK_anarchist_milities:0 "Anarchist Milities"
-RDK_anarchist_milities_desc:0 "In search of allies, the RDK allied itself with anarchists opposed to the Russian regime. Anarchist groups reject hierarchical structures and state control. Their tactics involve decentralised decision-making and the pursuit of individual freedom. The chaos they create is a means of destroying oppressive systems, which plays to the volunteers' advantage, but this alliance may have consequences in the future."
+ RDK_liberal_milities:0 "Liberal Milities"
+ RDK_liberal_milities_desc:0 "In search of allies, the RDK allied itself with democratic opponents of the Russian regime. Liberal militias draw inspiration from democratic values and individual freedom. They fight for a liberal vision of the future and oppose authoritarianism. They support diversity and advocate inclusive governance."
+ RDK_anarchist_milities:0 "Anarchist Milities"
+ RDK_anarchist_milities_desc:0 "In search of allies, the RDK allied itself with anarchists opposed to the Russian regime. Anarchist groups reject hierarchical structures and state control. Their tactics involve decentralised decision-making and the pursuit of individual freedom. The chaos they create is a means of destroying oppressive systems, which plays to the volunteers' advantage, but this alliance may have consequences in the future."

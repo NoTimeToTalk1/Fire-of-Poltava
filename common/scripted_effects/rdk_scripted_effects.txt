@@ -1,0 +1,85 @@
+# ============================================================
+#  Scripted Effects — called from rdk.1 event on war start
+#  Converts AFU_rdk (volunteer pool) + AFU_rdk_eq (gear tier)
+#  + AFU_rdk_media (popularity) + AFU_rdk_image (image)
+#  into concrete modifiers for the RDK tag.
+# ============================================================
+
+AFU_rdk_apply_war_buffs = {
+
+	# ---- Manpower conversion --------------------------------
+	# Each point of AFU_rdk = 1 man in the field
+	RVC = {
+		add_manpower = var:AFU.AFU_rdk
+	}
+
+	# ---- Equipment tier bonuses ----------------------------
+	if = {
+		limit = { check_variable = { AFU.AFU_rdk_eq > 0 } }
+		RVC = { add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 500 producer = AFU } }
+	}
+	if = {
+		limit = { check_variable = { AFU.AFU_rdk_eq > 1 } }
+		RVC = { add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 800 producer = AFU } }
+	}
+	if = {
+		limit = { check_variable = { AFU.AFU_rdk_eq > 2 } }
+		RVC = { add_equipment_to_stockpile = { type = support_equipment amount = 300 producer = AFU } }
+	}
+	if = {
+		limit = { check_variable = { AFU.AFU_rdk_eq > 3 } }
+		RVC = { add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 1000 producer = AFU } }
+	}
+	if = {
+		limit = { check_variable = { AFU.AFU_rdk_eq > 4 } }
+		RVC = {
+			add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 400 producer = AFU }
+		}
+	}
+
+	# ---- Popularity (media) bonuses/maluses ----------------
+	# Low popularity: small stability debuff for RDK at start
+	if = {
+		limit = { check_variable = { AFU.AFU_rdk_media < 3 } }
+		RVC = {
+			add_stability = -0.05
+			add_war_support = -0.05
+		}
+	}
+	# Medium popularity
+	else_if = {
+		limit = {
+			check_variable = { AFU.AFU_rdk_media > 2 }
+			check_variable = { AFU.AFU_rdk_media < 7 }
+		}
+		RVC = {
+			add_stability = 0.05
+			add_war_support = 0.05
+		}
+	}
+	# High popularity
+	else_if = {
+		limit = { check_variable = { AFU.AFU_rdk_media > 6 } }
+		RVC = {
+			add_stability = 0.10
+			add_war_support = 0.10
+			add_political_power = 25
+		}
+	}
+
+	# ---- Image bonuses/maluses -----------------------------
+	# Bad image: recruit penalty idea
+	if = {
+		limit = { check_variable = { AFU.AFU_rdk_image < 3 } }
+		RVC = {
+			add_ideas = RDK_poor_image
+		}
+	}
+	# Good image: legitimacy idea
+	else_if = {
+		limit = { check_variable = { AFU.AFU_rdk_image > 6 } }
+		RVC = {
+			add_ideas = RDK_good_image
+		}
+	}
+}
