@@ -533,6 +533,27 @@ characters = {
 		}
 	}
 
+	AFU_Rob_Rundo = {
+		name = "Rob Rundo"
+		portraits = {
+			army = {
+				large = "gfx/leaders/AFU/Rob_Rundo.dds"
+			}
+		}
+		corps_commander = {
+			traits = { street_fighter }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			visible = {
+				AFU = { 
+				has_country_flag = AFU_brothers_from_the_new_world_flag
+				}
+			}
+		}
+	}
 
 	################
 	### Advisors ###
@@ -1690,7 +1711,7 @@ characters = {
         name="Ihor Garkovenko"
         portraits={
             civilian={
-                small="GFX_idea_garkovenko"
+                small="gfx/interface/ideas/ministers/AFU/garkovenko.dds"
             }
         }
 
@@ -1716,7 +1737,7 @@ characters = {
         name="Oleksiy Reins"
         portraits={
             civilian={
-                small="GFX_idea_reins"
+                small="gfx/interface/ideas/ministers/AFU/reins.dds"
             }
         }
 
@@ -1742,7 +1763,7 @@ characters = {
         name="Mykyta Nadtochiy"
         portraits={
             civilian={
-                small="GFX_idea_nadtochiy"
+                small="gfx/interface/ideas/ministers/AFU/nadtochiy.dds"
             }
         }
 
@@ -1768,7 +1789,7 @@ characters = {
         name="Vadym Troyan"
         portraits={
             civilian={
-                small="GFX_idea_troyan"
+                small="gfx/interface/ideas/ministers/AFU/troyan.dds"
             }
         }
 
@@ -1794,7 +1815,7 @@ characters = {
         name="Metropolitan Ioann"
         portraits={
             civilian={
-                small="GFX_idea_ioan"
+                small="gfx/interface/ideas/ministers/AFU/serhiev.dds"
             }
         }
 
@@ -1820,7 +1841,7 @@ characters = {
         name="Kyrylo Serhieiev"
         portraits={
             civilian={
-                small="GFX_idea_serhiev"
+                small="gfx/interface/ideas/ministers/AFU/serhiev.dds"
             }
         }
 
@@ -1849,7 +1870,7 @@ characters = {
         name="Vitaliy Baranov"
         portraits={
             civilian={
-                small="GFX_idea_baranov"
+                small="gfx/interface/ideas/ministers/AFU/baranov.dds"
             }
         }
 
@@ -1877,7 +1898,7 @@ characters = {
         name="Mykhailo Gonchar"
         portraits={
             civilian={
-                small="GFX_idea_gonchar"
+                small="gfx/interface/ideas/ministers/AFU/gonchar.dds"
             }
         }
 
@@ -1902,5 +1923,59 @@ characters = {
             }
         }
     }
+	
+	
+    AFU_Yulia_Fedosyuk={
+        name="Yulia Fedosyuk"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/Yulia_Fedosyuk.dds"
+            }
+        }
+
+        advisor={
+            slot = culture_minister
+            idea_token = AFU_Yulia_Fedosyuk
+            allowed = {
+                original_tag = AFU
+            }
+			visible = {
+				AFU = { has_idea = AFU_azov_legacy_of_joan_of_arc }
+			}
+            available = {
+
+            }
+            traits = {
+                Silver_Rose
+            }
+        }
+    }
+	
+    AFU_Kateryna_Prokopenko={
+        name="Kateryna Prokopenko"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/Kateryna_Prokopenko.dds"
+            }
+        }
+
+        advisor={
+            slot = head_of_government
+            idea_token = AFU_Kateryna_Prokopenko
+            allowed = {
+                original_tag = AFU
+            }
+			visible = {
+				AFU = { has_idea = AFU_azov_legacy_of_joan_of_arc }
+			}
+            available = {
+
+            }
+            traits = {
+                activist_fighter
+            }
+        }
+    }
+
 	
 }
