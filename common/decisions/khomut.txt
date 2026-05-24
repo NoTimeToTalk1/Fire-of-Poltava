@@ -6,7 +6,7 @@ afu_diplomacy_with_russia_category = {
 		}
 		
 		visible = {	
-		has_country_flag = russia_ignored						
+			has_country_flag = russia_ignored						
 		}
 		
 		cost = 10
@@ -17,14 +17,14 @@ afu_diplomacy_with_russia_category = {
         days_remove = 10
 		
 		remove_effect = {
-		custom_effect_tooltip = Negotiating_with_Russia_second_try_tt		
+			custom_effect_tooltip = Negotiating_with_Russia_second_try_tt		
 			hidden_effect = {
-		RUS = {
-				country_event = { 
-					id = homut.8
-					days = 2 
-				}
-			}			
+			RUS = {
+					country_event = { 
+						id = homut.8
+						days_remove =  2 
+					}
+				}			
 			}
 		}
 	}
@@ -35,11 +35,11 @@ afu_diplomacy_with_russia_category = {
 		}
 		
 		visible = {
-		OR = {
-		has_country_flag = russia_ignored	
-		has_country_flag = russia_accept_big	
-		has_country_flag = russia_accept
-		}
+			OR = {
+				has_country_flag = russia_ignored	
+				has_country_flag = russia_accept_big	
+				has_country_flag = russia_accept
+			}
 		}
 		
 		cost = 10
@@ -47,16 +47,16 @@ afu_diplomacy_with_russia_category = {
 			factor = 100
 		}
 		
-ai_will_do = {
-    base = 0
-}
+		ai_will_do = {
+			base = 0
+		}
 		
         days_remove = 10
 		
 		remove_effect = {
-		custom_effect_tooltip = Negotiating_with_Russia_end_tt		
+			custom_effect_tooltip = Negotiating_with_Russia_end_tt		
 			hidden_effect = {
-		clr_country_flag = AFU_Open_a_Negotiating_Channel_with_Moscow			
+				clr_country_flag = AFU_Open_a_Negotiating_Channel_with_Moscow			
 			}
 		}
 	}
@@ -69,8 +69,8 @@ ai_will_do = {
 		
 		visible = {	
 			OR = {
-		has_country_flag = russia_accept_big		
-		has_country_flag = russia_accept		
+				has_country_flag = russia_accept_big		
+				has_country_flag = russia_accept		
 			}			
 		}
 		
@@ -82,11 +82,11 @@ ai_will_do = {
         days_remove = 10
 		
 		remove_effect = {
-add_to_variable = {
-    var = fulfilment_of_Russian_requirements_variable
-    value = 3
-    tooltip = Negotiating_with_Russia_tt
-}
+			add_to_variable = {
+				var = fulfilment_of_Russian_requirements_variable
+				value = 3
+				tooltip = Negotiating_with_Russia_tt
+			}
 			clamp_variable = {
 				var = fulfilment_of_Russian_requirements_variable
 				min = 0
@@ -111,11 +111,11 @@ add_to_variable = {
 		}
 		
 		available = {
-		check_variable = {
-    var = fulfilment_of_Russian_requirements_variable
-    value = 25
-    compare = greater_than_or_equals
-}
+			check_variable = {
+				var = fulfilment_of_Russian_requirements_variable
+				value = 25
+				compare = greater_than_or_equals
+			}
 		}
 		
 		cost = 50
@@ -124,9 +124,9 @@ add_to_variable = {
 		}
 		
 		modifier = {
-		political_power_gain = 0.5
-		monthly_population = 0.5
-		oligarchism_drift = 0.04
+			political_power_gain = 0.5
+			monthly_population = 0.5
+			oligarchism_drift = 0.04
 		}
 		
         days_remove = 60
@@ -147,20 +147,20 @@ add_to_variable = {
 		
 		visible = {	
 			OR = {
-		has_country_flag = russia_accept_big		
-		has_country_flag = russia_accept		
+				has_country_flag = russia_accept_big		
+				has_country_flag = russia_accept		
 			}			
 		}
 		
 		available = {
-		check_variable = {
-    var = fulfilment_of_Russian_requirements_variable
-    value = 25
-    compare = greater_than_or_equals
-}
+			check_variable = {
+				var = fulfilment_of_Russian_requirements_variable
+				value = 25
+				compare = greater_than_or_equals
+			}
 
 			AFU_shukalo = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
 		}
 		
@@ -170,27 +170,26 @@ add_to_variable = {
 		}
 		
 		modifier = {
-		stability_weekly = 0.01
-		war_support_weekly = 0.01
-		oligarchism_drift = 0.02
+			stability_weekly = 0.01
+			war_support_weekly = 0.01
+			oligarchism_drift = 0.02
 		}
 		
         days_remove = 90
 		
 		remove_effect = {
-		
-		random_owned_state = {
-        add_extra_state_shared_building_slots = 1
-        add_building_construction = {
-    type = religious_building
-    level = 1
-    instant_build = yes
-    }
-    }		
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = religious_building
+					level = 1
+					instant_build = yes
+				}
+			}		
 			hidden_effect = {
 				country_event = { 
 					id = homut.13
-					days = 1
+					days_remove =  1
 				}			
 			}
 		}
@@ -203,18 +202,18 @@ add_to_variable = {
 		
 		visible = {	
 			OR = {
-		has_country_flag = russia_accept_big		
-		has_country_flag = russia_accept		
+				has_country_flag = russia_accept_big		
+				has_country_flag = russia_accept		
 			}			
 		}
 		
 		available = {
-	arms_factory > 7
-		check_variable = {
-    var = fulfilment_of_Russian_requirements_variable
-    value = 65
-    compare = greater_than_or_equals
-}
+			arms_factory > 7
+			check_variable = {
+				var = fulfilment_of_Russian_requirements_variable
+				value = 65
+				compare = greater_than_or_equals
+			}
 		}
 		
 		cost = 60
@@ -223,25 +222,25 @@ add_to_variable = {
 		}
 		
 		modifier = {
-		political_power_gain = -0.5
-		oligarchism_drift = -0.08
+			political_power_gain = -0.5
+			oligarchism_drift = -0.08
 		}
 		
         days_remove = 50
 		
 		remove_effect = {
-	set_fuel_ratio = 1
-add_equipment_to_stockpile = {
-    type = infantry_equipment
-    amount = 4000
-    producer = RUS
-}		
-		random_owned_state = {
-    remove_building = {
-    type = arms_factory
-    level = 1
-}
-    }		
+			set_fuel_ratio = 1
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 4000
+				producer = RUS
+			}		
+			random_owned_state = {
+				remove_building = {
+					type = arms_factory
+					level = 1
+				}
+   		 	}		
 			hidden_effect = {
 			
 			}
@@ -260,33 +259,31 @@ afu_homut_party_decisions_category = {
 
 
 		visible = {
-		tag = AFU				
-		has_country_flag = AFU_formation_of_the_together_for_donbas_coalition
-
+			tag = AFU				
+			has_country_flag = AFU_formation_of_the_together_for_donbas_coalition
 			AFU_bondar = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
 		}
 
-custom_cost_trigger = {
-oligarchism > 0.05
-}
-custom_cost_text = decision_cost_VIDRO_5_tooltip		
+		custom_cost_trigger = {
+			oligarchism > 0.05
+		}
+		custom_cost_text = decision_cost_VIDRO_5_tooltip		
 		
 		available = {
 			AFU_bondar = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
-oligarchism > 0.3	
-NOT = {
-has_country_flag = afu_homut_party_decisions_activate
-}		
-		
+			oligarchism > 0.3	
+			NOT = {
+				has_country_flag = afu_homut_party_decisions_activate
+			}		
 		}
 	
 
 		modifier = {
-		political_power_gain = -0.25
+			political_power_gain = -0.25
 		}
 		
 		days_remove = 30
@@ -298,10 +295,10 @@ has_country_flag = afu_homut_party_decisions_activate
 
 		complete_effect = {	
             hidden_effect = {
-add_popularity = {
-    ideology = oligarchism
-    popularity = -0.05
-}
+				add_popularity = {
+					ideology = oligarchism
+					popularity = -0.05
+				}
                set_country_flag = afu_homut_party_decisions_activate
             }
 	  	}
@@ -328,34 +325,32 @@ add_popularity = {
 
 
 		visible = {
-		tag = AFU				
-		has_country_flag = AFU_formation_of_the_together_for_donbas_coalition
-
+			tag = AFU				
+			has_country_flag = AFU_formation_of_the_together_for_donbas_coalition
 			AFU_bondar = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
 		}
 
-custom_cost_trigger = {
-oligarchism > 0.02
-}
-custom_cost_text = decision_cost_VIDRO_2_tooltip		
-		
+		custom_cost_trigger = {
+			oligarchism > 0.02
+		}
+		custom_cost_text = decision_cost_VIDRO_2_tooltip		
+				
 		available = {
 			AFU_bondar = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
-oligarchism > 0.02			
-		
+			oligarchism > 0.02
 		}
 	
 
 		modifier = {
-		political_power_gain = -0.3
-		liberalism_drift = -0.03
-		conservatism_drift = -0.03
-		national_democracy_drift = -0.03
-		authoritarianism_drift -0.03
+			political_power_gain = -0.3
+			liberalism_drift = -0.03
+			conservatism_drift = -0.03
+			national_democracy_drift = -0.03
+			authoritarianism_drift -0.03
 		}
 		
 		days_remove = 30
@@ -367,10 +362,10 @@ oligarchism > 0.02
 
 		complete_effect = {	
             hidden_effect = {
-add_popularity = {
-    ideology = oligarchism
-    popularity = -0.02
-}
+				add_popularity = {
+					ideology = oligarchism
+					popularity = -0.02
+				}
             }
 	  	}
 		
@@ -389,34 +384,32 @@ add_popularity = {
 
 
 		visible = {
-		tag = AFU				
-		has_country_flag = 	AFU_formation_of_the_together_for_donbas_coalition
-
+			tag = AFU				
+			has_country_flag = 	AFU_formation_of_the_together_for_donbas_coalition
 			AFU_bondar = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
 		}
 
-custom_cost_trigger = {
-oligarchism > 0.02
-}
-custom_cost_text = decision_cost_VIDRO_2_tooltip		
+		custom_cost_trigger = {
+			oligarchism > 0.02
+		}
+		custom_cost_text = decision_cost_VIDRO_2_tooltip		
 		
 		available = {
 			AFU_bondar = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
-oligarchism > 0.02		
-		
+			oligarchism > 0.02		
 		}
 	
 
 		modifier = {
-		political_power_gain = -0.3
-		progressivism_drift = -0.03
-		social_democracy_drift = -0.03
-		socialism_drift = -0.03
-		communism_drift -0.03
+			political_power_gain = -0.3
+			progressivism_drift = -0.03
+			social_democracy_drift = -0.03
+			socialism_drift = -0.03
+			communism_drift -0.03
 		}
 		
 		days_remove = 30
@@ -428,10 +421,10 @@ oligarchism > 0.02
 
 		complete_effect = {	
             hidden_effect = {
-add_popularity = {
-    ideology = oligarchism
-    popularity = -0.02
-}
+				add_popularity = {
+					ideology = oligarchism
+					popularity = -0.02
+				}
             }
 	  	}
 		
@@ -459,28 +452,27 @@ add_popularity = {
 			}
 		}
 
-custom_cost_trigger = {
-oligarchism > 0.1
-}
-custom_cost_text = decision_cost_VIDRO_10_tooltip		
+		custom_cost_trigger = {
+			oligarchism > 0.1
+		}
+		custom_cost_text = decision_cost_VIDRO_10_tooltip		
 		
 		available = {
 			AFU_bondar = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
-oligarchism > 0.3	
-NOT = {
-has_country_flag = afu_homut_party_decisions_activate
-}		
-		
+			oligarchism > 0.3	
+			NOT = {
+				has_country_flag = afu_homut_party_decisions_activate
+			}		
 		}
 	
 
 		modifier = {
-		political_power_gain = -0.4
-		conversion_cost_civ_to_mil_factor = -0.75
-		conversion_cost_mil_to_civ_factor = -0.75
-		industry_repair_factor = 0.4
+			political_power_gain = -0.4
+			conversion_cost_civ_to_mil_factor = -0.75
+			conversion_cost_mil_to_civ_factor = -0.75
+			industry_repair_factor = 0.4
 		}
 		
 		days_remove = 30
@@ -492,10 +484,10 @@ has_country_flag = afu_homut_party_decisions_activate
 
 		complete_effect = {	
             hidden_effect = {
-add_popularity = {
-    ideology = oligarchism
-    popularity = -0.1
-}
+				add_popularity = {
+					ideology = oligarchism
+					popularity = -0.1
+				}
                set_country_flag = afu_homut_party_decisions_activate
             }
 	  	}
@@ -521,38 +513,35 @@ add_popularity = {
 
 
 		visible = {
-		tag = AFU				
-		has_country_flag = AFU_formation_of_the_together_for_donbas_coalition
-
+			tag = AFU				
+			has_country_flag = AFU_formation_of_the_together_for_donbas_coalition
 			AFU_bondar = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
 		}
 
-custom_cost_trigger = {
-oligarchism > 0.05
-}
-custom_cost_text = decision_cost_VIDRO_5_tooltip		
+		custom_cost_trigger = {
+			oligarchism > 0.05
+		}
+		custom_cost_text = decision_cost_VIDRO_5_tooltip		
 		
 		available = {
 			AFU_bondar = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
-oligarchism > 0.15	
-NOT = {
-has_country_flag = afu_homut_party_decisions_activate
-}
-
-has_core_occupation_modifier = {
-  modifier = foreign_civilian_oversight
-}		
-		
+			oligarchism > 0.15	
+			NOT = {
+				has_country_flag = afu_homut_party_decisions_activate
+			}
+			has_core_occupation_modifier = {
+				modifier = foreign_civilian_oversight
+			}	
 		}
 	
 
 		modifier = {
-		political_power_gain = -0.4
-		required_garrison_factor = -0.9
+			political_power_gain = -0.4
+			required_garrison_factor = -0.9
 		}
 		
 		days_remove = 30
@@ -564,11 +553,11 @@ has_core_occupation_modifier = {
 
 		complete_effect = {	
             hidden_effect = {
-add_popularity = {
-    ideology = oligarchism
-    popularity = -0.05
-}
-               set_country_flag = afu_homut_party_decisions_activate
+				add_popularity = {
+					ideology = oligarchism
+					popularity = -0.05
+				}
+               	set_country_flag = afu_homut_party_decisions_activate
             }
 	  	}
 		
@@ -595,33 +584,31 @@ add_popularity = {
 
 
 		visible = {
-		tag = AFU				
-		has_country_flag = AFU_formation_of_the_together_for_donbas_coalition
-
+			tag = AFU				
+			has_country_flag = AFU_formation_of_the_together_for_donbas_coalition
 			AFU_kinakh = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
 		}
 
-custom_cost_trigger = {
-centrism > 0.05
-}
-custom_cost_text = decision_cost_PPPU_5_tooltip		
+		custom_cost_trigger = {
+			centrism > 0.05
+		}
+		custom_cost_text = decision_cost_PPPU_5_tooltip		
 		
 		available = {
 			AFU_kinakh = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
-centrism > 0.3	
-NOT = {
-has_country_flag = afu_homut_party_decisions_activate
-}		
-		
+			centrism > 0.3	
+			NOT = {
+				has_country_flag = afu_homut_party_decisions_activate
+			}
 		}
 	
 
 		modifier = {
-		political_power_gain = -0.25
+			political_power_gain = -0.25
 		}
 		
 		days_remove = 30
@@ -633,10 +620,10 @@ has_country_flag = afu_homut_party_decisions_activate
 
 		complete_effect = {	
             hidden_effect = {
-add_popularity = {
-    ideology = centrism
-    popularity = -0.05
-}
+				add_popularity = {
+					ideology = centrism
+					popularity = -0.05
+				}
                set_country_flag = afu_homut_party_decisions_activate
             }
 	  	}
@@ -662,36 +649,34 @@ add_popularity = {
 
 
 		visible = {
-		tag = AFU				
-		has_country_flag = AFU_formation_of_the_together_for_donbas_coalition
-
+			tag = AFU				
+			has_country_flag = AFU_formation_of_the_together_for_donbas_coalition
 			AFU_kinakh = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
 		}
 
-custom_cost_trigger = {
-centrism > 0.1
-}
-custom_cost_text = decision_cost_PPPU_10_tooltip		
+		custom_cost_trigger = {
+			centrism > 0.1
+		}
+		custom_cost_text = decision_cost_PPPU_10_tooltip		
 		
 		available = {
 			AFU_kinakh = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
-centrism > 0.3	
-NOT = {
-has_country_flag = afu_homut_party_decisions_activate
-}		
-		
+			centrism > 0.3	
+			NOT = {
+				has_country_flag = afu_homut_party_decisions_activate
+			}		
 		}
 	
 
 		modifier = {
-		political_power_gain = -0.4
-		conversion_cost_civ_to_mil_factor = -0.75
-		conversion_cost_mil_to_civ_factor = -0.75
-		industry_repair_factor = 0.4
+			political_power_gain = -0.4
+			conversion_cost_civ_to_mil_factor = -0.75
+			conversion_cost_mil_to_civ_factor = -0.75
+			industry_repair_factor = 0.4
 		}
 		
 		days_remove = 30
@@ -703,10 +688,10 @@ has_country_flag = afu_homut_party_decisions_activate
 
 		complete_effect = {	
             hidden_effect = {
-add_popularity = {
-    ideology = centrism
-    popularity = -0.1
-}
+				add_popularity = {
+					ideology = centrism
+					popularity = -0.1
+				}
                set_country_flag = afu_homut_party_decisions_activate
             }
 	  	}
@@ -732,34 +717,31 @@ add_popularity = {
 
 
 		visible = {
-		tag = AFU				
-		has_country_flag = AFU_formation_of_the_together_for_donbas_coalition
-
+			tag = AFU				
+			has_country_flag = AFU_formation_of_the_together_for_donbas_coalition
 			AFU_kinakh = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
 		}
 
-custom_cost_trigger = {
-centrism > 0.05
-}
-custom_cost_text = decision_cost_PPPU_5_tooltip		
+		custom_cost_trigger = {
+			centrism > 0.05
+		}
+		custom_cost_text = decision_cost_PPPU_5_tooltip		
 		
 		available = {
 			AFU_kinakh = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
-centrism > 0.15	
-NOT = {
-has_country_flag = afu_homut_party_decisions_activate
-}
-	
-		
+			centrism > 0.15	
+			NOT = {
+				has_country_flag = afu_homut_party_decisions_activate
+			}
 		}
 	
 
 		modifier = {
-		political_power_gain = -0.4
+			political_power_gain = -0.4
 		}
 		
 		days_remove = 30
@@ -771,10 +753,10 @@ has_country_flag = afu_homut_party_decisions_activate
 
 		complete_effect = {	
             hidden_effect = {
-add_popularity = {
-    ideology = centrism
-    popularity = -0.05
-}
+				add_popularity = {
+					ideology = centrism
+					popularity = -0.05
+				}
                set_country_flag = afu_homut_party_decisions_activate
             }
 	  	}
@@ -801,33 +783,31 @@ add_popularity = {
 
 
 		visible = {
-		tag = AFU				
-		has_country_flag = AFU_formation_of_the_together_for_donbas_coalition
-
+			tag = AFU				
+			has_country_flag = AFU_formation_of_the_together_for_donbas_coalition
 			AFU_kolesnikov = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
 		}
 
-custom_cost_trigger = {
-oligarchism > 0.05
-}
-custom_cost_text = decision_cost_RZD_5_tooltip		
+		custom_cost_trigger = {
+			oligarchism > 0.05
+		}
+		custom_cost_text = decision_cost_RZD_5_tooltip		
 		
 		available = {
 			AFU_kolesnikov = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
-oligarchism > 0.3	
-NOT = {
-has_country_flag = afu_homut_party_decisions_activate
-}		
-		
+			oligarchism > 0.3	
+			NOT = {
+				has_country_flag = afu_homut_party_decisions_activate
+			}		
 		}
 	
 
 		modifier = {
-		political_power_gain = -0.25
+			political_power_gain = -0.25
 		}
 		
 		days_remove = 30
@@ -839,10 +819,10 @@ has_country_flag = afu_homut_party_decisions_activate
 
 		complete_effect = {	
             hidden_effect = {
-add_popularity = {
-    ideology = oligarchism
-    popularity = -0.05
-}
+				add_popularity = {
+					ideology = oligarchism
+					popularity = -0.05
+				}
                set_country_flag = afu_homut_party_decisions_activate
             }
 	  	}
@@ -869,34 +849,32 @@ add_popularity = {
 
 
 		visible = {
-		tag = AFU				
-		has_country_flag = AFU_formation_of_the_together_for_donbas_coalition
-
+			tag = AFU				
+			has_country_flag = AFU_formation_of_the_together_for_donbas_coalition
 			AFU_kolesnikov = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
 		}
 
-custom_cost_trigger = {
-oligarchism > 0.02
-}
-custom_cost_text = decision_cost_RZD_2_tooltip		
+		custom_cost_trigger = {
+			oligarchism > 0.02
+		}
+		custom_cost_text = decision_cost_RZD_2_tooltip		
 		
 		available = {
 			AFU_kolesnikov = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
-oligarchism > 0.02			
-		
+			oligarchism > 0.02			
 		}
 	
 
 		modifier = {
-		political_power_gain = -0.3
-		liberalism_drift = -0.03
-		conservatism_drift = -0.03
-		national_democracy_drift = -0.03
-		authoritarianism_drift -0.03
+			political_power_gain = -0.3
+			liberalism_drift = -0.03
+			conservatism_drift = -0.03
+			national_democracy_drift = -0.03
+			authoritarianism_drift -0.03
 		}
 		
 		days_remove = 30
@@ -908,10 +886,10 @@ oligarchism > 0.02
 
 		complete_effect = {	
             hidden_effect = {
-add_popularity = {
-    ideology = oligarchism
-    popularity = -0.02
-}
+				add_popularity = {
+					ideology = oligarchism
+					popularity = -0.02
+				}
             }
 	  	}
 		
@@ -930,34 +908,32 @@ add_popularity = {
 
 
 		visible = {
-		tag = AFU				
-		has_country_flag = 	AFU_formation_of_the_together_for_donbas_coalition
-
+			tag = AFU				
+			has_country_flag = 	AFU_formation_of_the_together_for_donbas_coalition
 			AFU_kolesnikov = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
 		}
 
-custom_cost_trigger = {
-oligarchism > 0.02
-}
-custom_cost_text = decision_cost_RZD_2_tooltip		
+		custom_cost_trigger = {
+			oligarchism > 0.02
+		}
+		custom_cost_text = decision_cost_RZD_2_tooltip		
 		
 		available = {
 			AFU_kolesnikov = {
-			is_hired_as_advisor = yes
+				is_hired_as_advisor = yes
 			}
-oligarchism > 0.02		
-		
+			oligarchism > 0.02		
 		}
 	
 
 		modifier = {
-		political_power_gain = -0.3
-		progressivism_drift = -0.03
-		social_democracy_drift = -0.03
-		socialism_drift = -0.03
-		communism_drift -0.03
+			political_power_gain = -0.3
+			progressivism_drift = -0.03
+			social_democracy_drift = -0.03
+			socialism_drift = -0.03
+			communism_drift -0.03
 		}
 		
 		days_remove = 30
@@ -969,10 +945,10 @@ oligarchism > 0.02
 
 		complete_effect = {	
             hidden_effect = {
-add_popularity = {
-    ideology = oligarchism
-    popularity = -0.02
-}
+				add_popularity = {
+					ideology = oligarchism
+					popularity = -0.02
+				}
             }
 	  	}
 		
@@ -1050,4 +1026,505 @@ add_power_balance_value = {
 
 
 
+}
+
+AFU_khomut_kolomoyskiy_cooperation_category = {
+	afu_khomut_offer_kolomoyskiy_luhansk_industries = {
+
+		icon = GFX_decision_kolomoyskiy_trust
+
+
+		visible = {
+			tag = AFU				
+			has_completed_focus = AFU_contact_bondar
+			AFU_bondar = {
+				is_hired_as_advisor = yes
+			}
+		}
+		
+		available = {
+			AFU_bondar = {
+				is_hired_as_advisor = yes
+			}
+			518 = {
+				industrial_complex > 2
+			}
+		}
+	
+
+		modifier = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 30
+		
+		days_remove = 30
+
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {	
+            
+	  	}
+		
+        cancel_effect = {
+
+        }
+
+		remove_effect  = {
+			518 = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+			add_to_variable = {
+				var = FOP_corruption_var
+				value = -15
+				tooltip = add_corruption_var_tt
+			}
+			add_to_variable = {
+				var = AFU_kolomoyskiy_trust
+				value = 15
+				tooltip = AFU_kolomoyskiy_trust_15_tt
+			}
+		}
+	}
+	afu_khomut_arrange_meeting_with_kharkiv_industries = {
+
+		icon = GFX_decision_kolomoyskiy_trust
+
+		visible = {
+			tag = AFU				
+			has_completed_focus = AFU_contact_bondar
+			AFU_bondar = {
+				is_hired_as_advisor = yes
+			}
+		}
+		
+		available = {
+			AFU_bondar = {
+				is_hired_as_advisor = yes
+			}
+			497 = {
+				industrial_complex > 3
+			}
+		}
+	
+
+		modifier = {
+			
+		}
+
+		cost = 70
+		
+		days_remove = 30
+
+		ai_will_do = {
+			base = 100
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {	
+            
+	  	}
+		
+        cancel_effect = {
+
+        }
+
+		remove_effect  = {
+			add_to_variable = {
+				var = FOP_corruption_var
+				value = -15
+				tooltip = add_corruption_var_tt
+			}
+			497 = {
+				remove_building = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+			add_to_variable = {
+				var = AFU_kolomoyskiy_trust
+				value = 20
+				tooltip = AFU_kolomoyskiy_trust_20_tt
+			}
+		}
+	}
+	afu_khomut_lend_kolomoyskiy_some_industry = {
+		icon = GFX_decision_kolomoyskiy_trust
+
+		visible = {
+			tag = AFU				
+			has_completed_focus = AFU_contact_bondar
+			AFU_bondar = {
+				is_hired_as_advisor = yes
+			}
+		}
+		
+		available = {
+			AFU_bondar = {
+				is_hired_as_advisor = yes
+			}
+		}
+	
+
+		modifier = {
+			consumer_goods_factor = 0.1
+		}
+
+		cost = 30
+		
+		days_remove = 45
+
+		ai_will_do = {
+			base = 100
+			modifier = {
+				add = -110
+				has_completed_focus = AFU_mutually_beneficial_alliance
+			}
+		}
+
+		complete_effect = {	
+            
+	  	}
+		
+        cancel_effect = {
+
+        }
+
+		remove_effect  = {
+			add_to_variable = {
+				var = FOP_corruption_var
+				value = -5
+				tooltip = add_corruption_var_tt
+			}
+			add_to_variable = {
+				var = AFU_kolomoyskiy_trust
+				value = 10
+				tooltip = AFU_kolomoyskiy_trust_10_tt
+			}
+		}
+	}
+	afu_khomut_give_kolomoyskiy_space_in_mariupol = {
+		icon = GFX_decision_kolomoyskiy_trust
+
+		visible = {
+			tag = AFU				
+			has_completed_focus = AFU_contact_bondar
+			AFU_bondar = {
+				is_hired_as_advisor = yes
+			}
+		}
+		
+		available = {
+			AFU_bondar = {
+				is_hired_as_advisor = yes
+			}
+			2031 = {
+				industrial_complex > 1
+			}
+			custom_trigger_tooltip = {
+				tooltip = AFU_kolomoyskiy_trust_49_tt
+				check_variable = { AFU_kolomoyskiy_trust > 49 }
+			}
+		}
+	
+
+		modifier = {
+			
+		}
+
+		cost = 80
+		
+		days_remove = 50
+
+		ai_will_do = {
+			base = 100
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {	
+            
+	  	}
+		
+        cancel_effect = {
+
+        }
+
+		remove_effect  = {
+			add_to_variable = {
+				var = FOP_corruption_var
+				value = -10
+				tooltip = add_corruption_var_tt
+			}
+			2031 = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+			add_to_variable = {
+				var = AFU_kolomoyskiy_trust
+				value = 25
+				tooltip = AFU_kolomoyskiy_trust_25_tt
+			}
+		}
+	}
+}
+afu_khomut_anti_azov_category = {
+	afu_khomut_azov_impending_coup = {
+		icon = GFX_decision_target_azov
+		activation = {
+			has_country_flag = afu_azov_activity
+		}
+		available = {
+			custom_trigger_tooltip = afu_impending_coup_tt
+			check_variable = {
+				afu_azov_activity_var < 10
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				has_country_flag = afu_azov_activity
+			}
+		}
+		days_mission_timeout = 120
+		complete_effect = {
+			clr_country_flag = afu_azov_activity
+		}
+		timeout_effect = {
+			country_event = azov.1
+		}
+	}
+	afu_mobilize_pardoned_ldpr_activists = {
+		icon = GFX_decision_mobilize_ldpr_participants
+
+		visible = {
+			tag = AFU				
+			has_country_flag = afu_azov_activity
+		}
+		
+		available = {
+			has_country_flag = afu_azov_activity
+			has_completed_focus = AFU_pardon_ldpr_participants
+		}
+
+		cost = 30
+
+		days_remove =  30
+
+		fire_only_once = yes
+
+		remove_effect = {
+			add_stability = -0.05
+			add_to_variable = {
+				var = afu_azov_activity_var
+				value = -15
+				tooltip = afu_azov_activity_var_minus_15_tt
+			}
+			hidden_effect = {
+				country_event = {
+					id = homut.22
+					days =  7
+				}
+			}
+		}
+	}
+	afu_anti_azov_propaganda = {
+		icon = GFX_decision_target_azov
+
+		visible = {
+			tag = AFU				
+			has_country_flag = afu_azov_activity
+		}
+		
+		available = {
+			has_country_flag = afu_azov_activity
+		}
+
+		cost = 20
+
+		days_remove =  21
+
+		remove_effect = {
+			add_popularity = {
+				ideology = ultranationalism
+				popularity = -0.01
+			}
+			add_days_mission_timeout = {
+				mission = afu_khomut_azov_impending_coup
+				days = 14
+			}
+		}
+	}
+	afu_locate_azov_insurgency_point = {
+		icon = GFX_decision_target_azov
+
+		visible = {
+			tag = AFU				
+			has_country_flag = afu_azov_activity
+			NOT = {
+				has_country_flag = afu_located_azov_point
+			}
+		}
+		
+		available = {
+			has_country_flag = afu_azov_activity
+			NOT = {
+				has_country_flag = afu_located_azov_point
+			}
+		}
+
+		cost = 30
+
+		days_remove = 21
+
+		remove_effect = {
+			set_country_flag = afu_located_azov_point
+		}
+	}
+	afu_strike_azov_insurgents = {
+		icon = GFX_decision_target_azov
+
+		visible = {
+			tag = AFU				
+			has_country_flag = afu_azov_activity
+			has_country_flag = afu_located_azov_point
+		}
+		
+		available = {
+			has_country_flag = afu_azov_activity
+			has_country_flag = afu_located_azov_point
+		}
+
+		cost = 30
+
+		days_remove = 14
+
+		remove_effect = {
+			clr_country_flag = afu_located_azov_point
+			add_to_variable = {
+				value = -10
+				var = afu_azov_activity_var
+				tooltip = afu_azov_activity_var_minus_10_tt
+			}
+			add_days_mission_timeout = {
+				mission = afu_khomut_azov_impending_coup
+				days = 21
+			}
+		}
+	}
+	afu_order_zhorin_arrest = {
+		icon = GFX_decision_target_azov
+
+		visible = {
+			tag = AFU				
+			has_country_flag = afu_azov_activity
+		}
+		
+		available = {
+			has_country_flag = afu_azov_activity
+			has_completed_focus = AFU_hunt_for_ringleaders
+			AFU_Zhorin = {
+				can_be_country_leader = yes
+			}
+		}
+
+		cost = 25
+
+		days_remove =  30
+
+		remove_effect = {
+			random_list = {
+				50 = {
+					country_event = homut.23
+				}
+				50 = {
+					country_event = homut.24
+				}
+			}
+		}
+	}
+	afu_order_redis_arrest = {
+		icon = GFX_decision_target_azov
+
+		visible = {
+			tag = AFU				
+			has_country_flag = afu_azov_activity
+		}
+		
+		available = {
+			has_country_flag = afu_azov_activity
+			has_completed_focus = AFU_hunt_for_ringleaders
+			AFU_Prokopenko = {
+				is_unit_leader = yes
+			}
+		}
+
+		cost = 25
+
+		days_remove =  30
+
+		remove_effect = {
+			random_list = {
+				50 = {
+					country_event = homut.25
+				}
+				50 = {
+					country_event = homut.26
+				}
+			}
+		}
+	}
+	afu_mobilize_militias_against_azov = {
+		icon = GFX_decision_anti_hatred_militias
+
+		visible = {
+			tag = AFU				
+			has_country_flag = afu_azov_activity
+		}
+		
+		available = {
+			has_country_flag = afu_azov_activity
+			has_completed_focus = AFU_stop_ethnic_hatred
+		}
+
+		cost = 40
+
+		days_remove = 28
+
+		remove_effect = {
+			random_list = {
+				50 = {
+					add_to_variable = {
+						var = afu_azov_activity_var
+						value = 5
+						tooltip = afu_azov_activity_var_5_tt
+					}
+					add_days_mission_timeout = {
+						mission = afu_khomut_azov_impending_coup
+						days = -14
+					}
+				}
+				50 = {
+					add_to_variable = {
+						var = afu_azov_activity_var
+						value = -5
+						tooltip = afu_azov_activity_var_minus_5_tt
+					}
+					add_days_mission_timeout = {
+						mission = afu_khomut_azov_impending_coup
+						days = 14
+					}
+				}
+			}
+		}
+	}
 }
