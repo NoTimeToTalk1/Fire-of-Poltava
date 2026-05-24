@@ -15,6 +15,12 @@ shared_focus = {
 	x = 22
 	y = 0
 
+	allow_branch = {
+		NOT = {
+			tag = DBS
+		}
+	}
+
 	available = {
 		has_completed_focus = AFU_free_donbas
 		has_completed_focus = AFU_reshaping_the_mentality
@@ -153,6 +159,12 @@ shared_focus = {
 
 	x = 22
 	y = 0
+
+	allow_branch = {
+		NOT = {
+			tag = DBS
+		}
+	}
 
 	available = {
 		has_completed_focus = AFU_free_donbas
@@ -489,7 +501,11 @@ shared_focus = {
 	cost = 2
 
 	x = 10
-	y = 2
+	y = 6
+
+	allow_branch = {
+		tag = DBS
+	}
 
 	completion_reward = {
 		add_political_power = 100
@@ -1334,7 +1350,11 @@ shared_focus = {
 	cost = 2
 
 	x = 20
-	y = 2
+	y = 15
+
+	allow_branch = {
+		tag = LBU
+	}
 
 	completion_reward = {
 		add_political_power = 50
@@ -1432,7 +1452,7 @@ shared_focus = {
 			tooltip = AFU_rdk_tt
 		}
 		hidden_effect = {
-		country_event = { id = AFU_football.4 days = 7 }
+			country_event = { id = AFU_football.4 days = 7 }
 		}
 	}
 }
@@ -1553,9 +1573,9 @@ shared_focus = {
 		add_manpower = 1100
 		add_command_power = 20
 		AFU_activate_football_mechanic = yes
-	hidden_effect = {
-    set_country_flag = AFU_ultras_football_open	
-	}
+		hidden_effect = {
+			set_country_flag = AFU_ultras_football_open	
+		}
 	}
 }
 
@@ -1819,7 +1839,11 @@ shared_focus = {
 	cost = 1
 
 	x = 10
-	y = 2
+	y = 26
+
+	allow_branch = {
+		tag = UKR
+	}
 
 	completion_reward = {
 		add_stability = 0.1
