@@ -510,6 +510,9 @@ shared_focus = {
 			value = 100
 		}
 		set_country_flag = afu_azov_activity
+		custom_effect_tooltip = afu_disband_the_azov_regiment_tt
+		activate_mission_tooltip = afu_khomut_azov_impending_coup
+		country_event = homut.19
 	}
 }
 
@@ -528,10 +531,6 @@ shared_focus = {
 	completion_reward = {
 		add_war_support = -0.10
 		custom_effect_tooltip = afu_disband_the_azov_regiment_tt
-		country_event = {
-			id = homut.19
-			days = 6
-		}
 		send_embargo = PLT
 	}
 }
@@ -547,8 +546,11 @@ shared_focus = {
 	y = 1
 
 	available = {
-		NOT = {
-			has_country_flag = afu_azov_activity
+		custom_trigger_tooltip = {
+			tooltip = afu_azov_activity_tt
+			NOT = {
+				has_country_flag = afu_azov_activity
+			}
 		}
 	}
 

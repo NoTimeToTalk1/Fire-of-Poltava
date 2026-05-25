@@ -463,3 +463,88 @@ country_event = {
 	}
 }
 
+#ldnr brutality
+country_event = {
+	id = homut.22
+	title = homut.22.t
+	desc = homut.22.d
+
+	picture = GFX_event_afu_khomut_golf
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = homut.22.a
+		add_stability = -0.05
+		add_popularity = {
+			ideology = ultranationalism
+			popularity = 0.03
+		}
+		add_popularity = {
+			ideology = oligarchism
+			popularity = -0.03
+		}
+		add_days_mission_timeout = {
+			mission = afu_khomut_azov_impending_coup
+			days = -30
+		}
+	}
+}
+
+#zhorin successful arrest
+country_event = {
+	id = homut.23
+	title = homut.23.t
+	desc = homut.23.d
+
+	picture = GFX_event_afu_khomut_9
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = homut.23.a
+		add_to_variable = {
+			value = -15
+			var = afu_azov_activity_var
+			tooltip = afu_azov_activity_var_minus_15_tt
+		}
+		retire_character = AFU_Zhorin
+	}
+}
+
+#redis successful arrest
+country_event = {
+	id = homut.24
+	title = homut.24.t
+	desc = homut.24.d
+
+	picture = GFX_event_afu_khomut_9
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = homut.24.a
+		add_to_variable = {
+			value = -15
+			var = afu_azov_activity_var
+			tooltip = afu_azov_activity_var_minus_15_tt
+		}
+		retire_character = AFU_Prokopenko
+	}
+}
+
+#fail arrest
+country_event = {
+	id = homut.25
+	title = homut.25.t
+	desc = homut.25.d
+
+	picture = GFX_event_afu_khomut_9
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = homut.25.a
+		add_days_mission_timeout = {
+			mission = afu_khomut_azov_impending_coup
+			days = 5
+		}
+	}
+}
+
