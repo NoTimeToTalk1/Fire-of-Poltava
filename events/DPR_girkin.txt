@@ -12,6 +12,8 @@ country_event = {
 
 	option = {
 		name = gir.0.a
+		load_focus_tree = DPR_girkin
+		#There should be fucking parties and natspirits or whatever I am too cooked rn
 	}
 }
 
@@ -93,21 +95,27 @@ country_event = {
 
 	option = {
 		name = gir.4.a
-		add_stability = -0.2
-		swap_ideas = { --- ADD THIS TO EVENT INSTEAD, ALSO DEMILITARIZE REGIONS AND OPEN DECISIONS
+		swap_ideas = {
 			remove_idea = DPR_peoples_opposition_2
 			add_idea = DPR_peoples_opposition_3
 		}
 		
-		2097 = { set_demilitarized_zone = yes }
-		2081 = { set_demilitarized_zone = yes }
-		2099 = { set_demilitarized_zone = yes }
-		2098 = { set_demilitarized_zone = yes }
-		
-		2031 = { set_demilitarized_zone = yes }
-		2093 = { set_demilitarized_zone = yes }
-		2094 = { set_demilitarized_zone = yes }
-		2083 = { set_demilitarized_zone = yes }
+		every_state = {
+			limit = {
+				OR = {
+					state = 2097
+					state = 2081
+					state = 2099
+					state = 2098
+					
+					state = 2031
+					state = 2093
+					state = 2094
+					state = 2083
+				}
+			}
+			set_demilitarized_zone = yes
+		}
 	}
 }
 
@@ -123,7 +131,26 @@ country_event = {
 
 	option = {
 		name = gir.5.a
-		remove_ideas = DPR_peoples_opposition_1
+		add_popularity = {
+			ideology = conservatism
+			popularity = 0.06
+		}
+		add_popularity = {
+			ideology = liberalism
+			popularity = 0.04
+		}
+		add_popularity = {
+			ideology = socialism
+			popularity = 0.07
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.03
+		}
+		swap_ideas = {
+			remove_idea = DPR_peoples_opposition_1
+			add_idea = DPR_illusion_of_freedom
+		}
 	}
 }
 
@@ -211,21 +238,32 @@ country_event = {
 					has_country_flag = DPR_girkin_pushilin_deal
 				}
 			}
-			2097 = { set_demilitarized_zone = yes }
-			2081 = { set_demilitarized_zone = yes }
-			2099 = { set_demilitarized_zone = yes }
-			2098 = { set_demilitarized_zone = yes }
-			
-			2724 = { set_demilitarized_zone = yes }
-			2862 = { set_demilitarized_zone = yes }
-			
-			2031 = { set_demilitarized_zone = yes }
-			2093 = { set_demilitarized_zone = yes }
-			2094 = { set_demilitarized_zone = yes }
-			2083 = { set_demilitarized_zone = yes }
-			
-			2346 = { set_demilitarized_zone = yes }
-			2301 = { set_demilitarized_zone = yes }
+			swap_ideas = {
+				remove_idea = DPR_illusion_of_freedom
+				add_idea = DPR_nationwide_opposition
+			}
+			every_state = {
+				limit = {
+					OR = {
+						state = 2097
+						state = 2081
+						state = 2099
+						state = 2098
+						
+						state = 2724
+						state = 2862
+						
+						state = 2031
+						state = 2093
+						state = 2094
+						state = 2083
+						
+						state = 2346
+						state = 2301
+					}
+				}
+				set_demilitarized_zone = yes
+			}
 		}
 		else_if = {
 			limit = {
@@ -234,23 +272,39 @@ country_event = {
 					NOT = { has_country_flag = DPR_girkin_pushilin_deal }
 				}
 			}
-			2097 = { set_demilitarized_zone = yes }
-			2081 = { set_demilitarized_zone = yes }
-			2099 = { set_demilitarized_zone = yes }
-			2098 = { set_demilitarized_zone = yes }
-			
-			2031 = { set_demilitarized_zone = yes }
-			2093 = { set_demilitarized_zone = yes }
-			2094 = { set_demilitarized_zone = yes }
-			2083 = { set_demilitarized_zone = yes }
-			
-			2082 = { set_demilitarized_zone = yes }
-			2309 = { set_demilitarized_zone = yes }
-			2856 = { set_demilitarized_zone = yes }
-			2310 = { set_demilitarized_zone = yes }
+			swap_ideas = {
+				remove_idea = DPR_illusion_of_freedom
+				add_idea = DPR_nationwide_opposition
+			}
+			every_state = {
+				limit = {
+					OR = {
+						state = 2097
+						state = 2081
+						state = 2099
+						state = 2098
+						
+						state = 2724
+						state = 2862
+						
+						state = 2031
+						state = 2093
+						state = 2094
+						state = 2083
+						
+						state = 2346
+						state = 2301
+					}
+				}
+				set_demilitarized_zone = yes
+			}
 		}
 		else = {
-			add_political_power = 50
+			add_political_power = 100
+			swap_ideas = {
+				remove_idea = DPR_illusion_of_freedom
+				add_idea = DPR_shattered_hopes
+			}
 		}
 	}
 }
@@ -285,6 +339,7 @@ country_event = {
 	option = {
 		name = gir.911.a
 		set_country_flag = vitrenko_is_dead
+		retire_character = DPR_Vitrenko
 		add_manpower = -1
 	}
 }
@@ -302,6 +357,7 @@ country_event = {
 	option = {
 		name = gir.922.a
 		set_country_flag = pasechnik_is_dead
+		retire_character = DPR_Pasechnik
 		add_manpower = -1
 	}
 }
@@ -319,6 +375,7 @@ country_event = {
 	option = {
 		name = gir.933.a
 		set_country_flag = pushilin_is_dead
+		retire_character = DPR_Pushilin
 		add_manpower = -1
 	}
 }
@@ -335,6 +392,7 @@ country_event = {
 
 	option = {
 		name = gir.10.a
+		add_ideas = DPR_wagner_presence
 	}
 }
 
@@ -350,6 +408,66 @@ country_event = {
 
 	option = {
 		name = gir.11.a
+		###ADDS 3 ELITE UNITS(PRIGHOZIN AND OTHER NOOBS AS GENERALS TOO)
+		DPR_Prigozhin = {
+			add_corps_commander_role = {
+				skill = 4
+				attack_skill = 4
+				defense_skill = 4
+				planning_skill = 2
+				logistics_skill = 3
+			}
+		}
+		DPR_Utkin = {
+			add_corps_commander_role = {
+				skill = 4
+				attack_skill = 3
+				defense_skill = 2
+				planning_skill = 4
+				logistics_skill = 4
+			}
+		}
+		division_template = {
+			name = "Wagner Detachment"
+			is_locked = yes
+			regiments = {
+				APC = { x = 0 y = 0 }
+				IFV = { x = 0 y = 1 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				artillery_brigade = { x = 2 y = 0 }
+				motorized = { x = 3 y = 0 }
+				motorized = { x = 3 y = 1 }
+			}
+			support = {
+				mot_recon = { x = 0 y = 0 }
+				engineer = { x = 0 y = 1 }
+				signal_company = { x = 0 y = 2 }
+			}
+		}
+		random_owned_controlled_state = {
+			create_unit = {
+				division = "name = \"Wagner Assault Detachment\" 
+				division_template = \"Wagner Detachment\" 
+				start_experience_factor = 0.5
+				start_equipment_factor = 0.8"
+				owner = DPR
+			}
+			create_unit = {
+				division = "name = \"Wagner Assault Detachment\" 
+				division_template = \"Wagner Detachment\" 
+				start_experience_factor = 0.5
+				start_equipment_factor = 0.8"
+				owner = DPR
+			}
+			create_unit = {
+				division = "name = \"Wagner Assault Detachment\" 
+				division_template = \"Wagner Detachment\" 
+				start_experience_factor = 0.5
+				start_equipment_factor = 0.8"
+				owner = DPR
+			}
+		}
 	}
 }
 
@@ -365,6 +483,7 @@ country_event = {
 
 	option = {
 		name = gir.12.a
+		add_political_power = 50
 	}
 }
 
@@ -395,6 +514,10 @@ country_event = {
 
 	option = {
 		name = gir.14.a
+		swap_ideas = {
+			remove_idea = LPR_FSB
+			add_idea = DPR_FSB_1
+		}
 	}
 }
 
@@ -410,6 +533,10 @@ country_event = {
 
 	option = {
 		name = gir.15.a
+		swap_ideas = {
+			remove_idea = DPR_FSB_1
+			add_idea = DPR_FSB_2
+		}
 	}
 }
 
@@ -440,6 +567,7 @@ country_event = {
 
 	option = {
 		name = gir.17.a
+		add_political_power = 10
 	}
 }
 
@@ -455,6 +583,7 @@ country_event = {
 
 	option = {
 		name = gir.18.a
+		###ADD IHOR IVANOV AS ADVISOR
 	}
 }
 
@@ -485,6 +614,7 @@ country_event = {
 
 	option = {
 		name = gir.20.a
+		add_political_power = 10
 	}
 }
 
@@ -500,6 +630,7 @@ country_event = {
 
 	option = {
 		name = gir.21.a
+		add_political_power = 10
 	}
 }
 
@@ -545,6 +676,10 @@ country_event = {
 
 	option = {
 		name = gir.24.a
+		swap_ideas = {
+			remove_idea = DPR_new_friends_3
+			add_idea = DPR_monarchical_coalition_1
+		}
 	}
 }
 
@@ -575,6 +710,7 @@ country_event = {
 
 	option = {
 		name = gir.26.a
+		### SET APROPRIATE PARTY NAMES FOR TRD, ULTRNAT, AUTH.
 	}
 }
 

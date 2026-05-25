@@ -18,7 +18,6 @@ shared_focus = {
 	y = 0
 
 	completion_reward = {
-		add_ideas = DPR_peoples_opposition_1
 		add_political_power = 40
 		country_event = {
 			id = dpr.901 #PLACEHOLDER --- Вуличні протести виборців вітренко та пасєки
@@ -45,7 +44,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###DEVIL TOOLTIP DEATHS BLOOD HAHAHAAHAH
+		custom_effect_tooltip = DPR_girkin_fight_tt
 		add_popularity = {
 			ideology = traditionalism
 			popularity = 0.3
@@ -70,10 +69,6 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		#swap_ideas = { --- ADD THIS TO EVENT INSTEAD
-		#	remove_idea = DPR_peoples_opposition_1
-		#	add_idea = DPR_peoples_opposition_2
-		#}
 		add_manpower = 6000
 		country_event = {
 			id = dpr.902 #PLACEHOLDER --- Перші криваві зіткнення на вулицях
@@ -97,22 +92,6 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		add_popularity = {
-			ideology = conservatism
-			popularity = -0.1
-		}
-		add_popularity = {
-			ideology = liberalism
-			popularity = -0.1
-		}
-		add_popularity = {
-			ideology = socialism
-			popularity = -0.1
-		}
-		add_popularity = {
-			ideology = communism
-			popularity = -0.1
-		}
 		add_political_power = -80
 		country_event = {
 			id = dpr.903 #PLACEHOLDER --- Вирізка з газети про дискредитацію Вітренко й Пасєки (відомі вони разом як "Народна Опозиція")
@@ -136,10 +115,6 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		#swap_ideas = { --- ADD THIS TO EVENT INSTEAD, ALSO DEMILITARIZE REGIONS AND OPEN DECISIONS
-		#	remove_idea = DPR_peoples_opposition_2
-		#	add_idea = DPR_peoples_opposition_3
-		#}
 		add_stability = -0.2
 		country_event = {
 			id = dpr.904 #PLACEHOLDER --- Війна гіркіна та лоялістів з опозицією в містах та селах
@@ -166,7 +141,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###ANGEL TOOLTIP CANDYS HAPINESS ETC.
+		custom_effect_tooltip = DPR_girkin_guarantees_tt
 		add_popularity = {
 			ideology = traditionalism
 			popularity = -0.2
@@ -192,23 +167,6 @@ shared_focus = {
 
 	completion_reward = {
 		add_political_power = 200
-		remove_ideas = DPR_peoples_opposition_1
-		add_popularity = {
-			ideology = conservatism
-			popularity = 0.06
-		}
-		add_popularity = {
-			ideology = liberalism
-			popularity = 0.04
-		}
-		add_popularity = {
-			ideology = socialism
-			popularity = 0.07
-		}
-		add_popularity = {
-			ideology = communism
-			popularity = 0.03
-		}
 		country_event = {
 			id = dpr.905 #PLACEHOLDER --- Лібералізація конституції гіркіном, уряд пішов на поступки опозиції (стратегічний хід, далі більше)
 			days = 1
@@ -238,14 +196,6 @@ shared_focus = {
 				}
 				50 = {
 					set_country_flag = DPR_raid_fail
-				}
-			}
-			random_list = { ### SHOULD REMOVE THIS LATER, ONLY FOR TESTING NOW
-				50 = {
-					###
-				}
-				50 = {
-					set_country_flag = DPR_girkin_pushilin_deal
 				}
 			}
 		}
@@ -302,8 +252,6 @@ shared_focus = {
 			id = dpr.909 #PLACEHOLDER --- Опис подальшої ситуації (народ в страху, в державі анархія)
 			days = 1
 		}
-		###GUI FOR DEMILITARIZATION OF REGIONS(WHAT???)
-		###+ADD DECISIONS TO FUCK WITH VITRENKO AND PASECHNIK(part of gui)
 	}
 }
 
@@ -325,7 +273,6 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		#Нацдух про вагнер дати, який прибирається коли береш фокус на інтеграцію в регулярні війська
 		add_popularity = {
 			ideology = traditionalism
 			popularity = -0.1
@@ -356,7 +303,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###ADDS 3 ELITE UNITS(PRIGHOZIN AND OTHER NOOBS AS GENERALS TOO)
+		custom_effect_tooltip = DPR_girkin_wagner_tt
 		country_event = {
 			id = dpr.911 #PLACEHOLDER --- Інтеграція Вагнера в регулярні війська
 			days = 1
@@ -407,7 +354,6 @@ shared_focus = {
 
 	completion_reward = {
 		add_ideas = DPR_colonels_plan_1
-		add_political_power = 50
 		country_event = {
 			id = dpr.912 #PLACEHOLDER --- івент про геніальність гіркіна як стратега на воєнному й державному рівнях
 			days = 1
@@ -453,10 +399,6 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		swap_ideas = {
-			remove_idea = LPR_FSB
-			add_idea = DPR_FSB_1
-		}
 		country_event = {
 			id = dpr.914 #PLACEHOLDER --- Івент про методи дій фсб
 			days = 1
@@ -479,13 +421,9 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		swap_ideas = {
-			remove_idea = DPR_FSB_1
-			add_idea = DPR_FSB_2
-		}
 		create_intelligence_agency = {
 			name = "Security Service of Novorossiya"
-			icon = GFX_intelligence_agency_logo_agency
+			icon = GFX_intelligence_agency_logo_girkin
 		}
 		country_event = {
 			id = dpr.915 #PLACEHOLDER --- Операція новостворенної Служби Безпеки Новоросії по затримці рандомних держзрадників
@@ -590,7 +528,6 @@ shared_focus = {
 			id = dpr.918 #PLACEHOLDER --- Зустріч Гіркіна та Іванова - лідера РОВС
 			days = 7
 		}
-		###ADD IHOR IVANOV AS ADVISOR
 	}
 }
 
@@ -829,10 +766,6 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		swap_ideas = {
-			remove_idea = DPR_new_friends_3
-			add_idea = DPR_monarchical_coalition_1
-		}
 		country_event = {
 			id = dpr.924 #PLACEHOLDER --- Івент про перший з'їзд всеросійського монархічного конгресу
 			days = 1
@@ -936,7 +869,6 @@ shared_focus = {
 			id = dpr.926 #PLACEHOLDER --- Івент про святкову промову Гіркіна на честь єдинства всеросійського монархічного конгресу
 			days = 1
 		}
-		### SET APROPRIATE PARTY NAMES FOR TRD, ULTRNAT, AUTH.
 	}
 }
 

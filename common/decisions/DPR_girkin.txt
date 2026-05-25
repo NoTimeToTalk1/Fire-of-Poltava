@@ -251,6 +251,19 @@ DPR_putting_down_the_unrest_category = {
 		
 		complete_effect = {
 			clr_country_flag = DPR_girkin_civil_war
+
+			if = {
+				limit = {
+					has_idea = DPR_peoples_opposition_3
+				}
+				remove_ideas = DPR_peoples_opposition_3
+			}
+			else_if = {
+				limit = {
+					has_idea = DPR_nationwide_opposition
+				}
+				remove_ideas = DPR_nationwide_opposition
+			}
 		}
 	}
 }
