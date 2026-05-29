@@ -1,0 +1,232 @@
+# ══════════════════════════════════════════════
+# ІНІЦІАЛІЗАЦІЯ
+# ══════════════════════════════════════════════
+
+WL_black_market_init = {
+    set_country_flag = WL_black_market_unlocked
+    set_variable = { WL_shadow_hryvnia = 10 }
+    set_variable = { WL_bm_tier = 1 }
+    add_dynamic_modifier = { modifier = WL_bm_shadow_network }
+    custom_effect_tooltip = WL_bm_init_tt
+}
+
+# ══════════════════════════════════════════════
+# ДОДАВАННЯ / ВІДНІМАННЯ ТІНЬОВИХ ГРИВЕНЬ
+# ══════════════════════════════════════════════
+
+WL_bm_add_shadow_hryvnia = {
+    add_to_variable = { 
+        var = WL_shadow_hryvnia 
+        value = temp_var_bm_value 
+    }
+    
+    # Кап на 200
+    if = {
+        limit = { check_variable = { WL_shadow_hryvnia > 200 } }
+        set_variable = { WL_shadow_hryvnia = 200 }
+    }
+}
+
+WL_bm_subtract_shadow_hryvnia = {
+    subtract_from_variable = { 
+        var = WL_shadow_hryvnia 
+        value = temp_var_bm_value 
+    }
+}
+
+# ══════════════════════════════════════════════
+# ЩОМІСЯЧНИЙ ДОХІД
+# ══════════════════════════════════════════════
+
+WL_bm_monthly_income = {
+    # Базовий +3
+    set_temp_variable = { temp_var_bm_value = 3 }
+    WL_bm_add_shadow_hryvnia = yes
+
+    # Контрабандисти +4
+    if = {
+        limit = { has_country_flag = WL_smugglers_active }
+        set_temp_variable = { temp_var_bm_value = 4 }
+        WL_bm_add_shadow_hryvnia = yes
+    }
+
+    # Tier 2 +2
+    if = {
+        limit = { check_variable = { WL_bm_tier > 1 } }
+        set_temp_variable = { temp_var_bm_value = 2 }
+        WL_bm_add_shadow_hryvnia = yes
+    }
+
+    # Tier 3 +3
+    if = {
+        limit = { check_variable = { WL_bm_tier > 2 } }
+        set_temp_variable = { temp_var_bm_value = 3 }
+        WL_bm_add_shadow_hryvnia = yes
+    }
+}
+
+# ══════════════════════════════════════════════
+# ПІДВИЩЕННЯ РІВНЯ
+# ══════════════════════════════════════════════
+
+WL_bm_upgrade_to_tier2 = {
+    if = {
+        limit = { check_variable = { WL_bm_tier < 2 } }
+        set_variable = { WL_bm_tier = 2 }
+        add_dynamic_modifier = { modifier = WL_bm_shadow_network_tier2 }
+        custom_effect_tooltip = WL_bm_tier2_upgraded_tt
+    }
+}
+
+WL_bm_upgrade_to_tier3 = {
+    if = {
+        limit = { check_variable = { WL_bm_tier < 3 } }
+        set_variable = { WL_bm_tier = 3 }
+        add_dynamic_modifier = { modifier = WL_bm_shadow_network_tier3 }
+        custom_effect_tooltip = WL_bm_tier3_upgraded_tt
+    }
+}
+
+### =============================================
+### BLACK MARKET PURCHASE EFFECTS
+### =============================================
+
+WL_bm_buy_infantry_effect = {
+    subtract_from_variable = { var = WL_shadow_hryvnia value = 20 }
+
+    add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 650 }
+    if = { limit = { check_variable = { WL_bm_tier > 1 } }
+        add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 200 }
+    }
+    if = { limit = { check_variable = { WL_bm_tier > 2 } }
+        add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 250 }
+    }
+    if = { limit = { check_variable = { WL_bm_tier > 3 } }
+        add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 100 }
+    }
+}
+
+WL_bm_buy_drones_effect = {
+    subtract_from_variable = { var = WL_shadow_hryvnia value = 30 }
+
+    add_equipment_to_stockpile = { type = recon_drone_equipment_1    amount = 35 }
+    add_equipment_to_stockpile = { type = fpv_drone_equipment_1      amount = 70 }
+    add_equipment_to_stockpile = { type = dropper_drone_equipment_1  amount = 35 }
+
+    if = { limit = { check_variable = { WL_bm_tier > 1 } }
+        add_equipment_to_stockpile = { type = fpv_drone_equipment_1 amount = 25 }
+    }
+    if = { limit = { check_variable = { WL_bm_tier > 2 } }
+        add_equipment_to_stockpile = { type = recon_drone_equipment_1   amount = 20 }
+        add_equipment_to_stockpile = { type = dropper_drone_equipment_1 amount = 20 }
+    }
+    if = { limit = { check_variable = { WL_bm_tier > 3 } }
+        add_equipment_to_stockpile = { type = recon_drone_equipment_1   amount = 20 }
+        add_equipment_to_stockpile = { type = dropper_drone_equipment_1 amount = 20 }
+    }
+}
+
+WL_bm_buy_support_effect = {
+    subtract_from_variable = { var = WL_shadow_hryvnia value = 25 }
+
+    add_equipment_to_stockpile = { type = support_equipment_1 amount = 200 }
+    if = { limit = { check_variable = { WL_bm_tier > 1 } }
+        add_equipment_to_stockpile = { type = support_equipment_1 amount = 60 }
+    }
+    if = { limit = { check_variable = { WL_bm_tier > 2 } }
+        add_equipment_to_stockpile = { type = support_equipment_1 amount = 80 }
+    }
+    if = { limit = { check_variable = { WL_bm_tier > 3 } }
+        add_equipment_to_stockpile = { type = support_equipment_1 amount = 50 }
+    }
+}
+
+WL_bm_buy_anti_air_effect = {
+    subtract_from_variable = { var = WL_shadow_hryvnia value = 35 }
+
+    add_equipment_to_stockpile = { type = anti_air_equipment_2 amount = 80 }
+    if = { limit = { check_variable = { WL_bm_tier > 1 } }
+        add_equipment_to_stockpile = { type = anti_air_equipment_2 amount = 25 }
+    }
+    if = { limit = { check_variable = { WL_bm_tier > 2 } }
+        add_equipment_to_stockpile = { type = anti_air_equipment_2 amount = 30 }
+    }
+    if = { limit = { check_variable = { WL_bm_tier > 3 } }
+        add_equipment_to_stockpile = { type = anti_air_equipment_2 amount = 20 }
+    }
+}
+
+WL_bm_buy_anti_tank_effect = {
+    subtract_from_variable = { var = WL_shadow_hryvnia value = 35 }
+
+    add_equipment_to_stockpile = { type = anti_tank_equipment_1 amount = 80 }
+    if = { limit = { check_variable = { WL_bm_tier > 1 } }
+        add_equipment_to_stockpile = { type = anti_tank_equipment_1 amount = 25 }
+    }
+    if = { limit = { check_variable = { WL_bm_tier > 2 } }
+        add_equipment_to_stockpile = { type = anti_tank_equipment_1 amount = 30 }
+    }
+    if = { limit = { check_variable = { WL_bm_tier > 3 } }
+        add_equipment_to_stockpile = { type = anti_tank_equipment_1 amount = 20 }
+    }
+}
+
+WL_bm_buy_apc_effect = {
+    subtract_from_variable = { var = WL_shadow_hryvnia value = 50 }
+
+    add_equipment_to_stockpile = { type = armored_car_equipment_1 amount = 30 }
+    if = { limit = { check_variable = { WL_bm_tier > 1 } }
+        add_equipment_to_stockpile = { type = armored_car_equipment_1 amount = 15 }
+    }
+    if = { limit = { check_variable = { WL_bm_tier > 2 } }
+        add_equipment_to_stockpile = { type = armored_car_equipment_1 amount = 20 }
+    }
+    if = { limit = { check_variable = { WL_bm_tier > 3 } }
+        add_equipment_to_stockpile = { type = armored_car_equipment_1 amount = 10 }
+    }
+}
+
+WL_bm_buy_motorized_effect = {
+    subtract_from_variable = { var = WL_shadow_hryvnia value = 30 }
+
+    add_equipment_to_stockpile = { type = motorized_equipment_2 amount = 30 }
+    if = { limit = { check_variable = { WL_bm_tier > 1 } }
+        add_equipment_to_stockpile = { type = motorized_equipment_2 amount = 30 }
+    }
+    if = { limit = { check_variable = { WL_bm_tier > 2 } }
+        add_equipment_to_stockpile = { type = motorized_equipment_2 amount = 20 }
+    }
+    if = { limit = { check_variable = { WL_bm_tier > 3 } }
+        add_equipment_to_stockpile = { type = motorized_equipment_2 amount = 10 }
+    }
+}
+
+WL_bm_buy_mortars_effect = {
+    subtract_from_variable = { var = WL_shadow_hryvnia value = 25 }
+
+    add_equipment_to_stockpile = { type = mortar_equipment_1 amount = 100 }
+    if = { limit = { check_variable = { WL_bm_tier > 1 } }
+        add_equipment_to_stockpile = { type = mortar_equipment_1 amount = 30 }
+    }
+    if = { limit = { check_variable = { WL_bm_tier > 2 } }
+        add_equipment_to_stockpile = { type = mortar_equipment_1 amount = 35 }
+    }
+    if = { limit = { check_variable = { WL_bm_tier > 3 } }
+        add_equipment_to_stockpile = { type = mortar_equipment_1 amount = 20 }
+    }
+}
+
+WL_bm_buy_artillery_effect = {
+    subtract_from_variable = { var = WL_shadow_hryvnia value = 45 }
+
+    add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 50 }
+    if = { limit = { check_variable = { WL_bm_tier > 1 } }
+        add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 15 }
+    }
+    if = { limit = { check_variable = { WL_bm_tier > 2 } }
+        add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 20 }
+    }
+    if = { limit = { check_variable = { WL_bm_tier > 3 } }   # було >2 в оригіналі — виправив на >3
+        add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 10 }
+    }
+}
