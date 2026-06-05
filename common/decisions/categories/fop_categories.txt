@@ -144,26 +144,11 @@ FOP_coring_micro_region = {
 			is_left_bank_ukraine = yes
 			is_right_bank_ukraine = yes
 		}
-        NOT = {
-            OR = {
-                tag = WST
-                tag = NRT
-                tag = ESN
-                tag = STH
-            }
-        }
 	}
     visible_when_empty = yes
 	visible = {
         locked_coring = no
-        NOT = {
-            OR = {
-                tag = WST
-                tag = NRT
-                tag = ESN
-                tag = STH
-            }
-        }
+        has_united_region = no
 	}
 }
 
@@ -175,23 +160,16 @@ FOP_coring_region = {
 			is_left_bank_ukraine = yes
 			is_right_bank_ukraine = yes
 		}
-		OR = {
-			tag = WST
-			tag = NRT
-			tag = STH
-			tag = ESN
-		}
-		NOT = {
-			tag = RBU
-			tag = LBU
-		}
 	}
     visible_when_empty = yes
 	visible = {
+        locked_coring = no
+        has_united_region = yes
+        has_united_river_bank = no
 	}
 }
 
-FOP_coring_super_region = {
+FOP_coring_river_bank = {
 	icon = GFX_decision_category_generic_civil_support
 
 	allowed = {
@@ -199,16 +177,14 @@ FOP_coring_super_region = {
 			is_left_bank_ukraine = yes
 			is_right_bank_ukraine = yes
 		}
-		OR = {
-			tag = RBU
-			tag = LBU
-		}
-		NOT = {
-			tag = UKR
-		}
 	}
     visible_when_empty = yes
 	visible = {
+        locked_coring = no
+        has_united_river_bank = yes
+        NOT = {
+            tag = UKR
+        }
 	}
 }
 
@@ -216,10 +192,14 @@ FOP_coring_ukraine = {
 	icon = GFX_decision_category_generic_civil_support
 
 	allowed = {
-		tag = UKR
+		OR = {
+            is_left_bank_ukraine = yes
+			is_right_bank_ukraine = yes
+        }
 	}
     visible_when_empty = yes
 	visible = {
+        tag = UKR
 	}
 }
 
