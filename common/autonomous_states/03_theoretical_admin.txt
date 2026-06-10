@@ -1,0 +1,52 @@
+autonomy_state = {
+	id = autonomy_theoretical_jurisdiction
+	
+	use_overlord_color = yes
+
+	min_freedom_level = 0.5
+
+	manpower_influence = 0.0
+
+	rule = {
+		desc = "RULE_DESC_IS_A_SUBJECT"
+	}
+
+	modifier = {
+		hidden_modifier = {
+			autonomy_manpower_share = 0.0
+			extra_trade_to_overlord_factor = 0.0
+			overlord_trade_cost_factor = 0.0
+			peace_score_ratio_transferred_to_overlord = 0.0
+			lend_lease_tension_with_overlord = 0.0
+			faction_influence_contribution_factor = 0.0
+		}
+	}
+
+	ai_subject_wants_higher = {
+		factor = 0.0
+	}
+
+	ai_overlord_wants_lower = {
+		factor = 0.0
+	}
+
+	ai_overlord_wants_garrison = {
+		always = no
+	}
+
+	allowed = {
+		always = no
+	}
+
+	allowed_levels_filter = {
+		autonomy_theoretical_jurisdiction
+	}
+
+	can_take_level = {
+		always = no
+	}
+
+	can_lose_level = {
+		always = no
+	}
+}

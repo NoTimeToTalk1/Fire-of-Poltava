@@ -1,0 +1,73 @@
+autonomy_state = {
+	id = autonomy_de_jure_puppet
+
+	min_freedom_level = 0.9
+
+	manpower_influence = 0.0
+
+	rule = {
+		can_be_spymaster = yes
+	}
+
+	modifier = {
+		license_subject_master_purchase_cost = -0.5
+		overlord_trade_cost_factor = -0.25
+		can_master_build_for_us = 1
+	}
+
+	ai_subject_wants_higher = {
+		factor = 1.0
+	}
+
+	ai_overlord_wants_lower = {
+		factor = 0.0
+	}
+
+	ai_overlord_wants_garrison = {
+		always = no
+	}
+
+	allowed = {
+		OR = {
+			tag = MAN
+			original_tag = MAN
+			tag = KIS
+			original_tag = KIS
+			tag = PLB
+			original_tag = PLB
+		}
+	}
+
+	can_take_level = {
+		if = {
+			limit = {
+				original_tag = MAN
+			}
+			OR = {
+				has_completed_focus = MAN_third_eye_3i
+				has_government = communism
+				has_government = democratic
+			}
+		}
+		OR = {
+			if = {
+				limit = {
+					original_tag = PLB
+				}
+				has_completed_focus = PLB_hyperbearia_eternal
+			}
+			OR = {
+				has_completed_focus = PLB_hyperbearia_eternal
+				has_government = communism
+				has_government = democratic
+			}
+		}
+	}
+
+	can_lose_level = {
+		custom_trigger_tooltip = {
+			tooltip = cannot_annex_de_jure_puppet
+			has_country_flag = can_annex_de_jure_puppet_flag
+		}
+	}
+}
