@@ -177,14 +177,19 @@ FOP_micro_region_development = {
                     add_political_power = 25
                 }
 			}
-            if = {
-                limit = {
-                    any_owned_state = {
-                        has_active_resistance = yes
-                    }
-                }
-				add_compliance = 3
-            }
+	if = {
+		limit = {
+			any_owned_state = {
+				has_active_resistance = yes
+			}
+		}
+		random_owned_state = {
+			limit = {
+				has_active_resistance = yes
+			}
+			add_compliance = 3
+		}
+	}
 		}
 	}
     economic_concessions = {
@@ -209,14 +214,19 @@ FOP_micro_region_development = {
 
 		remove_effect = {
             add_political_power = 30
-            if = {
-                limit = {
-                    any_owned_state = {
-                        has_active_resistance = yes
-                    }
-                }
-				add_compliance = 5
-            }
+	if = {
+		limit = {
+			any_owned_state = {
+				has_active_resistance = yes
+			}
+		}
+		random_owned_state = {
+			limit = {
+				has_active_resistance = yes
+			}
+			add_compliance = 3
+		}
+	}
 		}
 	}
     invest_in_social_buildings = {
@@ -278,14 +288,19 @@ FOP_micro_region_development = {
 		            }
                 }
 			}
-            if = {
-                limit = {
-                    any_owned_state = {
-                        has_active_resistance = yes
-                    }
-                }
-				add_compliance = 10
-            }
+	if = {
+		limit = {
+			any_owned_state = {
+				has_active_resistance = yes
+			}
+		}
+		random_owned_state = {
+			limit = {
+				has_active_resistance = yes
+			}
+			add_compliance = 10
+		}
+	}
 		}
     }
 
@@ -326,21 +341,28 @@ FOP_micro_region_development = {
                     add_manpower = -500
                 }
 			}
-			if = {
-                limit = {
-                    any_owned_state = {
-                        has_active_resistance = yes
-                    }
-                }
-				random_list = {
-					50 = {
-						add_resistance = -5
-					}
-					50 = {
-						add_resistance  = 5
-					}
+	if = {
+		limit = {
+			any_owned_state = {
+				has_active_resistance = yes
+			}
+		}
+
+		random_owned_state = {
+			limit = {
+				has_active_resistance = yes
+			}
+
+			random_list = {
+				50 = {
+					add_resistance = -5
 				}
-            }
+				50 = {
+					add_resistance = 5
+				}
+			}
+		}
+	}
 		}
 	}
     invest_in_populace_control = {
