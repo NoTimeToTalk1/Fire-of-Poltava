@@ -1,6 +1,7 @@
 on_actions = {
 	on_startup = {
 		effect = {
+			# Info Screen
 			every_country = {
 				# Top tabs
 				add_to_array = { Info_Screen_Top_Tab_Array = 1 }
@@ -36,6 +37,32 @@ on_actions = {
 						is_ai = no
 					}
 					set_country_flag = FOP_Info_Screen_Visible
+				}
+			}
+			# Ending Screen
+			every_country = {
+				# Top tabs
+				add_to_array = { Ending_Screen_Top_Tab_Array = 1 }
+				add_to_array = { Ending_Screen_Top_Tab_Array = 2 }
+				set_variable = { Ending_Screen_Tab = 1 }
+
+				add_to_array = { Ending_Screen_Credits_store = 1 }
+				add_to_array = { Ending_Screen_Credits_store = 2 }
+
+				if = {
+					limit = {
+						FOP_has_content = yes
+					}
+					set_country_flag = Ending_Screen_HasCustomCloseButton
+				}
+				if = {
+					limit = {
+						check_variable = { Ending_Screen_array_main^num > 0 }
+					}
+					for_each_loop = {
+						array = Ending_Screen_array_main
+						add_to_array = { Ending_Screen_storage_array = v }
+					}
 				}
 			}
 		}
