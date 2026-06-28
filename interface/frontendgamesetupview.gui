@@ -136,7 +136,7 @@ guiTypes = {
 		iconType = {
 			name = "country_flag"
 			quadTextureSprite = "GFX_shield_medium"
-			position = { x = 34 y = 188 }
+			position = { x = 34 y = 187 }	## adjusted from 34, 188 to properly align the element
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -146,12 +146,20 @@ guiTypes = {
 			quadTextureSprite = "GFX_country_selection_entry"
 			position = { x = 0 y = 0 }
 			clicksound = click_checkbox
+			pdx_tooltip = "" #TODO: added element to prevent rendering of the leader description twice. Revert if fixed.
+		}
+
+		iconType = {
+			name = "new_content"
+			position = { x = 114 y = 174 }	## adjusted from 110, 180 to properly align the element
+			spriteType = "GFX_unplayed_content_notification"
+			alwaystransparent = yes
 		}
 
 		instantTextBoxType = {
 			name = "country_name"
-			position = { x = 8 y = 247 }
-			font = "hoi_16mbs"
+			position = { x = 8 y = 250 }	## adjusted from 8, 247 to account for smaller font
+			font = "hoi_16mbs"				## adjusted from hoi_20b
 			borderSize = { x = 0 y = 0 }
 			maxWidth = 131
 			maxHeight = 20
@@ -168,7 +176,7 @@ guiTypes = {
 		iconType = {
 			name = "country_flag"
 			quadTextureSprite = "GFX_shield_medium"
-			position = { x = 26 y = 22 }
+			position = { x = 28 y = 24 }	## adjusted from 26, 22 to properly align the element
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -176,8 +184,16 @@ guiTypes = {
 		buttonType = {
 			name = "country"
 			quadTextureSprite = "GFX_country_selection_minor_entry"
-			position = { x = 0 y = 0 }
+			position = { x = 0 y = 3 }		## adjusted from 0, 0 to properly align the element
 			clicksound = click_checkbox
+			pdx_tooltip = "" #TODO: added element to prevent rendering of the leader description twice. Revert if fixed.
+		}
+
+		iconType = {
+			name = "new_content"
+			position = { x = 108 y = 13 }	## adjusted from 100, 15 to properly align the element
+			spriteType = "GFX_unplayed_content_notification"
+			alwaystransparent = yes
 		}
 	}
 
@@ -188,7 +204,7 @@ guiTypes = {
 		iconType = {
 			name = "country_flag"
 			quadTextureSprite = "GFX_flag_small2"
-			position = { x = 9 y = 9 }
+			position = { x = 9 y = 8 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -198,9 +214,32 @@ guiTypes = {
 			quadTextureSprite = "GFX_mini_country_selector"
 			position = { x = 0 y = 0 }
 			clicksound = click_checkbox
+			pdx_tooltip = "" #TODO: added element to prevent rendering of the leader description twice. Revert if fixed.
+		}
+
+		iconType = {
+			name = "new_content"
+			position = { x = 43 y = 0 }		## adjusted from 42, 0 to properly align the element
+			spriteType = "GFX_unplayed_content_notification"
+			alwaystransparent = yes
 		}
 	}
+	
+	### country filter
+	containerWindowType = {
+		name = "country_filter"
+		size = { width = 149 height = 33 }
 
+		buttonType = {
+			name = "button"
+			quadTextureSprite = "GFX_country_filter_entry"
+			buttonText = "FILTER"
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+			oversound = ui_menu_over
+			frame = 2
+		}
+	}
 
 	### LOAD GAME
 	containerWindowType = {
@@ -453,7 +492,7 @@ guiTypes = {
 		}
 
 		instantTextBoxType = {
-			position = {x = 145 y = 470 }
+			position = { x = 145 y = 470 }
 			name = "filename_label"
 			font = "hoi_16mbs"
 			borderSize = {x = 8 y = 0}
@@ -476,7 +515,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "back_button"
-			position = { x = 10000 y = 10000 }							### THIS ONE IS FOR THE BACK BUTTON NOT WORKING
+			position = { x = 100 y = 523 }
 			quadTextureSprite = "GFX_button_148x34"
 			buttonText = "BACK"
 			buttonFont = "hoi_20b"
@@ -484,12 +523,13 @@ guiTypes = {
 			clicksound = click_close
 			oversound = ui_menu_over
 			#shortcut = "ESCAPE"
+			hide = yes	# Disabled
 		}
 
 		buttonType = {
 			name = "start_button"
-			position = { x = 105 y = 523 }
-			quadTextureSprite = "GFX_button_261x34"						### THIS ONE IS TO CENTER THE SELECT BUTTON
+			position = { x = 105 y = 523 }				## adjusted from 245, 523 to centre the element
+			quadTextureSprite = "GFX_button_261x34"		## adjusted from GFX_button_148x34
 			buttonText = "MENU_BAR_SAVE_PLAY"
 			buttonFont = "hoi_20b"
 			Orientation = "UPPER_LEFT"
@@ -544,7 +584,7 @@ guiTypes = {
 			position = { x = 110 y = 274 }
 			font = "hoi_20b"
 			borderSize = {x = 0 y = 0}
-			text = "KR_history_title"
+			text = "BM_HISTORY_TITLE"
 			maxWidth = 340
 			maxHeight = 30
 			format = centre
@@ -605,7 +645,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "title"
-			position = { x = 442 y = 12 }							### NOT PROPERLY CENTRED IN VANILLA
+			position = { x = 442 y = 12 }	## adjusted from 435, 12 to centre the element
 			textureFile = ""
 			font = "hoi_24header"
 			borderSize = {x = 0 y = 0}
@@ -620,10 +660,9 @@ guiTypes = {
 			quadTextureSprite = "GFX_country_selection_bg"
 		}
 
-
 		ButtonType = {
 			name = "back_button"
-			position = { x = 100000 y = 100000 } #please fuck off
+			position = { x = -158 y = -42 }
 			quadTextureSprite = "GFX_button_148x34"
 			buttonText = "BACK"
 			buttonFont = "hoi_18mbs"
@@ -631,11 +670,12 @@ guiTypes = {
 			clicksound = click_close
 			oversound = ui_menu_over
 			#shortcut = "ESCAPE"
+			hide = yes	# Disabled
 		}
 
 		ButtonType = {
 			name = "select_button"
-			position = { x = -130 y = -52 }
+			position = { x = -130 y = -42 }
 			quadTextureSprite = "GFX_button_261x34"
 			buttonText = "FE_SELECT_COUNTRY"
 			buttonFont = "hoi_18mbs"
@@ -661,9 +701,17 @@ guiTypes = {
 			}
 		}
 
+		OverlappingElementsBoxType = {
+			name = "filters"
+			position = { x = 22 y = 321 }
+			size = { x = 1181 y = 32 }
+			format = center
+			spacing = 14.0
+		}
+
 		containerWindowType = {
 			name = "countries_medium"
-			position = { x = 15 y = 330 }
+			position = { x = 15 y = 352 }
 			size = { width = -15 height = 120 }
 
 			gridboxType = {
@@ -672,6 +720,7 @@ guiTypes = {
 				size = { width = 100% height = 100% }
 				slotsize = { width = 150 height = 0 }
 				add_horizontal = yes
+				max_slots_horizontal = 3
 				max_slots_vertical = 1
 				format = "UPPER_LEFT"
 			}
@@ -679,40 +728,24 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "countries_mini"
-			position = { x = 24 y = 330 }
+			position = { x = 8 y = 360 }
 			size = { width = -15 height = 120 }
 
 			gridboxType = {
 				name = "countries_grid"
 				position = { x = 0 y = 0 }
 				size = { width = 100% height = 100% }
-				slotsize = { width = 86 height = 45 }
-				add_horizontal = no
-				max_slots_horizontal = 20
+				slotsize = { width = 50 height = 38 }
+				add_horizontal = yes
+				max_slots_horizontal = 24
 				max_slots_vertical = 2
 				format = "UPPER_LEFT"
 			}
 		}
 
-
-		iconType = {
-			name = "minor_country_leader"
-			quadTextureSprite = "GFX_leader_unknown"
-			position = { x = 289 y = 441 }
-			scale = 0.696
-			rotation = -0.04
-		}
-
-		iconType = {
-			name = "minor_portrait_overlay"
-			spriteType = "GFX_minor_portrait_overlay"
-			position = { x = 280 y = 430 }
-		}
-
-
 		instantTextBoxType = {
 			name = "info_title"
-			position = { x = 10 y = 450 }
+			position = { x = 10 y = 462 }
 			font = "hoi4_typewriter22"
 			borderSize = {x = 0 y = 0}
 			text = "FE_COUNTRY_INFO_TITLE"
@@ -723,7 +756,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "info"
-			position = { x = 35 y = 485 }
+			position = { x = 35 y = 497 }
 
 			instantTextBoxType = {
 				name = "leader_label"
@@ -825,9 +858,23 @@ guiTypes = {
 			}
 		}
 
+		iconType = {
+			name = "minor_country_leader"
+			quadTextureSprite = "GFX_leader_unknown"
+			position = { x = 289 y = 457 }
+			scale = 0.696
+			rotation = -0.04
+		}
+
+		iconType = {
+			name = "minor_portrait_overlay"
+			spriteType = "GFX_minor_portrait_overlay"
+			position = { x = 280 y = 446 }
+		}
+
 		instantTextBoxType = {
 			name = "nation_title"
-			position = { x = 442 y = 421 }
+			position = { x = 442 y = 433 }
 			font = "hoi_24header"
 			borderSize = {x = 0 y = 0}
 			maxWidth = 340
@@ -838,7 +885,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "spirit"
-			position = { x = 451 y = 475 }
+			position = { x = 451 y = 484 }
 
 			iconType = {
 				name = "pol_faction_icon"
@@ -857,7 +904,7 @@ guiTypes = {
 					name = "ideas_grid"
 					position = { x = 0 y = 0 }
 					size = { width = 100% height = 70 }
-					slotsize = { width = 60 height = 66 }
+					slotsize = { width = 70 height = 70 }
 					max_slots = { x = 3 y = 1 }
 					add_horizontal = yes
 					format = "UPPER_LEFT"
@@ -866,7 +913,7 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "focus"
-				position = { x = 9 y = 87 }
+				position = { x = 9 y = 100 }
 				size = { width = 100% height = 100 }
 				scale = 0.8
 
@@ -884,7 +931,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "history_title"
-			position = { x = 830 y = 449 }
+			position = { x = 830 y = 462 }
 			font = "hoi4_typewriter22"
 			borderSize = { x = 0 y = 0 }
 			text = "FE_COUNTRY_HISTORY_TITLE"
@@ -895,13 +942,53 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "history"
-			position = { x = 810 y = 482 }
+			position = { x = 810 y = 496 }
 			font = "hoi4_typewriter16"
-			borderSize = {x = 0 y = 0}
+			borderSize = { x = 0 y = 0 }
 			maxWidth = 375
 			maxHeight = 204
 			format = left
 			scrollbarType = standardtext_slider
+		}
+
+		dropDownBoxType = {
+			name = "more_countries"
+			position = { x = 5 y = 412 }					## adjusted from 10, 412 to better align the element
+
+			expandButton = {
+				name = "expand_button"
+				position = { x = 1168 y = -4 }
+				quadTextureSprite = "GFX_peace_drop_down_button"
+				clicksound = click_default
+			}
+
+			expandedWindow = {
+				name = "expanded_window"
+				position = { x = 0 y = -300 }
+				show_position = { x = 0 y = 24 }			## adjusted from 0, 25 to better align the element
+				show_animation_type = decelerated
+				hide_animation_type = accelerated
+				animation_time = 300
+				size = { width = 1215 height = 45 }			## adjusted from 1205, 58 to better align the element
+				verticalScrollbar = "right_vertical_slider"
+				scroll_wheel_factor = 50
+				smooth_scrolling = yes
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_tiled_plain_bg_small"	## adjusted from GFX_tiled_window_1b_thin_border
+				}
+
+				gridBoxType = {
+					name = "countries_mini_expanded"
+					position = { x = 3 y = 0 }
+					size = { width = 199 height = 100%% }
+					slotsize = { width = 50 height = 38 }	## adjusted from 52, 38 to make space for 24 slots
+					add_horizontal = yes
+					max_slots_horizontal = 24				## adjusted from 22
+					format = "UPPER_LEFT"
+				}
+			}
 		}
 	}
 
@@ -1390,7 +1477,7 @@ guiTypes = {
 				position = { x = 10 y = -39}
 				quadTextureSprite = "GFX_button_123x34"
 				orientation = "LOWER_LEFT"
-				buttonText = "CUSTOM_GAME_SETTINGS_BACK"
+				buttonText = "SM_APPLY"
 				buttonFont = "hoi_18mbs"
 				clicksound = click_default
 			}
@@ -1943,11 +2030,14 @@ guiTypes = {
 			size = { width = 102% height = 128}
 			clipping = no
 
-			Background =
-			{
-				name = "top_bg"
-				spriteType = "GFX_tiled_frontend_upper_bar"
-				position = { x = -10 y = 0 }
+			containerWindowType = {
+				name = background
+				size = { width=102% height=100% }
+				Background = {
+					name = "top_bg"
+					spriteType = "GFX_tiled_frontend_upper_bar"
+					position = { x = -10 y = 0 }
+				}
 			}
 
 			containerWindowType = {
@@ -2088,7 +2178,7 @@ guiTypes = {
 			}
 
 			ButtonType = {
-				position = { x = -487 y = 48 }
+				position = { x = -449 y = 48 }
 				name = "player_shield"
 				quadTextureSprite = "GFX_player_flag"
 				Orientation = "UPPER_RIGHT"
@@ -2097,20 +2187,20 @@ guiTypes = {
 			iconType = {
 				name = "large_flag_frame"
 				spriteType = "GFX_large_flag_frame"
-				position = { x = -492 y = 45 }
+				position = { x = -454 y = 45 }
 				Orientation = "UPPER_RIGHT"
 			}
 
 			iconType = {
 				name = "selected_nation_label_bg"
 				spriteType = "GFX_generic_bg"
-				position = { x = -380 y = 46 }
+				position = { x = -342 y = 46 }
 				Orientation = "UPPER_RIGHT"
 			}
 
 			instantTextBoxType = {
 				name = "selected_nation_label"
-				position = { x = -375 y = 55 }
+				position = { x = -337 y = 55 }
 				textureFile = ""
 				font = "hoi_20bs"
 				borderSize = {x = 0 y = 0}
@@ -2123,7 +2213,7 @@ guiTypes = {
 			}
 
 			ButtonType = {
-				position = { x = -97 y = 45 }
+				position = { x = -59 y = 45 }
 				name = "extended_country_button"
 				quadTextureSprite = "GFX_extended_country_button"
 				Orientation = "UPPER_RIGHT"
@@ -2136,13 +2226,17 @@ guiTypes = {
 			show_position = { x = 0 y = -100 }
 			animation_type = decelerated
 			animation_time = 1000
-			size = { width = 102% height = 128}
+			size = { width = 100% height = 128}
 			Orientation = lower_left
 
-			Background = {
-				name = "bottom_win"
-				spriteType = "GFX_tiled_frontend_lower_bar"
-				position = { x = -10 y = 0}
+			containerWindowType = {
+				name = background
+				size = { width=102% height=100% }
+				Background = {
+					name = "bottom_win"
+					spriteType = "GFX_tiled_frontend_lower_bar"
+					position = { x = -10 y = 0}
+				}
 			}
 
 			ButtonType = {
@@ -2183,14 +2277,15 @@ guiTypes = {
 
 			iconType = {
 				name = "enabled_achievement_icons"
-				position = { x = 10000 y = 10000 }					### TO SEND AWAY ACHIEVEMNTS OFFSCREEN
+				position = { x = -344 y = -115 }
 				quadTextureSprite = "GFX_enabled_achievement_icons"
 				Orientation = "LOWER_RIGHT"
+				hide = yes	# Disabled
 			}
 
 			ButtonType = {
 				name = "play_button"
-				position = { x = -300 y = -100 }
+				position = { x = -262 y = -100 }
 				quadTextureSprite = "GFX_play_button"
 				buttonText = "FE_START"
 				buttonFont = "hoi_30header"
@@ -2202,7 +2297,7 @@ guiTypes = {
 
 			ButtonType = {
 				name = "play_button_ready"
-				position = { x = -300 y = -100 }
+				position = { x = -262 y = -100 }
 				spriteType = "GFX_play_button_ready"
 				buttonText = "READY"
 				buttonFont = "hoi_30header"
@@ -2214,7 +2309,7 @@ guiTypes = {
 
 			iconType = {
 				name = "play_button_checkbox"
-				position = { x = -112 y = -85 }
+				position = { x = -74 y = -85 }
 				quadTextureSprite = "GFX_generic_checkbox2"
 				Orientation = "LOWER_RIGHT"
 				alwaystransparent = yes

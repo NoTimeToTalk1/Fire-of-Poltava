@@ -52,12 +52,6 @@ NDefines.NMilitary.CORPS_COMMANDER_ARMIES_CAP = -1				-- how many armies a corps
 NDefines.NMilitary.FIELD_MARSHAL_DIVISIONS_CAP = 12				-- how many divisions a field marshall is limited to. 0 = inf, < 0 = blocked
 NDefines.NMilitary.FIELD_MARSHAL_ARMIES_CAP = 3					-- how many armies a field marshall is limited to. 0 = inf, < 0 = blocked
 
-NDefines.NMilitary.MAX_DIVISION_BRIGADE_WIDTH = 6				-- Max width of regiments in division designer.
-NDefines.NMilitary.MAX_DIVISION_BRIGADE_HEIGHT = 6				-- Max height of regiments in division designer.
-NDefines.NMilitary.MIN_DIVISION_BRIGADE_HEIGHT = 4				-- Min height of regiments in division designer.
-NDefines.NMilitary.MAX_DIVISION_SUPPORT_WIDTH = 2				-- Max width of support in division designer.
-NDefines.NMilitary.MAX_DIVISION_SUPPORT_HEIGHT = 6				-- Max height of support in division designer.
-
 NDefines.NMilitary.UNIT_EXP_LEVELS = { 0.1, 0.3, 0.75, 0.9 }	-- Experience needed to progress to the next level
 
 NDefines.NMilitary.EQUIPMENT_COMBAT_LOSS_FACTOR = 0.50			-- % of equipment lost to strength ratio in combat, so some % is returned if below 1
