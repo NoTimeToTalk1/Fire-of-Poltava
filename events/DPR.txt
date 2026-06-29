@@ -412,6 +412,10 @@ country_event = {
 	option = {
 		name = dpr.24.a
 		mark_focus_tree_layout_dirty = yes
+		country_event = {
+			id = dpr.33
+			days = 180
+		}
 	}
 }
 
@@ -527,5 +531,26 @@ country_event = {
 
 	option = {
 		name = dpr.32.a
+	}
+}
+
+country_event = {
+	id = dpr.33
+	title = dpr.33.t
+	desc = dpr.33.d
+	picture = GFX_event_dnr_encircled
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = dpr.33.a
+		delete_units = {
+			division_template = "Batalyon opolcheniya"
+		}
+		add_timed_idea = {
+			idea = DPR_chaos_in_organisation
+			days = 1500
+		} 
 	}
 }
