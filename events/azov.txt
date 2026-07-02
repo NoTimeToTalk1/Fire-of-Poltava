@@ -14,17 +14,22 @@ country_event = {
 		custom_effect_tooltip = azov_cum_into_power
 		FOP_change_political_system_military_dictatorship = yes
 		hidden_effect = {
-		USA = {
-		send_embargo = AFU
-		}
+			USA = {
+				send_embargo = AFU
+			}
 			load_focus_tree = AFU_azov
 			complete_national_focus = afu_ruleofthefarright
 			set_politics = {
 				ruling_party = ultranationalism
 			}
-			add_popularity = {
-				ideology = ultranationalism
-				popularity = 0.2
+			if = {
+				limit = {
+					ultranationalism > 0.4
+				}
+				add_popularity = {
+					ideology = ultranationalism
+					popularity = -0.3
+				}
 			}
 			promote_character = AFU_zhorin
 			set_cosmetic_tag = AFU_azov
