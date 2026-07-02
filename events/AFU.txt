@@ -185,11 +185,26 @@ country_event = { #Biletsky - Helping ZSU?
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	option = { #YES
+	option = { # YES
 		name = afu.7.a
 		ai_chance = {
 			factor = 90
+
+			modifier = {
+				factor = 100
+				AFU = {
+					has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements
+				}
+			}
+
+			modifier = {
+				factor = 0
+				AFU = {
+					has_completed_focus = AFU_sideline_the_far_right_elements
+				}
+			}
 		}
+
 		add_equipment_to_stockpile = {
 			type = support_equipment
 			amount = -250
@@ -213,11 +228,27 @@ country_event = { #Biletsky - Helping ZSU?
 		AFU = { country_event = afu.71 }
 		add_political_power = -30
 	}
-	option = { #NO
+
+	option = { # NO
 		name = afu.7.b
 		ai_chance = {
 			factor = 10
+
+			modifier = {
+				factor = 0
+				AFU = {
+					has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements
+				}
+			}
+
+			modifier = {
+				factor = 100
+				AFU = {
+					has_completed_focus = AFU_sideline_the_far_right_elements
+				}
+			}
 		}
+
 		AFU = { country_event = afu.72 }
 		add_stability = -0.05
 		add_popularity = {
