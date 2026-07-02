@@ -225,83 +225,56 @@ DPR_verkhovna_duma_category = {
 
 	DPR_rostislave_libs_lustration_for_debils = {
 		available = {
-			OR = {
-				liberalism > 0.5
-			}
+			has_country_flag = speaker_nevzorov
 		}
 		visible = {
-			OR = {
-				liberalism > 0.5
-			}
+			has_country_flag = speaker_nevzorov
 		}
 		days_re_enable = 2
 
 		cost = 25
-		days_remove = 180
+		days_remove = 60
 
 		complete_effect = {
-			add_ideas = efficiency_burocracy
 			add_stability = -0.2
 		}
 		remove_effect = {
-			hidden_effect = {
-				swap_ideas = {
-					remove_idea = efficiency_burocracy
-					add_idea = planning_stage
-				}
-			}	
+			FOP_administrative_efficiency_medium_improvement = yes	
 		}
 	}
 
 	DPR_rostislave_libs_invite_ivests = {
 		available = {
-			OR = {
-				liberalism > 0.5
-			}
+			has_country_flag = speaker_nevzorov
 		}
 		visible = {
-			OR = {
-				liberalism > 0.5
-			}
+			has_country_flag = speaker_nevzorov
 		}
 		days_re_enable = 2
 
 		cost = 25
-		days_remove = 180
+		days_remove = 60
 
 		complete_effect = {
-			add_ideas = finances_civilian
-			add_ideas = very_low_taxation
+			FOP_change_taxes_proportional = yes
+			FOP_change_commercial_policy_free_trade = yes
 		}
 		remove_effect = {
-			hidden_effect = {
-				swap_ideas = {
-					remove_idea = finances_civilian
-					add_idea = finances_no_data
-				}
-				swap_ideas = {
-					remove_idea = very_low_taxation
-					add_idea = standard_taxation
-				}
-			}	
+			
 		}
 	}
 
 	DPR_rostislave_libs_stimulate_busines = {
 		available = {
-			OR = {
-				liberalism > 0.5
-			}
+			has_country_flag = speaker_nevzorov
 		}
 		visible = {
-			OR = {
-				liberalism > 0.5
-			}
+			has_country_flag = speaker_nevzorov
 		}
 		days_re_enable = 2
 
 		cost = 25
-		days_remove = 180
+		days_remove = 60
 
 		complete_effect = {
 			add_war_support = -0.05
@@ -319,63 +292,53 @@ DPR_verkhovna_duma_category = {
 	DPR_rostislave_army_investition = {
 		available = {
 			OR = {
-				oligarchism > 0.5
-				conservatism > 0.5
-				ultranationalism > 0.5
+				has_country_flag = speaker_tsaryov
+				has_country_flag = speaker_ponos
+				has_country_flag = speaker_vorobyov
 			}
 		}
 		visible = {
 			OR = {
-				oligarchism > 0.5
-				conservatism > 0.5
-				ultranationalism > 0.5
+				has_country_flag = speaker_tsaryov
+				has_country_flag = speaker_ponos
+				has_country_flag = speaker_vorobyov
 			}
 		}
 		days_re_enable = 2
 
 		cost = 25
-		days_remove = 180
+		days_remove = 60
 
 		complete_effect = {
-			add_ideas = finances_army
-			add_ideas = five_percent
+			FOP_military_professionalism_medium_improvement = yes
 		}
 		remove_effect = {
-			hidden_effect = {
-				swap_ideas = {
-					remove_idea = finances_army
-					add_idea = finances_no_data
-				}
-				swap_ideas = {
-					remove_idea = five_percent
-					add_idea = two_percent
-				}
-			}	
+			add_manpower = 5000
 		}
 	}
 
 	DPR_rostislave_right_education_investition = {
 		available = {
 			OR = {
-				oligarchism > 0.5
-				conservatism > 0.5
-				ultranationalism > 0.5
+				has_country_flag = speaker_tsaryov
+				has_country_flag = speaker_ponos
+				has_country_flag = speaker_vorobyov
 			}
 		}
 		visible = {
 			OR = {
-				oligarchism > 0.5
-				conservatism > 0.5
-				ultranationalism > 0.5
+				has_country_flag = speaker_tsaryov
+				has_country_flag = speaker_ponos
+				has_country_flag = speaker_vorobyov
 			}
 		}
 		days_re_enable = 2
 
 		cost = 25
-		days_remove = 180
+		days_remove = 60
 
 		complete_effect = {
-			add_ideas = education_military
+			FOP_scince_medium_improvement = yes
 		}
 		remove_effect = {
 			random_core_state = {
@@ -391,9 +354,9 @@ DPR_verkhovna_duma_category = {
 	DPR_rostislave_language_supression = {
 		available = {
 			OR = {
-				oligarchism > 0.5
-				conservatism > 0.5
-				ultranationalism > 0.5
+				has_country_flag = speaker_tsaryov
+				has_country_flag = speaker_ponos
+				has_country_flag = speaker_vorobyov
 			}
 		}
 		visible = {
@@ -403,9 +366,9 @@ DPR_verkhovna_duma_category = {
 				}
 			}
 			OR = {
-				oligarchism > 0.5
-				conservatism > 0.5
-				ultranationalism > 0.5
+				has_country_flag = speaker_tsaryov
+				has_country_flag = speaker_ponos
+				has_country_flag = speaker_vorobyov
 			}
 		}
 		days_re_enable = 2
@@ -447,31 +410,27 @@ DPR_verkhovna_duma_category = {
 	DPR_rostislave_right_heathcare_investition = {
 		available = {
 			OR = {
-				oligarchism > 0.5
-				conservatism > 0.5
-				ultranationalism > 0.5
+				has_country_flag = speaker_tsaryov
+				has_country_flag = speaker_ponos
+				has_country_flag = speaker_vorobyov
 			}
 		}
 		visible = {
 			OR = {
-				oligarchism > 0.5
-				conservatism > 0.5
-				ultranationalism > 0.5
+				has_country_flag = speaker_tsaryov
+				has_country_flag = speaker_ponos
+				has_country_flag = speaker_vorobyov
 			}
 		}
 		days_re_enable = 2
 
 		cost = 25
-		days_remove = 180
+		days_remove = 90
 
 		complete_effect = {
-			add_ideas = healthcare_public_decent
+			FOP_healthcare_medium_improvement = yes
 		}
 		remove_effect = {
-			swap_ideas = {
-				remove_idea = healthcare_public_decent
-				add_idea = healthcare_public_bad
-			}
 			random_core_state = {
 				add_building_construction = {
 					type = hospital_building
@@ -485,59 +444,53 @@ DPR_verkhovna_duma_category = {
 	DPR_rostislave_army_investition = {
 		available = {
 			OR = {
-				centrism > 0.5
-				liberalism > 0.5
+				has_country_flag = speaker_nadion
+				has_country_flag = speaker_yanik
+				has_country_flag = speaker_nevzorov
 			}
 		}
 		visible = {
 			OR = {
-				centrism > 0.5
-				liberalism > 0.5
+				has_country_flag = speaker_nadion
+				has_country_flag = speaker_yanik
+				has_country_flag = speaker_nevzorov
 			}
 		}
 		days_re_enable = 2
 
 		cost = 25
-		days_remove = 180
+		days_remove = 60
 
 		complete_effect = {
-			add_ideas = finances_army
-			add_ideas = three_percent
+			FOP_military_professionalism_small_improvement = yes
 		}
 		remove_effect = {
-			hidden_effect = {
-				swap_ideas = {
-					remove_idea = finances_army
-					add_idea = finances_no_data
-				}
-				swap_ideas = {
-					remove_idea = three_percent
-					add_idea = two_percent
-				}
-			}	
+			add_manpower = 5000
 		}
 	}
 
 	DPR_rostislave_centre_education_investition = {
 		available = {
 			OR = {
-				centrism > 0.5
-				liberalism > 0.5
+				has_country_flag = speaker_nadion
+				has_country_flag = speaker_yanik
+				has_country_flag = speaker_nevzorov
 			}
 		}
 		visible = {
 			OR = {
-				centrism > 0.5
-				liberalism > 0.5
+				has_country_flag = speaker_nadion
+				has_country_flag = speaker_yanik
+				has_country_flag = speaker_nevzorov
 			}
 		}
 		days_re_enable = 2
 
 		cost = 25
-		days_remove = 180
+		days_remove = 60
 
 		complete_effect = {
-			add_ideas = education_excessive
+			FOP_scince_small_improvement = yes
 		}
 		remove_effect = {
 			random_core_state = {
@@ -553,8 +506,9 @@ DPR_verkhovna_duma_category = {
 	DPR_rostislave_administration_update = {
 		available = {
 			OR = {
-				centrism > 0.5
-				liberalism > 0.5
+				has_country_flag = speaker_nadion
+				has_country_flag = speaker_yanik
+				has_country_flag = speaker_nevzorov
 			}
 		}
 		visible = {
@@ -564,8 +518,9 @@ DPR_verkhovna_duma_category = {
 				}
 			}
 			OR = {
-				centrism > 0.5
-				liberalism > 0.5
+				has_country_flag = speaker_nadion
+				has_country_flag = speaker_yanik
+				has_country_flag = speaker_nevzorov
 			}
 		}
 		days_re_enable = 2
@@ -574,7 +529,7 @@ DPR_verkhovna_duma_category = {
 		days_remove = 20
 
 		complete_effect = {
-			###
+			FOP_administrative_efficiency_small_improvement = yes
 		}
 		remove_effect = {
 			random_owned_state = {
@@ -607,29 +562,27 @@ DPR_verkhovna_duma_category = {
 	DPR_rostislave_centre_heathcare_investition = {
 		available = {
 			OR = {
-				centrism > 0.5
-				liberalism > 0.5
+				has_country_flag = speaker_nadion
+				has_country_flag = speaker_yanik
+				has_country_flag = speaker_nevzorov
 			}
 		}
 		visible = {
 			OR = {
-				centrism > 0.5
-				liberalism > 0.5
+				has_country_flag = speaker_nadion
+				has_country_flag = speaker_yanik
+				has_country_flag = speaker_nevzorov
 			}
 		}
 		days_re_enable = 2
 
 		cost = 25
-		days_remove = 180
+		days_remove = 60
 
 		complete_effect = {
-			add_ideas = healthcare_public_good
+			FOP_healthcare_small_improvement = yes
 		}
 		remove_effect = {
-			swap_ideas = {
-				remove_idea = healthcare_public_good
-				add_idea = healthcare_public_bad
-			}
 			random_core_state = {
 				add_building_construction = {
 					type = hospital_building
@@ -640,57 +593,19 @@ DPR_verkhovna_duma_category = {
 		}
 	}
 
-	DPR_rostislave_army_investition = {
-		available = {
-			OR = {
-				communism > 0.5
-				socialism > 0.5
-				social_democracy > 0.5
-			}
-		}
-		visible = {
-			OR = {
-				communism > 0.5
-				socialism > 0.5
-				social_democracy > 0.5
-			}
-		}
-		days_re_enable = 2
-
-		cost = 25
-		days_remove = 90
-
-		complete_effect = {
-			add_ideas = finances_army
-			add_ideas = three_percent
-		}
-		remove_effect = {
-			hidden_effect = {
-				swap_ideas = {
-					remove_idea = finances_army
-					add_idea = finances_no_data
-				}
-				swap_ideas = {
-					remove_idea = three_percent
-					add_idea = two_percent
-				}
-			}	
-		}
-	}
-
 	DPR_rostislave_left_education_investition = {
 		available = {
 			OR = {
-				communism > 0.5
+				has_country_flag = speaker_tylkin
 				socialism > 0.5
-				social_democracy > 0.5
+				has_country_flag = speaker_rudkovskyi
 			}
 		}
 		visible = {
 			OR = {
-				communism > 0.5
+				has_country_flag = speaker_tylkin
 				socialism > 0.5
-				social_democracy > 0.5
+				set_country_flag = speaker_rudkovskyi
 			}
 		}
 		days_re_enable = 2
@@ -699,7 +614,7 @@ DPR_verkhovna_duma_category = {
 		days_remove = 120
 
 		complete_effect = {
-			add_ideas = education_standard
+			FOP_science_medium_improvement = yes
 		}
 		remove_effect = {
 			random_core_state = {
@@ -735,9 +650,9 @@ DPR_verkhovna_duma_category = {
 	DPR_rostislave_left_propaganda = {
 		available = {
 			OR = {
-				communism > 0.5
+				has_country_flag = speaker_tylkin
 				socialism > 0.5
-				social_democracy > 0.5
+				set_country_flag = speaker_rudkovskyi
 			}
 		}
 		visible = {
@@ -747,9 +662,9 @@ DPR_verkhovna_duma_category = {
 				}
 			}
 			OR = {
-				communism > 0.5
+				has_country_flag = speaker_tylkin
 				socialism > 0.5
-				social_democracy > 0.5
+				set_country_flag = speaker_rudkovskyi
 			}
 		}
 		days_re_enable = 2
@@ -791,31 +706,27 @@ DPR_verkhovna_duma_category = {
 	DPR_rostislave_left_heathcare_investition = {
 		available = {
 			OR = {
-				communism > 0.5
+				has_country_flag = speaker_tylkin
 				socialism > 0.5
-				social_democracy > 0.5
+				set_country_flag = speaker_rudkovskyi
 			}
 		}
 		visible = {
 			OR = {
-				communism > 0.5
+				has_country_flag = speaker_tylkin
 				socialism > 0.5
-				social_democracy > 0.5
+				set_country_flag = speaker_rudkovskyi
 			}
 		}
 		days_re_enable = 2
 
 		cost = 25
-		days_remove = 180
+		days_remove = 60
 
 		complete_effect = {
-			add_ideas = healthcare_public_good
+			FOP_healthcare_medium_improvement = yes
 		}
 		remove_effect = {
-			swap_ideas = {
-				remove_idea = healthcare_public_good
-				add_idea = healthcare_public_bad
-			}
 			random_core_state = {
 				add_building_construction = {
 					type = hospital_building
@@ -836,33 +747,40 @@ DPR_verkhovna_duma_category = {
 	DPR_rostislave_left_workers_right_support = {
 		available = {
 			OR = {
-				communism > 0.5
+				has_country_flag = speaker_tylkin
 				socialism > 0.5
-				social_democracy > 0.5
+				set_country_flag = speaker_rudkovskyi
 			}
 		}
 		visible = {
 			OR = {
-				communism > 0.5
+				has_country_flag = speaker_tylkin
 				socialism > 0.5
-				social_democracy > 0.5
+				set_country_flag = speaker_rudkovskyi
 			}
 		}
 		days_re_enable = 2
 
 		cost = 30
-		days_remove = 180
+		days_remove = 60
+
+		modifier = {
+			consumer_goods_factor = 0.05
+			stability_factor = 0.05
+		}
 
 		complete_effect = {
-			add_ideas = hour_limit_8
-		}
-		remove_effect = {
-			hidden_effect = {
-				swap_ideas = {
-					remove_idea = hour_limit_8
-					add_idea = hour_limit_10
+			if = {
+				limit = {
+					NOT = {
+						has_ideas = fop_working_hours_8
+					}
 				}
 			}
+			FOP_change_working_hours_8 = yes
+		}
+		remove_effect = {
+			
 		}
 	}
 
@@ -938,10 +856,18 @@ DPR_verkhovna_duma_category = {
 						ideology = conservatism
 						popularity = 0.03
 					}
+					add_popularity = {
+						ideology = oligarchism
+						popularity = 0.02
+					}
 				}
 				30 = {
 					add_popularity = {
 						ideology = conservatism
+						popularity = 0.04
+					}
+					add_popularity = {
+						ideology = oligarchism
 						popularity = 0.04
 					}
 				}
@@ -949,6 +875,10 @@ DPR_verkhovna_duma_category = {
 					add_popularity = {
 						ideology = conservatism
 						popularity = 0.05
+					}
+					add_popularity = {
+						ideology = oligarchism
+						popularity = 0.06
 					}
 				}
 			}
@@ -1035,7 +965,7 @@ DPR_verkhovna_duma_category = {
 				20 = {
 					add_popularity = {
 						ideology = liberalism
-						popularity = 0.06
+						popularity = 0.07
 					}
 				}
 			}
@@ -1067,7 +997,11 @@ DPR_verkhovna_duma_category = {
 				50 = {
 					add_popularity = {
 						ideology = social_democracy
-						popularity = 0.04
+						popularity = 0.03
+					}
+					add_popularity = {
+						ideology = socialism
+						popularity = 0.02
 					}
 				}
 				30 = {
@@ -1075,11 +1009,27 @@ DPR_verkhovna_duma_category = {
 						ideology = social_democracy
 						popularity = 0.05
 					}
+					add_popularity = {
+						ideology = socialism
+						popularity = 0.02
+					}
+					add_popularity = {
+						ideology = communism
+						popularity = 0.01
+					}
 				}
 				20 = {
 					add_popularity = {
 						ideology = social_democracy
 						popularity = 0.06
+					}
+					add_popularity = {
+						ideology = socialism
+						popularity = 0.03
+					}
+					add_popularity = {
+						ideology = communism
+						popularity = 0.02
 					}
 				}
 			}

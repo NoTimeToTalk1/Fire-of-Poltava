@@ -766,6 +766,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
+		FOP_change_political_system_monarchy = yes
 		country_event = {
 			id = gir.24 #PLACEHOLDER --- Івент про перший з'їзд всеросійського монархічного конгресу
 			days = 1
@@ -1155,7 +1156,17 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###ADD CLAIMS ON WHOLE UKRAINE
+		every_state = {
+			limit = {
+				OR = {
+					is_owned_by = GLY
+					is_owned_by = PDL
+					is_owned_by = SIV
+					is_owned_by = DIR
+				}
+			}
+			add_claim_by = DPR
+		}
 		add_ideas = DPR_malorussia_will_be_ours # --- +10% ATTACK AGAINST UKR WARLORDS, WORKS UNTIL UKRAINE IS UNITED
 	}
 }
@@ -1194,6 +1205,11 @@ shared_focus = {
 	}
 
 	completion_reward = {
+		set_power_balance = {
+			id = DPR_rostislave_girkin_political_balance
+			right_side = DPR_bop_right_side
+			left_side = DPR_bop_left_side
+		}
 		country_event = { # --- !!! START BALANCE OF POWER GAME BETWEEN GIRKIN AND ROSTIK !!!
 			id = gir.34 #PLACEHOLDER --- івент про початок суперництва гіркіна та ростіслава (перший за консервативний традиціоналізм та ізоляціонізм з культом білої гвардії, другий за союз з заходом, лібералізацію та демократизацію)
 			days = 1
@@ -1225,8 +1241,8 @@ shared_focus = {
 		###GIVES POINTS TO ROSTIK IN BoP(Balance of Power) game
 		add_power_balance_value = {
 			id = DPR_rostislave_girkin_political_balance
-			value = 0.33
-			tooltip_side = girkin_influence_growth
+			value = -0.1
+			tooltip_side = rostislave_influence_growth
 		}
 	}
 }
@@ -1246,7 +1262,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###CHANGE LAWS TO FUCKING FEDERATION OR AUTONOMISM
+		FOP_change_centralization_federalism = yes
 	}
 }
 
@@ -1265,7 +1281,11 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###GIVES POINTS TO ROSTIK IN BoP(Balance of Power) game
+		add_power_balance_value = {
+			id = DPR_rostislave_girkin_political_balance
+			value = -0.1
+			tooltip_side = rostislave_influence_growth
+		}
 	}
 }
 
@@ -1290,7 +1310,11 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###GIVES POINTS TO GIRKIN IN BoP(Balance of Power) game
+		add_power_balance_value = {
+			id = DPR_rostislave_girkin_political_balance
+			value = 0.1
+			tooltip_side = girkin_influence_growth
+		}
 	}
 }
 
@@ -1309,7 +1333,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###CHANGE LAWS TO CENTRALIZED STATE
+		FOP_change_centralization_unitarism
 	}
 }
 
@@ -1328,7 +1352,11 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###GIVES POINTS TO GIRKIN IN BoP(Balance of Power) game
+		add_power_balance_value = {
+			id = DPR_rostislave_girkin_political_balance
+			value = 0.1
+			tooltip_side = girkin_influence_growth
+		}
 	}
 }
 
@@ -1354,13 +1382,29 @@ shared_focus = {
 		custom_effect_tooltip = romanov_vs_girkin_conclusion_tt
 		hidden_effect = {
 			### !!! ADD CHECK CONDITION WHO HAS MORE POINTS in BoP game !!!
-			country_event = { # --- IF ROSTIK HAS MORE POINTS
-				id = gir.35 #PLACEHOLDER --- івент про позбавлення гіркіна посади прем'єра ростіславом як наслідок внутрішньої боротьби та передача йому повноважень головнокомандуючого (гіркіна попустили, більше жодних денікінів) (писати з погляду ростіслава)
-				days = 1
+			if = {
+				limit = {
+					power_balance_value = {
+						id = DPR_rostislave_girkin_balance_decisions
+						value < 0.04
+					}
+				}
+				country_event = { # --- IF ROSTIK HAS MORE POINTS
+					id = gir.35 #PLACEHOLDER --- івент про позбавлення гіркіна посади прем'єра ростіславом як наслідок внутрішньої боротьби та передача йому повноважень головнокомандуючого (гіркіна попустили, більше жодних денікінів) (писати з погляду ростіслава)
+					days = 1
+				}
 			}
-			country_event = { # --- IF GIRKIN HAS MORE POINTS
-				id = gir.36 #PLACEHOLDER --- івент про попуск царя
-				days = 1
+			if = {
+				limit = {
+					power_balance_value = {
+						id = DPR_rostislave_girkin_balance_decisions
+						value > 0.04
+					}
+				}
+				country_event = { # --- IF GIRKIN HAS MORE POINTS
+					id = gir.36 #PLACEHOLDER --- івент про попуск царя
+					days = 1
+				}
 			}
 			country_event = generic_debug.1
 		}
@@ -1391,7 +1435,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		### just pp
+		add_political_power = 50
 	}
 
 	allow_branch = {
@@ -1467,7 +1511,7 @@ shared_focus = {
 			id = gir.39 #PLACEHOLDER --- івент про офіційне перейняття рос імперією ростіка українського крісла при ООН
 			days = 1
 		}
-		###CHANGE LAW TO OPEN BORDERS(BLESSED)
+		FOP_change_immigration_open_borders = yes
 	}
 }
 
@@ -1490,9 +1534,12 @@ shared_focus = {
 			idea = DPR_parliamentarism_propaganda
 			days = 180
 		}
-		country_event = { # --- HIDDEN EVENT BTW
-			id = gir.40 #PLACEHOLDER --- Election Cycle .1, inspiration: (gir.99)
-			days = 1
+		FOP_change_suffrage_universal = yes
+		hidden_effect = {
+			country_event = { # --- HIDDEN EVENT BTW
+				id = gir.40 #PLACEHOLDER --- Election Cycle .1, inspiration: (gir.99)
+				days = 1
+			}
 		}
 	}
 }
@@ -1524,9 +1571,11 @@ shared_focus = {
 			ideology = authoritarianism
 			popularity = -0.05
 		}
-		country_event = { # --- HIDDEN EVENT BTW
-			id = gir.41 #PLACEHOLDER --- NEW EVENT, inspiration: (gir.100)
-			days = 1
+		hidden_effect = {
+			country_event = { # --- HIDDEN EVENT BTW
+				id = gir.41 #PLACEHOLDER --- NEW EVENT, inspiration: (gir.100)
+				days = 1
+			}
 		}
 	}
 }
@@ -1573,9 +1622,11 @@ shared_focus = {
 
 	completion_reward = {
 		add_ideas = DPR_liberal_empire
-		country_event = { # --- HIDDEN EVENT BTW
-			id = gir.43 #PLACEHOLDER --- From ORIH, "Liberal empire" (gir.102)
-			days = 1
+		hidden_effect = {
+			country_event = { # --- HIDDEN EVENT BTW
+				id = gir.43 #PLACEHOLDER --- From ORIH, "Liberal empire" (gir.102)
+				days = 1
+			}
 		}
 	}
 }
@@ -1595,7 +1646,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###CHANGE LAWS TO MULTICULTURALISM THING(NO HATE <3)
+		FOP_change_ethnic_minorities_cultural_autonomy = yes
 	}
 }
 
@@ -1615,9 +1666,11 @@ shared_focus = {
 
 	completion_reward = {
 		###GIVES LEADER TRAIT (EMPEROR OF ALL MEN)
-		country_event = { # --- HIDDEN EVENT BTW
-			id = gir.44 #PLACEHOLDER --- From ORIH, "The most important student" (gir.103)
-			days = 1
+		hidden_effect = {
+			country_event = { # --- HIDDEN EVENT BTW
+				id = gir.44 #PLACEHOLDER --- From ORIH, "The most important student" (gir.103)
+				days = 1
+			}
 		}
 	}
 }
@@ -1679,7 +1732,6 @@ shared_focus = {
 			ideology = social_democracy
 			popularity = 0.05
 		}
-		###CHANGES LAWS TO SMTH
 	}
 }
 
@@ -1698,6 +1750,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
+		FOP_change_religious_rights_secularism = yes
 		###CHANGES LAWS TO FUCKING SECULARISM
 		### EVENT ABOUT CONFLICT WITH POPE LOL???
 	}
@@ -1718,7 +1771,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###CHANGES LAWS TO DEMILITARIZATION LMAO NO ARMY BOZO
+		FOP_change_conscription_disarmed_nation = yes
 	}
 }
 
@@ -1797,7 +1850,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		### just pp
+		add_political_power = 50
 	}
 
 	allow_branch = {
@@ -1823,7 +1876,11 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###ADD ADVISORS AND POLITICANS(ROVS, IMPERIAL LEGION)
+		activate_advisor = DNR_ivanov
+		activate_advisor = DNR_Zhuravlev
+		activate_advisor = DNR_Volkov
+		activate_advisor = DNR_fedorov
+		activate_advisor = DNR_dus
 	}
 }
 
@@ -1883,7 +1940,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###CHANGE LAWS TO ONE PARTY/NO PARTY SYSTEM
+		FOP_change_party_system_nonpartisan = yes
 	}
 }
 
@@ -1936,7 +1993,7 @@ shared_focus = {
 			ideology = social_democracy
 			popularity = -0.1
 		}
-		###CHJANGE LAW FOR PRESS RIGHTS OR SMTH
+		FOP_change_press_freedom_state = yes
 	}
 }
 
@@ -2115,7 +2172,12 @@ shared_focus = {
 			remove_idea = DPR_colonels_plan_7
 			add_idea = DPR_generalissimos_plan
 		}
-		### ADD LEADER TRAIT "GENERALISSIMO"
+		DPR_girkin = {
+			add_trait = {
+				ideology = traditionalism
+				trait = GENERALISSIMO
+			}
+		}
 	}
 }
 
@@ -2235,7 +2297,12 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###ADD LOYAL MARIA MINISTERS :3
+		recruit_character = DNR_bakov
+		recruit_character = DNR_SimyonovichNikshych
+		recruit_character = DNR_Rogozin
+		recruit_character = DNR_Malofeev
+		recruit_character = DNR_Lebedev
+		recruit_character = DNR_Kvachkov
 		add_popularity = {
 			ideology = traditionalism
 			popularity = 0.1
@@ -2284,7 +2351,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###REMOVE GIRKIN GENERALS
+		retire_character = DNR_ivanov
 		country_event = { # --- REMOVES MANPOWER BTW
 			id = gir.58 #PLACEHOLDER --- івент про штурм головної резиденції ровс спецназом, заборону організації та ліквідацію Іванова з прибічниками (мочать його в офісі)
 			days = 1
@@ -2427,6 +2494,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
+		recruit_character = DNR_chemeris
 		###NEW COSSACK ADVISORS
 		###ALSO ADD SOME COSSACK DIVISIONS
 	}
@@ -2485,7 +2553,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###I am fucking dying please save me
+		add_political_power = 50
 	}
 
 	allow_branch = {
@@ -2585,7 +2653,9 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###LAWS LAWS MORE LAWS
+		FOP_change_party_system_nonpartisan = yes
+		FOP_change_suffrage_no = yes
+		FOP_change_press_freedom_state = yes
 		add_ideas = DPR_absolute_power_1
 	}
 }
@@ -2692,7 +2762,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###ADDS LAW NO PROFESIONALISM LMAO
+		FOP_change_military_professionalism_incompetent_militia = yes
 	}
 }
 
@@ -2756,8 +2826,17 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###ADD CLAIMS ON WHOLE OKRAINA
-		###ADD DECISIONS TO GO FIGHT THE UKROPS
+		every_state = {
+			limit = {
+				OR = {
+					is_owned_by = GLY
+					is_owned_by = PDL
+					is_owned_by = SIV
+					is_owned_by = DIR
+				}
+			}
+			add_claim_by = DPR
+		}
 		add_war_support = 0.1
 	}
 
@@ -2863,7 +2942,7 @@ shared_focus = {
 shared_focus = {
 	id = DPR_righteous_hike
 	icon = GFX_DPR_Righteous_Hike
-	cost = 3
+	cost = 8
 
 	relative_position_id = DPR_appeal_to_the_people
 	x = -1
@@ -3302,7 +3381,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		add_offsite_building = { type = industrial_complex level = 1 }
+		add_offsite_building = { type = industrial_complex level = 3 }
 	}
 }
 
