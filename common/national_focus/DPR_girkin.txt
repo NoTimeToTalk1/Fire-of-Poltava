@@ -581,7 +581,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###ADD DECISIONS TO RECRUIT COSSACK LEADERS
+		custom_decision_category_tooltip = DPR_invite_cossack_leaders
 	}
 }
 
@@ -601,6 +601,24 @@ shared_focus = {
 
 	completion_reward = {
 		###ADD 4 COSSACK BRIGADES(4 horse, 2 infantry, 1 truck)
+		random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"1st Cossack Brigade\" division_template = \"Cossaks Division\" start_experience_factor = 0.2 start_equipment_factor = 0.7" 
+				owner = DPR
+			}
+			create_unit = {
+				division = "name = \"2nd Cossack Brigade\" division_template = \"Cossaks Division\" start_experience_factor = 0.3 start_equipment_factor = 0.5" 
+				owner = DPR
+			}
+			create_unit = {
+				division = "name = \"3rd Cossack Brigade\" division_template = \"Cossaks Division\" start_experience_factor = 0.2 start_equipment_factor = 0.8" 
+				owner = DPR
+			}
+			create_unit = {
+				division = "name = \"4th Cossack Brigade\" division_template = \"Cossaks Division\" start_experience_factor = 0.2 start_equipment_factor = 0.6" 
+				owner = DPR
+			}	
+		}
 		country_event = {
 			id = gir.20 #PLACEHOLDER --- Івент про марш-парад Донських кізяків по Донецьку
 			days = 1
@@ -965,8 +983,8 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###INCREASES COMPLIANCE ON NEW CONQUERED LAND
-		###AND DECISIONS TO LOWER RESISTANCE(REAL)
+		set_country_flag = girkin_second_russian_spring_flag
+		custom_decision_category_tooltip = girkin_collaborants_decisions
 	}
 }
 
@@ -1013,11 +1031,11 @@ shared_focus = {
 		}
 		country_event = {
 			id = gir.29 #PLACEHOLDER --- Івент про Марію Романову (біографія, чому вона має стати монархом) в процесі виконання
-			days = 1
+			days = 2
 		}
 		country_event = {
 			id = gir.30 #PLACEHOLDER --- Івент про Ростіслава Романова (біографія, чому він має стати монархом) в процесі виконання
-			days = 1
+			days = 3
 		}
 	}
 }
@@ -1104,7 +1122,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		add_stability = 0.10
+		add_stability = 0.05
 		add_political_power = 20
 	}
 }
@@ -1185,7 +1203,9 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###CHANGING LAWS(IDK WHICH ONES THO)
+		FOP_change_suffrage_universal = yes
+		FOP_change_party_system_multiparty = yes
+		FOP_change_press_freedom_free = yes
 	}
 }
 
@@ -1893,7 +1913,9 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###ADD SOME NEW COOL ADVISOR GUYS 2.0(BORODAI, MIHEEV etc.)
+		recruit_character = DNR_borodai
+		recruit_character = DNR_Prosvirnin
+		recruit_character = DNR_chemeris
 	}
 }
 
@@ -2012,7 +2034,11 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###Maybe add ministers?
+		activate_advisor = DNR_ivanov
+		activate_advisor = DNR_Zhuravlev
+		activate_advisor = DNR_Volkov
+		activate_advisor = DNR_fedorov
+		activate_advisor = DNR_dus
 		country_event = {
 			id = gir.48 #PLACEHOLDER --- From ORIH, "The Collegium meeting" (gir.90)
 			days = 1
@@ -2035,7 +2061,12 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###ADD LEADER TRAIT "NEW DENIKIN" or smth
+		DPR_girkin = {
+			add_trait = {
+				ideology = traditionalism
+				trait = new_denikin_1
+			}
+		}
 		swap_ideas = {
 			remove_idea = DPR_colonels_plan_6
 			add_idea = DPR_colonels_plan_7
@@ -2291,17 +2322,11 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		recruit_character = DNR_bakov
 		activate_advisor = DNR_bakov
-		recruit_character = DNR_SimyonovichNikshych
 		activate_advisor = DNR_SimyonovichNikshych
-		recruit_character = DNR_Rogozin
 		activate_advisor = DNR_Rogozin
-		recruit_character = DNR_Malofeev
 		activate_advisor = DNR_Malofeev
-		recruit_character = DNR_Lebedev
 		activate_advisor = DNR_Lebedev
-		recruit_character = DNR_Kvachkov
 		activate_advisor = DNR_Kvachkov
 		add_popularity = {
 			ideology = traditionalism
@@ -2351,7 +2376,6 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		retire_character = DNR_ivanov
 		country_event = { # --- REMOVES MANPOWER BTW
 			id = gir.58 #PLACEHOLDER --- івент про штурм головної резиденції ровс спецназом, заборону організації та ліквідацію Іванова з прибічниками (мочать його в офісі)
 			days = 1
@@ -2515,7 +2539,21 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		recruit_character = DNR_chemeris
+		activate_advisor = DNR_chemeris
+		random_owned_controlled_state = {
+			create_unit = {
+				division = "name = \"Cossack Brigade\" division_template = \"Cossaks Division\" start_experience_factor = 0.2 start_equipment_factor = 0.9" 
+				owner = DPR
+			}
+			create_unit = {
+				division = "name = \"Cossack Brigade\" division_template = \"Cossaks Division\" start_experience_factor = 0.2 start_equipment_factor = 0.7" 
+				owner = DPR
+			}
+			create_unit = {
+				division = "name = \"Cossack Brigade\" division_template = \"Cossaks Division\" start_experience_factor = 0.2 start_equipment_factor = 0.5" 
+				owner = DPR
+			}
+		}
 		###NEW COSSACK ADVISORS
 		###ALSO ADD SOME COSSACK DIVISIONS
 	}
