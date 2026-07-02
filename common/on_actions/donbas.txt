@@ -6,6 +6,7 @@ on_actions = {
 					FROM = { tag = DPR }
 					AFU = { exists = yes }
 					LPR = { exists = no }
+					RAF = { exists = no }
 				}
 				every_state = {
 					if = {
@@ -39,6 +40,41 @@ on_actions = {
 					FROM = { tag = LPR }
 					AFU = { exists = yes }
 					DPR = { exists = no }
+					RAF = { exists = no }
+				}
+				every_state = {
+					if = {
+						limit = {
+							is_claimed_by = DPR
+						}
+						remove_claim_by = DPR
+					}
+				}
+				every_state = {
+					if = {
+						limit = {
+							is_claimed_by = LPR
+						}
+						remove_claim_by = LPR
+					}
+				}
+				AFU = {
+					country_event = { id = afu.9 days = 1 }
+				}
+				RUS_Putin = {
+					set_portraits = {
+						civilian = {
+							large = "gfx\leaders\RUS\Putin1.dds"
+						}
+					}
+           	 	}
+			}
+			if = {
+				limit = {
+					FROM = { tag = RAF }
+					AFU = { exists = yes }
+					DPR = { exists = no }
+					LPR = { exists = no }
 				}
 				every_state = {
 					if = {
