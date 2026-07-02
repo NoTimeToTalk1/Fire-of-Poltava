@@ -328,16 +328,17 @@ country_event = {
 
 # VITRENKO KILL
 country_event = {
-	id = gir.911
-	title = gir.911.t
-	desc = gir.911.d
+	id = gir.901
+	title = gir.901.t
+	desc = gir.901.d
 	picture = none
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
-		name = gir.911.a
+		name = gir.901.a
+		custom_effect_tooltip = DPR_vitrenko_death_tt
 		set_country_flag = vitrenko_is_dead
 		retire_character = DPR_Vitrenko
 		add_manpower = -1
@@ -346,16 +347,17 @@ country_event = {
 
 # PASEKA KILL
 country_event = {
-	id = gir.922
-	title = gir.922.t
-	desc = gir.922.d
+	id = gir.902
+	title = gir.902.t
+	desc = gir.902.d
 	picture = none
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
-		name = gir.922.a
+		name = gir.902.a
+		custom_effect_tooltip = DPR_pasechnik_death_tt
 		set_country_flag = pasechnik_is_dead
 		retire_character = DPR_Pasechnik
 		add_manpower = -1
@@ -364,16 +366,17 @@ country_event = {
 
 # PUSHILIN KILL
 country_event = {
-	id = gir.933
-	title = gir.933.t
-	desc = gir.933.d
+	id = gir.903
+	title = gir.903.t
+	desc = gir.903.d
 	picture = none
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
-		name = gir.933.a
+		name = gir.903.a
+		custom_effect_tooltip = DPR_pushilin_death_tt
 		set_country_flag = pushilin_is_dead
 		retire_character = DPR_Pushilin
 		add_manpower = -1
@@ -926,46 +929,46 @@ country_event = {
 
 # Election Cycle .2
 country_event = {
-	id = gir.411
-	title = gir.411.t
-	desc = gir.411.d
+	id = gir.401
+	title = gir.401.t
+	desc = gir.401.d
 	picture = none
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
-		name = gir.411.a
+		name = gir.401.a
 	}
 }
 
 # Election Cycle .3
 country_event = {
-	id = gir.422
-	title = gir.422.t
-	desc = gir.422.d
+	id = gir.402
+	title = gir.402.t
+	desc = gir.402.d
 	picture = none
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
-		name = gir.422.a
+		name = gir.402.a
 	}
 }
 
 # Election Cycle .4
 country_event = {
-	id = gir.433
-	title = gir.433.t
-	desc = gir.433.d
+	id = gir.403
+	title = gir.403.t
+	desc = gir.403.d
 	picture = none
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
-		name = gir.433.a
+		name = gir.403.a
 	}
 }
 
@@ -1389,7 +1392,7 @@ country_event = {
 	}
 }
 
-# івент про промову монарха
+# новосний івент про війну імперії та рф
 country_event = {
 	id = gir.69
 	title = gir.69.t
@@ -1404,11 +1407,22 @@ country_event = {
 	}
 }
 
-# івент про початок війни імперців з рашкою
+# івент про промову монарха
 country_event = {
 	id = gir.70
 	title = gir.70.t
-	desc = gir.70.d
+	desc = {
+		text = gir.70.d.a
+		trigger = {
+			has_leader = DPR_Maria
+		}
+	}
+	desc = {
+		text = gir.70.d.b
+		trigger = {
+			has_leader = DPR_George
+		}
+	}
 	picture = none
 
 	fire_only_once = yes
@@ -1419,7 +1433,7 @@ country_event = {
 	}
 }
 
-# івент про триумфальну перемогу імперців проти хуйла
+# івент про початок війни імперців з рашкою
 country_event = {
 	id = gir.71
 	title = gir.71.t
@@ -1434,7 +1448,7 @@ country_event = {
 	}
 }
 
-# івент про коронацію на імператора в соборі василія блаженного
+# івент про триумфальну перемогу імперців проти хуйла
 country_event = {
 	id = gir.72
 	title = gir.72.t
@@ -1449,11 +1463,22 @@ country_event = {
 	}
 }
 
-# івент про активність анти-монархічних рухів після перемоги над Рашкою
+# івент про коронацію на імператора в соборі василія блаженного
 country_event = {
 	id = gir.73
 	title = gir.73.t
-	desc = gir.73.d
+	desc = {
+		text = gir.73.d.a
+		trigger = {
+			has_leader = DPR_Maria
+		}
+	}
+	desc = {
+		text = gir.73.d.b
+		trigger = {
+			has_leader = DPR_George
+		}
+	}
 	picture = none
 
 	fire_only_once = yes
@@ -1461,10 +1486,19 @@ country_event = {
 
 	option = {
 		name = gir.73.a
+		trigger = {
+			has_leader = DPR_Maria
+		}
+	}
+	option = {
+		name = gir.73.b
+		trigger = {
+			has_leader = DPR_George
+		}
 	}
 }
 
-# івент про оголошення плани захопити Балтію, Фінляндію та Польщу, оголосити війну НАТО та битись до конца
+# івент про активність анти-монархічних рухів після перемоги над Рашкою
 country_event = {
 	id = gir.74
 	title = gir.74.t
@@ -1479,7 +1513,7 @@ country_event = {
 	}
 }
 
-# івент про втілення імперських амбіцій рашки з завоюванням Центральної Азії, Кавказу, Балтії, Фінляндії, та Польщі
+# івент про оголошення плани захопити Балтію, Фінляндію та Польщу, оголосити війну НАТО та битись до конца
 country_event = {
 	id = gir.75
 	title = gir.75.t
@@ -1494,7 +1528,7 @@ country_event = {
 	}
 }
 
-# івент для економічної гілки коли імперці завойовують Україну (буде для Ростіка й машки) й про можливості цієї землі
+# івент про втілення імперських амбіцій рашки з завоюванням Центральної Азії, Кавказу, Балтії, Фінляндії, та Польщі
 country_event = {
 	id = gir.76
 	title = gir.76.t
@@ -1509,7 +1543,7 @@ country_event = {
 	}
 }
 
-# gir.85
+# івент для економічної гілки коли імперці завойовують Україну (буде для Ростіка й машки) й про можливості цієї землі
 country_event = {
 	id = gir.77
 	title = gir.77.t
@@ -1524,7 +1558,7 @@ country_event = {
 	}
 }
 
-# gir.83
+# gir.85
 country_event = {
 	id = gir.78
 	title = gir.78.t
@@ -1537,9 +1571,13 @@ country_event = {
 	option = {
 		name = gir.78.a
 	}
+
+	option = {
+		name = gir.78.b
+	}
 }
 
-# gir.84
+# gir.83
 country_event = {
 	id = gir.79
 	title = gir.79.t
@@ -1554,7 +1592,7 @@ country_event = {
 	}
 }
 
-# free
+# gir.84
 country_event = {
 	id = gir.80
 	title = gir.80.t
