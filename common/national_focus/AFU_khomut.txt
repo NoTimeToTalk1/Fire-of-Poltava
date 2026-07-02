@@ -28,7 +28,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_contact_bondar
 	icon = GFX_AFU_Contact_Bondar
-	cost = 2
+	cost = 3
 
 	relative_position_id = AFU_kho_mu_ty_nnik
 	x = -2
@@ -50,11 +50,18 @@ shared_focus = {
 shared_focus = {
 	id = AFU_talk_with_kolomoyskyi
 	icon = GFX_AFU_Talk_with_Kolomoyskyi
-	cost = 2
+	cost = 3
 
 	relative_position_id = AFU_contact_bondar
 	x = -2
 	y = 1
+
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = AFU_kolomoyskiy_trust_49_tt
+			check_variable = {	AFU_kolomoyskiy_trust > 49	}
+		}
+	}
 
 	prerequisite = { focus = AFU_contact_bondar }
 
@@ -63,6 +70,10 @@ shared_focus = {
 			var = FOP_corruption_var
 			value = -5
 			tooltip = add_corruption_var_tt
+		}
+		add_to_variable = {
+			var = AFU_kolomoyskiy_trust
+			value = 10
 		}
 		add_opinion_modifier = {
 			target = DNI
@@ -88,7 +99,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_revival_faction_session
 	icon = GFX_AFU_Revival_Faction_Session
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_contact_bondar
 	x = 0
@@ -107,11 +118,18 @@ shared_focus = {
 shared_focus = {
 	id = AFU_mutually_beneficial_alliance
 	icon = GFX_AFU_Mutually_Beneficial_Alliance
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_revival_faction_session
 	x = -1
 	y = 1
+
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = AFU_kolomoyskiy_trust_74_tt
+			check_variable = {	AFU_kolomoyskiy_trust > 74	}
+		}
+	}
 
 	prerequisite = { focus = AFU_talk_with_kolomoyskyi }
 	prerequisite = { focus = AFU_revival_faction_session }
@@ -151,7 +169,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_invite_kinakh
 	icon = GFX_AFU_Invite_Kinakh
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_kho_mu_ty_nnik
 	x = 2
@@ -173,7 +191,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_integrate_the_party_of_industrialists
 	icon = GFX_AFU_Integrate_the_Party_of_Industrialists
-	cost = 2
+	cost = 6
 
 	relative_position_id = AFU_invite_kinakh
 	x = 0
@@ -197,7 +215,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_meeting_with_the_donetsk_clan
 	icon = GFX_AFU_Meeting_with_the_Donetsk_Clan
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_invite_kinakh
 	x = 2
@@ -223,7 +241,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_negotiation_channel_with_moscow
 	icon = GFX_AFU_Negotiation_Channel_with_Moscow
-	cost = 2
+	cost = 6
 
 	relative_position_id = AFU_integrate_the_party_of_industrialists
 	x = 1
@@ -259,7 +277,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_cooperation_with_local_outsiders
 	icon = GFX_AFU_Cooperation_with_Local_Outsiders
-	cost = 2
+	cost = 5
 	
 	relative_position_id = AFU_kho_mu_ty_nnik
 	x = 0
@@ -289,7 +307,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_formation_of_coalition
 	icon = GFX_AFU_Formation_of_Coalition
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_cooperation_with_local_outsiders
 	x = 0
@@ -317,7 +335,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_time_for_great_solutions
 	icon = GFX_AFU_Time_for_Great_Solutions
-	cost = 2
+	cost = 3
 
 	relative_position_id = AFU_formation_of_coalition
 	x = 0
@@ -342,7 +360,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_learn_from_the_best
 	icon = GFX_AFU_Learn_from_the_Best
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_time_for_great_solutions
 	x = -5
@@ -377,7 +395,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_tax_cuts_for_businesses
 	icon = GFX_AFU_Tax_Cuts_for_Businesses
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_learn_from_the_best
 	x = 0
@@ -423,7 +441,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_special_rights_to_corporations
 	icon = GFX_AFU_Special_Rights_to_Corporations
-	cost = 2
+	cost = 6
 
 	relative_position_id = AFU_tax_cuts_for_businesses
 	x = 0
@@ -468,7 +486,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_deradicalization_of_society
 	icon = GFX_AFU_Deradicalization_of_Society
-	cost = 2
+	cost = 6
 
 	relative_position_id = AFU_time_for_great_solutions
 	x = -1
@@ -479,7 +497,7 @@ shared_focus = {
 	completion_reward = {
 		add_popularity = {
 			ideology = ultranationalism
-			popularity = -0.06
+			popularity = -0.02
 		}
 		hidden_effect = {
 			add_to_variable = {
@@ -487,6 +505,14 @@ shared_focus = {
 				value = 10
 			}
 		}
+		set_variable = {
+			var = afu_azov_activity_var
+			value = 100
+		}
+		set_country_flag = afu_azov_activity
+		custom_effect_tooltip = afu_disband_the_azov_regiment_tt
+		activate_mission_tooltip = afu_khomut_azov_impending_coup
+		country_event = homut.19
 	}
 }
 
@@ -494,7 +520,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_hunt_for_ringleaders
 	icon = GFX_AFU_Hunt_for_Ringleaders
-	cost = 2
+	cost = 7
 
 	relative_position_id = AFU_deradicalization_of_society
 	x = -2
@@ -504,23 +530,7 @@ shared_focus = {
 
 	completion_reward = {
 		add_war_support = -0.10
-		custom_effect_tooltip = AFU_disband_the_azov_regiment_tt
-		set_nationality = {
-			target_country = PLT
-			character = AFU_Prokopenko
-		}
-		set_nationality = {
-			target_country = PLT
-			character = AFU_Tavr
-		}
-		set_nationality = {
-			target_country = PLT
-			character = AFU_Khimik
-		}
-		country_event = {
-			id = homut.19
-			days = 6
-		}
+		custom_effect_tooltip = afu_disband_the_azov_regiment_tt
 		send_embargo = PLT
 	}
 }
@@ -529,11 +539,20 @@ shared_focus = {
 shared_focus = {
 	id = AFU_disband_azov
 	icon = GFX_AFU_Disband_Azov
-	cost = 2
+	cost = 6
 
 	relative_position_id = AFU_hunt_for_ringleaders
 	x = 0
 	y = 1
+
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = afu_azov_activity_tt
+			NOT = {
+				has_country_flag = afu_azov_activity
+			}
+		}
+	}
 
 	prerequisite = { focus = AFU_hunt_for_ringleaders }
 
@@ -541,6 +560,10 @@ shared_focus = {
 		add_manpower = -3000
 		army_experience = -25
 		add_command_power = -20
+		delete_units = {
+			division_template = "Dobrovolchiy Batal'yon"
+			disband = yes
+		}
 		hidden_effect = {
 			add_to_variable = {
 				var = fulfilment_of_Russian_requirements_variable
@@ -554,7 +577,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_for_the_state
 	icon = GFX_AFU_For_the_State
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_disband_azov
 	x = -1
@@ -572,7 +595,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_strengthen_the_police_force
 	icon = GFX_AFU_Strengthen_the_Police_Force
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_for_the_state
 	x = 0
@@ -581,7 +604,7 @@ shared_focus = {
 	prerequisite = { focus = AFU_for_the_state }
 
 	completion_reward = {
-		add_ideas = fop_security_opressive_police
+		FOP_change_security_opressive_police = yes
 		add_ideas = AFU_Counterintelligence_operation_1
 		add_to_variable = {
 			var = FOP_administrative_efficiency_var
@@ -595,7 +618,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_expand_security_service_funding
 	icon = GFX_AFU_Expand_Security_Service_Funding
-	cost = 2
+	cost = 6
 
 	relative_position_id = AFU_strengthen_the_police_force
 	x = -1
@@ -625,7 +648,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_stop_inner_conflicts
 	icon = GFX_AFU_Stop_Inner_Conflicts
-	cost = 2
+	cost = 4
 
 	relative_position_id = AFU_strengthen_the_police_force
 	x = 1
@@ -642,7 +665,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_form_the_internal_troops
 	icon = GFX_AFU_Form_the_Internal_Troops
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_stop_inner_conflicts
 	x = -1
@@ -671,7 +694,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_tackle_peoples_problems
 	icon = GFX_AFU_Tackle_Peoples_Problems
-	cost = 2
+	cost = 5
 
 
 	relative_position_id = AFU_time_for_great_solutions
@@ -685,12 +708,12 @@ shared_focus = {
 			ideology = oligarchism
 			popularity = 0.05
 		}
-		add_ideas = fop_healthcare_system_social_insurance
-		add_ideas = fop_pensions_moderate
-		add_ideas = fop_unemployment_subsidies_moderate
+		FOP_change_healthcare_system_social_insurance = yes
+		FOP_change_pensions_moderate = yes
+		FOP_change_unemployment_subsidies_low = yes
 		add_to_variable = {
 			var = FOP_Poverty_var
-			value = 5
+			value = 10
 			tooltip = add_Poverty_var_tt
 		}
 	}
@@ -700,7 +723,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_distribute_humanitarian_aid
 	icon = GFX_AFU_Distribute_Humanitarian_Aid
-	cost = 2
+	cost = 6
 
 	relative_position_id = AFU_tackle_peoples_problems
 	x = 0
@@ -726,7 +749,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_raise_funds_for_war_veterans
 	icon = GFX_AFU_Raise_Funds_for_War_Veterans
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_distribute_humanitarian_aid
 	x = 0
@@ -760,7 +783,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_dismantle_kryvonos_legacy
 	icon = GFX_AFU_Dismantle_Kryvonos_Legacy
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_time_for_great_solutions
 	x = 1
@@ -777,7 +800,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_abolish_censorship_laws
 	icon = GFX_AFU_Abolish_Censorship_Laws
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_dismantle_kryvonos_legacy
 	x = 2
@@ -802,7 +825,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_open_trade_channels
 	icon = GFX_AFU_Open_Trade_Channels
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_abolish_censorship_laws
 	x = 0
@@ -819,7 +842,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_for_the_people
 	icon = GFX_AFU_For_the_People
-	cost = 2
+	cost = 5
 	
 	relative_position_id = AFU_open_trade_channels
 	x = 1
@@ -837,7 +860,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_raise_the_living_standards
 	icon = GFX_AFU_Raise_the_Living_Standards
-	cost = 2
+	cost = 6
 
 	relative_position_id = AFU_for_the_people
 	x = 0
@@ -881,7 +904,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_golf_the_best_entertainment
 	icon = GFX_AFU_Golf_The_Best_Entertainment
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_raise_the_living_standards
 	x = 1
@@ -917,7 +940,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_miners_paradise_on_earth
 	icon = GFX_AFU_Miners_Paradise_on_Earth
-	cost = 2
+	cost = 7
 
 	relative_position_id = AFU_raise_the_living_standards
 	x = -1
@@ -952,7 +975,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_nation_of_hard_workers
 	icon = GFX_AFU_Nation_of_Hard_Workers
-	cost = 2
+	cost = 4
 
 	relative_position_id = AFU_miners_paradise_on_earth
 	x = 1
@@ -983,7 +1006,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_pardon_ldpr_participants
 	icon = GFX_AFU_Pardon_LDPR_Participants
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_deradicalization_of_society
 	x = 0
@@ -1004,6 +1027,23 @@ shared_focus = {
 			ideology = liberalism
 			popularity = -0.03
 		}
+		add_popularity = {
+			ideology = conservatism
+			popularity = -0.03
+		}
+		if = {
+			limit = {
+				has_idea = AFU_support_PRH
+			}
+			remove_ideas = AFU_support_PRH
+		}
+		if = {
+			limit = {
+				has_idea = AFU_support_UKR
+			}
+			remove_ideas = AFU_support_UKR
+		}
+		custom_effect_tooltip = afu_disband_the_azov_regiment_tt
 		add_timed_idea = {
 			idea = AFU_Amnesty_Fatigue
 			days = 360
@@ -1023,6 +1063,15 @@ shared_focus = {
 				value = 10
 			}
 		}
+		if = {
+			limit = {
+				has_country_flag = afu_azov_activity
+			}
+			add_days_mission_timeout = {
+				mission = afu_khomut_azov_impending_coup
+				days = -14
+			}
+		}
 	}
 }
 
@@ -1030,7 +1079,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_stop_ethnic_hatred
 	icon = GFX_AFU_Stop_Ethnic_Hatred
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_pardon_ldpr_participants
 	x = 0
@@ -1044,6 +1093,7 @@ shared_focus = {
 			ideology = oligarchism
 			popularity = 0.02
 		}
+		custom_effect_tooltip = afu_disband_the_azov_regiment_tt
 		every_core_state = {
 			add_state_modifier = {
 				modifier = {
@@ -1069,7 +1119,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_break_the_totalitarian_system
 	icon = GFX_AFU_Break_Totalitarian_System
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_dismantle_kryvonos_legacy
 	x = 0
@@ -1092,7 +1142,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_remove_the_military_from_politics
 	icon = GFX_AFU_Remove_the_Military_from_Politics
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_break_the_totalitarian_system
 	x = 0
@@ -1101,11 +1151,6 @@ shared_focus = {
 	prerequisite = { focus = AFU_break_the_totalitarian_system }
 
 	completion_reward = {
-		add_to_variable = {
-			var = FOP_administrative_efficiency_var
-			value = 25
-			tooltip = add_administrative_efficiency_var_tt
-		}
 		add_political_power = 30
 		add_stability = -0.05
 		hidden_effect = {
@@ -1121,7 +1166,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_for_the_nation
 	icon = GFX_AFU_For_the_Nation
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_remove_the_military_from_politics
 	x = -1
@@ -1140,7 +1185,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_reform_the_territorial_system
 	icon = GFX_AFU_Reform_the_Territorial_System
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_for_the_nation
 	x = -1
@@ -1168,7 +1213,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_presidential_republic_project
 	icon = GFX_AFU_Presidential_Republic_Project
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_reform_the_territorial_system
 	x = 0
@@ -1212,7 +1257,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_second_language_initiative
 	icon = GFX_AFU_Second_Language_Initiative
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_support_regional_minorities
 	x = 0
@@ -1234,7 +1279,7 @@ shared_focus = {
 shared_focus = {
 	id = AFU_decisive_referendums
 	icon = GFX_AFU_Decisive_Referendums
-	cost = 2
+	cost = 5
 
 	relative_position_id = AFU_second_language_initiative
 	x = -1

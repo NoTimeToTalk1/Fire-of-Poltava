@@ -1,3 +1,42 @@
+is_ukrainian_warlord = {
+	OR = {
+		original_tag = CBL 
+		original_tag = CHE
+		original_tag = CHR
+		original_tag = HAL
+		original_tag = HUT
+		original_tag = KHA
+		original_tag = KHM
+		original_tag = KOB
+		original_tag = KRM
+		original_tag = KYI
+		original_tag = MYK
+		original_tag = ODE
+		original_tag = OLD
+		original_tag = PLT
+		original_tag = RIV
+		original_tag = STR
+		original_tag = SUM
+		original_tag = TER
+		original_tag = VIN
+		original_tag = VOL
+		original_tag = ZAK
+		original_tag = ZAP 
+		original_tag = ZHY
+		original_tag = DNI
+		original_tag = AFU
+		original_tag = DPR
+		original_tag = KHE
+		original_tag = KIR
+		original_tag = LPR
+		original_tag = REC
+		original_tag = SHA
+		original_tag = BDZ
+		original_tag = HUT
+		original_tag = UMA
+
+	}
+}
 is_pro_ukrainian = {
 	OR = {
 		original_tag = CBL #
@@ -23,14 +62,19 @@ is_pro_ukrainian = {
 		original_tag = ZAK
 		original_tag = ZAP #
 		original_tag = ZHY
-		AFU = {
-			OR = {
-				has_country_flag = AFU_dan
-				has_country_flag = AFU_kryvonos
-				AND = {
-					has_country_flag = AFU_khomut
-					NOT = {
-						has_country_flag = we_call_moscow
+		original_tag = DNI
+		AND = {
+			original_tag = AFU
+			AFU = {
+				OR = {
+					has_country_flag = AFU_dan
+					has_country_flag = AFU_kryvonos
+					has_country_flag = AFU_sav
+					AND = {
+						has_country_flag = AFU_khomut
+						NOT = {
+							has_country_flag = we_call_moscow
+						}
 					}
 				}
 			}
@@ -48,9 +92,9 @@ is_pro_russian = {
 		original_tag = REC
 		#original_tag = RUS
 		original_tag = SHA
-		AFU = {
-			OR = {
-				has_country_flag = AFU_sav
+		AND = {
+			original_tag = AFU
+			AFU = {
 				AND = {
 					has_country_flag = AFU_khomut
 					has_country_flag = we_call_moscow

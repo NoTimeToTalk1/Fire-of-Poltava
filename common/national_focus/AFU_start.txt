@@ -26,9 +26,7 @@
 		prerequisite = { focus = AFU_on_our_own }
 
 		completion_reward = {
-			add_ideas = {
-				AFU_state_of_emergency
-			}
+			add_stability = -0.05
 			add_war_support = 0.05
 		}
 	}
@@ -173,6 +171,10 @@
 		cost = 2
 		prerequisite = { focus = AFU_assessing_the_situation }
 
+		ai_will_do = {
+			base = 100
+		}
+
 		completion_reward = {
 			unlock_decision_category_tooltip = afu_mobilization_category
 		}
@@ -189,6 +191,10 @@
 
 		cost = 3
 		prerequisite = { focus = AFU_mobilize_our_forces }
+
+		ai_will_do = {
+			base = 100
+		}
 
 		completion_reward = { 
 			country_event = afu.13
@@ -281,6 +287,9 @@
 
 		completion_reward = {
 			custom_effect_tooltip = fop_azov_blind_eye_tt
+			hidden_effect = {
+				country_event = afu.16
+			}
 		}
 	}
 
@@ -507,12 +516,10 @@
 				idea = AFU_harsh_quotas
 				days = 180
 			}
+			FOP_change_pensions_no = yes
+			FOP_change_unemployment_subsidies_no = yes
+			FOP_change_working_hours_10 = yes
 			add_ideas = fop_forced_labour_penal_labour
-		add_tech_bonus = {
-			bonus = 0.25
-			uses = 1
-			category = discipline
-		}
 		}
     }
 
@@ -529,11 +536,11 @@
 		prerequisite = { focus = AFU_harshen_the_quotas }
 
 		completion_reward = {
-		add_to_variable = {
-			var = FOP_administrative_efficiency_var
-			value = 10
-			tooltip = add_administrative_efficiency_var_tt
-		}
+			add_to_variable = {
+				var = FOP_administrative_efficiency_var
+				value = 10
+				tooltip = add_administrative_efficiency_var_tt
+			}
 			swap_ideas = {
 				remove_idea = AFU_disorganized_administration
 				add_idea = AFU_millitary_administration
@@ -808,10 +815,14 @@
 			add_political_power = 50
 			remove_ideas = AFU_military_administration
 			remove_ideas = AFU_martial_law
+			FOP_change_political_system_liberal_democracy = yes
 			hidden_effect = {
 				if = {
 					limit = {
-						has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements
+						AND = {
+							ultranationalism > 0.2
+							has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements
+						}
 					}
 					country_event = {
 						id = azov.1
@@ -845,6 +856,7 @@
 
 		completion_reward = {
 			add_political_power = 50
+			FOP_change_political_system_stratocracy = yes
 			hidden_effect = {
 				if = {
 					limit = {

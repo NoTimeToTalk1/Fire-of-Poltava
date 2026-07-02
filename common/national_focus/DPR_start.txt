@@ -1,4 +1,4 @@
-﻿	#Situation in Ukraine
+﻿#Situation in Ukraine
 	shared_focus = {
 		id = DPR_situation_in_ukraine
 		icon = GFX_DPR_Situation_in_Ukraine
@@ -55,7 +55,7 @@
 				id = dpr.3
 				hours = 6
 			}
-			add_political_power = 50
+			add_political_power = 150
 		}
 	}
 
@@ -138,19 +138,6 @@
 		completion_reward = {
 			add_manpower = 1250
 			unlock_decision_category_tooltip = DPR_mobilize_the_youth_and_reserves_category
-			division_template = {
-				name = "Opolchenci"
-				is_locked = yes
-				division_names_group = BLR_INF_01
-				priority = 0
-				template_counter = 0
-				regiments = { 
-					infantry = { x = 0 y = 0 } 
-					infantry = { x = 1 y = 0 }
-					infantry = { x = 2 y = 0 }
-					infantry = { x = 1 y = 1 } 
-				}
-			}
 		}
     }
 
@@ -261,6 +248,13 @@
 			}
 			hidden_effect = {
 				country_event = dpr.20
+				every_state = {
+					limit = {
+						is_core_of = LPR
+					}
+					remove_core_of = LPR
+					add_core_of = DPR
+				}
 			}
 			add_stability = 0.2
 		}
@@ -282,6 +276,10 @@
 		cost = 3
 		prerequisite = { focus = DPR_look_around_us }
 
+		ai_will_do = {
+			base = 100
+		}
+
 		completion_reward = {
 			country_event = {
 				id = dpr.7
@@ -300,8 +298,12 @@
 		x = 0
 		y = 1
 
-		cost = 4
+		cost = 5
 		prerequisite = { focus = DPR_look_east }
+
+		ai_will_do = {
+			base = 100
+		}
 
 		completion_reward = {
 			add_manpower = 1500
@@ -318,8 +320,12 @@
 		x = 0
 		y = 1
 		
-		cost = 5
+		cost = 6
 		prerequisite = { focus = DPR_request_russian_equipment }
+
+		ai_will_do = {
+			base = 100
+		}
 		
 		completion_reward = {
 			add_manpower = 3000
@@ -382,14 +388,12 @@
 					num_provinces = 2
 					on_win = donbass_war.1 #Event on win
 					on_lose = donbass_war.2 #Event on loss
-					on_cancel = japan_border_conflict.4 #Event on cancel
 				}
 				defender = {
-					state = 2306
+					state = 2301
 					num_provinces = 2
-					on_win = japan_border_conflict.3 #Even on win
-					on_lose = japan_border_conflict.2 #Even on loss
-					on_cancel = japan_border_conflict.4 #Event on cancel
+					on_win = donbass_war.1 #Event on win
+					on_lose = donbass_war.2 #Event on loss
 				}
 			}
 		}
@@ -404,12 +408,15 @@
 		x = 0
 		y = 1
 
-		cost = 5
+		cost = 7
 		prerequisite = { focus = DPR_test_their_strengh }
 
 		bypass = {
 			AFU = {
-				has_capitulated = yes
+				OR = {
+					exists = no
+					has_war_with = DPR
+				}
 			}
 		}
 
@@ -419,6 +426,12 @@
 			declare_war_on = {
 				target = AFU
 				type = annex_everything
+			}
+			LPR = {
+				declare_war_on = {
+					target = AFU
+					type = annex_everything
+				}
 			}
 			hidden_effect = {
 				add_timed_idea = {
@@ -697,6 +710,8 @@
 					add_core_of = DPR
 				}
 			}
+
+			country_lock_all_division_template = no
 		}
 	}
 	
@@ -713,6 +728,6 @@
 		prerequisite = { focus = DPR_finish_integration }
 
 		completion_reward = {
-			#country_event = dpr.
+			country_event = DPRelection.1
 		}
 	}

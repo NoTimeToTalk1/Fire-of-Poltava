@@ -5,13 +5,13 @@ FOP_warehouses = {
 	    has_completed_focus = FOP_Find_Warehouses
         NOT = {
             OR = {
-                has_country_flag = united_galicia
-                has_country_flag = united_podillya
-                has_country_flag = united_dnieper
-                has_country_flag = united_siveria
-                has_country_flag = united_buh
-                has_country_flag = united_tavria
-                has_country_flag = united_donbas
+                tag = GLY
+                tag = PDL
+                tag = DIR
+                tag = SIV
+                tag = BUH
+                tag = TVR
+                tag = DBS
                 tag = DNI
             }
         }
@@ -25,13 +25,13 @@ FOP_appeasement = {
 	    has_completed_focus = FOP_Appease_The_Populace
         NOT = {
             OR = {
-                has_country_flag = united_galicia
-                has_country_flag = united_podillya
-                has_country_flag = united_dnieper
-                has_country_flag = united_siveria
-                has_country_flag = united_buh
-                has_country_flag = united_tavria
-                has_country_flag = united_donbas
+                tag = GLY
+                tag = PDL
+                tag = DIR
+                tag = SIV
+                tag = BUH
+                tag = TVR
+                tag = DBS
                 tag = DNI
             }
         }
@@ -45,13 +45,13 @@ FOP_earn_trust = {
 	    has_completed_focus = FOP_Earn_The_Trust
         NOT = {
             OR = {
-                has_country_flag = united_galicia
-                has_country_flag = united_podillya
-                has_country_flag = united_dnieper
-                has_country_flag = united_siveria
-                has_country_flag = united_buh
-                has_country_flag = united_tavria
-                has_country_flag = united_donbas
+                tag = GLY
+                tag = PDL
+                tag = DIR
+                tag = SIV
+                tag = BUH
+                tag = TVR
+                tag = DBS
                 tag = DNI
             }
         }
@@ -65,13 +65,13 @@ FOP_mobilisation = {
 	    has_completed_focus = FOP_Mobilisation
         NOT = {
             OR = {
-                has_country_flag = united_galicia
-                has_country_flag = united_podillya
-                has_country_flag = united_dnieper
-                has_country_flag = united_siveria
-                has_country_flag = united_buh
-                has_country_flag = united_tavria
-                has_country_flag = united_donbas
+                tag = GLY
+                tag = PDL
+                tag = DIR
+                tag = SIV
+                tag = BUH
+                tag = TVR
+                tag = DBS
                 tag = DNI
             }
         }
@@ -85,13 +85,13 @@ FOP_resources = {
 	    has_completed_focus = FOP_Rudimentary_Resource_Production
         NOT = {
             OR = {
-                has_country_flag = united_galicia
-                has_country_flag = united_podillya
-                has_country_flag = united_dnieper
-                has_country_flag = united_siveria
-                has_country_flag = united_buh
-                has_country_flag = united_tavria
-                has_country_flag = united_donbas
+                tag = GLY
+                tag = PDL
+                tag = DIR
+                tag = SIV
+                tag = BUH
+                tag = TVR
+                tag = DBS
                 tag = DNI
             }
         }
@@ -105,13 +105,13 @@ FOP_micro_region_development = {
 	    has_completed_focus = FOP_Time_To_Reorganise
         NOT = {
             OR = {
-                has_country_flag = united_galicia
-                has_country_flag = united_podillya
-                has_country_flag = united_north_center
-                has_country_flag = united_north
-                has_country_flag = united_south_west
-                has_country_flag = united_south_center
-                has_country_flag = united_south_east
+                tag = GLY
+                tag = PDL
+                tag = NRT_center
+                tag = NRT
+                tag = STH_west
+                tag = STH_center
+                tag = STH_east
                 tag = DNI
             }
         }
@@ -137,91 +137,69 @@ FOP_building_projects = {
 }
 
 FOP_coring_micro_region = {
-	icon = GFX_decision_category_generic_civil_support
+	icon = GFX_decision_category_coring
 
 	allowed = {
-		tag_has_content = no
 		OR = {
 			is_left_bank_ukraine = yes
 			is_right_bank_ukraine = yes
 		}
-        NOT = {
-            OR = {
-                tag = WST
-                tag = NRT
-                tag = ESN
-                tag = STH
-            }
-        }
 	}
     visible_when_empty = yes
 	visible = {
-        NOT = {
-            OR = {
-                tag = WST
-                tag = NRT
-                tag = ESN
-                tag = STH
-            }
-        }
+        locked_coring = no
+        has_united_region = no
 	}
 }
 
 FOP_coring_region = {
-	icon = GFX_decision_category_generic_civil_support
+	icon = GFX_decision_category_coring
 
 	allowed = {
-		tag_has_content = no
 		OR = {
 			is_left_bank_ukraine = yes
 			is_right_bank_ukraine = yes
 		}
-		OR = {
-			tag = WST
-			tag = NRT
-			tag = STH
-			tag = ESN
-		}
-		NOT = {
-			tag = RBU
-			tag = LBU
-		}
 	}
     visible_when_empty = yes
 	visible = {
+        locked_coring = no
+        has_united_region = yes
+        has_united_river_bank = no
 	}
 }
 
-FOP_coring_super_region = {
-	icon = GFX_decision_category_generic_civil_support
+FOP_coring_river_bank = {
+	icon = GFX_decision_category_coring
 
 	allowed = {
-		tag_has_content = no
 		OR = {
 			is_left_bank_ukraine = yes
 			is_right_bank_ukraine = yes
 		}
-		OR = {
-			tag = RBU
-			tag = LBU
-		}
-		NOT = {
-			tag = UKR
-		}
 	}
     visible_when_empty = yes
 	visible = {
+        locked_coring = no
+        has_united_river_bank = yes
+        NOT = {
+            tag = UKR
+        }
 	}
 }
 
 FOP_coring_ukraine = {
-	icon = GFX_decision_category_generic_civil_support
+	icon = GFX_decision_category_coring
 
 	allowed = {
-		tag = UKR
+		OR = {
+            is_left_bank_ukraine = yes
+			is_right_bank_ukraine = yes
+        }
 	}
     visible_when_empty = yes
 	visible = {
+        tag = UKR
 	}
 }
 
@@ -240,5 +218,35 @@ FOP_exports = {
 FOP_trading = {
     visible = {
         has_country_flag = FOP_trading
+        NOT = {
+            has_country_flag = FOP_trading_expanded
+        }
+    }
+}
+
+FOP_workforce = {
+    visible = {
+        OR = {
+            has_country_flag = FOP_looking_for_immigrants
+            has_country_flag = FOP_returning_our_refugees
+        }
+    }
+}
+
+FOP_trading_expanded = {
+    visible = {
+        has_country_flag = FOP_trading_expanded
+    }
+}
+
+WL_black_market_category = {
+    icon = GFX_decision_category_black_market
+
+    visible = {
+        has_country_flag = WL_black_market_unlocked
+    }
+
+    priority = {
+        base = 1
     }
 }

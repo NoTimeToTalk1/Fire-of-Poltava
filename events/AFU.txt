@@ -11,11 +11,11 @@ country_event = { #On Our Own
 
 	option = {
 		name = afu.1.a
-		add_political_power = 200
+		add_political_power = 150
 	}
 }
 
-country_event = { #Contacting The Government
+country_event = { #Contacting the Government
 	id = afu.2
 	title = afu.2.t
 	desc = afu.2.d
@@ -30,7 +30,7 @@ country_event = { #Contacting The Government
 	}
 }
 
-country_event = { #Asessing the Situation
+country_event = { #Assessing the Situation
 	id = afu.3
 	title = afu.3.t
 	desc = afu.3.d
@@ -45,7 +45,7 @@ country_event = { #Asessing the Situation
 	}
 }
 
-country_event = { #Life in the Donbass
+country_event = { #Life in Donbas
 	id = afu.4
 	title = afu.4.t
 	desc = afu.4.d
@@ -72,7 +72,7 @@ country_event = { #Zelenskyy - Helping ZSU?
 	option = { #YES
 		name = afu.5.a
 		ai_chance = {
-			factor = 70
+			factor = 60
 		}
 		AFU = { country_event = afu.51 }
 		add_political_power = -50
@@ -80,7 +80,7 @@ country_event = { #Zelenskyy - Helping ZSU?
 	option = { #NO
 		name = afu.5.b
 		ai_chance = {
-			factor = 30
+			factor = 40
 		}
 		AFU = { country_event = afu.52 }
 		add_stability = -0.05
@@ -130,7 +130,7 @@ country_event = { #Poroshenko - Helping ZSU?
 	option = { #YES
 		name = afu.6.a
 		ai_chance = {
-			factor = 60
+			factor = 80
 		}
 		AFU = { country_event = afu.61 }
 		add_political_power = -50
@@ -138,7 +138,7 @@ country_event = { #Poroshenko - Helping ZSU?
 	option = { #NO
 		name = afu.6.b
 		ai_chance = {
-			factor = 40
+			factor = 20
 		}
 		AFU = { country_event = afu.62 }
 		add_stability = -0.05
@@ -185,41 +185,76 @@ country_event = { #Biletsky - Helping ZSU?
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	option = { #YES
+	option = { # YES
 		name = afu.7.a
 		ai_chance = {
-			factor = 80
+			factor = 90
+
+			modifier = {
+				factor = 100
+				AFU = {
+					has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements
+				}
+			}
+
+			modifier = {
+				factor = 0
+				AFU = {
+					has_completed_focus = AFU_sideline_the_far_right_elements
+				}
+			}
 		}
-		send_equipment = {
+
+		add_equipment_to_stockpile = {
 			type = support_equipment
-			amount = 500
-			target = AFU
+			amount = -250
+			producer = PLT
 		}
-		send_equipment = {
-			type = motorized_equipment_1 
-			amount = 150
-			target = AFU
+		add_equipment_to_stockpile = {
+			type = motorized_equipment
+			amount = -150
+			producer = PLT
 		}
-		send_equipment = {
-			type = mechanized_equipment_1
-			amount = 20
-			target = AFU
+		add_equipment_to_stockpile = {
+			type = APC_equipment
+			amount = -20
+			producer = PLT
 		}
-		send_equipment = {
-			type = modern_tank_equipment
-			amount = 2
-			target = AFU
+		add_equipment_to_stockpile = {
+			type = MBT_chassis_0
+			amount = -2
+			producer = PLT
 		}
 		AFU = { country_event = afu.71 }
-		add_political_power = -50
+		add_political_power = -30
 	}
-	option = { #NO
+
+	option = { # NO
 		name = afu.7.b
 		ai_chance = {
-			factor = 20
+			factor = 10
+
+			modifier = {
+				factor = 0
+				AFU = {
+					has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements
+				}
+			}
+
+			modifier = {
+				factor = 100
+				AFU = {
+					has_completed_focus = AFU_sideline_the_far_right_elements
+				}
+			}
 		}
+
 		AFU = { country_event = afu.72 }
 		add_stability = -0.05
+		add_popularity = {
+			ideology = ultranationalism
+			popularity = -0.02
+		}
 	}
 }
 
@@ -234,6 +269,26 @@ country_event = { #Biletsky helped us
 
 	option = {
 		name = afu.71.a
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 250
+			producer = PLT
+		}
+		add_equipment_to_stockpile = {
+			type = motorized_equipment
+			amount = 150
+			producer = PLT
+		}
+		add_equipment_to_stockpile = {
+			type = APC_equipment
+			amount = 20
+			producer = PLT
+		}
+		add_equipment_to_stockpile = {
+			type = MBT_chassis_0
+			amount = 2
+			producer = PLT
+		}
 		add_popularity = {
 			ideology = ultranationalism
 			popularity = 0.02
@@ -253,6 +308,10 @@ country_event = { #Biletsky didn't help us
 	option = {
 		name = afu.72.a
 		add_political_power = -10
+		add_popularity = {
+			ideology = ultranationalism
+			popularity = -0.02
+		}
 	}
 }
 
@@ -533,15 +592,18 @@ country_event = { #oh fuck
     }
 
     immediate = {
-        hidden_effect = {
-            AFU = {
-                country_event = { id = afu.19 days = 5 }
-				set_country_flag = AFU_5
-                unlock_decision_category_tooltip = emergency_makeshift_fortifications
-            }
-        }
+		AFU = {
+			country_event = { id = afu.19 days = 14 }
+		}
     }
+
+	option = {
+		name = afu.20.a
+		set_country_flag = AFU_5
+		unlock_decision_category_tooltip = emergency_makeshift_fortifications
+	}
 }
+
 country_event = {
 	id = afu.19
 	title = afu.19.t
@@ -554,38 +616,30 @@ country_event = {
 	
 	option = {
 		name = afu.19.a
-    		
-			VSR = {
+		RAF = {
 			transfer_state = 2031
-			transfer_state = 2030
 			set_province_controller = 1495
 			set_province_controller = 12927
 			set_province_controller = 12999
 			set_province_controller = 5825
-			
-			add_ideas = VSR_kramatorsk_in_three_days
-			add_ideas = VSR_unprepared
-			
-			
 			declare_war_on = {
 				target = AFU
 				type = annex_everything
 			}
 		}
-		   RUS = {
-			give_military_access = VSR
+		RUS = {
+			give_military_access = RAF
 		}
-			DPR = { 
-			add_to_faction = VSR
-	      }
-	     hidden_effect = {
-					VSR = { 
-						add_timed_idea = { idea = gas_gas_gas days = 10 }
-						activate_mission = 7_days_free
-						
-						load_oob = "VSRF_2019"
-					}
-				}
+		DPR = { 
+			add_to_faction = RAF
+	    }
+	    hidden_effect = {
+			RAF = { 
+				add_timed_idea = { idea = RAF_incursion days = 14 }
+				
+				load_oob = "RAF"
+			}
+		}
 	}
 }
 country_event = {
@@ -957,7 +1011,7 @@ country_event = { #KRYVONYS STAY IN POWER
 	option = {
 		name = afu.34.a
 		custom_effect_tooltip = kryvonys_cum_into_power
-		load_focus_tree = AFU_azov
+		load_focus_tree = AFU_kryvonos
 	}
 }
 
@@ -1005,6 +1059,21 @@ country_event = {
         traits = {  }
     }
 }
+	}
+}
+
+country_event = { # Army doesn't feel so well
+	id = afu.37
+	title = afu.37.t
+	desc = afu.37.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = afu.37.a
+		add_ideas = AFU_army_troubles
+		mark_focus_tree_layout_dirty = yes
 	}
 }
 

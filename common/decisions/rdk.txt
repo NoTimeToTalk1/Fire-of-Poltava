@@ -1,83 +1,722 @@
-rdk_core = {
-RDK_nationalisation = {
+# ============================================================
+#  AFU / RDK Decision Categories
+#  Variables used:
+#    AFU_rdk        — manpower pool (converted on war start)
+#    AFU_rdk_eq     — equipment tier  [0‑5]
+#    AFU_rdk_media  — popularity      [0‑10]
+#    AFU_rdk_image  — public image    [0‑10] 
+#    AFU_rdk_points — RDK action pts  
+# ============================================================
 
-		icon = GFX_decision_generic_decision
-		
-				ai_will_do = {	
-			factor = 20		
-		}
-		
-		available = {
-			tag = RDK
-			any_controlled_state = { 
-	is_fully_controlled_by = RDK
-			compliance > 10
+AFU_azov_rvc_category = {
+
+	# ----------------------------------------------------------
+	#  TRICKLE: passively gain RDK points every 30 days
+	# ----------------------------------------------------------
+	AFU_rdk_points_trickle = {
+	icon = GFX_decision_rdk_points
+	
+    activation = {
+			has_country_flag = rvc_coop
+    }
+	
+	available = {
+	country_exists = RVC
+	}
+
+    cancel_trigger = {
+    country_exists = RVC
+    }
+    is_good = yes
+	days_mission_timeout = 60
+        
+        modifier = {
+        	political_power_gain = -0.1
+        }
+       
+		timeout_effect = {
+			add_to_variable = {
+				var = AFU_rdk_points
+				value = 3
+				tooltip = AFU_rdk_points_trickle_tt
 			}
-		}
-
-		visible = {
-
-			any_controlled_state = { 
-	is_fully_controlled_by = RDK
-			compliance > 10
+			clamp_variable = {
+				var = AFU_rdk_points
+				min = 0
+				max = 100
 			}
-		}
-		
-		cost = 20
-		
-		days_remove = 10
-
-		remove_effect  = {
-random_controlled_state = {
-			limit = {
-	is_fully_controlled_by = RDK
-			compliance > 10
-		NOT = {
-		has_state_flag = RDK_liberated
-		}
+			subtract_from_variable = {
+				var = AFU_rdk_media
+				value = 1
 			}
-add_core_of = RDK
-remove_core_of = RUS
-set_state_flag = RDK_liberated
-}
+			clamp_variable = {
+				var = AFU_rdk_media
+				min = 0
+				max = 10
+			}
 		}
 	}
+
+	# ----------------------------------------------------------
+	#  CONVERSION: spend Political Power → RDK points
+	# ----------------------------------------------------------
+	AFU_rdk_convert_pp = {
+		icon = GFX_decision_rdk_points
+
+		ai_will_do = { factor = 30 }
+
+		available = {
+			has_country_flag = rvc_coop
+			has_political_power > 49
+		}
+		visible = {
+			has_country_flag = rvc_coop
+		}
+
+    cancel_trigger = {
+    country_exists = RVC
+    }
+		# costs 50 PP, grants 10 RDK points
+		cost = 50
+		days_remove = 21
+
+		remove_effect = {
+			add_to_variable = {
+				var = AFU_rdk_points
+				value = 10
+				tooltip = AFU_rdk_points_convert_tt
+			}
+			clamp_variable = {
+				var = AFU_rdk_points
+				min = 0
+				max = 100
+			}
+		}
+	}
+
+	# ----------------------------------------------------------
+	#  WAR DECISION — trigger RDK spawn event
+	# ----------------------------------------------------------
+	AFU_rdk_war_decision = {
+		icon = GFX_decision_rdk
+		priority = 10
+
+		cost = 0
+		ai_will_do = { factor = 50 }
+
+		available = {
+			has_country_flag = rvc_coop
+		}
+		fire_only_once = yes
+		visible = {
+			has_country_flag = rvc_coop
+			AFU = { has_war_with = RUS }
+		}
+
+		complete_effect = {
+			country_event = rvc.1
+		}
+	}
+
+	# ----------------------------------------------------------
+	#  RECRUIT: basic volunteer drive  (costs 3 RDK points)
+	# ----------------------------------------------------------
+	AFU_rdk_1_decision = {
+		icon = GFX_decision_rdk
+
+		ai_will_do = { factor = 50 }
+
+		available = {
+			has_country_flag = rvc_coop
+			custom_trigger_tooltip = {
+				tooltip = AFU_rdk_points_cost_3_tt
+				check_variable = { AFU_rdk_points > 2 }
+			}
+		}
+		visible = {
+			has_country_flag = rvc_coop
+		}
+
+    cancel_trigger = {
+    country_exists = RVC
+    }
+		custom_cost_trigger = {
+			check_variable = { AFU_rdk_points > 2 }
+		}
+		custom_cost_text = AFU_rdk_points_cost_3_tt
+
+		days_remove = 30
+
+		complete_effect = {
+			subtract_from_variable = {
+				var = AFU_rdk_points
+				value = 3
+			}
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = AFU_rdk
+				value = 50
+				tooltip = AFU_rdk_tt
+			}
+		}
+	}
+
+	# ----------------------------------------------------------
+	#  RECRUIT+: media-boosted drive  (costs 5 pts, needs media > 3)
+	# ----------------------------------------------------------
+	AFU_rdk_2_decision = {
+		icon = GFX_decision_rdk
+
+		ai_will_do = { factor = 50 }
+
+		available = {
+			check_variable = { AFU_rdk_media > 3 }
+			has_country_flag = rvc_coop
+			custom_trigger_tooltip = {
+				tooltip = AFU_rdk_points_cost_5_tt
+				check_variable = { AFU_rdk_points > 4 }
+			}
+		}
+		visible = {
+			has_country_flag = rvc_coop
+			check_variable = { AFU_rdk_media > 3 }
+		}
+
+    cancel_trigger = {
+    country_exists = RVC
+    }
+		custom_cost_trigger = {
+			check_variable = { AFU_rdk_points > 4 }
+		}
+		custom_cost_text = AFU_rdk_points_cost_5_tt
+
+		days_remove = 50
+
+		complete_effect = {
+			subtract_from_variable = {
+				var = AFU_rdk_points
+				value = 5
+			}
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = AFU_rdk
+				value = 100
+				tooltip = AFU_rdk_tt
+			}
+		}
+	}
+
+	# ----------------------------------------------------------
+	#  EQUIPMENT: supply a batch of gear  (costs 4 pts)
+	# ----------------------------------------------------------
+	AFU_rdk_eq_1_decision = {
+		icon = GFX_decision_rdk
+
+		ai_will_do = { factor = 50 }
+
+		available = {
+			has_country_flag = rvc_coop
+			custom_trigger_tooltip = {
+				tooltip = AFU_rdk_points_cost_4_tt
+				check_variable = { AFU_rdk_points > 3 }
+			}
+		}
+		visible = {
+			has_country_flag = rvc_coop
+		}
+
+    cancel_trigger = {
+    country_exists = RVC
+    }
+		custom_cost_trigger = {
+			check_variable = { AFU_rdk_points > 3 }
+		}
+		custom_cost_text = AFU_rdk_points_cost_4_tt
+
+		days_remove = 180
+
+		complete_effect = {
+			subtract_from_variable = {
+				var = AFU_rdk_points
+				value = 4
+			}
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = AFU_rdk_eq
+				value = 1
+				tooltip = AFU_rdk_eq_tt
+			}
+			clamp_variable = {
+				var = AFU_rdk_eq
+				min = 0
+				max = 5
+			}
+		}
+	}
+
+	# ----------------------------------------------------------
+	#  MEDIA — low-cost buzz (popularity ↑, image ↓ slightly)
+	# ----------------------------------------------------------
+	AFU_rdk_media_cheap = {
+		icon = GFX_decision_rdk1
+
+		ai_will_do = { factor = 40 }
+
+		available = {
+			has_country_flag = rvc_coop
+			custom_trigger_tooltip = {
+				tooltip = AFU_rdk_points_cost_2_tt
+				check_variable = { AFU_rdk_points > 1 }
+			}
+		}
+		visible = {
+			has_country_flag = rvc_coop
+		}
+
+    cancel_trigger = {
+    country_exists = RVC
+    }
+		custom_cost_trigger = {
+			check_variable = { AFU_rdk_points > 1 }
+		}
+		custom_cost_text = AFU_rdk_points_cost_2_tt
+
+		days_remove = 60
+
+		complete_effect = {
+			subtract_from_variable = {
+				var = AFU_rdk_points
+				value = 2
+			}
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = AFU_rdk_media
+				value = 1
+				tooltip = AFU_rdk_media_tt
+			}
+			clamp_variable = {
+				var = AFU_rdk_media
+				min = 0
+				max = 10
+			}
+			# image takes a small hit from cheap sensationalism
+			add_to_variable = {
+				var = AFU_rdk_image
+				value = -1
+				tooltip = AFU_rdk_image_down_tt
+			}
+			clamp_variable = {
+				var = AFU_rdk_image
+				min = 0
+				max = 10
+			}
+		}
+	}
+
+	# ----------------------------------------------------------
+	#  MEDIA — professional campaign (popularity ↑↑, image neutral)
+	# ----------------------------------------------------------
+	AFU_rdk_media_pro = {
+		icon = GFX_decision_rdk1
+
+		ai_will_do = { factor = 30 }
+
+		available = {
+			has_country_flag = rvc_coop
+			custom_trigger_tooltip = {
+				tooltip = AFU_rdk_points_cost_6_tt
+				check_variable = { AFU_rdk_points > 5 }
+			}
+		}
+		visible = {
+			has_country_flag = rvc_coop
+		}
+
+    cancel_trigger = {
+    country_exists = RVC
+    }
+		custom_cost_trigger = {
+			check_variable = { AFU_rdk_points > 5 }
+		}
+		custom_cost_text = AFU_rdk_points_cost_6_tt
+
+		days_remove = 90
+
+		complete_effect = {
+			subtract_from_variable = {
+				var = AFU_rdk_points
+				value = 6
+			}
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = AFU_rdk_media
+				value = 2
+				tooltip = AFU_rdk_media_tt
+			}
+			clamp_variable = {
+				var = AFU_rdk_media
+				min = 0
+				max = 10
+			}
+		}
+	}
+
+	# ----------------------------------------------------------
+	#  IMAGE — PR clean-up (image ↑↑, costs 8 pts)
+	# ----------------------------------------------------------
+	AFU_rdk_image_cleanup = {
+		icon = GFX_decision_rdk1
+
+		ai_will_do = { factor = 20 }
+
+		available = {
+			has_country_flag = rvc_coop
+			custom_trigger_tooltip = {
+				tooltip = AFU_rdk_points_cost_8_tt
+				check_variable = { AFU_rdk_points > 7 }
+			}
+		}
+		visible = {
+			has_country_flag = rvc_coop
+		}
+
+    cancel_trigger = {
+    country_exists = RVC
+    }
+		custom_cost_trigger = {
+			check_variable = { AFU_rdk_points > 7 }
+		}
+		custom_cost_text = AFU_rdk_points_cost_8_tt
+
+		days_remove = 120
+
+		complete_effect = {
+			subtract_from_variable = {
+				var = AFU_rdk_points
+				value = 8
+			}
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = AFU_rdk_image
+				value = 2
+				tooltip = AFU_rdk_image_tt
+			}
+			clamp_variable = {
+				var = AFU_rdk_image
+				min = 0
+				max = 10
+			}
+		}
+	}
+
+	# ----------------------------------------------------------
+	#  IMAGE — international observers visit (image ↑, media ↑)
+	# ----------------------------------------------------------
+	AFU_rdk_image_observers = {
+		icon = GFX_decision_rdk1
+
+		ai_will_do = { factor = 15 }
+
+		available = {
+			has_country_flag = rvc_coop
+			custom_trigger_tooltip = {
+				tooltip = AFU_rdk_points_cost_10_tt
+				check_variable = { AFU_rdk_points > 9 }
+			}
+		}
+		visible = {
+			has_country_flag = rvc_coop
+		}
+
+    cancel_trigger = {
+    country_exists = RVC
+    }
+		custom_cost_trigger = {
+			check_variable = { AFU_rdk_points > 9 }
+		}
+		custom_cost_text = AFU_rdk_points_cost_10_tt
+
+		fire_only_once = yes
+		days_remove = 150
+
+		complete_effect = {
+			subtract_from_variable = {
+				var = AFU_rdk_points
+				value = 10
+			}
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = AFU_rdk_image
+				value = 3
+				tooltip = AFU_rdk_image_tt
+			}
+			clamp_variable = {
+				var = AFU_rdk_image
+				min = 0
+				max = 10
+			}
+			add_to_variable = {
+				var = AFU_rdk_media
+				value = 1
+				tooltip = AFU_rdk_media_tt
+			}
+			clamp_variable = {
+				var = AFU_rdk_media
+				min = 0
+				max = 10
+			}
+		}
+	}
+
+	# ----------------------------------------------------------
+	#  NSWP — establish contact
+	# ----------------------------------------------------------
+	AFU_rdk_contact_nswp_decision = {
+		icon = GFX_decision_nswp
+
+		ai_will_do = { factor = 50 }
+
+		available = {
+			has_country_flag = rvc_coop
+			custom_trigger_tooltip = {
+				tooltip = AFU_rdk_points_cost_5_tt
+				check_variable = { AFU_rdk_points > 4 }
+			}
+		}
+		visible = {
+			has_country_flag = rvc_coop
+		}
+
+    cancel_trigger = {
+    country_exists = RVC
+    }
+		custom_cost_trigger = {
+			check_variable = { AFU_rdk_points > 4 }
+		}
+		custom_cost_text = AFU_rdk_points_cost_5_tt
+
+		fire_only_once = yes
+		days_remove = 60
+
+		complete_effect = {
+			subtract_from_variable = {
+				var = AFU_rdk_points
+				value = 5
+			}
+		}
+		remove_effect = {
+			hidden_effect = {
+				set_country_flag = contact_with_nswp
+			}
+		}
+	}
+
+	# ----------------------------------------------------------
+	#  NSWP — covert operation
+	# ----------------------------------------------------------
+	AFU_rdk_nswp_operation_decision = {
+		icon = GFX_decision_nswp
+
+		ai_will_do = { factor = 50 }
+
+		available = {
+			has_country_flag = contact_with_nswp
+			custom_trigger_tooltip = {
+				tooltip = AFU_rdk_points_cost_6_tt
+				check_variable = { AFU_rdk_points > 5 }
+			}
+		}
+		visible = {
+			has_country_flag = contact_with_nswp
+		}
+
+    cancel_trigger = {
+    country_exists = RVC
+    }
+		custom_cost_trigger = {
+			check_variable = { AFU_rdk_points > 5 }
+		}
+		custom_cost_text = AFU_rdk_points_cost_6_tt
+
+		days_remove = 60
+
+		complete_effect = {
+			subtract_from_variable = {
+				var = AFU_rdk_points
+				value = 6
+			}
+		}
+		remove_effect = {
+			random_list = {
+				60 = {
+					RUS = {
+						add_stability = -0.01
+						add_manpower = -10
+					}
+				}
+				30 = {
+					RUS = {
+						add_stability = -0.03
+						add_manpower = -25
+					}
+				}
+				10 = {
+					RUS = {
+						add_stability = -0.05
+						add_manpower = -30
+					}
+				}
+			}
+		}
+	}
+
+	# ----------------------------------------------------------
+	#  NSWP — recruit members
+	# ----------------------------------------------------------
+	AFU_rdk_nswp_invite_members_decision = {
+		icon = GFX_decision_nswp
+
+		ai_will_do = { factor = 50 }
+
+		available = {
+			has_country_flag = contact_with_nswp
+			custom_trigger_tooltip = {
+				tooltip = AFU_rdk_points_cost_6_tt
+				check_variable = { AFU_rdk_points > 5 }
+			}
+		}
+		visible = {
+			has_country_flag = contact_with_nswp
+		}
+
+    cancel_trigger = {
+    country_exists = RVC
+    }
+		custom_cost_trigger = {
+			check_variable = { AFU_rdk_points > 5 }
+		}
+		custom_cost_text = AFU_rdk_points_cost_6_tt
+
+		days_remove = 60
+
+		complete_effect = {
+			subtract_from_variable = {
+				var = AFU_rdk_points
+				value = 6
+			}
+		}
+		remove_effect = {
+			random_list = {
+				60 = {
+			add_to_variable = {
+				var = AFU_rdk
+				value = 10
+				tooltip = AFU_rdk_tt
+			}
+					RUS = { add_manpower = -10 }
+				}
+				30 = {
+			add_to_variable = {
+				var = AFU_rdk
+				value = 25
+				tooltip = AFU_rdk_tt
+			}
+					RUS = { add_manpower = -25 }
+				}
+				10 = {
+			add_to_variable = {
+				var = AFU_rdk
+				value = 30
+				tooltip = AFU_rdk_tt
+			}
+					RUS = { add_manpower = -30 }
+				}
+			}
+		}
+	}
+}
+
+# ============================================================
+#  RDK CORE DECISIONS  (available after RDK is spawned)
+# ============================================================
+rdk_core = {
+
+	RDK_nationalisation = {
+		icon = GFX_decision_generic_decision
+
+		ai_will_do = { factor = 20 }
+
+		available = {
+			tag = RVC
+			any_controlled_state = {
+				is_fully_controlled_by = RVC
+				compliance > 10
+			}
+		}
+		visible = {
+			any_controlled_state = {
+				is_fully_controlled_by = RVC
+				compliance > 10
+			}
+		}
+
+		cost = 20
+		days_remove = 10
+
+		remove_effect = {
+			random_controlled_state = {
+				limit = {
+					is_fully_controlled_by = RVC
+					compliance > 10
+					NOT = { has_state_flag = RDK_liberated }
+				}
+				add_core_of = RVC
+				remove_core_of = RUS
+				set_state_flag = RDK_liberated
+			}
+		}
+	}
+
 	RDK_propaganda = {
 		icon = GFX_decision_generic_decision
-		
-				ai_will_do = {	
-			factor = 20		
-		}
-		
+
+		ai_will_do = { factor = 20 }
+
 		available = {
-			tag = RDK
-			any_controlled_state = { 
-				is_fully_controlled_by = RDK
+			tag = RVC
+			any_controlled_state = {
+				is_fully_controlled_by = RVC
 			}
 		}
 
 		cost = 10
-		
 		days_remove = 20
 
-		remove_effect  = {
+		remove_effect = {
 			random_controlled_state = {
 				limit = {
-					is_fully_controlled_by = RDK
+					is_fully_controlled_by = RVC
 				}
 				if = {
 					limit = {
-						check_variable = {AFU.rdk_media < 3}
+						check_variable = { AFU.rdk_media < 3 }
 					}
 					add_compliance = 5
 				}
 				else_if = {
 					limit = {
-						check_variable = {AFU.rdk_media > 2}
+						check_variable = { AFU.rdk_media > 2 }
 					}
 					add_compliance = 10
 				}
-			}	
+			}
 		}
 	}
 }

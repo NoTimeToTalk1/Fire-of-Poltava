@@ -1,0 +1,269 @@
+###############################################
+# Події дружніх матчів
+###############################################
+
+add_namespace = AFU_football
+
+###############################################
+# EVENT 1 — Щомісячний: анонс матчу
+# Тригериться автоматично раз на місяць
+# Рандомно обирає команди через variables
+###############################################
+
+country_event = {
+    id = AFU_football.1
+    title = AFU_football.1.t
+    desc = AFU_football.1.d
+    picture = GFX_event_report_event_football_match
+
+    is_triggered_only = yes   # викликається зі scripted_trigger
+
+    immediate = {
+		hidden_effect = {
+        random_list = {
+            3.57 = { set_variable = { AFU_match_pair = 1  } }   # Динамо       vs Шахтар
+            3.57 = { set_variable = { AFU_match_pair = 2  } }   # Динамо       vs Металіст
+            3.57 = { set_variable = { AFU_match_pair = 3  } }   # Динамо       vs Дніпро-1
+            3.57 = { set_variable = { AFU_match_pair = 4  } }   # Динамо       vs Чорноморець
+            3.57 = { set_variable = { AFU_match_pair = 5  } }   # Динамо       vs Карпати
+            3.57 = { set_variable = { AFU_match_pair = 6  } }   # Динамо       vs ФК Азов
+            3.57 = { set_variable = { AFU_match_pair = 7  } }   # Динамо       vs Ворскла
+            3.57 = { set_variable = { AFU_match_pair = 8  } }   # Шахтар       vs Металіст
+            3.57 = { set_variable = { AFU_match_pair = 9  } }   # Шахтар       vs Дніпро-1
+            3.57 = { set_variable = { AFU_match_pair = 10 } }   # Шахтар       vs Чорноморець
+            3.57 = { set_variable = { AFU_match_pair = 11 } }   # Шахтар       vs Карпати
+            3.57 = { set_variable = { AFU_match_pair = 12 } }   # Шахтар       vs ФК Азов
+            3.57 = { set_variable = { AFU_match_pair = 13 } }   # Шахтар       vs Ворскла
+            3.57 = { set_variable = { AFU_match_pair = 14 } }   # Металіст     vs Дніпро-1
+            3.57 = { set_variable = { AFU_match_pair = 15 } }   # Металіст     vs Чорноморець
+            3.57 = { set_variable = { AFU_match_pair = 16 } }   # Металіст     vs Карпати
+            3.57 = { set_variable = { AFU_match_pair = 17 } }   # Металіст     vs ФК Азов
+            3.57 = { set_variable = { AFU_match_pair = 18 } }   # Металіст     vs Ворскла
+            3.57 = { set_variable = { AFU_match_pair = 19 } }   # Дніпро-1     vs Чорноморець
+            3.57 = { set_variable = { AFU_match_pair = 20 } }   # Дніпро-1     vs Карпати
+            3.57 = { set_variable = { AFU_match_pair = 21 } }   # Дніпро-1     vs ФК Азов
+            3.57 = { set_variable = { AFU_match_pair = 22 } }   # Дніпро-1     vs Ворскла
+            3.57 = { set_variable = { AFU_match_pair = 23 } }   # Чорноморець  vs Карпати
+            3.57 = { set_variable = { AFU_match_pair = 24 } }   # Чорноморець  vs ФК Азов
+            3.57 = { set_variable = { AFU_match_pair = 25 } }   # Чорноморець  vs Ворскла
+            3.57 = { set_variable = { AFU_match_pair = 26 } }   # Карпати      vs ФК Азов
+            3.57 = { set_variable = { AFU_match_pair = 27 } }   # Карпати      vs Ворскла
+            3.58 = { set_variable = { AFU_match_pair = 28 } }   # ФК Азов      vs Ворскла 
+        }
+        set_country_flag = AFU_football_match_scheduled
+        clr_country_flag = AFU_bet_placed_this_month
+		}
+    }
+
+    option = {
+        name = AFU_football.1.a       # "Слідкуватиму за матчем"
+        if = {
+            limit = {
+                OR = {
+                    check_variable = { AFU_match_pair = 6  }
+                    check_variable = { AFU_match_pair = 12 }
+                    check_variable = { AFU_match_pair = 17 }
+                    check_variable = { AFU_match_pair = 21 }
+                    check_variable = { AFU_match_pair = 24 }
+                    check_variable = { AFU_match_pair = 26 }
+                    check_variable = { AFU_match_pair = 28 }
+                }
+            }
+            custom_effect_tooltip = AFU_derby_incoming_tooltip
+			country_event = { id = AFU_football.3 days = 7 }
+					hidden_effect = {
+        set_country_flag = AFU_azov_derby_event					
+					}
+		else = {
+		custom_effect_tooltip = AFU_match_announced_tooltip
+		country_event = { id = AFU_football.2 days = 7 }
+		}
+        }
+    }
+
+}
+
+
+###############################################
+# EVENT 2 — Результат матчу
+# Тригериться після того, як гравець зробив вибір
+###############################################
+
+country_event = {
+    id = AFU_football.2
+    title = AFU_football.2.t
+    desc = AFU_football.2.d
+    picture = GFX_event_report_event_football_match
+
+    is_triggered_only = yes
+	
+    immediate = {
+		hidden_effect = {
+        # Симулюємо результат: 50/50 між командою А та Б
+        random_list = {
+            50 = { set_variable = { AFU_match_winner = 1 } }  # Перемогла команда А
+            50 = { set_variable = { AFU_match_winner = 2 } }  # Перемогла команда Б
+			}
+        }
+    }
+
+    # ── Варіант: гравець поставив на А, А перемогла ──
+    option = {
+        name = AFU_football.2.win_a
+        trigger = {
+            check_variable = { AFU_player_bet = 1 }
+            check_variable = { AFU_match_winner = 1 }
+        }
+        custom_effect_tooltip = AFU_win_bet_tooltip
+        AFU_football_win_bonus = yes
+        hidden_effect = {
+        AFU_football_clear_shedule = yes
+        }
+    }
+
+    # ── Варіант: гравець поставив на Б, Б перемогла ──
+    option = {
+        name = AFU_football.2.win_b
+        trigger = {
+            check_variable = { AFU_player_bet = 2 }
+            check_variable = { AFU_match_winner = 2 }
+        }
+        custom_effect_tooltip = AFU_win_bet_tooltip
+        AFU_football_win_bonus = yes
+        hidden_effect = {
+        AFU_football_clear_shedule = yes
+        }
+    }
+
+    # ── Варіант: гравець поставив на А, але Б перемогла ──
+    option = {
+        name = AFU_football.2.lose_a
+        trigger = {
+            check_variable = { AFU_player_bet = 1 }
+            check_variable = { AFU_match_winner = 2 }
+        }
+        custom_effect_tooltip = AFU_lose_bet_tooltip
+        AFU_football_lose_penalty = yes
+        hidden_effect = {
+        AFU_football_clear_shedule = yes
+        }
+    }
+
+    # ── Варіант: гравець поставив на Б, але А перемогла ──
+    option = {
+        name = AFU_football.2.lose_b
+        trigger = {
+            check_variable = { AFU_player_bet = 2 }
+            check_variable = { AFU_match_winner = 1 }
+        }
+        custom_effect_tooltip = AFU_lose_bet_tooltip
+        AFU_football_lose_penalty = yes
+        hidden_effect = {
+        AFU_football_clear_shedule = yes
+        }
+    }
+
+    # ── Варіант: гравець пропустив матч ──
+    option = {
+        name = AFU_football.2.skip
+        trigger = {
+            check_variable = { AFU_player_bet = 0 }
+            check_variable = { AFU_match_winner = 1 }
+        }
+        # Нейтральний результат — невеликий бонус від самого факту матчу
+        custom_effect_tooltip = AFU_skip_result_tooltip
+        AFU_football_neutral_result = yes
+        hidden_effect = {
+        AFU_football_clear_shedule = yes
+        }
+    }
+
+    # ── Варіант: гравець пропустив матч ──
+    option = {
+        name = AFU_football.2.skip2
+        trigger = {
+            check_variable = { AFU_player_bet = 0 }
+            check_variable = { AFU_match_winner = 2 }
+        }
+        # Нейтральний результат — невеликий бонус від самого факту матчу
+        custom_effect_tooltip = AFU_skip_result_tooltip
+        AFU_football_neutral_result = yes
+        hidden_effect = {
+        AFU_football_clear_shedule = yes
+        }
+    }
+}
+
+
+###############################################
+# EVENT 3 — Спецподія: ФК Азов на полі
+# Тригер: будь-яка пара де бере участь ФК Азов
+# (пари: 6, 12, 17, 21, 24, 26, 28)
+###############################################
+
+country_event = {
+    id = AFU_football.3
+    title = AFU_football.3.t
+    desc = AFU_football.3.d
+    picture = GFX_event_report_event_football_match_azov
+	
+    fire_only_once = no
+    is_triggered_only = yes
+
+    option = {
+        name = AFU_football.3.a   
+    add_popularity = {
+        ideology = ultranationalism
+        popularity = 0.05
+    }
+        add_stability = 0.005
+        AFU_football_clear_shedule = yes
+    }
+
+    option = {
+        name = AFU_football.3.b   
+        add_stability = 0.01
+        AFU_football_clear_shedule = yes
+    }
+}
+
+
+###############################################
+# Косметичний івент ФК Азов проти ФК РДК
+###############################################
+
+country_event = {
+    id = AFU_football.4
+    title = AFU_football.4.t
+    desc = AFU_football.4.d
+    picture = GFX_event_azov_rvc_football
+	
+    fire_only_once = no
+    is_triggered_only = yes
+
+    option = {
+        name = AFU_football.4.a   
+			add_to_variable = {
+				var = AFU_rdk_points
+				value = 1
+				tooltip = AFU_rdk_points_small_trickle_tt
+			}
+			clamp_variable = {
+				var = AFU_rdk_points
+				min = 0
+				max = 100
+			}
+			add_to_variable = {
+				var = AFU_rdk_media
+				value = 1
+				tooltip = AFU_rdk_media_tt
+			}
+			clamp_variable = {
+				var = AFU_rdk_media
+				min = 0
+				max = 10
+			}
+    }
+}
+
+

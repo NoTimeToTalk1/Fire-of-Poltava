@@ -1,0 +1,37 @@
+# ============================================================
+#  RDK Country Ideas — applied at war start based on variables
+# ============================================================
+
+ideas = {
+
+	country = {
+
+		# Applied when AFU_rdk_image < 3
+		RDK_poor_image = {
+			picture = GFX_idea_rdk_poor_image
+
+			allowed = { always = no }   # only via effect
+			removal_cost = -1
+
+			modifier = {
+				conscription_factor = -0.10
+				stability_factor = -0.05
+				war_support_factor = -0.05
+			}
+		}
+
+		# Applied when AFU_rdk_image > 6
+		RDK_good_image = {
+			picture = GFX_idea_rdk_good_image
+
+			allowed = { always = no }
+			removal_cost = -1
+
+			modifier = {
+				conscription_factor = 0.10
+				stability_factor = 0.05
+				political_power_gain = 0.10
+			}
+		}
+	}
+}

@@ -5,45 +5,35 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			OR = {
-				original_tag = BDZ
-				original_tag = BUK
-				original_tag = CBL
-				#original_tag = CHE
-				original_tag = CHR
-				original_tag = DNI
-				original_tag = HAL
-				original_tag = HUT
-				original_tag = KHA
-				original_tag = KHE
-				#original_tag = KIR
-				original_tag = KOB
-				original_tag = KRM
-				original_tag = KYI
-				original_tag = MYK
-				original_tag = ODE
-				original_tag = OLD
-				original_tag = PLT
-				original_tag = RIV
-				original_tag = SHA
-				original_tag = STR
-				original_tag = SUM
-				original_tag = UMA
-				original_tag = VIN
-				original_tag = VOL
-				original_tag = ZAK
-				original_tag = ZAP
-				original_tag = ZHY
+			AND = {
+				OR = {
+					is_galicia_ukraine = yes
+					is_podolia_ukraine = yes
+					is_siveria_ukraine = yes
+					is_dnieper_ukraine = yes
+					is_buh_ukraine = yes
+					is_tavria_ukraine = yes
+					is_donbas_ukraine = yes
+					original_tag = DNI
+				}
+				FOP_has_content = no
 			}
 		}
 	}
+	default = no
+	shared_focus = FOP_Fire_Of_Poltava
+	shared_focus = FOP_We_Stand_On_Ground
+	shared_focus = FOP_Unification_Of_The_Region
+	shared_focus = FOP_Last_Steps
+}	
+	
 
-focus = {
+shared_focus = {
 	id = FOP_Fire_Of_Poltava
 	icon = GFX_FOP_Fire_Of_Poltava
     cost = 1
 
-	x = 35
+	x = 50
 	y = 1
 
 	completion_reward = {
@@ -54,7 +44,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_We_Are_Holding
 	icon = GFX_FOP_We_Are_Holding
     cost = 2
@@ -73,7 +63,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Time_To_Reorganise
 	icon = GFX_FOP_Time_To_Reorganise
     cost = 2
@@ -103,7 +93,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_What_About_Army
 	icon = GFX_FOP_What_About_Army
 	cost = 2
@@ -119,7 +109,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Rely_On_Militias
 	icon = GFX_FOP_Rely_On_Militias
 	cost = 2
@@ -137,7 +127,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Rely_On_Vehicles
 	icon = GFX_FOP_Rely_On_Vehicles
 	cost = 2
@@ -155,7 +145,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Rely_On_Professionals
 	icon = GFX_FOP_Rely_On_Professionals
 	cost = 2
@@ -173,7 +163,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Gather_Militants
 	icon = GFX_FOP_Gather_Militants
 	cost = 6
@@ -213,7 +203,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Seize_What_We_Can
 	icon = GFX_FOP_Seize_What_We_Can
 	cost = 7
@@ -238,7 +228,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Search_For_Skilled_Personnel
 	icon = GFX_FOP_Search_For_Skilled_Personnel
     cost = 5
@@ -254,7 +244,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Making_Up_General_Staff
 	icon = GFX_FOP_Making_Up_General_Staff
     cost = 8
@@ -278,7 +268,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Find_Warehouses
 	icon = GFX_FOP_Find_Warehouses
     cost = 5
@@ -294,7 +284,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Mobilisation
 	icon = GFX_FOP_Mobilisation
     cost = 6
@@ -318,7 +308,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Prepare_Equipment_Production
 	icon = GFX_FOP_Prepare_Equipment_Production
     cost = 5
@@ -331,6 +321,11 @@ focus = {
     prerequisite = { focus = FOP_Find_Warehouses }
 	
 	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.25
+			uses = 2
+			category = infantry_weapons
+		}
 		add_ideas = FOP_starting_equipment_production
 		random_owned_controlled_state = {
 			add_building_construction = {
@@ -343,7 +338,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Bad_Times
 	icon = GFX_FOP_Bad_Times
     cost = 2
@@ -359,7 +354,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Require_Better_Treatment
 	icon = GFX_FOP_Require_Better_Treatment
     cost = 2
@@ -372,6 +367,11 @@ focus = {
 	prerequisite = { focus = FOP_Bad_Times }
 	
 	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.15
+			uses = 1
+			category = incentive_workforce
+		}
 		add_ideas = FOP_ease_up
 		hidden_effect = {
 			country_event = {
@@ -382,7 +382,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Make_Strong_People
 	icon = GFX_FOP_Make_Strong_People
     cost = 2
@@ -395,6 +395,11 @@ focus = {
     prerequisite = { focus = FOP_Bad_Times }
 	
 	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.15
+			uses = 1
+			category = mandatory_workforce
+		}
 		add_ideas = FOP_strict_rule
 		hidden_effect = {
 			country_event = {
@@ -405,7 +410,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Reorganise_The_Administration
 	icon = GFX_FOP_Reorganise_The_Administration
     cost = 5
@@ -422,7 +427,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Appease_The_Populace
 	icon = GFX_FOP_Appease_The_Populace
     cost = 6
@@ -447,7 +452,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Earn_The_Trust
 	icon = GFX_FOP_Earn_The_Trust
     cost = 4
@@ -470,7 +475,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Its_Fine
 	icon = GFX_FOP_Its_Fine
     cost = 3
@@ -491,7 +496,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_No_Time_To_Whine
 	icon = GFX_FOP_No_Time_To_Whine
     cost = 3
@@ -512,7 +517,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_We_Will_See_The_Future
 	icon = GFX_FOP_We_Will_See_The_Future
     cost = 5
@@ -531,7 +536,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Look_Into_Industry
 	icon = GFX_FOP_Look_Into_Industry
     cost = 2
@@ -550,7 +555,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_The_More_The_Better
 	icon = GFX_FOP_The_More_The_Better
     cost = 3
@@ -564,10 +569,20 @@ focus = {
 	
 	completion_reward = {
 		add_ideas = FOP_production_quantity
+		add_tech_bonus = {
+			bonus = 0.15
+			uses = 2
+			category = crates
+		}
+		add_tech_bonus = {
+			bonus = 0.25
+			uses = 2
+			category = dispersed_industry_category
+		}
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Concentrate_Product_Quality
 	icon = GFX_FOP_Concentrate_Product_Quality
     cost = 3
@@ -581,10 +596,20 @@ focus = {
 	
 	completion_reward = {
 		add_ideas = FOP_production_quality
+		add_tech_bonus = {
+			bonus = 0.15
+			uses = 2
+			category = tools
+		}
+		add_tech_bonus = {
+			bonus = 0.25
+			uses = 2
+			category = concentrated_industry_category
+		}
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Stabilize_Production
 	icon = GFX_FOP_Stabilize_Production
     cost = 3
@@ -602,7 +627,7 @@ focus = {
 		}
 	}
 }
-focus = {
+shared_focus = {
 	id = FOP_Expand_Factories
 	icon = GFX_FOP_Expand_Factories
     cost = 5
@@ -638,7 +663,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Organize_Workers
 	icon = GFX_FOP_Organize_Workers
     cost = 3
@@ -652,12 +677,17 @@ focus = {
 	completion_reward = {
 		add_ideas = FOP_workers_organisation
 		FOP_unemployment_small_improvement = yes
+		add_tech_bonus = {
+			bonus = 0.15
+			uses = 1
+			category = workforce
+		}
 	}
 }
 
 
 
-focus = {
+shared_focus = {
 	id = FOP_The_More_We_Work_The_Better_Our_Chances
 	icon = GFX_FOP_The_More_We_Work_The_Better_Our_Chances
     cost = 4
@@ -682,7 +712,7 @@ focus = {
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Rudimentary_Resource_Production
 	icon = GFX_FOP_Rudimentary_Resource_Production
     cost = 4
@@ -697,10 +727,15 @@ focus = {
 
 	completion_reward = {
 		unlock_decision_category_tooltip = FOP_resources
+		add_tech_bonus = {
+			bonus = 0.15
+			uses = 1
+			category = excavation_tech
+		}
 	}
 }
 
-focus = {
+shared_focus = {
 	id = FOP_Jumpstart_The_Industry
 	icon = GFX_FOP_Jumpstart_The_Industry
     cost = 6
@@ -724,6 +759,4 @@ focus = {
 			}
 		}
 	}
-}
-
 }

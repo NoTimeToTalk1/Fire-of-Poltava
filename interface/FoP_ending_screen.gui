@@ -1,0 +1,154 @@
+guiTypes = {
+	containerwindowtype = {
+		name = "FOP_Ending_Screen"
+		size = { width = 1000 height = 442 }
+		orientation = center
+		position = { x = -471 y = -221 }
+		moveable = yes
+		click_to_front = yes
+		clipping = no
+		background = {
+			name = "bg"
+			quadtexturesprite = "GFX_tiled_window_transparent"
+		}
+		iconType = {
+			name = "poster"
+			position = { x = 15 y = 8 }
+			alwaystransparent = no
+		}
+		iconType = {
+			name = "background"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_Info_Screen_background"
+			alwaystransparent = yes
+		}
+		gridboxtype = {
+			name = "Top_Tabs"
+			position = { x = 109 y = -40 }
+			slotsize = { width = 188 height = 45 }
+			add_horizontal = yes
+			max_slots_horizontal = 4
+		}
+		iconType = {
+			name = "flag"
+			position = { x = 410 y = 13 }
+			spriteType = "GFX_flag_small"
+		}
+		instantTextBoxType = {
+			name = "country_name"
+			position = { x = 440 y = 3 }
+			text = "[ROOT.GetName]"
+			maxwidth = 150
+			maxheight = 36
+			vertical_alignment = center
+		}
+		instantTextBoxType = {
+			name = "entry_title"
+			position = { x = 155 y = 45 }
+			text = "[Ending_Screen_Get_Content_Country]"
+			font = "aldrich_32_outline"
+			maxwidth = 690
+			maxheight = 32
+			format = left
+			text_color_code = Y
+			format = center
+		}
+		instantTextBoxType = {
+			name = "entry_desc"
+			position = { x = 20 y = 82 }
+			text = "[Ending_Screen_Get_Content_Desc_Country]"
+			font = "aldrich_20_outline"
+			maxwidth = 930
+			maxheight = 377
+			format = left
+		}
+		buttonType = {
+			name = "closing_button"
+			position = { x = 438 y = 390 }
+			quadTextureSprite = "GFX_button_123x34"
+			buttonText = "[Get_Closing_Closing_Button_Text]"
+			buttonFont = "Bomb_16"
+			pdx_tooltip = FOP_Ending_Screen_Closing_Button_tt
+			shortcut = "ESCAPE"
+		}
+	}
+
+	containerWindowType = {
+		name = "Ending_Screen_Top_Tabs_entry"
+		size = { width = 188 height = 45 }
+		buttonType = {
+			name = "tab_button"
+			spriteType = "GFX_Info_Screen_Top_Tabs"
+			clicksound = "open_sub_window"
+		}
+		instantTextBoxType = {
+			name = "tab_text"
+			position = { x = 15 y = 0 }
+			text = [Ending_Screen_Get_Tab_Name]
+			font = "aldrich_18_outline"
+			maxwidth = 200
+			maxheight = 32
+			vertical_alignment = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "FOP_Ending_Screen_Credits"
+		position = { x = 0 y = 0 }
+		containerWindowType = {
+			name = "gridbox_container"
+			size = { width = 177 height = 379 }
+			position = { x = 15 y = 75 }
+			clipping = yes
+			gridboxtype = {
+				name = "entry_gridbox"
+				slotsize = { width = 0 height = 36 }
+				add_horizontal = no
+				max_slots_horizontal = 1
+			}
+		}
+		instantTextBoxType = {
+			name = "credits_title"
+			position = { x = 220 y = 45 }
+			text = "[Ending_Screen_Get_Credits]"
+			font = "aldrich_32_outline"
+			maxwidth = 545
+			maxheight = 32
+			format = left
+			text_color_code = Y
+			format = center
+		}
+		instantTextBoxType = {
+			name = "credits_desc"
+			position = { x = 200 y = 75 }
+			text = "[Ending_Screen_Get_Credits_Desc_Country]"
+			font = "aldrich_20_outline"
+			maxwidth = 750
+			maxheight = 377
+			format = left
+		}
+	}
+
+	containerWindowType = {
+		name = "Ending_Screen_Content_Entry"
+		size = { width = 130 height = 36 }
+		clipping = no
+		buttonType = {
+			name = "Content_button"
+			position = { x = 12 y = -1 }
+			spriteType = "GFX_Info_Screen_entry_content"
+			pdx_tooltip = Ending_Screen_Content_button_tt
+		}
+		instantTextBoxType = {
+			name = "content_text"
+			position = { x = 20 y = 0 }
+			text = [Ending_Screen_Get_Content_Country]
+			maxwidth = 125
+			maxheight = 30
+			vertical_alignment = center
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+	}
+}

@@ -1,34 +1,27 @@
-focus_tree = {
-	id = fop_generic_region
-	continuous_focus_position = { x = 0 y = 1000 }
-	country = {
-		factor = 0
-		modifier = {
-			add = 10
-			OR = {
-                tag = WST
-                tag = NRT 
-                tag = STH 
-                tag = ESN
-		        tag = KOS
-            }
-		}
-	}
-
-    focus = {
+    shared_focus = {
         id = FOP_Unification_Of_The_Region
         icon = GFX_FOP_Unification_Of_The_Region
         cost = 1
 
 		x = 50
-        y = 1
+        y = 21
+
+        allow_branch = {
+            OR = {
+                tag = WST
+                tag = NRT
+                tag = STH
+                tag = ESN
+            }
+            FOP_has_content = no
+        }
 
         completion_reward = {
             
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Regional_Administration_Expansion
         icon = GFX_FOP_Regional_Administration_Expansion
         cost = 5
@@ -45,7 +38,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Prepare_To_Work_Further
         icon = GFX_FOP_Prepare_To_Work_Further
         cost = 5
@@ -61,7 +54,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Lets_Go
         icon = GFX_FOP_Lets_Go
         cost = 1
@@ -79,7 +72,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Expansion_Of_The_Military
         icon = GFX_FOP_Expansion_Of_The_Military
         cost = 1
@@ -95,7 +88,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Doctrinal_Enhancement
         icon = GFX_FOP_Doctrinal_Enhancement
         cost = 1
@@ -115,7 +108,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Military_Excercises 
         icon = GFX_FOP_Military_Excercises 
         cost = 1
@@ -131,7 +124,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Keeping_Professionalism_Growing
         icon = GFX_FOP_Keeping_Professionalism_Growing
         cost = 1
@@ -147,7 +140,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Open_Military_Education_Facilities
         icon = GFX_FOP_Open_Military_Education_Facilities
         cost = 6
@@ -176,7 +169,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Generals_Qualification_Raise
         icon = GFX_FOP_Generals_Qualification_Raise
         x = 4
@@ -196,7 +189,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_More_Military_Complex_Investments
         icon = GFX_FOP_More_Military_Complex_Investments
         cost = 1
@@ -215,7 +208,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Look_Into_Skies
         icon = GFX_FOP_Look_Into_Skies
         cost = 1
@@ -231,7 +224,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Restore_Airbases
         icon = GFX_FOP_Restore_Airbases
         cost = 1
@@ -260,7 +253,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Start_Planes_Production
         icon = GFX_FOP_Start_Planes_Production
         cost = 1
@@ -281,7 +274,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Look_For_Foreign_Airplanes
         icon = GFX_FOP_Look_For_Foreign_Airplanes
         cost = 1
@@ -298,7 +291,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Open_Pilot_Academy
         icon = GFX_FOP_Open_Pilot_Academy
         cost = 1
@@ -314,7 +307,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Enhance_Arms_Production_Capabilities
         icon = GFX_FOP_Enhance_Arms_Production_Capabilities
         cost = 1
@@ -330,7 +323,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_New_Weapon_Market_Opportunities
         icon = GFX_FOP_New_Weapon_Market_Opportunities
         cost = 1
@@ -342,12 +335,17 @@ focus_tree = {
         prerequisite = { focus = FOP_Enhance_Arms_Production_Capabilities }
        
         completion_reward = {
+    add_to_variable = { 
+        var = WL_bm_tier 
+        value = 1 
+		tooltip = bm_upgraded
+    }
             unlock_decision_category_tooltip = FOP_weapon_market_increased
             set_country_flag = FOP_weapon_market_increased
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Create_More_Military_Jobs
         icon = GFX_FOP_Create_More_Military_Jobs
         cost = 1
@@ -367,7 +365,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Engaging_In_Politics
         icon = GFX_FOP_Engaging_In_Politics
         cost = 1
@@ -390,7 +388,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Set_Up_Our_MFA
         icon = GFX_FOP_Set_Up_Our_MFA
         cost = 1
@@ -406,7 +404,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Organize_International_Communication
         icon = GFX_FOP_Organize_International_Communication
         cost = 1
@@ -422,30 +420,30 @@ focus_tree = {
                 limit = {
                     tag = WST
                 }
-                news_event = FOP_global_warlord.12
+                news_event = FOP_global_warlord.15
             }
             if = {
                 limit = {
                     tag = ESN
                 }
-                news_event = FOP_global_warlord.13
+                news_event = FOP_global_warlord.16
             }
             if = {
                 limit = {
                     tag = NRT
                 }
-                news_event = FOP_global_warlord.14
+                news_event = FOP_global_warlord.17
             }
             if = {
                 limit = {
                     tag = STH
                 }
-                news_event = FOP_global_warlord.15
+                news_event = FOP_global_warlord.18
             }
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Watching_Around_Us
         icon = GFX_FOP_Watching_Around_Us
         cost = 1
@@ -462,7 +460,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Seek_International_Recognition
         icon = GFX_FOP_Seek_International_Recognition
         cost = 1
@@ -481,7 +479,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Watch_To_The_West
         icon = GFX_FOP_Watch_To_The_West
         cost = 1
@@ -508,7 +506,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Open_Gates_To_Europe
         icon = GFX_FOP_Open_Gates_To_Europe
         cost = 1
@@ -528,7 +526,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Western_Investments
         icon = GFX_FOP_Western_Investments
         cost = 1
@@ -557,7 +555,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Alignment_With_Free_World
         icon = GFX_FOP_Alignment_With_Free_World
         cost = 1
@@ -585,7 +583,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_We_Are_Alone
         icon = GFX_FOP_We_Are_Alone
         cost = 1
@@ -607,7 +605,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Thinking_Of_Self_Sufficiency
         icon = GFX_FOP_Thinking_Of_Self_Sufficiency
         cost = 1
@@ -623,7 +621,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Window_For_Questionable_Opportunities
         icon = GFX_FOP_Window_For_Questionable_Opportunities
         cost = 1
@@ -636,10 +634,15 @@ focus_tree = {
        
         completion_reward = {
             country_event = FOP_generic.31
+    add_to_variable = { 
+        var = WL_bm_tier 
+        value = 1 
+		tooltip = bm_upgraded
+    }
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_We_Will_Survive_Without_Anyone
         icon = GFX_FOP_We_Will_Survive_Without_Anyone
         cost = 1
@@ -658,7 +661,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Watch_To_The_East
         icon = GFX_FOP_Watch_To_The_East
         cost = 5
@@ -685,7 +688,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Closer_To_Multipolar_World
         icon = GFX_FOP_Closer_To_Multipolar_World
         cost = 1
@@ -705,7 +708,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Offer_What_We_Can
         icon = GFX_FOP_Offer_What_We_Can
         cost = 1
@@ -734,7 +737,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Eastern_Connections
         icon = GFX_FOP_Eastern_Connections
         cost = 1
@@ -763,7 +766,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Engage_With_Ukrainian_Warlords
         icon = GFX_FOP_Engage_With_Ukrainian_Warlords
         cost = 1
@@ -780,7 +783,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Look_For_Diplomacy
         icon = GFX_FOP_Look_For_Diplomacy
         cost = 1
@@ -797,7 +800,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Send_Diplomats_To_Warlords
         icon = GFX_FOP_Send_Diplomats_To_Warlords
         cost = 1
@@ -825,7 +828,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Establish_Intelligence_Service
         icon = GFX_FOP_Establish_Intelligence_Service
         cost = 1
@@ -843,7 +846,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Mutual_Aid
         icon = GFX_FOP_Mutual_Aid
         cost = 1
@@ -874,7 +877,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Entrench_Ourselves
         icon = GFX_FOP_Entrench_Ourselves
         cost = 1
@@ -891,7 +894,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Reinforce_Secureness
         icon = GFX_FOP_Reinforce_Secureness
         cost = 1
@@ -907,7 +910,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_We_Need_No_Allies
         icon = GFX_FOP_We_Need_No_Allies
         cost = 1
@@ -937,7 +940,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Slow_Return_To_Normalcy
         icon = GFX_FOP_Slow_Return_To_Normalcy
         cost = 1
@@ -956,7 +959,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Political_Laws_Revision
         icon = GFX_FOP_Political_Laws_Revision
         cost = 5
@@ -980,7 +983,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Community_Laws_Revision
         icon = GFX_FOP_Community_Laws_Revision
         cost = 28
@@ -1003,7 +1006,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Set_Up_National_Medias
         icon = GFX_FOP_Set_Up_National_Medias
         cost = 1
@@ -1019,7 +1022,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Public_Relations
         icon = GFX_FOP_Public_Relations
         cost = 1
@@ -1035,7 +1038,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Invest_In_Education
         icon = GFX_FOP_Invest_In_Education
         cost = 1
@@ -1065,7 +1068,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Everything_For_People
         icon = GFX_FOP_Everything_For_People
         cost = 1
@@ -1084,7 +1087,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Everything_For_State
         icon = GFX_FOP_Everything_For_State
         cost = 1
@@ -1103,7 +1106,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Fire_Of_Poltava_Extinguishes
         icon = GFX_FOP_Fire_Of_Poltava_Extinguishes
         cost = 1
@@ -1112,14 +1115,14 @@ focus_tree = {
         x = 0
         y = 4
        
-        prerequisite = { focus = FOP_Everything_For_People FOP_Everything_For_State }
+        prerequisite = { focus = FOP_Everything_For_People focus = FOP_Everything_For_State }
        
         completion_reward = {
             remove_ideas = FOP_ruin_5
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Water_The_Seeds_For_Economy
         icon = GFX_FOP_Water_The_Seeds_For_Economy
         cost = 1
@@ -1138,7 +1141,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Coming_To_International_Market
         icon = GFX_FOP_Coming_To_International_Market
         cost = 1
@@ -1155,7 +1158,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Negotiate_For_Exports
         icon = GFX_FOP_Negotiate_For_Exports
         cost = 1
@@ -1172,7 +1175,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Look_For_Imports
         icon = GFX_FOP_Look_For_Imports
         cost = 1
@@ -1189,7 +1192,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Become_Reliable_Trade_Partners
         icon = GFX_FOP_Become_Reliable_Trade_Partners
         cost = 1
@@ -1235,7 +1238,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Focus_On_Domestic_Issues
         icon = GFX_FOP_Focus_On_Domestic_Issues
         cost = 1
@@ -1251,7 +1254,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Industrial_Restoration
         icon = GFX_FOP_Industrial_Restoration
         cost = 5
@@ -1281,7 +1284,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Revitalize_Agriculture
         icon = GFX_FOP_Revitalize_Agriculture
         cost = 5
@@ -1311,7 +1314,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Scientific_Investments
         icon = GFX_FOP_Scientific_Investments
         cost = 1
@@ -1327,7 +1330,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Construction_Works
         icon = GFX_FOP_Construction_Works
         cost = 1
@@ -1347,7 +1350,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Contact_The_IMF
         icon = GFX_FOP_Contact_The_IMF
         cost = 5
@@ -1393,7 +1396,7 @@ focus_tree = {
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_Embrace_Shadow_Economy
         icon = GFX_FOP_Embrace_Shadow_Economy
         cost = 1
@@ -1409,10 +1412,15 @@ focus_tree = {
         mutually_exclusive = { focus = FOP_Contact_The_IMF }
         completion_reward = {
             add_ideas = FOP_shadow_economy
+    add_to_variable = { 
+        var = WL_bm_tier 
+        value = 1 
+		tooltip = bm_upgraded
+    }
         }
     }
 
-    focus = {
+    shared_focus = {
         id = FOP_New_Economic_Miracle
         icon = GFX_FOP_New_Economic_Miracle
         cost = 1
@@ -1430,5 +1438,4 @@ focus_tree = {
             }
             FOP_poverty_medium_improvement = yes
         }
-    }
-}    
+    }  

@@ -13,7 +13,16 @@ world_legitimacy = {
 			NOT = {
                 has_idea = fop_press_freedom_free
             }
-		}		
+            FOP_has_content = no
+		}	
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                is_pro_european = yes
+            }
+        }	
 
 		cost = 25
 
@@ -47,7 +56,16 @@ world_legitimacy = {
                     has_idea = fop_suffrage_elite
                 }
             }
-		}		
+            FOP_has_content = no
+		}	
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                is_pro_european = yes
+            }
+        }	
 
 		cost = 25
 
@@ -71,7 +89,16 @@ world_legitimacy = {
 		visible = {
             has_country_flag = FOP_world_legitimacy	
 			has_idea = fop_party_system_nonpartisan
-		}		
+            FOP_has_content = no
+		}
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                is_pro_european = yes
+            }
+        }		
 
 		cost = 50
 
@@ -95,7 +122,16 @@ world_legitimacy = {
 		visible = {
             has_country_flag = FOP_world_legitimacy
             has_idea = fop_ethnic_minorities_opression
-		}		
+            FOP_has_content = no
+		}
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                is_pro_european = yes
+            }
+        }		
 
 		cost = 15
 
@@ -119,7 +155,16 @@ world_legitimacy = {
 		visible = {	
             has_country_flag = FOP_world_legitimacy
             has_idea = fop_sexual_minorities_compulsory_sterilization
-		}		
+            FOP_has_content = no
+		}
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                is_pro_european = yes
+            }
+        }
 
 		cost = 15
 
@@ -141,7 +186,12 @@ world_legitimacy = {
 
 		visible = {	
             has_country_flag = eu_help
+            FOP_has_content = no
 		}
+
+        ai_will_do = {
+            base = 100
+        }
 
         modifier = {
             consumer_goods_factor = 0.15
@@ -154,9 +204,13 @@ world_legitimacy = {
     imf_ask_for_loan = {
         visible = {
             has_country_flag = IMF_accepted
+            FOP_has_content = no
         }
         modifier = {
             consumer_goods_factor = -0.1
+        }
+        ai_will_do = {
+            base = 100
         }
         days_remove = 60
         complete_effect = {
@@ -175,7 +229,16 @@ world_legitimacy = {
 
 		visible = {	
             has_country_flag = FOP_world_legitimacy
+            FOP_has_content = no
 		}		
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                is_pro_russian = yes
+            }
+        }
 
 		cost = 30
 
@@ -195,8 +258,17 @@ world_legitimacy = {
         days_remove = 30
 
 		visible = {
-            has_country_flag = FOP_world_legitimacy	
-		}		
+            has_country_flag = FOP_world_legitimacy
+            FOP_has_content = no
+		}	
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                is_pro_russian = yes
+            }
+        }	
 
 		cost = 30
 
@@ -235,7 +307,16 @@ world_legitimacy = {
 			NOT = {
                 has_idea = fop_sexual_minorities_criminalized
             }
-		}		
+            FOP_has_content = no
+		}
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                is_pro_russian = yes
+            }
+        }		
 
 		cost = 30
 
@@ -273,8 +354,8 @@ world_legitimacy = {
             }
             if = {
                 limit = {
-                    AME = {
-                        has_country_leader = USA_biden
+                    USA = {
+                        has_country_leader = USA_trump
                     }
                 }
                 add_to_variable = {
@@ -285,34 +366,7 @@ world_legitimacy = {
             }
    	    }
     }
-    tr_look_for_trading_resources = {
-        available = { 
-			
-		}		
-		fire_only_once = yes
-        days_remove = 30
-
-		visible = {
-            has_country_flag = FOP_world_legitimacy	
-			USA = {
-                has_country_leader = {
-                    character = USA_trump
-                }
-            }
-		}		
-
-		cost = 30
-
-		remove_effect = {
-            add_to_variable = {
-                var = FOP_america_allegiance
-                value = 2
-                tooltip = FOP_america_allegiance_tt
-            }
-            set_country_flag = tr_ready_to_trade
-   	    }
-    }
-    tr_great_deal = {
+    tr_express_support = {
         available = { 
 			
 		}		
@@ -325,38 +379,24 @@ world_legitimacy = {
                     character = USA_trump
                 }
             }
-            has_country_flag = tr_ready_to_trade
-		}
-        modifier = {
-            consumer_goods_factor = 0.2
-            political_power_gain_factor = -0.2
-        }		
+            FOP_has_content = no
+		}		
 		cost = 30
 
-		complete_effect = {
-            add_political_power = 50
-            add_to_variable = {
-                var = FOP_america_allegiance
-                value = 2
-                tooltip = FOP_america_allegiance_tt
-            }
-   	    }
-    }
-    tr_express_support = {
-        available = { 
-			
-		}		
-        days_remove = 30
-
-		visible = {
-            has_country_flag = FOP_world_legitimacy	
-			USA = {
-                has_country_leader = {
-                    character = USA_trump
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                OR = {
+                    has_government = oligarchism
+                    has_government = conservatism
+                    AND = {
+                        has_government = traditionalism
+                        is_pro_russian = no
+                    }
                 }
             }
-		}		
-		cost = 30
+        }
 
 		complete_effect = {
             add_political_power = 50
@@ -366,6 +406,459 @@ world_legitimacy = {
                 tooltip = FOP_america_allegiance_tt
             }
    	    }
+    }
+    tr_stand_with_traditional_rights = {
+        available = { 
+			
+		}		
+		fire_only_once = yes
+        days_remove = 30
+
+		visible = {
+            has_country_flag = FOP_world_legitimacy	
+			NOT = {
+                has_idea = fop_sexual_minorities_criminalized
+            }
+            FOP_has_content = no
+            USA = {
+                has_country_leader = USA_trump
+            }
+		}
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                OR = {
+                    has_government = oligarchism
+                    has_government = conservatism
+                    AND = {
+                        has_government = traditionalism
+                        is_pro_russian = no
+                    }
+                }
+            }
+        }		
+
+		cost = 30
+
+		complete_effect = {
+            add_ideas = fop_sexual_minorities_criminalized
+            add_to_variable = {
+                var = FOP_trump_allegiance
+                value = 1
+                tooltip = FOP_trump_allegiance_increase_tt
+            }
+            add_to_variable = {
+                var = FOP_russia_allegiance
+                value = 2
+                tooltip = FOP_russia_allegiance_tt
+            }
+            add_to_variable = {
+                var = FOP_europe_allegiance
+                value = -1
+                tooltip = FOP_europe_allegiance_decrease_tt
+            }
+            if = {
+                limit = {
+                    has_country_flag = eu_accepted_free_speech
+                }
+                add_to_variable = {
+                    var = FOP_europe_allegiance
+                    value = -1
+                    tooltip = FOP_europe_allegiance_decrease_tt
+                }
+            }
+            if = {
+                limit = {
+                    has_country_flag = eu_lightened_lgbt_laws
+                }
+                add_to_variable = {
+                    var = FOP_europe_allegiance
+                    value = -1
+                    tooltip = FOP_europe_allegiance_decrease_tt
+                }
+            }
+            
+   	    }
+    }
+    tr_offer_trump_resources = {
+        available = { 
+			
+		}		
+		fire_only_once = yes
+        days_remove = 30
+
+		visible = {
+            has_country_flag = FOP_world_legitimacy	
+			NOT = {
+                has_idea = fop_sexual_minorities_criminalized
+            }
+            FOP_has_content = no
+            USA = {
+                has_country_leader = USA_trump
+            }
+		}
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                OR = {
+                    has_government = oligarchism
+                    has_government = conservatism
+                    AND = {
+                        has_government = traditionalism
+                        is_pro_russian = no
+                    }
+                }
+            }
+        }		
+
+		cost = 40
+
+		complete_effect = {
+            add_to_variable = {
+                var = FOP_trump_allegiance
+                value = 2
+                tooltip = FOP_trump_allegiance_increase_tt
+            }
+            set_country_flag = FOP_trading_with_trump
+        }
+    }
+    tr_give_oil_to_trump = {
+        available = {
+            ROOT = {
+                has_resources_in_country = {
+                    resource = oil
+                    amount > 15
+                }
+            }
+		}		
+		fire_only_once = yes
+        days_remove = 50
+
+		visible = {
+            has_country_flag = FOP_world_legitimacy
+            has_country_flag = FOP_trading_with_trump
+			NOT = {
+                has_idea = fop_sexual_minorities_criminalized
+            }
+            FOP_has_content = no
+            USA = {
+                has_country_leader = USA_trump
+            }
+		}
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                OR = {
+                    has_government = oligarchism
+                    has_government = conservatism
+                    AND = {
+                        has_government = traditionalism
+                        is_pro_russian = no
+                    }
+                }
+            }
+        }		
+
+		cost = 25
+
+		complete_effect = {
+            add_to_variable = {
+                var = FOP_trump_allegiance
+                value = 2
+                tooltip = FOP_trump_allegiance_increase_tt
+            }
+            USA = {
+                create_import = {
+                    resource = oil
+                    amount = 15
+                    exporter = ROOT
+                }
+            }
+        }
+    }
+    tr_lobby_trump_interests = {
+        available = { 
+			
+		}		
+		fire_only_once = yes
+        days_remove = 60
+
+		visible = {
+            has_country_flag = FOP_world_legitimacy
+            FOP_has_content = no
+            USA = {
+                has_country_leader = USA_trump
+            }
+		}
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                OR = {
+                    has_government = oligarchism
+                    has_government = conservatism
+                    AND = {
+                        has_government = traditionalism
+                        is_pro_russian = no
+                    }
+                }
+            }
+        }		
+
+		cost = 30
+
+		complete_effect = {
+            add_to_variable = {
+                var = FOP_trump_allegiance
+                value = 3
+                tooltip = FOP_russia_allegiance_tt
+            }
+            if = {
+                limit = {
+                    has_country_flag = eu_accepted_free_speech
+                }
+                add_to_variable = {
+                    var = FOP_europe_allegiance
+                    value = -2
+                    tooltip = FOP_europe_allegiance_decrease_tt
+                }
+            }
+   	    }
+    }
+    ask_europe_for_recognition = {
+        available = {
+            hidden_trigger = {
+                FOP_has_content = yes
+            }
+        }
+
+        visible = {
+            FOP_has_content = yes
+            favourable_for_europe = yes
+        }
+
+        days_remove = 30
+
+        cost = 25
+
+        complete_effect = {
+            EUN = {
+                country_event = { id = FOP_generic.25 days = 14 }
+            }
+        }
+
+        remove_effect = {
+            custom_effect_tooltip = eu_recognition_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        NOT = {
+                            has_country_flag = eu_refused_help
+                        }
+                    }
+                    set_country_flag = eu_limited_recognition
+                }
+            }
+        }
+    }
+    ask_russia_for_recognition = {
+        available = {
+            hidden_trigger = {
+                FOP_has_content = yes
+            }
+        }
+
+        visible = {
+            FOP_has_content = yes
+            is_pro_russian = yes
+        }
+
+        days_remove = 30
+
+        cost = 25
+
+        ai_will_do = {
+            base = 0
+            modifier = {
+                add = 50
+                is_pro_russian = yes
+            }
+            modifier = {
+                add = -50
+                is_pro_russian = no
+            }
+        }
+
+        complete_effect = {
+            RUS = {
+                country_event = { id = FOP_generic.28 days = 14 }
+            }
+        }
+
+        remove_effect = {
+            custom_effect_tooltip = ru_recognition_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        NOT = {
+                            has_country_flag = ru_refused_help
+                        }
+                    }
+                    set_country_flag = ru_limited_recognition
+                }
+            }
+        }
+    }
+    ask_trump_for_recognition = {
+        available = {
+            hidden_trigger = {
+                FOP_has_content = yes
+            }
+        }
+
+        visible = {
+            FOP_has_content = yes
+            OR = {
+                has_government = oligarchism
+                has_government = conservatism
+                AND = {
+                    has_government = traditionalism
+                    is_pro_russian = no
+                }
+            }
+            USA = {
+                has_country_leader = USA_trump
+            }
+        }
+
+        days_remove = 30
+
+        cost = 25
+
+        ai_will_do = {
+            base = 0
+            modifier = {
+                add = 50
+                OR = {
+                    has_government = oligarchism
+                    has_government = conservatism
+                    AND = {
+                        has_government = traditionalism
+                        is_pro_russian = no
+                    }
+                }
+            }
+        }
+
+        complete_effect = {
+            USA = {
+                country_event = { id = FOP_generic.28 days = 14 }
+            }
+        }
+
+        remove_effect = {
+            custom_effect_tooltip = tr_recognition_tt
+            hidden_effect = {
+                set_country_flag = tr_limited_recognition
+            }
+        }
+    }
+    ask_un_to_return_chernivtsi = {
+        available = {
+
+        }
+
+        visible = {
+            tag = RBU
+            OR = {
+                has_country_flag = eu_recognized_state
+                has_country_flag = ru_recognized_state
+            }
+        }
+
+        days_remove = 30
+
+        cost = 50
+
+        ai_will_do = {
+            base = 120
+        }
+
+        complete_effect = {
+            BUK = {
+                country_event = FOP_generic.56
+            }
+        }
+
+        remove_effect = {
+            
+        }
+    }
+    enter_chernivtsi = {
+        available = {
+
+        }
+
+        visible = {
+            tag = RBU
+        }
+
+        days_remove = 30
+
+        cost = 50
+
+        ai_will_do = {
+            base = 100
+        }
+
+        complete_effect = {
+            
+        }
+
+        remove_effect = {
+            declare_war_on = {
+                target = BUK
+                type = annex_country
+            }
+        }
+    }
+    ask_bosphorus_access = {
+        available = {
+
+        }
+
+        visible = {
+            tag = LBU
+            OR = {
+                has_country_flag = eu_recognized_state
+                has_country_flag = ru_recognized_state
+            }
+        }
+
+        days_remove = 30
+
+        cost = 50
+
+        ai_will_do = {
+            base = 120
+        }
+
+        complete_effect = {
+            TUR = {
+                country_event = FOP_generic.59
+            }
+        }
+
+        remove_effect = {
+            
+        }
     }
 }
 warlord_legitimacy = {

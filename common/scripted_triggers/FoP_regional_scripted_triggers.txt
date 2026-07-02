@@ -142,6 +142,7 @@ is_right_bank_ukraine = {
 		tooltip = is_right_bank_ukraine_tt
 		OR = {
 			original_tag = HAL
+			original_tag = ZAK
 			original_tag = HUT
 			original_tag = TER
 			original_tag = RIV
@@ -527,7 +528,6 @@ favourable_for_europe = {
 				has_government = communism
 				has_government = traditionalism
 				has_government = esotericism
-				has_government = oligarchism
 			}
 		}
 	}
@@ -711,5 +711,56 @@ FOP_has_content = {
 	OR = {
 		original_tag = AFU
 		original_tag = DPR
+		original_tag = LPR
+	}
+}
+
+locked_coring = {
+	OR = {
+		AND = {
+			original_tag = AFU
+			AFU = {
+				NOT = {
+					has_completed_focus = AFU_finalize_integration
+				}
+			}
+		}
+		AND = {
+			original_tag = DPR
+			DPR = {
+				NOT = {
+					has_completed_focus = DPR_finish_integration
+				}
+			}
+		}
+	}
+}
+
+has_united_microregion = {
+	OR = {
+		tag = GLY
+		tag = PDL
+		tag = SIV
+		tag = DIR
+		tag = BUH
+		tag = TVR
+		tag = DBS
+		tag = DNP
+	}
+}
+
+has_united_region = {
+	OR = {
+		tag = WST
+		tag = NRT
+		tag = STH
+		tag = ESN
+	}
+}
+
+has_united_river_bank = {
+	OR = {
+		tag = RBU
+		tag = LBU
 	}
 }

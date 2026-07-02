@@ -1,0 +1,113 @@
+# ══════════════════════════════════════════════
+# DYNAMIC MODIFIER — підключається через
+# add_dynamic_modifier = { modifier = WL_bm_shadow_network }
+# у scripted_effect або completion_reward фокусу
+# ══════════════════════════════════════════════
+
+dynamic_modifier = {
+    name = WL_bm_shadow_network
+
+    # Присутній поки є прапор
+    enable = {
+        has_country_flag = WL_black_market_unlocked
+        is_ukrainian_warlord = yes
+    }
+
+    # ── Базові бонуси (завжди при активному ринку) ──
+    supply_consumption_factor        = -0.03   # -3% витрат постачання
+    army_org_factor                  = 0.02    # +2% організації армії
+    army_morale_factor               = 0.02    # +2% морального духу
+    production_speed_arms_factory_factor = 0.03  # +3% швидкість виробництва
+
+    # ── Бонуси рівня II ───────────────────────────
+    # Додаються якщо WL_bm_tier >= 2
+    # Реалізовано через окремий dynamic_modifier нижче
+}
+
+
+dynamic_modifier = {
+    name = WL_bm_shadow_network_tier2
+
+    enable = {
+        has_country_flag = WL_black_market_unlocked
+        is_ukrainian_warlord = yes
+        check_variable = { WL_bm_tier > 1 }
+    }
+
+    supply_consumption_factor        = -0.04   # додаткові -4% постачання
+    army_attack_factor               = 0.02    # +2% атаки армії
+    army_defence_factor              = 0.02    # +2% захисту армії
+    industrial_capacity_factory      = 0.05    # +5% виробнича потужність
+}
+
+
+dynamic_modifier = {
+    name = WL_bm_shadow_network_tier3
+
+    enable = {
+        has_country_flag = WL_black_market_unlocked
+        is_ukrainian_warlord = yes
+        check_variable = { WL_bm_tier > 2 }
+    }
+
+    supply_consumption_factor        = -0.05   # додаткові -5% постачання
+    army_attack_factor               = 0.03    # +3% атаки
+    army_defence_factor              = 0.03    # +3% захисту
+    max_dig_in                       = 1       # +1 до окопування
+    recon_factor                     = 0.05    # +5% розвідка
+}
+
+
+# ══════════════════════════════════════════════
+# ГОТОВІ БЛОКИ ДЛЯ НАЦДУХІВ
+# ══════════════════════════════════════════════
+
+# Дух: "Тіньова мережа постачання" (рівень I)
+# ─────────────────────────────────────────────
+# idea = {
+#     name = WL_spirit_shadow_network_1
+#     picture = GFX_idea_black_market
+#     allowed = { is_ukrainian_warlord = yes }
+#     modifier = {
+#         supply_consumption_factor            = -0.03
+#         army_org_factor                      = 0.02
+#         army_morale_factor                   = 0.02
+#         production_speed_arms_factory_factor = 0.03
+#     }
+# }
+
+# Дух: "Тіньова мережа постачання" (рівень II)
+# ─────────────────────────────────────────────
+# idea = {
+#     name = WL_spirit_shadow_network_2
+#     picture = GFX_idea_black_market
+#     allowed = { is_ukrainian_warlord = yes }
+#     modifier = {
+#         supply_consumption_factor            = -0.07
+#         army_org_factor                      = 0.02
+#         army_morale_factor                   = 0.02
+#         army_attack_factor                   = 0.02
+#         army_defence_factor                  = 0.02
+#         production_speed_arms_factory_factor = 0.03
+#         industrial_capacity_factory          = 0.05
+#     }
+# }
+
+# Дух: "Тіньова мережа постачання" (рівень III)
+# ─────────────────────────────────────────────
+# idea = {
+#     name = WL_spirit_shadow_network_3
+#     picture = GFX_idea_black_market
+#     allowed = { is_ukrainian_warlord = yes }
+#     modifier = {
+#         supply_consumption_factor            = -0.12
+#         army_org_factor                      = 0.02
+#         army_morale_factor                   = 0.02
+#         army_attack_factor                   = 0.05
+#         army_defence_factor                  = 0.05
+#         production_speed_arms_factory_factor = 0.03
+#         industrial_capacity_factory          = 0.05
+#         max_dig_in                           = 1
+#         recon_factor                         = 0.05
+#     }
+# }

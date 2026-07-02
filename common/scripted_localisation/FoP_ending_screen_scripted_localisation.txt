@@ -1,0 +1,241 @@
+defined_text = {
+	name = Get_Closing_Closing_Button_Text
+	text = {
+		trigger = { has_country_flag = Ending_Screen_HasCustomCloseButton }
+		localization_key = "FOP_Ending_Screen_Closing_Button_Text_[THIS.GetTag]"
+	}
+
+	text = {
+		localization_key = FOP_Ending_Screen_Closing_Button_Text_Generic
+	}
+}
+
+defined_text = {
+	name = Get_Poster
+	text = {
+		trigger = { FOP_has_content = yes }
+		localization_key = "GFX_FOP_Info_Screen_Poster_[THIS.GetTag]"
+	}
+
+	## Default
+	text = {
+		localization_key = "GFX_FOP_Info_Screen_Poster_No_Content"
+	}
+}
+
+defined_text = {
+	name = Ending_Screen_Get_Content_Country
+	text = {
+		trigger = {
+			if = {
+				limit = {
+					NOT = { has_variable = entry }
+				}
+				set_temp_variable = { entry = Ending_Screen_Selected }
+			}
+			always = no
+		}
+	}
+	text = {
+		trigger = {
+			check_variable = { Ending_Screen_Tab = 2 }
+		}
+		localization_key = "[Get_Credits_Content]"
+	}
+	text = {
+		localization_key = "FOP_Ending_Screen_Content" 
+	}
+}
+
+defined_text = {
+	name = Ending_Screen_Get_Content_Desc_Country
+	text = {
+		trigger = {
+			if = {
+				limit = {
+					NOT = { has_variable = entry }
+				}
+				set_temp_variable = { entry = Ending_Screen_Selected }
+			}
+			always = no
+		}
+	}
+
+	text = {
+		trigger = {
+			original_tag = AFU
+			has_government = ultranationalist
+		}
+		localization_key = "FOP_Ending_Screen_Azov_Desc"
+	}
+	text = {
+		trigger = {
+			original_tag = AFU
+			has_government = authoritarianism
+		}
+		localization_key = "FOP_Ending_Screen_Kryvonos_Desc"
+	}
+	text = {
+		trigger = {
+			original_tag = AFU
+			OR = {
+				has_government = liberalism
+				has_government = conservatism
+			}
+		}
+		localization_key = "FOP_Ending_Screen_Danilov_Desc"
+	}
+	text = {
+		trigger = {
+			original_tag = AFU
+			OR = {
+				has_government = progressivism
+				has_government = centrism
+				has_government = oligarchism
+			}
+		}
+		localization_key = "FOP_Ending_Screen_Khomut_Desc"
+	}
+	text = {
+		trigger = {
+			original_tag = AFU
+			OR = {
+				has_government = social_democracy
+				has_government = socialism
+			}
+		}
+		localization_key = "FOP_Ending_Screen_Savchenko_Desc"
+	}
+
+	text = {
+		trigger = {
+			original_tag = DPR
+			has_government = authoritarianism
+		}
+		localization_key = "FOP_Ending_Screen_Penis_Desc"
+	}
+	text = {
+		trigger = {
+			original_tag = DPR
+			OR = {
+				has_government = conservatism
+				has_government = liberalism
+			}
+		}
+		localization_key = "FOP_Ending_Screen_Pasechnik_Desc"
+	}
+	text = {
+		trigger = {
+			original_tag = DPR
+			OR = {
+				has_government = communism
+				has_government = socialism
+			}
+		}
+		localization_key = "FOP_Ending_Screen_Vitrenko_Desc"
+	}
+	text = {
+		trigger = {
+			original_tag = DPR
+			has_country_leader = {
+				character = DNR_rostislav
+			}
+		}
+		localization_key = "FOP_Ending_Screen_Rostislav_Desc"
+	}
+	text = {
+		trigger = {
+			original_tag = DPR
+			has_country_leader = {
+				character = DNR_maria
+			}
+		}
+		localization_key = "FOP_Ending_Screen_Maria_Desc"
+	}
+	text = {
+		trigger = {
+			original_tag = DPR
+			has_country_leader = {
+				character = DNR_george
+			}
+		}
+		localization_key = "FOP_Ending_Screen_George_Desc"
+	}
+	text = {
+		trigger = {
+			original_tag = DPR
+			has_country_leader = {
+				character = DNR_girkin
+			}
+		}
+		localization_key = "FOP_Ending_Screen_Girkin_Desc"
+	}
+
+	text = {
+		localization_key = "FOP_Ending_Screen_Content_Desc" 
+	}
+}
+
+defined_text = {
+	name = Ending_Screen_Get_Credits
+	text = {
+		trigger = {
+			if = {
+				limit = {
+					NOT = { has_variable = entry }
+				}
+				set_temp_variable = { entry = Ending_Screen_Selected }
+			}
+			always = no
+		}
+	}
+	text = {
+		trigger = {
+			check_variable = { Ending_Screen_Tab = 2 }
+		}
+		localization_key = "[Get_Credits_Content]"
+	}
+	text = { localization_key = "[THIS.GetTag]_Ending_Screen_Content" }
+}
+defined_text = {
+	name = Ending_Screen_Get_Credits_Desc_Country
+	text = {
+		trigger = {
+			if = {
+				limit = {
+					NOT = { has_variable = entry }
+				}
+				set_temp_variable = { entry = Ending_Screen_Selected }
+			}
+			always = no
+		}
+	}
+	text = {
+		trigger = {
+			check_variable = { Ending_Screen_Tab = 2 }
+		}
+		localization_key = "[Get_Credits_Content_Desc]"
+	}
+	text = { localization_key = "[THIS.GetTag]_Ending_Screen_Content_Desc" }
+}
+defined_text = {
+	name = Ending_Screen_Get_Entry_Container
+	text = {
+		localization_key = "Ending_Screen_Content_Entry"
+	}
+}
+
+defined_text = {
+	name = Ending_Screen_Get_Tab_Name
+	text = { localization_key = "Ending_Screen_Tab_Name_[?tab]" }
+}
+
+defined_text = {
+	name = Get_Credits_Content
+	text = { localization_key = "Ending_Screen_Credits_Content.[?entry]" }
+}
+
+defined_text = {
+	name = Get_Credits_Content_Desc
+	text = { localization_key = "Ending_Screen_Credits_Content_Desc.[?Ending_Screen_Selected]" }
+}

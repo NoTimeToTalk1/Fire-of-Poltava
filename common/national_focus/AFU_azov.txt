@@ -15,6 +15,12 @@ shared_focus = {
 	x = 22
 	y = 0
 
+	allow_branch = {
+		NOT = {
+			tag = DBS
+		}
+	}
+
 	available = {
 		has_completed_focus = AFU_free_donbas
 		has_completed_focus = AFU_reshaping_the_mentality
@@ -153,6 +159,12 @@ shared_focus = {
 
 	x = 22
 	y = 0
+
+	allow_branch = {
+		NOT = {
+			tag = DBS
+		}
+	}
 
 	available = {
 		has_completed_focus = AFU_free_donbas
@@ -489,7 +501,11 @@ shared_focus = {
 	cost = 2
 
 	x = 10
-	y = 2
+	y = 6
+
+	allow_branch = {
+		tag = DBS
+	}
 
 	completion_reward = {
 		add_political_power = 100
@@ -930,6 +946,8 @@ shared_focus = {
 		add_manpower = 5000
 		FOP_change_women_on_the_frontline = yes
 		add_ideas = AFU_azov_legacy_of_joan_of_arc
+		activate_advisor = AFU_Kateryna_Prokopenko
+		activate_advisor = AFU_Yulia_Fedosyuk
 	}
 }
 
@@ -1179,6 +1197,11 @@ shared_focus = {
 	completion_reward = {
 		country_event = azov.70
 		add_ideas = AFU_azov_azovnet
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 2
+			category = cybersecurity
+		}
 	}
 }
 
@@ -1327,7 +1350,11 @@ shared_focus = {
 	cost = 2
 
 	x = 20
-	y = 2
+	y = 15
+
+	allow_branch = {
+		tag = LBU
+	}
 
 	completion_reward = {
 		add_political_power = 50
@@ -1369,6 +1396,7 @@ shared_focus = {
 
 	completion_reward = {
 		add_political_power = 25
+		activate_mission = AFU_rdk_points_trickle
 		hidden_effect = {
 			country_event = azov.9
 			set_country_flag = rvc_coop
@@ -1422,6 +1450,9 @@ shared_focus = {
 			var = AFU_rdk
 			value = 9000
 			tooltip = AFU_rdk_tt
+		}
+		hidden_effect = {
+			country_event = { id = AFU_football.4 days = 7 }
 		}
 	}
 }
@@ -1541,6 +1572,10 @@ shared_focus = {
 	completion_reward = {
 		add_manpower = 1100
 		add_command_power = 20
+		AFU_activate_football_mechanic = yes
+		hidden_effect = {
+			set_country_flag = AFU_ultras_football_open	
+		}
 	}
 }
 
@@ -1580,6 +1615,7 @@ shared_focus = {
 		custom_effect_tooltip = azov_farright_american
 		hidden_effect = {
 			load_oob = "azov_farright_american"
+			set_country_flag = AFU_brothers_from_the_new_world_flag
 		}
 	}
 }
@@ -1717,6 +1753,11 @@ shared_focus = {
 	prerequisite = { focus = AFU_for_a_national_ukraine }
 
 	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.25
+			uses = 2
+			category = construction_tech
+		}
 		swap_ideas = {
 			remove_idea = industrial_legacy
 			add_idea = AFU_azov_updated_military_industrial_complex
@@ -1798,7 +1839,11 @@ shared_focus = {
 	cost = 1
 
 	x = 10
-	y = 2
+	y = 26
+
+	allow_branch = {
+		tag = UKR
+	}
 
 	completion_reward = {
 		add_stability = 0.1
@@ -2523,9 +2568,14 @@ shared_focus = {
 		country_event = { id = azov.21 days = 10 }
 	}
 
+	allow_branch = {
+		tag = DBS
+	}
+
 	completion_reward = {
 		country_event = { id = azov.22 }
 		FOP_change_economic_system_corporatism = yes
+		FOP_change_political_system_natiocracy = yes
 	}
 }
 
@@ -2542,6 +2592,11 @@ shared_focus = {
 	prerequisite = { focus = AFU_lessons_of_natiocracy }
 
 	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.25
+			uses = 1
+			category = workforce
+		}
 		add_political_power = 50
 		add_ideas = AFU_azov_new_aristocracy
 	}
@@ -2642,6 +2697,9 @@ shared_focus = {
 	prerequisite = { focus = AFU_give_oligarchs_a_fight }
 
 	completion_reward = {
+	hidden_effect = {
+			set_country_flag = AFU_azovstal
+	}
 		2093 = {
 			add_extra_state_shared_building_slots = 2
 			add_building_construction = {
@@ -2696,6 +2754,11 @@ shared_focus = {
 	prerequisite = { focus = AFU_first_national_syndicalist_congress }
 
 	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.1
+			uses = 1
+			category = workforce
+		}
 		add_popularity = {
 			ideology = ultranationalism
 			popularity = 0.1
@@ -2891,6 +2954,11 @@ shared_focus = {
 		FOP_change_economic_mobilization_war_economy = yes
 		custom_effect_tooltip = fop_economic_mobilization_early_tt
 		#Maybe like it will increase every 6 months or smth
+		add_tech_bonus = {
+			bonus = 0.3
+			uses = 1
+			category = incentive_workforce
+		}
 	}
 }
 
@@ -2934,6 +3002,11 @@ shared_focus = {
 	completion_reward = {
 		add_stability = -0.10
 		FOP_change_economic_mobilization_total = yes
+		add_tech_bonus = {
+			bonus = 0.3
+			uses = 1
+			category = mandatory_workforce
+		}
 	}
 }
 
@@ -2981,6 +3054,11 @@ shared_focus = {
 				level = 1
 				instant_build = yes
 			}
+		}
+		add_tech_bonus = {
+			bonus = 0.3
+			uses = 2
+			category = excavation_tech
 		}
 	}
 }

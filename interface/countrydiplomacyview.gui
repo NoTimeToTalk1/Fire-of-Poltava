@@ -1,8 +1,175 @@
 guiTypes = {
 
 	containerWindowType = {
+		name = "political_system_container_diplo"
+		position = { x = 0 y = 0 }
+
+		containerWindowType = {
+			name = "political_system_name_container_diplo"
+			position = { x = 225 y = 150 }
+			size = { width = 255 height = 60 }
+			clipping = no
+
+			instantTextboxType = {
+				name = "political_system_name_diplo"
+				position = { x = 4 y = 42 }
+				font = "hoi_20bs"
+				text = "[GetGovernmentType]"
+				maxWidth = 160
+				maxHeight = 20
+				format = centre
+				vertical_alignment = center
+				fixedsize = yes
+			}
+		}
+
+		iconType = {
+			name = "no_political_system_icon"
+			position = { x = 393 y = 130 } #x = 386 y = 142
+			spriteType = "GFX_ideology_unknown"
+			scale = 0.9 #delete
+		}
+		iconType = {
+			name = "fop_political_system_natiocracy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_natiocracy"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_oligarchy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_oligarchy"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_stratocracy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_stratocracy"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_theocracy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_theocracy"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_absolute_monarchy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_absolute_monarchy"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_personalistic_dictatorship_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_personalistic_dictatorship"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_military_dictatorship_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_military_dictatorship"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_civilian_dictatorship_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_civilian_dictatorship"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_anocracy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_anocracy"
+			#pdx_tooltip = ""
+		}
+		iconType = {
+			name = "fop_political_system_guided_democracy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_guided_democracy"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_transitioning_democracy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_transitioning_democracy"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_dominant_party_democracy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_dominant_party_democracy"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_liberal_democracy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_liberal_democracy"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_minarchy_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_minarchy"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_provisional_government_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_provisional_government"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_partisan_movement_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_partisan_movement"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+		iconType = {
+			name = "fop_political_system_anarchic_community_icon"
+			position = { x = 393 y = 130 }
+			spriteType = "GFX_political_system_anarchic_community"
+			#pdx_tooltip = ""
+			scale = 0.9
+		}
+	}
+
+	containerWindowType = {
+		name = "subideology_container_diplo"
+		position = { x = 225 y = 150 }
+		
+		instantTextboxType = {
+			name = "subideology_name"
+			position = { x = 4 y = 14 }
+			font = "hoi_20bs"
+			text = "[GetRulingIdeologySubtype]"
+			#pdx_tooltip = "GetRulingIdeologySubtype"
+			maxWidth = 160
+			maxHeight = 20
+			format = centre
+			vertical_alignment = center
+			fixedsize = yes
+		}
+	}
+
+	containerWindowType = {
 		name = "countrydiplomacyview"
-		position = { x = -606 y = 78}
+		position = { x = -606 y = 78 }
 		show_position = { x = -6 y = 78 }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
@@ -19,6 +186,13 @@ guiTypes = {
 			spriteType = "GFX_tiled_bg"
 		}
 
+		iconType = {
+			name = "production_header_bg"
+			spriteType = "GFX_header_bg"
+			position = { x = -1 y = 1 }
+			Orientation = "UPPER_LEFT"
+		}
+
 		containerWindowType = {
 			name = "country_info"
 			position = { x = 0 y = 50 }
@@ -26,14 +200,14 @@ guiTypes = {
 
 			iconType = {
 				name = "diplo_upper_win_bg"
-				position = { x = 139 y = -4 }
+				position = { x = 4 y = -8 }
 				spriteType = "GFX_diplo_upper_win_bg"
 			}
 
 			iconType = {
 				name = "diplo_country_flag"
 				quadTextureSprite ="GFX_shield_medium"
-				position = { x= 40 y = 3 }
+				position = { x = 40 y = 3 }
 				Orientation = "UPPER_LEFT"
 			}
 
@@ -49,7 +223,7 @@ guiTypes = {
 				position = { x = 145 y = 3 }
 				font = "hoi_18mbs"
 				text = "Germanian"
-				maxWidth = 200%%
+				maxWidth = 260
 				fixedsize = yes
 				maxHeight = 20
 				format = left
@@ -64,9 +238,9 @@ guiTypes = {
 				instantTextboxType = {
 					name = "faction_name"
 					position = { x = 0 y = 0 }
-					font = "hoi_18mbs"
+					font = "hoi_16mbs"
 					text = "faction"
-					maxWidth = 200%%
+					maxWidth = 260
 					maxHeight = 20
 					fixedsize = yes
 					format = left
@@ -76,39 +250,83 @@ guiTypes = {
 			instantTextboxType = {
 				name = "leader_name"
 				position = { x = 145 y = 43 }
-				font = "hoi_16mbs"
+				font = "hoi_18mbs"
 				text = "Rudolf Kittler"
-				maxWidth = 200%%
+				maxWidth = 260
 				maxHeight = 20
 				format = left
 				fixedsize = yes
 			}
 
+			#iconType = {
+			#	name = "stability_bg"
+			#	spriteType = "GFX_diplo_unity_bg"
+			#	position = { x = 447 y = 1 }
+			#}
+
+			iconType = {
+				name = "stability_icon"
+				spriteType = "GFX_stability_icon"
+				position = { x = 435 y = -44 }
+			}
+
+			instantTextboxType = {
+				name = "stability_value"
+				position = { x = 426 y = -25 }
+				font = "hoi_16mbs"
+				text = "100%"
+				maxWidth = 44
+				maxHeight = 20
+				format = center
+			}
+
+			#iconType = {
+			#	name = "war_support_bg"
+			#	spriteType = "GFX_diplo_unity_bg"
+			#	position = { x = 490 y = 1 }
+			#}
+
+			iconType = {
+				name = "war_support_icon"
+				spriteType = "GFX_war_support_icon"
+				position = { x = 476 y = -44 }
+			}
+
+			instantTextboxType = {
+				name = "war_support_value"
+				position = { x = 467 y = -25 }
+				font = "hoi_16mbs"
+				text = "100%"
+				maxWidth = 44
+				maxHeight = 20
+				format = center
+			}
+
 			containerWindowType = {
 				name = "opinion_info"
-				position = { x = 340 y = 5 }
+				position = { x = 311 y = -54 }
 				size = { width = 100 height = 60 }
 				clipping = no
 
 				background = {
 					name = "Background"
-					spriteType ="GFX_diplo_opinion_bg"
-					position = { x = 33 y = -4 }
+					spriteType = "GFX_diplo_opinion_bg"
+					position = { x = 33 y = -3 }
 				}
 
 				iconType = {
 					name = "our_opinion_left_flag"
 					quadTextureSprite ="GFX_flag_small"
-					position = { x = 38 y = 9 }
+					position = { x = 38 y = 10 }
 					alwaystransparent = yes
 				}
 
 				instantTextboxType = {
 					name = "our_opinion_value"
-					position = { x = 67 y = -4 }
+					position = { x = 85 y = 10 }
 					font = "hoi_16mbs"
 					text = "+50"
-					maxWidth = 30
+					maxWidth = 40
 					maxHeight = 20
 					format = center
 				}
@@ -116,66 +334,23 @@ guiTypes = {
 				iconType = {
 					name = "their_opinion_left_flag"
 					quadTextureSprite = "GFX_flag_small"
-					position = { x = 74 y = 21 }
+					position = { x = 74 y = 22 }
 					alwaystransparent = yes
 				}
 
 				instantTextboxType = {
 					name = "their_opinion_value"
-					position = { x = 37 y = 42 }
+					position = { x = 12 y = 29 }
 					font = "hoi_16mbs"
 					text = "-100"
-					maxWidth = 30
+					maxWidth = 40
 					maxHeight = 20
 					format = center
 				}
 			}
 
-			iconType = {
-				name = "stability_bg"
-				spriteType = "GFX_diplo_unity_bg"
-				position = { x= 447 y = 1 }
-			}
-
-			iconType = {
-				name = "stability_icon"
-				spriteType = "GFX_stability_icon"
-				position = { x= 455 y = 9 }
-			}
-
-			instantTextboxType = {
-				name = "stability_value"
-				position = { x = 446 y = 42 }
-				font = "hoi_16mbs"
-				text = "100%"
-				maxWidth = 44
-				maxHeight = 20
-				format = center
-			}
-
-			iconType = {
-				name = "war_support_bg"
-				spriteType = "GFX_diplo_unity_bg"
-				position = { x = 490 y = 1 }
-			}
-
-			iconType = {
-				name = "war_support_icon"
-				spriteType = "GFX_war_support_icon"
-				position = { x = 497 y = 9 }
-			}
-
-			instantTextboxType = {
-				name = "war_support_value"
-				position = { x = 490 y = 42 }
-				font = "hoi_16mbs"
-				text = "100%"
-				maxWidth = 44
-				maxHeight = 20
-				format = center
-			}
-
 			#------------------------- TAB BUTTONS ----------------------------
+
 			iconType = {
 				name = "tabs_background"
 				quadTextureSprite = "GFX_tab_diplomacy_bg"
@@ -247,23 +422,6 @@ guiTypes = {
 						position = { x = -15 y = -3 }
 					}
 				}
-				
-				iconType = {
-					name = "ideology_icon"
-					spriteType = "GFX_ideology_unknown"
-					position = { x = 133 y = 130 } #x = 126 y = 142
-					Orientation = "UPPER_LEFT"
-					frame = 1
-					scale = 0.89 #delete
-				}
-				iconType = {
-					name = "ideology_icon2"
-					spriteType = "GFX_ideology_unknown"
-					position = { x = 393 y = 130 } #x = 386 y = 142
-					Orientation = "UPPER_RIGHT"
-					frame = 1
-					scale = 0.89 #delete
-				}
 
 				containerWindowType = {
 					name = "ruling_party_info"
@@ -284,7 +442,7 @@ guiTypes = {
 
 					instantTextboxType = {
 						name = "ideology_name"
-						position = { x = 4 y = 14 }
+						position = { x = 9999 y = 9999 }
 						font = "hoi_20bs"
 						text = "ideology"
 						maxWidth = 160
@@ -353,6 +511,15 @@ guiTypes = {
 				}
 			}
 
+			iconType = {
+				name = "ideology_icon"
+				spriteType = "GFX_ideology_unknown"
+				position = { x = 183 y = 240 } #x = 126 y = 142
+				Orientation = "UPPER_LEFT"
+				frame = 1
+				scale = 0.89 #delete
+			}
+
 			containerWindowType = {
 				name = "national_spirit_info"
 				position = { x = 18 y = 340 } #y = 335
@@ -410,15 +577,15 @@ guiTypes = {
 			containerWindowType = {
 				name = "relations_info"
 				position = { x = 11 y = 482 }
-				size = { width = 268 height = -50 }
-				margin = { top = 8 bottom = 8 }
+				size = { width = 268 height = -36 }
+				#margin = { top = 8 bottom = 8 }
 				verticalScrollbar = "right_vertical_slider"
 				scroll_wheel_factor = 50
 				smooth_scrolling = yes
 
 				background = {
 					name = "Background"
-					spriteType ="GFX_tiled_window_1b_thin_border"
+					spriteType = "GFX_tiled_window_1b_thin_border"
 				}
 
 				gridboxtype = {
@@ -435,7 +602,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "diplomatic_actions"
 				position = { x = 272 y = 482 }
-				size = { width = 265 height = -50 }
+				size = { width = 265 height = -36 }
 				margin = { top = 8 bottom = 8 }
 				verticalScrollbar = "right_vertical_slider"
 				scroll_wheel_factor = 40
@@ -446,15 +613,15 @@ guiTypes = {
 					spriteType = "GFX_tiled_window_1b_thin_border"
 				}
 
-				iconType = {
-					name = "win_header_short"
-					position = { x = 8 y = -2 }
-					spriteType = "GFX_win_header_short"
-				}
+				#iconType = {
+				#	name = "win_header_short"
+				#	position = { x = 8 y = -2 }
+				#	spriteType = "GFX_win_header_short"
+				#}
 
 				gridboxtype = {
 					name = "actions_grid"
-					position = { x = 10 y = 32 }
+					position = { x = 10 y = 8 }
 					size = { width = 255 height = 100%% }
 					slotsize = { width = 255 height = 29 }
 					max_slots_horizontal = 1
@@ -722,18 +889,18 @@ guiTypes = {
 
 			#------------------------- END INFO TAB ----------------------------
 
-			iconType ={
-				name ="diplomacy_bottom"
+			iconType = {
+				name = "diplomacy_bottom"
 				spriteType = "GFX_main_screens_bottom"
-				position = { x = 3 y = -55 }
+				position = { x = -1 y = -44 }
 				Orientation = "LOWER_LEFT"
 			}
 
 			buttonType = {
 				name = "back_button"
-				position = { x = 24 y = -48 }
+				position = { x = 24 y = -38 }
 				clicksound = click_close
-				quadTextureSprite ="GFX_button_221x34"
+				quadTextureSprite = "GFX_button_221x34"
 				buttonFont = "hoi_16mbs"
 				Orientation = "LOWER_LEFT"
 				buttonText = "OPEN_COUNTRY_LIST"
@@ -742,8 +909,8 @@ guiTypes = {
 
 			buttonType = {
 				name = "logistics_button"
-				position = { x = 296 y = -48 }
-				quadTextureSprite ="GFX_button_221x34"
+				position = { x = 296 y = -38 }
+				quadTextureSprite = "GFX_button_221x34"
 				buttonFont = "hoi_16mbs"
 				Orientation = "LOWER_LEFT"
 				buttonText = "OPEN_COUNTRY_LOGISTICS"
@@ -751,29 +918,22 @@ guiTypes = {
 			}
 		}
 
-		iconType ={
-			name ="production_header_bg"
-			spriteType = "GFX_header_bg"
-			position = { x= 5 y = 07 }
-			Orientation = "UPPER_LEFT"
-		}
-
 		containerWindowType = {
 			name = "player_info_box"
-			position = { x = 280 y = 11 }
+			position = { x = 200 y = 10 }
 			size = { width = 270 height = 40 }
 
 			iconType ={
-				name ="player_name_bg"
+				name = "player_name_bg"
 				spriteType = "GFX_generic_text_bg_203"
-				position = { x= 10 y = 0 }
+				position = { x = 10 y = 0 }
 				Orientation = "UPPER_LEFT"
 			}
 
 			iconType ={
-				name ="player_icon"
+				name = "player_icon"
 				spriteType = "GFX_players_icon"
-				position = { x= 15 y = 4 }
+				position = { x = 15 y = 4 }
 				Orientation = "UPPER_LEFT"
 			}
 
@@ -782,7 +942,7 @@ guiTypes = {
 				position = { x = 35 y = 4 }
 				textureFile = ""
 				font = "hoi_18mbs"
-				borderSize = {x = 0 y = 0}
+				borderSize = { x = 0 y = 0 }
 				text = "Player"
 				maxWidth = 175
 				maxHeight = 40
@@ -795,14 +955,15 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "diplomacy_title"
-			position = { x = 45 y = 8 }
+			position = { x = 45 y = 7 }
 			textureFile = ""
 			font = "hoi_36header"
-			borderSize = {x = 0 y = 0}
+			borderSize = { x = 0 y = -5 }
 			text = "DIPLOMACY_DIPLOMACY"
 			maxWidth = 240
 			maxHeight = 20
 			format = left
+			alwaystransparent = yes
 		}
 
 		containerWindowType = {

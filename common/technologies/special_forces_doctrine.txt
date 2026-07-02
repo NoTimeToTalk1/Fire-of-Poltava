@@ -14,9 +14,6 @@ technologies = {
 			max_organisation = 5
 			soft_attack = 0.05
 		}
-		enable_subunits = {
-			rangers_support
-		}		
 		###########
 		
 		force_use_small_tech_layout = yes
@@ -41,7 +38,7 @@ technologies = {
 		
 		allow = {
 			AND = {
-				has_tech = tech_mountaineers
+				has_tech = infantry_acclimatization
 				can_unlock_new_special_forces_tree = yes
 			}
 		}
@@ -85,14 +82,6 @@ technologies = {
 
 		xor = { rangers }
 		
-		rangers_support = {
-			acclimatization_cold_climate_gain_factor = 0.25
-			snow = {
-				attack = 0.15
-				defence = 0.20
-				movement = 0.15
-			}
-		}
 		
 		doctrine = yes	
 		research_cost = 4.5
@@ -131,13 +120,6 @@ technologies = {
 
 		xor = { ski_troops }
 		
-		rangers_support = {
-			mountain = {
-				attack = 0.20
-				defence = 0.10
-				movement = 0.10
-			}
-		}
 		
 		doctrine = yes	
 		research_cost = 4.5
@@ -171,7 +153,6 @@ technologies = {
 			initiative = 0.01
 		}
 		unit_mountaineers_design_cost_factor = -0.50
-		unit_rangers_support_design_cost_factor = -0.50
 		
 		force_use_small_tech_layout = yes
 		
@@ -271,12 +252,6 @@ technologies = {
 			}
 		}
 		
-		rangers_support = {
-			battalion_mult = {
-				category = category_line_artillery
-				soft_attack = 0.20
-			}
-		}
 		
 		xor = { mountaineers_combat_1 }
 		
@@ -438,7 +413,7 @@ technologies = {
 		
 		allow = { 
 			AND = {
-				has_tech = marines
+				has_tech = night_vision
 				can_unlock_new_special_forces_tree = yes
 			}
 		}
@@ -464,9 +439,6 @@ technologies = {
 			soft_attack = 0.05
 		}
 		
-		enable_subunits = {
-			pioneer_support
-		}
 		
 		doctrine = yes	
 		research_cost = 2.25
@@ -506,13 +478,6 @@ technologies = {
 		
 		force_use_small_tech_layout = yes
 		
-		pioneer_support = {
-			jungle = {
-				attack = 0.15
-				defence = 0.10
-				movement = 0.10
-			}
-		}
 		
 		path = {
 			leads_to_tech = marines_recon 
@@ -557,13 +522,6 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		pioneer_support = {
-			amphibious = {
-				attack = 0.25
-				defence = 0.15
-				movement = 0.20
-			}
-		}
 		
 		doctrine = yes	
 		research_cost = 2.25
@@ -649,10 +607,7 @@ technologies = {
 		}
 		
 		xor = { marines_expeditionary }
-		
-		enable_subunits = {
-			marine_commando
-		}
+	
 		
 		on_research_complete = {
 			custom_effect_tooltip = SF_MARINES_exfiltration_effect_tt
@@ -739,10 +694,6 @@ technologies = {
 			leads_to_tech = marines_commandoes_mechanised 
 			research_cost_coeff = 1
 		}
-
-		marine_commando = {
-			breakthrough = 0.15
-		}
 		
 		doctrine = yes	
 		research_cost = 2.25
@@ -784,14 +735,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		
-		pioneer_support = {
-			battalion_mult = {
-				category = category_line_artillery
-				max_organisation = 2
-				add = yes
-			}
-		}
+	
 		
 		shore_bombardment_bonus = 0.15
 		special_forces_attack_factor = 0.10
@@ -826,20 +770,7 @@ technologies = {
 		xp_unlock_cost = 60
 		
 		force_use_small_tech_layout = yes
-
-		amphibious_mechanized = {
-			 soft_attack = 0.1
-			 breakthrough = 0.1
-			 max_organisation = 5
-		}
-		
-		pioneer_support = {
-			battalion_mult = {
-				category = category_amphibious_tanks
-				armor = 0.15
-				breakthrough = 0.15
-			}
-		}
+	
 		
 		
 		on_research_complete = {
@@ -1404,16 +1335,13 @@ technologies = {
 			max_organisation = 5
 			soft_attack = 0.05
 		}
-		enable_subunits = {
-			rangers_support
-		}	
 		doctrine = yes	
 		research_cost = 2.25
 		
 
 		allow = {
 			AND = {
-				has_tech = rangers_tech
+				has_tech = army_uniform
 				can_unlock_new_special_forces_tree = yes
 			}
 		}
@@ -1437,15 +1365,6 @@ technologies = {
 		path = {
 			leads_to_tech = rangers_guerilla_doctrine
 			research_cost_coeff = 1
-		}
-
-		ranger_battalion = {
-			acclimatization_cold_climate_gain_factor = 0.25
-			forest = {
-				attack = 0.1
-				defence = 0.1
-				movement = 0.05
-			}
 		}
 		
 		doctrine = yes	
@@ -1475,15 +1394,6 @@ technologies = {
 		path = {
 			leads_to_tech = rangers_guerilla_doctrine
 			research_cost_coeff = 1
-		}
-
-		ranger_battalion = {
-			acclimatization_hot_climate_gain_factor = 0.25
-			jungle = {
-				attack = 0.1
-				defence = 0.1
-				movement = 0.05
-			}
 		}
 		
 		doctrine = yes	
@@ -1546,19 +1456,6 @@ technologies = {
 		force_use_small_tech_layout = yes
 
 		xor = {	rangers_fire_support_integration }
-
-		rangers_support = {
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-				movement = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-				movement = 0.05
-			}
-		}
 		
 		path = {
 			leads_to_tech = rangers_urban_combat
@@ -1604,13 +1501,6 @@ technologies = {
 				breakthrough = 0.05
 			}
 		}
-		rangers_support = {
-			battalion_mult = {
-				category = category_line_artillery
-				defense = 0.15
-				breakthrough = 0.15
-			}
-		}
 		
 		doctrine = yes	
 		research_cost = 2.25
@@ -1641,14 +1531,6 @@ technologies = {
 			supply_consumption = -0.02		
 		}
 
-		ranger_battalion = {	
-			urban = {
-				attack = 0.1
-				defence = 0.1
-				movement = 0.05
-			}
-		}
-
 		categories = {
 			special_forces_doctrine
 			cat_rangers_doctrine
@@ -1668,13 +1550,6 @@ technologies = {
 		xp_unlock_cost = 60
 		
 		force_use_small_tech_layout = yes
-
-		ranger_battalion = {
-			max_organisation = 10
-			soft_attack = 0.1
-			breakthrough = 0.1
-		}
-		rangers_special_forces_contribution_factor = -0.1
 		
 		xor = { rangers_backbone_doctrine }
 
