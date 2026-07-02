@@ -791,6 +791,31 @@ country_event = {
 
 	option = {
 		name = gir.31.a
+		set_country_flag = DPR_path_constitutionalist
+		DPR_Rostislav = {
+			promote_leader = yes
+		}
+		set_politics = {
+			ruling_party = conservatism
+			elections_allowed = no
+		}
+		DPR_girkin = {
+			remove_country_leader_role = yes
+			add_advisor_role = {
+				activate = yes
+				advisor = {
+					slot = head_of_government
+				}
+			}
+		}
+	}
+	option = {
+		name = gir.31.b
+		set_country_flag = DPR_path_absolutist
+		retire_character = DPR_girkin
+		DPR_Maria = {
+			promote_leader = yes
+		}
 	}
 }
 
@@ -836,6 +861,11 @@ country_event = {
 
 	option = {
 		name = gir.34.a
+		set_power_balance = {
+			id = DPR_rostislave_girkin_political_balance
+			right_side = DPR_bop_right_side
+			left_side = DPR_bop_left_side
+		}
 	}
 }
 
@@ -851,6 +881,7 @@ country_event = {
 
 	option = {
 		name = gir.35.a
+		set_country_flag = DPR_path_constitutionalist_rostislav
 	}
 }
 
@@ -866,6 +897,7 @@ country_event = {
 
 	option = {
 		name = gir.36.a
+		set_country_flag = DPR_path_constitutionalist_strelkov
 	}
 }
 
@@ -911,6 +943,7 @@ country_event = {
 
 	option = {
 		name = gir.39.a
+		set_country_flag = eu_recognized_state
 	}
 }
 
@@ -1196,6 +1229,11 @@ country_event = {
 
 	option = {
 		name = gir.55.a
+		set_power_balance = {
+			id = DPR_maria_georgiy_political_balance
+			right_side = DPR_emp_bop_right_side
+			left_side = DPR_emp_bop_left_side
+		}
 	}
 }
 
@@ -1271,6 +1309,10 @@ country_event = {
 
 	option = {
 		name = gir.60.a
+		kill_country_leader = yes
+		DPR_George = {
+			promote_leader = yes
+		}
 	}
 }
 

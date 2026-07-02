@@ -146,7 +146,6 @@ shared_focus = {
 			ideology = traditionalism
 			popularity = -0.2
 		}
-		
 		set_country_flag = DPR_girkin_guarantees
 	}
 }
@@ -1205,11 +1204,6 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		set_power_balance = {
-			id = DPR_rostislave_girkin_political_balance
-			right_side = DPR_bop_right_side
-			left_side = DPR_bop_left_side
-		}
 		country_event = { # --- !!! START BALANCE OF POWER GAME BETWEEN GIRKIN AND ROSTIK !!!
 			id = gir.34 #PLACEHOLDER --- івент про початок суперництва гіркіна та ростіслава (перший за консервативний традиціоналізм та ізоляціонізм з культом білої гвардії, другий за союз з заходом, лібералізацію та демократизацію)
 			days = 1
@@ -2205,11 +2199,11 @@ shared_focus = {
 		###THIS FOCUS AUTO COMPLETES
 		country_event = {
 			id = gir.54 #PLACEHOLDER --- івент про коронацію Марії Романової імператрицею всеросійською
-			days = 1
+			days = 2
 		}
 		country_event = { # --- !!! START BALANCE OF POWER GAME BETWEEN MARIA AND GRIGORIY !!!
 			id = gir.55 #PLACEHOLDER --- івент про напружені відносини Марії та її сина Григорія (син не лояльний владі матері та хотів сам стати імператором, але перевагу надали їй. Тож він хоче більше влади, бабла, та повноважень)
-			days = 1
+			days = 5
 		}
 	}
 
@@ -2298,11 +2292,17 @@ shared_focus = {
 
 	completion_reward = {
 		recruit_character = DNR_bakov
+		activate_advisor = DNR_bakov
 		recruit_character = DNR_SimyonovichNikshych
+		activate_advisor = DNR_SimyonovichNikshych
 		recruit_character = DNR_Rogozin
+		activate_advisor = DNR_Rogozin
 		recruit_character = DNR_Malofeev
+		activate_advisor = DNR_Malofeev
 		recruit_character = DNR_Lebedev
+		activate_advisor = DNR_Lebedev
 		recruit_character = DNR_Kvachkov
+		activate_advisor = DNR_Kvachkov
 		add_popularity = {
 			ideology = traditionalism
 			popularity = 0.1
@@ -2386,14 +2386,35 @@ shared_focus = {
 	completion_reward = {
 		custom_effect_tooltip = maria_vs_george_conclusion_tt
 		hidden_effect = {
-			### !!! ADD CHECK CONDITION WHO HAS MORE POINTS in BoP game !!!
-			country_event = { # --- IF MARIA HAS MORE POINTS
-				id = gir.59 #PLACEHOLDER --- івент про тріумф матері
-				days = 1
+			if = {
+				limit = {
+					OR = {
+						power_balance_value = {
+							id = DPR_emp_bop_left_side
+							value = 0
+						}
+						power_balance_value = {
+							id = DPR_emp_bop_left_side
+							value < 0
+						}
+					}
+				}
+				country_event = { # --- IF MARIA HAS MORE POINTS
+					id = gir.59 #PLACEHOLDER --- івент про тріумф матері
+					days = 1
+				}
 			}
-			country_event = { # --- IF GRIGORIY HAS MORE POINTS
-				id = gir.60 #PLACEHOLDER --- івент про вбивсто Машки сином (в ночі в імператорському палаці, вину кидає син на її козацьку гвардію)
-				days = 1
+			if = {
+				limit = {
+					power_balance_value = {
+						id = DPR_emp_bop_right_side
+						value > 0
+					}
+				}
+				country_event = { # --- IF GRIGORIY HAS MORE POINTS
+					id = gir.60 #PLACEHOLDER --- івент про вбивсто Машки сином (в ночі в імператорському палаці, вину кидає син на її козацьку гвардію)
+					days = 1
+				}
 			}
 		}
 	}
@@ -2473,7 +2494,7 @@ shared_focus = {
 	completion_reward = {
 		add_popularity = {
 			ideology = traditionalism
-			popularity = 0.2
+			popularity = 0.1
 		}
 		###ALSO ADDS LEADER TRAIT
 	}
