@@ -63,7 +63,16 @@ AFU_azov_support_category = {
 	}
 
 	visible = {	
-		has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements	
+		has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements
+		NOT = {
+			OR = {
+				has_completed_focus = AFU_victory
+				has_war_with = DPR
+				has_war_with = LPR
+				has_war_with = RAF
+			}
+			
+		}	
 	}
 }
 
