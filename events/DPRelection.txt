@@ -16,7 +16,7 @@ country_event = {
 		name = DPRelection.1.a
         set_country_flag = DPRelection_government
 		custom_effect_tooltip = DPRelection_government_option_tt
-		load_focus_tree = DPR_penis_election
+		load_focus_tree = DPR_elections_government
 		set_country_flag = DPRelection_active
 	}
 	
@@ -24,7 +24,7 @@ country_event = {
 		name = DPRelection.1.b
         set_country_flag = DPRelection_opposition
 		custom_effect_tooltip = DPRelection_opposition_option_tt
-		load_focus_tree = DPR_opposition
+		load_focus_tree = DPR_elections_opposition
 		set_country_flag = DPRelection_active
 	}
 }
@@ -419,37 +419,6 @@ country_event = {
 	option = { 
 		name = DPRelection.21.a
 	}
-}
-
-country_event = {
-	id = DPRelection.22
-	title = DPRelection.22.t
-	desc = DPRelection.22.d
-
-	picture = none
-
-	is_triggered_only = yes
-
-	fire_only_once = yes
-
-	trigger = {
-		DPR = {
-			has_government = traditionalism
-		}
-
-	}
-
-	option = { 
-		name = DPRelection.22.a
-		DPR = {
-			remove_ideas = DPR_unpopular_president
-			remove_ideas = DPR_FSB
-			load_focus_tree = DPR_girkin
-		}
-		
-	}
-	
-
 }
 
 country_event = {
