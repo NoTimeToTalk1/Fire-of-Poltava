@@ -78,7 +78,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_jesus_azov
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -143,7 +143,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_jesus_azov
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -202,7 +202,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_jesus_azov
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -443,7 +443,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_pcu5
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -492,7 +492,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_pcu
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -533,7 +533,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_pcu
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -567,7 +567,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_pcu
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -611,7 +611,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_pcu
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -655,7 +655,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_upcmp
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -702,7 +702,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_pcu2
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -789,7 +789,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_pcu3
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -853,7 +853,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_pcu4
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -997,7 +997,7 @@ AFU_azov_raising_loyalty_category = {
 		icon = GFX_decision_generic_decision
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -1040,7 +1040,13 @@ AFU_azov_stabilization_category = {
 		icon = GFX_decision_generic_decision
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 180
+			modifier = {
+				add = -170
+				NOT = {
+					has_ideas = AFU_azov_huge_resistance_3
+				}
+			}		
 		}
 		
 		available = {
@@ -1051,14 +1057,14 @@ AFU_azov_stabilization_category = {
         original_tag = AFU
 		}
 		
-		cost = 60
+		cost = 15
 		
-		days_remove = 60
+		days_remove = 14
 
 
 		remove_effect  = {
-		add_stability = 0.03
-		add_manpower = 50
+			add_stability = 0.02
+			add_manpower = 50
 		}
 	}
 AFU_call_military_patrols_decision_2 = {
@@ -1066,25 +1072,32 @@ AFU_call_military_patrols_decision_2 = {
 		icon = GFX_decision_generic_decision
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 200
+			modifier = {
+				add = -190
+				NOT = {
+					has_ideas = AFU_azov_huge_resistance_1
+					has_ideas = AFU_azov_huge_resistance_2
+				}
+			}		
 		}
 		
 		available = {
-		original_tag = AFU
+			original_tag = AFU
 		}
 
 		visible = {
-        original_tag = AFU
+        	original_tag = AFU
 		}
 		
-		cost = 90
+		cost = 25
 		
-		days_remove = 60
+		days_remove = 14
 
 
 		remove_effect  = {
-		add_stability = 0.05
-		add_manpower = 75
+			add_stability = 0.05
+			add_manpower = 75
 		}
 	}
 	
@@ -1093,25 +1106,31 @@ AFU_call_military_patrols_decision_3 = {
 		icon = GFX_decision_generic_decision
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 210
+			modifier = {
+				add = -200
+				NOT = {
+					has_ideas = AFU_azov_huge_resistance_1
+				}
+			}		
 		}
 		
 		available = {
-		original_tag = AFU
+			original_tag = AFU
 		}
 
 		visible = {
-        original_tag = AFU
+        	original_tag = AFU
 		}
 		
-		cost = 130
+		cost = 30
 		
-		days_remove = 60
+		days_remove = 14
 
 
 		remove_effect  = {
-		add_stability = 0.07
-		add_manpower = 100
+			add_stability = 0.08
+			add_manpower = 100
 		}
 	}
 
