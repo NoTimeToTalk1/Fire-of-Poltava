@@ -188,20 +188,7 @@ DPR_putting_down_the_unrest_category = {
         }
     }
 
-    DPR_end_pasechnik = {
-		available = {
-			2097 = { is_demilitarized_zone = no }
-		}
-		
-        cost = 25
-        ai_will_do = { factor = 100 }
-        days_remove = 7
-        fire_only_once = yes
-		
-        remove_effect = { country_event = dpr_girkin.10 }
-    }
-
-    DPR_end_vitrenko = {
+	DPR_end_vitrenko = {
         available = {
 			2031 = { is_demilitarized_zone = no }
 		}
@@ -211,10 +198,23 @@ DPR_putting_down_the_unrest_category = {
         days_remove = 7
         fire_only_once = yes
 
-        remove_effect = { country_event = dpr_girkin.11 }
+        remove_effect = { country_event = gir.901 }
+    }
+	
+	DPR_end_pasechnik = {
+		available = {
+			2097 = { is_demilitarized_zone = no }
+		}
+		
+        cost = 25
+        ai_will_do = { factor = 100 }
+        days_remove = 7
+        fire_only_once = yes
+		
+        remove_effect = { country_event = gir.902 }
     }
 
-    DPR_end_pushilin = {
+	DPR_end_pushilin = {
         visible = {
             has_country_flag = DPR_raid_fail
 			NOT = { has_country_flag = DPR_girkin_pushilin_deal }
@@ -229,7 +229,7 @@ DPR_putting_down_the_unrest_category = {
         days_remove = 7
         fire_only_once = yes
 
-        remove_effect = { country_event = DPR_pushilin.999 }
+        remove_effect = { country_event = gir.903 }
     }
 	
 	DPR_end_the_war = {
