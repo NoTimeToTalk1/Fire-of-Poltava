@@ -22,7 +22,7 @@ afu_diplomacy_with_russia_category = {
 			RUS = {
 					country_event = { 
 						id = homut.8
-						days_remove =  2 
+						days =  2 
 					}
 				}			
 			}
@@ -189,7 +189,7 @@ afu_diplomacy_with_russia_category = {
 			hidden_effect = {
 				country_event = { 
 					id = homut.13
-					days_remove =  1
+					days =  1
 				}			
 			}
 		}
@@ -1277,9 +1277,9 @@ afu_khomut_anti_azov_category = {
 			has_country_flag = afu_azov_activity
 		}
 		available = {
-			custom_trigger_tooltip = afu_impending_coup_tt
-			check_variable = {
-				afu_azov_activity_var < 10
+			custom_trigger_tooltip = {
+				tooltip = afu_impending_coup_tt
+				check_variable = { afu_azov_activity_var < 10 }
 			}
 		}
 		cancel_trigger = {

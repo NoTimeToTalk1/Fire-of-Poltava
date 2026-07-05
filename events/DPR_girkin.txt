@@ -799,8 +799,11 @@ country_event = {
 		DPR_Rostislav = {
 			promote_leader = yes
 		}
+		remove_country_leader_role = {
+			character = DPR_Girkin
+			ideology = traditionalism
+		}
 		DPR_Girkin = {
-			remove_country_leader_role = yes
 			add_advisor_role = {
 				activate = yes
 				advisor = {
@@ -808,7 +811,7 @@ country_event = {
 				}
 			}
 		}
-		complete_focus = DPR_and_become_a_mentor
+		complete_national_focus = DPR_and_become_a_mentor
 	}
 	option = {
 		name = gir.31.b
@@ -816,12 +819,8 @@ country_event = {
 		DPR_Maria = {
 			promote_leader = yes
 		}
-		set_politics = {
-			ruling_party = 
-			elections_allowed = no
-		}
 		retire_character = DPR_Girkin
-		complete_focus = DPR_and_restore_historical_justice
+		complete_national_focus = DPR_and_restore_historical_justice
 	}
 }
 
@@ -1479,13 +1478,13 @@ country_event = {
 	desc = {
 		text = gir.70.d.a
 		trigger = {
-			has_leader = DPR_Maria
+			has_country_leader = DPR_Maria
 		}
 	}
 	desc = {
 		text = gir.70.d.b
 		trigger = {
-			has_leader = DPR_George
+			has_country_leader = DPR_George
 		}
 	}
 	picture = none
@@ -1537,13 +1536,13 @@ country_event = {
 	desc = {
 		text = gir.73.d.a
 		trigger = {
-			has_leader = DPR_Maria
+			has_country_leader = DPR_Maria
 		}
 	}
 	desc = {
 		text = gir.73.d.b
 		trigger = {
-			has_leader = DPR_George
+			has_country_leader = DPR_George
 		}
 	}
 	picture = none
@@ -1554,13 +1553,13 @@ country_event = {
 	option = {
 		name = gir.73.a
 		trigger = {
-			has_leader = DPR_Maria
+			has_country_leader = DPR_Maria
 		}
 	}
 	option = {
 		name = gir.73.b
 		trigger = {
-			has_leader = DPR_George
+			has_country_leader = DPR_George
 		}
 	}
 }

@@ -581,7 +581,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		custom_decision_category_tooltip = DPR_invite_cossack_leaders
+		unlock_decision_category_tooltip = DPR_invite_cossack_leaders
 	}
 }
 
@@ -985,7 +985,7 @@ shared_focus = {
 		###INCREASES COMPLIANCE ON NEW CONQUERED LAND
 		###ADDS DECISIONS TO LOWER RESISTANCE(REAL)
 		set_country_flag = girkin_second_russian_spring_flag
-		custom_decision_category_tooltip = girkin_collaborants_decisions
+		unlock_decision_category_tooltip = girkin_collaborants_decisions
 	}
 }
 
@@ -1405,13 +1405,7 @@ shared_focus = {
 					days = 1
 				}
 			}
-			if = {
-				limit = {
-					power_balance_value = {
-						id = DPR_rostislave_girkin_balance_decisions
-						value > 0.04
-					}
-				}
+			else = {
 				country_event = { # --- IF GIRKIN HAS MORE POINTS
 					id = gir.36 #PLACEHOLDER --- івент про попуск царя
 					days = 1
@@ -2413,15 +2407,9 @@ shared_focus = {
 			### !!! ADD CHECK CONDITION WHO HAS MORE POINTS in BoP game !!!
 			if = {
 				limit = {
-					OR = {
-						power_balance_value = {
-							id = DPR_emp_bop_left_side
-							value = 0
-						}
-						power_balance_value = {
-							id = DPR_emp_bop_left_side
-							value < 0
-						}
+					power_balance_value = {
+						id = DPR_emp_bop_left_side
+						value < 0
 					}
 				}
 				country_event = { # --- IF MARIA HAS MORE POINTS
@@ -2429,13 +2417,7 @@ shared_focus = {
 					days = 1
 				}
 			}
-			if = {
-				limit = {
-					power_balance_value = {
-						id = DPR_emp_bop_right_side
-						value > 0
-					}
-				}
+			else = {
 				country_event = { # --- IF GRIGORIY HAS MORE POINTS
 					id = gir.60 #PLACEHOLDER --- івент про вбивсто Машки сином (в ночі в імператорському палаці, вину кидає син на її козацьку гвардію)
 					days = 1
@@ -4448,34 +4430,40 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		add_building_construction = {
-			type = naval_base
-			level = 5
-			instant_build = yes
-			province = {
-				all_provinces = yes
-				limit_to_coastal = yes
-				limit_to_victory_point > 3
+		random_core_state = {
+			add_building_construction = {
+				type = naval_base
+				level = 5
+				instant_build = yes
+				province = {
+					all_provinces = yes
+					limit_to_coastal = yes
+					limit_to_victory_point > 3
+				}
 			}
 		}
-		add_building_construction = {
-			type = naval_base
-			level = 5
-			instant_build = yes
-			province = {
-				all_provinces = yes
-				limit_to_coastal = yes
-				limit_to_victory_point > 3
+		random_core_state = {
+			add_building_construction = {
+				type = naval_base
+				level = 5
+				instant_build = yes
+				province = {
+					all_provinces = yes
+					limit_to_coastal = yes
+					limit_to_victory_point > 3
+				}
 			}
 		}
-		add_building_construction = {
-			type = naval_base
-			level = 5
-			instant_build = yes
-			province = {
-				all_provinces = yes
-				limit_to_coastal = yes
-				limit_to_victory_point > 3
+		random_core_state = {
+			add_building_construction = {
+				type = naval_base
+				level = 5
+				instant_build = yes
+				province = {
+					all_provinces = yes
+					limit_to_coastal = yes
+					limit_to_victory_point > 3
+				}
 			}
 		}
 	}

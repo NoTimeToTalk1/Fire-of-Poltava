@@ -224,7 +224,7 @@ world_legitimacy = {
         days_remove = 90
         modifier = {
             consumer_goods_factor = 0.2
-            political_power_gain_factor = -0.2
+            political_power_factor = -0.2
         }
 
 		visible = {	
@@ -355,8 +355,11 @@ world_legitimacy = {
             if = {
                 limit = {
                     USA = {
-                        has_country_leader = USA_trump
-                    }
+						has_country_leader = {
+							character = USA_trump
+							ruling_only = yes
+						}
+					}
                 }
                 add_to_variable = {
                     var = FOP_trump_allegiance
@@ -376,8 +379,9 @@ world_legitimacy = {
             has_country_flag = FOP_world_legitimacy	
 			USA = {
                 has_country_leader = {
-                    character = USA_trump
-                }
+					character = USA_trump
+					ruling_only = yes
+				}
             }
             FOP_has_content = no
 		}		
@@ -421,7 +425,10 @@ world_legitimacy = {
             }
             FOP_has_content = no
             USA = {
-                has_country_leader = USA_trump
+                has_country_leader = {
+					character = USA_trump
+					ruling_only = yes
+				}
             }
 		}
 
@@ -496,7 +503,10 @@ world_legitimacy = {
             }
             FOP_has_content = no
             USA = {
-                has_country_leader = USA_trump
+                has_country_leader = {
+					character = USA_trump
+					ruling_only = yes
+				}
             }
 		}
 
@@ -546,7 +556,10 @@ world_legitimacy = {
             }
             FOP_has_content = no
             USA = {
-                has_country_leader = USA_trump
+                has_country_leader = {
+					character = USA_trump
+					ruling_only = yes
+				}
             }
 		}
 
@@ -593,7 +606,10 @@ world_legitimacy = {
             has_country_flag = FOP_world_legitimacy
             FOP_has_content = no
             USA = {
-                has_country_leader = USA_trump
+                has_country_leader = {
+					character = USA_trump
+					ruling_only = yes
+				}
             }
 		}
 
@@ -734,7 +750,10 @@ world_legitimacy = {
                 }
             }
             USA = {
-                has_country_leader = USA_trump
+                has_country_leader = {
+					character = USA_trump
+					ruling_only = yes
+				}
             }
         }
 

@@ -1747,50 +1747,69 @@ unite_donbas_ukraine = {
 		}
 	}
 
-	### WE HAVE FOCUSES FOR THAT SHIT INSTEAD
-	#attack_kharkiv = {
-	#	icon = GFX_decision_swords
-	#	
-	#	
-	#	available = {
-	#		is_neighbor_of = KHA
-	#	}
-	#
-	#	target_root_trigger = {
-	#		ROOT = {
-	#			NOT = {
-	#				original_tag = KHA
-	#			}
-	#		}
-	#	}
-	#
-	#	targets = {
-	#		tag = KHA
-	#	}
-	#	
-	#	fire_only_once = yes
-    #   days_remove = 14
-	#
-	#	visible = {
-	#		KHA = {
-	#			exists = yes
-	#		}				
-	#	}		
-	#
-	#	cost = 15
-	#
-	#
-	#	remove_effect = {
-	#		declare_war_on = {
-    #			target = KHA
-    #			type = annex_everything
-	#		}
-	#	}
-	#
-	#	ai_will_do = {
-	#		base = 50
-	#	}
-	#}
+	attack_kharkiv = {
+		icon = GFX_decision_swords
+		
+		
+		available = {
+			is_neighbor_of = KHA
+		}
+	
+		target_root_trigger = {
+			ROOT = {
+				NOT = {
+					original_tag = KHA
+				}
+			}
+		}
+	
+		targets = {
+			tag = KHA
+		}
+		
+		fire_only_once = yes
+		days_remove = 14
+	
+		visible = {
+			KHA = {
+				exists = yes
+			}
+			
+			# FOCUS TREES THAT DON'T HAVE 'ATTACK KHARKIV' FOCUSES( too lazy to add, these focuses suck anyways(except khomut) )
+			OR = {
+				AND = {
+					tag = AFU
+					OR = {
+						has_focus_tree = AFU_khomut
+						has_focus_tree = AFU_kryvonos
+						has_focus_tree = AFU_savchenko
+						has_focus_tree = AFU_danilov
+					}
+				}
+				AND = {
+					tag = DPR
+					OR = {
+						has_focus_tree = DPR_pushilin
+						has_focus_tree = DPR_pasechnik
+					}
+				}
+			}
+		}
+	
+		cost = 15
+	
+	
+		remove_effect = {
+			declare_war_on = {
+    			target = KHA
+    			type = annex_everything
+			}
+		}
+	
+		ai_will_do = {
+			base = 50
+		}
+	}
 }
 
 unite_east_ukraine = {
@@ -3612,7 +3631,7 @@ unite_left_bank_ukraine = {
 					id = reg_exp_left_bank.1
 					days = 1
 				}		
-				has_country_flag = unification_choice_made_banks	
+				set_country_flag = unification_choice_made_banks	
 			}
 		}
 
@@ -4189,7 +4208,7 @@ unite_ukraine = {
 		available = { 
 			custom_trigger_tooltip = {
 				tooltip = unite_ukraine_tt
-				is_ukraine = yes
+				#is_ukraine = yes
 				can_unite_ukraine = yes
 			}
 			date > 2030.01.01

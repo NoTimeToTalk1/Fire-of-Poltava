@@ -1161,10 +1161,10 @@ country_event = {
 
 	option = { 
 		name = dpr_vitrenko.42.a
-			every_state = {
-				limit = {
-						OR = {
-							state = 2091
+		every_state = {
+			limit = {
+				OR = {
+					state = 2091
 							state = 2309
 							state = 2029
 							state = 518
@@ -1229,51 +1229,51 @@ country_event = {
 							state = 2047
 							state = 613
 							state = 2046
-							state = 613
-							state = 2046
-							state = 2045
-							state = 794
-							state = 1601
-							state = 2060
-						}
+					state = 613
+					state = 2046
+					state = 2045
+					state = 794
+					state = 1601
+					state = 2060
 				}
-				VTN = {
-					transfer_state = PREV
-				}
-				add_core_of = VTN
-				if = {
-					limit = {
+			}
+			VTN = {
+				transfer_state = PREV
+			}
+			add_core_of = VTN
+	
+			if = {
+				limit = {
 					2044 = {
 						is_owned_by = DPR
 					}
-					}
-					every_state = {
-						limit = {
-							OR = {
-								state = 2044
-								state = 2125
-								state = 2126
-								state = 769
-								state = 2130
-								state = 2129
-								state = 2128
-								state = 2127
-							}
+				}
+				every_state = {
+					limit = {
+						OR = {
+							state = 2044
+							state = 2125
+							state = 2126
+							state = 769
+							state = 2130
+							state = 2129
+							state = 2128
+							state = 2127
 						}
-						VTN = {
-							transfer_state = PREV
-						}
-						add_core_of = VTN
-						
 					}
+					VTN = {
+						transfer_state = PREV
+					}
+					add_core_of = VTN
 				}
 			}
-			DPR = {
-							set_autonomy = {
-								target = VTN
-								autonomy_state = FOP_recognized_state
-							}
-						}
+		}
+		DPR = {
+			set_autonomy = {
+				target = VTN
+				autonomy_state = autonomy_autonomous_territory
+			}
+		}
 	}
 }
 
@@ -1290,11 +1290,11 @@ country_event = {
 
 	option = { 
 		name = dpr_vitrenko.43.a
-			every_state = {
-				limit = {
-						OR = {
-							state = 1272
-							state = 1293
+		every_state = {
+			limit = {
+				OR = {
+					state = 1272
+					state = 1293
 							state = 2346
 							state = 1233
 							state = 1292
@@ -1316,18 +1316,19 @@ country_event = {
 							state = 1608
 							state = 593
 							state = 1607
-							state = 2247
-							state = 2246
-						}
-				}
-				VTW = {
-					transfer_state = PREV
+					state = 2247
+					state = 2246
 				}
 			}
-								set_autonomy = {
-    					target = VTW
-						autonomy_state = FOP_recognized_state
-				}
+			VTW = {
+				transfer_state = PREV
+			}
+		}
+
+		set_autonomy = {
+    		target = VTW
+			autonomy_state = FOP_recognized_state
+		}
 	}
 }
 
@@ -1344,89 +1345,74 @@ country_event = {
 
 	option = { 
 		name = dpr_vitrenko.44.a
-					if = {
-						limit = {
-							CRI = {
-								exists = yes
-							}
-							VTN = {
-								exists = no
-							}
-							DPR = {
-									has_country_flag = dpr_vitrenko_to_odkb
-							}
-						}
-						DPR = {
-							annex_country = {
-								target = CRI
-							}
-						}
-						every_state = {
-							limit = {
-								is_owned_by = CRI
-							}
-							add_core_of = DPR
-						}
-					}
-					if = {
-						limit = {
-							VTN = {
-								exists = yes
-							}
-							CRI = {
-								exists = yes
-							}
-							DPR = {
-									NOT = {
-										has_country_flag = dpr_vitrenko_to_odkb
-									}
-									
-							}
-						}
-						}
-					if = {
-						limit = {
-							VTN = {
-								exists = yes
-							}
-							CRI = {
-								exists = yes
-							}
-							DPR = {
-										has_country_flag = dpr_vitrenko_to_odkb
-									
-							}
-						}
-						VTN = {
-							annex_country = {
-								target = CRI
-							}
-							}
-						every_state = {
-							limit = {
-								is_core_of = CRI
-							}
-							add_core_of = VTN
-						}
-						}
-					RUS = {
-						add_to_faction = DPR
-					}
-					if = {
-						limit = {
-							VTN = {
-								exists = yes
-							}
-							VTW = {
-								exists = yes
-							}
-						}
-					RUS = {
-						add_to_faction = VTN
-						add_to_faction = VTW
-					}
-					}
+		if = {
+			limit = {
+				CRI = {
+					exists = yes
+				}
+				VTN = {
+					exists = no
+				}
+				DPR = {
+					has_country_flag = dpr_vitrenko_to_odkb
+				}
+			}
+			DPR = {
+				annex_country = {
+					target = CRI
+				}
+			}
+			every_state = {
+				limit = {
+					is_owned_by = CRI
+				}
+				add_core_of = DPR
+			}
+		}
 
+		else_if = {
+			limit = {
+				VTN = {
+					exists = yes
+				}
+				CRI = {
+					exists = yes
+				}
+				DPR = {
+					NOT = {
+						has_country_flag = dpr_vitrenko_to_odkb
+					}
+				}
+			}
+			RUS = {
+				add_to_faction = DPR
+			}
+		}
+
+		else_if = {
+			limit = {
+				VTN = {
+					exists = yes
+				}
+				CRI = {
+					exists = yes
+				}
+				DPR = {
+					has_country_flag = dpr_vitrenko_to_odkb
+				}
+			}
+			VTN = {
+				annex_country = {
+					target = CRI
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = CRI
+				}
+				add_core_of = VTN
+			}
+		}
 	}
 }
 
@@ -1509,7 +1495,7 @@ country_event = {
 				traits = { }
 			}
 			set_politics = {
-				ruling_party = radical_socialism
+				ruling_party = socialism
 			}	
 		}						
 	}
@@ -1531,7 +1517,7 @@ country_event = {
 				traits = { }
 			}
 			set_politics = {
-				ruling_party = radical_socialism
+				ruling_party = socialism
 			} 	
 		}
 		DPR = {
@@ -1544,29 +1530,28 @@ country_event = {
 				traits = { }
 			}
 			set_politics = {
-				ruling_party = radical_socialism
+				ruling_party = socialism
 			} 	
 		}			
 	}
 
 	option = {
-
 		name = dpr_vitrenko.45.f
 		VTN = {
-				create_country_leader = {
-					name = "Vladimir Marchenko"
-					desc = ""
-					picture = "gfx/leaders/DNR/vitrenkolover.dds"
-					expire = "2099.1.1"
-					ideology = authoritarian_socialism
-					traits = { }
-				}
-				set_politics = {
-					ruling_party = radical_socialism
-				} 
+			create_country_leader = {
+				name = "Vladimir Marchenko"
+				desc = ""
+				picture = "gfx/leaders/DNR/vitrenkolover.dds"
+				expire = "2099.1.1"
+				ideology = authoritarian_socialism
+				traits = { }
 			}
-		}			
-	}
+			set_politics = {
+				ruling_party = socialism
+			} 
+		}
+	}			
+}
 
 country_event = {
 	id = dpr_vitrenko.46
@@ -1579,44 +1564,42 @@ country_event = {
 
 	is_triggered_only = yes
 
-	option = { 
+	option = {
 		name = dpr_vitrenko.46.a
 		VTW = {
-				create_country_leader = {
-					name = "Aleksandr Kostorny"
-					desc = ""
-					picture = "gfx/leaders/DNR/kostornyy.dds"
-					expire = "2099.1.1"
-					ideology = authoritarian_socialism
-					traits = { }
-				}
-				set_politics = {
-					ruling_party = radical_socialism
-				} 
+			create_country_leader = {
+				name = "Aleksandr Kostorny"
+				desc = ""
+				picture = "gfx/leaders/DNR/kostornyy.dds"
+				expire = "2099.1.1"
+				ideology = authoritarian_socialism
+				traits = { }
 			}
-		}			
+			set_politics = {
+				ruling_party = socialism
+			} 
+		}
 	}
 
 	option = { 
 		name = dpr_vitrenko.46.b
 		VTW = {
-				create_country_leader = {
-					name = "Taras Chornovol"
-					desc = ""
-					picture = "gfx/leaders/DNR/chornovil.dds"
-					expire = "2099.1.1"
-					ideology = authoritarian_socialism
-					traits = { }
-				}
-				set_politics = {
-					ruling_party = radical_socialism
-				} 
+			create_country_leader = {
+				name = "Taras Chornovol"
+				desc = ""
+				picture = "gfx/leaders/DNR/chornovil.dds"
+				expire = "2099.1.1"
+				ideology = authoritarian_socialism
+				traits = { }
 			}
+			set_politics = {
+				ruling_party = socialism
+			} 
 		}
-				
 	}
+}
 
-	country_event = {
+country_event = {
 	id = dpr_vitrenko.47
 	title = novososiya
 	desc = pupet
@@ -1628,17 +1611,17 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = yas
+		name = dpr_vitrenko.47.a
 		DPR = {
 			set_autonomy = {
 				target = VTN
 				autonomy_state = FOP_recognized_state
 			}
-		}	
+		}
 	}
-	}
+}
 
-	country_event = {
+country_event = {
 	id = dpr_vitrenko.48
 	title = west
 	desc = pupet
@@ -1650,7 +1633,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = { 
-		name = yas
+		name = dpr_vitrenko.47.b
 		DPR = {
 			set_autonomy = {
 				target = VTW
@@ -1658,6 +1641,6 @@ country_event = {
 			}
 		}	
 	}
-	}
+}
 
 
