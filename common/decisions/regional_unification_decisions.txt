@@ -1651,7 +1651,7 @@ unite_donbas_ukraine = {
 		}
    	}
 
-	#deal_with_afu = {
+	deal_with_afu = {
 		icon = GFX_ZAK_rada_election
 		
 		
@@ -1685,6 +1685,7 @@ unite_donbas_ukraine = {
 					original_tag = LPR
 				}
 			}
+			is_ai = no
 		}
 
 		
@@ -1701,7 +1702,7 @@ unite_donbas_ukraine = {
 		}
 	}
 
-	#attack_novososiya = {
+	attack_novososiya = {
 		icon = GFX_decision_swords
 		
 		
@@ -1728,6 +1729,7 @@ unite_donbas_ukraine = {
 			NOT = {
 				original_tag = AFU
 			}
+			is_ai = no
 		}		
 
 		cost = 15
@@ -1745,49 +1747,50 @@ unite_donbas_ukraine = {
 		}
 	}
 
+	### WE HAVE FOCUSES FOR THAT SHIT INSTEAD
 	#attack_kharkiv = {
-		icon = GFX_decision_swords
-		
-		
-		available = {
-			is_neighbor_of = KHA
-		}
-
-		target_root_trigger = {
-			ROOT = {
-				NOT = {
-					original_tag = KHA
-				}
-			}
-		}
-
-		targets = {
-			tag = KHA
-		}
-		
-		fire_only_once = yes
-        days_remove = 14
-
-		visible = {
-			KHA = {
-				exists = yes
-			}				
-		}		
-
-		cost = 15
-
-
-		remove_effect = {
-			declare_war_on = {
-    			target = KHA
-    			type = annex_everything
-			}
-	  	}
-
-		ai_will_do = {
-			base = 50
-		}
-	}
+	#	icon = GFX_decision_swords
+	#	
+	#	
+	#	available = {
+	#		is_neighbor_of = KHA
+	#	}
+	#
+	#	target_root_trigger = {
+	#		ROOT = {
+	#			NOT = {
+	#				original_tag = KHA
+	#			}
+	#		}
+	#	}
+	#
+	#	targets = {
+	#		tag = KHA
+	#	}
+	#	
+	#	fire_only_once = yes
+    #   days_remove = 14
+	#
+	#	visible = {
+	#		KHA = {
+	#			exists = yes
+	#		}				
+	#	}		
+	#
+	#	cost = 15
+	#
+	#
+	#	remove_effect = {
+	#		declare_war_on = {
+    #			target = KHA
+    #			type = annex_everything
+	#		}
+	#	}
+	#
+	#	ai_will_do = {
+	#		base = 50
+	#	}
+	#}
 }
 
 unite_east_ukraine = {
