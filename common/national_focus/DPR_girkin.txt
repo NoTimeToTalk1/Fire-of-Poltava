@@ -783,7 +783,6 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		FOP_change_political_system_monarchy = yes
 		country_event = {
 			id = gir.24 #PLACEHOLDER --- Івент про перший з'їзд всеросійського монархічного конгресу
 			days = 1
@@ -983,6 +982,8 @@ shared_focus = {
 	}
 
 	completion_reward = {
+		###INCREASES COMPLIANCE ON NEW CONQUERED LAND
+		###ADDS DECISIONS TO LOWER RESISTANCE(REAL)
 		set_country_flag = girkin_second_russian_spring_flag
 		custom_decision_category_tooltip = girkin_collaborants_decisions
 	}
@@ -1059,15 +1060,10 @@ shared_focus = {
 			id = gir.31 #PLACEHOLDER --- івент про вибір монарха рос імперії (або ростіслав або машка) --- IN THIS EVENT NEW PARTY POPULARITIES NEED TO BE SET UP FOR EVERY VARIANT+NEW RULING PARTY+PARTY NAMES CHANGED+PARTY LEADERS CHANGED+NEW LEADER+NEW PREMIER+ADVISORS
 			days = 1
 		}
-		#swap_ideas = { ### ADD THIS TO EVENT CONSTITUTIONAL PATH INSTEAD OF FOCUS
-		#	remove_idea = DPR_colonels_plan_5
-		#	add_idea = DPR_colonels_plan_6
-		#}
 		swap_ideas = {
 			remove_idea = DPR_white_legacy
 			add_idea = DPR_empire_strikes_back
 		}
-		set_country_flag = DPR_path_constitutionalist
 		hidden_effect = { #FOCUS RELOAD
 			country_event = generic_debug.1
 		}
@@ -1173,6 +1169,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
+		###ADDS CLAIMS ON WHOLE UKRAINE
 		every_state = {
 			limit = {
 				OR = {
@@ -1525,7 +1522,7 @@ shared_focus = {
 			id = gir.39 #PLACEHOLDER --- івент про офіційне перейняття рос імперією ростіка українського крісла при ООН
 			days = 1
 		}
-		FOP_change_immigration_open_borders = yes
+		#FOP_change_immigration_open_borders = yes
 	}
 }
 
@@ -1609,7 +1606,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###ADDS DUMA GUI WHICH ORIH AND IHOR HAD DONE
+		unlock_decision_category_tooltip = DPR_verkhovna_duma_category
 		country_event = { # --- HIDDEN EVENT BTW
 			id = gir.42 #PLACEHOLDER --- From ORIH, "The first meeting of the Verkhovna Duma" (gir.101)
 			days = 1
@@ -1765,7 +1762,6 @@ shared_focus = {
 
 	completion_reward = {
 		FOP_change_religious_rights_secularism = yes
-		###CHANGES LAWS TO FUCKING SECULARISM
 		### EVENT ABOUT CONFLICT WITH POPE LOL???
 	}
 }
@@ -1807,7 +1803,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		###OPEN BORDERS LAW
+		FOP_change_immigration_encouraged = yes
 	}
 }
 
@@ -1890,6 +1886,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
+		###ADDS ADVISORS AND POLITICANS(ROVS, IMPERIAL LEGION)
 		activate_advisor = DNR_ivanov
 		activate_advisor = DNR_Zhuravlev
 		activate_advisor = DNR_Volkov
@@ -1913,6 +1910,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
+		###ADDS SOME NEW COOL ADVISOR GUYS 2.0(BORODAI, MIHEEV etc.)
 		recruit_character = DNR_borodai
 		recruit_character = DNR_Prosvirnin
 		recruit_character = DNR_chemeris
@@ -2034,6 +2032,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
+		###Maybe adds ministers
 		activate_advisor = DNR_ivanov
 		activate_advisor = DNR_Zhuravlev
 		activate_advisor = DNR_Volkov
@@ -2061,10 +2060,10 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		DPR_girkin = {
+		DPR_Girkin = {
 			add_trait = {
 				ideology = traditionalism
-				trait = new_denikin_1
+				trait = new_denikin_1 #Why _1 tho?
 			}
 		}
 		swap_ideas = {
@@ -2197,7 +2196,7 @@ shared_focus = {
 			remove_idea = DPR_colonels_plan_7
 			add_idea = DPR_generalissimos_plan
 		}
-		DPR_girkin = {
+		DPR_Girkin = {
 			add_trait = {
 				ideology = traditionalism
 				trait = GENERALISSIMO
@@ -2376,6 +2375,7 @@ shared_focus = {
 	}
 
 	completion_reward = {
+		###REMOVES GIRKIN GENERALS
 		country_event = { # --- REMOVES MANPOWER BTW
 			id = gir.58 #PLACEHOLDER --- івент про штурм головної резиденції ровс спецназом, заборону організації та ліквідацію Іванова з прибічниками (мочать його в офісі)
 			days = 1
@@ -2410,6 +2410,7 @@ shared_focus = {
 	completion_reward = {
 		custom_effect_tooltip = maria_vs_george_conclusion_tt
 		hidden_effect = {
+			### !!! ADD CHECK CONDITION WHO HAS MORE POINTS in BoP game !!!
 			if = {
 				limit = {
 					OR = {
@@ -2885,6 +2886,8 @@ shared_focus = {
 	}
 
 	completion_reward = {
+		###ADD CLAIMS ON WHOLE OKRAINA
+		###ADD DECISIONS TO GO FIGHT THE UKROPS
 		every_state = {
 			limit = {
 				OR = {

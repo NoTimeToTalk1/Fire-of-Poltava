@@ -792,14 +792,14 @@ country_event = {
 	option = {
 		name = gir.31.a
 		set_country_flag = DPR_path_constitutionalist
+		swap_ideas = {
+			remove_idea = DPR_colonels_plan_5
+			add_idea = DPR_colonels_plan_6
+		}
 		DPR_Rostislav = {
 			promote_leader = yes
 		}
-		set_politics = {
-			ruling_party = conservatism
-			elections_allowed = no
-		}
-		DPR_girkin = {
+		DPR_Girkin = {
 			remove_country_leader_role = yes
 			add_advisor_role = {
 				activate = yes
@@ -813,10 +813,14 @@ country_event = {
 	option = {
 		name = gir.31.b
 		set_country_flag = DPR_path_absolutist
-		retire_character = DPR_girkin
 		DPR_Maria = {
 			promote_leader = yes
 		}
+		set_politics = {
+			ruling_party = 
+			elections_allowed = no
+		}
+		retire_character = DPR_Girkin
 		complete_focus = DPR_and_restore_historical_justice
 	}
 }
@@ -833,6 +837,7 @@ country_event = {
 
 	option = {
 		name = gir.32.a
+		FOP_change_political_system_monarchy = yes
 	}
 }
 
@@ -1118,7 +1123,7 @@ country_event = {
 	}
 }
 
-# івент про розстріл антиокупаційної демонстрації українців у Львові/Києві (на вибір) гіркінськими військами
+# From ORIH, "The Collegium meeting" (gir.90)
 country_event = {
 	id = gir.48
 	title = gir.48.t
@@ -1130,12 +1135,10 @@ country_event = {
 
 	option = {
 		name = gir.48.a
-		add_manpower = -500
-		add_stability = -0.04
 	}
 }
 
-# івент про написання антиурядової пісні на основі тієї з "Голодних Ігор" й про коротку реакцію уряду в стилі "от хохли дебіли, заборонити нахуй"
+# івент про розстріл антиокупаційної демонстрації українців у Львові/Києві (на вибір) гіркінськими військами
 country_event = {
 	id = gir.49
 	title = gir.49.t
@@ -1147,10 +1150,12 @@ country_event = {
 
 	option = {
 		name = gir.49.a
+		add_manpower = -500
+		add_stability = -0.04
 	}
 }
 
-# --- Continuation of previous event about song
+# івент про написання антиурядової пісні на основі тієї з "Голодних Ігор" й про коротку реакцію уряду в стилі "от хохли дебіли, заборонити нахуй"
 country_event = {
 	id = gir.50
 	title = gir.50.t
@@ -1223,6 +1228,7 @@ country_event = {
 
 	option = {
 		name = gir.54.a
+		FOP_change_political_system_monarchy = yes
 	}
 }
 
