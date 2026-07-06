@@ -294,9 +294,13 @@ DPR_mobilize_the_youth_and_reserves_category = {
 		
 		remove_effect = {
 			#add_timed_idea = { idea = DPR_mobiks2  days = 30 }
-			add_manpower = 8000
+			add_manpower = 4000
 			2096 = {
 				add_manpower = -8000
+				create_unit = {
+					division = "name = \"Batalyon Opolcheniya\" division_template = \"Batalyon opolcheniya\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
+					owner = DPR
+				}
 			}
 		}
 	}
@@ -325,9 +329,13 @@ DPR_mobilize_the_youth_and_reserves_category = {
 		
 		remove_effect = {
 			#add_timed_idea = { idea = DPR_mobiks3  days = 30 }
-			add_manpower = 10000
+			add_manpower = 5000
 			557 = {
 				add_manpower = -10000
+				create_unit = {
+					division = "name = \"Batalyon Opolcheniya\" division_template = \"Batalyon opolcheniya\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+					owner = DPR
+				}
 			}
 			add_stability = -0.02
 		}
@@ -347,7 +355,7 @@ DPR_request_russian_weapons_category = {
 		
 		cost = 25
 		ai_will_do = {
-			base = 150
+			base = 120
 		}
 
 		fire_only_once = yes
@@ -377,7 +385,7 @@ DPR_request_russian_weapons_category = {
 		
 		cost = 25
 		ai_will_do = {
-			base = 150
+			base = 120
 		}
 
 		fire_only_once = yes
@@ -407,7 +415,7 @@ DPR_request_russian_weapons_category = {
 		
 		cost = 25
 		ai_will_do = {
-			base = 150
+			base = 120
 		}
 
 		fire_only_once = yes
@@ -437,7 +445,7 @@ DPR_request_russian_weapons_category = {
 		
 		cost = 25
 		ai_will_do = {
-			base = 150
+			base = 120
 		}
 
 		fire_only_once = yes
@@ -467,7 +475,7 @@ DPR_request_russian_weapons_category = {
 		
 		cost = 35
 		ai_will_do = {
-			base = 150
+			base = 120
 		}
 
 		fire_only_once = yes
@@ -501,23 +509,42 @@ DPR_request_russian_volunteers_category = {
 		
 		cost = 10
 		ai_will_do = {
-			base = 100
+			base = 150
 		}
 
 		fire_only_once = yes
 		
-		days_remove = 35
+		days_remove = 60
 		
 		remove_effect = {
 			random_list = {
 				50 = {
-					add_manpower = 1000
+					random_owned_controlled_state = {
+						create_unit = {
+							division = "name = \"Dobrobat\" division_template = \"Dobrobat\" start_experience_factor = 0.1 start_equipment_factor = 0.4"
+							owner = DPR
+						}
+					}
 				}
 				30 = {
-					add_manpower = 2000
+					random_owned_controlled_state = {
+						create_unit = {
+							division = "name = \"Dobrobat\" division_template = \"Dobrobat\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+							owner = DPR
+						}
+					}
 				}
 				20 = {
-					add_manpower = 3000
+					random_owned_controlled_state = {
+						create_unit = {
+							division = "name = \"Dobrobat\" division_template = \"Dobrobat\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
+							owner = DPR
+						}
+						create_unit = {
+							division = "name = \"Dobrobat\" division_template = \"Dobrobat\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+							owner = DPR
+						}
+					}
 				}
 			}
 		}
@@ -533,23 +560,42 @@ DPR_request_russian_volunteers_category = {
 		
 		cost = 10
 		ai_will_do = {
-			base = 100
+			base = 150
 		}
 
 		fire_only_once = yes
 		
-		days_remove = 35
+		days_remove = 60
 		
 		remove_effect = {
 			random_list = {
 				50 = {
-					add_manpower = 1000
+					random_owned_controlled_state = {
+						create_unit = {
+							division = "name = \"Dobrobat\" division_template = \"Dobrobat\" start_experience_factor = 0.1 start_equipment_factor = 0.4"
+							owner = DPR
+						}
+					}
 				}
 				30 = {
-					add_manpower = 2000
+					random_owned_controlled_state = {
+						create_unit = {
+							division = "name = \"Dobrobat\" division_template = \"Dobrobat\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+							owner = DPR
+						}
+					}
 				}
 				20 = {
-					add_manpower = 3000
+					random_owned_controlled_state = {
+						create_unit = {
+							division = "name = \"Dobrobat\" division_template = \"Dobrobat\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
+							owner = DPR
+						}
+						create_unit = {
+							division = "name = \"Dobrobat\" division_template = \"Dobrobat\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+							owner = DPR
+						}
+					}
 				}
 			}
 		}
@@ -565,23 +611,42 @@ DPR_request_russian_volunteers_category = {
 		
 		cost = 10
 		ai_will_do = {
-			base = 100
+			base = 150
 		}
 
 		fire_only_once = yes
 		
-		days_remove = 35
+		days_remove = 60
 		
 		remove_effect = {
 			random_list = {
 				50 = {
-					add_manpower = 1000
+					random_owned_controlled_state = {
+						create_unit = {
+							division = "name = \"Dobrobat\" division_template = \"Dobrobat\" start_experience_factor = 0.1 start_equipment_factor = 0.4"
+							owner = DPR
+						}
+					}
 				}
 				30 = {
-					add_manpower = 2000
+					random_owned_controlled_state = {
+						create_unit = {
+							division = "name = \"Dobrobat\" division_template = \"Dobrobat\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+							owner = DPR
+						}
+					}
 				}
 				20 = {
-					add_manpower = 3000
+					random_owned_controlled_state = {
+						create_unit = {
+							division = "name = \"Dobrobat\" division_template = \"Dobrobat\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
+							owner = DPR
+						}
+						create_unit = {
+							division = "name = \"Dobrobat\" division_template = \"Dobrobat\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+							owner = DPR
+						}
+					}
 				}
 			}
 		}
