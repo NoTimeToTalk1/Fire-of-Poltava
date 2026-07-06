@@ -719,7 +719,7 @@ buildings = {
 
 	### NEW
 	hospital_building = {
-		base_cost = 15000
+		base_cost = 20000
 		icon_frame = 28
 		value = 1
 		
@@ -740,7 +740,7 @@ buildings = {
 	}
 
 	farm_building = {
-		base_cost = 12000
+		base_cost = 16000
 		icon_frame = 29
 		value = 1
 		
@@ -765,7 +765,7 @@ buildings = {
 	}
 
 	civil_education_centre = {
-		base_cost = 11000
+		base_cost = 16000
 		icon_frame = 34
 		value = 1
 		
@@ -787,7 +787,7 @@ buildings = {
 	}
 
 	religious_building = {
-		base_cost = 9000
+		base_cost = 12000
 		icon_frame = 35
 		value = 1
 		
@@ -808,7 +808,7 @@ buildings = {
 	}
 
 	situation_centre = {
-		base_cost = 15000
+		base_cost = 19000
 		icon_frame = 30
 		value = 1
 		
@@ -831,7 +831,7 @@ buildings = {
 	}
 
 	civilian_resting_place = {
-		base_cost = 8000
+		base_cost = 13000
 		icon_frame = 31
 		value = 1
 		
@@ -851,7 +851,7 @@ buildings = {
 	}
 
 	boot_camp = {
-		base_cost = 7000
+		base_cost = 16000
 		icon_frame = 32
 		value = 1
 		
@@ -864,6 +864,9 @@ buildings = {
 			state_max = 1
 		}
 		disabled_in_dmz = yes
+		  state_modifiers = {
+			local_org_regain = 0.01
+		  }
 		country_modifiers = {
 			modifiers = {					
 				experience_gain_army_factor = 0.02	
@@ -872,7 +875,7 @@ buildings = {
 	}
 
 	recruiting_center = {
-		base_cost = 6000
+		base_cost = 16000
 		icon_frame = 33
 		value = 1
 		
@@ -884,16 +887,18 @@ buildings = {
 			state_max = 5
 		}
 		disabled_in_dmz = yes
+		  state_modifiers = {
+			local_manpower = 0.01
+		  }
 		country_modifiers = {
 			modifiers = {
-				conscription_factor = 0.01
-				minimum_training_level = -0.01
+				minimum_training_level = -0.003
 			}
 		}
 	}
 
 	labour_camp = {
-		base_cost = 7000
+		base_cost = 17000
 		icon_frame = 36
 		value = 1
 		
@@ -909,9 +914,9 @@ buildings = {
 			modifiers = {
 		resistance_growth = 0.02
 		trade_opinion_factor = -0.02
-		production_factory_efficiency_gain_factor = 0.02
-		production_factory_max_efficiency_factor = 0.02
-		production_factory_start_efficiency_factor = 0.02
+		production_factory_efficiency_gain_factor = 0.005
+		production_factory_max_efficiency_factor = 0.005
+		production_factory_start_efficiency_factor = 0.005
 		consumer_goods_factor = 0.01
 		industry_free_repair_factor = 0.04
 		required_garrison_factor = 0.01
