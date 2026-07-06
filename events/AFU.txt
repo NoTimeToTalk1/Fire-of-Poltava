@@ -76,6 +76,12 @@ country_event = { #Zelenskyy - Helping ZSU?
 		}
 		AFU = { country_event = afu.51 }
 		add_political_power = -50
+		
+		add_opinion_modifier = {
+			target = AFU
+			modifier = large_increase
+		}
+
 	}
 	option = { #NO
 		name = afu.5.b
@@ -100,6 +106,12 @@ country_event = { #Zelenskyy helped us
 		name = afu.51.a
 		add_political_power = 10
 		add_ideas = AFU_support_UKR
+		
+		add_opinion_modifier = {
+			target = KYI
+			modifier = large_increase
+		}
+
 	}
 }
 
@@ -134,6 +146,12 @@ country_event = { #Poroshenko - Helping ZSU?
 		}
 		AFU = { country_event = afu.61 }
 		add_political_power = -50
+		
+		add_opinion_modifier = {
+			target = AFU
+			modifier = large_increase
+		}
+
 	}
 	option = { #NO
 		name = afu.6.b
@@ -158,6 +176,12 @@ country_event = { #Poroshenko helped us
 		name = afu.61.a
 		add_political_power = 10
 		add_ideas = AFU_support_PRH
+		
+		add_opinion_modifier = {
+			target = CHR
+			modifier = large_increase
+		}
+
 	}
 }
 
@@ -203,6 +227,11 @@ country_event = { #Biletsky - Helping ZSU?
 					has_completed_focus = AFU_sideline_the_far_right_elements
 				}
 			}
+		}
+		
+		add_opinion_modifier = {
+			target = AFU
+			modifier = large_increase
 		}
 
 		add_equipment_to_stockpile = {
@@ -269,6 +298,12 @@ country_event = { #Biletsky helped us
 
 	option = {
 		name = afu.71.a
+		
+		add_opinion_modifier = {
+			target = PLT
+			modifier = large_increase
+		}
+
 		add_equipment_to_stockpile = {
 			type = support_equipment
 			amount = 250
@@ -331,6 +366,12 @@ country_event = { #Avakov - Helping ZSU?
 		}
 		AFU = { country_event = afu.81 }
 		add_political_power = -50
+		
+		add_opinion_modifier = {
+			target = AFU
+			modifier = large_increase
+		}
+
 	}
 	option = { #NO
 		name = afu.8.b
@@ -355,6 +396,12 @@ country_event = { #Avakov helped us
 		name = afu.81.a
 		add_political_power = 10
 		set_country_flag = AFU_support_KHA
+		
+		add_opinion_modifier = {
+			target = KHA
+			modifier = large_increase
+		}
+
 	}
 }
 
@@ -505,18 +552,6 @@ country_event = { #Special Operations Forces
 	option = {
 		name = afu.14.a
 		add_ideas = AFU_ssojaitsa
-		random_owned_controlled_state = {
-			create_unit = {
-				division = "name = \"1-yi Polk Syl Spetsopratsiy\" division_template = \"Special Operation Forces\" start_experience_factor = 0.3 start_equipment_factor = 0.9"
-				owner = AFU
-			}
-		}
-		random_owned_controlled_state = {
-			create_unit = {
-				division = "name = \"2-yi Polk Syl Spetsopratsiy\" division_template = \"Special Operation Forces\" start_experience_factor = 0.3 start_equipment_factor = 0.9"
-				owner = AFU
-			}
-		}
 	}
 }
 
