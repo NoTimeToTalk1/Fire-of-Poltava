@@ -779,12 +779,14 @@ country_event = {
 			remove_idea = DPR_colonels_plan_5
 			add_idea = DPR_colonels_plan_6
 		}
-		DPR_Rostislav = {
-			promote_leader = yes
+		retire_country_leader = yes
+		promote_character = {
+			character = DPR_Rostislav
+			ideology = paternalism
 		}
-		remove_country_leader_role = {
-			character = DPR_Girkin
-			ideology = traditionalism
+		set_politics = {
+			ruling_party = authoritarianism
+			elections_allowed = no
 		}
 		DPR_Girkin = {
 			add_advisor_role = {
@@ -794,15 +796,23 @@ country_event = {
 				}
 			}
 		}
+		mark_focus_tree_layout_dirty = yes
 		complete_national_focus = DPR_and_become_a_mentor
 	}
+
 	option = {
 		name = gir.31.b
 		set_country_flag = DPR_path_absolutist
-		DPR_Maria = {
-			promote_leader = yes
-		}
 		retire_character = DPR_Girkin
+		promote_character = {
+			character = DPR_Maria
+			ideology = monarchism
+		}
+		promote_character = {
+			character = DPR_George
+			ideology = absolutism
+		}
+		mark_focus_tree_layout_dirty = yes
 		complete_national_focus = DPR_and_restore_historical_justice
 	}
 }
@@ -1087,6 +1097,7 @@ country_event = {
 
 	option = {
 		name = gir.46.a
+		set_country_flag = FOP_Ending_Screen_Visible
 	}
 }
 
@@ -1311,8 +1322,9 @@ country_event = {
 	option = {
 		name = gir.60.a
 		kill_country_leader = yes
-		DPR_George = {
-			promote_leader = yes
+		set_politics = {
+			ruling_party = authoritarianism
+			elections_allowed = no
 		}
 		set_country_flag = DPR_path_absolutist_george
 		mark_focus_tree_layout_dirty = yes
@@ -1346,6 +1358,7 @@ country_event = {
 
 	option = {
 		name = gir.62.a
+		set_country_flag = FOP_Ending_Screen_Visible
 	}
 }
 
@@ -1421,6 +1434,7 @@ country_event = {
 
 	option = {
 		name = gir.67.a
+		set_country_flag = FOP_Ending_Screen_Visible
 	}
 }
 
