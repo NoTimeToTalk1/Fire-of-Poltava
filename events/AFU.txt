@@ -551,16 +551,34 @@ country_event = { #Special Operations Forces
 
 	option = {
 		name = afu.14.a
-		add_ideas = AFU_ssojaitsa
+		add_ideas = AFU_sso
+		division_template = {
+			name = "Special Operation Forces"
+			division_names_group = UKR_INF_01
+			priority = 2
+			regiments = {
+				afu_sof = { x = 0 y = 0 }
+				afu_sof = { x = 0 y = 1 }
+				afu_sof = { x = 0 y = 2 }
+				afu_sof = { x = 1 y = 0 }
+				afu_sof = { x = 1 y = 1 }
+			}
+			support = {
+				maintenance_company = { x = 0 y = 0 }
+				mot_recon = { x = 0 y = 1 }
+				signal_company = { x = 0 y = 2 }
+			}
+			override_model = UKR_Special_Forces_3_entity
+		}
 		random_owned_controlled_state = {
 			create_unit = {
-				division = "name = \"1-yy Polk Syl Spetsopratsiy\" division_template = \"Special Operation Forces\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
+				division = "name = \"3-yy Polk Syl Spetsopratsiy\" division_template = \"Special Operation Forces\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
 				owner = AFU
 			}
 		}
 		random_owned_controlled_state = {
 			create_unit = {
-				division = "name = \"2-yy Polk Syl Spetsopratsiy\" division_template = \"Special Operation Forces\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
+				division = "name = \"8-yy Polk Syl Spetsopratsiy\" division_template = \"Special Operation Forces\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
 				owner = AFU
 			}
 		}
