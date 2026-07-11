@@ -285,13 +285,17 @@
 		y = 1
 
 		cost = 1
-		prerequisite = { focus = AFU_enhanced_training focus = AFU_rely_on_militias }
+		prerequisite = { focus = AFU_rely_on_militias }
 		mutually_exclusive = { focus = AFU_sideline_the_far_right_elements }
 
 		completion_reward = {
 			custom_effect_tooltip = fop_azov_blind_eye_tt
 			hidden_effect = {
 				country_event = afu.16
+				add_popularity = {
+					ideology = ultranationalism
+					popularity = 0.2
+				}
 			}
 		}
 	}
