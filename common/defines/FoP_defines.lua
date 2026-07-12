@@ -95,6 +95,8 @@ NDefines.NSupply.VP_TO_SUPPLY_BONUS_CONVERSION = 0.025			-- Bonus to supply loca
 
 
 
+NDefines.NGraphics.COUNTRY_COLOR_SATURATION_MODIFIER = 1.0
+NDefines.NGraphics.COUNTRY_COLOR_BRIGHTNESS_MODIFIER = 1.0
 
 NDefines_Graphics.NGraphics.PROVINCE_NAME_DRAW_DISTANCE = 1000.0 		-- Remove province names beyond this distance
 

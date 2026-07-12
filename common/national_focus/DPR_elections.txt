@@ -10,13 +10,11 @@
 	shared_focus = {
 		id = DPR_another_term
 		icon = GFX_Another_Term
+
 		x = 15
 		y = 0
-		cost = 4
 
-		ai_will_do = {
-			factor = 10
-		}
+		cost = 4
 
 		completion_reward = {
             country_event = {
@@ -30,21 +28,23 @@
                     days = 3
 				}
 			}
-		}		
+		}
 	}
 	
 	#Reputational Collapse
 	shared_focus = {
 		id = DPR_reputation_colapse
 		icon = GFX_Reputation_Collapse
-		x = 35
-		y = 1
-		cost = 1
 
+		relative_position_id = DPR_another_term
+		x = 0
+		y = 2
 
 		ai_will_do = {
 			factor = 10
 		}
+
+		cost = 1
 		prerequisite = { 
 			focus = DPR_another_term
 		}
@@ -54,21 +54,20 @@
 				id = DPRelection.12
 				days = 1
             }	
-		}		
+		}
 	}
 	
 	#Block the Sources!
 	shared_focus = {
 		id = DPR_block_sources
 		icon = GFX_Block_the_Sources
-		x = 34
-		y = 2
+
+		relative_position_id = DPR_reputation_colapse
+		x = -1
+		y = 1
+
+
 		cost = 2
-
-
-		ai_will_do = {
-			factor = 10
-		}
 		prerequisite = { 
 			focus = DPR_reputation_colapse
 		}
@@ -80,21 +79,19 @@
 				id = DPRelection.13
 				days = 1
             }	
-		}		
+		}
 	}
 	
 	#Bribe Whoever You Can!
 	shared_focus = {
 		id = DPR_bribe
 		icon = GFX_Bribe_Whoever_You_Can
-		x = 36
-		y = 2
+
+		relative_position_id = DPR_reputation_colapse
+		x = 1
+		y = 1
+
 		cost = 2
-
-
-		ai_will_do = {
-			factor = 10
-		}
 		prerequisite = { 
 			focus = DPR_reputation_colapse
 		}
@@ -106,26 +103,24 @@
 				id = DPRelection.14
 				days = 1
             }
-		}		
+		}
 	}
 	
 	#Nothing Happened
 	shared_focus = {
 		id = DPR_nothing_hapenned
 		icon = GFX_Nothing_Happened
-		x = 35
-		y = 3
+
+		relative_position_id = DPR_bribe
+		x = -1
+		y = 1
+
 		cost = 3
-
-
-		ai_will_do = {
-			factor = 10
+		prerequisite = { 
+			focus = DPR_block_sources
 		}
 		prerequisite = { 
 			focus = DPR_bribe
-		}
-		prerequisite = { 
-			focus = DPR_block_sources
 		}
 
 		completion_reward = {
@@ -137,13 +132,14 @@
             }
 		}		
 	}
-	
+
 	shared_focus = {
 		id = DPR_ensure_order
 		icon = GFX_Ensure_Order
-		x = 33
-		y = 4
-		cost = 3
+
+		relative_position_id = DPR_nothing_hapenned
+		x = -2
+		y = 1
 
 		available = {
 			custom_trigger_tooltip = {
@@ -154,9 +150,8 @@
 			}
 		}
 		bypass_if_unavailable = yes
-		ai_will_do = {
-			factor = 10
-		}
+
+		cost = 3
 		prerequisite = { 
 			focus = DPR_nothing_hapenned
 		}
@@ -167,44 +162,14 @@
 			set_country_flag = DPRelection_ensure_order
 		}		
 	}
-	
-	shared_focus = {
-		id = DPR_sos
-		icon = GFX_Stability_Order_Security
-		x = 33
-		y = 5
-		cost = 3
 
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = DPRelection_ensured_order_tt
-				has_country_flag = DPRelection_ensure_order
-			}
-		}
-		ai_will_do = {
-			factor = 15
-		}
-		prerequisite = { 
-			focus = DPR_ensure_order
-		}
-		mutually_exclusive = { focus = DPR_send_punishers }
-	
-		completion_reward = {
-			Pushilin_pp_increase = yes
-			Pushilin_pp_growth = yes
-			country_event = {
-                    id = DPRelection.16
-                    days = 1
-            }
-		}		
-	}
-	
 	shared_focus = {
 		id = DPR_send_punishers
 		icon = GFX_Send_the_Punishers
-		x = 31
-		y = 5
-		cost = 3
+
+		relative_position_id = DPR_ensure_order
+		x = -2
+		y = 1
 
 		available = {
 			custom_trigger_tooltip = {
@@ -212,9 +177,8 @@
 				has_country_flag = DPRelection_NOT_ensured_order
 			}
 		}
-		ai_will_do = {
-			factor = 15
-		}
+
+		cost = 3
 		prerequisite = { 
 			focus = DPR_ensure_order
 		}
@@ -222,8 +186,39 @@
 
 		completion_reward = {
 			country_event = {
-                    id = DPRelection.17
-                    days = 1
+				id = DPRelection.17
+				days = 1
+            }
+		}		
+	}
+
+	shared_focus = {
+		id = DPR_sos
+		icon = GFX_Stability_Order_Security
+
+		relative_position_id = DPR_ensure_order
+		x = 0
+		y = 1
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DPRelection_ensured_order_tt
+				has_country_flag = DPRelection_ensure_order
+			}
+		}
+
+		cost = 3
+		prerequisite = { 
+			focus = DPR_ensure_order
+		}
+		mutually_exclusive = { focus = DPR_send_punishers }
+
+		completion_reward = {
+			Pushilin_pp_increase = yes
+			Pushilin_pp_growth = yes
+			country_event = {
+				id = DPRelection.16
+				days = 1
             }
 		}		
 	}
@@ -231,14 +226,12 @@
 	shared_focus = {
 		id = DPR_call_friend
 		icon = GFX_Call_an_Old_Friend
-		x = 35
-		y = 4
+
+		relative_position_id = DPR_nothing_hapenned
+		x = 0
+		y = 1
+
 		cost = 3
-
-
-		ai_will_do = {
-			factor = 10
-		}
 		prerequisite = { 
 			focus = DPR_nothing_hapenned
 		}
@@ -254,14 +247,12 @@
 	shared_focus = {
 		id = DPR_spoiler
 		icon = GFX_Candidate_Spoiler
-		x = 35
-		y = 5
+
+		relative_position_id = DPR_call_friend
+		x = 0
+		y = 1
+
 		cost = 3
-
-
-		ai_will_do = {
-			factor = 15
-		}
 		prerequisite = { 
 			focus = DPR_call_friend
 		}
@@ -275,14 +266,12 @@
 	shared_focus = {
 		id = DPR_praise_heroes
 		icon = GFX_Praise_the_Heroes
-		x = 37
-		y = 4
+
+		relative_position_id = DPR_nothing_hapenned
+		x = 2
+		y = 1
+
 		cost = 3
-
-
-		ai_will_do = {
-			factor = 10
-		}
 		prerequisite = { 
 			focus = DPR_nothing_hapenned
 		}
@@ -297,14 +286,12 @@
 	shared_focus = {
 		id = DPR_cinematography
 		icon = GFX_Run_Cinematography
-		x = 37
-		y = 5
+
+		relative_position_id = DPR_praise_heroes
+		x = 0
+		y = 1
+
 		cost = 3
-
-
-		ai_will_do = {
-			factor = 15
-		}
 		prerequisite = { 
 			focus = DPR_praise_heroes
 		}
@@ -320,24 +307,21 @@
 	shared_focus = {
 		id = DPR_minutes
 		icon = GFX_Last_Minutes
-		x = 35
-		y = 6
+
+		relative_position_id = DPR_cinematography
+		x = -2
+		y = 1
+
 		cost = 4
-
-
-		ai_will_do = {
-			factor = 15
+		prerequisite = { 
+			focus = DPR_send_punishers
+			focus = DPR_sos
 		}
 		prerequisite = { 
 			focus = DPR_spoiler
 		}
-		
 		prerequisite = { 
 			focus = DPR_cinematography
-		}
-		prerequisite = { 
-			focus = DPR_send_punishers
-			focus = DPR_sos
 		}
 
 		completion_reward = {
