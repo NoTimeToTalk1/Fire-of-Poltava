@@ -8,12 +8,11 @@ AFU_elections_category = {
             has_country_flag = afu_elections_flag
         }
 		
-        available = {
+		available = {
 			always = no
-			has_country_flag = afu_elections_flag
-        }
+		}
 
-		days_mission_timeout = 180
+		days_mission_timeout = 120
 		fire_only_once = yes
         
 		complete_effect = {
@@ -47,7 +46,7 @@ AFU_elections_category = {
 				}
 				country_event = afu.22
 			}
-			if = {
+			else_if = {
 				limit = {
 					NOT = {
 						has_government = ultranationalism
@@ -69,7 +68,7 @@ AFU_elections_category = {
 				}
 				country_event = afu.23
 			}
-			if = {
+			else_if = {
 				limit = {
 					NOT = {
 						has_government = ultranationalism
@@ -91,7 +90,7 @@ AFU_elections_category = {
 				}
 				country_event = afu.24
 			}
-			if = {
+			else_if = {
 				limit = {
 					has_government = ultranationalism
 				}
@@ -133,53 +132,9 @@ AFU_elections_category = {
 					50 = {
 						add_to_variable = {
 							var = AFU_danilov_power
-							value = 0.5
-							tooltip = AFU_danilov_power_tt
-						}
-						clamp_variable = {
-							var = AFU_danilov_power
-							min = 0
-							max = 100
-						}
-						
-						random_list = {
-							50 = {
-								add_to_variable = {
-									var = AFU_khomut_power
-									value = -0.5
-									tooltip = AFU_khomut_power_tt
-								}
-								clamp_variable = {
-									var = AFU_khomut_power
-									min = 0
-									max = 100
-								}
-							}
-							50 = {
-								add_to_variable = {
-									var = AFU_savchenko_power
-									value = -0.5
-									tooltip = AFU_savchenko_power_tt
-								}
-								clamp_variable = {
-									var = AFU_savchenko_power
-									min = 0
-									max = 100
-								}
-							}
-						}
-					}
-					35 = {
-						add_to_variable = {
-							var = AFU_danilov_power
 							value = 1
 							tooltip = AFU_danilov_power_tt
 						}
-						clamp_variable = {
-							var = AFU_danilov_power
-							min = 0
-							max = 100
-						}
 						
 						random_list = {
 							50 = {
@@ -188,11 +143,6 @@ AFU_elections_category = {
 									value = -1
 									tooltip = AFU_khomut_power_tt
 								}
-								clamp_variable = {
-									var = AFU_khomut_power
-									min = 0
-									max = 100
-								}
 							}
 							50 = {
 								add_to_variable = {
@@ -200,25 +150,39 @@ AFU_elections_category = {
 									value = -1
 									tooltip = AFU_savchenko_power_tt
 								}
-								clamp_variable = {
+							}
+						}
+					}
+					30 = {
+						add_to_variable = {
+							var = AFU_danilov_power
+							value = 2
+							tooltip = AFU_danilov_power_tt
+						}
+						
+						random_list = {
+							50 = {
+								add_to_variable = {
+									var = AFU_khomut_power
+									value = -2
+									tooltip = AFU_khomut_power_tt
+								}
+							}
+							50 = {
+								add_to_variable = {
 									var = AFU_savchenko_power
-									min = 0
-									max = 100
+									value = -2
+									tooltip = AFU_savchenko_power_tt
 								}
 							}
 						}
 					}
-					15 = {
+					20 = {
 						add_to_variable = {
 							var = AFU_danilov_power
 							value = 3
 							tooltip = AFU_danilov_power_tt
 						}
-						clamp_variable = {
-							var = AFU_danilov_power
-							min = 0
-							max = 100
-						}
 						
 						random_list = {
 							50 = {
@@ -227,22 +191,12 @@ AFU_elections_category = {
 									value = -3
 									tooltip = AFU_khomut_power_tt
 								}
-								clamp_variable = {
-									var = AFU_khomut_power
-									min = 0
-									max = 100
-								}
 							}
 							50 = {
 								add_to_variable = {
 									var = AFU_savchenko_power
 									value = -3
 									tooltip = AFU_savchenko_power_tt
-								}
-								clamp_variable = {
-									var = AFU_savchenko_power
-									min = 0
-									max = 100
 								}
 							}
 						}
@@ -250,7 +204,7 @@ AFU_elections_category = {
 				}
 			}
 			
-			if = {
+			else_if = {
 				limit = {
 					has_country_flag = AFU_elections_play_khomut
 				}
@@ -259,77 +213,47 @@ AFU_elections_category = {
 					50 = {
 						add_to_variable = {
 							var = AFU_khomut_power
-							value = 2.5
+							value = 1
 							tooltip = AFU_khomut_power_tt
-						}
-						clamp_variable = {
-							var = AFU_khomut_power
-							min = 0
-							max = 100
 						}
 						
 						random_list = {
 							50 = {
 								add_to_variable = {
 									var = AFU_danilov_power
-									value = -2.5
+									value = -1
 									tooltip = AFU_danilov_power_tt
-								}
-								clamp_variable = {
-									var = AFU_danilov_power
-									min = 0
-									max = 100
 								}
 							}
 							50 = {
 								add_to_variable = {
 									var = AFU_savchenko_power
-									value = -2.5
+									value = -1
 									tooltip = AFU_savchenko_power_tt
 								}
-								clamp_variable = {
-									var = AFU_savchenko_power
-									min = 0
-									max = 100
-								} 
 							}
 						}
 					}
 					30 = {
 						add_to_variable = {
 							var = AFU_khomut_power
-							value = 3
+							value = 2
 							tooltip = AFU_khomut_power_tt
-						}
-						clamp_variable = {
-							var = AFU_khomut_power
-							min = 0
-							max = 100
 						}
 						
 						random_list = {
 							50 = {
 								add_to_variable = {
 									var = AFU_danilov_power
-									value = -3
+									value = -2
 									tooltip = AFU_danilov_power_tt
-								}
-								clamp_variable = {
-									var = AFU_danilov_power
-									min = 0
-									max = 100
 								}
 							}
 							50 = {
 								add_to_variable = {
 									var = AFU_savchenko_power
-									value = -3
+									value = -2
 									tooltip = AFU_savchenko_power_tt
-								}
-								clamp_variable = {
-									var = AFU_savchenko_power
-									min = 0
-									max = 100
 								}
 							}
 						}
@@ -337,38 +261,23 @@ AFU_elections_category = {
 					20 = {
 						add_to_variable = {
 							var = AFU_khomut_power
-							value = 3.5
+							value = 3
 							tooltip = AFU_khomut_power_tt
-						}
-						clamp_variable = {
-							var = AFU_khomut_power
-							min = 0
-							max = 100
 						}
 						
 						random_list = {
 							50 = {
 								add_to_variable = {
 									var = AFU_danilov_power
-									value = -3.5
+									value = -3
 									tooltip = AFU_danilov_power_tt
-								}
-								clamp_variable = {
-									var = AFU_danilov_power
-									min = 0
-									max = 100
 								}
 							}
 							50 = {
 								add_to_variable = {
 									var = AFU_savchenko_power
-									value = -3.5
+									value = -3
 									tooltip = AFU_savchenko_power_tt
-								}
-								clamp_variable = {
-									var = AFU_savchenko_power
-									min = 0
-									max = 100
 								}
 							}
 						}
@@ -376,7 +285,7 @@ AFU_elections_category = {
 				}
 			}
 			
-			if = {
+			else_if = {
 				limit = {
 					has_country_flag = AFU_elections_play_savchenko
 				}
@@ -385,38 +294,23 @@ AFU_elections_category = {
 					50 = {
 						add_to_variable = {
 							var = AFU_savchenko_power
-							value = 2.5
+							value = 1
 							tooltip = AFU_savchenko_power_tt
-						}
-						clamp_variable = {
-							var = AFU_savchenko_power
-							min = 0
-							max = 100
 						}
 						
 						random_list = {
 							50 = {
 								add_to_variable = {
 									var = AFU_danilov_power
-									value = -2.5
+									value = -1
 									tooltip = AFU_danilov_power_tt
-								}
-								clamp_variable = {
-									var = AFU_danilov_power
-									min = 0
-									max = 100
 								}
 							}
 							50 = {
 								add_to_variable = {
 									var = AFU_khomut_power
-									value = -2.5
+									value = -1
 									tooltip = AFU_khomut_power_tt
-								}
-								clamp_variable = {
-									var = AFU_khomut_power
-									min = 0
-									max = 100
 								}
 							}
 						}
@@ -424,38 +318,23 @@ AFU_elections_category = {
 					30 = {
 						add_to_variable = {
 							var = AFU_savchenko_power
-							value = 3
+							value = 2
 							tooltip = AFU_savchenko_power_tt
-						}
-						clamp_variable = {
-							var = AFU_savchenko_power
-							min = 0
-							max = 100
 						}
 						
 						random_list = {
 							50 = {
 								add_to_variable = {
 									var = AFU_danilov_power
-									value = -3
+									value = -2
 									tooltip = AFU_danilov_power_tt
-								}
-								clamp_variable = {
-									var = AFU_danilov_power
-									min = 0
-									max = 100
 								}
 							}
 							50 = {
 								add_to_variable = {
 									var = AFU_khomut_power
-									value = -3
+									value = -2
 									tooltip = AFU_khomut_power_tt
-								}
-								clamp_variable = {
-									var = AFU_khomut_power
-									min = 0
-									max = 100
 								}
 							}
 						}
@@ -463,38 +342,23 @@ AFU_elections_category = {
 					20 = {
 						add_to_variable = {
 							var = AFU_savchenko_power
-							value = 3.5
+							value = 3
 							tooltip = AFU_savchenko_power_tt
-						}
-						clamp_variable = {
-							var = AFU_savchenko_power
-							min = 0
-							max = 100
 						}
 						
 						random_list = {
 							50 = {
 								add_to_variable = {
 									var = AFU_danilov_power
-									value = -3.5
+									value = -3
 									tooltip = AFU_danilov_power_tt
-								}
-								clamp_variable = {
-									var = AFU_danilov_power
-									min = 0
-									max = 100
 								}
 							}
 							50 = {
 								add_to_variable = {
 									var = AFU_khomut_power
-									value = -3.5
+									value = -3
 									tooltip = AFU_khomut_power_tt
-								}
-								clamp_variable = {
-									var = AFU_khomut_power
-									min = 0
-									max = 100
 								}
 							}
 						}
@@ -530,79 +394,35 @@ AFU_elections_category = {
 				50 = {
 					add_to_variable = {
 						var = AFU_danilov_power
-						value = 2
+						value = 3
 						tooltip = AFU_danilov_power_tt
 					}
-					clamp_variable = {
-						var = AFU_danilov_power
-						min = 0
-						max = 100
+					add_to_variable = {
+						var = AFU_savchenko_power
+						value = -1.5
+						tooltip = AFU_savchenko_power_tt
 					}
-					
-					random_list = {
-						50 = {
-							add_to_variable = {
-								var = AFU_khomut_power
-								value = -2
-								tooltip = AFU_khomut_power_tt
-							}
-							clamp_variable = {
-								var = AFU_khomut_power
-								min = 0
-								max = 100
-							}
-						}
-						50 = {
-							add_to_variable = {
-								var = AFU_savchenko_power
-								value = -2
-								tooltip = AFU_savchenko_power_tt
-							}
-							clamp_variable = {
-								var = AFU_savchenko_power
-								min = 0
-								max = 100
-							}
-						}
+					add_to_variable = {
+						var = AFU_khomut_power
+						value = -1.5
+						tooltip = AFU_khomut_power_tt
 					}
 				}
 				50 = {
 					add_to_variable = {
 						var = AFU_danilov_power
-						value = 3
+						value = 5
 						tooltip = AFU_danilov_power_tt
 					}
-					clamp_variable = {
-						var = AFU_danilov_power
-						min = 0
-						max = 100
+					add_to_variable = {
+						var = AFU_savchenko_power
+						value = -2.5
+						tooltip = AFU_savchenko_power_tt
 					}
-					
-					random_list = {
-						50 = {
-							add_to_variable = {
-								var = AFU_khomut_power
-								value = -3
-								tooltip = AFU_khomut_power_tt
-							}
-							clamp_variable = {
-								var = AFU_khomut_power
-								min = 0
-								max = 100
-							}
-						}
-						50 = {
-							add_to_variable = {
-								var = AFU_savchenko_power
-								value = -3
-								tooltip = AFU_savchenko_power_tt
-							}
-							clamp_variable = {
-								var = AFU_savchenko_power
-								min = 0
-								max = 100
-							}
-						}
+					add_to_variable = {
+						var = AFU_khomut_power
+						value = -2.5
+						tooltip = AFU_khomut_power_tt
 					}
 				}
 			}
@@ -689,79 +509,35 @@ AFU_elections_category = {
 				50 = {
 					add_to_variable = {
 						var = AFU_savchenko_power
-						value = 2
+						value = 3
 						tooltip = AFU_savchenko_power_tt
 					}
-					clamp_variable = {
-						var = AFU_savchenko_power
-						min = 0
-						max = 100
+					add_to_variable = {
+						var = AFU_danilov_power
+						value = -1.5
+						tooltip = AFU_danilov_power_tt
 					}
-					
-					random_list = {
-						50 = {
-							add_to_variable = {
-								var = AFU_danilov_power
-								value = -2
-								tooltip = AFU_danilov_power_tt
-							}
-							clamp_variable = {
-								var = AFU_danilov_power
-								min = 0
-								max = 100
-							}
-						}
-						50 = {
-							add_to_variable = {
-								var = AFU_khomut_power
-								value = -2
-								tooltip = AFU_khomut_power_tt
-							}
-							clamp_variable = {
-								var = AFU_khomut_power
-								min = 0
-								max = 100
-							} 
-						}
+					add_to_variable = {
+						var = AFU_khomut_power
+						value = -1.5
+						tooltip = AFU_khomut_power_tt
 					}
 				}
 				50 = {
 					add_to_variable = {
 						var = AFU_savchenko_power
-						value = 3
+						value = 5
 						tooltip = AFU_savchenko_power_tt
 					}
-					clamp_variable = {
-						var = AFU_savchenko_power
-						min = 0
-						max = 100
+					add_to_variable = {
+						var = AFU_danilov_power
+						value = -2.5
+						tooltip = AFU_danilov_power_tt
 					}
-					
-					random_list = {
-						50 = {
-							add_to_variable = {
-								var = AFU_danilov_power
-								value = -3
-								tooltip = AFU_danilov_power_tt
-							}
-							clamp_variable = {
-								var = AFU_danilov_power
-								min = 0
-								max = 100
-							}
-						}
-						50 = {
-							add_to_variable = {
-								var = AFU_khomut_power
-								value = -3
-								tooltip = AFU_khomut_power_tt
-							}
-							clamp_variable = {
-								var = AFU_khomut_power
-								min = 0
-								max = 100
-							}
-						}
+					add_to_variable = {
+						var = AFU_khomut_power
+						value = -2.5
+						tooltip = AFU_khomut_power_tt
 					}
 				}
 			}
@@ -781,7 +557,7 @@ AFU_elections_category = {
 			}
 		}
 		
-		days_remove = 21
+		days_remove = 28
 		
 		cost = 25
 		ai_will_do = {	
@@ -793,79 +569,35 @@ AFU_elections_category = {
 				50 = {
 					add_to_variable = {
 						var = AFU_khomut_power
-						value = 2
+						value = 3
 						tooltip = AFU_khomut_power_tt
 					}
-					clamp_variable = {
-						var = AFU_khomut_power
-						min = 0
-						max = 100
+					add_to_variable = {
+						var = AFU_danilov_power
+						value = -1.5
+						tooltip = AFU_danilov_power_tt
 					}
-					
-					random_list = {
-						50 = {
-							add_to_variable = {
-								var = AFU_danilov_power
-								value = -2
-								tooltip = AFU_danilov_power_tt
-							}
-							clamp_variable = {
-								var = AFU_danilov_power
-								min = 0
-								max = 100
-							}
-						}
-						50 = {
-							add_to_variable = {
-								var = AFU_savchenko_power
-								value = -2
-								tooltip = AFU_savchenko_power_tt
-							}
-							clamp_variable = {
-								var = AFU_savchenko_power
-								min = 0
-								max = 100
-							}
-						}
+					add_to_variable = {
+						var = AFU_savchenko_power
+						value = -1.5
+						tooltip = AFU_savchenko_power_tt
 					}
 				}
 				50 = {
 					add_to_variable = {
 						var = AFU_khomut_power
-						value = 3
+						value = 5
 						tooltip = AFU_khomut_power_tt
 					}
-					clamp_variable = {
-						var = AFU_khomut_power
-						min = 0
-						max = 100
+					add_to_variable = {
+						var = AFU_danilov_power
+						value = -2.5
+						tooltip = AFU_danilov_power_tt
 					}
-					
-					random_list = {
-						50 = {
-							add_to_variable = {
-								var = AFU_danilov_power
-								value = -3
-								tooltip = AFU_danilov_power_tt
-							}
-							clamp_variable = {
-								var = AFU_danilov_power
-								min = 0
-								max = 100
-							}
-						}
-						50 = {
-							add_to_variable = {
-								var = AFU_savchenko_power
-								value = -3
-								tooltip = AFU_savchenko_power_tt
-							}
-							clamp_variable = {
-								var = AFU_savchenko_power
-								min = 0
-								max = 100
-							}
-						}
+					add_to_variable = {
+						var = AFU_savchenko_power
+						value = -2.5
+						tooltip = AFU_savchenko_power_tt
 					}
 				}
 			}
@@ -885,7 +617,7 @@ AFU_elections_category = {
         }
 		
 		fire_only_once = no
-		days_mission_timeout = 10
+		days_mission_timeout = 12
 		
 		activation = {
 			AND = {
@@ -901,38 +633,23 @@ AFU_elections_category = {
 				70 = {
 					add_to_variable = {
 						var = AFU_danilov_power
-						value = 2.5
+						value = 1.5
 						tooltip = AFU_danilov_power_tt
-					}
-					clamp_variable = {
-						var = AFU_danilov_power
-						min = 0
-						max = 100
 					}
 					
 					random_list = {
 						50 = {
 							add_to_variable = {
 								var = AFU_khomut_power
-								value = -2.5
+								value = -1.5
 								tooltip = AFU_khomut_power_tt
-							}
-							clamp_variable = {
-								var = AFU_khomut_power
-								min = 0
-								max = 100
 							}
 						}
 						50 = {
 							add_to_variable = {
 								var = AFU_savchenko_power
-								value = -2.5
+								value = -1.5
 								tooltip = AFU_savchenko_power_tt
-							}
-							clamp_variable = {
-								var = AFU_savchenko_power
-								min = 0
-								max = 100
 							}
 						}
 					}
@@ -943,11 +660,6 @@ AFU_elections_category = {
 						value = 3
 						tooltip = AFU_danilov_power_tt
 					}
-					clamp_variable = {
-						var = AFU_danilov_power
-						min = 0
-						max = 100
-					}
 					
 					random_list = {
 						50 = {
@@ -956,11 +668,6 @@ AFU_elections_category = {
 								value = -3
 								tooltip = AFU_khomut_power_tt
 							}
-							clamp_variable = {
-								var = AFU_khomut_power
-								min = 0
-								max = 100
-							}
 						}
 						50 = {
 							add_to_variable = {
@@ -968,11 +675,6 @@ AFU_elections_category = {
 								value = -3
 								tooltip = AFU_savchenko_power_tt
 							}
-							clamp_variable = {
-								var = AFU_savchenko_power
-								min = 0
-								max = 100
-							} 
 						}
 					}
 				}
@@ -992,7 +694,7 @@ AFU_elections_category = {
         }
 		
 		fire_only_once = no
-		days_mission_timeout = 10
+		days_mission_timeout = 12
 		
 		activation = {
 			AND = {
@@ -1008,38 +710,23 @@ AFU_elections_category = {
 				70 = {
 					add_to_variable = {
 						var = AFU_savchenko_power
-						value = 2.5
+						value = 1.5
 						tooltip = AFU_savchenko_power_tt
-					}
-					clamp_variable = {
-						var = AFU_savchenko_power
-						min = 0
-						max = 100
 					}
 					
 					random_list = {
 						50 = {
 							add_to_variable = {
 								var = AFU_danilov_power
-								value = -2.5
+								value = -1.5
 								tooltip = AFU_danilov_power_tt
-							}
-							clamp_variable = {
-								var = AFU_danilov_power
-								min = 0
-								max = 100
 							}
 						}
 						50 = {
 							add_to_variable = {
 								var = AFU_khomut_power
-								value = -2.5
+								value = -1.5
 								tooltip = AFU_khomut_power_tt
-							}
-							clamp_variable = {
-								var = AFU_khomut_power
-								min = 0
-								max = 100
 							}
 						}
 					}
@@ -1050,11 +737,6 @@ AFU_elections_category = {
 						value = 3
 						tooltip = AFU_savchenko_power_tt
 					}
-					clamp_variable = {
-						var = AFU_savchenko_power
-						min = 0
-						max = 100
-					}
 					
 					random_list = {
 						50 = {
@@ -1063,22 +745,12 @@ AFU_elections_category = {
 								value = -3
 								tooltip = AFU_danilov_power_tt
 							}
-							clamp_variable = {
-								var = AFU_danilov_power
-								min = 0
-								max = 100
-							}
 						}
 						50 = {
 							add_to_variable = {
 								var = AFU_khomut_power
 								value = -3
 								tooltip = AFU_khomut_power_tt
-							}
-							clamp_variable = {
-								var = AFU_khomut_power
-								min = 0
-								max = 100
 							}
 						}
 					}
@@ -1099,7 +771,7 @@ AFU_elections_category = {
         }
 		
 		fire_only_once = no
-		days_mission_timeout = 10
+		days_mission_timeout = 12
 		
 		activation = {
 			AND = {
@@ -1115,39 +787,24 @@ AFU_elections_category = {
 				70 = {
 					add_to_variable = {
 						var = AFU_khomut_power
-						value = 2.5
+						value = 1.5
 						tooltip = AFU_khomut_power_tt
-					}
-					clamp_variable = {
-						var = AFU_khomut_power
-						min = 0
-						max = 100
 					}
 					
 					random_list = {
 						50 = {
 							add_to_variable = {
 								var = AFU_danilov_power
-								value = -2.5
+								value = -1.5
 								tooltip = AFU_danilov_power_tt
-							}
-							clamp_variable = {
-								var = AFU_danilov_power
-								min = 0
-								max = 100
 							}
 						}
 						50 = {
 							add_to_variable = {
 								var = AFU_savchenko_power
-								value = -2.5
+								value = -1.5
 								tooltip = AFU_savchenko_power_tt
 							}
-							clamp_variable = {
-								var = AFU_savchenko_power
-								min = 0
-								max = 100
-							} 
 						}
 					}
 				}
@@ -1157,11 +814,6 @@ AFU_elections_category = {
 						value = 3
 						tooltip = AFU_khomut_power_tt
 					}
-					clamp_variable = {
-						var = AFU_khomut_power
-						min = 0
-						max = 100
-					}
 					
 					random_list = {
 						50 = {
@@ -1170,22 +822,12 @@ AFU_elections_category = {
 								value = -3
 								tooltip = AFU_danilov_power_tt
 							}
-							clamp_variable = {
-								var = AFU_danilov_power
-								min = 0
-								max = 100
-							}
 						}
 						50 = {
 							add_to_variable = {
 								var = AFU_savchenko_power
 								value = -3
 								tooltip = AFU_savchenko_power_tt
-							}
-							clamp_variable = {
-								var = AFU_savchenko_power
-								min = 0
-								max = 100
 							}
 						}
 					}
