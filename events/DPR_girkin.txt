@@ -14,6 +14,20 @@ country_event = {
 		name = gir.0.a
 		load_focus_tree = DPR_girkin
 		clr_country_flag = DPRelection_active
+		set_politics = {
+			ruling_party = traditionalism
+			elections_allowed = no
+			long_name = "Novorossiyan Monarchical Party"
+			name = "NMP"
+		}
+		set_popularities = {
+			socialism = 10
+			social_democracy = 10
+			liberalism = 10
+			conservatism = 10
+			traditionalism = 40
+			authoritarianism = 20
+		}
 		#There should be fucking parties and natspirits or whatever I am too cooked rn
 	}
 }
@@ -313,7 +327,18 @@ country_event = {
 country_event = {
 	id = gir.9
 	title = gir.9.t
-	desc = gir.9.d
+	desc = {
+		text = gir.9.d.a
+		trigger = {
+			NOT = { has_country_flag = DPR_raid_success }
+		}
+	}
+	desc = {
+		text = gir.9.d.b
+		trigger = {
+			has_country_flag = DPR_raid_success
+		}
+	}
 	picture = none
 
 	fire_only_once = yes
@@ -321,8 +346,19 @@ country_event = {
 
 	option = {
 		name = gir.9.a
-		set_country_flag = DPR_girkin_civil_war
-		unlock_decision_category_tooltip = DPR_putting_down_the_unrest_category
+		
+		if = {
+			limit = {
+				NOT = { has_country_flag = DPR_raid_success }
+			}
+			set_country_flag = DPR_girkin_civil_war
+			unlock_decision_category_tooltip = DPR_putting_down_the_unrest_category
+		}
+		else = {
+			retire_character = DPR_Vitrenko
+			retire_character = DPR_Pasechnik
+			retire_character = DPR_Pushilin
+		}
 	}
 }
 
@@ -775,45 +811,69 @@ country_event = {
 	option = {
 		name = gir.31.a
 		set_country_flag = DPR_path_constitutionalist
+		load_focus_tree = {
+			tree = DPR_constitutionalist
+			keep_completed = yes
+		}
+		mark_focus_tree_layout_dirty = yes
+		complete_national_focus = DPR_and_become_a_mentor
+		
 		swap_ideas = {
 			remove_idea = DPR_colonels_plan_5
 			add_idea = DPR_colonels_plan_6
 		}
 		retire_country_leader = yes
-		promote_character = {
+		add_country_leader_role = {
 			character = DPR_Rostislav
-			ideology = paternalism
+			promote_leader = yes
+			country_leader = {
+				ideology = paternalism
+				expire = "2077.3.1.1"
+				#traits = {  }
+			}
 		}
 		set_politics = {
 			ruling_party = authoritarianism
 			elections_allowed = no
 		}
-		DPR_Girkin = {
-			add_advisor_role = {
-				activate = yes
-				advisor = {
-					slot = head_of_government
-				}
+		add_advisor_role = {
+			character = DPR_Girkin
+			activate = yes
+			advisor = {
+				slot = head_of_government
 			}
 		}
-		mark_focus_tree_layout_dirty = yes
-		complete_national_focus = DPR_and_become_a_mentor
 	}
 
 	option = {
 		name = gir.31.b
 		set_country_flag = DPR_path_absolutist
-		retire_character = DPR_Girkin
-		promote_character = {
-			character = DPR_Maria
-			ideology = monarchism
-		}
-		promote_character = {
-			character = DPR_George
-			ideology = absolutism
+		load_focus_tree = {
+			tree = DPR_absolutist
+			keep_completed = yes
 		}
 		mark_focus_tree_layout_dirty = yes
 		complete_national_focus = DPR_and_restore_historical_justice
+		
+		retire_country_leader = yes
+		add_country_leader_role = {
+			character = DPR_Maria
+			promote_leader = yes
+			country_leader = {
+				ideology = monarchism
+				expire = "2077.3.1.1"
+				#traits = {  }
+			}
+		}
+		add_country_leader_role = {
+			character = DPR_George
+			promote_leader = yes
+			country_leader = {
+				ideology = absolutism
+				expire = "2077.3.1.1"
+				#traits = {  }
+			}
+		}
 	}
 }
 
@@ -883,6 +943,11 @@ country_event = {
 		name = gir.35.a
 		set_country_flag = DPR_path_constitutionalist_rostislav
 		mark_focus_tree_layout_dirty = yes
+		
+		remove_advisor_role = {
+			character = DPR_Girkin
+			slot = head_of_government
+		}
 	}
 }
 
@@ -1287,7 +1352,7 @@ country_event = {
 
 	option = {
 		name = gir.58.a
-		retire_character = DNR_ivanov
+		retire_character = DPR_Ivanov
 		add_manpower = -100
 	}
 }

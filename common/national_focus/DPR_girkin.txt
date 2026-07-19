@@ -24,6 +24,15 @@ shared_focus = {
 			days = 1
 		}
 	}
+
+	allow_branch = {
+		NOT = {
+			OR = {
+				has_country_flag = DPR_path_constitutionalist
+				has_country_flag = DPR_path_absolutist
+			}
+		}
+	}
 }
 
 #Give Them a Fight
@@ -601,6 +610,22 @@ shared_focus = {
 
 	completion_reward = {
 		###ADD 4 COSSACK BRIGADES(4 horse, 2 infantry, 1 truck)
+		division_template = {
+			name = "Cossaks Division"
+			is_locked = yes
+			division_names_group = RUS_INF_01
+			priority = 0
+			template_counter = 0
+			regiments = {
+				cavalry = { x = 0 y = 0 }
+				cavalry = { x = 0 y = 1 }
+				cavalry = { x = 0 y = 2 }
+				cavalry = { x = 0 y = 3 }
+			}
+			support = {
+				military_police = { x = 0 y = 0 }
+			}
+		}
 		random_owned_controlled_state  = {
 			create_unit = {
 				division = "name = \"1st Cossack Brigade\" division_template = \"Cossaks Division\" start_experience_factor = 0.2 start_equipment_factor = 0.7" 
@@ -1238,9 +1263,9 @@ shared_focus = {
 	x = -1
 	y = 1
 
-	available = { # --- IF YOU CHOOSE ROSTIK IN EVENT
-		has_country_flag = DPR_rostik_choice
-	}
+	#available = { # --- IF YOU CHOOSE ROSTIK IN EVENT
+	#	has_country_flag = DPR_rostik_choice
+	#}
 	prerequisite = {
 		focus = DPR_conflict_of_interests
 	}
@@ -1310,9 +1335,9 @@ shared_focus = {
 	x = 1
 	y = 1
 
-	available = { # --- IF YOU CHOOSE GIRKIN IN EVENT
-		has_country_flag = DPR_girkin_choice
-	}
+	#available = { # --- IF YOU CHOOSE GIRKIN IN EVENT
+	#	has_country_flag = DPR_girkin_choice
+	#}
 	prerequisite = {
 		focus = DPR_conflict_of_interests
 	}
@@ -1397,7 +1422,7 @@ shared_focus = {
 				limit = {
 					power_balance_value = {
 						id = DPR_rostislave_girkin_balance_decisions
-						value < 0.04
+						value < 0.01
 					}
 				}
 				country_event = { # --- IF ROSTIK HAS MORE POINTS
@@ -1411,7 +1436,6 @@ shared_focus = {
 					days = 1
 				}
 			}
-			country_event = generic_debug.1
 		}
 	}
 }
