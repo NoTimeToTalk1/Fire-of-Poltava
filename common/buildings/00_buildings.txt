@@ -32,7 +32,7 @@ buildings = {
 	#   repair_speed_factor = 0.5 # Optional. Factor for how fast the building is repaired (default = 1.0)
 
 	infrastructure = {
-		base_cost = 5000
+		base_cost = 6000
 		icon_frame = 3
 		infrastructure = yes
 		value = 1
@@ -54,7 +54,7 @@ buildings = {
 
 	arms_factory = {
 		show_on_map = 6
-		base_cost = 8500
+		base_cost = 9000
 		base_cost_conversion = 4000
 		military_production = 1
 		disabled_in_dmz = yes
@@ -69,7 +69,7 @@ buildings = {
 
 	industrial_complex = {
 		show_on_map = 6
-		base_cost = 11800
+		base_cost = 12000
 		base_cost_conversion = 9000
 		general_production = 1
 		icon_frame = 1
@@ -469,15 +469,15 @@ buildings = {
 		show_on_map = 1
 		base_cost = 35000
 		icon_frame = 27
-		#nuclear_reactor = yes
+		nuclear_reactor = yes
 		affects_energy = yes
 		value = 10
 		infrastructure_construction_effect = yes
 		
 		country_modifiers = {
 			modifiers = {
-				consumer_goods_factor = -0.1
-				factory_energy_consumption = -0.3
+				nuclear_production_factor = 3
+				thermonuclear_production_factor = 2
 			}
 		}
 
@@ -603,6 +603,33 @@ buildings = {
 		}
 	}
 	dam_mountain = {
+		show_on_map = 1
+		base_cost = 20000
+		damage_factor = 0 # This building can't be damaged by regular strat bombing
+		icon_frame = 26
+		value = 5
+		tags = { dam_building }
+		spawn_point = dam_spawn
+		damage_factor = -1
+		is_buildable = no
+		affects_energy = yes
+		need_detection = yes
+		detecting_intel_type = civilian 
+		province_damage_modifiers = { flooded }
+		only_display_if_exists = yes
+		special_icon = GFX_dam_icon_small
+		level_cap = {
+			province_max = 1
+		}
+		show_modifier = yes
+		state_modifiers = {
+			state_production_speed_buildings_factor = 0.15
+			local_building_slots_factor = 0.15
+			state_resources_factor = 0.1
+			local_factory_energy_consumption = -0.65
+		}
+	}
+	cataract_dam_mountain = {
 		show_on_map = 1
 		base_cost = 20000
 		damage_factor = 0 # This building can't be damaged by regular strat bombing
@@ -759,7 +786,7 @@ buildings = {
 			}
 		}
 		  state_modifiers = {
-			attrition_for_controller = -0.02
+			#attrition_for_controller = -0.02
 			local_supplies_for_controller = 0.05
 		  }
 	}
@@ -864,12 +891,12 @@ buildings = {
 			state_max = 1
 		}
 		disabled_in_dmz = yes
-		  state_modifiers = {
+		  state_modifiers = { # NOT A FUCKING STATE MODIFIER, I am tired of seeing it in error.log, deleting this for now, useless ass building
 			local_org_regain = 0.01
 		  }
-		country_modifiers = {
+		country_modifiers = { # NOT A FUCKING COUNTRY MODIFIER, I am tired of seeing it in error.log, deleting this for now, useless ass building
 			modifiers = {					
-				experience_gain_army_factor = 0.02	
+				# experience_gain_army_factor = 0.02	
 			}
 		}
 	}
