@@ -251,6 +251,23 @@ first_elections_round = {
                 id = DPRelection.20
             }
 		} 
+			else_if = {
+				limit = {		
+			    check_variable = {
+                    NDPD_pp > 50
+                }
+			}
+			set_popularities = {
+	            oligarchism = 56
+	            national_democracy = 21
+	            ultranationalism = 8
+	            socialism = 15
+            }
+			clr_country_flag = DPRelection_active
+			country_event = {
+                id = DPRelection.23
+            }
+		}
 
         else = {
 		    add_to_variable = { SWPD_pp = FDP_pp }
