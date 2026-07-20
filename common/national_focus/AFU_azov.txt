@@ -15,11 +15,6 @@ shared_focus = {
 	x = 22
 	y = 0
 
-	allow_branch = {
-		NOT = {
-			tag = DBS
-		}
-	}
 	available = {
 		has_completed_focus = AFU_free_donbas
 		has_completed_focus = AFU_reshaping_the_mentality
@@ -31,11 +26,20 @@ shared_focus = {
 		custom_effect_tooltip = afu_azov_kha_preparations_tt
 	}
 
+	bypass = {
+		KHA = { exists = no }
+	}
+
 	allow_branch = {
 		KHA = {
 			NOT = {
 				has_government = ultranationalism
 			}
+		}
+	}
+	allow_branch = {
+		NOT = {
+			tag = DBS
 		}
 	}
 }
@@ -160,12 +164,6 @@ shared_focus = {
 	x = 22
 	y = 0
 
-	allow_branch = {
-		NOT = {
-			tag = DBS
-		}
-	}
-
 	available = {
 		has_completed_focus = AFU_free_donbas
 		has_completed_focus = AFU_reshaping_the_mentality
@@ -182,6 +180,11 @@ shared_focus = {
 	allow_branch = {
 		KHA = {
 			has_government = ultranationalism
+		}
+	}
+	allow_branch = {
+		NOT = {
+			tag = DBS
 		}
 	}
 }
@@ -3125,7 +3128,7 @@ shared_focus = {
 
 	completion_reward = {
 		swap_ideas = {
-			remove_idea = AFU_azov_new_natiocratic_economy_2
+			remove_idea = AFU_azov_new_natiocratic_economy_1
 			add_idea = AFU_azov_new_natiocratic_economy_3
 		}
 		random_core_state = {
@@ -3183,6 +3186,10 @@ shared_focus = {
 	}
 
 	completion_reward = {
+		swap_ideas = {
+			remove_idea = AFU_azov_new_natiocratic_economy_2
+			add_idea = AFU_azov_new_natiocratic_economy_4
+		}
 		swap_ideas = {
 			remove_idea = AFU_azov_new_natiocratic_economy_3
 			add_idea = AFU_azov_new_natiocratic_economy_4
