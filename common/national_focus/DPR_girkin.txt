@@ -491,13 +491,11 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		if = {
+		every_country = {
 			limit = {
-				any_other_country = {
-					OR = {
-						has_government = communism
-						has_government = socialism
-					}
+				OR = {
+					has_government = communism
+					has_government = socialism
 				}
 			}
 			add_opinion_modifier = {
@@ -1049,6 +1047,9 @@ shared_focus = {
 	prerequisite = {
 		focus = DPR_consolidation_of_the_south
 	}
+	available = {
+		tag = LBU
+	}
 
 	completion_reward = {
 		country_event = {
@@ -1422,7 +1423,7 @@ shared_focus = {
 				limit = {
 					power_balance_value = {
 						id = DPR_rostislave_girkin_balance_decisions
-						value < 0.01
+						value < 0
 					}
 				}
 				country_event = { # --- IF ROSTIK HAS MORE POINTS
