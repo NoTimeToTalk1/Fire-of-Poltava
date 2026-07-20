@@ -275,20 +275,27 @@ second_elections_round = {
         custom_effect_tooltip = DPRelection_second_round_tt
 		
 		if = {
-		    limit = {		
+            limit = {		
 			    check_variable = {
-                    NDPD_pp > 50
+                    SWPD_pp > 50
                 }
 			}
 			set_popularities = {
-	            oligarchism = 56
-	            national_democracy = 21
-	            ultranationalism = 8
-	            socialism = 15
+	            oligarchism = 29
+	            national_democracy = 11
+	            ultranationalism = 21
+	            socialism = 39
+            }
+			
+			set_politics = {
+	            ruling_party = socialism
+                elections_allowed = no
+                last_election = "1984.12.1"
+                election_frequency = 48
             }
 			clr_country_flag = DPRelection_active
 			country_event = {
-                id = DPRelection.23
+                id = dpr_vitrenko.1
             }
 		}
 		
@@ -339,26 +346,18 @@ second_elections_round = {
 			country_event = {
                 id = DPRelection.24
             }
-		} 
-
-        else = {
-            set_popularities = {
-	            oligarchism = 29
-	            national_democracy = 11
-	            ultranationalism = 21
-	            socialism = 39
-            }
-			
-			set_politics = {
-	            ruling_party = socialism
-                elections_allowed = no
-                last_election = "1984.12.1"
-                election_frequency = 48
+		}
+		
+		else = {
+			set_popularities = {
+	            oligarchism = 56
+	            national_democracy = 21
+	            ultranationalism = 8
+	            socialism = 15
             }
 			clr_country_flag = DPRelection_active
 			country_event = {
-                id = dpr_vitrenko.1
+                id = DPRelection.23
             }
 		}
-}		
-		
+	}		
