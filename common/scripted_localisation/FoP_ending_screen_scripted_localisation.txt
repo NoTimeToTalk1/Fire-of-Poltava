@@ -110,16 +110,17 @@ defined_text = {
 	text = {
 		trigger = {
 			original_tag = DPR
-			has_government = authoritarianism
+			has_country_leader = {
+				character = DPR_Pushilin
+			}
 		}
-		localization_key = "FOP_Ending_Screen_Penis_Desc"
+		localization_key = "FOP_Ending_Screen_Pushilin_Desc"
 	}
 	text = {
 		trigger = {
 			original_tag = DPR
-			OR = {
-				has_government = conservatism
-				has_government = liberalism
+			has_country_leader = {
+				character = LPR_Pasechnik
 			}
 		}
 		localization_key = "FOP_Ending_Screen_Pasechnik_Desc"
@@ -127,9 +128,8 @@ defined_text = {
 	text = {
 		trigger = {
 			original_tag = DPR
-			OR = {
-				has_government = communism
-				has_government = socialism
+			has_country_leader = {
+				character = DPR_Vitrenko
 			}
 		}
 		localization_key = "FOP_Ending_Screen_Vitrenko_Desc"
@@ -138,8 +138,9 @@ defined_text = {
 		trigger = {
 			original_tag = DPR
 			has_country_leader = {
-				character = DNR_rostislav
+				character = DPR_Rostislav
 			}
+			NOT = { has_ideology = ultranationalism }
 		}
 		localization_key = "FOP_Ending_Screen_Rostislav_Desc"
 	}
@@ -147,7 +148,7 @@ defined_text = {
 		trigger = {
 			original_tag = DPR
 			has_country_leader = {
-				character = DNR_maria
+				character = DPR_Maria
 			}
 		}
 		localization_key = "FOP_Ending_Screen_Maria_Desc"
@@ -156,7 +157,7 @@ defined_text = {
 		trigger = {
 			original_tag = DPR
 			has_country_leader = {
-				character = DNR_george
+				character = DPR_George
 			}
 		}
 		localization_key = "FOP_Ending_Screen_George_Desc"
@@ -165,8 +166,9 @@ defined_text = {
 		trigger = {
 			original_tag = DPR
 			has_country_leader = {
-				character = DNR_girkin
+				character = DPR_Rostislav
 			}
+			has_ideology = ultranationalism
 		}
 		localization_key = "FOP_Ending_Screen_Girkin_Desc"
 	}
