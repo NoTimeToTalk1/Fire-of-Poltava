@@ -40,10 +40,6 @@
 		x = 0
 		y = 2
 
-		ai_will_do = {
-			factor = 10
-		}
-
 		cost = 1
 		prerequisite = { 
 			focus = DPR_another_term
@@ -344,13 +340,11 @@
 	shared_focus = {
 		id = DPR_opposition_union
 		icon = GFX_Opposition_Union
+
 		x = 15
 		y = 0
-		cost = 4
 
-		ai_will_do = {
-			factor = 10
-		}
+		cost = 4
 
 		completion_reward = {
             country_event = {
@@ -362,131 +356,14 @@
 	}
 	
 	shared_focus = {
-		id = DPR_people_fight
-		icon = GFX_People_Fight_For
-		x = 30
-		y = 1
-		cost = 3
-
-
-
-		ai_will_do = {
-			factor = 10
-		}
-		prerequisite = { focus = DPR_opposition_union  }
-
-		completion_reward = {
-            country_event = {
-				id = DPRelection.3
-				days = 1
-            }
-			Opposition_pp_increase = yes
-			add_political_power = 20
-		}		
-	}
-	
-	shared_focus = {
-		id = DPR_equality
-		icon = GFX_Equality
-		x = 32
-		y = 2
-		cost = 3
-
-
-
-		ai_will_do = {
-			factor = 15
-		}
-
-        prerequisite = { focus = DPR_people_fight }
-        mutually_exclusive = { focus = DPR_freedom }
-        mutually_exclusive = { focus = DPR_nation }		
-		completion_reward = {
-			SWPD_pp_increase = yes
-		}		
-	}
-	
-	shared_focus = {
-		id = DPR_freedom
-		icon = GFX_Freedom
-		x = 30
-		y = 2
-		cost = 3
-
-
-
-		ai_will_do = {
-			factor = 15
-		}
-
-        prerequisite = { focus = DPR_people_fight }	
-        mutually_exclusive = { focus = DPR_equality }
-        mutually_exclusive = { focus = DPR_nation }		
-		completion_reward = {
-			DPN_pp_increase = yes
-		}		
-	}
-	
-	shared_focus = {
-		id = DPR_nation
-		icon = GFX_Strong_Nation
-		x = 28
-		y = 2
-		cost = 3
-
-
-
-		ai_will_do = {
-			factor = 15
-		}
-
-        prerequisite = { focus = DPR_people_fight }	
-        mutually_exclusive = { focus = DPR_equality }
-        mutually_exclusive = { focus = DPR_freedom }		
-		completion_reward = {
-			FDP_pp_increase = yes
-		}		
-	}
-	
-	shared_focus = {
-		id = DPR_march
-		icon = GFX_March_on_Donetsk
-		x = 30
-		y = 3
-		cost = 3
-
-
-
-		ai_will_do = {
-			factor = 15
-		}
-
-        prerequisite = {
-			focus = DPR_nation
-			focus = DPR_freedom
-			focus = DPR_equality
-		}			
-		completion_reward = {
-			country_event = {
-				id = DPRelection.4
-				days = 3
-            }
-		}		
-	}
-	
-	shared_focus = {
 		id = DPR_cariov_office
 		icon = GFX_In_the_Tsaryov_Office
-		x = 35
-		y = 1
-		cost = 3
 
+		relative_position_id = DPR_opposition_union
+		x = -5
+		y = 2
 
-
-		ai_will_do = {
-			factor = 15
-		}
-		prerequisite = { focus = DPR_opposition_union  }
+		prerequisite = { focus = DPR_opposition_union }
 
 		completion_reward = {
             country_event = {
@@ -497,49 +374,17 @@
 	}
 	
 	shared_focus = {
-		id = DPR_pragmatic_allience
-		icon = GFX_Pragmatic_Alliance
-		x = 34
-		y = 2
-		cost = 3
-
-
-
-		ai_will_do = {
-			factor = 15
-		}
-		prerequisite = { focus = DPR_cariov_office }
-
-        mutually_exclusive = {focus = DPR_democratic_block }		
-		completion_reward = {
-            custom_effect_tooltip = DPRelection_CP_to_FDP_tt
-			add_to_variable = { FDP_pp = CP_pp }
-			set_variable = { CP_pp = 0 }
-			hidden_effect = {
-				CP_pp_increase = yes
-			}
-			country_event = {
-				id = DPRelection.6
-				days = 1
-            }
-		}		
-	}
-	
-	shared_focus = {
 		id = DPR_democratic_block
 		icon = GFX_Democratic_Bloc
-		x = 36
-		y = 2
+
+		relative_position_id = DPR_cariov_office
+		x = -1
+		y = 1
+
 		cost = 3
-
-
-
-		ai_will_do = {
-			factor = 15
-		}
 		prerequisite = { focus = DPR_cariov_office }
 
-        mutually_exclusive = {focus = DPR_pragmatic_allience }		
+        mutually_exclusive = {focus = DPR_pragmatic_allience }
 		completion_reward = {
             custom_effect_tooltip = DPRelection_CP_to_DPN_tt
 			add_to_variable = { DPN_pp = CP_pp }
@@ -555,21 +400,43 @@
 	}
 	
 	shared_focus = {
+		id = DPR_pragmatic_allience
+		icon = GFX_Pragmatic_Alliance
+
+		relative_position_id = DPR_cariov_office
+		x = 1
+		y = 1
+
+		cost = 3
+		prerequisite = { focus = DPR_cariov_office }
+
+        mutually_exclusive = {focus = DPR_democratic_block }
+		completion_reward = {
+            custom_effect_tooltip = DPRelection_CP_to_FDP_tt
+			add_to_variable = { FDP_pp = CP_pp }
+			set_variable = { CP_pp = 0 }
+			hidden_effect = {
+				CP_pp_increase = yes
+			}
+			country_event = {
+				id = DPRelection.6
+				days = 1
+            }
+		}		
+	}
+	
+	shared_focus = {
 		id = DPR_second_attempt
 		icon = GFX_Second_Attempt
-		x = 35
-		y = 3
+
+		relative_position_id = DPR_pragmatic_allience
+		x = -1
+		y = 1
+
 		cost = 3
-
-
-
-		ai_will_do = {
-			factor = 15
-		}
 		prerequisite = { 
-		    focus = DPR_pragmatic_allience
 			focus = DPR_democratic_block
-		
+			focus = DPR_pragmatic_allience
 		}
 
 		completion_reward = {
@@ -581,20 +448,114 @@
 	}
 	
 	shared_focus = {
+		id = DPR_people_fight
+		icon = GFX_People_Fight_For
+
+		relative_position_id = DPR_opposition_union
+		x = 0
+		y = 2
+
+		cost = 3
+		prerequisite = { focus = DPR_opposition_union }
+
+		completion_reward = {
+            country_event = {
+				id = DPRelection.3
+				days = 1
+            }
+			Opposition_pp_increase = yes
+			add_political_power = 20
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_nation
+		icon = GFX_Strong_Nation
+
+		relative_position_id = DPR_people_fight
+		x = -2
+		y = 1
+
+		cost = 3
+        prerequisite = { focus = DPR_people_fight }
+		mutually_exclusive = { focus = DPR_freedom }
+        mutually_exclusive = { focus = DPR_equality }
+
+		completion_reward = {
+			FDP_pp_increase = yes
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_freedom
+		icon = GFX_Freedom
+		
+		relative_position_id = DPR_people_fight
+		x = 0
+		y = 1
+
+		cost = 3
+        prerequisite = { focus = DPR_people_fight }
+		mutually_exclusive = { focus = DPR_nation }
+        mutually_exclusive = { focus = DPR_equality }
+
+		completion_reward = {
+			DPN_pp_increase = yes
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_equality
+		icon = GFX_Equality
+
+		relative_position_id = DPR_people_fight
+		x = 2
+		y = 1
+
+		cost = 3
+        prerequisite = { focus = DPR_people_fight }
+		mutually_exclusive = { focus = DPR_nation }
+        mutually_exclusive = { focus = DPR_freedom }
+
+		completion_reward = {
+			SWPD_pp_increase = yes
+		}		
+	}
+	
+	shared_focus = {
+		id = DPR_march
+		icon = GFX_March_on_Donetsk
+
+		relative_position_id = DPR_equality
+		x = -2
+		y = 1
+
+		cost = 3
+        prerequisite = {
+			focus = DPR_nation
+			focus = DPR_freedom
+			focus = DPR_equality
+		}
+
+		completion_reward = {
+			country_event = {
+				id = DPRelection.4
+				days = 3
+            }
+		}		
+	}
+	
+	shared_focus = {
 		id = DPR_workers_strike
 		icon = GFX_Workers_Strike
-		x = 39
-		y = 1
+
+		relative_position_id = DPR_opposition_union
+		x = 5
+		y = 2
+
 		cost = 3
-
-
-
-		ai_will_do = {
-			factor = 10
-		}
 		prerequisite = { 
 		    focus = DPR_opposition_union
-		
 		}
 
 		completion_reward = {
@@ -607,18 +568,14 @@
 	shared_focus = {
 		id = DPR_help_them
 		icon = GFX_Help_Them
-		x = 38
-		y = 2
+
+		relative_position_id = DPR_workers_strike
+		x = -1
+		y = 1
+
 		cost = 3
-
-
-
-		ai_will_do = {
-			factor = 15
-		}
-		prerequisite = { 
+		prerequisite = {
 		    focus = DPR_workers_strike
-		
 		}
 		mutually_exclusive = { focus = DPR_better_call_push }
 
@@ -631,18 +588,14 @@
 	shared_focus = {
 		id = DPR_better_call_push
 		icon = GFX_Better_Call_Pushilin
-		x = 40
-		y = 2
+
+		relative_position_id = DPR_workers_strike
+		x = 1
+		y = 1
+
 		cost = 3
-
-
-
-		ai_will_do = {
-			factor = 15
-		}
-		prerequisite = { 
+		prerequisite = {
 		   focus = DPR_workers_strike
-		
 		}
 		mutually_exclusive = { focus = DPR_help_them }
 
@@ -652,22 +605,19 @@
 				days = 1
             }
 			set_country_flag = DPR_better_call_push_flag
-		}		
+		}
 	}
 	
 	shared_focus = {
 		id = DPR_promise_them
 		icon = GFX_Promise_Them
-		x = 39
-		y = 3
+
+		relative_position_id = DPR_better_call_push
+		x = -1
+		y = 1
+
 		cost = 3
-
-
-
-		ai_will_do = {
-			factor = 15
-		}
-		prerequisite = { 
+		prerequisite = {
 		    focus = DPR_help_them
 		    focus = DPR_better_call_push
 		}
@@ -681,23 +631,20 @@
 	shared_focus = {
 		id = DPR_road_to_future
 		icon = GFX_Road_to_the_Future
-		x = 35
-		y = 4
+
+		relative_position_id = DPR_promise_them
+		x = -5
+		y = 1
+
 		cost = 1
-
-
-
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = { 
-		    focus = DPR_promise_them
-		}
-		prerequisite = { 
+		prerequisite = {
 		    focus = DPR_second_attempt
 		}
-		prerequisite = { 
+		prerequisite = {
 			focus = DPR_march
+		}
+		prerequisite = {
+		    focus = DPR_promise_them
 		}
 
 		completion_reward = {
