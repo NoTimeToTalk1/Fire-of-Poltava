@@ -15,8 +15,18 @@
 #		example_effect = yes
 #	}
 #
+#4 - SWDP
+#3 - DPN
+#2 - FDP
+#NDPD - penis dushilin
 
 Parties_pp_change = {
+		if = {
+            limit = {		
+			    check_variable = {
+                    opposition_leader = 1
+                }
+			}
 		set_temp_variable = { growthN = NDPD_pp_ch }
         add_to_variable = { NDPD_pp = growthN }
 		divide_temp_variable = { growthN = 4 }
@@ -61,78 +71,196 @@ Parties_pp_change = {
 		subtract_from_variable = { DPN_pp = growthC }
 		subtract_from_variable = { SWPD_pp = growthC }
 		subtract_from_variable = { NDPD_pp = growthC }
+		}
+
+
+		else_if = {
+            limit = { check_variable = { opposition_leader = 2 } }
+		set_temp_variable = { growthN = NDPD_pp_ch }
+        add_to_variable = { NDPD_pp = growthN }
+		subtract_from_variable = { FDP_pp = growthN }
 		
+		set_temp_variable = { growthF = FDP_pp_ch  }
+		add_to_variable = { FDP_pp = growthF }
+		subtract_from_variable = { NDPD_pp = growthF }
+		}
+
+
+		else_if = {
+            limit = { check_variable = { opposition_leader = 3 } }
+		set_temp_variable = { growthN = NDPD_pp_ch }
+        add_to_variable = { NDPD_pp = growthN }
+		subtract_from_variable = { DPN_pp = growthN }
+		
+		set_temp_variable = { growthF = DPN_pp_ch  }
+		add_to_variable = { DPN_pp = growthF }
+		subtract_from_variable = { NDPD_pp = growthF }
+		}
+
+
+		else_if = {
+            limit = { check_variable = { opposition_leader = 4 } }
+		set_temp_variable = { growthN = NDPD_pp_ch }
+        add_to_variable = { NDPD_pp = growthN }
+		subtract_from_variable = { SWPD_pp = growthN }
+		
+		set_temp_variable = { growthF = SWPD_pp_ch  }
+		add_to_variable = { SWPD_pp = growthF }
+		subtract_from_variable = { NDPD_pp = growthF }
+		}
 	}
 	
 Opposition_pp_increase = {
 	    custom_effect_tooltip = DPRelection_Opposition_increase_tt
-	
+		if = {
+            limit = { check_variable = { opposition_leader = 1 } }
         add_to_variable = { FDP_pp = 1 }
 		add_to_variable = { DPN_pp = 1 }
 		add_to_variable = { SWPD_pp = 1 }
 		subtract_from_variable = { NDPD_pp = 3 }
+		}
+		else_if = {
+            limit = { check_variable = { opposition_leader = 2 } }
+        add_to_variable = { FDP_pp = 3 }
+		subtract_from_variable = { NDPD_pp = 3 }
+		}
+		else_if = {
+            limit = { check_variable = { opposition_leader = 3 } }
+        add_to_variable = { DPN_pp = 3 }
+		subtract_from_variable = { NDPD_pp = 3 }
+		}
+		else_if = {
+            limit = { check_variable = { opposition_leader = 4 } }
+        add_to_variable = { SWPD_pp = 3 }
+		subtract_from_variable = { NDPD_pp = 3 }
+		}
 }
 
 Opposition_pp_decrease = {
 	    custom_effect_tooltip = DPRelection_Opposition_decrease_tt
-	
+		if = {
+			limit = { check_variable = { opposition_leader = 1 } }
         subtract_from_variable = { FDP_pp = 1 }
 		subtract_from_variable = { DPN_pp = 1 }
 		subtract_from_variable = { SWPD_pp = 1 }
 		add_to_variable = { NDPD_pp = 3 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 2 } }
+        subtract_from_variable = { FDP_pp = 3 }
+		add_to_variable = { NDPD_pp = 3 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 3 } }
+        subtract_from_variable = { DPN_pp = 3 }
+		add_to_variable = { NDPD_pp = 3 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 4 } }
+        subtract_from_variable = { SWPD_pp = 3 }
+		add_to_variable = { NDPD_pp = 3 }
+		}
 }
 
 SWPD_pp_increase = {
 	    custom_effect_tooltip = DPRelection_SWPD_increase_tt
-	
+		if = {
+			limit = { check_variable = { opposition_leader = 1 } }
         subtract_from_variable = { FDP_pp = 0.75 }
 		subtract_from_variable = { DPN_pp = 0.5 }
 		add_to_variable = { SWPD_pp = 2.5 }
 		subtract_from_variable = { NDPD_pp = 1.25 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 4 } }
+		add_to_variable = { SWPD_pp = 2.5 }
+		subtract_from_variable = { NDPD_pp = 2.5 }
+		}
+		else = {}
 }
 
 SWPD_pp_increase_strong = {
 	    custom_effect_tooltip = DPRelection_SWPD_increase_strong_tt
-	
+		if = {
+			limit = { check_variable = { opposition_leader = 1 } }	
         subtract_from_variable = { FDP_pp = 1 }
 		subtract_from_variable = { DPN_pp = 0.75 }
 		add_to_variable = { SWPD_pp = 4 }
 		subtract_from_variable = { NDPD_pp = 2.25 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 4 } }
+		add_to_variable = { SWPD_pp = 4 }
+		subtract_from_variable = { NDPD_pp = 4 }
+		}
+		else = {}
 }
 
 DPN_pp_increase = {
 	    custom_effect_tooltip = DPRelection_DPN_increase_tt
-	
+		if = {
+			limit = { check_variable = { opposition_leader = 1 } }		
         subtract_from_variable = { FDP_pp = 0.5 }
 		subtract_from_variable = { SWPD_pp = 0.5 }
 		add_to_variable = { DPN_pp = 2.5 }
 		subtract_from_variable = { NDPD_pp = 1.5 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 4 } }
+		add_to_variable = { SWPD_pp = 4 }
+		subtract_from_variable = { NDPD_pp = 4 }
+		}
+		else = {}
 }
 
 FDP_pp_increase = {
 	    custom_effect_tooltip = DPRelection_FDP_increase_tt
-	
+		if = {
+			limit = { check_variable = { opposition_leader = 1 } }		
         subtract_from_variable = { DPN_pp = 0.5 }
 		subtract_from_variable = { SWPD_pp = 0.75 }
 		add_to_variable = { FDP_pp = 2.5 }
 		subtract_from_variable = { NDPD_pp = 1.25 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 2 } }
+		add_to_variable = { SWPD_pp = 2.5 }
+		subtract_from_variable = { NDPD_pp = 2.5 }
+		}
+		else = {}
 }
 
 FDP_pp_increase_strong = {
 	    custom_effect_tooltip = DPRelection_FDP_increase_strong_tt
-	
+		if = {
+			limit = { check_variable = { opposition_leader = 1 } }		
         subtract_from_variable = { DPN_pp = 0.90 }
 		subtract_from_variable = { SWPD_pp = 0.75 }
 		add_to_variable = { FDP_pp = 4 }
 		subtract_from_variable = { NDPD_pp = 2.35 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 2 } }
+		add_to_variable = { FDP_pp = 4 }
+		subtract_from_variable = { NDPD_pp = 4 }
+		}
+		else = {}
 }
 
 FDP_pp_decrease = {
 	    custom_effect_tooltip = DPRelection_FDP_decrease_tt
-	
+		if = {
+			limit = { check_variable = { opposition_leader = 1 } }		
         add_to_variable = { DPN_pp = 1 }
 		subtract_from_variable = { FDP_pp = 3 }
 		add_to_variable = { NDPD_pp = 2 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 2 } }
+		add_to_variable = { NDPD_pp = 3 }
+		subtract_from_variable = { FDP_pp = 3 }
+		}
+		else = {}
 }
 
 CP_pp_increase = {
@@ -148,46 +276,131 @@ CP_pp_increase = {
 
 Opposition_pp_growth = {
         custom_effect_tooltip = DPRelection_Opposition_growth_tt
-	
+		if = {
+			limit = { check_variable = { opposition_leader = 1 } }			
         add_to_variable = { FDP_pp_ch = 0.5 }
 		add_to_variable = { DPN_pp_ch = 0.5 }
 		add_to_variable = { SWPD_pp_ch = 0.5 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 2 } }		
+        add_to_variable = { FDP_pp = 1.5 }
+
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 3 } }		
+        add_to_variable = { DPN_pp = 1.5 }
+
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 4 } }		
+        add_to_variable = { SWPD_pp = 1.5 }
+
+		}
 }
 
 Pushilin_pp_decrease = {
 	    custom_effect_tooltip = DPRelection_Pushilin_pp_decrease_tt
-	
+		if = {
+			limit = { check_variable = { opposition_leader = 1 } }		
         add_to_variable = { FDP_pp = 1 }
 		add_to_variable = { DPN_pp = 1 }
 		add_to_variable = { SWPD_pp = 1 }
 		subtract_from_variable = { NDPD_pp = 3 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 2 } }		
+        add_to_variable = { FDP_pp = 3 }
+		subtract_from_variable = { NDPD_pp = 3 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 3 } }		
+        add_to_variable = { DPN_pp = 3 }
+		subtract_from_variable = { NDPD_pp = 3 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 4 } }		
+        add_to_variable = { SWPD_pp = 3 }
+		subtract_from_variable = { NDPD_pp = 3 }
+		}
 }
 
 Pushilin_pp_decrease_strong = {
 	    custom_effect_tooltip = DPRelection_Pushilin_pp_decrease_strong_tt
-	
+		if = {
+			limit = { check_variable = { opposition_leader = 1 } }		
         add_to_variable = { FDP_pp = 2 }
 		add_to_variable = { DPN_pp = 2 }
 		add_to_variable = { SWPD_pp = 3 }
 		subtract_from_variable = { NDPD_pp = 7 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 2 } }		
+        add_to_variable = { FDP_pp = 7 }
+		subtract_from_variable = { NDPD_pp = 7 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 3 } }		
+        add_to_variable = { DPN_pp = 7 }
+		subtract_from_variable = { NDPD_pp = 7 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 4 } }		
+        add_to_variable = { SWPD_pp = 7 }
+		subtract_from_variable = { NDPD_pp = 7 }
+		}
 }
 
 Pushilin_pp_increase = {
 	    custom_effect_tooltip = DPRelection_Pushilin_increase_tt
-	
+		if = {
+			limit = { check_variable = { opposition_leader = 1 } }			
         subtract_from_variable = { FDP_pp = 1 }
 		subtract_from_variable = { DPN_pp = 0.5 }
 		subtract_from_variable = { SWPD_pp = 0.5 }
 		add_to_variable = { NDPD_pp = 2 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 2 } }		
+        subtract_from_variable = { FDP_pp = 2 }
+		add_to_variable = { NDPD_pp = 2 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 3 } }		
+        subtract_from_variable = { DPN_pp = 2 }
+		add_to_variable = { NDPD_pp = 2 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 4 } }		
+        subtract_from_variable = { SWPD_pp = 2 }
+		add_to_variable = { NDPD_pp = 2 }
+		}
 }
 
 Pushilin_pp_increase_strong = {
 	    custom_effect_tooltip = DPRelection_Pushilin_increase_strong_tt
-	
+		if = {
+			limit = { check_variable = { opposition_leader = 1 } }		
         subtract_from_variable = { FDP_pp = 3 }
 		subtract_from_variable = { DPN_pp = 1 }
 		subtract_from_variable = { SWPD_pp = 1 }
 		add_to_variable = { NDPD_pp = 5 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 2 } }		
+        subtract_from_variable = { FDP_pp = 5 }
+		add_to_variable = { NDPD_pp = 5 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 3 } }		
+        subtract_from_variable = { DPN_pp = 5 }
+		add_to_variable = { NDPD_pp = 5 }
+		}
+		else_if = {
+			limit = { check_variable = { opposition_leader = 4 } }		
+        subtract_from_variable = { SWPD_pp = 5 }
+		add_to_variable = { NDPD_pp = 5 }
+		}
 }
 
 Pushilin_pp_growth = {
