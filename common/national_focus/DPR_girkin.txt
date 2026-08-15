@@ -491,16 +491,18 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		every_country = {
-			limit = {
-				OR = {
-					has_government = communism
-					has_government = socialism
+		any_other_country = {
+			if = {
+				limit = {
+					OR = {
+						has_government = communism
+						has_government = socialism
+					}
 				}
-			}
-			add_opinion_modifier = {
-				target = ROOT
-				modifier = spirit_of_novorosiya
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = spirit_of_novorosiya
+				}
 			}
 		}
 		country_event = {
@@ -1277,9 +1279,9 @@ shared_focus = {
 	completion_reward = {
 		###GIVES POINTS TO ROSTIK IN BoP(Balance of Power) game
 		add_power_balance_value = {
-			id = DPR_rostislave_girkin_political_balance
+			id = DPR_liberalization_bop
 			value = -0.1
-			tooltip_side = rostislave_influence_growth
+			tooltip_side = rostislav_influence_growth
 		}
 	}
 }
@@ -1319,9 +1321,9 @@ shared_focus = {
 
 	completion_reward = {
 		add_power_balance_value = {
-			id = DPR_rostislave_girkin_political_balance
+			id = DPR_liberalization_bop
 			value = -0.1
-			tooltip_side = rostislave_influence_growth
+			tooltip_side = rostislav_influence_growth
 		}
 	}
 }
@@ -1348,7 +1350,7 @@ shared_focus = {
 
 	completion_reward = {
 		add_power_balance_value = {
-			id = DPR_rostislave_girkin_political_balance
+			id = DPR_liberalization_bop
 			value = 0.1
 			tooltip_side = girkin_influence_growth
 		}
@@ -1390,7 +1392,7 @@ shared_focus = {
 
 	completion_reward = {
 		add_power_balance_value = {
-			id = DPR_rostislave_girkin_political_balance
+			id = DPR_liberalization_bop
 			value = 0.1
 			tooltip_side = girkin_influence_growth
 		}
@@ -1422,7 +1424,7 @@ shared_focus = {
 			if = {
 				limit = {
 					power_balance_value = {
-						id = DPR_rostislave_girkin_balance_decisions
+						id = DPR_liberalization_bop
 						value < 0
 					}
 				}
@@ -2433,7 +2435,7 @@ shared_focus = {
 			if = {
 				limit = {
 					power_balance_value = {
-						id = DPR_emp_bop_left_side
+						id = DPR_family_bop
 						value < 0
 					}
 				}
