@@ -175,8 +175,11 @@
 		prerequisite = { focus = DPR_look_north }
 
 		completion_reward = {
-			add_political_power = 50
-			add_stability = 0.1
+			give_military_access = LPR
+			give_guarantee = LPR
+			LPR = {
+				country_event = dpr.22
+			}
 		}
 	}
 
@@ -192,26 +195,9 @@
 		cost = 2
 		prerequisite = { focus = DPR_look_north }
 
-		available = {
-			has_global_flag = DNR_tradewar
-			has_global_flag = DNR_ok
-		}
-
 		completion_reward = {
-			give_military_access = LPR
-			give_guarantee = LPR
-			LPR = {
-				country_event = dpr.22
-			}
-
-			#remove_ideas = {
-			#	the_tariff_war_dnr
-			#}
-			#LPR = {
-			#	remove_ideas = {
-			#		the_tariff_war_dnr
-			#	}
-			#}
+			remove_ideas = LPR_rivalry_between_republics
+			LPR = { remove_ideas = LPR_rivalry_between_republics }
 		}
 	}
 
