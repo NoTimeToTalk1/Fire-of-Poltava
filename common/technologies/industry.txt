@@ -1,5 +1,4 @@
-#####-------------------------------------------------------> Modified by NoTimeToTalk
-#####-------------------------------------------------------> Made by MihaVar
+#####-------------------------------------------------------> Modified by MihaVar
 
 technologies = {
 
@@ -294,10 +293,12 @@ concentrated_production_planning = {
 }
 
 centralized_supply_chains = {
-	research_cost = 2.5
+	research_cost = 2
 	start_year = 2021
 
-	supply_node_range = 0.15
+	industrial_capacity_factory = 0.15
+	industrial_capacity_dockyard = 0.1
+	global_building_slots_factor = 0.20
 
 	path = { leads_to_tech = mega_factory_complexes }
 
@@ -306,12 +307,12 @@ centralized_supply_chains = {
 }
 
 mega_factory_complexes = {
-	research_cost = 3
+	research_cost = 2
 	start_year = 2023
 
-		industrial_capacity_factory = 0.1
-		industrial_capacity_dockyard = 0.1
-		global_building_slots_factor = 0.1
+	industrial_capacity_factory = 0.15
+	industrial_capacity_dockyard = 0.1
+	global_building_slots_factor = 0.20
 
 	path = { leads_to_tech = single_point_failure_risk }
 
@@ -323,9 +324,9 @@ single_point_failure_risk = {
 	research_cost = 2
 	start_year = 2025
 
-		industrial_capacity_factory = 0.1
-		industrial_capacity_dockyard = 0.1
-		global_building_slots_factor = 0.1
+	industrial_capacity_factory = 0.15
+	industrial_capacity_dockyard = 0.1
+	global_building_slots_factor = 0.20
 
 	path = { leads_to_tech = high_density_factory_zones }
 
@@ -334,12 +335,12 @@ single_point_failure_risk = {
 }
 
 high_density_factory_zones = {
-	research_cost = 3
+	research_cost = 2
 	start_year = 2027
 
-		industrial_capacity_factory = 0.15
-		industrial_capacity_dockyard = 0.1
-		global_building_slots_factor = 0.15
+	industrial_capacity_factory = 0.15
+	industrial_capacity_dockyard = 0.1
+	global_building_slots_factor = 0.20
 
 	folder = { name = industry_folder position = { x = 6 y = 10 } }
 	categories = { industry cat_production concentrated_industry_category }
@@ -351,11 +352,12 @@ local_workshops_network = {
 	research_cost = 2
 	start_year = 2019
 
-		industrial_capacity_factory = 0.05
-		industrial_capacity_dockyard = 0.05
-		line_change_production_efficiency_factor = 0.02
-		production_factory_start_efficiency_factor = 0.05
-		industry_air_damage_factor = -0.15
+	industrial_capacity_factory = 0.1
+	industrial_capacity_dockyard = 0.1
+	line_change_production_efficiency_factor = 0.1
+	production_factory_start_efficiency_factor = 0.05
+	industry_air_damage_factor = -0.15
+	global_building_slots_factor = 0.2
 
 	xor = { concentrated_production_planning }
 
@@ -369,11 +371,12 @@ regional_manufacturing = {
 	research_cost = 2
 	start_year = 2021
 
-		industrial_capacity_factory = 0.05
-		industrial_capacity_dockyard = 0.05
-		line_change_production_efficiency_factor = 0.05
-		production_factory_start_efficiency_factor = 0.05
-		industry_air_damage_factor = -0.1
+	industrial_capacity_factory = 0.1
+	industrial_capacity_dockyard = 0.1
+	line_change_production_efficiency_factor = 0.1
+	production_factory_start_efficiency_factor = 0.05
+	industry_air_damage_factor = -0.15
+	global_building_slots_factor = 0.2
 
 	path = { leads_to_tech = redundant_production_lines }
 
@@ -382,14 +385,15 @@ regional_manufacturing = {
 }
 
 redundant_production_lines = {
-	research_cost = 2.5
+	research_cost = 2
 	start_year = 2023
 
-		industrial_capacity_factory = 0.05
-		industrial_capacity_dockyard = 0.05
-		line_change_production_efficiency_factor = 0.05
-		production_factory_start_efficiency_factor = 0.05
-		industry_air_damage_factor = -0.1
+	industrial_capacity_factory = 0.1
+	industrial_capacity_dockyard = 0.1
+	line_change_production_efficiency_factor = 0.1
+	production_factory_start_efficiency_factor = 0.05
+	industry_air_damage_factor = -0.15
+	global_building_slots_factor = 0.2
 
 	path = { leads_to_tech = industrial_resilience }
 
@@ -398,14 +402,15 @@ redundant_production_lines = {
 }
 
 industrial_resilience = {
-	research_cost = 3
+	research_cost = 2
 	start_year = 2025
 
-		industrial_capacity_factory = 0.15
-		industrial_capacity_dockyard = 0.15
-		line_change_production_efficiency_factor = 0.05
-		production_factory_start_efficiency_factor = 0.05
-		industry_air_damage_factor = -0.1
+	industrial_capacity_factory = 0.1
+	industrial_capacity_dockyard = 0.1
+	line_change_production_efficiency_factor = 0.1
+	production_factory_start_efficiency_factor = 0.05
+	industry_air_damage_factor = -0.15
+	global_building_slots_factor = 0.2
 
 	path = { leads_to_tech = mobile_production_facilities }
 
@@ -414,14 +419,15 @@ industrial_resilience = {
 }
 
 mobile_production_facilities = {
-	research_cost = 3
+	research_cost = 2
 	start_year = 2027
 
-		industrial_capacity_factory = 0.15
-		industrial_capacity_dockyard = 0.15
-		line_change_production_efficiency_factor = 0.2
-		production_factory_start_efficiency_factor = 0.15
-		industry_air_damage_factor = -0.1
+	industrial_capacity_factory = 0.1
+	industrial_capacity_dockyard = 0.1
+	line_change_production_efficiency_factor = 0.1
+	production_factory_start_efficiency_factor = 0.05
+	industry_air_damage_factor = -0.15
+	global_building_slots_factor = 0.2
 
 	folder = { name = industry_folder position = { x = 8 y = 10 } }
 	categories = { industry cat_production dispersed_industry_category }
