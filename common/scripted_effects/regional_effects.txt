@@ -1353,7 +1353,7 @@ progress_microregion = {
 			original_tag = KHA
 			has_government = ultranationalism
 		}
-		set_cosmetic_tag = KHA_freicorps_regional_donbas
+		set_cosmetic_tag = KHA_freikorps_regional_donbas
 		mark_focus_tree_layout_dirty = yes
 	}
 	else_if = {
@@ -1391,7 +1391,7 @@ progress_microregion = {
 			original_tag = DPR
 			has_government = authoritarianism
 		}
-		set_cosmetic_tag = DPR_dushilin_regional_donbas
+		set_cosmetic_tag = DPR_pushilin_regional_donbas
 		mark_focus_tree_layout_dirty = yes
 	}
 	else_if = {
@@ -1660,7 +1660,7 @@ progress_region = {
 			original_tag = KHA
 			has_government = ultranationalism
 		}
-		set_cosmetic_tag = KHA_freicorps_regional_east
+		set_cosmetic_tag = KHA_freikorps_regional_east
 		mark_focus_tree_layout_dirty = yes
 	}
 	else_if = {
@@ -1692,7 +1692,7 @@ progress_region = {
 			original_tag = DPR
 			has_government = authoritarianism
 		}
-		set_cosmetic_tag = DPR_dushilin_regional_east
+		set_cosmetic_tag = DPR_pushilin_regional_east
 		mark_focus_tree_layout_dirty = yes
 	}
 	else_if = {
@@ -1976,7 +1976,7 @@ progress_river_bank = {
 			original_tag = KHA
 			has_government = ultranationalism
 		}
-		set_cosmetic_tag = KHA_freicorps_regional_left_bank
+		set_cosmetic_tag = KHA_freikorps_regional_left_bank
 		mark_focus_tree_layout_dirty = yes
 	}
 	else_if = {
@@ -2008,7 +2008,7 @@ progress_river_bank = {
 			original_tag = DPR
 			has_government = authoritarianism
 		}
-		set_cosmetic_tag = DPR_dushilin_regional_left_bank
+		set_cosmetic_tag = DPR_pushilin_regional_left_bank
 		mark_focus_tree_layout_dirty = yes
 	}
 	else_if = {
@@ -2230,10 +2230,7 @@ progress_ukraine = {
 	else_if = {
 		limit = {
 			original_tag = AFU
-			OR = {
-				has_government = authoritarianism
-				has_government = centrism
-			}
+			has_government = authoritarianism
 		}
 		set_cosmetic_tag = AFU_kryvonos_united_ukraine
 		mark_focus_tree_layout_dirty = yes
@@ -2249,7 +2246,11 @@ progress_ukraine = {
 	else_if = {
 		limit = {
 			original_tag = AFU
-			has_government = oligarchism
+			OR = {
+				has_government = social_liberalism
+				has_government = centrism
+				has_government = oligarchism
+			}
 		}
 		set_cosmetic_tag = AFU_khomut_united_ukraine
 		mark_focus_tree_layout_dirty = yes
@@ -2258,7 +2259,10 @@ progress_ukraine = {
 	else_if = {
 		limit = {
 			original_tag = AFU
-			has_government = social_democracy
+			OR = {
+				has_government = socialism
+				has_government = social_democracy
+			}
 		}
 		set_cosmetic_tag = AFU_savchenko_united_ukraine
 		mark_focus_tree_layout_dirty = yes
@@ -2268,6 +2272,10 @@ progress_ukraine = {
 		limit = {
 			original_tag = AFU
 			has_government = liberalism
+			OR = {
+				has_government = liberalism
+				has_government = conservatism
+			}
 		}
 		set_cosmetic_tag = AFU_danilov_united_ukraine
 		mark_focus_tree_layout_dirty = yes
@@ -2288,7 +2296,7 @@ progress_ukraine = {
 			original_tag = KHA
 			has_government = ultranationalism
 		}
-		set_cosmetic_tag = KHA_freicorps_united_ukraine
+		set_cosmetic_tag = KHA_freikorps_united_ukraine
 		mark_focus_tree_layout_dirty = yes
 	}
 	else_if = {
@@ -2358,7 +2366,7 @@ progress_ukraine = {
 			original_tag = DPR
 			has_government = authoritarianism
 		}
-		set_cosmetic_tag = DPR_dushilin_united_ukraine
+		set_cosmetic_tag = DPR_pushilin_united_ukraine
 		mark_focus_tree_layout_dirty = yes
 		set_country_flag = FOP_Ending_Screen_Visible
 	}
