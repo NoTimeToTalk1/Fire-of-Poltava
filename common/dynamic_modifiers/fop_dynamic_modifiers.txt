@@ -1,0 +1,55 @@
+FOP_south_war_preparedness = {
+    icon = GFX_idea_unknown
+    enable = { 
+        OR = {
+            AND = {
+                tag = TVR
+                TVR = {
+                    has_war_with = BUH
+                }
+            }
+            AND = {
+                tag = BUH
+                BUH = {
+                    has_war_with = TVR
+                }
+            }
+        }
+    }
+    remove_trigger = {
+        tag = STH
+    }
+    army_attack_factor = south_war_preparedness_attack_var
+    army_attack_speed_factor = south_war_preparedness_attack_var
+    army_defence_factor = south_war_preparedness_defence_var
+    army_org_factor = south_war_preparedness_organisation_var
+    army_morale_factor = south_war_preparedness_organisation_var
+    army_speed_factor = south_war_preparedness_organisation_var
+}
+FOP_south_war_fatigue = {
+    icon = GFX_idea_unknown
+    enable = { 
+        OR = {
+            AND = {
+                tag = TVR
+                TVR = {
+                    has_war_with = BUH
+                }
+            }
+            AND = {
+                tag = BUH
+                BUH = {
+                    has_war_with = TVR
+                }
+            }
+        }
+    }
+    remove_trigger = {
+        tag = STH
+    }
+    stability_factor = south_war_political_fatigue_var
+    war_support_factor = south_war_political_fatigue_var
+    political_power_gain_factor = south_war_political_fatigue_var
+    production_factory_efficiency_gain_factor = south_war_economic_fatigue_var
+    consumer_goods_factor = south_war_economic_fatigue_var
+}

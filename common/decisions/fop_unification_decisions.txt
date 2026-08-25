@@ -1903,12 +1903,12 @@ unite_east_ukraine = {
 				}
 				NOT = {
 					has_country_flag = east_war
-					has_country_flag = east_elections
-					has_country_flag = east_dogovornyak
+					has_country_flag = east_referendum
+					has_country_flag = east_deal
 				}
 				NOT = {
-					has_country_flag = dogovornyak_agreed
-					has_country_flag = elections_agreed
+					has_country_flag = deal_agreed
+					has_country_flag = referendum_agreed
 				}
 				NOT = {
 					has_country_flag = unification_choice_made
@@ -1931,7 +1931,7 @@ unite_east_ukraine = {
         }
 	}
 
-	prepare_elections_east = {
+	prepare_referendum_east = {
         target_trigger = {
             FROM = {
 				OR = {
@@ -1941,15 +1941,15 @@ unite_east_ukraine = {
             }
         }
 		visible = {
-			can_do_elections = yes
+			can_do_referendum = yes
 			NOT = {
 				has_country_flag = east_war
-				has_country_flag = east_elections
-				has_country_flag = east_dogovornyak
+				has_country_flag = east_referendum
+				has_country_flag = east_deal
 			}
 			NOT = {
-				has_country_flag = dogovornyak_agreed
-				has_country_flag = elections_agreed
+				has_country_flag = deal_agreed
+				has_country_flag = referendum_agreed
 			}
 			NOT = {
 				has_country_flag = unification_choice_made
@@ -1975,11 +1975,11 @@ unite_east_ukraine = {
 		}
 	}
 
-	prepare_elections_east_agreed = {
+	prepare_referendum_east_agreed = {
 		visible = {
-			has_country_flag = elections_agreed
+			has_country_flag = referendum_agreed
 			NOT = {
-				has_country_flag = east_elections
+				has_country_flag = east_referendum
 			}
 		}
 		fire_only_once = yes
@@ -1994,8 +1994,8 @@ unite_east_ukraine = {
 					var = dnipro_rates_grow
 					value = 2
 				}
-				set_country_flag = east_elections
-				clr_country_flag = elections_agreed
+				set_country_flag = east_referendum
+				clr_country_flag = referendum_agreed
 				add_political_power = 100
 			}
 			DBS = {
@@ -2007,8 +2007,8 @@ unite_east_ukraine = {
 					var = donbas_rates_grow
 					value = 2
 				}
-				set_country_flag = east_elections
-				clr_country_flag = elections_agreed
+				set_country_flag = east_referendum
+				clr_country_flag = referendum_agreed
 				add_political_power = 100
 			}
 		}
@@ -2018,17 +2018,17 @@ unite_east_ukraine = {
 		}
 	}
 
-	prepare_dogovornyak_east = {
+	prepare_deal_east = {
 		visible = {
-			can_do_dogovornyak = yes		
+			can_do_deal = yes		
 			NOT = {
 					has_country_flag = east_war
-					has_country_flag = east_elections
-					has_country_flag = east_dogovornyak
+					has_country_flag = east_referendum
+					has_country_flag = east_deal
 				}
 				NOT = {
-					has_country_flag = dogovornyak_agreed
-					has_country_flag = elections_agreed
+					has_country_flag = deal_agreed
+					has_country_flag = referendum_agreed
 				}
 				NOT = {
 					has_country_flag = unification_choice_made
@@ -2069,18 +2069,18 @@ unite_east_ukraine = {
 		}
 	}
 
-	prepare_dogovornyak_east_agreed = {
+	prepare_deal_east_agreed = {
 		visible = {
-			has_country_flag = dogovornyak_agreed
+			has_country_flag = deal_agreed
 			NOT = {
-				has_country_flag = east_dogovornyak
+				has_country_flag = east_deal
 			}
 		}
 		fire_only_once = yes
         	days_remove = 0
 		complete_effect = {
 			DNP = {
-				set_country_flag = east_dogovornyak
+				set_country_flag = east_deal
 				add_political_power = 100
 				set_variable = {
 					var = dnipro_spendible_influence
@@ -2096,7 +2096,7 @@ unite_east_ukraine = {
 				}
 			}
 			DBS = {
-				set_country_flag = east_dogovornyak	
+				set_country_flag = east_deal	
 				add_political_power = 100
 				set_variable = {
 					var = donbas_spendible_influence
@@ -2225,6 +2225,7 @@ unite_south_ukraine = {
 		cost = 0
 
 		complete_effect = {
+			clr_country_flag = south_war_growing_fatigue
 			custom_effect_tooltip = south_unite_tt
 			hidden_effect = {
 				progress_region = yes
@@ -2288,12 +2289,12 @@ unite_south_ukraine = {
 			}
 			NOT = {
 				has_country_flag = south_war
-				has_country_flag = south_elections
-				has_country_flag = south_dogovornyak
+				has_country_flag = south_referendum
+				has_country_flag = south_deal
 			}
 			NOT = {
-				has_country_flag = dogovornyak_agreed
-				has_country_flag = elections_agreed
+				has_country_flag = deal_agreed
+				has_country_flag = referendum_agreed
 			}
 			NOT = {
 				has_country_flag = unification_choice_made
@@ -2312,7 +2313,7 @@ unite_south_ukraine = {
         }
     }
 
-	prepare_elections_south = {
+	prepare_referendum_south = {
         target_trigger = {
             FROM = {
 				OR = {
@@ -2325,15 +2326,15 @@ unite_south_ukraine = {
 			date > 2024.01.01
 		}
 		visible = {
-			can_do_elections = yes
+			can_do_referendum = yes
 			NOT = {
 				has_country_flag = south_war
-				has_country_flag = south_elections
-				has_country_flag = south_dogovornyak
+				has_country_flag = south_referendum
+				has_country_flag = south_deal
 			}
 			NOT = {
-				has_country_flag = dogovornyak_agreed
-				has_country_flag = elections_agreed
+				has_country_flag = deal_agreed
+				has_country_flag = referendum_agreed
 			}
 			NOT = {
 				has_country_flag = unification_choice_made
@@ -2359,11 +2360,11 @@ unite_south_ukraine = {
 		}
 	}
 
-	prepare_elections_south_agreed = {
+	prepare_referendum_south_agreed = {
 		visible = {
-			has_country_flag = elections_agreed
+			has_country_flag = referendum_agreed
 			NOT = {
-				has_country_flag = south_elections
+				has_country_flag = south_referendum
 			}
 		}
 		fire_only_once = yes
@@ -2378,8 +2379,8 @@ unite_south_ukraine = {
 					var = buh_rates_grow
 					value = 2
 				}
-				set_country_flag = south_elections
-				clr_country_flag = elections_agreed
+				set_country_flag = south_referendum
+				clr_country_flag = referendum_agreed
 				add_political_power = 100
 			}
 			TVR = {
@@ -2391,8 +2392,8 @@ unite_south_ukraine = {
 					var = tavria_rates_grow
 					value = 2
 				}
-				set_country_flag = south_elections
-				clr_country_flag = elections_agreed
+				set_country_flag = south_referendum
+				clr_country_flag = referendum_agreed
 				add_political_power = 100
 			}
 		}
@@ -2402,17 +2403,17 @@ unite_south_ukraine = {
 		}
 	}
 
-	prepare_dogovornyak_south = {
+	prepare_deal_south = {
 		visible = {
-			can_do_dogovornyak = yes
+			can_do_deal = yes
 				NOT = {
 					has_country_flag = south_war
-					has_country_flag = south_elections
-					has_country_flag = south_dogovornyak
+					has_country_flag = south_referendum
+					has_country_flag = south_deal
 				}
 				NOT = {
-					has_country_flag = dogovornyak_agreed
-					has_country_flag = elections_agreed
+					has_country_flag = deal_agreed
+					has_country_flag = referendum_agreed
 				}
 				NOT = {
 					has_country_flag = unification_choice_made
@@ -2456,18 +2457,18 @@ unite_south_ukraine = {
 		}
 	}
 
-	prepare_dogovornyak_south_agreed = {
+	prepare_deal_south_agreed = {
 		visible = {
-			has_country_flag = dogovornyak_agreed
+			has_country_flag = deal_agreed
 			NOT = {
-				has_country_flag = south_dogovornyak
+				has_country_flag = south_deal
 			}
 		}
 		fire_only_once = yes
         	days_remove = 0
 		complete_effect = {
 			TVR = {
-				set_country_flag = south_dogovornyak
+				set_country_flag = south_deal
 				add_political_power = 100
 				set_variable = {
 					var = tavria_spendible_influence
@@ -2483,7 +2484,7 @@ unite_south_ukraine = {
 				}
 			}
 			BUH = {
-				set_country_flag = south_dogovornyak	
+				set_country_flag = south_deal	
 				add_political_power = 100
 				set_variable = {
 					var = buh_spendible_influence
@@ -2651,7 +2652,7 @@ unite_north_ukraine = {
 		}
 	}
 
-	prepare_elections_north = {
+	prepare_referendum_north = {
         target_trigger = {
             FROM = {
 				OR = {
@@ -2661,15 +2662,15 @@ unite_north_ukraine = {
             }
         }
 		visible = {
-			can_do_elections = yes
+			can_do_referendum = yes
 			NOT = {
 					has_country_flag = north_war
-					has_country_flag = north_elections
-					has_country_flag = north_dogovornyak
+					has_country_flag = north_referendum
+					has_country_flag = north_deal
 				}
 				NOT = {
-					has_country_flag = dogovornyak_agreed
-					has_country_flag = elections_agreed
+					has_country_flag = deal_agreed
+					has_country_flag = referendum_agreed
 				}
 				NOT = {
 					has_country_flag = unification_choice_made
@@ -2696,11 +2697,11 @@ unite_north_ukraine = {
 		}
 	}
 
-	prepare_elections_north_agreed = {
+	prepare_referendum_north_agreed = {
 		visible = {
-			has_country_flag = elections_agreed
+			has_country_flag = referendum_agreed
 			NOT = {
-				has_country_flag = north_elections
+				has_country_flag = north_referendum
 			}
 		}
 		fire_only_once = yes
@@ -2715,8 +2716,8 @@ unite_north_ukraine = {
 					var = siveria_rates_grow
 					value = 2
 				}
-				set_country_flag = north_elections
-				clr_country_flag = elections_agreed
+				set_country_flag = north_referendum
+				clr_country_flag = referendum_agreed
 				add_political_power = 100
 			}
 			DIR = {
@@ -2728,8 +2729,8 @@ unite_north_ukraine = {
 					var = dnieper_rates_grow
 					value = 2
 				}
-				set_country_flag = north_elections
-				clr_country_flag = elections_agreed
+				set_country_flag = north_referendum
+				clr_country_flag = referendum_agreed
 				add_political_power = 100
 			}
 		}
@@ -2739,17 +2740,17 @@ unite_north_ukraine = {
 		}
 	}
 
-	prepare_dogovornyak_north = {
+	prepare_deal_north = {
 		visible = {
-			can_do_dogovornyak = yes
+			can_do_deal = yes
 			NOT = {
 					has_country_flag = north_war
-					has_country_flag = north_elections
-					has_country_flag = north_dogovornyak
+					has_country_flag = north_referendum
+					has_country_flag = north_deal
 				}
 				NOT = {
-					has_country_flag = dogovornyak_agreed
-					has_country_flag = elections_agreed
+					has_country_flag = deal_agreed
+					has_country_flag = referendum_agreed
 				}
 				NOT = {
 					has_country_flag = unification_choice_made
@@ -2790,18 +2791,18 @@ unite_north_ukraine = {
 		}
 	}
 
-	prepare_dogovornyak_north_agreed = {
+	prepare_deal_north_agreed = {
 		visible = {
-			has_country_flag = dogovornyak_agreed
+			has_country_flag = deal_agreed
 			NOT = {
-				has_country_flag = north_dogovornyak
+				has_country_flag = north_deal
 			}
 		}
 		fire_only_once = yes
         	days_remove = 0	
 		complete_effect = {
 			DNP = {
-					set_country_flag = north_dogovornyak
+					set_country_flag = north_deal
 					add_political_power = 100
 					set_variable = {
 						var = dnieper_spendible_influence
@@ -2817,7 +2818,7 @@ unite_north_ukraine = {
 					}
 				}
 			SIV = {
-					set_country_flag = north_dogovornyak	
+					set_country_flag = north_deal	
 					add_political_power = 100
 					set_variable = {
 						var = siveria_spendible_influence
@@ -2869,12 +2870,12 @@ unite_north_ukraine = {
 			}
 			NOT = {
 				has_country_flag = north_war
-				has_country_flag = north_elections
-				has_country_flag = north_dogovornyak
+				has_country_flag = north_referendum
+				has_country_flag = north_deal
 			}
 			NOT = {
-				has_country_flag = dogovornyak_agreed
-				has_country_flag = elections_agreed
+				has_country_flag = deal_agreed
+				has_country_flag = referendum_agreed
 			}
 			NOT = {
 				has_country_flag = unification_choice_made
@@ -3040,7 +3041,7 @@ unite_west_ukraine = {
 		}
 	}
 
-	prepare_elections_west = {
+	prepare_referendum_west = {
 		available = {
 			date > 2024.01.01
 		}
@@ -3053,11 +3054,11 @@ unite_west_ukraine = {
             }
         }
 		visible = {
-			can_do_elections = yes
+			can_do_referendum = yes
 			NOT = {
 				has_country_flag = west_war
-				has_country_flag = west_elections
-				has_country_flag = west_dogovornyak
+				has_country_flag = west_referendum
+				has_country_flag = west_deal
 			}
 			NOT = {
 				has_country_flag = unification_choice_made
@@ -3083,11 +3084,11 @@ unite_west_ukraine = {
 		}
 	}
 
-	prepare_elections_west_agreed = {
+	prepare_referendum_west_agreed = {
 		visible = {
-			has_country_flag = elections_agreed
+			has_country_flag = referendum_agreed
 			NOT = {
-				has_country_flag = west_elections
+				has_country_flag = west_referendum
 			}
 		}
 		fire_only_once = yes
@@ -3102,8 +3103,8 @@ unite_west_ukraine = {
 					var = galicia_rates_grow
 					value = 2
 				}
-				set_country_flag = west_elections
-				clr_country_flag = elections_agreed
+				set_country_flag = west_referendum
+				clr_country_flag = referendum_agreed
 				add_political_power = 100
 			}
 			PDL = {
@@ -3115,8 +3116,8 @@ unite_west_ukraine = {
 					var = podolia_rates_grow
 					value = 2
 				}
-				set_country_flag = west_elections
-				clr_country_flag = elections_agreed
+				set_country_flag = west_referendum
+				clr_country_flag = referendum_agreed
 				add_political_power = 100
 			}
 		}
@@ -3126,13 +3127,13 @@ unite_west_ukraine = {
 		}
 	}
 
-	prepare_dogovornyak_west = {
+	prepare_deal_west = {
 		visible = {
-			can_do_dogovornyak = yes
+			can_do_deal = yes
 			NOT = {
 				has_country_flag = west_war
-				has_country_flag = west_elections
-				has_country_flag = west_dogovornyak
+				has_country_flag = west_referendum
+				has_country_flag = west_deal
 			}
 			NOT = {
 				has_country_flag = unification_choice_made
@@ -3175,11 +3176,11 @@ unite_west_ukraine = {
 		}
 	}
 
-	prepare_dogovornyak_west_agreed = {
+	prepare_deal_west_agreed = {
 		visible = {
-			has_country_flag = dogovornyak_agreed
+			has_country_flag = deal_agreed
 			NOT = {
-				has_country_flag = west_dogovornyak
+				has_country_flag = west_deal
 			}
 		}
 		
@@ -3188,7 +3189,7 @@ unite_west_ukraine = {
 
 		complete_effect = {
 			GLY = {
-				set_country_flag = west_dogovornyak
+				set_country_flag = west_deal
 				add_political_power = 100
 				set_variable = {
 					var = galicia_spendible_influence
@@ -3204,7 +3205,7 @@ unite_west_ukraine = {
 				}
 			}
 			PDL = {
-				set_country_flag = west_dogovornyak	
+				set_country_flag = west_deal	
 				add_political_power = 100
 				set_variable = {
 					var = podolia_spendible_influence
@@ -3256,8 +3257,8 @@ unite_west_ukraine = {
 			}
 			NOT = {
 				has_country_flag = west_war
-				has_country_flag = west_elections
-				has_country_flag = west_dogovornyak
+				has_country_flag = west_referendum
+				has_country_flag = west_deal
 			}
 			NOT = {
 				has_country_flag = unification_choice_made
@@ -3419,7 +3420,7 @@ unite_left_bank_ukraine = {
 		}
 	}
 
-	prepare_elections_left_bank = {
+	prepare_referendum_left_bank = {
 		available = {
 			date > 2027.01.01
 			STH = {
@@ -3446,15 +3447,15 @@ unite_left_bank_ukraine = {
             }
         }
 		visible = {
-			can_do_elections = yes
+			can_do_referendum = yes
 			NOT = {
 				has_country_flag = left_bank_war
-				has_country_flag = left_bank_elections
-				has_country_flag = left_bank_dogovornyak
+				has_country_flag = left_bank_referendum
+				has_country_flag = left_bank_deal
 			}
 			NOT = {
-				has_country_flag = dogovornyak_agreed_banks
-				has_country_flag = elections_agreed_banks
+				has_country_flag = deal_agreed_banks
+				has_country_flag = referendum_agreed_banks
 			}
 			NOT = {
 				has_country_flag = unification_choice_made_banks
@@ -3480,11 +3481,11 @@ unite_left_bank_ukraine = {
 		}
 	}
 
-	prepare_elections_left_bank_agreed = {
+	prepare_referendum_left_bank_agreed = {
 		visible = {
-			has_country_flag = elections_agreed_banks
+			has_country_flag = referendum_agreed_banks
 			NOT = {
-				has_country_flag = left_bank_elections
+				has_country_flag = left_bank_referendum
 			}
 		}
 		
@@ -3501,8 +3502,8 @@ unite_left_bank_ukraine = {
 					var = south_rates_grow
 					value = 2
 				}
-				set_country_flag = left_bank_elections
-				clr_country_flag = elections_agreed
+				set_country_flag = left_bank_referendum
+				clr_country_flag = referendum_agreed
 				add_political_power = 100
 			}
 			ESN = {
@@ -3514,8 +3515,8 @@ unite_left_bank_ukraine = {
 					var = east_rates_grow
 					value = 2
 				}
-				set_country_flag = left_bank_elections
-				clr_country_flag = elections_agreed
+				set_country_flag = left_bank_referendum
+				clr_country_flag = referendum_agreed
 				add_political_power = 100
 			}
 		}
@@ -3525,11 +3526,11 @@ unite_left_bank_ukraine = {
 		}
 	}
 
-	prepare_dogovornyak_left_bank_agreed = {
+	prepare_deal_left_bank_agreed = {
 		visible = {
-			has_country_flag = dogovornyak_agreed_banks
+			has_country_flag = deal_agreed_banks
 			NOT = {
-				has_country_flag = left_bank_dogovornyak
+				has_country_flag = left_bank_deal
 			}
 		}
 		
@@ -3538,7 +3539,7 @@ unite_left_bank_ukraine = {
 		
 		complete_effect = {
 			ESN = {
-				set_country_flag = left_bank_dogovornyak
+				set_country_flag = left_bank_deal
 				add_political_power = 100
 				set_variable = {
 					var = east_spendible_influence
@@ -3554,7 +3555,7 @@ unite_left_bank_ukraine = {
 				}
 			}
 			STH = {
-				set_country_flag = left_bank_dogovornyak	
+				set_country_flag = left_bank_deal	
 				add_political_power = 100
 				set_variable = {
 					var = south_spendible_influence
@@ -3576,7 +3577,7 @@ unite_left_bank_ukraine = {
 		}
 	}
 
-	prepare_dogovornyak_left_bank = {
+	prepare_deal_left_bank = {
 		available = {
 			date > 2027.01.01
 			STH = {
@@ -3595,15 +3596,15 @@ unite_left_bank_ukraine = {
 			}
 		}
 		visible = {
-			can_do_dogovornyak = yes
+			can_do_deal = yes
 			NOT = {
 				has_country_flag = left_bank_war
-				has_country_flag = left_bank_elections
-				has_country_flag = left_bank_dogovornyak
+				has_country_flag = left_bank_referendum
+				has_country_flag = left_bank_deal
 			}
 			NOT = {
-				has_country_flag = dogovornyak_agreed_banks
-				has_country_flag = elections_agreed_banks
+				has_country_flag = deal_agreed_banks
+				has_country_flag = referendum_agreed_banks
 			}
 			NOT = {
 				has_country_flag = unification_choice_made_banks
@@ -3673,12 +3674,12 @@ unite_left_bank_ukraine = {
 			}
 			NOT = {
 				has_country_flag = left_bank_war
-				has_country_flag = left_bank_elections
-				has_country_flag = left_bank_dogovornyak
+				has_country_flag = left_bank_referendum
+				has_country_flag = left_bank_deal
 			}
 			NOT = {
-				has_country_flag = dogovornyak_agreed_banks
-				has_country_flag = elections_agreed_banks
+				has_country_flag = deal_agreed_banks
+				has_country_flag = referendum_agreed_banks
 			}
 			NOT = {
 				has_country_flag = unification_choice_made_banks
@@ -3843,7 +3844,7 @@ unite_right_bank_ukraine = {
 		}
 	}
 
-	prepare_elections_right_bank = {
+	prepare_referendum_right_bank = {
 		available = {
 			date > 2027.01.01
 			NRT = {
@@ -3870,19 +3871,19 @@ unite_right_bank_ukraine = {
             }
         }
 		visible = {
-			can_do_elections = yes
+			can_do_referendum = yes
 			OR = {
 				tag = WST
 				tag = NRT
 			}
 			NOT = {
 					has_country_flag = right_bank_war
-					has_country_flag = right_bank_elections
-					has_country_flag = right_bank_dogovornyak
+					has_country_flag = right_bank_referendum
+					has_country_flag = right_bank_deal
 				}
 			NOT = {
-				has_country_flag = dogovornyak_agreed_banks
-				has_country_flag = elections_agreed_banks
+				has_country_flag = deal_agreed_banks
+				has_country_flag = referendum_agreed_banks
 			}
 			NOT = {
 				has_country_flag = unification_choice_made_banks
@@ -3906,11 +3907,11 @@ unite_right_bank_ukraine = {
 		}
 	}
 
-	prepare_elections_right_bank_agreed = {
+	prepare_referendum_right_bank_agreed = {
 		visible = {
-			has_country_flag = elections_agreed_banks
+			has_country_flag = referendum_agreed_banks
 			NOT = {
-				has_country_flag = right_bank_elections
+				has_country_flag = right_bank_referendum
 			}
 		}
 		
@@ -3927,8 +3928,8 @@ unite_right_bank_ukraine = {
 					var = west_rates_grow
 					value = 2
 				}
-				set_country_flag = right_bank_elections
-				clr_country_flag = elections_agreed
+				set_country_flag = right_bank_referendum
+				clr_country_flag = referendum_agreed
 				add_political_power = 100
 			}
 			NRT = {
@@ -3940,8 +3941,8 @@ unite_right_bank_ukraine = {
 					var = north_rates_grow
 					value = 2
 				}
-				set_country_flag = right_bank_elections
-				clr_country_flag = elections_agreed
+				set_country_flag = right_bank_referendum
+				clr_country_flag = referendum_agreed
 				add_political_power = 100
 			}
 		}
@@ -3951,11 +3952,11 @@ unite_right_bank_ukraine = {
 		}
 	}
 
-	prepare_dogovornyak_right_bank_agreed = {
+	prepare_deal_right_bank_agreed = {
 		visible = {
-			has_country_flag = dogovornyak_agreed_banks
+			has_country_flag = deal_agreed_banks
 			NOT = {
-				has_country_flag = right_bank_dogovornyak
+				has_country_flag = right_bank_deal
 			}
 		}
 		
@@ -3964,7 +3965,7 @@ unite_right_bank_ukraine = {
 
 		complete_effect = {
 			NRT = {
-				set_country_flag = right_bank_dogovornyak
+				set_country_flag = right_bank_deal
 				add_political_power = 100
 				set_variable = {
 					var = north_spendible_influence
@@ -3980,7 +3981,7 @@ unite_right_bank_ukraine = {
 				}
 			}
 			WST = {
-					set_country_flag = right_bank_dogovornyak	
+					set_country_flag = right_bank_deal	
 					add_political_power = 100
 					set_variable = {
 						var = west_spendible_influence
@@ -4002,7 +4003,7 @@ unite_right_bank_ukraine = {
 		}
 	}
 
-	prepare_dogovornyak_right_bank = {
+	prepare_deal_right_bank = {
 		available = {
 			date > 2027.01.01
 			NRT = {
@@ -4021,15 +4022,15 @@ unite_right_bank_ukraine = {
 			}
 		}
 		visible = {
-            can_do_dogovornyak = yes
+            can_do_deal = yes
 			NOT = {
 					has_country_flag = right_bank_war
-					has_country_flag = right_bank_elections
-					has_country_flag = right_bank_dogovornyak
+					has_country_flag = right_bank_referendum
+					has_country_flag = right_bank_deal
 				}
 			NOT = {
-				has_country_flag = dogovornyak_agreed_banks
-				has_country_flag = elections_agreed_banks
+				has_country_flag = deal_agreed_banks
+				has_country_flag = referendum_agreed_banks
 			}
 			NOT = {
 				has_country_flag = unification_choice_made_banks
@@ -4099,12 +4100,12 @@ unite_right_bank_ukraine = {
 				}
 				NOT = {
 					has_country_flag = right_bank_war
-					has_country_flag = right_bank_elections
-					has_country_flag = right_bank_dogovornyak
+					has_country_flag = right_bank_referendum
+					has_country_flag = right_bank_deal
 				}
 				NOT = {
-					has_country_flag = dogovornyak_agreed_banks
-					has_country_flag = elections_agreed_banks
+					has_country_flag = deal_agreed_banks
+					has_country_flag = referendum_agreed_banks
 				}
 				NOT = {
 					has_country_flag = unification_choice_made_banks
@@ -4342,17 +4343,17 @@ unite_ukraine = {
         }
     }
 
-	prepare_dogovornyak_ukraine = {
+	prepare_deal_ukraine = {
 		visible = {
-            can_do_dogovornyak = yes
+            can_do_deal = yes
 			NOT = {
 				has_country_flag = ukraine_war
-				has_country_flag = ukraine_dogovornyak
-				has_country_flag = ukraine_elections
+				has_country_flag = ukraine_deal
+				has_country_flag = ukraine_referendum
 			}
 			NOT = {
-				has_country_flag = dogovornyak_agreed_ua
-				has_country_flag = elections_agreed_ua
+				has_country_flag = deal_agreed_ua
+				has_country_flag = referendum_agreed_ua
 			}
 			NOT = {
 				has_country_flag = unification_choice_made_ukraine
@@ -4393,11 +4394,11 @@ unite_ukraine = {
 		}
 	}
 
-	prepare_elections_ukraine_agreed = {
+	prepare_referendum_ukraine_agreed = {
 		visible = {
-			has_country_flag = elections_agreed_ua
+			has_country_flag = referendum_agreed_ua
 			NOT = {
-				has_country_flag = ukraine_elections
+				has_country_flag = ukraine_referendum
 			}
 		}
 		fire_only_once = yes
@@ -4412,8 +4413,8 @@ unite_ukraine = {
 					var = left_bank_rates_grow
 					value = 2
 				}
-				set_country_flag = ukraine_elections
-				clr_country_flag = elections_agreed
+				set_country_flag = ukraine_referendum
+				clr_country_flag = referendum_agreed
 				add_political_power = 100
 			}
 			RBU = {
@@ -4425,8 +4426,8 @@ unite_ukraine = {
 					var = right_bank_rates_grow
 					value = 2
 				}
-				set_country_flag = ukraine_elections
-				clr_country_flag = elections_agreed
+				set_country_flag = ukraine_referendum
+				clr_country_flag = referendum_agreed
 				add_political_power = 100
 			}
 		}
@@ -4436,18 +4437,18 @@ unite_ukraine = {
 		}
 	}
 
-	prepare_dogovornyak_ukraine_agreed = {
+	prepare_deal_ukraine_agreed = {
 		visible = {
-			has_country_flag = dogovornyak_agreed_ua
+			has_country_flag = deal_agreed_ua
 			NOT = {
-				has_country_flag = ukraine_dogovornyak
+				has_country_flag = ukraine_deal
 			}
 		}
 		fire_only_once = yes
         	days_remove = 0
 		complete_effect = {
 			LBU = {
-				set_country_flag = ukraine_dogovornyak
+				set_country_flag = ukraine_deal
 				add_political_power = 100
 				set_variable = {
 					var = left_bank_spendible_influence
@@ -4463,7 +4464,7 @@ unite_ukraine = {
 				}
 			}
 			RBU = {
-					set_country_flag = ukraine_dogovornyak	
+					set_country_flag = ukraine_deal	
 					add_political_power = 100
 					set_variable = {
 						var = right_bank_spendible_influence
@@ -4485,7 +4486,7 @@ unite_ukraine = {
 		}
 	}
 
-	prepare_elections_ukraine = {
+	prepare_referendum_ukraine = {
 		available = {
 			date > 2030.01.01
 		}
@@ -4498,15 +4499,15 @@ unite_ukraine = {
             }
         }
 		visible = {
-			can_do_elections = yes
+			can_do_referendum = yes
 			NOT = {
 				has_country_flag = ukraine_war
-				has_country_flag = ukraine_dogovornyak
-				has_country_flag = ukraine_elections
+				has_country_flag = ukraine_deal
+				has_country_flag = ukraine_referendum
 			}
 			NOT = {
-				has_country_flag = dogovornyak_agreed_ua
-				has_country_flag = elections_agreed_ua
+				has_country_flag = deal_agreed_ua
+				has_country_flag = referendum_agreed_ua
 			}
 			NOT = {
 				has_country_flag = unification_choice_made_ukraine
@@ -4560,12 +4561,12 @@ unite_ukraine = {
 				}
 				NOT = {
                     has_country_flag = ukraine_war
-                    has_country_flag = ukraine_dogovornyak
-                    has_country_flag = ukraine_elections
+                    has_country_flag = ukraine_deal
+                    has_country_flag = ukraine_referendum
 				}
 				NOT = {
-					has_country_flag = dogovornyak_agreed_ua
-					has_country_flag = elections_agreed_ua
+					has_country_flag = deal_agreed_ua
+					has_country_flag = referendum_agreed_ua
 				}
 				NOT = {
 					has_country_flag = unification_choice_made_ukraine

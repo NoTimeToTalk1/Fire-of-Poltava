@@ -1,0 +1,415 @@
+south_war = {
+	south_war_countdown = {
+		FROM = {
+			if = {
+				limit = {
+					tag = BUH
+				}
+				tag = TVR
+			}
+			if = {
+				limit = {
+					tag = TVR
+				}
+				tag = BUH
+			}
+		}
+		activation = {
+			has_country_flag = south_war_preparation
+		}
+		available = {
+			always = no
+		}
+		cancel_trigger = {
+			NOT = {
+				has_country_flag = south_war_preparation
+			}
+			has_war = yes
+		}
+		is_good = no
+		days_mission_timeout = 120
+		timeout_effect = {
+			clr_country_flag = south_war_preparation
+			set_country_flag = south_war_active
+			ROOT = {
+				declare_war_on = {
+					target = FROM
+					type = annex_everything
+				}
+			}
+			south_war_preparedness_effect = yes
+			add_dynamic_modifier = FOP_south_war_preparedness
+			add_dynamic_modifier = FOP_south_war_fatigue
+		}
+		war_with_on_timeout = FROM
+	}
+	south_war_pick_defensive_doctrine = {
+		available = {
+			NOT = {
+				has_country_flag = south_war_defensive_doctrine
+				has_country_flag = south_war_offensive_doctrine
+			}
+		}
+		visible = {
+			has_war = no
+		}
+		complete_effect = {
+			set_country_flag = south_war_defensive_doctrine
+			add_to_variable = {
+				var = south_war_preparedness_var
+				value = 5
+				tooltip = war_preparedness_5_tt
+			}
+			clamp_variable = {
+				var = south_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	south_war_pick_offensive_doctrine = {
+		available = {
+			NOT = {
+				has_country_flag = south_war_defensive_doctrine
+				has_country_flag = south_war_offensive_doctrine
+			}
+		}
+		visible = {
+			has_war = no
+		}
+		complete_effect = {
+			set_country_flag = south_war_offensive_doctrine
+			add_to_variable = {
+				var = south_war_preparedness_var
+				value = 5
+				tooltip = war_preparedness_5_tt
+			}
+			clamp_variable = {
+				var = south_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	south_war_investigate_opponent_doctrine = {
+		custom_cost_trigger = {
+			command_power > 14
+		}
+		visible = {
+			has_war = no
+		}
+		custom_cost_text = decision_cost_15_cp
+		complete_effect = {
+			set_country_flag = south_war_known_enemy_doctrine
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	south_war_devise_offensive_operation = {
+		custom_cost_trigger = {
+			command_power > 19
+		}
+		visible = {
+			has_war = no
+			has_country_flag = south_war_offensive_doctrine
+		}
+		custom_cost_text = decision_cost_20_cp
+		days_remove = 30
+		remove_effect = {
+			set_country_flag = south_war_offensive_planned
+			add_to_variable = {
+				var = south_war_preparedness_var
+				value = 10
+				tooltip = war_preparedness_10_tt
+			}
+			clamp_variable = {
+				var = south_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	south_war_devise_reserve_plans = {
+		custom_cost_trigger = {
+			command_power > 29
+		}
+		visible = {
+			has_war = no
+			has_country_flag = south_war_offensive_doctrine
+		}
+		custom_cost_text = decision_cost_30_cp
+		days_remove = 30
+		remove_effect = {
+			set_country_flag = south_war_reserve_planning
+			add_to_variable = {
+				var = south_war_preparedness_var
+				value = 15
+				tooltip = war_preparedness_15_tt
+			}
+			clamp_variable = {
+				var = south_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	south_war_prepare_main_defences = {
+		custom_cost_trigger = {
+			command_power > 19
+		}
+		visible = {
+			has_war = no
+			has_country_flag = south_war_defensive_doctrine
+		}
+		custom_cost_text = decision_cost_20_cp
+		days_remove = 30
+		remove_effect = {
+			#fortifications
+			add_to_variable = {
+				var = south_war_preparedness_var
+				value = 10
+				tooltip = war_preparedness_10_tt
+			}
+			clamp_variable = {
+				var = south_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	south_war_prepare_secondary_defences = {
+		custom_cost_trigger = {
+			command_power > 29
+		}
+		visible = {
+			has_war = no
+			has_country_flag = south_war_defensive_doctrine
+		}
+		custom_cost_text = decision_cost_30_cp
+		days_remove = 45
+		remove_effect = {
+			#fortifications
+			add_to_variable = {
+				var = south_war_preparedness_var
+				value = 15
+				tooltip = war_preparedness_15_tt
+			}
+			clamp_variable = {
+				var = south_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	south_war_strike_a_diversion = {
+		custom_cost_trigger = {
+			command_power > 14
+		}
+		visible = {
+			has_war = no
+		}
+		custom_cost_text = decision_cost_15_cp
+		days_remove = 25
+		remove_effect = {
+			#damage infrastructure
+			if = {
+				limit = {
+					tag = TVR
+				}
+				BUH = {
+					add_to_variable = {
+						var = south_war_preparedness_var
+						value = -5
+						tooltip = war_preparedness_minus_5_tt
+					}
+					clamp_variable = {
+						var = south_war_preparedness_var
+						min = 0
+						max = 100
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = BUH
+				}
+				TVR = {
+					add_to_variable = {
+						var = south_war_preparedness_var
+						value = -5
+						tooltip = war_preparedness_minus_5_tt
+					}
+					clamp_variable = {
+						var = south_war_preparedness_var
+						min = 0
+						max = 100
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 150
+		}
+	}
+	south_war_set_economy_on_war_rails = {
+		custom_cost_trigger = {
+			command_power > 19
+		}
+		visible = {
+			has_war = no
+		}
+		custom_cost_text = decision_cost_19_cp
+		days_remove = 25
+		remove_effect = {
+			add_stability_factor = -0.1
+			#nat spirit
+			add_to_variable = {
+				var = south_war_preparedness_var
+				value = 10
+				tooltip = war_preparedness_10_tt
+			}
+			clamp_variable = {
+				var = south_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	south_war_get_enemy_intel = {
+		custom_cost_trigger = {
+			command_power > 24
+		}
+		visible = {
+			has_war = no
+			has_country_flag = south_war_defensive_doctrine
+		}
+		custom_cost_text = decision_cost_25_cp
+		days_remove = 20
+		remove_effect = {
+			#intel
+		}
+		ai_will_do = {
+			base = 150
+		}
+	}
+	south_war_motivational_speech = {
+		visible = {
+			has_war = no
+		}
+		cost = 30
+		days_remove = 20
+		remove_effect = {
+			
+		}
+		ai_will_do = {
+			base = 150
+		}
+	}
+	south_war_increase_war_production = {
+		visible = {
+			has_war = no
+			#has_ideas
+		}
+		cost = 20
+		days_remove = 21
+		remove_effect = {
+			#convert factory
+			add_to_variable = {
+				var = south_war_preparedness_var
+				value = 5
+				tooltip = war_preparedness_5_tt
+			}
+			clamp_variable = {
+				var = south_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		ai_will_do = {
+			base = 150
+		}
+	}
+	south_war_hold_our_positions = {
+		activation = {
+			has_country_flag = south_war_active
+			has_country_flag = south_war_pick_defensive_doctrine
+			#does not have idea
+		}
+		cancel_trigger = {
+			surrender_progress > 0.25
+		}
+		cancel_effect = {
+			#add_ideas
+		}
+		is_good = no
+		days_mission_timeout = 45
+		timeout_effect = {
+			#add_ideas
+			set_country_flag = south_war_growing_fatigue
+		}
+	}
+	south_war_fatigue = {
+		activation = {
+			has_country_flag = south_war_growing_fatigue
+			has_war = yes
+		}
+		cancel_trigger = {
+			has_war = no
+		}
+		is_good = no
+		days_mission_timeout = 30
+		timeout_effect = {
+			add_to_variable = {
+				var = south_war_preparedness_attack_var
+				value = -0.03
+			}
+			add_to_variable = {
+				var = south_war_preparedness_defence_var
+				value = -0.03
+			}
+			add_to_variable = {
+				var = south_war_preparedness_organisation_var
+				value = -0.05
+			}
+			add_to_variable = {
+				var = south_war_political_fatigue_var
+				value = -0.02
+			}
+			add_to_variable = {
+				var = south_war_economic_fatigue_var
+				value = -0.05
+			}
+		}
+	}
+}
+
