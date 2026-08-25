@@ -1,31 +1,31 @@
-north_dogovornyak = {
+north_deal = {
 	siveria_view_influence = {
 	
-	icon = GFX_decision_dogovornyak_influence
+	icon = GFX_decision_deal_influence
 	
 		available = {
 			always = no
 		}
 		visible = {
-			has_country_flag = north_dogovornyak
+			has_country_flag = north_deal
 			tag = SIV
 		}
 	}
 	dnieper_view_influence = {
 	
-	icon = GFX_decision_dogovornyak_influence
+	icon = GFX_decision_deal_influence
 	
 		available = {
 			always = no
 		}
 		visible = {
-			has_country_flag = north_dogovornyak
+			has_country_flag = north_deal
 			tag = DIR
 		}
 	}
 	north_current_topic = {
 	
-	icon = GFX_decision_dogovornyak_topic
+	icon = GFX_decision_deal_topic
 	
 		available = {
 			always = no
@@ -33,7 +33,7 @@ north_dogovornyak = {
 	}
 	north_summing_up = {
 	
-	icon = GFX_decision_dogovornyak_topic
+	icon = GFX_decision_deal_topic
 	
 		available = {
 			check_variable = { north_done_themes = 10 }
@@ -85,7 +85,7 @@ north_dogovornyak = {
 					check_variable = { DIR.dnieper_done_themes < 10 }
 					check_variable = { SIV.siveria_done_themes < 10 }
 				}
-				custom_effect_tooltip = dogovornyak_not_decided
+				custom_effect_tooltip = deal_not_decided
 			}
 			else_if = {
 				limit = {
@@ -200,22 +200,22 @@ north_dogovornyak = {
 	}
 	north_choice_time = {
 	
-	icon = GFX_decision_dogovornyak_topic
+	icon = GFX_decision_deal_topic
 		
 		activation = {
 			always = no
 		}
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice
+				has_country_flag = deal_choice
 			}
 		}
 		is_good = no
 		days_mission_timeout = 7
 		selectable_mission = no
 		timeout_effect = {
-			clr_country_flag = dogovornyak_choice
-			clr_country_flag = dogovornyak_choice_made
+			clr_country_flag = deal_choice
+			clr_country_flag = deal_choice_made
 			add_to_variable = {
 				var = north_done_themes
 				value = 1
@@ -327,11 +327,11 @@ north_dogovornyak = {
 	}
 	north_give_high_importance = {
 	
-	icon = GFX_decision_dogovornyak_highimportance
+	icon = GFX_decision_deal_highimportance
 	
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = DIR}
@@ -343,7 +343,7 @@ north_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = no
 		}
 		days_remove = 0
@@ -352,7 +352,7 @@ north_dogovornyak = {
 			base = 90
 		}
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = DIR
@@ -383,11 +383,11 @@ north_dogovornyak = {
 	}
 	north_give_medium_importance = {
 	
-	icon = GFX_decision_dogovornyak_mediumimportance
+	icon = GFX_decision_deal_mediumimportance
 
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = DIR}
@@ -399,7 +399,7 @@ north_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = no
 		}
 		days_remove = 0
@@ -408,7 +408,7 @@ north_dogovornyak = {
 			base = 90
 		}
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = DIR
@@ -439,11 +439,11 @@ north_dogovornyak = {
 	}
 	north_give_low_importance = {
 	
-	icon = GFX_decision_dogovornyak_lowimportance
+	icon = GFX_decision_deal_lowimportance
 
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = DIR}
@@ -455,7 +455,7 @@ north_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = no
 		}
 		days_remove = 0
@@ -464,7 +464,7 @@ north_dogovornyak = {
 			base = 90
 		}
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = DIR
@@ -495,11 +495,11 @@ north_dogovornyak = {
 	}
 	north_give_importance_ai = {
 	
-	icon = GFX_decision_dogovornyak_highimportance
+	icon = GFX_decision_deal_highimportance
 
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = DIR}
@@ -511,7 +511,7 @@ north_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = yes
 		}
 		days_remove = 0
@@ -521,7 +521,7 @@ north_dogovornyak = {
 		}
 		fixed_random_seed = no
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = DIR
@@ -599,7 +599,7 @@ north_dogovornyak = {
 		}
 	}
 	north_discuss_economy_base = {
-			icon = GFX_decision_dogovornyak_economicbase
+			icon = GFX_decision_deal_economicbase
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -610,7 +610,7 @@ north_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = economy_base
 				}
 			}
@@ -624,7 +624,7 @@ north_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = economy_base
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = dnieper_influence_choice
 						value = 0
@@ -634,7 +634,7 @@ north_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = economy_base
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = siveria_influence_choice
 						value = 0
@@ -643,7 +643,7 @@ north_dogovornyak = {
 			}
 	}
 	north_discuss_economy_freedoms = {
-			icon = GFX_decision_dogovornyak_economicfreedom
+			icon = GFX_decision_deal_economicfreedom
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -654,7 +654,7 @@ north_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = economy_freedoms
 				}
 			}
@@ -668,7 +668,7 @@ north_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = economy_freedoms
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = dnieper_influence_choice
 						value = 0
@@ -678,7 +678,7 @@ north_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = economy_freedoms
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = siveria_influence_choice
 						value = 0
@@ -687,7 +687,7 @@ north_dogovornyak = {
 			}
 	}
 	north_discuss_army_standarts = {
-			icon = GFX_decision_dogovornyak_armystandarts
+			icon = GFX_decision_deal_armystandarts
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -698,7 +698,7 @@ north_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = army_standarts
 				}
 			}
@@ -712,7 +712,7 @@ north_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = army_standarts
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = dnieper_influence_choice
 						value = 0
@@ -722,7 +722,7 @@ north_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = army_standarts
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = siveria_influence_choice
 						value = 0
@@ -731,7 +731,7 @@ north_dogovornyak = {
 			}
 	}
 	north_discuss_army_structure = {
-			icon = GFX_decision_dogovornyak_armystructure
+			icon = GFX_decision_deal_armystructure
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -742,7 +742,7 @@ north_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = army_structure
 				}
 			}
@@ -756,7 +756,7 @@ north_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = army_structure
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = dnieper_influence_choice
 						value = 0
@@ -766,7 +766,7 @@ north_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = army_structure
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = siveria_influence_choice
 						value = 0
@@ -775,7 +775,7 @@ north_dogovornyak = {
 			}
 	}
 	north_discuss_state_control = {
-			icon = GFX_decision_dogovornyak_statecontrol
+			icon = GFX_decision_deal_statecontrol
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -786,7 +786,7 @@ north_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = state_control
 				}
 			}
@@ -800,7 +800,7 @@ north_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = state_control
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = dnieper_influence_choice
 						value = 0
@@ -810,7 +810,7 @@ north_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = state_control
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = siveria_influence_choice
 						value = 0
@@ -819,7 +819,7 @@ north_dogovornyak = {
 			}
 	}
 	north_discuss_civilian_services = {
-			icon = GFX_decision_dogovornyak_civilianservices
+			icon = GFX_decision_deal_civilianservices
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -830,7 +830,7 @@ north_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = civilian_services
 				}
 			}
@@ -844,7 +844,7 @@ north_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = civilian_services
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = dnieper_influence_choice
 						value = 0
@@ -854,7 +854,7 @@ north_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = civilian_services
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = siveria_influence_choice
 						value = 0
@@ -863,7 +863,7 @@ north_dogovornyak = {
 			}
 	}
 	north_discuss_workers = {
-			icon = GFX_decision_dogovornyak_workers
+			icon = GFX_decision_deal_workers
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -874,7 +874,7 @@ north_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = worker_stance
 				}
 			}
@@ -888,7 +888,7 @@ north_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = worker_stance
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = dnieper_influence_choice
 						value = 0
@@ -898,7 +898,7 @@ north_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = worker_stance
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = siveria_influence_choice
 						value = 0
@@ -907,7 +907,7 @@ north_dogovornyak = {
 			}
 	}
 	north_discuss_liberties = {
-			icon = GFX_decision_dogovornyak_civilliberies
+			icon = GFX_decision_deal_civilliberies
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -918,7 +918,7 @@ north_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = civilian_liberties
 				}
 			}
@@ -932,7 +932,7 @@ north_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = civilian_liberties
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = dnieper_influence_choice
 						value = 0
@@ -942,7 +942,7 @@ north_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = civilian_liberties
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = siveria_influence_choice
 						value = 0
@@ -951,7 +951,7 @@ north_dogovornyak = {
 			}
 	}
 	north_discuss_equality = {
-			icon = GFX_decision_dogovornyak_equality
+			icon = GFX_decision_deal_equality
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -962,7 +962,7 @@ north_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = equality
 				}
 			}
@@ -976,7 +976,7 @@ north_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = equality
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = dnieper_influence_choice
 						value = 0
@@ -986,7 +986,7 @@ north_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = equality
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = siveria_influence_choice
 						value = 0
@@ -995,7 +995,7 @@ north_dogovornyak = {
 			}
 	}
 	north_discuss_community_controls = {
-			icon = GFX_decision_dogovornyak_communitycontrol
+			icon = GFX_decision_deal_communitycontrol
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -1006,7 +1006,7 @@ north_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = community_controls
 				}
 			}
@@ -1020,7 +1020,7 @@ north_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = community_controls
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = dnieper_influence_choice
 						value = 0
@@ -1030,7 +1030,7 @@ north_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = north_choice_time
 					set_country_flag = community_controls
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = siveria_influence_choice
 						value = 0
@@ -1040,34 +1040,34 @@ north_dogovornyak = {
 	}
 }
 
-west_dogovornyak = {
+west_deal = {
 	podolia_view_influence = {
 	
-	icon = GFX_decision_dogovornyak_influence
+	icon = GFX_decision_deal_influence
 	
 		available = {
 			always = no
 		}
 		visible = {
-			has_country_flag = west_dogovornyak
+			has_country_flag = west_deal
 			tag = PDL
 		}
 	}
 	galicia_view_influence = {
 	
-	icon = GFX_decision_dogovornyak_influence
+	icon = GFX_decision_deal_influence
 	
 		available = {
 			always = no
 		}
 		visible = {
-			has_country_flag = west_dogovornyak
+			has_country_flag = west_deal
 			tag = GLY
 		}
 	}
 	west_current_topic = {
 	
-	icon = GFX_decision_dogovornyak_topic
+	icon = GFX_decision_deal_topic
 	
 		available = {
 			always = no
@@ -1075,7 +1075,7 @@ west_dogovornyak = {
 	}
 	west_summing_up = {
 	
-	icon = GFX_decision_dogovornyak_topic
+	icon = GFX_decision_deal_topic
 	
 		available = {
 			check_variable = {west_done_themes = 10}
@@ -1100,7 +1100,7 @@ west_dogovornyak = {
 		}
 		target_trigger = {
 			FROM = {
-				has_country_flag = west_dogovornyak
+				has_country_flag = west_deal
 			}
 		}
 		visible = {
@@ -1124,7 +1124,7 @@ west_dogovornyak = {
 					check_variable = { GLY.west_done_themes < 10 }
 					check_variable = { PDL.west_done_themes < 10 }
 				}
-				custom_effect_tooltip = dogovornyak_not_decided
+				custom_effect_tooltip = deal_not_decided
 			}
 			else_if = {
 				limit = {
@@ -1239,22 +1239,22 @@ west_dogovornyak = {
 	}
 	west_choice_time = {
 	
-	icon = GFX_decision_dogovornyak_topic
+	icon = GFX_decision_deal_topic
 		
 		activation = {
 			always = no
 		}
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice
+				has_country_flag = deal_choice
 			}
 		}
 		is_good = no
 		days_mission_timeout = 7
 		selectable_mission = no
 		timeout_effect = {
-			clr_country_flag = dogovornyak_choice
-			clr_country_flag = dogovornyak_choice_made
+			clr_country_flag = deal_choice
+			clr_country_flag = deal_choice_made
 			GLY = {
 					add_to_variable = {
 						var = west_done_themes
@@ -1373,11 +1373,11 @@ west_dogovornyak = {
 	}
 	west_give_high_importance = {
 	
-	icon = GFX_decision_dogovornyak_highimportance
+	icon = GFX_decision_deal_highimportance
 	
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = GLY}
@@ -1389,7 +1389,7 @@ west_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = no
 		}
 		days_remove = 0
@@ -1398,7 +1398,7 @@ west_dogovornyak = {
 			base = 90
 		}
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = GLY
@@ -1429,11 +1429,11 @@ west_dogovornyak = {
 	}
 	west_give_medium_importance = {
 	
-	icon = GFX_decision_dogovornyak_mediumimportance
+	icon = GFX_decision_deal_mediumimportance
 	
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = GLY}
@@ -1445,7 +1445,7 @@ west_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = no
 		}
 		days_remove = 0
@@ -1454,7 +1454,7 @@ west_dogovornyak = {
 			base = 90
 		}
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = GLY
@@ -1485,11 +1485,11 @@ west_dogovornyak = {
 	}
 	west_give_low_importance = {
 	
-	icon = GFX_decision_dogovornyak_lowimportance
+	icon = GFX_decision_deal_lowimportance
 	
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = GLY}
@@ -1501,7 +1501,7 @@ west_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = no
 		}
 		days_remove = 0
@@ -1510,7 +1510,7 @@ west_dogovornyak = {
 			base = 90
 		}
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = GLY
@@ -1541,11 +1541,11 @@ west_dogovornyak = {
 	}
 	west_give_importance_ai = {
 	
-	icon = GFX_decision_dogovornyak_influence
+	icon = GFX_decision_deal_influence
 	
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = GLY}
@@ -1557,7 +1557,7 @@ west_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = yes
 		}
 		days_remove = 0
@@ -1567,7 +1567,7 @@ west_dogovornyak = {
 		}
 		fixed_random_seed = no
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = GLY
@@ -1646,7 +1646,7 @@ west_dogovornyak = {
 	}
 	west_discuss_economy_base = {
 	
-	icon = GFX_decision_dogovornyak_economicbase
+	icon = GFX_decision_deal_economicbase
 
 			available = {
 				NOT = {
@@ -1658,7 +1658,7 @@ west_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = economy_base
 				}
 			}
@@ -1672,7 +1672,7 @@ west_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = west_choice_time
 					set_country_flag = economy_base
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = galicia_influence_choice
 						value = 0
@@ -1682,7 +1682,7 @@ west_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = west_choice_time
 					set_country_flag = economy_base
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = podolia_influence_choice
 						value = 0
@@ -1692,7 +1692,7 @@ west_dogovornyak = {
 	}
 	west_discuss_economy_freedoms = {
 	
-	icon = GFX_decision_dogovornyak_economicfreedom
+	icon = GFX_decision_deal_economicfreedom
 
 			available = {
 				NOT = {
@@ -1704,7 +1704,7 @@ west_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = economy_freedoms
 				}
 			}
@@ -1718,7 +1718,7 @@ west_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = west_choice_time
 					set_country_flag = economy_freedoms
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = galicia_influence_choice
 						value = 0
@@ -1728,7 +1728,7 @@ west_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = west_choice_time
 					set_country_flag = economy_freedoms
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = podolia_influence_choice
 						value = 0
@@ -1738,7 +1738,7 @@ west_dogovornyak = {
 	}
 	west_discuss_army_standarts = {
 	
-	icon = GFX_decision_dogovornyak_armystandarts
+	icon = GFX_decision_deal_armystandarts
 
 			available = {
 				NOT = {
@@ -1750,7 +1750,7 @@ west_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = army_standarts
 				}
 			}
@@ -1764,7 +1764,7 @@ west_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = west_choice_time
 					set_country_flag = army_standarts
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = galicia_influence_choice
 						value = 0
@@ -1774,7 +1774,7 @@ west_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = west_choice_time
 					set_country_flag = army_standarts
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = podolia_influence_choice
 						value = 0
@@ -1784,7 +1784,7 @@ west_dogovornyak = {
 	}
 	west_discuss_army_structure = {
 	
-	icon = GFX_decision_dogovornyak_armystructure
+	icon = GFX_decision_deal_armystructure
 
 			available = {
 				NOT = {
@@ -1796,7 +1796,7 @@ west_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = army_structure
 				}
 			}
@@ -1810,7 +1810,7 @@ west_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = west_choice_time
 					set_country_flag = army_structure
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = galicia_influence_choice
 						value = 0
@@ -1820,7 +1820,7 @@ west_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = west_choice_time
 					set_country_flag = army_structure
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = podolia_influence_choice
 						value = 0
@@ -1829,7 +1829,7 @@ west_dogovornyak = {
 			}
 	}
 	west_discuss_state_control = {
-			icon = GFX_decision_dogovornyak_statecontrol
+			icon = GFX_decision_deal_statecontrol
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -1840,7 +1840,7 @@ west_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = state_control
 				}
 			}
@@ -1854,7 +1854,7 @@ west_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = west_choice_time
 					set_country_flag = state_control
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = galicia_influence_choice
 						value = 0
@@ -1864,7 +1864,7 @@ west_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = west_choice_time
 					set_country_flag = state_control
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = podolia_influence_choice
 						value = 0
@@ -1873,7 +1873,7 @@ west_dogovornyak = {
 			}
 	}
 	west_discuss_civilian_services = {
-			icon = GFX_decision_dogovornyak_civilianservices
+			icon = GFX_decision_deal_civilianservices
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -1884,7 +1884,7 @@ west_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = civilian_services
 				}
 			}
@@ -1898,7 +1898,7 @@ west_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = west_choice_time
 					set_country_flag = civilian_services
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = galicia_influence_choice
 						value = 0
@@ -1908,7 +1908,7 @@ west_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = west_choice_time
 					set_country_flag = civilian_services
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = podolia_influence_choice
 						value = 0
@@ -1917,7 +1917,7 @@ west_dogovornyak = {
 			}
 	}
 	west_discuss_workers = {
-			icon = GFX_decision_dogovornyak_workers
+			icon = GFX_decision_deal_workers
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -1928,7 +1928,7 @@ west_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = worker_stance
 				}
 			}
@@ -1942,7 +1942,7 @@ west_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = west_choice_time
 					set_country_flag = worker_stance
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = galicia_influence_choice
 						value = 0
@@ -1952,7 +1952,7 @@ west_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = west_choice_time
 					set_country_flag = worker_stance
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = podolia_influence_choice
 						value = 0
@@ -1961,7 +1961,7 @@ west_dogovornyak = {
 			}
 	}
 	west_discuss_liberties = {
-			icon = GFX_decision_dogovornyak_civilliberies
+			icon = GFX_decision_deal_civilliberies
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -1972,7 +1972,7 @@ west_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = civilian_liberties
 				}
 			}
@@ -1986,7 +1986,7 @@ west_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = west_choice_time
 					set_country_flag = civilian_liberties
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = galicia_influence_choice
 						value = 0
@@ -1996,7 +1996,7 @@ west_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = west_choice_time
 					set_country_flag = civilian_liberties
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = podolia_influence_choice
 						value = 0
@@ -2005,7 +2005,7 @@ west_dogovornyak = {
 			}
 	}
 	west_discuss_equality = {
-			icon = GFX_decision_dogovornyak_equality
+			icon = GFX_decision_deal_equality
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -2016,7 +2016,7 @@ west_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = equality
 				}
 			}
@@ -2030,7 +2030,7 @@ west_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = west_choice_time
 					set_country_flag = equality
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = galicia_influence_choice
 						value = 0
@@ -2040,7 +2040,7 @@ west_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = west_choice_time
 					set_country_flag = equality
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = podolia_influence_choice
 						value = 0
@@ -2049,7 +2049,7 @@ west_dogovornyak = {
 			}
 	}
 	west_discuss_community_controls = {
-			icon = GFX_decision_dogovornyak_communitycontrol
+			icon = GFX_decision_deal_communitycontrol
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -2060,7 +2060,7 @@ west_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = community_controls
 				}
 			}
@@ -2074,7 +2074,7 @@ west_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = west_choice_time
 					set_country_flag = community_controls
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = galicia_influence_choice
 						value = 0
@@ -2084,7 +2084,7 @@ west_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = west_choice_time
 					set_country_flag = community_controls
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = podolia_influence_choice
 						value = 0
@@ -2094,34 +2094,34 @@ west_dogovornyak = {
 	}
 }
 
-south_dogovornyak = {
+south_deal = {
 	tavria_view_influence = {
 	
-	icon = GFX_decision_dogovornyak_influence
+	icon = GFX_decision_deal_influence
 	
 		available = {
 			always = no
 		}
 		visible = {
-			has_country_flag = south_dogovornyak
+			has_country_flag = south_deal
 			tag = TVR
 		}
 	}
 	buh_view_influence = {
 	
-	icon = GFX_decision_dogovornyak_influence
+	icon = GFX_decision_deal_influence
 	
 		available = {
 			always = no
 		}
 		visible = {
-			has_country_flag = south_dogovornyak
+			has_country_flag = south_deal
 			tag = BUH
 		}
 	}
 	south_current_topic = {
 	
-	icon = GFX_decision_dogovornyak_topic
+	icon = GFX_decision_deal_topic
 	
 		available = {
 			always = no
@@ -2129,7 +2129,7 @@ south_dogovornyak = {
 	}
 	south_summing_up = {
 	
-	icon = GFX_decision_dogovornyak_topic
+	icon = GFX_decision_deal_topic
 
 		available = {
 				check_variable = {south_done_themes = 10}
@@ -2181,7 +2181,7 @@ south_dogovornyak = {
 					check_variable = { BUH.south_done_themes < 10 }
 					check_variable = { TVR.south_done_themes < 10 }
 				}
-				custom_effect_tooltip = dogovornyak_not_decided
+				custom_effect_tooltip = deal_not_decided
 			}
 			else_if = {
 				limit = {
@@ -2296,22 +2296,22 @@ south_dogovornyak = {
 	}
 	south_choice_time = {
 	
-	icon = GFX_decision_dogovornyak_topic
+	icon = GFX_decision_deal_topic
 	
 		activation = {
 			always = no
 		}
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice
+				has_country_flag = deal_choice
 			}
 		}
 		is_good = no
 		days_mission_timeout = 7
 		selectable_mission = no
 		timeout_effect = {
-			clr_country_flag = dogovornyak_choice
-			clr_country_flag = dogovornyak_choice_made
+			clr_country_flag = deal_choice
+			clr_country_flag = deal_choice_made
 			BUH = {
 					add_to_variable = {
 						var = south_done_themes
@@ -2431,11 +2431,11 @@ south_dogovornyak = {
 	}
 	south_give_high_importance = {
 	
-	icon = GFX_decision_dogovornyak_highimportance
+	icon = GFX_decision_deal_highimportance
 
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = BUH}
@@ -2447,7 +2447,7 @@ south_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = no
 		}
 		days_remove = 0
@@ -2456,7 +2456,7 @@ south_dogovornyak = {
 			base = 90
 		}
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = BUH
@@ -2487,11 +2487,11 @@ south_dogovornyak = {
 	}
 	south_give_medium_importance = {
 	
-	icon = GFX_decision_dogovornyak_mediumimportance
+	icon = GFX_decision_deal_mediumimportance
 
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = BUH}
@@ -2503,7 +2503,7 @@ south_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = no
 		}
 		days_remove = 0
@@ -2512,7 +2512,7 @@ south_dogovornyak = {
 			base = 90
 		}
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = BUH
@@ -2543,11 +2543,11 @@ south_dogovornyak = {
 	}
 	south_give_low_importance = {
 	
-	icon = GFX_decision_dogovornyak_lowimportance
+	icon = GFX_decision_deal_lowimportance
 
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = BUH}
@@ -2559,7 +2559,7 @@ south_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = no
 		}
 		days_remove = 0
@@ -2568,7 +2568,7 @@ south_dogovornyak = {
 			base = 90
 		}
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = BUH
@@ -2599,11 +2599,11 @@ south_dogovornyak = {
 	}
 	south_give_importance_ai = {
 	
-	icon = GFX_decision_dogovornyak_topic
+	icon = GFX_decision_deal_topic
 
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = BUH}
@@ -2615,7 +2615,7 @@ south_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = yes
 		}
 		days_remove = 0
@@ -2625,7 +2625,7 @@ south_dogovornyak = {
 		}
 		fixed_random_seed = no
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = BUH
@@ -2704,7 +2704,7 @@ south_dogovornyak = {
 	}
 	south_discuss_economy_base = {
 	
-	icon = GFX_decision_dogovornyak_economicbase
+	icon = GFX_decision_deal_economicbase
 
 			available = {
 				NOT = {
@@ -2716,7 +2716,7 @@ south_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = economy_base
 				}
 			}
@@ -2730,7 +2730,7 @@ south_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = economy_base
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = buh_influence_choice
 						value = 0
@@ -2740,7 +2740,7 @@ south_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = economy_base
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = tavria_influence_choice
 						value = 0
@@ -2749,7 +2749,7 @@ south_dogovornyak = {
 			}
 	}
 	south_discuss_economy_freedoms = {
-			icon = GFX_decision_dogovornyak_economicfreedom
+			icon = GFX_decision_deal_economicfreedom
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -2760,7 +2760,7 @@ south_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = economy_freedoms
 				}
 			}
@@ -2774,7 +2774,7 @@ south_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = economy_freedoms
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = buh_influence_choice
 						value = 0
@@ -2784,7 +2784,7 @@ south_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = economy_freedoms
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = tavria_influence_choice
 						value = 0
@@ -2793,7 +2793,7 @@ south_dogovornyak = {
 			}
 	}
 	south_discuss_army_standarts = {
-			icon = GFX_decision_dogovornyak_armystandarts
+			icon = GFX_decision_deal_armystandarts
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -2804,7 +2804,7 @@ south_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = army_standarts
 				}
 			}
@@ -2818,7 +2818,7 @@ south_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = army_standarts
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = buh_influence_choice
 						value = 0
@@ -2828,7 +2828,7 @@ south_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = army_standarts
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = tavria_influence_choice
 						value = 0
@@ -2837,7 +2837,7 @@ south_dogovornyak = {
 			}
 	}
 	south_discuss_army_structure = {
-			icon = GFX_decision_dogovornyak_armystructure
+			icon = GFX_decision_deal_armystructure
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -2848,7 +2848,7 @@ south_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = army_structure
 				}
 			}
@@ -2862,7 +2862,7 @@ south_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = army_structure
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = buh_influence_choice
 						value = 0
@@ -2872,7 +2872,7 @@ south_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = army_structure
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = tavria_influence_choice
 						value = 0
@@ -2881,7 +2881,7 @@ south_dogovornyak = {
 			}
 	}
 	south_discuss_state_control = {
-			icon = GFX_decision_dogovornyak_statecontrol
+			icon = GFX_decision_deal_statecontrol
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -2892,7 +2892,7 @@ south_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = state_control
 				}
 			}
@@ -2906,7 +2906,7 @@ south_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = state_control
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = buh_influence_choice
 						value = 0
@@ -2916,7 +2916,7 @@ south_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = state_control
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = tavria_influence_choice
 						value = 0
@@ -2925,7 +2925,7 @@ south_dogovornyak = {
 			}
 	}
 	south_discuss_civilian_services = {
-			icon = GFX_decision_dogovornyak_civilianservices
+			icon = GFX_decision_deal_civilianservices
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -2936,7 +2936,7 @@ south_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = civilian_services
 				}
 			}
@@ -2950,7 +2950,7 @@ south_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = civilian_services
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = buh_influence_choice
 						value = 0
@@ -2960,7 +2960,7 @@ south_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = civilian_services
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = tavria_influence_choice
 						value = 0
@@ -2969,7 +2969,7 @@ south_dogovornyak = {
 			}
 	}
 	south_discuss_workers = {
-			icon = GFX_decision_dogovornyak_workers
+			icon = GFX_decision_deal_workers
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -2980,7 +2980,7 @@ south_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = worker_stance
 				}
 			}
@@ -2994,7 +2994,7 @@ south_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = worker_stance
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = buh_influence_choice
 						value = 0
@@ -3004,7 +3004,7 @@ south_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = worker_stance
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = tavria_influence_choice
 						value = 0
@@ -3013,7 +3013,7 @@ south_dogovornyak = {
 			}
 	}
 	south_discuss_liberties = {
-			icon = GFX_decision_dogovornyak_civilliberies
+			icon = GFX_decision_deal_civilliberies
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -3024,7 +3024,7 @@ south_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = civilian_liberties
 				}
 			}
@@ -3038,7 +3038,7 @@ south_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = civilian_liberties
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = buh_influence_choice
 						value = 0
@@ -3048,7 +3048,7 @@ south_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = civilian_liberties
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = tavria_influence_choice
 						value = 0
@@ -3057,7 +3057,7 @@ south_dogovornyak = {
 			}
 	}
 	south_discuss_equality = {
-			icon = GFX_decision_dogovornyak_equality
+			icon = GFX_decision_deal_equality
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -3068,7 +3068,7 @@ south_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = equality
 				}
 			}
@@ -3082,7 +3082,7 @@ south_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = equality
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = buh_influence_choice
 						value = 0
@@ -3092,7 +3092,7 @@ south_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = equality
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = tavria_influence_choice
 						value = 0
@@ -3101,7 +3101,7 @@ south_dogovornyak = {
 			}
 	}
 	south_discuss_community_controls = {
-			icon = GFX_decision_dogovornyak_communitycontrol
+			icon = GFX_decision_deal_communitycontrol
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -3112,7 +3112,7 @@ south_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = community_controls
 				}
 			}
@@ -3126,7 +3126,7 @@ south_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = community_controls
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = buh_influence_choice
 						value = 0
@@ -3136,7 +3136,7 @@ south_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = south_choice_time
 					set_country_flag = community_controls
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = tavria_influence_choice
 						value = 0
@@ -3146,35 +3146,35 @@ south_dogovornyak = {
 	}
 }
 
-east_dogovornyak = {
+east_deal = {
 	donbas_view_influence = {
-		icon = GFX_decision_dogovornyak_influence
+		icon = GFX_decision_deal_influence
 		available = {
 			always = no
 		}
 		visible = {
-			has_country_flag = east_dogovornyak
+			has_country_flag = east_deal
 			tag = DBS
 		}
 	}
 	dnipro_view_influence = {
-		icon = GFX_decision_dogovornyak_influence
+		icon = GFX_decision_deal_influence
 		available = {
 			always = no
 		}
 		visible = {
-			has_country_flag = east_dogovornyak
+			has_country_flag = east_deal
 			tag = DNP
 		}
 	}
 	east_current_topic = {
-		icon = GFX_decision_dogovornyak_topic
+		icon = GFX_decision_deal_topic
 		available = {
 			always = no
 		}
 	}
 	east_summing_up = {
-		icon = GFX_decision_dogovornyak_topic
+		icon = GFX_decision_deal_topic
 		available = {
 			check_variable = { east_done_themes = 10 }
 				if = {
@@ -3225,7 +3225,7 @@ east_dogovornyak = {
 					check_variable = { DNP.east_done_themes < 10 }
 					check_variable = { DBS.east_done_themes < 10 }
 				}
-				custom_effect_tooltip = dogovornyak_not_decided
+				custom_effect_tooltip = deal_not_decided
 			}
 			else_if = {
 				limit = {
@@ -3339,21 +3339,21 @@ east_dogovornyak = {
 		}
 	}
 	east_choice_time = {	
-		icon = GFX_decision_dogovornyak_influence	
+		icon = GFX_decision_deal_influence	
 		activation = {
 			always = no
 		}
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice
+				has_country_flag = deal_choice
 			}
 		}
 		is_good = no
 		days_mission_timeout = 7
 		selectable_mission = no
 		timeout_effect = {
-			clr_country_flag = dogovornyak_choice
-			clr_country_flag = dogovornyak_choice_made
+			clr_country_flag = deal_choice
+			clr_country_flag = deal_choice_made
 			DNP = {
 					add_to_variable = {
 						var = east_done_themes
@@ -3471,10 +3471,10 @@ east_dogovornyak = {
 		}
 	}
 	east_give_high_importance = {
-		icon = GFX_decision_dogovornyak_highimportance
+		icon = GFX_decision_deal_highimportance
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = DNP}
@@ -3486,7 +3486,7 @@ east_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = no
 		}
 		days_remove = 0
@@ -3495,7 +3495,7 @@ east_dogovornyak = {
 			base = 90
 		}
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = DNP
@@ -3525,10 +3525,10 @@ east_dogovornyak = {
 		}
 	}
 	east_give_medium_importance = {
-		icon = GFX_decision_dogovornyak_mediumimportance
+		icon = GFX_decision_deal_mediumimportance
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = DNP}
@@ -3540,7 +3540,7 @@ east_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = no
 		}
 		days_remove = 0
@@ -3549,7 +3549,7 @@ east_dogovornyak = {
 			base = 90
 		}
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = DNP
@@ -3579,10 +3579,10 @@ east_dogovornyak = {
 		}
 	}
 	east_give_low_importance = {
-		icon = GFX_decision_dogovornyak_lowimportance
+		icon = GFX_decision_deal_lowimportance
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = DNP}
@@ -3594,7 +3594,7 @@ east_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = no
 		}
 		days_remove = 0
@@ -3603,7 +3603,7 @@ east_dogovornyak = {
 			base = 90
 		}
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = DNP
@@ -3633,10 +3633,10 @@ east_dogovornyak = {
 		}
 	}
 	east_give_importance_ai = {
-		icon = GFX_decision_dogovornyak_lowimportance
+		icon = GFX_decision_deal_lowimportance
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = DNP}
@@ -3648,7 +3648,7 @@ east_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = yes
 		}
 		days_remove = 0
@@ -3658,7 +3658,7 @@ east_dogovornyak = {
 		}
 		fixed_random_seed = no
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = DNP
@@ -3736,7 +3736,7 @@ east_dogovornyak = {
 		}
 	}
 	east_discuss_economy_base = {
-			icon = GFX_decision_dogovornyak_economicbase
+			icon = GFX_decision_deal_economicbase
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -3747,7 +3747,7 @@ east_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = economy_base
 				}
 			}
@@ -3761,7 +3761,7 @@ east_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = economy_base
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = donbas_influence_choice
 						value = 0
@@ -3771,7 +3771,7 @@ east_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = economy_base
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = dnipro_influence_choice
 						value = 0
@@ -3780,7 +3780,7 @@ east_dogovornyak = {
 			}
 	}
 	east_discuss_economy_freedoms = {
-			icon = GFX_decision_dogovornyak_economicfreedom
+			icon = GFX_decision_deal_economicfreedom
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -3791,7 +3791,7 @@ east_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = economy_freedoms
 				}
 			}
@@ -3805,7 +3805,7 @@ east_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = economy_freedoms
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = donbas_influence_choice
 						value = 0
@@ -3815,7 +3815,7 @@ east_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = economy_freedoms
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = dnipro_influence_choice
 						value = 0
@@ -3824,7 +3824,7 @@ east_dogovornyak = {
 			}
 	}
 	east_discuss_army_standarts = {
-			icon = GFX_decision_dogovornyak_armystandarts
+			icon = GFX_decision_deal_armystandarts
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -3835,7 +3835,7 @@ east_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = army_standarts
 				}
 			}
@@ -3849,7 +3849,7 @@ east_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = army_standarts
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = donbas_influence_choice
 						value = 0
@@ -3859,7 +3859,7 @@ east_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = army_standarts
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = dnipro_influence_choice
 						value = 0
@@ -3868,7 +3868,7 @@ east_dogovornyak = {
 			}
 	}
 	east_discuss_army_structure = {
-			icon = GFX_decision_dogovornyak_armystructure
+			icon = GFX_decision_deal_armystructure
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -3879,7 +3879,7 @@ east_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = army_structure
 				}
 			}
@@ -3893,7 +3893,7 @@ east_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = army_structure
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = donbas_influence_choice
 						value = 0
@@ -3903,7 +3903,7 @@ east_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = army_structure
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = dnipro_influence_choice
 						value = 0
@@ -3912,7 +3912,7 @@ east_dogovornyak = {
 			}
 	}
 	east_discuss_state_control = {
-			icon = GFX_decision_dogovornyak_statecontrol
+			icon = GFX_decision_deal_statecontrol
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -3923,7 +3923,7 @@ east_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = state_control
 				}
 			}
@@ -3937,7 +3937,7 @@ east_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = state_control
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = donbas_influence_choice
 						value = 0
@@ -3947,7 +3947,7 @@ east_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = state_control
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = dnipro_influence_choice
 						value = 0
@@ -3956,7 +3956,7 @@ east_dogovornyak = {
 			}
 	}
 	east_discuss_civilian_services = {
-			icon = GFX_decision_dogovornyak_civilianservices
+			icon = GFX_decision_deal_civilianservices
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -3967,7 +3967,7 @@ east_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = civilian_services
 				}
 			}
@@ -3981,7 +3981,7 @@ east_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = civilian_services
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = donbas_influence_choice
 						value = 0
@@ -3991,7 +3991,7 @@ east_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = civilian_services
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = dnipro_influence_choice
 						value = 0
@@ -4000,7 +4000,7 @@ east_dogovornyak = {
 			}
 	}
 	east_discuss_workers = {
-			icon = GFX_decision_dogovornyak_workers
+			icon = GFX_decision_deal_workers
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -4011,7 +4011,7 @@ east_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = worker_stance
 				}
 			}
@@ -4025,7 +4025,7 @@ east_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = worker_stance
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = donbas_influence_choice
 						value = 0
@@ -4035,7 +4035,7 @@ east_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = worker_stance
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = dnipro_influence_choice
 						value = 0
@@ -4044,7 +4044,7 @@ east_dogovornyak = {
 			}
 	}
 	east_discuss_liberties = {
-			icon = GFX_decision_dogovornyak_civilliberies
+			icon = GFX_decision_deal_civilliberies
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -4055,7 +4055,7 @@ east_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = civilian_liberties
 				}
 			}
@@ -4069,7 +4069,7 @@ east_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = civilian_liberties
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = donbas_influence_choice
 						value = 0
@@ -4079,7 +4079,7 @@ east_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = civilian_liberties
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = dnipro_influence_choice
 						value = 0
@@ -4088,7 +4088,7 @@ east_dogovornyak = {
 			}
 	}
 	east_discuss_equality = {
-			icon = GFX_decision_dogovornyak_equality
+			icon = GFX_decision_deal_equality
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -4099,7 +4099,7 @@ east_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = equality
 				}
 			}
@@ -4113,7 +4113,7 @@ east_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = equality
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = donbas_influence_choice
 						value = 0
@@ -4123,7 +4123,7 @@ east_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = equality
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = dnipro_influence_choice
 						value = 0
@@ -4132,7 +4132,7 @@ east_dogovornyak = {
 			}
 	}
 	east_discuss_community_controls = {
-			icon = GFX_decision_dogovornyak_communitycontrol
+			icon = GFX_decision_deal_communitycontrol
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -4143,7 +4143,7 @@ east_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = community_controls
 				}
 			}
@@ -4157,7 +4157,7 @@ east_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = community_controls
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = donbas_influence_choice
 						value = 0
@@ -4167,7 +4167,7 @@ east_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = east_choice_time
 					set_country_flag = community_controls
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = dnipro_influence_choice
 						value = 0
@@ -4177,35 +4177,35 @@ east_dogovornyak = {
 	}
 }
 
-left_bank_dogovornyak = {
+left_bank_deal = {
 	south_view_influence = {
-		icon = GFX_decision_dogovornyak_influence
+		icon = GFX_decision_deal_influence
 		available = {
 			always = no
 		}
 		visible = {
-			has_country_flag = left_bank_dogovornyak
+			has_country_flag = left_bank_deal
 			tag = STH
 		}
 	}
 	east_view_influence = {
-		icon = GFX_decision_dogovornyak_influence
+		icon = GFX_decision_deal_influence
 		available = {
 			always = no
 		}
 		visible = {
-			has_country_flag = left_bank_dogovornyak
+			has_country_flag = left_bank_deal
 			tag = ESN
 		}
 	}
 	left_bank_current_topic = {
-		icon = GFX_decision_dogovornyak_topic
+		icon = GFX_decision_deal_topic
 		available = {
 			always = no
 		}
 	}
 	left_bank_summing_up = {
-		icon = GFX_decision_dogovornyak_topic
+		icon = GFX_decision_deal_topic
 		available = {
 			check_variable = {left_bank_done_themes = 10}
 				if = {
@@ -4256,7 +4256,7 @@ left_bank_dogovornyak = {
 					check_variable = { ESN.left_bank_done_themes < 10 }
 					check_variable = { STH.left_bank_done_themes < 10 }
 				}
-				custom_effect_tooltip = dogovornyak_not_decided
+				custom_effect_tooltip = deal_not_decided
 			}
 			else_if = {
 				limit = {
@@ -4370,21 +4370,21 @@ left_bank_dogovornyak = {
 		}
 	}
 	left_bank_choice_time = {
-		icon = GFX_decision_dogovornyak_topic	
+		icon = GFX_decision_deal_topic	
 		activation = {
 			always = no
 		}
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice
+				has_country_flag = deal_choice
 			}
 		}
 		is_good = no
 		days_mission_timeout = 7
 		selectable_mission = no
 		timeout_effect = {
-			clr_country_flag = dogovornyak_choice
-			clr_country_flag = dogovornyak_choice_made
+			clr_country_flag = deal_choice
+			clr_country_flag = deal_choice_made
 			ESN = {
 					add_to_variable = {
 						var = left_bank_done_themes
@@ -4503,10 +4503,10 @@ left_bank_dogovornyak = {
 		}
 	}
 	left_bank_give_high_importance = {
-		icon = GFX_decision_dogovornyak_highimportance
+		icon = GFX_decision_deal_highimportance
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = ESN}
@@ -4518,7 +4518,7 @@ left_bank_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = no
 		}
 		days_remove = 0
@@ -4527,7 +4527,7 @@ left_bank_dogovornyak = {
 			base = 90
 		}
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = ESN
@@ -4557,10 +4557,10 @@ left_bank_dogovornyak = {
 		}
 	}
 	left_bank_give_medium_importance = {
-		icon = GFX_decision_dogovornyak_mediumimportance
+		icon = GFX_decision_deal_mediumimportance
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = ESN}
@@ -4572,7 +4572,7 @@ left_bank_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = no
 		}
 		days_remove = 0
@@ -4581,7 +4581,7 @@ left_bank_dogovornyak = {
 			base = 90
 		}
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = ESN
@@ -4611,10 +4611,10 @@ left_bank_dogovornyak = {
 		}
 	}
 	left_bank_give_low_importance = {
-		icon = GFX_decision_dogovornyak_lowimportance
+		icon = GFX_decision_deal_lowimportance
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = ESN}
@@ -4626,7 +4626,7 @@ left_bank_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = no
 		}
 		days_remove = 0
@@ -4635,7 +4635,7 @@ left_bank_dogovornyak = {
 			base = 90
 		}
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = ESN
@@ -4665,10 +4665,10 @@ left_bank_dogovornyak = {
 		}
 	}
 	left_bank_give_importance_ai = {
-		icon = GFX_decision_dogovornyak_topic
+		icon = GFX_decision_deal_topic
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = ESN}
@@ -4680,7 +4680,7 @@ left_bank_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = yes
 		}
 		days_remove = 0
@@ -4690,7 +4690,7 @@ left_bank_dogovornyak = {
 		}
 		fixed_random_seed = no
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = ESN
@@ -4768,7 +4768,7 @@ left_bank_dogovornyak = {
 		}
 	}	
 		left_bank_discuss_economy_base = {
-		    icon = GFX_decision_dogovornyak_economicbase
+		    icon = GFX_decision_deal_economicbase
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -4779,7 +4779,7 @@ left_bank_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = economy_base
 				}
 			}
@@ -4793,7 +4793,7 @@ left_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = left_bank_choice_time
 					set_country_flag = economy_base
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = east_influence_choice
 						value = 0
@@ -4803,7 +4803,7 @@ left_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = left_bank_choice_time
 					set_country_flag = economy_base
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = south_influence_choice
 						value = 0
@@ -4812,7 +4812,7 @@ left_bank_dogovornyak = {
 			}
 	}
 	left_bank_discuss_economy_freedoms = {
-		    icon = GFX_decision_dogovornyak_economicfreedom
+		    icon = GFX_decision_deal_economicfreedom
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -4823,7 +4823,7 @@ left_bank_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = economy_freedoms
 				}
 			}
@@ -4837,7 +4837,7 @@ left_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = left_bank_choice_time
 					set_country_flag = economy_freedoms
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = east_influence_choice
 						value = 0
@@ -4847,7 +4847,7 @@ left_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = left_bank_choice_time
 					set_country_flag = economy_freedoms
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = south_influence_choice
 						value = 0
@@ -4856,7 +4856,7 @@ left_bank_dogovornyak = {
 			}
 	}
 	left_bank_discuss_army_standarts = {
-		    icon = GFX_decision_dogovornyak_armystandarts
+		    icon = GFX_decision_deal_armystandarts
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -4867,7 +4867,7 @@ left_bank_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = army_standarts
 				}
 			}
@@ -4881,7 +4881,7 @@ left_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = left_bank_choice_time
 					set_country_flag = army_standarts
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = east_influence_choice
 						value = 0
@@ -4891,7 +4891,7 @@ left_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = left_bank_choice_time
 					set_country_flag = army_standarts
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = south_influence_choice
 						value = 0
@@ -4900,7 +4900,7 @@ left_bank_dogovornyak = {
 			}
 	}
 	left_bank_discuss_army_structure = {
-		    icon = GFX_decision_dogovornyak_armystructure
+		    icon = GFX_decision_deal_armystructure
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -4911,7 +4911,7 @@ left_bank_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = army_structure
 				}
 			}
@@ -4925,7 +4925,7 @@ left_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = left_bank_choice_time
 					set_country_flag = army_structure
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = east_influence_choice
 						value = 0
@@ -4935,7 +4935,7 @@ left_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = left_bank_choice_time
 					set_country_flag = army_structure
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = south_influence_choice
 						value = 0
@@ -4944,7 +4944,7 @@ left_bank_dogovornyak = {
 			}
 	}
 	left_bank_discuss_state_control = {
-		    icon = GFX_decision_dogovornyak_statecontrol
+		    icon = GFX_decision_deal_statecontrol
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -4955,7 +4955,7 @@ left_bank_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = state_control
 				}
 			}
@@ -4969,7 +4969,7 @@ left_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = left_bank_choice_time
 					set_country_flag = state_control
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = east_influence_choice
 						value = 0
@@ -4979,7 +4979,7 @@ left_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = left_bank_choice_time
 					set_country_flag = state_control
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = south_influence_choice
 						value = 0
@@ -4988,7 +4988,7 @@ left_bank_dogovornyak = {
 			}
 	}
 	left_bank_discuss_civilian_services = {
-		    icon = GFX_decision_dogovornyak_civilianservices
+		    icon = GFX_decision_deal_civilianservices
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -4999,7 +4999,7 @@ left_bank_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = civilian_services
 				}
 			}
@@ -5013,7 +5013,7 @@ left_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = left_bank_choice_time
 					set_country_flag = civilian_services
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = east_influence_choice
 						value = 0
@@ -5023,7 +5023,7 @@ left_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = left_bank_choice_time
 					set_country_flag = civilian_services
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = south_influence_choice
 						value = 0
@@ -5032,7 +5032,7 @@ left_bank_dogovornyak = {
 			}
 	}
 	left_bank_discuss_workers = {
-		    icon = GFX_decision_dogovornyak_workers
+		    icon = GFX_decision_deal_workers
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -5043,7 +5043,7 @@ left_bank_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = worker_stance
 				}
 			}
@@ -5057,7 +5057,7 @@ left_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = left_bank_choice_time
 					set_country_flag = worker_stance
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = east_influence_choice
 						value = 0
@@ -5067,7 +5067,7 @@ left_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = left_bank_choice_time
 					set_country_flag = worker_stance
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = south_influence_choice
 						value = 0
@@ -5076,7 +5076,7 @@ left_bank_dogovornyak = {
 			}
 	}
 	left_bank_discuss_liberties = {
-		    icon = GFX_decision_dogovornyak_civilliberies
+		    icon = GFX_decision_deal_civilliberies
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -5087,7 +5087,7 @@ left_bank_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = civilian_liberties
 				}
 			}
@@ -5101,7 +5101,7 @@ left_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = left_bank_choice_time
 					set_country_flag = civilian_liberties
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = east_influence_choice
 						value = 0
@@ -5111,7 +5111,7 @@ left_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = left_bank_choice_time
 					set_country_flag = civilian_liberties
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = south_influence_choice
 						value = 0
@@ -5120,7 +5120,7 @@ left_bank_dogovornyak = {
 			}
 	}
 	left_bank_discuss_equality = {
-		    icon = GFX_decision_dogovornyak_equality
+		    icon = GFX_decision_deal_equality
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -5131,7 +5131,7 @@ left_bank_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = equality
 				}
 			}
@@ -5145,7 +5145,7 @@ left_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = left_bank_choice_time
 					set_country_flag = equality
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = east_influence_choice
 						value = 0
@@ -5155,7 +5155,7 @@ left_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = left_bank_choice_time
 					set_country_flag = equality
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = south_influence_choice
 						value = 0
@@ -5164,7 +5164,7 @@ left_bank_dogovornyak = {
 			}
 	}
 	left_bank_discuss_community_controls = {
-		    icon = GFX_decision_dogovornyak_communitycontrol
+		    icon = GFX_decision_deal_communitycontrol
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -5175,7 +5175,7 @@ left_bank_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = community_controls
 				}
 			}
@@ -5189,7 +5189,7 @@ left_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = left_bank_choice_time
 					set_country_flag = community_controls
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = east_influence_choice
 						value = 0
@@ -5199,7 +5199,7 @@ left_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = left_bank_choice_time
 					set_country_flag = community_controls
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = south_influence_choice
 						value = 0
@@ -5209,35 +5209,35 @@ left_bank_dogovornyak = {
 	}
 }
 
-right_bank_dogovornyak = {
+right_bank_deal = {
 	north_view_influence = {
-		icon = GFX_decision_dogovornyak_influence
+		icon = GFX_decision_deal_influence
 		available = {
 			always = no
 		}
 		visible = {
-			has_country_flag = right_bank_dogovornyak
+			has_country_flag = right_bank_deal
 			tag = NRT
 		}
 	}
 	west_view_influence = {
-	icon = GFX_decision_dogovornyak_influence
+	icon = GFX_decision_deal_influence
 		available = {
 			always = no
 		}
 		visible = {
-			has_country_flag = right_bank_dogovornyak
+			has_country_flag = right_bank_deal
 			tag = WST
 		}
 	}
 	right_bank_current_topic = {
-	icon = GFX_decision_dogovornyak_topic
+	icon = GFX_decision_deal_topic
 		available = {
 			always = no
 		}
 	}
 	right_bank_summing_up = {
-	icon = GFX_decision_dogovornyak_topic
+	icon = GFX_decision_deal_topic
 		available = {
 			check_variable = {right_bank_done_themes = 10}
 				if = {
@@ -5288,7 +5288,7 @@ right_bank_dogovornyak = {
 					check_variable = { WST.right_bank_done_themes < 10 }
 					check_variable = { NRT.right_bank_done_themes < 10 }
 				}
-				custom_effect_tooltip = dogovornyak_not_decided
+				custom_effect_tooltip = deal_not_decided
 			}
 			else_if = {
 				limit = {
@@ -5402,21 +5402,21 @@ right_bank_dogovornyak = {
 		}
 	}
 	right_bank_choice_time = {
-        icon = GFX_decision_dogovornyak_topic	
+        icon = GFX_decision_deal_topic	
 		activation = {
 			always = no
 		}
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice
+				has_country_flag = deal_choice
 			}
 		}
 		is_good = no
 		days_mission_timeout = 7
 		selectable_mission = no
 		timeout_effect = {
-			clr_country_flag = dogovornyak_choice
-			clr_country_flag = dogovornyak_choice_made
+			clr_country_flag = deal_choice
+			clr_country_flag = deal_choice_made
 			NRT = {
 					add_to_variable = {
 						var = right_bank_done_themes
@@ -5534,10 +5534,10 @@ right_bank_dogovornyak = {
 		}
 	}
 	right_bank_give_high_importance = {
-	icon = GFX_decision_dogovornyak_highimportance
+	icon = GFX_decision_deal_highimportance
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = WST}
@@ -5549,7 +5549,7 @@ right_bank_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = no
 		}
 		days_remove = 0
@@ -5558,7 +5558,7 @@ right_bank_dogovornyak = {
 			base = 90
 		}
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = WST
@@ -5588,10 +5588,10 @@ right_bank_dogovornyak = {
 		}
 	}
 	right_bank_give_medium_importance = {
-	icon = GFX_decision_dogovornyak_mediumimportance
+	icon = GFX_decision_deal_mediumimportance
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = WST}
@@ -5603,7 +5603,7 @@ right_bank_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = no
 		}
 		days_remove = 0
@@ -5612,7 +5612,7 @@ right_bank_dogovornyak = {
 			base = 90
 		}
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = WST
@@ -5642,10 +5642,10 @@ right_bank_dogovornyak = {
 		}
 	}
 	right_bank_give_low_importance = {
-	icon = GFX_decision_dogovornyak_lowimportance
+	icon = GFX_decision_deal_lowimportance
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = WST}
@@ -5657,7 +5657,7 @@ right_bank_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = no
 		}
 		days_remove = 0
@@ -5666,7 +5666,7 @@ right_bank_dogovornyak = {
 			base = 90
 		}
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = WST
@@ -5696,10 +5696,10 @@ right_bank_dogovornyak = {
 		}
 	}
 	right_bank_give_importance_ai = {
-	icon = GFX_decision_dogovornyak_topic
+	icon = GFX_decision_deal_topic
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {tag = WST}
@@ -5711,7 +5711,7 @@ right_bank_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = yes
 		}
 		days_remove = 0
@@ -5721,7 +5721,7 @@ right_bank_dogovornyak = {
 		}
 		fixed_random_seed = no
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = WST
@@ -5799,7 +5799,7 @@ right_bank_dogovornyak = {
 		}
 	}
 	right_bank_discuss_economy_base = {
-			icon = GFX_decision_dogovornyak_economicbase
+			icon = GFX_decision_deal_economicbase
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -5810,7 +5810,7 @@ right_bank_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = economy_base
 				}
 			}
@@ -5824,7 +5824,7 @@ right_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = right_bank_choice_time
 					set_country_flag = economy_base
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = west_influence_choice
 						value = 0
@@ -5834,7 +5834,7 @@ right_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = right_bank_choice_time
 					set_country_flag = economy_base
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = north_influence_choice
 						value = 0
@@ -5843,7 +5843,7 @@ right_bank_dogovornyak = {
 			}
 	}
 	right_bank_discuss_economy_freedoms = {
-			icon = GFX_decision_dogovornyak_economicfreedom
+			icon = GFX_decision_deal_economicfreedom
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -5854,7 +5854,7 @@ right_bank_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = economy_freedoms
 				}
 			}
@@ -5868,7 +5868,7 @@ right_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = right_bank_choice_time
 					set_country_flag = economy_freedoms
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = west_influence_choice
 						value = 0
@@ -5878,7 +5878,7 @@ right_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = right_bank_choice_time
 					set_country_flag = economy_freedoms
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = north_influence_choice
 						value = 0
@@ -5887,7 +5887,7 @@ right_bank_dogovornyak = {
 			}
 	}
 	right_bank_discuss_army_standarts = {
-			icon = GFX_decision_dogovornyak_armystandarts
+			icon = GFX_decision_deal_armystandarts
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -5898,7 +5898,7 @@ right_bank_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = army_standarts
 				}
 			}
@@ -5912,7 +5912,7 @@ right_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = right_bank_choice_time
 					set_country_flag = army_standarts
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = west_influence_choice
 						value = 0
@@ -5922,7 +5922,7 @@ right_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = right_bank_choice_time
 					set_country_flag = army_standarts
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = north_influence_choice
 						value = 0
@@ -5931,7 +5931,7 @@ right_bank_dogovornyak = {
 			}
 	}
 	right_bank_discuss_army_structure = {
-			icon = GFX_decision_dogovornyak_armystructure
+			icon = GFX_decision_deal_armystructure
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -5942,7 +5942,7 @@ right_bank_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = army_structure
 				}
 			}
@@ -5956,7 +5956,7 @@ right_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = right_bank_choice_time
 					set_country_flag = army_structure
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = west_influence_choice
 						value = 0
@@ -5966,7 +5966,7 @@ right_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = right_bank_choice_time
 					set_country_flag = army_structure
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = north_influence_choice
 						value = 0
@@ -5975,7 +5975,7 @@ right_bank_dogovornyak = {
 			}
 	}
 	right_bank_discuss_state_control = {
-			icon = GFX_decision_dogovornyak_statecontrol
+			icon = GFX_decision_deal_statecontrol
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -5986,7 +5986,7 @@ right_bank_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = state_control
 				}
 			}
@@ -6000,7 +6000,7 @@ right_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = right_bank_choice_time
 					set_country_flag = state_control
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = west_influence_choice
 						value = 0
@@ -6010,7 +6010,7 @@ right_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = right_bank_choice_time
 					set_country_flag = state_control
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = north_influence_choice
 						value = 0
@@ -6019,7 +6019,7 @@ right_bank_dogovornyak = {
 			}
 	}
 	right_bank_discuss_civilian_services = {
-			icon = GFX_decision_dogovornyak_civilianservices
+			icon = GFX_decision_deal_civilianservices
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -6030,7 +6030,7 @@ right_bank_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = civilian_services
 				}
 			}
@@ -6044,7 +6044,7 @@ right_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = right_bank_choice_time
 					set_country_flag = civilian_services
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = west_influence_choice
 						value = 0
@@ -6054,7 +6054,7 @@ right_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = right_bank_choice_time
 					set_country_flag = civilian_services
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = north_influence_choice
 						value = 0
@@ -6063,7 +6063,7 @@ right_bank_dogovornyak = {
 			}
 	}
 	right_bank_discuss_workers = {
-			icon = GFX_decision_dogovornyak_workers
+			icon = GFX_decision_deal_workers
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -6074,7 +6074,7 @@ right_bank_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = worker_stance
 				}
 			}
@@ -6088,7 +6088,7 @@ right_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = right_bank_choice_time
 					set_country_flag = worker_stance
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = west_influence_choice
 						value = 0
@@ -6098,7 +6098,7 @@ right_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = right_bank_choice_time
 					set_country_flag = worker_stance
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = north_influence_choice
 						value = 0
@@ -6107,7 +6107,7 @@ right_bank_dogovornyak = {
 			}
 	}
 	right_bank_discuss_liberties = {
-			icon = GFX_decision_dogovornyak_civilliberies
+			icon = GFX_decision_deal_civilliberies
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -6118,7 +6118,7 @@ right_bank_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = civilian_liberties
 				}
 			}
@@ -6132,7 +6132,7 @@ right_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = right_bank_choice_time
 					set_country_flag = civilian_liberties
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = west_influence_choice
 						value = 0
@@ -6142,7 +6142,7 @@ right_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = right_bank_choice_time
 					set_country_flag = civilian_liberties
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = north_influence_choice
 						value = 0
@@ -6151,7 +6151,7 @@ right_bank_dogovornyak = {
 			}
 	}
 	right_bank_discuss_equality = {
-			icon = GFX_decision_dogovornyak_equality
+			icon = GFX_decision_deal_equality
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -6162,7 +6162,7 @@ right_bank_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = equality
 				}
 			}
@@ -6176,7 +6176,7 @@ right_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = right_bank_choice_time
 					set_country_flag = equality
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = west_influence_choice
 						value = 0
@@ -6186,7 +6186,7 @@ right_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = right_bank_choice_time
 					set_country_flag = equality
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = north_influence_choice
 						value = 0
@@ -6195,7 +6195,7 @@ right_bank_dogovornyak = {
 			}
 	}
 	right_bank_discuss_community_controls = {
-			icon = GFX_decision_dogovornyak_communitycontrol
+			icon = GFX_decision_deal_communitycontrol
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -6206,7 +6206,7 @@ right_bank_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = community_controls
 				}
 			}
@@ -6220,7 +6220,7 @@ right_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = right_bank_choice_time
 					set_country_flag = community_controls
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = west_influence_choice
 						value = 0
@@ -6230,7 +6230,7 @@ right_bank_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = right_bank_choice_time
 					set_country_flag = community_controls
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = north_influence_choice
 						value = 0
@@ -6240,35 +6240,35 @@ right_bank_dogovornyak = {
 	}
 }
 
-ukraine_dogovornyak = {
+ukraine_deal = {
 	right_bank_view_influence = {
-	icon = GFX_decision_dogovornyak_influence
+	icon = GFX_decision_deal_influence
 		available = {
 			always = no
 		}
 		visible = {
-			has_country_flag = ukraine_dogovornyak
+			has_country_flag = ukraine_deal
 			tag = RBU
 		}
 	}
 	left_bank_view_influence = {
-	icon = GFX_decision_dogovornyak_influence
+	icon = GFX_decision_deal_influence
 		available = {
 			always = no
 		}
 		visible = {
-			has_country_flag = ukraine_dogovornyak
+			has_country_flag = ukraine_deal
 			tag = LBU
 		}
 	}
 	ukraine_current_topic = {
-	icon = GFX_decision_dogovornyak_topic
+	icon = GFX_decision_deal_topic
 		available = {
 			always = no
 		}
 	}
 	ukraine_summing_up = {
-	icon = GFX_decision_dogovornyak_topic
+	icon = GFX_decision_deal_topic
 		available = {
 			check_variable = {ukraine_done_themes = 10}
 				if = {
@@ -6322,7 +6322,7 @@ ukraine_dogovornyak = {
 					check_variable = { RBU.ukraine_done_themes < 10 }
 					check_variable = { LBU.ukraine_done_themes < 10 }
 				}
-				custom_effect_tooltip = dogovornyak_not_decided
+				custom_effect_tooltip = deal_not_decided
 			}
 			else_if = {
 				limit = {
@@ -6436,21 +6436,21 @@ ukraine_dogovornyak = {
 		}
 	}
 	ukraine_choice_time = {	
-	icon = GFX_decision_dogovornyak_topic	
+	icon = GFX_decision_deal_topic	
 		activation = {
 			always = no
 		}
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice
+				has_country_flag = deal_choice
 			}
 		}
 		is_good = no
 		days_mission_timeout = 7
 		selectable_mission = no
 		timeout_effect = {
-			clr_country_flag = dogovornyak_choice
-			clr_country_flag = dogovornyak_choice_made
+			clr_country_flag = deal_choice
+			clr_country_flag = deal_choice_made
 			LBU = {
 					add_to_variable = {
 						var = ukraine_done_themes
@@ -6569,10 +6569,10 @@ ukraine_dogovornyak = {
 		}
 	}
 	ukraine_give_high_importance = {
-		icon = GFX_decision_dogovornyak_highimportance
+		icon = GFX_decision_deal_highimportance
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {has_country_flag = united_left_bank}
@@ -6584,7 +6584,7 @@ ukraine_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = no
 		}
 		days_remove = 0
@@ -6593,7 +6593,7 @@ ukraine_dogovornyak = {
 			base = 90
 		}
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = LBU
@@ -6623,10 +6623,10 @@ ukraine_dogovornyak = {
 		}
 	}
 	ukraine_give_medium_importance = {
-		icon = GFX_decision_dogovornyak_mediumimportance
+		icon = GFX_decision_deal_mediumimportance
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {has_country_flag = united_left_bank}
@@ -6638,7 +6638,7 @@ ukraine_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = no
 		}
 		days_remove = 0
@@ -6647,7 +6647,7 @@ ukraine_dogovornyak = {
 			base = 90
 		}
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = LBU
@@ -6677,10 +6677,10 @@ ukraine_dogovornyak = {
 		}
 	}
 	ukraine_give_low_importance = {
-		icon = GFX_decision_dogovornyak_lowimportance
+		icon = GFX_decision_deal_lowimportance
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {has_country_flag = united_left_bank}
@@ -6692,7 +6692,7 @@ ukraine_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = no
 		}
 		days_remove = 0
@@ -6701,7 +6701,7 @@ ukraine_dogovornyak = {
 			base = 90
 		}
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = LBU
@@ -6731,10 +6731,10 @@ ukraine_dogovornyak = {
 		}
 	}
 	ukraine_give_importance_ai = {
-		icon = GFX_decision_dogovornyak_topic
+		icon = GFX_decision_deal_topic
 		available = {
 			NOT = {
-				has_country_flag = dogovornyak_choice_made
+				has_country_flag = deal_choice_made
 			}
 			if = {
 				limit = {has_country_flag = united_left_bank}
@@ -6746,7 +6746,7 @@ ukraine_dogovornyak = {
 			}
 		}
 		visible = {
-			has_country_flag = dogovornyak_choice
+			has_country_flag = deal_choice
 			is_ai = yes
 		}
 		days_remove = 0
@@ -6756,7 +6756,7 @@ ukraine_dogovornyak = {
 		}
 		fixed_random_seed = no
 		complete_effect = {
-			set_country_flag = dogovornyak_choice_made
+			set_country_flag = deal_choice_made
 			if = {
 				limit = {
 					tag = LBU
@@ -6834,7 +6834,7 @@ ukraine_dogovornyak = {
 		}
 	}
 	ukraine_discuss_economy_base = {
-			icon = GFX_decision_dogovornyak_economicbase
+			icon = GFX_decision_deal_economicbase
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -6845,7 +6845,7 @@ ukraine_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = economy_base
 				}
 			}
@@ -6859,7 +6859,7 @@ ukraine_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = ukraine_choice_time
 					set_country_flag = economy_base
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = left_bank_influence_choice
 						value = 0
@@ -6869,7 +6869,7 @@ ukraine_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = ukraine_choice_time
 					set_country_flag = economy_base
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = right_bank_influence_choice
 						value = 0
@@ -6878,7 +6878,7 @@ ukraine_dogovornyak = {
 			}
 	}
 	ukraine_discuss_economy_freedoms = {
-			icon = GFX_decision_dogovornyak_economicfreedom
+			icon = GFX_decision_deal_economicfreedom
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -6889,7 +6889,7 @@ ukraine_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = economy_freedoms
 				}
 			}
@@ -6903,7 +6903,7 @@ ukraine_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = ukraine_choice_time
 					set_country_flag = economy_freedoms
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = left_bank_influence_choice
 						value = 0
@@ -6913,7 +6913,7 @@ ukraine_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = ukraine_choice_time
 					set_country_flag = economy_freedoms
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = right_bank_influence_choice
 						value = 0
@@ -6922,7 +6922,7 @@ ukraine_dogovornyak = {
 			}
 	}
 	ukraine_discuss_army_standarts = {
-			icon = GFX_decision_dogovornyak_armystandarts
+			icon = GFX_decision_deal_armystandarts
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -6933,7 +6933,7 @@ ukraine_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = army_standarts
 				}
 			}
@@ -6947,7 +6947,7 @@ ukraine_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = ukraine_choice_time
 					set_country_flag = army_standarts
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = left_bank_influence_choice
 						value = 0
@@ -6957,7 +6957,7 @@ ukraine_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = ukraine_choice_time
 					set_country_flag = army_standarts
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = right_bank_influence_choice
 						value = 0
@@ -6966,7 +6966,7 @@ ukraine_dogovornyak = {
 			}
 	}
 	ukraine_discuss_army_structure = {
-			icon = GFX_decision_dogovornyak_armystructure
+			icon = GFX_decision_deal_armystructure
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -6977,7 +6977,7 @@ ukraine_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = army_structure
 				}
 			}
@@ -6991,7 +6991,7 @@ ukraine_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = ukraine_choice_time
 					set_country_flag = army_structure
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = left_bank_influence_choice
 						value = 0
@@ -7001,7 +7001,7 @@ ukraine_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = ukraine_choice_time
 					set_country_flag = army_structure
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = right_bank_influence_choice
 						value = 0
@@ -7010,7 +7010,7 @@ ukraine_dogovornyak = {
 			}
 	}
 	ukraine_discuss_state_control = {
-			icon = GFX_decision_dogovornyak_statecontrol
+			icon = GFX_decision_deal_statecontrol
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -7021,7 +7021,7 @@ ukraine_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = state_control
 				}
 			}
@@ -7035,7 +7035,7 @@ ukraine_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = ukraine_choice_time
 					set_country_flag = state_control
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = left_bank_influence_choice
 						value = 0
@@ -7045,7 +7045,7 @@ ukraine_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = ukraine_choice_time
 					set_country_flag = state_control
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = right_bank_influence_choice
 						value = 0
@@ -7054,7 +7054,7 @@ ukraine_dogovornyak = {
 			}
 	}
 	ukraine_discuss_civilian_services = {
-			icon = GFX_decision_dogovornyak_civilianservices
+			icon = GFX_decision_deal_civilianservices
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -7065,7 +7065,7 @@ ukraine_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = civilian_services
 				}
 			}
@@ -7079,7 +7079,7 @@ ukraine_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = ukraine_choice_time
 					set_country_flag = civilian_services
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = left_bank_influence_choice
 						value = 0
@@ -7089,7 +7089,7 @@ ukraine_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = ukraine_choice_time
 					set_country_flag = civilian_services
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = right_bank_influence_choice
 						value = 0
@@ -7098,7 +7098,7 @@ ukraine_dogovornyak = {
 			}
 	}
 	ukraine_discuss_workers = {
-			icon = GFX_decision_dogovornyak_workers
+			icon = GFX_decision_deal_workers
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -7109,7 +7109,7 @@ ukraine_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = worker_stance
 				}
 			}
@@ -7123,7 +7123,7 @@ ukraine_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = ukraine_choice_time
 					set_country_flag = worker_stance
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = left_bank_influence_choice
 						value = 0
@@ -7133,7 +7133,7 @@ ukraine_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = ukraine_choice_time
 					set_country_flag = worker_stance
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = right_bank_influence_choice
 						value = 0
@@ -7142,7 +7142,7 @@ ukraine_dogovornyak = {
 			}
 	}
 	ukraine_discuss_liberties = {
-			icon = GFX_decision_dogovornyak_civilliberies
+			icon = GFX_decision_deal_civilliberies
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -7153,7 +7153,7 @@ ukraine_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = civilian_liberties
 				}
 			}
@@ -7167,7 +7167,7 @@ ukraine_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = ukraine_choice_time
 					set_country_flag = civilian_liberties
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = left_bank_influence_choice
 						value = 0
@@ -7177,7 +7177,7 @@ ukraine_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = ukraine_choice_time
 					set_country_flag = civilian_liberties
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = right_bank_influence_choice
 						value = 0
@@ -7186,7 +7186,7 @@ ukraine_dogovornyak = {
 			}
 	}
 	ukraine_discuss_equality = {
-			icon = GFX_decision_dogovornyak_equality
+			icon = GFX_decision_deal_equality
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -7197,7 +7197,7 @@ ukraine_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = equality
 				}
 			}
@@ -7211,7 +7211,7 @@ ukraine_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = ukraine_choice_time
 					set_country_flag = equality
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = left_bank_influence_choice
 						value = 0
@@ -7221,7 +7221,7 @@ ukraine_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = ukraine_choice_time
 					set_country_flag = equality
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = right_bank_influence_choice
 						value = 0
@@ -7230,7 +7230,7 @@ ukraine_dogovornyak = {
 			}
 	}
 	ukraine_discuss_community_controls = {
-			icon = GFX_decision_dogovornyak_communitycontrol
+			icon = GFX_decision_deal_communitycontrol
 			available = {
 				NOT = {
 					has_country_flag = {
@@ -7241,7 +7241,7 @@ ukraine_dogovornyak = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = dogovornyak_choice
+					has_country_flag = deal_choice
 					has_country_flag = community_controls
 				}
 			}
@@ -7255,7 +7255,7 @@ ukraine_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = ukraine_choice_time
 					set_country_flag = community_controls
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = left_bank_influence_choice
 						value = 0
@@ -7265,7 +7265,7 @@ ukraine_dogovornyak = {
 					set_country_flag = picked_a_theme
 					activate_mission = ukraine_choice_time
 					set_country_flag = community_controls
-					set_country_flag = dogovornyak_choice
+					set_country_flag = deal_choice
 					set_variable = {
 						var = right_bank_influence_choice
 						value = 0

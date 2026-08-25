@@ -1,11 +1,11 @@
-south_elections = {
-	south_elections_countdown = {			
+south_referendum = {
+	south_referendum_countdown = {			
 		activation = {
 			always = no
 		}
 		available = {
 			NOT = {
-				has_country_flag = south_elections
+				has_country_flag = south_referendum
 			}
 		}
 		target_trigger = {
@@ -14,16 +14,16 @@ south_elections = {
 					tag = BUH
 					tag = TVR
 				}
-				has_country_flag = south_elections
+				has_country_flag = south_referendum
             }
         }
 		is_good = no
 		days_mission_timeout = 150
 		selectable_mission = no
 		timeout_effect = {
-			clr_country_flag = south_elections
+			clr_country_flag = south_referendum
 			FROM = {
-				clr_country_flag = south_elections
+				clr_country_flag = south_referendum
 			}
 			if = {
 				limit = {
@@ -58,14 +58,14 @@ south_elections = {
 				}
 			}
 			else = {
-					custom_effect_tooltip = elections_not_decided
+					custom_effect_tooltip = referendum_not_decided
 			}
 		}
 	}
 
 	south_change_in_popularity = {			
 		activation = {
-			has_country_flag = south_elections
+			has_country_flag = south_referendum
 			OR = {
 				tag = BUH
 				tag = TVR
@@ -73,7 +73,7 @@ south_elections = {
 		}
 		available = {
 			NOT = {
-				has_country_flag = south_elections
+				has_country_flag = south_referendum
 			}
 		}
 		target_trigger = {
@@ -82,7 +82,7 @@ south_elections = {
 					tag = BUH
 					tag = TVR
 				}
-				has_country_flag = south_elections
+				has_country_flag = south_referendum
             }
         }
 		is_good = yes
@@ -98,7 +98,7 @@ south_elections = {
 					limit = {
 						check_variable = {BUH.buh_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 					add_to_variable = {
 						var = buh_rates
 						value = 2.50
@@ -114,7 +114,7 @@ south_elections = {
 					limit = {
 						check_variable = {BUH.buh_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 					add_to_variable = {
 						var = buh_rates
 						value = 1.50
@@ -130,7 +130,7 @@ south_elections = {
 					limit = {
 						check_variable = {BUH.buh_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 					add_to_variable = {
 						var = buh_rates
 						value = 0.50
@@ -151,7 +151,7 @@ south_elections = {
 					limit = {
 						check_variable = {TVR.tavria_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 					add_to_variable = {
 						var = tavria_rates
 						value = 2.50
@@ -167,7 +167,7 @@ south_elections = {
 					limit = {
 						check_variable = {TVR.tavria_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 					add_to_variable = {
 						var = tavria_rates
 						value = 1.50
@@ -183,7 +183,7 @@ south_elections = {
 					limit = {
 						check_variable = {TVR.tavria_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 					add_to_variable = {
 						var = tavria_rates
 						value = 0.50
@@ -204,19 +204,19 @@ south_elections = {
 					limit = {
 						check_variable = {BUH.buh_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {BUH.buh_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {BUH.buh_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 				}		
 			}
 			else_if = {
@@ -227,19 +227,19 @@ south_elections = {
 					limit = {
 						check_variable = {TVR.tavria_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {TVR.tavria_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {TVR.tavria_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 				}		
 			}
     	}
@@ -280,7 +280,7 @@ south_elections = {
 				limit = {
 					tag = BUH
 				}
-				custom_effect_tooltip = elections_agitation
+				custom_effect_tooltip = referendum_agitation
 				hidden_effect = {
 					random_list = {
 						20 = {
@@ -327,7 +327,7 @@ south_elections = {
 				limit = {
 					tag = TVR
 				}
-				custom_effect_tooltip = elections_agitation
+				custom_effect_tooltip = referendum_agitation
 				hidden_effect = {
 					random_list = {
 						20 = {
@@ -408,7 +408,7 @@ south_elections = {
 				limit = {
 					tag = BUH
 				}
-				custom_effect_tooltip = elections_reach_out
+				custom_effect_tooltip = referendum_reach_out
 				hidden_effect = {
 					add_to_variable = {
 						var = buh_rates
@@ -426,7 +426,7 @@ south_elections = {
 				limit = {
 					tag = TVR
 				}
-				custom_effect_tooltip = elections_reach_out
+				custom_effect_tooltip = referendum_reach_out
 				hidden_effect = {
 					add_to_variable = {
 						var = tavria_rates
@@ -479,7 +479,7 @@ south_elections = {
 					tag = BUH
 				}
 			}
-			custom_effect_tooltip = elections_discredit_opponent
+			custom_effect_tooltip = referendum_discredit_opponent
 			hidden_effect = {
 				random_list = {
 					20 = {
@@ -527,7 +527,7 @@ south_elections = {
 					tag = TVR
 				}
 			}
-			custom_effect_tooltip = elections_discredit_opponent
+			custom_effect_tooltip = referendum_discredit_opponent
 			hidden_effect = {
 				random_list = {
 					20 = {
@@ -616,7 +616,7 @@ south_elections = {
 			set_country_flag = elect_action
 		}
 		remove_effect = {
-			custom_effect_tooltip = elections_disrupt_agitation
+			custom_effect_tooltip = referendum_disrupt_agitation
 			clr_country_flag = elect_action
 			if = {
 				limit = {
@@ -684,7 +684,7 @@ south_elections = {
 			set_country_flag = elect_action
 		}
 		remove_effect = {
-			custom_effect_tooltip = elections_improve_agitation
+			custom_effect_tooltip = referendum_improve_agitation
 			clr_country_flag = elect_action
 			if = {
 				limit = {
@@ -708,14 +708,14 @@ south_elections = {
 	}
 }
 
-west_elections = {
-		west_elections_countdown = {			
+west_referendum = {
+		west_referendum_countdown = {			
 		activation = {
 			always = no
 		}
 		available = {
 			NOT = {
-				has_country_flag = west_elections
+				has_country_flag = west_referendum
 			}
 		}
 		target_trigger = {
@@ -724,16 +724,16 @@ west_elections = {
 					tag = GLY
 					tag = PDL
 				}
-				has_country_flag = west_elections
+				has_country_flag = west_referendum
             }
         }
 		is_good = no
 		days_mission_timeout = 150
 		selectable_mission = no
 		timeout_effect = {
-			clr_country_flag = west_elections
+			clr_country_flag = west_referendum
 			FROM = {
-				clr_country_flag = west_elections
+				clr_country_flag = west_referendum
 			}
 			if = {
 				limit = {
@@ -768,14 +768,14 @@ west_elections = {
 				}
 			}
 			else = {
-					custom_effect_tooltip = elections_not_decided
+					custom_effect_tooltip = referendum_not_decided
 			}
 		}
 	}
 
 	west_change_in_popularity = {			
 		activation = {
-			has_country_flag = west_elections
+			has_country_flag = west_referendum
 			OR = {
 				tag = GLY
 				tag = PDL
@@ -783,7 +783,7 @@ west_elections = {
 		}
 		available = {
 			NOT = {
-				has_country_flag = west_elections
+				has_country_flag = west_referendum
 			}
 		}
 		target_trigger = {
@@ -792,7 +792,7 @@ west_elections = {
 					tag = GLY
 					tag = PDL
 				}
-				has_country_flag = west_elections
+				has_country_flag = west_referendum
             }
         }
 		is_good = yes
@@ -808,7 +808,7 @@ west_elections = {
 					limit = {
 						check_variable = {GLY.galicia_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 					add_to_variable = {
 						var = galicia_rates
 						value = 2.50
@@ -824,7 +824,7 @@ west_elections = {
 					limit = {
 						check_variable = {GLY.galicia_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 					add_to_variable = {
 						var = galicia_rates
 						value = 1.50
@@ -840,7 +840,7 @@ west_elections = {
 					limit = {
 						check_variable = {GLY.galicia_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 					add_to_variable = {
 						var = galicia_rates
 						value = 0.50
@@ -861,7 +861,7 @@ west_elections = {
 					limit = {
 						check_variable = {PDL.podolia_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 					add_to_variable = {
 						var = podolia_rates
 						value = 2.50
@@ -877,7 +877,7 @@ west_elections = {
 					limit = {
 						check_variable = {PDL.podolia_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 					add_to_variable = {
 						var = podolia_rates
 						value = 1.50
@@ -893,7 +893,7 @@ west_elections = {
 					limit = {
 						check_variable = {PDL.podolia_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 					add_to_variable = {
 						var = podolia_rates
 						value = 0.50
@@ -914,19 +914,19 @@ west_elections = {
 					limit = {
 						check_variable = {GLY.galicia_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {GLY.galicia_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {GLY.galicia_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 				}		
 			}
 			else_if = {
@@ -937,19 +937,19 @@ west_elections = {
 					limit = {
 						check_variable = {PDL.podolia_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {PDL.podolia_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {PDL.podolia_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 				}		
 			}
     	}
@@ -990,7 +990,7 @@ west_elections = {
 				limit = {
 					tag = GLY
 				}
-				custom_effect_tooltip = elections_agitation
+				custom_effect_tooltip = referendum_agitation
 				hidden_effect = {
 					random_list = {
 						20 = {
@@ -1037,7 +1037,7 @@ west_elections = {
 				limit = {
 					tag = PDL
 				}
-				custom_effect_tooltip = elections_agitation
+				custom_effect_tooltip = referendum_agitation
 				hidden_effect = {
 					random_list = {
 						20 = {
@@ -1118,7 +1118,7 @@ west_elections = {
 				limit = {
 					tag = GLY
 				}
-				custom_effect_tooltip = elections_reach_out
+				custom_effect_tooltip = referendum_reach_out
 				hidden_effect = {
 					add_to_variable = {
 						var = galicia_rates
@@ -1136,7 +1136,7 @@ west_elections = {
 				limit = {
 					tag = PDL
 				}
-				custom_effect_tooltip = elections_reach_out
+				custom_effect_tooltip = referendum_reach_out
 				hidden_effect = {
 					add_to_variable = {
 						var = podolia_rates
@@ -1189,7 +1189,7 @@ west_elections = {
 					tag = GLY
 				}
 			}
-			custom_effect_tooltip = elections_discredit_opponent
+			custom_effect_tooltip = referendum_discredit_opponent
 			hidden_effect = {
 				random_list = {
 					20 = {
@@ -1237,7 +1237,7 @@ west_elections = {
 					tag = PDL
 				}
 			}
-			custom_effect_tooltip = elections_discredit_opponent
+			custom_effect_tooltip = referendum_discredit_opponent
 			hidden_effect = {
 				random_list = {
 					20 = {
@@ -1326,7 +1326,7 @@ west_elections = {
 			set_country_flag = elect_action
 		}
 		remove_effect = {
-			custom_effect_tooltip = elections_disrupt_agitation
+			custom_effect_tooltip = referendum_disrupt_agitation
 			clr_country_flag = elect_action
 			if = {
 				limit = {
@@ -1394,7 +1394,7 @@ west_elections = {
 			set_country_flag = elect_action
 		}
 		remove_effect = {
-			custom_effect_tooltip = elections_improve_agitation
+			custom_effect_tooltip = referendum_improve_agitation
 			clr_country_flag = elect_action
 			if = {
 				limit = {
@@ -1418,14 +1418,14 @@ west_elections = {
 	}
 }
 
-north_elections = {
-		north_elections_countdown = {			
+north_referendum = {
+		north_referendum_countdown = {			
 		activation = {
-			has_country_flag = north_elections
+			has_country_flag = north_referendum
 		}
 		available = {
 			NOT = {
-				has_country_flag = north_elections
+				has_country_flag = north_referendum
 			}
 		}
 		is_good = no
@@ -1433,10 +1433,10 @@ north_elections = {
 		selectable_mission = no
 		timeout_effect = {
 			SIV = {
-				clr_country_flag = north_elections
+				clr_country_flag = north_referendum
 			}
 			DIR = {
-				clr_country_flag = north_elections
+				clr_country_flag = north_referendum
 			}
 			if = {
 				limit = {
@@ -1471,18 +1471,18 @@ north_elections = {
 				}
 			}
 			else = {
-					custom_effect_tooltip = elections_not_decided
+					custom_effect_tooltip = referendum_not_decided
 			}
 		}
 	}
 
 	north_change_in_popularity = {			
 		activation = {
-			has_country_flag = north_elections
+			has_country_flag = north_referendum
 		}
 		available = {
 			NOT = {
-				has_country_flag = north_elections
+				has_country_flag = north_referendum
 			}
 		}
 		is_good = yes
@@ -1499,7 +1499,7 @@ north_elections = {
 					limit = {
 						check_variable = {SIV.siveria_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 					add_to_variable = {
 						var = siveria_rates
 						value = 2.50
@@ -1515,7 +1515,7 @@ north_elections = {
 					limit = {
 						check_variable = {SIV.siveria_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 					add_to_variable = {
 						var = siveria_rates
 						value = 1.50
@@ -1531,7 +1531,7 @@ north_elections = {
 					limit = {
 						check_variable = {SIV.siveria_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 					add_to_variable = {
 						var = siveria_rates
 						value = 0.50
@@ -1552,7 +1552,7 @@ north_elections = {
 					limit = {
 						check_variable = {DIR.dnieper_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 					add_to_variable = {
 						var = dnieper_rates
 						value = 2.50
@@ -1568,7 +1568,7 @@ north_elections = {
 					limit = {
 						check_variable = {DIR.dnieper_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 					add_to_variable = {
 						var = dnieper_rates
 						value = 1.50
@@ -1584,7 +1584,7 @@ north_elections = {
 					limit = {
 						check_variable = {DIR.dnieper_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 					add_to_variable = {
 						var = dnieper_rates
 						value = 0.50
@@ -1605,19 +1605,19 @@ north_elections = {
 					limit = {
 						check_variable = {SIV.siveria_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {SIV.siveria_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {SIV.siveria_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 				}		
 			}
 			else_if = {
@@ -1628,19 +1628,19 @@ north_elections = {
 					limit = {
 						check_variable = {DIR.dnieper_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {DIR.dnieper_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {DIR.dnieper_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 				}		
 			}
     	}
@@ -1673,7 +1673,7 @@ north_elections = {
 				limit = {
 					tag = SIV
 				}
-				custom_effect_tooltip = elections_agitation
+				custom_effect_tooltip = referendum_agitation
 				hidden_effect = {
 					random_list = {
 						20 = {
@@ -1720,7 +1720,7 @@ north_elections = {
 				limit = {
 					tag = DIR
 				}
-				custom_effect_tooltip = elections_agitation
+				custom_effect_tooltip = referendum_agitation
 				hidden_effect = {
 					random_list = {
 						20 = {
@@ -1793,7 +1793,7 @@ north_elections = {
 				limit = {
 					tag = SIV
 				}
-				custom_effect_tooltip = elections_reach_out
+				custom_effect_tooltip = referendum_reach_out
 				hidden_effect = {
 					add_to_variable = {
 						var = siveria_rates
@@ -1811,7 +1811,7 @@ north_elections = {
 				limit = {
 					tag = DIR
 				}
-				custom_effect_tooltip = elections_reach_out
+				custom_effect_tooltip = referendum_reach_out
 				hidden_effect = {
 					add_to_variable = {
 						var = dnieper_rates
@@ -1854,7 +1854,7 @@ north_elections = {
 			limit = {
 				tag = DIR
 			}
-			custom_effect_tooltip = elections_discredit_opponent
+			custom_effect_tooltip = referendum_discredit_opponent
 			hidden_effect = {
 				random_list = {
 					20 = {
@@ -1900,7 +1900,7 @@ north_elections = {
 			limit = {
 				tag = SIV
 			}
-			custom_effect_tooltip = elections_discredit_opponent
+			custom_effect_tooltip = referendum_discredit_opponent
 			hidden_effect = {
 				random_list = {
 					20 = {
@@ -1981,7 +1981,7 @@ north_elections = {
 			set_country_flag = elect_action
 		}
 		remove_effect = {
-			custom_effect_tooltip = elections_disrupt_agitation
+			custom_effect_tooltip = referendum_disrupt_agitation
 			clr_country_flag = elect_action
 			if = {
 				limit = {
@@ -2041,7 +2041,7 @@ north_elections = {
 			set_country_flag = elect_action
 		}
 		remove_effect = {
-			custom_effect_tooltip = elections_improve_agitation
+			custom_effect_tooltip = referendum_improve_agitation
 			clr_country_flag = elect_action
 			if = {
 				limit = {
@@ -2065,14 +2065,14 @@ north_elections = {
 	}
 }
 
-east_elections = {
-		east_elections_countdown = {			
+east_referendum = {
+		east_referendum_countdown = {			
 		activation = {
-			has_country_flag = east_elections
+			has_country_flag = east_referendum
 		}
 		available = {
 			NOT = {
-				has_country_flag = east_elections
+				has_country_flag = east_referendum
 			}
 		}
 		is_good = no
@@ -2080,10 +2080,10 @@ east_elections = {
 		selectable_mission = no
 		timeout_effect = {
 			DBS = {
-				clr_country_flag = east_elections
+				clr_country_flag = east_referendum
 			}
 			DNP = {
-				clr_country_flag = east_elections
+				clr_country_flag = east_referendum
 			}
 			if = {
 				limit = {
@@ -2118,18 +2118,18 @@ east_elections = {
 				}
 			}
 			else = {
-					custom_effect_tooltip = elections_not_decided
+					custom_effect_tooltip = referendum_not_decided
 			}
 		}
 	}
 
 	east_change_in_popularity = {			
 		activation = {
-			has_country_flag = east_elections
+			has_country_flag = east_referendum
 		}
 		available = {
 			NOT = {
-				has_country_flag = east_elections
+				has_country_flag = east_referendum
 			}
 		}
 		is_good = yes
@@ -2146,7 +2146,7 @@ east_elections = {
 					limit = {
 						check_variable = {DBS.donbas_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 					add_to_variable = {
 						var = donbas_rates
 						value = 2.50
@@ -2162,7 +2162,7 @@ east_elections = {
 					limit = {
 						check_variable = {DBS.donbas_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 					add_to_variable = {
 						var = donbas_rates
 						value = 1.50
@@ -2178,7 +2178,7 @@ east_elections = {
 					limit = {
 						check_variable = {DBS.donbas_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 					add_to_variable = {
 						var = donbas_rates
 						value = 0.50
@@ -2199,7 +2199,7 @@ east_elections = {
 					limit = {
 						check_variable = {DNP.dnipro_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 					add_to_variable = {
 						var = dnipro_rates
 						value = 2.50
@@ -2215,7 +2215,7 @@ east_elections = {
 					limit = {
 						check_variable = {DNP.dnipro_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 					add_to_variable = {
 						var = dnipro_rates
 						value = 1.50
@@ -2231,7 +2231,7 @@ east_elections = {
 					limit = {
 						check_variable = {DNP.dnipro_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 					add_to_variable = {
 						var = dnipro_rates
 						value = 0.50
@@ -2252,19 +2252,19 @@ east_elections = {
 					limit = {
 						check_variable = {DBS.donbas_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {DBS.donbas_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {DBS.donbas_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 				}		
 			}
 			else_if = {
@@ -2275,19 +2275,19 @@ east_elections = {
 					limit = {
 						check_variable = {DNP.dnipro_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {DNP.dnipro_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {DNP.dnipro_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 				}		
 			}
     	}
@@ -2320,7 +2320,7 @@ east_elections = {
 				limit = {
 					tag = DBS
 				}
-				custom_effect_tooltip = elections_agitation
+				custom_effect_tooltip = referendum_agitation
 				hidden_effect = {
 					random_list = {
 						20 = {
@@ -2367,7 +2367,7 @@ east_elections = {
 				limit = {
 					tag = DNP
 				}
-				custom_effect_tooltip = elections_agitation
+				custom_effect_tooltip = referendum_agitation
 				hidden_effect = {
 					random_list = {
 						20 = {
@@ -2440,7 +2440,7 @@ east_elections = {
 				limit = {
 					tag = DBS
 				}
-				custom_effect_tooltip = elections_reach_out
+				custom_effect_tooltip = referendum_reach_out
 				hidden_effect = {
 					add_to_variable = {
 						var = donbas_rates
@@ -2458,7 +2458,7 @@ east_elections = {
 				limit = {
 					tag = DNP
 				}
-				custom_effect_tooltip = elections_reach_out
+				custom_effect_tooltip = referendum_reach_out
 				hidden_effect = {
 					add_to_variable = {
 						var = dnipro_rates
@@ -2501,7 +2501,7 @@ east_elections = {
 			limit = {
 				tag = DNP
 			}
-			custom_effect_tooltip = elections_discredit_opponent
+			custom_effect_tooltip = referendum_discredit_opponent
 			hidden_effect = {
 				random_list = {
 					20 = {
@@ -2547,7 +2547,7 @@ east_elections = {
 			limit = {
 				tag = DBS
 			}
-			custom_effect_tooltip = elections_discredit_opponent
+			custom_effect_tooltip = referendum_discredit_opponent
 			hidden_effect = {
 				random_list = {
 					20 = {
@@ -2628,7 +2628,7 @@ east_elections = {
 			set_country_flag = elect_action
 		}
 		remove_effect = {
-			custom_effect_tooltip = elections_disrupt_agitation
+			custom_effect_tooltip = referendum_disrupt_agitation
 			clr_country_flag = elect_action
 			if = {
 				limit = {
@@ -2688,7 +2688,7 @@ east_elections = {
 			set_country_flag = elect_action
 		}
 		remove_effect = {
-			custom_effect_tooltip = elections_improve_agitation
+			custom_effect_tooltip = referendum_improve_agitation
 			clr_country_flag = elect_action
 			if = {
 				limit = {
@@ -2712,14 +2712,14 @@ east_elections = {
 	}
 }
 
-left_bank_elections = {
-		left_bank_elections_countdown = {			
+left_bank_referendum = {
+		left_bank_referendum_countdown = {			
 		activation = {
-			has_country_flag = left_bank_elections
+			has_country_flag = left_bank_referendum
 		}
 		available = {
 			NOT = {
-				has_country_flag = left_bank_elections
+				has_country_flag = left_bank_referendum
 			}
 		}
 		is_good = no
@@ -2727,10 +2727,10 @@ left_bank_elections = {
 		selectable_mission = no
 		timeout_effect = {
 			ESN = {
-				clr_country_flag = left_bank_elections
+				clr_country_flag = left_bank_referendum
 			}
 			STH = {
-				clr_country_flag = left_bank_elections
+				clr_country_flag = left_bank_referendum
 			}
 			if = {
 				limit = {
@@ -2765,18 +2765,18 @@ left_bank_elections = {
 				}
 			}
 			else = {
-					custom_effect_tooltip = elections_not_decided
+					custom_effect_tooltip = referendum_not_decided
 			}
 		}
 	}
 
 	left_bank_change_in_popularity = {			
 		activation = {
-			has_country_flag = left_bank_elections
+			has_country_flag = left_bank_referendum
 		}
 		available = {
 			NOT = {
-				has_country_flag = left_bank_elections
+				has_country_flag = left_bank_referendum
 			}
 		}
 		is_good = yes
@@ -2793,7 +2793,7 @@ left_bank_elections = {
 					limit = {
 						check_variable = {ESN.east_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 					add_to_variable = {
 						var = east_rates
 						value = 2.50
@@ -2809,7 +2809,7 @@ left_bank_elections = {
 					limit = {
 						check_variable = {ESN.east_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 					add_to_variable = {
 						var = east_rates
 						value = 1.50
@@ -2825,7 +2825,7 @@ left_bank_elections = {
 					limit = {
 						check_variable = {ESN.east_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 					add_to_variable = {
 						var = east_rates
 						value = 0.50
@@ -2846,7 +2846,7 @@ left_bank_elections = {
 					limit = {
 						check_variable = {STH.south_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 					add_to_variable = {
 						var = south_rates
 						value = 2.50
@@ -2862,7 +2862,7 @@ left_bank_elections = {
 					limit = {
 						check_variable = {STH.south_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 					add_to_variable = {
 						var = south_rates
 						value = 1.50
@@ -2878,7 +2878,7 @@ left_bank_elections = {
 					limit = {
 						check_variable = {STH.south_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 					add_to_variable = {
 						var = south_rates
 						value = 0.50
@@ -2899,19 +2899,19 @@ left_bank_elections = {
 					limit = {
 						check_variable = {ESN.east_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {ESN.east_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {ESN.east_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 				}		
 			}
 			else_if = {
@@ -2922,19 +2922,19 @@ left_bank_elections = {
 					limit = {
 						check_variable = {STH.south_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {STH.south_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {STH.south_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 				}		
 			}
     	}
@@ -2967,7 +2967,7 @@ left_bank_elections = {
 				limit = {
 					tag = ESN
 				}
-				custom_effect_tooltip = elections_agitation
+				custom_effect_tooltip = referendum_agitation
 				hidden_effect = {
 					random_list = {
 						20 = {
@@ -3014,7 +3014,7 @@ left_bank_elections = {
 				limit = {
 					tag = STH
 				}
-				custom_effect_tooltip = elections_agitation
+				custom_effect_tooltip = referendum_agitation
 				hidden_effect = {
 					random_list = {
 						20 = {
@@ -3087,7 +3087,7 @@ left_bank_elections = {
 				limit = {
 					tag = ESN
 				}
-				custom_effect_tooltip = elections_reach_out
+				custom_effect_tooltip = referendum_reach_out
 				hidden_effect = {
 					add_to_variable = {
 						var = east_rates
@@ -3105,7 +3105,7 @@ left_bank_elections = {
 				limit = {
 					tag = STH
 				}
-				custom_effect_tooltip = elections_reach_out
+				custom_effect_tooltip = referendum_reach_out
 				hidden_effect = {
 					add_to_variable = {
 						var = south_rates
@@ -3148,7 +3148,7 @@ left_bank_elections = {
 			limit = {
 				tag = STH
 			}
-			custom_effect_tooltip = elections_discredit_opponent
+			custom_effect_tooltip = referendum_discredit_opponent
 			hidden_effect = {
 				random_list = {
 					20 = {
@@ -3194,7 +3194,7 @@ left_bank_elections = {
 			limit = {
 				tag = ESN
 			}
-			custom_effect_tooltip = elections_discredit_opponent
+			custom_effect_tooltip = referendum_discredit_opponent
 			hidden_effect = {
 				random_list = {
 					20 = {
@@ -3275,7 +3275,7 @@ left_bank_elections = {
 			set_country_flag = elect_action
 		}
 		remove_effect = {
-			custom_effect_tooltip = elections_disrupt_agitation
+			custom_effect_tooltip = referendum_disrupt_agitation
 			clr_country_flag = elect_action
 			if = {
 				limit = {
@@ -3335,7 +3335,7 @@ left_bank_elections = {
 			set_country_flag = elect_action
 		}
 		remove_effect = {
-			custom_effect_tooltip = elections_improve_agitation
+			custom_effect_tooltip = referendum_improve_agitation
 			clr_country_flag = elect_action
 			if = {
 				limit = {
@@ -3359,14 +3359,14 @@ left_bank_elections = {
 	}
 }
 
-right_bank_elections = {
-		right_bank_elections_countdown = {			
+right_bank_referendum = {
+		right_bank_referendum_countdown = {			
 		activation = {
-			has_country_flag = right_bank_elections
+			has_country_flag = right_bank_referendum
 		}
 		available = {
 			NOT = {
-				has_country_flag = right_bank_elections
+				has_country_flag = right_bank_referendum
 			}
 		}
 		is_good = no
@@ -3374,10 +3374,10 @@ right_bank_elections = {
 		selectable_mission = no
 		timeout_effect = {
 			NRT = {
-				clr_country_flag = right_bank_elections
+				clr_country_flag = right_bank_referendum
 			}
 			WST = {
-				clr_country_flag = right_bank_elections
+				clr_country_flag = right_bank_referendum
 			}
 			if = {
 				limit = {
@@ -3412,18 +3412,18 @@ right_bank_elections = {
 				}
 			}
 			else = {
-					custom_effect_tooltip = elections_not_decided
+					custom_effect_tooltip = referendum_not_decided
 			}
 		}
 	}
 
 	right_bank_change_in_popularity = {			
 		activation = {
-			has_country_flag = right_bank_elections
+			has_country_flag = right_bank_referendum
 		}
 		available = {
 			NOT = {
-				has_country_flag = right_bank_elections
+				has_country_flag = right_bank_referendum
 			}
 		}
 		is_good = yes
@@ -3440,7 +3440,7 @@ right_bank_elections = {
 					limit = {
 						check_variable = {NRT.north_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 					add_to_variable = {
 						var = north_rates
 						value = 2.50
@@ -3456,7 +3456,7 @@ right_bank_elections = {
 					limit = {
 						check_variable = {NRT.north_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 					add_to_variable = {
 						var = north_rates
 						value = 1.50
@@ -3472,7 +3472,7 @@ right_bank_elections = {
 					limit = {
 						check_variable = {NRT.north_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 					add_to_variable = {
 						var = north_rates
 						value = 0.50
@@ -3493,7 +3493,7 @@ right_bank_elections = {
 					limit = {
 						check_variable = {WST.west_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 					add_to_variable = {
 						var = west_rates
 						value = 2.50
@@ -3509,7 +3509,7 @@ right_bank_elections = {
 					limit = {
 						check_variable = {WST.west_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 					add_to_variable = {
 						var = west_rates
 						value = 1.50
@@ -3525,7 +3525,7 @@ right_bank_elections = {
 					limit = {
 						check_variable = {WST.west_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 					add_to_variable = {
 						var = west_rates
 						value = 0.50
@@ -3546,19 +3546,19 @@ right_bank_elections = {
 					limit = {
 						check_variable = {NRT.north_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {NRT.north_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {NRT.north_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 				}		
 			}
 			else_if = {
@@ -3569,19 +3569,19 @@ right_bank_elections = {
 					limit = {
 						check_variable = {WST.west_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {WST.west_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {WST.west_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 				}		
 			}
     	}
@@ -3614,7 +3614,7 @@ right_bank_elections = {
 				limit = {
 					tag = NRT
 				}
-				custom_effect_tooltip = elections_agitation
+				custom_effect_tooltip = referendum_agitation
 				hidden_effect = {
 					random_list = {
 						20 = {
@@ -3661,7 +3661,7 @@ right_bank_elections = {
 				limit = {
 					tag = WST
 				}
-				custom_effect_tooltip = elections_agitation
+				custom_effect_tooltip = referendum_agitation
 				hidden_effect = {
 					random_list = {
 						20 = {
@@ -3734,7 +3734,7 @@ right_bank_elections = {
 				limit = {
 					tag = NRT
 				}
-				custom_effect_tooltip = elections_reach_out
+				custom_effect_tooltip = referendum_reach_out
 				hidden_effect = {
 					add_to_variable = {
 						var = north_rates
@@ -3752,7 +3752,7 @@ right_bank_elections = {
 				limit = {
 					tag = WST
 				}
-				custom_effect_tooltip = elections_reach_out
+				custom_effect_tooltip = referendum_reach_out
 				hidden_effect = {
 					add_to_variable = {
 						var = west_rates
@@ -3795,7 +3795,7 @@ right_bank_elections = {
 			limit = {
 				tag = WST
 			}
-			custom_effect_tooltip = elections_discredit_opponent
+			custom_effect_tooltip = referendum_discredit_opponent
 			hidden_effect = {
 				random_list = {
 					20 = {
@@ -3841,7 +3841,7 @@ right_bank_elections = {
 			limit = {
 				tag = NRT
 			}
-			custom_effect_tooltip = elections_discredit_opponent
+			custom_effect_tooltip = referendum_discredit_opponent
 			hidden_effect = {
 				random_list = {
 					20 = {
@@ -3922,7 +3922,7 @@ right_bank_elections = {
 			set_country_flag = elect_action
 		}
 		remove_effect = {
-			custom_effect_tooltip = elections_disrupt_agitation
+			custom_effect_tooltip = referendum_disrupt_agitation
 			clr_country_flag = elect_action
 			if = {
 				limit = {
@@ -3982,7 +3982,7 @@ right_bank_elections = {
 			set_country_flag = elect_action
 		}
 		remove_effect = {
-			custom_effect_tooltip = elections_improve_agitation
+			custom_effect_tooltip = referendum_improve_agitation
 			clr_country_flag = elect_action
 			if = {
 				limit = {
@@ -4006,14 +4006,14 @@ right_bank_elections = {
 	}
 }
 
-ukraine_elections = {
-		ukraine_elections_countdown = {			
+ukraine_referendum = {
+		ukraine_referendum_countdown = {			
 		activation = {
-			has_country_flag = ukraine_elections
+			has_country_flag = ukraine_referendum
 		}
 		available = {
 			NOT = {
-				has_country_flag = ukraine_elections
+				has_country_flag = ukraine_referendum
 			}
 		}
 		is_good = no
@@ -4021,10 +4021,10 @@ ukraine_elections = {
 		selectable_mission = no
 		timeout_effect = {
 			RBU = {
-				clr_country_flag = ukraine_elections
+				clr_country_flag = ukraine_referendum
 			}
 			LBU = {
-				clr_country_flag = ukraine_elections
+				clr_country_flag = ukraine_referendum
 			}
 			if = {
 				limit = {
@@ -4059,18 +4059,18 @@ ukraine_elections = {
 				}
 			}
 			else = {
-					custom_effect_tooltip = elections_not_decided
+					custom_effect_tooltip = referendum_not_decided
 			}
 		}
 	}
 
 	ukraine_change_in_popularity = {			
 		activation = {
-			has_country_flag = ukraine_elections
+			has_country_flag = ukraine_referendum
 		}
 		available = {
 			NOT = {
-				has_country_flag = ukraine_elections
+				has_country_flag = ukraine_referendum
 			}
 		}
 		is_good = yes
@@ -4087,7 +4087,7 @@ ukraine_elections = {
 					limit = {
 						check_variable = {RBU.right_bank_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 					add_to_variable = {
 						var = right_bank_rates
 						value = 2.50
@@ -4103,7 +4103,7 @@ ukraine_elections = {
 					limit = {
 						check_variable = {RBU.right_bank_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 					add_to_variable = {
 						var = right_bank_rates
 						value = 1.50
@@ -4119,7 +4119,7 @@ ukraine_elections = {
 					limit = {
 						check_variable = {RBU.right_bank_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 					add_to_variable = {
 						var = right_bank_rates
 						value = 0.50
@@ -4140,7 +4140,7 @@ ukraine_elections = {
 					limit = {
 						check_variable = {LBU.left_bank_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 					add_to_variable = {
 						var = left_bank_rates
 						value = 2.50
@@ -4156,7 +4156,7 @@ ukraine_elections = {
 					limit = {
 						check_variable = {LBU.left_bank_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 					add_to_variable = {
 						var = left_bank_rates
 						value = 1.50
@@ -4172,7 +4172,7 @@ ukraine_elections = {
 					limit = {
 						check_variable = {LBU.left_bank_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 					add_to_variable = {
 						var = left_bank_rates
 						value = 0.50
@@ -4193,19 +4193,19 @@ ukraine_elections = {
 					limit = {
 						check_variable = {RBU.right_bank_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {RBU.right_bank_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {RBU.right_bank_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 				}		
 			}
 			else_if = {
@@ -4216,19 +4216,19 @@ ukraine_elections = {
 					limit = {
 						check_variable = {LBU.left_bank_rates_grow = 3}
 					}
-					custom_effect_tooltip = elections_high_rate
+					custom_effect_tooltip = referendum_high_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {LBU.left_bank_rates_grow = 2}
 					}
-					custom_effect_tooltip = elections_medium_rate
+					custom_effect_tooltip = referendum_medium_rate
 				}
 				else_if = {
 					limit = {
 						check_variable = {LBU.left_bank_rates_grow = 1}
 					}
-					custom_effect_tooltip = elections_low_rate
+					custom_effect_tooltip = referendum_low_rate
 				}		
 			}
     	}
@@ -4261,7 +4261,7 @@ ukraine_elections = {
 				limit = {
 					tag = RBU
 				}
-				custom_effect_tooltip = elections_agitation
+				custom_effect_tooltip = referendum_agitation
 				hidden_effect = {
 					random_list = {
 						20 = {
@@ -4308,7 +4308,7 @@ ukraine_elections = {
 				limit = {
 					tag = LBU
 				}
-				custom_effect_tooltip = elections_agitation
+				custom_effect_tooltip = referendum_agitation
 				hidden_effect = {
 					random_list = {
 						20 = {
@@ -4381,7 +4381,7 @@ ukraine_elections = {
 				limit = {
 					tag = RBU
 				}
-				custom_effect_tooltip = elections_reach_out
+				custom_effect_tooltip = referendum_reach_out
 				hidden_effect = {
 					add_to_variable = {
 						var = right_bank_rates
@@ -4399,7 +4399,7 @@ ukraine_elections = {
 				limit = {
 					tag = LBU
 				}
-				custom_effect_tooltip = elections_reach_out
+				custom_effect_tooltip = referendum_reach_out
 				hidden_effect = {
 					add_to_variable = {
 						var = left_bank_rates
@@ -4442,7 +4442,7 @@ ukraine_elections = {
 			limit = {
 				tag = LBU
 			}
-			custom_effect_tooltip = elections_discredit_opponent
+			custom_effect_tooltip = referendum_discredit_opponent
 			hidden_effect = {
 				random_list = {
 					20 = {
@@ -4488,7 +4488,7 @@ ukraine_elections = {
 			limit = {
 				tag = RBU
 			}
-			custom_effect_tooltip = elections_discredit_opponent
+			custom_effect_tooltip = referendum_discredit_opponent
 			hidden_effect = {
 				random_list = {
 					20 = {
@@ -4569,7 +4569,7 @@ ukraine_elections = {
 			set_country_flag = elect_action
 		}
 		remove_effect = {
-			custom_effect_tooltip = elections_disrupt_agitation
+			custom_effect_tooltip = referendum_disrupt_agitation
 			clr_country_flag = elect_action
 			if = {
 				limit = {
@@ -4629,7 +4629,7 @@ ukraine_elections = {
 			set_country_flag = elect_action
 		}
 		remove_effect = {
-			custom_effect_tooltip = elections_improve_agitation
+			custom_effect_tooltip = referendum_improve_agitation
 			clr_country_flag = elect_action
 			if = {
 				limit = {
