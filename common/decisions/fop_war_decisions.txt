@@ -1,24 +1,19 @@
 south_war = {
 	south_war_countdown = {
-		FROM = {
-			if = {
-				limit = {
+		target_trigger = {
+			FROM = {
+				OR = {
 					tag = BUH
-				}
-				tag = TVR
-			}
-			if = {
-				limit = {
 					tag = TVR
 				}
-				tag = BUH
 			}
 		}
 		activation = {
 			has_country_flag = south_war_preparation
 		}
 		available = {
-			always = no
+			has_war = no
+			has_country_flag = south_war_active
 		}
 		cancel_trigger = {
 			NOT = {
@@ -31,15 +26,36 @@ south_war = {
 		timeout_effect = {
 			clr_country_flag = south_war_preparation
 			set_country_flag = south_war_active
-			ROOT = {
+			if = {
+				limit = {
+					tag = BUH
+				}
 				declare_war_on = {
-					target = FROM
+					target = TVR
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					tag = TVR
+				}
+				declare_war_on = {
+					target = BUH
 					type = annex_everything
 				}
 			}
 			south_war_preparedness_effect = yes
 			add_dynamic_modifier = FOP_south_war_preparedness
 			add_dynamic_modifier = FOP_south_war_fatigue
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = south_war_defensive_doctrine
+						has_country_flag = south_war_offensive_doctrine
+					}
+				}
+				set_country_flag = south_war_growing_fatigue
+			}
 		}
 		war_with_on_timeout = FROM
 	}
@@ -106,9 +122,14 @@ south_war = {
 		visible = {
 			has_war = no
 		}
-		custom_cost_text = decision_cost_15_cp
+		custom_cost_text = decision_cost_CP_15
+		days_remove = 30
 		complete_effect = {
+			add_command_power = -15
+		}
+		remove_effect = {
 			set_country_flag = south_war_known_enemy_doctrine
+			custom_effect_tooltip = south_war_investigate_opponent_doctrine_tt
 		}
 		fire_only_once = yes
 		ai_will_do = {
@@ -123,10 +144,14 @@ south_war = {
 			has_war = no
 			has_country_flag = south_war_offensive_doctrine
 		}
-		custom_cost_text = decision_cost_20_cp
+		custom_cost_text = decision_cost_CP_20
 		days_remove = 30
+		complete_effect = {
+			add_command_power = -20
+		}
 		remove_effect = {
 			set_country_flag = south_war_offensive_planned
+			custom_effect_tooltip = south_war_offensive_planned_tt
 			add_to_variable = {
 				var = south_war_preparedness_var
 				value = 10
@@ -151,10 +176,14 @@ south_war = {
 			has_war = no
 			has_country_flag = south_war_offensive_doctrine
 		}
-		custom_cost_text = decision_cost_30_cp
+		custom_cost_text = decision_cost_CP_30
 		days_remove = 30
+		complete_effect = {
+			add_command_power = -30
+		}
 		remove_effect = {
 			set_country_flag = south_war_reserve_planning
+			custom_effect_tooltip = south_war_reserve_offensive_planned_tt
 			add_to_variable = {
 				var = south_war_preparedness_var
 				value = 15
@@ -179,10 +208,38 @@ south_war = {
 			has_war = no
 			has_country_flag = south_war_defensive_doctrine
 		}
-		custom_cost_text = decision_cost_20_cp
+		custom_cost_text = decision_cost_CP_20
 		days_remove = 30
+		complete_effect = {
+			add_command_power = -20
+		}
 		remove_effect = {
-			#fortifications
+			if = {
+				limit = {
+					tag = TVR
+				}
+				2086 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 1507 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 4523 }
+				}
+				2087 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 14030 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 15839 }
+				}
+			}
+			if = {
+				limit = {
+					tag = BUH
+				}
+				614 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 2589 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 13765 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 6852 }
+				}
+				2023 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 13888  }
+				}
+			}
 			add_to_variable = {
 				var = south_war_preparedness_var
 				value = 10
@@ -207,8 +264,11 @@ south_war = {
 			has_war = no
 			has_country_flag = south_war_defensive_doctrine
 		}
-		custom_cost_text = decision_cost_30_cp
+		custom_cost_text = decision_cost_CP_30
 		days_remove = 45
+		complete_effect = {
+			add_command_power = -30
+		}
 		remove_effect = {
 			#fortifications
 			add_to_variable = {
@@ -234,7 +294,10 @@ south_war = {
 		visible = {
 			has_war = no
 		}
-		custom_cost_text = decision_cost_15_cp
+		custom_cost_text = decision_cost_CP_15
+		complete_effect = {
+			add_command_power = -15
+		}
 		days_remove = 25
 		remove_effect = {
 			#damage infrastructure
@@ -253,6 +316,33 @@ south_war = {
 						min = 0
 						max = 100
 					}
+					random_owned_controlled_state = {
+						limit = {
+							arms_factory > 1
+						}
+						damage_building = {
+							type = arms_factory
+							damage = 1
+						}
+					}
+					random_owned_controlled_state = {
+						limit = {
+							infrastructure > 1
+						}
+						damage_building = {
+							type = infrastructure
+							damage = 1
+						}
+					}
+					random_owned_controlled_state = {
+						limit = {
+							industrial_complex > 1
+						}
+						damage_building = {
+							type = industrial_complex
+							damage = 1
+						}
+					}
 				}
 			}
 			if = {
@@ -270,6 +360,33 @@ south_war = {
 						min = 0
 						max = 100
 					}
+					random_owned_controlled_state = {
+						limit = {
+							arms_factory > 1
+						}
+						damage_building = {
+							type = arms_factory
+							damage = 1
+						}
+					}
+					random_owned_controlled_state = {
+						limit = {
+							infrastructure > 1
+						}
+						damage_building = {
+							type = infrastructure
+							damage = 1
+						}
+					}
+					random_owned_controlled_state = {
+						limit = {
+							industrial_complex > 1
+						}
+						damage_building = {
+							type = industrial_complex
+							damage = 1
+						}
+					}
 				}
 			}
 		}
@@ -284,8 +401,11 @@ south_war = {
 		visible = {
 			has_war = no
 		}
-		custom_cost_text = decision_cost_19_cp
+		custom_cost_text = decision_cost_CP_20
 		days_remove = 25
+		complete_effect = {
+			add_command_power = -20
+		}
 		remove_effect = {
 			add_stability_factor = -0.1
 			#nat spirit
@@ -313,10 +433,24 @@ south_war = {
 			has_war = no
 			has_country_flag = south_war_defensive_doctrine
 		}
-		custom_cost_text = decision_cost_25_cp
+		custom_cost_text = decision_cost_CP_25
 		days_remove = 20
+		complete_effect = {
+			add_command_power = -25
+		}
 		remove_effect = {
-			#intel
+			if = {
+				limit = {
+					tag = TVR
+				}
+				add_intel = {
+					target = BUH
+					civilian_intel = 10
+					army_intel = 10
+					navy_intel = 10
+					airforce_intel = 10
+				}
+			}
 		}
 		ai_will_do = {
 			base = 150
@@ -362,7 +496,7 @@ south_war = {
 	south_war_hold_our_positions = {
 		activation = {
 			has_country_flag = south_war_active
-			has_country_flag = south_war_pick_defensive_doctrine
+			has_country_flag = south_war_defensive_doctrine
 			#does not have idea
 		}
 		cancel_trigger = {
@@ -375,6 +509,51 @@ south_war = {
 		days_mission_timeout = 45
 		timeout_effect = {
 			#add_ideas
+			set_country_flag = south_war_growing_fatigue
+		}
+	}
+	south_war_execute_offensive_operation = {
+		FROM = {
+			if = {
+				limit = {
+					tag = BUH
+				}
+				tag = TVR
+			}
+			if = {
+				limit = {
+					tag = TVR
+				}
+				tag = BUH
+			}
+		}
+		activation = {
+			has_country_flag = south_war_active
+			has_country_flag = south_war_offensive_doctrine
+			#does not have idea
+		}
+		available = {
+			FROM = {
+				surrender_progress > 0.25
+			}
+		}
+		is_good = no
+		days_mission_timeout = 45
+		timeout_effect = {
+			if = {
+				limit = {
+					has_country_flag = south_war_reserve_planning
+				}
+				clr_country_flag = south_war_reserve_planning
+				custom_effect_tooltip = reserve_tt
+			}
+			else = {
+				#add_ideas
+				set_country_flag = south_war_growing_fatigue
+				custom_effect_tooltip = no_reserve_tt
+			}
+		}
+		complete_effect = {
 			set_country_flag = south_war_growing_fatigue
 		}
 	}

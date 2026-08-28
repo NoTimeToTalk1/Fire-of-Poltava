@@ -4165,3 +4165,193 @@ defined_text = {
                 localization_key = DniproFinalUnifierOption
         }
 }
+defined_text = {
+        name = GetSouthWarPreparednessLevel
+        text = {
+                trigger = {
+                        check_variable = {
+                                south_war_preparedness_var < 30
+                        }
+                }
+                localization_key = SouthWarPreparednessLow
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                south_war_preparedness_var > 29
+                        }
+                        check_variable = {
+                                south_war_preparedness_var < 50
+                        }
+                }
+                localization_key = SouthWarPreparednessMedium
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                south_war_preparedness_var > 49
+                        }
+                        check_variable = {
+                                south_war_preparedness_var < 75
+                        }
+                }
+                localization_key = SouthWarPreparednessGood
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                south_war_preparedness_var > 74
+                        }
+                        check_variable = {
+                                south_war_preparedness_var < 90
+                        }
+                }
+                localization_key = SouthWarPreparednessGreat
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                south_war_preparedness_var > 89
+                        }
+                }
+                localization_key = SouthWarPreparednessFull
+        }
+}
+defined_text = {
+        name = GetSouthWarDoctrineRoot
+        text = {
+                trigger = {
+                        has_country_flag = south_war_defensive_doctrine
+                        tag = TVR
+                }
+                localization_key = TavriaDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        has_country_flag = south_war_offensive_doctrine
+                        tag = TVR
+                }
+                localization_key = TavriaOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        NOT = {
+                               has_country_flag = south_war_defensive_doctrine
+                               has_country_flag = south_war_offensive_doctrine 
+                        }
+                        tag = TVR
+                }
+                localization_key = TavriaNoDoctrine
+        }
+        text = {
+                trigger = {
+                        has_country_flag = south_war_defensive_doctrine
+                        tag = BUH
+                }
+                localization_key = BuhDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        has_country_flag = south_war_offensive_doctrine
+                        tag = BUH
+                }
+                localization_key = BuhOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        NOT = {
+                               has_country_flag = south_war_defensive_doctrine
+                               has_country_flag = south_war_offensive_doctrine 
+                        }
+                        tag = BUH
+                }
+                localization_key = BuhNoDoctrine
+        }
+}
+defined_text = {
+        name = GetSouthWarDoctrineFrom
+        text = {
+                trigger = {
+                        tag = BUH
+                        TVR = {
+                                has_country_flag = south_war_defensive_doctrine
+                        }
+                        has_country_flag = south_war_known_enemy_doctrine
+                }
+                localization_key = TavriaDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = BUH
+                        TVR = {
+                                has_country_flag = south_war_offensive_doctrine
+                        }
+                        has_country_flag = south_war_known_enemy_doctrine
+                }
+                localization_key = TavriaOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = BUH
+                        TVR = {
+                                NOT = {
+                                        has_country_flag = south_war_defensive_doctrine
+                                        has_country_flag = south_war_offensive_doctrine 
+                                }
+                        }
+                        has_country_flag = south_war_known_enemy_doctrine
+                }
+                localization_key = TavriaNoDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = BUH
+                        NOT = {
+                                has_country_flag = south_war_known_enemy_doctrine
+                        }
+                }
+                localization_key = TavriaNoDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = TVR
+                        BUH = {
+                                has_country_flag = south_war_defensive_doctrine
+                        }
+                        has_country_flag = south_war_known_enemy_doctrine
+                }
+                localization_key = BuhDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = TVR
+                        BUH = {
+                                has_country_flag = south_war_offensive_doctrine
+                        }
+                        has_country_flag = south_war_known_enemy_doctrine
+                }
+                localization_key = BuhOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = TVR
+                        BUH = {
+                                NOT = {
+                                        has_country_flag = south_war_defensive_doctrine
+                                        has_country_flag = south_war_offensive_doctrine 
+                                }
+                        }
+                        has_country_flag = south_war_known_enemy_doctrine
+                }
+                localization_key = BuhNoDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = TVR
+                        NOT = {
+                                has_country_flag = south_war_known_enemy_doctrine
+                        }
+                }
+                localization_key = BuhNoDoctrine
+        }
+}
