@@ -407,8 +407,8 @@ south_war = {
 			add_command_power = -20
 		}
 		remove_effect = {
+			add_ideas = fop_economic_mobilization_war_economy
 			add_stability_factor = -0.1
-			#nat spirit
 			add_to_variable = {
 				var = south_war_preparedness_var
 				value = 10
@@ -476,8 +476,10 @@ south_war = {
 		}
 		cost = 20
 		days_remove = 21
+		modifier = {
+			production_factory_efficiency_gain_factor = 0.05
+		}
 		remove_effect = {
-			#convert factory
 			add_to_variable = {
 				var = south_war_preparedness_var
 				value = 5
@@ -497,13 +499,16 @@ south_war = {
 		activation = {
 			has_country_flag = south_war_active
 			has_country_flag = south_war_defensive_doctrine
-			#does not have idea
+			NOT = {
+				has_country_flag = south_war_growing_fatigue
+				has_ideas = FOP_failed_defense
+			}
 		}
 		cancel_trigger = {
 			surrender_progress > 0.25
 		}
 		cancel_effect = {
-			#add_ideas
+			add_ideas = FOP_failed_defense
 		}
 		is_good = no
 		days_mission_timeout = 45
@@ -530,7 +535,10 @@ south_war = {
 		activation = {
 			has_country_flag = south_war_active
 			has_country_flag = south_war_offensive_doctrine
-			#does not have idea
+			NOT = {
+				has_country_flag = south_war_growing_fatigue
+				has_ideas = FOP_failed_offensive
+			}
 		}
 		available = {
 			FROM = {
@@ -548,7 +556,7 @@ south_war = {
 				custom_effect_tooltip = reserve_tt
 			}
 			else = {
-				#add_ideas
+				add_ideas = FOP_failed_offensive
 				set_country_flag = south_war_growing_fatigue
 				custom_effect_tooltip = no_reserve_tt
 			}
