@@ -1,13 +1,5 @@
 south_war = {
 	south_war_countdown = {
-		target_trigger = {
-			FROM = {
-				OR = {
-					tag = BUH
-					tag = TVR
-				}
-			}
-		}
 		activation = {
 			has_country_flag = south_war_preparation
 		}
@@ -19,7 +11,6 @@ south_war = {
 			NOT = {
 				has_country_flag = south_war_preparation
 			}
-			has_war = yes
 		}
 		is_good = no
 		days_mission_timeout = 120
@@ -45,8 +36,6 @@ south_war = {
 				}
 			}
 			south_war_preparedness_effect = yes
-			add_dynamic_modifier = FOP_south_war_preparedness
-			add_dynamic_modifier = FOP_south_war_fatigue
 			if = {
 				limit = {
 					NOT = {
@@ -55,6 +44,24 @@ south_war = {
 					}
 				}
 				set_country_flag = south_war_growing_fatigue
+			}
+			hidden_effect = {
+				BUH = {
+					add_dynamic_modifier = {
+						modifier = FOP_south_war_preparedness
+					}
+					add_dynamic_modifier = {
+						modifier = FOP_south_war_fatigue
+					}
+				}
+				TVR = {
+					add_dynamic_modifier = {
+						modifier = FOP_south_war_preparedness
+					}
+					add_dynamic_modifier = {
+						modifier = FOP_south_war_fatigue
+					}
+				}
 			}
 		}
 		war_with_on_timeout = FROM
@@ -73,8 +80,8 @@ south_war = {
 			set_country_flag = south_war_defensive_doctrine
 			add_to_variable = {
 				var = south_war_preparedness_var
-				value = 5
-				tooltip = war_preparedness_5_tt
+				value = 10
+				tooltip = war_preparedness_10_tt
 			}
 			clamp_variable = {
 				var = south_war_preparedness_var
@@ -101,8 +108,8 @@ south_war = {
 			set_country_flag = south_war_offensive_doctrine
 			add_to_variable = {
 				var = south_war_preparedness_var
-				value = 5
-				tooltip = war_preparedness_5_tt
+				value = 10
+				tooltip = war_preparedness_10_tt
 			}
 			clamp_variable = {
 				var = south_war_preparedness_var
@@ -154,8 +161,8 @@ south_war = {
 			custom_effect_tooltip = south_war_offensive_planned_tt
 			add_to_variable = {
 				var = south_war_preparedness_var
-				value = 10
-				tooltip = war_preparedness_10_tt
+				value = 20
+				tooltip = war_preparedness_20_tt
 			}
 			clamp_variable = {
 				var = south_war_preparedness_var
@@ -186,8 +193,8 @@ south_war = {
 			custom_effect_tooltip = south_war_reserve_offensive_planned_tt
 			add_to_variable = {
 				var = south_war_preparedness_var
-				value = 15
-				tooltip = war_preparedness_15_tt
+				value = 20
+				tooltip = war_preparedness_20_tt
 			}
 			clamp_variable = {
 				var = south_war_preparedness_var
@@ -242,8 +249,8 @@ south_war = {
 			}
 			add_to_variable = {
 				var = south_war_preparedness_var
-				value = 10
-				tooltip = war_preparedness_10_tt
+				value = 20
+				tooltip = war_preparedness_20_tt
 			}
 			clamp_variable = {
 				var = south_war_preparedness_var
@@ -258,23 +265,23 @@ south_war = {
 	}
 	south_war_prepare_secondary_defences = {
 		custom_cost_trigger = {
-			command_power > 29
+			command_power > 19
 		}
 		visible = {
 			has_war = no
 			has_country_flag = south_war_defensive_doctrine
 		}
-		custom_cost_text = decision_cost_CP_30
+		custom_cost_text = decision_cost_CP_20
 		days_remove = 45
 		complete_effect = {
-			add_command_power = -30
+			add_command_power = -20
 		}
 		remove_effect = {
 			#fortifications
 			add_to_variable = {
 				var = south_war_preparedness_var
-				value = 15
-				tooltip = war_preparedness_15_tt
+				value = 20
+				tooltip = war_preparedness_20_tt
 			}
 			clamp_variable = {
 				var = south_war_preparedness_var
@@ -287,7 +294,7 @@ south_war = {
 			base = 150
 		}
 	}
-	south_war_strike_a_diversion = {
+	south_war_commit_sabotage = {
 		custom_cost_trigger = {
 			command_power > 14
 		}
@@ -308,8 +315,8 @@ south_war = {
 				BUH = {
 					add_to_variable = {
 						var = south_war_preparedness_var
-						value = -5
-						tooltip = war_preparedness_minus_5_tt
+						value = -10
+						tooltip = war_preparedness_minus_10_tt
 					}
 					clamp_variable = {
 						var = south_war_preparedness_var
@@ -352,8 +359,8 @@ south_war = {
 				TVR = {
 					add_to_variable = {
 						var = south_war_preparedness_var
-						value = -5
-						tooltip = war_preparedness_minus_5_tt
+						value = -10
+						tooltip = war_preparedness_minus_10_tt
 					}
 					clamp_variable = {
 						var = south_war_preparedness_var
@@ -427,16 +434,16 @@ south_war = {
 	}
 	south_war_get_enemy_intel = {
 		custom_cost_trigger = {
-			command_power > 24
+			command_power > 19
 		}
 		visible = {
 			has_war = no
 			has_country_flag = south_war_defensive_doctrine
 		}
-		custom_cost_text = decision_cost_CP_25
+		custom_cost_text = decision_cost_CP_20
 		days_remove = 20
 		complete_effect = {
-			add_command_power = -25
+			add_command_power = -20
 		}
 		remove_effect = {
 			if = {
@@ -445,6 +452,18 @@ south_war = {
 				}
 				add_intel = {
 					target = BUH
+					civilian_intel = 10
+					army_intel = 10
+					navy_intel = 10
+					airforce_intel = 10
+				}
+			}
+			if = {
+				limit = {
+					tag = BUH
+				}
+				add_intel = {
+					target = TVR
 					civilian_intel = 10
 					army_intel = 10
 					navy_intel = 10
@@ -461,9 +480,9 @@ south_war = {
 			has_war = no
 		}
 		cost = 30
-		days_remove = 20
+		days_remove = 30
 		remove_effect = {
-			
+			add_war_support = 0.03
 		}
 		ai_will_do = {
 			base = 150
@@ -472,7 +491,7 @@ south_war = {
 	south_war_increase_war_production = {
 		visible = {
 			has_war = no
-			#has_ideas
+			has_ideas = fop_economic_mobilization_war_economy
 		}
 		cost = 20
 		days_remove = 21
@@ -480,6 +499,36 @@ south_war = {
 			production_factory_efficiency_gain_factor = 0.05
 		}
 		remove_effect = {
+			add_to_variable = {
+				var = south_war_preparedness_var
+				value = 5
+				tooltip = war_preparedness_5_tt
+			}
+			clamp_variable = {
+				var = south_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		ai_will_do = {
+			base = 150
+		}
+	}
+	south_war_emergent_arms_factory_construction = {
+		visible = {
+			has_war = no
+			has_ideas = fop_economic_mobilization_war_economy
+		}
+		cost = 20
+		days_remove = 28
+		remove_effect = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 			add_to_variable = {
 				var = south_war_preparedness_var
 				value = 5
@@ -513,7 +562,10 @@ south_war = {
 		is_good = no
 		days_mission_timeout = 45
 		timeout_effect = {
-			#add_ideas
+			add_ideas = FOP_counterattack
+			set_country_flag = south_war_growing_fatigue
+		}
+		complete_effect = {
 			set_country_flag = south_war_growing_fatigue
 		}
 	}
@@ -546,19 +598,18 @@ south_war = {
 			}
 		}
 		is_good = no
-		days_mission_timeout = 45
+		days_mission_timeout = 30
 		timeout_effect = {
 			if = {
 				limit = {
 					has_country_flag = south_war_reserve_planning
 				}
 				clr_country_flag = south_war_reserve_planning
-				custom_effect_tooltip = reserve_tt
+				custom_effect_tooltip = reserve_plan_tt
 			}
 			else = {
 				add_ideas = FOP_failed_offensive
 				set_country_flag = south_war_growing_fatigue
-				custom_effect_tooltip = no_reserve_tt
 			}
 		}
 		complete_effect = {
@@ -569,6 +620,9 @@ south_war = {
 		activation = {
 			has_country_flag = south_war_growing_fatigue
 			has_war = yes
+		}
+		available = {
+			has_war = no
 		}
 		cancel_trigger = {
 			has_war = no
