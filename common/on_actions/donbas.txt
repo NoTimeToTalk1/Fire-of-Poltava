@@ -115,7 +115,7 @@ on_actions = {
         }
     }
 
-    on_annex = {
+	on_annex = {
 		effect = {
             if = {
 				limit = {
@@ -169,18 +169,21 @@ on_actions = {
 			}
 		}
 	}
-
-	on_annex = {
-        effect = {
+	
+	on_capitulation = {
+		effect = {
             if = {
 				limit = {
-					FROM = { tag = RAF }
-					AFU = { exists = yes }
+					FROM = { tag = RUS }
+					AFU = {
+						has_government = ultranationalism
+						NOT = { has_country_flag = rvc_coop }
+					}
 				}
 				AFU = {
-					country_event = { id = afu.20 days = 10 }
+					country_event = azov.58
 				}
 			}
-        }
+	    }
     }
 }
