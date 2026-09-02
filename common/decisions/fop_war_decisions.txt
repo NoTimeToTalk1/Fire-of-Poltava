@@ -642,6 +642,21 @@ south_war = {
 				var = south_war_preparedness_organisation_var
 				value = -0.05
 			}
+			clamp_variable = {
+				var = south_war_preparedness_attack_var
+				min = 0
+				max = 1
+			}
+			clamp_variable = {
+				var = south_war_preparedness_defence_var
+				min = 0
+				max = 1
+			}
+			clamp_variable = {
+				var = south_war_preparedness_organisation_var
+				min = 0
+				max = 1
+			}
 			add_to_variable = {
 				var = south_war_political_fatigue_var
 				value = -0.02
@@ -650,7 +665,679 @@ south_war = {
 				var = south_war_economic_fatigue_var
 				value = -0.05
 			}
+			custom_effect_tooltip = war_fatigue_tt
 		}
 	}
 }
 
+east_war = {
+	east_war_countdown = {
+		activation = {
+			has_country_flag = east_war_preparation
+		}
+		available = {
+			has_war = no
+			has_country_flag = east_war_active
+		}
+		cancel_trigger = {
+			NOT = {
+				has_country_flag = east_war_preparation
+			}
+		}
+		is_good = no
+		days_mission_timeout = 120
+		timeout_effect = {
+			clr_country_flag = east_war_preparation
+			set_country_flag = east_war_active
+			if = {
+				limit = {
+					tag = DBS
+				}
+				declare_war_on = {
+					target = DNP
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					tag = DNP
+				}
+				declare_war_on = {
+					target = DBS
+					type = annex_everything
+				}
+			}
+			east_war_preparedness_effect = yes
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = east_war_defensive_doctrine
+						has_country_flag = east_war_offensive_doctrine
+					}
+				}
+				set_country_flag = east_war_growing_fatigue
+			}
+			hidden_effect = {
+				DBS = {
+					add_dynamic_modifier = {
+						modifier = FOP_east_war_preparedness
+					}
+					add_dynamic_modifier = {
+						modifier = FOP_east_war_fatigue
+					}
+				}
+				DNP = {
+					add_dynamic_modifier = {
+						modifier = FOP_east_war_preparedness
+					}
+					add_dynamic_modifier = {
+						modifier = FOP_east_war_fatigue
+					}
+				}
+			}
+		}
+		war_with_on_timeout = FROM
+	}
+	east_war_pick_defensive_doctrine = {
+		available = {
+			NOT = {
+				has_country_flag = east_war_defensive_doctrine
+				has_country_flag = east_war_offensive_doctrine
+			}
+		}
+		visible = {
+			has_war = no
+		}
+		complete_effect = {
+			set_country_flag = east_war_defensive_doctrine
+			add_to_variable = {
+				var = east_war_preparedness_var
+				value = 10
+				tooltip = war_preparedness_10_tt
+			}
+			clamp_variable = {
+				var = east_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	east_war_pick_offensive_doctrine = {
+		available = {
+			NOT = {
+				has_country_flag = east_war_defensive_doctrine
+				has_country_flag = east_war_offensive_doctrine
+			}
+		}
+		visible = {
+			has_war = no
+		}
+		complete_effect = {
+			set_country_flag = east_war_offensive_doctrine
+			add_to_variable = {
+				var = east_war_preparedness_var
+				value = 10
+				tooltip = war_preparedness_10_tt
+			}
+			clamp_variable = {
+				var = east_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	east_war_investigate_opponent_doctrine = {
+		custom_cost_trigger = {
+			command_power > 14
+		}
+		visible = {
+			has_war = no
+		}
+		custom_cost_text = decision_cost_CP_15
+		days_remove = 30
+		complete_effect = {
+			add_command_power = -15
+		}
+		remove_effect = {
+			set_country_flag = east_war_known_enemy_doctrine
+			custom_effect_tooltip = east_war_investigate_opponent_doctrine_tt
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	east_war_devise_offensive_operation = {
+		custom_cost_trigger = {
+			command_power > 19
+		}
+		visible = {
+			has_war = no
+			has_country_flag = east_war_offensive_doctrine
+		}
+		custom_cost_text = decision_cost_CP_20
+		days_remove = 30
+		complete_effect = {
+			add_command_power = -20
+		}
+		remove_effect = {
+			set_country_flag = east_war_offensive_planned
+			custom_effect_tooltip = east_war_offensive_planned_tt
+			add_to_variable = {
+				var = east_war_preparedness_var
+				value = 20
+				tooltip = war_preparedness_20_tt
+			}
+			clamp_variable = {
+				var = east_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	east_war_devise_reserve_plans = {
+		custom_cost_trigger = {
+			command_power > 29
+		}
+		visible = {
+			has_war = no
+			has_country_flag = east_war_offensive_doctrine
+		}
+		custom_cost_text = decision_cost_CP_30
+		days_remove = 30
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = east_war_reserve_planning
+			custom_effect_tooltip = east_war_reserve_offensive_planned_tt
+			add_to_variable = {
+				var = east_war_preparedness_var
+				value = 20
+				tooltip = war_preparedness_20_tt
+			}
+			clamp_variable = {
+				var = east_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	east_war_prepare_main_defences = {
+		custom_cost_trigger = {
+			command_power > 19
+		}
+		visible = {
+			has_war = no
+			has_country_flag = east_war_defensive_doctrine
+		}
+		custom_cost_text = decision_cost_CP_20
+		days_remove = 30
+		complete_effect = {
+			add_command_power = -20
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					tag = DNP
+				}
+				2086 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 1507 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 4523 }
+				}
+				2087 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 14030 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 15839 }
+				}
+			}
+			if = {
+				limit = {
+					tag = DBS
+				}
+				614 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 2589 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 13765 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 6852 }
+				}
+				2023 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 13888  }
+				}
+			}
+			add_to_variable = {
+				var = east_war_preparedness_var
+				value = 20
+				tooltip = war_preparedness_20_tt
+			}
+			clamp_variable = {
+				var = east_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	east_war_prepare_secondary_defences = {
+		custom_cost_trigger = {
+			command_power > 19
+		}
+		visible = {
+			has_war = no
+			has_country_flag = east_war_defensive_doctrine
+		}
+		custom_cost_text = decision_cost_CP_20
+		days_remove = 45
+		complete_effect = {
+			add_command_power = -20
+		}
+		remove_effect = {
+			#fortifications
+			add_to_variable = {
+				var = east_war_preparedness_var
+				value = 20
+				tooltip = war_preparedness_20_tt
+			}
+			clamp_variable = {
+				var = east_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	east_war_commit_sabotage = {
+		custom_cost_trigger = {
+			command_power > 14
+		}
+		visible = {
+			has_war = no
+		}
+		custom_cost_text = decision_cost_CP_15
+		complete_effect = {
+			add_command_power = -15
+		}
+		days_remove = 25
+		remove_effect = {
+			#damage infrastructure
+			if = {
+				limit = {
+					tag = DNP
+				}
+				DBS = {
+					add_to_variable = {
+						var = east_war_preparedness_var
+						value = -10
+						tooltip = war_preparedness_minus_10_tt
+					}
+					clamp_variable = {
+						var = east_war_preparedness_var
+						min = 0
+						max = 100
+					}
+					random_owned_controlled_state = {
+						limit = {
+							arms_factory > 1
+						}
+						damage_building = {
+							type = arms_factory
+							damage = 1
+						}
+					}
+					random_owned_controlled_state = {
+						limit = {
+							infrastructure > 1
+						}
+						damage_building = {
+							type = infrastructure
+							damage = 1
+						}
+					}
+					random_owned_controlled_state = {
+						limit = {
+							industrial_complex > 1
+						}
+						damage_building = {
+							type = industrial_complex
+							damage = 1
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = DBS
+				}
+				DNP = {
+					add_to_variable = {
+						var = east_war_preparedness_var
+						value = -10
+						tooltip = war_preparedness_minus_10_tt
+					}
+					clamp_variable = {
+						var = east_war_preparedness_var
+						min = 0
+						max = 100
+					}
+					random_owned_controlled_state = {
+						limit = {
+							arms_factory > 1
+						}
+						damage_building = {
+							type = arms_factory
+							damage = 1
+						}
+					}
+					random_owned_controlled_state = {
+						limit = {
+							infrastructure > 1
+						}
+						damage_building = {
+							type = infrastructure
+							damage = 1
+						}
+					}
+					random_owned_controlled_state = {
+						limit = {
+							industrial_complex > 1
+						}
+						damage_building = {
+							type = industrial_complex
+							damage = 1
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 150
+		}
+	}
+	east_war_set_economy_on_war_rails = {
+		custom_cost_trigger = {
+			command_power > 19
+		}
+		visible = {
+			has_war = no
+		}
+		custom_cost_text = decision_cost_CP_20
+		days_remove = 25
+		complete_effect = {
+			add_command_power = -20
+		}
+		remove_effect = {
+			add_ideas = fop_economic_mobilization_war_economy
+			add_stability_factor = -0.1
+			add_to_variable = {
+				var = east_war_preparedness_var
+				value = 10
+				tooltip = war_preparedness_10_tt
+			}
+			clamp_variable = {
+				var = east_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	east_war_get_enemy_intel = {
+		custom_cost_trigger = {
+			command_power > 19
+		}
+		visible = {
+			has_war = no
+			has_country_flag = east_war_defensive_doctrine
+		}
+		custom_cost_text = decision_cost_CP_20
+		days_remove = 20
+		complete_effect = {
+			add_command_power = -20
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					tag = DNP
+				}
+				add_intel = {
+					target = DBS
+					civilian_intel = 10
+					army_intel = 10
+					navy_intel = 10
+					airforce_intel = 10
+				}
+			}
+			if = {
+				limit = {
+					tag = DBS
+				}
+				add_intel = {
+					target = DNP
+					civilian_intel = 10
+					army_intel = 10
+					navy_intel = 10
+					airforce_intel = 10
+				}
+			}
+		}
+		ai_will_do = {
+			base = 150
+		}
+	}
+	east_war_motivational_speech = {
+		visible = {
+			has_war = no
+		}
+		cost = 30
+		days_remove = 30
+		remove_effect = {
+			add_war_support = 0.03
+		}
+		ai_will_do = {
+			base = 150
+		}
+	}
+	east_war_increase_war_production = {
+		visible = {
+			has_war = no
+			has_ideas = fop_economic_mobilization_war_economy
+		}
+		cost = 20
+		days_remove = 21
+		modifier = {
+			production_factory_efficiency_gain_factor = 0.05
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = east_war_preparedness_var
+				value = 5
+				tooltip = war_preparedness_5_tt
+			}
+			clamp_variable = {
+				var = east_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		ai_will_do = {
+			base = 150
+		}
+	}
+	east_war_emergent_arms_factory_construction = {
+		visible = {
+			has_war = no
+			has_ideas = fop_economic_mobilization_war_economy
+		}
+		cost = 20
+		days_remove = 28
+		remove_effect = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_to_variable = {
+				var = east_war_preparedness_var
+				value = 5
+				tooltip = war_preparedness_5_tt
+			}
+			clamp_variable = {
+				var = east_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		ai_will_do = {
+			base = 150
+		}
+	}
+	east_war_hold_our_positions = {
+		activation = {
+			has_country_flag = east_war_active
+			has_country_flag = east_war_defensive_doctrine
+			NOT = {
+				has_country_flag = east_war_growing_fatigue
+				has_ideas = FOP_failed_defense
+			}
+		}
+		cancel_trigger = {
+			surrender_progress > 0.25
+		}
+		cancel_effect = {
+			add_ideas = FOP_failed_defense
+		}
+		is_good = no
+		days_mission_timeout = 45
+		timeout_effect = {
+			add_ideas = FOP_counterattack
+			set_country_flag = east_war_growing_fatigue
+		}
+		complete_effect = {
+			set_country_flag = east_war_growing_fatigue
+		}
+	}
+	east_war_execute_offensive_operation = {
+		FROM = {
+			if = {
+				limit = {
+					tag = DBS
+				}
+				tag = DNP
+			}
+			if = {
+				limit = {
+					tag = DNP
+				}
+				tag = DBS
+			}
+		}
+		activation = {
+			has_country_flag = east_war_active
+			has_country_flag = east_war_offensive_doctrine
+			NOT = {
+				has_country_flag = east_war_growing_fatigue
+				has_ideas = FOP_failed_offensive
+			}
+		}
+		available = {
+			FROM = {
+				surrender_progress > 0.25
+			}
+		}
+		is_good = no
+		days_mission_timeout = 30
+		timeout_effect = {
+			if = {
+				limit = {
+					has_country_flag = east_war_reserve_planning
+				}
+				clr_country_flag = east_war_reserve_planning
+				custom_effect_tooltip = reserve_plan_tt
+			}
+			else = {
+				add_ideas = FOP_failed_offensive
+				set_country_flag = east_war_growing_fatigue
+			}
+		}
+		complete_effect = {
+			set_country_flag = east_war_growing_fatigue
+		}
+	}
+	east_war_fatigue = {
+		activation = {
+			has_country_flag = east_war_growing_fatigue
+			has_war = yes
+		}
+		available = {
+			has_war = no
+		}
+		cancel_trigger = {
+			has_war = no
+		}
+		is_good = no
+		days_mission_timeout = 30
+		timeout_effect = {
+			add_to_variable = {
+				var = east_war_preparedness_attack_var
+				value = -0.03
+			}
+			add_to_variable = {
+				var = east_war_preparedness_defence_var
+				value = -0.03
+			}
+			add_to_variable = {
+				var = east_war_preparedness_organisation_var
+				value = -0.05
+			}
+			clamp_variable = {
+				var = east_war_preparedness_attack_var
+				min = 0
+				max = 1
+			}
+			clamp_variable = {
+				var = east_war_preparedness_defence_var
+				min = 0
+				max = 1
+			}
+			clamp_variable = {
+				var = east_war_preparedness_organisation_var
+				min = 0
+				max = 1
+			}
+			add_to_variable = {
+				var = east_war_political_fatigue_var
+				value = -0.02
+			}
+			add_to_variable = {
+				var = east_war_economic_fatigue_var
+				value = -0.05
+			}
+			custom_effect_tooltip = war_fatigue_tt
+		}
+	}
+}

@@ -2480,3 +2480,98 @@ south_war_preparedness_effect = {
 		#add spirit with bad preparedness
 	}
 }
+east_war_preparedness_effect = {
+	if = {
+		limit = {
+			check_variable = {east_war_preparedness_var < 30}
+		}
+		add_to_variable = {
+			var = east_war_preparedness_attack_var
+			value = -0.1
+		}
+		add_to_variable = {
+			var = east_war_preparedness_defence_var
+			value = -0.1
+		}
+		add_to_variable = {
+			var = east_war_preparedness_organisation_var
+			value = -0.15
+		}
+		#add spirit with no preparedness
+	}
+	if = {
+		limit = {
+			check_variable = {east_war_preparedness_var > 29}
+			check_variable = {east_war_preparedness_var < 50}
+		}
+		add_to_variable = {
+			var = east_war_preparedness_attack_var
+			value = 0.025
+		}
+		add_to_variable = {
+			var = east_war_preparedness_defence_var
+			value = 0.025
+		}
+		add_to_variable = {
+			var = east_war_preparedness_organisation_var
+			value = 0.05
+		}
+		#add spirit with bad preparedness
+	}
+	if = {
+		limit = {
+			check_variable = {east_war_preparedness_var > 49}
+			check_variable = {east_war_preparedness_var < 75}
+		}
+		add_to_variable = {
+			var = east_war_preparedness_attack_var
+			value = 0.07
+		}
+		add_to_variable = {
+			var = east_war_preparedness_defence_var
+			value = 0.07
+		}
+		add_to_variable = {
+			var = east_war_preparedness_organisation_var
+			value = 0.1
+		}
+		#add spirit with bad preparedness
+	}
+	if = {
+		limit = {
+			check_variable = {east_war_preparedness_var > 74}
+			check_variable = {east_war_preparedness_var < 90}
+		}
+		add_to_variable = {
+			var = east_war_preparedness_attack_var
+			value = 0.15
+		}
+		add_to_variable = {
+			var = east_war_preparedness_defence_var
+			value = 0.15
+		}
+		add_to_variable = {
+			var = east_war_preparedness_organisation_var
+			value = 0.2
+		}
+		#add spirit with bad preparedness
+	}
+	if = {
+		limit = {
+			check_variable = {east_war_preparedness_var > 89}
+		}
+		add_to_variable = {
+			var = east_war_preparedness_attack_var
+			value = 0.2
+		}
+		add_to_variable = {
+			var = east_war_preparedness_defence_var
+			value = 0.2
+		}
+		add_to_variable = {
+			var = east_war_preparedness_organisation_var
+			value = 0.25
+		}
+		#add spirit with bad preparedness
+	}
+}

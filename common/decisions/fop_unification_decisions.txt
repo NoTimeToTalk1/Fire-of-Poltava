@@ -1846,6 +1846,8 @@ unite_east_ukraine = {
 		complete_effect = {
 			custom_effect_tooltip = east_unite_tt
 			hidden_effect = {
+				clr_country_flag = east_war_fatigue
+				clr_country_flag = east_war_active
 				progress_region = yes
 				set_country_flag = united_east
 				save_global_event_target_as = UKR_east_unifier
@@ -1917,17 +1919,19 @@ unite_east_ukraine = {
 
         complete_effect = {
 			country_event = {
-					id = reg_exp_east.4
-				}
+				id = reg_exp_east.4
+			}
+			set_country_flag = unification_choice_made
+			set_country_flag = east_war
+			set_country_flag = east_war_preparation
             FROM = {
 				country_event = {
 					id = reg_exp_east.4
 				}
 				set_country_flag = unification_choice_made
 				set_country_flag = east_war
+				set_country_flag = east_war_preparation
 			}
-			set_country_flag = unification_choice_made
-			set_country_flag = east_war
         }
 	}
 
@@ -2226,6 +2230,7 @@ unite_south_ukraine = {
 
 		complete_effect = {
 			clr_country_flag = south_war_growing_fatigue
+			clr_country_flag = south_war_active
 			custom_effect_tooltip = south_unite_tt
 			hidden_effect = {
 				progress_region = yes

@@ -4355,3 +4355,193 @@ defined_text = {
                 localization_key = BuhNoDoctrine
         }
 }
+defined_text = {
+        name = GetEastWarPreparednessLevel
+        text = {
+                trigger = {
+                        check_variable = {
+                                east_war_preparedness_var < 30
+                        }
+                }
+                localization_key = EastWarPreparednessLow
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                east_war_preparedness_var > 29
+                        }
+                        check_variable = {
+                                east_war_preparedness_var < 50
+                        }
+                }
+                localization_key = EastWarPreparednessMedium
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                east_war_preparedness_var > 49
+                        }
+                        check_variable = {
+                                east_war_preparedness_var < 75
+                        }
+                }
+                localization_key = EastWarPreparednessGood
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                east_war_preparedness_var > 74
+                        }
+                        check_variable = {
+                                east_war_preparedness_var < 90
+                        }
+                }
+                localization_key = EastWarPreparednessGreat
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                east_war_preparedness_var > 89
+                        }
+                }
+                localization_key = EastWarPreparednessFull
+        }
+}
+defined_text = {
+        name = GetEastWarDoctrineRoot
+        text = {
+                trigger = {
+                        has_country_flag = east_war_defensive_doctrine
+                        tag = DNP
+                }
+                localization_key = DniproDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        has_country_flag = east_war_offensive_doctrine
+                        tag = DNP
+                }
+                localization_key = DniproOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        NOT = {
+                               has_country_flag = east_war_defensive_doctrine
+                               has_country_flag = east_war_offensive_doctrine 
+                        }
+                        tag = DNP
+                }
+                localization_key = DniproNoDoctrine
+        }
+        text = {
+                trigger = {
+                        has_country_flag = east_war_defensive_doctrine
+                        tag = DBS
+                }
+                localization_key = DonbasDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        has_country_flag = east_war_offensive_doctrine
+                        tag = DBS
+                }
+                localization_key = DonbasOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        NOT = {
+                               has_country_flag = east_war_defensive_doctrine
+                               has_country_flag = east_war_offensive_doctrine 
+                        }
+                        tag = DBS
+                }
+                localization_key = DonbasNoDoctrine
+        }
+}
+defined_text = {
+        name = GetEastWarDoctrineFrom
+        text = {
+                trigger = {
+                        tag = DBS
+                        DNP = {
+                                has_country_flag = east_war_defensive_doctrine
+                        }
+                        has_country_flag = east_war_known_enemy_doctrine
+                }
+                localization_key = DniproDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = DBS
+                        DNP = {
+                                has_country_flag = east_war_offensive_doctrine
+                        }
+                        has_country_flag = east_war_known_enemy_doctrine
+                }
+                localization_key = DniproOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = DBS
+                        DNP = {
+                                NOT = {
+                                        has_country_flag = east_war_defensive_doctrine
+                                        has_country_flag = east_war_offensive_doctrine 
+                                }
+                        }
+                        has_country_flag = east_war_known_enemy_doctrine
+                }
+                localization_key = DniproNoDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = DBS
+                        NOT = {
+                                has_country_flag = east_war_known_enemy_doctrine
+                        }
+                }
+                localization_key = DniproNoDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = DNP
+                        DBS = {
+                                has_country_flag = east_war_defensive_doctrine
+                        }
+                        has_country_flag = east_war_known_enemy_doctrine
+                }
+                localization_key = DonbasDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = DNP
+                        DBS = {
+                                has_country_flag = east_war_offensive_doctrine
+                        }
+                        has_country_flag = east_war_known_enemy_doctrine
+                }
+                localization_key = DonbasOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = DNP
+                        DBS = {
+                                NOT = {
+                                        has_country_flag = east_war_defensive_doctrine
+                                        has_country_flag = east_war_offensive_doctrine 
+                                }
+                        }
+                        has_country_flag = east_war_known_enemy_doctrine
+                }
+                localization_key = DonbasNoDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = DNP
+                        NOT = {
+                                has_country_flag = east_war_known_enemy_doctrine
+                        }
+                }
+                localization_key = DonbasNoDoctrine
+        }
+}
