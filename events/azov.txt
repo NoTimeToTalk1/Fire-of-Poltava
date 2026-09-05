@@ -1749,20 +1749,11 @@ country_event = {
 				target = KLM
 				autonomous_state = FOP_controlled_region
 			}
-			add_country_leader_role = {
-				character = PLT_kuharchyk
-				promote_leader = yes
-				country_leader = {
-					ideology = social_nationalism
-					expire = "2222.1.1.1"
-					traits = { }
-				}
-			}
-			PLT_kuharchyk = {
+			AFU_Gandalf = {
 				set_nationality = MRD
 			}
 			add_country_leader_role = {
-				character = AFU_himik
+				character = AFU_Gandalf
 				promote_leader = yes
 				country_leader = {
 					ideology = social_nationalism
@@ -1770,11 +1761,11 @@ country_event = {
 					traits = { }
 				}
 			}
-			AFU_himik = {
+			AFU_Khimik = {
 				set_nationality = NOV
 			}
 			add_country_leader_role = {
-				character = AFU_khorenko
+				character = AFU_Khimik
 				promote_leader = yes
 				country_leader = {
 					ideology = social_nationalism
@@ -1782,11 +1773,11 @@ country_event = {
 					traits = { }
 				}
 			}
-			AFU_khorenko = {
+			AFU_Apis = {
 				set_nationality = KLM
 			}
 			add_country_leader_role = {
-				character = AFU_redys
+				character = AFU_Apis
 				promote_leader = yes
 				country_leader = {
 					ideology = social_nationalism
@@ -1794,11 +1785,11 @@ country_event = {
 					traits = { }
 				}
 			}
-			AFU_redys = {
+			AFU_Prokopenko = {
 				set_nationality = TTR
 			}
 			add_country_leader_role = {
-				character = AFU_syr
+				character = AFU_Prokopenko
 				promote_leader = yes
 				country_leader = {
 					ideology = social_nationalism
@@ -1806,10 +1797,18 @@ country_event = {
 					traits = { }
 				}
 			}
-			AFU_syr = {
+			AFU_Syrskyi = {
 				set_nationality = MOS
 			}
-			load_focus_tree = AFU_azov_triumph
+			add_country_leader_role = {
+				character = AFU_Syrskyi
+				promote_leader = yes
+				country_leader = {
+					ideology = social_nationalism
+					expire = "2222.1.1.1"
+					traits = { }
+				}
+			}
 		}
 		NOV = {
 			set_cosmetic_tag = NOV_azov
@@ -2239,6 +2238,7 @@ country_event = {
 				target = SOS
 			}
 		}
+		mark_focus_tree_layout_dirty = yes
 	}
 }
 
@@ -2323,6 +2323,18 @@ country_event = {
 			set_cosmetic_tag = GEO_ultranationalism
 			load_oob = GEO_fasci
 		}
+		GEO = {
+            declare_war_on = {
+                target = ABK
+                type = annex_everything
+            }
+        }
+		GEO = {
+            declare_war_on = {
+                target = SOS
+                type = annex_everything
+            }
+        }
 	}
 }
 
