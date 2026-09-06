@@ -2627,6 +2627,8 @@ unite_north_ukraine = {
 
 		complete_effect = {
 			custom_effect_tooltip = north_unite_tt
+			clr_country_flag = north_war_growing_fatigue
+			clr_country_flag = north_war_active
 			hidden_effect = {
 				progress_region = yes
 				set_country_flag = united_north
@@ -2891,13 +2893,14 @@ unite_north_ukraine = {
 
         complete_effect = {
 			country_event = reg_exp_north.4
-            FROM = {
+			set_country_flag = unification_choice_made
+			set_country_flag = north_war
+			set_country_flag = north_war_preparation
+			FROM = {
 				country_event = reg_exp_north.4
 				set_country_flag = unification_choice_made
 				set_country_flag = north_war
 			}
-			set_country_flag = unification_choice_made
-			set_country_flag = north_war
         }
 
 	}

@@ -4545,3 +4545,193 @@ defined_text = {
                 localization_key = DonbasNoDoctrine
         }
 }
+defined_text = {
+        name = GetNorthWarPreparednessLevel
+        text = {
+                trigger = {
+                        check_variable = {
+                                north_war_preparedness_var < 30
+                        }
+                }
+                localization_key = NorthWarPreparednessLow
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                north_war_preparedness_var > 29
+                        }
+                        check_variable = {
+                                north_war_preparedness_var < 50
+                        }
+                }
+                localization_key = NorthWarPreparednessMedium
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                north_war_preparedness_var > 49
+                        }
+                        check_variable = {
+                                north_war_preparedness_var < 75
+                        }
+                }
+                localization_key = NorthWarPreparednessGood
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                north_war_preparedness_var > 74
+                        }
+                        check_variable = {
+                                north_war_preparedness_var < 90
+                        }
+                }
+                localization_key = NorthWarPreparednessGreat
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                north_war_preparedness_var > 89
+                        }
+                }
+                localization_key = NorthWarPreparednessFull
+        }
+}
+defined_text = {
+        name = GetNorthWarDoctrineRoot
+        text = {
+                trigger = {
+                        has_country_flag = north_war_defensive_doctrine
+                        tag = DIR
+                }
+                localization_key = DnieperDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        has_country_flag = north_war_offensive_doctrine
+                        tag = DIR
+                }
+                localization_key = DnieperOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        NOT = {
+                               has_country_flag = north_war_defensive_doctrine
+                               has_country_flag = north_war_offensive_doctrine 
+                        }
+                        tag = DIR
+                }
+                localization_key = DnieperNoDoctrine
+        }
+        text = {
+                trigger = {
+                        has_country_flag = north_war_defensive_doctrine
+                        tag = SIV
+                }
+                localization_key = SiveriaDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        has_country_flag = north_war_offensive_doctrine
+                        tag = SIV
+                }
+                localization_key = SiveriaOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        NOT = {
+                               has_country_flag = north_war_defensive_doctrine
+                               has_country_flag = north_war_offensive_doctrine 
+                        }
+                        tag = SIV
+                }
+                localization_key = SiveriaNoDoctrine
+        }
+}
+defined_text = {
+        name = GetNorthWarDoctrineFrom
+        text = {
+                trigger = {
+                        tag = SIV
+                        DIR = {
+                                has_country_flag = north_war_defensive_doctrine
+                        }
+                        has_country_flag = north_war_known_enemy_doctrine
+                }
+                localization_key = DnieperDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = SIV
+                        DIR = {
+                                has_country_flag = north_war_offensive_doctrine
+                        }
+                        has_country_flag = north_war_known_enemy_doctrine
+                }
+                localization_key = DnieperOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = SIV
+                        DIR = {
+                                NOT = {
+                                        has_country_flag = north_war_defensive_doctrine
+                                        has_country_flag = north_war_offensive_doctrine 
+                                }
+                        }
+                        has_country_flag = north_war_known_enemy_doctrine
+                }
+                localization_key = DnieperNoDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = SIV
+                        NOT = {
+                                has_country_flag = north_war_known_enemy_doctrine
+                        }
+                }
+                localization_key = DnieperNoDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = DIR
+                        SIV = {
+                                has_country_flag = north_war_defensive_doctrine
+                        }
+                        has_country_flag = north_war_known_enemy_doctrine
+                }
+                localization_key = SiveriaDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = DIR
+                        SIV = {
+                                has_country_flag = north_war_offensive_doctrine
+                        }
+                        has_country_flag = north_war_known_enemy_doctrine
+                }
+                localization_key = SiveriaOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = DIR
+                        SIV = {
+                                NOT = {
+                                        has_country_flag = north_war_defensive_doctrine
+                                        has_country_flag = north_war_offensive_doctrine 
+                                }
+                        }
+                        has_country_flag = north_war_known_enemy_doctrine
+                }
+                localization_key = SiveriaNoDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = DIR
+                        NOT = {
+                                has_country_flag = north_war_known_enemy_doctrine
+                        }
+                }
+                localization_key = SiveriaNoDoctrine
+        }
+}
