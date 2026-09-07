@@ -12,6 +12,8 @@ shared_focus = {
 
 	completion_reward = {
 		country_event = { id = dan.29 }
+	add_research_slot = 1
+    add_political_power = 50
 	}
 }
 
@@ -29,6 +31,8 @@ shared_focus = {
 	}
 
 	completion_reward = {
+	add_stability = 0.05
+    add_war_support = 0.05
 		country_event = { id = dan.30 }
 	}
 }
@@ -60,6 +64,10 @@ shared_focus = {
 
 	completion_reward = {
 		country_event = { id = dan.1 }
+add_opinion_modifier = {
+	target = DNI
+	modifier = improve_relation
+}
 	}
 }
 
@@ -74,89 +82,14 @@ shared_focus = {
 
 	prerequisite = { focus = AFU_we_are_not_alone }
 
-	mutually_exclusive = {
-		focus = AFU_align_with_the_legetimists
-		focus = AFU_trust_the_old_faces
-	}
-
 	completion_reward = {
+	add_ideas = fop_oligarchs_power_tamed_oligarchs
 		custom_effect_tooltip = danilov_allow_focuses
 		hidden_effect = {
 			country_event = { id = dan.3 }
 		}
 		set_country_flag = danilov_new_focuses
-	}
-}
-
-#Align with the Legetimists
-shared_focus = {
-	id = AFU_align_with_the_legetimists
-	icon = GFX_AFU_align_with_the_legetimists
-	cost = 3
-
-	x = 3
-	y = 3
-
-	available = {
-		AND = {
-			country_exists = UKR
-			UKR = {
-				has_character = UKR_Zelensky
-			}
-		}
-	}
-	prerequisite = { focus = AFU_we_are_not_alone }
-
-	mutually_exclusive = {
-		focus = AFU_the_only_ones_fighting_for_a_common_goal
-		focus = AFU_trust_the_old_faces
-	}
-
-	completion_reward = {
-		custom_effect_tooltip = danilov_allow_focuses
-		create_faction = ZE_FACTION_NAME
-		AFU = { add_to_faction = UKR }
-		country_event = {
-			id = dan.7
-			days = 2
-		}
-		set_country_flag = danilov_new_focuses
-	}
-}
-
-#Trust the Old Faces
-shared_focus = {
-	id = AFU_trust_the_old_faces
-	icon = GFX_AFU_trust_the_old_faces
-	cost = 3
-
-	x = 7
-	y = 3
-
-	available = {
-		AND = {
-			country_exists = CHR
-			CHR = {
-				has_character = UAR_Poroshenko
-			}
-		}
-	}
-
-	prerequisite = { focus = AFU_we_are_not_alone }
-	mutually_exclusive = {
-		focus = AFU_the_only_ones_fighting_for_a_common_goal
-		focus = AFU_align_with_the_legetimists
-	}
-
-	completion_reward = {
-		custom_effect_tooltip = danilov_allow_focuses
-		create_faction = CHR_FACTION_NAME
-		AFU = { add_to_faction = CHR }
-		country_event = {
-			id = dan.5
-			days = 2
-		}
-		set_country_flag = danilov_new_focuses
+		add_stability = 0.05
 	}
 }
 
@@ -173,6 +106,18 @@ shared_focus = {
 	mutually_exclusive = { focus = AFU_industrial_redistribution }
 
 	completion_reward = {
+		add_to_variable = {
+			var = FOP_administrative_efficiency_var
+			value = 10
+			tooltip = add_administrative_efficiency_var_tt
+		}
+			add_to_variable = {
+			var = FOP_corruption_var
+			value = 25
+			tooltip = add_corruption_var_tt
+		}
+	add_ideas = fop_oligarchs_relations_cooperation
+	add_ideas = fop_commercial_policy_free_trade
 		SWI = {
 			set_nationality = {
 				target_country = AFU
@@ -197,6 +142,17 @@ shared_focus = {
 	mutually_exclusive = { focus = AFU_new_minister_of_economy }
 
 	completion_reward = {
+			add_to_variable = {
+			var = FOP_corruption_var
+			value = -5
+			tooltip = add_corruption_var_tt
+		}
+		add_to_variable = {
+			var = FOP_administrative_efficiency_var
+			value = -10
+			tooltip = add_administrative_efficiency_var_tt
+		}
+		add_ideas = fop_commercial_policy_free_trade
 		add_timed_idea = {
 			idea = AFU_industrial_redistribution_1
 			days = 60
@@ -221,7 +177,11 @@ shared_focus = {
 	prerequisite = { focus = AFU_industrial_redistribution  focus = AFU_new_minister_of_economy }
 
 	completion_reward = {
-		add_extra_state_shared_building_slots = 2
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = industry
+		}
 		add_popularity = {
 			ideology = conservatism
 			popularity = 0.05
@@ -242,7 +202,22 @@ shared_focus = {
 	prerequisite = { focus = AFU_state_security_strategy }
 
 	completion_reward = {
+		add_to_variable = {
+			var = FOP_Poverty_var
+			value = 5
+			tooltip = add_Poverty_var_tt
+		}
+	add_ideas = fop_pensions_moderate
+	add_ideas = fop_minimum_wage_moderate
+	add_stability = 0.1
 		country_event = { id = dan.12 }
+		random_owned_controlled_state = {
+		add_state_modifier = {
+				modifier = {
+					state_production_speed_industrial_complex_factor = 0.3
+				}
+			}
+		}
 	}
 }
 
@@ -258,9 +233,26 @@ shared_focus = {
 	prerequisite = { focus = AFU_state_security_strategy }
 
 	completion_reward = {
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = situation_centre
+				level = 1
+				instant_build = yes
+			}
+		}
 		add_ideas = AFU_legacy_of_ato_1
+		army_experience = 25
 		add_command_power = 25
 		country_event = { id = dan.13 }
+		random_army_leader = { 
+		gain_xp = 5
+		}
+		random_army_leader = { 
+		gain_xp = 5
+		}
+		random_army_leader = { 
+		gain_xp = 5
+		}
 	}
 }
 
@@ -284,6 +276,15 @@ shared_focus = {
 			popularity = 0.05
 		}
 		country_event = { id = dan.14 }
+		random_army_leader = { 
+		gain_xp = 5
+		}
+		random_army_leader = { 
+		gain_xp = 5
+		}
+		random_army_leader = { 
+		gain_xp = 5
+		}
 	}
 }
 
@@ -299,11 +300,34 @@ shared_focus = {
 	prerequisite = { focus = AFU_support_veterans }
 
 	completion_reward = {
+		add_to_variable = {
+			var = FOP_Healthcare_var
+			value = 15
+			tooltip = add_Healthcare_var_tt
+		}
+		add_to_variable = {
+			var = FOP_Poverty_var
+			value = 15
+			tooltip = add_Poverty_var_tt
+		}
+	add_political_power = 25
 		add_timed_idea = {
 			idea = AFU_humanitarian_aid_1
 			days = 365
 		}
 		country_event = { id = dan.15 }
+add_opinion_modifier = {
+	target = CAN
+	modifier = medium_increase
+}
+add_opinion_modifier = {
+	target = EUN
+	modifier = medium_increase
+}
+add_opinion_modifier = {
+	target = GBR
+	modifier = medium_increase
+}
 	}
 }
 
@@ -319,8 +343,19 @@ shared_focus = {
 	prerequisite = { focus = AFU_support_veterans }
 
 	completion_reward = {
+		add_to_variable = {
+			var = FOP_military_professionalism_var
+			value = 10
+			tooltip = add_military_professionalism_var_tt
+		}
 		custom_effect_tooltip = danilov_unlock_new_decisions
 		country_event = { id = dan.16 }
+		random_army_leader = { 
+		add_defense = 1
+		}
+		random_army_leader = { 
+		add_defense = 1
+		}
 	}
 }
 
@@ -337,7 +372,31 @@ shared_focus = {
 	prerequisite = { focus = AFU_borders_under_control }
 
 	completion_reward = {
+		add_to_variable = {
+			var = FOP_military_professionalism_var
+			value = 10
+			tooltip = add_military_professionalism_var_tt
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = boot_camp
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = boot_camp
+				level = 1
+				instant_build = yes
+			}
+		}
+	add_ideas = fop_training_advanced
+	army_experience = 30
 		country_event = { id = dan.17 }
+		random_army_leader = { 
+		add_coordination = 1
+		}
 	}
 }
 
@@ -355,6 +414,17 @@ shared_focus = {
 	completion_reward = {
 		custom_effect_tooltip = danilov_unlock_new_decisions
 		country_event = { id = dan.18 }
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = situation_centre
+				level = 1
+				instant_build = yes
+			}
+		}
+	add_decryption = {
+    target = RUS
+    amount = 300
+}
 	}
 }
 
@@ -370,8 +440,13 @@ shared_focus = {
 	prerequisite = { focus = AFU_keep_the_army_in_shape }
 
 	completion_reward = {
+	add_manpower = -300
 		custom_effect_tooltip = danilov_unlock_new_decisions
 		country_event = { id = dan.19 }
+add_popularity = {
+    ideology = communism
+    popularity = -0.25
+}
 	}
 }
 
@@ -388,6 +463,11 @@ shared_focus = {
 	prerequisite = { focus = AFU_hunting_for_rats }
 
 	completion_reward = {
+		add_to_variable = {
+			var = FOP_military_professionalism_var
+			value = 10
+			tooltip = add_military_professionalism_var_tt
+		}
 		country_event = { id = dan.20 }
 	}
 }
@@ -406,6 +486,12 @@ shared_focus = {
 	}
 
 	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 3
+			category = construction_tech
+		}
+
 		country_event = { id = dan.21 }
 	}
 }
@@ -422,8 +508,20 @@ shared_focus = {
 	prerequisite = { focus = AFU_enterprise_support_program }
 
 	completion_reward = {
+		add_to_variable = {
+			var = FOP_schooling_var
+			value = 50
+			tooltip = add_schooling_var_tt
+		}
 		custom_effect_tooltip = danilov_unlock_new_decisions
 		country_event = { id = dan.22 }
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = civil_education_centre
+				level = 1
+				instant_build = yes
+			}
+		}
 	}
 }
 
@@ -440,6 +538,13 @@ shared_focus = {
 
 	completion_reward = {
 		country_event = { id = dan.23 }
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = civil_education_centre
+				level = 1
+				instant_build = yes
+			}
+		}
 	}
 }
 
@@ -455,8 +560,19 @@ shared_focus = {
 	prerequisite = { focus = AFU_explorations_of_donbas_mines }
 
 	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = excavation_tech
+		}
 		add_political_power = 25
 		country_event = { id = dan.24 }
+		random_owned_controlled_state = {
+add_resource = {
+    type = coal
+    amount = 10
+}
+		}
 	}
 }
 
@@ -489,6 +605,35 @@ shared_focus = {
 	prerequisite = { focus = AFU_enterprise_support_program }
 
 	completion_reward = {
+		add_to_variable = {
+			var = FOP_Industry_var
+			value = 5
+			tooltip = add_Industry_var_tt
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_state_modifier = {
+				modifier = {
+					state_repair_speed_industrial_complex_factor = 0.3
+				}
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_state_modifier = {
+				modifier = {
+					state_repair_speed_industrial_complex_factor = 0.3
+				}
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_state_modifier = {
+				modifier = {
+					state_repair_speed_industrial_complex_factor = 0.3
+				}
+			}
+		}
 		add_ideas = AFU_buduemo
 		country_event = { id = dan.26 }
 	}
@@ -507,6 +652,16 @@ shared_focus = {
 	prerequisite = { focus = AFU_reform_of_the_tax_system }
 
 	completion_reward = {
+		add_to_variable = {
+			var = FOP_Industry_var
+			value = 5
+			tooltip = add_Industry_var_tt
+		}
+		add_to_variable = {
+			var = FOP_Unemployment_var
+			value = 50
+			tooltip = add_Unemployment_var_tt
+		}
 		add_ideas = AFU_labour_mobilisation
 		country_event = { id = dan.27 }
 	}
@@ -524,6 +679,16 @@ shared_focus = {
 	prerequisite = { focus = AFU_we_will_find_a_job_for_everyone }
 
 	completion_reward = {
+		add_to_variable = {
+			var = FOP_Industry_var
+			value = 10
+			tooltip = add_Industry_var_tt
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 3
+			category = excavation_tech
+		}
 		custom_effect_tooltip = danilov_unlock_new_decisions
 		country_event = { id = dan.28 }
 	}
@@ -634,7 +799,7 @@ shared_focus = {
 			AFU_danilov = {
 				set_portraits = {
 					civilian = {
-						large = "gfx/leaders/AFU/danilov2.dds"
+						large = "gfx/leaders/AFU/Danilov1.dds"
 					}
 				}
 			}

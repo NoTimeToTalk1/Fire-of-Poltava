@@ -16,16 +16,22 @@ country_event = {
 		name = DPRelection.1.a
         set_country_flag = DPRelection_government
 		custom_effect_tooltip = DPRelection_government_option_tt
-		load_focus_tree = DPR_penis_election
+		load_focus_tree = DPR_elections_government
 		set_country_flag = DPRelection_active
+		ai_chance = {
+			base = 30
+		}
 	}
 	
 	option = { 
 		name = DPRelection.1.b
         set_country_flag = DPRelection_opposition
 		custom_effect_tooltip = DPRelection_opposition_option_tt
-		load_focus_tree = DPR_opposition
+		load_focus_tree = DPR_elections_opposition
 		set_country_flag = DPRelection_active
+		ai_chance = {
+			base = 70
+		}
 	}
 }
 
@@ -422,37 +428,6 @@ country_event = {
 }
 
 country_event = {
-	id = DPRelection.22
-	title = DPRelection.22.t
-	desc = DPRelection.22.d
-
-	picture = none
-
-	is_triggered_only = yes
-
-	fire_only_once = yes
-
-	trigger = {
-		DPR = {
-			has_government = ultranationalism
-		}
-
-	}
-
-	option = { 
-		name = DPRelection.22.a
-		DPR = {
-			remove_ideas = DPR_clown
-			remove_ideas = DPR_FSB
-			load_focus_tree = DPR_strelkov
-		}
-		
-	}
-	
-
-}
-
-country_event = {
 	id = DPRelection.24
 	title = DPRelection.24.t
 	desc = DPRelection.24.d
@@ -463,24 +438,11 @@ country_event = {
 
 	fire_only_once = yes
 
-	trigger = {
-		DPR = {
-			has_government = conservative_democracy
-		}
-
-	}
-
 	option = { 
 		name = DPRelection.24.a
-		DPR = {
-			remove_ideas = DPR_clown
-			remove_ideas = DPR_FSB
-			load_focus_tree = DPR_pasek
-		}
-		
+		load_focus_tree = DPR_pasechnik
+		clr_country_flag = DPRelection_active
 	}
-	
-
 }
 
 country_event = {
@@ -488,28 +450,15 @@ country_event = {
 	title = DPRelection.23.t
 	desc = DPRelection.23.d
 
-	picture = none
+	
 
 	is_triggered_only = yes
 
 	fire_only_once = yes
 
-	trigger = {
-		DPR = {
-			has_country_flag = dpr_penis_win
-		}
-
-	}
-
 	option = { 
 		name = DPRelection.23.a
-		DPR = {
-			remove_ideas = DPR_clown
-			remove_ideas = DPR_FSB
-			load_focus_tree = DPR_penis
-		}
-		
+		load_focus_tree = DPR_pushilin
+		clr_country_flag = DPRelection_active
 	}
-	
-
 }

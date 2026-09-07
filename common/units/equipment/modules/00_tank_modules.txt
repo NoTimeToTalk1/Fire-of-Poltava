@@ -4,26 +4,53 @@ equipment_modules = {
 	}
 ### ENGINES ###
    ## DIESEL ##
-	tank_diesel_engine_gen1 = {
-		abbreviation = "die1"
-		category = tank_diesel_engine
+	tank_diesel_engine_gen0 = {
+		abbreviation = "dis0"
+		category = tank_diesel_engine_type
 		sfx = sfx_ui_sd_module_engine
 
 		add_stats = {
-			build_cost_ic = 1
+			build_cost_ic = 3
 			fuel_consumption = 3.5
 			maximum_speed = 7
 		}
 		can_convert_from = {
-			module_category = tank_diesel_engine
+			module_category = tank_diesel_engine_type
 			convert_cost_ic = 1.15
 		}
 		can_convert_from = {
-			module_category = tank_turbine_engine
+			module_category = tank_turbine_engine_type
 			convert_cost_ic = 1.15
 		}
 		can_convert_from = {
-			module_category = tank_electric_engine
+			module_category = tank_electric_engine_type
+			convert_cost_ic = 1.15
+		}
+
+		xp_cost = 3
+	}
+
+	tank_diesel_engine_gen1 = {
+		abbreviation = "dis1"
+		category = tank_diesel_engine_type
+		sfx = sfx_ui_sd_module_engine
+		parent = tank_diesel_engine_gen0
+
+		add_stats = {
+			build_cost_ic = 3
+			fuel_consumption = 3.5
+			maximum_speed = 7
+		}
+		can_convert_from = {
+			module_category = tank_diesel_engine_type
+			convert_cost_ic = 1.15
+		}
+		can_convert_from = {
+			module_category = tank_turbine_engine_type
+			convert_cost_ic = 1.15
+		}
+		can_convert_from = {
+			module_category = tank_electric_engine_type
 			convert_cost_ic = 1.15
 		}
 
@@ -31,26 +58,26 @@ equipment_modules = {
 	}
 
 	tank_diesel_engine_gen2 = {
-		abbreviation = "die2"
-		category = tank_diesel_engine
+		abbreviation = "dis2"
+		category = tank_diesel_engine_type
 		sfx = sfx_ui_sd_module_engine
 		parent = tank_diesel_engine_gen1
 
 		add_stats = {
-			build_cost_ic = 1.15
+			build_cost_ic = 4.15
 			fuel_consumption = 4.1
 			maximum_speed = 8.5
 		}
 		can_convert_from = {
-			module_category = tank_diesel_engine
+			module_category = tank_diesel_engine_type
 			convert_cost_ic = 1.15
 		}
 		can_convert_from = {
-			module_category = tank_turbine_engine
+			module_category = tank_turbine_engine_type
 			convert_cost_ic = 1.15
 		}
 		can_convert_from = {
-			module_category = tank_electric_engine
+			module_category = tank_electric_engine_type
 			convert_cost_ic = 1.15
 		}
 
@@ -58,26 +85,26 @@ equipment_modules = {
 	}
 
 	tank_diesel_engine_gen3 = {
-		abbreviation = "die3"
-		category = tank_diesel_engine
+		abbreviation = "dis3"
+		category = tank_diesel_engine_type
 		sfx = sfx_ui_sd_module_engine
 		parent = tank_diesel_engine_gen2
 
 		add_stats = {
-			build_cost_ic = 1.3
+			build_cost_ic = 5.3
 			fuel_consumption = 4.7
 			maximum_speed = 10
 		}
 		can_convert_from = {
-			module_category = tank_diesel_engine
+			module_category = tank_diesel_engine_type
 			convert_cost_ic = 1.25
 		}
 		can_convert_from = {
-			module_category = tank_turbine_engine
+			module_category = tank_turbine_engine_type
 			convert_cost_ic = 1.25
 		}
 		can_convert_from = {
-			module_category = tank_electric_engine
+			module_category = tank_electric_engine_type
 			convert_cost_ic = 1.25
 		}
 
@@ -85,26 +112,26 @@ equipment_modules = {
 	}
 
 	tank_diesel_engine_gen4 = {
-		abbreviation = "die4"
-		category = tank_diesel_engine
+		abbreviation = "dis4"
+		category = tank_diesel_engine_type
 		sfx = sfx_ui_sd_module_engine
 		parent = tank_diesel_engine_gen3
 
 		add_stats = {
-			build_cost_ic = 1.5
+			build_cost_ic = 6.5
 			fuel_consumption = 5.3
 			maximum_speed = 11.25
 		}
 		can_convert_from = {
-			module_category = tank_diesel_engine
+			module_category = tank_diesel_engine_type
 			convert_cost_ic = 1.5
 		}
 		can_convert_from = {
-			module_category = tank_turbine_engine
+			module_category = tank_turbine_engine_type
 			convert_cost_ic = 1.5
 		}
 		can_convert_from = {
-			module_category = tank_electric_engine
+			module_category = tank_electric_engine_type
 			convert_cost_ic = 1.5
 		}
 
@@ -115,25 +142,25 @@ equipment_modules = {
 
 	tank_gas_turbine_engine_gen1 = {
 		abbreviation = "gte1"
-		category = tank_turbine_engine
+		category = tank_turbine_engine_type
 		sfx = sfx_ui_sd_module_engine
 
 		add_stats = {
-			build_cost_ic = 1.25
+			build_cost_ic = 3.25
 			fuel_consumption = 5.3
 			maximum_speed = 9.8
-			reliability = -0.1
+			reliability = -0.03
 		}
 		can_convert_from = {
-			module_category = tank_diesel_engine
+			module_category = tank_diesel_engine_type
 			convert_cost_ic = 1.5
 		}
 		can_convert_from = {
-			module_category = tank_turbine_engine
+			module_category = tank_turbine_engine_type
 			convert_cost_ic = 1.5
 		}
 		can_convert_from = {
-			module_category = tank_electric_engine
+			module_category = tank_electric_engine_type
 			convert_cost_ic = 1.5
 		}
 
@@ -142,25 +169,25 @@ equipment_modules = {
 
 	tank_gas_turbine_engine_gen2 = {
 		abbreviation = "gte2"
-		category = tank_turbine_engine
+		category = tank_turbine_engine_type
 		sfx = sfx_ui_sd_module_engine
 		parent = tank_gas_turbine_engine_gen1
 
 		add_stats = {
-			build_cost_ic = 1.4
+			build_cost_ic = 4.4
 			fuel_consumption = 6.1
 			maximum_speed = 11.25
 		}
 		can_convert_from = {
-			module_category = tank_diesel_engine
+			module_category = tank_diesel_engine_type
 			convert_cost_ic = 1.65
 		}
 		can_convert_from = {
-			module_category = tank_turbine_engine
+			module_category = tank_turbine_engine_type
 			convert_cost_ic = 1.65
 		}
 		can_convert_from = {
-			module_category = tank_electric_engine
+			module_category = tank_electric_engine_type
 			convert_cost_ic = 1.65
 		}
 
@@ -169,25 +196,25 @@ equipment_modules = {
 
 	tank_gas_turbine_engine_gen3 = {
 		abbreviation = "gte3"
-		category = tank_turbine_engine
+		category = tank_turbine_engine_type
 		sfx = sfx_ui_sd_module_engine
 		parent = tank_gas_turbine_engine_gen2
 
 		add_stats = {
-			build_cost_ic = 1.65
+			build_cost_ic = 5.65
 			fuel_consumption = 6.9
 			maximum_speed = 13
 		}
 		can_convert_from = {
-			module_category = tank_diesel_engine
+			module_category = tank_diesel_engine_type
 			convert_cost_ic = 1.85
 		}
 		can_convert_from = {
-			module_category = tank_turbine_engine
+			module_category = tank_turbine_engine_type
 			convert_cost_ic = 1.85
 		}
 		can_convert_from = {
-			module_category = tank_electric_engine
+			module_category = tank_electric_engine_type
 			convert_cost_ic = 1.85
 		}
 
@@ -197,7 +224,7 @@ equipment_modules = {
 	## ELECTRIC ##
 	tank_electric_engine_gen1 = {
 		abbreviation = "ee1"
-		category = tank_electric_engine
+		category = tank_electric_engine_type
 		sfx = sfx_ui_sd_module_engine
 
 		add_stats = {
@@ -206,15 +233,15 @@ equipment_modules = {
 			maximum_speed = 14.5
 		}
 		can_convert_from = {
-			module_category = tank_diesel_engine
+			module_category = tank_diesel_engine_type
 			convert_cost_ic = 3.25
 		}
 		can_convert_from = {
-			module_category = tank_turbine_engine
+			module_category = tank_turbine_engine_type
 			convert_cost_ic = 3.25
 		}
 		can_convert_from = {
-			module_category = tank_electric_engine
+			module_category = tank_electric_engine_type
 			convert_cost_ic = 3.25
 		}
 		build_cost_resources = {
@@ -226,25 +253,25 @@ equipment_modules = {
 
 	tank_electric_engine_gen2 = {
 		abbreviation = "ee2"
-		category = tank_electric_engine
+		category = tank_electric_engine_type
 		sfx = sfx_ui_sd_module_engine
 		parent = tank_electric_engine_gen1
 
 		add_stats = {
-			build_cost_ic = 3.5
+			build_cost_ic = 4.5
 			fuel_consumption = 0.5
 			maximum_speed = 15.5
 		}
 		can_convert_from = {
-			module_category = tank_diesel_engine
+			module_category = tank_diesel_engine_type
 			convert_cost_ic = 3.75
 		}
 		can_convert_from = {
-			module_category = tank_turbine_engine
+			module_category = tank_turbine_engine_type
 			convert_cost_ic = 3.75
 		}
 		can_convert_from = {
-			module_category = tank_electric_engine
+			module_category = tank_electric_engine_type
 			convert_cost_ic = 3.75
 		}
 		build_cost_resources = {
@@ -258,13 +285,29 @@ equipment_modules = {
 	###Armor Types
 
 	## STEEL ##
-	tank_steel_armor_gen1 = {
-		abbreviation = "ste1"
+	tank_steel_armor_gen0 = {
+		abbreviation = "ste0"
 		category = tank_steel_armor
 		sfx = sfx_ui_sd_module_sonar
 
 		add_stats = {
-			defense = 2
+			defense = 4
+			breakthrough = 6
+		}
+		xp_cost = 3
+		multiply_stats = {
+			build_cost_ic = -0.1
+		}
+	}
+
+	tank_steel_armor_gen1 = {
+		abbreviation = "ste1"
+		category = tank_steel_armor
+		sfx = sfx_ui_sd_module_sonar
+		parent = tank_steel_armor_gen0
+
+		add_stats = {
+			defense = 4
 			breakthrough = 6
 		}
 		xp_cost = 3
@@ -282,7 +325,7 @@ equipment_modules = {
 		add_stats = {
 			defense = 5
 			breakthrough = 11
-			armor_value = 5
+			armor_value = 10
 			maximum_speed = -1.5
 		}
 		xp_cost = 3
@@ -310,8 +353,8 @@ equipment_modules = {
 	}
 
 	## COMPOSITE ##
-	tank_composite_armor_gen1 = {
-		abbreviation = "tca1"
+	tank_composite_armor_gen0 = {
+		abbreviation = "com0"
 		category = tank_comp_armor
 		sfx = sfx_ui_sd_module_sonar
 
@@ -320,7 +363,26 @@ equipment_modules = {
 			breakthrough = 8
 			armor_value = 20
 			maximum_speed = -1.5
-			build_cost_ic = 2
+			build_cost_ic = 4
+		}
+		xp_cost = 3
+		multiply_stats = { }
+		build_cost_resources = {
+			steel = 1
+		}
+	}
+	tank_composite_armor_gen1 = {
+		abbreviation = "com1"
+		category = tank_comp_armor
+		sfx = sfx_ui_sd_module_sonar
+		parent = tank_composite_armor_gen0
+
+		add_stats = {
+			defense = 4
+			breakthrough = 8
+			armor_value = 20
+			maximum_speed = -1.5
+			build_cost_ic = 4
 		}
 		xp_cost = 3
 		multiply_stats = { }
@@ -330,7 +392,7 @@ equipment_modules = {
 	}
 
 	tank_composite_armor_gen2 = {
-		abbreviation = "tca2"
+		abbreviation = "com2"
 		category = tank_comp_armor
 		sfx = sfx_ui_sd_module_sonar
 		parent = tank_composite_armor_gen1
@@ -340,7 +402,7 @@ equipment_modules = {
 			breakthrough = 11.5
 			armor_value = 30
 			maximum_speed = -2.5
-			build_cost_ic = 2.35
+			build_cost_ic = 4.35
 		}
 		xp_cost = 3
 		multiply_stats = { }
@@ -379,7 +441,7 @@ equipment_modules = {
 		multiply_stats = {
 			armor_value = -0.1
 			breakthrough = 0.8
-			reliability = -0.2
+			reliability = -0.05
 		}
 	}
 
@@ -429,7 +491,7 @@ equipment_modules = {
 			maximum_speed = 0.1
 			breakthrough = 14
 			defense = 3
-			build_cost_ic = 0.3
+			build_cost_ic = 0.5
 		}
 
 		can_convert_from = {
@@ -439,7 +501,7 @@ equipment_modules = {
 		xp_cost = 3
 		multiply_stats = {
 			armor_value = 0.1
-			reliability = -0.2
+			reliability = -0.05
 			breakthrough = 0.8
 		}
 	}
@@ -449,15 +511,38 @@ equipment_modules = {
 	## BARRELS ##
 		## RIFLED ##
 
-	tank_rifled_barrel_gen1 = {
-		abbreviation = "rifled1"
+	tank_rifled_barrel_gen0 = {
+		abbreviation = "rifled0"
 		category = tank_barrel_rifled
 		sfx = sfx_ui_sd_module_turret
 
 		add_stats = {
 			soft_attack = 9.5
 			hard_attack = 5
-			reliability = -0.2
+			reliability = -0.05
+			ap_attack = 2
+			build_cost_ic = 0.5
+
+		}
+		dismantle_cost_ic = 0.5
+
+		can_convert_from = {
+			module_category = tank_barrel_rifled
+			convert_cost_ic = 0.5
+		}
+		xp_cost = 1
+	}
+
+	tank_rifled_barrel_gen1 = {
+		abbreviation = "rifled1"
+		category = tank_barrel_rifled
+		sfx = sfx_ui_sd_module_turret
+		parent = tank_rifled_barrel_gen0
+
+		add_stats = {
+			soft_attack = 9.5
+			hard_attack = 5
+			reliability = -0.05
 			ap_attack = 2
 			build_cost_ic = 0.5
 
@@ -480,8 +565,8 @@ equipment_modules = {
 		add_stats = {
 			soft_attack = 12.75
 			hard_attack = 5
-			reliability = -0.2
-			ap_attack = 3
+			reliability = -0.05
+			ap_attack = 5
 			build_cost_ic = 0.6
 
 		}
@@ -503,8 +588,8 @@ equipment_modules = {
 		add_stats = {
 			soft_attack = 18.5
 			hard_attack = 6
-			reliability = -0.1
-			ap_attack = 7
+			reliability = -0.03
+			ap_attack = 9
 			build_cost_ic = 0.7
 
 		}
@@ -518,16 +603,38 @@ equipment_modules = {
 	}
 
 	## SMOOTHBORE ## 
-
-	tank_smoothbore_barrel_gen1 = {
-		abbreviation = "smoothbore1"
+	tank_smoothbore_barrel_gen0 = {
+		abbreviation = "smbr0"
 		category = tank_barrel_smoothbore
 		sfx = sfx_ui_sd_module_turret
 
 		add_stats = {
 			soft_attack = 4
 			hard_attack = 8.5
-			reliability = 0.2
+			reliability = 0.1
+			ap_attack = 14
+			build_cost_ic = 0.5
+
+		}
+		dismantle_cost_ic = 0.5
+
+		can_convert_from = {
+			module_category = tank_barrel_smoothbore
+			convert_cost_ic = 0.5
+		}
+		xp_cost = 1
+	}
+
+	tank_smoothbore_barrel_gen1 = {
+		abbreviation = "smbr1"
+		category = tank_barrel_smoothbore
+		sfx = sfx_ui_sd_module_turret
+		parent = tank_smoothbore_barrel_gen0
+
+		add_stats = {
+			soft_attack = 4
+			hard_attack = 8.5
+			reliability = 0.1
 			ap_attack = 14
 			build_cost_ic = 0.5
 
@@ -542,7 +649,7 @@ equipment_modules = {
 	}
 
 	tank_smoothbore_barrel_gen2 = {
-		abbreviation = "smoothbore2"
+		abbreviation = "smbr2"
 		category = tank_barrel_smoothbore
 		sfx = sfx_ui_sd_module_turret
 		parent = tank_smoothbore_barrel_gen1
@@ -550,7 +657,7 @@ equipment_modules = {
 		add_stats = {
 			soft_attack = 5
 			hard_attack = 10.75
-			reliability = 0.4
+			reliability = 0.15
 			ap_attack = 19
 			build_cost_ic = 0.6
 
@@ -565,7 +672,7 @@ equipment_modules = {
 	}
 
 	tank_smoothbore_barrel_gen3 = {
-		abbreviation = "smoothbore3"
+		abbreviation = "smbr3"
 		category = tank_barrel_smoothbore
 		sfx = sfx_ui_sd_module_turret
 		parent = tank_smoothbore_barrel_gen2
@@ -573,7 +680,7 @@ equipment_modules = {
 		add_stats = {
 			soft_attack = 6
 			hard_attack = 15
-			reliability = 0.5
+			reliability = 0.2
 			ap_attack = 23
 			build_cost_ic = 0.6
 
@@ -591,7 +698,7 @@ equipment_modules = {
 
 	manual_loading = {
 		abbreviation = "manload"
-		category = tank_loader
+		category = tank_loader_type
 		sfx = sfx_ui_sd_module_turret
 
 		allowed_module_categories = {
@@ -605,11 +712,11 @@ equipment_modules = {
 			}
 		}
 		add_stats = {
-			reliability = 0.5
+			reliability = 0.2
 			breakthrough = -0.3
 		}
 		can_convert_from = {
-			module_category = tank_loader
+			module_category = tank_loader_type
 			convert_cost_ic = 1
 		}
 
@@ -618,7 +725,7 @@ equipment_modules = {
 
 	auto_loading = {
 		abbreviation = "autoload" ## space program
-		category = tank_loader
+		category = tank_loader_type
 		sfx = sfx_ui_sd_module_turret
 
 		allowed_module_categories = {
@@ -637,7 +744,7 @@ equipment_modules = {
 			build_cost_ic = 0.4
 		}
 		can_convert_from = {
-			module_category = tank_loader
+			module_category = tank_loader_type
 			convert_cost_ic = 1.25
 		}
 
@@ -647,20 +754,28 @@ equipment_modules = {
 
 	## SPECIAL MODULE ##
 
+	mbt_machine_gun = {
+		abbreviation = "thmg"
+		category = tank_secondary_turret
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 3.5
+			soft_attack = 4
+		}
+		xp_cost = 1
+		multiply_stats = {
+		}
+	}
+
 	smoke_launcher {
 		abbreviation = "smoke"
-		category = tank_special_module
+		category = tank_secondary_turret
 		sfx = sfx_ui_sd_module_turret
-	
-		allowed_module_categories = {
-		turret_type_slot = {
-				tank_turret
-			}
-		}
 		add_stats = {
 			defense = 0.25
-			breakthrough = 0.4
-			build_cost_ic = 0.25
+			breakthrough = 0.2
+			build_cost_ic = 0.6
 		}
 		can_convert_from = {
 			module_category = tank_special_module_type
@@ -674,37 +789,45 @@ equipment_modules = {
 		abbreviation = "copecage"
 		category = tank_special_module
 		sfx = sfx_ui_sd_module_turret
-	
-		allowed_module_categories = {
-		turret_type_slot = {
-				tank_turret
-			}
-		}
 		add_stats = {
-			reliability = -0.2
+			reliability = -0.05
 			armor = 0.1
-			build_cost_ic = 0.1
-		}
-		multiply_stats = {
-			soft_attack = 0.2
-			breakthrough = 0.2
+			build_cost_ic = 0.5
 		}
 		xp_cost = 1
 	}
 
-	blow_out_panels {
+	reactive_armour {
+		abbreviation = "erd"
+		category = tank_special_module
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			reliability = -0.35
+			armor = 0.2
+			build_cost_ic = 0.5
+		}
+		xp_cost = 1
+	}
+
+	active_protection_system = {
+		abbreviation = "aps"
+		category = tank_special_module
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			reliability = -0.05
+			armor = 0.1
+			build_cost_ic = 0.5
+		}
+		xp_cost = 1
+	}
+
+	blow_out_panels = {
 		abbreviation = "blowout"
 		category = tank_special_module
 		sfx = sfx_ui_sd_module_turret
-	
-		allowed_module_categories = {
-		turret_type_slot = {
-				tank_turret
-			}
-		}
 		add_stats = {
-			reliability = -0.2
-			build_cost_ic = 0.3
+			reliability = -0.05
+			build_cost_ic = 0.5
 		}
 		multiply_stats = {
 			defense = 0.2
@@ -713,18 +836,12 @@ equipment_modules = {
 		xp_cost = 2
 	}
 
-	night_vision {
-		abbreviation = "blowout"
+	thermal_scope = {
+		abbreviation = "thermal"
 		category = tank_special_module
 		sfx = sfx_ui_sd_module_turret
-	
-		allowed_module_categories = {
-		turret_type_slot = {
-				tank_turret
-			}
-		}
 		add_stats = {
-			reliability = -0.2
+			reliability = -0.05
 			recon = 0.4
 			build_cost_ic = 0.6
 		}
@@ -732,5 +849,105 @@ equipment_modules = {
 			breakthrough = 0.2
 		}
 		xp_cost = 3
+	}
+
+	##Suspension
+
+	tank_torsion_bar_suspension = {
+		abbreviation = "tor"
+		category = tank_suspension_type
+		sfx = sfx_ui_sd_module_sonar
+
+		add_stats = {
+			build_cost_ic = 3
+			reliability = 0.15
+		}
+		dismantle_cost_ic  = 2
+
+		multiply_stats = {
+		}
+	}
+
+	tank_christie_suspension = {
+		abbreviation = "chr"
+		category = tank_suspension_type
+		sfx = sfx_ui_sd_module_sonar
+
+		add_stats = {
+			build_cost_ic = 3
+		}
+		dismantle_cost_ic  = 2
+
+		multiply_stats =  {
+			maximum_speed = 0.2
+		}
+	}
+
+	tank_bogie_suspension = {
+		abbreviation = "bog"
+		category = tank_suspension_type
+		sfx = sfx_ui_sd_module_sonar
+
+		add_stats = {
+		}
+		dismantle_cost_ic  = 1
+
+	}
+
+	tank_interleaved_suspension = {
+		abbreviation = "int"
+		category = tank_suspension_type
+		sfx = sfx_ui_sd_module_sonar
+
+		add_stats = {
+			build_cost_ic = 4
+			breakthrough = 4
+		}
+		dismantle_cost_ic  = 2
+
+		multiply_stats =  {
+		}
+
+		can_convert_from = {
+			module = tank_torsion_bar_suspension
+			convert_cost_ic = 0.5
+		}
+	}
+
+	tank_wheeled_suspension = {
+		abbreviation = "whe"
+		category = tank_non_tracked_suspension_type
+		sfx = sfx_ui_sd_module_sonar
+
+		add_stats = {
+			reliability = -0.05
+		}
+		dismantle_cost_ic  = 0.5
+
+		multiply_stats =  {
+			build_cost_ic = -0.1
+			hardness = -0.4
+		}
+	}
+
+	tank_half_track_suspension = {
+		abbreviation = "htr"
+		category = tank_non_tracked_suspension_type
+		sfx = sfx_ui_sd_module_sonar
+
+		add_stats = {
+			reliability = -0.03
+		}
+		dismantle_cost_ic  = 0.5
+
+		multiply_stats =  {
+			build_cost_ic = -0.05
+			hardness = -0.3
+		}
+
+		can_convert_from = {
+			module = tank_wheeled_suspension
+			convert_cost_ic = 0.5
+		}
 	}
 }

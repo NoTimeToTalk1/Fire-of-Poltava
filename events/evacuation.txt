@@ -12,13 +12,13 @@ country_event = {
 
 	option = {
 		name = evac.1.a
-				AFU = {
-                set_nationality = {
-                    target_country = KYI
-                    character = AFU_syr
-                }
+		AFU = {
+			set_nationality = {
+				target_country = KYI
+				character = AFU_Syrskyi
+			}
+		}
 	}
-}
 
 	option = {
 		name = evac.1.b
@@ -28,7 +28,6 @@ country_event = {
         }
 	}
 }
-
 
 #azovtsti
 country_event = {
@@ -42,18 +41,22 @@ country_event = {
 
 	option = {
 		name = evac.2.a
-				add_manpower = 100
-				AFU = {
-                set_nationality = {
-                    target_country = PLT
-                    character = AFU_redys
-                }
-                set_nationality = {
-                    target_country = PLT
-                    character = AFU_zhorin
-                }
-	}
-						hidden_effect = {
+		add_manpower = 100
+		AFU = {
+			set_nationality = {
+				target_country = PLT
+				character = AFU_Prokopenko
+			}
+			set_nationality = {
+				target_country = PLT
+				character = AFU_Zhorin
+			}
+		}
+		army_experience = 10
+		recruit_character = AFU_Tavr
+		recruit_character = AFU_Khimik
+		
+		hidden_effect = {
 			add_corps_commander_role = {
 				Character = AFU_zhorin
 				skill = 3
@@ -62,11 +65,8 @@ country_event = {
 				planning_skill = 3
 				logistics_skill = 2
 			}						
-						}
-			army_experience = 10
-			recruit_character = AFU_tavr
-			recruit_character = AFU_himik
-}
+		}
+	}
 }
 
 #global proukr
@@ -81,13 +81,13 @@ country_event = {
 
 	option = {
 		name = evac.3.a
-		    add_political_power = -10
-			add_stability = -0.1
-			army_experience = 10
-			add_popularity = {
-				ideology = ultranationalism
-				popularity = 0.05
-			}
+		add_political_power = -10
+		add_stability = -0.1
+		army_experience = 10
+		add_popularity = {
+			ideology = ultranationalism
+			popularity = 0.05
+		}
 	}
 }
 
@@ -105,21 +105,20 @@ country_event = {
 	option = {
 		name = evac.4.a
 		add_manpower = 300
-				AFU = {
-                set_nationality = {
-                    target_country = ZAP
-                    character = AFU_Kohan
-                }
-                set_nationality = {
-                    target_country = ZAP
-                    character = AFU_homa
-                }
-	}
-			army_experience = 10
-			add_popularity = {
-				ideology = ultranationalism
-				popularity = 0.05
+		AFU = {
+			set_nationality = {
+				target_country = ZAP
+				character = AFU_Kohan
 			}
+			set_nationality = {
+				target_country = ZAP
+				character = AFU_homa
+			}
+		}
+		army_experience = 10
+		add_popularity = {
+			ideology = ultranationalism
+			popularity = 0.05
+		}
 	}
-}
 }

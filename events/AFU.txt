@@ -5,21 +5,21 @@ country_event = { #On Our Own
 	id = afu.1
 	title = afu.1.t
 	desc = afu.1.d
-	picture = GFX_report_event_carp_rada
+	picture = GFX_event_afu_poster
 
 	is_triggered_only = yes
 
 	option = {
 		name = afu.1.a
-		add_political_power = 200
+		add_political_power = 150
 	}
 }
 
-country_event = { #Contacting The Government
+country_event = { #Contacting the Government
 	id = afu.2
 	title = afu.2.t
 	desc = afu.2.d
-	picture = GFX_report_event_carp_rada
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -30,11 +30,11 @@ country_event = { #Contacting The Government
 	}
 }
 
-country_event = { #Asessing the Situation
+country_event = { #Assessing the Situation
 	id = afu.3
 	title = afu.3.t
 	desc = afu.3.d
-	picture = GFX_report_event_carp_rada
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -45,11 +45,11 @@ country_event = { #Asessing the Situation
 	}
 }
 
-country_event = { #Life in the Donbass
+country_event = { #Life in Donbas
 	id = afu.4
 	title = afu.4.t
 	desc = afu.4.d
-	picture = GFX_afu_poster
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -64,7 +64,7 @@ country_event = { #Zelenskyy - Helping ZSU?
 	id = afu.5
 	title = afu.5.t
 	desc = afu.5.d
-	picture = GFX_report_event_carp_rada
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -72,15 +72,21 @@ country_event = { #Zelenskyy - Helping ZSU?
 	option = { #YES
 		name = afu.5.a
 		ai_chance = {
-			factor = 70
+			base = 60
 		}
 		AFU = { country_event = afu.51 }
 		add_political_power = -50
+		
+		add_opinion_modifier = {
+			target = AFU
+			modifier = large_increase
+		}
+
 	}
 	option = { #NO
 		name = afu.5.b
 		ai_chance = {
-			factor = 30
+			base = 40
 		}
 		AFU = { country_event = afu.52 }
 		add_stability = -0.05
@@ -91,7 +97,7 @@ country_event = { #Zelenskyy helped us
 	id = afu.51
 	title = afu.51.t
 	desc = afu.51.d
-	picture = GFX_report_event_carp_rada
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -100,6 +106,12 @@ country_event = { #Zelenskyy helped us
 		name = afu.51.a
 		add_political_power = 10
 		add_ideas = AFU_support_UKR
+		
+		add_opinion_modifier = {
+			target = KYI
+			modifier = large_increase
+		}
+
 	}
 }
 
@@ -107,7 +119,7 @@ country_event = { #Zelenskyy didn't help us
 	id = afu.52
 	title = afu.52.t
 	desc = afu.52.d
-	picture = GFX_report_event_carp_rada
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -122,7 +134,7 @@ country_event = { #Poroshenko - Helping ZSU?
 	id = afu.6
 	title = afu.6.t
 	desc = afu.6.d
-	picture = GFX_report_event_carp_rada
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -130,15 +142,21 @@ country_event = { #Poroshenko - Helping ZSU?
 	option = { #YES
 		name = afu.6.a
 		ai_chance = {
-			factor = 60
+			base = 80
 		}
 		AFU = { country_event = afu.61 }
 		add_political_power = -50
+		
+		add_opinion_modifier = {
+			target = AFU
+			modifier = large_increase
+		}
+
 	}
 	option = { #NO
 		name = afu.6.b
 		ai_chance = {
-			factor = 40
+			base = 20
 		}
 		AFU = { country_event = afu.62 }
 		add_stability = -0.05
@@ -149,7 +167,7 @@ country_event = { #Poroshenko helped us
 	id = afu.61
 	title = afu.61.t
 	desc = afu.61.d
-	picture = GFX_report_event_carp_rada
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -158,6 +176,12 @@ country_event = { #Poroshenko helped us
 		name = afu.61.a
 		add_political_power = 10
 		add_ideas = AFU_support_PRH
+		
+		add_opinion_modifier = {
+			target = CHR
+			modifier = large_increase
+		}
+
 	}
 }
 
@@ -165,7 +189,7 @@ country_event = { #Poroshenko didn't help us
 	id = afu.62
 	title = afu.62.t
 	desc = afu.62.d
-	picture = GFX_report_event_carp_rada
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -180,46 +204,86 @@ country_event = { #Biletsky - Helping ZSU?
 	id = afu.7
 	title = afu.7.t
 	desc = afu.7.d
-	picture = GFX_report_event_carp_rada
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	option = { #YES
+	option = { # YES
 		name = afu.7.a
 		ai_chance = {
-			factor = 80
+			base = 90
+
+			modifier = {
+				factor = 100
+				AFU = {
+					has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements
+				}
+			}
+
+			modifier = {
+				factor = 0
+				AFU = {
+					has_completed_focus = AFU_sideline_the_far_right_elements
+				}
+			}
 		}
-		send_equipment = {
+		
+		add_opinion_modifier = {
+			target = AFU
+			modifier = large_increase
+		}
+
+		add_equipment_to_stockpile = {
 			type = support_equipment
-			amount = 500
-			target = AFU
+			amount = -250
+			producer = PLT
 		}
-		send_equipment = {
-			type = motorized_equipment_1 
-			amount = 150
-			target = AFU
+		add_equipment_to_stockpile = {
+			type = motorized_equipment
+			amount = -150
+			producer = PLT
 		}
-		send_equipment = {
-			type = mechanized_equipment_1
-			amount = 20
-			target = AFU
+		add_equipment_to_stockpile = {
+			type = APC_equipment
+			amount = -20
+			producer = PLT
 		}
-		send_equipment = {
-			type = modern_tank_equipment
-			amount = 2
-			target = AFU
+		add_equipment_to_stockpile = {
+			type = MBT_chassis_0
+			amount = -2
+			producer = PLT
 		}
 		AFU = { country_event = afu.71 }
-		add_political_power = -50
+		add_political_power = -30
 	}
-	option = { #NO
+
+	option = { # NO
 		name = afu.7.b
 		ai_chance = {
-			factor = 20
+			base = 10
+
+			modifier = {
+				factor = 0
+				AFU = {
+					has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements
+				}
+			}
+
+			modifier = {
+				factor = 100
+				AFU = {
+					has_completed_focus = AFU_sideline_the_far_right_elements
+				}
+			}
 		}
+
 		AFU = { country_event = afu.72 }
 		add_stability = -0.05
+		add_popularity = {
+			ideology = ultranationalism
+			popularity = -0.02
+		}
 	}
 }
 
@@ -227,13 +291,39 @@ country_event = { #Biletsky helped us
 	id = afu.71
 	title = afu.71.t
 	desc = afu.71.d
-	picture = GFX_report_event_carp_rada
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = afu.71.a
+		
+		add_opinion_modifier = {
+			target = PLT
+			modifier = large_increase
+		}
+
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 250
+			producer = PLT
+		}
+		add_equipment_to_stockpile = {
+			type = motorized_equipment
+			amount = 150
+			producer = PLT
+		}
+		add_equipment_to_stockpile = {
+			type = APC_equipment
+			amount = 20
+			producer = PLT
+		}
+		add_equipment_to_stockpile = {
+			type = MBT_chassis_0
+			amount = 2
+			producer = PLT
+		}
 		add_popularity = {
 			ideology = ultranationalism
 			popularity = 0.02
@@ -245,7 +335,7 @@ country_event = { #Biletsky didn't help us
 	id = afu.72
 	title = afu.72.t
 	desc = afu.72.d
-	picture = GFX_report_event_carp_rada
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -253,6 +343,10 @@ country_event = { #Biletsky didn't help us
 	option = {
 		name = afu.72.a
 		add_political_power = -10
+		add_popularity = {
+			ideology = ultranationalism
+			popularity = -0.02
+		}
 	}
 }
 
@@ -260,7 +354,7 @@ country_event = { #Avakov - Helping ZSU?
 	id = afu.8
 	title = afu.8.t
 	desc = afu.8.d
-	picture = GFX_report_event_carp_rada
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -268,15 +362,21 @@ country_event = { #Avakov - Helping ZSU?
 	option = { #YES
 		name = afu.8.a
 		ai_chance = {
-			factor = 60
+			base = 60
 		}
 		AFU = { country_event = afu.81 }
 		add_political_power = -50
+		
+		add_opinion_modifier = {
+			target = AFU
+			modifier = large_increase
+		}
+
 	}
 	option = { #NO
 		name = afu.8.b
 		ai_chance = {
-			factor = 40
+			base = 40
 		}
 		AFU = { country_event = afu.82 }
 		add_stability = -0.05
@@ -288,7 +388,7 @@ country_event = { #Avakov helped us
 	title = afu.81.t
 	desc = afu.81.d
 
-	picture = GFX_report_event_carp_rada
+	picture = GFX_event_afu_poster
 	fire_only_once = yes
 	is_triggered_only = yes
 	
@@ -296,6 +396,12 @@ country_event = { #Avakov helped us
 		name = afu.81.a
 		add_political_power = 10
 		set_country_flag = AFU_support_KHA
+		
+		add_opinion_modifier = {
+			target = KHA
+			modifier = large_increase
+		}
+
 	}
 }
 
@@ -304,7 +410,7 @@ country_event = { #Avakov didn't help us
 	title = afu.82.t
 	desc = afu.82.d
 
-	picture = GFX_report_event_carp_rada
+	picture = GFX_event_afu_poster
 	fire_only_once = yes
 	is_triggered_only = yes
 	
@@ -318,7 +424,7 @@ country_event = { #Victory!
 	id = afu.9
 	title = afu.9.t
 	desc = afu.9.d
-	picture = GFX_And_Now_We_Wait_shine
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -343,7 +449,7 @@ country_event = { #Victory!
 	id = afu.10
 	title = afu.10.t
 	desc = afu.10.d
-	picture = GFX_And_Now_We_Wait_shine
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -361,7 +467,7 @@ country_event = { #Start Integration
 	id = afu.11
 	title = afu.11.t
 	desc = afu.11.d
-	picture = GFX_And_Now_We_Wait_shine
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -376,7 +482,7 @@ country_event = { #End Integration
 	id = afu.12
 	title = afu.12.t
 	desc = afu.12.d
-	picture = GFX_And_Now_We_Wait_shine
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -399,6 +505,7 @@ country_event = { #End Integration
 			remove_core_of = LPR
 			add_core_of = AFU
 		}
+		set_country_flag = AFU_finish_integration
 	}
 }
 
@@ -406,7 +513,7 @@ country_event = { #Territorial Defence Forces
 	id = afu.13
 	title = afu.13.t
 	desc = afu.13.d
-	picture = GFX_afu_poster
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -423,11 +530,12 @@ country_event = { #Territorial Defence Forces
 			regiments = {
 				regular_infantry = { x = 0 y = 0 }
 				regular_infantry = { x = 0 y = 1 }
+				regular_infantry = { x = 0 y = 2 }
 			}
 			support = {
 				military_police = { x = 0 y = 0 }
 			}
-			override_model = UKR_Militia_Bat_entity
+			override_model = UKR_Militia_Bat_0_entity
 		}
 	}
 }
@@ -436,14 +544,44 @@ country_event = { #Special Operations Forces
 	id = afu.14
 	title = afu.14.t
 	desc = afu.14.d
-	picture = GFX_afu_poster
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = afu.14.a
-		add_ideas = AFU_ssojaitsa
+		add_ideas = AFU_sso
+		division_template = {
+			name = "Special Operation Forces"
+			division_names_group = UKR_INF_01
+			priority = 2
+			regiments = {
+				afu_sof = { x = 0 y = 0 }
+				afu_sof = { x = 0 y = 1 }
+				afu_sof = { x = 0 y = 2 }
+				afu_sof = { x = 1 y = 0 }
+				afu_sof = { x = 1 y = 1 }
+			}
+			support = {
+				maintenance_company = { x = 0 y = 0 }
+				mot_recon = { x = 0 y = 1 }
+				signal_company = { x = 0 y = 2 }
+			}
+			override_model = UKR_Special_Forces_3_entity
+		}
+		random_owned_controlled_state = {
+			create_unit = {
+				division = "name = \"3-yy Polk Syl Spetsopratsiy\" division_template = \"Special Operation Forces\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
+				owner = AFU
+			}
+		}
+		random_owned_controlled_state = {
+			create_unit = {
+				division = "name = \"8-yy Polk Syl Spetsopratsiy\" division_template = \"Special Operation Forces\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
+				owner = AFU
+			}
+		}
 	}
 }
 
@@ -451,7 +589,7 @@ country_event = { #Reform of General Staff
 	id = afu.15
 	title = afu.15.t
 	desc = afu.15.d
-	picture = GFX_afu_poster
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -466,7 +604,7 @@ country_event = { #The Azov Battalion
 	id = afu.16
 	title = afu.16.t
 	desc = afu.16.d
-	picture = GFX_afu_poster
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -480,7 +618,7 @@ country_event = { #Planning the Defence
 	id = afu.17
 	title = afu.17.t
 	desc = afu.17.d
-	picture = GFX_report_event_carp_rada
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -533,15 +671,18 @@ country_event = { #oh fuck
     }
 
     immediate = {
-        hidden_effect = {
-            AFU = {
-                country_event = { id = afu.19 days = 5 }
-				set_country_flag = AFU_5
-                unlock_decision_category_tooltip = emergency_makeshift_fortifications
-            }
-        }
+		AFU = {
+			country_event = { id = afu.19 days = 14 }
+		}
     }
+
+	option = {
+		name = afu.18.a
+		set_country_flag = AFU_5
+		unlock_decision_category_tooltip = emergency_makeshift_fortifications
+	}
 }
+
 country_event = {
 	id = afu.19
 	title = afu.19.t
@@ -554,54 +695,30 @@ country_event = {
 	
 	option = {
 		name = afu.19.a
-    		
-			VSR = {
+		RAF = {
 			transfer_state = 2031
-			transfer_state = 2030
 			set_province_controller = 1495
 			set_province_controller = 12927
 			set_province_controller = 12999
 			set_province_controller = 5825
-			
-			add_ideas = VSR_kramatorsk_in_three_days
-			add_ideas = VSR_unprepared
-			
-			
 			declare_war_on = {
 				target = AFU
 				type = annex_everything
 			}
 		}
-		   RUS = {
-			give_military_access = VSR
+		RUS = {
+			give_military_access = RAF
 		}
-			DPR = { 
-			add_to_faction = VSR
-	      }
-	     hidden_effect = {
-					VSR = { 
-						add_timed_idea = { idea = gas_gas_gas days = 10 }
-						activate_mission = 7_days_free
-						
-						load_oob = "VSRF_2019"
-					}
-				}
-	}
-}
-country_event = {
-	id = afu.20
-	title = afu.20.t
-	desc = afu.20.d
-	#hidden = yes
-
-	picture = GFX_a
-	
-	fire_only_once = yes
-
-	is_triggered_only = yes
-
-	option = {
-		name = afu.20.a
+		DPR = { 
+			add_to_faction = RAF
+	    }
+	    hidden_effect = {
+			RAF = { 
+				add_timed_idea = { idea = RAF_incursion days = 14 }
+				
+				load_oob = "RAF"
+			}
+		}
 	}
 }
 
@@ -655,8 +772,8 @@ country_event = {
 			ideology = conservatism
 			popularity = 0.2
 		}
-		set_cosmetic_tag = AFU_dan
-		load_focus_tree = rdk
+		set_cosmetic_tag = AFU_danilov_regional_donbas
+		load_focus_tree = AFU_danilov
 	}
 }
 
@@ -675,7 +792,7 @@ country_event = {
 		name = afu.23.a
 		custom_effect_tooltip = homut_cum_into_power
 		hidden_effect = {
-		load_focus_tree = homut
+		load_focus_tree = AFU_khomut
 		set_politics = {
 	    ruling_party = oligarchism
 }
@@ -683,8 +800,8 @@ country_event = {
 				ideology = oligarchism
 				popularity = 0.2
 		}
-		set_cosmetic_tag = AFU_homut
-		complete_national_focus = AFU_homut
+		set_cosmetic_tag = AFU_khomut_regional_donbas
+		complete_national_focus = AFU_kho_mu_ty_nnik
 	}
 }
 }
@@ -704,7 +821,7 @@ country_event = {
 		name = afu.24.a
 		custom_effect_tooltip = savchenko_cum_into_power
 		hidden_effect = {
-		load_focus_tree = savchenko
+		load_focus_tree = AFU_savchenko
 		set_politics = {
 	    ruling_party = social_democracy
 }
@@ -712,9 +829,9 @@ country_event = {
 				ideology = social_democracy
 				popularity = 0.2
 		}
-		set_cosmetic_tag = AFU_sav
+		set_cosmetic_tag = AFU_savchenko_regional_donbas
 		load_focus_tree = AFU_savchenko
-		complete_national_focus = isr_savchenko
+		complete_national_focus = AFU_savchenko
 	}
 }
 }
@@ -733,75 +850,84 @@ country_event = {
 
 	option = {
 		name = afu.25.a
+		ai_chance = {
+			base = 33
+		}
 		hidden_effect = {
-		set_country_flag = AFU_elections_flag
-		set_country_flag = AFU_elections_play_danilov
-		
+			set_country_flag = AFU_elections_flag
+			set_country_flag = AFU_elections_play_danilov
+			
 			add_to_variable = {
 				var = AFU_danilov_power
-				value = 20
+				value = 30
 				tooltip = AFU_danilov_power_tt
 			}
 			add_to_variable = {
 				var = AFU_savchenko_power
-				value = 15
+				value = 30
 				tooltip = AFU_savchenko_power_tt
 			}
 			add_to_variable = {
 				var = AFU_khomut_power
-				value = 25
-				tooltip = AFU_savchenko_power_tt
+				value = 40
+				tooltip = AFU_khomut_power_tt
 			}
+		}
 	}
-}
 
 	option = {
 		name = afu.25.c
+		ai_chance = {
+			base = 33
+		}
 		hidden_effect = {
-		set_country_flag = AFU_elections_flag
-		set_country_flag = AFU_elections_play_savchenko
-		
+			set_country_flag = AFU_elections_flag
+			set_country_flag = AFU_elections_play_savchenko
+			
 			add_to_variable = {
 				var = AFU_danilov_power
-				value = 20
+				value = 30
 				tooltip = AFU_danilov_power_tt
 			}
 			add_to_variable = {
 				var = AFU_savchenko_power
-				value = 15
+				value = 30
 				tooltip = AFU_savchenko_power_tt
 			}
 			add_to_variable = {
 				var = AFU_khomut_power
-				value = 25
-				tooltip = AFU_savchenko_power_tt
+				value = 40
+				tooltip = AFU_khomut_power_tt
 			}
+		}
 	}
-}
 	
 	option = {
 		name = afu.25.b
+		ai_chance = {
+			base = 34
+		}
 		hidden_effect = {
-		set_country_flag = AFU_elections_flag
-		set_country_flag = AFU_elections_play_khomut
-		
+			set_country_flag = AFU_elections_flag
+			set_country_flag = AFU_elections_play_khomut
+			
 			add_to_variable = {
 				var = AFU_danilov_power
-				value = 20
+				value = 30
 				tooltip = AFU_danilov_power_tt
 			}
 			add_to_variable = {
 				var = AFU_savchenko_power
-				value = 15
+				value = 30
 				tooltip = AFU_savchenko_power_tt
 			}
 			add_to_variable = {
 				var = AFU_khomut_power
-				value = 25
-				tooltip = AFU_savchenko_power_tt
+				value = 40
+				tooltip = AFU_khomut_power_tt
 			}
+		}
 	}
-}
 }
 
 ##ELECTIONS RANDOM IVENTS
@@ -948,7 +1074,7 @@ country_event = { #KRYVONYS STAY IN POWER
 	desc = afu.34.d
 	#hidden = yes
 
-	picture = GFX_afu_poster
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 
@@ -957,7 +1083,7 @@ country_event = { #KRYVONYS STAY IN POWER
 	option = {
 		name = afu.34.a
 		custom_effect_tooltip = kryvonys_cum_into_power
-		load_focus_tree = AFU_azov
+		load_focus_tree = AFU_kryvonos
 	}
 }
 
@@ -967,7 +1093,7 @@ country_event = {
 	desc = afu.35.d
 	#hidden = yes
 
-	picture = GFX_afu_poster
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 
@@ -987,7 +1113,7 @@ country_event = {
 	desc = afu.36.d
 	#hidden = yes
 
-	picture = GFX_afu_poster
+	picture = GFX_event_afu_poster
 	
 	fire_only_once = yes
 
@@ -1005,6 +1131,22 @@ country_event = {
         traits = {  }
     }
 }
+	}
+}
+
+country_event = { # Army doesn't feel so well
+	id = afu.37
+	title = afu.37.t
+	desc = afu.37.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = afu.37.a
+		add_ideas = AFU_army_troubles
+		set_country_flag = AFU_army_reforming
+		mark_focus_tree_layout_dirty = yes
 	}
 }
 
@@ -1061,25 +1203,68 @@ country_event = { # Generals decision
 
 	option = {
 		name = AFU_army.4.a
-		retire_character = AFU_Syrskyi
-		retire_character = AFU_Bessarab
-		set_country_flag = AFU_purge_small
+		trigger = {
+			NOT = {
+				OR = {
+					has_country_leader = {
+						character = AFU_Kryvonos
+					}
+					has_government = ultranationalism
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					character = AFU_Savchenko
+				}
+			}
+			retire_character = AFU_Syrskyi
+			retire_character = AFU_Naiev
+			retire_character = AFU_Muzhenko
+			retire_character = AFU_Tantsyura
+			retire_character = AFU_Bessarab
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					character = AFU_Danilov
+				}
+			}
+			retire_character = AFU_Kryvonos
+			retire_character = AFU_Tantsyura
+			retire_character = AFU_Bessarab
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					character = AFU_Khomutynnik
+				}
+			}
+			retire_character = AFU_Tantsyura
+			retire_character = AFU_Shevtsov
+		}
+		add_command_power = -50
+		set_country_flag = AFU_purge_done
 	}
 
 	option = {
 		name = AFU_army.4.b
-		retire_character = AFU_Syrskyi
-		retire_character = AFU_Naiev
-		retire_character = AFU_Tantsyura
-		retire_character = AFU_Bessarab
-		retire_character = AFU_Shevtsov
-		set_country_flag = AFU_purge_big
-	}
-
-	option = {
-		name = AFU_army.4.c
-		add_command_power = 50
-		army_experience = -35
+		if = {
+			limit = {
+				OR = {
+					has_country_leader = {
+						character = AFU_Kryvonos
+					}
+					has_government = ultranationalism
+				}
+			}
+			add_command_power = 20
+		}
+		else = {
+			add_command_power = 50
+			army_experience = -35
+		}
 		set_country_flag = AFU_no_purge
 	}
 }

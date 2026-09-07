@@ -14,7 +14,7 @@ AFU_mobilization_category = {
 		
 		cost = 50
 		ai_will_do = {
-			factor = 100
+			base = 50
 		}
 		
 		remove_effect = {
@@ -42,7 +42,7 @@ AFU_mobilization_category = {
 		
 		cost = 60
 		ai_will_do = {
-			factor = 100
+			base = 50
 		}
 		
 		remove_effect = {
@@ -71,12 +71,11 @@ AFU_mobilization_category = {
 		
 		cost = 75
 		ai_will_do = {
-			factor = 100
+			base = 50
 		}
 		
 		remove_effect = {
 		    add_manpower = 10000
-			add_ideas = extensive_conscription
 			hidden_effect = {
 				clr_country_flag = AFUmob2
 				set_country_flag = AFUmob3
@@ -101,11 +100,12 @@ AFU_mobilization_category = {
 		
 		cost = 50
 		ai_will_do = {
-			factor = 100
+			base = 50
 		}
 		
 		remove_effect = {
 		    add_manpower = 17500
+			set_country_flag = AFUmob4
 		}
 	}
 	afu_mobilization_5 = {
@@ -126,7 +126,7 @@ AFU_mobilization_category = {
 		
 		cost = 100
 		ai_will_do = {
-			factor = 100
+			base = 50
 		}
 		
 		remove_effect = {
@@ -152,7 +152,7 @@ AFU_teroborona_category = {
 		
 		cost = 50
 		ai_will_do = {	
-			factor = 100		
+			base = 100		
 		}
 		
 		remove_effect = {
@@ -182,7 +182,7 @@ AFU_teroborona_category = {
 		
 		cost = 50
 		ai_will_do = {	
-			factor = 100		
+			base = 100		
 		}
 		
 		remove_effect = {
@@ -212,7 +212,7 @@ AFU_teroborona_category = {
 		
 		cost = 50
 		ai_will_do = {	
-			factor = 100		
+			base = 100		
 		}
 		
 		remove_effect = {
@@ -221,36 +221,6 @@ AFU_teroborona_category = {
 				random_owned_controlled_state  = {
 					create_unit = {
 						division = "name = \"Teroborona\" division_template = \"Teroborona\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
-						owner = AFU
-					}
-				}
-			}
-		}
-	}
-	afu_teroborona_4 = {
-		
-		allowed = {
-			original_tag = AFU
-		}
-		
-		visible = {
-			has_completed_focus = AFU_territorial_defence_forces
-		}
-		
-        fire_only_once = yes
-		days_remove = 25
-		
-		cost = 50
-		ai_will_do = {	
-			factor = 100		
-		}
-		
-		remove_effect = {
-			AFU = {
-				add_manpower = -1000
-				random_owned_controlled_state  = {
-					create_unit = {
-						division = "name = \"Teroborona\" division_template = \"Teroborona\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
 						owner = AFU
 					}
 				}
@@ -276,14 +246,14 @@ AFU_integration_category = {
 		
 		cost = 20
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		remove_effect = {
 			add_manpower = -2000
 			DPR = {
 				remove_country_leader_role = {
-					character = DNR_Pidor
+					character = DPR_Pushilin
 					ideology = kleptocracy
 				}
 			}
@@ -320,7 +290,7 @@ AFU_integration_category = {
 		
 		cost = 20
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		remove_effect = {
@@ -353,7 +323,7 @@ AFU_integration_category = {
 		
 		cost = 50
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		available = {
@@ -393,7 +363,7 @@ AFU_integration_category = {
 		
 		cost = 50
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		remove_effect = {
@@ -418,7 +388,7 @@ AFU_integration_category = {
 		
 		cost = 50
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		remove_effect = {
@@ -443,7 +413,7 @@ AFU_integration_category = {
 		
 		cost = 30
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		remove_effect = {
@@ -473,7 +443,7 @@ AFU_integration_category = {
 		
 		cost = 100
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		remove_effect = {
@@ -506,15 +476,15 @@ AFU_emergency_makeshift_fortifications_category = {
 		}
 		
 		fire_only_once = yes
-        days_remove = 30
+        days_remove = 14
 		
-		cost = 100
+		cost = 50
 		ai_will_do = {
-			factor = 100
+			base = 150
 		}
 		
 		modifier = {
-			civilian_factory_use = 6
+			civilian_factory_use = 4
 		}
 		
 		remove_effect = {
@@ -543,62 +513,12 @@ AFU_azov_support_category = {
 		}
 		
 		visible = {	
-			has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements	
+			has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements
 		}
 		
 		cost = 20
 		ai_will_do = {
-			factor = 100
-		}
-		
-		fire_only_once = no
-        days_remove = 20
-		
-		remove_effect = {
-			add_popularity = {
-				ideology = ultranationalism
-				popularity = 0.01
-			}
-			add_war_support = 0.05
-			add_command_power = 5
-	   	}
-	}
-    afu_ask_azov_for_help_2 = {			
-		
-		available = { 
-			has_war_support > 0.5
-		}
-		
-		visible = {	
-			has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements	
-		}
-		
-		cost = 35
-		ai_will_do = {
-			factor = 100
-		}
-		
-		fire_only_once = no
-        days_remove = 25
-		
-		remove_effect = {
-			add_popularity = {
-				ideology = ultranationalism
-				popularity = 0.03
-			}
-			add_war_support = 0.05
-			add_command_power = 5
-	   	}
-	}
-    afu_ask_azov_for_help_3 = {			
-		
-		available = { 
-			has_war_support > 0.7
-		}
-		
-        cost = 50
-		ai_will_do = {
-			factor = 100
+			base = 30
 		}
 		
 		fire_only_once = no
@@ -607,10 +527,67 @@ AFU_azov_support_category = {
 		remove_effect = {
 			add_popularity = {
 				ideology = ultranationalism
-				popularity = 0.05
+				popularity = 0.005
 			}
-			add_war_support = 0.05
-			add_command_power = 25
+			add_manpower = 10
+			add_war_support = 0.005
+			add_command_power = 1
+	   	}
+	}
+    afu_ask_azov_for_help_2 = {			
+		
+		available = { 
+			has_war_support > 0.4
+		}
+		
+		visible = {	
+			has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements	
+		}
+		
+		cost = 40
+		ai_will_do = {
+			base = 30
+		}
+		
+		fire_only_once = no
+        days_remove = 60
+		
+		remove_effect = {
+			add_popularity = {
+				ideology = ultranationalism
+				popularity = 0.01
+			}
+			add_manpower = 30
+			add_war_support = 0.01
+			add_command_power = 3
+	   	}
+	}
+    afu_ask_azov_for_help_3 = {			
+		
+		available = { 
+			has_war_support > 0.5
+		}
+
+		visible = {	
+			has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements	
+		}
+		
+        cost = 60
+		ai_will_do = {
+			base = 30
+		}
+		
+		fire_only_once = no
+        days_remove = 90
+		
+		remove_effect = {
+			add_popularity = {
+				ideology = ultranationalism
+				popularity = 0.02
+			}
+			add_manpower = 50
+			add_war_support = 0.02
+			add_command_power = 5
 	   	}
 	}
 }
@@ -627,9 +604,9 @@ AFU_weapon_shipment_category = {
 			has_completed_focus = AFU_eastern_european_cooperation
 		}
 		
-		cost = 50
+		cost = 30
 		ai_will_do = {
-			factor = 50
+			base = 50
 		}
 		
 		fire_only_once = no
@@ -658,9 +635,9 @@ AFU_weapon_shipment_category = {
 			has_completed_focus = AFU_eastern_european_cooperation
 		}
 		
-		cost = 75
+		cost = 40
 		ai_will_do = {
-			factor = 50
+			base = 50
 		}
 		
 		fire_only_once = no
@@ -689,9 +666,9 @@ AFU_weapon_shipment_category = {
 			has_completed_focus = AFU_eastern_european_cooperation
 		}
 		
-		cost = 80
+		cost = 50
 		ai_will_do = {
-			factor = 50
+			base = 50
 		}
 		
 		fire_only_once = no
@@ -720,9 +697,9 @@ AFU_weapon_shipment_category = {
 			has_completed_focus = AFU_eastern_european_cooperation
 		}
 		
-		cost = 100
+		cost = 60
 		ai_will_do = {
-			factor = 50
+			base = 50
 		}
 		
 		fire_only_once = no
@@ -762,12 +739,12 @@ AFU_plane_shipment_category = {
 		fire_only_once = yes
 
         ai_will_do = {	
-			factor = 50		
+			base = 50		
 		}
 
 		remove_effect = {
 			add_equipment_to_stockpile = {
-                type = small_plane_airframe
+                type = LCA1
                 amount = 10
 				producer = KAZ
             }
@@ -792,12 +769,12 @@ AFU_plane_shipment_category = {
 		fire_only_once = yes
 
         ai_will_do = {	
-			factor = 50		
+			base = 50		
 		}
 
 		remove_effect = {
 			add_equipment_to_stockpile = {
-                type = small_plane_airframe
+                type = LCA1
                 amount = 10
 				producer = GEO
             }
@@ -821,17 +798,18 @@ AFU_plane_shipment_category = {
 
 		visible = {
 			has_country_flag = eu_limited_recognition
+			tag = LBU
 		}
 
 		fire_only_once = yes
 
         ai_will_do = {	
-			factor = 50		
+			base = 50		
 		}
 
 		remove_effect = {
 			add_equipment_to_stockpile = {
-                type = small_plane_airframe
+                type = LCA1
                 amount = 30
 				producer = EUN
             }
@@ -860,12 +838,12 @@ AFU_plane_shipment_category = {
 		fire_only_once = yes
 
         ai_will_do = {	
-			factor = 50		
+			base = 50		
 		}
 
 		remove_effect = {
 			add_equipment_to_stockpile = {
-                type = small_plane_airframe
+                type = LCA1
                 amount = 50
 				producer = LAS
             }

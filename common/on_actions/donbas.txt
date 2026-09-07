@@ -5,6 +5,8 @@ on_actions = {
 				limit = {
 					FROM = { tag = DPR }
 					AFU = { exists = yes }
+					LPR = { exists = no }
+					RAF = { exists = no }
 				}
 				every_state = {
 					if = {
@@ -13,6 +15,8 @@ on_actions = {
 						}
 						remove_claim_by = DPR
 					}
+				}
+				every_state = {
 					if = {
 						limit = {
 							is_claimed_by = LPR
@@ -23,16 +27,104 @@ on_actions = {
 				AFU = {
 					country_event = { id = afu.9 days = 1 }
 				}
+				RUS = {
+					RUS_Monke = {
+						set_portraits = {
+							character = RUS_Monke
+							civilian = {
+								large = "gfx\leaders\RUS\Putin1.dds"
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = { tag = LPR }
+					AFU = { exists = yes }
+					DPR = { exists = no }
+					RAF = { exists = no }
+				}
+				every_state = {
+					if = {
+						limit = {
+							is_claimed_by = DPR
+						}
+						remove_claim_by = DPR
+					}
+				}
+				every_state = {
+					if = {
+						limit = {
+							is_claimed_by = LPR
+						}
+						remove_claim_by = LPR
+					}
+				}
+				AFU = {
+					country_event = { id = afu.9 days = 1 }
+				}
+				RUS = {
+					RUS_Monke = {
+						set_portraits = {
+							character = RUS_Monke
+							civilian = {
+								large = "gfx\leaders\RUS\Putin1.dds"
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = { tag = RAF }
+					AFU = { exists = yes }
+					DPR = { exists = no }
+					LPR = { exists = no }
+				}
+				every_state = {
+					if = {
+						limit = {
+							is_claimed_by = DPR
+						}
+						remove_claim_by = DPR
+					}
+				}
+				every_state = {
+					if = {
+						limit = {
+							is_claimed_by = LPR
+						}
+						remove_claim_by = LPR
+					}
+				}
+				AFU = {
+					country_event = { id = afu.9 days = 1 }
+				}
+				RUS = {
+					RUS_Monke = {
+						set_portraits = {
+							character = RUS_Monke
+							civilian = {
+								large = "gfx\leaders\RUS\Putin1.dds"
+							}
+						}
+					}
+				}
 			}
         }
     }
 
-    on_annex = {
+	on_annex = {
 		effect = {
             if = {
 				limit = {
 					FROM = { tag = AFU }
-					DPR = { exists = yes }
+					OR = {
+						country_exists = DPR
+						country_exists = LPR
+						country_exists = RAF
+					}
 				}
 				DPR = {
 					transfer_state = 2031
@@ -54,6 +146,9 @@ on_actions = {
 					transfer_state = 2099
 					transfer_state = 2862
 				}
+				DPR = {
+					set_faction_leader = yes
+				}
 			}
 	    }
     }
@@ -74,18 +169,21 @@ on_actions = {
 			}
 		}
 	}
-
-	on_annex = {
-        effect = {
+	
+	on_capitulation = {
+		effect = {
             if = {
 				limit = {
-					FROM = { tag = VSR }
-					AFU = { exists = yes }
+					FROM = { tag = RUS }
+					AFU = {
+						has_government = ultranationalism
+						NOT = { has_country_flag = rvc_coop }
+					}
 				}
 				AFU = {
-					country_event = { id = afu.20 days = 10 }
+					country_event = azov.58
 				}
 			}
-        }
+	    }
     }
 }

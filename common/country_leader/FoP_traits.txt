@@ -4,12 +4,41 @@
 
 leader_traits = {
 
+Silver_Rose = {
+	random = no
+	
+	war_stability_factor = 0.3
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+activist_fighter = {
+	random = no
+	
+	political_power_gain = 0.15
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+great_patriot_of_novorossiya = {
+	random = no
+	
+	surrender_limit = 0.1
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
 pan_president = {
 	random = no
 	sprite = 14
 	
 	political_power_cost = -0.1
-	political_advisor_cost_factor = -0.25
 	army_leader_cost_factor = -0.15
 	
 	ai_will_do = {
@@ -23,7 +52,6 @@ shadow_lawyer = {
 	
 	political_power_cost = -0.05
 	drift_defence_factor = 0.1
-	political_advisor_cost_factor = -0.1
 	
 	ai_will_do = {
 		factor = 1
@@ -35,7 +63,7 @@ agrarian_lobbyist = {
 	sprite = 6
 	
 	production_speed_infrastructure_factor = 0.1
-	weekly_stability = 0.005
+	stability_weekly = 0.005
 	
 	ai_will_do = {
 		factor = 1
@@ -47,7 +75,7 @@ construction_backer = {
 	sprite = 12
 	
 	consumer_goods_factor = -0.03
-	production_speed_civilian_factory_factor = 0.15
+	production_speed_industrial_complex_factor = 0.15
 	political_power_gain = 0.05
 	
 	ai_will_do = {
@@ -73,7 +101,7 @@ police_networker = {
 	sprite = 16
 	
 	root_out_resistance_effectiveness_factor = 0.2
-	suppression_factor = 0.1
+	resistance_decay_on_our_occupied_states = 0.1
 	compliance_growth_on_our_occupied_states = 0.02
 	
 	ai_will_do = {
@@ -86,7 +114,6 @@ pragmatic_operator = {
 	sprite = 4
 	
 	political_power_gain = 0.1
-	advisor_cost_factor = -0.1
 	justify_war_goal_time = -0.05
 	
 	ai_will_do = {
@@ -111,8 +138,8 @@ Technocratmunicipalist = {
 	
 	consumer_goods_factor = -0.01
 	research_speed_factor = 0.05
-	weekly_war_support = -0.01
-	weekly_stability = 0.01
+	war_support_weekly = -0.01
+	stability_weekly = 0.01
 	
 	ai_will_do = {
 		factor = 1
@@ -123,9 +150,9 @@ Grey_coordinator = {
 	random = no
 	sprite = 15
 	
-	operative_slots = 1
+	operative_slot = 1
 	intel_network_gain_factor = 0.1
-	sabotage_factor = 0.05
+	resistance_activity = 0.05
 	
 	ai_will_do = {
 		factor = 1
@@ -149,7 +176,6 @@ Nomenclaturepatron = {
 	random = no
 	sprite = 17
 	
-	political_advisor_cost_factor = -0.15
 	stability_factor = 0.03
 	
 	ai_will_do = {
@@ -161,7 +187,7 @@ Curatorofborders = {
 	random = no
 	sprite = 7
 	
-	manpower_factor = 0.02
+	stability_factor = 0.03
 	
 	ai_will_do = {
 		factor = 1
@@ -173,7 +199,7 @@ Commercialdiplomat = {
 	sprite = 10
 	
 	trade_opinion_factor = 0.2
-	resource_gain_efficiency = 0.05
+	local_resource_gain_efficiency_per_infrastructure = 0.05
 	
 	ai_will_do = {
 		factor = 1
@@ -210,7 +236,7 @@ Frontlineadministrator = {
 	
 	org_loss_when_moving = -0.1
 	supply_consumption_factor = -0.05
-	division_recovery_rate = 0.03
+	army_morale_factor = 0.03
 	
 	ai_will_do = {
 		factor = 1
@@ -254,7 +280,7 @@ army_core_attack_factor = 0.08
 	}
 	Democratic_dictator = {
 		sprite = 13
-		political_power_gain = 0.25
+		political_power_gain = 0.1
 		stability_weekly = 0.01
 		ai_will_do = {
 			factor = 1
@@ -270,7 +296,7 @@ army_core_attack_factor = 0.08
 	}
 	Young_Tsar2 = {
 		sprite = 13
-		political_power_gain = 0.25
+		political_power_gain = 0.15
 		trade_opinion_factor = 0.1
 		stability_weekly = 0.01
 		ai_will_do = {
@@ -279,7 +305,7 @@ army_core_attack_factor = 0.08
 	}
 	Young_Tsar = {
 		sprite = 13
-		political_power_gain = 0.2
+		political_power_gain = 0.1
 		trade_opinion_factor = 0.1
 		ai_will_do = {
 			factor = 1
@@ -314,17 +340,17 @@ army_core_attack_factor = 0.08
 	}
 	Mad_monarch1 = {
 		sprite = 13
-		political_power_gain = -0.9
-		trade_opinion_factor = -0.9
-		research_speed_factor = -0.9
+		political_power_gain = -0.2
+		trade_opinion_factor = -0.5
+		research_speed_factor = -0.4
 		ai_will_do = {
 			factor = 1
 		}
 	}
 	Mad_monarch2 = {
 		sprite = 13
-		trade_opinion_factor = -0.9
-		research_speed_factor = -0.9
+		trade_opinion_factor = -0.4
+		research_speed_factor = -0.3
 		ai_will_do = {
 			factor = 1
 		}
@@ -332,7 +358,7 @@ army_core_attack_factor = 0.08
 
 	grand_duke = {
 		sprite = 13
-		political_power_gain = 0.2
+		political_power_gain = 0.15
 		civilian_factory_use = 3
 		ai_will_do = {
 			factor = 1
@@ -495,7 +521,7 @@ army_core_attack_factor = 0.08
 
 	Christiannationalmilitarist = {
 		sprite = 13
-		ultranationalism_drift_drift = 0.02
+		ultranationalism_drift = 0.02
 		command_power_gain = 0.09
 		army_org_factor = 0.08
 		
@@ -654,7 +680,7 @@ army_core_attack_factor = 0.08
 
 	HeadoftheUkrainianRussianBelarusianPanSlavistParty = {
 		random = no
-		political_power_gain = 0.3
+		political_power_gain = 0.1
 		war_support_weekly_factor = 0.3
 		
 		ai_will_do = {
@@ -675,7 +701,7 @@ army_core_attack_factor = 0.08
 	deputy_head_of_the_Socialist_Party = {
 		random = no
 		party_popularity_stability_factor = 0.15
-		political_power_gain = 0.3
+		political_power_gain = 0.1
 		
 		ai_will_do = {
 			factor = 1
@@ -868,10 +894,10 @@ army_core_attack_factor = 0.08
 
 	trait_ruban = {
 		random = no
-		political_power_gain = 0.3
-		war_stability_factor = 0.3
+		political_power_gain = 0.1
+		war_stability_factor = 0.1
 		equipment_capture_factor = 0.5 
-		send_volunteer_factor = 0.3
+		send_volunteer_factor = 0.2
 		
 		ai_will_do = {
 			factor = 1
@@ -916,7 +942,6 @@ army_core_attack_factor = 0.08
 	expert_in_area_development = {
 		random = no
 		production_speed_bunker_factor = 0.1
-		production_speed_pillbox_factor = 0.1
 		production_speed_anti_air_building_factor = 0.1
 		
 		ai_will_do = {
@@ -945,7 +970,6 @@ army_core_attack_factor = 0.08
 		random = no
 		political_power_gain = 0.05
 		war_support_factor = 0.1
-		mobilization_laws_cost_factor = -0.1
 		military_leader_cost_factor = -0.1
 	}
 
@@ -993,9 +1017,9 @@ army_core_attack_factor = 0.08
 	}
     full_disloyal = {
         random = no
-			stability_factor = -0.75
-			political_power_gain = -0.5
-			political_power_cost = 0.5
+			stability_factor = -0.1
+			political_power_gain = -0.2
+			political_power_cost = 0.2
 			
 		ai_will_do = {
 			factor = 1
@@ -1052,7 +1076,7 @@ army_core_attack_factor = 0.08
 		stability_factor = 0.15
 		war_support_factor = 0.2
 		army_morale_factor = 0.1
-		political_power_gain = 0.2
+		political_power_gain = 0.1
 	}
 
     Povar = {
@@ -1130,7 +1154,7 @@ army_core_attack_factor = 0.08
 	}
 	f_s_d = {
 		random = no
-    political_power_gain = 0.5
+    political_power_gain = 0.1
 	war_support_factor = 0.03
 
 		ai_will_do = {
@@ -1192,7 +1216,7 @@ army_morale_factor = 0.3
 	local_resources_factor = 0.3
 	min_export = 0.5
 	party_popularity_stability_factor = 0.3
-	political_power_gain = 0.3
+	political_power_gain = 0.1
 
 		ai_will_do = {
 			factor = 2
@@ -1264,7 +1288,7 @@ army_morale_factor = 0.3
     encryption_factor = 0.5
 	drift_defence_factor = 0.3
 	stability_weekly = 0.01
-	political_power_gain = 0.3
+	political_power_gain = 0.1
 		ai_will_do = {
 			factor = 2
 		}
@@ -1358,8 +1382,8 @@ army_morale_factor = 0.3
 	right_conservative = {
 		random = no
 		sprite = 13
-		stability_factor = 0.25
-		political_power_cost = 0.3
+		stability_factor = 0.1
+		political_power_cost = 0.1
 		stability_weekly = 0.1
 		
 		ai_will_do = {
@@ -1369,7 +1393,7 @@ army_morale_factor = 0.3
 	editor_of_the_newspaper = {
 		random = no
 		sprite = 13
-		stability_factor = 0.25
+		stability_factor = 0.1
 		
 		ai_will_do = {
 			factor = 1 
@@ -1404,7 +1428,7 @@ army_morale_factor = 0.3
 		sprite = 13
 
 		political_power_factor = 0.05
-		radical_socialism_drift = 0.1
+		socialism_drift = 0.1
 		
 		ai_will_do = {
 			factor = 1 
@@ -1414,7 +1438,7 @@ army_morale_factor = 0.3
 		random = no
 		sprite = 13
 		drift_defence_factor = 0.1
-		political_power_factor = 0.15
+		political_power_factor = 0.1
 		
 		ai_will_do = {
 			factor = 1 
@@ -1424,7 +1448,7 @@ army_morale_factor = 0.3
 		random = no
 		sprite = 13
 		drift_defence_factor = 0.1
-		political_power_factor = 0.15
+		political_power_factor = 0.1
 		
 		ai_will_do = {
 			factor = 1 
@@ -1507,7 +1531,7 @@ army_morale_factor = 0.3
 	
 	s_r_n_b_o = {
 		random = no
-		political_power_factor = 0.3
+		political_power_factor = 0.1
 	    operative_slot = 1
 		resistance_decay = -0.1
 		stability_factor = 0.05
@@ -1630,8 +1654,7 @@ army_morale_factor = 0.3
 	}
 	renovation_architect = {
 		random = no
-		trade_laws_cost_factor = -0.25
-		economy_cost_factor = -0.25
+
 		industrial_capacity_factory = 0.1
 		
 		ai_will_do = {

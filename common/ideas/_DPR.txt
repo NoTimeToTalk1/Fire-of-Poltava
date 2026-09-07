@@ -12,6 +12,26 @@ ideas = {
 				army_core_defence_factor = 0.1
 				political_power_gain = 0.5
 			}
+
+			cancel = {
+				has_country_leader = {
+					character = DPR_Girkin
+				}
+		    }
+		}
+
+		DPR_external_army_control = {
+			picture = external_army_control
+
+			modifier = {
+				army_org_factor = -0.1
+			}
+
+			cancel = {
+				has_country_leader = {
+					character = DPR_Girkin
+				}
+		    }
 		}
 
 		DPR_oligarchs = {
@@ -21,20 +41,30 @@ ideas = {
 			modifier = {
             	oligarchism_drift = 0.01
 			}
+
+			cancel = {
+				has_country_leader = {
+					character = DPR_Girkin
+				}
+		    }
 		}
 
-		DPR_clown = {
+		DPR_unpopular_president = {
 
-			picture = DPR_clown
+			picture = DPR_unpopular_president
 
 			modifier = {
-            	stability_factor = -0.1
+            	stability_factor = -0.15
+			}
+			
+			available = {
+				has_country_leader = DPR_Pushilin
 			}
 		}
 
-		DPR_shluha = {
+		DPR_surprise_effect = {
 
-			picture = DPR_shluha
+			picture = DPR_surprise_effect
 
 			modifier = {
 				offence = 0.5
@@ -50,7 +80,13 @@ ideas = {
             	consumer_goods_factor = 0.05
 				oligarchism_drift = -0.02
 				political_power_cost = 0.1
-            }	
+            }
+
+			cancel = {
+				has_country_leader = {
+					character = DPR_Girkin
+				}
+		    }
 		}
 
 		DPR_problem_with_oligarchs = {
@@ -61,6 +97,12 @@ ideas = {
 				civilian_factory_use = 3
 				production_speed_buildings_factor = -0.1
             }
+
+			cancel = {
+				has_country_leader = {
+					character = DPR_Girkin
+				}
+		    }
 		}
 
 		DPR_russian_influence = {
@@ -74,6 +116,12 @@ ideas = {
 				research_speed_factor = 0.2
 				political_power_gain = -0.3
             }
+
+			cancel = {
+				has_country_leader = {
+					character = DPR_Girkin
+				}
+		    }
 		}
 
 		DPR_crisis_in_administration = {
@@ -86,33 +134,46 @@ ideas = {
             }
 		}
 
-		DPR_federation = {
-
-			picture = DPR_federation
-
-			modifier = {
-				stability_factor = -0.1
-			}
-		}
-
-		DPR_confederation = {
-
-			picture = DPR_confederation
-
-			modifier = {
-				stability_factor = -0.2
-			}
-		}
-
 		DPR_novorosjablyat = {
 
-			picture = DPR_novorosjablyat
+			picture = DPR_novorossiya
 
 			modifier = {
 				stability_factor = 0.1
 				war_support_factor = 0.1
 				justify_war_goal_time = -0.5
 				weekly_manpower = 250
+			}
+
+			cancel = {
+				has_country_leader = {
+					character = DPR_Girkin
+				}
+		    }
+		}
+
+		RAF_incursion = {
+			modifier = {
+				surrender_limit = 0.5
+				supply_consumption_factor = 0.2
+				army_morale_factor = -0.15
+				army_speed_factor = 0.1
+			}
+		}
+
+		DPR_chaos_in_the_ranks = {
+
+			picture = DPR_chaos_in_the_ranks
+
+			modifier = {
+				army_org_factor = -0.4
+				training_time_factor = 0.5
+				army_strength_factor = -0.1
+				army_attack_factor = 0.05
+				equipment_capture_factor = 0.15
+				army_defence_factor = -0.15
+				experience_gain_army_unit_factor = -0.15
+				pocket_penalty = 0.2
 			}
 		}
 	}

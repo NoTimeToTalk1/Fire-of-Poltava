@@ -1,0 +1,144 @@
+AFU_ultras_football_category = {
+
+# ─── сховати івенти ──────────────────────
+AFU_deactivate_football_mechanic_decision = {
+    icon = GFX_decision_football_ball_no
+
+    allowed = {
+        original_tag = AFU
+    }
+
+    available = {
+    has_country_flag = AFU_ultras_football_active          
+    }
+
+    visible = {
+    has_country_flag = AFU_ultras_football_active   
+    }
+
+    cost = 0
+
+    days_remove = 1
+
+    complete_effect = {
+      AFU_deactivate_football_mechanic = yes
+    }
+}
+
+# ─── вілкрити механіку ──────────────────────
+AFU_activate_football_mechanic_decision = {
+    icon = GFX_decision_football_ball_yes
+
+    allowed = {
+        original_tag = AFU
+    }
+
+    available = {
+    has_country_flag = AFU_ultras_football_deactive    
+    }
+
+    visible = {
+    has_country_flag = AFU_ultras_football_deactive  
+    }
+
+    cost = 0
+
+    days_remove = 1
+
+    complete_effect = {
+      AFU_activate_football_mechanic = yes
+    }
+}
+
+# ─── СТАВКА НА КОМАНДУ А ──────────────────────
+AFU_bet_on_team_a = {
+    icon = GFX_decision_football_ball
+
+    allowed = {
+        original_tag = AFU
+    }
+
+    available = {
+        NOT = { has_country_flag = AFU_bet_placed_this_month }
+        NOT = { has_country_flag = AFU_azov_derby_event }
+        has_country_flag = AFU_football_match_scheduled
+    }
+
+    visible = {
+        has_country_flag = AFU_ultras_football_active
+        has_country_flag = AFU_football_match_scheduled
+    }
+
+    cost = 0
+
+    days_remove = 1
+
+    complete_effect = {
+        set_country_flag = AFU_bet_placed_this_month
+        set_variable = { AFU_player_bet = 1 }  # 1 = поставив на команду А
+        custom_effect_tooltip = AFU_bet_team_a_tooltip
+    }
+}
+
+# ─── СТАВКА НА КОМАНДУ Б ──────────────────────
+AFU_bet_on_team_b = {
+    icon = GFX_decision_football_ball
+
+    allowed = {
+        original_tag = AFU
+    }
+
+    available = {
+        NOT = { has_country_flag = AFU_bet_placed_this_month }
+        NOT = { has_country_flag = AFU_azov_derby_event }
+        has_country_flag = AFU_football_match_scheduled
+    }
+
+    visible = {
+        has_country_flag = AFU_ultras_football_active
+        has_country_flag = AFU_football_match_scheduled
+    }
+
+    cost = 0
+
+    days_remove = 1
+
+    complete_effect = {
+        set_country_flag = AFU_bet_placed_this_month
+        set_variable = { AFU_player_bet = 2 }  # 2 = поставив на команду Б
+        custom_effect_tooltip = AFU_bet_team_b_tooltip
+    }
+	
+	}
+	
+
+# ─── ПРОПУСТИТИ МАТЧ ──────────────────────────
+AFU_skip_match = {
+    icon = GFX_decision_football_ball
+
+    allowed = {
+        original_tag = AFU
+    }
+
+    available = {
+        NOT = { has_country_flag = AFU_bet_placed_this_month }
+        NOT = { has_country_flag = AFU_azov_derby_event }
+        has_country_flag = AFU_football_match_scheduled
+    }
+
+    visible = {
+        has_country_flag = AFU_ultras_football_active
+        has_country_flag = AFU_football_match_scheduled
+    }
+
+    cost = 0
+
+    days_remove = 1
+
+    complete_effect = {
+        set_country_flag = AFU_bet_placed_this_month
+        set_variable = { AFU_player_bet = 0 }  # 0 = не ставив
+        custom_effect_tooltip = AFU_skip_match_tooltip
+    }
+}
+}

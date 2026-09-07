@@ -1,0 +1,60 @@
+###############################################
+# Scripted Localisation — Чорний ринок
+# common/scripted_localisation/WL_bm_scripted_loc.txt
+#
+# Динамічний опис категорії: баланс ТГ + рівень ринку
+###############################################
+
+# ── Баланс тіньових гривень (для custom_cost_text) ──
+defined_text = {
+    name = WL_bm_category_balance_display
+
+    text = {
+        trigger = { check_variable = { WL_bm_tier > 2 } }
+        localization_key = WL_bm_display_tier3
+    }
+    text = {
+        trigger = { check_variable = { WL_bm_tier > 1 } }
+        localization_key = WL_bm_display_tier2
+    }
+    text = {
+        # tier 1 або не задано
+        localization_key = WL_bm_display_tier1
+    }
+}
+
+
+# ── Рівень ринку у тексті ──────────────────────────
+defined_text = {
+    name = WL_bm_tier_name
+
+    text = {
+        trigger = { check_variable = { WL_bm_tier > 2 } }
+        localization_key = WL_bm_tier_name_3
+    }
+    text = {
+        trigger = { check_variable = { WL_bm_tier > 1 } }
+        localization_key = WL_bm_tier_name_2
+    }
+    text = {
+        localization_key = WL_bm_tier_name_1
+    }
+}
+
+
+# ── Бонус закупівлі залежно від рівня ─────────────
+defined_text = {
+    name = WL_bm_purchase_bonus_text
+
+    text = {
+        trigger = { check_variable = { WL_bm_tier > 2 } }
+        localization_key = WL_bm_bonus_tier3_text
+    }
+    text = {
+        trigger = { check_variable = { WL_bm_tier > 1 } }
+        localization_key = WL_bm_bonus_tier2_text
+    }
+    text = {
+        localization_key = WL_bm_bonus_tier1_text
+    }
+}

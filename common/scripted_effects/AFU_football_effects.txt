@@ -1,0 +1,47 @@
+###############################################
+# Scripted Effect: активація механіки
+###############################################
+
+AFU_activate_football_mechanic = {
+    set_country_flag = AFU_ultras_football_active
+    custom_effect_tooltip = AFU_football_mechanic_activated_tooltip
+    clr_country_flag = AFU_ultras_football_deactive
+}
+
+AFU_deactivate_football_mechanic = {
+    clr_country_flag = AFU_ultras_football_active
+    clr_country_flag = AFU_football_match_scheduled
+    clr_country_flag = AFU_bet_placed_this_month
+    clear_variable = AFU_match_pair
+    clear_variable = AFU_match_winner
+    clear_variable = AFU_player_bet
+    set_country_flag = AFU_ultras_football_deactive
+}
+
+# очистка
+AFU_football_clear_shedule = {
+   clr_country_flag = AFU_football_match_scheduled
+   clr_country_flag = AFU_bet_placed_this_month   
+   clr_country_flag = AFU_azov_derby_event
+   set_variable = { AFU_player_bet = 0 }
+}
+
+# ── Ефекти бафів за перемогу ──────────────────
+# Перемога улюбленої команди
+AFU_football_win_bonus = {
+    add_popularity = {
+        ideology = ultranationalism
+        popularity = 0.005
+    }
+    add_political_power = 5
+}
+
+# Поразка улюбленої команди
+AFU_football_lose_penalty = {
+    add_political_power = -5
+}
+
+# Нейтральний результат (без ставки)
+AFU_football_neutral_result = {
+    add_stability = 0.0005
+}

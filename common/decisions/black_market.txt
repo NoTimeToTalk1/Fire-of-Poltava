@@ -1,0 +1,292 @@
+WL_black_market_category = {
+
+# ══════════════════════════════════════════════
+# БЛОК 1 — УПРАВЛІННЯ РЕСУРСОМ
+# ══════════════════════════════════════════════
+
+WL_bm_invite_smugglers = {
+    icon = GFX_decision_black_market_smuggler
+
+    allowed = { is_ukrainian_warlord = yes }
+
+    available = {
+        NOT = { has_country_flag = WL_smugglers_cooldown }
+    }
+
+    visible = { has_country_flag = WL_black_market_unlocked }
+
+    cost = 50
+    days_remove = 30
+
+    modifier = {
+        stability_factor = -0.05
+        trade_opinion_factor = -0.10
+    }
+
+    complete_effect = {
+        set_country_flag = WL_smugglers_active
+        custom_effect_tooltip = WL_bm_smugglers_active_tooltip
+		activate_mission = WL_bm_monthly_smugglers_income
+    add_to_variable = { 
+        var = WL_shadow_hryvnia 
+        value = 10
+		tooltip = WL_bm_smuglers_tt
+    }
+    }
+
+    timeout_effect = {
+	hidden_effect = {
+        clr_country_flag = WL_smugglers_active
+        set_country_flag = { flag = WL_smugglers_cooldown days = 60 }
+        custom_effect_tooltip = WL_bm_smugglers_left_tooltip
+		}
+
+    }
+}
+
+# ══════════════════════════════════════════════
+# БЛОК 2 — ЗАКУПІВЛЯ СПОРЯДЖЕННЯ
+# ══════════════════════════════════════════════
+
+# ── Піхотне озброєння ─────────────────────────
+WL_bm_buy_infantry = {
+    icon = GFX_decision_black_market_infantry
+
+    allowed = { is_ukrainian_warlord = yes }
+    visible = { has_country_flag = WL_black_market_unlocked }
+
+    available = {
+        has_country_flag = WL_black_market_unlocked
+        check_variable = { WL_shadow_hryvnia > 19 }
+        OR = {
+            has_tech = infantry_weapons
+            has_tech = infantry_weapons_1
+        }
+    }
+
+    custom_cost_trigger = { check_variable = { WL_shadow_hryvnia > 19 } }
+    custom_cost_text = WL_bm_cost_20_sh
+
+    cost = 0
+    days_remove = 7
+
+    complete_effect = {
+        WL_bm_buy_infantry_effect = yes
+    }
+}
+
+# ── Дрони ─────────────────────────────────────
+WL_bm_buy_drones = {
+    icon = GFX_decision_black_market_drone
+
+    allowed = { is_ukrainian_warlord = yes }
+    visible = { has_country_flag = WL_black_market_unlocked }
+
+    available = {
+        has_country_flag = WL_black_market_unlocked
+        check_variable = { WL_shadow_hryvnia > 29 }
+        OR = { has_tech = drone_equipment_usage }
+    }
+
+    custom_cost_trigger = { check_variable = { WL_shadow_hryvnia > 29 } }
+    custom_cost_text = WL_bm_cost_30_sh
+
+    cost = 0
+    days_remove = 7
+
+    complete_effect = {
+        WL_bm_buy_drones_effect = yes
+    }
+}
+
+# ── Допоміжне спорядження ─────────────────────
+WL_bm_buy_support = {
+    icon = GFX_decision_black_market_support
+
+    allowed = { is_ukrainian_warlord = yes }
+    visible = { has_country_flag = WL_black_market_unlocked }
+
+    available = {
+        has_country_flag = WL_black_market_unlocked
+        check_variable = { WL_shadow_hryvnia > 24 }
+        has_tech = support_weapons
+    }
+
+    custom_cost_trigger = { check_variable = { WL_shadow_hryvnia > 24 } }
+    custom_cost_text = WL_bm_cost_25_sh
+
+    cost = 0
+    days_remove = 7
+
+    complete_effect = {
+        WL_bm_buy_support_effect = yes
+    }
+}
+
+# ── Зенітне озброєння ─────────────────────────
+WL_bm_buy_anti_air = {
+    icon = GFX_decision_black_market_anti_air
+
+    allowed = { is_ukrainian_warlord = yes }
+    visible = { has_country_flag = WL_black_market_unlocked }
+
+    available = {
+        has_country_flag = WL_black_market_unlocked
+        check_variable = { WL_shadow_hryvnia > 34 }
+        has_tech = infantry_aa1
+    }
+
+    custom_cost_trigger = { check_variable = { WL_shadow_hryvnia > 34 } }
+    custom_cost_text = WL_bm_cost_35_sh
+
+    cost = 0
+    days_remove = 14
+
+    complete_effect = {
+        WL_bm_buy_anti_air_effect = yes
+    }
+}
+
+# ── Протитанкове озброєння ────────────────────
+WL_bm_buy_anti_tank = {
+    icon = GFX_decision_black_market_anti_tank
+
+    allowed = { is_ukrainian_warlord = yes }
+    visible = { has_country_flag = WL_black_market_unlocked }
+
+    available = {
+        has_country_flag = WL_black_market_unlocked
+        check_variable = { WL_shadow_hryvnia > 34 }
+        has_tech = infantry_at1
+    }
+
+    custom_cost_trigger = { check_variable = { WL_shadow_hryvnia > 34 } }
+    custom_cost_text = WL_bm_cost_35_sh
+
+    cost = 0
+    days_remove = 14
+
+    complete_effect = {
+        WL_bm_buy_anti_tank_effect = yes
+    }
+}
+
+# ── БТР / APC ─────────────────────────────────
+WL_bm_buy_apc = {
+    icon = GFX_decision_black_market_apc
+
+    allowed = { is_ukrainian_warlord = yes }
+    visible = { has_country_flag = WL_black_market_unlocked }
+
+    available = {
+        has_country_flag = WL_black_market_unlocked
+        check_variable = { WL_shadow_hryvnia > 49 }
+        has_tech = armored_car1
+    }
+
+    custom_cost_trigger = { check_variable = { WL_shadow_hryvnia > 49 } }
+    custom_cost_text = WL_bm_cost_50_sh
+
+    cost = 0
+    days_remove = 21
+
+    complete_effect = {
+        WL_bm_buy_apc_effect = yes
+    }
+}
+
+# ── Моторизована техніка ──────────────────────
+WL_bm_buy_motorized = {
+    icon = GFX_decision_black_market_motorized
+
+    allowed = { is_ukrainian_warlord = yes }
+    visible = { has_country_flag = WL_black_market_unlocked }
+
+    available = {
+        has_country_flag = WL_black_market_unlocked
+        check_variable = { WL_shadow_hryvnia > 29 }
+        has_tech = utility_vehicle2
+    }
+
+    custom_cost_trigger = { check_variable = { WL_shadow_hryvnia > 29 } }
+    custom_cost_text = WL_bm_cost_30_sh
+
+    cost = 0
+    days_remove = 14
+
+    complete_effect = {
+        WL_bm_buy_motorized_effect = yes
+    }
+}
+
+# ── Міномети ──────────────────────────────────
+WL_bm_buy_mortars = {
+    icon = GFX_decision_black_market_mortar
+
+    allowed = { is_ukrainian_warlord = yes }
+    visible = { has_country_flag = WL_black_market_unlocked }
+
+    available = {
+        has_country_flag = WL_black_market_unlocked
+        check_variable = { WL_shadow_hryvnia > 24 }
+        has_tech = mortar1
+    }
+
+    custom_cost_trigger = { check_variable = { WL_shadow_hryvnia > 24 } }
+    custom_cost_text = WL_bm_cost_25_sh
+
+    cost = 0
+    days_remove = 10
+
+    complete_effect = {
+        WL_bm_buy_mortars_effect = yes
+    }
+}
+
+# ── Артилерія ─────────────────────────────────
+WL_bm_buy_artillery = {
+    icon = GFX_decision_black_market_artillery
+
+    allowed = { is_ukrainian_warlord = yes }
+    visible = { has_country_flag = WL_black_market_unlocked }
+
+    available = {
+        has_country_flag = WL_black_market_unlocked
+        check_variable = { WL_shadow_hryvnia > 44 }
+        has_tech = howitzer1
+    }
+
+    custom_cost_trigger = { check_variable = { WL_shadow_hryvnia > 44 } }
+    custom_cost_text = WL_bm_cost_45_sh
+
+    cost = 0
+    days_remove = 21
+
+    complete_effect = {
+        WL_bm_buy_artillery_effect = yes
+    }
+}
+
+# ==================== БАЗОВА ЩОМІСЯЧНА МІСІЯ ====================
+WL_bm_monthly_base_income = {
+    icon = GFX_mission_icon_shadow_hryvnia
+
+    is_goal = no
+    is_mission = yes
+
+    activation = {
+        has_country_flag = WL_black_market_unlocked
+    }
+
+    available = {
+        NOT = { has_country_flag = WL_black_market_unlocked }
+    }
+
+    days_mission_timeout = 30
+
+    timeout_effect = {
+        set_temp_variable = { temp_var_bm_value = 3 }
+        WL_bm_add_shadow_hryvnia = yes
+    }
+}
+}

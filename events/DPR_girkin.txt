@@ -1,11 +1,43 @@
 ﻿add_namespace = gir
 
-#PLACEHOLDER --- Вуличні протести виборців вітренко та пасєки
+# GIRKIN WON THE ELECTIONS
+country_event = {
+	id = gir.0
+	title = gir.0.t
+	desc = gir.0.d
+	
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.0.a
+		load_focus_tree = DPR_girkin
+		clr_country_flag = DPRelection_active
+		set_politics = {
+			ruling_party = traditionalism
+			elections_allowed = no
+			long_name = "Novorossiyan Monarchical Party"
+			name = "NMP"
+		}
+		set_popularities = {
+			socialism = 10
+			social_democracy = 10
+			liberalism = 10
+			conservatism = 10
+			traditionalism = 40
+			authoritarianism = 20
+		}
+		#There should be fucking parties and natspirits or whatever I am too cooked rn
+	}
+}
+
+# Вуличні протести виборців вітренко та пасєки
 country_event = {
 	id = gir.1
 	title = gir.1.t
 	desc = gir.1.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -16,12 +48,12 @@ country_event = {
 	}
 }
 
-#PLACEHOLDER --- Перші криваві зіткнення на вулицях
+# Перші криваві зіткнення на вулицях
 country_event = {
 	id = gir.2
 	title = gir.2.t
 	desc = gir.2.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -35,12 +67,12 @@ country_event = {
 	}
 }
 
-#PLACEHOLDER --- Вирізка з газети про дискредитацію Вітренко й Пасєки (відомі вони разом як "Народна Опозиція")
+# Вирізка з газети про дискредитацію Вітренко й Пасєки (відомі вони разом як "Народна Опозиція")
 country_event = {
 	id = gir.3
 	title = gir.3.t
 	desc = gir.3.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -66,147 +98,424 @@ country_event = {
 	}
 }
 
-#PLACEHOLDER --- Війна гіркіна та лоялістів з опозицією в містах та селах
+# Війна гіркіна та лоялістів з опозицією в містах та селах
 country_event = {
 	id = gir.4
 	title = gir.4.t
 	desc = gir.4.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.4.a
-		add_stability = -0.2
-		swap_ideas = { --- ADD THIS TO EVENT INSTEAD, ALSO DEMILITARIZE REGIONS AND OPEN DECISIONS
+		swap_ideas = {
 			remove_idea = DPR_peoples_opposition_2
 			add_idea = DPR_peoples_opposition_3
+		}
+		
+		every_state = {
+			limit = {
+				OR = {
+					state = 2097
+					state = 2081
+					state = 2099
+					state = 2098
+					
+					state = 2031
+					state = 2093
+					state = 2094
+					state = 2083
+				}
+			}
+			set_demilitarized_zone = yes
 		}
 	}
 }
 
+# Лібералізація конституції гіркіном, уряд пішов на поступки опозиції (стратегічний хід, далі більше)
 country_event = {
 	id = gir.5
 	title = gir.5.t
 	desc = gir.5.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.5.a
-		remove_ideas = DPR_peoples_opposition_1
+		add_popularity = {
+			ideology = conservatism
+			popularity = 0.06
+		}
+		add_popularity = {
+			ideology = liberalism
+			popularity = 0.04
+		}
+		add_popularity = {
+			ideology = socialism
+			popularity = 0.07
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.03
+		}
+		swap_ideas = {
+			remove_idea = DPR_peoples_opposition_1
+			add_idea = DPR_illusion_of_freedom
+		}
 	}
 }
 
-#PLACEHOLDER --- Штурм ячейки Народної Опозиції (сценарій з лібералізацією)
+# Штурм ячейки Народної Опозиції (сценарій з лібералізацією) 1/2
 country_event = {
 	id = gir.6
 	title = gir.6.t
-	desc = gir.6.d
-	picture = none
+	desc = {
+		text = gir.6.d.a
+		trigger = {
+			has_country_flag = DPR_raid_success
+		}
+	}
+	desc = {
+		text = gir.6.d.b
+		trigger = {
+			has_country_flag = DPR_raid_fail
+		}
+	}
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.6.a
+		country_event = gir.7
 	}
 }
 
-#PLACEHOLDER --- Відміна правок, шок контент
+# Штурм ячейки Народної Опозиції (сценарій з лібералізацією) 2/2
 country_event = {
 	id = gir.7
 	title = gir.7.t
-	desc = gir.7.d
-	picture = none
+	desc = {
+		text = gir.7.d.a
+		trigger = {
+			has_country_flag = DPR_raid_success
+		}
+	}
+	desc = {
+		text = gir.7.d.b
+		trigger = {
+			has_country_flag = DPR_raid_fail
+		}
+	}
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.7.a
+		trigger = {
+            has_country_flag = DPR_raid_success
+        }
+		add_political_power = 10
+	}
+
+	option = {
+		name = gir.7.b
+		trigger = {
+            has_country_flag = DPR_raid_fail
+        }
+		add_manpower = -1
 	}
 }
 
-#PLACEHOLDER --- Опис подальшої ситуації (народ в страху, в державі анархія)
+# Відміна правок, шок контент
 country_event = {
 	id = gir.8
 	title = gir.8.t
 	desc = gir.8.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.8.a
+		if = {
+			limit = {
+				AND = {
+					has_country_flag = DPR_raid_fail
+					has_country_flag = DPR_girkin_pushilin_deal
+				}
+			}
+			swap_ideas = {
+				remove_idea = DPR_illusion_of_freedom
+				add_idea = DPR_nationwide_opposition
+			}
+			every_state = {
+				limit = {
+					OR = {
+						state = 2031
+						state = 2093
+						state = 2094
+						state = 2083
+						
+						state = 2346
+						state = 2301
+						
+						state = 2097
+						state = 2081
+						state = 2099
+						state = 2098
+						
+						state = 2724
+						state = 2862
+					}
+				}
+				set_demilitarized_zone = yes
+			}
+		}
+		else_if = {
+			limit = {
+				AND = {
+					has_country_flag = DPR_raid_fail
+					NOT = { has_country_flag = DPR_girkin_pushilin_deal }
+				}
+			}
+			swap_ideas = {
+				remove_idea = DPR_illusion_of_freedom
+				add_idea = DPR_nationwide_opposition
+			}
+			every_state = {
+				limit = {
+					OR = {
+						state = 2031
+						state = 2093
+						state = 2094
+						state = 2083
+						
+						state = 2097
+						state = 2081
+						state = 2099
+						state = 2098
+						
+						state = 2082
+                        state = 2309
+                        state = 2856
+                        state = 2310
+					}
+				}
+				set_demilitarized_zone = yes
+			}
+		}
+		else = {
+			add_political_power = 100
+			swap_ideas = {
+				remove_idea = DPR_illusion_of_freedom
+				add_idea = DPR_shattered_hopes
+			}
+		}
 	}
 }
 
+# Опис подальшої ситуації (народ в страху, в державі анархія)
 country_event = {
 	id = gir.9
 	title = gir.9.t
-	desc = gir.9.d
-	picture = none
+	desc = {
+		text = gir.9.d.a
+		trigger = {
+			NOT = { has_country_flag = DPR_raid_success }
+		}
+	}
+	desc = {
+		text = gir.9.d.b
+		trigger = {
+			has_country_flag = DPR_raid_success
+		}
+	}
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.9.a
+		
+		if = {
+			limit = {
+				NOT = { has_country_flag = DPR_raid_success }
+			}
+			set_country_flag = DPR_girkin_civil_war
+			unlock_decision_category_tooltip = DPR_putting_down_the_unrest_category
+		}
+		else = {
+			retire_character = DPR_Vitrenko
+			retire_character = DPR_Pasechnik
+			retire_character = DPR_Pushilin
+		}
 	}
 }
 
+# VITRENKO KILL
+country_event = {
+	id = gir.901
+	title = gir.901.t
+	desc = gir.901.d
+	
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.901.a
+		custom_effect_tooltip = DPR_vitrenko_death_tt
+		set_country_flag = vitrenko_is_dead
+		retire_character = DPR_Vitrenko
+		add_manpower = -1
+	}
+}
+
+# PASEKA KILL
+country_event = {
+	id = gir.902
+	title = gir.902.t
+	desc = gir.902.d
+	
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.902.a
+		custom_effect_tooltip = DPR_pasechnik_death_tt
+		set_country_flag = pasechnik_is_dead
+		retire_character = DPR_Pasechnik
+		add_manpower = -1
+	}
+}
+
+# PUSHILIN KILL
+country_event = {
+	id = gir.903
+	title = gir.903.t
+	desc = gir.903.d
+	
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.903.a
+		custom_effect_tooltip = DPR_pushilin_death_tt
+		set_country_flag = pushilin_is_dead
+		retire_character = DPR_Pushilin
+		add_manpower = -1
+	}
+}
+
+# Телефонний діалог гіркіна та пріґожина
 country_event = {
 	id = gir.10
 	title = gir.10.t
 	desc = gir.10.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.10.a
+		add_ideas = DPR_wagner_presence
 	}
 }
 
+# Інтеграція Вагнера в регулярні війська
 country_event = {
 	id = gir.11
 	title = gir.11.t
 	desc = gir.11.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.11.a
+		###ADDS 3 ELITE UNITS(PRIGHOZIN AND OTHER NOOBS AS GENERALS TOO)
+		DPR_Prigozhin = {
+			add_corps_commander_role = {
+				skill = 4
+				attack_skill = 4
+				defense_skill = 4
+				planning_skill = 2
+				logistics_skill = 3
+			}
+		}
+		DPR_Utkin = {
+			add_corps_commander_role = {
+				skill = 4
+				attack_skill = 3
+				defense_skill = 2
+				planning_skill = 4
+				logistics_skill = 4
+			}
+		}
+		division_template = {
+			name = "Wagner Detachment"
+			is_locked = yes
+			regiments = {
+				APC = { x = 0 y = 0 }
+				IFV = { x = 0 y = 1 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				artillery_brigade = { x = 2 y = 0 }
+				motorized = { x = 3 y = 0 }
+				motorized = { x = 3 y = 1 }
+			}
+			support = {
+				mot_recon = { x = 0 y = 0 }
+				engineer = { x = 0 y = 1 }
+				signal_company = { x = 0 y = 2 }
+			}
+		}
+		capital_scope = {
+			create_unit = {
+				division = "name = \"Wagner Assault Detachment\" division_template = \"Wagner Detachment\" start_experience_factor = 0.4 start_equipment_factor = 0.8"
+				owner = DPR
+				count = 3
+			}
+		}
 	}
 }
 
+# івент про геніальність гіркіна як стратега на воєнному й державному рівнях
 country_event = {
 	id = gir.12
 	title = gir.12.t
 	desc = gir.12.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.12.a
+		add_political_power = 50
 	}
 }
 
+# HIDDEN івент про фсб
 country_event = {
 	id = gir.13
 	title = gir.13.t
 	desc = gir.13.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -216,39 +525,50 @@ country_event = {
 	}
 }
 
+# Івент про методи дій фсб
 country_event = {
 	id = gir.14
 	title = gir.14.t
 	desc = gir.14.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.14.a
+		swap_ideas = {
+			remove_idea = LPR_FSB
+			add_idea = DPR_FSB_1
+		}
 	}
 }
 
+# Операція новостворенної Служби Безпеки Новоросії по затримці рандомних держзрадників
 country_event = {
 	id = gir.15
 	title = gir.15.t
 	desc = gir.15.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.15.a
+		swap_ideas = {
+			remove_idea = DPR_FSB_1
+			add_idea = DPR_FSB_2
+		}
 	}
 }
 
+# HIDDEN Івент про РОВС (історія, хто шо, відносно коротко, основна увага на 2014-зараз)
 country_event = {
 	id = gir.16
 	title = gir.16.t
 	desc = gir.16.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -258,39 +578,45 @@ country_event = {
 	}
 }
 
+# Івент про те як Біла Гвардія насправді не програла а червоні просто оголосили про перемогу не добивши їх - білі досі легітимні й базовані
 country_event = {
 	id = gir.17
 	title = gir.17.t
 	desc = gir.17.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.17.a
+		add_political_power = 10
 	}
 }
 
+# Зустріч Гіркіна та Іванова - лідера РОВС
 country_event = {
 	id = gir.18
 	title = gir.18.t
 	desc = gir.18.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.18.a
+		recruit_character = DNR_ivanov
+		activate_advisor = DNR_ivanov
 	}
 }
 
+# Історія Донського козацтва (відносно коротко, основна увага на 2014-зараз)
 country_event = {
 	id = gir.19
 	title = gir.19.t
 	desc = gir.19.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -300,39 +626,44 @@ country_event = {
 	}
 }
 
+# Івент про марш-парад Донських кізяків по Донецьку
 country_event = {
 	id = gir.20
 	title = gir.20.t
 	desc = gir.20.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.20.a
+		add_political_power = 10
 	}
 }
 
+# Пафосний івент про те як нащадки рос консерватизму та монархізму покажуть всім кузькіну мать
 country_event = {
 	id = gir.21
 	title = gir.21.t
 	desc = gir.21.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.21.a
+		add_political_power = 10
 	}
 }
 
+# Івент про рос православну церкву за кордоном
 country_event = {
 	id = gir.22
 	title = gir.22.t
 	desc = gir.22.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -342,11 +673,12 @@ country_event = {
 	}
 }
 
+# Івент про приїзд митрополита Іларіона в новососію де він підпише з Гіркіним угоду про переїзд церкви сюди
 country_event = {
 	id = gir.23
 	title = gir.23.t
 	desc = gir.23.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -356,25 +688,31 @@ country_event = {
 	}
 }
 
+# Івент про перший з'їзд всеросійського монархічного конгресу
 country_event = {
 	id = gir.24
 	title = gir.24.t
 	desc = gir.24.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.24.a
+		swap_ideas = {
+			remove_idea = DPR_new_friends_3
+			add_idea = DPR_monarchical_coalition_1
+		}
 	}
 }
 
+# Івент про декомунізацію
 country_event = {
 	id = gir.25
 	title = gir.25.t
 	desc = gir.25.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -384,25 +722,28 @@ country_event = {
 	}
 }
 
+# Івент про святкову промову Гіркіна на честь єдинства всеросійського монархічного конгресу
 country_event = {
 	id = gir.26
 	title = gir.26.t
 	desc = gir.26.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.26.a
+		### SET APROPRIATE PARTY NAMES FOR TRD, ULTRNAT, AUTH.
 	}
 }
 
+# Івент про кордони новососії і чому вони правильні
 country_event = {
 	id = gir.27
 	title = gir.27.t
 	desc = gir.27.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -412,11 +753,12 @@ country_event = {
 	}
 }
 
+# Івент про засідання поців в тому монархічному конгерсі і як вони дискутують кому віддати корону на початку виконання
 country_event = {
 	id = gir.28
 	title = gir.28.t
 	desc = gir.28.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -426,11 +768,12 @@ country_event = {
 	}
 }
 
+# Івент про Марію Романову (біографія, чому вона має стати монархом) в процесі виконання
 country_event = {
 	id = gir.29
 	title = gir.29.t
 	desc = gir.29.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -440,11 +783,12 @@ country_event = {
 	}
 }
 
+# Івент про Ростіслава Романова (біографія, чому він має стати монархом) в процесі виконання
 country_event = {
 	id = gir.30
 	title = gir.30.t
 	desc = gir.30.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -454,95 +798,182 @@ country_event = {
 	}
 }
 
+# івент про вибір монарха рос імперії (або ростіслав або машка)
 country_event = {
 	id = gir.31
 	title = gir.31.t
 	desc = gir.31.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.31.a
+		set_country_flag = DPR_path_constitutionalist
+		load_focus_tree = {
+			tree = DPR_constitutionalist
+			keep_completed = yes
+		}
+		mark_focus_tree_layout_dirty = yes
+		complete_national_focus = DPR_and_become_a_mentor
+		
+		swap_ideas = {
+			remove_idea = DPR_colonels_plan_5
+			add_idea = DPR_colonels_plan_6
+		}
+		retire_country_leader = yes
+		add_country_leader_role = {
+			character = DPR_Rostislav
+			promote_leader = yes
+			country_leader = {
+				ideology = paternalism
+				expire = "2077.3.1.1"
+				#traits = {  }
+			}
+		}
+		set_politics = {
+			ruling_party = authoritarianism
+			elections_allowed = no
+		}
+		add_advisor_role = {
+			character = DPR_Girkin
+			activate = yes
+			advisor = {
+				slot = head_of_government
+			}
+		}
+	}
+
+	option = {
+		name = gir.31.b
+		set_country_flag = DPR_path_absolutist
+		load_focus_tree = {
+			tree = DPR_absolutist
+			keep_completed = yes
+		}
+		mark_focus_tree_layout_dirty = yes
+		complete_national_focus = DPR_and_restore_historical_justice
+		
+		retire_country_leader = yes
+		add_country_leader_role = {
+			character = DPR_Maria
+			promote_leader = yes
+			country_leader = {
+				ideology = monarchism
+				expire = "2077.3.1.1"
+				#traits = {  }
+			}
+		}
+		add_country_leader_role = {
+			character = DPR_George
+			promote_leader = yes
+			country_leader = {
+				ideology = absolutism
+				expire = "2077.3.1.1"
+				#traits = {  }
+			}
+		}
 	}
 }
 
+# івент про коронацію Ростіслава Романова імператором всеросійським
 country_event = {
 	id = gir.32
 	title = gir.32.t
 	desc = gir.32.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.32.a
+		FOP_change_political_system_monarchy = yes
 	}
 }
 
+#івент про проголошення про відмову від притензій на землі рф імператором Ростіславом (текст документу, можна скорочено з вирізаними моментами)
 country_event = {
 	id = gir.33
 	title = gir.33.t
 	desc = gir.33.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.33.a
+		set_cosmetic_tag = DPR_rostislav
 	}
 }
 
+# івент про початок суперництва гіркіна та ростіслава
 country_event = {
 	id = gir.34
 	title = gir.34.t
 	desc = gir.34.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.34.a
+		set_power_balance = {
+			id = DPR_liberalization_bop
+			left_side = DPR_rostislav_side
+			right_side = DPR_strelkov_side
+		}
 	}
 }
 
+# івент про позбавлення гіркіна посади прем'єра ростіславом як наслідок внутрішньої боротьби та передача йому повноважень головнокомандуючого
 country_event = {
 	id = gir.35
 	title = gir.35.t
 	desc = gir.35.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.35.a
+		set_country_flag = DPR_path_constitutionalist_rostislav
+		mark_focus_tree_layout_dirty = yes
+		
+		remove_advisor_role = {
+			character = DPR_Girkin
+			slot = head_of_government
+		}
 	}
 }
 
+# івент про попуск царя
 country_event = {
 	id = gir.36
 	title = gir.36.t
 	desc = gir.36.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.36.a
+		set_country_flag = DPR_path_constitutionalist_strelkov
+		mark_focus_tree_layout_dirty = yes
 	}
 }
 
+# івент про вислання делегації рос імперії ростіслава до ООН (початок побудови міжнародних стосунків)
 country_event = {
 	id = gir.37
 	title = gir.37.t
 	desc = gir.37.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -552,11 +983,12 @@ country_event = {
 	}
 }
 
+# From ORIH, "Echoes of Freedom" (gir.98)
 country_event = {
 	id = gir.38
 	title = gir.38.t
 	desc = gir.38.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -566,25 +998,28 @@ country_event = {
 	}
 }
 
+# івент про офіційне перейняття рос імперією ростіка українського крісла при ООН
 country_event = {
 	id = gir.39
 	title = gir.39.t
 	desc = gir.39.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.39.a
+		set_country_flag = eu_recognized_state
 	}
 }
 
+# Election Cycle .1, inspiration: (gir.99)
 country_event = {
 	id = gir.40
 	title = gir.40.t
 	desc = gir.40.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -594,11 +1029,57 @@ country_event = {
 	}
 }
 
+# Election Cycle .2
+country_event = {
+	id = gir.401
+	title = gir.401.t
+	desc = gir.401.d
+	
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.401.a
+	}
+}
+
+# Election Cycle .3
+country_event = {
+	id = gir.402
+	title = gir.402.t
+	desc = gir.402.d
+	
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.402.a
+	}
+}
+
+# Election Cycle .4
+country_event = {
+	id = gir.403
+	title = gir.403.t
+	desc = gir.403.d
+	
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.403.a
+	}
+}
+
+# NEW EVENT, inspiration: (gir.100)
 country_event = {
 	id = gir.41
 	title = gir.41.t
 	desc = gir.41.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -608,11 +1089,12 @@ country_event = {
 	}
 }
 
+# From ORIH, "The first meeting of the Verkhovna Duma" (gir.101)
 country_event = {
 	id = gir.42
 	title = gir.42.t
 	desc = gir.42.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -622,11 +1104,12 @@ country_event = {
 	}
 }
 
+# From ORIH, "Liberal empire" (gir.102)
 country_event = {
 	id = gir.43
 	title = gir.43.t
 	desc = gir.43.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -636,11 +1119,12 @@ country_event = {
 	}
 }
 
+# From ORIH, "The most important student" (gir.103)
 country_event = {
 	id = gir.44
 	title = gir.44.t
 	desc = gir.44.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -650,39 +1134,44 @@ country_event = {
 	}
 }
 
+# івент про промову Гіркіна українською
 country_event = {
 	id = gir.45
 	title = gir.45.t
 	desc = gir.45.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.45.a
+		add_political_power = 15
 	}
 }
 
+# фінальний івент до гілки Ростіслава, розсипати бази про те як він об'єднав всі народи на теренах України та як зміг об'єднати Україну (свою імперію) з Заходом
 country_event = {
 	id = gir.46
 	title = gir.46.t
 	desc = gir.46.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.46.a
+		set_country_flag = FOP_Ending_Screen_Visible
 	}
 }
 
+# івент про те як гіркін з колєгами забирають в царя Ростіка "скучну роботу" у вигляді багатьох адміністративних повноважень (він клює на лоха)
 country_event = {
 	id = gir.47
 	title = gir.47.t
 	desc = gir.47.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -692,11 +1181,12 @@ country_event = {
 	}
 }
 
+# From ORIH, "The Collegium meeting" (gir.90)
 country_event = {
 	id = gir.48
 	title = gir.48.t
 	desc = gir.48.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -706,25 +1196,29 @@ country_event = {
 	}
 }
 
+# івент про розстріл антиокупаційної демонстрації українців у Львові/Києві (на вибір) гіркінськими військами
 country_event = {
 	id = gir.49
 	title = gir.49.t
 	desc = gir.49.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.49.a
+		add_manpower = -500
+		add_stability = -0.04
 	}
 }
 
+# івент про написання антиурядової пісні на основі тієї з "Голодних Ігор" й про коротку реакцію уряду в стилі "от хохли дебіли, заборонити нахуй"
 country_event = {
 	id = gir.50
 	title = gir.50.t
 	desc = gir.50.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -734,11 +1228,12 @@ country_event = {
 	}
 }
 
+# From ORIH, "Terrible evening" (gir.104)
 country_event = {
 	id = gir.51
 	title = gir.51.t
 	desc = gir.51.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -748,11 +1243,12 @@ country_event = {
 	}
 }
 
+# From ORIH, "Liquidation of a Ukrainian agitation cell" (gir.91)
 country_event = {
 	id = gir.52
 	title = gir.52.t
 	desc = gir.52.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -762,53 +1258,64 @@ country_event = {
 	}
 }
 
+# івент про повну перемогою білого руху та гіркіна над ростіком й іншими й те що Гіркін побудує державу зі своїм культом
 country_event = {
 	id = gir.53
 	title = gir.53.t
 	desc = gir.53.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.53.a
+		set_country_flag = FOP_Ending_Screen_Visible
 	}
 }
 
+# івент про коронацію Марії Романової імператрицею всеросійською
 country_event = {
 	id = gir.54
 	title = gir.54.t
 	desc = gir.54.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.54.a
+		FOP_change_political_system_monarchy = yes
 	}
 }
 
+# івент про напружені відносини Марії та її сина Григорія
 country_event = {
 	id = gir.55
 	title = gir.55.t
 	desc = gir.55.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.55.a
+		set_power_balance = {
+			id = DPR_family_bop
+			left_side = DPR_maria_side
+			right_side = DPR_george_side
+		}
 	}
 }
 
+# івент про промову Машки адресованої всьому світові що рашн емпайр іс соу бек
 country_event = {
 	id = gir.56
 	title = gir.56.t
 	desc = gir.56.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -818,11 +1325,12 @@ country_event = {
 	}
 }
 
+# івент про те як гіркіна попускає Машка і він стає звичайним генералом
 country_event = {
 	id = gir.57
 	title = gir.57.t
 	desc = gir.57.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -832,53 +1340,68 @@ country_event = {
 	}
 }
 
+# івент про штурм головної резиденції ровс спецназом, заборону організації та ліквідацію Іванова з прибічниками
 country_event = {
 	id = gir.58
 	title = gir.58.t
 	desc = gir.58.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.58.a
+		retire_character = DNR_Ivanov
+		add_manpower = -100
 	}
 }
 
+# івент про тріумф матері
 country_event = {
 	id = gir.59
 	title = gir.59.t
 	desc = gir.59.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.59.a
+		set_country_flag = DPR_path_absolutist_maria
+		mark_focus_tree_layout_dirty = yes
 	}
 }
 
+# івент про вбивсто Машки сином
 country_event = {
 	id = gir.60
 	title = gir.60.t
 	desc = gir.60.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.60.a
+		kill_country_leader = yes
+		set_politics = {
+			ruling_party = authoritarianism
+			elections_allowed = no
+		}
+		set_country_flag = DPR_path_absolutist_george
+		mark_focus_tree_layout_dirty = yes
 	}
 }
 
+# івент про відновлення соціальних станів періодну імперії
 country_event = {
 	id = gir.61
 	title = gir.61.t
 	desc = gir.61.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -888,25 +1411,28 @@ country_event = {
 	}
 }
 
+# фінальний івент матері Марії
 country_event = {
 	id = gir.62
 	title = gir.62.t
 	desc = gir.62.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.62.a
+		set_country_flag = FOP_Ending_Screen_Visible
 	}
 }
 
+# івент про коронацію Георгія Романова імператором після смерті матері
 country_event = {
 	id = gir.63
 	title = gir.63.t
 	desc = gir.63.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -916,11 +1442,12 @@ country_event = {
 	}
 }
 
+# івент про полювання на про-мамкінських поців в уряді силами Георгія
 country_event = {
 	id = gir.64
 	title = gir.64.t
 	desc = gir.64.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -930,11 +1457,12 @@ country_event = {
 	}
 }
 
+# івент про повне очищення ім‘я та «совісті» Георгія після вбивства матері та успішного знищення своїх супротивників
 country_event = {
 	id = gir.65
 	title = gir.65.t
 	desc = gir.65.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -944,11 +1472,12 @@ country_event = {
 	}
 }
 
+# івент про геноцид козацьких полків та генералітету
 country_event = {
 	id = gir.66
 	title = gir.66.t
 	desc = gir.66.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -958,25 +1487,28 @@ country_event = {
 	}
 }
 
+# фінальний івент до Георгія
 country_event = {
 	id = gir.67
 	title = gir.67.t
 	desc = gir.67.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.67.a
+		set_country_flag = FOP_Ending_Screen_Visible
 	}
 }
 
+# івент про заперечення укр ідентичності
 country_event = {
 	id = gir.68
 	title = gir.68.t
 	desc = gir.68.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -986,11 +1518,12 @@ country_event = {
 	}
 }
 
+# новосний івент про війну імперії та рф
 country_event = {
 	id = gir.69
 	title = gir.69.t
 	desc = gir.69.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -1000,25 +1533,39 @@ country_event = {
 	}
 }
 
+# івент про промову монарха
 country_event = {
 	id = gir.70
 	title = gir.70.t
-	desc = gir.70.d
-	picture = none
+	desc = {
+		text = gir.70.d.a
+		trigger = {
+			has_country_leader = DPR_Maria
+		}
+	}
+	desc = {
+		text = gir.70.d.b
+		trigger = {
+			has_country_leader = DPR_George
+		}
+	}
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.70.a
+		set_cosmetic_tag = DPR_imperial
 	}
 }
 
+# івент про початок війни імперців з рашкою
 country_event = {
 	id = gir.71
 	title = gir.71.t
 	desc = gir.71.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -1028,39 +1575,63 @@ country_event = {
 	}
 }
 
+# івент про триумфальну перемогу імперців проти хуйла
 country_event = {
 	id = gir.72
 	title = gir.72.t
 	desc = gir.72.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.72.a
+		set_country_flag = FOP_Ending_Screen_Visible
 	}
 }
 
+# івент про коронацію на імператора в соборі василія блаженного
 country_event = {
 	id = gir.73
 	title = gir.73.t
-	desc = gir.73.d
-	picture = none
+	desc = {
+		text = gir.73.d.a
+		trigger = {
+			has_country_leader = DPR_Maria
+		}
+	}
+	desc = {
+		text = gir.73.d.b
+		trigger = {
+			has_country_leader = DPR_George
+		}
+	}
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.73.a
+		trigger = {
+			has_country_leader = DPR_Maria
+		}
+	}
+	option = {
+		name = gir.73.b
+		trigger = {
+			has_country_leader = DPR_George
+		}
 	}
 }
 
+# івент про активність анти-монархічних рухів після перемоги над Рашкою
 country_event = {
 	id = gir.74
 	title = gir.74.t
 	desc = gir.74.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -1070,11 +1641,12 @@ country_event = {
 	}
 }
 
+# івент про оголошення плани захопити Балтію, Фінляндію та Польщу, оголосити війну НАТО та битись до конца
 country_event = {
 	id = gir.75
 	title = gir.75.t
 	desc = gir.75.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -1084,11 +1656,12 @@ country_event = {
 	}
 }
 
+# івент про втілення імперських амбіцій рашки з завоюванням Центральної Азії, Кавказу, Балтії, Фінляндії, та Польщі
 country_event = {
 	id = gir.76
 	title = gir.76.t
 	desc = gir.76.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -1098,11 +1671,12 @@ country_event = {
 	}
 }
 
+# івент для економічної гілки коли імперці завойовують Україну (буде для Ростіка й машки) й про можливості цієї землі
 country_event = {
 	id = gir.77
 	title = gir.77.t
 	desc = gir.77.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -1112,11 +1686,12 @@ country_event = {
 	}
 }
 
+# gir.85
 country_event = {
 	id = gir.78
 	title = gir.78.t
 	desc = gir.78.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -1124,13 +1699,18 @@ country_event = {
 	option = {
 		name = gir.78.a
 	}
+
+	option = {
+		name = gir.78.b
+	}
 }
 
+# gir.83
 country_event = {
 	id = gir.79
 	title = gir.79.t
 	desc = gir.79.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -1140,16 +1720,31 @@ country_event = {
 	}
 }
 
+# gir.84
 country_event = {
 	id = gir.80
 	title = gir.80.t
 	desc = gir.80.d
-	picture = none
+	
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = gir.80.a
+	}
+}
+
+# WE ARE OLES BUZINAAAAAAAAAAAAAAAAAAA
+country_event = {
+	id = gir.81
+	title = gir.81.t
+	desc = gir.81.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = gir.81.a
 	}
 }

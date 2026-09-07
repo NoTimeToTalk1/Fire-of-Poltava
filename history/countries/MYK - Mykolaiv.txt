@@ -26,16 +26,21 @@ add_ideas = {
 	fop_unemployment_subsidies_low
 	fop_women_military_assistance
 	fop_working_hours_8
+	
+	## Political System
+	fop_political_system_civilian_dictatorship
 }
 
 # Starting tech
-set_technology = {
+set_technology = { basic_train = 1
 	infantry_weapons = 1
 	infantry_weapons1 = 1
 	support_weapons = 1
     army_uniform = 1
     command_and_control = 1
     night_vision = 1
+	infantry_at1 = 1
+	infantry_aa1 = 1
 	
 	tech_support = 1
 	tech_engineers = 1
@@ -54,9 +59,31 @@ set_technology = {
     utility_vehicle1 = 1
 	armored_car1 = 1
 	AFV = 1
-    MBT1 = 1
     IFV1 = 1
     APC1 = 1
+
+	basic_machine_tools = 1
+	electronic_mechanical_engineering = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = { basic_train = 1
+		MBT0_chassis = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "No Step Back"
+		}
+	}
+	set_technology = { basic_train = 1
+		MBT1 = 1
+	}
 }
 
 set_politics = {
@@ -88,6 +115,14 @@ recruit_character = MYK_Kim
 ### Marshals and Generals ###
 recruit_character = MYK_Marchenko
 recruit_character = MYK_Markus
+recruit_character = MYK_Chaplenko
+recruit_character = MYK_Chibineev
+recruit_character = MYK_Tonenchuk
+recruit_character = MYK_Makukha
+recruit_character = MYK_Vitek
+recruit_character = MYK_Orlyuk
+recruit_character = MYK_Kolodiy
+recruit_character = MYK_Delyatitsky
 
 ### Admirals ###
 recruit_character = MYK_Hayduk

@@ -1,0 +1,38 @@
+###############################################
+# Новинна подія — відкриття чорного ринку
+# events/WL_black_market_events.txt
+###############################################
+
+add_namespace = WL_black_market_news
+
+country_event = {
+    id = WL_black_market_news.1
+    title = WL_black_market_news.1.t
+    desc = WL_black_market_news.1.d
+    picture = GFX_news_event_ukr_black_market
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = WL_black_market_news.1.a
+        custom_effect_tooltip = WL_bm_init_tooltip
+		WL_black_market_init = yes
+    }
+}
+
+country_event = {
+    id = WL_black_market_news.2
+    title = WL_black_market_news.2.t
+    desc = WL_black_market_news.2.d
+    picture = GFX_news_event_ukr_black_market
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = WL_black_market_news.2.a
+		WL_bm_upgrade_to_tier2 = yes
+    }
+}
+

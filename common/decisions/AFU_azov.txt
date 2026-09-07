@@ -78,7 +78,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_jesus_azov
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -143,7 +143,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_jesus_azov
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -202,7 +202,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_jesus_azov
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -443,7 +443,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_pcu5
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -492,7 +492,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_pcu
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -533,7 +533,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_pcu
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -567,7 +567,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_pcu
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -611,7 +611,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_pcu
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -655,7 +655,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_upcmp
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -702,7 +702,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_pcu2
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -789,7 +789,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_pcu3
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -853,7 +853,7 @@ AFU_azov_church_politics_category = {
 		icon = GFX_decision_pcu4
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
@@ -921,18 +921,11 @@ AFU_azov_church_politics_category = {
 				has_state_flag = upc_mp_activity
 			}
 		}
-		cost = 5
+		cost = 20
 		fire_only_once = yes
 		days_remove = 20
 		modifier = {
 			resistance_activity = 0.2
-		}
-		visible = {
-			FROM = {
-				NOT = {
-					is_core_of = ROOT
-				}
-			}
 		}
 		ai_will_do = {
 			base = 15
@@ -970,18 +963,11 @@ AFU_azov_church_politics_category = {
 			}
 		}
 		icon = GFX_decision_noupcmp
-		cost = 10
+		cost = 40
 		fire_only_once = yes
 		days_remove = 20
 		modifier = {
 			resistance_activity = 0.5
-		}
-		visible = {
-			FROM = {
-				NOT = {
-					is_core_of = ROOT
-				}
-			}
 		}
 		ai_will_do = {
 			base = 15
@@ -1011,13 +997,13 @@ AFU_azov_raising_loyalty_category = {
 		icon = GFX_decision_generic_decision
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 20		
 		}
 		
 		available = {
 			AFU = {
 				any_unit_leader = {		
-					has_trait = Doubtfully_loyal_commander
+					has_trait = Doubtfully_loyal
 				}
 			}
 		}
@@ -1025,7 +1011,7 @@ AFU_azov_raising_loyalty_category = {
 		visible = {
 			AFU = {
 				any_army_leader = {		
-					has_trait = Doubtfully_loyal_commander
+					has_trait = Doubtfully_loyal
 				}
 			}
 		}
@@ -1039,9 +1025,9 @@ AFU_azov_raising_loyalty_category = {
 			add_command_power = 5
 			random_unit_leader = {
 				limit = {
-					has_trait = Doubtfully_loyal_commander
+					has_trait = Doubtfully_loyal
 				}
-				remove_unit_leader_trait = Doubtfully_loyal_commander
+				remove_unit_leader_trait = Doubtfully_loyal
 			}
 		}
 	}
@@ -1054,7 +1040,13 @@ AFU_azov_stabilization_category = {
 		icon = GFX_decision_generic_decision
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 180
+			modifier = {
+				add = -170
+				NOT = {
+					has_ideas = AFU_azov_huge_resistance_3
+				}
+			}		
 		}
 		
 		available = {
@@ -1067,12 +1059,12 @@ AFU_azov_stabilization_category = {
 		
 		cost = 25
 		
-		days_remove = 20
+		days_remove = 14
 
 
 		remove_effect  = {
-		add_stability = 0.05
-		add_manpower = 50
+			add_stability = 0.02
+			add_manpower = 50
 		}
 	}
 AFU_call_military_patrols_decision_2 = {
@@ -1080,25 +1072,32 @@ AFU_call_military_patrols_decision_2 = {
 		icon = GFX_decision_generic_decision
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 200
+			modifier = {
+				add = -190
+				NOT = {
+					has_ideas = AFU_azov_huge_resistance_1
+					has_ideas = AFU_azov_huge_resistance_2
+				}
+			}		
 		}
 		
 		available = {
-		original_tag = AFU
+			original_tag = AFU
 		}
 
 		visible = {
-        original_tag = AFU
+        	original_tag = AFU
 		}
 		
 		cost = 35
 		
-		days_remove = 20
+		days_remove = 14
 
 
 		remove_effect  = {
-		add_stability = 0.07
-		add_manpower = 75
+			add_stability = 0.05
+			add_manpower = 75
 		}
 	}
 	
@@ -1107,25 +1106,31 @@ AFU_call_military_patrols_decision_3 = {
 		icon = GFX_decision_generic_decision
 		
 		ai_will_do = {	
-			factor = 20		
+			base = 210
+			modifier = {
+				add = -200
+				NOT = {
+					has_ideas = AFU_azov_huge_resistance_1
+				}
+			}		
 		}
 		
 		available = {
-		original_tag = AFU
+			original_tag = AFU
 		}
 
 		visible = {
-        original_tag = AFU
+        	original_tag = AFU
 		}
 		
-		cost = 50
+		cost = 45
 		
-		days_remove = 20
+		days_remove = 14
 
 
 		remove_effect  = {
-		add_stability = 0.1
-		add_manpower = 100
+			add_stability = 0.08
+			add_manpower = 100
 		}
 	}
 
@@ -2067,6 +2072,7 @@ has_country_flag = azov_decision_activate
 	}
 }
 
+### FIX THIS FUCKING SHITHOLE PLEASE, FUCKING HELL
 AFU_azov_renamings_category = {
 
 	azov_renaming_decisions_2308 = {
@@ -2534,255 +2540,6 @@ AFU_azov_renamings_category = {
 		hidden_effect = {
 		country_event = { id = azov.51 }
 		}
-		}
-	}
-}
-
-AFU_azov_rvc_category = {
-
-	AFU_rdk_war_decision = {
-		icon = GFX_decision_rdk
-		
-		cost = 50
-		ai_will_do = {
-			factor = 50
-		}
-		
-		available = {
-			has_completed_focus = AFU_invite_russian_far_rights	   
-		}
-		
-		fire_only_once = yes
-
-		visible = {
-			AND = {
-				has_completed_focus = AFU_invite_russian_far_rights
-				AFU = { has_war_with = RUS }
-			}
-		}
-		
-
-		complete_effect = {
-			country_event = rdk.1
-		}
-	}
-
-	AFU_rdk_1_decision = {
-
-		icon = GFX_decision_rdk
-		
-		ai_will_do = {	
-			factor = 50	
-		}
-		
-		available = {
-			has_completed_focus = AFU_invite_russian_far_rights	
-		}
-
-		visible = {
-			has_completed_focus = AFU_invite_russian_far_rights	
-		}
-		
-		cost = 50
-
-		
-		days_remove = 180
-
-		complete_effect = {
-			add_to_variable = {
-				var = AFU_rdk
-				value = 50
-				tooltip = AFU_rdk_tt
-			}
-		}
-	}
-	AFU_rdk_2_decision = {
-
-		icon = GFX_decision_rdk
-		
-		ai_will_do = {
-			factor = 50
-		}
-		
-		available = {
-			check_variable = {
-				AFU_rdk_media > 3
-			}
-			has_completed_focus = AFU_invite_russian_far_rights
-		}
-
-		visible = {
-			has_completed_focus = AFU_invite_russian_far_rights
-			check_variable = {
-				AFU_rdk_media > 3
-			}
-		}
-		
-		cost = 50
-
-		
-		days_remove = 180
-
-		complete_effect = {
-			add_to_variable = {
-				var = AFU_rdk
-				value = 100
-				tooltip = AFU_rdk_tt
-			}
-		}
-	}
-	AFU_rdk_eq_1_decision = {
-
-		icon = GFX_decision_rdk
-		
-		ai_will_do = {
-			factor = 50
-		}
-		
-		available = {
-			has_completed_focus = AFU_invite_russian_far_rights
-		}
-
-		visible = {
-			has_completed_focus = AFU_invite_russian_far_rights
-		}
-		
-		cost = 50
-		days_remove = 180
-
-		complete_effect = {
-			add_to_variable = {
-				var = AFU_rdk_eq
-				value = 1
-				tooltip = AFU_rdk_eq_tt
-			}
-			clamp_variable = {
-				var = AFU_rdk_eq
-				min = 0
-				max = 5
-			}
-		}
-	}
-	AFU_rdk_contact_nswp_decision = {
-		icon = GFX_decision_nswp
-		
-		ai_will_do = {
-			factor = 50
-		}
-		
-		available = {
-			has_completed_focus = AFU_invite_russian_far_rights
-		}
-
-		visible = {
-			has_completed_focus = AFU_invite_russian_far_rights
-		}
-		
-		cost = 100
-
-		
-		days_remove = 60
-		
-		fire_only_once = yes
-
-		remove_effect  = {
-			hidden_effect = {
-				set_country_flag = contact_with_nswp
-			}
-		}
-	}
-	AFU_rdk_nswp_operation_decision = {
-		icon = GFX_decision_nswp
-		
-		ai_will_do = {
-			factor = 50
-		}
-		
-		available = {
-			has_country_flag = contact_with_nswp
-		}
-
-		visible = {
-			has_country_flag = contact_with_nswp
-		}
-		
-		cost = 100
-		days_remove = 60
-
-		remove_effect = {
-			random_list = {
-				60 = {
-					RUS = {
-						add_stability = -0.01
-						add_manpower = -10
-					}
-				}
-				30 = {
-					RUS = {
-						add_stability = -0.03
-						add_manpower = -25
-					}
-				}
-				10 = {
-					RUS = {
-						add_stability = -0.05
-						add_manpower = -30
-					}
-				}
-			}
-		}
-	}
-	AFU_rdk_nswp_invite_members_decision = {
-		icon = GFX_decision_nswp
-		
-		ai_will_do = {
-			factor = 50
-		}
-		
-		available = {
-			has_country_flag = contact_with_nswp
-		}
-
-		visible = {
-			has_country_flag = contact_with_nswp
-		}
-		
-		cost = 100
-		days_remove = 60
-		
-		remove_effect  = {
-			random_list = {
-				60 = {
-					add_to_variable = {
-						var = AFU_rdk
-						value = 10
-						tooltip = AFU_rdk_tt
-					}
-					RUS = {
-						add_manpower = -10
-					}
-				}
-				30 = {
-					add_to_variable = {
-						var = AFU_rdk
-						value = 25
-						tooltip = AFU_rdk_tt
-					}
-					RUS = {
-						add_manpower = -25
-					}
-				}
-				10 = {
-					add_to_variable = {
-						var = AFU_rdk
-						value = 30
-						tooltip = AFU_rdk_tt
-					}
-					RUS = {
-						add_manpower = -30
-					}
-				}
-			}
 		}
 	}
 }

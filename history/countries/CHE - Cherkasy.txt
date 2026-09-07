@@ -6,8 +6,6 @@ set_convoys = 0
 set_stability = 0.5
 set_war_support = 0.5
 
-set_research_slots = 0
-
 add_ideas = {
 	## NatSpirits
 	CHE_allies_in_the_west
@@ -26,16 +24,21 @@ add_ideas = {
 	fop_unemployment_subsidies_low
 	fop_women_military_assistance
 	fop_working_hours_8
+	
+	## Political System
+	fop_political_system_provisional_government
 }
 
 # Starting tech
-set_technology = {
+set_technology = { basic_train = 1
 	infantry_weapons = 1
 	infantry_weapons1 = 1
 	support_weapons = 1
     army_uniform = 1
     command_and_control = 1
     night_vision = 1
+	infantry_at1 = 1
+	infantry_aa1 = 1
 	
 	tech_support = 1
 	tech_engineers = 1
@@ -54,9 +57,31 @@ set_technology = {
     utility_vehicle1 = 1
 	armored_car1 = 1
 	AFV = 1
-    MBT1 = 1
     IFV1 = 1
     APC1 = 1
+
+	basic_machine_tools = 1
+	electronic_mechanical_engineering = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = { basic_train = 1
+		MBT0_chassis = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "No Step Back"
+		}
+	}
+	set_technology = { basic_train = 1
+		MBT1 = 1
+	}
 }
 
 set_politics = {
@@ -96,11 +121,3 @@ recruit_character = CHE_Lichman
 ### Admirals ###
 
 ### Advisors ###
-recruit_character = CHE_Bondarenko
-recruit_character = CHE_cherv
-recruit_character = CHE_kup
-recruit_character = CHE_moroz
-recruit_character = CHE_rad
-recruit_character = CHE_seminoga
-recruit_character = CHE_yak
-recruit_character = CHE_yarik

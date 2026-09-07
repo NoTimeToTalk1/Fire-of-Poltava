@@ -1,0 +1,131 @@
+add_namespace = rus_trade
+
+country_event = {
+    id = rus_trade.2
+    hidden = yes
+    is_triggered_only = yes
+
+    immediate = {
+	AFU = {
+            country_event = {
+                id = rus_trade.1
+                days = 1
+                random_days = 7
+            }	
+	
+	}
+        every_country = {
+            limit = {
+                is_pro_ukrainian = yes
+            }
+
+            country_event = {
+                id = rus_trade.1
+                days = 1
+                random_days = 7
+            }
+        }
+    }
+}
+
+country_event = {
+	id = rus_trade.1
+	title = rus_trade.1.t
+	desc = rus_trade.1.d
+	picture = GFX_event_rus_trade
+
+	is_triggered_only = yes
+	
+	immediate = {
+	hidden_effect = {
+		DPR = {
+			send_embargo = ROOT
+		}
+		LPR = {
+			send_embargo = ROOT
+		}
+		KIR = {
+			send_embargo = ROOT
+		}		
+	}
+}
+
+	option = {
+		name = rus_trade.1.a
+
+		set_country_flag = russian_trade_decided
+
+		RUS = {
+			send_embargo = ROOT
+		}
+
+		add_political_power = 35
+		
+		ai_chance = {
+			base = 30
+
+			modifier = {
+				factor = 20
+				has_government = ultranationalism
+			}
+			
+			modifier = {
+				factor = 15
+				has_government = national_democracy
+			}
+
+			modifier = {
+				factor = 0.15
+				has_government = oligarchism
+			}
+
+			modifier = {
+				factor = 0.3
+				has_idea = fop_commercial_policy_free_trade
+			}
+		}
+	}
+
+	option = {
+		name = rus_trade.1.b
+
+		set_country_flag = russian_trade_decided
+		
+		add_stability = -0.2
+		add_war_support = -0.1
+		add_popularity = {
+			ideology = oligarchism
+			popularity = 0.02
+		}
+
+		ai_chance = {
+			base = 5
+
+			modifier = {
+				factor = 10
+				has_government = oligarchism
+			}
+
+			modifier = {
+				factor = 0
+				original_tag = AFU
+			}
+
+			modifier = {
+				factor = 5
+				has_idea = fop_commercial_policy_free_trade
+			}
+
+			modifier = {
+				factor = 0.1
+				has_government = ultranationalism
+			}
+
+			modifier = {
+				factor = 0.25
+				has_government = national_democracy
+			}
+		}
+
+	}
+}

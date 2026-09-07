@@ -26,9 +26,7 @@
 		prerequisite = { focus = AFU_on_our_own }
 
 		completion_reward = {
-			add_ideas = {
-				AFU_state_of_emergency
-			}
+			add_stability = -0.05
 			add_war_support = 0.05
 		}
 	}
@@ -173,6 +171,10 @@
 		cost = 2
 		prerequisite = { focus = AFU_assessing_the_situation }
 
+		ai_will_do = {
+			base = 100
+		}
+
 		completion_reward = {
 			unlock_decision_category_tooltip = afu_mobilization_category
 		}
@@ -189,6 +191,10 @@
 
 		cost = 3
 		prerequisite = { focus = AFU_mobilize_our_forces }
+
+		ai_will_do = {
+			base = 100
+		}
 
 		completion_reward = { 
 			country_event = afu.13
@@ -245,6 +251,9 @@
 
 		completion_reward = {
 			country_event = afu.14
+			set_technology = {
+				afu_special_forces = 1
+			}
 		}
 	}
 
@@ -276,11 +285,14 @@
 		y = 1
 
 		cost = 1
-		prerequisite = { focus = AFU_enhanced_training focus = AFU_rely_on_militias }
+		prerequisite = { focus = AFU_rely_on_militias }
 		mutually_exclusive = { focus = AFU_sideline_the_far_right_elements }
 
 		completion_reward = {
 			custom_effect_tooltip = fop_azov_blind_eye_tt
+			hidden_effect = {
+				country_event = afu.16
+			}
 		}
 	}
 
@@ -319,12 +331,11 @@
 		y = 1
 
 		cost = 5
-		prerequisite = { focus = AFU_sideline_the_far_right_elements }
+		prerequisite = { focus = AFU_turn_a_blind_eye_to_far_right_elements focus = AFU_sideline_the_far_right_elements }
         prerequisite = { focus = AFU_reform_the_general_staff }
 
 		completion_reward = {
 			add_ideas = AFU_ready_military
-			add_ideas = fop_military_professionalism_professional_army
 		}
     }
 
@@ -507,6 +518,10 @@
 				idea = AFU_harsh_quotas
 				days = 180
 			}
+			FOP_change_pensions_no = yes
+			FOP_change_unemployment_subsidies_no = yes
+			FOP_change_working_hours_10 = yes
+			add_ideas = fop_forced_labour_penal_labour
 		}
     }
 
@@ -523,9 +538,15 @@
 		prerequisite = { focus = AFU_harshen_the_quotas }
 
 		completion_reward = {
+			FOP_administrative_efficiency_progress = yes
+			add_to_variable = {
+				var = FOP_administrative_efficiency_var
+				value = 10
+				tooltip = add_administrative_efficiency_var_tt
+			}
 			swap_ideas = {
-				remove_idea = AFU_disorganised_administration
-				add_idea = AFU_millitary_administration
+				remove_idea = AFU_disorganized_administration
+				add_idea = AFU_military_administration
 			}
 		}
 	}
@@ -546,6 +567,8 @@
 		completion_reward = {
 			add_political_power = -25
 			remove_ideas = AFU_strikes
+			
+			custom_effect_tooltip = afu_AFU_promise_reforms_tt
 		}
     }
 
@@ -565,6 +588,8 @@
 		completion_reward = {
 			add_political_power = -125
 			remove_ideas = AFU_strikes
+			
+			custom_effect_tooltip = afu_AFU_crackdown_on_dissent_tt
 		}
     }
 
@@ -586,9 +611,11 @@
 		}
 
 		completion_reward = {
-			add_political_power = 100
 			news_event = newsfop.4
 			country_event = afu.10
+			hidden_effect = {
+				set_political_power = 100
+			}
 		}
 
 		allow_branch = {
@@ -650,6 +677,45 @@
 				ideology = communism
 				popularity = -0.02
 			}
+			custom_effect_tooltip = AFU_renaming_tt
+			hidden_effect = {
+				set_province_name = { id = 1709 name = VICTORY_POINTS_1709_UKR }
+				set_province_name = { id = 19852 name = VICTORY_POINTS_19852_UKR }
+				set_province_name = { id = 7322 name = VICTORY_POINTS_7322_UKR }
+				set_province_name = { id = 1589 name = VICTORY_POINTS_1589_UKR }
+				set_province_name = { id = 3026 name = VICTORY_POINTS_3026_UKR }
+				set_province_name = { id = 10 name = VICTORY_POINTS_10_UKR }
+				set_province_name = { id = 813 name = VICTORY_POINTS_813_UKR }
+				set_province_name = { id = 9256 name = VICTORY_POINTS_9256_UKR }
+				set_province_name = { id = 13451 name = VICTORY_POINTS_13451_UKR }
+				set_province_name = { id = 9235 name = VICTORY_POINTS_9235_UKR }
+				set_province_name = { id = 8896 name = VICTORY_POINTS_8896_UKR }
+				set_province_name = { id = 13509 name = VICTORY_POINTS_13509_UKR }
+				set_province_name = { id = 9685 name = VICTORY_POINTS_9685_UKR }
+				set_province_name = { id = 13565 name = VICTORY_POINTS_13565_UKR }
+				set_province_name = { id = 13622 name = VICTORY_POINTS_13622_UKR }
+				set_province_name = { id = 13498 name = VICTORY_POINTS_13498_UKR }
+				set_province_name = { id = 13798 name = VICTORY_POINTS_13798_UKR }
+				set_province_name = { id = 8754 name = VICTORY_POINTS_8754_UKR }
+				set_province_name = { id = 13516 name = VICTORY_POINTS_13516_UKR }
+				set_province_name = { id = 8565 name = VICTORY_POINTS_8565_UKR }
+				set_province_name = { id = 6999 name = VICTORY_POINTS_6999_UKR }
+				set_province_name = { id = 13463 name = VICTORY_POINTS_13463_UKR }
+				set_province_name = { id = 9143 name = VICTORY_POINTS_9143_UKR }
+				set_province_name = { id = 13499 name = VICTORY_POINTS_13499_UKR }
+				set_province_name = { id = 771 name = VICTORY_POINTS_771_UKR }
+				set_province_name = { id = 6189 name = VICTORY_POINTS_6189_UKR }
+				set_province_name = { id = 1452 name = VICTORY_POINTS_1452_UKR }
+				set_province_name = { id = 9681 name = VICTORY_POINTS_9681_UKR }
+				set_province_name = { id = 7093 name = VICTORY_POINTS_7093_UKR }
+				set_province_name = { id = 6474 name = VICTORY_POINTS_6474_UKR }
+				set_province_name = { id = 3460 name = VICTORY_POINTS_3460_UKR }
+				set_province_name = { id = 8139 name = VICTORY_POINTS_8139_UKR }
+				set_province_name = { id = 13407 name = VICTORY_POINTS_13407_UKR }
+				set_province_name = { id = 7189 name = VICTORY_POINTS_7189_UKR }
+				set_province_name = { id = 13361 name = VICTORY_POINTS_13361_UKR }
+				set_province_name = { id = 1363 name = VICTORY_POINTS_1363_UKR }
+			}
 		}
 	}
 
@@ -692,12 +758,6 @@
 
 		completion_reward = {
 			add_manpower = -2000
-			DNR_Pidor = {
-				retire = yes
-			}
-			LNR_Huy = {
-				retire = yes
-			}
 			add_timed_idea = {
 				idea = AFU_filtration
 				days = 60
@@ -793,6 +853,7 @@
 			add_political_power = 50
 			remove_ideas = AFU_military_administration
 			remove_ideas = AFU_martial_law
+			FOP_change_political_system_liberal_democracy = yes
 			hidden_effect = {
 				if = {
 					limit = {
@@ -830,19 +891,9 @@
 
 		completion_reward = {
 			add_political_power = 50
+			FOP_change_political_system_stratocracy = yes
 			hidden_effect = {
-				if = {
-					limit = {
-						has_completed_focus = AFU_turn_a_blind_eye_to_far_right_elements
-					}
-					country_event = {
-						id = azov.1
-						days = 7
-					}
-				}
-				else = {
-					country_event = afu.34
-				}
+				country_event = afu.34
 			}
 		}
     }

@@ -19,10 +19,15 @@ shared_focus = {
 		has_completed_focus = AFU_free_donbas
 		has_completed_focus = AFU_reshaping_the_mentality
 		has_completed_focus = AFU_hold_the_banner_high
+		KHA = { exists = yes }
 	}
 
 	completion_reward = {
 		custom_effect_tooltip = afu_azov_kha_preparations_tt
+	}
+
+	bypass = {
+		KHA = { exists = no }
 	}
 
 	allow_branch = {
@@ -30,6 +35,11 @@ shared_focus = {
 			NOT = {
 				has_government = ultranationalism
 			}
+		}
+	}
+	allow_branch = {
+		NOT = {
+			tag = DBS
 		}
 	}
 }
@@ -172,6 +182,11 @@ shared_focus = {
 			has_government = ultranationalism
 		}
 	}
+	allow_branch = {
+		NOT = {
+			tag = DBS
+		}
+	}
 }
 
 #Negotiations with Ideological Brothers
@@ -284,7 +299,10 @@ shared_focus = {
 	prerequisite = { focus = AFU_rule_of_the_far_right }
 
 	completion_reward = {
-		add_ideas = AFU_azov_keeping_up_morale
+		add_timed_idea = {
+			idea = AFU_azov_keeping_up_morale
+			days = 90
+		}
 	}
 }
 
@@ -489,7 +507,7 @@ shared_focus = {
 	cost = 2
 
 	x = 10
-	y = 2
+	y = 6
 
 	completion_reward = {
 		add_political_power = 100
@@ -503,6 +521,10 @@ shared_focus = {
 			}
 			remove_ideas = AFU_bezlad
 		}
+	}
+
+	allow_branch = {
+		tag = DBS
 	}
 }
 
@@ -930,6 +952,8 @@ shared_focus = {
 		add_manpower = 5000
 		FOP_change_women_on_the_frontline = yes
 		add_ideas = AFU_azov_legacy_of_joan_of_arc
+		activate_advisor = AFU_Kateryna_Prokopenko
+		activate_advisor = AFU_Yulia_Fedosyuk
 	}
 }
 
@@ -986,7 +1010,7 @@ shared_focus = {
 	prerequisite = { focus = AFU_europa_is_in_danger }
 
 	completion_reward = {
-		FOP_change_racial_integration_segregation = yes
+		##add some ethnic shit law idk
 		add_manpower = -1000
 	}
 }
@@ -1047,7 +1071,7 @@ shared_focus = {
 
 	completion_reward = {
 		swap_ideas = {
-			remove_idea = AFU_national_security_service
+			remove_idea = AFU_azov_national_security_service
 			add_idea = AFU_azov_national_security_service_old_1
 		}
 	}
@@ -1068,7 +1092,7 @@ shared_focus = {
 
 	completion_reward = {
 		swap_ideas = {
-			remove_idea = AFU_national_security_service
+			remove_idea = AFU_azov_national_security_service
 			add_idea = AFU_azov_national_security_service_new_1
 		}
 	}
@@ -1179,6 +1203,11 @@ shared_focus = {
 	completion_reward = {
 		country_event = azov.70
 		add_ideas = AFU_azov_azovnet
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 2
+			category = cybersecurity
+		}
 	}
 }
 
@@ -1327,13 +1356,17 @@ shared_focus = {
 	cost = 2
 
 	x = 20
-	y = 2
+	y = 15
 
 	completion_reward = {
 		add_political_power = 50
 		hidden_effect = {
 			country_event = azov.10
 		}
+	}
+
+	allow_branch = {
+		tag = LBU
 	}
 }
 
@@ -1369,6 +1402,7 @@ shared_focus = {
 
 	completion_reward = {
 		add_political_power = 25
+		activate_mission = AFU_rdk_points_trickle
 		hidden_effect = {
 			country_event = azov.9
 			set_country_flag = rvc_coop
@@ -1422,6 +1456,9 @@ shared_focus = {
 			var = AFU_rdk
 			value = 9000
 			tooltip = AFU_rdk_tt
+		}
+		hidden_effect = {
+			country_event = { id = AFU_football.4 days = 7 }
 		}
 	}
 }
@@ -1541,6 +1578,10 @@ shared_focus = {
 	completion_reward = {
 		add_manpower = 1100
 		add_command_power = 20
+		AFU_activate_football_mechanic = yes
+		hidden_effect = {
+			set_country_flag = AFU_ultras_football_open	
+		}
 	}
 }
 
@@ -1580,6 +1621,7 @@ shared_focus = {
 		custom_effect_tooltip = azov_farright_american
 		hidden_effect = {
 			load_oob = "azov_farright_american"
+			set_country_flag = AFU_brothers_from_the_new_world_flag
 		}
 	}
 }
@@ -1717,9 +1759,14 @@ shared_focus = {
 	prerequisite = { focus = AFU_for_a_national_ukraine }
 
 	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.25
+			uses = 2
+			category = construction_tech
+		}
 		swap_ideas = {
 			remove_idea = industrial_legacy
-			add_idea = AFU_azov_updated_military_industrial_complex
+			add_idea = AFU_azov_updated_military_industrial_complex_1
 		}
 	}
 }
@@ -1798,7 +1845,7 @@ shared_focus = {
 	cost = 1
 
 	x = 10
-	y = 2
+	y = 26
 
 	completion_reward = {
 		add_stability = 0.1
@@ -1808,6 +1855,10 @@ shared_focus = {
 				days = 14
 			}
 		}
+	}
+
+	allow_branch = {
+		tag = UKR
 	}
 }
 
@@ -1937,11 +1988,6 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		add_stability = 0.1
-		add_popularity = {
-			ideology = ultranationalism
-			popularity = 0.2
-		}
 		add_ideas = AFU_azov_nationalist_constitution
 		FOP_administrative_efficiency_high_improvement = yes
 		country_event = azov.66
@@ -1962,18 +2008,10 @@ shared_focus = {
 	mutually_exclusive = { focus = AFU_unite_the_right }
 
 	completion_reward = {
-		add_stability = 0.1
+		add_political_power = 50
 		add_popularity = {
 			ideology = ultranationalism
-			popularity = -0.1
-		}
-		add_popularity = {
-			ideology = traditionalism
-			popularity = 0.05
-		}
-		add_popularity = {
-			ideology = authoritarianism
-			popularity = 0.05
+			popularity = 0.1
 		}
 	}
 
@@ -1981,6 +2019,7 @@ shared_focus = {
 		has_country_leader = {
 			character = AFU_Zhorin
 		}
+		tag = UKR
 	}
 }
 
@@ -1998,18 +2037,10 @@ shared_focus = {
 	mutually_exclusive = { focus = AFU_unite_the_right }
 
 	completion_reward = {
-		add_stability = 0.1
+		add_political_power = 50
 		add_popularity = {
 			ideology = ultranationalism
-			popularity = -0.1
-		}
-		add_popularity = {
-			ideology = traditionalism
-			popularity = 0.05
-		}
-		add_popularity = {
-			ideology = authoritarianism
-			popularity = 0.05
+			popularity = 0.1
 		}
 	}
 
@@ -2017,6 +2048,7 @@ shared_focus = {
 		has_country_leader = {
 			character = PLT_Biletsky
 		}
+		tag = UKR
 	}
 }
 
@@ -2035,10 +2067,18 @@ shared_focus = {
 	mutually_exclusive = { focus = AFU_one_party_one_vision_z }
 
 	completion_reward = {
-		add_political_power = 50
+		add_stability = 0.1
 		add_popularity = {
-			ideology = ultranationalism
+			ideology = traditionalism
 			popularity = 0.1
+		}
+		add_popularity = {
+			ideology = authoritarianism
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = esotericism
+			popularity = 0.05
 		}
 	}
 }
@@ -2061,10 +2101,6 @@ shared_focus = {
 
 	completion_reward = {
 		add_war_support = 0.2
-		add_popularity = {
-			ideology = ultranationalism
-			popularity = 0.2
-		}
 		add_ideas = AFU_azov_final_fight
 	}
 }
@@ -2124,6 +2160,7 @@ shared_focus = {
 
 	allow_branch = {
 		has_country_flag = rvc_coop
+		tag = UKR
 	}
 }
 
@@ -2147,6 +2184,7 @@ shared_focus = {
 		NOT = {
 			has_country_flag = rvc_coop
 		}
+		tag = UKR
 	}
 }
 
@@ -2372,6 +2410,9 @@ shared_focus = {
 			every_country = {
 				limit = {
 					has_war_with = RUS
+					NOT = {
+						tag = UKR
+					}
 				}
 				add_ideas = AFU_help_from_azov
 			}
@@ -2526,6 +2567,11 @@ shared_focus = {
 	completion_reward = {
 		country_event = { id = azov.22 }
 		FOP_change_economic_system_corporatism = yes
+		FOP_change_political_system_natiocracy = yes
+	}
+
+	allow_branch = {
+		tag = DBS
 	}
 }
 
@@ -2542,6 +2588,11 @@ shared_focus = {
 	prerequisite = { focus = AFU_lessons_of_natiocracy }
 
 	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.25
+			uses = 1
+			category = workforce
+		}
 		add_political_power = 50
 		add_ideas = AFU_azov_new_aristocracy
 	}
@@ -2642,6 +2693,9 @@ shared_focus = {
 	prerequisite = { focus = AFU_give_oligarchs_a_fight }
 
 	completion_reward = {
+	hidden_effect = {
+			set_country_flag = AFU_azovstal
+	}
 		2093 = {
 			add_extra_state_shared_building_slots = 2
 			add_building_construction = {
@@ -2696,6 +2750,11 @@ shared_focus = {
 	prerequisite = { focus = AFU_first_national_syndicalist_congress }
 
 	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.1
+			uses = 1
+			category = workforce
+		}
 		add_popularity = {
 			ideology = ultranationalism
 			popularity = 0.1
@@ -2891,6 +2950,11 @@ shared_focus = {
 		FOP_change_economic_mobilization_war_economy = yes
 		custom_effect_tooltip = fop_economic_mobilization_early_tt
 		#Maybe like it will increase every 6 months or smth
+		add_tech_bonus = {
+			bonus = 0.3
+			uses = 1
+			category = incentive_workforce
+		}
 	}
 }
 
@@ -2934,6 +2998,11 @@ shared_focus = {
 	completion_reward = {
 		add_stability = -0.10
 		FOP_change_economic_mobilization_total = yes
+		add_tech_bonus = {
+			bonus = 0.3
+			uses = 1
+			category = mandatory_workforce
+		}
 	}
 }
 
@@ -2974,13 +3043,18 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		add_ideas = AFU_azov_natiocracy_economic_politics_1
+		add_ideas = AFU_azov_new_natiocratic_economy_1
 		random_core_state = {
 			add_building_construction = {
 				type = industrial_complex
 				level = 1
 				instant_build = yes
 			}
+		}
+		add_tech_bonus = {
+			bonus = 0.3
+			uses = 2
+			category = excavation_tech
 		}
 	}
 }
@@ -3044,7 +3118,7 @@ shared_focus = {
 
 	completion_reward = {
 		swap_ideas = {
-			remove_idea = AFU_azov_new_natiocratic_economy_2
+			remove_idea = AFU_azov_new_natiocratic_economy_1
 			add_idea = AFU_azov_new_natiocratic_economy_3
 		}
 		random_core_state = {
@@ -3102,6 +3176,10 @@ shared_focus = {
 	}
 
 	completion_reward = {
+		swap_ideas = {
+			remove_idea = AFU_azov_new_natiocratic_economy_2
+			add_idea = AFU_azov_new_natiocratic_economy_4
+		}
 		swap_ideas = {
 			remove_idea = AFU_azov_new_natiocratic_economy_3
 			add_idea = AFU_azov_new_natiocratic_economy_4

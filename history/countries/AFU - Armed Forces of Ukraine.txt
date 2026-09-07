@@ -1,9 +1,9 @@
 ﻿capital = 2095
 oob = "AFU"
 set_naval_oob = ""
-set_research_slots = 3
+set_research_slots = 4
 set_convoys = 0
-set_stability = 0.5
+set_stability = 0.4
 set_war_support = 0.5
 
 country_lock_all_division_template = yes
@@ -23,16 +23,29 @@ add_ideas = {
 	fop_supervsion_strict_rules
 	fop_press_freedom_censored
 	fop_security_regulated_police
+
+	fop_healthcare_system_public
+	fop_pensions_low
+	fop_unemployment_subsidies_low
+	fop_minimum_wage_low
+	fop_working_hours_8
+	
+	fop_administrative_efficiency_deficient_administrative_system
+	
+	## Political System
+	fop_political_system_military_dictatorship
 }
 
 # Starting tech
-set_technology = {
+set_technology = { basic_train = 1
 	infantry_weapons = 1
 	infantry_weapons1 = 1
 	support_weapons = 1
     army_uniform = 1
     command_and_control = 1
     night_vision = 1
+	infantry_at1 = 1
+	infantry_aa1 = 1
 	
 	tech_support = 1
 	tech_engineers = 1
@@ -51,9 +64,84 @@ set_technology = {
     utility_vehicle1 = 1
 	armored_car1 = 1
 	AFV = 1
-    MBT1 = 1
     IFV1 = 1
     APC1 = 1
+
+	basic_machine_tools = 1
+	electronic_mechanical_engineering = 1
+
+	basic_machine_tools = 1
+	electronic_mechanical_engineering = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	create_equipment_variant = {
+		name = "T-64"
+		type = MBT_chassis_0
+		parent_version = 0
+		model = AFU_main_battle_tank_entity
+		modules = {
+			loader_slot = manual_loading
+			main_armament_slot = tank_smoothbore_barrel_gen0
+			turret_type_slot = tank_two_man_turret
+			suspension_type_slot = tank_torsion_bar_suspension
+			armor_type_slot = tank_composite_armor_gen0
+			engine_type_slot = tank_diesel_engine_gen0
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 1
+			tank_nsb_armor_upgrade = 1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "BM 'Oplot'"
+		type = MBT_chassis_1
+		parent_version = 1
+		model = AFU_main_battle_tank_2_entity
+		modules = {
+			loader_slot = manual_loading
+			main_armament_slot = tank_smoothbore_barrel_gen1
+			turret_type_slot = tank_two_man_turret
+			suspension_type_slot = tank_torsion_bar_suspension
+			armor_type_slot = tank_composite_armor_gen0
+			engine_type_slot = tank_diesel_engine_gen0
+			special_type_slot_1 = reactive_armour
+			special_type_slot_2 = thermal_scope
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 1
+			tank_nsb_armor_upgrade = 2
+		}
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = { basic_train = 1
+		MBT0_chassis = 1
+		MBT1_chassis = 1
+		tank_diesel_engine_gen1 = 1
+		tank_steel_armor_gen1 = 1
+		tank_composite_armor_gen1 = 1
+		tank_rifled_barrel_gen1 = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "No Step Back"
+		}
+	}
+	set_technology = { basic_train = 1
+		MBT1 = 1
+	}
 }
 
 set_politics = {
@@ -102,17 +190,17 @@ set_party_name = {
 set_popularities = {
 	communism = 0
 	socialism = 0
-	social_democracy = 5
+	social_democracy = 8
 	progressivism = 0
 	centrism = 0
 	liberalism = 10
-	conservatism = 10
-	national_democracy = 10
+	conservatism = 12
+	national_democracy = 8
 	traditionalism = 0
 	authoritarianism = 40
-	ultranationalism = 10
+	ultranationalism = 8
 	esotericism = 0
-	oligarchism = 15
+	oligarchism = 14
 }
 
 ### Country Leaders ###
@@ -144,6 +232,7 @@ recruit_character = AFU_DaVinci
 recruit_character = AFU_Orest
 recruit_character = AFU_Process
 recruit_character = AFU_Esenin
+recruit_character = AFU_Oleh_Mudrak
 
 ### Admirals ###
 
@@ -184,3 +273,5 @@ recruit_character = AFU_barvinenko
 recruit_character = AFU_zubik
 recruit_character = AFU_kacuba
 recruit_character = AFU_svyatash
+recruit_character = AFU_Kateryna_Prokopenko
+recruit_character = AFU_Yulia_Fedosyuk

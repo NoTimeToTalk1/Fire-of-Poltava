@@ -13,7 +13,16 @@ world_legitimacy = {
 			NOT = {
                 has_idea = fop_press_freedom_free
             }
-		}		
+            tag_has_content = no
+		}	
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                is_pro_european = yes
+            }
+        }	
 
 		cost = 25
 
@@ -47,7 +56,16 @@ world_legitimacy = {
                     has_idea = fop_suffrage_elite
                 }
             }
-		}		
+            tag_has_content = no
+		}	
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                is_pro_european = yes
+            }
+        }	
 
 		cost = 25
 
@@ -71,7 +89,16 @@ world_legitimacy = {
 		visible = {
             has_country_flag = FOP_world_legitimacy	
 			has_idea = fop_party_system_nonpartisan
-		}		
+            tag_has_content = no
+		}
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                is_pro_european = yes
+            }
+        }		
 
 		cost = 50
 
@@ -95,7 +122,16 @@ world_legitimacy = {
 		visible = {
             has_country_flag = FOP_world_legitimacy
             has_idea = fop_ethnic_minorities_opression
-		}		
+            tag_has_content = no
+		}
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                is_pro_european = yes
+            }
+        }		
 
 		cost = 15
 
@@ -119,7 +155,16 @@ world_legitimacy = {
 		visible = {	
             has_country_flag = FOP_world_legitimacy
             has_idea = fop_sexual_minorities_compulsory_sterilization
-		}		
+            tag_has_content = no
+		}
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                is_pro_european = yes
+            }
+        }
 
 		cost = 15
 
@@ -141,7 +186,12 @@ world_legitimacy = {
 
 		visible = {	
             has_country_flag = eu_help
+            tag_has_content = no
 		}
+
+        ai_will_do = {
+            base = 100
+        }
 
         modifier = {
             consumer_goods_factor = 0.15
@@ -154,9 +204,13 @@ world_legitimacy = {
     imf_ask_for_loan = {
         visible = {
             has_country_flag = IMF_accepted
+            tag_has_content = no
         }
         modifier = {
             consumer_goods_factor = -0.1
+        }
+        ai_will_do = {
+            base = 100
         }
         days_remove = 60
         complete_effect = {
@@ -170,12 +224,21 @@ world_legitimacy = {
         days_remove = 90
         modifier = {
             consumer_goods_factor = 0.2
-            political_power_gain_factor = -0.2
+            political_power_factor = -0.2
         }
 
 		visible = {	
             has_country_flag = FOP_world_legitimacy
+            tag_has_content = no
 		}		
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                is_pro_russian = yes
+            }
+        }
 
 		cost = 30
 
@@ -195,8 +258,17 @@ world_legitimacy = {
         days_remove = 30
 
 		visible = {
-            has_country_flag = FOP_world_legitimacy	
-		}		
+            has_country_flag = FOP_world_legitimacy
+            tag_has_content = no
+		}	
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                is_pro_russian = yes
+            }
+        }	
 
 		cost = 30
 
@@ -235,7 +307,16 @@ world_legitimacy = {
 			NOT = {
                 has_idea = fop_sexual_minorities_criminalized
             }
-		}		
+            tag_has_content = no
+		}
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                is_pro_russian = yes
+            }
+        }		
 
 		cost = 30
 
@@ -273,9 +354,12 @@ world_legitimacy = {
             }
             if = {
                 limit = {
-                    AME = {
-                        has_country_leader = USA_biden
-                    }
+                    USA = {
+						has_country_leader = {
+							character = USA_trump
+							ruling_only = yes
+						}
+					}
                 }
                 add_to_variable = {
                     var = FOP_trump_allegiance
@@ -285,34 +369,7 @@ world_legitimacy = {
             }
    	    }
     }
-    tr_look_for_trading_resources = {
-        available = { 
-			
-		}		
-		fire_only_once = yes
-        days_remove = 30
-
-		visible = {
-            has_country_flag = FOP_world_legitimacy	
-			USA = {
-                has_country_leader = {
-                    character = USA_trump
-                }
-            }
-		}		
-
-		cost = 30
-
-		remove_effect = {
-            add_to_variable = {
-                var = FOP_america_allegiance
-                value = 2
-                tooltip = FOP_america_allegiance_tt
-            }
-            set_country_flag = tr_ready_to_trade
-   	    }
-    }
-    tr_great_deal = {
+    tr_express_support = {
         available = { 
 			
 		}		
@@ -322,41 +379,28 @@ world_legitimacy = {
             has_country_flag = FOP_world_legitimacy	
 			USA = {
                 has_country_leader = {
-                    character = USA_trump
-                }
+					character = USA_trump
+					ruling_only = yes
+				}
             }
-            has_country_flag = tr_ready_to_trade
-		}
-        modifier = {
-            consumer_goods_factor = 0.2
-            political_power_gain_factor = -0.2
-        }		
-		cost = 30
-
-		complete_effect = {
-            add_political_power = 50
-            add_to_variable = {
-                var = FOP_america_allegiance
-                value = 2
-                tooltip = FOP_america_allegiance_tt
-            }
-   	    }
-    }
-    tr_express_support = {
-        available = { 
-			
-		}		
-        days_remove = 30
-
-		visible = {
-            has_country_flag = FOP_world_legitimacy	
-			USA = {
-                has_country_leader = {
-                    character = USA_trump
-                }
-            }
+            tag_has_content = no
 		}		
 		cost = 30
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                OR = {
+                    has_government = oligarchism
+                    has_government = conservatism
+                    AND = {
+                        has_government = traditionalism
+                        is_pro_russian = no
+                    }
+                }
+            }
+        }
 
 		complete_effect = {
             add_political_power = 50
@@ -367,14 +411,482 @@ world_legitimacy = {
             }
    	    }
     }
+    tr_stand_with_traditional_rights = {
+        available = { 
+			
+		}		
+		fire_only_once = yes
+        days_remove = 30
+
+		visible = {
+            has_country_flag = FOP_world_legitimacy	
+			NOT = {
+                has_idea = fop_sexual_minorities_criminalized
+            }
+            tag_has_content = no
+            USA = {
+                has_country_leader = {
+					character = USA_trump
+					ruling_only = yes
+				}
+            }
+		}
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                OR = {
+                    has_government = oligarchism
+                    has_government = conservatism
+                    AND = {
+                        has_government = traditionalism
+                        is_pro_russian = no
+                    }
+                }
+            }
+        }		
+
+		cost = 30
+
+		complete_effect = {
+            add_ideas = fop_sexual_minorities_criminalized
+            add_to_variable = {
+                var = FOP_trump_allegiance
+                value = 1
+                tooltip = FOP_trump_allegiance_increase_tt
+            }
+            add_to_variable = {
+                var = FOP_russia_allegiance
+                value = 2
+                tooltip = FOP_russia_allegiance_tt
+            }
+            add_to_variable = {
+                var = FOP_europe_allegiance
+                value = -1
+                tooltip = FOP_europe_allegiance_decrease_tt
+            }
+            if = {
+                limit = {
+                    has_country_flag = eu_accepted_free_speech
+                }
+                add_to_variable = {
+                    var = FOP_europe_allegiance
+                    value = -1
+                    tooltip = FOP_europe_allegiance_decrease_tt
+                }
+            }
+            if = {
+                limit = {
+                    has_country_flag = eu_lightened_lgbt_laws
+                }
+                add_to_variable = {
+                    var = FOP_europe_allegiance
+                    value = -1
+                    tooltip = FOP_europe_allegiance_decrease_tt
+                }
+            }
+            
+   	    }
+    }
+    tr_offer_trump_resources = {
+        available = { 
+			
+		}		
+		fire_only_once = yes
+        days_remove = 30
+
+		visible = {
+            has_country_flag = FOP_world_legitimacy	
+			NOT = {
+                has_idea = fop_sexual_minorities_criminalized
+            }
+            tag_has_content = no
+            USA = {
+                has_country_leader = {
+					character = USA_trump
+					ruling_only = yes
+				}
+            }
+		}
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                OR = {
+                    has_government = oligarchism
+                    has_government = conservatism
+                    AND = {
+                        has_government = traditionalism
+                        is_pro_russian = no
+                    }
+                }
+            }
+        }		
+
+		cost = 40
+
+		complete_effect = {
+            add_to_variable = {
+                var = FOP_trump_allegiance
+                value = 2
+                tooltip = FOP_trump_allegiance_increase_tt
+            }
+            set_country_flag = FOP_trading_with_trump
+        }
+    }
+    tr_give_oil_to_trump = {
+        available = {
+            ROOT = {
+                has_resources_in_country = {
+                    resource = oil
+                    amount > 15
+                }
+            }
+		}		
+		fire_only_once = yes
+        days_remove = 50
+
+		visible = {
+            has_country_flag = FOP_world_legitimacy
+            has_country_flag = FOP_trading_with_trump
+			NOT = {
+                has_idea = fop_sexual_minorities_criminalized
+            }
+            tag_has_content = no
+            USA = {
+                has_country_leader = {
+					character = USA_trump
+					ruling_only = yes
+				}
+            }
+		}
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                OR = {
+                    has_government = oligarchism
+                    has_government = conservatism
+                    AND = {
+                        has_government = traditionalism
+                        is_pro_russian = no
+                    }
+                }
+            }
+        }		
+
+		cost = 25
+
+		complete_effect = {
+            add_to_variable = {
+                var = FOP_trump_allegiance
+                value = 2
+                tooltip = FOP_trump_allegiance_increase_tt
+            }
+            USA = {
+                create_import = {
+                    resource = oil
+                    amount = 15
+                    exporter = ROOT
+                }
+            }
+        }
+    }
+    tr_lobby_trump_interests = {
+        available = { 
+			
+		}		
+		fire_only_once = yes
+        days_remove = 60
+
+		visible = {
+            has_country_flag = FOP_world_legitimacy
+            tag_has_content = no
+            USA = {
+                has_country_leader = {
+					character = USA_trump
+					ruling_only = yes
+				}
+            }
+		}
+
+        ai_will_do = {
+            base = 50
+            modifier = {
+                add = 100
+                OR = {
+                    has_government = oligarchism
+                    has_government = conservatism
+                    AND = {
+                        has_government = traditionalism
+                        is_pro_russian = no
+                    }
+                }
+            }
+        }		
+
+		cost = 30
+
+		complete_effect = {
+            add_to_variable = {
+                var = FOP_trump_allegiance
+                value = 3
+                tooltip = FOP_russia_allegiance_tt
+            }
+            if = {
+                limit = {
+                    has_country_flag = eu_accepted_free_speech
+                }
+                add_to_variable = {
+                    var = FOP_europe_allegiance
+                    value = -2
+                    tooltip = FOP_europe_allegiance_decrease_tt
+                }
+            }
+   	    }
+    }
+    ask_europe_for_recognition = {
+        available = {
+            hidden_trigger = {
+                tag_has_content = yes
+            }
+        }
+
+        visible = {
+            tag_has_content = yes
+            favourable_for_europe = yes
+        }
+
+        days_remove = 30
+
+        cost = 25
+
+        complete_effect = {
+            EUN = {
+                country_event = { id = FOP_generic.25 days = 14 }
+            }
+        }
+
+        remove_effect = {
+            custom_effect_tooltip = eu_recognition_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        NOT = {
+                            has_country_flag = eu_refused_help
+                        }
+                    }
+                    set_country_flag = eu_limited_recognition
+                }
+            }
+        }
+    }
+    ask_russia_for_recognition = {
+        available = {
+            hidden_trigger = {
+                tag_has_content = yes
+            }
+        }
+
+        visible = {
+            tag_has_content = yes
+            is_pro_russian = yes
+        }
+
+        days_remove = 30
+
+        cost = 25
+
+        ai_will_do = {
+            base = 0
+            modifier = {
+                add = 50
+                is_pro_russian = yes
+            }
+            modifier = {
+                add = -50
+                is_pro_russian = no
+            }
+        }
+
+        complete_effect = {
+            RUS = {
+                country_event = { id = FOP_generic.28 days = 14 }
+            }
+        }
+
+        remove_effect = {
+            custom_effect_tooltip = ru_recognition_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        NOT = {
+                            has_country_flag = ru_refused_help
+                        }
+                    }
+                    set_country_flag = ru_limited_recognition
+                }
+            }
+        }
+    }
+    ask_trump_for_recognition = {
+        available = {
+            hidden_trigger = {
+                tag_has_content = yes
+            }
+        }
+
+        visible = {
+            tag_has_content = yes
+            OR = {
+                has_government = oligarchism
+                has_government = conservatism
+                AND = {
+                    has_government = traditionalism
+                    is_pro_russian = no
+                }
+            }
+            USA = {
+                has_country_leader = {
+					character = USA_trump
+					ruling_only = yes
+				}
+            }
+        }
+
+        days_remove = 30
+
+        cost = 25
+
+        ai_will_do = {
+            base = 0
+            modifier = {
+                add = 50
+                OR = {
+                    has_government = oligarchism
+                    has_government = conservatism
+                    AND = {
+                        has_government = traditionalism
+                        is_pro_russian = no
+                    }
+                }
+            }
+        }
+
+        complete_effect = {
+            USA = {
+                country_event = { id = FOP_generic.28 days = 14 }
+            }
+        }
+
+        remove_effect = {
+            custom_effect_tooltip = tr_recognition_tt
+            hidden_effect = {
+                set_country_flag = tr_limited_recognition
+            }
+        }
+    }
+    ask_un_to_return_chernivtsi = {
+        available = {
+
+        }
+
+        visible = {
+            tag = RBU
+            OR = {
+                has_country_flag = eu_recognized_state
+                has_country_flag = ru_recognized_state
+            }
+        }
+
+        days_remove = 30
+
+        cost = 50
+
+        ai_will_do = {
+            base = 120
+        }
+
+        complete_effect = {
+            BUK = {
+                country_event = FOP_generic.56
+            }
+        }
+
+        remove_effect = {
+            
+        }
+    }
+    enter_chernivtsi = {
+        available = {
+
+        }
+
+        visible = {
+            tag = RBU
+        }
+
+        days_remove = 30
+
+        cost = 50
+
+        ai_will_do = {
+            base = 100
+        }
+
+        complete_effect = {
+            
+        }
+
+        remove_effect = {
+            declare_war_on = {
+                target = BUK
+                type = annex_country
+            }
+        }
+    }
+    ask_bosphorus_access = {
+        available = {
+
+        }
+
+        visible = {
+            tag = LBU
+            OR = {
+                has_country_flag = eu_recognized_state
+                has_country_flag = ru_recognized_state
+            }
+        }
+
+        days_remove = 30
+
+        cost = 50
+
+        ai_will_do = {
+            base = 120
+        }
+
+        complete_effect = {
+            TUR = {
+                country_event = FOP_generic.59
+            }
+        }
+
+        remove_effect = {
+            
+        }
+    }
 }
 warlord_legitimacy = {
     recognize_west_warlord = {
         available = {
-            NOT = {
-                is_west_ukraine = yes
-            }
             can_do_dogovornyak = yes
+            hidden_trigger = {
+                is_west_ukraine = no
+            }
         }
         target_trigger = {
             FROM = {
@@ -382,9 +894,7 @@ warlord_legitimacy = {
             }
         }
         visible = {
-            NOT = {
-                is_west_ukraine = yes
-            }
+            is_west_ukraine = no
         }
         fire_only_once = yes
         days_remove = 30	
@@ -424,10 +934,325 @@ warlord_legitimacy = {
             }
    	    }
     }
+    negotiate_west_trade = {
+        available = {
+            hidden_trigger = {
+                is_west_ukraine = no
+            }
+            can_do_dogovornyak = yes
+        }
+        target_trigger = {
+            FROM = {
+                tag = WST
+            }
+        }
+        visible = {
+            OR = {
+                AND = {
+                    tag = NRT
+                    WST = {
+                        has_country_flag = recognized_by_north_warlord
+                    }
+                }
+                AND = {
+                    tag = STH
+                    WST = {
+                        has_country_flag = recognized_by_south_warlord
+                    }
+                }
+                AND = {
+                    tag = ESN
+                    WST = {
+                        has_country_flag = recognized_by_east_warlord
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    AND = {
+                        WST = {
+                            has_country_flag = trade_with_north
+                        }
+                        NRT = {
+                            has_country_flag = trade_with_west
+                        }
+                    }
+                    AND = {
+                        WST = {
+                            has_country_flag = trade_with_south
+                        }
+                        STH = {
+                            has_country_flag = trade_with_west
+                        }
+                    }
+                    AND = {
+                        WST = {
+                            has_country_flag = trade_with_east
+                        }
+                        ESN = {
+                            has_country_flag = trade_with_west
+                        }
+                    }
+                }
+            }
+        }
+        fire_only_once = yes
+        days_remove = 30	
+
+		cost = 25
+
+        remove_effect = {
+            if = {
+                limit = {
+                    tag = NRT
+                }
+                WST = {
+                    set_country_flag = trade_with_north
+                    give_market_access = NRT
+                }
+                NRT = {
+                    set_country_flag = trade_with_west
+                    give_market_access = WST
+                }
+            }
+            if = {
+                limit = {
+                    tag = STH
+                }
+                WST = {
+                    set_country_flag = trade_with_south
+                    give_market_access = STH
+                }
+                STH = {
+                    set_country_flag = trade_with_west
+                    give_market_access = WST
+                }
+            }
+            if = {
+                limit = {
+                    tag = ESN
+                }
+                WST = {
+                    set_country_flag = trade_with_east
+                    give_market_access = ESN
+                }
+                ESN = {
+                    set_country_flag = trade_with_west
+                    give_market_access = WST
+                }
+            }
+        }
+    }
+    negotiate_west_guarantees = {
+        available = {
+            hidden_trigger = {
+                is_west_ukraine = no
+            }
+            can_do_dogovornyak = yes
+        }
+        target_trigger = {
+            FROM = {
+                tag = WST
+            }
+        }
+        visible = {
+            OR = {
+                AND = {
+                    tag = NRT
+                    WST = {
+                        has_country_flag = recognized_by_north_warlord
+                    }
+                }
+                AND = {
+                    tag = STH
+                    WST = {
+                        has_country_flag = recognized_by_south_warlord
+                    }
+                }
+                AND = {
+                    tag = ESN
+                    WST = {
+                        has_country_flag = recognized_by_east_warlord
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    AND = {
+                        WST = {
+                            has_guaranteed = NRT
+                        }
+                        NRT = {
+                            has_guaranteed = WST
+                        }
+                    }
+                    AND = {
+                        WST = {
+                            has_guaranteed = STH
+                        }
+                        STH = {
+                            has_guaranteed = WST
+                        }
+                    }
+                    AND = {
+                        WST = {
+                            has_guaranteed = ESN
+                        }
+                        ESN = {
+                            has_guaranteed = WST
+                        }
+                    }
+                }
+            }
+        }
+        fire_only_once = yes
+        days_remove = 30	
+
+		cost = 25
+
+        remove_effect = {
+            if = {
+                limit = {
+                    tag = NRT
+                }
+                WST = {
+                    give_guarantee = NRT
+                }
+                NRT = {
+                    give_guarantee = WST
+                }
+            }
+            if = {
+                limit = {
+                    tag = STH
+                }
+                WST = {
+                    give_guarantee = STH
+                }
+                STH = {
+                    give_guarantee = WST
+                }
+            }
+            if = {
+                limit = {
+                    tag = ESN
+                }
+                WST = {
+                    give_guarantee = ESN
+                }
+                ESN = {
+                    give_guarantee = WST
+                }
+            }
+        }
+    }
+    negotiate_west_military_access = {
+        available = {
+            hidden_trigger = {
+                is_west_ukraine = no
+            }
+            can_do_dogovornyak = yes
+        }
+        target_trigger = {
+            FROM = {
+                tag = WST
+            }
+        }
+        visible = {
+            OR = {
+                AND = {
+                    tag = NRT
+                    WST = {
+                        has_country_flag = recognized_by_north_warlord
+                    }
+                }
+                AND = {
+                    tag = STH
+                    WST = {
+                        has_country_flag = recognized_by_south_warlord
+                    }
+                }
+                AND = {
+                    tag = ESN
+                    WST = {
+                        has_country_flag = recognized_by_east_warlord
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    AND = {
+                        WST = {
+                            has_military_access_to = NRT
+                        }
+                        NRT = {
+                            has_military_access_to = WST
+                        }
+                    }
+                    AND = {
+                        WST = {
+                            has_military_access_to = STH
+                        }
+                        STH = {
+                            has_military_access_to = WST
+                        }
+                    }
+                    AND = {
+                        WST = {
+                            has_military_access_to = ESN
+                        }
+                        ESN = {
+                            has_military_access_to = WST
+                        }
+                    }
+                }
+            }
+        }
+        fire_only_once = yes
+        days_remove = 30	
+
+		cost = 25
+
+        remove_effect = {
+            if = {
+                limit = {
+                    tag = NRT
+                }
+                WST = {
+                    give_military_access = NRT
+                }
+                NRT = {
+                    give_military_access = WST
+                }
+            }
+            if = {
+                limit = {
+                    tag = STH
+                }
+                WST = {
+                    give_military_access = STH
+                }
+                STH = {
+                    give_military_access = WST
+                }
+            }
+            if = {
+                limit = {
+                    tag = ESN
+                }
+                WST = {
+                    give_military_access = ESN
+                }
+                ESN = {
+                    give_military_access = WST
+                }
+            }
+        }
+    }
     recognize_east_warlord = {
         available = {
-            NOT = {
-                is_east_ukraine = yes
+            hidden_trigger = {
+                is_east_ukraine = no
             }
             can_do_dogovornyak = yes
         }
@@ -437,9 +1262,7 @@ warlord_legitimacy = {
             }
         }
         visible = {
-            NOT = {
-                is_east_ukraine = yes
-            }
+            is_east_ukraine = no
         }
         fire_only_once = yes
         days_remove = 30	
@@ -479,10 +1302,325 @@ warlord_legitimacy = {
             }
    	    }
     }
+    negotiate_east_trade = {
+        available = {
+            hidden_trigger = {
+                is_east_ukraine = no
+            }
+            can_do_dogovornyak = yes
+        }
+        target_trigger = {
+            FROM = {
+                tag = ESN
+            }
+        }
+        visible = {
+            OR = {
+                AND = {
+                    tag = WST
+                    ESN = {
+                        has_country_flag = recognized_by_west_warlord
+                    }
+                }
+                AND = {
+                    tag = NRT
+                    ESN = {
+                        has_country_flag = recognized_by_north_warlord
+                    }
+                }
+                AND = {
+                    tag = STH
+                    ESN = {
+                        has_country_flag = recognized_by_south_warlord
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    AND = {
+                        ESN = {
+                            has_country_flag = trade_with_west
+                        }
+                        WST = {
+                            has_country_flag = trade_with_east
+                        }
+                    }
+                    AND = {
+                        ESN = {
+                            has_country_flag = trade_with_north
+                        }
+                        NRT = {
+                            has_country_flag = trade_with_east
+                        }
+                    }
+                    AND = {
+                        STH = {
+                            has_country_flag = trade_with_east
+                        }
+                        ESN = {
+                            has_country_flag = trade_with_south
+                        }
+                    }
+                }
+            }
+        }
+        fire_only_once = yes
+        days_remove = 30	
+
+		cost = 25
+
+        remove_effect = {
+            if = {
+                limit = {
+                    tag = WST
+                }
+                WST = {
+                    set_country_flag = trade_with_east
+                    give_market_access = ESN
+                }
+                ESN = {
+                    set_country_flag = trade_with_west
+                    give_market_access = WST
+                }
+            }
+            if = {
+                limit = {
+                    tag = NRT
+                }
+                NRT = {
+                    set_country_flag = trade_with_east
+                    give_market_access = ESN
+                }
+                ESN = {
+                    set_country_flag = trade_with_north
+                    give_market_access = NRT
+                }
+            }
+            if = {
+                limit = {
+                    tag = STH
+                }
+                STH = {
+                    set_country_flag = trade_with_east
+                    give_market_access = ESN
+                }
+                ESN = {
+                    set_country_flag = trade_with_south
+                    give_market_access = STH
+                }
+            }
+        }
+    }
+    negotiate_east_guarantees = {
+        available = {
+            hidden_trigger = {
+                is_east_ukraine = no
+            }
+            can_do_dogovornyak = yes
+        }
+        target_trigger = {
+            FROM = {
+                tag = ESN
+            }
+        }
+        visible = {
+            OR = {
+                AND = {
+                    tag = WST
+                    ESN = {
+                        has_country_flag = recognized_by_west_warlord
+                    }
+                }
+                AND = {
+                    tag = NRT
+                    ESN = {
+                        has_country_flag = recognized_by_north_warlord
+                    }
+                }
+                AND = {
+                    tag = STH
+                    ESN = {
+                        has_country_flag = recognized_by_south_warlord
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    AND = {
+                        WST = {
+                            has_guaranteed = ESN
+                        }
+                        ESN = {
+                            has_guaranteed = WST
+                        }
+                    }
+                    AND = {
+                        NRT = {
+                            has_guaranteed = ESN
+                        }
+                        ESN = {
+                            has_guaranteed = NRT
+                        }
+                    }
+                    AND = {
+                        STH = {
+                            has_guaranteed = ESN
+                        }
+                        ESN = {
+                            has_guaranteed = STH
+                        }
+                    }
+                }
+            }
+        }
+        fire_only_once = yes
+        days_remove = 30	
+
+		cost = 25
+
+        remove_effect = {
+            if = {
+                limit = {
+                    tag = WST
+                }
+                WST = {
+                    give_guarantee = ESN
+                }
+                ESN = {
+                    give_guarantee = WST
+                }
+            }
+            if = {
+                limit = {
+                    tag = NRT
+                }
+                NRT = {
+                    give_guarantee = ESN
+                }
+                ESN = {
+                    give_guarantee = NRT
+                }
+            }
+            if = {
+                limit = {
+                    tag = STH
+                }
+                STH = {
+                    give_guarantee = ESN
+                }
+                ESN = {
+                    give_guarantee = STH
+                }
+            }
+        }
+    }
+    negotiate_east_military_access = {
+        available = {
+            hidden_trigger = {
+                is_east_ukraine = no
+            }
+            can_do_dogovornyak = yes
+        }
+        target_trigger = {
+            FROM = {
+                tag = ESN
+            }
+        }
+        visible = {
+            OR = {
+                AND = {
+                    tag = WST
+                    ESN = {
+                        has_country_flag = recognized_by_west_warlord
+                    }
+                }
+                AND = {
+                    tag = NRT
+                    ESN = {
+                        has_country_flag = recognized_by_north_warlord
+                    }
+                }
+                AND = {
+                    tag = STH
+                    ESN = {
+                        has_country_flag = recognized_by_south_warlord
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    AND = {
+                        WST = {
+                            has_military_access_to = ESN
+                        }
+                        ESN = {
+                            has_military_access_to = WST
+                        }
+                    }
+                    AND = {
+                        NRT = {
+                            has_military_access_to = ESN
+                        }
+                        ESN = {
+                            has_military_access_to = NRT
+                        }
+                    }
+                    AND = {
+                        STH = {
+                            has_military_access_to = ESN
+                        }
+                        ESN = {
+                            has_military_access_to = STH
+                        }
+                    }
+                }
+            }
+        }
+        fire_only_once = yes
+        days_remove = 30	
+
+		cost = 25
+
+        remove_effect = {
+            if = {
+                limit = {
+                    tag = WST
+                }
+                WST = {
+                    give_military_access = ESN
+                }
+                ESN = {
+                    give_military_access = WST
+                }
+            }
+            if = {
+                limit = {
+                    tag = NRT
+                }
+                NRT = {
+                    give_military_access = ESN
+                }
+                ESN = {
+                    give_military_access = NRT
+                }
+            }
+            if = {
+                limit = {
+                    tag = STH
+                }
+                STH = {
+                    give_military_access = ESN
+                }
+                ESN = {
+                    give_military_access = STH
+                }
+            }
+        }
+    }
     recognize_north_warlord = {
         available = {
-            NOT = {
-                is_north_ukraine = yes
+            hidden_trigger = {
+                is_north_ukraine = no
             }
             can_do_dogovornyak = yes
         }
@@ -492,9 +1630,7 @@ warlord_legitimacy = {
             }
         }
         visible = {
-            NOT = {
-                is_north_ukraine = yes
-            }
+            is_north_ukraine = no
         }
         fire_only_once = yes
         days_remove = 30	
@@ -534,10 +1670,325 @@ warlord_legitimacy = {
             }
    	    }
     }
+    negotiate_north_trade = {
+        available = {
+            hidden_trigger = {
+                is_north_ukraine = no
+            }
+            can_do_dogovornyak = yes
+        }
+        target_trigger = {
+            FROM = {
+                tag = NRT
+            }
+        }
+        visible = {
+            OR = {
+                AND = {
+                    tag = WST
+                    NRT = {
+                        has_country_flag = recognized_by_west_warlord
+                    }
+                }
+                AND = {
+                    tag = STH
+                    NRT = {
+                        has_country_flag = recognized_by_south_warlord
+                    }
+                }
+                AND = {
+                    tag = ESN
+                    NRT = {
+                        has_country_flag = recognized_by_east_warlord
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    AND = {
+                        NRT = {
+                            has_country_flag = trade_with_west
+                        }
+                        WST = {
+                            has_country_flag = trade_with_north
+                        }
+                    }
+                    AND = {
+                        NRT = {
+                            has_country_flag = trade_with_south
+                        }
+                        STH = {
+                            has_country_flag = trade_with_north
+                        }
+                    }
+                    AND = {
+                        NRT = {
+                            has_country_flag = trade_with_east
+                        }
+                        ESN = {
+                            has_country_flag = trade_with_north
+                        }
+                    }
+                }
+            }
+        }
+        fire_only_once = yes
+        days_remove = 30	
+
+		cost = 25
+
+        remove_effect = {
+            if = {
+                limit = {
+                    tag = WST
+                }
+                WST = {
+                    set_country_flag = trade_with_north
+                    give_market_access = NRT
+                }
+                NRT = {
+                    set_country_flag = trade_with_west
+                    give_market_access = WST
+                }
+            }
+            if = {
+                limit = {
+                    tag = STH
+                }
+                NRT = {
+                    set_country_flag = trade_with_south
+                    give_market_access = STH
+                }
+                STH = {
+                    set_country_flag = trade_with_north
+                    give_market_access = NRT
+                }
+            }
+            if = {
+                limit = {
+                    tag = ESN
+                }
+                NRT = {
+                    set_country_flag = trade_with_east
+                    give_market_access = ESN
+                }
+                ESN = {
+                    set_country_flag = trade_with_north
+                    give_market_access = NRT
+                }
+            }
+        }
+    }
+    negotiate_north_guarantees = {
+        available = {
+            hidden_trigger = {
+                is_north_ukraine = no
+            }
+            can_do_dogovornyak = yes
+        }
+        target_trigger = {
+            FROM = {
+                tag = NRT
+            }
+        }
+        visible = {
+            OR = {
+                AND = {
+                    tag = WST
+                    NRT = {
+                        has_country_flag = recognized_by_west_warlord
+                    }
+                }
+                AND = {
+                    tag = STH
+                    NRT = {
+                        has_country_flag = recognized_by_south_warlord
+                    }
+                }
+                AND = {
+                    tag = ESN
+                    NRT = {
+                        has_country_flag = recognized_by_east_warlord
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    AND = {
+                        WST = {
+                            has_guaranteed = NRT
+                        }
+                        NRT = {
+                            has_guaranteed = WST
+                        }
+                    }
+                    AND = {
+                        NRT = {
+                            has_guaranteed = STH
+                        }
+                        STH = {
+                            has_guaranteed = NRT
+                        }
+                    }
+                    AND = {
+                        NRT = {
+                            has_guaranteed = ESN
+                        }
+                        ESN = {
+                            has_guaranteed = NRT
+                        }
+                    }
+                }
+            }
+        }
+        fire_only_once = yes
+        days_remove = 30	
+
+		cost = 25
+
+        remove_effect = {
+            if = {
+                limit = {
+                    tag = WST
+                }
+                WST = {
+                    give_guarantee = NRT
+                }
+                NRT = {
+                    give_guarantee = WST
+                }
+            }
+            if = {
+                limit = {
+                    tag = STH
+                }
+                NRT = {
+                    give_guarantee = STH
+                }
+                STH = {
+                    give_guarantee = NRT
+                }
+            }
+            if = {
+                limit = {
+                    tag = ESN
+                }
+                NRT = {
+                    give_guarantee = ESN
+                }
+                ESN = {
+                    give_guarantee = NRT
+                }
+            }
+        }
+    }
+    negotiate_north_military_access = {
+        available = {
+            hidden_trigger = {
+                is_north_ukraine = no
+            }
+            can_do_dogovornyak = yes
+        }
+        target_trigger = {
+            FROM = {
+                tag = NRT
+            }
+        }
+        visible = {
+            OR = {
+                AND = {
+                    tag = WST
+                    NRT = {
+                        has_country_flag = recognized_by_west_warlord
+                    }
+                }
+                AND = {
+                    tag = STH
+                    NRT = {
+                        has_country_flag = recognized_by_south_warlord
+                    }
+                }
+                AND = {
+                    tag = ESN
+                    NRT = {
+                        has_country_flag = recognized_by_east_warlord
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    AND = {
+                        WST = {
+                            has_military_access_to = NRT
+                        }
+                        NRT = {
+                            has_military_access_to = WST
+                        }
+                    }
+                    AND = {
+                        NRT = {
+                            has_military_access_to = STH
+                        }
+                        STH = {
+                            has_military_access_to = NRT
+                        }
+                    }
+                    AND = {
+                        NRT = {
+                            has_military_access_to = ESN
+                        }
+                        ESN = {
+                            has_military_access_to = NRT
+                        }
+                    }
+                }
+            }
+        }
+        fire_only_once = yes
+        days_remove = 30	
+
+		cost = 25
+
+        remove_effect = {
+            if = {
+                limit = {
+                    tag = WST
+                }
+                WST = {
+                    give_military_access = NRT
+                }
+                NRT = {
+                    give_military_access = WST
+                }
+            }
+            if = {
+                limit = {
+                    tag = STH
+                }
+                NRT = {
+                    give_military_access = STH
+                }
+                STH = {
+                    give_military_access = WST
+                }
+            }
+            if = {
+                limit = {
+                    tag = ESN
+                }
+                NRT = {
+                    give_military_access = ESN
+                }
+                ESN = {
+                    give_military_access = WST
+                }
+            }
+        }
+    }
     recognize_south_warlord = {
         available = {
-            NOT = {
-                is_south_ukraine = yes
+            hidden_trigger = {
+                is_south_ukraine = no
             }
             can_do_dogovornyak = yes
         }
@@ -547,9 +1998,7 @@ warlord_legitimacy = {
             }
         }
         visible = {
-            NOT = {
-                is_south_ukraine = yes
-            }
+            is_south_ukraine = no
         }
         fire_only_once = yes
         days_remove = 30	
@@ -589,10 +2038,325 @@ warlord_legitimacy = {
             }
    	    }
     }
+    negotiate_south_trade = {
+        available = {
+            hidden_trigger = {
+                is_south_ukraine = no
+            }
+            can_do_dogovornyak = yes
+        }
+        target_trigger = {
+            FROM = {
+                tag = STH
+            }
+        }
+        visible = {
+            OR = {
+                AND = {
+                    tag = WST
+                    STH = {
+                        has_country_flag = recognized_by_west_warlord
+                    }
+                }
+                AND = {
+                    tag = NRT
+                    STH = {
+                        has_country_flag = recognized_by_north_warlord
+                    }
+                }
+                AND = {
+                    tag = ESN
+                    STH = {
+                        has_country_flag = recognized_by_east_warlord
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    AND = {
+                        STH = {
+                            has_country_flag = trade_with_west
+                        }
+                        WST = {
+                            has_country_flag = trade_with_south
+                        }
+                    }
+                    AND = {
+                        STH = {
+                            has_country_flag = trade_with_north
+                        }
+                        NRT = {
+                            has_country_flag = trade_with_south
+                        }
+                    }
+                    AND = {
+                        STH = {
+                            has_country_flag = trade_with_east
+                        }
+                        ESN = {
+                            has_country_flag = trade_with_south
+                        }
+                    }
+                }
+            }
+        }
+        fire_only_once = yes
+        days_remove = 30	
+
+		cost = 25
+
+        remove_effect = {
+            if = {
+                limit = {
+                    tag = WST
+                }
+                WST = {
+                    set_country_flag = trade_with_south
+                    give_market_access = STH
+                }
+                STH = {
+                    set_country_flag = trade_with_west
+                    give_market_access = WST
+                }
+            }
+            if = {
+                limit = {
+                    tag = NRT
+                }
+                NRT = {
+                    set_country_flag = trade_with_south
+                    give_market_access = STH
+                }
+                STH = {
+                    set_country_flag = trade_with_north
+                    give_market_access = NRT
+                }
+            }
+            if = {
+                limit = {
+                    tag = ESN
+                }
+                STH = {
+                    set_country_flag = trade_with_east
+                    give_market_access = ESN
+                }
+                ESN = {
+                    set_country_flag = trade_with_south
+                    give_market_access = STH
+                }
+            }
+        }
+    }
+    negotiate_south_guarantees = {
+        available = {
+            hidden_trigger = {
+                is_south_ukraine = no
+            }
+            can_do_dogovornyak = yes
+        }
+        target_trigger = {
+            FROM = {
+                tag = STH
+            }
+        }
+        visible = {
+            OR = {
+                AND = {
+                    tag = WST
+                    STH = {
+                        has_country_flag = recognized_by_west_warlord
+                    }
+                }
+                AND = {
+                    tag = NRT
+                    STH = {
+                        has_country_flag = recognized_by_north_warlord
+                    }
+                }
+                AND = {
+                    tag = ESN
+                    STH = {
+                        has_country_flag = recognized_by_east_warlord
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    AND = {
+                        WST = {
+                            has_guaranteed = STH
+                        }
+                        STH = {
+                            has_guaranteed = WST
+                        }
+                    }
+                    AND = {
+                        NRT = {
+                            has_guaranteed = STH
+                        }
+                        STH = {
+                            has_guaranteed = NRT
+                        }
+                    }
+                    AND = {
+                        STH = {
+                            has_guaranteed = ESN
+                        }
+                        ESN = {
+                            has_guaranteed = STH
+                        }
+                    }
+                }
+            }
+        }
+        fire_only_once = yes
+        days_remove = 30	
+
+		cost = 25
+
+        remove_effect = {
+            if = {
+                limit = {
+                    tag = WST
+                }
+                WST = {
+                    give_guarantee = STH
+                }
+                STH = {
+                    give_guarantee = WST
+                }
+            }
+            if = {
+                limit = {
+                    tag = NRT
+                }
+                NRT = {
+                    give_guarantee = STH
+                }
+                STH = {
+                    give_guarantee = NRT
+                }
+            }
+            if = {
+                limit = {
+                    tag = ESN
+                }
+                STH = {
+                    give_guarantee = ESN
+                }
+                ESN = {
+                    give_guarantee = STH
+                }
+            }
+        }
+    }
+    negotiate_south_military_access = {
+        available = {
+            hidden_trigger = {
+                is_south_ukraine = no
+            }
+            can_do_dogovornyak = yes
+        }
+        target_trigger = {
+            FROM = {
+                tag = STH
+            }
+        }
+        visible = {
+            OR = {
+                AND = {
+                    tag = WST
+                    STH = {
+                        has_country_flag = recognized_by_west_warlord
+                    }
+                }
+                AND = {
+                    tag = NRT
+                    STH = {
+                        has_country_flag = recognized_by_north_warlord
+                    }
+                }
+                AND = {
+                    tag = ESN
+                    STH = {
+                        has_country_flag = recognized_by_east_warlord
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    AND = {
+                        WST = {
+                            has_military_access_to = STH
+                        }
+                        STH = {
+                            has_military_access_to = WST
+                        }
+                    }
+                    AND = {
+                        NRT = {
+                            has_military_access_to = STH
+                        }
+                        STH = {
+                            has_military_access_to = NRT
+                        }
+                    }
+                    AND = {
+                        STH = {
+                            has_military_access_to = ESN
+                        }
+                        ESN = {
+                            has_military_access_to = STH
+                        }
+                    }
+                }
+            }
+        }
+        fire_only_once = yes
+        days_remove = 30	
+
+		cost = 25
+
+        remove_effect = {
+            if = {
+                limit = {
+                    tag = WST
+                }
+                WST = {
+                    give_military_access = STH
+                }
+                STH = {
+                    give_military_access = WST
+                }
+            }
+            if = {
+                limit = {
+                    tag = NRT
+                }
+                NRT = {
+                    give_military_access = STH
+                }
+                STH = {
+                    give_military_access = NRT
+                }
+            }
+            if = {
+                limit = {
+                    tag = ESN
+                }
+                STH = {
+                    give_military_access = ESN
+                }
+                ESN = {
+                    give_military_access = STH
+                }
+            }
+        }
+    }
     help_west_warlord = {
         available = {
-            NOT = {
-                is_west_ukraine = yes
+            hidden_trigger = {
+                is_west_ukraine = no
             }
             OR = {
                 AND = {
@@ -616,9 +2380,7 @@ warlord_legitimacy = {
             }
         }
         visible = {
-            NOT = {
-                is_west_ukraine = yes
-            }
+            is_west_ukraine = no
             OR = {
                 AND = {
                     tag = NRT
@@ -684,8 +2446,8 @@ warlord_legitimacy = {
     }
     help_east_warlord = {
         available = {
-            NOT = {
-                is_east_ukraine = yes
+            hidden_trigger = {
+                is_east_ukraine = no
             }
             OR = {
                 AND = {
@@ -709,9 +2471,7 @@ warlord_legitimacy = {
             }
         }
         visible = {
-            NOT = {
-                is_east_ukraine = yes
-            }
+            is_east_ukraine = no
             OR = {
                 AND = {
                     tag = NRT
@@ -777,8 +2537,8 @@ warlord_legitimacy = {
     }
     help_north_warlord = {
         available = {
-            NOT = {
-                is_north_ukraine = yes
+            hidden_trigger = {
+                is_north_ukraine = no
             }
             OR = {
                 AND = {
@@ -802,9 +2562,7 @@ warlord_legitimacy = {
             }
         }
         visible = {
-            NOT = {
-                is_north_ukraine = yes
-            }
+            is_north_ukraine = no
             OR = {
                 AND = {
                     tag = ESN
@@ -870,8 +2628,8 @@ warlord_legitimacy = {
     }
     help_south_warlord = {
         available = {
-            NOT = {
-                is_south_ukraine = yes
+            hidden_trigger = {
+                is_south_ukraine = no
             }
             OR = {
                 AND = {
@@ -895,9 +2653,7 @@ warlord_legitimacy = {
             }
         }
         visible = {
-            NOT = {
-                is_south_ukraine = yes
-            }
+            is_south_ukraine = no
             OR = {
                 AND = {
                     tag = ESN

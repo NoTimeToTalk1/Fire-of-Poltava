@@ -1,0 +1,108 @@
+###############################################
+# Scripted Localisation — dynamic team names
+# common/scripted_localisation/AFU_team_names.txt
+#
+# 8 команд → 28 унікальних пар.
+# AFU_match_pair = 1..28, жодна команда не грає сама з собою.
+#
+# Таблиця пар:
+#  1  Динамо       vs Шахтар
+#  2  Динамо       vs Металіст
+#  3  Динамо       vs Дніпро-1
+#  4  Динамо       vs Чорноморець
+#  5  Динамо       vs Карпати
+#  6  Динамо       vs ФК Азов
+#  7  Динамо       vs Ворскла
+#  8  Шахтар       vs Металіст
+#  9  Шахтар       vs Дніпро-1
+# 10  Шахтар       vs Чорноморець
+# 11  Шахтар       vs Карпати
+# 12  Шахтар       vs ФК Азов
+# 13  Шахтар       vs Ворскла
+# 14  Металіст     vs Дніпро-1
+# 15  Металіст     vs Чорноморець
+# 16  Металіст     vs Карпати
+# 17  Металіст     vs ФК Азов
+# 18  Металіст     vs Ворскла
+# 19  Дніпро-1     vs Чорноморець
+# 20  Дніпро-1     vs Карпати
+# 21  Дніпро-1     vs ФК Азов
+# 22  Дніпро-1     vs Ворскла
+# 23  Чорноморець  vs Карпати
+# 24  Чорноморець  vs ФК Азов
+# 25  Чорноморець  vs Ворскла
+# 26  Карпати      vs ФК Азов
+# 27  Карпати      vs Ворскла
+# 28  ФК Азов      vs Ворскла
+###############################################
+
+defined_text = {
+    name = AFU_team_a_name
+
+    text = { trigger = { check_variable = { AFU_match_pair = 1  } } localization_key = AFU_team_dynamo       }
+    text = { trigger = { check_variable = { AFU_match_pair = 2  } } localization_key = AFU_team_dynamo       }
+    text = { trigger = { check_variable = { AFU_match_pair = 3  } } localization_key = AFU_team_dynamo       }
+    text = { trigger = { check_variable = { AFU_match_pair = 4  } } localization_key = AFU_team_dynamo       }
+    text = { trigger = { check_variable = { AFU_match_pair = 5  } } localization_key = AFU_team_dynamo       }
+    text = { trigger = { check_variable = { AFU_match_pair = 6  } } localization_key = AFU_team_dynamo       }
+    text = { trigger = { check_variable = { AFU_match_pair = 7  } } localization_key = AFU_team_dynamo       }
+    text = { trigger = { check_variable = { AFU_match_pair = 8  } } localization_key = AFU_team_shakhtar     }
+    text = { trigger = { check_variable = { AFU_match_pair = 9  } } localization_key = AFU_team_shakhtar     }
+    text = { trigger = { check_variable = { AFU_match_pair = 10 } } localization_key = AFU_team_shakhtar     }
+    text = { trigger = { check_variable = { AFU_match_pair = 11 } } localization_key = AFU_team_shakhtar     }
+    text = { trigger = { check_variable = { AFU_match_pair = 12 } } localization_key = AFU_team_shakhtar     }
+    text = { trigger = { check_variable = { AFU_match_pair = 13 } } localization_key = AFU_team_shakhtar     }
+    text = { trigger = { check_variable = { AFU_match_pair = 14 } } localization_key = AFU_team_metalist     }
+    text = { trigger = { check_variable = { AFU_match_pair = 15 } } localization_key = AFU_team_metalist     }
+    text = { trigger = { check_variable = { AFU_match_pair = 16 } } localization_key = AFU_team_metalist     }
+    text = { trigger = { check_variable = { AFU_match_pair = 17 } } localization_key = AFU_team_metalist     }
+    text = { trigger = { check_variable = { AFU_match_pair = 18 } } localization_key = AFU_team_metalist     }
+    text = { trigger = { check_variable = { AFU_match_pair = 19 } } localization_key = AFU_team_dnipro       }
+    text = { trigger = { check_variable = { AFU_match_pair = 20 } } localization_key = AFU_team_dnipro       }
+    text = { trigger = { check_variable = { AFU_match_pair = 21 } } localization_key = AFU_team_dnipro       }
+    text = { trigger = { check_variable = { AFU_match_pair = 22 } } localization_key = AFU_team_dnipro       }
+    text = { trigger = { check_variable = { AFU_match_pair = 23 } } localization_key = AFU_team_chornomorets }
+    text = { trigger = { check_variable = { AFU_match_pair = 24 } } localization_key = AFU_team_chornomorets }
+    text = { trigger = { check_variable = { AFU_match_pair = 25 } } localization_key = AFU_team_chornomorets }
+    text = { trigger = { check_variable = { AFU_match_pair = 26 } } localization_key = AFU_team_karpaty      }
+    text = { trigger = { check_variable = { AFU_match_pair = 27 } } localization_key = AFU_team_karpaty      }
+    text = { trigger = { check_variable = { AFU_match_pair = 28 } } localization_key = AFU_team_azov_fc      }
+
+    text = { localization_key = AFU_team_unknown }
+}
+
+defined_text = {
+    name = AFU_team_b_name
+
+    text = { trigger = { check_variable = { AFU_match_pair = 1  } } localization_key = AFU_team_shakhtar     }
+    text = { trigger = { check_variable = { AFU_match_pair = 2  } } localization_key = AFU_team_metalist     }
+    text = { trigger = { check_variable = { AFU_match_pair = 3  } } localization_key = AFU_team_dnipro       }
+    text = { trigger = { check_variable = { AFU_match_pair = 4  } } localization_key = AFU_team_chornomorets }
+    text = { trigger = { check_variable = { AFU_match_pair = 5  } } localization_key = AFU_team_karpaty      }
+    text = { trigger = { check_variable = { AFU_match_pair = 6  } } localization_key = AFU_team_azov_fc      }
+    text = { trigger = { check_variable = { AFU_match_pair = 7  } } localization_key = AFU_team_vorskla      }
+    text = { trigger = { check_variable = { AFU_match_pair = 8  } } localization_key = AFU_team_metalist     }
+    text = { trigger = { check_variable = { AFU_match_pair = 9  } } localization_key = AFU_team_dnipro       }
+    text = { trigger = { check_variable = { AFU_match_pair = 10 } } localization_key = AFU_team_chornomorets }
+    text = { trigger = { check_variable = { AFU_match_pair = 11 } } localization_key = AFU_team_karpaty      }
+    text = { trigger = { check_variable = { AFU_match_pair = 12 } } localization_key = AFU_team_azov_fc      }
+    text = { trigger = { check_variable = { AFU_match_pair = 13 } } localization_key = AFU_team_vorskla      }
+    text = { trigger = { check_variable = { AFU_match_pair = 14 } } localization_key = AFU_team_dnipro       }
+    text = { trigger = { check_variable = { AFU_match_pair = 15 } } localization_key = AFU_team_chornomorets }
+    text = { trigger = { check_variable = { AFU_match_pair = 16 } } localization_key = AFU_team_karpaty      }
+    text = { trigger = { check_variable = { AFU_match_pair = 17 } } localization_key = AFU_team_azov_fc      }
+    text = { trigger = { check_variable = { AFU_match_pair = 18 } } localization_key = AFU_team_vorskla      }
+    text = { trigger = { check_variable = { AFU_match_pair = 19 } } localization_key = AFU_team_chornomorets }
+    text = { trigger = { check_variable = { AFU_match_pair = 20 } } localization_key = AFU_team_karpaty      }
+    text = { trigger = { check_variable = { AFU_match_pair = 21 } } localization_key = AFU_team_azov_fc      }
+    text = { trigger = { check_variable = { AFU_match_pair = 22 } } localization_key = AFU_team_vorskla      }
+    text = { trigger = { check_variable = { AFU_match_pair = 23 } } localization_key = AFU_team_karpaty      }
+    text = { trigger = { check_variable = { AFU_match_pair = 24 } } localization_key = AFU_team_azov_fc      }
+    text = { trigger = { check_variable = { AFU_match_pair = 25 } } localization_key = AFU_team_vorskla      }
+    text = { trigger = { check_variable = { AFU_match_pair = 26 } } localization_key = AFU_team_azov_fc      }
+    text = { trigger = { check_variable = { AFU_match_pair = 27 } } localization_key = AFU_team_vorskla      }
+    text = { trigger = { check_variable = { AFU_match_pair = 28 } } localization_key = AFU_team_vorskla      }
+
+    text = { localization_key = AFU_team_unknown }
+}
+

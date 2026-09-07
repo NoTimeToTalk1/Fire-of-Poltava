@@ -280,6 +280,10 @@ country_event = { #Russians came
 				type = annex_everything
 			}
 			declare_war_on = {
+				target = MYK
+				type = annex_everything
+			}
+			declare_war_on = {
 				target = OLD
 				type = annex_everything
 			}
@@ -331,6 +335,10 @@ country_event = { #Russians came
 			
 			declare_war_on = {
 				target = ODE
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = MYK
 				type = annex_everything
 			}
 			declare_war_on = {
@@ -439,7 +447,6 @@ country_event = { #Shariy Rises Up
 					amount = 5
 					producer = ODE
 				}
-				load_oob = "odesamyk"
 			}
 			KHE = { country_event = ode.41 }
 			#country_event = {
@@ -516,7 +523,6 @@ country_event = { #Shariy Rises Up
 					amount = 5
 					producer = ODE
 				}
-				load_oob = "odesamyk"
 			}
 			KHE = { country_event = ode.41 }
 			#country_event = {
@@ -593,7 +599,6 @@ country_event = { #Shariy Rises Up
 					amount = 5
 					producer = ODE
 				}
-				load_oob = "odesamyk"
 			}
 			KHE = { country_event = ode.41 }
 			#country_event = {
@@ -617,12 +622,9 @@ country_event = { #Kherson Intervention
 	option = {
 		name = ode.41.a
 		ai_chance = {
-			factor = 100
+			base = 100
 		}
 		2858 = {
-			transfer_state_to = KHE
-		}
-		2847 = {
 			transfer_state_to = KHE
 		}
 		
@@ -635,7 +637,7 @@ country_event = { #Kherson Intervention
 	option = {
 		name = ode.41.b
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		add_political_power = -50
 	}

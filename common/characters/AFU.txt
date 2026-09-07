@@ -14,7 +14,7 @@ characters = {
 		}
 		country_leader = {
 			desc = "POLITICS_AFU_KRYVONOS_DESC"
-			ideology = paternalism
+			ideology = ukrainian_stratocracy
 			expire = "2077.3.1.1"
 		}
 		field_marshal = {
@@ -47,6 +47,7 @@ characters = {
 		portraits = {
 			civilian = {
 				large = "gfx/leaders/AFU/Danilov.dds"
+                small="gfx/interface/ideas/ministers/AFU/danilov.dds"
 			}
 		}
 		country_leader = {
@@ -59,6 +60,23 @@ characters = {
 			ideology = liberal_conservatism
 			expire = "2077.3.1.1"
 		}
+
+        advisor={
+            slot = head_of_government
+            idea_token = AFU_danilov
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+
+            }
+            available = {
+
+            }
+            traits = {
+                s_r_n_b_o
+            }
+        }
 	}
 	AFU_Khomutynnik = {
 		name = "Vitaliy Khomutynnik"
@@ -85,7 +103,7 @@ characters = {
 				large = "gfx/leaders/AFU/Prokopenko.dds"
 			}
 			army = {
-				large = "gfx/leaders/AFU/Prokopenko.dds"
+				large = "gfx/leaders/AFU/Prokopenko3.dds"
 			}
 		}
 		#country_leader = {
@@ -359,10 +377,7 @@ characters = {
 			planning_skill = 3
 			logistics_skill = 3
 			visible = {
-				OR = {
-					has_completed_focus = AFU_new_generation_of_officers
-					AFU = { has_government = ultranationalism }
-				}
+				AFU = { has_government = ultranationalism }
 			}
 		}
 	}
@@ -419,10 +434,7 @@ characters = {
 			planning_skill = 2
 			logistics_skill = 2
 			visible = {
-				OR = {
-					has_completed_focus = AFU_new_generation_of_officers
-					AFU = { has_government = ultranationalism }
-				}
+				AFU = { has_government = ultranationalism }
 			}
 		}
 	}
@@ -441,10 +453,7 @@ characters = {
 			planning_skill = 2
 			logistics_skill = 3
 			visible = {
-				OR = {
-					has_completed_focus = AFU_new_generation_of_officers
-					AFU = { has_government = ultranationalism }
-				}
+				AFU = { has_government = ultranationalism }
 			}
 		}
 	}
@@ -463,10 +472,7 @@ characters = {
 			planning_skill = 2
 			logistics_skill = 1
 			visible = {
-				OR = {
-					has_completed_focus = AFU_new_generation_of_officers
-					AFU = { has_government = ultranationalism }
-				}
+				AFU = { has_government = ultranationalism }
 			}
 		}
 	}
@@ -527,4 +533,1440 @@ characters = {
 			}
 		}
 	}
+	AFU_Oleh_Mudrak = {
+		name = "Oleh Mudrak"
+		portraits = {
+			army = {
+				large = "gfx/leaders/AFU/Oleh_Mudrak.dds"
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 1
+			visible = {
+				AFU = { has_government = ultranationalism }
+			}
+		}
+	}
+
+	AFU_Rob_Rundo = {
+		name = "Rob Rundo"
+		portraits = {
+			army = {
+				large = "gfx/leaders/AFU/Rob_Rundo.dds"
+			}
+		}
+		corps_commander = {
+			traits = { street_fighter }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			visible = {
+				AFU = { 
+				has_country_flag = AFU_brothers_from_the_new_world_flag
+				}
+			}
+		}
+	}
+
+	################
+	### Advisors ###
+	################	
+
+		AFU_regesha={
+		name="Volodymyr Regesha"
+		portraits={
+			civilian={
+                small="gfx/interface/ideas/ministers/AFU/Yulia_Fedosyuk.dds"
+			}
+		}	
+		 corps_commander={
+			traits={ urban_assault_specialist fortress_buster camouflage_expert }
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=2
+		}
+	}
+	
+    AFU_khorenko={
+        name="Viktor Khorenko"
+        portraits={
+            civilian={
+                large="GFX_khorenko"
+                small="gfx/interface/ideas/ministers/AFU/khorenko.dds"
+            }
+        }
+
+        advisor={
+            slot = high_command
+            idea_token = AFU_khorenko
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+
+            }
+            available = {
+
+            }
+            traits = {
+                army_commando_1
+            }
+        }
+    }
+	
+    AFU_suhanov={
+        name="Vyacheslav Suhanov"
+        portraits={
+            civilian={
+                large="GFX_suhanov"
+                small="gfx/interface/ideas/ministers/AFU/suhanov.dds"
+            }
+        }
+
+        advisor={
+            slot = high_command
+            idea_token = AFU_suhanov
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+
+            }
+            available = {
+
+            }
+            traits = {
+                h_t_r_o
+            }
+        }
+    }
+	
+    AFU_maistrenko={
+        name="Oleksiy Maistrenko"
+        portraits={
+            civilian={
+                large="GFX_maistrenko"
+                small="gfx/interface/ideas/ministers/AFU/maistrenko.dds"
+            }
+        }
+
+        advisor={
+            slot = high_command
+            idea_token = AFU_maistrenkov
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+
+            }
+            available = {
+
+            }
+            traits = {
+                army_chief_morale_1
+            }
+        }
+    }
+	
+    AFU_moskalyov={
+        name="Eduard Moskalyov"
+        portraits={
+            civilian={
+                large="GFX_moskalyov"
+                small="gfx/interface/ideas/ministers/AFU/moskalyov.dds"
+            }
+        }
+
+        advisor={
+            slot = high_command
+            idea_token = AFU_moskalyov
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+
+            }
+            available = {
+
+            }
+            traits = {
+                army_armored_1
+            }
+        }
+    }
+
+    AFU_tsigikal={
+        name="Petro Tsigikal"
+        portraits={
+            civilian={
+                large="GFX_tsigikal"
+                small="gfx/interface/ideas/ministers/AFU/tsigikal.dds"
+            }
+        }
+
+        advisor={
+            slot = high_command
+            idea_token = AFU_tsigikal
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+
+            }
+            available = {
+
+            }
+            traits = {
+                h_s_b_g_s
+            }
+        }
+    }
+    AFU_gaidai={
+        name="Serhiy Gaidai"
+        portraits={
+            civilian={
+                large="GFX_gaidai"
+                small="gfx/interface/ideas/ministers/AFU/gaidai.dds"
+            }
+        }
+
+        advisor={
+            slot = foreign_minister
+            idea_token = AFU_gaidai
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+
+            }
+            available = {
+
+            }
+            traits = {
+                freedom_fighter
+            }
+        }
+    }
+
+    AFU_kuts={
+        name="Alexander Kuts"
+        portraits={
+            civilian={
+                large="GFX_kuts"
+                small="gfx/interface/ideas/ministers/AFU/kuts.dds"
+            }
+        }
+
+        advisor={
+            slot = interior_minister
+            idea_token = AFU_kuts
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+
+            }
+            available = {
+
+            }
+            traits = {
+                h_l_s_s
+            }
+        }
+    }
+	
+    AFU_rinat={
+        name="Rinat Akhmetov"
+        portraits={
+            civilian={
+                large="GFX_rinat"
+                small="gfx/interface/ideas/ministers/AFU/rinat.dds"
+            }
+        }
+
+        advisor={
+            slot = economy_minister
+            idea_token = AFU_rinat
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+
+            }
+            available = {
+
+            }
+            traits = {
+                rinat
+            }
+        }
+    }
+    AFU_struk={
+        name="Volodymyr Struk"
+        portraits={
+            civilian={
+                large="GFX_struk"
+                small="gfx/interface/ideas/ministers/AFU/struk.dds"
+            }
+        }
+
+        advisor={
+            slot = head_of_government
+            idea_token = AFU_struk
+            allowed = {
+                original_tag = AFU
+            }
+			visible = {
+				AFU = { NOT = { has_government = ultranationalism } }
+			}
+            available = {
+
+            }
+            traits = {
+                moderate_collaborator
+            }
+        }
+    }
+    AFU_kyrilenko={
+        name="Pavlo Kyrilenko"
+        portraits={
+            civilian={
+                large="GFX_kyrilenko"
+                small="gfx/interface/ideas/ministers/AFU/kyrilenko.dds"
+            }
+        }
+
+        advisor={
+            slot = commander_chief
+            idea_token = AFU_kyrilenko
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+
+            }
+            available = {
+
+            }
+            traits = {
+                renovation_architect
+            }
+        }
+    }
+    AFU_dutchak={
+        name="Vladislav Dutchak"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/dutchak.dds"
+            }
+        }
+
+        advisor={
+            slot = theorist
+            idea_token = AFU_dutchak
+            allowed = {
+                original_tag = AFU
+            }
+			visible = {
+				AFU = { has_government = ultranationalism }
+			}
+            available = {
+
+            }
+            traits = {
+                Chief_ideologist
+            }
+        }
+    }
+    AFU_kudryashov={
+        name="Rodion Kudryashov"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/kudryashov.dds"
+            }
+        }
+
+        advisor={
+            slot = commander_chief
+            idea_token = AFU_kudryashov
+            allowed = {
+                original_tag = AFU
+            }
+			visible = {
+				AFU = { has_government = ultranationalism }
+			}
+            available = {
+
+            }
+            traits = {
+                commanders_intercessor
+            }
+        }
+    }
+    AFU_nesterenko={
+        name="Oleksandr Nesterenko"
+        portraits={
+            civilian={
+                large="GFX_nesterenko"
+                small="gfx/interface/ideas/ministers/AFU/nesterenko.dds"
+            }
+        }
+
+        advisor={
+            slot = economy_minister
+            idea_token = AFU_nesterenko
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+
+            }
+            available = {
+
+            }
+            traits = {
+                inventive_genius
+            }
+        }
+    }
+    AFU_zhdanov={
+        name="Oleg Zhdanov"
+        portraits={
+            civilian={
+                large="GFX_zhdanov"
+                small="gfx/interface/ideas/ministers/AFU/zhdanov.dds"
+            }
+        }
+
+        advisor={
+            slot = theorist
+            idea_token = AFU_zhdanov
+			ledger = army
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+
+            }
+            available = {
+
+            }
+            traits = {
+                military_technocrat
+            }
+        }
+    }
+    AFU_lunev={
+        name="Ihor Lunev"
+        portraits={
+            civilian={
+                large="GFX_lunev"
+                small="gfx/interface/ideas/ministers/AFU/lunev.dds"
+            }
+        }
+
+        advisor={
+            slot = staff_chief
+            idea_token = AFU_lunev
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+
+            }
+            available = {
+
+            }
+            traits = {
+                army_chief_defensive_1
+            }
+        }
+    }
+	
+    AFU_ignatiev={
+        name="Ivan Ignatiev"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/ignatiev.dds"
+            }
+        }
+
+        advisor={
+            slot = staff_chief
+            idea_token = AFU_ignatiev
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+
+            }
+            available = {
+
+            }
+            traits = {
+                army_logistics_3
+            }
+        }
+    }
+
+    AFU_overchenko={
+        name="Serhiy Overchenko"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/overchenko.dds"
+            }
+        }
+
+        advisor={
+            slot = commander_chief
+            idea_token = AFU_overchenko
+            allowed = {
+                original_tag = AFU
+            }
+			visible = {
+				AFU = { has_government = ultranationalism }
+			}
+            available = {
+
+            }
+            traits = {
+                army_armored_3
+            }
+        }
+    }
+
+    AFU_bevz={
+        name="Serhiy Bevz"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/bevz.dds"
+            }
+        }
+
+        advisor={
+            slot = commander_chief
+            idea_token = AFU_bevz
+            allowed = {
+                original_tag = AFU
+            }
+			visible = {
+				AFU = { has_government = ultranationalism }
+			}
+            available = {
+
+            }
+            traits = {
+                army_chief_planning_2
+            }
+        }
+    }
+	
+    AFU_kupar={
+        name="George Kuparishvili"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/kupar.dds"
+            }
+        }
+
+        advisor={
+            slot = commander_chief
+            idea_token = AFU_kupar
+            allowed = {
+                original_tag = AFU
+            }
+			visible = {
+				AFU = { has_government = ultranationalism }
+			}
+            available = {
+
+            }
+            traits = {
+                army_chief_drill_2
+            }
+        }
+    }
+
+	
+    AFU_ruban={
+        name="Volodymyr Ruban"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/ruban.dds"
+            }
+        }
+
+        advisor={
+		    desc = "POLITICS_RUBAN_DESC"
+            slot = head_of_government
+            idea_token = AFU_ruban
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+
+            }
+            available = {
+
+            }
+            traits = {
+                trait_ruban
+            }
+        }
+    }	
+	
+    AFU_globa={
+        name="Constantin Globa"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/globa.dds"
+            }
+        }
+
+        advisor={
+            slot = foreign_minister
+            idea_token = AFU_globa
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+
+            }
+            available = {
+
+            }
+            traits = {
+                head_of_justice
+            }
+        }
+    }	
+	
+    AFU_protorchenko={
+        name="Tetyana Protorchenko"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/protorchenko.dds"
+            }
+        }
+
+        advisor={
+            slot = interior_minister
+            idea_token = AFU_protorchenko
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+
+            }
+            available = {
+
+            }
+            traits = {
+                h_a_d_d
+            }
+        }
+    }
+	
+    AFU_diyakiv={
+        name="Theodore Dyakiv"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/diyakiv.dds"
+            }
+        }
+
+        advisor={
+            slot = culture_minister
+            idea_token = AFU_diyakiv
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+
+            }
+            available = {
+
+            }
+            traits = {
+                trait_diyakiv
+            }
+        }
+    }
+	
+    AFU_arhipov={
+        name="Vitaliy Arkhipov"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/arhipov.dds"
+            }
+        }
+
+        advisor={
+            slot = economy_minister
+            idea_token =AFU_arhipov
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+
+            }
+            available = {
+
+            }
+            traits = {
+                trait_arhipov
+            }
+        }
+    }
+	
+    AFU_solovyova={
+        name="Yuliya Solovyova"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/solovyova.dds"
+            }
+        }
+
+        advisor={
+            slot = industry_minister
+            idea_token =AFU_solovyova
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+
+            }
+            available = {
+
+            }
+            traits = {
+                trait_solovyova
+            }
+        }
+    }
+	
+	
+    AFU_boichenko={
+        name="Vadym Boichenko"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/homut/boichenko.dds"
+            }
+        }
+
+        advisor={
+            slot = economy_minister
+            idea_token = AFU_boichenko
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+			has_country_flag = AFU_cooperation_with_local_outsiders
+            }
+            available = {
+
+            }
+            traits = {
+                Technocratmunicipalist
+            }
+        }
+    }
+
+    AFU_sukov={
+        name="Ruslan Sukov"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/homut/sukov.dds"
+            }
+        }
+
+        advisor={
+            slot = economy_minister
+            idea_token = AFU_sukov
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+			has_country_flag = AFU_cooperation_with_local_outsiders
+            }
+            available = {
+
+            }
+            traits = {
+                Grey_coordinator
+            }
+        }
+    }
+
+    AFU_gnatenko={
+        name="Valeriy Gnatenko"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/homut/gnatenko.dds"
+            }
+        }
+
+        advisor={
+            slot = economy_minister
+            idea_token =AFU_gnatenko
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+			has_country_flag = AFU_cooperation_with_local_outsiders
+            }
+            available = {
+
+            }
+            traits = {
+                Local_stabiliser
+            }
+        }
+    }
+
+    AFU_shukalo={
+        name="Roman Shukalo"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/homut/shukalo.dds"
+            }
+        }
+
+        advisor={
+            slot = culture_minister
+            idea_token =AFU_shukalo
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+			has_country_flag = AFU_cooperation_with_local_outsiders
+            }
+            available = {
+
+            }
+            traits = {
+             BishopoftheRussianOrthodoxChurchinUkraine
+            }
+        }
+    }
+
+    AFU_kinakh={
+        name="Anatoliy Kinakh"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/homut/kinakh.dds"
+            }
+        }
+
+        advisor={
+            slot = head_of_government
+            idea_token =AFU_kinakh
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+			has_country_flag = AFU_integrate_the_party_of_industrialist
+            }
+            available = {
+
+            }
+            traits = {
+             Nomenclaturepatron
+            }
+        }
+    }
+
+    AFU_olishyk={
+        name="Mykola Olischuk"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AF/homut/olishyk.dds"
+            }
+        }
+
+        advisor={
+            slot = interior_minister
+            idea_token =AFU_olishyk
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+			has_country_flag = AFU_integrate_the_party_of_industrialist
+            }
+            available = {
+
+            }
+            traits = {
+            Curatorofborders
+            }
+        }
+    }
+
+    AFU_myroshnychenko={
+        name="Oleksiy Miroshnichenko"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AF/homut/myroshnychenko.dds"
+            }
+        }
+
+        advisor={
+            slot = foreign_minister
+            idea_token =AFU_myroshnychenko
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+			has_country_flag = AFU_integrate_the_party_of_industrialist
+            }
+            available = {
+
+            }
+            traits = {
+            Commercialdiplomat
+            }
+        }
+    }
+	
+    AFU_bobov={
+        name="Gennadiy Bobov"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AF/homut/bobov.dds"
+            }
+        }
+
+        advisor={
+            slot = economy_minister
+            idea_token =AFU_bobov
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+			has_country_flag = AFU_integrate_the_party_of_industrialist
+            }
+            available = {
+
+            }
+            traits = {
+            Agriculturaltycoon
+            }
+        }
+    }
+	
+    AFU_chupak={
+        name="Vasyl Chupak"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AF/homut/chupak.dds"
+            }
+        }
+
+        advisor={
+            slot = culture_minister
+            idea_token =AFU_chupak
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+			has_country_flag = AFU_integrate_the_party_of_industrialist
+            }
+            available = {
+
+            }
+            traits = {
+            Scientificimplementer
+            }
+        }
+    }
+	
+    AFU_lev_gnatenko={
+        name="Lev Gnatenko"
+        portraits={
+            civilian={
+                 small="gfx/interface/ideas/ministers/AF/homut/lev_gnatenko.dds"
+            }
+        }
+
+        advisor={
+            slot = defence_minister
+            idea_token =AFU_lev_gnatenko
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+			has_country_flag = AFU_integrate_the_party_of_industrialist
+            }
+            available = {
+
+            }
+            traits = {
+            Frontlineadministrator
+            }
+        }
+    }
+	
+	
+    AFU_kolesnikov={
+        name="Borys Kolesnikov"
+        portraits={
+            civilian={
+                 small="gfx/interface/ideas/ministers/AF/homut/kolesnikov.dds"
+            }
+        }
+
+        advisor={
+            slot = head_of_government
+            idea_token = AFU_kolesnikov
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+			has_country_flag = AFU_meeting_with_the_donetsk_clan
+            }
+            available = {
+
+            }
+            traits = {
+                ProRussianfigure
+            }
+        }
+    }
+	
+    AFU_bondar={
+        name="Viktor Bondar"
+        portraits={
+            civilian={
+                 small="gfx/interface/ideas/ministers/AF/homut/bondar.dds"
+            }
+        }
+
+        advisor={
+            slot = head_of_government
+            idea_token = AFU_bondar
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+			has_country_flag = AFU_revival_faction_session
+            }
+            available = {
+
+            }
+            traits = {
+                pragmatic_operator
+            }
+        }
+    }
+	
+    AFU_pisarenko={
+        name="Valeriy Pisarenko"
+        portraits={
+            civilian={
+                 small="gfx/interface/ideas/ministers/AF/homut/pisarenko.dds"
+            }
+        }
+
+        advisor={
+            slot = foreign_minister
+            idea_token = AFU_pisarenko
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+			has_country_flag = AFU_revival_faction_session
+            }
+            available = {
+
+            }
+            traits = {
+                shadow_lawyer
+            }
+        }
+    }
+	
+    AFU_barvinenko={
+        name="Vitaliy Barvinenko"
+        portraits={
+            civilian={
+                 small="gfx/interface/ideas/ministers/AF/homut/barvinenko.dds"
+            }
+        }
+
+        advisor={
+            slot = economy_minister
+            idea_token = AFU_barvinenko
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+			has_country_flag = AFU_revival_faction_session
+            }
+            available = {
+
+            }
+            traits = {
+                agrarian_lobbyist
+            }
+        }
+    }
+	
+    AFU_zubik={
+        name="Volodymyr Zubyk"
+        portraits={
+            civilian={
+                 small="gfx/interface/ideas/ministers/AF/homut/zubik.dds"
+            }
+        }
+
+        advisor={
+            slot = economy_minister
+            idea_token = AFU_zubik
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+			has_country_flag = AFU_revival_faction_session
+            }
+            available = {
+
+            }
+            traits = {
+                construction_backer
+            }
+        }
+    }
+	
+    AFU_kacuba={
+        name="Volodymyr Katsuba"
+        portraits={
+            civilian={
+                 small="gfx/interface/ideas/ministers/AF/homut/kacuba.dds"
+            }
+        }
+
+        advisor={
+            slot = defence_minister
+            idea_token = AFU_kacuba
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+			has_country_flag = AFU_revival_faction_session
+            }
+            available = {
+
+            }
+            traits = {
+                air_marshal
+            }
+        }
+    }
+	
+    AFU_svyatash={
+        name="Dmytro Sviatash"
+        portraits={
+            civilian={
+                 small="gfx/interface/ideas/ministers/AF/homut/svyatash.dds"
+            }
+        }
+
+        advisor={
+            slot = interior_minister
+            idea_token = AFU_svyatash
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+			has_country_flag = AFU_revival_faction_session
+            }
+            available = {
+
+            }
+            traits = {
+             police_networker
+            }
+        }
+    }
+
+	AFU_garkovenko={
+        name="Ihor Garkovenko"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/garkovenko.dds"
+            }
+        }
+
+        advisor={
+            slot = culture_minister
+            idea_token = AFU_garkovenko
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+
+            }
+			visible = {
+				AFU = { has_government = ultranationalism }
+			}
+            traits = {
+                rightwingphilosopher
+            }
+        }
+    }
+	
+    AFU_reins={
+        name="Oleksiy Reins"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/reins.dds"
+            }
+        }
+
+        advisor={
+            slot = head_of_government
+            idea_token = AFU_reins
+            allowed = {
+                original_tag = AFU
+            }
+			visible = {
+				AFU = { has_government = ultranationalism }
+			}
+            available = {
+
+            }
+            traits = {
+                chief_ideologist
+            }
+        }
+    }
+	
+    AFU_nadtochiy={
+        name="Mykyta Nadtochiy"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/nadtochiy.dds"
+            }
+        }
+
+        advisor={
+            slot = defence_minister
+            idea_token = AFU_nadtochiy
+            allowed = {
+                original_tag = AFU
+            }
+			visible = {
+				AFU = { has_government = ultranationalism }
+			}
+            available = {
+
+            }
+            traits = {
+                deputy_commander_of_AZOV
+            }
+        }
+    }
+	
+    AFU_troyan={
+        name="Vadym Troyan"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/troyan.dds"
+            }
+        }
+
+        advisor={
+            slot = interior_minister
+            idea_token = AFU_troyan
+            allowed = {
+                original_tag = AFU
+            }
+			visible = {
+				AFU = { has_government = ultranationalism }
+			}
+            available = {
+
+            }
+            traits = {
+                hmdmp
+            }
+        }
+    }
+	
+    AFU_ioan={
+        name="Metropolitan Ioann"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/serhiev.dds"
+            }
+        }
+
+        advisor={
+            slot = culture_minister
+            idea_token = AFU_ioan
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+			has_country_flag = azov_military_clergy_decisions_2 
+            }
+            available = {
+
+            }
+            traits = {
+               h_o_m_c
+            }
+        }
+    }
+
+ AFU_serhiev={
+        name="Kyrylo Serhieiev"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/serhiev.dds"
+            }
+        }
+
+        advisor={
+            slot = culture_minister
+            idea_token = AFU_serhiev
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+			AFU = {
+			has_completed_focus = AFU_kozackomy_rodu_nema_prevodu
+			}
+
+            }
+            available = {
+
+            }
+            traits = {
+                trait_serhihev
+            }
+        }
+    }
+	
+    AFU_baranov={
+        name="Vitaliy Baranov"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/baranov.dds"
+            }
+        }
+
+        advisor={
+            slot = interior_minister
+            idea_token = AFU_baranov
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+			AFU = {
+			has_completed_focus = AFU_kozackomy_rodu_nema_prevodu
+			}
+            }
+            available = {
+
+            }
+            traits = {
+                trait_baranov
+            }
+        }
+    }
+
+    AFU_gonchar={
+        name="Mykhailo Gonchar"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/gonchar.dds"
+            }
+        }
+
+        advisor={
+            slot = theorist
+            idea_token = AFU_gonchar
+            allowed = {
+                original_tag = AFU
+            }
+            visible = {
+			
+			AFU = {
+			has_completed_focus = AFU_invite_observers
+			}
+
+            }
+            available = {
+
+            }
+            traits = {
+                trait_gonchar
+            }
+        }
+    }
+	
+	
+    AFU_Yulia_Fedosyuk={
+        name="Yulia Fedosyuk"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/Yulia_Fedosyuk.dds"
+            }
+        }
+
+        advisor={
+            slot = culture_minister
+            idea_token = AFU_Yulia_Fedosyuk
+            allowed = {
+                original_tag = AFU
+            }
+			visible = {
+				AFU = { has_idea = AFU_azov_legacy_of_joan_of_arc }
+			}
+            available = {
+
+            }
+            traits = {
+                Silver_Rose
+            }
+        }
+    }
+	
+    AFU_Kateryna_Prokopenko={
+        name="Kateryna Prokopenko"
+        portraits={
+            civilian={
+                small="gfx/interface/ideas/ministers/AFU/Kateryna_Prokopenko.dds"
+            }
+        }
+
+        advisor={
+            slot = head_of_government
+            idea_token = AFU_Kateryna_Prokopenko
+            allowed = {
+                original_tag = AFU
+            }
+			visible = {
+				AFU = { has_idea = AFU_azov_legacy_of_joan_of_arc }
+			}
+            available = {
+
+            }
+            traits = {
+                activist_fighter
+            }
+        }
+    }
+
+	
 }

@@ -1,19 +1,22 @@
 ﻿capital = 518
 oob = "LPR"
 set_naval_oob = ""
-set_research_slots = 3
+set_research_slots = 4
 set_convoys = 0
 set_stability = 0.5
 set_war_support = 0.5
 
+country_lock_all_division_template = yes
+
 add_ideas = {
 	## NatSpirits
 	industrial_legacy
-	AFU_apathy_of_the_population
+	apathy_of_the_population
 	LPR_democracy_shirm
 	LPR_FSB
-	LPR_rivalry_between_republics
 	LPR_second_fiddle
+	DPR_external_army_control
+	LPR_rivalry_between_republics
 	
 	## Laws
 	fop_conscription_volunteer_only
@@ -45,16 +48,21 @@ add_ideas = {
 	fop_ethnic_minorities_forced_assimilation
 	
 	fop_healthcare_outdated
+	
+	## Political System
+	fop_political_system_civilian_dictatorship
 }
 
 # Starting tech
-set_technology = {
+set_technology = { basic_train = 1
 	infantry_weapons = 1
 	infantry_weapons1 = 1
 	support_weapons = 1
     army_uniform = 1
     command_and_control = 1
     night_vision = 1
+	infantry_at1 = 1
+	infantry_aa1 = 1
 	
 	tech_support = 1
 	tech_engineers = 1
@@ -73,9 +81,56 @@ set_technology = {
     utility_vehicle1 = 1
 	armored_car1 = 1
 	AFV = 1
-    MBT1 = 1
     IFV1 = 1
     APC1 = 1
+
+	basic_machine_tools = 1
+	electronic_mechanical_engineering = 1
+}
+
+
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	create_equipment_variant = {
+		name = "T-64"
+		type = MBT_chassis_0
+		parent_version = 0
+		modules = {
+			loader_slot = manual_loading
+			main_armament_slot = tank_smoothbore_barrel_gen0
+			turret_type_slot = tank_two_man_turret
+			suspension_type_slot = tank_torsion_bar_suspension
+			armor_type_slot = tank_composite_armor_gen0
+			engine_type_slot = tank_diesel_engine_gen0
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 1
+			tank_nsb_armor_upgrade = 1
+		}
+		obsolete = yes
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = { basic_train = 1
+		MBT0_chassis = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "No Step Back"
+		}
+	}
+	set_technology = { basic_train = 1
+		MBT1 = 1
+	}
 }
 
 set_politics = {
@@ -103,6 +158,8 @@ set_popularities = {
 
 ### Country Leaders ###
 
+recruit_character = LPR_Pasechnik
+
 ### Marshals and Generals ###
 
 ### Admirals ###
@@ -116,3 +173,11 @@ recruit_character = LNR_gorenko
 recruit_character = LNR_Zinaida
 recruit_character = LNR_ignatov
 recruit_character = LNR_Kizyak
+recruit_character = LNR_kornet
+recruit_character = LNR_morg
+recruit_character = LNR_polov
+recruit_character = LNR_vacik
+recruit_character = LNR_benes
+recruit_character = LNR_bugr
+recruit_character = LNR_babich
+recruit_character = LNR_lesh

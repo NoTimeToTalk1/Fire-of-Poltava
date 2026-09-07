@@ -1,0 +1,236 @@
+autonomy_state = {
+	id = autonomy_occupied_region #Controlled Region
+
+	is_puppet = yes
+	use_overlord_color = yes
+
+	min_freedom_level = 0.1
+
+	manpower_influence = 1.0
+
+	rule = {
+		desc = "RULE_DESC_IS_A_SUBJECT"
+	}
+
+	modifier = {
+		hidden_modifier = {
+			autonomy_manpower_share = 1.0
+			can_master_build_for_us = 1
+			extra_trade_to_overlord_factor = 1.0
+			overlord_trade_cost_factor = -0.9
+			cic_to_overlord_factor = 0.25
+			mic_to_overlord_factor = 0.75
+			peace_score_ratio_transferred_to_overlord = 0.2
+			lend_lease_tension_with_overlord = -0.40
+			research_sharing_per_country_bonus_factor = -0.5
+			faction_influence_contribution_factor = -0.75
+		}
+	}
+
+	ai_subject_wants_higher = {
+		factor = 1.0
+	}
+
+	ai_overlord_wants_lower = {
+		factor = 1.0
+	}
+
+	ai_overlord_wants_garrison = {
+		always = yes
+	}
+
+	allowed = {
+		always = yes
+	}
+
+	allowed_levels_filter = {
+		autonomy_occupied_region
+		autonomy_governorate
+		autonomy_autonomous_territory
+		autonomy_autonomous_republic
+	}
+
+	can_take_level = {
+		always = no
+	}
+
+	can_lose_level = {
+		always = no
+	}
+}
+
+autonomy_state = {
+	id = autonomy_governorate #Local Administration
+
+	is_puppet = yes
+	use_overlord_color = yes
+
+	min_freedom_level = 0.3
+
+	manpower_influence = 0.9
+
+	rule = {
+		desc = "RULE_DESC_IS_A_SUBJECT"
+	}
+
+	modifier = {
+		hidden_modifier = {
+			autonomy_manpower_share = 0.9
+			can_master_build_for_us = 1
+			extra_trade_to_overlord_factor = 0.75
+			overlord_trade_cost_factor = -0.75
+			peace_score_ratio_transferred_to_overlord = 0.15
+			lend_lease_tension_with_overlord = -0.35
+			research_sharing_per_country_bonus_factor = -0.5
+			faction_influence_contribution_factor = -0.5
+		}
+	}
+
+	ai_subject_wants_higher = {
+		factor = 1.0
+	}
+
+	ai_overlord_wants_lower = {
+		factor = 1.0
+	}
+
+	ai_overlord_wants_garrison = {
+		always = yes
+	}
+
+	allowed = {
+		always = yes
+	}
+
+	allowed_levels_filter = {
+		autonomy_occupied_region
+		autonomy_governorate
+		autonomy_autonomous_territory
+		autonomy_autonomous_republic
+	}
+
+	can_take_level = {
+		always = no
+	}
+
+	can_lose_level = {
+		always = no
+	}
+}
+
+autonomy_state = {
+	id = autonomy_autonomous_territory
+
+	is_puppet = yes
+	use_overlord_color = yes
+
+	min_freedom_level = 0.5
+
+	manpower_influence = 0.5
+
+	rule = {
+		desc = "RULE_DESC_IS_A_SUBJECT"
+	}
+
+	modifier = {
+		hidden_modifier = {
+			autonomy_manpower_share = 0.5
+			extra_trade_to_overlord_factor = 0.4
+			overlord_trade_cost_factor = -0.4
+			peace_score_ratio_transferred_to_overlord = 0.08
+			lend_lease_tension_with_overlord = -0.20
+			research_sharing_per_country_bonus_factor = -0.25
+			faction_influence_contribution_factor = -0.35
+		}
+	}
+
+	ai_subject_wants_higher = {
+		factor = 1.0
+	}
+
+	ai_overlord_wants_lower = {
+		factor = 1.0
+	}
+
+	ai_overlord_wants_garrison = {
+		always = yes
+	}
+
+	allowed = {
+		always = yes
+	}
+
+	allowed_levels_filter = {
+		autonomy_occupied_region
+		autonomy_governorate
+		autonomy_autonomous_territory
+		autonomy_autonomous_republic
+	}
+
+	can_take_level = {
+		always = no
+	}
+
+	can_lose_level = {
+		always = no
+	}
+}
+
+autonomy_state = {
+	id = autonomy_autonomous_republic
+
+	is_puppet = yes
+	use_overlord_color = yes
+
+	min_freedom_level = 0.7
+
+	manpower_influence = 0.2
+
+	rule = {
+		desc = "RULE_DESC_IS_A_SUBJECT"
+	}
+
+	modifier = {
+		hidden_modifier = {
+			autonomy_manpower_share = 0.5
+			can_master_build_for_us = 1
+			extra_trade_to_overlord_factor = 1
+			overlord_trade_cost_factor = -0.9
+			cic_to_overlord_factor = 0.5
+			mic_to_overlord_factor = 0.5
+			unit_limit_subject_bonus = 1
+			faction_influence_contribution_factor = -0.5
+		}
+	}
+
+	ai_subject_wants_higher = {
+		factor = 1.0
+	}
+
+	ai_overlord_wants_lower = {
+		factor = 1.0
+	}
+
+	ai_overlord_wants_garrison = {
+		always = yes
+	}
+
+	allowed = {
+		always = yes
+	}
+
+	allowed_levels_filter = {
+		autonomy_occupied_region
+		autonomy_governorate
+		autonomy_autonomous_territory
+		autonomy_autonomous_republic
+	}
+
+	can_take_level = {
+		always = no
+	}
+
+	can_lose_level = {
+		always = no
+	}
+}

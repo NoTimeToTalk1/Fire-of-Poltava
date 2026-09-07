@@ -21,7 +21,7 @@ add_ideas = {
 	fop_gender_rights_traditional
 	fop_healthcare_no
 	fop_industry_primitive
-	fop_military_professionalism_incompetent_milita
+	fop_military_professionalism_incompetent_militia
 	fop_oligarchs_power_tamed_oligarchs
 	fop_oligarchs_relations_anti_oligarchic_policy
 	fop_pollution_strict_regulations
@@ -31,16 +31,21 @@ add_ideas = {
 	fop_sexual_minorities_criminalized
 	fop_supervision_encouraged_brutality
 	fop_unemployment_high
+	
+	## Political System
+	fop_political_system_anarchic_community
 }
 
 # Starting tech
-set_technology = {
+set_technology = { basic_train = 1
 	infantry_weapons = 1
 	infantry_weapons1 = 1
 	support_weapons = 1
     army_uniform = 1
     command_and_control = 1
     night_vision = 1
+	infantry_at1 = 1
+	infantry_aa1 = 1
 	
 	tech_support = 1
 	tech_engineers = 1
@@ -59,9 +64,31 @@ set_technology = {
     utility_vehicle1 = 1
 	armored_car1 = 1
 	AFV = 1
-    MBT1 = 1
     IFV1 = 1
     APC1 = 1
+
+	basic_machine_tools = 1
+	electronic_mechanical_engineering = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = { basic_train = 1
+		MBT0_chassis = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "No Step Back"
+		}
+	}
+	set_technology = { basic_train = 1
+		MBT1 = 1
+	}
 }
 
 set_politics = {

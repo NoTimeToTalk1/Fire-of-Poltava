@@ -12,24 +12,37 @@ country_event = {
 	option = {
 		name = azov.1.a
 		custom_effect_tooltip = azov_cum_into_power
+		FOP_change_political_system_military_dictatorship = yes
 		hidden_effect = {
-		load_focus_tree = AFU_azov
-		complete_national_focus = afu_ruleofthefarright
-		set_politics = {
-	    	ruling_party = ultranationalism
-		}
-        add_popularity = {
-			ideology = ultranationalism
-			popularity = 0.2
-		}
-		promote_character = AFU_zhorin
-		set_cosmetic_tag = AFU_azov
+			USA = {
+				send_embargo = AFU
+			}
+			load_focus_tree = AFU_azov
+			complete_national_focus = AFU_rule_of_the_far_right
+			set_politics = {
+				ruling_party = ultranationalism
+			}
+			if = {
+				limit = {
+					ultranationalism > 0.3
+				}
+				add_popularity = {
+					ideology = ultranationalism
+					popularity = -0.25
+				}
+			}
+			promote_character = AFU_zhorin
+			set_cosmetic_tag = AFU_azov
 			clr_country_flag = AFU_elections_flag
 			clr_country_flag = AFU_elections_play_danilov
 			clr_country_flag = AFU_elections_play_savchenko
 			clr_country_flag = AFU_elections_play_homut
 			remove_ideas = AFU_nationalist_agendas
 			remove_ideas = AFU_nationalist_agendas_2
+			country_event = {
+				id = afu.37
+				days = 14
+			}
 		}
 	}
 }
@@ -108,7 +121,7 @@ country_event = {
 			limit = {
 				PLT = {
 					NOT = {
-						has_country_flag = united_dnieper
+						tag = DIR
 					}
 				}
 			}
@@ -122,7 +135,7 @@ country_event = {
 		else_if = {
 			limit = {
 				PLT = {
-					has_country_flag = united_dnieper
+					tag = DIR
 				}
 			}
 			add_manpower = 4000
@@ -145,7 +158,7 @@ country_event = {
 		else_if = {
 			limit = {
 				PLT = {
-					has_country_flag = united_center
+					tag = NRT
 				}
 			}
 			add_manpower = 7000
@@ -197,7 +210,7 @@ country_event = {
 			limit = {
 				PLT = {
 					NOT = {
-						has_country_flag = united_dnieper
+						tag = DIR
 					}
 				}
 			}
@@ -211,7 +224,7 @@ country_event = {
 		else_if = {
 			limit = {
 				PLT = {
-					has_country_flag = united_dnieper
+					tag = DIR
 				}
 			}
 			add_manpower = 920
@@ -234,7 +247,7 @@ country_event = {
 		else_if = {
 			limit = {
 				PLT = {
-					has_country_flag = united_center
+					tag = NRT
 				}
 			}
 			add_manpower = 2135
@@ -934,7 +947,7 @@ country_event = {
 		name = azov.41.a
 		add_political_power = -5
 set_province_name = {
-                            id = 3320
+                            id = 12842
                             name = STATE_3320_AZOV_1
                         }
 	2105 = {
@@ -945,7 +958,7 @@ set_province_name = {
 		name = azov.41.b
 		add_political_power = -5
 set_province_name = {
-                            id = 3320
+                            id = 12842
                             name = STATE_3320_AZOV_2
                         }
 	2105 = {
@@ -958,7 +971,7 @@ set_province_name = {
 		has_country_flag = AFU_start_the_paganisation
 		}
 set_province_name = {
-                            id = 3320
+                            id = 12842
                             name = STATE_3320_AZOV_3
                         }
 	2105 = {
@@ -995,7 +1008,7 @@ set_province_name = {
                             id = 776
                             name = STATE_2111_AZOV_1
                         }
-	2111 = {
+	2010 = {
 	set_state_name = STATE_2111_AZOV_1
 	}
 	}
@@ -1006,7 +1019,7 @@ set_province_name = {
                             id = 776
                             name = STATE_2111_AZOV_2
                         }
-	2111 = {
+	2010 = {
 	set_state_name = STATE_2111_AZOV_2
 	}
 	}
@@ -1019,7 +1032,7 @@ set_province_name = {
                             id = 776
                             name = STATE_2111_AZOV_3
                         }
-	2111 = {
+	2010 = {
 	set_state_name = STATE_2111_AZOV_3
 	}
 			add_to_variable = {
@@ -1053,6 +1066,9 @@ set_province_name = {
                             id = 8379
                             name = STATE_8379_AZOV_1
                         }
+		2106 = {
+			set_state_name = STATE_8379_AZOV_1
+		}
 	}
 	option = {
 		name = azov.43.b
@@ -1061,6 +1077,9 @@ set_province_name = {
                             id = 8379
                             name = STATE_8379_AZOV_2
                         }
+		2106 = {
+			set_state_name = STATE_8379_AZOV_1
+		}
 	}
 	option = {
 		name = azov.43.c
@@ -1071,6 +1090,9 @@ set_province_name = {
                             id = 8379
                             name = STATE_8379_AZOV_3
                         }
+		2106 = {
+			set_state_name = STATE_8379_AZOV_1
+		}
 			add_to_variable = {
 				var =  AFU_azov_paganisation_v
 				value = 2
@@ -1103,20 +1125,13 @@ country_event = {
 	option = {
 		name = azov.44.b
 		add_political_power = -5
-set_province_name = {
-                            id = 13406
-                            name = STATE_2079_AZOV_2
-                        }
-	2079 = {
-	set_state_name = STATE_2079_AZOV_2
-	}
-set_province_name = {
-                            id = 15847
-                            name = STATE_2079_AZOV_2
-                        }
-	2724 = {
-	set_state_name = STATE_2079_AZOV_2
-	}
+		set_province_name = {
+			id = 13406
+			name = STATE_2079_AZOV_2
+		}
+		2035 = {
+			set_state_name = STATE_2079_AZOV_2
+		}
 	}
 	option = {
 		name = azov.44.c
@@ -1127,14 +1142,7 @@ set_province_name = {
                             id = 13406
                             name = STATE_2079_AZOV_3
                         }
-	2079 = {
-	set_state_name = STATE_2079_AZOV_3
-	}
-set_province_name = {
-                            id = 15847
-                            name = STATE_2079_AZOV_3
-                        }
-	2724 = {
+	2035 = {
 	set_state_name = STATE_2079_AZOV_3
 	}
 			add_to_variable = {
@@ -1165,7 +1173,7 @@ country_event = {
 		name = azov.45.a
 		add_political_power = -5
 set_province_name = {
-                            id = 13652
+                            id = 13531
                             name = STATE_2062_AZOV_1
                         }
 	2062 = {
@@ -1176,7 +1184,7 @@ set_province_name = {
 		name = azov.45.b
 		add_political_power = -5
 set_province_name = {
-                            id = 13652
+                            id = 13531
                             name = STATE_2062_AZOV_2
                         }
 	2062 = {
@@ -1189,7 +1197,7 @@ set_province_name = {
 		has_country_flag = AFU_start_the_paganisation
 		}
 set_province_name = {
-                            id = 13652
+                            id = 13531
                             name = STATE_2062_AZOV_3
                         }
 	2062 = {
@@ -1225,12 +1233,20 @@ country_event = {
 	2060 = {
 	set_state_name = STATE_2060_AZOV_1
 	}
+	set_province_name = {
+		id = 8379
+		name = STATE_2060_AZOV_1
+	}
 	}
 	option = {
 		name = azov.46.b
 		add_political_power = -5
 	2060 = {
 	set_state_name = STATE_2060_AZOV_2
+	}
+	set_province_name = {
+		id = 8379
+		name = STATE_2060_AZOV_2
 	}
 	}
 	option = {
@@ -1240,6 +1256,10 @@ country_event = {
 		}
 	2060 = {
 	set_state_name = STATE_2060_AZOV_3
+	}
+	set_province_name = {
+		id = 8379
+		name = STATE_2060_AZOV_3
 	}
 			add_to_variable = {
 				var =  AFU_azov_paganisation_v
@@ -1272,6 +1292,10 @@ set_province_name = {
                             id = 3104
                             name = STATE_3104_AZOV_1
                         }
+		set_state_name = {
+			id = 2047
+			name = STATE_3104_AZOV_1
+		}
 	}
 	option = {
 		name = azov.47.b
@@ -1280,6 +1304,10 @@ set_province_name = {
                             id = 3104
                             name = STATE_3104_AZOV_2
                         }
+		set_state_name = {
+		id = 2047
+		name = STATE_3104_AZOV_2
+	}
 	}
 	option = {
 		name = azov.47.c
@@ -1290,6 +1318,10 @@ set_province_name = {
                             id = 3104
                             name = STATE_3104_AZOV_3
                         }
+						set_state_name = {
+		id = 2047
+		name = STATE_3104_AZOV_3
+	}
 			add_to_variable = {
 				var =  AFU_azov_paganisation_v
 				value = 2
@@ -1379,7 +1411,7 @@ set_province_name = {
                             id = 4869
                             name = STATE_2080_AZOV_1
                         }
-	2080 = {
+	2011 = {
 	set_state_name = STATE_2080_AZOV_1
 	}
 	}
@@ -1390,7 +1422,7 @@ set_province_name = {
                             id = 4869
                             name = STATE_2080_AZOV_2
                         }
-	2080 = {
+	2011 = {
 	set_state_name = STATE_2080_AZOV_2
 	}
 	}
@@ -1403,7 +1435,7 @@ set_province_name = {
                             id = 4869
                             name = STATE_2080_AZOV_3
                         }
-	2080 = {
+	2011 = {
 	set_state_name = STATE_2080_AZOV_3
 	}
 			add_to_variable = {
@@ -1499,7 +1531,7 @@ set_province_name = {
                             id = 9169
                             name = STATE_2073_AZOV_1
                         }
-	2073 = {
+	559 = {
 	set_state_name = STATE_2073_AZOV_1
 	}
 	}
@@ -1510,7 +1542,7 @@ set_province_name = {
                             id = 9169
                             name = STATE_2073_AZOV_2
                         }
-	2073 = {
+	559 = {
 	set_state_name = STATE_2073_AZOV_2
 	}
 	}
@@ -1523,7 +1555,7 @@ set_province_name = {
                             id = 9169
                             name = STATE_2073_AZOV_3
                         }
-	2073 = {
+	559 = {
 	set_state_name = STATE_2073_AZOV_3
 	}
 			add_to_variable = {
@@ -1675,6 +1707,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = azov.57.a
+		set_country_flag = FOP_Ending_Screen_Visible
 	}
 }
 
@@ -1716,20 +1749,11 @@ country_event = {
 				target = KLM
 				autonomous_state = FOP_controlled_region
 			}
-			add_country_leader_role = {
-				character = PLT_kuharchyk
-				promote_leader = yes
-				country_leader = {
-					ideology = social_nationalism
-					expire = "2222.1.1.1"
-					traits = { }
-				}
-			}
-			PLT_kuharchyk = {
+			AFU_Gandalf = {
 				set_nationality = MRD
 			}
 			add_country_leader_role = {
-				character = AFU_himik
+				character = AFU_Gandalf
 				promote_leader = yes
 				country_leader = {
 					ideology = social_nationalism
@@ -1737,11 +1761,11 @@ country_event = {
 					traits = { }
 				}
 			}
-			AFU_himik = {
+			AFU_Khimik = {
 				set_nationality = NOV
 			}
 			add_country_leader_role = {
-				character = AFU_khorenko
+				character = AFU_Khimik
 				promote_leader = yes
 				country_leader = {
 					ideology = social_nationalism
@@ -1749,11 +1773,11 @@ country_event = {
 					traits = { }
 				}
 			}
-			AFU_khorenko = {
+			AFU_Apis = {
 				set_nationality = KLM
 			}
 			add_country_leader_role = {
-				character = AFU_redys
+				character = AFU_Apis
 				promote_leader = yes
 				country_leader = {
 					ideology = social_nationalism
@@ -1761,11 +1785,11 @@ country_event = {
 					traits = { }
 				}
 			}
-			AFU_redys = {
+			AFU_Prokopenko = {
 				set_nationality = TTR
 			}
 			add_country_leader_role = {
-				character = AFU_syr
+				character = AFU_Prokopenko
 				promote_leader = yes
 				country_leader = {
 					ideology = social_nationalism
@@ -1773,10 +1797,18 @@ country_event = {
 					traits = { }
 				}
 			}
-			AFU_syr = {
+			AFU_Syrskyi = {
 				set_nationality = MOS
 			}
-			load_focus_tree = AFU_azov_triumph
+			add_country_leader_role = {
+				character = AFU_Syrskyi
+				promote_leader = yes
+				country_leader = {
+					ideology = social_nationalism
+					expire = "2222.1.1.1"
+					traits = { }
+				}
+			}
 		}
 		NOV = {
 			set_cosmetic_tag = NOV_azov
@@ -2206,6 +2238,7 @@ country_event = {
 				target = SOS
 			}
 		}
+		mark_focus_tree_layout_dirty = yes
 	}
 }
 
@@ -2290,6 +2323,18 @@ country_event = {
 			set_cosmetic_tag = GEO_ultranationalism
 			load_oob = GEO_fasci
 		}
+		GEO = {
+            declare_war_on = {
+                target = ABK
+                type = annex_everything
+            }
+        }
+		GEO = {
+            declare_war_on = {
+                target = SOS
+                type = annex_everything
+            }
+        }
 	}
 }
 

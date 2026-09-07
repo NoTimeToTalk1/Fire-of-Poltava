@@ -8,13 +8,15 @@ ideas = {
 
 			modifier = {
 				war_support_factor = -0.05
-				recruitable_population_factor = -0.15
+				conscription_factor = -0.8
 			}
 
 		    cancel = {
-				has_war_with = AFU
-				has_war_with = DPR
-				has_war_with = LPR
+				OR = {
+					has_war_with = AFU
+					has_war_with = DPR
+					has_war_with = LPR
+				}
 		    }
 	    }
 
@@ -36,7 +38,7 @@ ideas = {
 			modifier = {
 				consumer_goods_factor = 0.1
 				stability_factor = 0.05
-				conscription = 0.01
+				conscription = 0.05
 				drift_defence_factor = 0.2
 			}
 		}
@@ -74,8 +76,8 @@ ideas = {
 			picture = AFU_nationalist_agendas
 
 			modifier = {
-				radical_nationalism_drift = 0.01
-				army_morale = 2
+				ultranationalism_drift = 0.02
+				army_morale = 1
 			}
 		}
 
@@ -84,16 +86,8 @@ ideas = {
 			picture = AFU_nationalist_agendas
 
 			modifier = {
+				ultranationalism_drift = 0.01
 				army_morale = 2
-			}
-		}
-
-		AFU_continue_the_state_of_emergency = {
-
-			picture = AFU_continuation_of_emergency_state
-
-			modifier = {
-               stability_weekly = -0.02
 			}
 		}
 
@@ -130,19 +124,19 @@ ideas = {
 			picture = AFU_strikes
 
 			modifier = {
-				industrial_capacity_factory = -0.25
+				industrial_capacity_factory = -0.2
 				industrial_capacity_dockyard = -0.25
-				political_power_gain = -0.5
+				political_power_gain = -0.4
 			}
 		}
 
-		AFU_millitary_administration = {
+		AFU_military_administration = {
 
 			picture = AFU_military_administration
 
 			modifier = {
-				political_power_gain = -0.15
-                stability_factor = 0.15
+				political_power_gain = -0.1
+                stability_factor = 0.1
 				consumer_goods_factor = -0.05
 				supply_node_range = 0.15
 			}
@@ -155,7 +149,7 @@ ideas = {
 			modifier = {
 				stability_factor = -0.3
 				consumer_goods_factor = 0.2
-				political_power_cost = -0.5
+				political_power_gain = -0.25
 			}
 		}
 
@@ -167,7 +161,7 @@ ideas = {
 				war_support_weekly = 0.025
 				stability_weekly_factor = -0.0025
 				drift_defence_factor = -0.2
-				consumer_goods_factor = 0.3
+				consumer_goods_factor = 0.2
 				industry_repair_factor = -0.5
 			}
 		}
@@ -179,7 +173,7 @@ ideas = {
 			modifier = {
 				weekly_manpower = -2500
 				stability_weekly = -0.02
-				political_power_gain = 0.5
+				political_power_gain = 0.2
 			}
 		}
 
@@ -188,15 +182,15 @@ ideas = {
 			picture = AFU_fucking_fsb
 
 			modifier = {
-				compliance_growth_on_our_occupied_states = -0.3
-				resistance_activity = -0.3
-				resistance_damage_to_garrison = -0.4
+				compliance_growth_on_our_occupied_states = 0.3
+				resistance_activity = 0.3
+				resistance_damage_to_garrison = 0.4
 			}
 		}
 
-		AFU_ssojaitsa = {
+		AFU_sso = {
 
-			picture = AFU_ssojaitsa
+			picture = AFU_sso
 
 			modifier = {
 				recon_factor = 0.2
@@ -217,10 +211,17 @@ ideas = {
 				minimum_training_level = 0.15
 				experience_loss_factor =-0.1
 				army_speed_factor = 0.05
-				army_org = 0.5
+				army_org = 0.3
 				army_org_regain = 0.1
 				pocket_penalty = -0.1
 				land_reinforce_rate = 0.05
+			}
+
+			available = {
+				OR = {
+					country_exists = DPR
+					country_exists = LPR
+				}
 			}
 		}
 
@@ -240,6 +241,13 @@ ideas = {
 				local_supply_impact_factor = -0.5
 				experience_loss_factor = 0.15
 			}
+
+			available = {
+				OR = {
+					country_exists = DPR
+					country_exists = LPR
+				}
+			}
 		}
 
 		AFU_ce_baza_ce_genshtab = {
@@ -252,6 +260,13 @@ ideas = {
 		        army_leader_start_level = 1
 		        army_leader_start_planning_level = 1
 			}
+
+			available = {
+				OR = {
+					country_exists = DPR
+					country_exists = LPR
+				}
+			}
 		}
 
 		AFU_ready_military = {
@@ -262,15 +277,17 @@ ideas = {
 				army_attack_factor = 0.07
 				army_defence_factor = 0.1
 				army_speed_factor = 0.05
-				supply_factor = 0.05
+				supply_consumption_factor = 0.05
 				no_supply_grace = 120
 				equipment_capture_factor = 0.01
 				army_breakthrough = 0.05
 			}
 
 			available = {
-				country_exists = DPR
-				country_exists = LPR
+				OR = {
+					country_exists = DPR
+					country_exists = LPR
+				}
 			}
 		}
 
@@ -289,8 +306,10 @@ ideas = {
 			}
 
 			available = {
-				country_exists = DPR
-				country_exists = LPR
+				OR = {
+					country_exists = DPR
+					country_exists = LPR
+				}
 			}
 		}
 
@@ -299,7 +318,6 @@ ideas = {
 			picture = AFU_support_UKR
 
 			modifier = {
-				stability_weekly = 0.02
 				consumer_goods_factor = -0.05
 				experience_gain_army_factor = 0.1
 				war_support_factor = 0.1
@@ -404,17 +422,6 @@ ideas = {
 		AFU_army_improved_3_2 = {
 			picture = AFU_army_improvements	
 			modifier = {
-				army_org_factor = 0.2
-				army_attack_factor = 0.1
-				army_defence_factor = 0.1
-				max_planning_factor = 0.2
-				army_org_regain = 0.2
-			}	
-		}
-
-		AFU_army_improved_3_3 = {
-			picture = AFU_army_improvements 	
-			modifier = {
 				army_org_factor = 0.1
 				army_attack_factor = 0.1
 				army_defence_factor = 0.1
@@ -424,17 +431,9 @@ ideas = {
 
 		AFU_army_purge_recovery_1 = {	
 			modifier = {
-				max_planning_factor = -0.2
+				max_planning_factor = -0.25
 				command_power_gain = -0.3
-				planning_speed = -0.1
-			}	
-		}
-
-		AFU_army_purge_recovery_2 = { 	
-			modifier = {
-				max_planning_factor = -0.3
-				command_power_gain = -0.4
-				planning_speed = -0.2
+				planning_speed = -0.15
 			}	
 		}
 
@@ -539,7 +538,7 @@ ideas = {
 				special_forces_attack_factor = 0.2
 				recon_factor = 0.1
 				land_night_attack = 0.6
-				supply_factor = 0.2
+				supply_consumption_factor = 0.2
 				heat_attrition_factor = -0.3
 				winter_attrition_factor = -0.3
 			}
@@ -553,7 +552,7 @@ ideas = {
 				special_forces_defence_factor = 0.2
 				recon_factor = 0.25
 				land_night_attack = 0.6
-				supply_factor = 0.2
+				supply_consumption_factor = 0.2
 				heat_attrition_factor = -0.3
 				winter_attrition_factor = -0.3
 			}
@@ -685,7 +684,7 @@ ideas = {
 		}
 
 		AFU_ipso = {
-			picture = 	
+			picture = AFU_ipso	
 			modifier = {
 				army_org_regain = 0.2
 				army_morale_factor = 0.1
@@ -693,7 +692,7 @@ ideas = {
 		}
 
 		AFU_hybrid_war_tactics = {
-			picture = 	
+			picture = AFU_hybrid_warfare_tactics	
 			modifier = {
 				army_org_regain = 0.25
 				army_morale_factor = 0.15
@@ -703,7 +702,7 @@ ideas = {
 		}
 
 		AFU_old_fleet = {
-			picture = 	
+			picture = AFU_old_fleet	
 			modifier = {
 				experience_gain_navy_unit_factor = 0.2
 				naval_coordination = 0.25
@@ -714,7 +713,7 @@ ideas = {
 		}
 
 		AFU_modern_ships_equipment = {
-			picture = 	
+			picture = AFU_modern_ships_equipment	
 			modifier = {
 				naval_accidents_chance = -0.15
 				navy_anti_air_attack_factor = 0.2
@@ -732,7 +731,7 @@ ideas = {
 		}
 
 		AFU_light_ships = {
-			picture = 	
+			picture = AFU_light_ships	
 			modifier = {
 				navy_max_range_factor = 0.25
 				naval_torpedo_hit_chance_factor = 0.3
@@ -742,7 +741,7 @@ ideas = {
 		}
 
 		AFU_fast_raids_tactic = {
-			picture = 	
+			picture = AFU_fast_raids_tactic	
 			modifier = {
 				navy_max_range_factor = 0.3
 				naval_torpedo_hit_chance_factor = 0.3
@@ -754,7 +753,7 @@ ideas = {
 		}
 
 		AFU_true_ukrainian_nature = {
-			picture = 	
+			picture = AFU_true_ukrainian_nature	
 			modifier = {
 				army_morale_factor = 0.1
 				army_org_regain = 0.1
@@ -763,7 +762,7 @@ ideas = {
 		}
 
 		AFU_OUN_pilled = {
-			picture = 	
+			picture = AFU_OUN_pilled	
 			modifier = {
 				army_morale_factor = 0.2
 				army_org_regain = 0.1
@@ -774,7 +773,7 @@ ideas = {
 		}
 
 		AFU_i_love_haydamaking = {
-			picture = 	
+			picture = AFU_i_love_haydamaking	
 			modifier = {
 				army_speed_factor = 0.15
 				terrain_penalty_reduction = 0.1
@@ -784,7 +783,7 @@ ideas = {
 		}
 
 		AFU_eternal_enemy = {
-			picture = 	
+			picture = AFU_eternal_enemy	
 			targeted_modifier = {
 				tag = RUS
 				attack_bonus_against = -0.15
@@ -796,7 +795,7 @@ ideas = {
 		}
 
 		AFU_crimea_compensation = {
-			picture = 	
+			picture = AFU_crimea_compensation	
 			modifier = {
 				consumer_goods_factor = -0.1
 				production_factory_efficiency_gain_factor = 0.3
@@ -815,7 +814,7 @@ ideas = {
 		}
 
 		AFU_CSTO_training = {
-			picture = 	
+			picture = AFU_CSTO_training	
 			modifier = {
 				command_power_gain_factor = 0.1
 				army_attack_factor = 0.1
@@ -1001,7 +1000,7 @@ ideas = {
 			traits = { domestic_company }
 
 			available = {
-				has_completed_focus = AFU_luhansk_chemical_industry
+    has_country_flag = AFU_luhansk_chemical_complex
 			}
 
 			cost = 25
@@ -1019,10 +1018,7 @@ ideas = {
 			}
 
 			available = {
-				OR = {
-					has_completed_focus = AFU_nationalize_the_azovstal
-					has_completed_focus = AFU_return_industry_to_akhmetov
-				}
+    has_country_flag = AFU_azovstal
 			}
 
 			cost = 25

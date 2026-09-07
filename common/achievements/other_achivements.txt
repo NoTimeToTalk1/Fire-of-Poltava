@@ -1,0 +1,136 @@
+# possible - filters out achivements on game start so we dont have to check everything all the
+#time
+## happened - checks if achivement happened
+
+unique_id = other_achievements
+
+FOP_achievements_1 = {
+	possible = {
+		always = yes
+	}
+
+	happened = {
+		has_country_flag = united_ukraine
+		AND = {
+			owns_state = 2124
+			owns_state = 2126
+			owns_state = 2125
+			owns_state = 2044
+			owns_state = 2127
+			owns_state = 2130
+			owns_state = 2128
+			owns_state = 2129
+			owns_state = 2347
+			owns_state = 2728
+		}
+	}
+}
+
+FOP_achievements_2 = {
+	possible = {
+		OR = {
+			tag = SUM
+			tag = LPR
+		}
+	}
+
+	happened = {
+		SUM = {
+			has_country_leader = SUM_Yuschenko
+		}
+		OR = {
+			AND = {
+				tag = SUM
+				has_war_with = LPR
+			}
+			AND = {
+				tag = LPR
+				has_war_with = SUM
+			}
+		}
+	}
+}
+
+FOP_achievements_3 = {
+	possible = {
+		original_tag = TER
+	}
+
+	happened = {
+		has_tech = nukes
+	}
+}
+
+FOP_achievements_4 = {
+	possible = {
+		original_tag = UMA
+	}
+
+	happened = {
+		owns_state = 2032
+	}
+}
+
+FOP_achievements_5 = {
+	possible = {
+		always = yes
+	}
+
+	happened = {
+		AND = {
+			2124 = {
+				is_owned_by = ROOT
+				infrastructure >= 5
+			}
+			2126 = {
+				is_owned_by = ROOT
+				infrastructure >= 5
+			}
+			2125 = {
+				is_owned_by = ROOT
+				infrastructure >= 5
+			}
+			2044 = {
+				is_owned_by = ROOT
+				infrastructure >= 5
+			}
+			2127 = {
+				is_owned_by = ROOT
+				infrastructure >= 5
+			}
+			2130 = {
+				is_owned_by = ROOT
+				infrastructure >= 5
+			}
+			2128 = {
+				is_owned_by = ROOT
+				infrastructure >= 5
+			}
+			2129 = {
+				is_owned_by = ROOT
+				infrastructure >= 5
+			}
+			2347 = {
+				is_owned_by = ROOT
+				infrastructure >= 5
+			}
+			2728 = {
+				is_owned_by = ROOT
+				infrastructure >= 5
+			}
+		}
+	}
+}
+
+FOP_achievements_6 = {
+	possible = {
+		original_tag = LPR
+	}
+
+	happened = {
+		custom_trigger_tooltip = {
+			tooltip = FOP_achievements_6_tt
+			has_cosmetic_tag = LPR_united_ukraine
+		}
+	}
+}

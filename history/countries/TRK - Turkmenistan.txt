@@ -7,11 +7,15 @@ set_stability = 0.5
 set_war_support = 0.5
 
 add_ideas = {
-	#
+	## NatSpirits
+	
+	## Laws
+	
+	## Political System
 }
 
 # Starting tech
-set_technology = {
+set_technology = { basic_train = 1
 	infantry_weapons = 1
 	infantry_weapons1 = 1
 	support_weapons = 1
@@ -23,6 +27,8 @@ set_technology = {
 	tech_engineers = 1
 	tech_recon = 1
 	tech_military_police = 1
+	infantry_at1 = 1
+	infantry_aa1 = 1
 	
 	mortar = 1
     mortar1 = 1
@@ -36,9 +42,31 @@ set_technology = {
     utility_vehicle1 = 1
 	armored_car1 = 1
 	AFV = 1
-    MBT1 = 1
     IFV1 = 1
     APC1 = 1
+
+	basic_machine_tools = 1
+	electronic_mechanical_engineering = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = { basic_train = 1
+		MBT0_chassis = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "No Step Back"
+		}
+	}
+	set_technology = { basic_train = 1
+		MBT1 = 1
+	}
 }
 
 set_politics = {

@@ -1,0 +1,16 @@
+on_actions = {
+    on_monthly_AFU = {
+        effect = {
+            if = {
+                limit = {
+                    original_tag = AFU
+                    has_country_flag = AFU_ultras_football_active
+                    NOT = { has_country_flag = AFU_football_match_scheduled }
+                    NOT = { has_country_flag = AFU_bet_placed_this_month }
+                }
+                country_event = { id = AFU_football.1 days = 3 }
+            }
+        }
+    }
+
+}
