@@ -1229,6 +1229,15 @@ unite_buh_ukraine = {
 			set_country_flag = united_buh
 			save_global_event_target_as = UKR_buh_unifier
 			news_event = FOP_global_warlord.5
+    if = {
+        limit = {
+            NOT = { tag = ODE }
+            ODE = { is_ai = yes }
+        }
+        annex_country = {
+            target = ODE
+        }
+    }
 		}
 	}
 
