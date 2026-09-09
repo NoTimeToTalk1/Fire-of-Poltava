@@ -4735,3 +4735,193 @@ defined_text = {
                 localization_key = SiveriaNoDoctrine
         }
 }
+defined_text = {
+        name = GetWestWarPreparednessLevel
+        text = {
+                trigger = {
+                        check_variable = {
+                                west_war_preparedness_var < 30
+                        }
+                }
+                localization_key = WestWarPreparednessLow
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                west_war_preparedness_var > 29
+                        }
+                        check_variable = {
+                                west_war_preparedness_var < 50
+                        }
+                }
+                localization_key = WestWarPreparednessMedium
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                west_war_preparedness_var > 49
+                        }
+                        check_variable = {
+                                west_war_preparedness_var < 75
+                        }
+                }
+                localization_key = WestWarPreparednessGood
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                west_war_preparedness_var > 74
+                        }
+                        check_variable = {
+                                west_war_preparedness_var < 90
+                        }
+                }
+                localization_key = WestWarPreparednessGreat
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                west_war_preparedness_var > 89
+                        }
+                }
+                localization_key = WestWarPreparednessFull
+        }
+}
+defined_text = {
+        name = GetWestWarDoctrineRoot
+        text = {
+                trigger = {
+                        has_country_flag = west_war_defensive_doctrine
+                        tag = PDL
+                }
+                localization_key = PodoliaDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        has_country_flag = west_war_offensive_doctrine
+                        tag = PDL
+                }
+                localization_key = PodoliaOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        NOT = {
+                               has_country_flag = west_war_defensive_doctrine
+                               has_country_flag = west_war_offensive_doctrine 
+                        }
+                        tag = PDL
+                }
+                localization_key = PodoliaNoDoctrine
+        }
+        text = {
+                trigger = {
+                        has_country_flag = west_war_defensive_doctrine
+                        tag = GLY
+                }
+                localization_key = GaliciaDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        has_country_flag = west_war_offensive_doctrine
+                        tag = GLY
+                }
+                localization_key = GaliciaOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        NOT = {
+                               has_country_flag = west_war_defensive_doctrine
+                               has_country_flag = west_war_offensive_doctrine 
+                        }
+                        tag = GLY
+                }
+                localization_key = GaliciaNoDoctrine
+        }
+}
+defined_text = {
+        name = GetWestWarDoctrineFrom
+        text = {
+                trigger = {
+                        tag = GLY
+                        PDL = {
+                                has_country_flag = west_war_defensive_doctrine
+                        }
+                        has_country_flag = west_war_known_enemy_doctrine
+                }
+                localization_key = PodoliaDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = GLY
+                        PDL = {
+                                has_country_flag = west_war_offensive_doctrine
+                        }
+                        has_country_flag = west_war_known_enemy_doctrine
+                }
+                localization_key = PodoliaOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = GLY
+                        PDL = {
+                                NOT = {
+                                        has_country_flag = west_war_defensive_doctrine
+                                        has_country_flag = west_war_offensive_doctrine 
+                                }
+                        }
+                        has_country_flag = west_war_known_enemy_doctrine
+                }
+                localization_key = PodoliaNoDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = GLY
+                        NOT = {
+                                has_country_flag = west_war_known_enemy_doctrine
+                        }
+                }
+                localization_key = PodoliaNoDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = PDL
+                        GLY = {
+                                has_country_flag = west_war_defensive_doctrine
+                        }
+                        has_country_flag = west_war_known_enemy_doctrine
+                }
+                localization_key = GaliciaDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = PDL
+                        GLY = {
+                                has_country_flag = west_war_offensive_doctrine
+                        }
+                        has_country_flag = west_war_known_enemy_doctrine
+                }
+                localization_key = GaliciaOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = PDL
+                        GLY = {
+                                NOT = {
+                                        has_country_flag = west_war_defensive_doctrine
+                                        has_country_flag = west_war_offensive_doctrine 
+                                }
+                        }
+                        has_country_flag = west_war_known_enemy_doctrine
+                }
+                localization_key = GaliciaNoDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = PDL
+                        NOT = {
+                                has_country_flag = west_war_known_enemy_doctrine
+                        }
+                }
+                localization_key = GaliciaNoDoctrine
+        }
+}
