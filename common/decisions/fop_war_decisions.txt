@@ -3049,3 +3049,783 @@ west_war = {
 		}
 	}
 }
+
+left_bank_war = {
+	left_bank_war_countdown = {
+		activation = {
+			has_country_flag = left_bank_war_preparation
+		}
+		available = {
+			has_war = no
+			has_country_flag = left_bank_war_active
+		}
+		cancel_trigger = {
+			NOT = {
+				has_country_flag = left_bank_war_preparation
+			}
+		}
+		is_good = no
+		days_mission_timeout = 120
+		timeout_effect = {
+			clr_country_flag = left_bank_war_preparation
+			set_country_flag = left_bank_war_active
+			if = {
+				limit = {
+					tag = STH
+				}
+				declare_war_on = {
+					target = ESN
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					tag = ESN
+				}
+				declare_war_on = {
+					target = STH
+					type = annex_everything
+				}
+			}
+			left_bank_war_preparedness_effect = yes
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = left_bank_war_defensive_doctrine
+						has_country_flag = left_bank_war_offensive_doctrine
+					}
+				}
+				set_country_flag = left_bank_war_growing_fatigue
+			}
+			hidden_effect = {
+				STH = {
+					add_dynamic_modifier = {
+						modifier = FOP_left_bank_war_preparedness
+					}
+					add_dynamic_modifier = {
+						modifier = FOP_left_bank_war_fatigue
+					}
+				}
+				ESN = {
+					add_dynamic_modifier = {
+						modifier = FOP_left_bank_war_preparedness
+					}
+					add_dynamic_modifier = {
+						modifier = FOP_left_bank_war_fatigue
+					}
+				}
+			}
+		}
+		war_with_on_timeout = FROM
+	}
+	left_bank_war_pick_defensive_doctrine = {
+		available = {
+			NOT = {
+				has_country_flag = left_bank_war_defensive_doctrine
+				has_country_flag = left_bank_war_offensive_doctrine
+			}
+		}
+		visible = {
+			has_war = no
+		}
+		complete_effect = {
+			set_country_flag = left_bank_war_defensive_doctrine
+			add_to_variable = {
+				var = left_bank_war_preparedness_var
+				value = 10
+				tooltip = war_preparedness_10_tt
+			}
+			clamp_variable = {
+				var = left_bank_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	left_bank_war_pick_offensive_doctrine = {
+		available = {
+			NOT = {
+				has_country_flag = left_bank_war_defensive_doctrine
+				has_country_flag = left_bank_war_offensive_doctrine
+			}
+		}
+		visible = {
+			has_war = no
+		}
+		complete_effect = {
+			set_country_flag = left_bank_war_offensive_doctrine
+			add_to_variable = {
+				var = left_bank_war_preparedness_var
+				value = 10
+				tooltip = war_preparedness_10_tt
+			}
+			clamp_variable = {
+				var = left_bank_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	left_bank_war_investigate_opponent_doctrine = {
+		custom_cost_trigger = {
+			command_power > 14
+		}
+		visible = {
+			has_war = no
+		}
+		custom_cost_text = decision_cost_CP_15
+		days_remove = 30
+		complete_effect = {
+			add_command_power = -15
+		}
+		remove_effect = {
+			set_country_flag = left_bank_war_known_enemy_doctrine
+			custom_effect_tooltip = left_bank_war_investigate_opponent_doctrine_tt
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	left_bank_war_devise_offensive_operation = {
+		custom_cost_trigger = {
+			command_power > 19
+		}
+		visible = {
+			has_war = no
+			has_country_flag = left_bank_war_offensive_doctrine
+		}
+		custom_cost_text = decision_cost_CP_20
+		days_remove = 30
+		complete_effect = {
+			add_command_power = -20
+		}
+		remove_effect = {
+			set_country_flag = left_bank_war_offensive_planned
+			custom_effect_tooltip = left_bank_war_offensive_planned_tt
+			add_to_variable = {
+				var = left_bank_war_preparedness_var
+				value = 20
+				tooltip = war_preparedness_20_tt
+			}
+			clamp_variable = {
+				var = left_bank_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	left_bank_war_devise_reserve_plans = {
+		custom_cost_trigger = {
+			command_power > 29
+		}
+		visible = {
+			has_war = no
+			has_country_flag = left_bank_war_offensive_doctrine
+		}
+		custom_cost_text = decision_cost_CP_30
+		days_remove = 30
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			set_country_flag = left_bank_war_reserve_planning
+			custom_effect_tooltip = left_bank_war_reserve_offensive_planned_tt
+			add_to_variable = {
+				var = left_bank_war_preparedness_var
+				value = 20
+				tooltip = war_preparedness_20_tt
+			}
+			clamp_variable = {
+				var = left_bank_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	left_bank_war_prepare_main_defences = {
+		custom_cost_trigger = {
+			command_power > 19
+		}
+		visible = {
+			has_war = no
+			has_country_flag = left_bank_war_defensive_doctrine
+		}
+		custom_cost_text = decision_cost_CP_20
+		days_remove = 30
+		complete_effect = {
+			add_command_power = -20
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					tag = ESN
+				}
+				2086 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 1507 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 4523 }
+				}
+				2087 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 14030 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 15839 }
+				}
+			}
+			if = {
+				limit = {
+					tag = STH
+				}
+				614 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 2589 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 13765 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 6852 }
+				}
+				2023 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 13888  }
+				}
+			}
+			add_to_variable = {
+				var = left_bank_war_preparedness_var
+				value = 20
+				tooltip = war_preparedness_20_tt
+			}
+			clamp_variable = {
+				var = left_bank_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	left_bank_war_prepare_secondary_defences = {
+		custom_cost_trigger = {
+			command_power > 19
+		}
+		visible = {
+			has_war = no
+			has_country_flag = left_bank_war_defensive_doctrine
+		}
+		custom_cost_text = decision_cost_CP_20
+		days_remove = 45
+		complete_effect = {
+			add_command_power = -20
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					tag = ESN
+				}
+				2035 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 15847 }
+				}
+				2012 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 13398 }
+				}
+				2009 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 4707 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 13148 }
+				}
+				2010 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 8915 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 13215 }
+				}
+				2011 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 2648 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 4869 }
+				}
+				2494 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 3179 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 13505 }
+				}
+				2346 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 3179 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 13505 }
+				}
+				2301 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 13570 }
+				}
+				2094 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 8462 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 13674 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 3710 }
+				}
+				2083 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 8020 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 8754 }
+				}
+			}
+			if = {
+				limit = {
+					tag = STH
+				}
+				2064 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 7054 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 2926 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 138 }
+				}
+				2088 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 13766 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 8851 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 6422 }
+				}
+				2078 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 13575 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 8481 }
+				}
+				2034 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 3340 }
+				}
+				623 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 13551 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 13582 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 5469 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 9676 }
+				}
+				2869 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 13673 }
+				}
+				2092 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 573 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 4159 }
+				}
+			}
+			if = {
+				limit = {
+					tag = STH
+					owns_state = 2075
+				}
+				2075 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 254 }
+				}
+				2076 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 66 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 11953 }
+				}
+				2080 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 1680 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 2669 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 13368 }
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 13709 }
+				}
+				565 = {
+					add_building_construction = { type = bunker level = 2 instant_build = yes province = 8675 }
+				}
+			}
+			add_to_variable = {
+				var = left_bank_war_preparedness_var
+				value = 20
+				tooltip = war_preparedness_20_tt
+			}
+			clamp_variable = {
+				var = left_bank_war_preparedness_var
+				min = 0
+				max = 100
+			}
+			set_country_flag = left_bank_war_secondary_defences
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	left_bank_war_commit_sabotage = {
+		custom_cost_trigger = {
+			command_power > 14
+		}
+		visible = {
+			has_war = no
+		}
+		custom_cost_text = decision_cost_CP_15
+		complete_effect = {
+			add_command_power = -15
+		}
+		days_remove = 25
+		remove_effect = {
+			#damage infrastructure
+			if = {
+				limit = {
+					tag = ESN
+				}
+				STH = {
+					add_to_variable = {
+						var = left_bank_war_preparedness_var
+						value = -10
+						tooltip = war_preparedness_minus_10_tt
+					}
+					clamp_variable = {
+						var = left_bank_war_preparedness_var
+						min = 0
+						max = 100
+					}
+					random_owned_controlled_state = {
+						limit = {
+							arms_factory > 1
+						}
+						damage_building = {
+							type = arms_factory
+							damage = 1
+						}
+					}
+					random_owned_controlled_state = {
+						limit = {
+							infrastructure > 1
+						}
+						damage_building = {
+							type = infrastructure
+							damage = 1
+						}
+					}
+					random_owned_controlled_state = {
+						limit = {
+							industrial_complex > 1
+						}
+						damage_building = {
+							type = industrial_complex
+							damage = 1
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = STH
+				}
+				ESN = {
+					add_to_variable = {
+						var = left_bank_war_preparedness_var
+						value = -10
+						tooltip = war_preparedness_minus_10_tt
+					}
+					clamp_variable = {
+						var = left_bank_war_preparedness_var
+						min = 0
+						max = 100
+					}
+					random_owned_controlled_state = {
+						limit = {
+							arms_factory > 1
+						}
+						damage_building = {
+							type = arms_factory
+							damage = 1
+						}
+					}
+					random_owned_controlled_state = {
+						limit = {
+							infrastructure > 1
+						}
+						damage_building = {
+							type = infrastructure
+							damage = 1
+						}
+					}
+					random_owned_controlled_state = {
+						limit = {
+							industrial_complex > 1
+						}
+						damage_building = {
+							type = industrial_complex
+							damage = 1
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 150
+		}
+	}
+	left_bank_war_set_economy_on_war_rails = {
+		custom_cost_trigger = {
+			command_power > 19
+		}
+		visible = {
+			has_war = no
+		}
+		custom_cost_text = decision_cost_CP_20
+		days_remove = 25
+		complete_effect = {
+			add_command_power = -20
+		}
+		remove_effect = {
+			add_ideas = fop_economic_mobilization_war_economy
+			add_stability_factor = -0.1
+			add_to_variable = {
+				var = left_bank_war_preparedness_var
+				value = 10
+				tooltip = war_preparedness_10_tt
+			}
+			clamp_variable = {
+				var = left_bank_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 150
+		}
+	}
+	left_bank_war_get_enemy_intel = {
+		custom_cost_trigger = {
+			command_power > 19
+		}
+		visible = {
+			has_war = no
+			has_country_flag = left_bank_war_defensive_doctrine
+		}
+		custom_cost_text = decision_cost_CP_20
+		days_remove = 20
+		complete_effect = {
+			add_command_power = -20
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					tag = ESN
+				}
+				add_intel = {
+					target = STH
+					civilian_intel = 10
+					army_intel = 10
+					navy_intel = 10
+					airforce_intel = 10
+				}
+			}
+			if = {
+				limit = {
+					tag = STH
+				}
+				add_intel = {
+					target = ESN
+					civilian_intel = 10
+					army_intel = 10
+					navy_intel = 10
+					airforce_intel = 10
+				}
+			}
+		}
+		ai_will_do = {
+			base = 150
+		}
+	}
+	left_bank_war_motivational_speech = {
+		visible = {
+			has_war = no
+		}
+		cost = 30
+		days_remove = 30
+		remove_effect = {
+			add_war_support = 0.03
+		}
+		ai_will_do = {
+			base = 150
+		}
+	}
+	left_bank_war_increase_war_production = {
+		visible = {
+			has_war = no
+			has_ideas = fop_economic_mobilization_war_economy
+		}
+		cost = 20
+		days_remove = 21
+		modifier = {
+			production_factory_efficiency_gain_factor = 0.05
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = left_bank_war_preparedness_var
+				value = 5
+				tooltip = war_preparedness_5_tt
+			}
+			clamp_variable = {
+				var = left_bank_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		ai_will_do = {
+			base = 150
+		}
+	}
+	left_bank_war_emergent_arms_factory_construction = {
+		visible = {
+			has_war = no
+			has_ideas = fop_economic_mobilization_war_economy
+		}
+		cost = 20
+		days_remove = 28
+		remove_effect = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_to_variable = {
+				var = left_bank_war_preparedness_var
+				value = 5
+				tooltip = war_preparedness_5_tt
+			}
+			clamp_variable = {
+				var = left_bank_war_preparedness_var
+				min = 0
+				max = 100
+			}
+		}
+		ai_will_do = {
+			base = 150
+		}
+	}
+	left_bank_war_hold_our_positions = {
+		activation = {
+			has_country_flag = left_bank_war_active
+			has_country_flag = left_bank_war_defensive_doctrine
+			NOT = {
+				has_country_flag = left_bank_war_growing_fatigue
+				has_ideas = FOP_failed_defense
+			}
+		}
+		cancel_trigger = {
+			if = {
+				limit = {
+					has_country_flag = left_bank_war_secondary_defences
+				}
+				surrender_progress > 0.5
+			}
+			else = {
+				surrender_progress > 0.25
+			}
+		}
+		cancel_effect = {
+			add_ideas = FOP_failed_defense
+		}
+		is_good = no
+		days_mission_timeout = 45
+		timeout_effect = {
+			add_ideas = FOP_counterattack
+			set_country_flag = left_bank_war_growing_fatigue
+		}
+		complete_effect = {
+			set_country_flag = left_bank_war_growing_fatigue
+		}
+	}
+	left_bank_war_execute_offensive_operation = {
+		FROM = {
+			if = {
+				limit = {
+					tag = STH
+				}
+				tag = ESN
+			}
+			if = {
+				limit = {
+					tag = ESN
+				}
+				tag = STH
+			}
+		}
+		activation = {
+			has_country_flag = left_bank_war_active
+			has_country_flag = left_bank_war_offensive_doctrine
+			NOT = {
+				has_country_flag = left_bank_war_growing_fatigue
+				has_ideas = FOP_failed_offensive
+			}
+		}
+		available = {
+			FROM = {
+				surrender_progress > 0.25
+			}
+		}
+		is_good = no
+		days_mission_timeout = 30
+		timeout_effect = {
+			if = {
+				limit = {
+					has_country_flag = left_bank_war_reserve_planning
+				}
+				clr_country_flag = left_bank_war_reserve_planning
+				custom_effect_tooltip = reserve_plan_tt
+			}
+			else = {
+				add_ideas = FOP_failed_offensive
+				set_country_flag = left_bank_war_growing_fatigue
+			}
+		}
+		complete_effect = {
+			set_country_flag = left_bank_war_growing_fatigue
+		}
+	}
+	left_bank_war_fatigue = {
+		activation = {
+			has_country_flag = left_bank_war_growing_fatigue
+			has_war = yes
+		}
+		available = {
+			has_war = no
+		}
+		cancel_trigger = {
+			has_war = no
+		}
+		is_good = no
+		days_mission_timeout = 30
+		timeout_effect = {
+			add_to_variable = {
+				var = left_bank_war_preparedness_attack_var
+				value = -0.03
+			}
+			add_to_variable = {
+				var = left_bank_war_preparedness_defence_var
+				value = -0.03
+			}
+			add_to_variable = {
+				var = left_bank_war_preparedness_organisation_var
+				value = -0.05
+			}
+			clamp_variable = {
+				var = left_bank_war_preparedness_attack_var
+				min = 0
+				max = 1
+			}
+			clamp_variable = {
+				var = left_bank_war_preparedness_defence_var
+				min = 0
+				max = 1
+			}
+			clamp_variable = {
+				var = left_bank_war_preparedness_organisation_var
+				min = 0
+				max = 1
+			}
+			add_to_variable = {
+				var = left_bank_war_political_fatigue_var
+				value = -0.02
+			}
+			add_to_variable = {
+				var = left_bank_war_economic_fatigue_var
+				value = -0.05
+			}
+			custom_effect_tooltip = war_fatigue_tt
+		}
+	}
+}

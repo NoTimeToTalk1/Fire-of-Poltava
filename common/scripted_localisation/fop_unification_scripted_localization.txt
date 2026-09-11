@@ -4925,3 +4925,193 @@ defined_text = {
                 localization_key = GaliciaNoDoctrine
         }
 }
+defined_text = {
+        name = GetLeftBankWarPreparednessLevel
+        text = {
+                trigger = {
+                        check_variable = {
+                                left_bank_war_preparedness_var < 30
+                        }
+                }
+                localization_key = LeftBankWarPreparednessLow
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                left_bank_war_preparedness_var > 29
+                        }
+                        check_variable = {
+                                left_bank_war_preparedness_var < 50
+                        }
+                }
+                localization_key = LeftBankWarPreparednessMedium
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                left_bank_war_preparedness_var > 49
+                        }
+                        check_variable = {
+                                left_bank_war_preparedness_var < 75
+                        }
+                }
+                localization_key = LeftBankWarPreparednessGood
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                left_bank_war_preparedness_var > 74
+                        }
+                        check_variable = {
+                                left_bank_war_preparedness_var < 90
+                        }
+                }
+                localization_key = LeftBankWarPreparednessGreat
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                left_bank_war_preparedness_var > 89
+                        }
+                }
+                localization_key = LeftBankWarPreparednessFull
+        }
+}
+defined_text = {
+        name = GetLeftBankWarDoctrineRoot
+        text = {
+                trigger = {
+                        has_country_flag = left_bank_war_defensive_doctrine
+                        tag = STH
+                }
+                localization_key = SouthUnifierDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        has_country_flag = left_bank_war_offensive_doctrine
+                        tag = STH
+                }
+                localization_key = SouthUnifierOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        NOT = {
+                               has_country_flag = left_bank_war_defensive_doctrine
+                               has_country_flag = left_bank_war_offensive_doctrine 
+                        }
+                        tag = STH
+                }
+                localization_key = SouthUnifierNoDoctrine
+        }
+        text = {
+                trigger = {
+                        has_country_flag = left_bank_war_defensive_doctrine
+                        tag = ESN
+                }
+                localization_key = EastUnifierDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        has_country_flag = left_bank_war_offensive_doctrine
+                        tag = ESN
+                }
+                localization_key = EastUnifierOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        NOT = {
+                               has_country_flag = left_bank_war_defensive_doctrine
+                               has_country_flag = left_bank_war_offensive_doctrine 
+                        }
+                        tag = ESN
+                }
+                localization_key = EastUnifierNoDoctrine
+        }
+}
+defined_text = {
+        name = GetLeftBankWarDoctrineFrom
+        text = {
+                trigger = {
+                        tag = ESN
+                        STH = {
+                                has_country_flag = left_bank_war_defensive_doctrine
+                        }
+                        has_country_flag = left_bank_war_known_enemy_doctrine
+                }
+                localization_key = SouthUnifierDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = ESN
+                        STH = {
+                                has_country_flag = left_bank_war_offensive_doctrine
+                        }
+                        has_country_flag = left_bank_war_known_enemy_doctrine
+                }
+                localization_key = SouthUnifierOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = ESN
+                        STH = {
+                                NOT = {
+                                        has_country_flag = left_bank_war_defensive_doctrine
+                                        has_country_flag = left_bank_war_offensive_doctrine 
+                                }
+                        }
+                        has_country_flag = left_bank_war_known_enemy_doctrine
+                }
+                localization_key = SouthUnifierNoDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = ESN
+                        NOT = {
+                                has_country_flag = left_bank_war_known_enemy_doctrine
+                        }
+                }
+                localization_key = SouthUnifierNoDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = STH
+                        ESN = {
+                                has_country_flag = left_bank_war_defensive_doctrine
+                        }
+                        has_country_flag = left_bank_war_known_enemy_doctrine
+                }
+                localization_key = EastUnifierDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = STH
+                        ESN = {
+                                has_country_flag = left_bank_war_offensive_doctrine
+                        }
+                        has_country_flag = left_bank_war_known_enemy_doctrine
+                }
+                localization_key = EastUnifierOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = STH
+                        ESN = {
+                                NOT = {
+                                        has_country_flag = left_bank_war_defensive_doctrine
+                                        has_country_flag = left_bank_war_offensive_doctrine 
+                                }
+                        }
+                        has_country_flag = left_bank_war_known_enemy_doctrine
+                }
+                localization_key = EastUnifierNoDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = STH
+                        NOT = {
+                                has_country_flag = left_bank_war_known_enemy_doctrine
+                        }
+                }
+                localization_key = EastUnifierNoDoctrine
+        }
+}
