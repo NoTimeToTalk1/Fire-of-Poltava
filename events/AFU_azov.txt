@@ -14,31 +14,25 @@ country_event = {
 		custom_effect_tooltip = azov_cum_into_power
 		FOP_change_political_system_military_dictatorship = yes
 		hidden_effect = {
-			USA = {
-				send_embargo = AFU
-			}
-			load_focus_tree = AFU_azov
-			complete_national_focus = AFU_rule_of_the_far_right
 			set_politics = {
 				ruling_party = ultranationalism
 			}
+			USA = {
+				send_embargo = AFU
+			}
+			remove_ideas = AFU_nationalist_agendas
+			load_focus_tree = AFU_azov
+			complete_national_focus = AFU_rule_of_the_far_right
+			set_cosmetic_tag = AFU_azov
 			if = {
 				limit = {
 					ultranationalism > 0.3
 				}
 				add_popularity = {
 					ideology = ultranationalism
-					popularity = -0.25
+					popularity = -0.25 #Makes no sense, Should do more tests on that
 				}
 			}
-			promote_character = AFU_zhorin
-			set_cosmetic_tag = AFU_azov
-			clr_country_flag = AFU_elections_flag
-			clr_country_flag = AFU_elections_play_danilov
-			clr_country_flag = AFU_elections_play_savchenko
-			clr_country_flag = AFU_elections_play_homut
-			remove_ideas = AFU_nationalist_agendas
-			remove_ideas = AFU_nationalist_agendas_2
 			country_event = {
 				id = afu.37
 				days = 14
@@ -1590,24 +1584,14 @@ country_event = {
 				value = 10
 				tooltip = AFU_pcu_influence_v_strong_tt
 			}
-			clamp_variable = {
-				var =  AFU_pcu_influence_v
-				min = 0
-				max = 100
-			}
 	}
 	option = {
 		name = azov.52.b
 		add_stability = 0.15
 			add_to_variable = {
 				var =  AFU_demuscovitisation_church_v
-				value = 0.02
+				value = 0.03
 				tooltip = AFU_demuscovitisation_church_v_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
 			}
 	}
 	option = {
@@ -1617,11 +1601,6 @@ country_event = {
 				var =  AFU_demuscovitisation_church_v
 				value = 0.07
 				tooltip = AFU_demuscovitisation_church_v_great_tt
-			}
-			clamp_variable = {
-				var = AFU_demuscovitisation_church_v
-				min = 0
-				max = 1
 			}
 	}
 }
@@ -1637,16 +1616,10 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = azov.52.a
-		add_political_power = 5
 			add_to_variable = {
 				var =  AFU_pcu_influence_v
 				value = 10
 				tooltip = AFU_pcu_influence_v_strong_tt
-			}
-			clamp_variable = {
-				var =  AFU_pcu_influence_v
-				min = 0
-				max = 100
 			}
 	}
 }
@@ -1720,8 +1693,9 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	option = {
+	immediate = {
 		name = azov.58.a
+		set_global_flag = Putin_lost
 		AFU = {
 			annex_country = {
 				target = TRN

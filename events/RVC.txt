@@ -97,3 +97,90 @@ country_event = {
 		add_political_power = 25
 	}
 }
+
+country_event = {
+	id = rvc.3
+	title = rvc.3.t
+	desc = rvc.3.d
+
+	picture = GFX_event_rdk_photo
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		name = rvc.3.a
+		set_global_flag = Putin_lost
+		AFU = {
+			annex_country = {
+				target = TRN
+			}
+			annex_country = {
+				target = CRI
+			}
+		}
+		EUN = {
+			transfer_state = 1614
+			transfer_state = 2335
+			transfer_state = 1615
+			transfer_state = 2484
+			transfer_state = 252
+			transfer_state = 2334
+			
+			transfer_state = 29
+			transfer_state = 36
+			transfer_state = 137
+			transfer_state = 165
+			transfer_state = 1351
+		}
+		CHC = {
+			transfer_state = 843
+			transfer_state = 2401
+			transfer_state = 2491
+			transfer_state = 821
+			transfer_state = 2399
+			transfer_state = 2400
+		}
+		DAG = {
+			transfer_state = 2504
+			transfer_state = 763
+			transfer_state = 1028
+			transfer_state = 784
+			transfer_state = 2402
+			transfer_state = 2296
+			transfer_state = 2297
+			transfer_state = 2298
+			transfer_state = 2503
+		}
+		GEO = {
+			annex_country = {
+				target = ABK
+			}
+			annex_country = {
+				target = SOS
+			}
+		}
+		RVC = {
+			annex_country = {
+				target = RUS
+			}
+			every_owned_state = {
+				if = {
+					limit = {
+						is_core_of = RUS
+					}
+					add_core_of = RVC
+					remove_core_of = RUS
+				}
+			}
+		}
+		every_country = {
+            limit = {
+                is_in_faction_with = RUS
+            }
+			leave_faction = yes
+            white_peace = AFU
+        }
+		mark_focus_tree_layout_dirty = yes
+	}
+}
