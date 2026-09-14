@@ -174,29 +174,36 @@ on_actions = {
 		effect = {
             if = {
 				limit = {
-					FROM = { tag = RUS }
-					AFU = {
+					ROOT = { tag = RUS }
+					FROM = {
+						tag = AFU
 						has_government = ultranationalism
 						NOT = { has_country_flag = rvc_coop }
 					}
 				}
 				AFU = {
+					white_peace = RUS
 					country_event = azov.58
 				}
 			}
-	    }
-    }
-	on_capitulation = {
-		effect = {
-            if = {
+			else_if = {
 				limit = {
-					FROM = { tag = RUS }
-					AFU = {
-						has_government = ultranationalism
-						has_country_flag = rvc_coop
+					ROOT = { tag = RUS }
+					OR = {
+						FROM = {
+							tag = AFU
+							has_government = ultranationalism
+							has_country_flag = rvc_coop
+						}
+						FROM = {
+							tag = RVC
+						}
 					}
 				}
-				RVC = {
+				AFU = {
+					white_peace = RUS
+				}
+				FROM = {
 					country_event = rvc.3
 				}
 			}
