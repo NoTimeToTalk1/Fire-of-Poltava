@@ -138,9 +138,9 @@ on_actions = {
 							transfer_troops = yes
 							target = KOB
 						}
-					}			
-					news_event = { id = cap.5 days = 2 }
+					}
 				}
+				news_event = { id = cap.5 days = 2 }
 			}
 		}
 	}
@@ -164,8 +164,8 @@ on_actions = {
 						transfer_troops = yes
 						target = CHR
 					}
-					news_event = { id = cap.6 days = 2 }
 				}
+				news_event = { id = cap.6 days = 2 }
 			}
 		}
 	}
@@ -185,8 +185,8 @@ on_actions = {
 					annex_country = {
 						target = CHE
 					}
-					country_event = { id = cap.7 days = 2 }
 				}
+				country_event = { id = cap.7 days = 2 }
 			}
 		}
 	}
@@ -206,8 +206,8 @@ on_actions = {
 					annex_country = {
 						target = UMA
 					}
-					country_event = { id = cap.8 days = 2 }
 				}
+				country_event = { id = cap.8 days = 2 }
 			}
 		}
 	}
@@ -224,11 +224,11 @@ on_actions = {
 					}
 				}
 				FROM = {
-				annex_country = {
-					target = VOL
-				}		
-				news_event = { id = cap.9 days = 2 }
+					annex_country = {
+						target = VOL
+					}
 				}
+				news_event = { id = cap.9 days = 2 }
 			}
 		}
 	}
@@ -248,8 +248,8 @@ on_actions = {
 					annex_country = {
 						target = RIV
 					}
-					news_event = { id = cap.10 days = 2 }
 				}
+				news_event = { id = cap.10 days = 2 }
 			}
 		}
 	}
@@ -275,8 +275,8 @@ on_actions = {
 						transfer_troops = yes
 						target = ROOT
 					}
-					news_event = { id = cap.11 days = 2 }
 				}
+				news_event = { id = cap.11 days = 2 }
 			}
 		}
 	}
@@ -297,8 +297,8 @@ on_actions = {
 						transfer_troops = yes
 						target = PLT
 					}
-					news_event = { id = cap.12 days = 2 }
 				}
+				news_event = { id = cap.12 days = 2 }
 			}
 		}
 	}
@@ -306,21 +306,19 @@ on_actions = {
 		effect = {
 			if = {
 				limit = {
-					FROM = {
-						original_tag = RVC
-					}
-
-					ROOT = {
-						original_tag = RUS
+					ROOT = { tag = RUS }
+					OR = {
+						FROM = {
+							tag = AFU
+							has_government = ultranationalism
+							has_country_flag = rvc_coop
+						}
+						FROM = {
+							tag = RVC
+						}
 					}
 				}
-				FROM = {
-					annex_country = {
-						transfer_troops = yes
-						target = ROOT
-					}
-					news_event = { id = cap.13 days = 2 }
-				}
+				news_event = { id = cap.13 days = 2 }
 			}
 		}
 	}
@@ -341,8 +339,8 @@ on_actions = {
 						transfer_troops = yes
 						target = ROOT
 					}
-					ews_event = { id = cap.14 days = 2 }
 				}
+				news_event = { id = cap.14 days = 2 }
 			}
 		}
 	}
@@ -363,8 +361,8 @@ on_actions = {
 						transfer_troops = yes
 						target = ROOT
 					}
-					news_event = { id = cap.15 days = 2 }
 				}
+				news_event = { id = cap.15 days = 2 }
 			}
 		}
 	}
