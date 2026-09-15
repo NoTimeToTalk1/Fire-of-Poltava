@@ -5115,3 +5115,383 @@ defined_text = {
                 localization_key = EastUnifierNoDoctrine
         }
 }
+defined_text = {
+        name = GetRightBankWarPreparednessLevel
+        text = {
+                trigger = {
+                        check_variable = {
+                                right_bank_war_preparedness_var < 30
+                        }
+                }
+                localization_key = RightBankWarPreparednessLow
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                right_bank_war_preparedness_var > 29
+                        }
+                        check_variable = {
+                                right_bank_war_preparedness_var < 50
+                        }
+                }
+                localization_key = RightBankWarPreparednessMedium
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                right_bank_war_preparedness_var > 49
+                        }
+                        check_variable = {
+                                right_bank_war_preparedness_var < 75
+                        }
+                }
+                localization_key = RightBankWarPreparednessGood
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                right_bank_war_preparedness_var > 74
+                        }
+                        check_variable = {
+                                right_bank_war_preparedness_var < 90
+                        }
+                }
+                localization_key = RightBankWarPreparednessGreat
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                right_bank_war_preparedness_var > 89
+                        }
+                }
+                localization_key = RightBankWarPreparednessFull
+        }
+}
+defined_text = {
+        name = GetRightBankWarDoctrineRoot
+        text = {
+                trigger = {
+                        has_country_flag = right_bank_war_defensive_doctrine
+                        tag = WST
+                }
+                localization_key = WestUnifierDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        has_country_flag = right_bank_war_offensive_doctrine
+                        tag = WST
+                }
+                localization_key = WestUnifierOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        NOT = {
+                               has_country_flag = right_bank_war_defensive_doctrine
+                               has_country_flag = right_bank_war_offensive_doctrine 
+                        }
+                        tag = WST
+                }
+                localization_key = WestUnifierNoDoctrine
+        }
+        text = {
+                trigger = {
+                        has_country_flag = right_bank_war_defensive_doctrine
+                        tag = NRT
+                }
+                localization_key = NorthUnifierDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        has_country_flag = right_bank_war_offensive_doctrine
+                        tag = NRT
+                }
+                localization_key = NorthUnifierOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        NOT = {
+                               has_country_flag = right_bank_war_defensive_doctrine
+                               has_country_flag = right_bank_war_offensive_doctrine 
+                        }
+                        tag = NRT
+                }
+                localization_key = NorthUnifierNoDoctrine
+        }
+}
+defined_text = {
+        name = GetRightBankWarDoctrineFrom
+        text = {
+                trigger = {
+                        tag = NRT
+                        WST = {
+                                has_country_flag = right_bank_war_defensive_doctrine
+                        }
+                        has_country_flag = right_bank_war_known_enemy_doctrine
+                }
+                localization_key = WestUnifierDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = NRT
+                        WST = {
+                                has_country_flag = right_bank_war_offensive_doctrine
+                        }
+                        has_country_flag = right_bank_war_known_enemy_doctrine
+                }
+                localization_key = WestUnifierOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = NRT
+                        WST = {
+                                NOT = {
+                                        has_country_flag = right_bank_war_defensive_doctrine
+                                        has_country_flag = right_bank_war_offensive_doctrine 
+                                }
+                        }
+                        has_country_flag = right_bank_war_known_enemy_doctrine
+                }
+                localization_key = WestUnifierNoDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = NRT
+                        NOT = {
+                                has_country_flag = right_bank_war_known_enemy_doctrine
+                        }
+                }
+                localization_key = WestUnifierNoDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = WST
+                        NRT = {
+                                has_country_flag = right_bank_war_defensive_doctrine
+                        }
+                        has_country_flag = right_bank_war_known_enemy_doctrine
+                }
+                localization_key = NorthUnifierDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = WST
+                        NRT = {
+                                has_country_flag = right_bank_war_offensive_doctrine
+                        }
+                        has_country_flag = right_bank_war_known_enemy_doctrine
+                }
+                localization_key = NorthUnifierOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = WST
+                        NRT = {
+                                NOT = {
+                                        has_country_flag = right_bank_war_defensive_doctrine
+                                        has_country_flag = right_bank_war_offensive_doctrine 
+                                }
+                        }
+                        has_country_flag = right_bank_war_known_enemy_doctrine
+                }
+                localization_key = NorthUnifierNoDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = WST
+                        NOT = {
+                                has_country_flag = right_bank_war_known_enemy_doctrine
+                        }
+                }
+                localization_key = NorthUnifierNoDoctrine
+        }
+}
+defined_text = {
+        name = GetUkraineWarPreparednessLevel
+        text = {
+                trigger = {
+                        check_variable = {
+                                ukraine_war_preparedness_var < 30
+                        }
+                }
+                localization_key = UkraineWarPreparednessLow
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                ukraine_war_preparedness_var > 29
+                        }
+                        check_variable = {
+                                ukraine_war_preparedness_var < 50
+                        }
+                }
+                localization_key = UkraineWarPreparednessMedium
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                ukraine_war_preparedness_var > 49
+                        }
+                        check_variable = {
+                                ukraine_war_preparedness_var < 75
+                        }
+                }
+                localization_key = UkraineWarPreparednessGood
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                ukraine_war_preparedness_var > 74
+                        }
+                        check_variable = {
+                                ukraine_war_preparedness_var < 90
+                        }
+                }
+                localization_key = UkraineWarPreparednessGreat
+        }
+        text = {
+                trigger = {
+                        check_variable = {
+                                ukraine_war_preparedness_var > 89
+                        }
+                }
+                localization_key = UkraineWarPreparednessFull
+        }
+}
+defined_text = {
+        name = GetUkraineWarDoctrineRoot
+        text = {
+                trigger = {
+                        has_country_flag = ukraine_war_defensive_doctrine
+                        tag = RBU
+                }
+                localization_key = RightBankUnifierDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        has_country_flag = ukraine_war_offensive_doctrine
+                        tag = RBU
+                }
+                localization_key = RightBankUnifierOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        NOT = {
+                               has_country_flag = ukraine_war_defensive_doctrine
+                               has_country_flag = ukraine_war_offensive_doctrine 
+                        }
+                        tag = RBU
+                }
+                localization_key = RightBankUnifierNoDoctrine
+        }
+        text = {
+                trigger = {
+                        has_country_flag = ukraine_war_defensive_doctrine
+                        tag = LBU
+                }
+                localization_key = LeftBankUnifierDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        has_country_flag = ukraine_war_offensive_doctrine
+                        tag = LBU
+                }
+                localization_key = LeftBankUnifierOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        NOT = {
+                               has_country_flag = ukraine_war_defensive_doctrine
+                               has_country_flag = ukraine_war_offensive_doctrine 
+                        }
+                        tag = LBU
+                }
+                localization_key = LeftBankUnifierNoDoctrine
+        }
+}
+defined_text = {
+        name = GetUkraineWarDoctrineFrom
+        text = {
+                trigger = {
+                        tag = LBU
+                        RBU = {
+                                has_country_flag = ukraine_war_defensive_doctrine
+                        }
+                        has_country_flag = ukraine_war_known_enemy_doctrine
+                }
+                localization_key = RightBankUnifierDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = LBU
+                        RBU = {
+                                has_country_flag = ukraine_war_offensive_doctrine
+                        }
+                        has_country_flag = ukraine_war_known_enemy_doctrine
+                }
+                localization_key = RightBankUnifierOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = LBU
+                        RBU = {
+                                NOT = {
+                                        has_country_flag = ukraine_war_defensive_doctrine
+                                        has_country_flag = ukraine_war_offensive_doctrine 
+                                }
+                        }
+                        has_country_flag = ukraine_war_known_enemy_doctrine
+                }
+                localization_key = RightBankUnifierNoDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = LBU
+                        NOT = {
+                                has_country_flag = ukraine_war_known_enemy_doctrine
+                        }
+                }
+                localization_key = RightBankUnifierNoDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = RBU
+                        LBU = {
+                                has_country_flag = ukraine_war_defensive_doctrine
+                        }
+                        has_country_flag = ukraine_war_known_enemy_doctrine
+                }
+                localization_key = LeftBankUnifierDefensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = RBU
+                        LBU = {
+                                has_country_flag = ukraine_war_offensive_doctrine
+                        }
+                        has_country_flag = ukraine_war_known_enemy_doctrine
+                }
+                localization_key = LeftBankUnifierOffensiveDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = RBU
+                        LBU = {
+                                NOT = {
+                                        has_country_flag = ukraine_war_defensive_doctrine
+                                        has_country_flag = ukraine_war_offensive_doctrine 
+                                }
+                        }
+                        has_country_flag = ukraine_war_known_enemy_doctrine
+                }
+                localization_key = LeftBankUnifierNoDoctrine
+        }
+        text = {
+                trigger = {
+                        tag = RBU
+                        NOT = {
+                                has_country_flag = ukraine_war_known_enemy_doctrine
+                        }
+                }
+                localization_key = LeftBankUnifierNoDoctrine
+        }
+}
