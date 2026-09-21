@@ -1,56 +1,84 @@
 on_actions = {
 	on_startup = {
 		effect = {
+			if = {
+				limit = {
+                    has_dlc = "Gotterdammerung"
+                }
+				country_event = { id = generic_debug.2 days = 1 }
+			}
+		}
+	}
+
+	on_startup = {
+		effect = {
 			every_country = {
 				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 5000
+					producer = KYI
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 3500
+					producer = KYI
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_1
+					amount = 2000
+					producer = KYI
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment_1
+					amount = 1000
+					producer = KYI
+				}
+				add_equipment_to_stockpile = {
+					type = APC_equipment_1
+					amount = 500
+					producer = KYI
+				}
+				add_equipment_to_stockpile = {
+					type = IFV_equipment_1
+					amount = 500
+					producer = KYI
+				}
+				add_equipment_to_stockpile = {
+					type = MBT_equipment_1
+					amount = 50
+					producer = KYI
+				}
+				add_equipment_to_stockpile = {
 					type = train_equipment_1
-					amount = 30
+					amount = 50
 					producer = KYI
 				}
 			}
 		}
 	}
-
-	# on_startup = {
+	on_monthly = {
 		effect = {
-			every_country = {
+            every_country = {
+                limit = {
+                    is_ai = yes
+                }
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_1
-					amount = 20000
+					amount = 750
 					producer = KYI
 				}
 				add_equipment_to_stockpile = {
 					type = support_equipment_1
-					amount = 7500
+					amount = 500
 					producer = KYI
 				}
 				add_equipment_to_stockpile = {
 					type = motorized_equipment_1
-					amount = 5000
+					amount = 250
 					producer = KYI
 				}
-				add_equipment_to_stockpile = {
-					type = artillery_equipment_1
-					amount = 2500
-					producer = KYI
-				}
-				add_equipment_to_stockpile = {
-					type = APC_equipment_1
-					amount = 1000
-					producer = KYI
-				}
-				add_equipment_to_stockpile = {
-					type = IFV_equipment_1
-					amount = 1000
-					producer = KYI
-				}
-				add_equipment_to_stockpile = {
-					type = MBT_equipment_1
-					amount = 100
-					producer = KYI
-				}
-			}
-		}
+            }
+        }
 	}
 
 	on_startup = {
