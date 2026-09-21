@@ -1,0 +1,563 @@
+shared_focus = {
+    id = FOP_United_At_Last
+    icon = GFX_FOP_United_At_Last
+    cost = 2
+
+    x = 50
+    y = 43
+
+    allow_branch = {
+        tag = UKR
+        tag_has_content = no
+    }
+
+    completion_reward = {
+        add_political_power = 200
+    }
+}
+
+shared_focus = {
+    id = FOP_Lets_Get_To_Business
+    icon = GFX_FOP_Lets_Get_To_Business
+    cost = 2
+
+    x = 0
+    y = 1
+
+    relative_position_id = FOP_United_At_Last
+
+    prerequisite = { focus = FOP_United_At_Last }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Foreign_Affairs
+    icon = GFX_FOP_Foreign_Affairs
+    cost = 5
+
+    x = -7
+    y = 1
+
+    relative_position_id = FOP_Lets_Get_To_Business
+
+    prerequisite = { focus = FOP_Lets_Get_To_Business }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Eyes_To_The_West
+    icon = GFX_FOP_Eyes_To_The_West
+    cost = 5
+
+    x = -5
+    y = 1
+
+    relative_position_id = FOP_Foreign_Affairs
+
+    prerequisite = { focus = FOP_Foreign_Affairs }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Keep_Up_With_America
+    icon = GFX_FOP_Keep_Up_With_America
+    cost = 5
+
+    x = -2
+    y = 1
+
+    relative_position_id = FOP_Eyes_To_The_West
+
+    prerequisite = { focus = FOP_Eyes_To_The_West }
+
+    available = {
+        has_country_flag = fop_us_recognition
+    }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Trans_Atlantic_Friendship
+    icon = GFX_FOP_Trans_Atlantic_Friendship
+    cost = 5
+
+    x = 0
+    y = 1
+
+    relative_position_id = FOP_Keep_Up_With_America
+
+    prerequisite = { focus = FOP_Keep_Up_With_America }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Reasoning_With_EU
+    icon = GFX_FOP_Reasoning_With_EU
+    cost = 5
+
+    x = 2
+    y = 1
+
+    relative_position_id = FOP_Eyes_To_The_West
+
+    prerequisite = { focus = FOP_Eyes_To_The_West }
+
+    available = {
+        has_country_flag = eu_recognized_state
+    }
+
+    mutually_exclusive = { focus = FOP_Adopt_Euroscepticism }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Talks_About_Membership
+    icon = GFX_FOP_Talks_About_Membership
+    cost = 5
+
+    x = 0
+    y = 1
+
+    relative_position_id = FOP_Reasoning_With_EU
+
+    prerequisite = { focus = FOP_Reasoning_With_EU }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Adopt_Euroscepticism
+    icon = GFX_FOP_Adopt_Euroscepticism
+    cost = 5
+
+    x = 0
+    y = 1
+
+    relative_position_id = FOP_Eyes_To_The_West
+
+    prerequisite = { focus = FOP_Eyes_To_The_West }
+
+    mutually_exclusive = { focus = FOP_Reasoning_With_EU }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Our_Own_Ventures
+    icon = GFX_FOP_Our_Own_Ventures
+    cost = 5
+
+    x = 0
+    y = 1
+
+    relative_position_id = FOP_Adopt_Euroscepticism
+
+    prerequisite = { focus = FOP_Adopt_Euroscepticism }
+
+    mutually_exclusive = { focus = FOP_Reasoning_With_EU }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Eyes_To_The_East
+    icon = GFX_FOP_Eyes_To_The_East
+    cost = 5
+
+    x = 3
+    y = 1
+
+    relative_position_id = FOP_Foreign_Affairs
+
+    prerequisite = { focus = FOP_Foreign_Affairs }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Russia_Strategy
+    icon = GFX_FOP_Russia_Strategy
+    cost = 5
+
+    x = 3
+    y = 1
+
+    relative_position_id = FOP_Eyes_To_The_East
+
+    prerequisite = { focus = FOP_Eyes_To_The_East }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_To_Hell_With_Russia
+    icon = GFX_FOP_To_Hell_With_Russia
+    cost = 5
+
+    x = 1
+    y = 1
+
+    relative_position_id = FOP_Russia_Strategy
+
+    prerequisite = { focus = FOP_Russia_Strategy }
+
+    mutually_exclusive = { focus = FOP_Warm_Water_Ports }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Warm_Water_Ports
+    icon = GFX_FOP_Warm_Water_Ports
+    cost = 5
+
+    x = -1
+    y = 1
+
+    relative_position_id = FOP_Russia_Strategy
+
+    prerequisite = { focus = FOP_Russia_Strategy }
+
+    available = {
+        has_country_flag = ru_recognized_state
+    }
+
+    mutually_exclusive = { focus = FOP_To_Hell_With_Russia }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Crimea_Question
+    icon = GFX_FOP_Crimea_Question
+    cost = 5
+
+    x = -2
+    y = 1
+
+    relative_position_id = FOP_Eyes_To_The_East
+
+    prerequisite = { focus = FOP_Eyes_To_The_East }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Negotiate_Crimea_Status
+    icon = GFX_FOP_Negotiate_Crimea_Status
+    cost = 5
+
+    x = -2
+    y = 1
+
+    relative_position_id = FOP_Crimea_Question
+
+    prerequisite = { focus = FOP_Crimea_Question }
+
+    mutually_exclusive = { focus = FOP_Operation_Homecoming }
+    mutually_exclusive = { focus = FOP_Leave_Crimea_Claims }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Leave_Crimea_Claims
+    icon = GFX_FOP_Leave_Crimea_Claims
+    cost = 5
+
+    x = 0
+    y = 1
+
+    relative_position_id = FOP_Crimea_Question
+
+    prerequisite = { focus = FOP_Crimea_Question }
+
+    mutually_exclusive = { focus = FOP_Negotiate_Crimea_Status }
+    mutually_exclusive = { focus = FOP_Operation_Homecoming }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Operation_Homecoming
+    icon = GFX_FOP_Operation_Homecoming
+    cost = 5
+
+    x = 2
+    y = 1
+
+    relative_position_id = FOP_Crimea_Question
+
+    prerequisite = { focus = FOP_Crimea_Question }
+
+    mutually_exclusive = { focus = FOP_Negotiate_Crimea_Status }
+    mutually_exclusive = { focus = FOP_Leave_Crimea_Claims }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Domestic_Affairs
+    icon = GFX_FOP_Domestic_Affairs
+    cost = 5
+
+    x = 8
+    y = 1
+
+    relative_position_id = FOP_Lets_Get_To_Business
+
+    prerequisite = { focus = FOP_Lets_Get_To_Business }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Calls_For_Unity
+    icon = GFX_FOP_Calls_For_Unity
+    cost = 5
+
+    x = -4
+    y = 1
+
+    relative_position_id = FOP_Domestic_Affairs
+
+    prerequisite = { focus = FOP_Domestic_Affairs }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_A_State_That_Provides
+    icon = GFX_FOP_A_State_That_Provides
+    cost = 5
+
+    x = -1
+    y = 1
+
+    relative_position_id = FOP_Calls_For_Unity
+
+    prerequisite = { focus = FOP_Calls_For_Unity }
+
+    mutually_exclusive = { focus = FOP_A_Nation_That_Serves }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_A_Nation_That_Serves
+    icon = GFX_FOP_A_Nation_That_Serves
+    cost = 5
+
+    x = 1
+    y = 1
+
+    relative_position_id = FOP_Calls_For_Unity
+
+    prerequisite = { focus = FOP_Calls_For_Unity }
+
+    mutually_exclusive = { focus = FOP_A_State_That_Provides }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Country_Reborn
+    icon = GFX_FOP_Country_Reborn
+    cost = 5
+
+    x = 0
+    y = 2
+
+    relative_position_id = FOP_Calls_For_Unity
+
+    prerequisite = { focus = FOP_A_State_That_Provides }
+    prerequisite = { focus = FOP_A_Nation_That_Serves }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Connecting_The_Industries
+    icon = GFX_FOP_Connecting_The_Industries
+    cost = 5
+
+    x = 0
+    y = 1
+
+    relative_position_id = FOP_Domestic_Affairs
+
+    prerequisite = { focus = FOP_Domestic_Affairs }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Investments_Synergy
+    icon = GFX_FOP_Investments_Synergy
+    cost = 5
+
+    x = -1
+    y = 1
+
+    relative_position_id = FOP_Connecting_The_Industries
+
+    prerequisite = { focus = FOP_Connecting_The_Industries }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Self_Sufficient_Economy
+    icon = GFX_FOP_Self_Sufficient_Economy
+    cost = 5
+
+    x = 1
+    y = 1
+
+    relative_position_id = FOP_Connecting_The_Industries
+
+    prerequisite = { focus = FOP_Connecting_The_Industries }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Rise_Of_An_Economic_Giant
+    icon = GFX_FOP_Rise_Of_An_Economic_Giant
+    cost = 5
+
+    x = 0
+    y = 2
+
+    relative_position_id = FOP_Connecting_The_Industries
+
+    prerequisite = { focus = FOP_Investments_Synergy focus = FOP_Self_Sufficient_Economy }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Great_Military_Industrial_Complex
+    icon = GFX_FOP_Great_Military_Industrial_Complex
+    cost = 5
+
+    x = 4
+    y = 1
+
+    relative_position_id = FOP_Domestic_Affairs
+
+    prerequisite = { focus = FOP_Domestic_Affairs }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_We_Rule_The_Skies
+    icon = GFX_FOP_We_Rule_The_Skies
+    cost = 5
+
+    x = -1
+    y = 1
+
+    relative_position_id = FOP_Great_Military_Industrial_Complex
+
+    prerequisite = { focus = FOP_Great_Military_Industrial_Complex }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Navy_Buildup
+    icon = GFX_FOP_Navy_Buildup
+    cost = 5
+
+    x = 1
+    y = 1
+
+    relative_position_id = FOP_Great_Military_Industrial_Complex
+
+    prerequisite = { focus = FOP_Great_Military_Industrial_Complex }
+
+    completion_reward = {
+        #tooltip
+    }
+}
+
+shared_focus = {
+    id = FOP_Troops_On_March
+    icon = GFX_FOP_Troops_On_March
+    cost = 5
+
+    x = 0
+    y = 2
+
+    relative_position_id = FOP_Great_Military_Industrial_Complex
+
+    prerequisite = { focus = FOP_We_Rule_The_Skies focus = FOP_Navy_Buildup }
+
+    completion_reward = {
+        #tooltip
+    }
+}
