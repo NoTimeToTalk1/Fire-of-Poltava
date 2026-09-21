@@ -1049,7 +1049,7 @@ country_event = {
 #UNIFICATION VPEREEEED
 
 country_event = {
-	id = reg_unify.1 #referendum center
+	id = reg_unify.1 #referendum fail
 	title = reg_unify.1.t
 	desc = reg_unify.1.d
 
@@ -1059,48 +1059,6 @@ country_event = {
 
 	option = { 
 		name = reg_unify.1.a
-	}
-}
-
-country_event = {
-	id = reg_unify.2 #north victory
-	title = reg_unify.2.t
-	desc = reg_unify.2.d
-
-	fire_only_once = yes
-
-	is_triggered_only = yes
-
-	option = { 
-		name = reg_unify.2.a
-	}
-}
-
-country_event = {
-	id = reg_unify.3 #north center victory
-	title = reg_unify.3.t
-	desc = reg_unify.3.d
-
-	fire_only_once = yes
-
-	is_triggered_only = yes
-
-	option = { 
-		name = reg_unify.3.a
-	}
-}
-
-country_event = {
-	id = reg_unify.4 #no winner ARRRGH WAR
-	title = reg_unify.4.t
-	desc = reg_unify.4.d
-
-	fire_only_once = yes
-
-	is_triggered_only = yes
-
-	option = { 
-		name = reg_unify.4.a
 		ROOT = {
 			declare_war_on = {
 				target = FROM
@@ -1110,25 +1068,8 @@ country_event = {
 	}
 }
 
-#rename
-
 country_event = {
-	id = reg_rename.1 #	East pro Ukraine
-	title = reg_unify.1.t
-	desc = reg_unify.1.d
-
-	fire_only_once = yes
-
-	is_triggered_only = yes
-
-	option = { 
-		name = reg_unify.1.a
-		
-	}
-}
-
-country_event = {
-	id = reg_rename.2 #	East pro rusix
+	id = reg_unify.2 #deal fail
 	title = reg_unify.2.t
 	desc = reg_unify.2.d
 
@@ -1138,28 +1079,14 @@ country_event = {
 
 	option = { 
 		name = reg_unify.2.a
-		2307 = {
-			set_state_name = "Artemovsk"
-		}
-		2095 = {
-			set_state_name = "Kramatorsk"
-		}
-		set_province_name = {
-			id = 8175
-			name = "Kramatorsk"
-		}
-		set_province_name = {
-			id = 13142
-			name = "Slavyansk"
-		}
-		set_province_name = {
-			id = 7364
-			name = "Krasny Liman"
+		ROOT = {
+			declare_war_on = {
+				target = FROM
+				type = annex_everything
+			}
 		}
 	}
 }
-
-#DOMAIN EXPANSION: UNLIMITED VOID
 
 country_event = { #east deal
 	id = reg_exp_east.1
