@@ -2900,6 +2900,7 @@ unite_north_ukraine = {
 				country_event = reg_exp_north.4
 				set_country_flag = unification_choice_made
 				set_country_flag = north_war
+				set_country_flag = north_war_preparation
 			}
         }
 
@@ -3713,6 +3714,22 @@ unite_left_bank_ukraine = {
 				set_country_flag = left_bank_war
 				set_country_flag = left_bank_war_preparation
 			}
+			if = {
+				limit = {
+					OR = {
+						has_country_flag = eu_limited_recognition
+						FROM = {
+							has_country_flag = eu_limited_recognition
+						}
+					}
+				}
+				EUN = {
+					country_event = {
+						id = FOP_generic.65
+						days = 7
+					}
+				}
+			}
         }
 
 	}
@@ -4141,6 +4158,23 @@ unite_right_bank_ukraine = {
 				country_event = reg_exp_right_bank.4		
 				set_country_flag = unification_choice_made_banks
 				set_country_flag = right_bank_war
+				set_country_flag = right_bank_war_preparation
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_flag = eu_limited_recognition
+						FROM = {
+							has_country_flag = eu_limited_recognition
+						}
+					}
+				}
+				EUN = {
+					country_event = {
+						id = FOP_generic.62
+						days = 7
+					}
+				}
 			}
         }
 
@@ -4606,6 +4640,22 @@ unite_ukraine = {
 				set_country_flag = unification_choice_made_ukraine
 				set_country_flag = ukraine_war
 				set_country_flag = ukraine_war_preparation
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_flag = eu_limited_recognition
+						FROM = {
+							has_country_flag = eu_limited_recognition
+						}
+					}
+				}
+				EUN = {
+					country_event = {
+						id = FOP_generic.68
+						days = 7
+					}
+				}
 			}
         }
 	}	

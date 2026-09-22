@@ -1930,7 +1930,467 @@ country_event = {
 	}
 }
 
+country_event = { 
+	id = FOP_generic.62 #right bank warlords going to war
+	title = FOP_generic.62.t
+	desc = FOP_generic.62.d
 
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.62.a #ask recognized states to peace out
+		if = {
+			limit = {
+				WST = {
+					has_country_flag = eu_limited_recognition
+				}
+			}
+			WST = {
+				country_event = {
+					id = FOP_generic.62
+					days = 7
+				}
+			}
+		}
+		if = {
+			limit = {
+				NRT = {
+					has_country_flag = eu_limited_recognition
+				}
+			}
+			NRT = {
+				country_event = {
+					id = FOP_generic.62
+					days = 7
+				}
+			}
+		}
+	}
+}
+
+country_event = { 
+	id = FOP_generic.63 #eu asks to peace out
+	title = FOP_generic.63.t
+	desc = FOP_generic.63.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.63.a #ok
+		set_country_flag = fop_regional_agreed_to_eu_peace
+		EUN = {
+			country_event = {
+				id = FOP_generic.64
+				days = 7
+			}
+		}
+	}
+
+	option = { 
+		name = FOP_generic.63.b #nah
+		set_country_flag = fop_regional_refused_eu_peace
+		EUN = {
+			country_event = {
+				id = FOP_generic.64
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = { 
+	id = FOP_generic.64 #responses from warlords
+	title = FOP_generic.64.t
+	desc = FOP_generic.64.d
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { 
+		name = FOP_generic.64.a #both agreed to make referendum instead
+		trigger = {
+			WST = {
+				has_country_flag = fop_regional_agreed_to_eu_peace
+			}
+			NRT = {
+				has_country_flag = fop_regional_agreed_to_eu_peace
+			}
+		}
+		WST = {
+			clr_country_flag = right_bank_war
+			clr_country_flag = right_bank_war_preparation
+			set_country_flag = right_bank_referendum
+		}
+		NRT = {
+			clr_country_flag = right_bank_war
+			clr_country_flag = right_bank_war_preparation
+			set_country_flag = right_bank_referendum
+		}
+	}
+
+	option = { 
+		name = FOP_generic.64.b #one side agreed and other not
+		trigger = {
+			OR = {
+				AND = {
+					WST = {
+						has_country_flag = fop_regional_agreed_to_eu_peace
+					}
+					NRT = {
+						has_country_flag = fop_regional_refused_eu_peace
+					}
+				}
+				AND = {
+					WST = {
+						has_country_flag = fop_regional_refused_eu_peace
+					}
+					NRT = {
+						has_country_flag = fop_regional_agreed_to_eu_peace
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				WST = {
+					has_country_flag = fop_regional_agreed_to_eu_peace
+				}
+			}
+			#national spirit
+		}
+		if = {
+			limit = {
+				NRT = {
+					has_country_flag = fop_regional_agreed_to_eu_peace
+				}
+			}
+			#national spirit
+		}
+	}
+
+	option = { 
+		name = FOP_generic.64.c #nobody agreed
+		trigger = {
+			WST = {
+				has_country_flag = fop_regional_refused_eu_peace
+			}
+			NRT = {
+				has_country_flag = fop_regional_refused_eu_peace
+			}
+		}
+	}
+}
+
+country_event = { 
+	id = FOP_generic.65 #left bank warlords going to war
+	title = FOP_generic.65.t
+	desc = FOP_generic.65.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.65.a #ask recognized states to peace out
+		if = {
+			limit = {
+				STH = {
+					has_country_flag = eu_limited_recognition
+				}
+			}
+			STH = {
+				country_event = {
+					id = FOP_generic.66
+					days = 7
+				}
+			}
+		}
+		if = {
+			limit = {
+				ESN = {
+					has_country_flag = eu_limited_recognition
+				}
+			}
+			ESN = {
+				country_event = {
+					id = FOP_generic.66
+					days = 7
+				}
+			}
+		}
+	}
+}
+
+country_event = { 
+	id = FOP_generic.66 #eu asks to peace out
+	title = FOP_generic.66.t
+	desc = FOP_generic.66.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.66.a #ok
+		set_country_flag = fop_regional_agreed_to_eu_peace
+		EUN = {
+			country_event = {
+				id = FOP_generic.67
+				days = 7
+			}
+		}
+	}
+
+	option = { 
+		name = FOP_generic.66.b #nah
+		set_country_flag = fop_regional_refused_eu_peace
+		EUN = {
+			country_event = {
+				id = FOP_generic.67
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = { 
+	id = FOP_generic.67 #responses from warlords
+	title = FOP_generic.67.t
+	desc = FOP_generic.67.d
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { 
+		name = FOP_generic.67.a #both agreed to make referendum instead
+		trigger = {
+			STH = {
+				has_country_flag = fop_regional_agreed_to_eu_peace
+			}
+			ESN = {
+				has_country_flag = fop_regional_agreed_to_eu_peace
+			}
+		}
+		STH = {
+			clr_country_flag = left_bank_war
+			clr_country_flag = left_bank_war_preparation
+			set_country_flag = left_bank_referendum
+		}
+		ESN = {
+			clr_country_flag = left_bank_war
+			clr_country_flag = left_bank_war_preparation
+			set_country_flag = left_bank_referendum
+		}
+	}
+
+	option = { 
+		name = FOP_generic.67.b #one side agreed and other not
+		trigger = {
+			OR = {
+				AND = {
+					STH = {
+						has_country_flag = fop_regional_agreed_to_eu_peace
+					}
+					ESN = {
+						has_country_flag = fop_regional_refused_eu_peace
+					}
+				}
+				AND = {
+					STH = {
+						has_country_flag = fop_regional_refused_eu_peace
+					}
+					ESN = {
+						has_country_flag = fop_regional_agreed_to_eu_peace
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				STH = {
+					has_country_flag = fop_regional_agreed_to_eu_peace
+				}
+			}
+			#national spirit
+		}
+		if = {
+			limit = {
+				ESN = {
+					has_country_flag = fop_regional_agreed_to_eu_peace
+				}
+			}
+			#national spirit
+		}
+	}
+
+	option = { 
+		name = FOP_generic.67.c #nobody agreed
+		trigger = {
+			STH = {
+				has_country_flag = fop_regional_refused_eu_peace
+			}
+			ESN = {
+				has_country_flag = fop_regional_refused_eu_peace
+			}
+		}
+	}
+}
+
+country_event = { 
+	id = FOP_generic.68 #ukraine warlords going to war
+	title = FOP_generic.68.t
+	desc = FOP_generic.68.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.68.a #ask recognized states to peace out
+		if = {
+			limit = {
+				RBU = {
+					OR = {
+						has_country_flag = eu_limited_recognition
+						has_country_flag = eu_recognized_state
+					}
+				}
+			}
+			RBU = {
+				country_event = {
+					id = FOP_generic.69
+					days = 7
+				}
+			}
+		}
+		if = {
+			limit = {
+				LBU = {
+					OR = {
+						has_country_flag = eu_limited_recognition
+						has_country_flag = eu_recognized_state
+					}
+				}
+			}
+			LBU = {
+				country_event = {
+					id = FOP_generic.69
+					days = 7
+				}
+			}
+		}
+	}
+}
+
+country_event = { 
+	id = FOP_generic.69 #eu asks to peace out
+	title = FOP_generic.69.t
+	desc = FOP_generic.69.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.69.a #ok
+		set_country_flag = fop_river_bank_agreed_to_eu_peace
+		EUN = {
+			country_event = {
+				id = FOP_generic.70
+				days = 7
+			}
+		}
+	}
+
+	option = { 
+		name = FOP_generic.69.b #nah
+		set_country_flag = fop_river_bank_refused_eu_peace
+		EUN = {
+			country_event = {
+				id = FOP_generic.70
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = { 
+	id = FOP_generic.70 #responses from warlords
+	title = FOP_generic.70.t
+	desc = FOP_generic.70.d
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { 
+		name = FOP_generic.70.a #both agreed to make referendum instead
+		trigger = {
+			RBU = {
+				has_country_flag = fop_river_bank_agreed_to_eu_peace
+			}
+			LBU = {
+				has_country_flag = fop_river_bank_agreed_to_eu_peace
+			}
+		}
+		RBU = {
+			clr_country_flag = ukraine_war
+			clr_country_flag = ukraine_war_preparation
+			set_country_flag = ukraine_referendum
+		}
+		LBU = {
+			clr_country_flag = ukraine_war
+			clr_country_flag = ukraine_war_preparation
+			set_country_flag = ukraine_referendum
+		}
+	}
+
+	option = { 
+		name = FOP_generic.70.b #one side agreed and other not
+		trigger = {
+			OR = {
+				AND = {
+					RBU = {
+						has_country_flag = fop_river_bank_agreed_to_eu_peace
+					}
+					LBU = {
+						has_country_flag = fop_river_bank_refused_eu_peace
+					}
+				}
+				AND = {
+					RBU = {
+						has_country_flag = fop_river_bank_refused_eu_peace
+					}
+					LBU = {
+						has_country_flag = fop_river_bank_agreed_to_eu_peace
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				RBU = {
+					has_country_flag = fop_river_bank_agreed_to_eu_peace
+				}
+			}
+			#national spirit
+		}
+		if = {
+			limit = {
+				LBU = {
+					has_country_flag = fop_river_bank_agreed_to_eu_peace
+				}
+			}
+			#national spirit
+		}
+	}
+
+	option = { 
+		name = FOP_generic.70.c #nobody agreed
+		trigger = {
+			RBU = {
+				has_country_flag = fop_river_bank_refused_eu_peace
+			}
+			LBU = {
+				has_country_flag = fop_river_bank_refused_eu_peace
+			}
+		}
+	}
+}
 
 #Social Development
 
