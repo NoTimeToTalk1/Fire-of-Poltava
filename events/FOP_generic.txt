@@ -1947,7 +1947,7 @@ country_event = {
 			}
 			WST = {
 				country_event = {
-					id = FOP_generic.62
+					id = FOP_generic.63
 					days = 7
 				}
 			}
@@ -1960,7 +1960,7 @@ country_event = {
 			}
 			NRT = {
 				country_event = {
-					id = FOP_generic.62
+					id = FOP_generic.63
 					days = 7
 				}
 			}
@@ -2057,7 +2057,12 @@ country_event = {
 					has_country_flag = fop_regional_agreed_to_eu_peace
 				}
 			}
-			#national spirit
+			WST = {
+				country_event = {
+					id = FOP_generic.71
+					days = 7
+				}
+			}
 		}
 		if = {
 			limit = {
@@ -2065,7 +2070,38 @@ country_event = {
 					has_country_flag = fop_regional_agreed_to_eu_peace
 				}
 			}
-			#national spirit
+			NRT = {
+				country_event = {
+					id = FOP_generic.71
+					days = 7
+				}
+			}
+		}
+		if = {
+			limit = {
+				WST = {
+					has_country_flag = fop_regional_refused_eu_peace
+				}
+			}
+			WST = {
+				country_event = {
+					id = FOP_generic.72
+					days = 7
+				}
+			}
+		}
+		if = {
+			limit = {
+				NRT = {
+					has_country_flag = fop_regional_refused_eu_peace
+				}
+			}
+			NRT = {
+				country_event = {
+					id = FOP_generic.72
+					days = 7
+				}
+			}
 		}
 	}
 
@@ -2209,7 +2245,12 @@ country_event = {
 					has_country_flag = fop_regional_agreed_to_eu_peace
 				}
 			}
-			#national spirit
+			STH = {
+				country_event = {
+					id = FOP_generic.71
+					days = 7
+				}
+			}
 		}
 		if = {
 			limit = {
@@ -2217,7 +2258,38 @@ country_event = {
 					has_country_flag = fop_regional_agreed_to_eu_peace
 				}
 			}
-			#national spirit
+			ESN = {
+				country_event = {
+					id = FOP_generic.71
+					days = 7
+				}
+			}
+		}
+		if = {
+			limit = {
+				STH = {
+					has_country_flag = fop_regional_refused_eu_peace
+				}
+			}
+			STH = {
+				country_event = {
+					id = FOP_generic.72
+					days = 7
+				}
+			}
+		}
+		if = {
+			limit = {
+				ESN = {
+					has_country_flag = fop_regional_refused_eu_peace
+				}
+			}
+			ESN = {
+				country_event = {
+					id = FOP_generic.72
+					days = 7
+				}
+			}
 		}
 	}
 
@@ -2367,7 +2439,12 @@ country_event = {
 					has_country_flag = fop_river_bank_agreed_to_eu_peace
 				}
 			}
-			#national spirit
+			RBU = {
+				country_event = {
+					id = FOP_generic.71
+					days = 7
+				}
+			}
 		}
 		if = {
 			limit = {
@@ -2375,7 +2452,38 @@ country_event = {
 					has_country_flag = fop_river_bank_agreed_to_eu_peace
 				}
 			}
-			#national spirit
+			LBU = {
+				country_event = {
+					id = FOP_generic.71
+					days = 7
+				}
+			}
+		}
+		if = {
+			limit = {
+				RBU = {
+					has_country_flag = fop_river_bank_refused_eu_peace
+				}
+			}
+			RBU = {
+				country_event = {
+					id = FOP_generic.72
+					days = 7
+				}
+			}
+		}
+		if = {
+			limit = {
+				LBU = {
+					has_country_flag = fop_river_bank_refused_eu_peace
+				}
+			}
+			LBU = {
+				country_event = {
+					id = FOP_generic.72
+					days = 7
+				}
+			}
 		}
 	}
 
@@ -2389,6 +2497,32 @@ country_event = {
 				has_country_flag = fop_river_bank_refused_eu_peace
 			}
 		}
+	}
+}
+
+country_event = { 
+	id = FOP_generic.71 #eu will help us in war
+	title = FOP_generic.71.t
+	desc = FOP_generic.71.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.71.a
+		add_ideas = FOP_eu_help_in_war
+	}
+}
+
+country_event = { 
+	id = FOP_generic.72 #eu sanctions us
+	title = FOP_generic.72.t
+	desc = FOP_generic.72.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FOP_generic.72.a
+		add_ideas = FOP_eu_sanctions
 	}
 }
 
