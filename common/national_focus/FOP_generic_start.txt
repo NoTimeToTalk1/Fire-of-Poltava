@@ -177,7 +177,7 @@ shared_focus = {
 	completion_reward = {
 		division_template = {
 			name = "Militia"
-			is_locked = yes
+			is_locked = no
 			division_names_group = UKR_INF_01
 			priority = 0
 			template_counter = 0
@@ -188,14 +188,28 @@ shared_focus = {
 		}
 		random_owned_controlled_state  = {
 			create_unit = {
-				division = "name = \"Militia\" division_template = \"Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+				division = "name = \"1st Militia\" division_template = \"Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
 				owner = ROOT
 			}	
 			add_manpower = -1200
 		}
 		random_owned_controlled_state  = {
 			create_unit = {
-				division = "name = \"Militia\" division_template = \"Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.4"
+				division = "name = \"2st Militia\" division_template = \"Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.7"
+				owner = ROOT
+			}	
+			add_manpower = -800
+		}
+		random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"3st Militia\" division_template = \"Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+				owner = ROOT
+			}	
+			add_manpower = -800
+		}
+		random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"4st Militia\" division_template = \"Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
 				owner = ROOT
 			}	
 			add_manpower = -800
@@ -225,6 +239,33 @@ shared_focus = {
 			amount = 300
 			producer = ROOT
 		}
+		division_template = {
+			name = "Motorised Division"
+			is_locked = no
+			division_names_group = UKR_INF_01
+			priority = 0
+			template_counter = 99
+			regiments = {
+			motorized = { x = 0 y = 0 }
+			motorized = { x = 0 y = 1 }
+			motorized = { x = 0 y = 2 }
+			motorized = { x = 0 y = 3 }
+			}
+		}
+		random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"Ryan Hosling Brigade\" division_template = \"Motorised Division\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
+				owner = ROOT
+			}	
+			add_manpower = -800
+		}
+		random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"Taxi Drivers Unit\" division_template = \"Motorised Division\" start_experience_factor = 0.1 start_equipment_factor = 0.8"
+				owner = ROOT
+			}	
+			add_manpower = -800
+		}
 	}
 }
 
@@ -241,6 +282,38 @@ shared_focus = {
 	
 	completion_reward = {
 		add_ideas = FOP_skilled_personnel
+		division_template = {
+			name = "Elite Division"
+			is_locked = no
+			division_names_group = UKR_INF_01
+			priority = 0
+			template_counter = 6
+			regiments = {
+			motorized = { x = 0 y = 0 }
+			motorized = { x = 0 y = 1 }
+			motorized = { x = 0 y = 2 }
+			main_battle_tank = { x = 1 y = 0 }
+			main_battle_tank = { x = 1 y = 0 }
+			}
+			support = {
+				engineer = { x = 0 y = 0 }
+				recon = { x = 0 y = 1 }
+			}
+		}
+		random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"Joker Brigade\" division_template = \"Elite Division\" start_experience_factor = 0.5 start_equipment_factor = 0.2"
+				owner = ROOT
+			}	
+			add_manpower = -800
+		}
+		random_owned_controlled_state  = {
+			create_unit = {
+				division = "name = \"Batman Brigade\" division_template = \"Elite Division\" start_experience_factor = 0.5 start_equipment_factor = 0.2"
+				owner = ROOT
+			}	
+			add_manpower = -800
+		}
 	}
 }
 
@@ -265,6 +338,20 @@ shared_focus = {
 			}
 		}
 		FOP_military_professionalism_small_improvement = yes
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"New Unit\" division_template = \"Special Forces\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+						owner = ROOT
+					}
+					add_manpower = -800
+				}
+			}
+		}
 	}
 }
 
@@ -281,6 +368,20 @@ shared_focus = {
 	
 	completion_reward = {
 		unlock_decision_category_tooltip = fop_warehouses
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"Warehouse Finders Unit\" division_template = \"Special Forces\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+						owner = ROOT
+					}
+					add_manpower = -800
+				}
+			}
+		}
 	}
 }
 
@@ -300,6 +401,18 @@ shared_focus = {
 		unlock_decision_category_tooltip = fop_mobilisation
 		add_manpower = 10000
 		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"TCK Unit\" division_template = \"Special Forces\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+						owner = ROOT
+					}
+					add_manpower = -800
+				}
+			}
 			country_event = {
 				id = FOP_generic.4
 				days = 5
