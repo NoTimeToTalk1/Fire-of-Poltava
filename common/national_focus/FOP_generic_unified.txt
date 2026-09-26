@@ -80,7 +80,7 @@ shared_focus = {
     prerequisite = { focus = FOP_Eyes_To_The_West }
 
     available = {
-        has_country_flag = fop_us_recognition
+        has_country_flag = fop_us_recognized_state
     }
 
     completion_reward = {
@@ -131,7 +131,7 @@ shared_focus = {
 shared_focus = {
     id = FOP_Talks_About_Membership
     icon = GFX_FOP_Talks_About_Membership
-    cost = 5
+    cost = 7
 
     x = 0
     y = 1
@@ -141,7 +141,12 @@ shared_focus = {
     prerequisite = { focus = FOP_Reasoning_With_EU }
 
     completion_reward = {
-        #tooltip
+        EUN = {
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = FOP_eu_member_state
+            }
+        }
     }
 }
 
@@ -160,7 +165,12 @@ shared_focus = {
     mutually_exclusive = { focus = FOP_Reasoning_With_EU }
 
     completion_reward = {
-        #tooltip
+        ROOT = {
+            add_opinion_modifier = {
+                target = EUN
+                modifier = FOP_euroscepticism
+            }
+        }
     }
 }
 
@@ -175,8 +185,6 @@ shared_focus = {
     relative_position_id = FOP_Adopt_Euroscepticism
 
     prerequisite = { focus = FOP_Adopt_Euroscepticism }
-
-    mutually_exclusive = { focus = FOP_Reasoning_With_EU }
 
     completion_reward = {
         #tooltip
@@ -232,7 +240,18 @@ shared_focus = {
     mutually_exclusive = { focus = FOP_Warm_Water_Ports }
 
     completion_reward = {
-        #tooltip
+        ROOT = {
+            add_opinion_modifier = {
+                target = RUS
+                modifier = FOP_hostility_towards_russia
+            }
+        }
+        RUS = {
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = FOP_hostility_towards_russia
+            }
+        }
     }
 }
 
@@ -255,7 +274,18 @@ shared_focus = {
     mutually_exclusive = { focus = FOP_To_Hell_With_Russia }
 
     completion_reward = {
-        #tooltip
+        ROOT = {
+            add_opinion_modifier = {
+                target = RUS
+                modifier = FOP_warm_relations_with_russia
+            }
+        }
+        RUS = {
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = FOP_warm_relations_with_russia
+            }
+        }
     }
 }
 
@@ -272,7 +302,12 @@ shared_focus = {
     prerequisite = { focus = FOP_Eyes_To_The_East }
 
     completion_reward = {
-        #tooltip
+        every_state = {
+            limit = {
+                is_owned_by = CRI
+            }
+            add_claim_by = ROOT
+        }
     }
 }
 
@@ -292,7 +327,7 @@ shared_focus = {
     mutually_exclusive = { focus = FOP_Leave_Crimea_Claims }
 
     completion_reward = {
-        #tooltip
+        unlock_decision_category_tooltip = FOP_crimea_negotiations
     }
 }
 
@@ -312,7 +347,18 @@ shared_focus = {
     mutually_exclusive = { focus = FOP_Operation_Homecoming }
 
     completion_reward = {
-        #tooltip
+        every_state = {
+            limit = {
+                is_owned_by = CRI
+            }
+            remove_claim_by = ROOT
+        }
+        RUS = {
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = FOP_discarded_crimea
+            }
+        }
     }
 }
 
@@ -332,7 +378,7 @@ shared_focus = {
     mutually_exclusive = { focus = FOP_Leave_Crimea_Claims }
 
     completion_reward = {
-        #tooltip
+        unlock_decision_category_tooltip = FOP_crimea_operation
     }
 }
 
@@ -497,7 +543,7 @@ shared_focus = {
 shared_focus = {
     id = FOP_Great_Military_Industrial_Complex
     icon = GFX_FOP_Great_Military_Industrial_Complex
-    cost = 5
+    cost = 7
 
     x = 4
     y = 1
@@ -507,7 +553,41 @@ shared_focus = {
     prerequisite = { focus = FOP_Domestic_Affairs }
 
     completion_reward = {
-        #tooltip
+        random_owned_controlled_state = {
+            add_building_construction = {
+                type = arms_factory
+                level = 3
+                instant_build = yes
+            }
+        }
+        random_owned_controlled_state = {
+            add_building_construction = {
+                type = arms_factory
+                level = 2
+                instant_build = yes
+            }
+        }
+        random_owned_controlled_state = {
+            add_building_construction = {
+                type = arms_factory
+                level = 2
+                instant_build = yes
+            }
+        }
+        random_owned_controlled_state = {
+            add_building_construction = {
+                type = arms_factory
+                level = 1
+                instant_build = yes
+            }
+        }
+        random_owned_controlled_state = {
+            add_building_construction = {
+                type = arms_factory
+                level = 1
+                instant_build = yes
+            }
+        }
     }
 }
 
@@ -531,7 +611,7 @@ shared_focus = {
 shared_focus = {
     id = FOP_Navy_Buildup
     icon = GFX_FOP_Navy_Buildup
-    cost = 5
+    cost = 7
 
     x = 1
     y = 1
@@ -541,7 +621,45 @@ shared_focus = {
     prerequisite = { focus = FOP_Great_Military_Industrial_Complex }
 
     completion_reward = {
-        #tooltip
+        random_owned_controlled_state = {
+            limit = {
+                is_coastal = yes
+            }
+            add_building_construction = {
+                type = dockyard
+                level = 2
+                instant_build = yes
+                province = {
+                    limit_to_coastal = yes
+                }
+            }
+        }
+        random_owned_controlled_state = {
+            limit = {
+                is_coastal = yes
+            }
+            add_building_construction = {
+                type = dockyard
+                level = 1
+                instant_build = yes
+                province = {
+                    limit_to_coastal = yes
+                }
+            }
+        }
+        random_owned_controlled_state = {
+            limit = {
+                is_coastal = yes
+            }
+            add_building_construction = {
+                type = dockyard
+                level = 1
+                instant_build = yes
+                province = {
+                    limit_to_coastal = yes
+                }
+            }
+        }
     }
 }
 

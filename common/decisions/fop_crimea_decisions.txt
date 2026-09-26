@@ -1,0 +1,242 @@
+FOP_crimea_negotiations = {
+    fop_crimea_negotiations_round_one_countdown = {
+		activation = {
+			has_country_flag = fop_crimea_negotiations_round_one
+		}
+		available = {
+			has_country_flag = fop_crimea_negotiations_round_two
+		}
+		cancel_trigger = {
+			NOT = {
+				has_country_flag = fop_crimea_negotiations_round_one
+			}
+		}
+		is_good = no
+		days_mission_timeout = 60
+		timeout_effect = {
+            if = {
+                limit = {
+                    check_variable = {
+                        FOP_crimea_negotiations_var > 5
+                    }
+                }
+                set_country_flag = fop_crimea_negotiations_round_two
+                clr_country_flag = fop_crimea_negotiations_round_one
+            }
+            else = {
+                clr_country_flag = fop_crimea_negotiations_round_one
+            }
+		}
+	}
+    fop_limit_the_military = {
+        fire_only_once = yes
+        cost = 75
+        days_remove = 30
+        complete_effect = {
+            add_to_variable = {
+                var = FOP_crimea_negotiations_var
+                value = 1
+            }
+        }
+        remove_effect = {
+            set_country_flag = FOP_negotiations_limiting_military
+        }
+    }
+    fop_recognize_russian_as_second_state_language = {
+        fire_only_once = yes
+        cost = 50
+        days_remove = 30
+        complete_effect = {
+            add_to_variable = {
+                var = FOP_crimea_negotiations_var
+                value = 1
+            }
+        }
+        remove_effect = {
+            set_country_flag = FOP_negotiations_russian_state_language
+        }
+    }
+    fop_accept_neutral_status = {
+        fire_only_once = yes
+        cost = 35
+        days_remove = 30
+        ai_will_do = {
+            base = 120
+            modifier = {
+                add = -120
+                is_pro_european = yes
+            }
+        }
+        complete_effect = {
+            add_to_variable = {
+                var = FOP_crimea_negotiations_var
+                value = 1
+            }
+        }
+        remove_effect = {
+            set_country_flag = FOP_negotiations_neutral_status
+        }
+    }
+    fop_move_to_odkb = {
+        fire_only_once = yes
+        cost = 60
+        days_remove = 30
+        ai_will_do = {
+            base = 90
+            modifier = {
+                add = 60
+                is_pro_russian = yes
+            }
+            modifier = {
+                add = -90
+                is_pro_european = yes
+            }
+        }
+        complete_effect = {
+            add_to_variable = {
+                var = FOP_crimea_negotiations_var
+                value = 2
+            }
+        }
+        remove_effect = {
+            set_country_flag = FOP_negotiations_russian_alliance
+        }
+    }
+    fop_ask_to_join_eaeu = {
+        fire_only_once = yes
+        cost = 50
+        days_remove = 30
+        ai_will_do = {
+            base = 90
+            modifier = {
+                add = 60
+                is_pro_russian = yes
+            }
+            modifier = {
+                add = -90
+                is_pro_european = yes
+            }
+        }
+        complete_effect = {
+            add_to_variable = {
+                var = FOP_crimea_negotiations_var
+                value = 2
+            }
+        }
+        remove_effect = {
+            set_country_flag = FOP_negotiations_russian_economic_union
+        }
+    }
+    fop_crimea_negotiations_round_two_countdown = {
+		activation = {
+			has_country_flag = fop_crimea_negotiations_round_two
+		}
+		available = {
+            NOT = {
+                has_country_flag = fop_crimea_negotiations_round_two
+            }
+		}
+		cancel_trigger = {
+			NOT = {
+				has_country_flag = fop_crimea_negotiations_round_two
+			}
+		}
+		is_good = no
+		days_mission_timeout = 60
+		timeout_effect = {
+            if = {
+                limit = {
+                    check_variable = {
+                        FOP_crimea_negotiations_var > 7
+                    }
+                }
+                set_country_flag = fop_crimea_negotiations_round_two
+            }
+            if = {
+                limit = {
+                    has_country_flag = FOP_negotiations_limiting_military
+                }
+                FOP_change_conscription_disarmed_nation = yes
+                FOP_change_economic_mobilization_civilian_economy = yes
+            }
+            if = {
+                limit = {
+                    has_country_flag = FOP_negotiations_russian_alliance
+                }
+                RUS = {
+                    add_to_faction = ROOT
+                }
+            }
+            if = {
+                limit = {
+                    has_country_flag = FOP_negotiations_russian_economic_union
+                }
+                #add idea
+            }
+            if = {
+                limit = {
+                    has_country_flag = FOP_negotiations_neutral_status
+                }
+                #add idea
+            }
+            else = {
+                clr_country_flag = fop_crimea_negotiations_round_two
+            }
+		}
+	}
+    fop_1991_variant = {
+        visible = {
+            has_country_flag = fop_crimea_negotiations_round_two
+        }
+        fire_only_once = yes
+        cost = 50
+        days_remove = 30
+        ai_will_do = {
+            base = 150
+        }
+        complete_effect = {
+            add_to_variable = {
+                var = FOP_crimea_negotiations_var
+                value = 1
+            }
+        }
+        remove_effect = {
+            if = {
+                limit = {
+                    check_variable = {
+                        FOP_crimea_negotiations_var < 7
+                    }
+                }
+                #nothing
+            }
+            if = {
+                limit = {
+                    check_variable = {
+                        FOP_crimea_negotiations_var > 6
+                    }
+                }
+                set_country_flag = FOP_negotiations_crimea_1991_status
+            }
+        }
+    }
+    fop_wide_autonomy = {
+        visible = {
+            has_country_flag = fop_crimea_negotiations_round_two
+        }
+        fire_only_once = yes
+        cost = 70
+        days_remove = 30
+        ai_will_do = {
+            base = 150
+        }
+        complete_effect = {
+            add_to_variable = {
+                var = FOP_crimea_negotiations_var
+                value = 1
+            }
+        }
+        remove_effect = {
+            set_country_flag = FOP_negotiations_crimea_wide_autonomy
+        }
+    }
+}
