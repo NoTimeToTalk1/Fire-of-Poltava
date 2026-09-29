@@ -20,6 +20,32 @@ division_template = {
 	}
 }
 
+division_template = {
+	name = "IFV Brigade"
+
+		regiments = {
+		IFV = { x = 0 y = 0 }
+		IFV = { x = 0 y = 1 }
+		IFV = { x = 0 y = 2 }
+		main_battle_tank = { x = 0 y = 3 }
+		motorized = { x = 0 y = 4}
+		main_battle_tank = { x = 1 y = 0 }
+		main_battle_tank = { x = 1 y = 1 }
+		rocket_artillery_brigade = { x = 1 y = 2 } 
+		anti_tank_brigade = { x = 1 y = 3 }
+		anti_air_brigade = { x = 1 y = 4}
+
+		
+	}
+	support = {
+       	engineer = { x = 0 y = 0 }
+		maintenance_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon = { x = 0 y = 3 }
+	}
+}
+
+
 units = {
 
 	division= {	
@@ -73,6 +99,30 @@ units = {
 		name = "6th 'Chenstokhovskaya' separate tank brigade"
 		location = 12999
 		division_template = "Pekhotnaya Brigada"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+	
+	division= {	
+		name = "19th Voronezh-Shumlinsk Motorized Rifle Division"
+		location = 12999
+		division_template = "IFV Brigade"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+	
+	division= {	
+		name = "20th Motor Rifle Prykarpattya-Berlin Division"
+		location = 12999
+		division_template = "IFV Brigade"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+	
+	division= {	
+		name = "42nd Guards Motor Rifle Yevpatoria Division"
+		location = 12999
+		division_template = "IFV Brigade"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.8
 	}

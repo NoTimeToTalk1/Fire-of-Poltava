@@ -89,6 +89,51 @@ shared_focus = {
     prerequisite = { focus = FOP_Open_For_Business }
 
 	completion_reward = {
+			if = {
+				limit = {
+				OR = {
+					is_north_ukraine = yes
+					is_south_ukraine = yes
+					}
+				}
+division_template = {
+	name = "Mechanized Brigade"
+	division_names_group = UKR_INF_01
+
+		regiments = {
+		IFV = { x = 0 y = 0 }
+		IFV = { x = 0 y = 1 }
+		APC = { x = 0 y = 2 }
+		main_battle_tank = { x = 0 y = 3 }
+		motorized = { x = 0 y = 4}
+		main_battle_tank = { x = 1 y = 0 }
+		main_battle_tank = { x = 1 y = 1 }
+		rocket_artillery_brigade = { x = 1 y = 2 } 
+		anti_tank_brigade = { x = 1 y = 3 }
+		anti_air_brigade = { x = 1 y = 4}
+
+		
+	}
+	support = {
+       	engineer = { x = 0 y = 0 }
+		maintenance_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon = { x = 0 y = 3 }
+	}
+}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"1st Divisiya im. Fedora Sicheslavskogo\" division_template = \"Mechanized Brigade\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+						owner = ROOT
+					}
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"2st Divisiya im. Fedora Sicheslavskogo\" division_template = \"Mechanized Brigade\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+						owner = ROOT
+					}
+				}
+		}
 		army_experience = 25
 		add_to_variable = {
 			var = FOP_military_professionalism_var

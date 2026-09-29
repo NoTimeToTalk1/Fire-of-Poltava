@@ -85,6 +85,33 @@
        
         completion_reward = {
             army_experience = 30
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+			if = {
+				limit = {
+				OR = {
+					is_north_ukraine = yes
+					is_south_ukraine = yes
+					}
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"1st Divisiya im. Fedora Sicheslavskogo\" division_template = \"Mechanized Brigade\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+						owner = ROOT
+					}
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"2st Divisiya im. Fedora Sicheslavskogo\" division_template = \"Mechanized Brigade\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+						owner = ROOT
+					}
+				}
+		}
         }
     }
 
@@ -205,6 +232,34 @@
                 idea = FOP_military_investments
                 days = 210
             }
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+			if = {
+				limit = {
+					is_ai = yes
+				}
+
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_1
+					amount = 50
+					producer = KYI
+				}
+				add_equipment_to_stockpile = {
+					type = APC_equipment_1
+					amount = 50
+					producer = KYI
+				}
+				add_equipment_to_stockpile = {
+					type = IFV_equipment_1
+					amount = 20
+					producer = KYI
+				}
+		}
         }
     }
 
@@ -320,6 +375,27 @@
       
         completion_reward = {
             add_ideas = FOP_increased_army_production
+			if = {
+				limit = {
+					is_ai = yes
+				}
+
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_1
+					amount = 50
+					producer = KYI
+				}
+				add_equipment_to_stockpile = {
+					type = APC_equipment_1
+					amount = 50
+					producer = KYI
+				}
+				add_equipment_to_stockpile = {
+					type = IFV_equipment_1
+					amount = 20
+					producer = KYI
+				}
+		}
         }
     }
 
@@ -357,11 +433,39 @@
         prerequisite = { focus = FOP_Enhance_Arms_Production_Capabilities }
        
         completion_reward = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_1
+					amount = 50
+					producer = KYI
+				}
+				add_equipment_to_stockpile = {
+					type = APC_equipment_1
+					amount = 50
+					producer = KYI
+				}
+				add_equipment_to_stockpile = {
+					type = IFV_equipment_1
+					amount = 20
+					producer = KYI
+				}
+		}
             add_to_variable = {
                 var = FOP_unemployment_var
                 value = 15
                 tooltip = add_Unemployment_var_tt
-            }	
+            }
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}			
         }
     }
 

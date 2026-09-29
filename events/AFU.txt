@@ -717,6 +717,66 @@ country_event = {
 				add_timed_idea = { idea = RAF_incursion days = 14 }
 				
 				load_oob = "RAF"
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 8500
+					producer = RUS
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 9000
+					producer = RUS
+				}
+				add_equipment_to_stockpile = {
+					type = anti_tank_equipment_1
+					amount = 5000
+					producer = RUS
+				}
+				add_equipment_to_stockpile = {
+					type = anti_air_equipment_1
+					amount = 5000
+					producer = RUS
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_1
+					amount = 500
+					producer = RUS
+				}
+				add_equipment_to_stockpile = {
+					type = APC_equipment_1
+					amount = 500
+					producer = RUS
+				}
+				add_equipment_to_stockpile = {
+					type = IFV_equipment_1
+					amount = 500
+					producer = RUS
+				}
+
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+				add_equipment_to_stockpile = {
+					type = MBT_chassis_1
+					amount = 200
+					producer = RUS
+				}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "No Step Back"
+		}
+	}
+				add_equipment_to_stockpile = {
+					type = MBT_equipment_1
+					amount = 200
+					producer = RUS
+				}
+}
+
 			}
 		}
 	}
