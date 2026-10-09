@@ -1,47 +1,59 @@
 division_template = {
-	name = "Brigada Opolcheniya"
+	name = "Motor Rifle Brigade"
 
 	regiments = {
-		motorized = { x = 0 y = 0 }
-		motorized = { x = 0 y = 1 }
+		IFV = { x = 0 y = 0 }
+		IFV = { x = 0 y = 1 }
+		IFV = { x = 0 y = 2 }
+		IFV = { x = 1 y = 0 }
+		IFV = { x = 1 y = 1 }
+		IFV = { x = 1 y = 2 }
+		IFV = { x = 2 y = 0 }
+		IFV = { x = 2 y = 1 }
+		IFV = { x = 2 y = 2 }
+		main_battle_tank = { x = 3 y = 0 }
+		main_battle_tank = { x = 3 y = 1 }
+		main_battle_tank = { x = 3 y = 2 }
+		sp_artillery_brigade = { x = 4 y = 0 }
+		sp_artillery_brigade = { x = 4 y = 1 }
+		rocket_artillery_brigade = { x = 4 y = 2 }
+		sp_anti_air_brigade = { x = 4 y = 3 }
+	}
+	support = {
+		anti_tank = { x = 0 y = 0 }
+		IFV_recon = { x = 0 y = 1 }
+		engineer = { x = 0 y = 2 }
+		signal_company = { x = 0 y = 3 }
+		field_hospital = { x = 0 y = 4 }
+		maintenance_company = { x = 0 y = 5 }
+		logistics_company = { x = 0 y = 6 }
+	}
+}
+
+division_template = {
+	name = "Tank Battalion"
+
+	regiments = {
+		main_battle_tank = { x = 0 y = 0 }
+		main_battle_tank = { x = 0 y = 1 }
+		main_battle_tank = { x = 0 y = 2 }
 		main_battle_tank = { x = 1 y = 0 }
-		artillery_brigade = { x = 2 y = 0 }
+		IFV = { x = 1 y = 1 }
+		sp_artillery_brigade = { x = 1 y = 2 }
 	}
 	support = {
-        engineer = { x = 0 y = 0 }
-       	artillery = { x = 0 y = 1 }
-		maintenance_company = { x = 0 y = 2 }
-		mot_recon = { x = 0 y = 3 }
+       	IFV_recon = { x = 0 y = 0 }
 	}
 }
 
 division_template = {
-	name = "Cossacks Division"
+	name = "Assault Battalion"
 
 	regiments = {
-		motorized = { x = 0 y = 0 }
-		motorized = { x = 0 y = 1 }
-		motorized = { x = 0 y = 2 }
-		motorized = { x = 1 y = 0 }
-		motorized = { x = 1 y = 1 }
-		motorized = { x = 1 y = 2 }
-	}
-	support = {
-		engineer = { x = 0 y = 0 }
-		military_police = { x = 0 y = 1 }
-		anti_tank = { x = 0 y = 2 }
-		recon = { x = 0 y = 3 }
-	}
-}
-
-division_template = {
-	name = "Batalyon opolcheniya"
-
-	regiments = {
-		infantry = { x = 0 y = 0 }
-		infantry = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
-		infantry = { x = 1 y = 0 }
+		IFV = { x = 0 y = 0 }
+		IFV = { x = 0 y = 1 }
+		IFV = { x = 0 y = 2 }
+		main_battle_tank = { x = 0 y = 3 }
 	}
 	support = {
        	artillery = { x = 0 y = 0 }
@@ -51,83 +63,83 @@ division_template = {
 #TOTAL DIVISIONS: 10
 units = {
 	
-	division= {
-		name = "1st 'Slavyansk' Guards Motorized rifle Brigade"
+	division = {
+		name = "1st Separate Guards Motor Rifle Brigade"
 		location = 8754
-		division_template = "Brigada Opolcheniya"
+		division_template = "Motor Rifle Brigade"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.7
 	}
 	
-	division= {
-		name = "3rd separate Guards Motorized Brigade"		
+	division = {
+		name = "3rd Separate Motor Rifle Brigade"		
 		location = 7322
-		division_template = "Brigada Opolcheniya"
+		division_template = "Motor Rifle Brigade"
 		start_experience_factor = 0.2
 		start_equipment_factor = 1.0
 	}
 	
-	division= {
-		name = "5th 'Aleksandr Zakharchenko' Motorized Brigade"
-		location = 1709
-		division_template = "Brigada Opolcheniya"
+	division = {
+		name = "5rd Separate Motor Rifle Brigade"
+		location = 13509
+		division_template = "Motor Rifle Brigade"
 		start_experience_factor = 0.3
 		start_equipment_factor = 0.9
 	}
 	
-	division= {
-		name = "100th separate Motorized Brigade"
-		location = 13509
-		division_template = "Brigada Opolcheniya"
+	division = {
+		name = "100th Separate Guards Motor Rifle Brigade"
+		location = 1709
+		division_template = "Motor Rifle Brigade"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.7
 	}
 
-	division= {
-		name = "9th Separate Marine Assault Motorized Rifle Regiment"
+	division = {
+		name = "9th Separate Naval Infantry Regiment"
 		location = 13798
-		division_template = "Brigada Opolcheniya"
+		division_template = "Motor Rifle Brigade"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
 	}
 
-	division= {
-		name = "11th 'Yenakievo-Dunay' Motorized regiment"
-		location = 13498
-		division_template = "Brigada Opolcheniya"
+	division = {
+		name = "11th Separate Motor Rifle Regiment"
+		location = 13451
+		division_template = "Motor Rifle Brigade"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.5
 	}
 	
-	division= {
+	division = {
 		name = "Separate Artillery Brigade 'Kalmius'"
 		location = 9256
-		division_template = "Brigada Opolcheniya"
+		division_template = "Motor Rifle Brigade"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.6
+		start_equipment_factor = 0.5
 	}
 	
-	division= {
+	division = {
 		name = "Separate Assault Battalion 'Somali'"
-		location = 1709
-		division_template = "Batalyon opolcheniya"
+		location = 19852
+		division_template = "Assault Battalion"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.6
+		start_equipment_factor = 0.4
 	}
 	
-	division= {
+	division = {
 		name = "Separate Tank Battalion 'Diesel'"
-		location = 13509
-		division_template = "Batalyon opolcheniya"
+		location = 13226
+		division_template = "Tank Battalion"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.8
+		start_equipment_factor = 0.4
 	}
 	
-	division= {
+	division = {
 		name = "Separate Reconnaissance Battalion 'Sparta'"
 		location = 1709
-		division_template = "Batalyon opolcheniya"
+		division_template = "Assault Battalion"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.6
+		start_equipment_factor = 0.4
 	}
 }
