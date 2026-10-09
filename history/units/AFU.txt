@@ -6,20 +6,30 @@ division_template = {
 		IFV = { x = 0 y = 0 }
 		IFV = { x = 0 y = 1 }
 		IFV = { x = 0 y = 2 }
-		main_battle_tank = { x = 1 y = 0 }
-		rocket_artillery_brigade = { x = 2 y = 0 }
-		APC = { x = 3 y = 0 }
-		APC = { x = 3 y = 1 }
+		IFV = { x = 1 y = 0 }
+		IFV = { x = 1 y = 1 }
+		IFV = { x = 1 y = 2 }
+		IFV = { x = 2 y = 0 }
+		IFV = { x = 2 y = 1 }
+		IFV = { x = 2 y = 2 }
+		main_battle_tank = { x = 3 y = 0 }
+		main_battle_tank = { x = 3 y = 1 }
+		main_battle_tank = { x = 3 y = 2 }
+		sp_artillery_brigade = { x = 4 y = 0 }
+		sp_artillery_brigade = { x = 4 y = 1 }
+		rocket_artillery_brigade = { x = 4 y = 2 }
+		sp_anti_tank_brigade = { x = 4 y = 3 }
 	}
 	support = {
-       	engineer = { x = 0 y = 0 }
-		maintenance_company = { x = 0 y = 1 }
-		field_hospital = { x = 0 y = 2 }
-		mot_recon = { x = 0 y = 3 }
-		signal_company = { x = 0 y = 4 }
+		IFV_recon = { x = 0 y = 0 }
+		signal_company = { x = 0 y = 1 }
+		engineer = { x = 0 y = 2 }
+		logistics_company = { x = 0 y = 3 }
+		maintenance_company = { x = 0 y = 4 }
+		field_hospital = { x = 0 y = 5 }
 	}
 	regimental_support = {
-		logistics_company = { x = 0 y = 0 }
+		mortar = { x = 0 y = 0 }
 	}
 	
 }
@@ -83,14 +93,14 @@ division_template = {
 }
 
 division_template = {
-	name = "Border Guards"
+	name = "Border Detachment"
 	division_names_group = UKR_INF_01
 
 	regiments = {
-		IFV = { x = 0 y = 0 }
-		IFV = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
-		infantry = { x = 0 y = 3 }
+		regular_infantry = { x = 0 y = 0 }
+		regular_infantry = { x = 0 y = 1 }
+		regular_infantry = { x = 0 y = 2 }
+		armored_car = { x = 1 y = 0 }
 	}
 	support = {
        	artillery = { x = 0 y = 0 }
@@ -98,10 +108,10 @@ division_template = {
 	
 }
 
-#TOTAL DIVISIONS: 14
+#TOTAL DIVISIONS: 17
 units = { 
 
-	division= {
+	division = {
 		name = "46th Airmobile Brigade 'Podilsk'"
 		location = 13235
 		division_template = "Povitryanno Desantni Viys'ka"
@@ -109,7 +119,7 @@ units = {
 		start_equipment_factor = 0.8
 	}
 
-	division= {
+	division = {
 		name = "36th 'Mykhailo Bilynsky' Marines Brigade" 
 		location = 13742
 		division_template = "Brygada Mors'koyi Pikhoty"
@@ -117,7 +127,7 @@ units = {
 		start_equipment_factor = 0.3
 	}
 	
-	division= {
+	division = {
 		name = "93rd 'Kholodny yar' Mechanized Brigade"
 		location = 8462
 		division_template = "Mechanizovana Bryhada"
@@ -125,7 +135,7 @@ units = {
 		start_equipment_factor = 0.6
 	}
 	
-	division= {
+	division = {
 		name = "53rd 'Volodymyr Monomakh' Mechanized Brigade"
 		location = 965
 		division_template = "Mechanizovana Bryhada"
@@ -133,7 +143,7 @@ units = {
 		start_equipment_factor = 0.7
 	}
 	
-	division= {
+	division = {
 		name = "54th 'Ivan Mazepa' Mechanized Brigade"
 		location = 5237
 		division_template = "Mechanizovana Bryhada"
@@ -141,7 +151,7 @@ units = {
 		start_equipment_factor = 0.7
 	}
 
-	division= {
+	division = {
 		name = "92nd 'Ivan Sirko' Mechanised Brigade"
 		location = 2275
 		division_template = "Mechanizovana Bryhada"
@@ -149,7 +159,7 @@ units = {
 		start_equipment_factor = 0.8
 	}
 
-	division= {
+	division = {
 		name = "28th 'Knights of the First Winter Campaign' Mechanized Brigade"
 		location = 13280
 		division_template = "Mechanizovana Bryhada"
@@ -157,7 +167,7 @@ units = {
 		start_equipment_factor = 0.6
 	}
 
-	division= {
+	division = {
 		name = "72nd 'Black Zaporozhians' Mechanized Brigade"
 		location = 7799
 		division_template = "Mechanizovana Bryhada"
@@ -165,7 +175,7 @@ units = {
 		start_equipment_factor = 0.7
 	}
 
-	division= {
+	division = {
 		name = "10th Mountain Assault Brigade 'Edelweiss'"
 		location = 8361
 		division_template = "Mechanizovana Bryhada"
@@ -173,7 +183,7 @@ units = {
 		start_equipment_factor = 0.6
 	}
 
-	division= {
+	division = {
 		name = "128th Mountain Assault Brigade 'Zakarpattia'"
 		location = 393
 		division_template = "Mechanizovana Bryhada"
@@ -181,7 +191,7 @@ units = {
 		start_equipment_factor = 0.7
 	}
 
-	division= {
+	division = {
 		name = "80th Air Assault brigade"
 		location = 13227
 		division_template = "Povitryanno Desantni Viys'ka"
@@ -189,7 +199,7 @@ units = {
 		start_equipment_factor = 0.8
 	}
 	
-	division= {
+	division = {
 		name = "Special Operations Detachment 'Azov'"
 		location = 13874
 		division_template = "Dobrovolchiy Batal'yon"
@@ -197,7 +207,7 @@ units = {
 		start_equipment_factor = 1.0
 	}
 	
-	division= {
+	division = {
 		name = "1st Assault Company of the DUK PS"
 		location = 13142
 		division_template = "Dobrovolchiy Batal'yon"
@@ -205,11 +215,35 @@ units = {
 		start_equipment_factor = 0.7
 	}
 	
-	division= {
+	division = {
 		name = "3rd Separate Rifle Company of the DUK PS"
 		location = 8462
 		division_template = "Dobrovolchiy Batal'yon"
 		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+	}
+
+	division = {
+		name = "Donetsk Border Detachment"
+		location = 13874
+		division_template = "Border Detachment"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	
+	division = {
+		name = "Kramatorsk Border Detachment"
+		location = 13142
+		division_template = "Border Detachment"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	
+	division = {
+		name = "Luhansk Border Detachment"
+		location = 8462
+		division_template = "Border Detachment"
+		start_experience_factor = 0.2
 		start_equipment_factor = 0.7
 	}
 }
@@ -245,4 +279,4 @@ instant_effect = {
 		progress = 0.3
 		efficiency = 50
 	}
-	}
+}

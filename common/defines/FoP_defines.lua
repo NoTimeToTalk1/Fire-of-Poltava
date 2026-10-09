@@ -52,7 +52,7 @@ NDefines.NMilitary.CORPS_COMMANDER_ARMIES_CAP = -1				-- how many armies a corps
 NDefines.NMilitary.FIELD_MARSHAL_DIVISIONS_CAP = 12				-- how many divisions a field marshall is limited to. 0 = inf, < 0 = blocked
 NDefines.NMilitary.FIELD_MARSHAL_ARMIES_CAP = 3					-- how many armies a field marshall is limited to. 0 = inf, < 0 = blocked
 
-NDefines.NMilitary.MAX_DIVISION_SUPPORT_HEIGHT = 7				-- Max height of support in division designer.
+NDefines.NMilitary.MAX_DIVISION_SUPPORT_HEIGHT = 8				-- Max height of support in division designer.
 
 NDefines.NMilitary.UNIT_EXP_LEVELS = { 0.1, 0.3, 0.75, 0.9 }	-- Experience needed to progress to the next level
 
