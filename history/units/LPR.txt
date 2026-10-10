@@ -1,110 +1,174 @@
 division_template = {
-	name = "Teritorialnaya oborona"
-	
+	name = "Territorial Defence"
 
 	regiments = {
-		infantry = { x = 0 y = 0 }
-		infantry = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
-		infantry = { x = 1 y = 0 }
+		regular_infantry = { x = 0 y = 0 }
+		regular_infantry = { x = 0 y = 1 }
+		regular_infantry = { x = 0 y = 2 }
+		regular_infantry = { x = 1 y = 0 }
+		regular_infantry = { x = 1 y = 1 }
+		regular_infantry = { x = 1 y = 2 }
 	}
 	support = {
-       	artillery = { x = 0 y = 0 }
+		logistics_company = { x = 0 y = 0 }
+		signal_company = { x = 0 y = 1 }
+		anti_air = { x = 0 y = 2 }
 	}
 }
 
 division_template = {
-	name = "Brigada Opolcheniya"
+	name = "Motor Rifle Brigade"
 
 	regiments = {
-		motorized = { x = 0 y = 0 }
-		motorized = { x = 0 y = 1 }
-		main_battle_tank = { x = 1 y = 0 }
-		artillery_brigade = { x = 2 y = 0 }
+		IFV = { x = 0 y = 0 }
+		IFV = { x = 0 y = 1 }
+		IFV = { x = 0 y = 2 }
+		IFV = { x = 1 y = 0 }
+		IFV = { x = 1 y = 1 }
+		IFV = { x = 1 y = 2 }
+		IFV = { x = 2 y = 0 }
+		IFV = { x = 2 y = 1 }
+		IFV = { x = 2 y = 2 }
+		main_battle_tank = { x = 3 y = 0 }
+		main_battle_tank = { x = 3 y = 1 }
+		main_battle_tank = { x = 3 y = 2 }
+		sp_artillery_brigade = { x = 4 y = 0 }
+		sp_artillery_brigade = { x = 4 y = 1 }
+		rocket_artillery_brigade = { x = 4 y = 2 }
+		sp_anti_air_brigade = { x = 4 y = 3 }
 	}
 	support = {
-        engineer = { x = 0 y = 0 }
-       	artillery = { x = 0 y = 1 }
-		maintenance_company = { x = 0 y = 2 }
-		mot_recon = { x = 0 y = 3 }
+		anti_tank = { x = 0 y = 0 }
+		IFV_recon = { x = 0 y = 1 }
+		engineer = { x = 0 y = 2 }
+		signal_company = { x = 0 y = 3 }
+		field_hospital = { x = 0 y = 4 }
+		logistics_company = { x = 0 y = 5 }
 	}
 }
 
-#TOTAL DIVISIONS: 10
+division_template = {
+	name = "Tank Battalion"
+
+	regiments = {
+		main_battle_tank = { x = 0 y = 0 }
+		main_battle_tank = { x = 0 y = 1 }
+		main_battle_tank = { x = 0 y = 2 }
+		main_battle_tank = { x = 1 y = 0 }
+		IFV = { x = 1 y = 1 }
+		sp_artillery_brigade = { x = 1 y = 2 }
+		rocket_artillery_brigade = { x = 2 y = 0 }
+		sp_anti_air_brigade = { x = 2 y = 1 }
+	}
+	support = {
+       	IFV_recon = { x = 0 y = 0 }
+	}
+}
+
+#TOTAL DIVISIONS: 14
 units = {
 
-	division= {
+	division = {
 		name = "2nd Guards Motor Rifle Brigade"
-		location = 13463
-		division_template = "Brigada Opolcheniya"
-		start_experience_factor = 0.3
-		start_equipment_factor = 0.4
+		location = 13361
+		division_template = "Motor Rifle Brigade"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
 	}
 	
-	division= {
+	division = {
 		name = "4th Separate Guards Motor Rifle Brigade"
-		location = 13299
-		division_template = "Brigada Opolcheniya"
-		start_experience_factor = 0.3
-		start_equipment_factor = 0.4
+		location = 9681
+		division_template = "Motor Rifle Brigade"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
 	}
 
-	division= {
+	division = {
 		name = "7th Separate Guards Motor Rifle Brigade"
-		location = 13299
-		division_template = "Brigada Opolcheniya"
-		start_experience_factor = 0.2
+		location = 8896
+		division_template = "Motor Rifle Brigade"
+		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
 	}
 	
-	division= {
+	division = {
 		name = "6th Separate Cossack Motor Rifle Regiment"
-		location = 6474
-		division_template = "Brigada Opolcheniya"
+		location = 6189
+		division_template = "Motor Rifle Brigade"
 		start_experience_factor = 0.1
-		start_equipment_factor = 0.4
+		start_equipment_factor = 0.7
 	}
 	
-	division= {
+	division = {
 		name = "10th Separate Artillery Brigade"
-		location = 13361
-		division_template = "Brigada Opolcheniya"
+		location = 8565
+		division_template = "Motor Rifle Brigade"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+
+	division = {
+		name = "Separate Tank Battalion 'August'"
+		location = 8565
+		division_template = "Tank Battalion"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	
+	division = {	
+		name = "11th TD battalion 'Ataman'"
+		location = 3611
+		division_template = "Territorial Defence"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.4
 	}
-	
-	division= {	
+	division = {	
+		name = "12th TD battalion 'Rim'"
+		location = 13499
+		division_template = "Territorial Defence"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.4
+	}
+	division = {	
+		name = "13th TD battalion 'Kulkin'"
+		location = 771
+		division_template = "Territorial Defence"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.4
+	}
+	division = {	
+		name = "14th TD battalion 'Prizrak'"
+		location = 13299
+		division_template = "Territorial Defence"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+	division = {	
 		name = "15th TD battalion 'SSSR'"
-		location = 8565
-		division_template = "Teritorialnaya oborona"
+		location = 9143
+		division_template = "Territorial Defence"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.6
 	}
-	division= {	
-		name = "12th TD battalion 'Rim'"
-		location = 8565
-		division_template = "Teritorialnaya oborona"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.4
-	}
-	division= {	
-		name = "14th TD battalion 'Prizrak'"
-		location = 8565
-		division_template = "Teritorialnaya oborona"
+	division = {	
+		name = "16th TD battalion 'Yarga'"
+		location = 13407
+		division_template = "Territorial Defence"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.5
 	}
-	division= {	
-		name = "17th TD battalion 'Bol'shoy'"
-		location = 7093
-		division_template = "Teritorialnaya oborona"
+	division = {	
+		name = "17th TD battalion 'Bolshoy'"
+		location = 13299
+		division_template = "Territorial Defence"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
 	}
-	division= {	
-		name = "16th TD battalion 'Leshii'"
-		location = 6999
-		division_template = "Teritorialnaya oborona"
+	division = {	
+		name = "18th TD battalion 'Pohodnyi'"
+		location = 13463
+		division_template = "Territorial Defence"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.3
 	}
