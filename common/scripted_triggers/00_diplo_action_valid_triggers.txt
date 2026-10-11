@@ -13,25 +13,25 @@ is_diplomatic_action_valid_generate_wargoal = {
 	always = no
 }
 
-is_diplomatic_action_valid_revoke_guarantee = {
-	always = no
-}
+#is_diplomatic_action_valid_revoke_guarantee = {
+#	always = no
+#}
 
-is_diplomatic_action_valid_milacc = {
-	always = no
-}
+#is_diplomatic_action_valid_milacc = {
+#	always = no
+#}
 
-is_diplomatic_action_valid_offer_milacc = {
-	always = no
-}
+#is_diplomatic_action_valid_offer_milacc = {
+#	always = no
+#}
 
 is_diplomatic_action_valid_nonaggressionpact = {
 	always = no
 }
 
-is_diplomatic_action_valid_improverelation = {
-	always = no
-}
+#is_diplomatic_action_valid_improverelation = {
+#	always = no
+#}
 
 is_diplomatic_action_valid_release_nation = {
 	always = no
@@ -45,17 +45,25 @@ is_diplomatic_action_valid_boost_party_popularity = {
 	always = no
 }
 
-is_diplomatic_action_valid_docking_rights = {
-	always = no
-}
+#is_diplomatic_action_valid_docking_rights = {
+#	always = no
+#}
 
-is_diplomatic_action_valid_offer_docking_rights = {
-	always = no
-}
+#is_diplomatic_action_valid_offer_docking_rights = {
+#	always = no
+#}
 
-is_diplomatic_action_valid_guarantee = {
-	always = no
-}
+#is_diplomatic_action_valid_lend_lease = {
+#	always = no
+#}
+
+#is_diplomatic_action_valid_guarantee = {
+#	always = no
+#}
+
+#is_diplomatic_action_valid_incoming_lend_lease = {
+#	always = no
+#}
 
 is_diplomatic_action_valid_request_licensed_production = {
 	always = no
@@ -73,9 +81,9 @@ is_diplomatic_action_valid_kick_from_faction = {
 	always = no
 }
 
-is_diplomatic_action_valid_send_attache = {
-	always = no
-}
+#is_diplomatic_action_valid_send_attache = {
+#	always = no
+#}
 
 is_diplomatic_action_valid_join_faction = {
 	always = no
@@ -93,312 +101,10 @@ is_diplomatic_action_valid_request_access_to_licence_production = {
 	always = no
 }
 
-is_diplomatic_action_valid_request_foreign_manpower = {
-	always = no
-}
+#is_diplomatic_action_valid_request_foreign_manpower = {
+#	always = no
+#}
 
-is_diplomatic_action_valid_international_market_access_rights = {
- 	always = no
-}
-
-DIPLOMACY_GUARANTEE_ENABLE_TRIGGER_OVERRIDES_GAME = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-
-DIPLOMACY_GUARANTEE_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-
-DIPLOMACY_REVOKE_GUARANTEE_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-
-DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-DIPLOMACY_RETURN_TERRITORY_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-DIPLOMACY_MILACC_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-DIPLOMACY_REVOKE_MILACC_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-DIPLOMACY_REVOKE_OFFER_MILACC_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-DIPLOMACY_OFFER_MILACC_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-DIPLOMACY_DOCKING_RIGHTS_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-DIPLOMACY_OFFER_DOCKING_RIGHTS_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-DIPLOMACY_LEND_LEASE_ENABLE_TRIGGER = {
-	if = {
-		limit = {
-			ROOT = {
-				has_country_flag = FOP_reaching_to_warlords
-			}
-			FROM = {
-				OR = {
-					is_left_bank_ukraine = yes
-					is_right_bank_ukraine = yes
-				}
-			}
-			custom_trigger_tooltip = {
-				tooltip = FOP_warlord_volunteer_tt
-				always = yes
-			}
-		}
-	}
-	else = {
-		custom_trigger_tooltip = {
-			tooltip = feature_disabled
-			always = no
-		}
-	}
-}
-DIPLOMACY_INCOMING_LEND_LEASE_ENABLE_TRIGGER = {
-	if = {
-		limit = {
-			FROM = {
-				has_country_flag = FOP_reaching_to_warlords
-			}
-			ROOT = {
-				OR = {
-					is_left_bank_ukraine = yes
-					is_right_bank_ukraine = yes
-				}
-			}
-			custom_trigger_tooltip = {
-				tooltip = FOP_warlord_volunteer_tt
-				always = yes
-			}
-		}
-	}
-	else = {
-		custom_trigger_tooltip = {
-			tooltip = feature_disabled
-			always = no
-		}
-	}
-}
-DIPLOMACY_REQUEST_LICENSED_PRODUCTION_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-DIPLOMACY_GENERATE_WARGOAL_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-DIPLOMACY_BOOST_PARTY_POPULARITY_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-DIPLOMACY_STAGE_COUP_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-DIPLOMACY_LEAVE_FACTION_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-DIPLOMACY_ASSUME_FACTION_LEADERSHIP_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-DIPLOMACY_KICK_FROM_FACTION_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-DIPLOMACY_SEND_ATTACHE_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-DIPLOMACY_PEACE_PROPOSAL_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
-	if = {
-		limit = {
-			ROOT = {
-				has_country_flag = FOP_reaching_to_warlords
-			}
-			FROM = {
-				OR = {
-					is_left_bank_ukraine = yes
-					is_right_bank_ukraine = yes
-				}
-			}
-			custom_trigger_tooltip = {
-				tooltip = FOP_warlord_volunteer_tt
-				always = yes
-			}
-		}
-	}
-	else = {
-		custom_trigger_tooltip = {
-			tooltip = feature_disabled
-			always = no
-		}
-	}
-}
-
-DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
-	if = {
-		limit = {
-			ROOT = {
-				tag = CHI
-				OR = {
-					has_global_flag = CHI_Western_Insurrection_Crisis
-					has_global_flag = CHI_Yunnan_War
-				}
-				NOT = { has_global_flag = JAP_Western_Insurrection_Intervention }
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = DIPLO_WESTERN_INSURRECTION_CALL
-			always = no
-		}
-	}
-	else = {
-		always = yes
-	}
-}
-
-DIPLOMACY_JOIN_ALLY_ENABLE_TRIGGER = {
-	if = {
-		limit = {
-			FROM = {
-				tag = CHI
-				OR = {
-					has_global_flag = CHI_Western_Insurrection_Crisis
-					has_global_flag = CHI_Yunnan_War
-				}
-				NOT = { has_global_flag = JAP_Western_Insurrection_Intervention }
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = DIPLO_WESTERN_INSURRECTION_JOIN
-			always = no
-		}
-	}
-	else = {
-		always = yes
-	}
-}
-
-DIPLOMACY_NONAGGRESSIONPACT_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-
-DIPLOMACY_IMPROVERELATION_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-
-DIPLOMACY_JOIN_FACTION_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-
-DIPLOMACY_CREATE_FACTION_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-
-DIPLOMACY_OFFER_JOIN_FACTION_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-
-DIPLOMACY_REQUEST_ACCESS_TO_LICENCE_PRODUCTION_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-
-DIPLOMACY_REQUEST_INTERNATIONAL_MARKET_ACCESS_RIGHTS_ENABLE_TRIGGER = {
-	custom_trigger_tooltip = {
-		tooltip = feature_disabled
-		always = no
-	}
-}
-
-DIPLOMACY_REQUEST_EXP_FORCE_ENABLE_TRIGGER = {
-	if = {
-		limit = { tag = CHI }
-		custom_trigger_tooltip = {
-			tooltip = feature_disabled
-			always = no
-		}
-	}
-}
+#is_diplomatic_action_valid_international_market_access_rights = {
+# 	always = no
+#}
