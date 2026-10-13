@@ -5,10 +5,18 @@
 
 # in some cases this trigger is checked for only initatior country, in that case both from & this is same
 
+is_diplomatic_action_valid_declare_war = {
+	#  This idea prevents getting into wars, disables war declarations via effect too.
+	NOT = { is_subject_of = FROM.overlord }
+}
 
 is_diplomatic_action_valid_generate_wargoal = {
 	always = no
 }
+
+#is_diplomatic_action_valid_guarantee = {
+#	always = no
+#}
 
 #is_diplomatic_action_valid_revoke_guarantee = {
 #	always = no
@@ -35,11 +43,11 @@ is_diplomatic_action_valid_generate_wargoal = {
 #}
 
 is_diplomatic_action_valid_stage_coup = {
-	always = no
+	NOT = { has_dlc = "La Resistance" }
 }
 
 is_diplomatic_action_valid_boost_party_popularity = {
-	always = no
+	NOT = { has_dlc = "La Resistance" }
 }
 
 is_diplomatic_action_valid_air_base_access = {
@@ -58,17 +66,13 @@ is_diplomatic_action_valid_offer_docking_rights = {
 	always = no
 }
 
-is_diplomatic_action_valid_lend_lease = {
-	always = no
-}
-
-#is_diplomatic_action_valid_guarantee = {
+#is_diplomatic_action_valid_lend_lease = {
 #	always = no
 #}
 
-is_diplomatic_action_valid_incoming_lend_lease = {
-	always = no
-}
+#is_diplomatic_action_valid_incoming_lend_lease = {
+#	always = no
+#}
 
 is_diplomatic_action_valid_request_licensed_production = {
 	always = no
@@ -86,9 +90,9 @@ is_diplomatic_action_valid_kick_from_faction = {
 	always = no
 }
 
-is_diplomatic_action_valid_send_attache = {
-	always = no
-}
+#is_diplomatic_action_valid_send_attache = {
+#	always = no
+#}
 
 is_diplomatic_action_valid_join_faction = {
 	always = no
@@ -106,10 +110,10 @@ is_diplomatic_action_valid_request_access_to_licence_production = {
 	always = no
 }
 
-is_diplomatic_action_valid_request_foreign_manpower = {
-	always = no
-}
+#is_diplomatic_action_valid_request_foreign_manpower = {
+#	always = no
+#}
 
-# is_diplomatic_action_valid_international_market_access_rights = {
-# 	always = no
-# }
+#is_diplomatic_action_valid_international_market_access_rights = {
+#	always = no
+#}
