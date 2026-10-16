@@ -1,42 +1,41 @@
 ideas = {
 	country = {
-		TER_pagan_fanaticism = {
-			picture = TER_pagan_fanaticism
-
-			removal_cost = -1
-
-			allowed = {
-				always = no
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-
+		TER_kupala_rebellion = {
+			picture = TER_kupala_rebellion
 			modifier = {
-				army_core_defence_factor = 0.15
-                army_core_attack_factor = 0.15
-                army_morale_factor = -0.02
-				surrender_limit = 1
+				stability_factor = 0.08
+				war_support_factor = 0.12
+				army_core_defence_factor = 0.12
+				army_core_attack_factor = 0.06
+				conscription_factor = 0.08
+				drift_defence_factor = 0.20
+				political_power_factor = -0.08
 			}
 		}
-		TER_unpopular_movement = {
-			picture = TER_unpopular_movement
 
-			removal_cost = -1
-
-			allowed = {
-				always = no
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-
+		TER_galician_vendee = {
+			picture = TER_galician_vendee
 			modifier = {
-				stability_factor = -0.5
-                war_support_factor = -0.5
-                industrial_capacity_factory = -0.2
-                local_resources_factor = -0.2
-                political_power_gain = -0.3
+				stability_weekly = -0.003
+				political_power_gain = -0.12
+				resistance_growth = 0.15
+				compliance_growth = -0.12
+				army_org_factor = -0.06
+				conscription_factor = -0.08
+				war_support_factor = -0.05
+				supply_consumption_factor = 0.08
+			}
+		}
+
+		TER_power_of_the_volkhvs = {
+			picture = TER_power_of_the_volkhvs
+			modifier = {
+				political_power_factor = -0.15
+				research_speed_factor = -0.10
+				stability_factor = 0.06
+				army_org_factor = 0.05
+				consumer_goods_factor = 0.05
+				drift_defence_factor = 0.15
 			}
 		}
 	}
