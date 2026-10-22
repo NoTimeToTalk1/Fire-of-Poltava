@@ -4,12 +4,20 @@ FOP_crimea_negotiations = {
 			has_country_flag = fop_crimea_negotiations_round_one
 		}
 		available = {
-			has_country_flag = fop_crimea_negotiations_round_two
+			OR = {
+                NOT = {
+                    has_country_flag = fop_crimea_negotiations_round_one
+                }
+                has_war = yes
+            }
 		}
 		cancel_trigger = {
-			NOT = {
-				has_country_flag = fop_crimea_negotiations_round_one
-			}
+			OR = {
+                NOT = {
+                    has_country_flag = fop_crimea_negotiations_round_one
+                }
+                has_war = yes
+            }
 		}
 		is_good = no
 		days_mission_timeout = 60
@@ -22,6 +30,10 @@ FOP_crimea_negotiations = {
                 }
                 set_country_flag = fop_crimea_negotiations_round_two
                 clr_country_flag = fop_crimea_negotiations_round_one
+                add_to_variable = {
+                    var = FOP_crimea_russia_awareness_var
+                    value = -10
+                }
             }
             else = {
                 clr_country_flag = fop_crimea_negotiations_round_one
@@ -35,7 +47,11 @@ FOP_crimea_negotiations = {
         complete_effect = {
             add_to_variable = {
                 var = FOP_crimea_negotiations_var
-                value = 1
+                value = 2
+            }
+            add_to_variable = {
+                var = FOP_crimea_russia_awareness_var
+                value = -5
             }
         }
         ai_will_do = {
@@ -67,7 +83,11 @@ FOP_crimea_negotiations = {
         complete_effect = {
             add_to_variable = {
                 var = FOP_crimea_negotiations_var
-                value = 1
+                value = 2
+            }
+            add_to_variable = {
+                var = FOP_crimea_russia_awareness_var
+                value = -10
             }
         }
         remove_effect = {
@@ -89,6 +109,10 @@ FOP_crimea_negotiations = {
             add_to_variable = {
                 var = FOP_crimea_negotiations_var
                 value = 1
+            }
+            add_to_variable = {
+                var = FOP_crimea_russia_awareness_var
+                value = -5
             }
         }
         remove_effect = {
@@ -126,6 +150,10 @@ FOP_crimea_negotiations = {
                     value = 2
                 }
             }
+            add_to_variable = {
+                var = FOP_crimea_russia_awareness_var
+                value = -15
+            }
         }
         remove_effect = {
             set_country_flag = FOP_negotiations_russian_alliance
@@ -151,6 +179,10 @@ FOP_crimea_negotiations = {
                 var = FOP_crimea_negotiations_var
                 value = 2
             }
+            add_to_variable = {
+                var = FOP_crimea_russia_awareness_var
+                value = -10
+            }
         }
         remove_effect = {
             set_country_flag = FOP_negotiations_russian_economic_union
@@ -161,14 +193,20 @@ FOP_crimea_negotiations = {
 			has_country_flag = fop_crimea_negotiations_round_two
 		}
 		available = {
-            NOT = {
-                has_country_flag = fop_crimea_negotiations_round_two
+            OR = {
+                NOT = {
+                    has_country_flag = fop_crimea_negotiations_round_two
+                }
+                has_war = yes
             }
 		}
 		cancel_trigger = {
-			NOT = {
-				has_country_flag = fop_crimea_negotiations_round_two
-			}
+            OR = {
+                NOT = {
+                    has_country_flag = fop_crimea_negotiations_round_two
+                }
+                has_war = yes
+            }
 		}
 		is_good = no
 		days_mission_timeout = 60
@@ -226,6 +264,10 @@ FOP_crimea_negotiations = {
                 var = FOP_crimea_negotiations_var
                 value = 1
             }
+            add_to_variable = {
+                var = FOP_crimea_russia_awareness_var
+                value = -5
+            }
         }
         remove_effect = {
             if = {
@@ -263,7 +305,11 @@ FOP_crimea_negotiations = {
         complete_effect = {
             add_to_variable = {
                 var = FOP_crimea_negotiations_var
-                value = 1
+                value = 2
+            }
+            add_to_variable = {
+                var = FOP_crimea_russia_awareness_var
+                value = -10
             }
         }
         remove_effect = {
@@ -422,6 +468,10 @@ FOP_crimea_operation = {
         cost = 50
         remove_effect = {
             set_country_flag = fop_crimea_partisans
+            add_to_variable = {
+                var = FOP_crimea_russia_awareness_var
+                value = 5
+            }
         }
     }
     fop_provide_partisans_with_weapons = {
@@ -444,6 +494,10 @@ FOP_crimea_operation = {
                 var = FOP_crimea_partisans_equipment_var
                 value = 1
             }
+            add_to_variable = {
+                var = FOP_crimea_russia_awareness_var
+                value = 1
+            }
         }
     }
     fop_train_partisans = {
@@ -456,6 +510,10 @@ FOP_crimea_operation = {
         remove_effect = {
             add_to_variable = {
                 var = FOP_crimea_partisans_experience_var
+                value = 1
+            }
+            add_to_variable = {
+                var = FOP_crimea_russia_awareness_var
                 value = 1
             }
         }
@@ -545,6 +603,10 @@ FOP_crimea_operation = {
         cost = 80
         remove_effect = {
             #defences
+            add_to_variable = {
+                var = FOP_crimea_russia_awareness_var
+                value = 10
+            }
         }
     }
     fop_buffer_zone_plan = {
@@ -572,6 +634,27 @@ FOP_crimea_operation = {
         cost = 50
         remove_effect = {
             army_experience = 10
+            add_to_variable = {
+                var = FOP_crimea_russia_awareness_var
+                value = 5
+            }
+            any_army_leader = {
+                add_skill_level = 1
+                random_list = {
+                    25 = {
+                        add_attack = 1
+                    }
+                    25 = {
+                        add_defence = 1
+                    }
+                    25 = {
+                        add_logistics = 1
+                    }
+                    25 = {
+                        add_planning = 1
+                    }
+                }
+            }
         }
     }
     fop_cover_up_with_talks = {
@@ -582,6 +665,10 @@ FOP_crimea_operation = {
         cost = 100
         remove_effect = {
             complete_focus = FOP_Negotiate_Crimea_Status
+            add_to_variable = {
+                var = FOP_crimea_russia_awareness_var
+                value = -10
+            }
         }
     }
     fop_pumping_up_industry = {
@@ -592,6 +679,10 @@ FOP_crimea_operation = {
         cost = 50
         remove_effect = {
             #natspirit
+            add_to_variable = {
+                var = FOP_crimea_russia_awareness_var
+                value = 5
+            }
         }
     }
     fop_prepare_for_active_phase = {
@@ -607,6 +698,10 @@ FOP_crimea_operation = {
             clr_country_flag = fop_focus_on_russia
             clr_country_flag = fop_focus_on_transnistria
             set_country_flag = fop_crimea_operation_commencing_attack
+            add_to_variable = {
+                var = FOP_crimea_russia_awareness_var
+                value = 20
+            }
         }
     }
     fop_attack_countdown = {
@@ -630,6 +725,8 @@ FOP_crimea_operation = {
                     type = annex_everything
                 }
             }
+            clr_country_flag = fop_crimea_negotiations_round_one
+            clr_country_flag = fop_crimea_negotiations_round_two
             if = {
                 limit = {
                     OR = {
