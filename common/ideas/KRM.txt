@@ -1,56 +1,62 @@
 ideas = {
 	country = {
-		KRM_automotive_capital = {
-			picture = KRM_automotive_capital
-
-			removal_cost = -1
-
-			allowed = {
-				always = no
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-
+		KRM_united_we_stand = {
+			picture = KRM_united_we_stand
+	allowed = {
+		country_exists = PLT
+	}
 			modifier = {
-				industrial_capacity_factory = 0.25
+				stability_factor = 0.10
+				war_support_factor = 0.12
+				army_org_factor = 0.06
+				conscription_factor = 0.08
+				drift_defence_factor = 0.15
+				political_power_factor = 0.05
 			}
 		}
-		KRM_kremenchuk_refinery_plant = {
-			picture = KRM_kremenchuk_refinery_plant
 
-			removal_cost = -1
-
-			allowed = {
-				always = no
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-
+		KRM_oligarch_influence = {
+			picture = KRM_oligarch_influence
 			modifier = {
-				base_fuel_gain = 120
-				fuel_gain = 200
-				max_fuel = 350
-		    }
+				industrial_capacity_factory = 0.12
+				local_resources_factor = 0.10
+				consumer_goods_factor = -0.06
+				political_power_factor = 0.08
+				production_factory_max_efficiency_factor = 0.08
+				stability_factor = -0.04
+			}
 		}
-		KRM_ukrtatnafta_primacy = {
-			picture = KRM_ukrtatnafta_primacy
 
-			removal_cost = -1
-
-			allowed = {
-				always = no
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-
+		KRM_city_besieged = {
+			picture = KRM_city_besieged
+	allowed = {
+		country_exists = PLT
+	}
 			modifier = {
-				stability_factor = -0.1
-				industrial_capacity_factory = 0.05
-				consumer_goods_factor = 0.05
-		    }
+				stability_factor = -0.12
+				consumer_goods_factor = 0.12
+				monthly_population = -0.10
+				army_org_factor = -0.08
+				supply_consumption_factor = 0.15
+				war_support_factor = -0.06
+				industrial_capacity_factory = -0.10
+			}
+		}
+
+		KRM_last_stand = {
+			picture = KRM_last_stand
+	allowed = {
+		country_exists = PLT
+	}
+			modifier = {
+				army_core_defence_factor = 0.12
+				army_defence_factor = 0.06
+				war_support_factor = 0.08
+				army_org_factor = -0.08
+				stability_factor = -0.06
+				conscription_factor = 0.05
+				experience_loss_factor = 0.10
+			}
 		}
 	}
 }

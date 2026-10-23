@@ -1,37 +1,53 @@
 ideas = {
 	country = {
-		PLT_home_of_the_revolution = {
-			picture = PLT_home_of_the_revolution
-
-			removal_cost = -1
-
-			allowed = {
-				always = no
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-
+		PLT_poltava_sparta = {
+			picture = PLT_poltava_sparta
 			modifier = {
-				stability_factor = -0.15
-				drift_defence_factor = -0.15
+				war_support_factor = 0.15
+				army_attack_factor = 0.10
+				army_org_factor = 0.08
+				conscription_factor = 0.10
+				stability_factor = -0.08
+				political_power_factor = 0.06
+				drift_defence_factor = 0.20
 			}
 		}
-		PLT_unstable_position = {
-			picture = PLT_unstable_position
 
-			removal_cost = -1
-
-			allowed = {
-				always = no
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-
+		PLT_stsiborsky_natiocracy = {
+			picture = PLT_stsiborsky_natiocracy
 			modifier = {
+				political_power_factor = 0.08
+				drift_defence_factor = 0.25
+				stability_factor = -0.06
+				research_speed_factor = -0.08
+				consumer_goods_factor = 0.05
+				war_support_factor = 0.08
+				democratic_drift = -0.05
+			}
+		}
+
+		PLT_terror_of_the_black_men = {
+			picture = PLT_terror_of_the_black_men
+			modifier = {
+				resistance_target = -0.20
+				compliance_growth = -0.15
+				stability_factor = -0.12
+				political_power_gain = -0.10
 				war_support_factor = -0.05
-				political_power_gain = -0.15
+				conscription_factor = -0.08
+				army_org_factor = 0.05
+			}
+		}
+
+		PLT_toxic_nest = {
+			picture = PLT_toxic_nest
+			modifier = {
+				subversive_activites_upkeep = -0.20
+				intel_network_gain_factor = 0.15
+				war_support_factor = 0.06
+				political_power_factor = 0.05
+				stability_factor = -0.05
+				opinion_gain_monthly_factor = -0.25
 			}
 		}
 	}
