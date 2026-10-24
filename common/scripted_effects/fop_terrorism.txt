@@ -1,0 +1,361 @@
+fop_select_terror_attack = {
+	random_list = {
+		# === Original Social ===
+		9 = {
+			modifier = { factor = 0 has_idea = fop_pensions_generous }
+			set_variable = { fop_terror_type = 1 }		# Pensioners
+		}
+		8 = {
+			modifier = { factor = 0 has_idea = fop_unemployment_subsidies_generous }
+			set_variable = { fop_terror_type = 2 }		# Unemployed
+		}
+		8 = {
+			modifier = { factor = 0 has_idea = fop_minimum_wage_generous }
+			set_variable = { fop_terror_type = 3 }		# Workers
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_idea = fop_working_hours_8
+					has_idea = fop_working_hours_10
+				}
+			}
+			set_variable = { fop_terror_type = 4 }		# Office Slaves
+		}
+		7 = {
+			modifier = { factor = 0 has_idea = fop_healthcare_system_public }
+			set_variable = { fop_terror_type = 5 }		# Doctors
+		}
+
+		# === Gender & Sexuality (both sides) ===
+		7 = {
+			modifier = { factor = 0 has_idea = fop_gender_rights_forced_equality }
+			set_variable = { fop_terror_type = 6 }		# Radical Feminists
+		}
+		7 = {
+			modifier = { factor = 0 has_idea = fop_gender_rights_restricted }
+			set_variable = { fop_terror_type = 17 }		# Patriarchalists
+		}
+		6 = {
+			modifier = { factor = 0 has_idea = fop_sexual_minorities_equal_rights }
+			set_variable = { fop_terror_type = 7 }		# Radical LGBT
+		}
+		6 = {
+			modifier = { factor = 0 has_idea = fop_sexual_minorities_criminalized }
+			set_variable = { fop_terror_type = 18 }		# Traditional Family Defenders
+		}
+
+		# === Ethnic (both sides) ===
+		6 = {
+			modifier = { factor = 0 has_idea = fop_ethnic_minorities_cultural_autonomy }
+			set_variable = { fop_terror_type = 8 }		# Ethnic minorities
+		}
+		6 = {
+			modifier = { factor = 0 has_idea = fop_ethnic_minorities_opression }
+			set_variable = { fop_terror_type = 19 }		# Ethnic Hardliners
+		}
+
+		# === Immigration (both sides) ===
+		6 = {
+			modifier = { factor = 0 has_idea = fop_immigration_closed_borders }
+			set_variable = { fop_terror_type = 9 }		# Anti-Migrants
+		}
+		6 = {
+			modifier = { factor = 0 has_idea = fop_immigration_encouraged }
+			set_variable = { fop_terror_type = 10 }		# Pro-Migrants
+		}
+
+		# === Ecology (both sides) ===
+		5 = {
+			modifier = { factor = 0 has_idea = fop_pollution_strict_regulations }
+			set_variable = { fop_terror_type = 11 }		# Eco-Terrorists
+		}
+		5 = {
+			modifier = { factor = 0 has_idea = fop_pollution_no_controls }
+			set_variable = { fop_terror_type = 20 }		# Industrialists
+		}
+
+		5 = { set_variable = { fop_terror_type = 12 } }	# Vatniks
+		4 = { set_variable = { fop_terror_type = 24 } }	# Anti-Vatniks
+		4 = { set_variable = { fop_terror_type = 13 } }	# Anarchists
+		4 = { set_variable = { fop_terror_type = 25 } }	# Statists
+		4 = { set_variable = { fop_terror_type = 14 } }	# Ultras
+		3 = { set_variable = { fop_terror_type = 15 } }	# TikTokers
+		3 = { set_variable = { fop_terror_type = 16 } }	# Boomers
+		4 = { set_variable = { fop_terror_type = 22 } }	# Anti-Welfare Youth
+		4 = { set_variable = { fop_terror_type = 23 } }	# Capitalist League
+	}
+
+	# Fallback
+	if = {
+		limit = { check_variable = { fop_terror_type = 0 } }
+		set_variable = { fop_terror_type = 99 }
+	}
+}
+fop_apply_terror_demand = {
+	if = {
+		limit = { check_variable = { fop_terror_type = 1 } }	
+		remove_ideas = { fop_pensions_no fop_pensions_low fop_pensions_moderate }
+		add_ideas = fop_pensions_generous
+		add_stability = 0.01
+		add_political_power = -50
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 2 } }	
+		remove_ideas = { fop_unemployment_subsidies_no fop_unemployment_subsidies_low fop_unemployment_subsidies_moderate }
+		add_ideas = fop_unemployment_subsidies_generous
+		add_stability = 0.01
+		add_political_power = -40
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 3 } }	
+		remove_ideas = { fop_minimum_wage_no fop_minimum_wage_low fop_minimum_wage_moderate }
+		add_ideas = fop_minimum_wage_generous
+		add_stability = 0.01
+		add_political_power = -45
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 4 } }	
+		remove_ideas = { fop_working_hours_unlimited fop_working_hours_14 fop_working_hours_12 }
+		add_ideas = fop_working_hours_8
+		add_stability = 0.01
+		add_political_power = -30
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 5 } }
+		remove_ideas = { fop_healthcare_system_no fop_healthcare_system_private_insurance fop_healthcare_system_social_insurance }
+		add_ideas = fop_healthcare_system_public
+		add_stability = 0.01
+		add_political_power = -60
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 6 } }
+		remove_ideas = { fop_gender_rights_restricted fop_gender_rights_traditional fop_gender_rights_legal_equality fop_gender_rights_promoted_equality }
+		add_ideas = fop_gender_rights_forced_equality
+		add_stability = 0.01
+		add_political_power = -70
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 7 } }
+		remove_ideas = { fop_sexual_minorities_criminalized fop_sexual_minorities_non_recognized fop_sexual_minorities_compulsory_sterilization fop_sexual_minorities_recognized }
+		add_ideas = fop_sexual_minorities_equal_rights
+		add_stability = 0.01
+		add_political_power = -50
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 8 } }
+		remove_ideas = { fop_ethnic_minorities_opression fop_ethnic_minorities_forced_assimilation fop_ethnic_minorities_cultural_acommodation }
+		add_ideas = fop_ethnic_minorities_cultural_autonomy
+		add_stability = 0.01
+		add_political_power = -40
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 9 } }		
+		remove_ideas = { fop_immigration_quota fop_immigration_open_borders fop_immigration_encouraged }
+		add_ideas = fop_immigration_closed_borders
+		add_stability = 0.01
+		add_political_power = -20
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 10 } }	
+		remove_ideas = { fop_immigration_closed_borders fop_immigration_quota fop_immigration_open_borders }
+		add_ideas = fop_immigration_encouraged
+		add_stability = -0.01
+		add_political_power = -30
+		add_manpower = 300
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 11 } }	
+		remove_ideas = { fop_pollution_no_controls fop_pollution_some_regulations fop_pollution_good_regulations }
+		add_ideas = fop_pollution_strict_regulations
+		add_stability = 0.01
+		add_political_power = -55
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 12 } }	
+		add_stability = 0.01
+		add_political_power = -80
+		add_war_support = -0.05
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 13 } }	
+		add_stability = -0.10
+		add_political_power = -100
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 14 } }	
+		add_stability = 0.02
+		add_political_power = -25
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 15 } }	
+		add_stability = 0.01
+		add_political_power = -35
+	}
+	else_if = {
+		limit = { OR = { check_variable = { fop_terror_type = 16 } check_variable = { fop_terror_type = 1 } } }
+		remove_ideas = { fop_pensions_no fop_pensions_low fop_pensions_moderate }
+		add_ideas = fop_pensions_generous
+		add_stability = 0.02
+		add_political_power = -50
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 17 } }		# Patriarchalists
+		remove_ideas = {
+			fop_gender_rights_legal_equality
+			fop_gender_rights_promoted_equality
+			fop_gender_rights_forced_equality
+		}
+		add_ideas = fop_gender_rights_restricted
+		add_stability = 0.02
+		add_political_power = -50
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 18 } }		# Traditional Family
+		remove_ideas = {
+			fop_sexual_minorities_recognized
+			fop_sexual_minorities_equal_rights
+		}
+		add_ideas = fop_sexual_minorities_criminalized
+		add_stability = 0.01
+		add_political_power = -45
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 19 } }		# Ethnic Hardliners
+		remove_ideas = {
+			fop_ethnic_minorities_cultural_acommodation
+			fop_ethnic_minorities_cultural_autonomy
+		}
+		add_ideas = fop_ethnic_minorities_opression
+		add_stability = -0.01
+		add_political_power = 30
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 20 } }		# Industrialists
+		remove_ideas = {
+			fop_pollution_some_regulations
+			fop_pollution_good_regulations
+			fop_pollution_strict_regulations
+		}
+		add_ideas = fop_pollution_no_controls
+		add_stability = -0.01
+		add_political_power = 20
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 22 } }		# Anti-Welfare Youth
+		remove_ideas = {
+			fop_pensions_low fop_pensions_moderate fop_pensions_generous
+			fop_unemployment_subsidies_low fop_unemployment_subsidies_moderate fop_unemployment_subsidies_generous
+		}
+		add_ideas = fop_pensions_no
+		add_ideas = fop_unemployment_subsidies_no
+		add_stability = -0.01
+		add_political_power = 40
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 23 } }		# Capitalist League
+		remove_ideas = {
+			fop_minimum_wage_low fop_minimum_wage_moderate fop_minimum_wage_generous
+			fop_working_hours_14 fop_working_hours_12 fop_working_hours_10 fop_working_hours_8
+		}
+		add_ideas = fop_minimum_wage_no
+		add_ideas = fop_working_hours_unlimited
+		add_stability = -0.01
+		add_political_power = 35
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 24 } }		# Anti-Vatniks
+		add_stability = 0.01
+		add_war_support = 0.01
+		add_political_power = -30
+	}
+	else_if = {
+		limit = { check_variable = { fop_terror_type = 25 } }		# Statists
+		add_stability = 0.01
+		add_political_power = 50
+	}
+	else = {
+		add_political_power = -75
+		add_stability = 0.01
+	}
+}
+
+fop_storm_terrorists = {
+	# Calculate agency strength
+	set_temp_variable = { agency_power = 0 }
+
+	# Base for having an agency
+	if = {
+		limit = { has_intelligence_agency = yes }
+		add_to_temp_variable = { agency_power = 4 }
+	}
+
+	# Strong bonuses from upgrades
+	if = { limit = { has_done_agency_upgrade = upgrade_passive_defense }		add_to_temp_variable = { agency_power = 12 } }
+	if = { limit = { has_done_agency_upgrade = upgrade_anti_partisan }			add_to_temp_variable = { agency_power = 14 } }
+	if = { limit = { has_done_agency_upgrade = upgrade_economy_civilian }		add_to_temp_variable = { agency_power = 3 } }
+	if = { limit = { has_done_agency_upgrade = upgrade_invisible_ink }			add_to_temp_variable = { agency_power = 5 } }
+	if = { limit = { has_done_agency_upgrade = upgrade_training_centers }		add_to_temp_variable = { agency_power = 12 } }
+	if = { limit = { has_done_agency_upgrade = upgrade_isolation_training }		add_to_temp_variable = { agency_power = 5 } }
+	if = { limit = { has_done_agency_upgrade = upgrade_psychological_warfare }	add_to_temp_variable = { agency_power = 12 } }
+	if = { limit = { has_done_agency_upgrade = upgrade_suicide_pills }			add_to_temp_variable = { agency_power = 3 } }
+	if = { limit = { has_done_agency_upgrade = upgrade_diplo_training }			add_to_temp_variable = { agency_power = 8 } }
+	if = { limit = { has_done_agency_upgrade = upgrade_naval_department }		add_to_temp_variable = { agency_power = 3 } }
+	if = { limit = { has_done_agency_upgrade = upgrade_air_department }			add_to_temp_variable = { agency_power = 3 } }
+	if = { limit = { has_done_agency_upgrade = upgrade_tech_department }		add_to_temp_variable = { agency_power = 5 } }
+	if = { limit = { has_done_agency_upgrade = upgrade_crypto_department }		add_to_temp_variable = { agency_power = 5 } }
+	if = { limit = { has_done_agency_upgrade = upgrade_defense_department }		add_to_temp_variable = { agency_power = 10 } }
+
+	# Operatives are also very important
+	set_temp_variable = { op_bonus = num_of_operatives }
+	multiply_temp_variable = { op_bonus = 2 }
+	add_to_temp_variable = { agency_power = op_bonus }
+
+	# Maximum cap
+	clamp_temp_variable = {
+		var = agency_power
+		min = 0
+		max = 100
+	}
+
+	random_list = {
+		# 1. Full Success
+		10 = {
+			modifier = {
+				add = agency_power
+				factor = 5
+			}
+			country_event = { id = fop_terrorism.2 hours = 2 }
+		}
+
+		# 2. Partial Success
+		20 = {
+			modifier = {
+				add = agency_power
+				factor = 1.3
+			}
+			country_event = { id = fop_terrorism.3 hours = 2 }
+		}
+
+		# 3. Brutal Problem
+		35 = {
+			modifier = {
+				factor = 1.5
+				subtract = agency_power
+				add = 10
+			}
+			country_event = { id = fop_terrorism.4 hours = 2 }
+		}
+
+		# 4. Full Failure – terrorists escaped
+		35 = {
+			modifier = {
+				factor = 1.9
+				subtract = agency_power
+				add = 14
+			}
+			country_event = { id = fop_terrorism.5 hours = 2 }
+		}
+	}
+}
