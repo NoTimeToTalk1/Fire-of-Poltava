@@ -6,14 +6,8 @@ country_event = {
 	desc = fop_terrorism.1.d
 	picture = [GetTerrorEventPic]
 
-	mean_time_to_happen = {
-		days = 10
-	}
+	is_triggered_only = yes
 
-	trigger = {
-		is_ukrainian_warlord = yes
-		stability < 0.25
-	}
 
 	immediate = {
 		hidden_effect = {
@@ -146,5 +140,28 @@ country_event = {
 		add_political_power = -70
 		add_manpower = -150
 		add_war_support = -0.06
+	}
+}
+
+country_event = {
+	id = fop_terrorism.100
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				is_ukrainian_warlord = yes
+				stability < 0.25
+				NOT = { has_country_flag = fop_terror_cooldown }
+			}
+			country_event = { id = fop_terrorism.1 }
+			
+			set_country_flag = {
+				flag = fop_terror_cooldown
+				days = 180
+			}
+		}
+		country_event = { id = fop_terrorism.100 days = 180 }
 	}
 }
