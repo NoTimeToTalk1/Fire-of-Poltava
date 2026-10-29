@@ -1,52 +1,38 @@
 ideas = {
 	country = {
-		KHE_promises_of_peace = {
-			picture = KHE_promises_of_peace
-
-			removal_cost = -1
-
-			allowed = {
-				always = no
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-
-			modifier = {
-            	stability_factor = 0.2
-			}
-		}
-		KHE_russian_as_a_second_language = {
-			picture = KHE_russian_as_a_second_language
-
-			removal_cost = -1
-
-			allowed = {
-				always = no
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-
-			modifier = {
-            	stability_factor = 0.1
-			}
-		}
 		KHE_ties_with_russia = {
-			picture = KHE_ties_with_russia
-
-			removal_cost = -1
-
-			allowed = {
-				always = no
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-
+			picture = KHE_real_democracy
 			modifier = {
-            	stability_factor = -0.2
-				consumer_goods_factor = -0.2
+				political_power_factor = 0.08
+				consumer_goods_factor = -0.06
+				industrial_capacity_factory = 0.06
+				war_support_factor = 0.05
+				stability_factor = -0.04
+				drift_defence_factor = 0.10
+			}
+		}
+
+		KHE_real_democracy = {
+			picture = KHE_real_democracy
+			modifier = {
+				stability_factor = 0.08
+				political_power_factor = 0.10
+				democratic_drift = 0.04
+				war_support_factor = -0.08
+				conscription_factor = -0.06
+				party_popularity_stability_factor = 0.08
+			}
+		}
+
+		KHE_terrorist_threat = {
+			picture = KHE_terrorist_threat
+			modifier = {
+				stability_factor = -0.08
+				war_support_factor = 0.10
+				army_defence_factor = 0.06
+				resistance_growth = 0.08
+				political_power_gain = -0.06
+				conscription_factor = 0.05
 			}
 		}
 	}
