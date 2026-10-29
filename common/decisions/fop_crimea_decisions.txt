@@ -456,7 +456,7 @@ FOP_crimea_operation = {
             add_command_power = -20
         }
         remove_effect = {
-            set_country_flag = fop_naval_invasion_plan
+            set_country_flag = fop_crimea_strikes_plan
         }
     }
     fop_create_partisan_cells_in_crimea = {
@@ -697,6 +697,7 @@ FOP_crimea_operation = {
             clr_country_flag = fop_focus_on_crimea
             clr_country_flag = fop_focus_on_russia
             clr_country_flag = fop_focus_on_transnistria
+            clr_country_flag = fop_crimea_operation_preparation
             set_country_flag = fop_crimea_operation_commencing_attack
             add_to_variable = {
                 var = FOP_crimea_russia_awareness_var
@@ -719,6 +720,7 @@ FOP_crimea_operation = {
 		is_good = no
 		days_mission_timeout = 60
 		timeout_effect = {
+            set_country_flag = fop_crimea_war_active_phase
             ROOT = {
                 declare_war_on = {
                     target = CRI
@@ -727,6 +729,7 @@ FOP_crimea_operation = {
             }
             clr_country_flag = fop_crimea_negotiations_round_one
             clr_country_flag = fop_crimea_negotiations_round_two
+            clr_country_flag = fop_crimea_operation_commencing_attack
             if = {
                 limit = {
                     OR = {
@@ -742,6 +745,160 @@ FOP_crimea_operation = {
                     }
                 }
             }
+            set_variable = {
+                var = FOP_crimea_russia_surrender_var
+                value = 0
+            }
 		}
+    }
+    fop_liberate_crimea = {
+        activation = {
+			has_country_flag = fop_crimea_operation_active_phase
+            CRI = {
+                exists = yes
+            }
+		}
+		available = {
+            OR = {
+                CRI = {
+                    exists = no
+                }
+                CRI = {
+                    capitulated = yes
+                }
+            }
+		}
+		is_good = no
+		days_mission_timeout = 60
+        complete_effect = {
+            add_to_variable = {
+                var = FOP_crimea_russia_surrender_var
+                value = 20
+            }
+        }
+		timeout_effect = {
+            add_stability = -0.1
+            add_to_variable = {
+                var = FOP_crimea_russia_surrender_var
+                value = -5
+            }
+		}
+    }
+    fop_destroy_transnistria = {
+        activation = {
+			has_country_flag = fop_crimea_operation_active_phase
+            has_country_flag = fop_transnistria_administration_plan
+            TRN = {
+                exists = yes
+            }
+		}
+		available = {
+            OR = {
+                TRN = {
+                    exists = no
+                }
+                TRN = {
+                    capitulated = yes
+                }
+            }
+		}
+        complete_effect = {
+            add_to_variable = {
+                var = FOP_crimea_russia_surrender_var
+                value = 5
+            }
+        }
+        is_good = no
+		days_mission_timeout = 30
+        timeout_effect = {
+
+        }
+    }
+    fop_holding_off = {
+        activation = {
+            has_country_flag = fop_crimea_operation_active_phase
+        }
+        cancel_trigger = {
+            surrender_progress < 0.2
+        }
+        is_good = yes
+		days_mission_timeout = 30
+        timeout_effect = {
+            add_to_variable = {
+                var = FOP_crimea_russia_surrender_var
+                value = 10
+            }
+        }
+    }
+    fop_realize_buffer_zone_plan = {
+        available = {
+            OR = {
+                2428 = { is_controlled_by = ROOT }
+                2426 = { is_controlled_by = ROOT }
+                2734 = { is_controlled_by = ROOT }
+                2735 = { is_controlled_by = ROOT }
+                2425 = { is_controlled_by = ROOT }
+                450 = { is_controlled_by = ROOT }
+                2423 = { is_controlled_by = ROOT }
+                2422 = { is_controlled_by = ROOT }
+                2421 = { is_controlled_by = ROOT }
+                2027 = { is_controlled_by = ROOT }
+                2733 = { is_controlled_by = ROOT }
+                511 = { is_controlled_by = ROOT }
+                2028 = { is_controlled_by = ROOT }
+                2741 = { is_controlled_by = ROOT }
+                2510 = { is_controlled_by = ROOT }
+                2392 = { is_controlled_by = ROOT }
+                2742 = { is_controlled_by = ROOT }
+                2687 = { is_controlled_by = ROOT }
+                2732 = { is_controlled_by = ROOT }
+                2320 = { is_controlled_by = ROOT }
+                2171 = { is_controlled_by = ROOT }
+                298 = { is_controlled_by = ROOT }
+                2375 = { is_controlled_by = ROOT }
+                2183 = { is_controlled_by = ROOT }
+                2321 = { is_controlled_by = ROOT }
+                330 = { is_controlled_by = ROOT }
+                388 = { is_controlled_by = ROOT }
+            }
+        }
+        visible = {
+            has_country_flag = fop_crimea_war_active_phase
+            has_country_flag = fop_plan_russia_buffer_zone
+        }
+        fire_only_once = yes
+        complete_effect = {
+            add_to_variable = {
+                var = FOP_crimea_russia_surrender_var
+                value = 5
+            }
+            if = { limit = { 2428 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 2426 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 2734 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 2735 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 2425 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 450 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 2423 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 2422 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 2421 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 2027 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 2733 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 511 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 2028 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 2741 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 2510 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 2392 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 2742 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 2687 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 2732 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 2320 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 2171 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 298 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 2375 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 2183 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 2321 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 330 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            if = { limit = { 388 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+        }
     }
 }
