@@ -1,4 +1,6 @@
 add_namespace = fop_terrorism
+add_namespace = fop_desertion
+add_namespace = fop_admin_crisis
 
 country_event = {
 	id = fop_terrorism.1
@@ -151,8 +153,7 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				is_ukrainian_warlord = yes
-				stability < 0.25
+				has_stability < 0.25
 				NOT = { has_country_flag = fop_terror_cooldown }
 			}
 			country_event = { id = fop_terrorism.1 }
@@ -163,5 +164,191 @@ country_event = {
 			}
 		}
 		country_event = { id = fop_terrorism.100 days = 180 }
+	}
+}
+
+	### DESERTION ###
+	
+country_event = {
+	id = fop_desertion.100
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_war_support < 0.25
+				NOT = { has_country_flag = fop_desertion_cooldown }
+				num_divisions > 0
+			}
+			country_event = { id = fop_desertion.1 }
+			
+			set_country_flag = {
+				flag = fop_desertion_cooldown
+				days = 120
+			}
+		}
+		country_event = { id = fop_desertion.100 days = 120 }
+	}
+}
+
+country_event = {
+	id = fop_desertion.1
+	title = fop_desertion.1.t
+	desc = fop_desertion.1.d
+	picture = GFX_report_event_desertion
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			random_owned_division = {
+				save_event_target_as = deserting_division
+			}
+		}
+	}
+
+	option = {
+		name = fop_desertion.1.a
+		ai_chance = { factor = 35 }
+
+		fop_desertion_accept = yes
+		custom_effect_tooltip = fop_desertion_accept_tt
+	}
+
+	option = {
+		name = fop_desertion.1.b
+		ai_chance = { factor = 65 }
+
+		fop_calculate_agency_power = yes
+		custom_effect_tooltip = [GetStormChanceTooltip]
+
+		hidden_effect = {
+			fop_try_stop_desertion = yes
+		}
+	}
+}
+
+# succes
+country_event = {
+	id = fop_desertion.2
+	title = fop_desertion.2.t
+	desc = fop_desertion.2.d
+	picture = GFX_report_event_desertion
+
+	is_triggered_only = yes
+
+	option = {
+		name = fop_desertion.2.a
+		event_target:deserting_division = {
+			damage_unit = {
+				organization = 0.12
+				strength = 0.04
+			}
+		}
+		add_manpower = -25
+		add_war_support = 0.015
+	}
+}
+
+# partial
+country_event = {
+	id = fop_desertion.3
+	title = fop_desertion.3.t
+	desc = fop_desertion.3.d
+	picture = GFX_report_event_desertion
+
+	is_triggered_only = yes
+
+	option = {
+		name = fop_desertion.3.a
+		event_target:deserting_division = {
+			damage_unit = {
+				organization = 0.30
+				strength = 0.16
+			}
+		}
+		add_manpower = -70
+	}
+}
+
+# fail
+country_event = {
+	id = fop_desertion.4
+	title = fop_desertion.4.t
+	desc = fop_desertion.4.d
+	picture = GFX_report_event_desertion
+
+	is_triggered_only = yes
+
+	option = {
+		name = fop_desertion.4.a
+		event_target:deserting_division = {
+			damage_unit = {
+				organization = 0.55
+				strength = 0.38
+			}
+		}
+		add_manpower = -120
+		add_war_support = -0.05
+	}
+}
+
+country_event = {
+	id = fop_admin_crisis.100
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_political_power < 0
+				NOT = { has_country_flag = fop_admin_crisis_cooldown }
+			}
+			country_event = { id = fop_admin_crisis.1 }
+			
+			set_country_flag = {
+				flag = fop_admin_crisis_cooldown
+				days = 150
+			}
+		}
+
+		country_event = { id = fop_admin_crisis.100 days = 150 }
+	}
+}
+
+country_event = {
+	id = fop_admin_crisis.1
+	title = fop_admin_crisis.1.t
+	desc = fop_admin_crisis.1.d
+	picture = GFX_report_event_generic_domino
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_variable = { fop_oligarch_group = random }
+			multiply_variable = { fop_oligarch_group = 11 }
+			round_variable = fop_oligarch_group
+			add_to_variable = { fop_oligarch_group = 1 }
+		}
+	}
+	option = {
+		name = fop_admin_crisis.1.a
+		ai_chance = { factor = 30 }
+
+		fop_admin_crisis_austerity = yes
+	}
+	option = {
+		name = fop_admin_crisis.1.b
+		ai_chance = { factor = 45 }
+
+		fop_admin_crisis_oligarchs = yes
+	}
+	option = {
+		name = fop_admin_crisis.1.c
+		ai_chance = { factor = 25 }
+
+		fop_admin_crisis_do_nothing = yes
 	}
 }
