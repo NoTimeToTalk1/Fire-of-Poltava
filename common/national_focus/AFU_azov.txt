@@ -30,11 +30,6 @@ shared_focus = {
 		KHA = { exists = no }
 	}
 
-		ai_will_do = {
-			base = 100
-		}
-
-
 	allow_branch = {
 		KHA = {
 			NOT = {
@@ -61,20 +56,17 @@ shared_focus = {
 
 	prerequisite = { focus = AFU_march_on_kharkiv }
 
-		ai_will_do = {
-			base = 100
-		}
-
-
 	completion_reward = {
 		KHA = {
-			add_temporary_buff_to_units = {
-				combat_offense = -0.15
-				combat_breakthrough = -0.15
-				org_damage_multiplier = 0.25
-				str_damage_multiplier = 0.25
-				cannot_retreat_while_attacking = 0.3
-				days = 60
+			every_unit_leader = {
+				add_temporary_buff_to_units = {
+					combat_offense = -0.15
+					combat_breakthrough = -0.15
+					org_damage_multiplier = 0.25
+					str_damage_multiplier = 0.25
+					cannot_retreat_while_attacking = 0.3
+					days = 60
+				}
 			}
 		}
 	}
@@ -91,11 +83,6 @@ shared_focus = {
 	y = 1
 
 	prerequisite = { focus = AFU_infrastructural_raids }
-	
-		ai_will_do = {
-			base = 100
-		}
-
 
 	completion_reward = {
 		KHA = {
@@ -118,10 +105,6 @@ shared_focus = {
 	y = 1
 
 	prerequisite = { focus = AFU_march_on_kharkiv }
-
-		ai_will_do = {
-			base = 100
-		}
 
 	completion_reward = {
 		add_manpower = 1000
@@ -147,10 +130,6 @@ shared_focus = {
 
 	prerequisite = { focus = AFU_invite_local_loyalists_to_azov }
 
-		ai_will_do = {
-			base = 100
-		}
-
 	completion_reward = {
 		add_ideas = AFU_azov_kharkiv_administration
 	}
@@ -168,10 +147,6 @@ shared_focus = {
 
 	prerequisite = { focus = AFU_blow_up_their_railways }
 	prerequisite = { focus = AFU_form_the_future_military_administration }
-
-		ai_will_do = {
-			base = 100
-		}
 
 	completion_reward = {
 		declare_war_on = {
@@ -196,10 +171,6 @@ shared_focus = {
 		has_completed_focus = AFU_reshaping_the_mentality
 		has_completed_focus = AFU_hold_the_banner_high
 	}
-
-		ai_will_do = {
-			base = 100
-		}
 
 	completion_reward = {
 		country_event = { id = azov.35 days = 1 }
@@ -232,10 +203,6 @@ shared_focus = {
 
 	prerequisite = { focus = AFU_the_cradle_of_nationalism_in_the_east }
 
-		ai_will_do = {
-			base = 100
-		}
-
 	completion_reward = {
 		add_command_power = 50
 		KHA = {
@@ -255,10 +222,6 @@ shared_focus = {
 	y = 2
 
 	prerequisite = { focus = AFU_negotiations_with_ideological_brothers }
-
-		ai_will_do = {
-			base = 100
-		}
 
 	completion_reward = {
 		annex_country = {
@@ -315,10 +278,10 @@ shared_focus = {
 			set_country_flag = azov_loyalty_raising_decisions
 			set_country_flag = azov_renaming_decisions
 			every_army_leader = { add_unit_leader_trait = Doubtfully_loyal_commander  }
-			AFU_zhorin = {
+			AFU_Zhorin = {
 				remove_unit_leader_trait = Doubtfully_loyal_commander
 			}
-			AFU_redys = {
+			AFU_Prokopenko = {
 				remove_unit_leader_trait = Doubtfully_loyal_commander
 			}
 		}
@@ -2450,7 +2413,6 @@ shared_focus = {
 				limit = {
 					has_war_with = RUS
 					NOT = {
-						tag = UKR
 						tag = AFU
 					}
 				}
