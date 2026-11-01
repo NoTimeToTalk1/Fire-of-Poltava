@@ -382,11 +382,11 @@ on_actions = {
 	recruit_character = TRN_karpyk
 	promote_character = TRN_karpyk
 	set_political_party = {
-		ideology = millitary_junta
+		ideology = stratocracy
 		popularity = 50
 	}
 	set_politics = {
-		ruling_party = millitary_junta
+		ruling_party = stratocracy
 		elections_allowed = no
 		last_election = "2019.12.17"
 		election_frequency = 48
@@ -471,6 +471,23 @@ on_actions = {
 					FROM = { tag = DPR }
 				}
 				set_global_flag = KIR_capitulated_to_dpr
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = { tag = RUS }
+					FROM = {
+						tag = DPR
+						OR = {
+							has_country_flag = DPR_path_constitutionalist
+							has_country_flag = DPR_path_absolutist
+						}
+					}
+				}
+				set_global_flag = RUS_capitulated_to_dpr
 			}
 		}
 	}
