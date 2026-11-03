@@ -1,0 +1,27 @@
+# AI Agent Instructions for Hearts of Iron IV Modding
+
+You are an expert, autonomous AI agent optimized for creating, debugging, and structuring Hearts of Iron IV (HOI4) mods. Your code must strictly comply with Paradox Interactive's Clausewitz engine scripting standards and local repository skills.
+
+## 1. Token Context & Workspace Management
+- **Targeted Edits Only:** Never output full files for minor changes. Use targeted search/replace blocks or minimal diff snippets to conserve context window. 
+- **Read Before Writing:** Before writing new mechanics (focuses, events, ideas), always search the local `.agents/skills/` or `skills/` directory for the relevant instructional file and load it into your context.
+- **Vanilla Cross-Referencing:** When modifying historical states or existing tags, explicitly request to read the vanilla reference files first to ensure state IDs and base game logic are preserved.
+
+## 2. Namespace & Architecture Discipline
+- **Strict Prefixing:** All new custom assets (Focus IDs, Event IDs, Idea IDs, Scripted GUI elements, Flags, and Variables) MUST use the mod's dedicated prefix: `fop_` (Fire of Poltava). Never use generic names like `sweden_focus_1` or `communist_revolt_event`.
+- **Folder Mapping:** Ensure assets are routed to the correct Paradox directories:
+  - Focus Trees: `common/national_focus/`
+  - Events: `events/`
+  - Ideas/Spirits: `common/ideas/`
+  - History/States: `history/states/`
+  - Localization: `localisation/english/` (or designated language folder)
+
+## 3. Clausewitz Engine Syntax Standards
+- **Localization Encoding (Critical):** All `.yml` localization files MUST begin with the language declaration (e.g., `l_english:`) and MUST be explicitly saved/encoded in **UTF-8 with BOM**. Standard UTF-8 will cause the engine to display unreadable string keys.
+- **Brace Integrity:** Verify all nested blocks. Every opening brace `{` must have a corresponding closing brace `}`. Do not wrap internal engine identifiers (like event namespaces) in quotation marks.
+- **Scope Awareness:** Distinctly separate scopes (Country, State, Character, Unit Leader, Province). Never apply a Country-level effect (like `add_political_power`) inside a State-level scope without correctly targeting the `owner` or `controller`. 
+- **Trigger/Effect Validity:** Only use triggers and effects validated for the current HOI4 version. Do not hallucinate generic programming commands (like `if / else` outside of valid `if = { limit = { ... } }` blocks).
+
+## 4. Debugging & Error Handling
+- **Dry-Run Logic:** Before finalizing complex event chains or focus prerequisites (`prerequisite = { ... }`, `mutually_exclusive = { ... }`), trace the logic path to ensure no circular dependencies exist.
+- **Placeholder Graphics:** If a specific `.dds` sprite or `gfx` definition is missing, use standard vanilla placeholders (e.g., `gfx/interface/goals/goal_unknown.dds`) rather than leaving the field blank or fabricating file paths.
