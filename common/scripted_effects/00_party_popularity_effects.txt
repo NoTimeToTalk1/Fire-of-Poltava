@@ -1,0 +1,119 @@
+# common/scripted_effects/00_party_popularity_effects.txt
+
+default_party_popularity_PP_gain = {
+    clear_variable = political_power_ideology
+    hidden_effect = {
+        if = {
+            limit = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_ideology_mapped } }
+            remove_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_ideology_mapped }
+        }
+        if = {
+            limit = { NOT = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier } } }
+            add_dynamic_modifier = { modifier = party_popularity_dynamic_modifier }
+        }
+    }
+}
+
+# Set political_power_ideology = token:your_ideology before calling this
+map_party_popularity_PP_gain_to_ideology = {
+    hidden_effect = {
+        if = {
+            limit = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier } }
+            remove_dynamic_modifier = { modifier = party_popularity_dynamic_modifier }
+        }
+        if = {
+            limit = { NOT = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_ideology_mapped } } }
+            add_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_ideology_mapped }
+        }
+        if = {
+            limit = { is_in_array = { coalition_partners = political_power_ideology } }
+            remove_from_array = { array = coalition_partners value = political_power_ideology }
+            update_coalition_pp_gain = yes
+        }
+    }
+}
+
+disable_party_popularity_PP_gain = {
+    clear_variable = political_power_ideology
+    hidden_effect = {
+        if = {
+            limit = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier } }
+            remove_dynamic_modifier = { modifier = party_popularity_dynamic_modifier }
+        }
+        if = {
+            limit = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_ideology_mapped } }
+            remove_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_ideology_mapped }
+        }
+    }
+}
+
+# Helper to recalculate coalition PP immediately on changes and daily ticks
+update_coalition_pp_gain = {
+    if = {
+        limit = { has_variable = coalition_partners^num }
+        set_variable = { coalition_pp_gain = 0 }
+        for_each_loop = {
+            array = coalition_partners
+            add_to_variable = { coalition_pp_gain = party_popularity@var:v }
+        }
+        multiply_variable = { coalition_pp_gain = coalition_stability?0.5 }
+    }
+    else = {
+        clear_variable = coalition_pp_gain
+        hidden_effect = {
+            if = {
+                limit = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_coalition } }
+                remove_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_coalition }
+            }
+        }
+    }
+}
+
+# Usage:
+# set_temp_variable = { coalition_partner_var = token:pataut }
+# add_to_coalition = yes
+add_to_coalition = {
+    if = {
+        limit = {
+            NOT = { check_variable = { coalition_partner_var = 0 } }
+            NOT = { is_in_array = { coalition_partners = coalition_partner_var } }
+            NOT = { check_variable = { current_party_ideology_group = coalition_partner_var } }
+        }
+        custom_effect_tooltip = add_to_coalition
+        add_to_array = { coalition_partners = coalition_partner_var }
+        hidden_effect = {
+            if = {
+                limit = { NOT = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_coalition } } }
+                add_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_coalition }
+            }
+        }
+        update_coalition_pp_gain = yes
+    }
+}
+
+# Usage:
+# set_temp_variable = { coalition_partner_var = token:pataut }
+# remove_from_coalition = yes
+remove_from_coalition = {
+    if = {
+        limit = { is_in_array = { coalition_partners = coalition_partner_var } }
+        custom_effect_tooltip = remove_from_coalition
+        remove_from_array = { array = coalition_partners value = coalition_partner_var }
+        if = {
+            limit = { check_variable = { coalition_partners^num = 0 } }
+            clear_array = coalition_partners
+        }
+        update_coalition_pp_gain = yes
+    }
+}
+
+end_coalition = {
+    clear_array = coalition_partners
+    clear_variable = coalition_pp_gain
+    hidden_effect = {
+        if = {
+            limit = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_coalition } }
+            remove_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_coalition }
+        }
+    }
+}
