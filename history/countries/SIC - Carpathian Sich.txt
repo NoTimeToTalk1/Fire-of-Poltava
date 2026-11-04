@@ -1,0 +1,130 @@
+capital = 2037
+oob = "SIC"
+set_naval_oob = ""
+set_research_slots = 3
+set_convoys = 0
+set_stability = 0.5
+set_war_support = 0.5
+
+add_ideas = {
+	## NatSpirits
+	
+	## Laws
+	fop_economic_system_corporatism
+    fop_centralization_unitarism
+    fop_oligarchs_power_tamed_oligarchs
+    fop_oligarchs_relations_anti_oligarchic_policy
+    fop_economic_mobilization_war_economy
+    fop_commercial_policy_heavy_protectionism
+    fop_taxes_proportional
+    fop_forced_labour_penal_labour
+    fop_conscription_extensive
+    fop_women_noncombat_only
+    fop_training_basic
+    fop_supervision_encouraged_brutality
+    fop_party_system_nonpartisan
+    fop_religious_rights_secularism
+    fop_suffrage_no
+    fop_press_freedom_state
+    fop_security_opressive_police
+    fop_immigration_closed_borders
+    fop_gender_rights_traditional
+    fop_sexual_minorities_criminalized
+    fop_ethnic_minorities_opression
+    fop_healthcare_system_public
+    fop_pensions_low
+    fop_unemployment_subsidies_no
+    fop_minimum_wage_low
+    fop_working_hours_12
+	
+	## Political System
+	fop_political_system_partisan_movement
+}
+
+# Starting tech
+set_technology = { basic_train = 1
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	support_weapons = 1
+    army_uniform = 1
+    command_and_control = 1
+    night_vision = 1
+	infantry_at1 = 1
+	infantry_aa1 = 1
+	
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_military_police = 1
+	
+	mortar = 1
+    mortar1 = 1
+    howitzer = 1
+    howitzer1 = 1
+	sp_artillery1 = 1
+    anti_air1 = 1
+	rocket_artillery1 = 1
+	
+    utility_vehicle = 1
+    utility_vehicle1 = 1
+	armored_car1 = 1
+	AFV = 1
+    IFV1 = 1
+    APC1 = 1
+
+	basic_machine_tools = 1
+	electronic_mechanical_engineering = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = { basic_train = 1
+		MBT0_chassis = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "No Step Back"
+		}
+	}
+	set_technology = { basic_train = 1
+		MBT1 = 1
+	}
+}
+
+set_politics = {
+	ruling_party = ultranationalism
+	name = "CS Command"
+	last_election = "2019.1.1"
+	election_frequency = 60
+	elections_allowed = no
+}
+
+set_popularities = {
+	communism = 0
+	socialism = 0
+	social_democracy = 10
+	progressivism = 0
+	centrism = 55
+	liberalism = 0
+	conservatism = 0
+	national_democracy = 0
+	traditionalism = 0
+	authoritarianism = 10
+	ultranationalism = 10
+	esotericism = 0
+	oligarchism = 15
+}
+
+### Country Leaders ###
+recruit_character = KRM_Council
+
+### Marshals and Generals ###
+
+### Admirals ###
+
+### Advisors ###
