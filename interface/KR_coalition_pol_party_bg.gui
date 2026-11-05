@@ -1,59 +1,58 @@
-# interface/KR_coalition_pol_party_bg.gui
-
 guiTypes = {
-    containerWindowType = {
-        name = "kr_coalition_pol_party_bg_container"
-        # Exact alignment with chart_explanation (328, 257) + parties_grid (-42, -8) + leading_pol_party_bg (60, 5)
-        position = { x = 346 y = 254 }
-        size = { width = 230 height = 234 }
-        clipping = no
+	containerWindowType = {
+		name = "kr_coalition_pol_party_bg_container"
+		# Aligned to chart_explanation (328, 257) + parties_grid (-42, -8) + leading_pol_party_bg (60, 5)
+		position = { x = 346 y = 254 }
+		size = { width = 230 height = 234 }
+		clipping = no
 
-        # 18px vertical step matching slotsize = { width = 230 height = 18 }
-        iconType = { name = "coalition_highlight_communism"          spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 0 }   alwaystransparent = yes }
-        iconType = { name = "coalition_highlight_socialism"          spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 18 }  alwaystransparent = yes }
-        iconType = { name = "coalition_highlight_social_democracy"   spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 36 }  alwaystransparent = yes }
-        iconType = { name = "coalition_highlight_progressivism"      spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 54 }  alwaystransparent = yes }
-        iconType = { name = "coalition_highlight_centrism"           spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 72 }  alwaystransparent = yes }
-        iconType = { name = "coalition_highlight_liberalism"         spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 90 }  alwaystransparent = yes }
-        iconType = { name = "coalition_highlight_conservatism"       spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 108 } alwaystransparent = yes }
-        iconType = { name = "coalition_highlight_national_democracy" spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 126 } alwaystransparent = yes }
-        iconType = { name = "coalition_highlight_traditionalism"     spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 144 } alwaystransparent = yes }
-        iconType = { name = "coalition_highlight_authoritarianism"   spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 162 } alwaystransparent = yes }
-        iconType = { name = "coalition_highlight_ultranationalism"   spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 180 } alwaystransparent = yes }
-        iconType = { name = "coalition_highlight_esotericism"        spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 198 } alwaystransparent = yes }
-        iconType = { name = "coalition_highlight_oligarchism"        spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 216 } alwaystransparent = yes }
-    }
+		# 18px vertical step matching slotsize = { width = 230 height = 18 }
+		iconType = { name = "coalition_highlight_communism"          spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 0 }   alwaystransparent = yes }
+		iconType = { name = "coalition_highlight_socialism"          spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 18 }  alwaystransparent = yes }
+		iconType = { name = "coalition_highlight_social_democracy"   spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 36 }  alwaystransparent = yes }
+		iconType = { name = "coalition_highlight_progressivism"      spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 54 }  alwaystransparent = yes }
+		iconType = { name = "coalition_highlight_centrism"           spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 72 }  alwaystransparent = yes }
+		iconType = { name = "coalition_highlight_liberalism"         spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 90 }  alwaystransparent = yes }
+		iconType = { name = "coalition_highlight_conservatism"       spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 108 } alwaystransparent = yes }
+		iconType = { name = "coalition_highlight_national_democracy" spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 126 } alwaystransparent = yes }
+		iconType = { name = "coalition_highlight_traditionalism"     spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 144 } alwaystransparent = yes }
+		iconType = { name = "coalition_highlight_authoritarianism"   spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 162 } alwaystransparent = yes }
+		iconType = { name = "coalition_highlight_ultranationalism"   spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 180 } alwaystransparent = yes }
+		iconType = { name = "coalition_highlight_esotericism"        spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 198 } alwaystransparent = yes }
+		iconType = { name = "coalition_highlight_oligarchism"        spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 216 } alwaystransparent = yes }
+	}
 
-    containerWindowType = {
-        name = "topbar_party_popularity_container"
-        position = { x = 173 y = 3 }
-        size = { width = 70 height = 30 }
+	containerWindowType = {
+		name = "topbar_party_popularity_container"
+		position = { x = 173 y = 3 }
+		size = { width = 70 height = 30 }
 
-        iconType = {
-            name = "party_pop_bg"
-            spriteType = "GFX_generic_box_smallest"
-            position = { x = 0 y = 0 }
-            Orientation = "UPPER_LEFT"
-        }
-        iconType = {
-            name = "ruling_party_icon"
-            spriteType = "GFX_ideology_unknown"
-            position = { x = 2 y = 1 }
-            Orientation = "UPPER_LEFT"
-            pdx_tooltip = "popularity_ideology_tooltip"
-            pdx_tooltip_delayed = "popularity_ideology_desc"
-        }
-        instantTextBoxType = {
-            name = "party_pop_value"
-            position = { x = 7 y = 3 }
-            font = "hoi_18mbs"
-            text = "[GetPopularityPPGain]" #party_popularity_tooltip
-            format = right
-            maxWidth = 57
-            maxHeight = 24
-            fixedsize = yes
-            pdx_tooltip = "party_popularity_tooltip_long"
-            pdx_tooltip_delayed = "party_popularity_delayed_tooltip"
-        }
-    }
+		iconType = {
+			name = "party_pop_bg"
+			spriteType = "GFX_generic_box_smallest"
+			position = { x = 0 y = 0 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "ruling_party_icon"
+			spriteType = "GFX_ideology_unknown"
+			position = { x = 3 y = 2 }
+			scale = 0.25 # Scales 100x102 ideology icons down to 25x25.5px
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "popularity_ideology_tooltip"
+			pdx_tooltip_delayed = "popularity_ideology_desc"
+		}
+		instantTextBoxType = {
+			name = "party_pop_value"
+			position = { x = 7 y = 3 }
+			font = "hoi_18mbs"
+			text = "[GetPopularityPPGain]"
+			format = right
+			maxWidth = 57
+			maxHeight = 24
+			fixedsize = yes
+			pdx_tooltip = "party_popularity_tooltip_long"
+			pdx_tooltip_delayed = "party_popularity_delayed_tooltip"
+		}
+	}
 }
