@@ -1,295 +1,376 @@
 # common/scripted_localisation/00_coalition_scripted_loc.txt
 
 defined_text = {
-    name = GetPopularityPPGain
-    text = {
-        trigger = { has_variable = political_power_ideology }
-        localization_key = party_popularity_value_mapped
-    }
-    text = {
-        localization_key = party_popularity_value_default
-    }
+	name = GetPopularityPPGain
+	text = {
+		trigger = { check_variable = { coalition_partners^num > 0 } }
+		localization_key = party_popularity_value_coalition
+	}
+	text = {
+		trigger = { has_variable = political_power_ideology }
+		localization_key = party_popularity_value_mapped
+	}
+	text = {
+		localization_key = party_popularity_value_default
+	}
 }
 
 defined_text = {
-    name = GetPopularityPPGainValue
-    text = {
-        trigger = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_ideology_mapped } }
-        localization_key = party_popularity_gain_value_mapped
-    }
-    text = {
-        trigger = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier } }
-        localization_key = party_popularity_gain_value_default
-    }
-    text = {
-        localization_key = party_popularity_gain_value_disabled
-    }
+	name = GetPopularityPPGainValue
+	text = {
+		trigger = { has_country_flag = party_popularity_pp_gain_disabled }
+		localization_key = party_popularity_gain_value_disabled
+	}
+	text = {
+		trigger = { has_variable = political_power_ideology }
+		localization_key = party_popularity_gain_value_mapped
+	}
+	text = {
+		localization_key = party_popularity_gain_value_default
+	}
 }
 
 defined_text = {
-    name = GetHasCoalition
-    text = {
-        trigger = { has_variable = coalition_partners^num }
-        localization_key = party_pop_coalition
-    }
-    text = {
-        localization_key = ""
-    }
+	name = GetHasCoalition
+	text = {
+		trigger = { check_variable = { coalition_partners^num > 0 } }
+		localization_key = party_pop_coalition
+	}
+	text = {
+		localization_key = ""
+	}
 }
 
-# Maps your 13 ideologies to standard HOI4 tooltip color codes
 defined_text = {
-    name = GetCoalitionTooltipColour
-    text = { trigger = { check_variable = { coalition_partner_var = token:communism } }          localization_key = "R" }
-    text = { trigger = { check_variable = { coalition_partner_var = token:socialism } }          localization_key = "R" }
-    text = { trigger = { check_variable = { coalition_partner_var = token:social_democracy } }   localization_key = "C" }
-    text = { trigger = { check_variable = { coalition_partner_var = token:progressivism } }      localization_key = "O" }
-    text = { trigger = { check_variable = { coalition_partner_var = token:centrism } }           localization_key = "g" }
-    text = { trigger = { check_variable = { coalition_partner_var = token:liberalism } }         localization_key = "Y" }
-    text = { trigger = { check_variable = { coalition_partner_var = token:conservatism } }       localization_key = "B" }
-    text = { trigger = { check_variable = { coalition_partner_var = token:national_democracy } } localization_key = "C" }
-    text = { trigger = { check_variable = { coalition_partner_var = token:traditionalism } }     localization_key = "B" }
-    text = { trigger = { check_variable = { coalition_partner_var = token:authoritarianism } }   localization_key = "g" }
-    text = { trigger = { check_variable = { coalition_partner_var = token:ultranationalism } }   localization_key = "O" }
-    text = { trigger = { check_variable = { coalition_partner_var = token:esotericism } }        localization_key = "M" }
-    text = { trigger = { check_variable = { coalition_partner_var = token:oligarchism } }        localization_key = "Y" }
-    text = { localization_key = "H" }
+	name = GetCoalitionTooltipColour
+	text = { trigger = { check_variable = { coalition_partner_var = token:communism } }          localization_key = "R" }
+	text = { trigger = { check_variable = { coalition_partner_var = token:socialism } }          localization_key = "R" }
+	text = { trigger = { check_variable = { coalition_partner_var = token:social_democracy } }   localization_key = "C" }
+	text = { trigger = { check_variable = { coalition_partner_var = token:progressivism } }      localization_key = "O" }
+	text = { trigger = { check_variable = { coalition_partner_var = token:centrism } }           localization_key = "g" }
+	text = { trigger = { check_variable = { coalition_partner_var = token:liberalism } }         localization_key = "Y" }
+	text = { trigger = { check_variable = { coalition_partner_var = token:conservatism } }       localization_key = "B" }
+	text = { trigger = { check_variable = { coalition_partner_var = token:national_democracy } } localization_key = "C" }
+	text = { trigger = { check_variable = { coalition_partner_var = token:traditionalism } }     localization_key = "B" }
+	text = { trigger = { check_variable = { coalition_partner_var = token:authoritarianism } }   localization_key = "g" }
+	text = { trigger = { check_variable = { coalition_partner_var = token:ultranationalism } }   localization_key = "O" }
+	text = { trigger = { check_variable = { coalition_partner_var = token:esotericism } }        localization_key = "M" }
+	text = { trigger = { check_variable = { coalition_partner_var = token:oligarchism } }        localization_key = "Y" }
+	text = { localization_key = "H" }
 }
 
 # --- Per-Ideology Coalition Tooltip Lines ---
 defined_text = {
-    name = GetCoalitionCommunism
-    text = {
-        trigger = { is_in_array = { coalition_partners = token:communism } }
-        localization_key = party_pop_coalition_communism
-    }
-    text = { localization_key = "" }
+	name = GetCoalitionCommunism
+	text = {
+		trigger = {
+			OR = {
+				has_variable = is_in_coalition_with_@token:communism
+				is_in_array = { coalition_partners = token:communism }
+			}
+		}
+		localization_key = party_pop_coalition_communism
+	}
+	text = { localization_key = "" }
 }
 defined_text = {
-    name = GetCoalitionSocialism
-    text = {
-        trigger = { is_in_array = { coalition_partners = token:socialism } }
-        localization_key = party_pop_coalition_socialism
-    }
-    text = { localization_key = "" }
+	name = GetCoalitionSocialism
+	text = {
+		trigger = {
+			OR = {
+				has_variable = is_in_coalition_with_@token:socialism
+				is_in_array = { coalition_partners = token:socialism }
+			}
+		}
+		localization_key = party_pop_coalition_socialism
+	}
+	text = { localization_key = "" }
 }
 defined_text = {
-    name = GetCoalitionSocialDemocracy
-    text = {
-        trigger = { is_in_array = { coalition_partners = token:social_democracy } }
-        localization_key = party_pop_coalition_social_democracy
-    }
-    text = { localization_key = "" }
+	name = GetCoalitionSocialDemocracy
+	text = {
+		trigger = {
+			OR = {
+				has_variable = is_in_coalition_with_@token:social_democracy
+				is_in_array = { coalition_partners = token:social_democracy }
+			}
+		}
+		localization_key = party_pop_coalition_social_democracy
+	}
+	text = { localization_key = "" }
 }
 defined_text = {
-    name = GetCoalitionProgressivism
-    text = {
-        trigger = { is_in_array = { coalition_partners = token:progressivism } }
-        localization_key = party_pop_coalition_progressivism
-    }
-    text = { localization_key = "" }
+	name = GetCoalitionProgressivism
+	text = {
+		trigger = {
+			OR = {
+				has_variable = is_in_coalition_with_@token:progressivism
+				is_in_array = { coalition_partners = token:progressivism }
+			}
+		}
+		localization_key = party_pop_coalition_progressivism
+	}
+	text = { localization_key = "" }
 }
 defined_text = {
-    name = GetCoalitionCentrism
-    text = {
-        trigger = { is_in_array = { coalition_partners = token:centrism } }
-        localization_key = party_pop_coalition_centrism
-    }
-    text = { localization_key = "" }
+	name = GetCoalitionCentrism
+	text = {
+		trigger = {
+			OR = {
+				has_variable = is_in_coalition_with_@token:centrism
+				is_in_array = { coalition_partners = token:centrism }
+			}
+		}
+		localization_key = party_pop_coalition_centrism
+	}
+	text = { localization_key = "" }
 }
 defined_text = {
-    name = GetCoalitionLiberalism
-    text = {
-        trigger = { is_in_array = { coalition_partners = token:liberalism } }
-        localization_key = party_pop_coalition_liberalism
-    }
-    text = { localization_key = "" }
+	name = GetCoalitionLiberalism
+	text = {
+		trigger = {
+			OR = {
+				has_variable = is_in_coalition_with_@token:liberalism
+				is_in_array = { coalition_partners = token:liberalism }
+			}
+		}
+		localization_key = party_pop_coalition_liberalism
+	}
+	text = { localization_key = "" }
 }
 defined_text = {
-    name = GetCoalitionConservatism
-    text = {
-        trigger = { is_in_array = { coalition_partners = token:conservatism } }
-        localization_key = party_pop_coalition_conservatism
-    }
-    text = { localization_key = "" }
+	name = GetCoalitionConservatism
+	text = {
+		trigger = {
+			OR = {
+				has_variable = is_in_coalition_with_@token:conservatism
+				is_in_array = { coalition_partners = token:conservatism }
+			}
+		}
+		localization_key = party_pop_coalition_conservatism
+	}
+	text = { localization_key = "" }
 }
 defined_text = {
-    name = GetCoalitionNationalDemocracy
-    text = {
-        trigger = { is_in_array = { coalition_partners = token:national_democracy } }
-        localization_key = party_pop_coalition_national_democracy
-    }
-    text = { localization_key = "" }
+	name = GetCoalitionNationalDemocracy
+	text = {
+		trigger = {
+			OR = {
+				has_variable = is_in_coalition_with_@token:national_democracy
+				is_in_array = { coalition_partners = token:national_democracy }
+			}
+		}
+		localization_key = party_pop_coalition_national_democracy
+	}
+	text = { localization_key = "" }
 }
 defined_text = {
-    name = GetCoalitionTraditionalism
-    text = {
-        trigger = { is_in_array = { coalition_partners = token:traditionalism } }
-        localization_key = party_pop_coalition_traditionalism
-    }
-    text = { localization_key = "" }
+	name = GetCoalitionTraditionalism
+	text = {
+		trigger = {
+			OR = {
+				has_variable = is_in_coalition_with_@token:traditionalism
+				is_in_array = { coalition_partners = token:traditionalism }
+			}
+		}
+		localization_key = party_pop_coalition_traditionalism
+	}
+	text = { localization_key = "" }
 }
 defined_text = {
-    name = GetCoalitionAuthoritarianism
-    text = {
-        trigger = { is_in_array = { coalition_partners = token:authoritarianism } }
-        localization_key = party_pop_coalition_authoritarianism
-    }
-    text = { localization_key = "" }
+	name = GetCoalitionAuthoritarianism
+	text = {
+		trigger = {
+			OR = {
+				has_variable = is_in_coalition_with_@token:authoritarianism
+				is_in_array = { coalition_partners = token:authoritarianism }
+			}
+		}
+		localization_key = party_pop_coalition_authoritarianism
+	}
+	text = { localization_key = "" }
 }
 defined_text = {
-    name = GetCoalitionUltranationalism
-    text = {
-        trigger = { is_in_array = { coalition_partners = token:ultranationalism } }
-        localization_key = party_pop_coalition_ultranationalism
-    }
-    text = { localization_key = "" }
+	name = GetCoalitionUltranationalism
+	text = {
+		trigger = {
+			OR = {
+				has_variable = is_in_coalition_with_@token:ultranationalism
+				is_in_array = { coalition_partners = token:ultranationalism }
+			}
+		}
+		localization_key = party_pop_coalition_ultranationalism
+	}
+	text = { localization_key = "" }
 }
 defined_text = {
-    name = GetCoalitionEsotericism
-    text = {
-        trigger = { is_in_array = { coalition_partners = token:esotericism } }
-        localization_key = party_pop_coalition_esotericism
-    }
-    text = { localization_key = "" }
+	name = GetCoalitionEsotericism
+	text = {
+		trigger = {
+			OR = {
+				has_variable = is_in_coalition_with_@token:esotericism
+				is_in_array = { coalition_partners = token:esotericism }
+			}
+		}
+		localization_key = party_pop_coalition_esotericism
+	}
+	text = { localization_key = "" }
 }
 defined_text = {
-    name = GetCoalitionOligarchism
-    text = {
-        trigger = { is_in_array = { coalition_partners = token:oligarchism } }
-        localization_key = party_pop_coalition_oligarchism
-    }
-    text = { localization_key = "" }
+	name = GetCoalitionOligarchism
+	text = {
+		trigger = {
+			OR = {
+				has_variable = is_in_coalition_with_@token:oligarchism
+				is_in_array = { coalition_partners = token:oligarchism }
+			}
+		}
+		localization_key = party_pop_coalition_oligarchism
+	}
+	text = { localization_key = "" }
 }
 
 # --- Per-Ideology Coalition PP Gain Calculations ---
 defined_text = {
-    name = GetCoalitionPPGain_Communism
-    text = {
-        trigger = {
-            set_temp_variable = { partner_pp_temp = party_popularity@communism }
-            multiply_temp_variable = { partner_pp_temp = coalition_stability?0.5 }
-        }
-        localization_key = "[?partner_pp_temp|=+2]"
-    }
+	name = GetCoalitionPPGain_Communism
+	text = {
+		trigger = {
+			set_temp_variable = { partner_pp_temp = party_popularity@communism }
+			multiply_temp_variable = { partner_pp_temp = coalition_stability }
+			always = yes
+		}
+		localization_key = party_pop_coalition_partner_pp
+	}
 }
 defined_text = {
-    name = GetCoalitionPPGain_Socialism
-    text = {
-        trigger = {
-            set_temp_variable = { partner_pp_temp = party_popularity@socialism }
-            multiply_temp_variable = { partner_pp_temp = coalition_stability?0.5 }
-        }
-        localization_key = "[?partner_pp_temp|=+2]"
-    }
+	name = GetCoalitionPPGain_Socialism
+	text = {
+		trigger = {
+			set_temp_variable = { partner_pp_temp = party_popularity@socialism }
+			multiply_temp_variable = { partner_pp_temp = coalition_stability }
+			always = yes
+		}
+		localization_key = party_pop_coalition_partner_pp
+	}
 }
 defined_text = {
-    name = GetCoalitionPPGain_SocialDemocracy
-    text = {
-        trigger = {
-            set_temp_variable = { partner_pp_temp = party_popularity@social_democracy }
-            multiply_temp_variable = { partner_pp_temp = coalition_stability?0.5 }
-        }
-        localization_key = "[?partner_pp_temp|=+2]"
-    }
+	name = GetCoalitionPPGain_SocialDemocracy
+	text = {
+		trigger = {
+			set_temp_variable = { partner_pp_temp = party_popularity@social_democracy }
+			multiply_temp_variable = { partner_pp_temp = coalition_stability }
+			always = yes
+		}
+		localization_key = party_pop_coalition_partner_pp
+	}
 }
 defined_text = {
-    name = GetCoalitionPPGain_Progressivism
-    text = {
-        trigger = {
-            set_temp_variable = { partner_pp_temp = party_popularity@progressivism }
-            multiply_temp_variable = { partner_pp_temp = coalition_stability?0.5 }
-        }
-        localization_key = "[?partner_pp_temp|=+2]"
-    }
+	name = GetCoalitionPPGain_Progressivism
+	text = {
+		trigger = {
+			set_temp_variable = { partner_pp_temp = party_popularity@progressivism }
+			multiply_temp_variable = { partner_pp_temp = coalition_stability }
+			always = yes
+		}
+		localization_key = party_pop_coalition_partner_pp
+	}
 }
 defined_text = {
-    name = GetCoalitionPPGain_Centrism
-    text = {
-        trigger = {
-            set_temp_variable = { partner_pp_temp = party_popularity@centrism }
-            multiply_temp_variable = { partner_pp_temp = coalition_stability?0.5 }
-        }
-        localization_key = "[?partner_pp_temp|=+2]"
-    }
+	name = GetCoalitionPPGain_Centrism
+	text = {
+		trigger = {
+			set_temp_variable = { partner_pp_temp = party_popularity@centrism }
+			multiply_temp_variable = { partner_pp_temp = coalition_stability }
+			always = yes
+		}
+		localization_key = party_pop_coalition_partner_pp
+	}
 }
 defined_text = {
-    name = GetCoalitionPPGain_Liberalism
-    text = {
-        trigger = {
-            set_temp_variable = { partner_pp_temp = party_popularity@liberalism }
-            multiply_temp_variable = { partner_pp_temp = coalition_stability?0.5 }
-        }
-        localization_key = "[?partner_pp_temp|=+2]"
-    }
+	name = GetCoalitionPPGain_Liberalism
+	text = {
+		trigger = {
+			set_temp_variable = { partner_pp_temp = party_popularity@liberalism }
+			multiply_temp_variable = { partner_pp_temp = coalition_stability }
+			always = yes
+		}
+		localization_key = party_pop_coalition_partner_pp
+	}
 }
 defined_text = {
-    name = GetCoalitionPPGain_Conservatism
-    text = {
-        trigger = {
-            set_temp_variable = { partner_pp_temp = party_popularity@conservatism }
-            multiply_temp_variable = { partner_pp_temp = coalition_stability?0.5 }
-        }
-        localization_key = "[?partner_pp_temp|=+2]"
-    }
+	name = GetCoalitionPPGain_Conservatism
+	text = {
+		trigger = {
+			set_temp_variable = { partner_pp_temp = party_popularity@conservatism }
+			multiply_temp_variable = { partner_pp_temp = coalition_stability }
+			always = yes
+		}
+		localization_key = party_pop_coalition_partner_pp
+	}
 }
 defined_text = {
-    name = GetCoalitionPPGain_NationalDemocracy
-    text = {
-        trigger = {
-            set_temp_variable = { partner_pp_temp = party_popularity@national_democracy }
-            multiply_temp_variable = { partner_pp_temp = coalition_stability?0.5 }
-        }
-        localization_key = "[?partner_pp_temp|=+2]"
-    }
+	name = GetCoalitionPPGain_NationalDemocracy
+	text = {
+		trigger = {
+			set_temp_variable = { partner_pp_temp = party_popularity@national_democracy }
+			multiply_temp_variable = { partner_pp_temp = coalition_stability }
+			always = yes
+		}
+		localization_key = party_pop_coalition_partner_pp
+	}
 }
 defined_text = {
-    name = GetCoalitionPPGain_Traditionalism
-    text = {
-        trigger = {
-            set_temp_variable = { partner_pp_temp = party_popularity@traditionalism }
-            multiply_temp_variable = { partner_pp_temp = coalition_stability?0.5 }
-        }
-        localization_key = "[?partner_pp_temp|=+2]"
-    }
+	name = GetCoalitionPPGain_Traditionalism
+	text = {
+		trigger = {
+			set_temp_variable = { partner_pp_temp = party_popularity@traditionalism }
+			multiply_temp_variable = { partner_pp_temp = coalition_stability }
+			always = yes
+		}
+		localization_key = party_pop_coalition_partner_pp
+	}
 }
 defined_text = {
-    name = GetCoalitionPPGain_Authoritarianism
-    text = {
-        trigger = {
-            set_temp_variable = { partner_pp_temp = party_popularity@authoritarianism }
-            multiply_temp_variable = { partner_pp_temp = coalition_stability?0.5 }
-        }
-        localization_key = "[?partner_pp_temp|=+2]"
-    }
+	name = GetCoalitionPPGain_Authoritarianism
+	text = {
+		trigger = {
+			set_temp_variable = { partner_pp_temp = party_popularity@authoritarianism }
+			multiply_temp_variable = { partner_pp_temp = coalition_stability }
+			always = yes
+		}
+		localization_key = party_pop_coalition_partner_pp
+	}
 }
 defined_text = {
-    name = GetCoalitionPPGain_Ultranationalism
-    text = {
-        trigger = {
-            set_temp_variable = { partner_pp_temp = party_popularity@ultranationalism }
-            multiply_temp_variable = { partner_pp_temp = coalition_stability?0.5 }
-        }
-        localization_key = "[?partner_pp_temp|=+2]"
-    }
+	name = GetCoalitionPPGain_Ultranationalism
+	text = {
+		trigger = {
+			set_temp_variable = { partner_pp_temp = party_popularity@ultranationalism }
+			multiply_temp_variable = { partner_pp_temp = coalition_stability }
+			always = yes
+		}
+		localization_key = party_pop_coalition_partner_pp
+	}
 }
 defined_text = {
-    name = GetCoalitionPPGain_Esotericism
-    text = {
-        trigger = {
-            set_temp_variable = { partner_pp_temp = party_popularity@esotericism }
-            multiply_temp_variable = { partner_pp_temp = coalition_stability?0.5 }
-        }
-        localization_key = "[?partner_pp_temp|=+2]"
-    }
+	name = GetCoalitionPPGain_Esotericism
+	text = {
+		trigger = {
+			set_temp_variable = { partner_pp_temp = party_popularity@esotericism }
+			multiply_temp_variable = { partner_pp_temp = coalition_stability }
+			always = yes
+		}
+		localization_key = party_pop_coalition_partner_pp
+	}
 }
 defined_text = {
-    name = GetCoalitionPPGain_Oligarchism
-    text = {
-        trigger = {
-            set_temp_variable = { partner_pp_temp = party_popularity@oligarchism }
-            multiply_temp_variable = { partner_pp_temp = coalition_stability?0.5 }
-        }
-        localization_key = "[?partner_pp_temp|=+2]"
-    }
+	name = GetCoalitionPPGain_Oligarchism
+	text = {
+		trigger = {
+			set_temp_variable = { partner_pp_temp = party_popularity@oligarchism }
+			multiply_temp_variable = { partner_pp_temp = coalition_stability }
+			always = yes
+		}
+		localization_key = party_pop_coalition_partner_pp
+	}
 }

@@ -1,42 +1,44 @@
 # common/on_actions/00_coalition_on_actions.txt
 
 on_actions = {
-    on_startup = {
-        effect = {
-            every_country = {
-                if = {
-                    limit = { has_variable = political_power_ideology }
-                    map_party_popularity_PP_gain_to_ideology = yes
-                }
-                else = {
-                    default_party_popularity_PP_gain = yes
-                }
-                update_coalition_pp_gain = yes
-            }
-        }
-    }
+	on_startup = {
+		effect = {
+			every_country = {
+				if = {
+					limit = { has_variable = political_power_ideology }
+					map_party_popularity_PP_gain_to_ideology = yes
+				}
+				else = {
+					default_party_popularity_PP_gain = yes
+				}
+			}
+		}
+	}
 
-    on_daily = {
-        effect = {
-            if = {
-                limit = { has_variable = coalition_partners^num }
-                update_coalition_pp_gain = yes
-            }
-        }
-    }
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = party_popularity_pp_gain_disabled }
+					NOT = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier } }
+					NOT = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_ideology_mapped } }
+				}
+				default_party_popularity_PP_gain = yes
+			}
+			else = {
+				update_coalition_pp_gain = yes
+			}
+		}
+	}
 
-    on_ruling_party_change = {
-        effect = {
-            # Prevent the new ruling ideology from also counting as a coalition partner
-            if = {
-                limit = { is_in_array = { coalition_partners = current_party_ideology_group } }
-                remove_from_array = { array = coalition_partners value = current_party_ideology_group }
-                if = {
-                    limit = { check_variable = { coalition_partners^num = 0 } }
-                    clear_array = coalition_partners
-                }
-                update_coalition_pp_gain = yes
-            }
-        }
-    }
+	on_ruling_party_change = {
+		effect = {
+			if = {
+				limit = { NOT = { has_variable = political_power_ideology } }
+				set_temp_variable = { coalition_partner_var = current_party_ideology_group }
+				remove_from_coalition = yes
+			}
+			update_coalition_pp_gain = yes
+		}
+	}
 }

@@ -1,41 +1,106 @@
 # common/scripted_guis/00_political_parties.txt
 
 scripted_gui = {
-    kr_coalition_party_highlight_gui = {
-        context_type = player_context
-        parent_window_token = politics_tab
-        window_name = "kr_coalition_pol_party_bg_container"
+	kr_coalition_party_highlight_gui = {
+		context_type = player_context
+		parent_window_token = politics_tab
+		window_name = "kr_coalition_pol_party_bg_container"
 
-        ai_enabled = { always = no }
+		ai_enabled = { always = no }
 
-        triggers = {
-            coalition_highlight_communism_visible          = { is_in_array = { coalition_partners = token:communism } }
-            coalition_highlight_socialism_visible          = { is_in_array = { coalition_partners = token:socialism } }
-            coalition_highlight_social_democracy_visible   = { is_in_array = { coalition_partners = token:social_democracy } }
-            coalition_highlight_progressivism_visible      = { is_in_array = { coalition_partners = token:progressivism } }
-            coalition_highlight_centrism_visible           = { is_in_array = { coalition_partners = token:centrism } }
-            coalition_highlight_liberalism_visible         = { is_in_array = { coalition_partners = token:liberalism } }
-            coalition_highlight_conservatism_visible       = { is_in_array = { coalition_partners = token:conservatism } }
-            coalition_highlight_national_democracy_visible = { is_in_array = { coalition_partners = token:national_democracy } }
-            coalition_highlight_traditionalism_visible     = { is_in_array = { coalition_partners = token:traditionalism } }
-            coalition_highlight_authoritarianism_visible   = { is_in_array = { coalition_partners = token:authoritarianism } }
-            coalition_highlight_ultranationalism_visible   = { is_in_array = { coalition_partners = token:ultranationalism } }
-            coalition_highlight_esotericism_visible        = { is_in_array = { coalition_partners = token:esotericism } }
-            coalition_highlight_oligarchism_visible        = { is_in_array = { coalition_partners = token:oligarchism } }
-        }
-    }
+		triggers = {
+			coalition_highlight_communism_visible = {
+				OR = {
+					has_variable = is_in_coalition_with_@token:communism
+					is_in_array = { coalition_partners = token:communism }
+				}
+			}
+			coalition_highlight_socialism_visible = {
+				OR = {
+					has_variable = is_in_coalition_with_@token:socialism
+					is_in_array = { coalition_partners = token:socialism }
+				}
+			}
+			coalition_highlight_social_democracy_visible = {
+				OR = {
+					has_variable = is_in_coalition_with_@token:social_democracy
+					is_in_array = { coalition_partners = token:social_democracy }
+				}
+			}
+			coalition_highlight_progressivism_visible = {
+				OR = {
+					has_variable = is_in_coalition_with_@token:progressivism
+					is_in_array = { coalition_partners = token:progressivism }
+				}
+			}
+			coalition_highlight_centrism_visible = {
+				OR = {
+					has_variable = is_in_coalition_with_@token:centrism
+					is_in_array = { coalition_partners = token:centrism }
+				}
+			}
+			coalition_highlight_liberalism_visible = {
+				OR = {
+					has_variable = is_in_coalition_with_@token:liberalism
+					is_in_array = { coalition_partners = token:liberalism }
+				}
+			}
+			coalition_highlight_conservatism_visible = {
+				OR = {
+					has_variable = is_in_coalition_with_@token:conservatism
+					is_in_array = { coalition_partners = token:conservatism }
+				}
+			}
+			coalition_highlight_national_democracy_visible = {
+				OR = {
+					has_variable = is_in_coalition_with_@token:national_democracy
+					is_in_array = { coalition_partners = token:national_democracy }
+				}
+			}
+			coalition_highlight_traditionalism_visible = {
+				OR = {
+					has_variable = is_in_coalition_with_@token:traditionalism
+					is_in_array = { coalition_partners = token:traditionalism }
+				}
+			}
+			coalition_highlight_authoritarianism_visible = {
+				OR = {
+					has_variable = is_in_coalition_with_@token:authoritarianism
+					is_in_array = { coalition_partners = token:authoritarianism }
+				}
+			}
+			coalition_highlight_ultranationalism_visible = {
+				OR = {
+					has_variable = is_in_coalition_with_@token:ultranationalism
+					is_in_array = { coalition_partners = token:ultranationalism }
+				}
+			}
+			coalition_highlight_esotericism_visible = {
+				OR = {
+					has_variable = is_in_coalition_with_@token:esotericism
+					is_in_array = { coalition_partners = token:esotericism }
+				}
+			}
+			coalition_highlight_oligarchism_visible = {
+				OR = {
+					has_variable = is_in_coalition_with_@token:oligarchism
+					is_in_array = { coalition_partners = token:oligarchism }
+				}
+			}
+		}
+	}
 
-    kr_topbar_party_popularity_gui = {
-        context_type = player_context
-        parent_window_token = top_bar
-        window_name = "topbar_party_popularity_container"
+	kr_topbar_party_popularity_gui = {
+		context_type = player_context
+		parent_window_token = top_bar
+		window_name = "topbar_party_popularity_container"
 
-        ai_enabled = { always = no }
+		ai_enabled = { always = no }
 
-        properties = {
-            ruling_party_icon = {
-                image = "GFX_ideology_[?current_party_ideology_group.GetTokenKey]_small"
-            }
-        }
-    }
+		properties = {
+			ruling_party_icon = {
+				image = "GFX_ideology_[?current_party_ideology_group.GetTokenKey]_small"
+			}
+		}
+	}
 }

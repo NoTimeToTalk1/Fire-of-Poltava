@@ -3,8 +3,8 @@
  popularity_ideology_desc: "§L[GetPopularityTooltipDesc]§!"
  party_popularity_delayed_tooltip: "Party popularity represents your current government's control over the nation and their support with the people. Political parties with high popularity are more able to push their political agenda and stabilise the nation."
 
- party_popularity_tooltip: "§HParty Popularity§! [GetPopularityPPGain]"
- party_popularity_tooltip_long: "§HEffects from our current Party Popularity:§!\nDaily Political Power Gain: [GetPopularityPPGainValue][GetHasCoalition][GetCoalitionCommunism][GetCoalitionSocialism][GetCoalitionSocialDemocracy][GetCoalitionProgressivism][GetCoalitionCentrism][GetCoalitionLiberalism][GetCoalitionConservatism][GetCoalitionNationalDemocracy][GetCoalitionTraditionalism][GetCoalitionAuthoritarianism][GetCoalitionUltranationalism][GetCoalitionEsotericism][GetCoalitionOligarchism]"
+ party_popularity_tooltip: "[GetPopularityPPGain]"
+ party_popularity_tooltip_long: "§HEffects from our current Party Popularity:§!\nRuling Party Political Power Gain: [GetPopularityPPGainValue][GetHasCoalition][GetCoalitionCommunism][GetCoalitionSocialism][GetCoalitionSocialDemocracy][GetCoalitionProgressivism][GetCoalitionCentrism][GetCoalitionLiberalism][GetCoalitionConservatism][GetCoalitionNationalDemocracy][GetCoalitionTraditionalism][GetCoalitionAuthoritarianism][GetCoalitionUltranationalism][GetCoalitionEsotericism][GetCoalitionOligarchism]"
 
  party_popularity_dynamic_modifier: "Party Popularity"
  party_popularity_dynamic_modifier_ideology_mapped: "Party Popularity"
@@ -12,13 +12,15 @@
 
  party_popularity_value_default: "[?party_popularity@ruling_party|%0]"
  party_popularity_value_mapped: "[?party_popularity@var:political_power_ideology|%0]"
+ party_popularity_value_coalition: "[?coalition_ruling_combined_pop|%0]"
 
  party_popularity_gain_value_default: "[?party_popularity@ruling_party|2=+]"
  party_popularity_gain_value_mapped: "[?party_popularity@var:political_power_ideology|2=+]"
  party_popularity_gain_value_disabled: "[?0|2=+]"
 
- party_pop_coalition: "\n\n§HCoalition Partners:§!\n"
+ party_pop_coalition: "\n\n§HCoalition Popularity:§! [?coalition_ruling_combined_pop|%0] ([?coalition_pp_gain|2=+])\n§HCoalition Partners:§!\n"
  party_pop_coalition_pp_gain: "[?coalition_pp_gain|=+2]"
+ party_pop_coalition_partner_pp: "[?partner_pp_temp|2=+]"
 
  party_pop_coalition_communism: "- [?token:communism.GetTokenLocalizedKey] ([GetCoalitionPPGain_Communism])\n"
  party_pop_coalition_socialism: "- [?token:socialism.GetTokenLocalizedKey] ([GetCoalitionPPGain_Socialism])\n"
