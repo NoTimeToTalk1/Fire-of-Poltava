@@ -1271,14 +1271,14 @@ AFU_khomut_kolomoyskiy_cooperation_category = {
 	}
 }
 afu_khomut_anti_azov_category = {
-	afu_khomut_azov_impending_coup = {
+	afu_khomut_azov_activities = {
 		icon = GFX_decision_target_azov
 		activation = {
 			has_country_flag = afu_azov_activity
 		}
 		available = {
 			custom_trigger_tooltip = {
-				tooltip = afu_impending_coup_tt
+				tooltip = afu_azov_activity_mission_tt
 				check_variable = { afu_azov_activity_var < 10 }
 			}
 		}
@@ -1287,13 +1287,41 @@ afu_khomut_anti_azov_category = {
 				has_country_flag = afu_azov_activity
 			}
 		}
-		days_mission_timeout = 180
+		days_mission_timeout = 30
 		complete_effect = {
 			clr_country_flag = afu_azov_activity
 		}
 		timeout_effect = {
-			country_event = azov.1
-			clr_country_flag = afu_azov_activity
+			activate_mission_tooltip = afu_khomut_azov_activities
+			random_list = {
+				30 = {
+					add_to_variable = {
+						var = afu_azov_activity_var
+						value = 5
+						tooltip = afu_azov_activity_var_5_tt
+					}
+				}
+				25 = {
+					add_stability = -0.02
+				}
+				25 = {
+					add_popularity = {
+						ideology = ultranationalism
+						popularity = 0.01
+					}
+				}
+				20 = {
+					random_owned_state = {
+						limit = {
+							industrial_complex > 1
+						}
+						damage_building = {
+							type = industrial_complex
+							damage = 1
+						}
+					}
+				}
+			}
 		}
 	}
 	afu_mobilize_pardoned_ldpr_activists = {
@@ -1351,9 +1379,10 @@ afu_khomut_anti_azov_category = {
 				ideology = ultranationalism
 				popularity = -0.01
 			}
-			add_days_mission_timeout = {
-				mission = afu_khomut_azov_impending_coup
-				days = 14
+			add_to_variable = {
+				var = afu_azov_activity_var
+				value = -5
+				tooltip = afu_azov_activity_var_minus_5_tt
 			}
 		}
 	}
@@ -1407,10 +1436,6 @@ afu_khomut_anti_azov_category = {
 				value = -10
 				var = afu_azov_activity_var
 				tooltip = afu_azov_activity_var_minus_10_tt
-			}
-			add_days_mission_timeout = {
-				mission = afu_khomut_azov_impending_coup
-				days = 21
 			}
 		}
 	}
@@ -1501,20 +1526,13 @@ afu_khomut_anti_azov_category = {
 						value = 5
 						tooltip = afu_azov_activity_var_5_tt
 					}
-					add_days_mission_timeout = {
-						mission = afu_khomut_azov_impending_coup
-						days = -14
-					}
+					add_stability = -0.05
 				}
 				50 = {
 					add_to_variable = {
 						var = afu_azov_activity_var
 						value = -5
 						tooltip = afu_azov_activity_var_minus_5_tt
-					}
-					add_days_mission_timeout = {
-						mission = afu_khomut_azov_impending_coup
-						days = 14
 					}
 				}
 			}

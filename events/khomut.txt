@@ -476,15 +476,16 @@ country_event = {
 		add_stability = -0.05
 		add_popularity = {
 			ideology = ultranationalism
-			popularity = 0.03
+			popularity = 0.05
 		}
 		add_popularity = {
 			ideology = oligarchism
-			popularity = -0.03
+			popularity = -0.05
 		}
-		add_days_mission_timeout = {
-			mission = afu_khomut_azov_impending_coup
-			days = -30
+		add_to_variable = {
+			var = afu_azov_activity_var
+			value = 15
+			tooltip = afu_azov_activity_var_15_tt
 		}
 	}
 }
@@ -540,9 +541,10 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = homut.25.a
-		add_days_mission_timeout = {
-			mission = afu_khomut_azov_impending_coup
-			days = 5
+		add_to_variable = {
+			value = 5
+			var = afu_azov_activity_var
+			tooltip = afu_azov_activity_var_5_tt
 		}
 	}
 }
