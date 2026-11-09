@@ -5,15 +5,11 @@ default_party_popularity_PP_gain = {
 	clr_country_flag = party_popularity_pp_gain_disabled
 	hidden_effect = {
 		if = {
-			limit = {
-				has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_ideology_mapped }
-			}
+			limit = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_ideology_mapped } }
 			remove_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_ideology_mapped }
 		}
 		if = {
-			limit = {
-				NOT = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier } }
-			}
+			limit = { NOT = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier } } }
 			add_dynamic_modifier = { modifier = party_popularity_dynamic_modifier }
 		}
 	}
@@ -24,20 +20,18 @@ map_party_popularity_PP_gain_to_ideology = {
 	clr_country_flag = party_popularity_pp_gain_disabled
 	hidden_effect = {
 		if = {
-			limit = {
-				has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier }
-			}
+			limit = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier } }
 			remove_dynamic_modifier = { modifier = party_popularity_dynamic_modifier }
 		}
 		if = {
-			limit = {
-				NOT = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_ideology_mapped } }
-			}
+			limit = { NOT = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_ideology_mapped } } }
 			add_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_ideology_mapped }
 		}
 	}
 	set_temp_variable = { coalition_partner_var = political_power_ideology }
 	remove_from_coalition = yes
+	set_temp_variable = { banned_party_var = political_power_ideology }
+	unban_party = yes
 	update_coalition_pp_gain = yes
 }
 
@@ -47,22 +41,18 @@ disable_party_popularity_PP_gain = {
 	clear_variable = ruling_party_pp_gain
 	hidden_effect = {
 		if = {
-			limit = {
-				has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier }
-			}
+			limit = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier } }
 			remove_dynamic_modifier = { modifier = party_popularity_dynamic_modifier }
 		}
 		if = {
-			limit = {
-				has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_ideology_mapped }
-			}
+			limit = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_ideology_mapped } }
 			remove_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_ideology_mapped }
 		}
 	}
 	update_coalition_pp_gain = yes
 }
 
-# Updates ruling_party_pp_gain, coalition_pp_gain, and Fuhrerreich's coalition_ruling_combined_pop
+# Recalculates Ruling PP, Coalition PP, Combined Popularity, AND Banned Party PP Debuff
 update_coalition_pp_gain = {
 	if = {
 		limit = { has_country_flag = party_popularity_pp_gain_disabled }
@@ -79,15 +69,14 @@ update_coalition_pp_gain = {
 		set_variable = { coalition_ruling_combined_pop = ruling_party_pp_gain }
 	}
 
+	# --- Coalition Calculation ---
 	if = {
 		limit = { NOT = { has_variable = coalition_stability } }
 		set_variable = { coalition_stability = 0.5 }
 	}
 
 	if = {
-		limit = {
-			check_variable = { coalition_partners^num > 0 }
-		}
+		limit = { check_variable = { coalition_partners^num > 0 } }
 		set_variable = { coalition_pp_gain = 0 }
 		for_each_loop = {
 			array = coalition_partners
@@ -100,17 +89,41 @@ update_coalition_pp_gain = {
 		clear_variable = coalition_pp_gain
 		hidden_effect = {
 			if = {
-				limit = {
-					has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_coalition }
-				}
+				limit = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_coalition } }
 				remove_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_coalition }
+			}
+		}
+	}
+
+	# --- Banned Parties Debuff Calculation ---
+	if = {
+		limit = { NOT = { has_variable = banned_party_penalty_factor } }
+		set_variable = { banned_party_penalty_factor = -0.5 }
+	}
+
+	if = {
+		limit = { check_variable = { banned_parties^num > 0 } }
+		set_variable = { banned_parties_combined_pop = 0 }
+		for_each_loop = {
+			array = banned_parties
+			add_to_variable = { banned_parties_combined_pop = party_popularity@var:v }
+		}
+		set_variable = { banned_pp_loss = banned_parties_combined_pop }
+		multiply_variable = { banned_pp_loss = banned_party_penalty_factor }
+	}
+	else = {
+		clear_variable = banned_parties_combined_pop
+		clear_variable = banned_pp_loss
+		hidden_effect = {
+			if = {
+				limit = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_banned } }
+				remove_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_banned }
 			}
 		}
 	}
 }
 
 add_to_coalition = {
-	# Ensure base PP dynamic modifier is active even if called from history files before on_startup
 	if = {
 		limit = {
 			NOT = { has_country_flag = party_popularity_pp_gain_disabled }
@@ -122,15 +135,11 @@ add_to_coalition = {
 	if = {
 		limit = {
 			NOT = {
-				AND = {
-					has_variable = political_power_ideology
-					check_variable = { political_power_ideology = coalition_partner_var }
-				}
+				check_variable = { coalition_partner_var = 0 }
+				check_variable = { political_power_ideology = coalition_partner_var }
 				is_in_array = { coalition_partners = coalition_partner_var }
-				AND = {
-					has_government = var:coalition_partner_var
-					has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier }
-				}
+				is_in_array = { banned_parties = coalition_partner_var }
+				has_government = var:coalition_partner_var
 			}
 		}
 		custom_effect_tooltip = add_to_coalition
@@ -138,9 +147,7 @@ add_to_coalition = {
 		add_to_array = { coalition_partners = coalition_partner_var }
 		hidden_effect = {
 			if = {
-				limit = {
-					NOT = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_coalition } }
-				}
+				limit = { NOT = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_coalition } } }
 				add_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_coalition }
 			}
 		}
@@ -150,17 +157,13 @@ add_to_coalition = {
 
 remove_from_coalition = {
 	if = {
-		limit = {
-			is_in_array = { coalition_partners = coalition_partner_var }
-		}
+		limit = { is_in_array = { coalition_partners = coalition_partner_var } }
 		custom_effect_tooltip = remove_from_coalition
 		hidden_effect = {
 			clear_variable = is_in_coalition_with_@var:coalition_partner_var
 			remove_from_array = { coalition_partners = coalition_partner_var }
 			if = {
-				limit = {
-					check_variable = { coalition_partners^num = 0 }
-				}
+				limit = { check_variable = { coalition_partners^num = 0 } }
 				clear_array = coalition_partners
 			}
 			update_coalition_pp_gain = yes
@@ -171,9 +174,7 @@ remove_from_coalition = {
 end_coalition = {
 	hidden_effect = {
 		if = {
-			limit = {
-				has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_coalition }
-			}
+			limit = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_coalition } }
 			remove_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_coalition }
 		}
 	}
@@ -197,126 +198,144 @@ end_coalition = {
 	update_coalition_pp_gain = yes
 }
 
-change_ruling_party_popularity = {
+# --- BANNED PARTIES CORE EFFECTS ---
+# Usage:
+# set_temp_variable = { banned_party_var = token:communism }
+# ban_party = yes
+ban_party = {
 	if = {
 		limit = {
-			OR = {
-				check_variable = { ideology_change_var > 1 }
-				check_variable = { ideology_change_var < -1 }
+			NOT = {
+				check_variable = { banned_party_var = 0 }
+				check_variable = { political_power_ideology = banned_party_var }
+				is_in_array = { banned_parties = banned_party_var }
+				has_government = var:banned_party_var
 			}
 		}
-		multiply_temp_variable = { ideology_change_var = 0.01 }
+		# If the party is currently in our coalition, kick them out first
+		if = {
+			limit = { is_in_array = { coalition_partners = banned_party_var } }
+			set_temp_variable = { coalition_partner_var = banned_party_var }
+			remove_from_coalition = yes
+		}
+		custom_effect_tooltip = ban_party_tt
+		set_variable = { is_banned_party_@var:banned_party_var = 1 }
+		add_to_array = { banned_parties = banned_party_var }
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_banned } } }
+				add_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_banned }
+			}
+		}
+		update_coalition_pp_gain = yes
 	}
-	add_popularity = {
-		ideology = var:current_party_ideology_group
-		popularity = ideology_change_var
+}
+
+# Usage:
+# set_temp_variable = { banned_party_var = token:communism }
+# unban_party = yes
+unban_party = {
+	if = {
+		limit = { is_in_array = { banned_parties = banned_party_var } }
+		custom_effect_tooltip = unban_party_tt
+		hidden_effect = {
+			clear_variable = is_banned_party_@var:banned_party_var
+			remove_from_array = { banned_parties = banned_party_var }
+			if = {
+				limit = { check_variable = { banned_parties^num = 0 } }
+				clear_array = banned_parties
+			}
+			update_coalition_pp_gain = yes
+		}
 	}
+}
+
+unban_all_parties = {
+	if = {
+		limit = { check_variable = { banned_parties^num > 0 } }
+		custom_effect_tooltip = unban_all_parties_tt
+	}
+	hidden_effect = {
+		if = {
+			limit = { has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_banned } }
+			remove_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_banned }
+		}
+	}
+	clear_variable = banned_parties_combined_pop
+	clear_variable = banned_pp_loss
+	clear_array = banned_parties
+
+	clear_variable = is_banned_party_@token:communism
+	clear_variable = is_banned_party_@token:socialism
+	clear_variable = is_banned_party_@token:social_democracy
+	clear_variable = is_banned_party_@token:progressivism
+	clear_variable = is_banned_party_@token:centrism
+	clear_variable = is_banned_party_@token:liberalism
+	clear_variable = is_banned_party_@token:conservatism
+	clear_variable = is_banned_party_@token:national_democracy
+	clear_variable = is_banned_party_@token:traditionalism
+	clear_variable = is_banned_party_@token:authoritarianism
+	clear_variable = is_banned_party_@token:ultranationalism
+	clear_variable = is_banned_party_@token:esotericism
+	clear_variable = is_banned_party_@token:oligarchism
+
 	update_coalition_pp_gain = yes
 }
 
-# --- One-Line Shorthand Effects (Fuhrerreich Style) ---
-add_coalition_communism = {
-	set_temp_variable = { coalition_partner_var = token:communism }
-	add_to_coalition = yes
-}
-add_coalition_socialism = {
-	set_temp_variable = { coalition_partner_var = token:socialism }
-	add_to_coalition = yes
-}
-add_coalition_social_democracy = {
-	set_temp_variable = { coalition_partner_var = token:social_democracy }
-	add_to_coalition = yes
-}
-add_coalition_progressivism = {
-	set_temp_variable = { coalition_partner_var = token:progressivism }
-	add_to_coalition = yes
-}
-add_coalition_centrism = {
-	set_temp_variable = { coalition_partner_var = token:centrism }
-	add_to_coalition = yes
-}
-add_coalition_liberalism = {
-	set_temp_variable = { coalition_partner_var = token:liberalism }
-	add_to_coalition = yes
-}
-add_coalition_conservatism = {
-	set_temp_variable = { coalition_partner_var = token:conservatism }
-	add_to_coalition = yes
-}
-add_coalition_national_democracy = {
-	set_temp_variable = { coalition_partner_var = token:national_democracy }
-	add_to_coalition = yes
-}
-add_coalition_traditionalism = {
-	set_temp_variable = { coalition_partner_var = token:traditionalism }
-	add_to_coalition = yes
-}
-add_coalition_authoritarianism = {
-	set_temp_variable = { coalition_partner_var = token:authoritarianism }
-	add_to_coalition = yes
-}
-add_coalition_ultranationalism = {
-	set_temp_variable = { coalition_partner_var = token:ultranationalism }
-	add_to_coalition = yes
-}
-add_coalition_esotericism = {
-	set_temp_variable = { coalition_partner_var = token:esotericism }
-	add_to_coalition = yes
-}
-add_coalition_oligarchism = {
-	set_temp_variable = { coalition_partner_var = token:oligarchism }
-	add_to_coalition = yes
-}
+# --- ONE-LINE COALITION HELPERS ---
+add_coalition_communism = { set_temp_variable = { coalition_partner_var = token:communism } add_to_coalition = yes }
+add_coalition_socialism = { set_temp_variable = { coalition_partner_var = token:socialism } add_to_coalition = yes }
+add_coalition_social_democracy = { set_temp_variable = { coalition_partner_var = token:social_democracy } add_to_coalition = yes }
+add_coalition_progressivism = { set_temp_variable = { coalition_partner_var = token:progressivism } add_to_coalition = yes }
+add_coalition_centrism = { set_temp_variable = { coalition_partner_var = token:centrism } add_to_coalition = yes }
+add_coalition_liberalism = { set_temp_variable = { coalition_partner_var = token:liberalism } add_to_coalition = yes }
+add_coalition_conservatism = { set_temp_variable = { coalition_partner_var = token:conservatism } add_to_coalition = yes }
+add_coalition_national_democracy = { set_temp_variable = { coalition_partner_var = token:national_democracy } add_to_coalition = yes }
+add_coalition_traditionalism = { set_temp_variable = { coalition_partner_var = token:traditionalism } add_to_coalition = yes }
+add_coalition_authoritarianism = { set_temp_variable = { coalition_partner_var = token:authoritarianism } add_to_coalition = yes }
+add_coalition_ultranationalism = { set_temp_variable = { coalition_partner_var = token:ultranationalism } add_to_coalition = yes }
+add_coalition_esotericism = { set_temp_variable = { coalition_partner_var = token:esotericism } add_to_coalition = yes }
+add_coalition_oligarchism = { set_temp_variable = { coalition_partner_var = token:oligarchism } add_to_coalition = yes }
 
-remove_coalition_communism = {
-	set_temp_variable = { coalition_partner_var = token:communism }
-	remove_from_coalition = yes
-}
-remove_coalition_socialism = {
-	set_temp_variable = { coalition_partner_var = token:socialism }
-	remove_from_coalition = yes
-}
-remove_coalition_social_democracy = {
-	set_temp_variable = { coalition_partner_var = token:social_democracy }
-	remove_from_coalition = yes
-}
-remove_coalition_progressivism = {
-	set_temp_variable = { coalition_partner_var = token:progressivism }
-	remove_from_coalition = yes
-}
-remove_coalition_centrism = {
-	set_temp_variable = { coalition_partner_var = token:centrism }
-	remove_from_coalition = yes
-}
-remove_coalition_liberalism = {
-	set_temp_variable = { coalition_partner_var = token:liberalism }
-	remove_from_coalition = yes
-}
-remove_coalition_conservatism = {
-	set_temp_variable = { coalition_partner_var = token:conservatism }
-	remove_from_coalition = yes
-}
-remove_coalition_national_democracy = {
-	set_temp_variable = { coalition_partner_var = token:national_democracy }
-	remove_from_coalition = yes
-}
-remove_coalition_traditionalism = {
-	set_temp_variable = { coalition_partner_var = token:traditionalism }
-	remove_from_coalition = yes
-}
-remove_coalition_authoritarianism = {
-	set_temp_variable = { coalition_partner_var = token:authoritarianism }
-	remove_from_coalition = yes
-}
-remove_coalition_ultranationalism = {
-	set_temp_variable = { coalition_partner_var = token:ultranationalism }
-	remove_from_coalition = yes
-}
-remove_coalition_esotericism = {
-	set_temp_variable = { coalition_partner_var = token:esotericism }
-	remove_from_coalition = yes
-}
-remove_coalition_oligarchism = {
-	set_temp_variable = { coalition_partner_var = token:oligarchism }
-	remove_from_coalition = yes
-}
+remove_coalition_communism = { set_temp_variable = { coalition_partner_var = token:communism } remove_from_coalition = yes }
+remove_coalition_socialism = { set_temp_variable = { coalition_partner_var = token:socialism } remove_from_coalition = yes }
+remove_coalition_social_democracy = { set_temp_variable = { coalition_partner_var = token:social_democracy } remove_from_coalition = yes }
+remove_coalition_progressivism = { set_temp_variable = { coalition_partner_var = token:progressivism } remove_from_coalition = yes }
+remove_coalition_centrism = { set_temp_variable = { coalition_partner_var = token:centrism } remove_from_coalition = yes }
+remove_coalition_liberalism = { set_temp_variable = { coalition_partner_var = token:liberalism } remove_from_coalition = yes }
+remove_coalition_conservatism = { set_temp_variable = { coalition_partner_var = token:conservatism } remove_from_coalition = yes }
+remove_coalition_national_democracy = { set_temp_variable = { coalition_partner_var = token:national_democracy } remove_from_coalition = yes }
+remove_coalition_traditionalism = { set_temp_variable = { coalition_partner_var = token:traditionalism } remove_from_coalition = yes }
+remove_coalition_authoritarianism = { set_temp_variable = { coalition_partner_var = token:authoritarianism } remove_from_coalition = yes }
+remove_coalition_ultranationalism = { set_temp_variable = { coalition_partner_var = token:ultranationalism } remove_from_coalition = yes }
+remove_coalition_esotericism = { set_temp_variable = { coalition_partner_var = token:esotericism } remove_from_coalition = yes }
+remove_coalition_oligarchism = { set_temp_variable = { coalition_partner_var = token:oligarchism } remove_from_coalition = yes }
+
+# --- ONE-LINE BANNED PARTY HELPERS ---
+ban_party_communism = { set_temp_variable = { banned_party_var = token:communism } ban_party = yes }
+ban_party_socialism = { set_temp_variable = { banned_party_var = token:socialism } ban_party = yes }
+ban_party_social_democracy = { set_temp_variable = { banned_party_var = token:social_democracy } ban_party = yes }
+ban_party_progressivism = { set_temp_variable = { banned_party_var = token:progressivism } ban_party = yes }
+ban_party_centrism = { set_temp_variable = { banned_party_var = token:centrism } ban_party = yes }
+ban_party_liberalism = { set_temp_variable = { banned_party_var = token:liberalism } ban_party = yes }
+ban_party_conservatism = { set_temp_variable = { banned_party_var = token:conservatism } ban_party = yes }
+ban_party_national_democracy = { set_temp_variable = { banned_party_var = token:national_democracy } ban_party = yes }
+ban_party_traditionalism = { set_temp_variable = { banned_party_var = token:traditionalism } ban_party = yes }
+ban_party_authoritarianism = { set_temp_variable = { banned_party_var = token:authoritarianism } ban_party = yes }
+ban_party_ultranationalism = { set_temp_variable = { banned_party_var = token:ultranationalism } ban_party = yes }
+ban_party_esotericism = { set_temp_variable = { banned_party_var = token:esotericism } ban_party = yes }
+ban_party_oligarchism = { set_temp_variable = { banned_party_var = token:oligarchism } ban_party = yes }
+
+unban_party_communism = { set_temp_variable = { banned_party_var = token:communism } unban_party = yes }
+unban_party_socialism = { set_temp_variable = { banned_party_var = token:socialism } unban_party = yes }
+unban_party_social_democracy = { set_temp_variable = { banned_party_var = token:social_democracy } unban_party = yes }
+unban_party_progressivism = { set_temp_variable = { banned_party_var = token:progressivism } unban_party = yes }
+unban_party_centrism = { set_temp_variable = { banned_party_var = token:centrism } unban_party = yes }
+unban_party_liberalism = { set_temp_variable = { banned_party_var = token:liberalism } unban_party = yes }
+unban_party_conservatism = { set_temp_variable = { banned_party_var = token:conservatism } unban_party = yes }
+unban_party_national_democracy = { set_temp_variable = { banned_party_var = token:national_democracy } unban_party = yes }
+unban_party_traditionalism = { set_temp_variable = { banned_party_var = token:traditionalism } unban_party = yes }
+unban_party_authoritarianism = { set_temp_variable = { banned_party_var = token:authoritarianism } unban_party = yes }
+unban_party_ultranationalism = { set_temp_variable = { banned_party_var = token:ultranationalism } unban_party = yes }
+unban_party_esotericism = { set_temp_variable = { banned_party_var = token:esotericism } unban_party = yes }
+unban_party_oligarchism = { set_temp_variable = { banned_party_var = token:oligarchism } unban_party = yes }

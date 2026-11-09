@@ -1,13 +1,17 @@
 # common/dynamic_modifiers/00_coalition_dynamic_modifiers.txt
 
 party_popularity_dynamic_modifier = {
-    political_power_gain = ROOT.party_popularity@ruling_party
+	political_power_gain = ruling_party_pp_gain
 }
 
 party_popularity_dynamic_modifier_ideology_mapped = {
-    political_power_gain = party_popularity@var:political_power_ideology
+	political_power_gain = ruling_party_pp_gain
 }
 
 party_popularity_dynamic_modifier_coalition = {
-    political_power_gain = coalition_pp_gain
+	political_power_gain = coalition_pp_gain
+}
+
+party_popularity_dynamic_modifier_banned = {
+	political_power_gain = banned_pp_loss
 }

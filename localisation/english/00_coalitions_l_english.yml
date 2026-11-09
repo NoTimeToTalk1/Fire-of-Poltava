@@ -1,21 +1,22 @@
 ﻿l_english:
- popularity_ideology_tooltip: "Your current ruling party is §H[?current_party_ideology_group.GetTokenLocalizedKey]§!"
+ popularity_ideology_tooltip: "Your current ruling party is §H[GetRulingIdeology]§!"
  popularity_ideology_desc: "§L[GetPopularityTooltipDesc]§!"
  party_popularity_delayed_tooltip: "Party popularity represents your current government's control over the nation and their support with the people. Political parties with high popularity are more able to push their political agenda and stabilise the nation."
 
  party_popularity_tooltip: "[GetPopularityPPGain]"
- party_popularity_tooltip_long: "§HEffects from our current Party Popularity:§!\nRuling Party Political Power Gain: [GetPopularityPPGainValue][GetHasCoalition][GetCoalitionCommunism][GetCoalitionSocialism][GetCoalitionSocialDemocracy][GetCoalitionProgressivism][GetCoalitionCentrism][GetCoalitionLiberalism][GetCoalitionConservatism][GetCoalitionNationalDemocracy][GetCoalitionTraditionalism][GetCoalitionAuthoritarianism][GetCoalitionUltranationalism][GetCoalitionEsotericism][GetCoalitionOligarchism]"
+ party_popularity_tooltip_long: "§HEffects from our current Party Popularity:§!\nRuling Party Political Power Gain: [GetPopularityPPGainValue][GetHasCoalition][GetCoalitionCommunism][GetCoalitionSocialism][GetCoalitionSocialDemocracy][GetCoalitionProgressivism][GetCoalitionCentrism][GetCoalitionLiberalism][GetCoalitionConservatism][GetCoalitionNationalDemocracy][GetCoalitionTraditionalism][GetCoalitionAuthoritarianism][GetCoalitionUltranationalism][GetCoalitionEsotericism][GetCoalitionOligarchism][GetHasBannedParties][GetBannedCommunism][GetBannedSocialism][GetBannedSocialDemocracy][GetBannedProgressivism][GetBannedCentrism][GetBannedLiberalism][GetBannedConservatism][GetBannedNationalDemocracy][GetBannedTraditionalism][GetBannedAuthoritarianism][GetBannedUltranationalism][GetBannedEsotericism][GetBannedOligarchism]"
 
  party_popularity_dynamic_modifier: "Party Popularity"
  party_popularity_dynamic_modifier_ideology_mapped: "Party Popularity"
  party_popularity_dynamic_modifier_coalition: "Coalitions"
+ party_popularity_dynamic_modifier_banned: "Banned Parties"
 
  party_popularity_value_default: "[?party_popularity@ruling_party|%0]"
  party_popularity_value_mapped: "[?party_popularity@var:political_power_ideology|%0]"
  party_popularity_value_coalition: "[?coalition_ruling_combined_pop|%0]"
 
- party_popularity_gain_value_default: "[?party_popularity@ruling_party|2=+]"
- party_popularity_gain_value_mapped: "[?party_popularity@var:political_power_ideology|2=+]"
+ party_popularity_gain_value_default: "[?ruling_party_pp_gain|2=+]"
+ party_popularity_gain_value_mapped: "[?ruling_party_pp_gain|2=+]"
  party_popularity_gain_value_disabled: "[?0|2=+]"
 
  party_pop_coalition: "\n\n§HCoalition Popularity:§! [?coalition_ruling_combined_pop|%0] ([?coalition_pp_gain|2=+])\n§HCoalition Partners:§!\n"
@@ -36,8 +37,31 @@
  party_pop_coalition_esotericism: "- [?token:esotericism.GetTokenLocalizedKey] ([GetCoalitionPPGain_Esotericism])\n"
  party_pop_coalition_oligarchism: "- [?token:oligarchism.GetTokenLocalizedKey] ([GetCoalitionPPGain_Oligarchism])\n"
 
+ # Banned Parties Localisation
+ party_banned_label: "§R[BANNED]§!"
+ party_pop_banned_header: "\n\n§RBanned Parties Popularity:§! [?banned_parties_combined_pop|%0] ([?banned_pp_loss|2=+])\n§RBanned Parties:§!\n"
+ party_pop_banned_partner_pp: "[?banned_pp_temp|2=+]"
+
+ party_pop_banned_communism: "- [?token:communism.GetTokenLocalizedKey] ([GetBannedPPGain_Communism])\n"
+ party_pop_banned_socialism: "- [?token:socialism.GetTokenLocalizedKey] ([GetBannedPPGain_Socialism])\n"
+ party_pop_banned_social_democracy: "- [?token:social_democracy.GetTokenLocalizedKey] ([GetBannedPPGain_SocialDemocracy])\n"
+ party_pop_banned_progressivism: "- [?token:progressivism.GetTokenLocalizedKey] ([GetBannedPPGain_Progressivism])\n"
+ party_pop_banned_centrism: "- [?token:centrism.GetTokenLocalizedKey] ([GetBannedPPGain_Centrism])\n"
+ party_pop_banned_liberalism: "- [?token:liberalism.GetTokenLocalizedKey] ([GetBannedPPGain_Liberalism])\n"
+ party_pop_banned_conservatism: "- [?token:conservatism.GetTokenLocalizedKey] ([GetBannedPPGain_Conservatism])\n"
+ party_pop_banned_national_democracy: "- [?token:national_democracy.GetTokenLocalizedKey] ([GetBannedPPGain_NationalDemocracy])\n"
+ party_pop_banned_traditionalism: "- [?token:traditionalism.GetTokenLocalizedKey] ([GetBannedPPGain_Traditionalism])\n"
+ party_pop_banned_authoritarianism: "- [?token:authoritarianism.GetTokenLocalizedKey] ([GetBannedPPGain_Authoritarianism])\n"
+ party_pop_banned_ultranationalism: "- [?token:ultranationalism.GetTokenLocalizedKey] ([GetBannedPPGain_Ultranationalism])\n"
+ party_pop_banned_esotericism: "- [?token:esotericism.GetTokenLocalizedKey] ([GetBannedPPGain_Esotericism])\n"
+ party_pop_banned_oligarchism: "- [?token:oligarchism.GetTokenLocalizedKey] ([GetBannedPPGain_Oligarchism])\n"
+
  add_to_coalition: "§[GetCoalitionTooltipColour][?coalition_partner_var.GetTokenLocalizedKey]§! will join the coalition.\n"
  remove_from_coalition: "§[GetCoalitionTooltipColour][?coalition_partner_var.GetTokenLocalizedKey]§! will leave the coalition.\n"
+
+ ban_party_tt: "§[GetBannedPartyTooltipColour][?banned_party_var.GetTokenLocalizedKey]§! will be §Rbanned§!.\n"
+ unban_party_tt: "§[GetBannedPartyTooltipColour][?banned_party_var.GetTokenLocalizedKey]§! will be §Gunbanned§!.\n"
+ unban_all_parties_tt: "All banned political parties will be §Gunbanned§!.\n"
 
  has_coalition_with_target: "Is in coalition with §H[?coalition_target.GetTokenLocalizedKey]§!."
  has_coalition_with_target_NOT: "Is not in coalition with §H[?coalition_target.GetTokenLocalizedKey]§!."

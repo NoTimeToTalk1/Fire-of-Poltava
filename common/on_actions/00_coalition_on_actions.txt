@@ -34,9 +34,28 @@ on_actions = {
 	on_ruling_party_change = {
 		effect = {
 			if = {
-				limit = { NOT = { has_variable = political_power_ideology } }
-				set_temp_variable = { coalition_partner_var = current_party_ideology_group }
-				remove_from_coalition = yes
+				limit = { check_variable = { coalition_partners^num > 0 } }
+				for_each_loop = {
+					array = coalition_partners
+					value = p
+					if = {
+						limit = { has_government = var:p }
+						set_temp_variable = { coalition_partner_var = p }
+						remove_from_coalition = yes
+					}
+				}
+			}
+			if = {
+				limit = { check_variable = { banned_parties^num > 0 } }
+				for_each_loop = {
+					array = banned_parties
+					value = b
+					if = {
+						limit = { has_government = var:b }
+						set_temp_variable = { banned_party_var = b }
+						unban_party = yes
+					}
+				}
 			}
 			update_coalition_pp_gain = yes
 		}

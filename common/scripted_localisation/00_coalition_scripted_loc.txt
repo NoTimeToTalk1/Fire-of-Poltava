@@ -374,3 +374,150 @@ defined_text = {
 		localization_key = party_pop_coalition_partner_pp
 	}
 }
+
+# --- Banned Parties Tooltip Section ---
+defined_text = {
+	name = GetHasBannedParties
+	text = {
+		trigger = { check_variable = { banned_parties^num > 0 } }
+		localization_key = party_pop_banned_header
+	}
+	text = { localization_key = "" }
+}
+
+defined_text = {
+	name = GetBannedPartyTooltipColour
+	text = { trigger = { check_variable = { banned_party_var = token:communism } }          localization_key = "R" }
+	text = { trigger = { check_variable = { banned_party_var = token:socialism } }          localization_key = "R" }
+	text = { trigger = { check_variable = { banned_party_var = token:social_democracy } }   localization_key = "C" }
+	text = { trigger = { check_variable = { banned_party_var = token:progressivism } }      localization_key = "O" }
+	text = { trigger = { check_variable = { banned_party_var = token:centrism } }           localization_key = "g" }
+	text = { trigger = { check_variable = { banned_party_var = token:liberalism } }         localization_key = "Y" }
+	text = { trigger = { check_variable = { banned_party_var = token:conservatism } }       localization_key = "B" }
+	text = { trigger = { check_variable = { banned_party_var = token:national_democracy } } localization_key = "C" }
+	text = { trigger = { check_variable = { banned_party_var = token:traditionalism } }     localization_key = "B" }
+	text = { trigger = { check_variable = { banned_party_var = token:authoritarianism } }   localization_key = "g" }
+	text = { trigger = { check_variable = { banned_party_var = token:ultranationalism } }   localization_key = "O" }
+	text = { trigger = { check_variable = { banned_party_var = token:esotericism } }        localization_key = "M" }
+	text = { trigger = { check_variable = { banned_party_var = token:oligarchism } }        localization_key = "Y" }
+	text = { localization_key = "H" }
+}
+
+defined_text = {
+	name = GetBannedCommunism
+	text = { trigger = { has_variable = is_banned_party_@token:communism } localization_key = party_pop_banned_communism }
+	text = { localization_key = "" }
+}
+defined_text = {
+	name = GetBannedSocialism
+	text = { trigger = { has_variable = is_banned_party_@token:socialism } localization_key = party_pop_banned_socialism }
+	text = { localization_key = "" }
+}
+defined_text = {
+	name = GetBannedSocialDemocracy
+	text = { trigger = { has_variable = is_banned_party_@token:social_democracy } localization_key = party_pop_banned_social_democracy }
+	text = { localization_key = "" }
+}
+defined_text = {
+	name = GetBannedProgressivism
+	text = { trigger = { has_variable = is_banned_party_@token:progressivism } localization_key = party_pop_banned_progressivism }
+	text = { localization_key = "" }
+}
+defined_text = {
+	name = GetBannedCentrism
+	text = { trigger = { has_variable = is_banned_party_@token:centrism } localization_key = party_pop_banned_centrism }
+	text = { localization_key = "" }
+}
+defined_text = {
+	name = GetBannedLiberalism
+	text = { trigger = { has_variable = is_banned_party_@token:liberalism } localization_key = party_pop_banned_liberalism }
+	text = { localization_key = "" }
+}
+defined_text = {
+	name = GetBannedConservatism
+	text = { trigger = { has_variable = is_banned_party_@token:conservatism } localization_key = party_pop_banned_conservatism }
+	text = { localization_key = "" }
+}
+defined_text = {
+	name = GetBannedNationalDemocracy
+	text = { trigger = { has_variable = is_banned_party_@token:national_democracy } localization_key = party_pop_banned_national_democracy }
+	text = { localization_key = "" }
+}
+defined_text = {
+	name = GetBannedTraditionalism
+	text = { trigger = { has_variable = is_banned_party_@token:traditionalism } localization_key = party_pop_banned_traditionalism }
+	text = { localization_key = "" }
+}
+defined_text = {
+	name = GetBannedAuthoritarianism
+	text = { trigger = { has_variable = is_banned_party_@token:authoritarianism } localization_key = party_pop_banned_authoritarianism }
+	text = { localization_key = "" }
+}
+defined_text = {
+	name = GetBannedUltranationalism
+	text = { trigger = { has_variable = is_banned_party_@token:ultranationalism } localization_key = party_pop_banned_ultranationalism }
+	text = { localization_key = "" }
+}
+defined_text = {
+	name = GetBannedEsotericism
+	text = { trigger = { has_variable = is_banned_party_@token:esotericism } localization_key = party_pop_banned_esotericism }
+	text = { localization_key = "" }
+}
+defined_text = {
+	name = GetBannedOligarchism
+	text = { trigger = { has_variable = is_banned_party_@token:oligarchism } localization_key = party_pop_banned_oligarchism }
+	text = { localization_key = "" }
+}
+
+defined_text = {
+	name = GetBannedPPGain_Communism
+	text = { trigger = { set_temp_variable = { banned_pp_temp = party_popularity@communism } multiply_temp_variable = { banned_pp_temp = banned_party_penalty_factor } always = yes } localization_key = party_pop_banned_partner_pp }
+}
+defined_text = {
+	name = GetBannedPPGain_Socialism
+	text = { trigger = { set_temp_variable = { banned_pp_temp = party_popularity@socialism } multiply_temp_variable = { banned_pp_temp = banned_party_penalty_factor } always = yes } localization_key = party_pop_banned_partner_pp }
+}
+defined_text = {
+	name = GetBannedPPGain_SocialDemocracy
+	text = { trigger = { set_temp_variable = { banned_pp_temp = party_popularity@social_democracy } multiply_temp_variable = { banned_pp_temp = banned_party_penalty_factor } always = yes } localization_key = party_pop_banned_partner_pp }
+}
+defined_text = {
+	name = GetBannedPPGain_Progressivism
+	text = { trigger = { set_temp_variable = { banned_pp_temp = party_popularity@progressivism } multiply_temp_variable = { banned_pp_temp = banned_party_penalty_factor } always = yes } localization_key = party_pop_banned_partner_pp }
+}
+defined_text = {
+	name = GetBannedPPGain_Centrism
+	text = { trigger = { set_temp_variable = { banned_pp_temp = party_popularity@centrism } multiply_temp_variable = { banned_pp_temp = banned_party_penalty_factor } always = yes } localization_key = party_pop_banned_partner_pp }
+}
+defined_text = {
+	name = GetBannedPPGain_Liberalism
+	text = { trigger = { set_temp_variable = { banned_pp_temp = party_popularity@liberalism } multiply_temp_variable = { banned_pp_temp = banned_party_penalty_factor } always = yes } localization_key = party_pop_banned_partner_pp }
+}
+defined_text = {
+	name = GetBannedPPGain_Conservatism
+	text = { trigger = { set_temp_variable = { banned_pp_temp = party_popularity@conservatism } multiply_temp_variable = { banned_pp_temp = banned_party_penalty_factor } always = yes } localization_key = party_pop_banned_partner_pp }
+}
+defined_text = {
+	name = GetBannedPPGain_NationalDemocracy
+	text = { trigger = { set_temp_variable = { banned_pp_temp = party_popularity@national_democracy } multiply_temp_variable = { banned_pp_temp = banned_party_penalty_factor } always = yes } localization_key = party_pop_banned_partner_pp }
+}
+defined_text = {
+	name = GetBannedPPGain_Traditionalism
+	text = { trigger = { set_temp_variable = { banned_pp_temp = party_popularity@traditionalism } multiply_temp_variable = { banned_pp_temp = banned_party_penalty_factor } always = yes } localization_key = party_pop_banned_partner_pp }
+}
+defined_text = {
+	name = GetBannedPPGain_Authoritarianism
+	text = { trigger = { set_temp_variable = { banned_pp_temp = party_popularity@authoritarianism } multiply_temp_variable = { banned_pp_temp = banned_party_penalty_factor } always = yes } localization_key = party_pop_banned_partner_pp }
+}
+defined_text = {
+	name = GetBannedPPGain_Ultranationalism
+	text = { trigger = { set_temp_variable = { banned_pp_temp = party_popularity@ultranationalism } multiply_temp_variable = { banned_pp_temp = banned_party_penalty_factor } always = yes } localization_key = party_pop_banned_partner_pp }
+}
+defined_text = {
+	name = GetBannedPPGain_Esotericism
+	text = { trigger = { set_temp_variable = { banned_pp_temp = party_popularity@esotericism } multiply_temp_variable = { banned_pp_temp = banned_party_penalty_factor } always = yes } localization_key = party_pop_banned_partner_pp }
+}
+defined_text = {
+	name = GetBannedPPGain_Oligarchism
+	text = { trigger = { set_temp_variable = { banned_pp_temp = party_popularity@oligarchism } multiply_temp_variable = { banned_pp_temp = banned_party_penalty_factor } always = yes } localization_key = party_pop_banned_partner_pp }
+}
