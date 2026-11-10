@@ -322,13 +322,13 @@ FOP_crimea_operation = {
         visible = {
             has_country_flag = fop_crimea_operation_preparation
             NOT = {
-                has_country_flag = fop_transnistria_focus
+                has_country_flag = fop_focus_on_transnistria_flag
             }
         }
         complete_effect = {
-            set_country_flag = fop_transnistria_focus
-            clr_country_flag = fop_crimea_focus
-            clr_country_flag = fop_russia_focus
+            set_country_flag = fop_focus_on_transnistria_flag
+            clr_country_flag = fop_focus_on_crimea_flag
+            clr_country_flag = fop_focus_on_russia_flag
         }
     }
     fop_capture_kovbasa = {
@@ -338,7 +338,7 @@ FOP_crimea_operation = {
             }
         }
         visible = {
-            has_country_flag = fop_transnistria_focus
+            has_country_flag = fop_focus_on_transnistria_flag
             NOT = {
                 has_country_flag = fop_destroy_kovbasa_plan
             }
@@ -362,7 +362,7 @@ FOP_crimea_operation = {
             }
         }
         visible = {
-            has_country_flag = fop_transnistria_focus
+            has_country_flag = fop_focus_on_transnistria_flag
             NOT = {
                 has_country_flag = fop_kovbasa_capture_plan
             }
@@ -381,7 +381,7 @@ FOP_crimea_operation = {
     }
     fop_create_plan_for_transnistria = {
         visible = {
-            has_country_flag = fop_transnistria_focus
+            has_country_flag = fop_focus_on_transnistria_flag
         }
         fire_only_once = yes
         days_remove = 21
@@ -405,18 +405,18 @@ FOP_crimea_operation = {
         visible = {
             has_country_flag = fop_crimea_operation_preparation
             NOT = {
-                has_country_flag = fop_crimea_focus
+                has_country_flag = fop_focus_on_crimea_flag
             }
         }
         complete_effect = {
-            set_country_flag = fop_crimea_focus
-            clr_country_flag = fop_transnistria_focus
-            clr_country_flag = fop_russia_focus
+            set_country_flag = fop_focus_on_crimea_flag
+            clr_country_flag = fop_focus_on_transnistria_flag
+            clr_country_flag = fop_focus_on_russia_flag
         }
     }
     fop_crimea_bridge_operation = {
         visible = {
-            has_country_flag = fop_focus_on_crimea
+            has_country_flag = fop_focus_on_crimea_flag
         }
         fire_only_once = yes
         days_remove = 35
@@ -427,7 +427,7 @@ FOP_crimea_operation = {
     }
     fop_crimea_naval_invasion = {
         visible = {
-            has_country_flag = fop_focus_on_crimea
+            has_country_flag = fop_focus_on_crimea_flag
         }
         fire_only_once = yes
         days_remove = 60
@@ -444,7 +444,7 @@ FOP_crimea_operation = {
     }
     fop_plan_strikes_on_crimea = {
         visible = {
-            has_country_flag = fop_focus_on_crimea
+            has_country_flag = fop_focus_on_crimea_flag
         }
         fire_only_once = yes
         days_remove = 60
@@ -461,7 +461,7 @@ FOP_crimea_operation = {
     }
     fop_create_partisan_cells_in_crimea = {
         visible = {
-            has_country_flag = fop_focus_on_crimea
+            has_country_flag = fop_focus_on_crimea_flag
         }
         fire_only_once = yes
         days_remove = 60
@@ -476,7 +476,7 @@ FOP_crimea_operation = {
     }
     fop_provide_partisans_with_weapons = {
         visible = {
-            has_country_flag = fop_focus_on_crimea
+            has_country_flag = fop_focus_on_crimea_flag
             has_country_flag = fop_crimea_partisans
         }
         days_remove = 35
@@ -502,7 +502,7 @@ FOP_crimea_operation = {
     }
     fop_train_partisans = {
         visible = {
-            has_country_flag = fop_focus_on_crimea
+            has_country_flag = fop_focus_on_crimea_flag
             has_country_flag = fop_crimea_partisans
         }
         days_remove = 70
@@ -520,7 +520,7 @@ FOP_crimea_operation = {
     }
     fop_plan_offensive_operation = {
         visible = {
-            has_country_flag = fop_focus_on_crimea
+            has_country_flag = fop_focus_on_crimea_flag
         }
         days_remove = 90
         custom_cost_trigger = {
@@ -537,18 +537,18 @@ FOP_crimea_operation = {
         visible = {
             has_country_flag = fop_crimea_operation_preparation
             NOT = {
-                has_country_flag = fop_russia_focus
+                has_country_flag = fop_focus_on_russia_flag
             }
         }
         complete_effect = {
-            set_country_flag = fop_russia_focus
-            clr_country_flag = fop_transnistria_focus
-            clr_country_flag = fop_crimea_focus
+            set_country_flag = fop_focus_on_russia_flag
+            clr_country_flag = fop_focus_on_transnistria_flag
+            clr_country_flag = fop_focus_on_crimea_flag
         }
     }
     fop_plan_strikes_on_military_industry = {
         visible = {
-            has_country_flag = fop_focus_on_russia
+            has_country_flag = fop_focus_on_russia_flag
         }
         fire_only_once = yes
         days_remove = 90
@@ -564,7 +564,7 @@ FOP_crimea_operation = {
     }
     fop_plan_strikes_on_oil_refineries = {
         visible = {
-            has_country_flag = fop_focus_on_russia
+            has_country_flag = fop_focus_on_russia_flag
         }
         fire_only_once = yes
         days_remove = 75
@@ -580,7 +580,7 @@ FOP_crimea_operation = {
     }
     fop_plan_strikes_on_domestic_logistics = {
         visible = {
-            has_country_flag = fop_focus_on_russia
+            has_country_flag = fop_focus_on_russia_flag
         }
         fire_only_once = yes
         days_remove = 90
@@ -596,7 +596,7 @@ FOP_crimea_operation = {
     }
     fop_sumy_siversk_defense_line = {
         visible = {
-            has_country_flag = fop_focus_on_russia
+            has_country_flag = fop_focus_on_russia_flag
         }
         fire_only_once = yes
         days_remove = 80
@@ -611,7 +611,7 @@ FOP_crimea_operation = {
     }
     fop_buffer_zone_plan = {
         visible = {
-            has_country_flag = fop_focus_on_russia
+            has_country_flag = fop_focus_on_russia_flag
         }
         fire_only_once = yes
         days_remove = 100
@@ -628,7 +628,7 @@ FOP_crimea_operation = {
     }
     fop_military_exercises = {
         visible = {
-            has_country_flag = fop_focus_on_russia
+            has_country_flag = fop_focus_on_russia_flag
         }
         days_remove = 45
         cost = 50
@@ -659,7 +659,7 @@ FOP_crimea_operation = {
     }
     fop_cover_up_with_talks = {
         visible = {
-            has_country_flag = fop_focus_on_russia
+            has_country_flag = fop_focus_on_russia_flag
         }
         days_remove = 14
         cost = 100
@@ -673,12 +673,12 @@ FOP_crimea_operation = {
     }
     fop_pumping_up_industry = {
         visible = {
-            has_country_flag = fop_focus_on_russia
+            has_country_flag = fop_focus_on_russia_flag
         }
         days_remove = 60
         cost = 50
         remove_effect = {
-            #natspirit
+            add_offsite_building = { type = industrial_complex level = 1 }
             add_to_variable = {
                 var = FOP_crimea_russia_awareness_var
                 value = 5
@@ -689,12 +689,13 @@ FOP_crimea_operation = {
         visible = {
             NOT = {
                 has_country_flag = fop_crimea_operation_commencing_attack
+                has_country_flag = fop_crimea_operation_active_phase
             }
         }
         fire_only_once = yes
         cost = 100
         complete_effect = {
-            clr_country_flag = fop_focus_on_crimea
+            clr_country_flag = fop_focus_on_crimea_flag
             clr_country_flag = fop_focus_on_russia
             clr_country_flag = fop_focus_on_transnistria
             clr_country_flag = fop_crimea_operation_preparation
@@ -717,7 +718,7 @@ FOP_crimea_operation = {
 				has_country_flag = fop_crimea_operation_commencing_attack
 			}
 		}
-		is_good = no
+		is_good = yes
 		days_mission_timeout = 60
 		timeout_effect = {
             set_country_flag = fop_crimea_war_active_phase
@@ -764,7 +765,7 @@ FOP_crimea_operation = {
                     exists = no
                 }
                 CRI = {
-                    capitulated = yes
+                    has_capitulated = yes
                 }
             }
 		}
@@ -798,7 +799,7 @@ FOP_crimea_operation = {
                     exists = no
                 }
                 TRN = {
-                    capitulated = yes
+                    has_capitulated = yes
                 }
             }
 		}
@@ -817,9 +818,19 @@ FOP_crimea_operation = {
     fop_holding_off = {
         activation = {
             has_country_flag = fop_crimea_operation_active_phase
+            NOT = {
+                ROOT = {
+                    surrender_progress > 0.2
+                }
+            }
+        }
+        available = {
+            ROOT = {
+                surrender_progress > 0.2
+            }
         }
         cancel_trigger = {
-            surrender_progress < 0.2
+            
         }
         is_good = yes
 		days_mission_timeout = 30
