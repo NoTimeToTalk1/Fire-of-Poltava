@@ -1,12 +1,11 @@
 guiTypes = {
 	containerWindowType = {
 		name = "kr_coalition_pol_party_bg_container"
-		# Aligned to chart_explanation (328, 257) + parties_grid (-42, -8) + leading_pol_party_bg (60, 5)
-		position = { x = 346 y = 254 }
+		position = { x = 0 y = 0 }
 		size = { width = 230 height = 234 }
 		clipping = no
 
-		# 1. Coalition Highlights ---  18px vertical step matching slotsize = { width = 230 height = 18 }
+		# 1. Coalition Highlights --- 18px vertical step matching slotsize = { width = 230 height = 18 }
 		iconType = { name = "coalition_highlight_communism"          spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 0 }   alwaystransparent = yes }
 		iconType = { name = "coalition_highlight_socialism"          spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 18 }  alwaystransparent = yes }
 		iconType = { name = "coalition_highlight_social_democracy"   spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 36 }  alwaystransparent = yes }
@@ -21,20 +20,20 @@ guiTypes = {
 		iconType = { name = "coalition_highlight_esotericism"        spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 198 } alwaystransparent = yes }
 		iconType = { name = "coalition_highlight_oligarchism"        spriteType = "GFX_coalition_pol_party_bg" position = { x = 0 y = 216 } alwaystransparent = yes }
 
-		# 2. Banned Party Red Banners (placed at x = 20 to cover the party name while keeping the ideology color box visible)
-		buttonType = { name = "banned_highlight_communism"          quadTextureSprite = "GFX_banned_pol_party_bg" position = { x = 20 y = 0 }   buttonFont = "hoi_16mbs" buttonText = "party_banned_label" alwaystransparent = yes }
-		buttonType = { name = "banned_highlight_socialism"          quadTextureSprite = "GFX_banned_pol_party_bg" position = { x = 20 y = 18 }  buttonFont = "hoi_16mbs" buttonText = "party_banned_label" alwaystransparent = yes }
-		buttonType = { name = "banned_highlight_social_democracy"   quadTextureSprite = "GFX_banned_pol_party_bg" position = { x = 20 y = 36 }  buttonFont = "hoi_16mbs" buttonText = "party_banned_label" alwaystransparent = yes }
-		buttonType = { name = "banned_highlight_progressivism"      quadTextureSprite = "GFX_banned_pol_party_bg" position = { x = 20 y = 54 }  buttonFont = "hoi_16mbs" buttonText = "party_banned_label" alwaystransparent = yes }
-		buttonType = { name = "banned_highlight_centrism"           quadTextureSprite = "GFX_banned_pol_party_bg" position = { x = 20 y = 72 }  buttonFont = "hoi_16mbs" buttonText = "party_banned_label" alwaystransparent = yes }
-		buttonType = { name = "banned_highlight_liberalism"         quadTextureSprite = "GFX_banned_pol_party_bg" position = { x = 20 y = 90 }  buttonFont = "hoi_16mbs" buttonText = "party_banned_label" alwaystransparent = yes }
-		buttonType = { name = "banned_highlight_conservatism"       quadTextureSprite = "GFX_banned_pol_party_bg" position = { x = 20 y = 108 } buttonFont = "hoi_16mbs" buttonText = "party_banned_label" alwaystransparent = yes }
-		buttonType = { name = "banned_highlight_national_democracy" quadTextureSprite = "GFX_banned_pol_party_bg" position = { x = 20 y = 126 } buttonFont = "hoi_16mbs" buttonText = "party_banned_label" alwaystransparent = yes }
-		buttonType = { name = "banned_highlight_traditionalism"     quadTextureSprite = "GFX_banned_pol_party_bg" position = { x = 20 y = 144 } buttonFont = "hoi_16mbs" buttonText = "party_banned_label" alwaystransparent = yes }
-		buttonType = { name = "banned_highlight_authoritarianism"   quadTextureSprite = "GFX_banned_pol_party_bg" position = { x = 20 y = 162 } buttonFont = "hoi_16mbs" buttonText = "party_banned_label" alwaystransparent = yes }
-		buttonType = { name = "banned_highlight_ultranationalism"   quadTextureSprite = "GFX_banned_pol_party_bg" position = { x = 20 y = 180 } buttonFont = "hoi_16mbs" buttonText = "party_banned_label" alwaystransparent = yes }
-		buttonType = { name = "banned_highlight_esotericism"        quadTextureSprite = "GFX_banned_pol_party_bg" position = { x = 20 y = 198 } buttonFont = "hoi_16mbs" buttonText = "party_banned_label" alwaystransparent = yes }
-		buttonType = { name = "banned_highlight_oligarchism"        quadTextureSprite = "GFX_banned_pol_party_bg" position = { x = 20 y = 216 } buttonFont = "hoi_16mbs" buttonText = "party_banned_label" alwaystransparent = yes }
+		# 2. Banned Party Highlights / Strikethroughs (x = 0)
+		iconType = { name = "banned_highlight_communism"          spriteType = "GFX_banned_pol_party_bg" position = { x = 0 y = 0 }   alwaystransparent = yes }
+		iconType = { name = "banned_highlight_socialism"          spriteType = "GFX_banned_pol_party_bg" position = { x = 0 y = 18 }  alwaystransparent = yes }
+		iconType = { name = "banned_highlight_social_democracy"   spriteType = "GFX_banned_pol_party_bg" position = { x = 0 y = 36 }  alwaystransparent = yes }
+		iconType = { name = "banned_highlight_progressivism"      spriteType = "GFX_banned_pol_party_bg" position = { x = 0 y = 54 }  alwaystransparent = yes }
+		iconType = { name = "banned_highlight_centrism"           spriteType = "GFX_banned_pol_party_bg" position = { x = 0 y = 72 }  alwaystransparent = yes }
+		iconType = { name = "banned_highlight_liberalism"         spriteType = "GFX_banned_pol_party_bg" position = { x = 0 y = 90 }  alwaystransparent = yes }
+		iconType = { name = "banned_highlight_conservatism"       spriteType = "GFX_banned_pol_party_bg" position = { x = 0 y = 108 } alwaystransparent = yes }
+		iconType = { name = "banned_highlight_national_democracy" spriteType = "GFX_banned_pol_party_bg" position = { x = 0 y = 126 } alwaystransparent = yes }
+		iconType = { name = "banned_highlight_traditionalism"     spriteType = "GFX_banned_pol_party_bg" position = { x = 0 y = 144 } alwaystransparent = yes }
+		iconType = { name = "banned_highlight_authoritarianism"   spriteType = "GFX_banned_pol_party_bg" position = { x = 0 y = 162 } alwaystransparent = yes }
+		iconType = { name = "banned_highlight_ultranationalism"   spriteType = "GFX_banned_pol_party_bg" position = { x = 0 y = 180 } alwaystransparent = yes }
+		iconType = { name = "banned_highlight_esotericism"        spriteType = "GFX_banned_pol_party_bg" position = { x = 0 y = 198 } alwaystransparent = yes }
+		iconType = { name = "banned_highlight_oligarchism"        spriteType = "GFX_banned_pol_party_bg" position = { x = 0 y = 216 } alwaystransparent = yes }
 	}
 
 	containerWindowType = {

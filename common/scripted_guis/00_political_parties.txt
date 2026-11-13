@@ -1,9 +1,7 @@
-# common/scripted_guis/00_political_parties.txt
-
 scripted_gui = {
 	kr_coalition_party_highlight_gui = {
 		context_type = player_context
-		parent_window_token = politics_tab
+		parent_window_name = coalition_pol_party_bg_anchor
 		window_name = "kr_coalition_pol_party_bg_container"
 		ai_enabled = { always = no }
 
@@ -23,7 +21,7 @@ scripted_gui = {
 			coalition_highlight_esotericism_visible        = { has_variable = is_in_coalition_with_@token:esotericism }
 			coalition_highlight_oligarchism_visible        = { has_variable = is_in_coalition_with_@token:oligarchism }
 
-			# Banned Party Banners
+			# Banned Party Highlights
 			banned_highlight_communism_visible          = { has_variable = is_banned_party_@token:communism }
 			banned_highlight_socialism_visible          = { has_variable = is_banned_party_@token:socialism }
 			banned_highlight_social_democracy_visible   = { has_variable = is_banned_party_@token:social_democracy }
