@@ -1,24 +1,37 @@
 ideas = {
 	country = {
-		VOL_counter_terrorist_operation = {
-			picture = VOL_counter_terrorist_operation
-
-			removal_cost = -1
-
-			allowed = {
-				always = no
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-
+		VOL_fugitives_from_the_capital = {
+			picture = VOL_fugitives_from_the_capital
 			modifier = {
-				war_stability_factor = 0.5
+				political_power_factor = 0.10
+				research_speed_factor = 0.05
+				stability_factor = -0.06
+				consumer_goods_factor = 0.05
+				war_support_factor = -0.04
+				party_popularity_stability_factor = 0.06
 			}
-			
-			targeted_modifier = {
-                tag = RIV
-                attack_bonus_against = 0.1
+		}
+
+		VOL_prosecutors_hand = {
+			picture = VOL_prosecutors_hand
+			modifier = {
+				political_power_factor = 0.12
+				stability_factor = 0.06
+				resistance_target = -0.08
+				compliance_growth = 0.06
+				war_support_factor = -0.05
+			}
+		}
+
+		VOL_palytsias_staircase = {
+			picture = VOL_palytsias_staircase
+			modifier = {
+				political_power_gain = -0.08
+				stability_factor = -0.05
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.06
+				drift_defence_factor = -0.10
+				party_popularity_stability_factor = -0.06
 			}
 		}
 	}
