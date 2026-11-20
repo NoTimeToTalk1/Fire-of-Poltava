@@ -2,7 +2,9 @@ equipment_modules = {
 	limit = {
 		has_dlc = "By Blood Alone"
 	}
-	### Engines
+
+
+### ENGINES ###
 
 	engine_1_1x = {
 		abbreviation = "e11"
@@ -10,11 +12,10 @@ equipment_modules = {
 		sfx = sfx_ui_sd_module_engine
 
 		add_stats = {
-			thrust = 11
+			thrust = 14
 			build_cost_ic = 12
 			fuel_consumption = 0.16
 		}
-		
 	}
 
 	engine_1_2x = {
@@ -23,7 +24,7 @@ equipment_modules = {
 		sfx = sfx_ui_sd_module_engine
 
 		add_stats = {
-			thrust = 19
+			thrust = 24
 			build_cost_ic = 24
 			fuel_consumption = 0.32
 		}
@@ -35,7 +36,7 @@ equipment_modules = {
 		sfx = sfx_ui_sd_module_engine
 
 		add_stats = {
-			thrust = 32
+			thrust = 40
 			build_cost_ic = 48
 			fuel_consumption = 0.64
 		}
@@ -47,9 +48,9 @@ equipment_modules = {
 		sfx = sfx_ui_sd_module_engine
 
 		add_stats = {
-			thrust = 41
+			thrust = 56
 			build_cost_ic = 68
-			fuel_consumption = 0.8
+			fuel_consumption = 0.80
 		}
 	}
 
@@ -60,7 +61,7 @@ equipment_modules = {
 		parent = engine_1_1x
 
 		add_stats = {
-			thrust = 16
+			thrust = 20
 			build_cost_ic = 14
 			fuel_consumption = 0.16
 		}
@@ -82,7 +83,7 @@ equipment_modules = {
 		parent = engine_1_2x
 
 		add_stats = {
-			thrust = 25
+			thrust = 32
 			build_cost_ic = 28
 			fuel_consumption = 0.32
 		}
@@ -104,7 +105,7 @@ equipment_modules = {
 		parent = engine_1_4x
 
 		add_stats = {
-			thrust = 40
+			thrust = 52
 			build_cost_ic = 56
 			fuel_consumption = 0.64
 		}
@@ -126,9 +127,9 @@ equipment_modules = {
 		parent = engine_1_8x
 
 		add_stats = {
-			thrust = 56
+			thrust = 72
 			build_cost_ic = 80
-			fuel_consumption = 0.8
+			fuel_consumption = 0.80
 		}
 
 		multiply_stats = {
@@ -148,7 +149,7 @@ equipment_modules = {
 		parent = engine_2_1x
 
 		add_stats = {
-			thrust = 25
+			thrust = 28
 			build_cost_ic = 16
 			fuel_consumption = 0.16
 		}
@@ -170,7 +171,7 @@ equipment_modules = {
 		parent = engine_2_2x
 
 		add_stats = {
-			thrust = 38
+			thrust = 44
 			build_cost_ic = 32
 			fuel_consumption = 0.32
 		}
@@ -192,7 +193,7 @@ equipment_modules = {
 		parent = engine_2_4x
 
 		add_stats = {
-			thrust = 64
+			thrust = 68
 			build_cost_ic = 64
 			fuel_consumption = 0.64
 		}
@@ -214,9 +215,9 @@ equipment_modules = {
 		parent = engine_2_8x
 
 		add_stats = {
-			thrust = 90
+			thrust = 96
 			build_cost_ic = 92
-			fuel_consumption = 0.8
+			fuel_consumption = 0.80
 		}
 
 		multiply_stats = {
@@ -236,7 +237,7 @@ equipment_modules = {
 		parent = engine_3_1x
 
 		add_stats = {
-			thrust = 30
+			thrust = 34
 			build_cost_ic = 18
 			fuel_consumption = 0.16
 		}
@@ -258,7 +259,7 @@ equipment_modules = {
 		parent = engine_3_2x
 
 		add_stats = {
-			thrust = 45
+			thrust = 52
 			build_cost_ic = 36
 			fuel_consumption = 0.32
 		}
@@ -280,7 +281,7 @@ equipment_modules = {
 		parent = engine_3_4x
 
 		add_stats = {
-			thrust = 75
+			thrust = 84
 			build_cost_ic = 72
 			fuel_consumption = 0.64
 		}
@@ -302,7 +303,7 @@ equipment_modules = {
 		parent = engine_3_8x
 
 		add_stats = {
-			thrust = 105
+			thrust = 118
 			build_cost_ic = 108
 			fuel_consumption = 0.8
 		}
@@ -325,17 +326,19 @@ equipment_modules = {
 ##  ##  ## ##       ##     ## ##        ##     ## ##   ### ##    ## 
  ###  ###  ######## ##     ## ##         #######  ##    ##  ######  
 
+
 ### CANNONS ###
 
 	rotary_cannon = {
+		# 20mm Rotary Cannon (Anti-Air / Light Fighter)
 		abbreviation = "rtc"
 		category = fighter_weapon
 		sfx = sfx_ui_sd_module_turret
 		add_equipment_type = { fighter }
 
 		add_stats = {
-			air_attack = 5
-			build_cost_ic = 1
+			air_attack = 6
+			build_cost_ic = 1.5
 			weight = 1
 		}
 		xp_cost = 1
@@ -346,56 +349,91 @@ equipment_modules = {
 	}
 
 	gast_cannon = {
+		# 23mm Twin-Barrel Cannon (Fighter / Light CAS)
 		abbreviation = "gsc"
 		category = fighter_weapon
 		sfx = sfx_ui_sd_module_turret
 		add_equipment_type = { fighter }
 
 		add_stats = {
-			air_attack = 9
-			build_cost_ic = 1.5
+			air_attack = 8
+			build_cost_ic = 2.0
 			weight = 2
+			air_agility = -0.5
 		}
 		xp_cost = 1
 		allow_mission_type = {
 			air_superiority
 			interception
+			cas
+		}
+		mission_type_stats = {
+			limit = {
+				cas
+			}
+			add_stats = {
+				air_ground_attack = 3
+			}
 		}
 	}
 
 	revolver_cannon = {
+		# 27mm Revolver Cannon (Multirole)
 		abbreviation = "rvc"
 		category = fighter_weapon
 		sfx = sfx_ui_sd_module_turret
 		add_equipment_type = { fighter }
+
 		add_stats = {
-			air_attack = 12
+			air_attack = 11
 			build_cost_ic = 3
-			air_agility = -2
-			weight = 3
+			weight = 2.5
+			air_agility = -1
 		}
 		xp_cost = 2
 		allow_mission_type = {
 			air_superiority
 			interception
+			cas
+		}
+		mission_type_stats = {
+			limit = {
+				cas
+			}
+			add_stats = {
+				air_ground_attack = 2
+			}
 		}
 	}
 
 	autocannon = {
+		# 30mm Heavy Autocannon (Anti-Armor / CAS)
 		abbreviation = "atc"
 		category = fighter_weapon
 		sfx = sfx_ui_sd_module_turret
 		add_equipment_type = { fighter }
+
 		add_stats = {
-			air_attack = 12
-			build_cost_ic = 3
-			air_agility = -0.5
-			weight = 4
+			air_attack = 9
+			build_cost_ic = 3.5
+			weight = 3.5
+			air_agility = -3.0
 		}
 		xp_cost = 2
 		allow_mission_type = {
 			air_superiority
 			interception
+			cas
+			attack_logistics
+		}
+		mission_type_stats = {
+			limit = {
+				cas
+				attack_logistics
+			}
+			add_stats = {
+				air_ground_attack = 6
+			}
 		}
 	}
 
@@ -895,7 +933,7 @@ equipment_modules = {
 	## AIR-TO-AIR MISSILES ##
 
 	guided_ata_missile = {
-		#Guided Air-to-Air Missile
+		# Guided Air-to-Air Missile
 		abbreviation = "aam"
 		category = fighter_weapon
 		sfx = sfx_ui_sd_module_turret
