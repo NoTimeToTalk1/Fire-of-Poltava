@@ -225,7 +225,7 @@ equipment_modules = {
 		}
 
 		can_convert_from = {
-			module = engine_1_8x
+			module = engine_2_8x
 			convert_cost_ic = 15
 		}
 	}
@@ -305,7 +305,7 @@ equipment_modules = {
 		add_stats = {
 			thrust = 118
 			build_cost_ic = 108
-			fuel_consumption = 0.8
+			fuel_consumption = 0.80
 		}
 
 		multiply_stats = {
@@ -334,7 +334,7 @@ equipment_modules = {
 		abbreviation = "rtc"
 		category = fighter_weapon
 		sfx = sfx_ui_sd_module_turret
-		add_equipment_type = { fighter }
+		add_equipment_type = fighter
 
 		add_stats = {
 			air_attack = 6
@@ -353,7 +353,7 @@ equipment_modules = {
 		abbreviation = "gsc"
 		category = fighter_weapon
 		sfx = sfx_ui_sd_module_turret
-		add_equipment_type = { fighter }
+		add_equipment_type = fighter
 
 		add_stats = {
 			air_attack = 8
@@ -382,7 +382,7 @@ equipment_modules = {
 		abbreviation = "rvc"
 		category = fighter_weapon
 		sfx = sfx_ui_sd_module_turret
-		add_equipment_type = { fighter }
+		add_equipment_type = fighter
 
 		add_stats = {
 			air_attack = 11
@@ -411,13 +411,13 @@ equipment_modules = {
 		abbreviation = "atc"
 		category = fighter_weapon
 		sfx = sfx_ui_sd_module_turret
-		add_equipment_type = { fighter }
+		add_equipment_type = fighter
 
 		add_stats = {
 			air_attack = 9
 			build_cost_ic = 3.5
 			weight = 3.5
-			air_agility = -3.0
+			air_agility = -3
 		}
 		xp_cost = 2
 		allow_mission_type = {
@@ -437,11 +437,268 @@ equipment_modules = {
 		}
 	}
 
+### MISSILES ###
+
+	## AIR-TO-AIR MISSILES ##
+
+	ir_ata_missile = {
+		# IR Homing Short-Range AAM (Heat-Seeking)
+		abbreviation = "ira"
+		category = fighter_weapon
+		sfx = sfx_ui_sd_module_turret
+		add_equipment_type = fighter
+
+		add_stats = {
+			air_attack = 10
+			build_cost_ic = 3.5
+			weight = 1.5
+			air_agility = -0.5
+		}
+		xp_cost = 2
+		allow_mission_type = {
+			air_superiority
+			interception
+		}
+	}
+
+	arh_ata_missile = {
+		# Active Radar Homing Long-Range BVR AAM
+		abbreviation = "arh"
+		category = fighter_weapon
+		sfx = sfx_ui_sd_module_turret
+		add_equipment_type = fighter
+
+		add_stats = {
+			air_attack = 18
+			build_cost_ic = 7
+			weight = 3
+			air_agility = -2
+		}
+		xp_cost = 3
+		allow_mission_type = {
+			air_superiority
+			interception
+		}
+	}
+
+	## AIR-TO-SURFACE MISSILES ##
+
+	unguided_ats_rocket = {
+		# Unguided Air-to-Ground Rocket
+		abbreviation = "uas"
+		category = cas_weapon
+		sfx = sfx_ui_sd_module_turret
+		add_equipment_type = cas
+
+		add_stats = {
+			build_cost_ic = 2
+			weight = 1.5
+		}
+		xp_cost = 1
+		allow_mission_type = {
+			cas
+			attack_logistics
+			naval_bomber
+		}
+		mission_type_stats = {
+			limit = {
+				cas
+				attack_logistics
+			}
+			add_stats = {
+				air_ground_attack = 7
+				weight = 1.5
+				air_agility = -4
+			}
+		}
+		mission_type_stats = {
+			limit = {
+				naval_bomber
+			}
+			add_stats = {
+				naval_strike_attack = 2
+				weight = 1.5
+				air_agility = -4
+			}
+			add_average_stats = {
+				naval_strike_targetting = 4
+			}
+		}
+	}
+
+	guided_ats_missile = {
+		# Guided Air-to-Surface Missile
+		abbreviation = "gas"
+		category = cas_weapon
+		sfx = sfx_ui_sd_module_turret
+		add_equipment_type = cas
+
+		add_stats = {
+			build_cost_ic = 5.5
+			weight = 2
+		}
+		xp_cost = 2
+		allow_mission_type = {
+			cas
+			attack_logistics
+			naval_bomber
+		}
+		mission_type_stats = {
+			limit = {
+				cas
+				attack_logistics
+			}
+			add_stats = {
+				air_ground_attack = 15
+				weight = 2
+				air_agility = -5
+			}
+		}
+		mission_type_stats = {
+			limit = {
+				naval_bomber
+			}
+			add_stats = {
+				naval_strike_attack = 6
+				weight = 2
+				air_agility = -5
+			}
+			add_average_stats = {
+				naval_strike_targetting = 8
+			}
+		}
+		can_convert_from = {
+			module = unguided_ats_rocket
+			convert_cost_ic = 2
+		}
+	}
+
+	guided_anti_tank_missile = {
+		# Air-Launched ATGM
+		abbreviation = "atm"
+		category = cas_weapon
+		sfx = sfx_ui_sd_module_turret
+		add_equipment_type = { cas tactical_bomber }
+
+		add_stats = {
+			build_cost_ic = 4
+			weight = 1.5
+		}
+		xp_cost = 2
+		allow_mission_type = {
+			cas
+			attack_logistics
+			naval_bomber
+		}
+		mission_type_stats = {
+			limit = {
+				cas
+				attack_logistics
+			}
+			add_stats = {
+				air_ground_attack = 11
+				weight = 1.5
+				air_agility = -3
+			}
+		}
+		mission_type_stats = {
+			limit = {
+				naval_bomber
+			}
+			add_stats = {
+				naval_strike_attack = 4
+				weight = 1.5
+				air_agility = -3
+			}
+			add_average_stats = {
+				naval_strike_targetting = 6
+			}
+		}
+		dismantle_cost_ic = 0.5
+	}
+
+	guided_anti_ship_missile = {
+		# Air-Launched Anti-Ship Missile
+		abbreviation = "asm"
+		category = nav_bomber_weapon
+		sfx = sfx_ui_sd_module_turret
+		add_equipment_type = maritime_patrol_plane
+
+		add_stats = {
+			build_cost_ic = 9
+			weight = 3
+		}
+		xp_cost = 3
+		allow_mission_type = {
+			naval_bomber
+			port_strike
+			naval_patrol
+		}
+		mission_type_stats = {
+			limit = {
+				naval_bomber
+				port_strike
+			}
+			add_stats = {
+				naval_strike_attack = 22
+				weight = 5
+				air_agility = -10
+			}
+			add_average_stats = {
+				naval_strike_targetting = 12
+			}
+		}
+		dismantle_cost_ic = 1.5
+	}
+
+	cruise_missile = {
+		# Air-Launched Cruise Missile
+		abbreviation = "cms"
+		category = strat_weapon
+		sfx = sfx_ui_sd_module_turret
+		add_equipment_type = strategic_bomber
+
+		add_stats = {
+			build_cost_ic = 14
+			weight = 5
+		}
+		xp_cost = 3
+		allow_mission_type = {
+			strategic_bomber
+			port_strike
+		}
+		mission_type_stats = {
+			limit = {
+				strategic_bomber
+			}
+			add_stats = {
+				air_bombing = 42
+				weight = 5
+				air_agility = -6
+			}
+		}
+		mission_type_stats = {
+			limit = {
+				port_strike
+			}
+			add_stats = {
+				naval_strike_attack = 16
+				weight = 5
+				air_agility = -6
+			}
+			add_average_stats = {
+				naval_strike_targetting = 10
+			}
+		}
+		dismantle_cost_ic = 2
+	}
+
 ### BOMBS ###
 
 	## UNGUIDED BOMBS ##
 
 	unguided_bomb_light = {
+		# Unguided Bomb, Light (under 100kg)
 		abbreviation = "ugbl"
 		category = cas_weapon
 		sfx = sfx_ui_sd_module_turret
@@ -485,6 +742,7 @@ equipment_modules = {
 	}
 
 	unguided_bomb_medium = {
+		# Unguided Bomb, Medium (100-500kg)
 		abbreviation = "ugbm"
 		category = cas_weapon
 		sfx = sfx_ui_sd_module_turret
@@ -539,6 +797,7 @@ equipment_modules = {
 	}
 
 	unguided_bomb_heavy = {
+		# Unguided Bomb, Heavy (500-1000kg)
 		abbreviation = "ugbh"
 		category = strat_weapon
 		sfx = sfx_ui_sd_module_turret
@@ -576,6 +835,7 @@ equipment_modules = {
 	}
 
 	unguided_bomb_superheavy = {
+		# Unguided Bomb, Superheavy (1000+kg)
 		abbreviation = "ugb"
 		category = strat_weapon
 		sfx = sfx_ui_sd_module_turret
@@ -612,7 +872,7 @@ equipment_modules = {
 		dismantle_cost_ic = 16
 	}
 
-	## GUIDED BOMBS ##
+	## GUIDED BOMBS (LGB / JDAM / GLIDE) ##
 
 	guided_bomb_light = {
 		# Guided Bomb, Light(under 100kg)
@@ -738,244 +998,10 @@ equipment_modules = {
 		dismantle_cost_ic = 0.5
 	}
 
-### MISSILES ###
-
-	## AIR-TO-AIR MISSILES ##
-
-	guided_ata_missile = {
-		# Guided Air-to-Air Missile
-		abbreviation = "aam"
-		category = fighter_weapon
-		sfx = sfx_ui_sd_module_turret
-		add_equipment_type = fighter
-		add_stats = {
-			air_attack = 12
-			build_cost_ic = 5
-			weight = 2
-			air_agility = -1
-		}
-		xp_cost = 2
-		allow_mission_type = {
-			air_superiority
-			interception
-		}
-	}
-
-	## AIR-TO-SURFACE MISSILES ##
-
-	unguided_ats_rocket = {
-		#Unguided Air-to-Ground Rocket
-		abbreviation = "uas"
-		category = cas_weapon
-		sfx = sfx_ui_sd_module_turret
-		add_equipment_type = cas
-
-		add_stats = {
-			build_cost_ic = 2
-			weight = 1.5
-		}
-		xp_cost = 1
-		allow_mission_type = {
-			cas
-			attack_logistics
-			naval_bomber
-		}
-		mission_type_stats = {
-			limit = {
-				cas
-				attack_logistics
-			}
-			add_stats = {
-				air_ground_attack = 7
-				weight = 1.5
-				air_agility = -4
-			}
-		}
-		mission_type_stats = {
-			limit = {
-				naval_bomber
-			}
-			add_stats = {
-				naval_strike_attack = 2
-				weight = 1.5
-				air_agility = -4
-			}
-			add_average_stats = {
-				naval_strike_targetting = 4
-			}
-		}
-	}
-
-	guided_ats_missile = {
-		#Guided Air-to-Surface Missile
-		abbreviation = "gas"
-		category = cas_weapon
-		sfx = sfx_ui_sd_module_turret
-		add_equipment_type = cas
-
-		add_stats = {
-			build_cost_ic = 5.5
-			weight = 2
-		}
-		xp_cost = 2
-		allow_mission_type = {
-			cas
-			attack_logistics
-			naval_bomber
-		}
-		mission_type_stats = {
-			limit = {
-				cas
-				attack_logistics
-			}
-			add_stats = {
-				air_ground_attack = 15
-				weight = 2
-				air_agility = -5
-			}
-		}
-		mission_type_stats = {
-			limit = {
-				naval_bomber
-			}
-			add_stats = {
-				naval_strike_attack = 6
-				weight = 2
-				air_agility = -5
-			}
-			add_average_stats = {
-				naval_strike_targetting = 8
-			}
-		}
-		can_convert_from = {
-			module = unguided_ats_rocket
-			convert_cost_ic = 2
-		}
-	}
-
-	guided_anti_tank_missile = {
-		# Air-Launched ATGM
-		abbreviation = "atm"
-		category = cas_weapon
-		sfx = sfx_ui_sd_module_turret
-		add_equipment_type = { cas tactical_bomber }
-
-		add_stats = {
-			build_cost_ic = 4
-			weight = 1.5
-		}
-		xp_cost = 2
-		allow_mission_type = {
-			cas
-			attack_logistics
-			naval_bomber
-		}
-		mission_type_stats = {
-			limit = {
-				cas
-				attack_logistics
-			}
-			add_stats = {
-				air_ground_attack = 11
-				weight = 1.5
-				air_agility = -3
-			}
-		}
-		mission_type_stats = {
-			limit = {
-				naval_bomber
-			}
-			add_stats = {
-				naval_strike_attack = 4
-				weight = 1.5
-				air_agility = -3
-			}
-			add_average_stats = {
-				naval_strike_targetting = 6
-			}
-		}
-		dismantle_cost_ic = 0.5
-	}
-
-	guided_anti_ship_missile = {
-		# Air-Launched Anti-Ship Missile
-		abbreviation = "asm"
-		category = nav_bomber_weapon
-		sfx = sfx_ui_sd_module_turret
-		add_equipment_type = { naval_bomber maritime_patrol_plane }
-
-		add_stats = {
-			build_cost_ic = 9
-			weight = 3
-		}
-		xp_cost = 3
-		allow_mission_type = {
-			naval_bomber
-			port_strike
-			naval_patrol
-		}
-		mission_type_stats = {
-			limit = {
-				naval_bomber
-				port_strike
-			}
-			add_stats = {
-				naval_strike_attack = 22
-				weight = 5
-				air_agility = -10
-			}
-			add_average_stats = {
-				naval_strike_targetting = 12
-			}
-		}
-		dismantle_cost_ic = 1.5
-	}
-
-	cruise_missile = {
-		# Air-Launched Cruise Missile
-		abbreviation = "cms"
-		category = strat_weapon
-		sfx = sfx_ui_sd_module_turret
-		add_equipment_type = { strategic_bomber } #+tactical_bomber
-
-		add_stats = {
-			build_cost_ic = 14
-			weight = 5
-		}
-		xp_cost = 3
-		allow_mission_type = {
-			strategic_bomber
-			port_strike
-		}
-		mission_type_stats = {
-			limit = {
-				strategic_bomber
-			}
-			add_stats = {
-				air_bombing = 42
-				weight = 5
-				air_agility = -6
-			}
-		}
-		mission_type_stats = {
-			limit = {
-				port_strike
-			}
-			add_stats = {
-				naval_strike_attack = 16
-				weight = 5
-				air_agility = -6
-			}
-			add_average_stats = {
-				naval_strike_targetting = 10
-			}
-		}
-		dismantle_cost_ic = 2
-	}
-
 ### RECON + NAVAL ###
 
 	recon_camera = {
+		# Electro-Optical / SIGINT Recon
 		abbreviation = "rca"
 		category = recon_camera
 		sfx = sfx_ui_sd_module_turret
@@ -1002,6 +1028,7 @@ equipment_modules = {
 	}
 
 	aerial_torpedo = {
+		# Lightweight ASW Torpedo
 		abbreviation = "tpm"
 		category = nav_bomber_weapon
 		sfx = sfx_ui_sd_module_turret
@@ -1035,6 +1062,7 @@ equipment_modules = {
 	}
 
 	airdropped_mines = {
+		# Air-Dropped Naval Mines
 		abbreviation = "adm"
 		category = mine_warfare_offense
 		sfx = sfx_ui_sd_module_turret
@@ -1086,6 +1114,7 @@ equipment_modules = {
  ######  ##        ########  ######  #### ##     ## ########    ##     ##  #######  ########   #######  ######## ########  ######                 ######  ##     ## ##     ## ######## ######## 
 
 	armor_plate_small = {
+		# Armored Cockpit / Titanium Tub
 		abbreviation = "aps"
 		category = plane_special_module_small
 		sfx = sfx_ui_sd_module_turret
@@ -1102,8 +1131,8 @@ equipment_modules = {
 		dismantle_cost_ic = 0.5
 	}
 
-
 	fuel_tanks_small = {
+		# Conformal / Extra Internal Fuel Tanks
 		abbreviation = "fts"
 		category = plane_special_module_small
 		sfx = sfx_ui_sd_module_turret
@@ -1121,6 +1150,7 @@ equipment_modules = {
 	}
 
 	self_sealing_fuel_tanks_small = {
+		# Fuel Inerting & Self-Sealing System
 		abbreviation = "ssf"
 		category = plane_special_module_small
 		sfx = sfx_ui_sd_module_turret
@@ -1138,6 +1168,7 @@ equipment_modules = {
 	}
 
 	non_strategic_materials_small = {
+		# Low-Cost Composite Airframe
 		abbreviation = "nsms"
 		category = plane_special_module_small
 		sfx = sfx_ui_sd_module_turret
@@ -1159,6 +1190,7 @@ equipment_modules = {
 	}
 
 	drop_tanks = {
+		# External Drop Tanks
 		abbreviation = "dpt"
 		category = plane_special_module_small
 		sfx = sfx_ui_sd_module_turret
@@ -1182,6 +1214,7 @@ equipment_modules = {
  ######  ##        ########  ######  #### ##     ## ########    ##     ##  #######  ########   #######  ######## ########  ######                ##     ## ######## ########  ####  #######  ##     ## 
 
 	armor_plate_medium = {
+		# Reinforced Airframe
 		abbreviation = "apm"
 		category = plane_special_module_medium
 		sfx = sfx_ui_sd_module_turret
@@ -1199,6 +1232,7 @@ equipment_modules = {
 	}
 
 	fuel_tanks_medium = {
+		# Extended Endurance Fuel Tanks
 		abbreviation = "ftm"
 		category = plane_special_module_medium
 		sfx = sfx_ui_sd_module_turret
@@ -1216,6 +1250,7 @@ equipment_modules = {
 	}
 
 	self_sealing_fuel_tanks_medium = {
+		# Fuel Inerting System
 		abbreviation = "ssm"
 		category = plane_special_module_medium
 		sfx = sfx_ui_sd_module_turret
@@ -1233,6 +1268,7 @@ equipment_modules = {
 	}
 
 	non_strategic_materials_medium = {
+		# Low-Cost Composite Drone Frame
 		abbreviation = "nsmm"
 		category = plane_special_module_medium
 		sfx = sfx_ui_sd_module_turret
@@ -1264,6 +1300,7 @@ equipment_modules = {
  ######  ##        ########  ######  #### ##     ## ########    ##     ## ########   #######   #######  ######## ########  ######                ######## ##     ## ##     ##  ######   ######## 
 
 	armor_plate_large = {
+		# Reinforced Heavy Airframe
 		abbreviation = "apl"
 		category = plane_special_module_large
 		sfx = sfx_ui_sd_module_turret
@@ -1281,6 +1318,7 @@ equipment_modules = {
 	}
 
 	fuel_tanks_large = {
+		# Long-Range Auxiliary Fuel Tanks
 		abbreviation = "ftl"
 		category = plane_special_module_large
 		sfx = sfx_ui_sd_module_turret
@@ -1298,6 +1336,7 @@ equipment_modules = {
 	}
 
 	self_sealing_fuel_tanks_large = {
+		# Heavy Fuel Inerting System
 		abbreviation = "ssl"
 		category = plane_special_module_large
 		sfx = sfx_ui_sd_module_turret
@@ -1315,6 +1354,7 @@ equipment_modules = {
 	}
 
 	non_strategic_materials_large = {
+		# Composite Large Airframe
 		abbreviation = "nsml"
 		category = plane_special_module_large
 		sfx = sfx_ui_sd_module_turret
@@ -1338,6 +1378,7 @@ equipment_modules = {
 	### DEFENSIVE & STEALTH SYSTEMS ###
 
 	countermeasures_1 = {
+		# Flares & Chaff Dispenser + RWR
 		abbreviation = "cm1"
 		category = plane_special_module_countermeasures
 		gui_category = plane_special_module_electronics
@@ -1372,6 +1413,7 @@ equipment_modules = {
 	}
 
 	ecm_pod_1 = {
+		# Electronic Countermeasures (ECM) Jamming Pod
 		abbreviation = "ecm1"
 		category = plane_special_module_ecm
 		gui_category = plane_special_module_electronics
@@ -1387,6 +1429,7 @@ equipment_modules = {
 	}
 
 	ecm_pod_2 = {
+		# Advanced DRFM / AESA Electronic Warfare Suite
 		abbreviation = "ecm2"
 		category = plane_special_module_ecm
 		gui_category = plane_special_module_electronics
@@ -1407,6 +1450,7 @@ equipment_modules = {
 	}
 
 	stealth_coating = {
+		# Radar-Absorbent Material (RAM) & Signature Reduction
 		abbreviation = "ram"
 		category = plane_special_module_stealth
 		gui_category = plane_special_module_electronics
@@ -1435,6 +1479,7 @@ equipment_modules = {
 ######## ######## ########  ######     ##    ##     ##  #######  ##    ## ####  ######   ######  
 
 	bomb_sights_1 = {
+		# Electro-Optical / Laser Targeting Pod I
 		abbreviation = "bs1"
 		category = plane_special_module_bomb_sights
 		gui_category = plane_special_module_electronics
@@ -1450,6 +1495,7 @@ equipment_modules = {
 	}
 
 	bomb_sights_2 = {
+		# Advanced Multi-Spectral Targeting Pod II
 		abbreviation = "bs2"
 		category = plane_special_module_bomb_sights
 		gui_category = plane_special_module_electronics
@@ -1470,6 +1516,7 @@ equipment_modules = {
 	}
 
 	radio_navigation_1 = {
+		# INS + Satellite Navigation I
 		abbreviation = "rn1"
 		category = plane_special_module_radio_navigation
 		gui_category = plane_special_module_electronics
@@ -1485,6 +1532,7 @@ equipment_modules = {
 	}
 
 	radio_navigation_2 = {
+		# Encrypted Satellite Nav + Tactical Data Link
 		abbreviation = "rn2"
 		category = plane_special_module_radio_navigation
 		gui_category = plane_special_module_electronics
@@ -1506,6 +1554,7 @@ equipment_modules = {
 	}
 
 	air_ground_radar_1 = {
+		# Ground-Mapping / Maritime Search Radar I
 		abbreviation = "agr1"
 		category = plane_special_module_air_ground_radar
 		gui_category = plane_special_module_electronics
@@ -1534,6 +1583,7 @@ equipment_modules = {
 	}
 
 	air_ground_radar_2 = {
+		# Synthetic Aperture (SAR) / Maritime AESA Radar II
 		abbreviation = "agr2"
 		category = plane_special_module_air_ground_radar
 		gui_category = plane_special_module_electronics
@@ -1567,6 +1617,7 @@ equipment_modules = {
 	}
 
 	air_air_radar_1 = {
+		# Pulse-Doppler Air-to-Air Radar I
 		abbreviation = "aar1"
 		category = plane_special_module_air_air_radar
 		gui_category = plane_special_module_electronics
@@ -1590,6 +1641,7 @@ equipment_modules = {
 	}
 
 	air_air_radar_2 = {
+		# AESA Air-to-Air Radar II
 		abbreviation = "aar2"
 		category = plane_special_module_air_air_radar
 		gui_category = plane_special_module_electronics
