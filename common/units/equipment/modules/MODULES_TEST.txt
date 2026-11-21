@@ -7,11 +7,11 @@ technologies = {
 	@2026 = 10
 	@2028 = 12
 
-	##################################################
-	##    ENGINES, RANGE & AIRFRAME CONSTRUCTION    ##
-	##################################################
+	################################################
+	####		ENGINES, RANGE & AIRFRAME		####
+	################################################
 
-	engines_1 = {
+	engines1 = {
 		enable_equipment_modules = {
 			engine_1_1x
 			engine_1_2x
@@ -80,7 +80,7 @@ technologies = {
 		}
 	}
 
-	engines_2 = {
+	engines2 = {
 		enable_equipment_modules = {
 			engine_2_1x
 			engine_2_2x
@@ -133,7 +133,7 @@ technologies = {
 		}
 	}
 
-	engines_3 = {
+	engines3 = {
 		enable_equipment_modules = {
 			engine_3_1x
 			engine_3_2x
@@ -186,7 +186,7 @@ technologies = {
 		}
 	}
 
-	engines_4 = {
+	engines4 = {
 		enable_equipment_modules = {
 			engine_4_1x
 			engine_4_2x
@@ -314,14 +314,13 @@ technologies = {
 	####			AIRCRAFT CANNONS			####
 	################################################
 
-	aircraft_cannons_1 = { ##aa_cannon_x in vanilla
+	aircraft_rotary_cannon = {
 		enable_equipment_modules = {
 			rotary_cannon
-			gast_cannon
 		}
 
 		path = {
-			leads_to_tech = aircraft_cannons_2
+			leads_to_tech = aircraft_revolver_cannon_1
 			research_cost_coeff = 1
 		}
 
@@ -337,7 +336,6 @@ technologies = {
 			plane_modules_tech
 			cat_air_guns
 			mio_cat_all_light_fighter_and_modules
-			mio_cat_all_cas_and_modules
 			mio_cat_all_light_aircraft_and_modules
 		}
 
@@ -345,15 +343,19 @@ technologies = {
 			factor = 2
 			modifier = {
 				has_tech = iw_small_airframe
-				factor = 4
+				factor = 3
 			}
 		}
 	}
 
-	aircraft_cannons_2 = {
+	aircraft_revolver_cannon1 = {
 		enable_equipment_modules = {
-			revolver_cannon
-			autocannon
+			revolver_cannon_1
+		}
+
+		path = {
+			leads_to_tech = aircraft_revolver_cannon_2
+			research_cost_coeff = 1
 		}
 
 		research_cost = 1
@@ -368,6 +370,102 @@ technologies = {
 			plane_modules_tech
 			cat_air_guns
 			mio_cat_all_light_fighter_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				has_tech = basic_small_airframe
+				factor = 3
+			}
+		}
+	}
+
+	aircraft_revolver_cannon2 = {
+		enable_equipment_modules = {
+			revolver_cannon_2
+		}
+
+		research_cost = 1.5
+		start_year = 2022
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 0 y = @2022 }
+		}
+
+		categories = {
+			air_equipment
+			plane_modules_tech
+			cat_air_guns
+			mio_cat_all_light_fighter_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				is_major = yes
+				factor = 2
+			}
+		}
+	}
+
+	aircraft_twin_cannon = {
+		enable_equipment_modules = {
+			gast_cannon
+		}
+
+		path = {
+			leads_to_tech = aircraft_autocannon_1
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1
+		start_year = 1991
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 0 y = @1991 }
+		}
+
+		categories = {
+			air_equipment
+			plane_modules_tech
+			cat_air_guns
+			mio_cat_all_cas_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				has_tech = iw_small_airframe
+				factor = 3
+			}
+		}
+	}
+
+	aircraft_autocannon1 = {
+		enable_equipment_modules = {
+			autocannon_1
+		}
+
+		path = {
+			leads_to_tech = aircraft_autocannon_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1
+		start_year = 2020
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 0 y = @2020 }
+		}
+
+		categories = {
+			air_equipment
+			plane_modules_tech
+			cat_air_guns
 			mio_cat_all_cas_and_modules
 			mio_cat_all_light_aircraft_and_modules
 		}
@@ -378,27 +476,49 @@ technologies = {
 				has_tech = basic_small_airframe
 				factor = 3
 			}
+		}
+	}
+
+	aircraft_autocannon2 = {
+		enable_equipment_modules = {
+			autocannon_2
+		}
+
+		research_cost = 1.5
+		start_year = 2022
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 0 y = @2022 }
+		}
+
+		categories = {
+			air_equipment
+			plane_modules_tech
+			cat_air_guns
+			mio_cat_all_cas_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+
+		ai_will_do = {
+			factor = 2
 			modifier = {
-				OR = {
-					tag = USA
-					tag = RUS
-				}
+				is_major = yes
 				factor = 2
 			}
 		}
 	}
 
 	################################################
-	####		AIR-TO-AIR MISSILES (AAM)		####
+	####			AIR-TO-AIR MISSILES			####
 	################################################
 
-	aam_missiles_tech = {
+	infrared_ata_missile1 = {
 		enable_equipment_modules = {
-			ir_ata_missile
+			ir_aam_1
 		}
 
 		path = {
-			leads_to_tech = arh_aam_missiles_tech
+			leads_to_tech = infrared_ata_missile2
 			research_cost_coeff = 1
 		}
 
@@ -426,16 +546,122 @@ technologies = {
 		}
 	}
 
-	arh_aam_missiles_tech = {
+	infrared_ata_missile2 = {
 		enable_equipment_modules = {
-			arh_ata_missile
+			ir_aam_2
+		}
+
+		path = {
+			leads_to_tech = infrared_ata_missile3
+			research_cost_coeff = 1
 		}
 
 		research_cost = 1.5
-		start_year = 2020
+		start_year = 2022
 		folder = {
 			name = bba_air_techs_folder
-			position = { x = 0 y = @2020 }
+			position = { x = 0 y = @2022 }
+		}
+
+		categories = {
+			air_equipment
+			plane_modules_tech
+			cat_air_guns
+			mio_cat_all_light_fighter_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				is_major = yes
+				factor = 2
+			}
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+		}
+	}
+
+	infrared_ata_missile3 = {
+		enable_equipment_modules = {
+			ir_aam_3
+		}
+
+		research_cost = 2
+		start_year = 2028
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 0 y = @2028 }
+		}
+
+		categories = {
+			air_equipment
+			plane_modules_tech
+			cat_air_guns
+			mio_cat_all_light_fighter_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				is_major = yes
+				factor = 3
+			}
+		}
+	}
+
+	radar_ata_missile1 = {
+		enable_equipment_modules = {
+			radar_aam_1
+		}
+
+		path = {
+			leads_to_tech = radar_ata_missile2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1
+		start_year = 1991
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 0 y = @1991 }
+		}
+
+		categories = {
+			air_equipment
+			plane_modules_tech
+			cat_air_guns
+			mio_cat_all_light_fighter_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				is_major = yes
+				factor = 2
+			}
+		}
+	}
+
+	radar_ata_missile2 = {
+		enable_equipment_modules = {
+			radar_aam_2
+		}
+
+		path = {
+			leads_to_tech = radar_ata_missile3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2022
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 0 y = @2022 }
 		}
 
 		categories = {
@@ -453,28 +679,52 @@ technologies = {
 				factor = 3
 			}
 			modifier = {
-				date > "2021.1.1"
+				date > "2022.1.1"
 				factor = 2
 			}
 		}
 	}
 
-	##################################################
-	### AIR-TO-GROUND BOMBS (UNGUIDED & GUIDED)
-	##################################################
-
-	light_air_bombs = {
+	radar_ata_missile3 = {
 		enable_equipment_modules = {
-			unguided_bomb_light
-			unguided_bomb_medium
+			radar_aam_3
+		}
+
+		research_cost = 2
+		start_year = 2028
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 0 y = @2028 }
+		}
+
+		categories = {
+			air_equipment
+			plane_modules_tech
+			cat_air_guns
+			mio_cat_all_light_fighter_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				is_major = yes
+				factor = 4
+			}
+		}
+	}
+
+	###############################################
+	###			AIR-TO-SURFACE MISSILES			###
+	###############################################
+
+	ats_missile = {
+		enable_equipment_modules = {
+			unguided_asm
 		}
 
 		path = {
-			leads_to_tech = heavy_air_bombs
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = guided_air_bombs_1
+			leads_to_tech = guided_ats_missile
 			research_cost_coeff = 1
 		}
 
@@ -490,63 +740,30 @@ technologies = {
 			plane_modules_tech
 			cat_air_bombs
 			mio_cat_all_cas_and_modules
-			mio_cat_all_medium_aircraft_and_modules
-			mio_cat_all_heavy_aircraft_and_modules
 			mio_cat_all_light_aircraft_and_modules
 		}
 
 		ai_will_do = {
 			factor = 2
 			modifier = {
-				OR = {
-					has_tech = iw_small_airframe
-					has_tech = iw_medium_airframe
-					has_tech = iw_large_airframe
-				}
-				factor = 4
-			}
-		}
-	}
-
-	heavy_air_bombs = {
-		enable_equipment_modules = {
-			unguided_bomb_heavy
-			unguided_bomb_superheavy
-		}
-
-		research_cost = 1
-		start_year = 2020
-		folder = {
-			name = bba_air_techs_folder
-			position = { x = 0 y = @2020 }
-		}
-
-		categories = {
-			air_equipment
-			plane_modules_tech
-			cat_air_bombs
-			mio_cat_all_cas_and_modules
-			mio_cat_all_heavy_aircraft_and_modules
-			mio_cat_all_light_aircraft_and_modules
-		}
-
-		ai_will_do = {
-			factor = 2
-			modifier = {
-				has_tech = basic_large_airframe
+				has_tech = iw_small_airframe
 				factor = 3
 			}
 		}
 	}
 
-	guided_air_bombs_1 = {
+	guided_ats_missile = {
 		enable_equipment_modules = {
-			guided_bomb_light
-			guided_bomb_medium
+			guided_asm
+			guided_atm
 		}
 
 		path = {
-			leads_to_tech = guided_air_bombs_2
+			leads_to_tech = aircraft_cruise_missile
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = suicide_charge
 			research_cost_coeff = 1
 		}
 
@@ -554,7 +771,7 @@ technologies = {
 		start_year = 2020
 		folder = {
 			name = bba_air_techs_folder
-			position = { x = 2 y = @2020 }
+			position = { x = 0 y = @2020 }
 		}
 
 		categories = {
@@ -578,7 +795,183 @@ technologies = {
 		}
 	}
 
-	guided_air_bombs_2 = {
+	aircraft_cruise_missile = {
+		enable_equipment_modules = {
+			cruise_missile
+		}
+
+		research_cost = 1.5
+		start_year = 2022
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 0 y = @2022 }
+		}
+
+		categories = {
+			air_equipment
+			plane_modules_tech
+			cat_air_bombs
+			mio_cat_all_heavy_aircraft_and_modules
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				is_major = yes
+				factor = 3
+			}
+			modifier = {
+				tag = RUS
+				factor = 3
+			}
+		}
+	}
+
+	suicide_charge = {
+		enable_equipment_modules = {
+			fixed_explosive_charge
+		}
+
+		research_cost = 1
+		start_year = 2022
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 2 y = @2022 }
+		}
+
+		categories = {
+			air_equipment
+			plane_modules_tech
+			mio_cat_all_medium_aircraft_and_modules
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				has_war = yes
+				factor = 3
+			}
+		}
+	}
+
+	############################################
+	####				BOMBS				####
+	############################################
+
+	tactical_bombs = {
+		enable_equipment_modules = {
+			unguided_bomb_light
+			unguided_bomb_medium
+		}
+
+		path = {
+			leads_to_tech = guided_tactical_bombs
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = heavy_bombs
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1
+		start_year = 1991
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 0 y = @1991 }
+		}
+
+		categories = {
+			air_equipment
+			plane_modules_tech
+			cat_air_bombs
+			mio_cat_all_cas_and_modules
+			mio_cat_all_medium_aircraft_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				OR = {
+					has_tech = iw_small_airframe
+					has_tech = iw_medium_airframe
+				}
+				factor = 4
+			}
+		}
+	}
+
+	guided_tactical_bombs = {
+		enable_equipment_modules = {
+			guided_bomb_light
+			guided_bomb_medium
+		}
+
+		research_cost = 1.5
+		start_year = 2020
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 0 y = @2020 }
+		}
+
+		categories = {
+			air_equipment
+			plane_modules_tech
+			cat_air_bombs
+			mio_cat_all_cas_and_modules
+			mio_cat_all_medium_aircraft_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				OR = {
+					has_tech = basic_small_airframe
+					has_tech = basic_medium_airframe
+				}
+				factor = 3
+			}
+		}
+	}
+
+	heavy_bombs = {
+		enable_equipment_modules = {
+			unguided_bomb_heavy
+			unguided_bomb_superheavy
+		}
+
+		path = {
+			leads_to_tech = guided_heavy_bombs
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1
+		start_year = 1991
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 2 y = @1991 }
+		}
+
+		categories = {
+			air_equipment
+			plane_modules_tech
+			cat_air_bombs
+			mio_cat_all_cas_and_modules
+			mio_cat_all_heavy_aircraft_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				has_tech = iw_large_airframe
+				factor = 3
+			}
+		}
+	}
+
+	guided_heavy_bombs = {
 		enable_equipment_modules = {
 			guided_bomb_heavy
 			guided_bomb_superheavy
@@ -614,157 +1007,17 @@ technologies = {
 	}
 
 	##################################################
-	### AIR-TO-SURFACE MISSILES & LOITERING MUNITIONS
+	##				NAVAL AIR ORDNANCE				##
 	##################################################
 
-	asm_missiles_tech = {
-		enable_equipment_modules = {
-			unguided_ats_rocket
-		}
-
-		path = {
-			leads_to_tech = guided_asm_missiles_tech
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1
-		start_year = 1991
-		folder = {
-			name = bba_air_techs_folder
-			position = { x = 0 y = @1991 }
-		}
-
-		categories = {
-			air_equipment
-			plane_modules_tech
-			cat_air_bombs
-			mio_cat_all_cas_and_modules
-			mio_cat_all_light_aircraft_and_modules
-		}
-
-		ai_will_do = {
-			factor = 2
-			modifier = {
-				has_tech = iw_small_airframe
-				factor = 3
-			}
-		}
-	}
-
-	guided_asm_missiles_tech = {
-		enable_equipment_modules = {
-			guided_ats_missile
-			guided_anti_tank_missile
-		}
-
-		path = {
-			leads_to_tech = cruise_missile_tech
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = loitering_munition_tech
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-		start_year = 2020
-		folder = {
-			name = bba_air_techs_folder
-			position = { x = 0 y = @2020 }
-		}
-
-		categories = {
-			air_equipment
-			plane_modules_tech
-			cat_air_bombs
-			mio_cat_all_cas_and_modules
-			mio_cat_all_medium_aircraft_and_modules
-			mio_cat_all_light_aircraft_and_modules
-		}
-
-		ai_will_do = {
-			factor = 3
-			modifier = {
-				OR = {
-					has_tech = basic_small_airframe
-					has_tech = basic_medium_airframe
-				}
-				factor = 3
-			}
-		}
-	}
-
-	cruise_missile_tech = {
-		enable_equipment_modules = {
-			cruise_missile
-		}
-
-		research_cost = 1.5
-		start_year = 2022
-		folder = {
-			name = bba_air_techs_folder
-			position = { x = 0 y = @2022 }
-		}
-
-		categories = {
-			air_equipment
-			plane_modules_tech
-			cat_air_bombs
-			mio_cat_all_heavy_aircraft_and_modules
-		}
-
-		ai_will_do = {
-			factor = 2
-			modifier = {
-				is_major = yes
-				factor = 3
-			}
-			modifier = {
-				tag = RUS
-				factor = 3
-			}
-		}
-	}
-
-	loitering_munition_tech = {
-		enable_equipment_modules = {
-			fixed_explosive_charge
-		}
-
-		research_cost = 1
-		start_year = 2022
-		folder = {
-			name = bba_air_techs_folder
-			position = { x = 2 y = @2022 }
-		}
-
-		categories = {
-			air_equipment
-			plane_modules_tech
-			mio_cat_all_medium_aircraft_and_modules
-		}
-
-		ai_will_do = {
-			factor = 2
-			modifier = {
-				has_war = yes
-				factor = 3
-			}
-		}
-	}
-
-	##################################################
-	###   NAVAL AIR ORDNANCE & ANTI-SHIP MISSILES   ##
-	##################################################
-
-	naval_air_ordnance_tech = {
+	air_torpedoe = {
 		enable_equipment_modules = {
 			aerial_torpedo
 			airdropped_mines
 		}
 
 		path = {
-			leads_to_tech = ashm_missiles_tech
+			leads_to_tech = anti_ship_missile
 			research_cost_coeff = 1
 		}
 
@@ -792,9 +1045,9 @@ technologies = {
 		}
 	}
 
-	ashm_missiles_tech = {
+	anti_ship_missile = {
 		enable_equipment_modules = {
-			guided_anti_ship_missile
+			guided_ashm
 		}
 
 		research_cost = 1.5
@@ -822,9 +1075,9 @@ technologies = {
 		}
 	}
 
-	##################################################
-	### SURVIVABILITY, COUNTERMEASURES, ECM & STEALTH
-	##################################################
+	###############################################
+	###		SURVIVABILITY & COUNTERMEASURES		###
+	###############################################
 
 	survivability_studies = {
 		enable_equipment_modules = {
@@ -838,15 +1091,15 @@ technologies = {
 		}
 
 		path = {
-			leads_to_tech = air_countermeasures_2
+			leads_to_tech = air_countermeasures
 			research_cost_coeff = 1
 		}
 		path = {
-			leads_to_tech = air_ecm_1
+			leads_to_tech = air_ecm1
 			research_cost_coeff = 1
 		}
 		path = {
-			leads_to_tech = stealth_technology
+			leads_to_tech = air_stealth
 			research_cost_coeff = 1
 		}
 
@@ -876,7 +1129,7 @@ technologies = {
 		}
 	}
 
-	air_countermeasures_2 = {
+	air_countermeasures = {
 		enable_equipment_modules = {
 			countermeasures_2
 		}
@@ -907,13 +1160,13 @@ technologies = {
 		}
 	}
 
-	air_ecm_1 = {
+	air_ecm1 = {
 		enable_equipment_modules = {
 			ecm_pod_1
 		}
 
 		path = {
-			leads_to_tech = air_ecm_2
+			leads_to_tech = air_ecm2
 			research_cost_coeff = 1
 		}
 
@@ -943,16 +1196,16 @@ technologies = {
 		}
 	}
 
-	air_ecm_2 = {
+	air_ecm2 = {
 		enable_equipment_modules = {
 			ecm_pod_2
 		}
 
 		research_cost = 1.5
-		start_year = 2025
+		start_year = 2024
 		folder = {
 			name = bba_air_techs_folder
-			position = { x = 0 y = @2025 }
+			position = { x = 0 y = @2024 }
 		}
 
 		categories = {
@@ -974,16 +1227,16 @@ technologies = {
 		}
 	}
 
-	stealth_technology = {
+	air_stealth = {
 		enable_equipment_modules = {
 			stealth_coating
 		}
 
 		research_cost = 2
-		start_year = 2025
+		start_year = 2024
 		folder = {
 			name = bba_air_techs_folder
-			position = { x = 2 y = @2025 }
+			position = { x = 2 y = @2024 }
 		}
 
 		categories = {
@@ -1004,9 +1257,9 @@ technologies = {
 		}
 	}
 
-	##################################################
-	### AVIONICS, RADARS & RECON
-	##################################################
+	################################################
+	####			AVIONICS & RADARS			####
+	################################################
 
 	basic_avionics = {
 		enable_equipment_modules = {
@@ -1016,6 +1269,10 @@ technologies = {
 
 		path = {
 			leads_to_tech = advanced_avionics
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = basic_plane_radar
 			research_cost_coeff = 1
 		}
 
@@ -1088,7 +1345,7 @@ technologies = {
 		start_year = 1991
 		folder = {
 			name = bba_air_techs_folder
-			position = { x = 0 y = @1991 }
+			position = { x = 2 y = @1991 }
 		}
 
 		categories = {
@@ -1114,10 +1371,10 @@ technologies = {
 		}
 
 		research_cost = 1.5
-		start_year = 2025
+		start_year = 2024
 		folder = {
 			name = bba_air_techs_folder
-			position = { x = 0 y = @2025 }
+			position = { x = 2 y = @2024 }
 		}
 
 		categories = {
@@ -1139,6 +1396,10 @@ technologies = {
 			}
 		}
 	}
+
+	####################################################
+	####			AERIAL RECONNAISSANCE			####
+	####################################################
 
 	photo_reconnaisance = {
 		enable_equipment_modules = {
