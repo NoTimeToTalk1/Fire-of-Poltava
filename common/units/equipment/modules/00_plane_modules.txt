@@ -767,7 +767,8 @@ equipment_modules = {
 	guided_atm = {
 		# Air-Launched ATGM
 		abbreviation = "atm"
-		category = cas_weapon
+		category = tac_weapon
+		gui_category = cas_weapon
 		sfx = sfx_ui_sd_module_turret
 		add_equipment_type = { cas tactical_bomber }
 
@@ -811,7 +812,8 @@ equipment_modules = {
 	guided_ashm = {
 		# Air-Launched Anti-Ship Missile
 		abbreviation = "asm"
-		category = nav_bomber_weapon
+		category = ashm_weapon
+		gui_category = nav_bomber_weapon
 		sfx = sfx_ui_sd_module_turret
 		add_equipment_type = maritime_patrol_plane
 
@@ -1333,7 +1335,7 @@ equipment_modules = {
 		abbreviation = "tpm"
 		category = nav_bomber_weapon
 		sfx = sfx_ui_sd_module_turret
-		add_equipment_type = { naval_bomber maritime_patrol_plane }
+		add_equipment_type = maritime_patrol_plane
 
 		add_stats = {
 			build_cost_ic = 4.5
@@ -1389,7 +1391,6 @@ equipment_modules = {
 		add_equipment_type = suicide
 		forbid_equipment_type_exact_match_for_category = {
 			tac_weapon = suicide
-			guided_medium_bomb_weapon = suicide
 			recon_camera = suicide
 		}
 
