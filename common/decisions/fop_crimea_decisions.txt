@@ -442,6 +442,7 @@ FOP_crimea_operation = {
         custom_cost_trigger = {
             command_power > 24
         }
+        custom_cost_text = decision_cost_CP_25
         complete_effect = {
             add_command_power = -25
         }
@@ -463,6 +464,7 @@ FOP_crimea_operation = {
         custom_cost_trigger = {
             command_power > 19
         }
+        custom_cost_text = decision_cost_CP_20
         cost = 50
         complete_effect = {
             add_command_power = -20
@@ -498,6 +500,14 @@ FOP_crimea_operation = {
         }
     }
     fop_provide_partisans_with_weapons = {
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = FOP_crimea_partisans_equipment_var_limit_tt
+                check_variable = {
+                    FOP_crimea_partisans_equipment_var < 5
+                }
+            }
+        }
         visible = {
             has_country_flag = fop_focus_on_crimea_flag
             has_country_flag = fop_crimea_partisans
@@ -515,21 +525,30 @@ FOP_crimea_operation = {
             }
             add_to_variable = {
                 var = FOP_crimea_operation_preparedness_var
-                value = 2
+                value = 1
                 tooltip = FOP_crimea_operation_preparedness_var_tt
             }
             add_to_variable = {
                 var = FOP_crimea_partisans_equipment_var
                 value = 1
+                tooltip = FOP_crimea_partisans_equipment_var_tt
             }
             add_to_variable = {
                 var = FOP_crimea_russia_awareness_var
-                value = 1
+                value = 2
                 tooltip = FOP_crimea_russia_awareness_var_tt
             }
         }
     }
     fop_train_partisans = {
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = FOP_crimea_partisans_experience_var_limit_tt
+                check_variable = {
+                    FOP_crimea_partisans_experience_var < 3
+                }
+            }
+        }
         visible = {
             has_country_flag = fop_focus_on_crimea_flag
             has_country_flag = fop_crimea_partisans
@@ -539,16 +558,17 @@ FOP_crimea_operation = {
         remove_effect = {
             add_to_variable = {
                 var = FOP_crimea_operation_preparedness_var
-                value = 2
+                value = 1
                 tooltip = FOP_crimea_operation_preparedness_var_tt
             }
             add_to_variable = {
                 var = FOP_crimea_partisans_experience_var
                 value = 1
+                tooltip = FOP_crimea_partisans_experience_var_tt
             }
             add_to_variable = {
                 var = FOP_crimea_russia_awareness_var
-                value = 1
+                value = 2
                 tooltip = FOP_crimea_russia_awareness_var_tt
             }
         }
@@ -561,6 +581,7 @@ FOP_crimea_operation = {
         custom_cost_trigger = {
             command_power > 34
         }
+        custom_cost_text = decision_cost_CP_35
         complete_effect = {
             add_command_power = -35
         }
@@ -595,6 +616,7 @@ FOP_crimea_operation = {
         custom_cost_trigger = {
             command_power > 39
         }
+        custom_cost_text = decision_cost_CP_40
         complete_effect = {
             add_command_power = -40
         }
@@ -616,6 +638,7 @@ FOP_crimea_operation = {
         custom_cost_trigger = {
             command_power > 39
         }
+        custom_cost_text = decision_cost_CP_40
         complete_effect = {
             add_command_power = -40
         }
@@ -637,6 +660,7 @@ FOP_crimea_operation = {
         custom_cost_trigger = {
             command_power > 39
         }
+        custom_cost_text = decision_cost_CP_40
         complete_effect = {
             add_command_power = -40
         }
@@ -644,7 +668,7 @@ FOP_crimea_operation = {
             set_country_flag = fop_russia_domestic_logistics_strikes
             add_to_variable = {
                 var = FOP_crimea_operation_preparedness_var
-                value = 10
+                value = 5
                 tooltip = FOP_crimea_operation_preparedness_var_tt
             }
         }
@@ -679,6 +703,7 @@ FOP_crimea_operation = {
         custom_cost_trigger = {
             command_power > 39
         }
+        custom_cost_text = decision_cost_CP_40
         cost = 80
         complete_effect = {
             add_command_power = -40
@@ -687,7 +712,7 @@ FOP_crimea_operation = {
             set_country_flag = fop_plan_russia_buffer_zone
             add_to_variable = {
                 var = FOP_crimea_operation_preparedness_var
-                value = 10
+                value = 5
                 tooltip = FOP_crimea_operation_preparedness_var_tt
             }
         }
@@ -707,7 +732,7 @@ FOP_crimea_operation = {
             }
             add_to_variable = {
                 var = FOP_crimea_operation_preparedness_var
-                value = 5
+                value = 3
                 tooltip = FOP_crimea_operation_preparedness_var_tt
             }
             any_army_leader = {
@@ -758,7 +783,7 @@ FOP_crimea_operation = {
             }
             add_to_variable = {
                 var = FOP_crimea_operation_preparedness_var
-                value = 5
+                value = 2
                 tooltip = FOP_crimea_operation_preparedness_var_tt
             }
         }
@@ -785,7 +810,7 @@ FOP_crimea_operation = {
             }
             add_to_variable = {
                 var = FOP_crimea_operation_preparedness_var
-                value = 10
+                value = 5
                 tooltip = FOP_crimea_operation_preparedness_var_tt
             }
         }
@@ -858,7 +883,7 @@ FOP_crimea_operation = {
         complete_effect = {
             add_to_variable = {
                 var = FOP_crimea_russia_surrender_var
-                value = 20
+                value = 30
             }
         }
 		timeout_effect = {
@@ -913,8 +938,11 @@ FOP_crimea_operation = {
                 surrender_progress > 0.2
             }
         }
-        cancel_trigger = {
-            
+        cancel_effect = {
+            add_to_variable = {
+                var = FOP_crimea_russia_surrender_var
+                value = -25
+            }
         }
         is_good = yes
 		days_mission_timeout = 30
@@ -994,6 +1022,7 @@ FOP_crimea_operation = {
             if = { limit = { 2321 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
             if = { limit = { 330 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
             if = { limit = { 388 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
+            clr_country_flag = fop_plan_russia_buffer_zone
         }
     }
 }
