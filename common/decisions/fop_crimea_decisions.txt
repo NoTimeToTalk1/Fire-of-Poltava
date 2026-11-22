@@ -621,7 +621,7 @@ FOP_crimea_operation = {
             add_command_power = -40
         }
         remove_effect = {
-            set_country_flag = fop_russia_military_industry_strikes
+            set_country_flag = fop_russia_military_industry_strikes_plan
             add_to_variable = {
                 var = FOP_crimea_operation_preparedness_var
                 value = 10
@@ -643,7 +643,7 @@ FOP_crimea_operation = {
             add_command_power = -40
         }
         remove_effect = {
-            set_country_flag = fop_russia_oil_refineries_strikes
+            set_country_flag = fop_russia_oil_refineries_strikes_plan
             add_to_variable = {
                 var = FOP_crimea_operation_preparedness_var
                 value = 10
@@ -665,7 +665,7 @@ FOP_crimea_operation = {
             add_command_power = -40
         }
         remove_effect = {
-            set_country_flag = fop_russia_domestic_logistics_strikes
+            set_country_flag = fop_russia_domestic_logistics_strikes_plan
             add_to_variable = {
                 var = FOP_crimea_operation_preparedness_var
                 value = 5
@@ -678,7 +678,7 @@ FOP_crimea_operation = {
             has_country_flag = fop_focus_on_russia_flag
         }
         fire_only_once = yes
-        days_remove = 80
+        days_remove = 120
         cost = 80
         remove_effect = {
             #defences
@@ -1023,6 +1023,309 @@ FOP_crimea_operation = {
             if = { limit = { 330 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
             if = { limit = { 388 = { is_controlled_by = ROOT } } add_to_variable = { var = FOP_crimea_russia_surrender_var value = 1 } }
             clr_country_flag = fop_plan_russia_buffer_zone
+        }
+    }
+    fop_strike_crimea_bridge_down = {
+        available = {
+            has_country_flag = fop_destroy_crimea_bridge_plan
+        }
+        visible = {
+            has_country_flag = fop_destroy_crimea_bridge_plan
+            has_country_flag = fop_crimea_war_active_phase
+        }
+        custom_cost_trigger = {
+            medium_plane_suicide_airframe > 10
+        }
+        custom_cost_text = fop_strike_crimea_bridge_down_tt
+        days_remove = 14
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = medium_plane_airframe
+                amount = -10
+            }
+        }
+        remove_effect = {
+            random_list = {
+                70 = {
+                    2124 = {
+                        set_demilitarized_zone = yes
+                    }
+                    CRI = {
+                        add_stability = -0.2
+                        add_war_support = -0.15
+                    }
+                    clr_country_flag = fop_destroy_crimea_bridge_plan
+                    add_to_variable = {
+                        var = FOP_crimea_russia_surrender_var
+                        value = 10
+                    }
+                }
+                30 = {
+                    add_to_variable = {
+                        var = FOP_crimea_russia_surrender_var
+                        value = -2
+                    }
+                }
+            }
+        }
+    }
+    fop_hit_crimea_infrastructure = {
+        available = {
+            has_country_flag = fop_crimea_strikes_plan
+        }
+        visible = {
+            has_country_flag = fop_crimea_strikes_plan
+            has_country_flag = fop_crimea_war_active_phase
+        }
+        custom_cost_trigger = {
+            medium_plane_suicide_airframe > 25
+        }
+        custom_cost_text = fop_strike_crimea_bridge_down_tt
+        days_remove = 14
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = medium_plane_airframe
+                amount = -25
+            }
+        }
+        remove_effect = {
+            random_list = {
+                60 = {
+                    CRI = {
+                        random_owned_controlled_state = {
+                            limit = {
+                                industrial_complex > 1
+                            }
+                            damage_building = {
+                                type = industrial_complex
+                                damage = 1
+                            }
+                        }
+                        add_stability = -0.02
+                    }
+                }
+                40 = {
+                    CRI = {
+                        add_war_support = 0.02
+                    }
+                }
+            }
+        }
+    }
+    fop_destroy_russian_oil_refinery = {
+        available = {
+            has_country_flag = fop_russia_oil_refineries_strikes_plan
+        }
+        visible = {
+            has_country_flag = fop_russia_oil_refineries_strikes_plan
+            has_country_flag = fop_crimea_war_active_phase
+        }
+        custom_cost_trigger = {
+            medium_plane_suicide_airframe > 100
+        }
+        custom_cost_text = fop_destroy_oil_refinery_tt
+        days_remove = 21
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = medium_plane_airframe
+                amount = -100
+            }
+        }
+        remove_effect = {
+            random_list = {
+                60 = {
+                    RUS = {
+                        random_owned_controlled_state = {
+                            limit = {
+                                synthetic_refinery > 1
+                            }
+                            damage_building = {
+                                type = synthetic_refinery
+                                damage = 1
+                            }
+                        }
+                    }
+                    add_to_variable = {
+                        var = FOP_crimea_russia_surrender_var
+                        value = 5
+                    }
+                }
+                40 = {
+                    add_to_variable = {
+                        var = FOP_crimea_russia_surrender_var
+                        value = -2
+                    }
+                }
+            }
+        }
+    }
+    fop_destroy_russian_military_complex = {
+        available = {
+            has_country_flag = fop_russia_military_industry_strikes_plan
+        }
+        visible = {
+            has_country_flag = fop_russia_military_industry_strikes_plan
+            has_country_flag = fop_crimea_war_active_phase
+        }
+        custom_cost_trigger = {
+            medium_plane_suicide_airframe > 100
+        }
+        custom_cost_text = fop_destroy_military_complex_tt
+        days_remove = 28
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = medium_plane_airframe
+                amount = -100
+            }
+        }
+        remove_effect = {
+            random_list = {
+                50 = {
+                    RUS = {
+                        random_owned_controlled_state = {
+                            limit = {
+                                arms_factory > 1
+                            }
+                            damage_building = {
+                                type = arms_factory
+                                damage = 1
+                            }
+                        }
+                    }
+                    add_to_variable = {
+                        var = FOP_crimea_russia_surrender_var
+                        value = 1
+                    }
+                }
+                50 = {
+
+                }
+            }
+        }
+    }
+    fop_destroy_russian_domestic_complex = {
+        available = {
+            has_country_flag = fop_russia_domestic_logistics_strikes_plan
+        }
+        visible = {
+            has_country_flag = fop_russia_domestic_logistics_strikes_plan
+            has_country_flag = fop_crimea_war_active_phase
+        }
+        custom_cost_trigger = {
+            medium_plane_suicide_airframe > 35
+        }
+        custom_cost_text = fop_destroy_domestic_complex_tt
+        days_remove = 28
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = medium_plane_airframe
+                amount = -35
+            }
+        }
+        remove_effect = {
+            random_list = {
+                70 = {
+                    RUS = {
+                        random_owned_controlled_state = {
+                            limit = {
+                                industrial_complex > 1
+                            }
+                            damage_building = {
+                                type = industrial_complex
+                                damage = 1
+                            }
+                        }
+                    }
+                    add_to_variable = {
+                        var = FOP_crimea_russia_surrender_var
+                        value = 2
+                    }
+                }
+                30 = {
+
+                }
+            }
+        }
+    }
+    fop_destroy_russian_resource_complex = {
+        available = {
+            has_country_flag = fop_russia_domestic_logistics_strikes_plan
+        }
+        visible = {
+            has_country_flag = fop_russia_domestic_logistics_strikes_plan
+            has_country_flag = fop_crimea_war_active_phase
+        }
+        custom_cost_trigger = {
+            medium_plane_suicide_airframe > 50
+        }
+        custom_cost_text = fop_destroy_domestic_complex_tt
+        days_remove = 28
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = medium_plane_airframe
+                amount = -50
+            }
+        }
+        remove_effect = {
+            random_list = {
+                60 = {
+                    RUS = {
+                        random_list = {
+                            25 = {
+                                random_owned_controlled_state = {
+                                    limit = {
+                                        tungsten > 5
+                                    }
+                                    add_resource = {
+                                        type = tungsten
+                                        amount = -5
+                                    }
+                                }
+                            }
+                            25 = {
+                                random_owned_controlled_state = {
+                                    limit = {
+                                        aluminium > 5
+                                    }
+                                    add_resource = {
+                                        type = aluminium
+                                        amount = -5
+                                    }
+                                }
+                            }
+                            25 = {
+                                random_owned_controlled_state = {
+                                    limit = {
+                                        rubber > 5
+                                    }
+                                    add_resource = {
+                                        type = rubber
+                                        amount = -5
+                                    }
+                                }
+                            }
+                            25 = {
+                                random_owned_controlled_state = {
+                                    limit = {
+                                        steel > 10
+                                    }
+                                    add_resource = {
+                                        type = steel
+                                        amount = -10
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    add_to_variable = {
+                        var = FOP_crimea_russia_surrender_var
+                        value = 1
+                    }
+                }
+                40 = {
+
+                }
+            }
         }
     }
 }
