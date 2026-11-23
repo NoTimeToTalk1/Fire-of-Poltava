@@ -1,8 +1,7 @@
-Equipment
+# Equipment
 
 Syntax:
-----------------
-
+```
 equipments = {
 	<equipment type name> = {
 		year = <4-digit year>
@@ -12,6 +11,7 @@ equipments = {
 		priority = <value>
 		archetype = <equipment archetype name>
 		parent = <equipment type name>
+		is_frame = <yes|no>  # Default yes for modular equipment, not applicable for non-modular equipment. Frame refers to tank chassis, ship hulls, and airplane frames.
 
 		# Land types
 		type = <armor|infantry|motorized|mechanized|anti_air|artillery|anti_tank|rocket|support>
@@ -19,6 +19,13 @@ equipments = {
 		type = <capital_ship|submarine|screen_ship|carrier|convoy|naval_transport>
 		# or Air types
 		type = <air_transport|figher|cas|interceptor|tactical_bomber|strategic_bomber|naval_bomber|missile|suicide>
+		
+		# Limit the amount of military factories or dockyards assignable to the type
+		# Military factories types (excluding railway guns)
+		max_military_factories = <amount>
+		# Dockyards
+		max_dockyard_factories = <amount>
+		
 
 		# The AI by default uses 'type' to connect archetypes to strategies e.g. unit_ratio. This can be overriden by
 		# ai_type, and allows you to set different unit_ratios for e.g. fighter, carrier fighter and heavy fighter even
@@ -115,3 +122,4 @@ equipments = {
 		manpower = <value>
 	}
 }
+```
