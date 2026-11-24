@@ -3050,3 +3050,166 @@ ukraine_war_preparedness_effect = {
 		
 	}
 }
+crimea_operation_preparedness_effect = {
+	if = {
+		limit = {
+			check_variable = {
+				FOP_crimea_operation_preparedness_var < 30
+			}
+		}
+		add_to_variable = {
+			var = crimea_operation_preparedness_attack_var
+			value = -0.15
+		}
+		add_to_variable = {
+			var = crimea_operation_preparedness_defence_var
+			value = -0.1
+		}
+		add_to_variable = {
+			var = crimea_operation_preparedness_organisation_var
+			value = -0.2
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				FOP_crimea_operation_preparedness_var > 30
+			}
+		}
+		add_to_variable = {
+			var = crimea_operation_preparedness_attack_var
+			value = 0.05
+		}
+		add_to_variable = {
+			var = crimea_operation_preparedness_defence_var
+			value = 0.05
+		}
+		add_to_variable = {
+			var = crimea_operation_preparedness_organisation_var
+			value = 0.05
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				FOP_crimea_operation_preparedness_var > 50
+			}
+		}
+		add_to_variable = {
+			var = crimea_operation_preparedness_attack_var
+			value = 0.05
+		}
+		add_to_variable = {
+			var = crimea_operation_preparedness_defence_var
+			value = 0.05
+		}
+		add_to_variable = {
+			var = crimea_operation_preparedness_organisation_var
+			value = 0.05
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				FOP_crimea_operation_preparedness_var > 70
+			}
+		}
+		add_to_variable = {
+			var = crimea_operation_preparedness_attack_var
+			value = 0.05
+		}
+		add_to_variable = {
+			var = crimea_operation_preparedness_defence_var
+			value = 0.05
+		}
+		add_to_variable = {
+			var = crimea_operation_preparedness_organisation_var
+			value = 0.05
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				FOP_crimea_operation_preparedness_var > 90
+			}
+		}
+		add_to_variable = {
+			var = crimea_operation_preparedness_attack_var
+			value = 0.05
+		}
+		add_to_variable = {
+			var = crimea_operation_preparedness_defence_var
+			value = 0.05
+		}
+		add_to_variable = {
+			var = crimea_operation_preparedness_organisation_var
+			value = 0.05
+		}
+	}
+}
+crimea_operation_awareness_effect = {
+	if = {
+		limit = {
+			check_variable = {
+				FOP_crimea_russia_awareness_var > 20
+			}
+		}
+		#event
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				FOP_crimea_russia_awareness_var > 35
+			}
+		}
+		custom_effect_tooltip = fop_crimea_operation_awareness_mild_tt
+		hidden_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					is_owned_by = RUS
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				FOP_crimea_russia_awareness_var > 50
+			}
+		}
+		custom_effect_tooltip = fop_crimea_operation_awareness_moderate_tt
+		hidden_effect = {
+			RUS = {
+				army_experience = 20
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				FOP_crimea_russia_awareness_var > 60
+			}
+		}
+		custom_effect_tooltip = fop_crimea_operation_awareness_high_tt
+		#russia moves soldiers to border
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				FOP_crimea_russia_awareness_var > 80
+			}
+		}
+		custom_effect_tooltip = fop_crimea_operation_awareness_extreme_tt
+		#russian invasion
+	}
+}

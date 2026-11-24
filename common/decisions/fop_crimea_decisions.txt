@@ -492,6 +492,7 @@ FOP_crimea_operation = {
                 value = 5
                 tooltip = FOP_crimea_russia_awareness_var_tt
             }
+            crimea_operation_awareness_effect = yes
             add_to_variable = {
                 var = FOP_crimea_operation_preparedness_var
                 value = 5
@@ -538,6 +539,7 @@ FOP_crimea_operation = {
                 value = 2
                 tooltip = FOP_crimea_russia_awareness_var_tt
             }
+            crimea_operation_awareness_effect = yes
         }
     }
     fop_train_partisans = {
@@ -571,6 +573,7 @@ FOP_crimea_operation = {
                 value = 2
                 tooltip = FOP_crimea_russia_awareness_var_tt
             }
+            crimea_operation_awareness_effect = yes
         }
     }
     fop_plan_offensive_operation = {
@@ -687,6 +690,7 @@ FOP_crimea_operation = {
                 value = 10
                 tooltip = FOP_crimea_russia_awareness_var_tt
             }
+            crimea_operation_awareness_effect = yes
             add_to_variable = {
                 var = FOP_crimea_operation_preparedness_var
                 value = 10
@@ -715,6 +719,12 @@ FOP_crimea_operation = {
                 value = 5
                 tooltip = FOP_crimea_operation_preparedness_var_tt
             }
+            add_to_variable = {
+                var = FOP_crimea_russia_awareness_var
+                value = 10
+                tooltip = FOP_crimea_russia_awareness_var_tt
+            }
+            crimea_operation_awareness_effect = yes
         }
     }
     fop_military_exercises = {
@@ -730,6 +740,7 @@ FOP_crimea_operation = {
                 value = 5
                 tooltip = FOP_crimea_russia_awareness_var_tt
             }
+            crimea_operation_awareness_effect = yes
             add_to_variable = {
                 var = FOP_crimea_operation_preparedness_var
                 value = 3
@@ -781,6 +792,7 @@ FOP_crimea_operation = {
                 value = 5
                 tooltip = FOP_crimea_russia_awareness_var_tt
             }
+            crimea_operation_awareness_effect = yes
             add_to_variable = {
                 var = FOP_crimea_operation_preparedness_var
                 value = 2
@@ -808,6 +820,7 @@ FOP_crimea_operation = {
                 value = 20
                 tooltip = FOP_crimea_russia_awareness_var_tt
             }
+            crimea_operation_awareness_effect = yes
             add_to_variable = {
                 var = FOP_crimea_operation_preparedness_var
                 value = 5
@@ -855,6 +868,7 @@ FOP_crimea_operation = {
                     }
                 }
             }
+            crimea_operation_preparedness_effect = yes
             set_variable = {
                 var = FOP_crimea_russia_surrender_var
                 value = 0
@@ -924,7 +938,7 @@ FOP_crimea_operation = {
 
         }
     }
-    fop_holding_off = {
+    fop_holding_off_tier_1 = {
         activation = {
             has_country_flag = fop_crimea_operation_active_phase
             NOT = {
@@ -943,6 +957,7 @@ FOP_crimea_operation = {
                 var = FOP_crimea_russia_surrender_var
                 value = -25
             }
+            set_country_flag = fop_crimea_surrender_tier_2
         }
         is_good = yes
 		days_mission_timeout = 30
@@ -951,6 +966,98 @@ FOP_crimea_operation = {
                 var = FOP_crimea_russia_surrender_var
                 value = 10
             }
+        }
+    }
+    fop_holding_off_tier_2 = {
+        activation = {
+            has_country_flag = fop_crimea_operation_active_phase
+            has_country_flag = fop_crimea_surrender_tier_2
+            NOT = {
+                ROOT = {
+                    surrender_progress > 0.4
+                }
+            }
+        }
+        available = {
+            ROOT = {
+                surrender_progress < 0.2
+            }
+        }
+        cancel_effect = {
+            if = {
+                limit = {
+                    ROOT = {
+                        surrender_progress < 0.4
+                    }
+                }
+                add_to_variable = {
+                    var = FOP_crimea_russia_surrender_var
+                    value = -40
+                }
+                clr_country_flag = fop_crimea_surrender_tier_2
+                set_country_flag = fop_crimea_surrender_tier_3
+            }
+            else_if = {
+                limit = {
+                    ROOT = {
+                        surrender_progress > 0.2
+                    }
+                }
+                clr_country_flag = fop_crimea_surrender_tier_2
+            }
+        }
+        is_good = yes
+		days_mission_timeout = 30
+        timeout_effect = {
+            add_to_variable = {
+                var = FOP_crimea_russia_surrender_var
+                value = 5
+            }
+        }
+    }
+    fop_holding_off_tier_3 = {
+        activation = {
+            has_country_flag = fop_crimea_operation_active_phase
+            has_country_flag = fop_crimea_surrender_tier_3
+            NOT = {
+                ROOT = {
+                    surrender_progress > 0.6
+                }
+            }
+        }
+        available = {
+            ROOT = {
+                surrender_progress < 0.6
+            }
+        }
+        cancel_effect = {
+            if = {
+                limit = {
+                    ROOT = {
+                        surrender_progress < 0.6
+                    }
+                }
+                add_to_variable = {
+                    var = FOP_crimea_russia_surrender_var
+                    value = -40
+                }
+                clr_country_flag = fop_crimea_surrender_tier_3
+                set_country_flag = fop_crimea_surrender_tier_4
+            }
+            else_if = {
+                limit = {
+                    ROOT = {
+                        surrender_progress > 0.4
+                    }
+                }
+                clr_country_flag = fop_crimea_surrender_tier_3
+                set_country_flag = fop_crimea_surrender_tier_2
+            }
+        }
+        is_good = yes
+		days_mission_timeout = 30
+        timeout_effect = {
+            
         }
     }
     fop_realize_buffer_zone_plan = {
@@ -1325,6 +1432,72 @@ FOP_crimea_operation = {
                 40 = {
 
                 }
+            }
+        }
+    }
+    fop_offer_negotiations = {
+        visible = {
+            has_country_flag = fop_crimea_war_active_phase
+        }
+        days_remove = 7
+        remove_effect = {
+            if = {
+                limit = {
+                    check_variable = { FOP_crimea_russia_surrender_var < -50 }
+                    check_variable = { FOP_crimea_russia_surrender_var > -100 }
+                }
+                #de-facto russian satelite
+            }
+            else_if = {
+                limit = {
+                    check_variable = { FOP_crimea_russia_surrender_var < 0 }
+                    check_variable = { FOP_crimea_russia_surrender_var > -50 }
+                }
+                #neutral status, recognized russian as state language, demilitarization, compensation
+            }
+            else_if = {
+                limit = {
+                    check_variable = { FOP_crimea_russia_surrender_var < 50 }
+                    check_variable = { FOP_crimea_russia_surrender_var > 0 }
+                }
+                #prewar borders, neutral status
+            }
+            else_if = {
+                limit = {
+                    OR = {
+                        AND = {
+                            check_variable = {
+                                FOP_crimea_russia_surrender_var > 75
+                            }
+                            check_variable = {
+                                FOP_crimea_russia_surrender_var < 100
+                            }
+                        }
+                        AND = {
+                            check_variable = {
+                                FOP_crimea_russia_surrender_var > 50
+                            }
+                            CRI = {
+                                exists = no
+                            }
+                        }
+                    }
+                }
+                #Crimea returned to Ukraine, neutral status
+            }
+            else_if = {
+                limit = {
+                    check_variable = { FOP_crimea_russia_surrender_var > 100 }
+                    check_variable = { FOP_crimea_russia_surrender_var < 150 }
+                }
+                #Crimea returned to Ukraine, russia does not meddle in Ukrainian politics
+            }
+            else_if = {
+                limit = {
+                    check_variable = { FOP_crimea_russia_surrender_var > 150 }
+                    check_variable = { FOP_crimea_russia_surrender_var < 200 }
+                }
+                #Crimea returned to Ukraine, demilitarized zone on borders, reparations, Ukraine is truly free
             }
         }
     }
